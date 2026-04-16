@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Environments
+.env
+.venv
+venv/
+env/
+rvc/
+*.conda
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data (large files — keep small CSVs only)
+data/*.jsonl
+data/*.parquet
+data/*.hdf5
+data/*.h5
+data/raw/
+data/cache/
+
+# Model weights / activations (large)
+*.pt
+*.bin
+*.safetensors
+*.npz
+*.npy
+
+# API keys / secrets
+.env
+secrets.json
+api_keys.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Results — DO commit CSVs, do NOT commit large dumps
+results/*.jsonl
+results/raw/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/_minted*/

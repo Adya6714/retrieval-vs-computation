@@ -1,0 +1,31 @@
+# ── Core data/stats ──────────────────────────────────────────────────
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+statsmodels>=0.14        # OLS regression with fixed effects (Probe 3)
+
+# ── Visualization ────────────────────────────────────────────────────
+matplotlib>=3.8
+seaborn>=0.13
+
+# ── API clients ──────────────────────────────────────────────────────
+requests>=2.31           # Infini-gram API + general HTTP
+openai>=1.30             # GPT-4o / o3 (if using OpenAI pair)
+anthropic>=0.28          # Claude Sonnet pair (if using Anthropic pair)
+
+# ── Utilities ────────────────────────────────────────────────────────
+tqdm>=4.66               # Progress bars for API sweep loops
+python-dotenv>=1.0       # Load API keys from .env file
+tenacity>=8.3            # Retry logic for API calls
+
+# ── Dev / notebook ───────────────────────────────────────────────────
+jupyterlab>=4.1
+ipykernel>=6.29
+
+# ── Phase 2+ (mechanistic) — install only when needed ────────────────
+# transformer_lens>=1.19    # Uncomment after verifying Qwen2.5-7B support
+# nnsight>=0.3              # Fallback if TransformerLens support is incomplete
+# transformers>=4.41        # HuggingFace (Qwen2.5-7B loading)
+# accelerate>=0.30          # Multi-GPU / device map for 7B model
+# bitsandbytes>=0.43        # 8-bit quantization (if VRAM < 14GB)
+# tuned-lens>=0.2           # Probe 2 mechanistic; check Qwen2.5 support first

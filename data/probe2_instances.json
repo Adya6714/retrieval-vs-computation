@@ -1,0 +1,12 @@
+[
+  {
+    "problem_id": "EXAMPLE_001",
+    "problem_family": "blocksworld",
+    "source_dataset": "PlanBench",
+    "source_instance_id": "bw_001",
+    "problem_text": "You have blocks A, B, C on a table. ...",
+    "reference_solution": ["move A onto B", "move B onto C"],
+    "pilot_gpt4o_correct": true,
+    "notes": "Reuse from GPT-4o pilot if applicable"
+  }
+]
