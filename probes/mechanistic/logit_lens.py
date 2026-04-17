@@ -13,10 +13,11 @@ def run_logit_lens(model: HookedTransformer, prompt: str) -> list[dict]:
 
     results: list[dict] = []
     for layer in range(model.cfg.n_layers):
-        resid_post = cache[f"blocks.{layer}.hook_resid_post"][:, -1, :]
+        resid_post = cache[f"blocks.{layer}.hook_resid_post"]
         normed = model.ln_final(resid_post)
         logits = model.unembed(normed)
-        probs = torch.softmax(logits, dim=-1)
+        last_token_logits = logits[:, -1, :]
+        probs = torch.softmax(last_token_logits, dim=-1)
 
         top_prob, top_idx = torch.max(probs, dim=-1)
         token_id = int(top_idx.item())

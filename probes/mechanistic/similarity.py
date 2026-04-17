@@ -9,10 +9,12 @@ def layer_cosine_similarity(acts_a: np.ndarray, acts_b: np.ndarray) -> np.ndarra
     """Compute layer-wise cosine similarity at the last token position."""
     if acts_a.ndim != 3 or acts_b.ndim != 3:
         raise ValueError("Both inputs must have shape [num_layers, seq_len, d_model].")
-    if acts_a.shape != acts_b.shape:
-        raise ValueError("Input activation arrays must have the same shape.")
-    if acts_a.shape[1] < 1:
-        raise ValueError("seq_len must be at least 1.")
+    if acts_a.shape[0] != acts_b.shape[0]:
+        raise ValueError("num_layers must match between inputs.")
+    if acts_a.shape[2] != acts_b.shape[2]:
+        raise ValueError("d_model must match between inputs.")
+    if acts_a.shape[1] < 1 or acts_b.shape[1] < 1:
+        raise ValueError("seq_len must be at least 1 for both inputs.")
 
     vecs_a = acts_a[:, -1, :]
     vecs_b = acts_b[:, -1, :]
