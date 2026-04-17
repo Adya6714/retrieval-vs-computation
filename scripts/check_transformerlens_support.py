@@ -1,45 +1,29 @@
-"""Check whether Qwen2.5-7B is listed in TransformerLens model registry."""
+"""Check whether any Qwen2.5 model is in TransformerLens registry."""
 
 from __future__ import annotations
 
-TARGET_MODEL = "Qwen/Qwen2.5-7B"
+TARGET_SUBSTRING = "Qwen2.5"
 
 
 def _get_official_model_names() -> list[str]:
-    import transformer_lens
+    import transformer_lens.loading_from_pretrained as loading_from_pretrained
 
-    # Preferred path mentioned in request.
-    if hasattr(transformer_lens, "utilities"):
-        utilities = transformer_lens.utilities
-        fn = getattr(utilities, "official_model_name_list", None)
-        if callable(fn):
-            return list(fn())
-
-    # Common fallback in some versions.
-    loading_mod = getattr(transformer_lens, "loading_from_pretrained", None)
-    if loading_mod is not None:
-        fn = getattr(loading_mod, "official_model_name_list", None)
-        if callable(fn):
-            return list(fn())
-
-    # Last-resort fallback for older/newer layouts.
-    try:
-        from transformer_lens.loading_from_pretrained import official_model_name_list
-
-        return list(official_model_name_list())
-    except Exception as exc:  # pragma: no cover - script fallback path
-        raise RuntimeError(
-            "Could not find official model registry API in transformer_lens."
-        ) from exc
+    names = loading_from_pretrained.OFFICIAL_MODEL_NAMES
+    return list(names)
 
 
 def main() -> None:
     names = _get_official_model_names()
-    supported = TARGET_MODEL in names
+    matches = [name for name in names if TARGET_SUBSTRING in name]
+    supported = len(matches) > 0
 
     print(f"TransformerLens registry size: {len(names)} models")
-    print(f"Target model: {TARGET_MODEL}")
+    print(f"Target substring: {TARGET_SUBSTRING}")
     print(f"Supported: {'YES' if supported else 'NO'}")
+    if supported:
+        print("Matching entries:")
+        for name in matches:
+            print(f"- {name}")
 
 
 if __name__ == "__main__":
