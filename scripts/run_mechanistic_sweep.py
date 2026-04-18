@@ -13,6 +13,7 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
+from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 
 
 
@@ -20,6 +21,12 @@ def main():
     parser = argparse.ArgumentParser(description="Layer 2 Mechanistic Sweep")
     parser.add_argument("--model", type=str, default="Qwen/Qwen2.5-7B-Instruct")
     parser.add_argument("--probe", type=str, choices=["probe1", "probe2"], default="probe1")
+    parser.add_argument(
+        "--question-bank",
+        type=str,
+        default=QUESTION_BANK_PATH,
+        help="Path to unified question bank CSV (used for probe1)",
+    )
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--family", type=str, default=None)
     parser.add_argument("--resume", action="store_true", default=True, help="Skip problem_ids already in output CSV")
@@ -41,7 +48,10 @@ def main():
     results_dir = Path(paths.get("results_dir", "./results"))
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    instances_path = problems_dir / f"{args.probe}_instances.csv"
+    if args.probe == "probe1":
+        instances_path = Path(args.question_bank)
+    else:
+        instances_path = problems_dir / f"{args.probe}_instances.csv"
     variants_path = problems_dir / f"{args.probe}_variants.csv"
     output_path = results_dir / f"{args.probe}_mechanistic.csv"
 
@@ -50,6 +60,15 @@ def main():
         return
 
     df_instances = pd.read_csv(instances_path)
+    if args.probe == "probe1":
+        missing_cols = set(QUESTION_BANK_COLUMNS) - set(df_instances.columns)
+        if missing_cols:
+            raise ValueError(
+                f"Question bank missing required columns: {sorted(missing_cols)}"
+            )
+        df_instances = df_instances[
+            df_instances["variant_type"].astype(str).str.strip().str.lower() == "canonical"
+        ]
 
     if args.family and "problem_family" in df_instances.columns:
         df_instances = df_instances[df_instances["problem_family"] == args.family]

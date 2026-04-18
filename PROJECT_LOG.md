@@ -245,3 +245,31 @@ Option B — raw HuggingFace hooks (most portable):
 **Bugs fixed this session:** patching.py tensor serialization, load_model call, crystallization layer detection, run_triangulation variant_type guard, cas.py family duplication, tep.py None label.
 
 **Pipeline status:** structurally complete. All Layer 1 code exists and is tested. Ready to execute the moment CSV + API keys arrive.
+
+### Session 4
+**Done:** Introduced a single strict question bank schema at `data/problems/question_bank.csv` with canonical columns:
+`problem_id, variant_type, problem_text, correct_answer, problem_family, problem_subtype, difficulty, contamination_pole, source, verifier_function, difficulty_params, notes`.
+Set this file as the default source for Probe 1 in:
+`run_behavioral_sweep.py`, `run_contamination_triage.py`, `fill_correct_answers.py`, and `run_mechanistic_sweep.py`.
+Added strict schema validation via `probes/common/io.py` (`QUESTION_BANK_COLUMNS`, `load_question_bank`), and canonical-row filtering (`variant_type == canonical`) in sweep/triage/mechanistic defaults.
+
+**Migration note:** Question bank initialized/cleared with header-only CSV as requested. Legacy `probe1_instances.csv` remains as backup/source during migration and is no longer the default for updated Probe 1 scripts.
+
+### Session 5
+**Done:** Migrated `Dataset Week 1.csv` (wide format) into unified `data/problems/question_bank.csv` (long format) via `scripts/migrate_week1_to_question_bank.py`.
+Validation run output:
+- Migrated rows: 70
+- Canonical: 15
+- Variants: 55 (`W2=15`, `W3=15`, `W4=15`, `W6=10`)
+- Strict schema confirmed in file header and pandas check.
+
+**Verifier/state-machine status:**
+- Implemented family-specific verifier handlers under one orchestrator entrypoint in `probes/contamination/verify.py`.
+- Added state-machine simulation for `blocksworld` and `mystery_blocksworld` with legal-transition checks.
+- Kept regex fallback path when a prompt cannot be parsed into explicit state/goal sections.
+- `tests/test_verifiers.py`: 12 passed.
+
+**Processed-state strategy (precision update):**
+- `run_behavioral_sweep.py --resume` now keys already-scored rows by
+  `(problem_id, variant_type, model)` instead of `(problem_id, variant_type)` only.
+- This prevents false skipping when running multiple models on the same question bank.

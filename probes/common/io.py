@@ -7,20 +7,37 @@ import csv
 from pathlib import Path
 import pandas as pd
 
+QUESTION_BANK_PATH = "data/problems/question_bank.csv"
+QUESTION_BANK_COLUMNS = [
+    "problem_id",
+    "variant_type",
+    "problem_text",
+    "correct_answer",
+    "problem_family",
+    "problem_subtype",
+    "difficulty",
+    "contamination_pole",
+    "source",
+    "verifier_function",
+    "difficulty_params",
+    "notes",
+]
+
+
+def load_question_bank(path: str = QUESTION_BANK_PATH) -> pd.DataFrame:
+    df = pd.read_csv(path, dtype=str)
+    missing = set(QUESTION_BANK_COLUMNS) - set(df.columns)
+    if missing:
+        raise ValueError(f"File {path} is missing required columns: {', '.join(sorted(missing))}")
+    return df
+
 
 def load_problems(path: str) -> pd.DataFrame:
-    df = pd.read_csv(path)
-    required_columns = {
-        "problem_id",
-        "problem_family",
-        "problem_text",
-        "correct_answer",
-        "difficulty",
-        "contamination_pole",
-    }
-    missing = required_columns - set(df.columns)
-    if missing:
-        raise ValueError(f"File {path} is missing required columns: {', '.join(missing)}")
+    # Backward-compatible alias retained while moving to a single question bank.
+    df = load_question_bank(path)
+    # Canonical problems are represented by variant_type == "canonical".
+    if "variant_type" in df.columns:
+        df = df[df["variant_type"].astype(str).str.strip().str.lower() == "canonical"].copy()
     return df
 
 

@@ -1,6 +1,1 @@
 problem_id,problem_family,variant_type,model,raw_response,behavioral_correct
-BW_155,blocksworld,canonical,mock,The answer is 42.,False
-BW_155,blocksworld,W2,mock,The answer is 42.,False
-BW_155,blocksworld,W4,mock,The answer is 42.,False
-BW_010,blocksworld,canonical,mock,The answer is 42.,False
-BW_010,blocksworld,W2,mock,The answer is 42.,False

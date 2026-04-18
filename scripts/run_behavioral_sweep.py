@@ -13,6 +13,7 @@ import pandas as pd
 import yaml
 from dotenv import load_dotenv
 
+from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 from probes.contamination.verify import verify_answer
 
 load_dotenv()
@@ -32,8 +33,8 @@ def _load_paths() -> dict:
         return yaml.safe_load(f)
 
 
-def _existing_pairs(output_path: Path) -> set[tuple[str, str]]:
-    """Return set of (problem_id, variant_type) pairs already in output CSV."""
+def _existing_pairs(output_path: Path) -> set[tuple[str, str, str]]:
+    """Return set of (problem_id, variant_type, model) keys already in output CSV."""
     if not output_path.exists() or output_path.stat().st_size == 0:
         return set()
     try:
@@ -43,8 +44,14 @@ def _existing_pairs(output_path: Path) -> set[tuple[str, str]]:
         # fillna so canonical rows (empty variant_type written as "") are
         # read back as "" rather than NaN, ensuring resume matching works.
         df["variant_type"] = df["variant_type"].fillna("")
+        if "model" not in df.columns:
+            return set()
         return {
-            (str(r["problem_id"]).strip(), str(r["variant_type"]).strip())
+            (
+                str(r["problem_id"]).strip(),
+                str(r["variant_type"]).strip(),
+                str(r["model"]).strip(),
+            )
             for _, r in df.iterrows()
         }
     except pd.errors.EmptyDataError:
@@ -64,6 +71,12 @@ def main() -> None:
                         help="Model identifier passed to the API client")
     parser.add_argument("--probe", type=str, choices=["probe1", "probe2"],
                         default="probe1")
+    parser.add_argument(
+        "--question-bank",
+        type=str,
+        default=QUESTION_BANK_PATH,
+        help="Path to unified question bank CSV (used for probe1)",
+    )
     parser.add_argument("--resume", action="store_true", default=True,
                         help="Skip (problem_id, variant_type) pairs already in output (default)")
     parser.add_argument("--no-resume", action="store_false", dest="resume",
@@ -77,7 +90,10 @@ def main() -> None:
     results_dir = Path(paths.get("results_dir", "./results"))
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    instances_path = problems_dir / f"{args.probe}_instances.csv"
+    if args.probe == "probe1":
+        instances_path = Path(args.question_bank)
+    else:
+        instances_path = problems_dir / f"{args.probe}_instances.csv"
     output_path = results_dir / "behavioral_sweep.csv"
 
     # 2. Load canonical problems
@@ -85,6 +101,15 @@ def main() -> None:
         raise FileNotFoundError(f"Instances file not found: {instances_path}")
 
     df_instances = pd.read_csv(instances_path, dtype=str)
+    missing_cols = set(QUESTION_BANK_COLUMNS) - set(df_instances.columns)
+    if missing_cols:
+        raise ValueError(
+            f"Question bank missing required columns: {sorted(missing_cols)}"
+        )
+    if "variant_type" in df_instances.columns:
+        df_instances = df_instances[
+            df_instances["variant_type"].astype(str).str.strip().str.lower() == "canonical"
+        ]
     df_instances["problem_id"] = df_instances["problem_id"].astype(str).str.strip()
 
     if args.family is not None:
@@ -128,7 +153,7 @@ def main() -> None:
         model_name = args.model
 
     # 5. Load existing results for resume
-    done_pairs: set[tuple[str, str]] = set()
+    done_pairs: set[tuple[str, str, str]] = set()
     if args.resume:
         done_pairs = _existing_pairs(output_path)
 
@@ -152,7 +177,7 @@ def main() -> None:
             correct_answer = row["correct_answer"]
 
             # 6. Skip already-scored pairs
-            if args.resume and (pid, vtype) in done_pairs:
+            if args.resume and (pid, vtype, model_name) in done_pairs:
                 n_skipped += 1
                 continue
 
@@ -163,7 +188,9 @@ def main() -> None:
 
                 # 7b. Verify answer
                 try:
-                    is_correct = verify_answer(pid, raw_response, correct_answer, family)
+                    is_correct = verify_answer(
+                        pid, raw_response, correct_answer, family, problem_text=problem_text
+                    )
                 except ValueError:
                     # Unrecognized family — log and treat as unscored
                     print(f"WARNING: unrecognized family '{family}' for {pid}. "
@@ -183,7 +210,7 @@ def main() -> None:
                 )
                 outfile.flush()  # 7d
 
-                done_pairs.add((pid, vtype))
+                done_pairs.add((pid, vtype, model_name))
                 n_processed += 1
 
             except Exception as exc:  # 7e

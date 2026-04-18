@@ -16,6 +16,8 @@ import subprocess
 import tempfile
 from pathlib import Path
 
+from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
+
 
 BLOCKSWORLD_FAMILIES = {"blocksworld", "planning_suite"}
 MYSTERY_FAMILIES = {"mystery_blocksworld"}
@@ -84,7 +86,8 @@ def pddl_action_to_natural(action: str) -> str:
 
 def get_pddl_paths(row: dict, planbench_root: Path) -> tuple[Path, Path] | None:
     """Extract domain + problem PDDL paths from CSV source field."""
-    source = row.get("source", "")
+    source = str(row.get("source", ""))
+    subtype = str(row.get("problem_subtype", "")).strip().lower()
     # source field format: "type=... | path=plan-bench/instances/blocksworld/..."
     path_match = re.search(r"path=([^\s|]+)", source)
     if not path_match:
@@ -94,16 +97,47 @@ def get_pddl_paths(row: dict, planbench_root: Path) -> tuple[Path, Path] | None:
     problem_rel = path_match.group(1).strip()
     problem_path = planbench_root / problem_rel
 
+    # Some source rows contain stale/malformed mystery paths.
+    # Fall back to a canonical generated location using filename.
     if not problem_path.exists():
-        print(f"  Problem file not found: {problem_path}")
-        return None
+        filename_match = re.search(r"filename=([^\s|]+)", source)
+        filename = filename_match.group(1).strip() if filename_match else problem_path.name
+        if subtype == "mystery_blocksworld":
+            fallback_problem = (
+                planbench_root
+                / "plan-bench/instances/blocksworld/mystery/generated"
+                / filename
+            )
+        elif subtype == "blocksworld":
+            fallback_problem = (
+                planbench_root
+                / "plan-bench/instances/blocksworld/generated"
+                / filename
+            )
+        else:
+            fallback_problem = problem_path
 
-    # Domain file is always in the same directory as the problem
-    domain_path = problem_path.parent / "domain.pddl"
-    if not domain_path.exists():
-        # Try one level up
-        domain_path = problem_path.parent.parent / "domain.pddl"
-    if not domain_path.exists():
+        if fallback_problem.exists():
+            problem_path = fallback_problem
+        else:
+            print(f"  Problem file not found: {problem_path}")
+            return None
+
+    # PlanBench domains are under pddlgenerators for these families.
+    if subtype == "mystery_blocksworld":
+        domain_candidates = [
+            planbench_root / "plan-bench/instances/blocksworld/mystery/generated_domain.pddl",
+            planbench_root / "plan-bench/pddlgenerators/blocksworld/mystery/domain.pddl",
+        ]
+    else:
+        domain_candidates = [
+            planbench_root / "plan-bench/instances/blocksworld/generated_domain.pddl",
+            planbench_root / "plan-bench/pddlgenerators/blocksworld/4ops/domain.pddl",
+            planbench_root / "plan-bench/pddlgenerators/blocksworld/domain.pddl",
+        ]
+
+    domain_path = next((p for p in domain_candidates if p.exists()), None)
+    if domain_path is None:
         print(f"  Domain file not found near: {problem_path}")
         return None
 
@@ -112,7 +146,7 @@ def get_pddl_paths(row: dict, planbench_root: Path) -> tuple[Path, Path] | None:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--csv", default="data/problems/probe1_instances.csv")
+    parser.add_argument("--csv", default=QUESTION_BANK_PATH)
     parser.add_argument("--planbench", required=True, help="Path to LLMs-Planning repo root")
     parser.add_argument("--downward", required=True, help="Path to fast-downward.py")
     parser.add_argument("--dry-run", action="store_true", help="Print paths only, don't run FD")
@@ -131,6 +165,12 @@ def main():
         fieldnames = reader.fieldnames
         rows = list(reader)
 
+    missing_cols = set(QUESTION_BANK_COLUMNS) - set(fieldnames or [])
+    if missing_cols:
+        raise ValueError(
+            f"Question bank missing required columns: {sorted(missing_cols)}"
+        )
+
     filled = 0
     skipped = 0
     failed = 0
@@ -139,6 +179,13 @@ def main():
         pid = row.get("problem_id", "").strip()
         subtype = row.get("problem_subtype", "").strip().lower()
         existing = row.get("correct_answer", "").strip()
+        variant_type = row.get("variant_type", "").strip().lower()
+
+        # Fill only canonical rows; skip W* variants.
+        if variant_type and variant_type != "canonical":
+            print(f"[SKIP] {pid} — variant {row.get('variant_type', '').strip()}, skipping")
+            skipped += 1
+            continue
 
         if existing:
             print(f"[SKIP] {pid} — already has answer")

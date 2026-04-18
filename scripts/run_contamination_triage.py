@@ -7,8 +7,9 @@ import csv
 from pathlib import Path
 
 from probes.contamination.score import score_problem
+from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 
-INPUT_PATH = Path("data/problems/probe1_instances.csv")
+INPUT_PATH = Path(QUESTION_BANK_PATH)
 OUTPUT_PATH = Path("results/contamination_triage.csv")
 
 OUTPUT_COLUMNS = [
@@ -48,6 +49,20 @@ def run_triage(
     with input_path.open("r", newline="", encoding="utf-8") as infile:
         reader = csv.DictReader(infile)
         rows = list(reader)
+
+    if rows:
+        missing_cols = set(QUESTION_BANK_COLUMNS) - set(rows[0].keys())
+        if missing_cols:
+            raise ValueError(
+                f"Question bank missing required columns: {sorted(missing_cols)}"
+            )
+
+    # Triage should run over canonical rows only.
+    rows = [
+        row
+        for row in rows
+        if str(row.get("variant_type", "")).strip().lower() == "canonical"
+    ]
 
     if family is not None:
         rows = [row for row in rows if row.get("problem_family") == family]
