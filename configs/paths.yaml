@@ -1,0 +1,6 @@
+data_dir: ./data
+results_dir: ./results
+figures_dir: ./figures
+cache_dir: ~/.cache/huggingface
+problems_dir: ./data/problems
+contamination_cache: ./data/contamination/infinigram_cache.json

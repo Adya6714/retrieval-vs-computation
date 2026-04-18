@@ -1,0 +1,4 @@
+problem_id,problem_family,variant_type,model,raw_response,behavioral_correct
+P1,gsm,,mock,The answer is 42.,False
+P2,gsm,,mock,The answer is 42.,True
+P3,blocksworld,,mock,The answer is 42.,False

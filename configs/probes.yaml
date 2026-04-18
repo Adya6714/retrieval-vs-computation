@@ -1,0 +1,13 @@
+probe1:
+  variants: [W1, W2, W3, W4, W5, W6]
+  primary_metric: CSS
+  secondary_metrics: [RCS, CAS]
+probe2:
+  phases: [plan_generation, step_execution]
+  primary_metric: CCI
+  secondary_metric: TEP
+  family: blocksworld_only
+probe3:
+  tool: infinigram
+  metrics: [contamination_score]
+  analysis: OLS_regression_with_family_fixed_effects

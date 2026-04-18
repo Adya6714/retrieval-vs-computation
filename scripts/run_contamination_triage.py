@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 from pathlib import Path
 
 from probes.contamination.score import score_problem
 
-INPUT_PATH = Path("data/probe1_instances.csv")
+INPUT_PATH = Path("data/problems/probe1_instances.csv")
 OUTPUT_PATH = Path("results/contamination_triage.csv")
 
 OUTPUT_COLUMNS = [
@@ -18,7 +19,6 @@ OUTPUT_COLUMNS = [
     "max_ngram_length",
     "max_ngram_count",
     "contamination_score",
-    "behavioral_correct",
 ]
 
 
@@ -31,25 +31,38 @@ def _existing_problem_ids(output_path: Path) -> set[str]:
         return {str(row.get("problem_id", "")).strip() for row in reader if row.get("problem_id")}
 
 
-def run_triage(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -> None:
+def run_triage(
+    limit: int | None = None,
+    family: str | None = None,
+    resume: bool = True,
+    input_path: Path = INPUT_PATH, 
+    output_path: Path = OUTPUT_PATH
+) -> None:
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    processed_ids = _existing_problem_ids(output_path)
+    processed_ids = _existing_problem_ids(output_path) if resume else set()
     write_header = not output_path.exists() or output_path.stat().st_size == 0
 
-    with input_path.open("r", newline="", encoding="utf-8") as infile, output_path.open(
-        "a", newline="", encoding="utf-8"
-    ) as outfile:
+    with input_path.open("r", newline="", encoding="utf-8") as infile:
         reader = csv.DictReader(infile)
+        rows = list(reader)
+
+    if family is not None:
+        rows = [row for row in rows if row.get("problem_family") == family]
+
+    if limit is not None:
+        rows = rows[:limit]
+
+    with output_path.open("a", newline="", encoding="utf-8") as outfile:
         writer = csv.DictWriter(outfile, fieldnames=OUTPUT_COLUMNS)
 
         if write_header:
             writer.writeheader()
             outfile.flush()
 
-        for row in reader:
+        for row in rows:
             problem_id = str(row.get("problem_id", "")).strip()
             if problem_id and problem_id in processed_ids:
                 continue
@@ -65,7 +78,6 @@ def run_triage(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -
                 "max_ngram_length": score["max_ngram_length"],
                 "max_ngram_count": score["max_ngram_count"],
                 "contamination_score": score["contamination_score"],
-                "behavioral_correct": row.get("behavioral_correct", ""),
             }
             writer.writerow(output_row)
             outfile.flush()
@@ -75,4 +87,13 @@ def run_triage(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -
 
 
 if __name__ == "__main__":
-    run_triage()
+    parser = argparse.ArgumentParser(description="Run contamination triage")
+    parser.add_argument("--limit", type=int, default=None, help="Process only first N problems then stop")
+    parser.add_argument("--family", type=str, default=None, help="Process only problems where problem_family matches this value")
+    
+    parser.add_argument("--resume", action="store_true", default=True, help="Skip problem_ids already present in the output CSV (default)")
+    parser.add_argument("--no-resume", action="store_false", dest="resume", help="Do not skip problem_ids already present")
+    
+    args = parser.parse_args()
+
+    run_triage(limit=args.limit, family=args.family, resume=args.resume)

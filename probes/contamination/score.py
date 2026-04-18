@@ -23,7 +23,7 @@ def _max_count_for_length(problem_text: str, n: int) -> int:
     return max_count
 
 
-def score_problem(problem_text: str) -> dict[str, int]:
+def score_problem(problem_text: str) -> dict[str, float | int]:
     """Score a problem by longest matched n-gram."""
 
     tokens = problem_text.split()
@@ -31,7 +31,7 @@ def score_problem(problem_text: str) -> dict[str, int]:
         return {
             "max_ngram_length": 0,
             "max_ngram_count": 0,
-            "contamination_score": 0,
+            "contamination_score": 0.0,
         }
 
     max_len = len(tokens)
@@ -39,7 +39,7 @@ def score_problem(problem_text: str) -> dict[str, int]:
         return {
             "max_ngram_length": 0,
             "max_ngram_count": 0,
-            "contamination_score": 0,
+            "contamination_score": 0.0,
         }
 
     start_len = min(START_NGRAM, max_len)
@@ -71,5 +71,5 @@ def score_problem(problem_text: str) -> dict[str, int]:
     return {
         "max_ngram_length": best_len,
         "max_ngram_count": best_count,
-        "contamination_score": best_len,
+        "contamination_score": round(best_len / max(len(tokens), 1), 4),
     }

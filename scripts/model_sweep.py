@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import os
 from pathlib import Path
@@ -11,13 +12,12 @@ import requests
 from dotenv import load_dotenv
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from probes.contamination.verify import verify_answer
+from probes.contamination.verify import verify_answer  # noqa: F401
 
-INPUT_PATH = Path("data/probe1_instances.csv")
+INPUT_PATH = Path("data/problems/probe1_instances.csv")
 OUTPUT_PATH = Path("results/behavioral_sweep.csv")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL_NAME = "openai/gpt-4o-mini"
-# TODO: add --model arg for multi-model sweep.
 REQUEST_TIMEOUT_SECONDS = 60
 
 OUTPUT_COLUMNS = [
@@ -63,7 +63,7 @@ def _query_openrouter(problem_text: str, api_key: str) -> str:
     return content
 
 
-def run_model_sweep(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -> None:
+def run_model_sweep(limit: int | None = None, family: str | None = None, input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -> None:
     load_dotenv()
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
@@ -73,19 +73,26 @@ def run_model_sweep(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PA
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     processed_ids = _existing_problem_ids(output_path)
-    write_header = len(processed_ids) == 0
+    write_header = not output_path.exists() or output_path.stat().st_size == 0
 
-    with input_path.open("r", newline="", encoding="utf-8") as infile, output_path.open(
-        "a", newline="", encoding="utf-8"
-    ) as outfile:
+    with input_path.open("r", newline="", encoding="utf-8") as infile:
         reader = csv.DictReader(infile)
+        rows = list(reader)
+
+    if family is not None:
+        rows = [row for row in rows if row.get("problem_family") == family]
+
+    if limit is not None:
+        rows = rows[:limit]
+
+    with output_path.open("a", newline="", encoding="utf-8") as outfile:
         writer = csv.DictWriter(outfile, fieldnames=OUTPUT_COLUMNS)
 
         if write_header:
             writer.writeheader()
             outfile.flush()
 
-        for row in reader:
+        for row in rows:
             problem_id = str(row.get("problem_id", "")).strip()
             if not problem_id:
                 print(f"WARNING: skipping row with missing problem_id: {row}")
@@ -102,7 +109,8 @@ def run_model_sweep(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PA
             except Exception as e:
                 print(f"ERROR: failed on problem_id={problem_id} after retries: {e}")
                 continue
-            behavioral_correct = bool(verify_answer(raw_response, correct_answer, problem_family))
+            
+            behavioral_correct = bool(verify_answer(problem_id, raw_response, correct_answer, problem_family))
 
             writer.writerow(
                 {
@@ -120,4 +128,12 @@ def run_model_sweep(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PA
 
 
 if __name__ == "__main__":
-    run_model_sweep()
+    parser = argparse.ArgumentParser(description="Run behavioral sweep")
+    parser.add_argument("--limit", type=int, default=None, help="Process only first N problems")
+    parser.add_argument("--family", type=str, default=None, help="Filter by problem_family")
+    parser.add_argument("--model", type=str, default="openai/gpt-4o-mini", help="Override MODEL_NAME")
+    args = parser.parse_args()
+
+    MODEL_NAME = args.model
+
+    run_model_sweep(limit=args.limit, family=args.family)

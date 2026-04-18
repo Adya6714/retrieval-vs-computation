@@ -18,9 +18,13 @@ tqdm>=4.66               # Progress bars for API sweep loops
 python-dotenv>=1.0       # Load API keys from .env file
 tenacity>=8.3            # Retry logic for API calls
 
-# ── Dev / notebook ───────────────────────────────────────────────────
+# ── Dev / testing ───────────────────────────────────────────────────
 jupyterlab>=4.1
 ipykernel>=6.29
+pytest>=8.0
+black>=24.2
+ruff>=0.3
+pytest-mock>=3.12
 
 # ── Phase 2+ (mechanistic) — install only when needed ────────────────
 # transformer_lens>=1.19    # Uncomment after verifying Qwen2.5-7B support
