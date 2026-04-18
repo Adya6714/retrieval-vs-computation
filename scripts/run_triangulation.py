@@ -133,7 +133,13 @@ def main():
     df_final = pd.DataFrame(final_rows)
 
     # 7. Contamination Regression via statsmodels
-    df_reg = df_final.dropna(subset=["css", "contamination_score", "problem_family"])
+    required_reg_cols = ["css", "contamination_score", "problem_family"]
+    missing_reg_cols = [c for c in required_reg_cols if c not in df_final.columns]
+    if missing_reg_cols:
+        print(f"Skipping regression — missing columns: {missing_reg_cols}")
+        df_reg = pd.DataFrame()
+    else:
+        df_reg = df_final.dropna(subset=required_reg_cols)
     if len(df_reg) >= 10:
         import statsmodels.formula.api as smf
         try:

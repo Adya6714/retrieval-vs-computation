@@ -23,11 +23,17 @@ def main():
 
     df = pd.read_csv(results_path)
     
-    required_cols = {"problem_id", "problem_family", "contamination_score"}
+    required_cols = {"problem_id", "contamination_score"}
     missing = required_cols - set(df.columns)
     if missing:
         print(f"Error: Required columns are missing from the CSV: {missing}")
         return
+
+    if "problem_family" in df.columns:
+        families = df["problem_family"].dropna().unique()
+    else:
+        families = ["unknown"]
+        df["problem_family"] = "unknown"
 
     # Print summary statistics
     print("Summary statistics (mean, min, max) for Contamination Score:")
@@ -41,7 +47,6 @@ def main():
     out_path = Path("figures/probe1_triage.png")
 
     fig, ax = plt.subplots(figsize=(8, 6))
-    families = df["problem_family"].dropna().unique()
 
     if "pilot_correct" in df.columns:
         # We have pilot accuracy data, so do a scatter plot

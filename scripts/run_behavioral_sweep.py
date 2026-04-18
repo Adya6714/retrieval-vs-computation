@@ -51,52 +51,6 @@ def _existing_pairs(output_path: Path) -> set[tuple[str, str]]:
         return set()
 
 
-def _build_rows(
-    df_instances: pd.DataFrame,
-    df_variants: pd.DataFrame,
-) -> list[dict]:
-    """Combine canonical and variant rows into a unified sweep list."""
-    rows: list[dict] = []
-
-    for _, inst in df_instances.iterrows():
-        rows.append(
-            {
-                "problem_id": str(inst["problem_id"]).strip(),
-                "problem_family": str(inst.get("problem_family", "")).strip(),
-                "problem_text": str(inst.get("problem_text", "")),
-                "correct_answer": str(inst.get("correct_answer", "")),
-                "variant_type": "",
-            }
-        )
-
-    if not df_variants.empty:
-        valid_pids = set(df_instances["problem_id"].astype(str).str.strip())
-        for _, var in df_variants.iterrows():
-            pid = str(var.get("problem_id", "")).strip()
-            if pid not in valid_pids:
-                continue
-            # Resolve family from the canonical row
-            canon_rows = df_instances[
-                df_instances["problem_id"].astype(str).str.strip() == pid
-            ]
-            family = (
-                str(canon_rows.iloc[0].get("problem_family", "")).strip()
-                if not canon_rows.empty
-                else ""
-            )
-            rows.append(
-                {
-                    "problem_id": pid,
-                    "problem_family": family,
-                    "problem_text": str(var.get("variant_text", "")),
-                    "correct_answer": str(var.get("correct_answer", "")),
-                    "variant_type": str(var.get("variant_type", "")).strip(),
-                }
-            )
-
-    return rows
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Phase 3 behavioral sweep — canonical + variants"
@@ -106,7 +60,7 @@ def main() -> None:
     parser.add_argument("--family", type=str, default=None,
                         help="Filter to a single problem_family")
     parser.add_argument("--model", type=str,
-                        default="anthropic/claude-sonnet-4-5-20251001",
+                        default="anthropic/claude-3-5-sonnet",
                         help="Model identifier passed to the API client")
     parser.add_argument("--probe", type=str, choices=["probe1", "probe2"],
                         default="probe1")
@@ -124,7 +78,6 @@ def main() -> None:
     results_dir.mkdir(parents=True, exist_ok=True)
 
     instances_path = problems_dir / f"{args.probe}_instances.csv"
-    variants_path = problems_dir / f"{args.probe}_variants.csv"
     output_path = results_dir / "behavioral_sweep.csv"
 
     # 2. Load canonical problems
@@ -142,19 +95,22 @@ def main() -> None:
     if args.limit is not None:
         df_instances = df_instances.head(args.limit)
 
-    # 3. Load variants
-    df_variants = pd.DataFrame()
-    if variants_path.exists():
-        df_variants = pd.read_csv(variants_path, dtype=str)
-        df_variants["problem_id"] = df_variants["problem_id"].astype(str).str.strip()
-    else:
-        print(f"WARNING: Variants file not found at {variants_path}. "
-              "Sweeping canonical problems only.")
+    # 3. Build unified sweep list
+    all_rows = []
+    for _, inst in df_instances.iterrows():
+        all_rows.append(
+            {
+                "problem_id": str(inst["problem_id"]).strip(),
+                "problem_family": str(
+                    inst.get("problem_subtype", inst.get("problem_family", ""))
+                ).strip().lower(),
+                "problem_text": str(inst.get("problem_text", "")),
+                "correct_answer": str(inst.get("correct_answer", "")),
+                "variant_type": str(inst.get("variant_type", "")).strip(),
+            }
+        )
 
-    # 4. Build unified sweep list
-    all_rows = _build_rows(df_instances, df_variants)
-
-    # 5. Select client
+    # 4. Select client
     if args.dry_run:
         from probes.behavioral.mock_client import MockClient
         client = MockClient(default_response="The answer is 42.")
@@ -162,16 +118,16 @@ def main() -> None:
         print("DRY RUN: using MockClient — no API credits spent.")
     else:
         import os
-        if not os.environ.get("ANTHROPIC_API_KEY"):
+        if not os.environ.get("OPENROUTER_API_KEY"):
             raise EnvironmentError(
-                "ANTHROPIC_API_KEY is not set. "
+                "OPENROUTER_API_KEY is not set. "
                 "Add it to .env and re-run, or use --dry-run to test locally."
             )
-        from probes.behavioral.anthropic_client import AnthropicClient
-        client = AnthropicClient(model=args.model)
+        from probes.behavioral.openai_client import OpenRouterClient
+        client = OpenRouterClient(model=args.model)
         model_name = args.model
 
-    # 6. Load existing results for resume
+    # 5. Load existing results for resume
     done_pairs: set[tuple[str, str]] = set()
     if args.resume:
         done_pairs = _existing_pairs(output_path)

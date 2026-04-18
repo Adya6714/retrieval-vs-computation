@@ -53,6 +53,9 @@ def _fetch_count(query: str) -> int:
         },
         timeout=REQUEST_TIMEOUT_SECONDS,
     )
+    print(f"DEBUG infinigram query: {query!r}")
+    print(f"DEBUG response status: {response.status_code}")
+    print(f"DEBUG response body: {response.text[:300]}")
     response.raise_for_status()
     payload = response.json()
     if "count" not in payload:

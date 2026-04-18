@@ -72,7 +72,7 @@ def run_triage(
 
             output_row = {
                 "problem_id": problem_id,
-                "problem_family": row.get("problem_family", ""),
+                "problem_family": row.get("problem_family", row.get("problem_subtype", "")),
                 "problem_text": problem_text,
                 "correct_answer": row.get("correct_answer", ""),
                 "max_ngram_length": score["max_ngram_length"],

@@ -1,10 +1,12 @@
 closed_models:
   - name: claude-sonnet-3-5
-    api: anthropic
-    notes: requires ANTHROPIC_API_KEY
+    api: openrouter
+    openrouter_id: anthropic/claude-3-5-sonnet
+    notes: behavioral sweep model A
   - name: claude-sonnet-3-7
-    api: anthropic
-    notes: requires ANTHROPIC_API_KEY
+    api: openrouter
+    openrouter_id: anthropic/claude-3-7-sonnet
+    notes: behavioral sweep model B
 open_models:
   - name: qwen2.5-7b
     hf_id: Qwen/Qwen2.5-7B-Instruct
