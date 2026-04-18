@@ -1,6 +1,6 @@
 # Beyond Accuracy — Retrieval vs Computation in LLM Reasoning
 
-**Authors:** Adya (lead), Shaswat, Nandini Banka
+**Authors:** Adya
 **Affiliation:** BITS Pilani
 **Target venues:** BlackboxNLP 2026, GenBench 2026 (primary); EMNLP Findings (stretch)
 **Status:** Design locked. Problem selection and execution pending.

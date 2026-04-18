@@ -1,6 +1,6 @@
 # Beyond Accuracy — Retrieval vs Computation in LLM Reasoning
 
-**Authors:** Adya (lead), Shaswat, Nandini Banka
+**Authors:** Adya
 **Affiliation:** BITS Pilani
 **Target venues:** BlackboxNLP 2026, GenBench 2026 (primary); EMNLP Findings (stretch)
 **Research design:** `CHARTER.md`
@@ -36,7 +36,7 @@ retrieval-vs-computation/
 │   └── paths.yaml                        # Data and results directory paths
 │
 ├── data/problems/
-│   ├── probe1_instances.csv              # 45 canonical problems — PENDING (Shaswat)
+│   ├── probe1_instances.csv              # 45 canonical problems — PENDING (Adya)
 │   ├── probe1_variants.csv               # W1-W6 variants — PENDING (team)
 │   └── probe2_instances.csv              # 8 Blocksworld instances — PENDING
 │

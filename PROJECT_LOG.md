@@ -9,7 +9,7 @@ Single source of truth for codebase state, bugs, deferred decisions, and what to
 | Phase | Status | Owner | Blocked On |
 |-------|--------|-------|------------|
 | Phase 0 — Infrastructure | Complete | Adya | — |
-| Phase 1 — Contamination Triage | Code complete, not executed | Adya + Shaswat | Shaswat's CSV PR |
+| Phase 1 — Contamination Triage | Code complete, not executed | Adya | Adya's CSV PR |
 | Phase 2 — Mechanistic Tooling | Code complete, not executed | Adya | GPU access |
 | Phase 3 — Probe 1 | Not started | — | Phase 1 gate + variant bank |
 | Phase 4 — Probes 2 and 3 | Not started | — | Phase 3 gate |
@@ -21,7 +21,7 @@ Single source of truth for codebase state, bugs, deferred decisions, and what to
 ## Section 2 — Execution Checklist
 
 ### Phase 1
-1. Merge Shaswat's PR
+1. Merge Adya's PR
 2. Run Section 6 checklist before anything else
 3. `pip install -r requirements.txt`
 4. `python scripts/test_api_keys.py`
@@ -134,7 +134,7 @@ Was incorrectly reading `behavioral_correct` from input CSV. Fixed — column re
 
 ## Section 6 — What To Do When the Question Bank Arrives
 
-Run these checks **before executing any script** after Shaswat's PR merges.
+Run these checks **before executing any script** after Adya's PR merges.
 
 **Check 1: family name strings**
 Open `data/problems/probe1_instances.csv` and `probes/contamination/verify.py` side by side. The `problem_family` values in the CSV must exactly match the strings the verifier expects:
@@ -232,7 +232,7 @@ Option B — raw HuggingFace hooks (most portable):
 ### Session 1
 **Done:** Full repo structure, `.cursorrules`, `.gitignore`, `requirements.txt`, `CHARTER.md`, result CSV schemas. Phase 1: `infinigram_client.py`, `score.py`, `triage.py`. Phase 2: `load_model.py`, `activations.py`, `similarity.py`, `logit_lens.py`, `sanity_check.py`. TransformerLens library decision.
 
-**Blockers at end:** Shaswat's PR, GPU, `sanity_check.py` structural bug, model sweep not written.
+**Blockers at end:** Adya's PR, GPU, `sanity_check.py` structural bug, model sweep not written.
 
 ### Session 2
 **Done:** `configs/`, `.env.example`, `Makefile`, `verify.py` stub, `probes/common/io.py`, `parsers.py`, `stats.py`, `mock_client.py`, `probe1_triage_plot.py`, `run_contamination_triage.py`. Variant numbering locked W1-W6 (W5=procedural, W6=reversal). All team docs: `shasshy.md`, `nandini.md`, `CONTRIBUTING_VARIANTS.md`, `REVIEW_PROTOCOL.md`.
