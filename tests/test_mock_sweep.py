@@ -81,11 +81,27 @@ def test_triage_writes_csv(tmp_path, monkeypatch):
     output_file = tmp_path / "contamination_triage.csv"
     
     # Write dummy input
+    fieldnames = [
+        "problem_id", "variant_type", "problem_text", "correct_answer", 
+        "problem_family", "problem_subtype", "difficulty", 
+        "contamination_pole", "source", "verifier_function", 
+        "difficulty_params", "notes"
+    ]
     with input_file.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["problem_id", "problem_text", "correct_answer", "problem_family"])
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerow({"problem_id": "P1", "problem_text": "text 1", "correct_answer": "a", "problem_family": "gsm"})
-        writer.writerow({"problem_id": "P2", "problem_text": "text 2", "correct_answer": "b", "problem_family": "gsm"})
+        writer.writerow({
+            "problem_id": "P1", "variant_type": "canonical", "problem_text": "text 1", 
+            "correct_answer": "a", "problem_family": "gsm", "problem_subtype": "arithmetic",
+            "difficulty": "easy", "contamination_pole": "high", "source": "mock", 
+            "verifier_function": "verify_gsm", "difficulty_params": "", "notes": ""
+        })
+        writer.writerow({
+            "problem_id": "P2", "variant_type": "canonical", "problem_text": "text 2", 
+            "correct_answer": "b", "problem_family": "gsm", "problem_subtype": "arithmetic",
+            "difficulty": "easy", "contamination_pole": "high", "source": "mock", 
+            "verifier_function": "verify_gsm", "difficulty_params": "", "notes": ""
+        })
         
     def mock_score_problem(text):
         return {

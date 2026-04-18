@@ -1,0 +1,3 @@
+problem_id,css,problem_family,css_signal,contamination_signal,cci_signal,agreement,n_signals,diagnosis
+BW_010,1.0,blocksworld,computation,,,insufficient,1,insufficient
+BW_155,1.0,blocksworld,computation,,,insufficient,1,insufficient
