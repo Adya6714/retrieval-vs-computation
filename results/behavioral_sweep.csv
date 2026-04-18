@@ -1,1 +1,3597 @@
 problem_id,problem_family,variant_type,model,raw_response,behavioral_correct
+BW_155,blocksworld,canonical,mock,The answer is 42.,False
+BW_010,blocksworld,canonical,mock,The answer is 42.,False
+BW_001,blocksworld,canonical,mock,The answer is 42.,False
+BW_011,blocksworld,canonical,mock,The answer is 42.,False
+BW_120,blocksworld,canonical,mock,The answer is 42.,False
+BW_227,blocksworld,canonical,mock,The answer is 42.,False
+BW_137,blocksworld,canonical,mock,The answer is 42.,False
+BW_172,blocksworld,canonical,mock,The answer is 42.,False
+BW_467,blocksworld,canonical,mock,The answer is 42.,False
+BW_080,blocksworld,canonical,mock,The answer is 42.,False
+MBW_001,mystery_blocksworld,canonical,mock,The answer is 42.,False
+MBW_100,mystery_blocksworld,canonical,mock,The answer is 42.,False
+MBW_127,mystery_blocksworld,canonical,mock,The answer is 42.,False
+MBW_185,mystery_blocksworld,canonical,mock,The answer is 42.,False
+MBW_10,mystery_blocksworld,canonical,mock,The answer is 42.,False
+BW_155,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up i
+2. pick-up f
+3. stack i f
+4. pick-up e
+5. stack f e
+6. pick-up j
+7. stack e j
+8. pick-up h
+9. stack j h",False
+BW_155,blocksworld,canonical,openai/gpt-4o,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h",False
+BW_155,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. stack i f
+3. put-down i
+4. pick-up f
+5. stack f e
+6. put-down f
+7. pick-up e
+8. stack e j
+9. put-down e
+10. pick-up j
+11. stack j h
+12. put-down j",False
+BW_010,blocksworld,canonical,openai/gpt-4o,"1. pick-up d  
+2. stack d e  
+3. pick-up e  
+4. stack e a  
+5. pick-up a  
+6. stack a b  
+7. pick-up b  
+8. stack b f",False
+BW_001,blocksworld,canonical,openai/gpt-4o,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l",False
+BW_011,blocksworld,canonical,openai/gpt-4o,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b",False
+BW_120,blocksworld,canonical,openai/gpt-4o,"1. pick-up c  
+2. stack c j  
+3. pick-up j  
+4. stack j g  
+5. pick-up g  
+6. stack g f  ",False
+BW_227,blocksworld,canonical,openai/gpt-4o,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",False
+BW_137,blocksworld,canonical,openai/gpt-4o,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i",False
+BW_172,blocksworld,canonical,openai/gpt-4o,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k",False
+BW_467,blocksworld,canonical,openai/gpt-4o,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h",False
+BW_080,blocksworld,canonical,openai/gpt-4o,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f",False
+BW_010,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b",False
+BW_001,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up l 
+2. stack l h 
+3. pick-up h 
+4. stack h b 
+5. pick-up b 
+6. stack b d 
+7. pick-up d 
+8. stack d g 
+9. pick-up g 
+10. stack g i 
+11. pick-up i 
+12. stack i f 
+13. pick-up f 
+14. stack f j",False
+BW_011,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. stack e l
+2. pick-up e
+3. stack e k
+4. pick-up k
+5. stack a k
+6. pick-up a
+7. stack g a
+8. pick-up g
+9. stack k g
+10. pick-up k
+11. stack c k
+12. put-down c
+13. pick-up b
+14. stack i b
+15. pick-up i
+16. stack h i
+17. pick-up h
+18. stack e h
+19. put-down e
+20. pick-up d (j does not exist and it would be necessary to perform another move to put-down c, so I assume that the response you want is by item and assumes the correct order for the blocks)",False
+BW_120,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. Pick-up c
+2. Pick-up j
+3. Stack j c
+4. Stack j g
+5. Stack g f
+6. Unstack g j 
+7. Put-down j
+8. Unstack j c 
+9. Put-down c",False
+BW_227,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",False
+BW_137,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack d a
+3. pick-up b
+4. stack a b
+5. pick-up j
+6. stack b j
+7. pick-up e
+8. stack j e
+9. pick-up l
+10. stack e l
+11. pick-up h
+12. stack l h
+13. pick-up c
+14. stack h c
+15. pick-up f
+16. stack c f
+17. pick-up g
+18. stack f g
+19. pick-up i
+20. stack g i",False
+BW_172,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k",False
+BW_467,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h",False
+BW_080,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f",False
+MBW_001,mystery_blocksworld,canonical,openai/gpt-4o,"1. Feast j f
+2. Feast f i
+3. Feast i g
+4. Feast g d
+5. Feast d b
+6. Feast b h
+7. Feast h l",False
+MBW_100,mystery_blocksworld,canonical,openai/gpt-4o,"1. feast b j
+2. feast j l
+3. feast l i",False
+MBW_127,mystery_blocksworld,canonical,openai/gpt-4o,"1. feast k g
+2. feast g j
+3. feast j e
+4. feast e b",False
+MBW_185,mystery_blocksworld,canonical,openai/gpt-4o,"1. feast j d
+2. feast d g
+3. feast g i
+4. feast i c
+5. feast c h
+6. feast h a
+7. feast a b
+8. feast b e
+9. feast e l",False
+MBW_10,mystery_blocksworld,canonical,openai/gpt-4o,"1. feast d e
+2. feast e a
+3. feast a b
+4. feast b f",False
+MBW_001,mystery_blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. attack f
+2. feast f i
+3. succumb g
+4. attack g
+5. feast g d 
+6. overcome d b h
+7. attack b
+8. gain harmony",False
+MBW_100,mystery_blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. attack b
+2. attack j
+3. attack l
+4. overcome l j
+5. overcome l i
+6. overcome b j",False
+MBW_127,mystery_blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. attack b
+2. feast k e
+3. feast j k
+4. succumb j
+5. overcome j b k 
+6. attack e 
+7. attack j",False
+MBW_185,mystery_blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. attack l
+2. succumb j
+3. succumb d
+4. succumb g
+5. succumb i
+6. succumb c
+7. succumb h
+8. succumb a
+9. succumb b
+10. succumb e
+11. feast j d
+12. feast d g
+13. feast g i
+14. feast i c
+15. feast c h
+16. feast h a
+17. feast a b
+18. feast b e
+19. feast e l",False
+MBW_10,mystery_blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. attack a
+2. succumb 1
+3. feast d e
+4. succumb 1
+5. feast e a
+6. succumb 1
+7. feast a b
+8. succumb 1
+9. feast b f",False
+BW_155,blocksworld,W2,mock,The answer is 42.,False
+BW_155,blocksworld,W3,mock,The answer is 42.,False
+BW_155,blocksworld,W4,mock,The answer is 42.,False
+BW_155,blocksworld,W6,mock,The answer is 42.,False
+BW_010,blocksworld,W2,mock,The answer is 42.,False
+BW_010,blocksworld,W3,mock,The answer is 42.,False
+BW_010,blocksworld,W4,mock,The answer is 42.,False
+BW_010,blocksworld,W6,mock,The answer is 42.,False
+BW_001,blocksworld,W2,mock,The answer is 42.,False
+BW_001,blocksworld,W3,mock,The answer is 42.,False
+BW_001,blocksworld,W4,mock,The answer is 42.,False
+BW_001,blocksworld,W6,mock,The answer is 42.,False
+BW_011,blocksworld,W2,mock,The answer is 42.,False
+BW_011,blocksworld,W3,mock,The answer is 42.,False
+BW_011,blocksworld,W4,mock,The answer is 42.,False
+BW_011,blocksworld,W6,mock,The answer is 42.,False
+BW_120,blocksworld,W2,mock,The answer is 42.,False
+BW_120,blocksworld,W3,mock,The answer is 42.,False
+BW_120,blocksworld,W4,mock,The answer is 42.,False
+BW_120,blocksworld,W6,mock,The answer is 42.,False
+BW_227,blocksworld,W2,mock,The answer is 42.,False
+BW_227,blocksworld,W3,mock,The answer is 42.,False
+BW_227,blocksworld,W4,mock,The answer is 42.,False
+BW_227,blocksworld,W6,mock,The answer is 42.,False
+BW_137,blocksworld,W2,mock,The answer is 42.,False
+BW_137,blocksworld,W3,mock,The answer is 42.,False
+BW_137,blocksworld,W4,mock,The answer is 42.,False
+BW_137,blocksworld,W6,mock,The answer is 42.,False
+BW_172,blocksworld,W2,mock,The answer is 42.,False
+BW_172,blocksworld,W3,mock,The answer is 42.,False
+BW_172,blocksworld,W4,mock,The answer is 42.,False
+BW_172,blocksworld,W6,mock,The answer is 42.,False
+BW_467,blocksworld,W2,mock,The answer is 42.,False
+BW_467,blocksworld,W3,mock,The answer is 42.,False
+BW_467,blocksworld,W4,mock,The answer is 42.,False
+BW_467,blocksworld,W6,mock,The answer is 42.,False
+BW_080,blocksworld,W2,mock,The answer is 42.,False
+BW_080,blocksworld,W3,mock,The answer is 42.,False
+BW_080,blocksworld,W4,mock,The answer is 42.,False
+BW_155_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_010_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_001_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_011_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_120_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_227_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_137_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_172_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_467_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_080_W5,blocksworld,W5,mock,The answer is 42.,False
+BW_155,blocksworld,W2,openai/gpt-4o,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h",False
+BW_155,blocksworld,W3,openai/gpt-4o,"1. Select Ivan
+2. Select Frank
+3. Place Frank under Eve
+4. Release Ivan
+5. Select Ivan
+6. Place Ivan under Frank
+7. Release Frank
+8. Release Ivan
+9. Select Eve
+10. Place Eve under Jake
+11. Release Eve
+12. Select Jake
+13. Place Jake under Henry",False
+BW_155,blocksworld,W4,openai/gpt-4o,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h",False
+BW_155,blocksworld,W6,openai/gpt-4o,"1. Unstack i f
+2. Put-down i
+3. Unstack f e
+4. Put-down f
+5. Unstack e j
+6. Put-down e
+7. Unstack j h
+8. Put-down j",True
+BW_010,blocksworld,W2,openai/gpt-4o,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b f",False
+BW_010,blocksworld,W3,openai/gpt-4o,"1. Select Diana
+2. Select Ethan
+3. Place Diana under Ethan
+4. Release Diana
+5. Select Ethan
+6. Select Alice
+7. Place Ethan under Alice
+8. Release Ethan
+9. Select Alice
+10. Select Brian
+11. Place Alice under Brian
+12. Release Alice
+13. Select Brian
+14. Select Felix
+15. Place Brian under Felix
+16. Release Brian",False
+BW_010,blocksworld,W4,openai/gpt-4o,"1. pick-up d  
+2. stack d e  
+3. pick-up e  
+4. stack e a  
+5. pick-up a  
+6. stack a b  
+7. pick-up b  
+8. stack b f  ",False
+BW_010,blocksworld,W6,openai/gpt-4o,"1. unstack d e
+2. put-down d
+3. unstack e a
+4. put-down e
+5. unstack a b
+6. put-down a
+7. unstack b f
+8. put-down b",True
+BW_001,blocksworld,W2,openai/gpt-4o,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l",False
+BW_001,blocksworld,W3,openai/gpt-4o,"1. Select James
+2. Place James under Fiona
+3. Select Fiona
+4. Place Fiona under Ian
+5. Select Ian
+6. Place Ian under Grace
+7. Select Grace
+8. Place Grace under Derek
+9. Select Derek
+10. Place Derek under Ben
+11. Select Ben
+12. Place Ben under Hannah
+13. Select Hannah
+14. Place Hannah under Leo",False
+BW_001,blocksworld,W4,openai/gpt-4o,"1. pick-up j  
+2. stack j f  
+3. pick-up f  
+4. stack f i  
+5. pick-up i  
+6. stack i g  
+7. pick-up g  
+8. stack g d  
+9. pick-up d  
+10. stack d b  
+11. pick-up b  
+12. stack b h  
+13. pick-up h  
+14. stack h l",False
+BW_001,blocksworld,W6,openai/gpt-4o,"1. unstack j f  
+2. put-down j  
+3. unstack f i  
+4. put-down f  
+5. unstack i g  
+6. put-down i  
+7. unstack g d  
+8. put-down g  
+9. unstack d b  
+10. put-down d  
+11. unstack b h  
+12. put-down b  
+13. unstack h l  
+14. put-down h",True
+BW_011,blocksworld,W2,openai/gpt-4o,"1. pick-up c
+2. stack c k
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a l
+7. pick-up l
+8. stack l j
+9. pick-up j
+10. stack j e
+11. pick-up e
+12. stack e h
+13. pick-up h
+14. stack h i
+15. pick-up i
+16. stack i b
+17. unstack g a
+18. stack k g
+19. put-down a
+20. unstack a l
+21. stack a l
+22. unstack l j
+23. stack l j
+24. unstack j e
+25. stack j e
+26. unstack e h
+27. stack e h
+28. unstack h i
+29. stack h i
+30. unstack i b
+31. stack i b",False
+BW_011,blocksworld,W3,openai/gpt-4o,"1. Select Carol
+2. Place Carol under Kevin
+3. Select Kevin
+4. Place Kevin under George
+5. Select George
+6. Place George under Amy
+7. Select Amy
+8. Place Amy under Laura
+9. Select Laura
+10. Place Laura under Jack
+11. Select Jack
+12. Place Jack under Edward
+13. Select Edward
+14. Place Edward under Helen
+15. Select Helen
+16. Place Helen under Ivan
+17. Select Ivan
+18. Place Ivan under Ben",False
+BW_011,blocksworld,W4,openai/gpt-4o,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b",False
+BW_011,blocksworld,W6,openai/gpt-4o,"1. Unstack c k  
+2. Put-down c  
+3. Unstack k g  
+4. Put-down k  
+5. Unstack g a  
+6. Put-down g  
+7. Unstack a l  
+8. Put-down a  
+9. Unstack l j  
+10. Put-down l  
+11. Unstack j e  
+12. Put-down j  
+13. Unstack e h  
+14. Put-down e  
+15. Unstack h i  
+16. Put-down h  
+17. Unstack i b  
+18. Put-down i  
+19. Put-down b  ",False
+BW_120,blocksworld,W2,openai/gpt-4o,"1. pick-up g
+2. stack g f
+3. pick-up j
+4. stack j g
+5. pick-up c
+6. stack c j",True
+BW_120,blocksworld,W3,openai/gpt-4o,"1. select Clara
+2. place Clara under Jake
+3. select Jake
+4. place Jake under Grace
+5. select Grace
+6. place Grace under Felix",False
+BW_120,blocksworld,W4,openai/gpt-4o,"1. pick-up g  
+2. stack g f  
+3. pick-up j  
+4. stack j g  
+5. pick-up c  
+6. stack c j  ",True
+BW_120,blocksworld,W6,openai/gpt-4o,"1. Unstack c j
+2. Put-down c
+3. Unstack j g
+4. Put-down j
+5. Unstack g f
+6. Put-down g
+7. Put-down f",False
+BW_227,blocksworld,W2,openai/gpt-4o,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",False
+BW_227,blocksworld,W3,openai/gpt-4o,"1. select Felix
+2. place Felix under Laura
+3. select Laura
+4. place Laura under George
+5. select George
+6. place George under Derek
+7. select Derek
+8. place Derek under Ian
+9. select Ian
+10. place Ian under Jack
+11. select Jack
+12. place Jack under Clara
+13. select Clara
+14. place Clara under Kevin
+15. select Kevin
+16. place Kevin under Amy",False
+BW_227,blocksworld,W4,openai/gpt-4o,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k",False
+BW_227,blocksworld,W6,openai/gpt-4o,"1. Unstack f l
+2. Put-down f
+3. Unstack l g
+4. Put-down l
+5. Unstack g d
+6. Put-down g
+7. Unstack d i
+8. Put-down d
+9. Unstack i j
+10. Put-down i
+11. Unstack j c
+12. Put-down j
+13. Unstack c k
+14. Put-down c
+15. Unstack k a
+16. Put-down k
+17. Put-down a",False
+BW_137,blocksworld,W2,openai/gpt-4o,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i",False
+BW_137,blocksworld,W3,openai/gpt-4o,"1. select Dana
+2. place Dana under Aaron
+3. select Aaron
+4. place Aaron under Brian
+5. select Brian
+6. place Brian under Julia
+7. select Julia
+8. place Julia under Ethan
+9. select Ethan
+10. place Ethan under Lisa
+11. select Lisa
+12. place Lisa under Harry
+13. select Harry
+14. place Harry under Clara
+15. select Clara
+16. place Clara under Frank
+17. select Frank
+18. place Frank under Gloria
+19. select Gloria
+20. place Gloria under Ivan",False
+BW_137,blocksworld,W4,openai/gpt-4o,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i",False
+BW_137,blocksworld,W6,openai/gpt-4o,"1. unstack d a
+2. put-down d
+3. unstack a b
+4. put-down a
+5. unstack b j
+6. put-down b
+7. unstack j e
+8. put-down j
+9. unstack e l
+10. put-down e
+11. unstack l h
+12. put-down l
+13. unstack h c
+14. put-down h
+15. unstack c f
+16. put-down c
+17. unstack f g
+18. put-down f
+19. unstack g i
+20. put-down g
+21. put-down i",False
+BW_172,blocksworld,W2,openai/gpt-4o,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k",False
+BW_172,blocksworld,W3,openai/gpt-4o,"1. Select Ivan
+2. Select Laura
+3. Place Ivan under Laura
+4. Select Gary
+5. Place Laura under Gary
+6. Select Ethan
+7. Place Gary under Ethan
+8. Select Dana
+9. Place Ethan under Dana
+10. Select Ben
+11. Place Dana under Ben
+12. Select Amy
+13. Place Ben under Amy
+14. Select Jake
+15. Place Amy under Jake
+16. Select Helen
+17. Place Jake under Helen
+18. Select Felix
+19. Place Helen under Felix
+20. Select Karen
+21. Place Felix under Karen",False
+BW_172,blocksworld,W4,openai/gpt-4o,"1. pick-up k  
+2. put-down k  
+3. pick-up f  
+4. stack f k  
+5. pick-up h  
+6. stack h f  
+7. pick-up j  
+8. stack j h  
+9. pick-up a  
+10. stack a j  
+11. pick-up b  
+12. stack b a  
+13. pick-up d  
+14. stack d b  
+15. pick-up e  
+16. stack e d  
+17. pick-up g  
+18. stack g e  
+19. pick-up l  
+20. stack l g  
+21. pick-up i  
+22. stack i l  ",False
+BW_172,blocksworld,W6,openai/gpt-4o,"1. Unstack i l  
+2. Put-down i  
+3. Unstack l g  
+4. Put-down l  
+5. Unstack g e  
+6. Put-down g  
+7. Unstack e d  
+8. Put-down e  
+9. Unstack d b  
+10. Put-down d  
+11. Unstack b a  
+12. Put-down b  
+13. Unstack a j  
+14. Put-down a  
+15. Unstack j h  
+16. Put-down j  
+17. Unstack h f  
+18. Put-down h  
+19. Unstack f k  
+20. Put-down f  
+21. Put-down k  ",False
+BW_467,blocksworld,W2,openai/gpt-4o,"1. pick-up g
+2. stack g i
+3. pick-up l
+4. stack l j
+5. pick-up i
+6. stack i l
+7. pick-up a
+8. stack a f
+9. pick-up j
+10. stack j a
+11. pick-up f
+12. stack f h",False
+BW_467,blocksworld,W3,openai/gpt-4o,"1. Select Gloria
+2. Place Gloria under Ian
+3. Select Ian
+4. Place Ian under Lisa
+5. Select Lisa
+6. Place Lisa under Jake
+7. Select Jake
+8. Place Jake under Amy
+9. Select Amy
+10. Place Amy under Felix
+11. Select Felix
+12. Place Felix under Hannah",False
+BW_467,blocksworld,W4,openai/gpt-4o,"1. pick-up g
+2. stack g i
+3. pick-up l
+4. stack l j
+5. pick-up a
+6. stack a f
+7. pick-up f
+8. stack f h
+9. pick-up j
+10. stack j a
+11. pick-up l
+12. stack l j
+13. pick-up i
+14. stack i l",False
+BW_467,blocksworld,W6,openai/gpt-4o,"1. Unstack g i  
+2. Put-down g  
+3. Unstack i l  
+4. Put-down i  
+5. Unstack l j  
+6. Put-down l  
+7. Unstack j a  
+8. Put-down j  
+9. Unstack a f  
+10. Put-down a  
+11. Unstack f h  
+12. Put-down f  
+13. Put-down h  ",False
+BW_080,blocksworld,W2,openai/gpt-4o,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f",False
+BW_080,blocksworld,W3,openai/gpt-4o,"1. select Laura
+2. place Laura under Clara
+3. select Clara
+4. place Clara under Ivan
+5. select Ivan
+6. place Ivan under Ethan
+7. select Ethan
+8. place Ethan under Jake
+9. select Jake
+10. place Jake under Felix",False
+BW_080,blocksworld,W4,openai/gpt-4o,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f",False
+BW_155_W5,blocksworld,W5,openai/gpt-4o,"1. unstack e i
+2. put-down e
+3. pick-up h
+4. put-down h
+5. pick-up f
+6. stack f h
+7. pick-up i
+8. stack i f
+9. pick-up j
+10. stack j i",False
+BW_010_W5,blocksworld,W5,openai/gpt-4o,"1. unstack b d  
+2. put-down b  
+3. pick-up a  
+4. stack a d  
+5. pick-up e  
+6. stack e f  
+7. pick-up b  
+8. stack b e",False
+BW_001_W5,blocksworld,W5,openai/gpt-4o,"1. unstack i g
+2. put-down i
+3. unstack g l
+4. stack g d
+5. unstack h j
+6. put-down h
+7. unstack j f
+8. stack j g
+9. unstack l h
+10. put-down l",False
+BW_011_W5,blocksworld,W5,openai/gpt-4o,"1. unstack h g
+2. put-down h
+3. unstack g i
+4. put-down g
+5. unstack i j
+6. stack i a
+7. unstack c k
+8. stack c j
+9. unstack j c
+10. put-down j
+11. unstack l b
+12. put-down l
+13. unstack e l
+14. put-down e
+15. pick-up b
+16. put-down b
+17. pick-up k
+18. put-down k
+19. pick-up h
+20. put-down h",False
+BW_120_W5,blocksworld,W5,openai/gpt-4o,"1. pick-up g
+2. put-down g
+3. pick-up f
+4. stack f c
+5. pick-up g
+6. stack g j
+7. pick-up j
+8. stack j f",False
+BW_227_W5,blocksworld,W5,openai/gpt-4o,"1. unstack a f
+2. put-down a
+3. pick-up k
+4. put-down k
+5. pick-up l
+6. stack l c
+7. pick-up k
+8. stack k f
+9. pick-up g
+10. put-down g
+11. pick-up i
+12. put-down i
+13. unstack g j
+14. put-down g
+15. pick-up i
+16. stack i g
+17. pick-up c
+18. stack c i",False
+BW_137_W5,blocksworld,W5,openai/gpt-4o,"1. unstack h e
+2. put-down h
+3. unstack e b
+4. put-down e
+5. unstack b c
+6. put-down b
+7. unstack c l
+8. put-down c
+9. unstack l d
+10. stack l c
+11. unstack d j
+12. put-down d
+13. unstack i f
+14. stack i table
+15. unstack j g
+16. put-down j
+17. unstack a i
+18. put-down a
+19. pick-up j
+20. stack j g
+21. pick-up b
+22. stack b j",False
+BW_172_W5,blocksworld,W5,openai/gpt-4o,"1. unstack a k
+2. put-down a
+3. unstack b g
+4. put-down b
+5. unstack d l
+6. put-down d
+7. unstack e h
+8. stack e i
+9. pick-up j
+10. put-down j
+11. pick-up i
+12. put-down i
+13. pick-up g
+14. stack g e
+15. pick-up b
+16. stack b d
+17. pick-up f
+18. stack f b
+19. pick-up a
+20. stack a k
+21. pick-up k
+22. stack k h",False
+BW_467_W5,blocksworld,W5,openai/gpt-4o,"1. unstack l f
+2. put-down l
+3. unstack f h
+4. put-down f
+5. unstack i g
+6. stack i h
+7. unstack a i
+8. put-down a
+9. pick-up j
+10. put-down j
+11. pick-up g
+12. stack g l",False
+BW_080_W5,blocksworld,W5,openai/gpt-4o,"1. unstack c i
+2. put-down c
+3. pick-up e
+4. stack e c
+5. unstack f j
+6. put-down f
+7. unstack j l
+8. put-down j",False
+MBW_001,mystery_blocksworld,W2,openai/gpt-4o,"1. attack j
+2. succumb j
+3. overcome j f
+4. attack f
+5. succumb f
+6. overcome f i
+7. attack i
+8. succumb i
+9. overcome i g
+10. attack g
+11. succumb g
+12. overcome g d
+13. attack d
+14. succumb d
+15. overcome d b
+16. attack b
+17. succumb b
+18. overcome b h
+19. attack h
+20. succumb h
+21. overcome h l",False
+MBW_001,mystery_blocksworld,W3,openai/gpt-4o,"1. broker Finland Iceland
+2. broker Iceland Greece
+3. broker Greece Denmark
+4. broker Denmark Belgium
+5. broker Belgium Hungary
+6. broker Hungary Latvia
+7. negotiate Jordan Finland",False
+MBW_001,mystery_blocksworld,W4,openai/gpt-4o,"1. attack j
+2. succumb j
+3. feast j f
+4. attack f
+5. succumb f
+6. feast f i
+7. attack i
+8. succumb i
+9. feast i g
+10. attack g
+11. succumb g
+12. feast g d
+13. attack d
+14. succumb d
+15. feast d b
+16. attack b
+17. succumb b
+18. feast b h
+19. attack h
+20. succumb h
+21. feast h l",False
+MBW_100,mystery_blocksworld,W2,openai/gpt-4o,"1. attack b
+2. succumb b
+3. attack j
+4. succumb j
+5. attack l
+6. succumb l
+7. overcome b j
+8. attack j
+9. succumb j
+10. attack l
+11. succumb l
+12. overcome j l
+13. attack l
+14. succumb l
+15. attack i
+16. succumb i
+17. overcome l i",False
+MBW_100,mystery_blocksworld,W3,openai/gpt-4o,"1. broker Morocco Thailand
+2. broker Thailand Uruguay
+3. broker Uruguay Estonia",False
+MBW_100,mystery_blocksworld,W4,openai/gpt-4o,"1. attack b
+2. overcome b j
+3. attack j
+4. overcome j l
+5. attack l
+6. overcome l i",False
+MBW_127,mystery_blocksworld,W2,openai/gpt-4o,"1. attack k
+2. overcome k g
+3. attack g
+4. overcome g j
+5. attack j
+6. overcome j e
+7. attack e
+8. overcome e b",False
+MBW_127,mystery_blocksworld,W3,openai/gpt-4o,"1. broker Kenya Germany
+2. broker Germany Japan
+3. broker Japan Egypt
+4. broker Egypt Brazil",False
+MBW_127,mystery_blocksworld,W4,openai/gpt-4o,"1. attack k  
+2. overcome k g  
+3. feast k g  
+4. attack g  
+5. overcome g j  
+6. feast g j  
+7. attack j  
+8. overcome j e  
+9. feast j e  
+10. attack e  
+11. overcome e b  
+12. feast e b",False
+MBW_185,mystery_blocksworld,W2,openai/gpt-4o,"1. attack j
+2. overcome j d
+3. attack d
+4. overcome d g
+5. attack g
+6. overcome g i
+7. attack i
+8. overcome i c
+9. attack c
+10. overcome c h
+11. attack h
+12. overcome h a
+13. attack a
+14. overcome a b
+15. attack b
+16. overcome b e
+17. attack e
+18. overcome e l",False
+MBW_185,mystery_blocksworld,W3,openai/gpt-4o,"1. broker Jordan Denmark
+2. broker Denmark Ghana
+3. broker Ghana India
+4. broker India Chile
+5. broker Chile Hungary
+6. broker Hungary Austria
+7. broker Austria Bolivia
+8. broker Bolivia Ecuador
+9. broker Ecuador Latvia",False
+MBW_185,mystery_blocksworld,W4,openai/gpt-4o,"1. attack j
+2. overcome j d
+3. feast j d
+4. succumb j
+5. attack d
+6. overcome d g
+7. feast d g
+8. succumb d
+9. attack g
+10. overcome g i
+11. feast g i
+12. succumb g
+13. attack i
+14. overcome i c
+15. feast i c
+16. succumb i
+17. attack c
+18. overcome c h
+19. feast c h
+20. succumb c
+21. attack h
+22. overcome h a
+23. feast h a
+24. succumb h
+25. attack a
+26. overcome a b
+27. feast a b
+28. succumb a
+29. attack b
+30. overcome b e
+31. feast b e
+32. succumb b
+33. attack e
+34. overcome e l",False
+MBW_10,mystery_blocksworld,W2,openai/gpt-4o,"1. attack d
+2. overcome d e
+3. attack e
+4. overcome e a
+5. attack a
+6. overcome a b
+7. attack b
+8. overcome b f",False
+MBW_10,mystery_blocksworld,W3,openai/gpt-4o,"1. appease Ethiopia
+2. broker Denmark Ethiopia
+3. appease Argentina
+4. broker Ethiopia Argentina
+5. appease Brazil
+6. broker Argentina Brazil
+7. appease France
+8. broker Brazil France",False
+MBW_10,mystery_blocksworld,W4,openai/gpt-4o,"1. attack d
+2. overcome d e
+3. feast d e
+4. succumb d
+5. attack e
+6. overcome e a
+7. feast e a
+8. succumb e
+9. attack a
+10. overcome a b
+11. feast a b
+12. succumb a
+13. attack b
+14. overcome b f",False
+BW_155,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. pick-up f
+3. stack i f
+4. pick-up e
+5. stack f e
+6. pick-up j
+7. stack e j
+8. pick-up h
+9. stack j h",False
+BW_155,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Ivan
+2. place Ivan under Frank
+3. select Frank
+4. place Frank under Eve
+5. select Eve
+6. place Eve under Jake
+7. select Jake
+8. place Jake under Henry",False
+BW_155,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h
+9. put-down h",False
+BW_155,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up h
+2. unstack f i
+3. unstack e f
+4. unstack j e
+5. unstack i j
+6. put-down i
+7. pick-up e
+8. put-down e
+9. pick-up f
+10. unstack j f
+11. pick-up j
+12. put-down j",False
+BW_010,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up e
+2. pick-up d
+3. put-down d
+4. stack e a
+5. pick-up a
+6. put-down a
+7. unstack d e
+8. unstack e a
+9. unstack a b
+10. unstack b f
+11. pick-up a
+12. stack a b
+13. pick-up b
+14. stack b f",False
+BW_010,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Diana
+2. place Diana under Ethan
+3. select Ethan
+4. place Ethan under Alice
+5. select Alice
+6. place Alice under Brian
+7. select Brian
+8. place Brian under Felix",False
+BW_010,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
+2. pick-up e
+3. pick-up a
+4. pick-up b
+5. stack a b
+6. pick-up f
+7. put-down f
+8. stack b f
+9. put-down f
+10. put-down b",False
+BW_010,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. unstack e d
+3. unstack a e
+4. unstack b a
+5. unstack d b
+6. put-down d
+7. put-down e
+8. put-down a
+9. put-down b
+10. put-down f",False
+BW_001,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up j
+2. put-down j
+3. pick-up f
+4. stack f j
+5. put-down j
+6. pick-up i
+7. stack i f
+8. put-down f
+9. pick-up g
+10. stack g i
+11. put-down i
+12. pick-up d
+13. stack d g
+14. put-down g
+15. pick-up b
+16. stack b d
+17. put-down d
+18. pick-up h
+19. stack h b
+20. put-down b
+21. pick-up l
+22. stack l h
+23. put-down h",False
+BW_001,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select James
+2. place James under Fiona
+3. select Fiona
+4. place Fiona under Ian
+5. select Ian
+6. place Ian under Grace
+7. select Grace
+8. place Grace under Derek
+9. select Derek
+10. place Derek under Ben
+11. select Ben
+12. place Ben under Hannah
+13. select Hannah
+14. place Hannah under Leo",False
+BW_001,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up(j)
+2. stack(j, f)
+3. pick-up(f)
+4. stack(f, i)
+5. pick-up(i)
+6. stack(i, g)
+7. pick-up(g)
+8. stack(g, d)
+9. pick-up(d)
+10. stack(d, b)
+11. pick-up(b)
+12. stack(b, h)
+13. pick-up(h)
+14. stack(h, l)
+15. put-down(h)",False
+BW_001,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
+2. pick-up h
+3. unstack h b
+4. pick-up b
+5. unstack b d
+6. pick-up d
+7. unstack d g
+8. pick-up g
+9. unstack g i
+10. pick-up i
+11. unstack i f
+12. pick-up f
+13. unstack f j
+14. pick-up j
+15. put-down j",False
+BW_011,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b
+19. pick-up b
+20. put-down c",False
+BW_011,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Carol
+2. place Carol under Kevin
+3. select Kevin
+4. place Kevin under George
+5. select George
+6. place George under Amy
+7. select Amy
+8. place Amy under Laura
+9. select Laura
+10. place Laura under Jack
+11. select Jack
+12. place Jack under Edward
+13. select Edward
+14. place Edward under Helen
+15. select Helen
+16. place Helen under Ivan
+17. select Ivan
+18. place Ivan under Ben
+19. release Carol
+20. release Kevin",False
+BW_011,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b
+19. put-down b",False
+BW_011,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
+2. put-down b
+3. pick-up b
+4. stack b i
+5. unstack b i
+6. stack i h
+7. unstack h i
+8. pick-up h
+9. put-down h
+10. pick-up i
+11. put-down i
+12. pick-up h
+13. unstack h e
+14. pick-up e
+15. put-down e
+16. stack e h
+17. put-down h
+18. pick-up h
+19. unstack h e
+20. pick-up e
+21. stack e a
+22. put-down a
+23. stack j e
+24. unstack j e
+25. stack j a
+26. unstack j a",False
+BW_120,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
+2. stack c j",False
+BW_120,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Clara
+2. place Clara under Jake
+3. select Jake
+4. place Jake under Grace
+5. select Grace
+6. place Grace under Felix
+7. release Felix 
+8. place Felix under Grace",False
+BW_120,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up(c)
+2. stack(c, j)
+3. pick-up(j)
+4. stack(j, g)
+5. pick-up(g)
+6. stack(g, f)
+7. pick-up(f)
+8. put-down(f)",False
+BW_120,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. unstack g j
+3. pick-up j
+4. unstack f c
+5. put-down c
+6. unstack j g
+7. put-down g
+8. unstack f j
+9. put-down j
+10. put-down f",False
+BW_227,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",False
+BW_227,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Felix
+2. place Felix under Laura
+3. select Laura
+4. place Laura under George
+5. select George
+6. place George under Derek
+7. select Derek
+8. place Derek under Ian
+9. select Ian
+10. place Ian under Jack
+11. select Jack
+12. place Jack under Clara
+13. select Clara
+14. place Clara under Kevin
+15. select Kevin
+16. place Kevin under Amy",False
+BW_227,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack a k
+3. pick-up k
+4. stack k c
+5. pick-up c
+6. stack c j
+7. pick-up j
+8. stack j i
+9. pick-up i
+10. stack i d
+11. pick-up d
+12. stack d g
+13. pick-up g
+14. stack g l
+15. pick-up l
+16. put-down l",False
+BW_227,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. pick-up k
+3. unstack c k
+4. unstack j c
+5. unstack i j
+6. unstack d i
+7. unstack g d
+8. unstack l g
+9. unstack f l
+10. put-down f
+11. put-down l
+12. put-down g
+13. put-down d
+14. put-down i
+15. put-down j
+16. put-down c
+17. put-down k",False
+BW_137,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. unstack d a
+5. stack a b
+6. pick-up b
+7. unstack a b
+8. stack b j
+9. pick-up j
+10. unstack b j
+11. stack j e
+12. pick-up e
+13. unstack j e
+14. stack e l
+15. pick-up l
+16. unstack e l
+17. stack l h
+18. pick-up h
+19. unstack l h
+20. stack h c
+21. pick-up c
+22. unstack h c
+23. stack c f
+24. pick-up f
+25. unstack c f
+26. stack f g
+27. pick-up g
+28. unstack f g
+29. stack g i
+30. pick-up i",False
+BW_137,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Dana
+2. place Dana under Aaron
+3. select Aaron
+4. place Aaron under Brian
+5. select Brian
+6. place Brian under Julia
+7. select Julia
+8. place Julia under Ethan
+9. select Ethan
+10. place Ethan under Lisa
+11. select Lisa
+12. place Lisa under Harry
+13. select Harry
+14. place Harry under Clara
+15. select Clara
+16. place Clara under Frank
+17. select Frank
+18. place Frank under Gloria
+19. select Gloria
+20. place Gloria under Ivan",False
+BW_137,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
+2. pick-up a
+3. stack d a
+4. pick-up b
+5. stack a b
+6. pick-up j
+7. stack b j
+8. pick-up e
+9. stack j e
+10. pick-up l
+11. stack e l
+12. pick-up h
+13. stack l h
+14. pick-up c
+15. stack h c
+16. pick-up f
+17. stack c f
+18. pick-up g
+19. stack f g
+20. pick-up i
+21. put-down i",False
+BW_137,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. put-down i
+3. unstack d a
+4. pick-up d
+5. put-down d
+6. unstack a b
+7. pick-up a
+8. put-down a
+9. unstack b j
+10. pick-up b
+11. put-down b
+12. unstack j e
+13. pick-up j
+14. put-down j
+15. unstack e l
+16. pick-up e
+17. put-down e
+18. unstack l h
+19. pick-up l
+20. put-down l
+21. unstack h c
+22. pick-up h
+23. put-down h
+24. unstack c f
+25. pick-up c
+26. put-down c
+27. unstack f g
+28. pick-up f
+29. put-down f
+30. unstack g i
+31. pick-up g
+32. put-down g
+33. pick-up i
+34. stack i a
+35. unstack i a
+36. stack a b
+37. unstack a b
+38. stack b j
+39. unstack b j
+40. stack j e
+41. unstack j e
+42. stack e l
+43. unstack e l
+44. stack l h
+45. unstack l h
+46. stack h c
+47. unstack h c
+48. stack c f
+49. unstack c f
+50. stack f g
+51. unstack f g",False
+BW_172,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k
+21. put-down i
+22. pick-up l
+23. put-down l
+24. pick-up g
+25. put-down g
+26. pick-up e
+27. put-down e
+28. pick-up d
+29. put-down d
+30. pick-up b
+31. put-down b
+32. pick-up a
+33. put-down a
+34. pick-up j
+35. put-down j
+36. pick-up h
+37. put-down h
+38. pick-up f
+39. put-down f
+40. pick-up k",False
+BW_172,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Ivan
+2. place Ivan under Laura
+3. select Laura
+4. place Laura under Gary
+5. select Gary
+6. place Gary under Ethan
+7. select Ethan
+8. place Ethan under Dana
+9. select Dana
+10. place Dana under Ben
+11. select Ben
+12. place Ben under Amy
+13. select Amy
+14. place Amy under Jake
+15. select Jake
+16. place Jake under Helen
+17. select Helen
+18. place Helen under Felix
+19. select Felix
+20. place Felix under Karen",False
+BW_172,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"Based on the given formal definition, the goal is to find a plan π that transforms the initial state S₀ into the goal state S*.
+
+Here is the solution:
+
+1. pick-up(k)
+2. stack(k, f)
+3. pick-up(f)
+4. stack(f, h)
+5. pick-up(h)
+6. stack(h, j)
+7. pick-up(j)
+8. stack(j, a)
+9. pick-up(a)
+10. stack(a, b)
+11. pick-up(b)
+12. stack(b, d)
+13. pick-up(d)
+14. stack(d, e)
+15. pick-up(e)
+16. stack(e, g)
+17. pick-up(g)
+18. stack(g, l)
+19. pick-up(l)
+20. put-down(l)
+21. pick-up(i)
+22. put-down(i)
+
+This plan transforms the initial state S₀ into the goal state S*.",False
+BW_172,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up k
+2. stack k b
+3. unstack d b
+4. stack d k
+5. unstack b d
+6. pick-up b
+7. stack b e
+8. unstack e b
+9. pick-up e
+10. stack e d
+11. unstack d e
+12. pick-up d
+13. stack d g
+14. unstack g d
+15. pick-up g
+16. stack g e
+17. unstack e g
+18. pick-up e
+19. stack e b
+20. unstack b e
+21. pick-up b
+22. stack b k
+23. unstack k b
+24. pick-up k
+25. stack k h
+26. unstack f h
+27. pick-up f
+28. stack f k
+29. unstack k f
+30. pick-up k
+31. stack k j
+32. unstack h j
+33. pick-up h
+34. stack h k
+35. unstack k h
+36. pick-up h
+37. stack h a
+38. unstack j a
+39. pick-up j
+40. stack j k
+41. unstack k j
+42. pick-up j
+43. stack j b
+44. unstack a b
+45. pick-up a
+46. stack a k
+47. unstack k a
+48. pick-up a
+49. stack a j
+50. unstack j a
+51. pick-up j
+52. stack j l
+53. unstack i l
+54. pick-up i
+55. stack i j
+56. unstack j i
+57. pick-up j
+58. stack j a
+59. unstack a j
+60. pick-up a
+61. stack a l
+62. unstack j l
+63. pick-up j
+64. stack j g
+65. unstack l g
+66. pick-up l
+67. stack l a
+68. unstack g l
+69. pick-up g
+70. stack g j
+71. unstack a j
+72. pick-up a
+73. stack a h
+74. unstack j h
+75. pick-up j
+76. stack j k
+77. unstack a k
+78. pick-up a
+79. stack a l
+80. unstack h l
+81. pick-up h
+82. stack h k
+83. unstack a k
+84. pick-up a
+85. stack a j
+86. unstack k j
+87. pick-up k
+88. stack k a
+89. unstack a k
+90. put-down k
+91. put-down a
+92. put-down j
+93. put-down l
+94. put-down g
+95. put-down e
+96. put-down d
+97. put-down b
+98. put-down h
+99. put-down f
+100. put-down i",False
+BW_467,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h
+13. pick-up h
+14. put-down h
+15. put-down f
+16. put-down a
+17. put-down j
+18. put-down l
+19. put-down i
+20. put-down g",False
+BW_467,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Gloria
+2. place Gloria under Ian
+3. select Ian
+4. place Ian under Lisa
+5. select Lisa
+6. place Lisa under Jake
+7. select Jake
+8. place Jake under Amy
+9. select Amy
+10. place Amy under Felix
+11. select Felix
+12. place Felix under Hannah",False
+BW_467,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up g
+2. pick-up i
+3. pick-up l
+4. stack l i
+5. pick-up j
+6. stack i j
+7. pick-up a
+8. stack j a
+9. pick-up f
+10. stack a f
+11. pick-up h
+12. put-down h
+13. pick-up h
+14. stack f h
+15. put-down h",False
+BW_467,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up h
+2. unstack j l
+3. pick-up l
+4. unstack g i
+5. pick-up i
+6. unstack f a
+7. pick-up a
+8. unstack i l
+9. pick-up l
+10. put-down l
+11. unstack a f
+12. pick-up f
+13. unstack j a
+14. pick-up j
+15. stack j l
+16. unstack i h
+17. pick-up i
+18. put-down i
+19. put-down i
+20. put-down h
+21. stack l i
+22. put-down l
+23. stack i h
+24. put-down i",False
+BW_080,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f
+11. pick-up f
+12. put-down f",False
+BW_080,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Laura
+2. place Laura under Clara
+3. select Ethan
+4. place Laura under Ivan
+5. place Ethan under Ivan
+6. place Ivan under Clara
+7. select Jake
+8. place Ethan under Jake
+9. release Henry is not allowed (there is no Henry)
+10. select Felix
+11. place Jake under Felix",False
+BW_080,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f
+11. put-down f",False
+BW_155_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. stack f h 
+2. pick-up h
+3. stack e i
+4. unstack h f
+5. unstack i e
+6. stack j i
+7. stack i f
+8. pick-up e
+9. stack h e 
+10. stack i h",False
+BW_010_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack a d
+3. unstack b d
+4. pick-up b
+5. stack b e
+6. put-down d
+7. unstack e f
+8. pick-up e
+9. stack e f",False
+BW_001_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
+2. put-down b
+3. pick-up d
+4. stack f d
+5. pick-up f
+6. put-down f
+7. pick-up g
+8. unstack l h
+9. stack h d
+10. unstack f d
+11. pick-up j
+12. stack j g
+13. put-down l
+14. pick-up l 
+15. put-down l
+16. stack b d
+17. put-down b
+18. pick-up h
+19. put-down h
+20. pick-up i
+21. put-down i
+22. pick-up j
+23. put-down j",False
+BW_011_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack a i
+3. put-down a
+4. pick-up c
+5. unstack j c
+6. pick-up j
+7. stack j c
+8. unstack c a
+9. put-down c
+10. unstack i a
+11. pick-up e
+12. unstack l b
+13. put-down e
+14. stack l b
+15. stack e k
+16. unstack k e
+17. unstack e h
+18. stack h e
+19. unstack g i
+20. put-down g
+21. pick-up h
+22. stack h g
+23. put-down h
+24. unstack b l
+25. put-down b
+26. pick-up g
+27. unstack g h
+28. unstack h e",False
+BW_120_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
+2. put-down c
+3. pick-up f
+4. stack f c
+5. unstack g f
+6. put-down g
+7. pick-up j
+8. stack j g
+9. unstack f c
+10. put-down f
+11. stack f j
+12. put-down f",False
+BW_227_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. put-down a
+3. stack a f
+4. pick-up c
+5. stack c k
+6. pick-up i
+7. stack i c
+8. pick-up g
+9. stack g i",False
+BW_137_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
+2. unstack l d
+3. stack l c
+4. put-down l
+5. pick-up j
+6. pick-up e
+7. unstack g e
+8. put-down b
+9. stack b g
+10. pick-up i
+11. unstack f i
+12. put-down i
+13. stack i F
+14. unstack a i
+15. stack a i
+16. stack d l",False
+BW_172_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up K
+2. stack A K
+3. unstack A K
+4. pick-up D
+5. unstack B G
+6. stack B D
+7. unstack E H
+8. pick-up F
+9. stack F B
+10. pick-up E
+11. unstack E I
+12. unstack I J
+13. stack E I
+14. stack J E
+15. unstack G E
+16. stack G B
+17. stack G I
+18. unstack K H
+19. stack K H",False
+BW_467_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up h 
+2. put-down h 
+3. stack h i 
+4. unstack a i 
+5. stack a h 
+6. unstack i a 
+7. put-down g 
+8. stack j k",False
+BW_080_W5,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up e
+2. pick-up i
+3. stack e c
+4. pick-up c
+5. stack c i
+6. unstack f j
+7. put-down f
+8. unstack i e
+9. put-down i
+10. unstack j l
+11. put-down j
+12. put-down l",False
+MBW_001,mystery_blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. overcome b g 
+2. overcome h i 
+3. overcome d f 
+4. overcome j l 
+5. attack f 
+6. succumb b 
+7. attack i 
+8. succumb g 
+9. feast g d 
+10. succumb f",False
+MBW_001,mystery_blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. provoke Jordan
+2. appease Finland
+3. provoke Finland
+4. appease Iceland
+5. broker Jordan Finland
+6. negotiate Finland Iceland
+7. broker Iceland Greece
+8. negotiate Greece Denmark
+9. broker Denmark Belgium
+10. appease Belgium
+11. provocate Hungary
+12. appease Hungary
+13. broker Hungary Latvia
+14. negotiate Hungary Belgium",False
+MBW_001,mystery_blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. attack j
+2. attack f
+3. attack i
+4. attack g
+5. attack d
+6. attack b
+7. attack h
+8. attack l
+9. succumb j
+10. succumb f
+11. succumb i
+12. succumb g
+13. succumb d
+14. succumb b
+15. succumb h
+16. succumb l
+17. feast j f
+18. feast f i
+19. feast i g
+20. feast g d
+21. feast d b
+22. feast b h
+23. feast h l",False
+MBW_100,mystery_blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. attack l
+2. attack j
+3. succumb j
+4. attack b
+5. feast l i
+6. overcome l i
+7. attack i
+8. succumb i
+9. feast j l
+10. overcome j l",False
+MBW_100,mystery_blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. provoke Thailand
+2. broker Thailand Uruguay
+3. negotiate Morocco Thailand",False
+MBW_100,mystery_blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. attack i
+2. overcome i b
+3. feast i b
+4. overcome b j
+5. feast b j
+6. overcome j l
+7. feast j l
+8. overcome l i
+9. feast l i",False
+MBW_127,mystery_blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. attack g
+2. overcome g j
+3. overcome e j
+4. succumb e
+5. feast e b
+6. overcome j b
+7. attack b",False
+MBW_127,mystery_blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. provoke Kenya
+2. appease Japan
+3. negotiate Kenya Germany
+4. provoke Germany
+5. negotiate Germany Japan
+6. provoke Japan
+7. appease Egypt
+8. negotiate Japan Egypt
+9. provoke Egypt
+10. negotiate Japan Egypt
+11. negotiate Egypt Brazil",False
+MBW_127,mystery_blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. overcome(k, g)
+2. feast(k, g)
+3. overcome(g, j)
+4. feast(g, j)
+5. overcome(j, e)
+6. feast(j, e)
+7. overcome(e, b)
+8. feast(e, b)
+9. succumb(b)",False
+MBW_185,mystery_blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. attack d
+2. succumb d
+3. overcome d g
+4. attack i
+5. succumb i
+6. overcome g i
+7. attack c
+8. succumb c
+9. overcome i c
+10. attack h
+11. succumb h
+12. overcome c h
+13. attack a
+14. succumb a
+15. overcome h a
+16. attack b
+17. succumb b
+18. overcome a b
+19. attack e
+20. succumb e
+21. overcome b e
+22. attack l
+23. succumb l
+24. overcome e l
+25. feast l e",False
+MBW_185,mystery_blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. provoke Jordan
+2. appease Ghana
+3. appease India
+4. appease Chile
+5. appease Hungary
+6. appease Austria
+7. appease Bolivia
+8. appease Ecuador
+9. appease Latvia
+10. broker Ghana Denmark
+11. broker India Ghana
+12. broker Chile India
+13. broker Hungary Chile
+14. broker Austria Hungary
+15. broker Bolivia Austria
+16. broker Ecuador Bolivia
+17. broker Latvia Ecuador
+18. negotiate Jordan Denmark
+19. negotiate Denmark Ghana
+20. negotiate Ghana India
+21. negotiate India Chile
+22. negotiate Chile Hungary
+23. negotiate Hungary Austria
+24. negotiate Austria Bolivia
+25. negotiate Bolivia Ecuador
+26. negotiate Ecuador Latvia",False
+MBW_185,mystery_blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. overcome(j, d)
+2. attack(j)
+3. feast(j, d)
+4. overcome(d, g)
+5. attack(d)
+6. feast(d, g)
+7. overcome(g, i)
+8. attack(g)
+9. feast(g, i)
+10. overcome(i, c)
+11. attack(i)
+12. feast(i, c)
+13. overcome(c, h)
+14. attack(c)
+15. feast(c, h)
+16. overcome(h, a)
+17. attack(h)
+18. feast(h, a)
+19. overcome(a, b)
+20. attack(a)
+21. feast(a, b)
+22. overcome(b, e)
+23. attack(b)
+24. feast(b, e)
+25. overcome(e, l)
+26. attack(e)
+27. succumb(l)",False
+MBW_10,mystery_blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. attack e
+2. succumb a
+3. overcome a b
+4. feast a b
+5. overcome a f
+6. succumb f 
+7. attack b
+8. succumb e",False
+MBW_10,mystery_blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. provoke Denmark
+2. appease Ethiopia
+3. broker Denmark Ethiopia
+4. broker Ethiopia Argentina
+5. appease Argentina
+6. brook Argentina Brazil
+7. provoke Argentina
+8. negotiate Denmark Argentina
+9. provoke Brazil
+10. appease Brazil
+11. negotiate Brazil France
+12. broker Argentina Brazil",False
+MBW_10,mystery_blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"Here is a solution plan π that achieves the goal state S* from the initial state S₀:
+
+1. attack(d)
+2. overcome(d, e)
+3. feast(d, e)
+4. attack(e)
+5. overcome(e, a)
+6. feast(e, a)
+7. attack(a)
+8. overcome(a, b)
+9. feast(a, b)
+10. attack(b)
+11. overcome(b, f)
+12. feast(b, f)
+
+This plan achieves the goal state S* by gradually removing the Pain predicate from each planet and introducing the Craves relation between planets.",False
+BW_155,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up h
+2. put-down h
+3. pick-up j
+4. stack j h
+5. pick-up e
+6. stack e j
+7. pick-up f
+8. stack f e
+9. pick-up i
+10. stack i f",False
+BW_155,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Henry
+2. select Jake
+3. place Jake under Henry
+4. select Eve
+5. place Eve under Jake
+6. select Frank
+7. place Frank under Eve
+8. select Ivan
+9. place Ivan under Frank",False
+BW_155,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up i
+2. stack i f
+3. pick-up e
+4. stack e j
+5. pick-up j
+6. stack j h
+7. pick-up f
+8. put-down f
+9. pick-up e
+10. put-down e
+11. pick-up j
+12. put-down j
+13. pick-up h
+14. put-down h
+15. pick-up j
+16. stack j h
+17. pick-up e
+18. stack e j
+19. pick-up f
+20. stack f e
+21. pick-up i
+22. stack i f",False
+BW_155,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack i f
+2. put-down i
+3. unstack f e
+4. put-down f
+5. unstack e j
+6. put-down e
+7. unstack j h
+8. put-down j",True
+BW_010,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up d
+2. pick-up e
+3. stack d e
+4. pick-up a
+5. stack e a
+6. pick-up b
+7. stack a b
+8. pick-up f
+9. put-down f
+10. unstack d e
+11. put-down d
+12. unstack e a
+13. put-down e
+14. unstack a b
+15. put-down a
+16. pick-up d
+17. pick-up e
+18. stack e a
+19. pick-up d
+20. stack d e
+21. pick-up b
+22. stack a b
+23. pick-up f
+24. stack b f",False
+BW_010,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up d
+2. put-down d
+3. pick-up e
+4. put-down e
+5. pick-up a
+6. put-down a
+7. pick-up b
+8. put-down b
+9. pick-up f
+10. put-down f
+11. pick-up b
+12. stack b f
+13. pick-up a
+14. stack a b
+15. pick-up e
+16. stack e a
+17. pick-up d
+18. stack d e",False
+BW_010,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Felix
+2. release Felix
+3. select Brian
+4. place Brian under Felix
+5. select Alice
+6. place Alice under Brian
+7. select Ethan
+8. place Ethan under Alice
+9. select Diana
+10. place Diana under Ethan",False
+BW_010,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up f
+2. put-down f
+3. pick-up b
+4. stack b f
+5. pick-up a
+6. stack a b
+7. pick-up e
+8. stack e a
+9. pick-up d
+10. stack d e",False
+BW_010,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack d e
+2. put-down d
+3. unstack e a
+4. put-down e
+5. unstack a b
+6. put-down a
+7. unstack b f
+8. put-down b",True
+BW_001,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up j
+2. pick-up f
+3. stack j f
+4. pick-up i
+5. stack f i
+6. pick-up g
+7. stack i g
+8. pick-up d
+9. stack g d
+10. pick-up b
+11. stack d b
+12. pick-up h
+13. stack b h
+14. pick-up l
+15. put-down l
+16. unstack j f
+17. put-down j
+18. pick-up l
+19. stack h l
+20. pick-up j
+21. stack j f",False
+BW_001,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up l
+2. put-down l
+3. pick-up h
+4. stack h l
+5. pick-up b
+6. stack b h
+7. pick-up d
+8. stack d b
+9. pick-up g
+10. stack g d
+11. pick-up i
+12. stack i g
+13. pick-up f
+14. stack f i
+15. pick-up j
+16. stack j f",False
+BW_001,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Leo
+2. select Hannah
+3. place Hannah under Leo
+4. select Ben
+5. place Ben under Hannah
+6. select Derek
+7. place Derek under Ben
+8. select Grace
+9. place Grace under Derek
+10. select Ian
+11. place Ian under Grace
+12. select Fiona
+13. place Fiona under Ian
+14. select James
+15. place James under Fiona",False
+BW_001,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(l)
+2. put-down(l)
+3. pick-up(h)
+4. stack(h,l)
+5. pick-up(b)
+6. stack(b,h)
+7. pick-up(d)
+8. stack(d,b)
+9. pick-up(g)
+10. stack(g,d)
+11. pick-up(i)
+12. stack(i,g)
+13. pick-up(f)
+14. stack(f,i)
+15. pick-up(j)
+16. stack(j,f)",False
+BW_001,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack j f
+2. put-down j
+3. unstack f i
+4. put-down f
+5. unstack i g
+6. put-down i
+7. unstack g d
+8. put-down g
+9. unstack d b
+10. put-down d
+11. unstack b h
+12. put-down b
+13. unstack h l
+14. put-down h",True
+BW_011,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up c
+2. pick-up k
+3. pick-up g
+4. pick-up a
+5. pick-up l
+6. pick-up j
+7. pick-up e
+8. pick-up h
+9. pick-up i
+10. pick-up b
+11. put-down b
+12. pick-up i
+13. stack i b
+14. pick-up h
+15. stack h i
+16. pick-up e
+17. stack e h
+18. pick-up j
+19. stack j e
+20. pick-up l
+21. stack l j
+22. pick-up a
+23. stack a l
+24. pick-up g
+25. stack g a
+26. pick-up k
+27. stack k g
+28. pick-up c
+29. stack c k",False
+BW_011,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up b
+2. put-down b
+3. pick-up i
+4. stack i b
+5. pick-up h
+6. stack h i
+7. pick-up e
+8. stack e h
+9. pick-up j
+10. stack j e
+11. pick-up l
+12. stack l j
+13. pick-up a
+14. stack a l
+15. pick-up g
+16. stack g a
+17. pick-up k
+18. stack k g
+19. pick-up c
+20. stack c k",False
+BW_011,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Ben
+2. select Ivan
+3. place Ivan under Ben
+4. select Helen
+5. place Helen under Ivan
+6. select Edward
+7. place Edward under Helen
+8. select Jack
+9. place Jack under Edward
+10. select Laura
+11. place Laura under Jack
+12. select Amy
+13. place Amy under Laura
+14. select George
+15. place George under Amy
+16. select Kevin
+17. place Kevin under George
+18. select Carol
+19. place Carol under Kevin",False
+BW_011,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(b)
+2. put-down(b)
+3. pick-up(i)
+4. stack(i,b)
+5. pick-up(h)
+6. stack(h,i)
+7. pick-up(e)
+8. stack(e,h)
+9. pick-up(j)
+10. stack(j,e)
+11. pick-up(l)
+12. stack(l,j)
+13. pick-up(a)
+14. stack(a,l)
+15. pick-up(g)
+16. stack(g,a)
+17. pick-up(k)
+18. stack(k,g)
+19. pick-up(c)
+20. stack(c,k)",False
+BW_011,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack c k
+2. put-down c
+3. unstack k g
+4. put-down k
+5. unstack g a
+6. put-down g
+7. unstack a l
+8. put-down a
+9. unstack l j
+10. put-down l
+11. unstack j e
+12. put-down j
+13. unstack e h
+14. put-down e
+15. unstack h i
+16. put-down h
+17. unstack i b
+18. put-down i",True
+BW_120,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up c
+2. pick-up j
+3. pick-up g
+4. pick-up f
+5. put-down f
+6. pick-up g
+7. stack g f
+8. pick-up j
+9. stack j g
+10. pick-up c
+11. stack c j",False
+BW_120,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up g
+2. stack g f
+3. pick-up j
+4. stack j g
+5. pick-up c
+6. stack c j",True
+BW_120,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Clara
+2. select Jake
+3. place Clara under Jake
+4. select Grace
+5. place Jake under Grace
+6. select Felix
+7. place Grace under Felix",False
+BW_120,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up f
+2. put-down f
+3. pick-up g
+4. stack g f
+5. pick-up j
+6. stack j g
+7. pick-up c
+8. stack c j",False
+BW_120,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack c j
+2. put-down c
+3. unstack j g
+4. put-down j
+5. unstack g f
+6. put-down g",True
+BW_227,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up f
+2. stack f l
+3. pick-up g
+4. stack g d
+5. pick-up i
+6. stack i j
+7. pick-up c
+8. stack c k
+9. pick-up a
+10. put-down a
+11. pick-up k
+12. stack k a
+13. pick-up c
+14. stack c k
+15. pick-up j
+16. stack j c
+17. pick-up i
+18. stack i j
+19. pick-up d
+20. stack d i
+21. pick-up g
+22. stack g d
+23. pick-up l
+24. stack l g
+25. pick-up f
+26. stack f l",False
+BW_227,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up a
+2. put-down a
+3. pick-up k
+4. stack k a
+5. pick-up c
+6. stack c k
+7. pick-up j
+8. stack j c
+9. pick-up i
+10. stack i j
+11. pick-up d
+12. stack d i
+13. pick-up g
+14. stack g d
+15. pick-up l
+16. stack l g
+17. pick-up f
+18. stack f l",False
+BW_227,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Amy
+2. select Kevin
+3. place Kevin under Amy
+4. select Clara
+5. place Clara under Kevin
+6. select Jack
+7. place Jack under Clara
+8. select Ian
+9. place Ian under Jack
+10. select Derek
+11. place Derek under Ian
+12. select George
+13. place George under Derek
+14. select Laura
+15. place Laura under George
+16. select Felix
+17. place Felix under Laura",False
+BW_227,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(a)
+2. put-down(a)
+3. pick-up(k)
+4. stack(k,a)
+5. pick-up(c)
+6. stack(c,k)
+7. pick-up(j)
+8. stack(j,c)
+9. pick-up(i)
+10. stack(i,j)
+11. pick-up(d)
+12. stack(d,i)
+13. pick-up(g)
+14. stack(g,d)
+15. pick-up(l)
+16. stack(l,g)
+17. pick-up(f)
+18. stack(f,l)",False
+BW_227,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack f l
+2. put-down f
+3. unstack l g
+4. put-down l
+5. unstack g d
+6. put-down g
+7. unstack d i
+8. put-down d
+9. unstack i j
+10. put-down i
+11. unstack j c
+12. put-down j
+13. unstack c k
+14. put-down c
+15. unstack k a
+16. put-down k",True
+BW_137,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up d
+2. pick-up a
+3. stack a b
+4. pick-up d
+5. stack d a
+6. pick-up j
+7. pick-up e
+8. stack e l
+9. pick-up h
+10. stack h c
+11. pick-up f
+12. stack f g
+13. pick-up i
+14. put-down i
+15. pick-up g
+16. stack g i
+17. pick-up f
+18. stack f g
+19. pick-up c
+20. stack c f
+21. pick-up h
+22. stack h c
+23. pick-up l
+24. stack l h
+25. pick-up e
+26. stack e l
+27. pick-up j
+28. stack j e
+29. pick-up b
+30. stack b j
+31. pick-up a
+32. stack a b
+33. pick-up d
+34. stack d a",False
+BW_137,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up i
+2. put-down i
+3. pick-up g
+4. stack g i
+5. pick-up f
+6. stack f g
+7. pick-up c
+8. stack c f
+9. pick-up h
+10. stack h c
+11. pick-up l
+12. stack l h
+13. pick-up e
+14. stack e l
+15. pick-up j
+16. stack j e
+17. pick-up b
+18. stack b j
+19. pick-up a
+20. stack a b
+21. pick-up d
+22. stack d a",False
+BW_137,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Dana
+2. place Dana under Aaron
+3. select Aaron
+4. place Aaron under Brian
+5. select Brian
+6. place Brian under Julia
+7. select Julia
+8. place Julia under Ethan
+9. select Ethan
+10. place Ethan under Lisa
+11. select Lisa
+12. place Lisa under Harry
+13. select Harry
+14. place Harry under Clara
+15. select Clara
+16. place Clara under Frank
+17. select Frank
+18. place Frank under Gloria
+19. select Gloria
+20. place Gloria under Ivan",False
+BW_137,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(i)
+2. put-down(i)
+3. pick-up(g)
+4. stack(g,i)
+5. pick-up(f)
+6. stack(f,g)
+7. pick-up(c)
+8. stack(c,f)
+9. pick-up(h)
+10. stack(h,c)
+11. pick-up(l)
+12. stack(l,h)
+13. pick-up(e)
+14. stack(e,l)
+15. pick-up(j)
+16. stack(j,e)
+17. pick-up(b)
+18. stack(b,j)
+19. pick-up(a)
+20. stack(a,b)
+21. pick-up(d)
+22. stack(d,a)",False
+BW_137,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack d a
+2. put-down d
+3. unstack a b
+4. put-down a
+5. unstack b j
+6. put-down b
+7. unstack j e
+8. put-down j
+9. unstack e l
+10. put-down e
+11. unstack l h
+12. put-down l
+13. unstack h c
+14. put-down h
+15. unstack c f
+16. put-down c
+17. unstack f g
+18. put-down f
+19. unstack g i
+20. put-down g",True
+BW_172,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up i
+2. pick-up l
+3. pick-up g
+4. pick-up e
+5. pick-up d
+6. pick-up b
+7. pick-up a
+8. pick-up j
+9. pick-up h
+10. pick-up f
+11. pick-up k
+12. put-down k
+13. pick-up f
+14. stack f k
+15. pick-up h
+16. stack h f
+17. pick-up j
+18. stack j h
+19. pick-up a
+20. stack a j
+21. pick-up b
+22. stack b a
+23. pick-up d
+24. stack d b
+25. pick-up e
+26. stack e d
+27. pick-up g
+28. stack g e
+29. pick-up l
+30. stack l g
+31. pick-up i
+32. stack i l",False
+BW_172,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up k
+2. put-down k
+3. pick-up f
+4. stack f k
+5. pick-up h
+6. stack h f
+7. pick-up j
+8. stack j h
+9. pick-up a
+10. stack a j
+11. pick-up b
+12. stack b a
+13. pick-up d
+14. stack d b
+15. pick-up e
+16. stack e d
+17. pick-up g
+18. stack g e
+19. pick-up l
+20. stack l g
+21. pick-up i
+22. stack i l",False
+BW_172,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Karen
+2. select Felix
+3. place Felix under Karen
+4. select Helen
+5. place Helen under Felix
+6. select Jake
+7. place Jake under Helen
+8. select Amy
+9. place Amy under Jake
+10. select Ben
+11. place Ben under Amy
+12. select Dana
+13. place Dana under Ben
+14. select Ethan
+15. place Ethan under Dana
+16. select Gary
+17. place Gary under Ethan
+18. select Laura
+19. place Laura under Gary
+20. select Ivan
+21. place Ivan under Laura",False
+BW_172,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(k)
+2. put-down(k)
+3. pick-up(f)
+4. stack(f,k)
+5. pick-up(h)
+6. stack(h,f)
+7. pick-up(j)
+8. stack(j,h)
+9. pick-up(a)
+10. stack(a,j)
+11. pick-up(b)
+12. stack(b,a)
+13. pick-up(d)
+14. stack(d,b)
+15. pick-up(e)
+16. stack(e,d)
+17. pick-up(g)
+18. stack(g,e)
+19. pick-up(l)
+20. stack(l,g)
+21. pick-up(i)
+22. stack(i,l)",False
+BW_172,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack i l
+2. put-down i
+3. unstack l g
+4. put-down l
+5. unstack g e
+6. put-down g
+7. unstack e d
+8. put-down e
+9. unstack d b
+10. put-down d
+11. unstack b a
+12. put-down b
+13. unstack a j
+14. put-down a
+15. unstack j h
+16. put-down j
+17. unstack h f
+18. put-down h
+19. unstack f k
+20. put-down f",True
+BW_467,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up g
+2. pick-up i
+3. stack g i
+4. pick-up l
+5. stack i l
+6. pick-up j
+7. stack l j
+8. pick-up a
+9. stack j a
+10. pick-up f
+11. stack a f
+12. pick-up h
+13. put-down h
+14. pick-up g
+15. put-down g
+16. pick-up i
+17. put-down i
+18. pick-up l
+19. put-down l
+20. pick-up j
+21. put-down j
+22. pick-up a
+23. put-down a
+24. pick-up f
+25. stack f h
+26. pick-up a
+27. stack a f
+28. pick-up j
+29. stack j a
+30. pick-up l
+31. stack l j
+32. pick-up i
+33. stack i l
+34. pick-up g
+35. stack g i",False
+BW_467,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up h
+2. put-down h
+3. pick-up f
+4. stack f h
+5. pick-up a
+6. stack a f
+7. pick-up j
+8. stack j a
+9. pick-up l
+10. stack l j
+11. pick-up i
+12. stack i l
+13. pick-up g
+14. stack g i",False
+BW_467,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Hannah
+2. select Felix
+3. place Felix under Hannah
+4. select Amy
+5. place Amy under Felix
+6. select Jake
+7. place Jake under Amy
+8. select Lisa
+9. place Lisa under Jake
+10. select Ian
+11. place Ian under Lisa
+12. select Gloria
+13. place Gloria under Ian",False
+BW_467,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up h
+2. put-down h
+3. pick-up f
+4. stack f h
+5. pick-up a
+6. stack a f
+7. pick-up j
+8. stack j a
+9. pick-up l
+10. stack l j
+11. pick-up i
+12. stack i l
+13. pick-up g
+14. stack g i",False
+BW_467,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack g i
+2. put-down g
+3. unstack i l
+4. put-down i
+5. unstack l j
+6. put-down l
+7. unstack j a
+8. put-down j
+9. unstack a f
+10. put-down a
+11. unstack f h
+12. put-down f",True
+BW_080,blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. pick-up l
+2. pick-up c
+3. stack l c
+4. pick-up i
+5. stack c i
+6. pick-up e
+7. stack i e
+8. pick-up j
+9. stack e j
+10. pick-up f
+11. stack j f",False
+BW_080,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up l
+2. put-down l
+3. pick-up c
+4. put-down c
+5. pick-up i
+6. put-down i
+7. pick-up e
+8. put-down e
+9. pick-up j
+10. put-down j
+11. pick-up f
+12. put-down f
+13. pick-up j
+14. stack j f
+15. pick-up e
+16. stack e j
+17. pick-up i
+18. stack i e
+19. pick-up c
+20. stack c i
+21. pick-up l
+22. stack l c",False
+BW_080,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Felix
+2. release Felix
+3. select Jake
+4. place Jake under Felix
+5. select Ethan
+6. place Ethan under Jake
+7. select Ivan
+8. place Ivan under Ethan
+9. select Clara
+10. place Clara under Ivan
+11. select Laura
+12. place Laura under Clara",False
+BW_080,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up f
+2. put-down f
+3. pick-up j
+4. stack j f
+5. pick-up e
+6. stack e j
+7. pick-up i
+8. stack i e
+9. pick-up c
+10. stack c i
+11. pick-up l
+12. stack l c",False
+BW_155_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack e i
+2. put-down e
+3. pick-up j
+4. stack j i
+5. unstack h f
+6. stack h e
+7. pick-up f
+8. stack f h
+9. pick-up i
+10. stack i f",False
+BW_010_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack b d
+2. stack b e
+3. pick-up a
+4. stack a d",False
+BW_001_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack i g
+2. put-down i
+3. unstack g l
+4. stack g d
+5. unstack l h
+6. put-down l
+7. unstack h j
+8. put-down h
+9. unstack j f
+10. stack j g
+11. unstack f d
+12. put-down f",False
+BW_011_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack h g
+2. put-down h
+3. unstack g i
+4. put-down g
+5. unstack i j
+6. stack i a
+7. unstack j c
+8. put-down j
+9. unstack c k
+10. stack c j
+11. unstack k e
+12. put-down k
+13. unstack e l
+14. stack e h
+15. unstack l b
+16. put-down l
+17. unstack b a",False
+BW_120_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. pick-up g
+2. put-down g
+3. pick-up j
+4. stack j f
+5. pick-up g
+6. stack g j
+7. pick-up f
+8. stack f c",False
+BW_227_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack a f
+2. put-down a
+3. unstack g j
+4. put-down g
+5. unstack k c
+6. stack k f
+7. pick-up i
+8. stack i g
+9. pick-up c
+10. stack c i
+11. pick-up l
+12. stack l c",False
+BW_137_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack h e
+2. put-down h
+3. unstack e b
+4. put-down e
+5. unstack j g
+6. put-down j
+7. unstack g a
+8. stack g j
+9. unstack l d
+10. put-down l
+11. unstack d j
+12. stack d l
+13. unstack b c
+14. stack b g
+15. unstack c l
+16. put-down c
+17. stack l c",False
+BW_172_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack a k
+2. put-down a
+3. unstack b g
+4. stack b d
+5. unstack i j
+6. put-down i
+7. unstack j e
+8. put-down j
+9. unstack e h
+10. stack e i
+11. pick-up g
+12. stack g e
+13. pick-up f
+14. stack f b
+15. pick-up k
+16. stack k h
+17. pick-up a
+18. stack a k",False
+BW_467_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack j a
+2. put-down j
+3. unstack a i
+4. put-down a
+5. unstack i g
+6. put-down i
+7. unstack g l
+8. put-down g
+9. unstack l f
+10. put-down l
+11. unstack f h
+12. put-down f
+13. pick-up i
+14. stack i h
+15. pick-up a
+16. stack a i
+17. pick-up g
+18. stack g l",False
+BW_080_W5,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack c i
+2. put-down c
+3. pick-up e
+4. stack e c
+5. unstack f j
+6. put-down f
+7. unstack c e
+8. stack c i
+9. stack e c
+10. pick-up j
+11. put-down j",False
+MBW_001,mystery_blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. attack j
+2. attack f
+3. attack i
+4. attack g
+5. attack d
+6. attack b
+7. attack h
+8. attack l",False
+MBW_001,mystery_blocksworld,W2,anthropic/claude-3.7-sonnet,"1. attack j
+2. overcome j f
+3. succumb j
+4. attack f
+5. overcome f i
+6. succumb f
+7. attack i
+8. overcome i g
+9. succumb i
+10. attack g
+11. overcome g d
+12. succumb g
+13. attack d
+14. overcome d b
+15. succumb d
+16. attack b
+17. overcome b h
+18. succumb b
+19. attack h
+20. overcome h l
+21. succumb h",False
+MBW_001,mystery_blocksworld,W3,anthropic/claude-3.7-sonnet,"1. provoke Finland
+2. broker Jordan Finland
+3. provoke Iceland
+4. broker Finland Iceland
+5. provoke Greece
+6. broker Iceland Greece
+7. provoke Denmark
+8. broker Greece Denmark
+9. provoke Belgium
+10. broker Denmark Belgium
+11. provoke Hungary
+12. broker Belgium Hungary
+13. provoke Latvia
+14. broker Hungary Latvia",False
+MBW_001,mystery_blocksworld,W4,anthropic/claude-3.7-sonnet,"1. attack j
+2. overcome j f
+3. attack f
+4. overcome f i
+5. attack i
+6. overcome i g
+7. attack g
+8. overcome g d
+9. attack d
+10. overcome d b
+11. attack b
+12. overcome b h
+13. attack h
+14. overcome h l",False
+MBW_100,mystery_blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. attack b
+2. attack j
+3. attack l
+4. attack i",False
+MBW_100,mystery_blocksworld,W2,anthropic/claude-3.7-sonnet,"1. attack b
+2. succumb b
+3. attack j
+4. overcome j b
+5. attack l
+6. overcome l j
+7. attack i
+8. overcome i l",False
+MBW_100,mystery_blocksworld,W3,anthropic/claude-3.7-sonnet,"1. provoke Morocco
+2. provoke Thailand
+3. provoke Uruguay
+4. appease Morocco
+5. appease Thailand
+6. appease Uruguay
+7. broker Morocco Thailand
+8. broker Thailand Uruguay
+9. broker Uruguay Estonia",False
+MBW_100,mystery_blocksworld,W4,anthropic/claude-3.7-sonnet,"1. attack b
+2. overcome b j
+3. attack j
+4. overcome j l
+5. attack l
+6. overcome l i",False
+MBW_127,mystery_blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. attack k
+2. attack g
+3. attack j
+4. attack e
+5. attack b
+6. succumb k
+7. overcome k g
+8. succumb g
+9. overcome g j
+10. succumb j
+11. overcome j e
+12. succumb e
+13. overcome e b
+14. feast k g
+15. feast g j
+16. feast j e
+17. feast e b",False
+MBW_127,mystery_blocksworld,W2,anthropic/claude-3.7-sonnet,"1. attack k
+2. overcome k g
+3. succumb k
+4. attack g
+5. overcome g j
+6. succumb g
+7. attack j
+8. overcome j e
+9. succumb j
+10. attack e
+11. overcome e b
+12. succumb e",False
+MBW_127,mystery_blocksworld,W3,anthropic/claude-3.7-sonnet,"1. provoke Kenya
+2. appease Kenya
+3. broker Kenya Germany
+4. provoke Germany
+5. appease Germany
+6. broker Germany Japan
+7. provoke Japan
+8. appease Japan
+9. broker Japan Egypt
+10. provoke Egypt
+11. appease Egypt
+12. broker Egypt Brazil",False
+MBW_127,mystery_blocksworld,W4,anthropic/claude-3.7-sonnet,"1. attack k
+2. attack g
+3. attack j
+4. attack e
+5. attack b
+6. overcome k g
+7. overcome g j
+8. overcome j e
+9. overcome e b",False
+MBW_185,mystery_blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. attack j
+2. attack d
+3. attack g
+4. attack i
+5. attack c
+6. attack h
+7. attack a
+8. attack b
+9. attack e
+10. attack l",False
+MBW_185,mystery_blocksworld,W2,anthropic/claude-3.7-sonnet,"1. attack j
+2. overcome j d
+3. attack d
+4. overcome d g
+5. attack g
+6. overcome g i
+7. attack i
+8. overcome i c
+9. attack c
+10. overcome c h
+11. attack h
+12. overcome h a
+13. attack a
+14. overcome a b
+15. attack b
+16. overcome b e
+17. attack e
+18. overcome e l",False
+MBW_185,mystery_blocksworld,W3,anthropic/claude-3.7-sonnet,"1. provoke Jordan
+2. broker Jordan Denmark
+3. negotiate Jordan Denmark
+4. provoke Denmark
+5. broker Denmark Ghana
+6. negotiate Denmark Ghana
+7. provoke Ghana
+8. broker Ghana India
+9. negotiate Ghana India
+10. provoke India
+11. broker India Chile
+12. negotiate India Chile
+13. provoke Chile
+14. broker Chile Hungary
+15. negotiate Chile Hungary
+16. provoke Hungary
+17. broker Hungary Austria
+18. negotiate Hungary Austria
+19. provoke Austria
+20. broker Austria Bolivia
+21. negotiate Austria Bolivia
+22. provoke Bolivia
+23. broker Bolivia Ecuador
+24. negotiate Bolivia Ecuador
+25. provoke Ecuador
+26. broker Ecuador Latvia
+27. negotiate Ecuador Latvia",False
+MBW_185,mystery_blocksworld,W4,anthropic/claude-3.7-sonnet,"1. attack j
+2. overcome j d
+3. attack d
+4. overcome d g
+5. attack g
+6. overcome g i
+7. attack i
+8. overcome i c
+9. attack c
+10. overcome c h
+11. attack h
+12. overcome h a
+13. attack a
+14. overcome a b
+15. attack b
+16. overcome b e
+17. attack e
+18. overcome e l",False
+MBW_10,mystery_blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. attack d
+2. attack e
+3. attack a
+4. attack b
+5. attack f
+6. succumb d
+7. succumb e
+8. succumb a
+9. succumb b
+10. overcome d e
+11. overcome e a
+12. overcome a b
+13. overcome b f",False
+MBW_10,mystery_blocksworld,W2,anthropic/claude-3.7-sonnet,"1. attack d
+2. overcome d e
+3. succumb d
+4. attack e
+5. overcome e a
+6. succumb e
+7. attack a
+8. overcome a b
+9. succumb a
+10. attack b
+11. overcome b f
+12. succumb b",False
+MBW_10,mystery_blocksworld,W3,anthropic/claude-3.7-sonnet,"1. provoke Denmark
+2. appease Denmark
+3. broker Denmark Ethiopia
+4. provoke Ethiopia
+5. appease Ethiopia
+6. broker Ethiopia Argentina
+7. provoke Argentina
+8. appease Argentina
+9. broker Argentina Brazil
+10. provoke Brazil
+11. appease Brazil
+12. broker Brazil France",False
+MBW_10,mystery_blocksworld,W4,anthropic/claude-3.7-sonnet,"1. attack d
+2. overcome d e
+3. attack e
+4. overcome e a
+5. attack a
+6. overcome a b
+7. attack b
+8. overcome b f",False

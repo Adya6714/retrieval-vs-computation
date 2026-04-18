@@ -1,6 +1,7 @@
 """Phase 3 behavioral sweep entrypoint.
 Use --dry-run to test the full pipeline without spending API credits.
-Resume-safe: already-scored (problem_id, variant_type) pairs are skipped.
+Resume-safe: already-scored (problem_id, variant_type, model) triples are skipped
+unless the latest row for that triple has raw_response starting with ERROR:.
 """
 
 from __future__ import annotations
@@ -34,26 +35,37 @@ def _load_paths() -> dict:
 
 
 def _existing_pairs(output_path: Path) -> set[tuple[str, str, str]]:
-    """Return set of (problem_id, variant_type, model) keys already in output CSV."""
+    """Return (problem_id, variant_type, model) keys already successfully scored.
+
+    The last row per key wins. Keys whose latest row is an API/transport failure
+    (raw_response starts with 'ERROR:') are omitted so the next run retries.
+    """
     if not output_path.exists() or output_path.stat().st_size == 0:
         return set()
     try:
         df = pd.read_csv(output_path, dtype=str)
         if "problem_id" not in df.columns or "variant_type" not in df.columns:
             return set()
-        # fillna so canonical rows (empty variant_type written as "") are
-        # read back as "" rather than NaN, ensuring resume matching works.
         df["variant_type"] = df["variant_type"].fillna("")
         if "model" not in df.columns:
             return set()
-        return {
-            (
-                str(r["problem_id"]).strip(),
-                str(r["variant_type"]).strip(),
-                str(r["model"]).strip(),
+        raw_col = (
+            df["raw_response"].fillna("").astype(str)
+            if "raw_response" in df.columns
+            else pd.Series([""] * len(df), index=df.index)
+        )
+        df = df.assign(_raw=raw_col)
+        last = df.groupby(
+            ["problem_id", "variant_type", "model"], sort=False
+        ).last()
+        done: set[tuple[str, str, str]] = set()
+        for (pid, vtype, model), row in last.iterrows():
+            if str(row["_raw"]).strip().startswith("ERROR:"):
+                continue
+            done.add(
+                (str(pid).strip(), str(vtype).strip(), str(model).strip())
             )
-            for _, r in df.iterrows()
-        }
+        return done
     except pd.errors.EmptyDataError:
         return set()
 
@@ -63,12 +75,15 @@ def main() -> None:
         description="Phase 3 behavioral sweep — canonical + variants"
     )
     parser.add_argument("--limit", type=int, default=None,
-                        help="Process only the first N canonical problems")
+                        help="Process only the first N rows after family/other filters")
     parser.add_argument("--family", type=str, default=None,
                         help="Filter to a single problem_family")
-    parser.add_argument("--model", type=str,
-                        default="anthropic/claude-3-5-sonnet",
-                        help="Model identifier passed to the API client")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="anthropic/claude-3.7-sonnet",
+        help="OpenRouter model id (default: anthropic/claude-3.7-sonnet)",
+    )
     parser.add_argument("--probe", type=str, choices=["probe1", "probe2"],
                         default="probe1")
     parser.add_argument(
@@ -96,7 +111,7 @@ def main() -> None:
         instances_path = problems_dir / f"{args.probe}_instances.csv"
     output_path = results_dir / "behavioral_sweep.csv"
 
-    # 2. Load canonical problems
+    # 2. Load question bank rows (canonical + W2–W6 variants, etc.)
     if not instances_path.exists():
         raise FileNotFoundError(f"Instances file not found: {instances_path}")
 
@@ -106,15 +121,18 @@ def main() -> None:
         raise ValueError(
             f"Question bank missing required columns: {sorted(missing_cols)}"
         )
-    if "variant_type" in df_instances.columns:
-        df_instances = df_instances[
-            df_instances["variant_type"].astype(str).str.strip().str.lower() == "canonical"
-        ]
     df_instances["problem_id"] = df_instances["problem_id"].astype(str).str.strip()
 
     if args.family is not None:
+        # Match against problem_subtype first (e.g. "blocksworld"),
+        # falling back to problem_family for rows that don't have a subtype.
+        subtype_col = df_instances["problem_subtype"].astype(str).str.strip().str.lower() \
+            if "problem_subtype" in df_instances.columns \
+            else pd.Series([""] * len(df_instances), index=df_instances.index)
+        family_col = df_instances["problem_family"].astype(str).str.strip().str.lower()
+        family_filter = args.family.lower()
         df_instances = df_instances[
-            df_instances["problem_family"].astype(str).str.strip() == args.family
+            (subtype_col == family_filter) | (family_col == family_filter)
         ]
 
     if args.limit is not None:
@@ -122,7 +140,12 @@ def main() -> None:
 
     # 3. Build unified sweep list
     all_rows = []
+    n_skipped_empty_answer = 0
     for _, inst in df_instances.iterrows():
+        correct_answer = str(inst.get("correct_answer", ""))
+        if correct_answer.strip() == "" or correct_answer.strip().lower() in {"nan", "none"}:
+            n_skipped_empty_answer += 1
+            continue
         all_rows.append(
             {
                 "problem_id": str(inst["problem_id"]).strip(),
@@ -130,9 +153,14 @@ def main() -> None:
                     inst.get("problem_subtype", inst.get("problem_family", ""))
                 ).strip().lower(),
                 "problem_text": str(inst.get("problem_text", "")),
-                "correct_answer": str(inst.get("correct_answer", "")),
+                "correct_answer": correct_answer,
                 "variant_type": str(inst.get("variant_type", "")).strip(),
             }
+        )
+    if n_skipped_empty_answer:
+        print(
+            f"Skipping {n_skipped_empty_answer} rows with empty correct_answer "
+            "(e.g., unsupported variants like BW_080/W6)."
         )
 
     # 4. Select client

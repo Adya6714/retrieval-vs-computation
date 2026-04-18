@@ -1,17 +1,31 @@
 closed_models:
-  - name: claude-sonnet-3-5
-    api: openrouter
-    openrouter_id: anthropic/claude-3-5-sonnet
-    notes: behavioral sweep model A
   - name: claude-sonnet-3-7
     api: openrouter
-    openrouter_id: anthropic/claude-3-7-sonnet
-    notes: behavioral sweep model B
+    openrouter_id: anthropic/claude-3.7-sonnet
+    mechanistic: false
+    behavioral: true
+    priority: required
+  - name: gpt-4o
+    api: openrouter
+    openrouter_id: openai/gpt-4o
+    mechanistic: false
+    behavioral: true
+    priority: required
+    notes: pilot data available
 open_models:
   - name: qwen2.5-7b
     hf_id: Qwen/Qwen2.5-7B-Instruct
     requires_gpu: true
-    notes: load via probes/mechanistic/load_model.py
+    mechanistic: true
+    behavioral: true
+    priority: required
+  - name: llama-3.1-8b
+    hf_id: meta-llama/Llama-3.1-8B-Instruct
+    requires_gpu: true
+    mechanistic: false
+    behavioral: true
+    priority: optional
+    notes: add only if budget allows
   - name: mock
     hf_id: null
     requires_gpu: false

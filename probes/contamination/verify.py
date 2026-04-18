@@ -4,6 +4,60 @@ from __future__ import annotations
 
 import re
 
+_PLAN_LINE_PREFIX = re.compile(r"^\s*\d+[\).\s]+")
+
+
+def _strip_numbered_plan_lines(text: str) -> list[str]:
+    """One logical line per list item; strip leading ``1.`` / ``2)`` etc."""
+    out: list[str] = []
+    for raw in str(text).splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        line = _PLAN_LINE_PREFIX.sub("", line).strip()
+        if line:
+            out.append(line)
+    return out
+
+
+_BLOCKSWORLD_LINE = re.compile(
+    r"^(pick-up|put-down|stack|unstack)\s+([a-z0-9]+)(?:\s+([a-z0-9]+))?\s*$",
+    re.IGNORECASE,
+)
+
+
+def _extract_blocksworld_actions_line_based(text: str) -> list[str]:
+    """Parse blocksworld plans line-by-line so numbered lists do not break regex."""
+    actions: list[str] = []
+    for line in _strip_numbered_plan_lines(text):
+        m = _BLOCKSWORLD_LINE.match(line.strip())
+        if not m:
+            continue
+        parts = [m.group(1).lower(), m.group(2).lower()]
+        if m.group(3):
+            parts.append(m.group(3).lower())
+        actions.append(" ".join(parts))
+    return actions
+
+
+_MYSTERY_LINE = re.compile(
+    r"^(attack|succumb|overcome|feast)\s+([a-z0-9]+)(?:\s+([a-z0-9]+))?\s*$",
+    re.IGNORECASE,
+)
+
+
+def _extract_mystery_actions_line_based(text: str) -> list[str]:
+    actions: list[str] = []
+    for line in _strip_numbered_plan_lines(text):
+        m = _MYSTERY_LINE.match(line.strip())
+        if not m:
+            continue
+        parts = [m.group(1).lower(), m.group(2).lower()]
+        if m.group(3):
+            parts.append(m.group(3).lower())
+        actions.append(" ".join(parts))
+    return actions
+
 
 def _extract_actions(text: str, pattern: re.Pattern[str]) -> list[str]:
     return [m.group(0).strip().lower() for m in pattern.finditer(str(text).lower())]
@@ -115,8 +169,7 @@ def _verify_blocksworld_state_machine(model_answer, problem_text) -> bool | None
     if parsed is None:
         return None
     state, goal = parsed
-    action_pattern = re.compile(r"(pick-up|put-down|stack|unstack)\s+[a-z0-9]+(\s+[a-z0-9]+)?", re.IGNORECASE)
-    actions = _extract_actions(model_answer, action_pattern)
+    actions = _extract_blocksworld_actions_line_based(model_answer)
     if not actions:
         return False
     for action in actions:
@@ -201,11 +254,7 @@ def _verify_mystery_state_machine(model_answer, problem_text) -> bool | None:
     if parsed is None:
         return None
     state, goals = parsed
-    mystery_pattern = re.compile(
-        r"(attack|succumb|overcome|feast)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
-        re.IGNORECASE,
-    )
-    actions = _extract_actions(model_answer, mystery_pattern)
+    actions = _extract_mystery_actions_line_based(model_answer)
     if not actions:
         return False
     for action in actions:
@@ -232,11 +281,17 @@ def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=N
 
     elif family == "mystery_blocksworld":
         sim_ok = _verify_mystery_state_machine(model_answer, problem_text)
-        if sim_ok is not None:
-            return sim_ok
+        if sim_ok is True:
+            return True
+        model_matches = _extract_mystery_actions_line_based(model_answer)
+        gt_matches = _extract_mystery_actions_line_based(ground_truth)
+        if model_matches and gt_matches:
+            return model_matches == gt_matches
+        if sim_ok is False:
+            return False
         mystery_pattern = re.compile(
-            r'(attack|succumb|overcome|feast)\s+[a-z0-9]+(\s+[a-z0-9]+)?',
-            re.IGNORECASE
+            r"(attack|succumb|overcome|feast)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
+            re.IGNORECASE,
         )
         model_matches = _extract_actions(model_answer, mystery_pattern)
         gt_matches = _extract_actions(ground_truth, mystery_pattern)
@@ -246,17 +301,23 @@ def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=N
 
     elif family in plan_families:
         sim_ok = _verify_blocksworld_state_machine(model_answer, problem_text)
-        if sim_ok is not None:
-            return sim_ok
-        # Extract actions like 'pick-up A' or 'unstack A B'
-        action_pattern = re.compile(r'(pick-up|put-down|stack|unstack)\s+[a-z0-9]+(\s+[a-z0-9]+)?', re.IGNORECASE)
+        if sim_ok is True:
+            return True
+        model_matches = _extract_blocksworld_actions_line_based(model_answer)
+        gt_matches = _extract_blocksworld_actions_line_based(ground_truth)
+        if model_matches and gt_matches:
+            if model_matches == gt_matches:
+                return True
+        if sim_ok is False:
+            return False
+        action_pattern = re.compile(
+            r"(pick-up|put-down|stack|unstack)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
+            re.IGNORECASE,
+        )
         model_matches = _extract_actions(model_answer, action_pattern)
         gt_matches = _extract_actions(ground_truth, action_pattern)
-        
         if not model_matches or not gt_matches:
-            # Fallback to simple string comparison if parser fails
             return str(model_answer).strip().lower() == str(ground_truth).strip().lower()
-            
         return model_matches == gt_matches
 
     else:

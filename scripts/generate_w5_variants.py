@@ -1,154 +1,116 @@
 #!/usr/bin/env python3
-"""Generate deterministic W5 variants for Probe 1 instances."""
+"""Generate W5 (procedural regeneration) variants for blocksworld canonical rows.
+
+W5 means: same block set, randomly re-drawn initial and goal states, plan
+found by Fast Downward.  The generated row is appended directly to
+question_bank.csv with a new problem_id of the form ``{source_id}_W5``.
+
+Usage
+-----
+  python scripts/generate_w5_variants.py \\
+      --planbench /path/to/LLMs-Planning \\
+      --downward  /path/to/downward/fast-downward.py
+
+  # preview without writing
+  python scripts/generate_w5_variants.py \\
+      --planbench /path/to/LLMs-Planning \\
+      --downward  /path/to/downward/fast-downward.py \\
+      --dry-run
+
+Both --planbench and --downward are required for actual execution; they are
+not needed with --dry-run (the script will skip FD and only report what it
+*would* generate).
+"""
 
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
-import math
 import re
+import subprocess
+import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Sequence, Set, Tuple
+from typing import Dict, List, Optional, Sequence, Set, Tuple
 
-import networkx as nx
 import numpy as np
 
+from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 
-INPUT_CSV = Path("data/problems/probe1_instances.csv")
-OUTPUT_CSV = Path("data/problems/probe1_variants.csv")
-OUTPUT_COLUMNS = [
-    "problem_id",
-    "variant_type",
-    "problem_text",
-    "correct_answer",
-    "source_problem_id",
-]
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+
 VARIANT_TYPE = "W5"
 
+_BLOCKSWORLD_SUBTYPES = {"blocksworld"}
+_MYSTERY_SUBTYPES = {"mystery_blocksworld"}
 
-@dataclass(frozen=True)
-class ProblemRow:
-    problem_id: str
-    problem_family: str
-    problem_text: str
-    correct_answer: str
-    raw: Dict[str, str]
+# Candidate locations for the 4-ops blocksworld domain file, relative to the
+# LLMs-Planning repo root (--planbench).
+_DOMAIN_CANDIDATES_RELATIVE = [
+    "plan-bench/instances/blocksworld/generated_domain.pddl",
+    "plan-bench/pddlgenerators/blocksworld/4ops/domain.pddl",
+    "plan-bench/pddlgenerators/blocksworld/domain.pddl",
+]
 
+
+# ---------------------------------------------------------------------------
+# Seed helpers
+# ---------------------------------------------------------------------------
 
 def _seed_from_problem_id(problem_id: str) -> int:
     digest = hashlib.sha256(problem_id.encode("utf-8")).hexdigest()
     return int(digest[:16], 16) % (2**32)
 
 
-def _read_input_rows(path: Path) -> List[ProblemRow]:
-    if not path.exists():
-        raise FileNotFoundError(f"Missing input CSV: {path}")
-    with path.open("r", newline="", encoding="utf-8") as handle:
-        reader = csv.DictReader(handle)
-        rows: List[ProblemRow] = []
-        for raw in reader:
-            rows.append(
-                ProblemRow(
-                    problem_id=str(raw.get("problem_id", "")).strip(),
-                    problem_family=str(raw.get("problem_family", "")).strip().lower(),
-                    problem_text=str(raw.get("problem_text", "")).strip(),
-                    correct_answer=str(raw.get("correct_answer", "")).strip(),
-                    raw={k: (v if v is not None else "") for k, v in raw.items()},
-                )
-            )
-    return rows
+# ---------------------------------------------------------------------------
+# Block-name extraction
+# ---------------------------------------------------------------------------
 
+def _extract_block_names(problem_text: str) -> List[str]:
+    """Return a sorted list of unique single-character block names found in
+    the canonical problem_text.
 
-def _read_existing_source_ids(path: Path) -> Set[str]:
-    if not path.exists():
-        return set()
-    with path.open("r", newline="", encoding="utf-8") as handle:
-        reader = csv.DictReader(handle)
-        return {
-            str(row.get("source_problem_id", "")).strip()
-            for row in reader
-            if str(row.get("source_problem_id", "")).strip()
-        }
+    We look inside the 'Current state:' section (before 'Goal:') to avoid
+    picking up names that only appear in the goal.  Falls back to the whole
+    text if that section is absent.
+    """
+    text = problem_text.strip().strip('"')
 
+    # Prefer the current-state section for extraction
+    cs_match = re.search(r"Current state:(.*?)(?:Goal:|$)", text, re.IGNORECASE | re.DOTALL)
+    search_text = cs_match.group(1) if cs_match else text
 
-def _next_problem_id(source_problem_id: str, used_ids: Set[str]) -> str:
-    candidate = f"{source_problem_id}_{VARIANT_TYPE}"
-    if candidate not in used_ids:
-        used_ids.add(candidate)
-        return candidate
-    idx = 2
-    while True:
-        candidate = f"{source_problem_id}_{VARIANT_TYPE}_{idx}"
-        if candidate not in used_ids:
-            used_ids.add(candidate)
-            return candidate
-        idx += 1
+    # Block names appear as lowercase word after "block " or in a listing
+    # like "Blocks a, b, c, and d are ..."
+    raw_names: Set[str] = set()
 
+    for m in re.finditer(r"\bblock\s+([a-z]\w*)\b", search_text, re.IGNORECASE):
+        raw_names.add(m.group(1).lower())
 
-def _parse_num_nodes(row: ProblemRow) -> int:
-    for key in ("num_nodes", "n_nodes", "nodes"):
-        raw_value = row.raw.get(key, "").strip()
-        if raw_value.isdigit():
-            return max(2, int(raw_value))
-    labels = set(re.findall(r"\b[A-Z]\b", row.problem_text))
-    if len(labels) >= 2:
-        return len(labels)
-    return 6
-
-
-def _generate_shortest_path(row: ProblemRow, rng: np.random.Generator) -> Tuple[str, str]:
-    num_nodes = _parse_num_nodes(row)
-    node_labels = [chr(ord("A") + i) for i in range(num_nodes)]
-
-    graph = nx.Graph()
-    graph.add_nodes_from(node_labels)
-
-    # Build a connected graph via a random spanning tree.
-    for idx in range(1, num_nodes):
-        neighbor_idx = int(rng.integers(0, idx))
-        weight = int(rng.integers(1, 11))
-        graph.add_edge(node_labels[idx], node_labels[neighbor_idx], weight=weight)
-
-    # Add extra random edges.
-    possible_edges: List[Tuple[str, str]] = []
-    for i in range(num_nodes):
-        for j in range(i + 1, num_nodes):
-            if not graph.has_edge(node_labels[i], node_labels[j]):
-                possible_edges.append((node_labels[i], node_labels[j]))
-    rng.shuffle(possible_edges)
-    extra_edges = int(rng.integers(max(1, num_nodes // 2), max(2, num_nodes)))
-    for u, v in possible_edges[:extra_edges]:
-        graph.add_edge(u, v, weight=int(rng.integers(1, 11)))
-
-    start, end = rng.choice(node_labels, size=2, replace=False).tolist()
-    path_nodes = nx.shortest_path(graph, source=start, target=end, weight="weight")
-
-    edge_desc = ", ".join(
-        f"{u}-{v}:{int(data['weight'])}" for u, v, data in sorted(graph.edges(data=True))
+    listing = re.search(
+        r"[Bb]locks?\s+([\w,\s]+?)\s+are\s+(?:clear\s+and\s+)?on\s+the\s+table",
+        search_text,
     )
-    problem_text = (
-        f"Given an undirected weighted graph with edges {edge_desc}, "
-        f"find the shortest path from {start} to {end}. "
-        "Respond as comma-separated node labels."
-    )
-    correct_answer = ",".join(path_nodes)
-    return problem_text, correct_answer
+    if listing:
+        for tok in re.findall(r"\b([a-z])\b", listing.group(1)):
+            raw_names.add(tok.lower())
+
+    return sorted(raw_names)
 
 
-def _extract_block_names(row: ProblemRow) -> List[str]:
-    for key in ("num_blocks", "n_blocks", "blocks"):
-        raw_value = row.raw.get(key, "").strip()
-        if raw_value.isdigit():
-            count = max(2, int(raw_value))
-            return [chr(ord("A") + i) for i in range(count)]
-    names = sorted(set(re.findall(r"\b[A-Z]\b", row.problem_text)))
-    if len(names) >= 2:
-        return names
-    return ["A", "B", "C", "D"]
+# ---------------------------------------------------------------------------
+# Random stack generation  (carried over from old script)
+# ---------------------------------------------------------------------------
 
-
-def _random_stacks(blocks: Sequence[str], rng: np.random.Generator) -> Tuple[Tuple[str, ...], ...]:
+def _random_stacks(
+    blocks: Sequence[str], rng: np.random.Generator
+) -> Tuple[Tuple[str, ...], ...]:
+    """Randomly partition *blocks* into one or more stacks."""
     blocks_list = list(blocks)
     rng.shuffle(blocks_list)
     stack_count = int(rng.integers(1, len(blocks_list) + 1))
@@ -161,6 +123,7 @@ def _random_stacks(blocks: Sequence[str], rng: np.random.Generator) -> Tuple[Tup
 
 
 def _stacks_to_positions(stacks: Tuple[Tuple[str, ...], ...]) -> Dict[str, str]:
+    """Map every block to what it sits on ('table' or another block name)."""
     positions: Dict[str, str] = {}
     for stack in stacks:
         for i, block in enumerate(stack):
@@ -168,179 +131,464 @@ def _stacks_to_positions(stacks: Tuple[Tuple[str, ...], ...]) -> Dict[str, str]:
     return positions
 
 
-def _positions_to_state(positions: Dict[str, str]) -> Tuple[Tuple[str, str], ...]:
-    return tuple(sorted(positions.items()))
+def _states_equal(
+    a: Tuple[Tuple[str, ...], ...], b: Tuple[Tuple[str, ...], ...]
+) -> bool:
+    return _stacks_to_positions(a) == _stacks_to_positions(b)
 
 
-def _clear_blocks(positions: Dict[str, str]) -> Set[str]:
-    supported: Set[str] = {support for support in positions.values() if support != "table"}
-    return set(positions.keys()) - supported
+# ---------------------------------------------------------------------------
+# PDDL generation
+# ---------------------------------------------------------------------------
+
+def _pddl_facts_for_stacks(stacks: Tuple[Tuple[str, ...], ...]) -> List[str]:
+    """Return PDDL predicates describing the given stacks."""
+    facts: List[str] = []
+    for stack in stacks:
+        for i, block in enumerate(stack):
+            if i == 0:
+                facts.append(f"(ontable {block})")
+            else:
+                facts.append(f"(on {block} {stack[i - 1]})")
+        facts.append(f"(clear {stack[-1]})")  # top block is clear
+    return facts
 
 
-def _neighbors(state: Tuple[Tuple[str, str], ...]) -> Iterable[Tuple[Tuple[Tuple[str, str], ...], str]]:
-    positions = dict(state)
-    clear = _clear_blocks(positions)
-    blocks = sorted(positions.keys())
-    for block in sorted(clear):
-        current_support = positions[block]
-        for target in ["table"] + sorted(clear):
-            if target == block or target == current_support:
-                continue
-            if target != "table" and target not in clear:
-                continue
-            new_positions = dict(positions)
-            new_positions[block] = target
-            move = f"move {block} from {current_support} to {target}"
-            yield _positions_to_state(new_positions), move
+def _write_pddl_problem(
+    problem_name: str,
+    blocks: List[str],
+    init_stacks: Tuple[Tuple[str, ...], ...],
+    goal_stacks: Tuple[Tuple[str, ...], ...],
+    dest: Path,
+) -> None:
+    """Write a PDDL 1.2 blocksworld problem file to *dest*."""
+    objects_str = " ".join(blocks)
+    init_facts = ["(handempty)"] + _pddl_facts_for_stacks(init_stacks)
+    goal_facts = _pddl_facts_for_stacks(goal_stacks)
+
+    init_str = "\n    ".join(init_facts)
+    goal_str = "\n    ".join(goal_facts)
+
+    content = f"""\
+(define (problem {problem_name})
+  (:domain blocksworld-4ops)
+  (:objects {objects_str})
+  (:init
+    {init_str})
+  (:goal (and
+    {goal_str}))
+)
+"""
+    dest.write_text(content, encoding="utf-8")
 
 
-def _find_plan(
-    initial: Tuple[Tuple[str, ...], ...], goal: Tuple[Tuple[str, ...], ...], max_depth: int = 24
-) -> List[str]:
-    start_state = _positions_to_state(_stacks_to_positions(initial))
-    goal_state = _positions_to_state(_stacks_to_positions(goal))
-    if start_state == goal_state:
-        return []
+# ---------------------------------------------------------------------------
+# Natural-language state descriptions
+# ---------------------------------------------------------------------------
 
-    queue: List[Tuple[Tuple[Tuple[str, str], ...], List[str]]] = [(start_state, [])]
-    seen = {start_state}
-    head = 0
-    while head < len(queue):
-        state, path = queue[head]
-        head += 1
-        if len(path) >= max_depth:
-            continue
-        for nxt_state, move in _neighbors(state):
-            if nxt_state in seen:
-                continue
-            next_path = path + [move]
-            if nxt_state == goal_state:
-                return next_path
-            seen.add(nxt_state)
-            queue.append((nxt_state, next_path))
-    return []
+def _english_list(items: List[str]) -> str:
+    """Join a list with Oxford comma: 'a, b, and c' or 'a and b'."""
+    if len(items) == 1:
+        return items[0]
+    if len(items) == 2:
+        return f"{items[0]} and {items[1]}"
+    return ", ".join(items[:-1]) + f", and {items[-1]}"
 
 
-def _describe_stacks(stacks: Tuple[Tuple[str, ...], ...]) -> str:
-    return "; ".join("[" + ", ".join(stack) + "]" for stack in stacks)
+def _describe_init_state(stacks: Tuple[Tuple[str, ...], ...]) -> str:
+    """Generate a natural-language description of the initial state matching
+    the canonical prompt format.
+
+    Examples
+    --------
+    All on table:
+        "Blocks a, b, c, d, and e are clear and on the table. The hand is empty."
+
+    Mixed:
+        "Block b is on block a. Block a is on the table. Block c is on the
+         table. Block d is on block e. Block e is on the table. The hand is
+         empty."
+    """
+    positions = _stacks_to_positions(stacks)
+
+    # Check if everything is just flat on the table
+    all_on_table = all(v == "table" for v in positions.values())
+    if all_on_table:
+        block_list = _english_list([f"block {b}" for b in sorted(positions.keys())])
+        # capitalise first letter
+        sentence = f"Blocks {_english_list(sorted(positions.keys()))} are clear and on the table."
+        return sentence + " The hand is empty."
+
+    # Mixed state: list every block's position
+    sentences: List[str] = []
+    # on-block relationships first, then on-table
+    for block in sorted(positions.keys()):
+        support = positions[block]
+        if support == "table":
+            sentences.append(f"Block {block} is on the table.")
+        else:
+            sentences.append(f"Block {block} is on block {support}.")
+    sentences.append("The hand is empty.")
+    return " ".join(sentences)
 
 
-def _generate_blocksworld(row: ProblemRow, rng: np.random.Generator) -> Tuple[str, str]:
-    blocks = _extract_block_names(row)
-    max_attempts = 30
-    for _ in range(max_attempts):
-        initial = _random_stacks(blocks, rng)
-        goal = _random_stacks(blocks, rng)
-        plan = _find_plan(initial, goal)
-        if plan:
-            problem_text = (
-                "Blocks: "
-                + ", ".join(blocks)
-                + f". Initial state stacks: {_describe_stacks(initial)}. "
-                + f"Goal state stacks: {_describe_stacks(goal)}. "
-                + "Provide a valid sequence of moves in the format "
-                + "'move X from Y to Z', one move per line."
-            )
-            return problem_text, "\n".join(plan)
+def _describe_goal_state(stacks: Tuple[Tuple[str, ...], ...]) -> str:
+    """Generate a natural-language description of the goal state.
 
-    # Fallback to a no-op problem if random search fails.
-    initial = _random_stacks(blocks, rng)
-    problem_text = (
-        "Blocks: "
-        + ", ".join(blocks)
-        + f". Initial state stacks: {_describe_stacks(initial)}. "
-        + f"Goal state stacks: {_describe_stacks(initial)}. "
-        + "Provide a valid sequence of moves in the format "
-        + "'move X from Y to Z', one move per line."
+    Uses the same comma-joined ON-relationships format as the canonical rows:
+    "Block b is on block a, block a is on the table."
+    """
+    positions = _stacks_to_positions(stacks)
+
+    # Collect stacking chains
+    clauses: List[str] = []
+    for block in sorted(positions.keys()):
+        support = positions[block]
+        if support == "table":
+            clauses.append(f"block {block} is on the table")
+        else:
+            clauses.append(f"block {block} is on block {support}")
+
+    if not clauses:
+        return ""
+    # Capitalise first word and join
+    joined = ", ".join(clauses)
+    return joined[0].upper() + joined[1:] + "."
+
+
+def _build_problem_text(
+    init_stacks: Tuple[Tuple[str, ...], ...],
+    goal_stacks: Tuple[Tuple[str, ...], ...],
+) -> str:
+    """Assemble the full canonical-format problem prompt."""
+    init_desc = _describe_init_state(init_stacks)
+    goal_desc = _describe_goal_state(goal_stacks)
+
+    return (
+        "You are a robot arm. "
+        "Available actions: "
+        "pick-up X (X must be clear and on the table, hand must be empty), "
+        "put-down X (place X on the table), "
+        "stack X Y (place X on Y; Y must be clear, you must be holding X), "
+        "unstack X Y (pick up X from Y; X must be clear, hand must be empty). "
+        "You can hold one block at a time. "
+        f"Current state: {init_desc} "
+        f"Goal: {goal_desc} "
+        "Respond with a numbered list of actions only. "
+        "Each action must be exactly one of: "
+        "pick-up X / put-down X / stack X Y / unstack X Y. "
+        "No explanation. No extra text."
     )
-    return problem_text, ""
 
 
-_NUMBER_PATTERN = re.compile(r"(?<![A-Za-z0-9_])[-+]?\d+(?:\.\d+)?")
+# ---------------------------------------------------------------------------
+# Fast Downward integration  (adapted from fill_correct_answers.py)
+# ---------------------------------------------------------------------------
 
-
-def _scale_number_string(value: str, factor: float) -> str:
-    number = float(value)
-    scaled = int(round(number * factor))
-    if number != 0 and scaled == 0:
-        scaled = 1 if number > 0 else -1
-    return str(scaled)
-
-
-def _generate_gsm(row: ProblemRow, rng: np.random.Generator) -> Tuple[str, str]:
-    factor = float(rng.uniform(0.5, 2.0))
-    problem_text = _NUMBER_PATTERN.sub(
-        lambda match: _scale_number_string(match.group(0), factor), row.problem_text
-    )
-    if "leaving" in problem_text.lower() or "remaining" in problem_text.lower() or "left" in problem_text.lower():
-        print(f"WARNING: {row.problem_id} may have intermediate values in text that "
-              f"scaling doesn't update. Manual review required.")
-    try:
-        answer_value = float(row.correct_answer)
-        correct_answer = str(int(round(answer_value * factor)))
-    except ValueError:
-        # If non-numeric answer appears, scale numbers in-place.
-        correct_answer = _NUMBER_PATTERN.sub(
-            lambda match: _scale_number_string(match.group(0), factor), row.correct_answer
+def run_fast_downward(
+    domain_path: Path, problem_path: Path, fd_path: Path
+) -> Optional[List[str]]:
+    """Run Fast Downward; return list of raw action strings or None on failure."""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        plan_file = Path(tmpdir) / "plan.txt"
+        result = subprocess.run(
+            [
+                str(fd_path),
+                "--plan-file", str(plan_file),
+                str(domain_path),
+                str(problem_path),
+                "--search", "astar(lmcut())",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=120,
         )
-    return problem_text, correct_answer
+        if not plan_file.exists():
+            print(f"    No plan found. FD stderr tail: {result.stderr[-300:]}")
+            return None
+
+        lines = plan_file.read_text().splitlines()
+        return [
+            line.strip().strip("()").strip()
+            for line in lines
+            if line.strip() and not line.strip().startswith(";")
+        ]
 
 
-def _generate_variant(row: ProblemRow, rng: np.random.Generator) -> Tuple[str, str]:
-    if row.problem_family == "shortest_path":
-        return _generate_shortest_path(row, rng)
-    if row.problem_family == "blocksworld":
-        return _generate_blocksworld(row, rng)
-    if row.problem_family == "gsm":
-        return _generate_gsm(row, rng)
-    raise ValueError(f"Unsupported problem_family '{row.problem_family}' for {row.problem_id}")
+def pddl_action_to_natural(action: str) -> str:
+    """Convert a raw FD action string to the natural-language format used in
+    the question bank (e.g. 'pick-up a', 'stack b a', 'unstack c b')."""
+    parts = action.lower().split()
+    if not parts:
+        return action
+    verb, args = parts[0], parts[1:]
+    if verb == "pick-up" and len(args) == 1:
+        return f"pick-up {args[0]}"
+    if verb == "put-down" and len(args) == 1:
+        return f"put-down {args[0]}"
+    if verb == "stack" and len(args) == 2:
+        return f"stack {args[0]} {args[1]}"
+    if verb == "unstack" and len(args) == 2:
+        return f"unstack {args[0]} {args[1]}"
+    return action
 
 
-def _collect_used_problem_ids(output_path: Path) -> Set[str]:
-    if not output_path.exists():
-        return set()
-    with output_path.open("r", newline="", encoding="utf-8") as handle:
-        reader = csv.DictReader(handle)
-        return {str(row.get("problem_id", "")).strip() for row in reader if row.get("problem_id")}
+def _find_domain_file(planbench_root: Path) -> Optional[Path]:
+    """Locate the 4-ops blocksworld domain file inside the planbench repo."""
+    for rel in _DOMAIN_CANDIDATES_RELATIVE:
+        candidate = planbench_root / rel
+        if candidate.exists():
+            return candidate
+    return None
 
 
-def _append_rows(path: Path, rows: Sequence[Dict[str, str]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    write_header = (not path.exists()) or path.stat().st_size == 0
-    with path.open("a", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=OUTPUT_COLUMNS)
-        if write_header:
-            writer.writeheader()
-        writer.writerows(rows)
+# ---------------------------------------------------------------------------
+# CSV helpers
+# ---------------------------------------------------------------------------
 
+def _load_csv(path: Path) -> Tuple[List[str], List[Dict[str, str]]]:
+    with path.open("r", newline="", encoding="utf-8") as fh:
+        reader = csv.DictReader(fh)
+        fieldnames = list(reader.fieldnames or [])
+        rows = list(reader)
+    return fieldnames, rows
+
+
+def _append_rows(
+    path: Path, fieldnames: List[str], new_rows: List[Dict[str, str]]
+) -> None:
+    with path.open("a", newline="", encoding="utf-8") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writerows(new_rows)
+
+
+# ---------------------------------------------------------------------------
+# Core generation logic
+# ---------------------------------------------------------------------------
+
+def _generate_w5_for_row(
+    row: Dict[str, str],
+    domain_path: Optional[Path],
+    fd_path: Optional[Path],
+    rng: np.random.Generator,
+    seed_value: int,
+    dry_run: bool,
+) -> Optional[Dict[str, str]]:
+    """Attempt to generate a W5 row for a canonical blocksworld row.
+
+    Returns the new row dict on success, or None on failure.
+    """
+    pid = row["problem_id"].strip()
+
+    # Extract block names from canonical problem_text
+    blocks = _extract_block_names(row.get("problem_text", ""))
+    if len(blocks) < 2:
+        print(f"[FAIL]  {pid} — could not extract ≥2 block names from problem_text")
+        return None
+
+    # Generate random init / goal states (retry until they differ)
+    max_attempts = 30
+    init_stacks: Optional[Tuple[Tuple[str, ...], ...]] = None
+    goal_stacks: Optional[Tuple[Tuple[str, ...], ...]] = None
+
+    for _ in range(max_attempts):
+        cand_init = _random_stacks(blocks, rng)
+        cand_goal = _random_stacks(blocks, rng)
+        if not _states_equal(cand_init, cand_goal):
+            init_stacks = cand_init
+            goal_stacks = cand_goal
+            break
+
+    if init_stacks is None or goal_stacks is None:
+        print(f"[FAIL]  {pid} — could not generate distinct init/goal after {max_attempts} attempts")
+        return None
+
+    problem_text = _build_problem_text(init_stacks, goal_stacks)
+
+    if dry_run:
+        print(f"[DRY]   {pid}_W5 — blocks={blocks}, seed={seed_value}")
+        print(f"          init : {init_stacks}")
+        print(f"          goal : {goal_stacks}")
+        print(f"          text : {problem_text[:120]}...")
+        return None  # don't build a real row in dry-run
+
+    # --- Write temp PDDL and call Fast Downward ---
+    if domain_path is None or fd_path is None:
+        print(f"[FAIL]  {pid} — --planbench / --downward required for real run")
+        return None
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        problem_file = Path(tmpdir) / f"{pid}_W5_problem.pddl"
+        _write_pddl_problem(
+            problem_name=f"{pid.lower()}-w5",
+            blocks=blocks,
+            init_stacks=init_stacks,
+            goal_stacks=goal_stacks,
+            dest=problem_file,
+        )
+
+        print(f"[RUN]   {pid}_W5 — calling Fast Downward …")
+        try:
+            raw_actions = run_fast_downward(domain_path, problem_file, fd_path)
+        except subprocess.TimeoutExpired:
+            print(f"[FAIL]  {pid} — Fast Downward timed out")
+            return None
+        except Exception as exc:
+            print(f"[FAIL]  {pid} — Fast Downward error: {exc}")
+            return None
+
+    if raw_actions is None:
+        return None
+
+    natural_actions = [pddl_action_to_natural(a) for a in raw_actions]
+    correct_answer = "\n".join(natural_actions)
+    print(f"          → {len(natural_actions)} steps")
+
+    # Build the new row: start from canonical, override W5-specific fields
+    new_row: Dict[str, str] = dict(row)
+    new_row["problem_id"] = f"{pid}_W5"
+    new_row["variant_type"] = VARIANT_TYPE
+    new_row["problem_text"] = problem_text
+    new_row["correct_answer"] = correct_answer
+    new_row["contamination_pole"] = "low"
+    new_row["source"] = f"generated_seed_{seed_value}"
+    new_row["notes"] = "W5 procedurally generated"
+    return new_row
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 def main() -> None:
-    input_rows = _read_input_rows(INPUT_CSV)
-    existing_source_ids = _read_existing_source_ids(OUTPUT_CSV)
-    used_problem_ids = _collect_used_problem_ids(OUTPUT_CSV)
+    parser = argparse.ArgumentParser(
+        description="Generate W5 (procedural) blocksworld variants into question_bank.csv.",
+    )
+    parser.add_argument(
+        "--csv",
+        default=QUESTION_BANK_PATH,
+        help=f"Path to question bank CSV (default: {QUESTION_BANK_PATH})",
+    )
+    parser.add_argument(
+        "--planbench",
+        default=None,
+        help="Path to the LLMs-Planning repo root (required unless --dry-run).",
+    )
+    parser.add_argument(
+        "--downward",
+        default=None,
+        help="Path to fast-downward.py (required unless --dry-run).",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print what would be generated without writing to the CSV.",
+    )
+    args = parser.parse_args()
 
+    csv_path = Path(args.csv)
+    if not csv_path.exists():
+        sys.exit(f"ERROR: CSV not found: {csv_path}")
+
+    # Validate required args for real runs
+    domain_path: Optional[Path] = None
+    fd_path: Optional[Path] = None
+
+    if not args.dry_run:
+        if not args.planbench:
+            sys.exit("ERROR: --planbench is required when not using --dry-run")
+        if not args.downward:
+            sys.exit("ERROR: --downward is required when not using --dry-run")
+
+        planbench_root = Path(args.planbench)
+        fd_path = Path(args.downward)
+
+        if not planbench_root.is_dir():
+            sys.exit(f"ERROR: --planbench directory not found: {planbench_root}")
+        if not fd_path.exists():
+            sys.exit(f"ERROR: fast-downward.py not found: {fd_path}")
+
+        domain_path = _find_domain_file(planbench_root)
+        if domain_path is None:
+            sys.exit(
+                f"ERROR: Could not find blocksworld domain.pddl under {planbench_root}. "
+                f"Tried:\n" + "\n".join(f"  {r}" for r in _DOMAIN_CANDIDATES_RELATIVE)
+            )
+        print(f"Domain: {domain_path}")
+        print(f"Planner: {fd_path}")
+
+    # Load CSV
+    fieldnames, rows = _load_csv(csv_path)
+
+    missing = set(QUESTION_BANK_COLUMNS) - set(fieldnames)
+    if missing:
+        sys.exit(f"ERROR: question_bank CSV missing columns: {sorted(missing)}")
+
+    # Build set of problem_ids that already have a W5 row
+    existing_w5_ids: Set[str] = {
+        row["problem_id"].replace("_W5", "").strip()
+        for row in rows
+        if row.get("variant_type", "").strip() == VARIANT_TYPE
+    }
+
+    generated = 0
+    skipped = 0
+    failed = 0
     new_rows: List[Dict[str, str]] = []
-    for row in input_rows:
-        if not row.problem_id:
-            continue
-        if row.problem_id in existing_source_ids:
+
+    for row in rows:
+        pid = row.get("problem_id", "").strip()
+        vtype = row.get("variant_type", "").strip().lower()
+        subtype = row.get("problem_subtype", "").strip().lower()
+
+        # Only process canonical rows
+        if vtype != "canonical":
             continue
 
-        rng = np.random.default_rng(_seed_from_problem_id(row.problem_id))
-        problem_text, correct_answer = _generate_variant(row, rng)
-        new_rows.append(
-            {
-                "problem_id": _next_problem_id(row.problem_id, used_problem_ids),
-                "variant_type": VARIANT_TYPE,
-                "problem_text": problem_text,
-                "correct_answer": correct_answer,
-                "source_problem_id": row.problem_id,
-            }
+        # Only blocksworld subtypes
+        if subtype in _MYSTERY_SUBTYPES:
+            print(f"[SKIP]  {pid} — mystery_blocksworld not supported yet (W5)")
+            skipped += 1
+            continue
+
+        if subtype not in _BLOCKSWORLD_SUBTYPES:
+            skipped += 1
+            continue
+
+        # Skip if W5 already exists
+        if pid in existing_w5_ids:
+            print(f"[SKIP]  {pid} — W5 row already exists")
+            skipped += 1
+            continue
+
+        seed_value = _seed_from_problem_id(pid)
+        rng = np.random.default_rng(seed_value)
+
+        new_row = _generate_w5_for_row(
+            row=row,
+            domain_path=domain_path,
+            fd_path=fd_path,
+            rng=rng,
+            seed_value=seed_value,
+            dry_run=args.dry_run,
         )
 
-    if new_rows:
-        _append_rows(OUTPUT_CSV, new_rows)
-    print(f"Wrote {len(new_rows)} new variants to {OUTPUT_CSV}")
+        if new_row is not None:
+            new_rows.append(new_row)
+            generated += 1
+        elif not args.dry_run:
+            failed += 1
+        else:
+            # dry_run returns None for successes too — count as generated
+            generated += 1
+
+    # Write to CSV (real run only)
+    if not args.dry_run and new_rows:
+        _append_rows(csv_path, fieldnames, new_rows)
+        print(f"\nAppended {len(new_rows)} new W5 rows to {csv_path}")
+
+    label = "Would generate" if args.dry_run else "Generated"
+    print(f"\nSummary: {label.lower()}={generated}, skipped={skipped}, failed={failed}")
 
 
 if __name__ == "__main__":

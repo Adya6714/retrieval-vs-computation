@@ -42,7 +42,16 @@ class OpenRouterClient:
             json=payload,
             timeout=60
         )
-        response.raise_for_status()
+        if not response.ok:
+            try:
+                body = response.json()
+                detail = body.get("error", {}).get("message") or str(body)[:400]
+            except Exception:
+                detail = (response.text or "")[:400]
+            raise requests.HTTPError(
+                f"{response.status_code} {response.reason} for {response.url}: {detail}",
+                response=response,
+            )
         return response.json()
 
     def complete(self, problem_id: str, prompt: str, **kwargs: Any) -> dict:

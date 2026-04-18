@@ -39,10 +39,11 @@ def compute_css(
             raise ValueError(f"W6 variant encountered for {problem_id}. CSS is undefined for W6.")
             
         is_correct = bool(verify_answer(
-            problem_id, 
-            variant["model_answer"], 
-            variant["correct_answer"], 
-            family
+            problem_id,
+            variant["model_answer"],
+            variant["correct_answer"],
+            family,
+            problem_text=variant.get("problem_text"),
         ))
         
         per_variant[variant_type] = is_correct

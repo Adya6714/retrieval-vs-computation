@@ -7,27 +7,117 @@ rather than crashing.
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
-from probes.common.io import load_results
+from probes.common.io import load_results, QUESTION_BANK_PATH
 from probes.behavioral.css import compute_css
 from probes.triangulation.per_instance import align_instance
+
+
+def _css_group_id(problem_id: str, variant_type: str) -> str:
+    """Canonical instance id for CSS: W5 sweep rows use ``BW_xxx_W5`` in CSV but
+    join to contamination/triage on ``BW_xxx``."""
+    pid = str(problem_id).strip()
+    vt = str(variant_type).strip().upper()
+    if vt == "W5" and pid.endswith("_W5"):
+        return pid[:-3]
+    return pid
+
+
+def _question_bank_meta_lookup(path: str) -> dict[tuple[str, str], dict[str, str]]:
+    """(problem_id, variant_type lower) -> correct_answer, problem_text from bank."""
+    p = Path(path)
+    if not p.exists():
+        return {}
+    df = pd.read_csv(p, dtype=str)
+    out: dict[tuple[str, str], dict[str, str]] = {}
+    for _, row in df.iterrows():
+        pid = str(row.get("problem_id", "")).strip()
+        if not pid:
+            continue
+        vt = str(row.get("variant_type", "")).strip().lower()
+        ca = row.get("correct_answer", "")
+        ca = "" if pd.isna(ca) else str(ca)
+        pt = row.get("problem_text", "")
+        pt = "" if pd.isna(pt) else str(pt)
+        out[(pid, vt)] = {"correct_answer": ca, "problem_text": pt}
+    return out
+
+
+def _behavioral_slice_for_css(df: pd.DataFrame, model: str | None) -> tuple[pd.DataFrame, str]:
+    """Return rows for one model so CSS is not mixed across models.
+
+    If ``model`` is set, keep only that id. If unset, use the sole non-mock
+    model if exactly one exists; otherwise exit with an error listing choices.
+    """
+    if df.empty or "model" not in df.columns:
+        return df, model or ""
+    mcol = df["model"].astype(str).str.strip()
+    if model:
+        sel = mcol == str(model).strip()
+        out = df.loc[sel].copy()
+        if out.empty:
+            print(f"ERROR: no behavioral rows for --behavioral-model {model!r}")
+            sys.exit(2)
+        return out, str(model).strip()
+    non_mock = df.loc[mcol.str.lower() != "mock"].copy()
+    if non_mock.empty:
+        return df.copy(), ""
+    u = sorted(non_mock["model"].astype(str).str.strip().unique())
+    if len(u) == 1:
+        return non_mock, u[0]
+    print(
+        "ERROR: behavioral_sweep.csv has multiple non-mock models; "
+        "CSS must use one model at a time. Pass --behavioral-model with one of:\n  "
+        + "\n  ".join(u)
+    )
+    sys.exit(2)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Triangulation Analysis")
     parser.add_argument("--behavioral", type=str, default="results/behavioral_sweep.csv")
+    parser.add_argument(
+        "--behavioral-model",
+        type=str,
+        default=None,
+        help=(
+            "OpenRouter model id: restrict behavioral rows to this model for CSS. "
+            "Required when the CSV contains more than one non-mock model."
+        ),
+    )
     parser.add_argument("--mechanistic", type=str, default="results/probe1_mechanistic.csv")
     parser.add_argument("--contamination", type=str, default="results/contamination_triage.csv")
+    parser.add_argument(
+        "--question-bank",
+        type=str,
+        default=QUESTION_BANK_PATH,
+        help="Used to fill correct_answer / problem_text for CSS when missing from behavioral CSV",
+    )
     parser.add_argument("--output", type=str, default="results/triangulation_per_instance.csv")
+    parser.add_argument(
+        "--regression-output",
+        type=str,
+        default="results/contamination_regression.txt",
+        help="Where to write the OLS summary (default: results/contamination_regression.txt)",
+    )
     args = parser.parse_args()
 
     # 1. Load data safely
     df_beh = load_results(args.behavioral)
     df_mech = load_results(args.mechanistic)
     df_cont = load_results(args.contamination)
+
+    behavioral_model_resolved = ""
+    if not df_beh.empty and "variant_type" in df_beh.columns:
+        df_beh, behavioral_model_resolved = _behavioral_slice_for_css(
+            df_beh, args.behavioral_model
+        )
+        if behavioral_model_resolved:
+            print(f"Behavioral CSS slice: model={behavioral_model_resolved!r}")
 
     available = []
     if not df_beh.empty: available.append("Behavioral")
@@ -51,32 +141,75 @@ def main():
                   "CSS will be None for all problems. "
                   "Re-run behavioral sweep with variant support before triangulation.")
         else:
-            for pid, group in df_beh.groupby("problem_id"):
+            bank_meta = _question_bank_meta_lookup(args.question_bank)
+            df_css = df_beh.copy()
+            df_css["_css_group"] = [
+                _css_group_id(r["problem_id"], r.get("variant_type", ""))
+                for _, r in df_css.iterrows()
+            ]
+            for pid, group in df_css.groupby("_css_group"):
                 pid_str = str(pid).strip()
-                fam = families.get(pid_str, "blocksworld")
-                
+                # Prefer behavioral row family (blocksworld / mystery_blocksworld). Contamination
+                # CSV may use umbrella labels like planning_suite that verify_answer rejects.
+                if "problem_family" in group.columns:
+                    gf = (
+                        group["problem_family"].dropna().astype(str).str.strip().str.lower()
+                    )
+                    gf = gf[gf.isin(
+                        {"blocksworld", "mystery_blocksworld", "logistics", "gsm",
+                         "shortest_path", "weighted_interval_scheduling", "coin_change",
+                         "knapsack"}
+                    )]
+                    fam = gf.iloc[0] if len(gf) else ""
+                else:
+                    fam = ""
+                if not fam:
+                    fam = families.get(pid_str, "blocksworld")
+
                 canonical_correct = ""
                 variants = []
                 for _, row in group.iterrows():
                     vtype = str(row.get("variant_type", "")).strip()
-                    if pd.isna(row.get("variant_type")) or vtype == "" or vtype.lower() in ["nan", "none", "canonical"]:
-                        canonical_correct = str(row.get("correct_answer", ""))
+                    vkey = vtype.lower()
+                    row_pid = str(row.get("problem_id", "")).strip()
+                    meta = bank_meta.get((row_pid, vkey), {})
+                    row_ca = row.get("correct_answer", "")
+                    row_ca = "" if pd.isna(row_ca) else str(row_ca)
+                    corr = row_ca or meta.get("correct_answer", "")
+                    ptext = meta.get("problem_text", "")
+                    model_ans = str(row.get("model_answer", "") or "").strip()
+                    if not model_ans:
+                        raw = row.get("raw_response", "")
+                        model_ans = "" if pd.isna(raw) else str(raw)
+
+                    if (
+                        pd.isna(row.get("variant_type"))
+                        or vtype == ""
+                        or vkey in ("nan", "none", "canonical")
+                    ):
+                        canonical_correct = corr
                     elif vtype.startswith("W") and vtype != "W6":
-                        variants.append({
-                            "variant_type": vtype,
-                            "model_answer": str(row.get("model_answer", "")),
-                            "correct_answer": str(row.get("correct_answer", ""))
-                        })
-                
+                        variants.append(
+                            {
+                                "variant_type": vtype,
+                                "model_answer": model_ans,
+                                "correct_answer": corr,
+                                "problem_text": ptext,
+                            }
+                        )
+
                 css_dict = compute_css(pid_str, canonical_correct, variants, fam)
                 beh_data.append({
                     "problem_id": pid_str,
-                    "css": css_dict.get("css")
+                    "css": css_dict.get("css"),
+                    "behavioral_model": behavioral_model_resolved,
                 })
 
     df_css_agg = pd.DataFrame(beh_data)
     if df_css_agg.empty:
-        df_css_agg = pd.DataFrame(columns=["problem_id", "css"])
+        df_css_agg = pd.DataFrame(
+            columns=["problem_id", "css", "behavioral_model"]
+        )
 
     # 3 & 4. Extract Contamination & Mechanistic data
     if not df_cont.empty and "problem_id" in df_cont.columns:
@@ -141,17 +274,29 @@ def main():
     else:
         df_reg = df_final.dropna(subset=required_reg_cols)
     if len(df_reg) >= 10:
-        import statsmodels.formula.api as smf
-        try:
-            model = smf.ols("css ~ contamination_score + C(problem_family)", data=df_reg).fit()
-            print("\n--- Contamination Regression Summary ---")
-            print(model.summary())
-            
-            Path("results").mkdir(parents=True, exist_ok=True)
-            with open("results/contamination_regression.txt", "w", encoding="utf-8") as f:
-                f.write(model.summary().as_text())
-        except Exception as e:
-            print(f"\nFailed to run regression: {e}")
+        if df_reg["css"].nunique() < 2:
+            print(
+                "\nSkipping regression — `css` is constant (zero variance). "
+                "Need mixed correct/incorrect variants across instances for a slope."
+            )
+        else:
+            import statsmodels.formula.api as smf
+
+            try:
+                model = smf.ols(
+                    "css ~ contamination_score + C(problem_family)", data=df_reg
+                ).fit()
+                print("\n--- Contamination Regression Summary ---")
+                print(model.summary())
+
+                Path("results").mkdir(parents=True, exist_ok=True)
+                reg_path = Path(args.regression_output)
+                reg_path.parent.mkdir(parents=True, exist_ok=True)
+                with reg_path.open("w", encoding="utf-8") as f:
+                    f.write(model.summary().as_text())
+                print(f"Wrote regression summary to {reg_path}")
+            except Exception as e:
+                print(f"\nFailed to run regression: {e}")
     else:
         print("\nInsufficient data for regression (need >= 10 problems with both scores).")
 

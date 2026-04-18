@@ -56,7 +56,7 @@ Single source of truth for codebase state, bugs, deferred decisions, and what to
 
 | Decision | Options | Owner | Blocked On |
 |----------|---------|-------|------------|
-| Closed model pair | GPT-4o/o3 vs Claude Sonnet 3.5/3.7 | Adya | Phase 3 start |
+| Closed model pair | GPT-4o/o3 vs Claude Sonnet 3.7 | Adya | Phase 3 start |
 | GPU compute source | RunPod vs BITS cluster vs Colab | Adya | Confirm now |
 | TransformerLens Qwen2.5 support | Confirmed vs nnsight fallback | Adya | Run check script |
 | Tuned lens for Qwen | Pretrained vs logit lens fallback | Adya | Phase 2 |
@@ -273,3 +273,110 @@ Validation run output:
 - `run_behavioral_sweep.py --resume` now keys already-scored rows by
   `(problem_id, variant_type, model)` instead of `(problem_id, variant_type)` only.
 - This prevents false skipping when running multiple models on the same question bank.
+
+### Session 6
+Should show only BW_080 empty. That's acceptable — 9/10 W6 rows populated is fine for the sweep. Note it in PROJECT_LOG.md and move to W5.
+Good question. Let me think about this from a reviewer's perspective, not just from a "what's available" perspective.
+
+---
+
+## What reviewers at BlackboxNLP and EMNLP actually expect
+
+Accepted papers in this space typically follow one of two patterns:
+
+**Pattern A (breadth):** 4-6 models spanning open/closed and size ranges. Used when the paper's claim is "this finding generalizes across model families." Requires more API budget but stronger generalization claims.
+
+**Pattern B (depth on fewer models):** 2-3 models, one open-weight for mechanistic work, one or two closed for behavioral comparison. Used when the paper's contribution is mechanistic — which yours is. Reviewers accept smaller model sets when the mechanistic depth justifies it.
+
+Your paper is Pattern B. The mechanistic work (activation similarity, logit lens, patching) requires open weights and is the novel contribution. The closed models are there to show behavioral findings aren't Qwen-specific.
+
+---
+
+## The problem with your proposed list
+
+You have 7 models. That is too many for your scope. Let me be direct about why.
+
+Running 7 models × 45 problems × 5 variants = 1,575 API calls minimum, just for behavioral Probe 1. At reasoning model pricing that is $200-400+. More importantly, you then have 7 model result columns in every table and every figure. Papers with 7 models either have a large team or have shallow per-model analysis. You have neither.
+
+Also: several of your proposed models have issues for this specific paper.
+
+**Qwen 3 8B** — good choice for mechanistic work, open weights, manageable size.
+
+**Llama 12B** — fine but adds a second open-weight model for mechanistic analysis. Running full activation + logit lens + patching on two open models doubles your GPU budget and your mechanistic results section. Pick one open model for mechanistic work.
+
+**Qwen large / DeepSeek V3 / DeepSeek R1** — these are very large models. DeepSeek R1 is a reasoning model (like o1). Including reasoning models is interesting but requires a separate discussion in your paper: do reasoning models show different retrieval-vs-computation signatures? That is almost a sub-paper. Don't open that thread unless you have the budget and the argument.
+
+**GPT-5.x mini / Claude Haiku** — haiku and mini are cost-optimized small models. For a reasoning paper, small closed models are the weakest choice because they show the most failure and the least interesting behavioral patterns. Reviewers sometimes ask "why the cheapest models?" You want at least one capable closed model.
+
+---
+
+## What I recommend
+
+**Three models total. This is the right scope for your paper.**
+
+| Model | Role | Why |
+|---|---|---|
+| Qwen2.5-7B | Open-weight, mechanistic anchor | Full activation analysis, logit lens, patching. Already in your codebase. Required for your mechanistic contribution. |
+| Claude Sonnet 3.7 | Closed, capable | Strong reasoning model, well-documented, your paper can cite published benchmark numbers for calibration. Cost-effective vs GPT-4o. |
+| GPT-4o | Closed, second behavioral point | You have pilot data on this already. Gives you a second closed-model data point. Well-known to reviewers. |
+
+This gives you: one open (mechanistic depth) + two closed (behavioral breadth). You can say "behavioral findings replicate across two closed model families (Anthropic and OpenAI) and one open-weight model." That is a defensible claim.
+
+---
+
+## Why not include reasoning models (o3, R1)
+
+Two reasons.
+
+First, reasoning models behave differently by design — they do extended chain-of-thought internally. Your Probe 2 (plan vs execute) assumes the model's announced plan is its "reasoning." For a reasoning model that internal CoT is hidden and the announced plan is post-hoc. The CCI measurement becomes ill-defined.
+
+Second, if you include a reasoning model and it shows different patterns from standard LLMs, you have to explain why. That explanation requires a sub-argument about reasoning model architecture that is beyond your paper's scope.
+
+If a reviewer asks "did you test reasoning models?" — you say: "We deliberately excluded reasoning models because their internal chain-of-thought is opaque and non-comparable with the step-by-step execution protocol of Probe 2. This is a scoped-out direction for future work." That is a complete answer.
+
+---
+
+## If you want a fourth model
+
+If budget allows and you want stronger generalization claims, add **Llama 3.1 8B** as a second open-weight behavioral model (not mechanistic — just behavioral CSS and CCI). This lets you say findings replicate across two open model families (Qwen and Llama) and two closed families. Four models, one mechanistic, three behavioral.
+
+But do not do this until the three-model version is running cleanly.
+
+---
+
+## Final answer
+
+| Model | Mechanistic | Behavioral | Priority |
+|---|---|---|---|
+| Qwen2.5-7B | Yes | Yes | Required |
+| Claude Sonnet 3.7 | No | Yes | Required |
+| GPT-4o | No | Yes | Required (you have pilot data) |
+| Llama 3.1 8B | No | Yes | Optional, add only if budget allows |
+
+Update your `configs/models.yaml` to reflect this. Everything else in your codebase stays the same.
+
+### Session 7 — Blocksworld full sweep (2026-04-19)
+
+Problem IDs: BW_001 through BW_467, MBW_001 through MBW_10 (canonical rows in triage).
+
+Variants in behavioral sweep: canonical, W2, W3, W4, W5, W6 (BW_080/W6 gap per bank).
+
+Models (OpenRouter): `anthropic/claude-3.7-sonnet`, `openai/gpt-4o`, `meta-llama/llama-3.1-8b-instruct`.
+
+Key outputs:
+
+- `results/behavioral_sweep.csv` (rescored after verifier fix; backup `results/behavioral_sweep.csv.bak`)
+- `results/contamination_triage.csv` (InfiniGram mini: `v2_dclm_all`)
+- `results/triangulation_per_instance.csv`
+- `results/contamination_regression.txt`
+- `figures/probe1_triage.png`
+
+Bugs fixed:
+
+- `run_behavioral_sweep.py` / `run_contamination_triage.py` `--family` matched `problem_family` instead of `problem_subtype` (silent zero rows).
+- **Verifier:** numbered plans (`1. pick-up …`) were merged across lines by a global regex, so action parsing and state checks were wrong. Fixed with line-based parsing for blocksworld and mystery plans; sequence match fallback when simulation returns false but lists match.
+
+Gate 1 (Claude 3.7 slice, *n*=15): triangulation convergence rate **0%** (all `diverging` under current alignment rule). OLS **css ~ contamination_score + C(problem_family)** ran after rescore: **positive** slope on `contamination_score` (~5.23), **p ≈ 0.22** — does **not** support the “high contamination → lower CSS” hypothesis as stated; interpret with caution (small *n*, CSS mostly low).
+
+Next: GSM family ingestion; optional mechanistic when GPU available.
+

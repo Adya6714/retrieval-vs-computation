@@ -6,6 +6,12 @@ import argparse
 import csv
 from pathlib import Path
 
+from tqdm import tqdm
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from probes.contamination import infinigram_client as _ig
 from probes.contamination.score import score_problem
 from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 
@@ -39,6 +45,11 @@ def run_triage(
     input_path: Path = INPUT_PATH, 
     output_path: Path = OUTPUT_PATH
 ) -> None:
+    print(
+        f"Infini-gram endpoint {_ig.API_URL!r} index={_ig.INDEX_NAME!r} "
+        f"ssl_verify={_ig.SSL_VERIFY}",
+        flush=True,
+    )
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
@@ -65,7 +76,11 @@ def run_triage(
     ]
 
     if family is not None:
-        rows = [row for row in rows if row.get("problem_family") == family]
+        rows = [
+            row for row in rows
+            if row.get("problem_subtype", "").strip().lower() == family.lower()
+            or row.get("problem_family", "").strip().lower() == family.lower()
+        ]
 
     if limit is not None:
         rows = rows[:limit]
@@ -77,12 +92,13 @@ def run_triage(
             writer.writeheader()
             outfile.flush()
 
-        for row in rows:
+        print(f"Processing {len(rows)} problems...")
+        for row in tqdm(rows, desc="Contamination Triage"):
             problem_id = str(row.get("problem_id", "")).strip()
             if problem_id and problem_id in processed_ids:
                 continue
 
-            problem_text = str(row.get("problem_text", ""))
+            problem_text = str(row.get("problem_text", "")).strip().strip('"')
             score = score_problem(problem_text)
 
             output_row = {
@@ -99,6 +115,8 @@ def run_triage(
 
             if problem_id:
                 processed_ids.add(problem_id)
+    
+    print(f"\nDone. Results saved to {output_path}")
 
 
 if __name__ == "__main__":

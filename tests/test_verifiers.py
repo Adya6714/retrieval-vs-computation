@@ -34,6 +34,14 @@ def test_plan_families(model_answer, correct_answer, expected):
     assert verify_answer("dummy_id", model_answer, correct_answer, "blocksworld") is expected
 
 
+def test_blocksworld_numbered_list_sequence_match_without_problem_text():
+    """Numbered model output must match ground-truth action list (no problem_text)."""
+    gt = "pick-up x\nput-down x"
+    model = "1. pick-up x\n2. put-down x"
+    assert verify_answer("dummy_id", model, gt, "blocksworld") is True
+    assert verify_answer("dummy_id", "2. put-down x\n1. pick-up x", gt, "blocksworld") is False
+
+
 def test_cross_family_unrecognized():
     """Test that an unrecognized problem family raises a ValueError."""
     with pytest.raises(ValueError):

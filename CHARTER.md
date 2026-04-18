@@ -115,7 +115,7 @@ For every problem instance, generate n-gram fingerprints from the canonical prob
 | Role | Models |
 |------|--------|
 | Mechanistic analysis | Qwen2.5-7B (fallback: OLMo-7B if tooling issues) |
-| Behavioral analysis | Qwen2.5-7B + one closed-model pair: GPT-4o vs o3 **or** Claude Sonnet 3.5 vs 3.7 |
+| Behavioral analysis | Qwen2.5-7B + one closed-model pair: GPT-4o vs o3 **or** Claude Sonnet 3.7 |
 
 > Final closed-model pair decided at Phase 3. Currently leaning Claude on cost and API stability grounds. No mechanistic analysis on closed models — the paper is explicit about this asymmetry.
 
@@ -262,7 +262,7 @@ Must specify per variant type: what is preserved, what changes, what must not ch
 1. Does BITS Pilani provide student GPU cluster access sufficient for Qwen2.5-7B inference?
 2. What specific fingerprinting method for contamination scoring? (Requires reading Magar & Schwartz, Golchin & Surdeanu, Carlini.)
 3. Does TransformerLens cleanly support Qwen2.5-7B? Alternatives: nnsight or raw HuggingFace hooks.
-4. Closed-model pair: GPT-4o vs o3, or Claude Sonnet 3.5 vs 3.7? (Decide at Phase 3.)
+4. Closed-model pair: GPT-4o vs o3, or Claude Sonnet 3.7? (Decide at Phase 3.)
 
 ---
 
