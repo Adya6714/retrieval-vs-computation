@@ -1,0 +1,156 @@
+Cleaned sweep: 384 rows remaining
+Status column added. Broken rows marked: MBW_100 W1, MBW_10 W1
+MBW W3 re-verified: MBW_001 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_100 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_127 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_185 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_10 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_001 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_100 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_127 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_185 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_10 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_001 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_100 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_127 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_185 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_10 | anthropic/claude-3.7-sonnet | False → False
+BW_E W3 re-verified: BW_E015 | anthropic/claude-3.7-sonnet | False → False
+BW_E W3 re-verified: BW_E017 | anthropic/claude-3.7-sonnet | False → False
+BW_E W3 re-verified: BW_E015 | openai/gpt-4o | False → False
+BW_E W3 re-verified: BW_E017 | openai/gpt-4o | False → False
+BW_E W3 re-verified: BW_E015 | meta-llama/llama-3.1-8b-instruct | False → False
+BW_E W3 re-verified: BW_E017 | meta-llama/llama-3.1-8b-instruct | False → False
+Re-verified rows updated: 21
+BW_E W2/W4 rows present: 30 (expected 30)
+VERIFIER GATE: MBW_001 W3 → True
+VERIFIER GATE: MBW_10 W3 → True
+VERIFIER GATE: MBW_100 W3 → True
+VERIFIER GATE: MBW_127 W3 → True
+VERIFIER GATE: MBW_185 W3 → True
+VERIFIER GATE: BW_E017 W3 → True
+VERIFIER GATE: BW_E015 W3 → True
+VERIFIER GATE: MBW_001 W5 → True
+VERIFIER GATE: MBW_10 W5 → True
+VERIFIER GATE: MBW_100 W5 → True
+VERIFIER GATE: MBW_127 W5 → True
+VERIFIER GATE: MBW_185 W5 → True
+VERIFIER GATE: BW_E002_W6 W6 → True
+VERIFIER GATE: BW_E015_W6 W6 → True
+VERIFIER GATE: BW_E017_W6 W6 → True
+VERIFIER GATE: BW_E019_W6 W6 → True
+VERIFIER GATE: BW_E100_W6 W6 → True
+RAN: MBW_001 W5 anthropic/claude-3.7-sonnet → False
+RAN: MBW_001 W5 openai/gpt-4o → False
+RAN: MBW_001 W5 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_10 W5 anthropic/claude-3.7-sonnet → False
+RAN: MBW_10 W5 openai/gpt-4o → False
+RAN: MBW_10 W5 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_100 W5 anthropic/claude-3.7-sonnet → False
+RAN: MBW_100 W5 openai/gpt-4o → False
+RAN: MBW_100 W5 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_127 W5 anthropic/claude-3.7-sonnet → False
+RAN: MBW_127 W5 openai/gpt-4o → False
+RAN: MBW_127 W5 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_185 W5 anthropic/claude-3.7-sonnet → False
+RAN: MBW_185 W5 openai/gpt-4o → False
+RAN: MBW_185 W5 meta-llama/llama-3.1-8b-instruct → False
+4A_MBW_W5 summary: {'ran': 15}
+RAN: BW_001 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_001 W1 openai/gpt-4o → False
+RAN: BW_001 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_010 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_010 W1 openai/gpt-4o → False
+RAN: BW_010 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_011 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_011 W1 openai/gpt-4o → False
+RAN: BW_011 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_080 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_080 W1 openai/gpt-4o → False
+RAN: BW_080 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_120 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_120 W1 openai/gpt-4o → False
+RAN: BW_120 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_137 W1 anthropic/claude-3.7-sonnet → True
+RAN: BW_137 W1 openai/gpt-4o → False
+RAN: BW_137 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_155 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_155 W1 openai/gpt-4o → False
+RAN: BW_155 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_172 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_172 W1 openai/gpt-4o → False
+RAN: BW_172 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_227 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_227 W1 openai/gpt-4o → False
+RAN: BW_227 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_467 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_467 W1 openai/gpt-4o → False
+RAN: BW_467 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_E002 W1 anthropic/claude-3.7-sonnet → True
+RAN: BW_E002 W1 openai/gpt-4o → True
+RAN: BW_E002 W1 meta-llama/llama-3.1-8b-instruct → True
+RAN: BW_E015 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_E015 W1 openai/gpt-4o → False
+RAN: BW_E015 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_E017 W1 anthropic/claude-3.7-sonnet → True
+RAN: BW_E017 W1 openai/gpt-4o → True
+RAN: BW_E017 W1 meta-llama/llama-3.1-8b-instruct → True
+RAN: BW_E019 W1 anthropic/claude-3.7-sonnet → True
+RAN: BW_E019 W1 openai/gpt-4o → False
+RAN: BW_E019 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: BW_E100 W1 anthropic/claude-3.7-sonnet → False
+RAN: BW_E100 W1 openai/gpt-4o → False
+RAN: BW_E100 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_001 W1 anthropic/claude-3.7-sonnet → False
+RAN: MBW_001 W1 openai/gpt-4o → False
+RAN: MBW_001 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_127 W1 anthropic/claude-3.7-sonnet → False
+RAN: MBW_127 W1 openai/gpt-4o → False
+RAN: MBW_127 W1 meta-llama/llama-3.1-8b-instruct → False
+RAN: MBW_185 W1 anthropic/claude-3.7-sonnet → False
+RAN: MBW_185 W1 openai/gpt-4o → False
+RAN: MBW_185 W1 meta-llama/llama-3.1-8b-instruct → False
+SKIP BROKEN: MBW_100 W1
+SKIP BROKEN: MBW_10 W1
+4B_W1 summary: {'ran': 54, 'correct': 8, 'broken_skip': 6}
+BW_E W6: already complete, skipping
+RAN: BW_080 W5 anthropic/claude-3.7-sonnet → True
+RAN: BW_080 W5 openai/gpt-4o → False
+RAN: BW_080 W5 meta-llama/llama-3.1-8b-instruct → False
+4D_BW_080_W5 summary: {'ran': 3, 'correct': 1}
+MBW W6: no QB rows found, skipping
+
+=== POST-RUN VALIDATION SUMMARY ===
+Sweep path: results/behavioral_sweep.csv
+Total rows: 456
+Rows excluding mock: 402
+By model (excluding mock):
+  anthropic/claude-3.7-sonnet: 134
+  openai/gpt-4o: 134
+  meta-llama/llama-3.1-8b-instruct: 134
+Batch summaries:
+  4A: {'ran': 15}
+  4B: {'ran': 54, 'correct': 8, 'broken_skip': 6}
+  4D: {'ran': 3, 'correct': 1}
+Variant counts by model (excluding mock):
+  anthropic/claude-3.7-sonnet CANONICAL: 20
+  anthropic/claude-3.7-sonnet W1: 18
+  anthropic/claude-3.7-sonnet W2: 20
+  anthropic/claude-3.7-sonnet W3: 20
+  anthropic/claude-3.7-sonnet W4: 20
+  anthropic/claude-3.7-sonnet W5: 20
+  anthropic/claude-3.7-sonnet W6: 16
+  openai/gpt-4o CANONICAL: 20
+  openai/gpt-4o W1: 18
+  openai/gpt-4o W2: 20
+  openai/gpt-4o W3: 20
+  openai/gpt-4o W4: 20
+  openai/gpt-4o W5: 20
+  openai/gpt-4o W6: 16
+  meta-llama/llama-3.1-8b-instruct CANONICAL: 20
+  meta-llama/llama-3.1-8b-instruct W1: 18
+  meta-llama/llama-3.1-8b-instruct W2: 20
+  meta-llama/llama-3.1-8b-instruct W3: 20
+  meta-llama/llama-3.1-8b-instruct W4: 20
+  meta-llama/llama-3.1-8b-instruct W5: 20
+  meta-llama/llama-3.1-8b-instruct W6: 16

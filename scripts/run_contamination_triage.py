@@ -16,7 +16,7 @@ from probes.contamination.score import score_problem
 from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 
 INPUT_PATH = Path(QUESTION_BANK_PATH)
-OUTPUT_PATH = Path("results/contamination_triage.csv")
+OUTPUT_PATH = Path("results/BW_RES_P3_contamination_triage.csv")
 
 OUTPUT_COLUMNS = [
     "problem_id",

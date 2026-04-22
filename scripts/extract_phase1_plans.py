@@ -4,9 +4,9 @@ import json
 import sys
 import pandas as pd
 
-SWEEP_PATH = "results/behavioral_sweep.csv"
+SWEEP_PATH = "results/BW_RES_P1_behavioral_sweep.csv"
 BANK_PATH  = "data/problems/question_bank.csv"
-OUT_PATH   = "results/phase1_plans.csv"
+OUT_PATH   = "results/BW_RES_P2_phase1_plans.csv"
 PDDL_ROOT  = "/Users/adya/Desktop/LLMs-Planning"
 
 PROBE2_MODELS = {
@@ -44,7 +44,8 @@ def parse_plan(raw_text):
 
 
 def main():
-    sweep = pd.read_csv(SWEEP_PATH)
+    sweep_path = SWEEP_PATH if os.path.exists(SWEEP_PATH) else "results/behavioral_sweep.csv"
+    sweep = pd.read_csv(sweep_path)
     bank  = pd.read_csv(BANK_PATH)
 
     bw_bank = bank[

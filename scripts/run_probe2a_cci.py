@@ -293,7 +293,7 @@ def main():
     parser.add_argument("--models", nargs="+",
                         default=["anthropic/claude-3.7-sonnet",
                                  "openai/gpt-4o"])
-    parser.add_argument("--output",    default="results/probe2a_cci.csv")
+    parser.add_argument("--output",    default="results/BW_RES_P2_probe2a_cci.csv")
     parser.add_argument("--max-steps", type=int, default=50)
     parser.add_argument("--resume",    action="store_true")
     args = parser.parse_args()
@@ -306,7 +306,10 @@ def main():
         print("  export OPENROUTER_API_KEY='...'", file=sys.stderr)
         sys.exit(1)
 
-    plans = pd.read_csv("results/phase1_plans.csv")
+    plans_path = "results/BW_RES_P2_phase1_plans.csv"
+    if not os.path.exists(plans_path):
+        plans_path = "results/phase1_plans.csv"
+    plans = pd.read_csv(plans_path)
     plans = plans[plans["plan_length"] > 0].reset_index(drop=True)
     print(f"Loaded {len(plans)} plan rows")
 

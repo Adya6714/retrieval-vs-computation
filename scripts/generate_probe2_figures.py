@@ -33,9 +33,19 @@ def short_model(m):
 
 
 # ── Load data ──────────────────────────────────────────────────────────────
-cci  = pd.read_csv("results/probe2a_cci.csv")
-tep  = pd.read_csv("results/probe2b_tep.csv")
-val  = pd.read_csv("results/probe2_validity_comparison.csv")
+cci_path = "results/BW_RES_P2_probe2a_cci.csv"
+if not os.path.exists(cci_path):
+    cci_path = "results/probe2a_cci.csv"
+tep_path = "results/BW_RES_P2_probe2b_tep.csv"
+if not os.path.exists(tep_path):
+    tep_path = "results/probe2b_tep.csv"
+val_path = "results/BW_RES_P2_probe2_validity_comparison.csv"
+if not os.path.exists(val_path):
+    val_path = "results/probe2_validity_comparison.csv"
+
+cci  = pd.read_csv(cci_path)
+tep  = pd.read_csv(tep_path)
+val  = pd.read_csv(val_path)
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -76,9 +86,9 @@ def fig1_validity_comparison():
                 ax.text(rect.get_x() + rect.get_width() / 2, h + 0.002,
                         f"{h:.3f}", ha="center", va="bottom", fontsize=8)
     plt.tight_layout()
-    plt.savefig("results/figures/fig1_validity_comparison.pdf",
+    plt.savefig("results/figures/BW_FIG_P2_validity_comparison.pdf",
                 dpi=300, bbox_inches="tight")
-    plt.savefig("results/figures/fig1_validity_comparison.png",
+    plt.savefig("results/figures/BW_FIG_P2_validity_comparison.png",
                 dpi=300, bbox_inches="tight")
     plt.close()
     print("Saved Figure 1")
@@ -141,9 +151,9 @@ def fig2_action_heatmap():
     fig.suptitle("Figure 2 — Action Type Distribution Heatmap (Phase 2)\n"
                  "Fraction of steps per action category", fontsize=12)
     plt.tight_layout()
-    plt.savefig("results/figures/fig2_action_heatmap.pdf",
+    plt.savefig("results/figures/BW_FIG_P2_action_heatmap.pdf",
                 dpi=300, bbox_inches="tight")
-    plt.savefig("results/figures/fig2_action_heatmap.png",
+    plt.savefig("results/figures/BW_FIG_P2_action_heatmap.png",
                 dpi=300, bbox_inches="tight")
     plt.close()
     print("Saved Figure 2")
@@ -211,9 +221,9 @@ def fig3_tep_cascade():
                  "Model behavior after state injection (red dashed = injection)",
                  fontsize=12)
     plt.tight_layout()
-    plt.savefig("results/figures/fig3_tep_cascade.pdf",
+    plt.savefig("results/figures/BW_FIG_P2_tep_cascade.pdf",
                 dpi=300, bbox_inches="tight")
-    plt.savefig("results/figures/fig3_tep_cascade.png",
+    plt.savefig("results/figures/BW_FIG_P2_tep_cascade.png",
                 dpi=300, bbox_inches="tight")
     plt.close()
     print("Saved Figure 3")
@@ -259,9 +269,9 @@ def fig4_repetition_rate():
     ax.legend(fontsize=10)
     ax.spines[["top", "right"]].set_visible(False)
     plt.tight_layout()
-    plt.savefig("results/figures/fig4_repetition_rate.pdf",
+    plt.savefig("results/figures/BW_FIG_P2_repetition_rate.pdf",
                 dpi=300, bbox_inches="tight")
-    plt.savefig("results/figures/fig4_repetition_rate.png",
+    plt.savefig("results/figures/BW_FIG_P2_repetition_rate.png",
                 dpi=300, bbox_inches="tight")
     plt.close()
     print("Saved Figure 4")
@@ -346,9 +356,9 @@ def fig5_violation_breakdown():
     fig.suptitle("Figure 5 — Precondition Violation Profile per Problem\n"
                  "(Probe 2: mechanistic failure breakdown)", fontsize=12)
     plt.tight_layout()
-    plt.savefig("results/figures/fig5_violation_breakdown.pdf",
+    plt.savefig("results/figures/BW_FIG_P2_violation_breakdown.pdf",
                 dpi=300, bbox_inches="tight")
-    plt.savefig("results/figures/fig5_violation_breakdown.png",
+    plt.savefig("results/figures/BW_FIG_P2_violation_breakdown.png",
                 dpi=300, bbox_inches="tight")
     plt.close()
     print("Saved Figure 5")
@@ -393,9 +403,9 @@ def fig6_first_illegal_step():
                  fontsize=12)
     ax.spines[["top", "right"]].set_visible(False)
     plt.tight_layout()
-    plt.savefig("results/figures/fig6_first_illegal_step.pdf",
+    plt.savefig("results/figures/BW_FIG_P2_first_illegal_step.pdf",
                 dpi=300, bbox_inches="tight")
-    plt.savefig("results/figures/fig6_first_illegal_step.png",
+    plt.savefig("results/figures/BW_FIG_P2_first_illegal_step.png",
                 dpi=300, bbox_inches="tight")
     plt.close()
     print("Saved Figure 6")

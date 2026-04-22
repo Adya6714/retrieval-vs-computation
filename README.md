@@ -249,6 +249,52 @@ make triangulate
 - Add a `scripts/audit_question_bank.py` and `scripts/audit_results_coverage.py` so missing rows are detected before spending API credits.
 - After Planning Suite finalization, ingest GSM + Algorithmic families into `question_bank.csv` using the same 7-row (`canonical` + `W1..W6`) structure.
 
+---
+
+## Maintenance map (what to keep, what to clean)
+
+### Core files to keep
+
+- `data/problems/question_bank.csv`: source of truth for all canonical + variant prompts and answers.
+- `results/behavioral_sweep.csv`: Probe 1 run log (all model responses and correctness flags).
+- `results/probe2a_cci.csv`: Probe 2A execution-coupling outputs.
+- `results/probe2b_tep.csv`: Probe 2B perturbation outputs.
+- `results/contamination_triage.csv`: contamination scores for canonical set.
+- `results/triangulation_per_instance.csv` (+ model-specific variants): merged per-instance diagnosis.
+- `scripts/run_behavioral_sweep.py`: primary Probe 1 runner.
+- `scripts/run_probe2a_cci.py`, `scripts/run_probe2b_tep.py`: Probe 2 runners.
+- `scripts/run_contamination_triage.py`: contamination runner.
+- `scripts/run_triangulation.py`: final merge + regression analysis.
+- `probes/contamination/verify.py`: verifier logic used across scoring and gates.
+
+### Utility/one-off scripts (safe cleanup candidates after freeze)
+
+- `fix_csv.py`: one-time question bank repair utility.
+- `scripts/run_probe1_repair_and_batches.py`: one-off orchestration script for targeted reruns and skip-guarded fills.
+- `scripts/generate_mbw_w5_variants.py`: MBW W5 generation utility (keep only if future regeneration needed).
+- `scripts/generate_w6_variants.py`: W6 generation utility (keep if regenerating procedural rows again).
+- `scripts/temp_flag_records.py`, `scripts/propagate_answers.py`, `scripts/translate_w3_answers.py`: migration/repair helpers; archive if no longer used.
+
+### Figures and analysis scripts
+
+- `scripts/generate_probe2_figures.py`: Probe 2 figure bundle using `results/probe2*.csv`.
+- `analysis/figures/*.py`: modular figure scripts for Section 8 graphs.
+- `analysis/figures/output/`: generated publication figures (PNG/PDF).
+
+### Path/naming note
+
+- The repo now supports both legacy and prefixed output names in several scripts (fallback logic added).
+- Current active outputs are still mostly legacy (`results/behavioral_sweep.csv`, `results/probe2a_cci.csv`, etc.).
+- Before final archival, choose one naming convention and migrate consistently.
+
+### Suggested cleanup workflow
+
+1. Freeze `question_bank.csv`.
+2. Archive old logs/experimental outputs to `results/archive/` (keep final outputs at root `results/`).
+3. Keep only one canonical result file per probe/model.
+4. Keep scripts that are runners or shared utilities; move one-off repair scripts to `scripts/archive/`.
+5. Rerun triangulation once after final contamination + sweep freeze, then tag that output set as final.
+
 ## Problem families and variant types
 
 Three families, 15 problems each, 45 total. Full justification in `CHARTER.md` Section 10.

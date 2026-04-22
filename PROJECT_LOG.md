@@ -445,3 +445,67 @@ Once W1 variants are written and added to question_bank.csv with variant_type="W
    - contamination
    - triangulation per model
 5. Only after Planning Suite is stable, ingest GSM + Algorithmic families into the same unified schema.
+
+---
+
+## Section 12 — File Responsibility Map (Maintenance View)
+
+This section is for day-to-day repo maintenance: what each file is responsible for, and what can be archived.
+
+### Data sources and outputs
+
+- `data/problems/question_bank.csv`
+  - Canonical source-of-truth table for all problem rows and variants.
+  - Any evaluation must read from this file; avoid hand-editing outside scripted fixes.
+- `results/behavioral_sweep.csv`
+  - Probe 1 output table; each row is `(problem_id, variant_type, model)` response + correctness.
+  - Contains historical artifacts unless cleaned by Section-1 deletions.
+- `results/probe2a_cci.csv`
+  - Probe 2A output (closed-loop execution consistency).
+- `results/probe2b_tep.csv`
+  - Probe 2B output (error injection cascade behavior).
+- `results/contamination_triage.csv`
+  - Contamination indexing output for canonical instances.
+- `results/triangulation_per_instance*.csv`
+  - Cross-probe merged diagnosis tables (per model where applicable).
+- `results/contamination_regression*.txt`
+  - Regression summaries produced by triangulation.
+
+### Primary runners (keep)
+
+- `scripts/run_behavioral_sweep.py` — Probe 1 main runner.
+- `scripts/extract_phase1_plans.py` — converts Probe 1 responses to plan inputs for Probe 2.
+- `scripts/run_probe2a_cci.py` — Probe 2A run script.
+- `scripts/run_probe2b_tep.py` — Probe 2B run script.
+- `scripts/run_contamination_triage.py` — contamination run script.
+- `scripts/run_triangulation.py` — final merge/regression script.
+
+### Verifier/metrics internals (keep)
+
+- `probes/contamination/verify.py` — answer validation state-machines and parsing.
+- `probes/behavioral/css.py` — CSS plus VAR/PDAS/DTS/VRI/CFS metric helpers.
+- `probes/triangulation/per_instance.py` — signal alignment rules (VAR-primary, CSS-secondary).
+
+### Figure generation
+
+- `scripts/generate_probe2_figures.py` — Probe 2 summary figures.
+- `analysis/figures/` — modular figure scripts and wrappers.
+- `analysis/figures/output/` — saved publication-ready graphics.
+
+### One-off / migration scripts (archive candidates)
+
+- `fix_csv.py`
+- `scripts/run_probe1_repair_and_batches.py`
+- `scripts/generate_mbw_w5_variants.py`
+- `scripts/translate_w3_answers.py`
+- `scripts/propagate_answers.py`
+- `scripts/temp_flag_records.py`
+
+If no longer needed for reruns, move these to `scripts/archive/` to reduce maintenance noise.
+
+### Current known state after latest runs
+
+- Question bank fixes A1–A7 verified in working `question_bank.csv`.
+- Probe 1 coverage refreshed (including W1 and MBW W5 runs with skip-guards).
+- Probe 2 outputs present (`probe2a_cci.csv`, `probe2b_tep.csv`) for target 3 models.
+- Triangulation scripts updated to VAR-first analysis logic; rerun once after contamination refresh for final tables.

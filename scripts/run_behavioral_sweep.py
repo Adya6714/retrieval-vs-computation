@@ -109,7 +109,11 @@ def main() -> None:
         instances_path = Path(args.question_bank)
     else:
         instances_path = problems_dir / f"{args.probe}_instances.csv"
-    output_path = results_dir / "behavioral_sweep.csv"
+    output_path = results_dir / "BW_RES_P1_behavioral_sweep.csv"
+    # Backward-compat: if legacy file exists and new file does not, continue using legacy.
+    legacy_output_path = results_dir / "behavioral_sweep.csv"
+    if legacy_output_path.exists() and not output_path.exists():
+        output_path = legacy_output_path
 
     # 2. Load question bank rows (canonical + W2–W6 variants, etc.)
     if not instances_path.exists():

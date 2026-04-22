@@ -1,0 +1,34 @@
+Cleaned sweep: 384 rows remaining
+Status column added. Broken rows marked: MBW_100 W1, MBW_10 W1
+MBW W3 re-verified: MBW_001 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_100 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_127 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_185 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_10 | openai/gpt-4o | False → False
+MBW W3 re-verified: MBW_001 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_100 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_127 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_185 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_10 | meta-llama/llama-3.1-8b-instruct | False → False
+MBW W3 re-verified: MBW_001 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_100 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_127 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_185 | anthropic/claude-3.7-sonnet | False → False
+MBW W3 re-verified: MBW_10 | anthropic/claude-3.7-sonnet | False → False
+BW_E W3 re-verified: BW_E015 | anthropic/claude-3.7-sonnet | False → False
+BW_E W3 re-verified: BW_E017 | anthropic/claude-3.7-sonnet | False → False
+BW_E W3 re-verified: BW_E015 | openai/gpt-4o | False → False
+BW_E W3 re-verified: BW_E017 | openai/gpt-4o | False → False
+BW_E W3 re-verified: BW_E015 | meta-llama/llama-3.1-8b-instruct | False → False
+BW_E W3 re-verified: BW_E017 | meta-llama/llama-3.1-8b-instruct | False → False
+Re-verified rows updated: 21
+BW_E W2/W4 rows present: 30 (expected 30)
+VERIFIER GATE: MBW_001 W3 → False
+Traceback (most recent call last):
+  File "/Users/adya/Desktop/rvc/scripts/run_probe1_repair_and_batches.py", line 380, in <module>
+    main()
+  File "/Users/adya/Desktop/rvc/scripts/run_probe1_repair_and_batches.py", line 328, in main
+    verifier_gate(qb_rows)
+  File "/Users/adya/Desktop/rvc/scripts/run_probe1_repair_and_batches.py", line 175, in verifier_gate
+    raise RuntimeError(f"VERIFIER GATE FAILED: {pid} {var}")
+RuntimeError: VERIFIER GATE FAILED: MBW_001 W3

@@ -13,7 +13,15 @@ from pathlib import Path
 import pandas as pd
 
 from probes.common.io import load_results, QUESTION_BANK_PATH
-from probes.behavioral.css import compute_css
+from probes.behavioral.css import (
+    compute_css,
+    compute_var,
+    compute_pdas,
+    compute_pdas_reversal,
+    compute_dts,
+    compute_vri,
+    compute_cfs,
+)
 from probes.triangulation.per_instance import align_instance
 
 
@@ -69,7 +77,7 @@ def _behavioral_slice_for_css(df: pd.DataFrame, model: str | None) -> tuple[pd.D
 
 def main():
     parser = argparse.ArgumentParser(description="Triangulation Analysis")
-    parser.add_argument("--behavioral", type=str, default="results/behavioral_sweep.csv")
+    parser.add_argument("--behavioral", type=str, default="results/BW_RES_P1_behavioral_sweep.csv")
     parser.add_argument(
         "--behavioral-model",
         type=str,
@@ -79,8 +87,8 @@ def main():
             "Required when the CSV contains more than one non-mock model."
         ),
     )
-    parser.add_argument("--mechanistic", type=str, default="results/probe1_mechanistic.csv")
-    parser.add_argument("--contamination", type=str, default="results/contamination_triage.csv")
+    parser.add_argument("--mechanistic", type=str, default="results/BW_RES_P3_probe1_mechanistic.csv")
+    parser.add_argument("--contamination", type=str, default="results/BW_RES_P3_contamination_triage.csv")
     parser.add_argument(
         "--question-bank",
         type=str,
@@ -88,19 +96,37 @@ def main():
         help="Used to fill correct_answer / problem_text for CSS when missing from behavioral CSV",
     )
     # Available output name choices: per-model files are written by the caller via --output
-    parser.add_argument("--output", type=str, default="results/triangulation_per_instance.csv")
+    parser.add_argument("--output", type=str, default="results/BW_RES_P3_triangulation_per_instance.csv")
     parser.add_argument(
         "--regression-output",
         type=str,
-        default="results/contamination_regression.txt",
-        help="Where to write the OLS summary (default: results/contamination_regression.txt)",
+        default="results/BW_RES_P3_contamination_regression.txt",
+        help="Where to write the OLS summary (default: results/BW_RES_P3_contamination_regression.txt)",
     )
     args = parser.parse_args()
 
     # 1. Load data safely
-    df_beh = load_results(args.behavioral)
-    df_mech = load_results(args.mechanistic)
-    df_cont = load_results(args.contamination)
+    behavioral_path = args.behavioral
+    if not Path(behavioral_path).exists() and behavioral_path == "results/BW_RES_P1_behavioral_sweep.csv":
+        behavioral_path = "results/behavioral_sweep.csv"
+    mechanistic_path = args.mechanistic
+    if not Path(mechanistic_path).exists() and mechanistic_path == "results/BW_RES_P3_probe1_mechanistic.csv":
+        mechanistic_path = "results/probe1_mechanistic.csv"
+    contamination_path = args.contamination
+    if not Path(contamination_path).exists() and contamination_path == "results/BW_RES_P3_contamination_triage.csv":
+        contamination_path = "results/contamination_triage.csv"
+
+    df_beh = load_results(behavioral_path)
+    df_mech = load_results(mechanistic_path)
+    df_cont = load_results(contamination_path)
+
+    # Section-1 style cleanup for analysis consistency.
+    if not df_beh.empty:
+        if "problem_id" in df_beh.columns:
+            df_beh = df_beh[~df_beh["problem_id"].astype(str).str.contains("_W5_TEMP", na=False)].copy()
+        if "model" in df_beh.columns:
+            df_beh = df_beh[df_beh["model"].astype(str) != "meta-llama/llama-3-8b-instruct"].copy()
+            df_beh = df_beh[df_beh["model"].astype(str).str.lower() != "mock"].copy()
 
     behavioral_model_resolved = ""
     if not df_beh.empty and "variant_type" in df_beh.columns:
@@ -153,7 +179,7 @@ def main():
             for _, row in df.iterrows():
                 families[str(row["problem_id"]).strip()] = str(row["problem_family"])
 
-    # 2. Compute CSS from behavioral CSV
+    # 2. Compute VAR (primary) + CSS (secondary) from behavioral CSV
     beh_data = []
     if not df_beh.empty and "problem_id" in df_beh.columns:
         if "variant_type" not in df_beh.columns:
@@ -183,6 +209,8 @@ def main():
                     fam = families.get(pid_str, "blocksworld")
 
                 canonical_correct = ""
+                canonical_bool = None
+                w5_bool = None
                 variants = []
                 for _, row in group.iterrows():
                     vtype = str(row.get("variant_type", "")).strip()
@@ -205,6 +233,11 @@ def main():
                         or vkey in ("nan", "none", "canonical")
                     ):
                         canonical_correct = corr
+                        bc = row.get("behavioral_correct", None)
+                        if pd.notna(bc):
+                            sval = str(bc).strip().lower()
+                            if sval in {"true", "false"}:
+                                canonical_bool = 1.0 if sval == "true" else 0.0
                     elif vtype.startswith("W") and vtype not in ("W5", "W6"):
                         variants.append(
                             {
@@ -215,9 +248,18 @@ def main():
                             }
                         )
 
+                    elif vtype == "W5":
+                        bc = row.get("behavioral_correct", None)
+                        if pd.notna(bc):
+                            sval = str(bc).strip().lower()
+                            if sval in {"true", "false"}:
+                                w5_bool = 1.0 if sval == "true" else 0.0
+
                 css_dict = compute_css(pid_str, canonical_correct, variants, fam)
                 beh_data.append({
                     "problem_id": pid_str,
+                    "var_canonical": canonical_bool,
+                    "var_w5": w5_bool,
                     "css": css_dict.get("css"),
                     "behavioral_model": behavioral_model_resolved,
                 })
@@ -225,7 +267,7 @@ def main():
     df_css_agg = pd.DataFrame(beh_data)
     if df_css_agg.empty:
         df_css_agg = pd.DataFrame(
-            columns=["problem_id", "css", "behavioral_model"]
+            columns=["problem_id", "var_canonical", "var_w5", "css", "behavioral_model"]
         )
 
     # 3 & 4. Extract Contamination & Mechanistic data
@@ -266,11 +308,17 @@ def main():
         pid = row["problem_id"]
         
         css_val = float(row["css"]) if "css" in row and pd.notna(row["css"]) else None
+        var_val = (
+            float(row["var_canonical"])
+            if "var_canonical" in row and pd.notna(row["var_canonical"])
+            else None
+        )
         cont_val = float(row["contamination_score"]) if "contamination_score" in row and pd.notna(row["contamination_score"]) else None
         
         # TODO: wire in Probe 2 results when available (cci=None for now)
         alignment_dict = align_instance(
             problem_id=str(pid),
+            var=var_val,
             css=css_val,
             contamination_score=cont_val,
             cci=None
@@ -283,39 +331,98 @@ def main():
     df_final = pd.DataFrame(final_rows)
 
     # 7. Contamination Regression via statsmodels
-    required_reg_cols = ["css", "contamination_score", "problem_family"]
-    missing_reg_cols = [c for c in required_reg_cols if c not in df_final.columns]
-    if missing_reg_cols:
-        print(f"Skipping regression — missing columns: {missing_reg_cols}")
-        df_reg = pd.DataFrame()
-    else:
-        df_reg = df_final.dropna(subset=required_reg_cols)
-    if len(df_reg) >= 10:
-        if df_reg["css"].nunique() < 2:
-            print(
-                "\nSkipping regression — `css` is constant (zero variance). "
-                "Need mixed correct/incorrect variants across instances for a slope."
-            )
-        else:
-            import statsmodels.formula.api as smf
+    import statsmodels.formula.api as smf
+    reg_sections = []
 
+    # Regression A: VAR(canonical) ~ contamination_score + family FE
+    req_a = ["var_canonical", "contamination_score", "problem_family"]
+    if all(c in df_final.columns for c in req_a):
+        df_reg_a = df_final.dropna(subset=req_a)
+        if len(df_reg_a) >= 10 and df_reg_a["var_canonical"].nunique() >= 2:
             try:
-                model = smf.ols(
-                    "css ~ contamination_score + C(problem_family)", data=df_reg
+                model_a = smf.ols(
+                    "var_canonical ~ contamination_score + C(problem_family)", data=df_reg_a
                 ).fit()
-                print("\n--- Contamination Regression Summary ---")
-                print(model.summary())
-
-                Path("results").mkdir(parents=True, exist_ok=True)
-                reg_path = Path(args.regression_output)
-                reg_path.parent.mkdir(parents=True, exist_ok=True)
-                with reg_path.open("w", encoding="utf-8") as f:
-                    f.write(model.summary().as_text())
-                print(f"Wrote regression summary to {reg_path}")
+                print("\n--- Contamination Regression (VAR canonical) ---")
+                print(model_a.summary())
+                reg_sections.append("=== VAR(canonical) regression ===\n" + model_a.summary().as_text() + "\n")
             except Exception as e:
-                print(f"\nFailed to run regression: {e}")
+                print(f"\nFailed VAR(canonical) regression: {e}")
+        else:
+            print("\nSkipping VAR(canonical) regression — insufficient rows or zero variance.")
     else:
-        print("\nInsufficient data for regression (need >= 10 problems with both scores).")
+        print("\nSkipping VAR(canonical) regression — missing columns.")
+
+    # Regression B: VAR(W5) ~ contamination_score + family FE
+    req_b = ["var_w5", "contamination_score", "problem_family"]
+    if all(c in df_final.columns for c in req_b):
+        df_reg_b = df_final.dropna(subset=req_b)
+        if len(df_reg_b) >= 10 and df_reg_b["var_w5"].nunique() >= 2:
+            try:
+                model_b = smf.ols(
+                    "var_w5 ~ contamination_score + C(problem_family)", data=df_reg_b
+                ).fit()
+                print("\n--- Contamination Regression (VAR W5) ---")
+                print(model_b.summary())
+                reg_sections.append("=== VAR(W5) regression ===\n" + model_b.summary().as_text() + "\n")
+            except Exception as e:
+                print(f"\nFailed VAR(W5) regression: {e}")
+        else:
+            print("\nSkipping VAR(W5) regression — insufficient rows or zero variance.")
+    else:
+        print("\nSkipping VAR(W5) regression — missing columns.")
+
+    # Supplemental model-level matrices and derived metrics
+    if not df_beh.empty and all(c in df_beh.columns for c in ["variant_type", "model", "behavioral_correct"]):
+        model_ids = sorted(df_beh["model"].astype(str).str.strip().unique())
+        variant_order = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
+        print("\n--- VAR Matrix (model x variant) ---")
+        for m in model_ids:
+            vals = []
+            for v in variant_order:
+                vv = compute_var(df_beh, v, m)
+                vals.append(f"{v}:{vv if vv is not None else 'NA'}")
+            print(f"{m} | " + " | ".join(vals))
+
+        print("\n--- PDAS / PDAS_reversal ---")
+        for m in model_ids:
+            print(
+                f"{m} | PDAS={compute_pdas(df_beh, m)} | "
+                f"PDAS_reversal={compute_pdas_reversal(df_beh, m)}"
+            )
+
+        print("\n--- DTS (W2/W3/W4/W5) ---")
+        for m in model_ids:
+            print(
+                f"{m} | W2={compute_dts(df_beh, 'W2', m)} | "
+                f"W3={compute_dts(df_beh, 'W3', m)} | "
+                f"W4={compute_dts(df_beh, 'W4', m)} | "
+                f"W5={compute_dts(df_beh, 'W5', m)}"
+            )
+
+        print("\n--- VRI ---")
+        for m in model_ids:
+            vri = compute_vri(df_beh, m)
+            print(
+                f"{m} | structural={vri['structural']} | "
+                f"vocabulary={vri['vocabulary']} | gap={vri['gap']}"
+            )
+
+        print("\n--- CFS (canonical/W2/W3/W4 first-action consistency) ---")
+        base_ids = sorted(df_beh["problem_id"].astype(str).str.replace(r"_W[0-9]+$", "", regex=True).unique())
+        for m in model_ids:
+            vals = [compute_cfs(df_beh, pid, m) for pid in base_ids]
+            vals = [v for v in vals if v is not None]
+            cfs_mean = round(sum(vals) / len(vals), 4) if vals else None
+            print(f"{m} | cfs_mean={cfs_mean}")
+
+    if reg_sections:
+        Path("results").mkdir(parents=True, exist_ok=True)
+        reg_path = Path(args.regression_output)
+        reg_path.parent.mkdir(parents=True, exist_ok=True)
+        with reg_path.open("w", encoding="utf-8") as f:
+            f.write("\n\n".join(reg_sections))
+        print(f"Wrote regression summary to {reg_path}")
 
     # 8. Set to output paths natively
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)

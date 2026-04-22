@@ -1,24 +1,25 @@
+=== VAR(W5) regression ===
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                    css   R-squared:                       0.424
-Model:                            OLS   Adj. R-squared:                  0.392
-Method:                 Least Squares   F-statistic:                     13.27
-Date:                Mon, 20 Apr 2026   Prob (F-statistic):            0.00186
-Time:                        09:53:07   Log-Likelihood:                 5.8478
-No. Observations:                  20   AIC:                            -7.696
-Df Residuals:                      18   BIC:                            -5.704
+Dep. Variable:                 var_w5   R-squared:                       0.127
+Model:                            OLS   Adj. R-squared:                  0.078
+Method:                 Least Squares   F-statistic:                     2.608
+Date:                Thu, 23 Apr 2026   Prob (F-statistic):              0.124
+Time:                        02:08:27   Log-Likelihood:                -12.755
+No. Observations:                  20   AIC:                             29.51
+Df Residuals:                      18   BIC:                             31.50
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 =======================================================================================
                           coef    std err          t      P>|t|      [0.025      0.975]
 ---------------------------------------------------------------------------------------
-Intercept              -0.0417      0.058     -0.723      0.479      -0.163       0.079
-contamination_score     1.5728      0.432      3.642      0.002       0.666       2.480
+Intercept              -1.3968      1.118     -1.249      0.227      -3.745       0.952
+contamination_score    46.0842     28.538      1.615      0.124     -13.872     106.040
 ==============================================================================
-Omnibus:                       23.446   Durbin-Watson:                   1.746
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               37.772
-Skew:                           1.928   Prob(JB):                     6.28e-09
-Kurtosis:                       8.519   Cond. No.                         10.2
+Omnibus:                        9.446   Durbin-Watson:                   1.774
+Prob(Omnibus):                  0.009   Jarque-Bera (JB):                2.052
+Skew:                           0.147   Prob(JB):                        0.358
+Kurtosis:                       1.459   Cond. No.                         265.
 ==============================================================================
 
 Notes:

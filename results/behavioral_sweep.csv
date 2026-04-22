@@ -3466,16 +3466,6 @@ BW_467_W6,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack j a
 16. stack a i
 17. pick-up g
 18. stack g l",False,
-BW_080_W6,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack c i
-2. put-down c
-3. pick-up e
-4. stack e c
-5. unstack f j
-6. put-down f
-7. unstack c i
-8. stack c i
-9. unstack j l
-10. put-down j",False,
 BW_E100_W6,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack b a
 2. put-down b
 3. pick-up c
@@ -3791,16 +3781,6 @@ BW_467_W6,blocksworld,W6,openai/gpt-4o,"1. Unstack j a
 8. Stack i h
 9. Pick-up a
 10. Stack a i",False,
-BW_080_W6,blocksworld,W6,openai/gpt-4o,"1. Unstack c i
-2. Put-down c
-3. Unstack f j
-4. Put-down f
-5. Unstack j l
-6. Put-down j
-7. Pick-up c
-8. Stack c i
-9. Pick-up e
-10. Stack e c",False,
 BW_E100_W6,blocksworld,W6,openai/gpt-4o,"1. unstack b a
 2. put-down b
 3. pick-up c
@@ -4489,16 +4469,6 @@ BW_467_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up h
 8. put-down f
 9. pick-up g
 10. stack g l",False,
-BW_080_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up e
-2. stack e i
-3. pick-up c
-4. stack c i
-5. put-down c
-6. unstack e i
-7. put-down e
-8. stack e c
-9. pick-up f
-10. put-down f",False,
 BW_E100_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack b a
 3. unstack b a
@@ -4560,3 +4530,871 @@ BW_080_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 10. put-down i
 11. pick-up j
 12. put-down j",False,
+MBW_001,mystery_blocksworld,W5,anthropic/claude-3.7-sonnet,"1. feast j f
+2. feast f i
+3. feast i g
+4. feast g d
+5. feast d b
+6. feast b h
+7. feast h l",False,
+MBW_001,mystery_blocksworld,W5,openai/gpt-4o,"1. feast j f
+2. feast f i
+3. feast i g
+4. feast g d
+5. feast d b
+6. feast b h
+7. feast h l",False,
+MBW_001,mystery_blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. attack j
+2. attack f
+3. attack i
+4. attack g
+5. attack d
+6. attack b
+7. attack h
+8. attack l
+9. succumb j
+10. succumb f
+11. succumb i
+12. succumb g
+13. succumb d
+14. succumb b
+15. succumb h
+16. succumb l
+17. overcome j f
+18. overcome f i
+19. overcome i g
+20. overcome g d
+21. overcome d b
+22. overcome b h
+23. overcome h l
+24. feast j f
+25. feast f i
+26. feast i g
+27. feast g d
+28. feast d b
+29. feast b h
+30. feast h l",False,
+MBW_10,mystery_blocksworld,W5,anthropic/claude-3.7-sonnet,"1. feast d e
+2. feast e a
+3. feast a b
+4. feast b f",False,
+MBW_10,mystery_blocksworld,W5,openai/gpt-4o,"1. feast d e
+2. feast e a
+3. feast a b
+4. feast b f",False,
+MBW_10,mystery_blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. attack e
+2. attack a
+3. attack b
+4. attack f
+5. succumb e
+6. succumb a
+7. succumb b
+8. succumb f
+9. overcome e a
+10. overcome a b
+11. overcome b f
+12. feast d e
+13. feast e a
+14. feast a b
+15. feast b f",False,
+MBW_100,mystery_blocksworld,W5,anthropic/claude-3.7-sonnet,"1. feast b j
+2. feast j l
+3. feast l i",False,
+MBW_100,mystery_blocksworld,W5,openai/gpt-4o,"1. feast b j
+2. feast j l
+3. feast l i",False,
+MBW_100,mystery_blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. attack b
+2. attack j
+3. attack l
+4. attack i
+5. succumb b
+6. succumb j
+7. succumb l
+8. succumb i
+9. overcome b j
+10. overcome j l
+11. overcome l i
+12. feast b j
+13. feast j l
+14. feast l i",False,
+MBW_127,mystery_blocksworld,W5,anthropic/claude-3.7-sonnet,"1. feast k g
+2. feast g j
+3. feast j e
+4. feast e b",False,
+MBW_127,mystery_blocksworld,W5,openai/gpt-4o,"1. feast k g
+2. feast g j
+3. feast j e
+4. feast e b",False,
+MBW_127,mystery_blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. attack k
+2. attack g
+3. attack j
+4. attack e
+5. attack b
+6. succumb k
+7. succumb g
+8. succumb j
+9. succumb e
+10. succumb b
+11. overcome k g
+12. overcome g j
+13. overcome j e
+14. overcome e b
+15. feast k g
+16. feast g j
+17. feast j e
+18. feast e b",False,
+MBW_185,mystery_blocksworld,W5,anthropic/claude-3.7-sonnet,"1. feast j d
+2. feast d g
+3. feast g i
+4. feast i c
+5. feast c h
+6. feast h a
+7. feast a b
+8. feast b e
+9. feast e l",False,
+MBW_185,mystery_blocksworld,W5,openai/gpt-4o,"1. feast j d
+2. feast d g
+3. feast g i
+4. feast i c
+5. feast c h
+6. feast h a
+7. feast a b
+8. feast b e
+9. feast e l",False,
+MBW_185,mystery_blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. attack j
+2. attack d
+3. attack g
+4. attack i
+5. attack c
+6. attack h
+7. attack a
+8. attack b
+9. attack e
+10. attack l
+11. succumb j
+12. succumb d
+13. succumb g
+14. succumb i
+15. succumb c
+16. succumb h
+17. succumb a
+18. succumb b
+19. succumb e
+20. succumb l
+21. overcome j d
+22. overcome d g
+23. overcome g i
+24. overcome i c
+25. overcome c h
+26. overcome h a
+27. overcome a b
+28. overcome b e
+29. overcome e l
+30. feast j d
+31. feast d g
+32. feast g i
+33. feast i c
+34. feast c h
+35. feast h a
+36. feast a b
+37. feast b e
+38. feast e l",False,
+BW_001,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up j
+2. pick-up f
+3. pick-up i
+4. pick-up g
+5. pick-up d
+6. pick-up b
+7. pick-up h
+8. pick-up l
+9. put-down l
+10. pick-up h
+11. stack h l
+12. pick-up b
+13. stack b h
+14. pick-up d
+15. stack d b
+16. pick-up g
+17. stack g d
+18. pick-up i
+19. stack i g
+20. pick-up f
+21. stack f i
+22. pick-up j
+23. stack j f",False,
+BW_001,blocksworld,W1,openai/gpt-4o,"1. pick-up j  
+2. stack j f  
+3. pick-up f  
+4. stack f i  
+5. pick-up i  
+6. stack i g  
+7. pick-up g  
+8. stack g d  
+9. pick-up d  
+10. stack d b  
+11. pick-up b  
+12. stack b h  
+13. pick-up h  
+14. stack h l",False,
+BW_001,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l
+15. put-down j",False,
+BW_010,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up d
+2. pick-up e
+3. pick-up a
+4. pick-up b
+5. pick-up f
+6. put-down f
+7. pick-up b
+8. stack b f
+9. pick-up a
+10. stack a b
+11. pick-up e
+12. stack e a
+13. pick-up d
+14. stack d e",False,
+BW_010,blocksworld,W1,openai/gpt-4o,"1. pick-up d  
+2. stack d e  
+3. pick-up e  
+4. stack e a  
+5. pick-up a  
+6. stack a b  
+7. pick-up b  
+8. stack b f",False,
+BW_010,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b f",False,
+BW_011,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up c
+2. pick-up k
+3. pick-up g
+4. pick-up a
+5. pick-up l
+6. pick-up j
+7. pick-up e
+8. pick-up h
+9. pick-up i
+10. pick-up b
+11. put-down b
+12. pick-up i
+13. stack i b
+14. pick-up h
+15. stack h i
+16. pick-up e
+17. stack e h
+18. pick-up j
+19. stack j e
+20. pick-up l
+21. stack l j
+22. pick-up a
+23. stack a l
+24. pick-up g
+25. stack g a
+26. pick-up k
+27. stack k g
+28. pick-up c
+29. stack c k",False,
+BW_011,blocksworld,W1,openai/gpt-4o,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b",False,
+BW_011,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b",False,
+BW_080,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up l
+2. pick-up c
+3. pick-up i
+4. pick-up e
+5. pick-up j
+6. pick-up f
+7. put-down f
+8. pick-up j
+9. stack j f
+10. pick-up e
+11. stack e j
+12. pick-up i
+13. stack i e
+14. pick-up c
+15. stack c i
+16. pick-up l
+17. stack l c",False,
+BW_080,blocksworld,W1,openai/gpt-4o,"1. pick-up l  
+2. stack l c  
+3. pick-up c  
+4. stack c i  
+5. pick-up i  
+6. stack i e  
+7. pick-up e  
+8. stack e j  
+9. pick-up j  
+10. stack j f",False,
+BW_080,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f
+11. pick-up f
+12. stack f l",False,
+BW_120,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up c
+2. pick-up j
+3. pick-up g
+4. pick-up f
+5. put-down f
+6. pick-up g
+7. stack g f
+8. pick-up j
+9. stack j g
+10. pick-up c
+11. stack c j",False,
+BW_120,blocksworld,W1,openai/gpt-4o,"1. pick-up c  
+2. stack c j  
+3. pick-up j  
+4. stack j g  
+5. pick-up g  
+6. stack g f",False,
+BW_120,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j g
+5. pick-up g
+6. stack g f
+7. put-down g
+8. put-down j
+9. put-down c",False,
+BW_137,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up g
+2. stack g i
+3. pick-up f
+4. stack f g
+5. pick-up c
+6. stack c f
+7. pick-up h
+8. stack h c
+9. pick-up l
+10. stack l h
+11. pick-up e
+12. stack e l
+13. pick-up j
+14. stack j e
+15. pick-up b
+16. stack b j
+17. pick-up a
+18. stack a b
+19. pick-up d
+20. stack d a",True,
+BW_137,blocksworld,W1,openai/gpt-4o,"1. pick-up d  
+2. stack d a  
+3. pick-up a  
+4. stack a b  
+5. pick-up b  
+6. stack b j  
+7. pick-up j  
+8. stack j e  
+9. pick-up e  
+10. stack e l  
+11. pick-up l  
+12. stack l h  
+13. pick-up h  
+14. stack h c  
+15. pick-up c  
+16. stack c f  
+17. pick-up f  
+18. stack f g  
+19. pick-up g  
+20. stack g i",False,
+BW_137,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i",False,
+BW_155,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up i
+2. pick-up f
+3. pick-up e
+4. pick-up j
+5. pick-up h
+6. put-down h
+7. pick-up j
+8. stack j h
+9. pick-up e
+10. stack e j
+11. pick-up f
+12. stack f e
+13. pick-up i
+14. stack i f",False,
+BW_155,blocksworld,W1,openai/gpt-4o,"1. pick-up i  
+2. stack i f  
+3. pick-up f  
+4. stack f e  
+5. pick-up e  
+6. stack e j  
+7. pick-up j  
+8. stack j h",False,
+BW_155,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h",False,
+BW_172,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up i
+2. pick-up l
+3. pick-up g
+4. pick-up e
+5. pick-up d
+6. pick-up b
+7. pick-up a
+8. pick-up j
+9. pick-up h
+10. pick-up f
+11. pick-up k
+12. put-down k
+13. pick-up f
+14. stack f k
+15. pick-up h
+16. stack h f
+17. pick-up j
+18. stack j h
+19. pick-up a
+20. stack a j
+21. pick-up b
+22. stack b a
+23. pick-up d
+24. stack d b
+25. pick-up e
+26. stack e d
+27. pick-up g
+28. stack g e
+29. pick-up l
+30. stack l g
+31. pick-up i
+32. stack i l",False,
+BW_172,blocksworld,W1,openai/gpt-4o,"1. pick-up i  
+2. stack i l  
+3. pick-up l  
+4. stack l g  
+5. pick-up g  
+6. stack g e  
+7. pick-up e  
+8. stack e d  
+9. pick-up d  
+10. stack d b  
+11. pick-up b  
+12. stack b a  
+13. pick-up a  
+14. stack a j  
+15. pick-up j  
+16. stack j h  
+17. pick-up h  
+18. stack h f  
+19. pick-up f  
+20. stack f k",False,
+BW_172,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k",False,
+BW_227,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up f
+2. pick-up l
+3. pick-up g
+4. pick-up d
+5. pick-up i
+6. pick-up j
+7. pick-up c
+8. pick-up k
+9. pick-up a
+10. put-down a
+11. pick-up k
+12. stack k a
+13. pick-up c
+14. stack c k
+15. pick-up j
+16. stack j c
+17. pick-up i
+18. stack i j
+19. pick-up d
+20. stack d i
+21. pick-up g
+22. stack g d
+23. pick-up l
+24. stack l g
+25. pick-up f
+26. stack f l",False,
+BW_227,blocksworld,W1,openai/gpt-4o,"1. pick-up f  
+2. stack f l  
+3. pick-up l  
+4. stack l g  
+5. pick-up g  
+6. stack g d  
+7. pick-up d  
+8. stack d i  
+9. pick-up i  
+10. stack i j  
+11. pick-up j  
+12. stack j c  
+13. pick-up c  
+14. stack c k  
+15. pick-up k  
+16. stack k a",False,
+BW_227,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",False,
+BW_467,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up g
+2. pick-up i
+3. pick-up l
+4. pick-up j
+5. pick-up a
+6. pick-up f
+7. pick-up h
+8. put-down h
+9. pick-up f
+10. stack f h
+11. pick-up a
+12. stack a f
+13. pick-up j
+14. stack j a
+15. pick-up l
+16. stack l j
+17. pick-up i
+18. stack i l
+19. pick-up g
+20. stack g i",False,
+BW_467,blocksworld,W1,openai/gpt-4o,"1. pick-up g  
+2. stack g i  
+3. pick-up i  
+4. stack i l  
+5. pick-up l  
+6. stack l j  
+7. pick-up j  
+8. stack j a  
+9. pick-up a  
+10. stack a f  
+11. pick-up f  
+12. stack f h",False,
+BW_467,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h",False,
+BW_E002,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b a",True,
+BW_E002,blocksworld,W1,openai/gpt-4o,"1. pick-up a  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,
+BW_E002,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b a",True,
+BW_E015,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up a
+2. unstack c b
+3. put-down c
+4. stack a b",False,
+BW_E015,blocksworld,W1,openai/gpt-4o,"1. pick-up a  
+2. unstack c b  
+3. put-down c  
+4. stack a b",False,
+BW_E015,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack a b
+3. unstack a b
+4. pick-up a
+5. stack a b",False,
+BW_E017,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a",True,
+BW_E017,blocksworld,W1,openai/gpt-4o,"1. pick-up a  
+2. stack a b  
+3. pick-up c  
+4. stack c a",True,
+BW_E017,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a",True,
+BW_E019,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. unstack a b
+2. stack a c
+3. pick-up b
+4. stack b a",True,
+BW_E019,blocksworld,W1,openai/gpt-4o,"1. Unstack a b  
+2. Put-down a  
+3. Pick-up b  
+4. Put-down b  
+5. Pick-up a  
+6. Stack a c  
+7. Pick-up b  
+8. Stack b a",False,
+BW_E019,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
+2. stack b c
+3. pick-up a
+4. stack a b",False,
+BW_E100,blocksworld,W1,anthropic/claude-3.7-sonnet,"1. unstack c a
+2. stack c a
+3. pick-up b
+4. stack b c",False,
+BW_E100,blocksworld,W1,openai/gpt-4o,"1. pick-up c  
+2. put-down c  
+3. pick-up b  
+4. stack b c",False,
+BW_E100,blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
+2. stack b c
+3. stack c a",False,
+MBW_001,mystery_blocksworld,W1,anthropic/claude-3.7-sonnet,"1. attack j
+2. attack f
+3. attack i
+4. attack g
+5. attack d
+6. attack b
+7. attack h
+8. attack l
+9. feast j f
+10. feast f i
+11. feast i g
+12. feast g d
+13. feast d b
+14. feast b h
+15. feast h l",False,
+MBW_001,mystery_blocksworld,W1,openai/gpt-4o,"1. feast j f  
+2. feast f i  
+3. feast i g  
+4. feast g d  
+5. feast d b  
+6. feast b h  
+7. feast h l",False,
+MBW_001,mystery_blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. attack j
+2. attack f
+3. attack i
+4. attack g
+5. attack d
+6. attack b
+7. attack h
+8. attack l
+9. succumb j
+10. succumb f
+11. succumb i
+12. succumb g
+13. succumb d
+14. succumb b
+15. succumb h
+16. succumb l
+17. overcome j f
+18. overcome f i
+19. overcome i g
+20. overcome g d
+21. overcome d b
+22. overcome b h
+23. overcome h l
+24. feast j f
+25. feast f i
+26. feast i g
+27. feast g d
+28. feast d b
+29. feast b h
+30. feast h l",False,
+MBW_127,mystery_blocksworld,W1,anthropic/claude-3.7-sonnet,"1. attack k
+2. attack g
+3. attack j
+4. attack e
+5. attack b
+6. feast k g
+7. feast g j
+8. feast j e
+9. feast e b",False,
+MBW_127,mystery_blocksworld,W1,openai/gpt-4o,"1. feast k g
+2. feast g j
+3. feast j e
+4. feast e b",False,
+MBW_127,mystery_blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. attack k
+2. succumb k
+3. attack g
+4. succumb g
+5. attack j
+6. succumb j
+7. attack e
+8. succumb e
+9. attack b
+10. succumb b
+11. feast k g
+12. feast g j
+13. feast j e
+14. feast e b",False,
+MBW_185,mystery_blocksworld,W1,anthropic/claude-3.7-sonnet,"1. attack j
+2. attack d
+3. attack g
+4. attack i
+5. attack c
+6. attack h
+7. attack a
+8. attack b
+9. attack e
+10. attack l
+11. feast j d
+12. feast d g
+13. feast g i
+14. feast i c
+15. feast c h
+16. feast h a
+17. feast a b
+18. feast b e
+19. feast e l",False,
+MBW_185,mystery_blocksworld,W1,openai/gpt-4o,"1. feast j d
+2. feast d g
+3. feast g i
+4. feast i c
+5. feast c h
+6. feast h a
+7. feast a b
+8. feast b e
+9. feast e l",False,
+MBW_185,mystery_blocksworld,W1,meta-llama/llama-3.1-8b-instruct,"1. attack j
+2. succumb j
+3. attack d
+4. succumb d
+5. attack g
+6. succumb g
+7. attack i
+8. succumb i
+9. attack c
+10. succumb c
+11. attack h
+12. succumb h
+13. attack a
+14. succumb a
+15. attack b
+16. succumb b
+17. attack e
+18. succumb e
+19. attack l
+20. succumb l",False,
+BW_080,blocksworld,W5,anthropic/claude-3.7-sonnet,"1. unstack l c
+2. put-down l
+3. unstack c i
+4. put-down c
+5. unstack i e
+6. put-down i
+7. unstack e j
+8. put-down e
+9. unstack j f
+10. put-down j",True,
+BW_080,blocksworld,W5,openai/gpt-4o,"1. Unstack l c  
+2. Put-down l  
+3. Unstack c i  
+4. Put-down c  
+5. Unstack i e  
+6. Put-down i  
+7. Unstack e j  
+8. Put-down e  
+9. Unstack j f  
+10. Put-down j  
+11. Put-down f",False,
+BW_080,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
+2. unstack j f
+3. unstack e j
+4. unstack i e
+5. unstack c i
+6. unstack l c
+7. put-down l
+8. put-down c
+9. put-down i
+10. put-down e
+11. put-down j",False,

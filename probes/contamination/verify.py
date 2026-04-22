@@ -30,7 +30,15 @@ def _extract_blocksworld_actions_line_based(text: str) -> list[str]:
     """Parse blocksworld plans line-by-line so numbered lists do not break regex."""
     actions: list[str] = []
     for line in _strip_numbered_plan_lines(text):
-        m = _BLOCKSWORLD_LINE.match(line.strip())
+        norm = line.strip().lower()
+        norm = re.sub(r"\bblock\s+", "", norm)
+        norm = re.sub(r"^select\s+([a-z0-9]+)$", r"pick-up \1", norm)
+        norm = re.sub(r"^release\s+([a-z0-9]+)$", r"put-down \1", norm)
+        norm = re.sub(r"^place\s+([a-z0-9]+)\s+under\s+([a-z0-9]+)$", r"stack \1 \2", norm)
+        norm = re.sub(r"^place\s+([a-z0-9]+)\s+on\s+([a-z0-9]+)$", r"stack \1 \2", norm)
+        norm = re.sub(r"^remove\s+([a-z0-9]+)\s+from\s+([a-z0-9]+)$", r"unstack \1 \2", norm)
+
+        m = _BLOCKSWORLD_LINE.match(norm)
         if not m:
             continue
         parts = [m.group(1).lower(), m.group(2).lower()]
@@ -41,7 +49,7 @@ def _extract_blocksworld_actions_line_based(text: str) -> list[str]:
 
 
 _MYSTERY_LINE = re.compile(
-    r"^(attack|succumb|overcome|feast)\s+([a-z0-9]+)(?:\s+([a-z0-9]+))?\s*$",
+    r"^(attack|succumb|overcome|broker|feast)\s+([a-z0-9]+)(?:\s+([a-z0-9]+))?\s*$",
     re.IGNORECASE,
 )
 
@@ -211,7 +219,7 @@ def _apply_mystery_action(state: set[tuple], action: str) -> bool:
     verb = parts[0]
     if verb in {"attack", "succumb"} and len(parts) != 2:
         return False
-    if verb in {"overcome", "feast"} and len(parts) != 3:
+    if verb in {"overcome", "broker", "feast"} and len(parts) != 3:
         return False
 
     if verb == "attack":
@@ -230,7 +238,7 @@ def _apply_mystery_action(state: set[tuple], action: str) -> bool:
         state.remove(("pain", x))
         state.update({("province", x), ("planet", x), ("harmony",)})
         return True
-    if verb == "overcome":
+    if verb in {"overcome", "broker"}:
         x, y = parts[1], parts[2]
         pre = {("pain", x), ("province", y)}
         if not pre.issubset(state):
@@ -290,7 +298,7 @@ def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=N
         if sim_ok is False:
             return False
         mystery_pattern = re.compile(
-            r"(attack|succumb|overcome|feast)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
+            r"(attack|succumb|overcome|broker|feast)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
             re.IGNORECASE,
         )
         model_matches = _extract_actions(model_answer, mystery_pattern)

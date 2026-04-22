@@ -12,11 +12,15 @@ import pandas as pd
 
 def align_instance(
     problem_id: str,
-    css: float | None,
-    contamination_score: float | None,
+    var: float | None = None,
+    css: float | None = None,
+    contamination_score: float | None = None,
     cci: float | None = None,
 ) -> dict:
-    
+    var_signal = None
+    if var is not None:
+        var_signal = "computation" if var > 0.0 else "retrieval"
+
     css_signal = None
     if css is not None:
         css_signal = "computation" if css >= 0.5 else "retrieval"
@@ -34,7 +38,7 @@ def align_instance(
     if cci is not None:
         cci_signal = "computation" if cci >= 0.4 else "retrieval"
 
-    signals = [s for s in [css_signal, contamination_signal, cci_signal] if s is not None]
+    signals = [s for s in [var_signal, contamination_signal, cci_signal] if s is not None]
     n_signals = len(signals)
 
     if n_signals < 2:
@@ -54,6 +58,7 @@ def align_instance(
 
     return {
         "problem_id": problem_id,
+        "var_signal": var_signal,
         "css_signal": css_signal,
         "contamination_signal": contamination_signal,
         "cci_signal": cci_signal,
@@ -69,6 +74,7 @@ def align_all(results: list[dict]) -> pd.DataFrame:
     for row in results:
         aligned_results.append(align_instance(
             problem_id=row.get("problem_id", ""),
+            var=row.get("var"),
             css=row.get("css"),
             contamination_score=row.get("contamination_score"),
             cci=row.get("cci")
