@@ -50,13 +50,12 @@ Each canonical problem is rewritten in multiple surface variants, presented in s
 | W3 | Entity rename |
 | W4 | Formal notation *(applicable families only)* |
 | W6 | Procedural regeneration (scripted, documented random seed) |
-| W7 | Forward-backward reversal *(applicable families only — answer changes)* |
+| W5 | Forward-backward reversal *(applicable families only — answer changes)* |
 
-> W5 (distractor insertion) was considered and rejected — it adds new content rather than varying surface form, making it a different probe entirely.
 
 **Metrics:**
 - **CSS** (Consistency Surface Score): fraction of applicable variants where model answer matches the original
-- **RCS** (Reversal Correctness Score): for W7 — did the model produce the correctly-reversed answer?
+- **RCS** (Reversal Correctness Score): for W5 — did the model produce the correctly-reversed answer?
 - **CAS** (Consistent Answer Signature): for hard-tier problems — did the model fail consistently (structural) or differently across variants (noisy)?
 
 **Mechanistic partner (Qwen2.5-7B only):** Layer-wise cosine similarity between residual-stream activations at matched token positions across variants. Activation patching on a subset with random-position control.
@@ -172,7 +171,7 @@ All sub-types from Mirzadeh et al.'s GSM-Symbolic toolkit — same verifier styl
 | GSM-P1/P2 | 4 | Depth-increased variants with additional arithmetic steps. Hard tier. |
 | GSM-NoOp | 3 | Distractor-containing variants used as naturally-hard instances, not as a variant generation method. |
 
-> W4 (formal notation) and W7 (reversal) do not apply to this family — arithmetic word problems don't have clean formal notation counterparts or natural reverse directions.
+> W4 (formal notation) and W5 (reversal) do not apply to this family — arithmetic word problems don't have clean formal notation counterparts or natural reverse directions.
 
 **Contamination targets:** 5 high / 5 medium / 5 low (procedurally re-templated with fresh parameter seeds).
 
@@ -191,7 +190,7 @@ Four algorithmic sub-types within one family — consistent variant-writing guid
 | Coin Change | 4 | 2 standard (canonical denominations), 2 adversarial (e.g. {1,3,4} for target 6 — greedy fails). Verifier: DP solver. |
 | Knapsack | 3 | 1 standard, 2 adversarial (value/weight-ratio greedy fails). Verifier: DP solver. |
 
-**W7 applicability:** Shortest Path (undirected graphs trivially reversible, directed with care) and Coin Change (target-to-denominations reversal is meaningful). Not applicable to WIS or Knapsack.
+**W5 applicability:** Shortest Path (undirected graphs trivially reversible, directed with care) and Coin Change (target-to-denominations reversal is meaningful). Not applicable to WIS or Knapsack.
 
 **Contamination targets:** 5 high / 5 medium / 5 low.
 
@@ -217,9 +216,9 @@ Four algorithmic sub-types within one family — consistent variant-writing guid
 | W3 Entity rename | All | All | All |
 | W4 Formal notation | Partial (BW, Logistics via PDDL) | Not applicable | All |
 | W6 Procedural regeneration | All | All | All |
-| W7 Reversal | Blocksworld only | Not applicable | SP and Coin Change only |
+| W5 Reversal | Blocksworld only | Not applicable | SP and Coin Change only |
 
-W4 and W7 are partial variants — reported on applicable subsets only, not pooled into the main CSS computation.
+W4 and W5 are partial variants — reported on applicable subsets only, not pooled into the main CSS computation.
 
 ---
 
@@ -284,8 +283,7 @@ The following are **not settled** and must not be treated as such in any impleme
 ### Probes and strategies
 - **S3–S8** (reasoning trace audit, linked-question consistency, confidence-vs-correctness, forward-backward as standalone, skill composition, generative problem construction): each addresses a different research question. Saved for future papers.
 - **A3 (adversarial distractors) as Probe 1**: same input axis as surface invariance, no pilot data, weaker mechanistic partner.
-- **D1 (reversal) as a fourth probe**: same axis as Probe 1 — would break three-axis triangulation. Bundled as W7 with its own metric (RCS) instead.
-- **W5 (distractor insertion) as Probe 1 variant**: adds content rather than varying surface form.
+- **D1 (reversal) as a fourth probe**: same axis as Probe 1 — would break three-axis triangulation. Bundled as W5 with its own metric (RCS) instead.
 - **LLM-generated variants**: introduces systematic bias correlated with the evaluating model's training distribution. Human-written variants only.
 
 ### Problem set

@@ -17,16 +17,6 @@ from probes.behavioral.css import compute_css
 from probes.triangulation.per_instance import align_instance
 
 
-def _css_group_id(problem_id: str, variant_type: str) -> str:
-    """Canonical instance id for CSS: W5 sweep rows use ``BW_xxx_W5`` in CSV but
-    join to contamination/triage on ``BW_xxx``."""
-    pid = str(problem_id).strip()
-    vt = str(variant_type).strip().upper()
-    if vt == "W5" and pid.endswith("_W5"):
-        return pid[:-3]
-    return pid
-
-
 def _question_bank_meta_lookup(path: str) -> dict[tuple[str, str], dict[str, str]]:
     """(problem_id, variant_type lower) -> correct_answer, problem_text from bank."""
     p = Path(path)
@@ -97,6 +87,7 @@ def main():
         default=QUESTION_BANK_PATH,
         help="Used to fill correct_answer / problem_text for CSS when missing from behavioral CSV",
     )
+    # Available output name choices: per-model files are written by the caller via --output
     parser.add_argument("--output", type=str, default="results/triangulation_per_instance.csv")
     parser.add_argument(
         "--regression-output",
@@ -118,6 +109,35 @@ def main():
         )
         if behavioral_model_resolved:
             print(f"Behavioral CSS slice: model={behavioral_model_resolved!r}")
+
+    if not df_beh.empty and "problem_id" in df_beh.columns:
+        # Normalize problem_id to base canonical ID.
+        # Old W5 rows were stored as BW_001_W5_TEMP; W6 rows as BW_001_W6 or BW_E002_W6.
+        # Strip all these suffixes so they group under their canonical base problem.
+        def _base_id(pid: str) -> str:
+            import re
+            pid = pid.strip()
+            pid = re.sub(r"_W5_TEMP$", "", pid)
+            pid = re.sub(r"_W[0-9]+$", "", pid)
+            return pid
+
+        def _infer_vtype(pid: str, existing_vtype: str) -> str:
+            """If problem_id encodes the variant, use that; otherwise keep existing."""
+            import re
+            if existing_vtype and existing_vtype.strip().upper() not in ("", "NAN", "NONE"):
+                match = re.search(r"_(W[0-9]+)(?:_TEMP)?$", pid.strip())
+                if match:
+                    # problem_id has a variant suffix — use it as override
+                    return match.group(1)
+                return existing_vtype
+            match = re.search(r"_(W[0-9]+)(?:_TEMP)?$", pid.strip())
+            return match.group(1) if match else existing_vtype
+
+        df_beh["base_id"] = df_beh["problem_id"].astype(str).apply(_base_id)
+        df_beh["variant_type"] = df_beh.apply(
+            lambda r: _infer_vtype(str(r["problem_id"]), str(r.get("variant_type", ""))),
+            axis=1,
+        )
 
     available = []
     if not df_beh.empty: available.append("Behavioral")
@@ -143,11 +163,7 @@ def main():
         else:
             bank_meta = _question_bank_meta_lookup(args.question_bank)
             df_css = df_beh.copy()
-            df_css["_css_group"] = [
-                _css_group_id(r["problem_id"], r.get("variant_type", ""))
-                for _, r in df_css.iterrows()
-            ]
-            for pid, group in df_css.groupby("_css_group"):
+            for pid, group in df_css.groupby("base_id"):
                 pid_str = str(pid).strip()
                 # Prefer behavioral row family (blocksworld / mystery_blocksworld). Contamination
                 # CSV may use umbrella labels like planning_suite that verify_answer rejects.
@@ -172,7 +188,8 @@ def main():
                     vtype = str(row.get("variant_type", "")).strip()
                     vkey = vtype.lower()
                     row_pid = str(row.get("problem_id", "")).strip()
-                    meta = bank_meta.get((row_pid, vkey), {})
+                    # Look up meta using base_id (canonical pid) when row_pid is a variant-suffixed id
+                    meta = bank_meta.get((pid_str, vkey), bank_meta.get((row_pid, vkey), {}))
                     row_ca = row.get("correct_answer", "")
                     row_ca = "" if pd.isna(row_ca) else str(row_ca)
                     corr = row_ca or meta.get("correct_answer", "")
@@ -188,7 +205,7 @@ def main():
                         or vkey in ("nan", "none", "canonical")
                     ):
                         canonical_correct = corr
-                    elif vtype.startswith("W") and vtype != "W6":
+                    elif vtype.startswith("W") and vtype not in ("W5", "W6"):
                         variants.append(
                             {
                                 "variant_type": vtype,

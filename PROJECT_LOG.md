@@ -89,7 +89,7 @@ Single source of truth for codebase state, bugs, deferred decisions, and what to
 ## Section 5 — Known Bugs and Fixes Needed
 
 ### Bug 1 (CRITICAL): `run_behavioral_sweep.py` — no variant support
-The behavioral sweep currently only runs canonical problems. CSS requires variant responses (W1-W5 per problem). This is the most important missing piece before Phase 3.
+The behavioral sweep currently only runs canonical problems. CSS requires variant responses (W1-W4, W6 per problem). This is the most important missing piece before Phase 3.
 
 **What needs to happen when variant bank arrives:**
 - `run_behavioral_sweep.py` must add a second loop over `probe1_variants.csv`
@@ -235,7 +235,7 @@ Option B — raw HuggingFace hooks (most portable):
 **Blockers at end:** Adya's PR, GPU, `sanity_check.py` structural bug, model sweep not written.
 
 ### Session 2
-**Done:** `configs/`, `.env.example`, `Makefile`, `verify.py` stub, `probes/common/io.py`, `parsers.py`, `stats.py`, `mock_client.py`, `probe1_triage_plot.py`, `run_contamination_triage.py`. Variant numbering locked W1-W6 (W5=procedural, W6=reversal). All team docs: `shasshy.md`, `nandini.md`, `CONTRIBUTING_VARIANTS.md`, `REVIEW_PROTOCOL.md`.
+**Done:** `configs/`, `.env.example`, `Makefile`, `verify.py` stub, `probes/common/io.py`, `parsers.py`, `stats.py`, `mock_client.py`, `probe1_triage_plot.py`, `run_contamination_triage.py`. Variant numbering locked W1-W6 (W6=procedural, W5=reversal). All team docs: `shasshy.md`, `nandini.md`, `CONTRIBUTING_VARIANTS.md`, `REVIEW_PROTOCOL.md`.
 
 **Bugs identified:** `triage.py` behavioral_correct (fixed), `model_sweep.py` path + signature (queued).
 
@@ -260,7 +260,7 @@ Added strict schema validation via `probes/common/io.py` (`QUESTION_BANK_COLUMNS
 Validation run output:
 - Migrated rows: 70
 - Canonical: 15
-- Variants: 55 (`W2=15`, `W3=15`, `W4=15`, `W6=10`)
+- Variants: 55 (`W2=15`, `W3=15`, `W4=15`, `W5=10`)
 - Strict schema confirmed in file header and pandas check.
 
 **Verifier/state-machine status:**
@@ -359,7 +359,7 @@ Update your `configs/models.yaml` to reflect this. Everything else in your codeb
 
 Problem IDs: BW_001 through BW_467, MBW_001 through MBW_10 (canonical rows in triage).
 
-Variants in behavioral sweep: canonical, W2, W3, W4, W5, W6 (BW_080/W6 gap per bank).
+Variants in behavioral sweep: canonical, W2, W3, W4, W5, W6 (BW_080/W5 gap per bank).
 
 Models (OpenRouter): `anthropic/claude-3.7-sonnet`, `openai/gpt-4o`, `meta-llama/llama-3.1-8b-instruct`.
 
@@ -380,3 +380,68 @@ Gate 1 (Claude 3.7 slice, *n*=15): triangulation convergence rate **0%** (all `d
 
 Next: GSM family ingestion; optional mechanistic when GPU available.
 
+So the right framing for your paper is: canonical instances are drawn from published benchmarks deliberately, to inherit their validation and to ground the contamination scoring in real training-data exposure. 
+---
+## TODO: W1 Lexical Paraphrase — NOT YET DONE
+Date flagged: [today's date]
+Status: BLOCKED — human writing required before any commands can be run
+
+W1 (lexical paraphrase) is missing for all 20 canonical problems:
+- 15 Blocksworld: BW_001, BW_010, BW_011, BW_080, BW_120, BW_137, BW_155, BW_172, BW_227, BW_467, BW_E002, BW_E015, BW_E017, BW_E019, BW_E100
+- 5 Mystery Blocksworld: MBW_001, MBW_10, MBW_100, MBW_127, MBW_185
+
+W1 rules (do not deviate):
+- Rephrase the problem statement and action descriptions in different natural language
+- Block names, action names (pick-up/put-down/stack/unstack), and goal state must remain identical
+- For MBW: rephrase only the wrapper prose; the nonsense predicate names (attack/succumb/overcome/feast, harmony/planet/province/pain/craves) must NOT be changed — they are the experimental manipulation
+- Each W1 must be reviewed by a team member who did not write it
+- Do NOT use an LLM to generate W1 variants — human-written only per research design
+
+Once W1 variants are written and added to question_bank.csv with variant_type="W1", run these commands in order:
+---
+
+## Section 11 — Current Repo Snapshot (Apr 2026)
+
+### Active data state
+
+- Source of truth: `data/problems/question_bank.csv`
+- Current size: **140 rows**
+- Family coverage in active bank:
+  - `planning_suite`: 140
+  - GSM / Algorithmic: not yet ingested into this active bank
+- Subtype coverage:
+  - `blocksworld`: 115
+  - `mystery_blocksworld`: 25
+- Variant distribution:
+  - `canonical=20`, `W1=20`, `W2=20`, `W3=20`, `W4=20`, `W5=15`, `W6=25`
+
+### What each pipeline file is doing right now
+
+- `scripts/run_behavioral_sweep.py`: Probe 1 generation + scoring entrypoint (resume-safe, supports family/subtype filtering).
+- `scripts/extract_phase1_plans.py`: extracts canonical plan outputs from behavioral runs for Probe 2 input.
+- `scripts/run_probe2a_cci.py`: Probe 2a closed-loop execution consistency from extracted plans.
+- `scripts/run_probe2b_tep.py`: Probe 2b perturbation/cascade behavior.
+- `scripts/run_contamination_triage.py`: contamination indexing over canonical rows.
+- `scripts/run_triangulation.py`: merges behavioral/mechanistic/contamination evidence per problem.
+- `scripts/run_mechanistic_sweep.py`: mechanistic metrics (dry-run local, real run GPU).
+
+### Blocksworld current execution status
+
+- Probe 1/triangulation have historical runs in `results/`.
+- Probe 2 scripts now include stronger action normalization and additional diagnostics.
+- One clean **final** run is still needed from a frozen bank to avoid mixed historical output files.
+
+### Cleanup and stabilization tasks before final rerun
+
+1. Freeze `question_bank.csv` (no ad-hoc manual edits after this point).
+2. Archive legacy/mixed result files; keep one current target file per probe/model.
+3. Run a deterministic coverage audit before paid calls:
+   - missing `(problem_id, variant_type, model)` for behavioral
+   - missing `problem_id` for contamination canonical set
+4. Execute full pipeline in order:
+   - behavioral (all three models, resume on)
+   - extract phase1 plans
+   - probe2a + probe2b
+   - contamination
+   - triangulation per model
+5. Only after Planning Suite is stable, ingest GSM + Algorithmic families into the same unified schema.

@@ -2,8 +2,8 @@
 CSS (Consistency Surface Score) measures the fraction of applicable variants
 on which a model's answer matches its answer on the canonical problem.
 
-CSS is undefined for W6 variants (reversal changes the correct answer).
-Use rcs.py for W6. W4 and W6 are partial variants reported separately.
+CSS is undefined for W5 variants (reversal changes the correct answer).
+Use rcs.py for W5. W4 and W5 are partial variants reported separately.
 """
 
 from __future__ import annotations
@@ -35,8 +35,8 @@ def compute_css(
     for variant in variant_responses:
         variant_type = variant["variant_type"]
         
-        if variant_type == "W6":
-            raise ValueError(f"W6 variant encountered for {problem_id}. CSS is undefined for W6.")
+        if variant_type == "W5":
+            raise ValueError(f"W5 variant encountered for {problem_id}. CSS is undefined for W5.")
             
         is_correct = bool(verify_answer(
             problem_id,

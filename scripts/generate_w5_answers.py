@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate correct_answer for W6 blocksworld variants.
+"""Generate correct_answer for W5 blocksworld variants.
 
-W6 is the "reverse planning" variant: the initial and goal states of the
+W5 is the "reverse planning" variant: the initial and goal states of the
 canonical problem are swapped.  Consequently, the reversed canonical plan
-(with each action semantically inverted) should be a valid plan for the W6
+(with each action semantically inverted) should be a valid plan for the W5
 problem.
 
 Inverse action mapping
@@ -15,10 +15,10 @@ Inverse action mapping
 
 Algorithm
 ---------
-1. For each W6 blocksworld row whose correct_answer is empty:
+1. For each W5 blocksworld row whose correct_answer is empty:
    a. Find the canonical row with the same problem_id.
    b. Reverse the canonical move list and invert each action.
-   c. Parse the W6 problem_text to extract the initial state.
+   c. Parse the W5 problem_text to extract the initial state.
    d. Simulate the reversed plan step-by-step, checking preconditions.
    e. If all moves are legal → fill correct_answer.
    f. Otherwise → print WARNING, leave correct_answer empty.
@@ -26,9 +26,9 @@ Algorithm
 
 Usage
 -----
-  python scripts/generate_w6_answers.py
-  python scripts/generate_w6_answers.py --dry-run
-  python scripts/generate_w6_answers.py --csv path/to/other.csv
+  python scripts/generate_w5_answers.py
+  python scripts/generate_w5_answers.py --dry-run
+  python scripts/generate_w5_answers.py --csv path/to/other.csv
 """
 
 from __future__ import annotations
@@ -172,13 +172,13 @@ class BlocksworldState:
 
 
 # ---------------------------------------------------------------------------
-# State parsing from W6 problem_text
+# State parsing from W5 problem_text
 # ---------------------------------------------------------------------------
 
-def _parse_w6_initial_state(problem_text: str) -> BlocksworldState:
-    """Extract the initial blocksworld state from a W6 problem_text string.
+def _parse_w5_initial_state(problem_text: str) -> BlocksworldState:
+    """Extract the initial blocksworld state from a W5 problem_text string.
 
-    The W6 problem_text has "Current state:" section describing which blocks
+    The W5 problem_text has "Current state:" section describing which blocks
     are on the table and which are stacked on others, e.g.:
 
       Current state: Block i is on block f, block f is on block e, ... 
@@ -355,33 +355,30 @@ def process(csv_path: Path, dry_run: bool) -> None:
         subtype = row.get("problem_subtype", "").strip().lower()
         answer = row.get("correct_answer", "").strip()
 
-        # Target: W6 blocksworld with missing answer
-        if vtype != "W6":
+        # Target: W5 blocksworld with missing answer
+        if vtype != "W5":
             continue
         if subtype != "blocksworld":
             skipped += 1
             continue
-        if answer:
-            print(f"[SKIP]  {pid} W6 — already has an answer")
-            skipped += 1
-            continue
+        # Removed skip if answer check so it can override inherited canonical ones.
 
         # --- Locate canonical row ---
         canonical = canonical_lookup.get(pid)
         if canonical is None:
-            print(f"[WARN]  {pid} W6 — no canonical row found; skipping")
+            print(f"[WARN]  {pid} W5 — no canonical row found; skipping")
             skipped += 1
             continue
 
         canonical_answer = canonical.get("correct_answer", "").strip()
         if not canonical_answer:
-            print(f"[WARN]  {pid} W6 — canonical row has empty correct_answer; skipping")
+            print(f"[WARN]  {pid} W5 — canonical row has empty correct_answer; skipping")
             skipped += 1
             continue
 
         canonical_moves = _parse_moves(canonical_answer)
         if not canonical_moves:
-            print(f"[WARN]  {pid} W6 — canonical answer has no parseable moves; skipping")
+            print(f"[WARN]  {pid} W5 — canonical answer has no parseable moves; skipping")
             skipped += 1
             continue
 
@@ -389,16 +386,16 @@ def process(csv_path: Path, dry_run: bool) -> None:
         try:
             reversed_plan = _make_reversed_plan(canonical_moves)
         except ValueError as exc:
-            print(f"[WARN]  {pid} W6 — could not invert plan: {exc}")
+            print(f"[WARN]  {pid} W5 — could not invert plan: {exc}")
             invalid += 1
             continue
 
-        # --- Parse initial state from W6 problem_text ---
+        # --- Parse initial state from W5 problem_text ---
         problem_text = row.get("problem_text", "").strip()
         try:
-            initial_state = _parse_w6_initial_state(problem_text)
+            initial_state = _parse_w5_initial_state(problem_text)
         except ValueError as exc:
-            print(f"[WARN]  {pid} W6 — could not parse initial state: {exc}")
+            print(f"[WARN]  {pid} W5 — could not parse initial state: {exc}")
             invalid += 1
             continue
 
@@ -408,7 +405,7 @@ def process(csv_path: Path, dry_run: bool) -> None:
             step_num = (bad_idx or 0) + 1
             bad_move = reversed_plan[bad_idx] if bad_idx is not None else "?"
             print(
-                f"[WARN]  {pid} W6 — illegal move at step {step_num} "
+                f"[WARN]  {pid} W5 — illegal move at step {step_num} "
                 f"({bad_move!r}): {err_msg}"
             )
             invalid += 1
@@ -417,12 +414,12 @@ def process(csv_path: Path, dry_run: bool) -> None:
         # --- All good: fill the answer ---
         plan_str = "\n".join(reversed_plan)
         if dry_run:
-            print(f"[DRY]   {pid} W6 — would write {len(reversed_plan)}-step plan:")
+            print(f"[DRY]   {pid} W5 — would write {len(reversed_plan)}-step plan:")
             for i, m in enumerate(reversed_plan, 1):
                 print(f"          {i}. {m}")
         else:
             row["correct_answer"] = plan_str
-            print(f"[FILL]  {pid} W6 — wrote {len(reversed_plan)}-step reversed plan")
+            print(f"[FILL]  {pid} W5 — wrote {len(reversed_plan)}-step reversed plan")
         filled += 1
 
     # --- Persist ---
@@ -436,7 +433,7 @@ def process(csv_path: Path, dry_run: bool) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate correct_answer for W6 blocksworld variants by reversing canonical plans.",
+        description="Generate correct_answer for W5 blocksworld variants by reversing canonical plans.",
     )
     parser.add_argument(
         "--csv",

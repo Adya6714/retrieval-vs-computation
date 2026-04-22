@@ -1,0 +1,40 @@
+Saved to results/probe2_validity_comparison.csv
+
+=== Phase 1 vs Phase 2 validity rate by model ===
+                                  p1_validity_rate  p2_validity_rate    cci
+model                                                                      
+anthropic/claude-3.7-sonnet                  0.059             0.000  0.000
+meta-llama/llama-3.1-8b-instruct             0.093             0.005  0.007
+openai/gpt-4o                                0.119             0.003  0.000
+
+=== By difficulty ===
+            p1_validity_rate  p2_validity_rate    cci
+difficulty                                           
+easy                   0.070             0.005  0.005
+hard                   0.099             0.000  0.000
+medium                 0.132             0.000  0.000
+
+=== Where Phase 1 first breaks (step number) ===
+                                  count  mean   std  min  25%  50%  75%   max
+model                                                                        
+anthropic/claude-3.7-sonnet        15.0  1.27  2.46  0.0  0.0  1.0  1.0  10.0
+meta-llama/llama-3.1-8b-instruct   15.0  1.07  0.96  0.0  0.0  1.0  2.0   2.0
+openai/gpt-4o                      15.0  1.33  0.98  0.0  0.0  2.0  2.0   2.0
+
+=== Per problem detail (Claude only) ===
+problem_id difficulty  p1_valid_steps  p1_plan_length  p1_validity_rate  p2_valid_steps  p2_validity_rate  cci
+    BW_155       easy               1               9            0.1111               0               0.0  0.0
+    BW_010       easy               1              24            0.0417               0               0.0  0.0
+    BW_001     medium               1              21            0.0476               0               0.0  0.0
+    BW_011       hard               1              29            0.0345               0               0.0  0.0
+    BW_120       easy               1              11            0.0909               0               0.0  0.0
+    BW_227       hard              10              26            0.3846               0               0.0  0.0
+    BW_137       hard               1              34            0.0294               0               0.0  0.0
+    BW_172       hard               1              32            0.0312               0               0.0  0.0
+    BW_467     medium               1              35            0.0286               0               0.0  0.0
+    BW_080     medium               1              11            0.0909               0               0.0  0.0
+   BW_E100       easy               0              30            0.0000               0               0.0  0.0
+   BW_E015       easy               0              22            0.0000               0               0.0  0.0
+   BW_E017       easy               0              15            0.0000               0               0.0  0.0
+   BW_E019       easy               0              31            0.0000               0               0.0  0.0
+   BW_E002       easy               0              24            0.0000               0               0.0  0.0

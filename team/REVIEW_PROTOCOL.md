@@ -37,7 +37,7 @@ The problem set is the foundation of the paper. A wrong answer in the CSV means 
 - [ ] How many instances / variants added
 - [ ] Which families / sub-types
 - [ ] Which instances are procedurally generated (list seeds)
-- [ ] Which instances are W6 (answer differs from canonical)
+- [ ] Which instances are W5 (answer differs from canonical)
 
 ## Self-check completed
 - [ ] Every answer independently verified
@@ -84,8 +84,8 @@ If any item fails: comment on the specific row in the PR. Do not approve until f
 For each variant in the PR:
 
 **Answer correctness**
-- [ ] For W1–W5: correct answer matches canonical exactly
-- [ ] For W6: correct answer was independently computed from the reversed problem
+- [ ] For W1–W4, W6: correct answer matches canonical exactly
+- [ ] For W5: correct answer was independently computed from the reversed problem
 - [ ] Independently solved the variant and got the same answer as `correct_answer`
 
 **Variant validity**
@@ -93,8 +93,8 @@ For each variant in the PR:
 - [ ] W2: all information from original is present, nothing dropped
 - [ ] W3: entity mapping is consistent throughout, no label missed
 - [ ] W4: formal notation is correct and complete
-- [ ] W5: generated instance is valid (answer correct, difficulty appropriate)
-- [ ] W6: reversal is well-defined and unambiguous
+- [ ] W6: generated instance is valid (answer correct, difficulty appropriate)
+- [ ] W5: reversal is well-defined and unambiguous
 
 **Meta**
 - [ ] `variant_id` follows format `PROBLEMID_WTYPE`
@@ -130,7 +130,7 @@ Escalate to Adya when:
 - An instance or variant doesn't fit cleanly into any tier definition in `INSTANCE_SELECTION_CRITERIA.md`
 - A source cannot be verified
 - Any code needs to be written or changed
-- A W6 reversal is ambiguous and you can't resolve it
+- A W5 reversal is ambiguous and you can't resolve it
 
 Do not merge anything escalated until Adya responds.
 

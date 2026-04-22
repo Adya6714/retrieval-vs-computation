@@ -1,0 +1,227 @@
+Loaded 60 plan rows
+
+--- anthropic/claude-3.7-sonnet | 15 problems ---
+  BW_155 | inject@2/9 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_155 | inject@3/9 | running... TEP=None | first=illegal_both | A=0 R=0 X=46
+  BW_155 | inject@4/9 | running... TEP=None | first=illegal_both | A=0 R=0 X=45
+  BW_155 | inject@6/9 | running... TEP=None | first=illegal_both | A=0 R=0 X=43
+  BW_010 | inject@2/24 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_010 | inject@8/24 | running... TEP=None | first=illegal_both | A=0 R=0 X=41
+  BW_010 | inject@12/24 | running... TEP=None | first=illegal_both | A=0 R=0 X=37
+  BW_010 | inject@16/24 | running... TEP=None | first=illegal_both | A=0 R=0 X=33
+  BW_001 | inject@2/21 | running... TEP=None | first=ambiguous | A=0 R=0 X=46
+  BW_001 | inject@7/21 | running... TEP=None | first=illegal_both | A=0 R=0 X=42
+  BW_001 | inject@10/21 | running... TEP=None | first=illegal_both | A=0 R=0 X=39
+  BW_001 | inject@14/21 | running... TEP=None | first=illegal_both | A=0 R=0 X=35
+  BW_011 | inject@2/29 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_011 | inject@9/29 | running... TEP=None | first=illegal_both | A=0 R=0 X=40
+  BW_011 | inject@14/29 | running... TEP=None | first=illegal_both | A=0 R=0 X=35
+  BW_011 | inject@19/29 | running... TEP=None | first=illegal_both | A=0 R=0 X=30
+  BW_120 | inject@2/11 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_120 | inject@3/11 | running... TEP=None | first=illegal_both | A=0 R=0 X=46
+  BW_120 | inject@5/11 | running... TEP=None | first=illegal_both | A=0 R=0 X=44
+  BW_120 | inject@7/11 | running... TEP=None | first=illegal_both | A=0 R=0 X=42
+  BW_227 | inject@2/26 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_227 | inject@8/26 | running... TEP=None | first=illegal_both | A=0 R=0 X=41
+  BW_227 | inject@13/26 | running... TEP=None | first=illegal_both | A=0 R=0 X=36
+  BW_227 | inject@17/26 | running... TEP=None | first=illegal_both | A=0 R=0 X=32
+  BW_137 | inject@2/34 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_137 | inject@11/34 | running... TEP=None | first=illegal_both | A=0 R=0 X=38
+  BW_137 | inject@17/34 | running... TEP=None | first=illegal_both | A=0 R=0 X=32
+  BW_137 | inject@22/34 | running... TEP=None | first=illegal_both | A=0 R=0 X=27
+  BW_172 | inject@2/32 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_172 | inject@10/32 | running... TEP=None | first=illegal_both | A=0 R=0 X=39
+  BW_172 | inject@16/32 | running... TEP=None | first=illegal_both | A=0 R=0 X=33
+  BW_172 | inject@21/32 | running... TEP=None | first=illegal_both | A=0 R=0 X=28
+  BW_467 | inject@2/35 | running... TEP=None | first=ambiguous | A=0 R=0 X=44
+  BW_467 | inject@11/35 | running... TEP=None | first=illegal_both | A=0 R=0 X=38
+  BW_467 | inject@17/35 | running... TEP=None | first=illegal_both | A=0 R=0 X=32
+  BW_467 | inject@23/35 | running... TEP=None | first=illegal_both | A=0 R=0 X=26
+  BW_080 | inject@2/11 | running... TEP=None | first=ambiguous | A=0 R=0 X=36
+  BW_080 | inject@3/11 | running... TEP=None | first=illegal_both | A=0 R=0 X=44
+  BW_080 | inject@5/11 | running... TEP=None | first=ambiguous | A=0 R=0 X=39
+  BW_080 | inject@7/11 | running... TEP=None | first=illegal_both | A=0 R=0 X=42
+  BW_E100 | inject@2/30 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@10/30 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@15/30 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@20/30 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@2/22 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@7/22 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@11/22 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@14/22 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@2/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@5/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@7/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@10/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@2/31 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@10/31 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@15/31 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@20/31 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@2/24 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@8/24 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@12/24 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@16/24 | running... TEP=None | first=None | A=None R=None X=None
+
+--- openai/gpt-4o | 15 problems ---
+  BW_155 | inject@2/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_155 | inject@3/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=46
+  BW_155 | inject@4/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=45
+  BW_155 | inject@5/8 | running... TEP=None | first=ambiguous | A=0 R=0 X=43
+  BW_010 | inject@2/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_010 | inject@3/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=46
+  BW_010 | inject@4/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=45
+  BW_010 | inject@5/8 | running... TEP=None | first=illegal_both | A=0 R=0 X=44
+  BW_001 | inject@2/14 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_001 | inject@4/14 | running... TEP=None | first=illegal_both | A=0 R=0 X=45
+  BW_001 | inject@7/14 | running... TEP=None | first=illegal_both | A=0 R=0 X=42
+  BW_001 | inject@9/14 | running... TEP=None | first=illegal_both | A=0 R=0 X=40
+  BW_011 | inject@2/18 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_011 | inject@6/18 | running... TEP=None | first=illegal_both | A=0 R=0 X=43
+  BW_011 | inject@9/18 | running... TEP=None | first=illegal_both | A=0 R=0 X=40
+  BW_011 | inject@12/18 | running... TEP=None | first=illegal_both | A=0 R=0 X=37
+  BW_120 | inject@2/6 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_120 | inject@3/6 | running... TEP=None | first=illegal_both | A=0 R=0 X=46
+  BW_120 | inject@4/6 | running... TEP=None | first=illegal_both | A=0 R=0 X=45
+  BW_227 | inject@2/16 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_227 | inject@5/16 | running... TEP=None | first=illegal_both | A=0 R=0 X=44
+  BW_227 | inject@8/16 | running... TEP=None | first=illegal_both | A=0 R=0 X=41
+  BW_227 | inject@10/16 | running... TEP=None | first=illegal_both | A=0 R=0 X=39
+  BW_137 | inject@2/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_137 | inject@6/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=43
+  BW_137 | inject@10/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=39
+  BW_137 | inject@13/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=36
+  BW_172 | inject@2/20 | running...     API error at step 12: API error 504: {"error":{"message":"The operation was aborted","code":504,"metadata":{"provider_name":"OpenAI"}},"user_id":"user_2tyoeDX3nyYsC40NpGtBGUzJ7ux"}
+TEP=None | first=illegal_both | A=0 R=0 X=9
+  BW_172 | inject@6/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=43
+  BW_172 | inject@10/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=39
+  BW_172 | inject@13/20 | running... TEP=None | first=illegal_both | A=0 R=0 X=36
+  BW_467 | inject@2/12 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_467 | inject@4/12 | running... TEP=None | first=illegal_both | A=0 R=0 X=45
+  BW_467 | inject@6/12 | running... TEP=None | first=illegal_both | A=0 R=0 X=43
+  BW_467 | inject@8/12 | running... TEP=None | first=illegal_both | A=0 R=0 X=41
+  BW_080 | inject@2/10 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_080 | inject@3/10 | running... TEP=None | first=illegal_both | A=0 R=0 X=46
+  BW_080 | inject@5/10 | running...     API error at step 10: API error 504: {"error":{"message":"The operation was aborted","code":504,"metadata":{"provider_name":"OpenAI"}},"user_id":"user_2tyoeDX3nyYsC40NpGtBGUzJ7ux"}
+TEP=None | first=illegal_both | A=0 R=0 X=4
+  BW_080 | inject@6/10 | running... TEP=None | first=illegal_both | A=0 R=0 X=43
+  BW_E100 | inject@2/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@5/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@8/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@11/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@2/25 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@8/25 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@12/25 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@16/25 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@2/35 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@11/35 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@17/35 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@23/35 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@2/21 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@7/21 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@10/21 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@14/21 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@2/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@6/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@10/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@13/20 | running... TEP=None | first=None | A=None R=None X=None
+
+--- meta-llama/llama-3.1-8b-instruct | 15 problems ---
+  BW_155 | inject@2/12 | running... TEP=None | first=illegal_both | A=0 R=0 X=47
+  BW_155 | inject@4/12 | running...     API error at step 18: HTTPSConnectionPool(host='openrouter.ai', port=443): Read timed out.
+TEP=None | first=illegal_both | A=0 R=0 X=13
+  BW_155 | inject@6/12 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_155 | inject@8/12 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_010 | inject@2/6 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_010 | inject@3/6 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_010 | inject@4/6 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_001 | inject@2/14 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_001 | inject@4/14 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_001 | inject@7/14 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_001 | inject@9/14 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_011 | inject@2/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_011 | inject@6/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_011 | inject@10/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_011 | inject@13/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_120 | inject@2/9 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_120 | inject@3/9 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_120 | inject@4/9 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_120 | inject@6/9 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_227 | inject@2/16 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_227 | inject@5/16 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_227 | inject@8/16 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_227 | inject@10/16 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_137 | inject@2/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_137 | inject@6/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_137 | inject@10/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_137 | inject@13/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_172 | inject@2/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_172 | inject@6/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_172 | inject@10/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_172 | inject@13/20 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_467 | inject@2/12 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_467 | inject@4/12 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_467 | inject@6/12 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_467 | inject@8/12 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_080 | inject@2/10 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_080 | inject@3/10 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_080 | inject@5/10 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_080 | inject@6/10 | running...     API error at step 0: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='openrouter.ai', port=443): Failed to resolve 'openrouter.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+TEP=None | first=None | A=0 R=0 X=0
+  BW_E100 | inject@2/12 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@4/12 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@6/12 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E100 | inject@8/12 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@2/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@5/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@7/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E015 | inject@10/15 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@2/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@5/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@8/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E017 | inject@11/17 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@2/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@6/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@10/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E019 | inject@13/20 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@2/16 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@5/16 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@8/16 | running... TEP=None | first=None | A=None R=None X=None
+  BW_E002 | inject@10/16 | running... TEP=None | first=None | A=None R=None X=None
+
+Done. Results in results/probe2b_tep.csv

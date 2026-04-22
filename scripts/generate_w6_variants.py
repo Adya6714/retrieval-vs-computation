@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Generate W5 (procedural regeneration) variants for blocksworld canonical rows.
+"""Generate W6 (procedural regeneration) variants for blocksworld canonical rows.
 
-W5 means: same block set, randomly re-drawn initial and goal states, plan
+W6 means: same block set, randomly re-drawn initial and goal states, plan
 found by Fast Downward.  The generated row is appended directly to
-question_bank.csv with a new problem_id of the form ``{source_id}_W5``.
+question_bank.csv with a new problem_id of the form ``{source_id}_W6``.
 
 Usage
 -----
-  python scripts/generate_w5_variants.py \\
+  python scripts/generate_w6_variants.py \\
       --planbench /path/to/LLMs-Planning \\
       --downward  /path/to/downward/fast-downward.py
 
   # preview without writing
-  python scripts/generate_w5_variants.py \\
+  python scripts/generate_w6_variants.py \\
       --planbench /path/to/LLMs-Planning \\
       --downward  /path/to/downward/fast-downward.py \\
       --dry-run
@@ -44,7 +44,7 @@ from probes.common.io import QUESTION_BANK_PATH, QUESTION_BANK_COLUMNS
 # Constants
 # ---------------------------------------------------------------------------
 
-VARIANT_TYPE = "W5"
+VARIANT_TYPE = "W6"
 
 _BLOCKSWORLD_SUBTYPES = {"blocksworld"}
 _MYSTERY_SUBTYPES = {"mystery_blocksworld"}
@@ -91,6 +91,12 @@ def _extract_block_names(problem_text: str) -> List[str]:
 
     for m in re.finditer(r"\bblock\s+([a-z]\w*)\b", search_text, re.IGNORECASE):
         raw_names.add(m.group(1).lower())
+
+    # Fallback to PDDL objects
+    pddl_match = re.search(r'\(\:objects\s+([^\)]+)\)', search_text, re.IGNORECASE)
+    if pddl_match:
+        for tok in pddl_match.group(1).split():
+            raw_names.add(tok.lower())
 
     listing = re.search(
         r"[Bb]locks?\s+([\w,\s]+?)\s+are\s+(?:clear\s+and\s+)?on\s+the\s+table",
@@ -366,7 +372,7 @@ def _append_rows(
 # Core generation logic
 # ---------------------------------------------------------------------------
 
-def _generate_w5_for_row(
+def _generate_w6_for_row(
     row: Dict[str, str],
     domain_path: Optional[Path],
     fd_path: Optional[Path],
@@ -374,7 +380,7 @@ def _generate_w5_for_row(
     seed_value: int,
     dry_run: bool,
 ) -> Optional[Dict[str, str]]:
-    """Attempt to generate a W5 row for a canonical blocksworld row.
+    """Attempt to generate a W6 row for a canonical blocksworld row.
 
     Returns the new row dict on success, or None on failure.
     """
@@ -406,7 +412,7 @@ def _generate_w5_for_row(
     problem_text = _build_problem_text(init_stacks, goal_stacks)
 
     if dry_run:
-        print(f"[DRY]   {pid}_W5 — blocks={blocks}, seed={seed_value}")
+        print(f"[DRY]   {pid}_W6 — blocks={blocks}, seed={seed_value}")
         print(f"          init : {init_stacks}")
         print(f"          goal : {goal_stacks}")
         print(f"          text : {problem_text[:120]}...")
@@ -418,16 +424,16 @@ def _generate_w5_for_row(
         return None
 
     with tempfile.TemporaryDirectory() as tmpdir:
-        problem_file = Path(tmpdir) / f"{pid}_W5_problem.pddl"
+        problem_file = Path(tmpdir) / f"{pid}_W6_problem.pddl"
         _write_pddl_problem(
-            problem_name=f"{pid.lower()}-w5",
+            problem_name=f"{pid.lower()}-w6",
             blocks=blocks,
             init_stacks=init_stacks,
             goal_stacks=goal_stacks,
             dest=problem_file,
         )
 
-        print(f"[RUN]   {pid}_W5 — calling Fast Downward …")
+        print(f"[RUN]   {pid}_W6 — calling Fast Downward …")
         try:
             raw_actions = run_fast_downward(domain_path, problem_file, fd_path)
         except subprocess.TimeoutExpired:
@@ -444,15 +450,15 @@ def _generate_w5_for_row(
     correct_answer = "\n".join(natural_actions)
     print(f"          → {len(natural_actions)} steps")
 
-    # Build the new row: start from canonical, override W5-specific fields
+    # Build the new row: start from canonical, override W6-specific fields
     new_row: Dict[str, str] = dict(row)
-    new_row["problem_id"] = f"{pid}_W5"
+    new_row["problem_id"] = f"{pid}_W6"
     new_row["variant_type"] = VARIANT_TYPE
     new_row["problem_text"] = problem_text
     new_row["correct_answer"] = correct_answer
     new_row["contamination_pole"] = "low"
     new_row["source"] = f"generated_seed_{seed_value}"
-    new_row["notes"] = "W5 procedurally generated"
+    new_row["notes"] = "W6 procedurally generated"
     return new_row
 
 
@@ -462,7 +468,7 @@ def _generate_w5_for_row(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate W5 (procedural) blocksworld variants into question_bank.csv.",
+        description="Generate W6 (procedural) blocksworld variants into question_bank.csv.",
     )
     parser.add_argument(
         "--csv",
@@ -524,9 +530,9 @@ def main() -> None:
     if missing:
         sys.exit(f"ERROR: question_bank CSV missing columns: {sorted(missing)}")
 
-    # Build set of problem_ids that already have a W5 row
-    existing_w5_ids: Set[str] = {
-        row["problem_id"].replace("_W5", "").strip()
+    # Build set of problem_ids that already have a W6 row
+    existing_w6_ids: Set[str] = {
+        row["problem_id"].replace("_W6", "").strip()
         for row in rows
         if row.get("variant_type", "").strip() == VARIANT_TYPE
     }
@@ -547,7 +553,7 @@ def main() -> None:
 
         # Only blocksworld subtypes
         if subtype in _MYSTERY_SUBTYPES:
-            print(f"[SKIP]  {pid} — mystery_blocksworld not supported yet (W5)")
+            print(f"[SKIP]  {pid} — mystery_blocksworld not supported yet (W6)")
             skipped += 1
             continue
 
@@ -555,16 +561,16 @@ def main() -> None:
             skipped += 1
             continue
 
-        # Skip if W5 already exists
-        if pid in existing_w5_ids:
-            print(f"[SKIP]  {pid} — W5 row already exists")
+        # Skip if W6 already exists
+        if pid in existing_w6_ids:
+            print(f"[SKIP]  {pid} — W6 row already exists")
             skipped += 1
             continue
 
         seed_value = _seed_from_problem_id(pid)
         rng = np.random.default_rng(seed_value)
 
-        new_row = _generate_w5_for_row(
+        new_row = _generate_w6_for_row(
             row=row,
             domain_path=domain_path,
             fd_path=fd_path,
@@ -585,7 +591,7 @@ def main() -> None:
     # Write to CSV (real run only)
     if not args.dry_run and new_rows:
         _append_rows(csv_path, fieldnames, new_rows)
-        print(f"\nAppended {len(new_rows)} new W5 rows to {csv_path}")
+        print(f"\nAppended {len(new_rows)} new W6 rows to {csv_path}")
 
     label = "Would generate" if args.dry_run else "Generated"
     print(f"\nSummary: {label.lower()}={generated}, skipped={skipped}, failed={failed}")

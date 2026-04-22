@@ -7,6 +7,14 @@ pick-up f
 stack f e
 pick-up i
 stack i f",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-155.pddl | path=plan-bench/instances/blocksworld/generated/instance-155.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
+BW_155,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks i, f, e, j, and h are unobstructed and resting on the surface. The gripper is vacant. Objective: Block i rests atop block f, block f rests atop block e, block e rests atop block j, and block j rests atop block h. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-155.pddl | path=plan-bench/instances/blocksworld/generated/instance-155.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
 BW_155,W2,"Action Reference:
 | Action      | Preconditions                        | Effect            |
 |-------------|--------------------------------------|-------------------|
@@ -108,7 +116,7 @@ pick-up f
 stack f e
 pick-up i
 stack i f",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-155.pddl | path=plan-bench/instances/blocksworld/generated/instance-155.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
-BW_155,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block i is on block f, block f is on block e, block e is on block j, and block j is on block h. Block h is on the table. The hand is empty. Goal: Blocks i, f, e, j, and h are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack i f
+BW_155,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block i is on block f, block f is on block e, block e is on block j, and block j is on block h. Block h is on the table. The hand is empty. Goal: Blocks i, f, e, j, and h are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack i f
 put-down i
 unstack f e
 put-down f
@@ -117,6 +125,14 @@ put-down e
 unstack j h
 put-down j",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-155.pddl | path=plan-bench/instances/blocksworld/generated/instance-155.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
 BW_010,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks d, e, a, b, and f are clear and on the table. The hand is empty. Goal: Block d is on block e, block e is on block a, block a is on block b, and block b is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/generated/instance-10.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
+BW_010,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks d, e, a, b, and f are unobstructed and resting on the surface. The gripper is vacant. Objective: Block d rests atop block e, block e rests atop block a, block a rests atop block b, and block b rests atop block f. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up b
 stack b f
 pick-up a
 stack a b
@@ -225,7 +241,7 @@ pick-up e
 stack e a
 pick-up d
 stack d e",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/generated/instance-10.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
-BW_010,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block d is on block e, block e is on block a, block a is on block b, and block b is on block f. Block f is on the table. The hand is empty. Goal: Blocks d, e, a, b, and f are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack d e
+BW_010,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block d is on block e, block e is on block a, block a is on block b, and block b is on block f. Block f is on the table. The hand is empty. Goal: Blocks d, e, a, b, and f are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack d e
 put-down d
 unstack e a
 put-down e
@@ -234,6 +250,20 @@ put-down a
 unstack b f
 put-down b",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/generated/instance-10.pddl,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks starting on table; no unstacking required
 BW_001,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks j, f, i, g, d, b, h, and l are clear and on the table. The hand is empty. Goal: Block j is on block f, block f is on block i, block i is on block g, block g is on block d, block d is on block b, block b is on block h, and block h is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/generated/instance-1.pddl,verify_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks starting on table; no unstacking required
+BW_001,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks j, f, i, g, d, b, h, and l are unobstructed and resting on the surface. The gripper is vacant. Objective: Block j rests atop block f, block f rests atop block i, block i rests atop block g, block g rests atop block d, block d rests atop block b, block b rests atop block h, and block h rests atop block l. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up h
 stack h l
 pick-up b
 stack b h
@@ -374,7 +404,7 @@ pick-up f
 stack f i
 pick-up j
 stack j f",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/generated/instance-1.pddl,verify_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks starting on table; no unstacking required
-BW_001,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block j is on block f, block f is on block i, block i is on block g, block g is on block d, block d is on block b, block b is on block h, and block h is on block l. Block l is on the table. The hand is empty. Goal: Blocks j, f, i, g, d, b, h, and l are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack j f
+BW_001,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block j is on block f, block f is on block i, block i is on block g, block g is on block d, block d is on block b, block b is on block h, and block h is on block l. Block l is on the table. The hand is empty. Goal: Blocks j, f, i, g, d, b, h, and l are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack j f
 put-down j
 unstack f i
 put-down f
@@ -389,6 +419,24 @@ put-down b
 unstack h l
 put-down h",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/generated/instance-1.pddl,verify_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks starting on table; no unstacking required
 BW_011,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, k, g, a, l, j, e, h, i, and b are clear and on the table. The hand is empty. Goal: Block c is on block k, block k is on block g, block g is on block a, block a is on block l, block l is on block j, block j is on block e, block e is on block h, block h is on block i, and block i is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-11.pddl | path=plan-bench/instances/blocksworld/generated/instance-11.pddl,verify_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks starting on table; no unstacking required
+BW_011,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks c, k, g, a, l, j, e, h, i, and b are unobstructed and resting on the surface. The gripper is vacant. Objective: Block c rests atop block k, block k rests atop block g, block g rests atop block a, block a rests atop block l, block l rests atop block j, block j rests atop block e, block e rests atop block h, block h rests atop block i, and block i rests atop block b. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up i
 stack i b
 pick-up h
 stack h i
@@ -550,7 +598,7 @@ pick-up k
 stack k g
 pick-up c
 stack c k",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-11.pddl | path=plan-bench/instances/blocksworld/generated/instance-11.pddl,verify_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks starting on table; no unstacking required
-BW_011,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block k, block k is on block g, block g is on block a, block a is on block l, block l is on block j, block j is on block e, block e is on block h, block h is on block i, and block i is on block b. Block b is on the table. The hand is empty. Goal: Blocks c, k, g, a, l, j, e, h, i, and b are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack c k
+BW_011,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block k, block k is on block g, block g is on block a, block a is on block l, block l is on block j, block j is on block e, block e is on block h, block h is on block i, and block i is on block b. Block b is on the table. The hand is empty. Goal: Blocks c, k, g, a, l, j, e, h, i, and b are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack c k
 put-down c
 unstack k g
 put-down k
@@ -569,6 +617,12 @@ put-down h
 unstack i b
 put-down i",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-11.pddl | path=plan-bench/instances/blocksworld/generated/instance-11.pddl,verify_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks starting on table; no unstacking required
 BW_120,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, j, g, and f are clear and on the table. The hand is empty. Goal: Block c is on block j, block j is on block g, and block g is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-120.pddl | path=plan-bench/instances/blocksworld/generated/instance-120.pddl,verify_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks starting on table; no unstacking required
+BW_120,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks c, j, g, and f are unobstructed and resting on the surface. The gripper is vacant. Objective: Block c rests atop block j, block j rests atop block g, and block g rests atop block f. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up g
 stack g f
 pick-up j
 stack j g
@@ -667,7 +721,7 @@ pick-up j
 stack j g
 pick-up c
 stack c j",planning_suite,blocksworld,easy,high,type=planbench_original | dataset=planbench | filename=instance-120.pddl | path=plan-bench/instances/blocksworld/generated/instance-120.pddl,verify_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks starting on table; no unstacking required
-BW_120,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block j, block j is on block g, and block g is on block f. Block f is on the table. The hand is empty. Goal: Blocks c, j, g, and f are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack c j
+BW_120,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block j, block j is on block g, and block g is on block f. Block f is on the table. The hand is empty. Goal: Blocks c, j, g, and f are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack c j
 put-down c
 unstack j g
 put-down j
@@ -688,7 +742,23 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false |,9 blocks starting on table; no unstacking required
+stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,9 blocks starting on table; no unstacking required
+BW_227,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks f, l, g, d, i, j, c, k, and a are unobstructed and resting on the surface. The gripper is vacant. Objective: Block f rests atop block l, block l rests atop block g, block g rests atop block d, block d rests atop block i, block i rests atop block j, block j rests atop block c, block c rests atop block k, and block k rests atop block a. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,9 blocks starting on table; no unstacking required
 BW_227,W2,"Action Reference:
 | Action      | Preconditions                        | Effect            |
 |-------------|--------------------------------------|-------------------|
@@ -737,7 +807,7 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false |,9 blocks starting on table; no unstacking required
+stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,9 blocks starting on table; no unstacking required
 BW_227,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Felix, Laura, George, Derek, Ian, Jack, Clara, Kevin, and Amy are all unassigned and available. Your hands are free. Goal: Felix reports to Laura, Laura reports to George, George reports to Derek, Derek reports to Ian, Ian reports to Jack, Jack reports to Clara, Clara reports to Kevin, and Kevin reports to Amy. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","select Kevin
 place Kevin under Amy
 select Clara
@@ -753,7 +823,7 @@ place George under Derek
 select Laura
 place Laura under George
 select Felix
-place Felix under Laura",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false |,9 blocks starting on table; no unstacking required
+place Felix under Laura",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,9 blocks starting on table; no unstacking required
 BW_227,W4,"FORMAL DEFINITION:
 π = ⟨B, S₀, S*, A⟩
 
@@ -824,8 +894,8 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false |,9 blocks starting on table; no unstacking required
-BW_227,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block f is on block l, block l is on block g, block g is on block d, block d is on block i, block i is on block j, block j is on block c, block c is on block k, and block k is on block a. Block a is on the table. The hand is empty. Goal: Blocks f, l, g, d, i, j, c, k, and a are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack f l
+stack f l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,9 blocks starting on table; no unstacking required
+BW_227,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block f is on block l, block l is on block g, block g is on block d, block d is on block i, block i is on block j, block j is on block c, block c is on block k, and block k is on block a. Block a is on the table. The hand is empty. Goal: Blocks f, l, g, d, i, j, c, k, and a are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack f l
 put-down f
 unstack l g
 put-down l
@@ -840,8 +910,28 @@ put-down j
 unstack c k
 put-down c
 unstack k a
-put-down k",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false |,9 blocks starting on table; no unstacking required
+put-down k",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-227.pddl | path=plan-bench/instances/blocksworld/generated/instance-227.pddl,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,9 blocks starting on table; no unstacking required
 BW_137,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks d, a, b, j, e, l, h, c, f, g, and i are clear and on the table. The hand is empty. Goal: Block d is on block a, block a is on block b, block b is on block j, block j is on block e, block e is on block l, block l is on block h, block h is on block c, block c is on block f, block f is on block g, and block g is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-137.pddl | path=plan-bench/instances/blocksworld/generated/instance-137.pddl,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,11 blocks starting on table; no unstacking required
+BW_137,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks d, a, b, j, e, l, h, c, f, g, and i are unobstructed and resting on the surface. The gripper is vacant. Objective: Block d rests atop block a, block a rests atop block b, block b rests atop block j, block j rests atop block e, block e rests atop block l, block l rests atop block h, block h rests atop block c, block c rests atop block f, block f rests atop block g, and block g rests atop block i. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up g
 stack g i
 pick-up f
 stack f g
@@ -1013,7 +1103,7 @@ pick-up a
 stack a b
 pick-up d
 stack d a",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-137.pddl | path=plan-bench/instances/blocksworld/generated/instance-137.pddl,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,11 blocks starting on table; no unstacking required
-BW_137,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block d is on block a, block a is on block b, block b is on block j, block j is on block e, block e is on block l, block l is on block h, block h is on block c, block c is on block f, block f is on block g, and block g is on block i. Block i is on the table. The hand is empty. Goal: Blocks d, a, b, j, e, l, h, c, f, g, and i are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack d a
+BW_137,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block d is on block a, block a is on block b, block b is on block j, block j is on block e, block e is on block l, block l is on block h, block h is on block c, block c is on block f, block f is on block g, and block g is on block i. Block i is on the table. The hand is empty. Goal: Blocks d, a, b, j, e, l, h, c, f, g, and i are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack d a
 put-down d
 unstack a b
 put-down a
@@ -1034,6 +1124,26 @@ put-down f
 unstack g i
 put-down g",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-137.pddl | path=plan-bench/instances/blocksworld/generated/instance-137.pddl,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,11 blocks starting on table; no unstacking required
 BW_172,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks i, l, g, e, d, b, a, j, h, f, and k are clear and on the table. The hand is empty. Goal: Block i is on block l, block l is on block g, block g is on block e, block e is on block d, block d is on block b, block b is on block a, block a is on block j, block j is on block h, block h is on block f, and block f is on block k. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-172.pddl | path=plan-bench/instances/blocksworld/generated/instance-172.pddl,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,11 blocks starting on table; no unstacking required
+BW_172,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks i, l, g, e, d, b, a, j, h, f, and k are unobstructed and resting on the surface. The gripper is vacant. Objective: Block i rests atop block l, block l rests atop block g, block g rests atop block e, block e rests atop block d, block d rests atop block b, block b rests atop block a, block a rests atop block j, block j rests atop block h, block h rests atop block f, and block f rests atop block k. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up f
 stack f k
 pick-up h
 stack h f
@@ -1090,9 +1200,7 @@ Goal:
 | h     | f                 |
 | f     | k                 |
 
-Respond with a numbered list of actions only. Each action must be exactly
-one of: pick-up X / put-down X / stack X Y / unstack X Y.
-No explanation. No extra text.","pick-up f
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up f
 stack f k
 pick-up h
 stack h f
@@ -1207,7 +1315,7 @@ pick-up l
 stack l g
 pick-up i
 stack i l",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-172.pddl | path=plan-bench/instances/blocksworld/generated/instance-172.pddl,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,11 blocks starting on table; no unstacking required
-BW_172,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block i is on block l, block l is on block g, block g is on block e, block e is on block d, block d is on block b, block b is on block a, block a is on block j, block j is on block h, block h is on block f, and block f is on block k. Block k is on the table. The hand is empty. Goal: Blocks i, l, g, e, d, b, a, j, h, f, and k are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack i l
+BW_172,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block i is on block l, block l is on block g, block g is on block e, block e is on block d, block d is on block b, block b is on block a, block a is on block j, block j is on block h, block h is on block f, and block f is on block k. Block k is on the table. The hand is empty. Goal: Blocks i, l, g, e, d, b, a, j, h, f, and k are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack i l
 put-down i
 unstack l g
 put-down l
@@ -1228,6 +1336,18 @@ put-down h
 unstack f k
 put-down f",planning_suite,blocksworld,hard,high,type=planbench_original | dataset=planbench | filename=instance-172.pddl | path=plan-bench/instances/blocksworld/generated/instance-172.pddl,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,11 blocks starting on table; no unstacking required
 BW_467,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks g, i, l, j, a, f, and h are clear and on the table. The hand is empty. Goal: Block g is on block i, block i is on block l, block l is on block j, block j is on block a, block a is on block f, and block f is on block h. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-467.pddl | path=plan-bench/instances/blocksworld/generated/instance-467.pddl,verify_blocksworld_plan,num_blocks=7 | requires_unstacking=false | max_initial_stack_depth=1,7 blocks starting on table; no unstacking required
+BW_467,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks g, i, l, j, a, f, and h are unobstructed and resting on the surface. The gripper is vacant. Objective: Block g rests atop block i, block i rests atop block l, block l rests atop block j, block j rests atop block a, block a rests atop block f, and block f rests atop block h. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up f
 stack f h
 pick-up a
 stack a f
@@ -1358,7 +1478,7 @@ pick-up i
 stack i l
 pick-up g
 stack g i",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-467.pddl | path=plan-bench/instances/blocksworld/generated/instance-467.pddl,verify_blocksworld_plan,num_blocks=7 | requires_unstacking=false | max_initial_stack_depth=1,7 blocks starting on table; no unstacking required
-BW_467,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block g is on block i, block i is on block l, block l is on block j, block j is on block a, block a is on block f, and block f is on block h. Block h is on the table. The hand is empty. Goal: Blocks g, i, l, j, a, f, and h are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack g i
+BW_467,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block g is on block i, block i is on block l, block l is on block j, block j is on block a, block a is on block f, and block f is on block h. Block h is on the table. The hand is empty. Goal: Blocks g, i, l, j, a, f, and h are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack g i
 put-down g
 unstack i l
 put-down i
@@ -1371,6 +1491,16 @@ put-down a
 unstack f h
 put-down f",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-467.pddl | path=plan-bench/instances/blocksworld/generated/instance-467.pddl,verify_blocksworld_plan,num_blocks=7 | requires_unstacking=false | max_initial_stack_depth=1,7 blocks starting on table; no unstacking required
 BW_080,canonical,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks l, c, i, e, j, and f are clear and on the table. The hand is empty. Goal: Block l is on block c, block c is on block i, block i is on block e, block e is on block j, and block j is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-80.pddl | path=plan-bench/instances/blocksworld/generated/instance-80.pddl,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,6 blocks starting on table; no unstacking required
+BW_080,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks l, c, i, e, j, and f are unobstructed and resting on the surface. The gripper is vacant. Objective: Block l rests atop block c, block c rests atop block i, block i rests atop block e, block e rests atop block j, and block j rests atop block f. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up j
 stack j f
 pick-up e
 stack e j
@@ -1407,9 +1537,7 @@ Goal:
 | e     | j                 |
 | j     | f                 |
 
-Respond with a numbered list of actions only. Each action must be exactly
-one of: pick-up X / put-down X / stack X Y / unstack X Y.
-No explanation. No extra text.","pick-up j
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
 stack j f
 pick-up e
 stack e j
@@ -1493,8 +1621,507 @@ pick-up c
 stack c i
 pick-up l
 stack l c",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-80.pddl | path=plan-bench/instances/blocksworld/generated/instance-80.pddl,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,6 blocks starting on table; no unstacking required
-BW_080,W6,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks l, c, i, e, j, and f are clear and on the table. The hand is empty. Goal: Block l is on block c, block c is on block i, block i is on block e, block e is on block j, and block j is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""",,planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-80.pddl | path=plan-bench/instances/blocksworld/generated/instance-80.pddl,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,6 blocks starting on table; no unstacking required
+BW_080,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block l is on block c, block c is on block i, block i is on block e, block e is on block j, and block j is on block f. Block f is on the table. The hand is empty. Goal: Blocks l, c, i, e, j, and f are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack l c
+put-down l
+unstack c i
+put-down c
+unstack i e
+put-down i
+unstack e j
+put-down e
+unstack j f
+put-down j",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-80.pddl | path=plan-bench/instances/blocksworld/generated/instance-80.pddl,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,6 blocks starting on table; no unstacking required
+BW_E002,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is clear. Block b is clear. Block c is clear. The hand is empty. Goal: Block a is on block c, and block b is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+
+","pick-up a 
+stack a c 
+pick-up b 
+stack b a",planning_suite,blocksworld,easy,low,type=planbench_generated | dataset=planbench_basic | filename=instance-basic-3-2.pddl,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E002,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks a, b, and c are on the surface. Block a is unobstructed. Block b is unobstructed. Block c is unobstructed. The gripper is vacant. Objective: Block a rests atop block c, and block b rests atop block a. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up a
+stack a c
+pick-up b
+stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_2,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E002,W2,"Action Reference:
+| Action | Preconditions | Effect |
+|-------------|--------------------------------------|-------------------|
+| pick-up X | X is on table, X is clear, hand empty| holding X |
+| put-down X | holding X | X on table |
+| stack X Y | holding X, Y is clear | X on Y |
+| unstack X Y | X on Y, X is clear, hand empty | holding X |
+
+Current State:
+| Block | Location | Clear? |
+|-------|----------|--------|
+| a | table | yes |
+| b | table | yes |
+| c | table | yes |
+
+Goal:
+| Block | Must be on top of |
+|-------|-------------------|
+| a | c |
+| b | a |
+
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up a
+stack a c
+pick-up b
+stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_2,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E002,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron, Brian, and Clara are all unassigned and available. Your hands are free. Goal: Aaron reports to Clara, and Brian reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","select Aaron
+place Aaron under Clara
+select Brian
+place Brian under Aaron",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_2,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E002,W4,"FORMAL DEFINITION:
+π = ⟨P, S₀, S*, A⟩
+
+BLOCKS:
+B = {a, b, c}
+
+INITIAL STATE S₀:
+OnTable(a), OnTable(b), OnTable(c),
+Clear(a), Clear(b), Clear(c),
+HandEmpty
+
+GOAL STATE S*:
+On(a,c), On(b,a)
+
+ACTIONS (Preconditions → Add Effects | Delete Effects):
+
+1. pick-up(x):
+   Pre:  Clear(x), OnTable(x), HandEmpty
+   Add:  Holding(x)
+   Del:  Clear(x), OnTable(x), HandEmpty
+
+2. put-down(x):
+   Pre:  Holding(x)
+   Add:  OnTable(x), Clear(x), HandEmpty
+   Del:  Holding(x)
+
+3. stack(x, y):
+   Pre:  Holding(x), Clear(y)
+   Add:  On(x,y), Clear(x), HandEmpty
+   Del:  Holding(x), Clear(y)
+
+4. unstack(x, y):
+   Pre:  On(x,y), Clear(x), HandEmpty
+   Add:  Holding(x), Clear(y)
+   Del:  On(x,y), Clear(x), HandEmpty
+
+CONSTRAINTS:
+- x ≠ y for all two-argument actions
+- Exactly one block can be held at a time
+- Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+
+TASK:
+Find plan π = (a₁, a₂, ..., aₙ) such that:
+S₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ
+
+OUTPUT FORMAT:
+Return a numbered list of actions only.
+Each action must be exactly one of:
+  pick-up X
+  put-down X
+  stack X Y
+  unstack X Y
+No explanation. No extra text.","pick-up a 
+stack a c 
+pick-up b 
+stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_2,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E002,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block b is on block a, block a is on block c. Block c is on the table. The hand is empty. Goal: Blocks a, b, and c are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack b a
+put-down b
+unstack a c
+put-down a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_2,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E015,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is on the table and clear. Block b is on the table. Block c is on block b and clear. The hand is empty. Goal: Block a is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,blocksworld,easy,low,type=planbench_generated | dataset=planbench_basic | filename=instance-basic-3-15.pddl,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E015,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks a, b, and c are on the surface. Block a is on the surface and unobstructed. Block b is on the surface. Block c is on block b and unobstructed. The gripper is vacant. Objective: Block a rests atop block b. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E015,W2,"Action Reference:
+| Action | Preconditions | Effect |
+|-------------|--------------------------------------|-------------------|
+| pick-up X | X is on table, X is clear, hand empty| holding X |
+| put-down X | holding X | X on table |
+| stack X Y | holding X, Y is clear | X on Y |
+| unstack X Y | X on Y, X is clear, hand empty | holding X |
+
+Current State:
+| Block | Location | Clear? |
+|-------|----------|--------|
+| a | table | yes |
+| b | table | no |
+| c | on b | yes |
+
+Goal:
+| Block | Must be on top of |
+|-------|-------------------|
+| a | b |
+
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E015,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron is unassigned and available. Brian is unassigned and available. Clara is reporting to Brian. Brian has someone above him. Clara has no one above her. Your hands are free. Goal: Aaron reports to Brian. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","select Aaron
+place Aaron under Brian
+select Clara
+place Clara under Aaron",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E015,W4,"FORMAL DEFINITION:
+π = ⟨P, S₀, S*, A⟩
+
+BLOCKS:
+B = {a, b, c}
+
+INITIAL STATE S₀:
+OnTable(a), OnTable(b), Clear(a), Clear(c),
+On(c,b), HandEmpty
+
+GOAL STATE S*:
+On(a,b)
+
+ACTIONS (Preconditions → Add Effects | Delete Effects):
+
+1. pick-up(x):
+   Pre:  Clear(x), OnTable(x), HandEmpty
+   Add:  Holding(x)
+   Del:  Clear(x), OnTable(x), HandEmpty
+
+2. put-down(x):
+   Pre:  Holding(x)
+   Add:  OnTable(x), Clear(x), HandEmpty
+   Del:  Holding(x)
+
+3. stack(x, y):
+   Pre:  Holding(x), Clear(y)
+   Add:  On(x,y), Clear(x), HandEmpty
+   Del:  Holding(x), Clear(y)
+
+4. unstack(x, y):
+   Pre:  On(x,y), Clear(x), HandEmpty
+   Add:  Holding(x), Clear(y)
+   Del:  On(x,y), Clear(x), HandEmpty
+
+CONSTRAINTS:
+- x ≠ y for all two-argument actions
+- Exactly one block can be held at a time
+- Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+
+TASK:
+Find plan π = (a₁, a₂, ..., aₙ) such that:
+S₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ
+
+OUTPUT FORMAT:
+Return a numbered list of actions only.
+Each action must be exactly one of:
+  pick-up X
+  put-down X
+  stack X Y
+  unstack X Y
+No explanation. No extra text.","unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E015,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block b. Block b and block c are on the table. The hand is empty. Goal: Blocks a and b are on the table, block c is on block b, and blocks a and c are clear. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack a b
+put-down a
+pick-up c
+stack c b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E017,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is clear. Block b is clear. Block c is clear. The hand is empty. Goal: Block a is on block b, and block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,blocksworld,easy,low,type=planbench_generated | dataset=planbench_basic | filename=instance-basic-3-17.pddl,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E017,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks a, b, and c are on the surface. Block a is unobstructed. Block b is unobstructed. Block c is unobstructed. The gripper is vacant. Objective: Block a rests atop block b, and block c rests atop block a. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E017,W2,"Action Reference:
+| Action | Preconditions | Effect |
+|-------------|--------------------------------------|-------------------|
+| pick-up X | X is on table, X is clear, hand empty| holding X |
+| put-down X | holding X | X on table |
+| stack X Y | holding X, Y is clear | X on Y |
+| unstack X Y | X on Y, X is clear, hand empty | holding X |
+
+Current State:
+| Block | Location | Clear? |
+|-------|----------|--------|
+| a | table | yes |
+| b | table | yes |
+| c | table | yes |
+
+Goal:
+| Block | Must be on top of |
+|-------|-------------------|
+| a | b |
+| c | a |
+
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E017,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron, Brian, and Clara are all unassigned and available. Your hands are free. Goal: Aaron reports to Brian, and Clara reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","remove Aaron from Brian
+select Clara
+place Clara under Aaron",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E017,W4,"FORMAL DEFINITION:
+π = ⟨P, S₀, S*, A⟩
+
+BLOCKS:
+B = {a, b, c}
+
+INITIAL STATE S₀:
+OnTable(a), OnTable(b), OnTable(c),
+Clear(a), Clear(b), Clear(c),
+HandEmpty
+
+GOAL STATE S*:
+On(a,b), On(c,a)
+
+ACTIONS (Preconditions → Add Effects | Delete Effects):
+
+1. pick-up(x):
+   Pre:  Clear(x), OnTable(x), HandEmpty
+   Add:  Holding(x)
+   Del:  Clear(x), OnTable(x), HandEmpty
+
+2. put-down(x):
+   Pre:  Holding(x)
+   Add:  OnTable(x), Clear(x), HandEmpty
+   Del:  Holding(x)
+
+3. stack(x, y):
+   Pre:  Holding(x), Clear(y)
+   Add:  On(x,y), Clear(x), HandEmpty
+   Del:  Holding(x), Clear(y)
+
+4. unstack(x, y):
+   Pre:  On(x,y), Clear(x), HandEmpty
+   Add:  Holding(x), Clear(y)
+   Del:  On(x,y), Clear(x), HandEmpty
+
+CONSTRAINTS:
+- x ≠ y for all two-argument actions
+- Exactly one block can be held at a time
+- Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+
+TASK:
+Find plan π = (a₁, a₂, ..., aₙ) such that:
+S₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ
+
+OUTPUT FORMAT:
+Return a numbered list of actions only.
+Each action must be exactly one of:
+  pick-up X
+  put-down X
+  stack X Y
+  unstack X Y
+No explanation. No extra text.","pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E017,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block a, block a is on block b. Block b is on the table. The hand is empty. Goal: Blocks a, b, and c are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack c a
+put-down c
+unstack a b
+put-down a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
+BW_E019,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block b and clear. Block b is on the table. Block c is on the table and clear. The hand is empty. Goal: Block a is on block c, and block b is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,blocksworld,easy,low,type=planbench_generated | dataset=planbench_basic | filename=instance-basic-3-19.pddl,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E019,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Block a is on block b and unobstructed. Block b is on the surface. Block c is on the surface and unobstructed. The gripper is vacant. Objective: Block a rests atop block c, and block b rests atop block a. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_19,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E019,W2,"Action Reference:
+| Action | Preconditions | Effect |
+|-------------|--------------------------------------|-------------------|
+| pick-up X | X is on table, X is clear, hand empty| holding X |
+| put-down X | holding X | X on table |
+| stack X Y | holding X, Y is clear | X on Y |
+| unstack X Y | X on Y, X is clear, hand empty | holding X |
+
+Current State:
+| Block | Location | Clear? |
+|-------|----------|--------|
+| a | on b | yes |
+| b | table | no |
+| c | table | yes |
+
+Goal:
+| Block | Must be on top of |
+|-------|-------------------|
+| a | c |
+| b | a |
+
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_19,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E019,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron is reporting to Brian. Brian is unassigned and available. Clara is unassigned and available. Your hands are free. Goal: Aaron reports to Clara, and Brian reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","remove Aaron from Brian
+select Aaron
+place Aaron under Clara
+select Brian
+place Brian under Aaron",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_19,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E019,W4,"FORMAL DEFINITION:
+π = ⟨P, S₀, S*, A⟩
+
+BLOCKS:
+B = {a, b, c}
+
+INITIAL STATE S₀:
+On(a,b), OnTable(b), OnTable(c),
+Clear(a), Clear(c),
+HandEmpty
+
+GOAL STATE S*:
+On(a,c), On(b,a)
+
+ACTIONS (Preconditions → Add Effects | Delete Effects):
+
+1. pick-up(x):
+   Pre:  Clear(x), OnTable(x), HandEmpty
+   Add:  Holding(x)
+   Del:  Clear(x), OnTable(x), HandEmpty
+
+2. put-down(x):
+   Pre:  Holding(x)
+   Add:  OnTable(x), Clear(x), HandEmpty
+   Del:  Holding(x)
+
+3. stack(x, y):
+   Pre:  Holding(x), Clear(y)
+   Add:  On(x,y), Clear(x), HandEmpty
+   Del:  Holding(x), Clear(y)
+
+4. unstack(x, y):
+   Pre:  On(x,y), Clear(x), HandEmpty
+   Add:  Holding(x), Clear(y)
+   Del:  On(x,y), Clear(x), HandEmpty
+
+CONSTRAINTS:
+- x ≠ y for all two-argument actions
+- Exactly one block can be held at a time
+- Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+
+TASK:
+Find plan π = (a₁, a₂, ..., aₙ) such that:
+S₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ
+
+OUTPUT FORMAT:
+Return a numbered list of actions only.
+Each action must be exactly one of:
+  pick-up X
+  put-down X
+  stack X Y
+  unstack X Y
+No explanation. No extra text.","unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_19,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E019,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block b is on block a, block a is on block c. Block c is on the table. The hand is empty. Goal: Block a is on block b, block b and block c are on the table, and blocks a and c are clear. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""
+","unstack b a
+put-down b
+unstack a c
+stack a b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_19,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E100,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is on the table. Block b is on the table. Block c is on block a and clear. Block b is clear. The hand is empty. Goal: Block b is on block c, and block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+
+
+","pick-up b
+stack b c",planning_suite,blocksworld,easy,low,type=planbench_generated | dataset=planbench_basic | filename=instance-basic-3-100.pddl,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,"3 blocks, 2 moves"
+BW_E100,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks a, b, and c are on the surface. Block a is on the surface. Block b is on the surface. Block c is on block a and unobstructed. Block b is unobstructed. The gripper is vacant. Objective: Block b rests atop block c, and block c rests atop block a. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up b
+stack b c",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_100,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,"3 blocks, 2 moves"
+BW_E100,W2,"Action Reference:
+| Action | Preconditions | Effect |
+|-------------|--------------------------------------|-------------------|
+| pick-up X | X is on table, X is clear, hand empty| holding X |
+| put-down X | holding X | X on table |
+| stack X Y | holding X, Y is clear | X on Y |
+| unstack X Y | X on Y, X is clear, hand empty | holding X |
+
+Current State:
+| Block | Location | Clear? |
+|-------|----------|--------|
+| a | table | no |
+| b | table | yes |
+| c | on a | yes |
+
+Goal:
+| Block | Must be on top of |
+|-------|-------------------|
+| b | c |
+| c | a |
+
+Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b c",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_100,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,"3 blocks, 2 moves"
+BW_E100,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron is unassigned. Brian is unassigned. Clara is reporting to Aaron. Brian has no one above him. Clara has no one above her. Your hands are free. Goal: Brian reports to Clara, and Clara reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","select Brian
+place Brian under Clara",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_100,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,"3 blocks, 2 moves"
+BW_E100,W4,"FORMAL DEFINITION:
+π = ⟨P, S₀, S*, A⟩
+
+BLOCKS:
+B = {a, b, c}
+
+INITIAL STATE S₀:
+OnTable(a), OnTable(b), Clear(b), Clear(c),
+On(c,a), HandEmpty
+
+GOAL STATE S*:
+On(b,c), On(c,a)
+
+ACTIONS (Preconditions → Add Effects | Delete Effects):
+
+1. pick-up(x):
+   Pre:  Clear(x), OnTable(x), HandEmpty
+   Add:  Holding(x)
+   Del:  Clear(x), OnTable(x), HandEmpty
+
+2. put-down(x):
+   Pre:  Holding(x)
+   Add:  OnTable(x), Clear(x), HandEmpty
+   Del:  Holding(x)
+
+3. stack(x, y):
+   Pre:  Holding(x), Clear(y)
+   Add:  On(x,y), Clear(x), HandEmpty
+   Del:  Holding(x), Clear(y)
+
+4. unstack(x, y):
+   Pre:  On(x,y), Clear(x), HandEmpty
+   Add:  Holding(x), Clear(y)
+   Del:  On(x,y), Clear(x), HandEmpty
+
+CONSTRAINTS:
+- x ≠ y for all two-argument actions
+- Exactly one block can be held at a time
+- Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+
+TASK:
+Find plan π = (a₁, a₂, ..., aₙ) such that:
+S₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ
+
+OUTPUT FORMAT:
+Return a numbered list of actions only.
+Each action must be exactly one of:
+  pick-up X
+  put-down X
+  stack X Y
+  unstack X Y
+No explanation. No extra text.","pick-up b
+stack b c",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_100,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,"3 blocks, 2 moves"
+BW_E100,W5,"""You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block b is on block c, block c is on block a. Block a is on the table. The hand is empty. Goal: Blocks a and b are on the table, block c is on block a, and blocks b and c are clear. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","unstack b c
+put-down b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_100,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,"3 blocks, 2 moves"
 MBW_001,canonical,"""You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks j, f, i, g, d, b, h, and l. Goal: craves j f, craves f i, craves i g, craves g d, craves d b, craves b h, and craves h l are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-1.pddl,verify_mystery_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks clean-start mystery instance
+MBW_001,W1,"""You are a robotic manipulator. Permitted operations: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current configuration: harmony is true. planet and province are true for blocks j, f, i, g, d, b, h, and l. Objective:craves j f, craves f i, craves i g, craves g d, craves d b, craves b h, and craves h l are true. Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack h
 overcome h l
 attack b
 overcome b h
@@ -1555,20 +2182,19 @@ overcome f i
 attack j
 overcome j f",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-1.pddl,verify_mystery_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks clean-start mystery instance
 MBW_001,W3,"""You are a diplomat brokering alliances. Available actions: provoke X (requires goodwill, sovereignty X, and influence X to be true), appease X (requires tension X to be true), broker X Y (requires sovereignty Y and tension X to be true), negotiate X Y (requires alliance X Y, sovereignty X, and goodwill to be true). Current state: goodwill is true. influence and sovereignty are true for nations Jordan, Finland, Iceland, Greece, Denmark, Belgium, Hungary, and Latvia. Goal: Jordan allies with Finland, Finland allies with Iceland, Iceland allies with Greece, Greece allies with Denmark, Denmark allies with Belgium, Belgium allies with Hungary, and Hungary allies with Latvia. Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.""","provoke Hungary
-overcome Hungary Latvia
+broker Hungary Latvia
 provoke Belgium
-overcome Belgium Hungary
+broker Belgium Hungary
 provoke Denmark
-overcome Denmark Belgium
+broker Denmark Belgium
 provoke Greece
-overcome Greece Denmark
+broker Greece Denmark
 provoke Iceland
-overcome Iceland Greece
+broker Iceland Greece
 provoke Finland
-overcome Finland Iceland
+broker Finland Iceland
 provoke Jordan
-overcome Jordan Finland
-",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-1.pddl,verify_mystery_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks clean-start mystery instance
+broker Jordan Finland",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-1.pddl,verify_mystery_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks clean-start mystery instance
 MBW_001,W4,"FORMAL DEFINITION:
 π = ⟨B, S₀, S*, A⟩
 
@@ -1637,7 +2263,23 @@ attack f
 overcome f i
 attack j
 overcome j f",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-1.pddl,verify_mystery_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks clean-start mystery instance
+MBW_001,W5,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true).
+Current state: harmony is true. planet and province are true for blocks j, f, i, g, d, b, h, and l. craves j f, craves f i, craves i g, craves g d, craves d b, craves b h, and craves h l are true.
+Goal: harmony is true. planet and province are true for all blocks j, f, i, g, d, b, h, and l. No craves relationships exist.
+Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","feast j f
+feast f i
+feast i g
+feast g d
+feast d b
+feast b h
+feast h l",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-1.pddl,verify_mystery_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=2,9 blocks clean-start mystery instance
 MBW_100,canonical,"""You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks b, j, l, and i. Goal: craves b j, craves j l, and craves l i are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-100.pddl | path=plan-bench/instances/blocksworld/generated/instance-100/mystery/instance-100-mystery.pddl,verify_mystery_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks clean-start mystery instance
+MBW_100,W1,"""You are a robotic manipulator. Permitted operations: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current configuration: harmony is true. planet and province are true for blocks b, j, l, and i. Objective: craves b j, craves j l, and craves l i are true. Respond with a numbered list of actions only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack l
 overcome l i
 attack j
 overcome j l
@@ -1676,12 +2318,11 @@ overcome j l
 attack b
 overcome b j",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-100.pddl | path=plan-bench/instances/blocksworld/generated/instance-100/mystery/instance-100-mystery.pddl,verify_mystery_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks clean-start mystery instance
 MBW_100,W3,"""You are a diplomat brokering alliances. Available actions: provoke X (requires goodwill, sovereignty X, and influence X to be true), appease X (requires tension X to be true), broker X Y (requires sovereignty Y and tension X to be true), negotiate X Y (requires alliance X Y, sovereignty X, and goodwill to be true). Current state: goodwill is true. influence and sovereignty are true for nations Morocco, Thailand, Uruguay, and Estonia. Goal: Morocco allies with Thailand, Thailand allies with Uruguay, and Uruguay allies with Estonia. Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.""","provoke Uruguay
-overcome Uruguay Estonia
+broker Uruguay Estonia
 provoke Thailand
-overcome Thailand Uruguay
+broker Thailand Uruguay
 provoke Morocco
-overcome Morocco Thailand
-",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-100.pddl | path=plan-bench/instances/blocksworld/generated/instance-100/mystery/instance-100-mystery.pddl,verify_mystery_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks clean-start mystery instance
+broker Morocco Thailand",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-100.pddl | path=plan-bench/instances/blocksworld/generated/instance-100/mystery/instance-100-mystery.pddl,verify_mystery_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks clean-start mystery instance
 MBW_100,W4,"FORMAL DEFINITION:
 π = ⟨B, S₀, S*, A⟩
 
@@ -1739,7 +2380,25 @@ attack j
 overcome j l
 attack b
 overcome b j",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-100.pddl | path=plan-bench/instances/blocksworld/generated/instance-100/mystery/instance-100-mystery.pddl,verify_mystery_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,4 blocks clean-start mystery instance
+MBW_100,W5,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true).
+Current state: harmony is true. planet and province are true for blocks b, j, l, and i. craves b j, craves j l, and craves l i are true.
+Goal: harmony is true. planet and province are true for all blocks b, j, l, and i. No craves relationships exist.
+Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+","feast b j
+succumb b
+feast j l
+succumb j
+feast l i
+succumb l",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-100.pddl | path=plan-bench/instances/blocksworld/generated/instance-100/mystery/instance-100-mystery.pddl,verify_mystery_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=2,5 blocks clean-start mystery instance
 MBW_127,canonical,"""You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks k, g, j, e, and b. Goal: craves k g, craves g j, craves j e, and craves e b are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-127.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-127.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_127,W1,"""You are a robotic manipulator. Permitted operations: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current configuration: harmony is true. planet and province are true for blocks k, g, j, e, and b. Objective: craves k g, craves g j, craves j e, and craves e b are true. Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack e
 overcome e b
 attack j
 overcome j e
@@ -1782,14 +2441,13 @@ overcome g j
 attack k
 overcome k g",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-127.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-127.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
 MBW_127,W3,"""You are a diplomat brokering alliances. Available actions: provoke X (requires goodwill, sovereignty X, and influence X to be true), appease X (requires tension X to be true), broker X Y (requires sovereignty Y and tension X to be true), negotiate X Y (requires alliance X Y, sovereignty X, and goodwill to be true). Current state: goodwill is true. influence and sovereignty are true for nations Kenya, Germany, Japan, Egypt, and Brazil. Goal: Kenya allies with Germany, Germany allies with Japan, Japan allies with Egypt, and Egypt allies with Brazil. Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.""","provoke Egypt
-overcome Egypt Brazil
+broker Egypt Brazil
 provoke Japan
-overcome Japan Egypt
+broker Japan Egypt
 provoke Germany
-overcome Germany Japan
+broker Germany Japan
 provoke Kenya
-overcome Kenya Germany
-",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-127.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-127.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+broker Kenya Germany",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-127.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-127.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
 MBW_127,W4,"FORMAL DEFINITION:
 π = ⟨B, S₀, S*, A⟩
 
@@ -1841,8 +2499,7 @@ Each action must be exactly one of:
   succumb X
   overcome X Y
   feast X Y
-No explanation. No extra text.
-```","attack e
+No explanation. No extra text.","attack e
 overcome e b
 attack j
 overcome j e
@@ -1850,7 +2507,36 @@ attack g
 overcome g j
 attack k
 overcome k g",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-127.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-127.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_127,W5,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true).
+Current state: harmony is true. planet and province are true for blocks k, g, j, e, and b. craves k g, craves g j, craves j e, and craves e b are true.
+Goal: harmony is true. planet and province are true for all blocks k, g, j, e, and b. No craves relationships exist.
+Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","feast k g
+succumb k
+feast g j
+succumb g
+feast j e
+succumb j
+feast e b
+succumb e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-127.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-127.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=2,6 blocks clean-start mystery instance
 MBW_185,canonical,"""You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks j, d, g, i, c, h, a, b, e, and l. Goal: craves j d, craves d g, craves g i, craves i c, craves c h, craves h a, craves a b, craves b e, and craves e l are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-185.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-185.pddl,verify_mystery_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks clean-start mystery instance
+MBW_185,W1,"""You are a robotic manipulator. Permitted operations: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current configuration: harmony is true. planet and province are true for blocks j, d, g, i, c, h, a, b, e, and l. Objective: craves j d, craves d g, craves g i, craves i c, craves c h, craves h a, craves a b, craves b e, and craves e l are true. Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack e
 overcome e l
 attack b
 overcome b e
@@ -1923,24 +2609,23 @@ overcome d g
 attack j
 overcome j d",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-185.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-185.pddl,verify_mystery_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks clean-start mystery instance
 MBW_185,W3,"""You are a diplomat brokering alliances. Available actions: provoke X (requires goodwill, sovereignty X, and influence X to be true), appease X (requires tension X to be true), broker X Y (requires sovereignty Y and tension X to be true), negotiate X Y (requires alliance X Y, sovereignty X, and goodwill to be true). Current state: goodwill is true. influence and sovereignty are true for nations Jordan, Denmark, Ghana, India, Chile, Hungary, Austria, Bolivia, Ecuador, and Latvia. Goal: Jordan allies with Denmark, Denmark allies with Ghana, Ghana allies with India, India allies with Chile, Chile allies with Hungary, Hungary allies with Austria, Austria allies with Bolivia, Bolivia allies with Ecuador, and Ecuador allies with Latvia. Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.""","provoke Ecuador
-overcome Ecuador Latvia
+broker Ecuador Latvia
 provoke Bolivia
-overcome Bolivia Ecuador
+broker Bolivia Ecuador
 provoke Austria
-overcome Austria Bolivia
+broker Austria Bolivia
 provoke Hungary
-overcome Hungary Austria
+broker Hungary Austria
 provoke Chile
-overcome Chile Hungary
+broker Chile Hungary
 provoke India
-overcome India Chile
+broker India Chile
 provoke Ghana
-overcome Ghana India
+broker Ghana India
 provoke Denmark
-overcome Denmark Ghana
+broker Denmark Ghana
 provoke Jordan
-overcome Jordan Denmark
-",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-185.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-185.pddl,verify_mystery_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks clean-start mystery instance
+broker Jordan Denmark",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-185.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-185.pddl,verify_mystery_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks clean-start mystery instance
 MBW_185,W4,"FORMAL DEFINITION:
 π = ⟨B, S₀, S*, A⟩
 
@@ -2013,7 +2698,36 @@ attack d
 overcome d g
 attack j
 overcome j d",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-185.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-185.pddl,verify_mystery_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,10 blocks clean-start mystery instance
+MBW_185,W5,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true).
+Current state: harmony is true. planet and province are true for blocks j, d, g, i, c, h, a, b, e, and l. craves j d, craves d g, craves g i, craves i c, craves c h, craves h a, craves a b, craves b e, and craves e l are true.
+Goal: harmony is true. planet and province are true for all blocks j, d, g, i, c, h, a, b, e, and l. No craves relationships exist.
+Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","feast j d
+succumb j
+feast d g
+succumb d
+feast g i
+succumb g
+feast i c
+succumb i
+feast c h
+succumb c
+feast h a
+succumb h
+feast a b
+succumb a
+feast b e
+succumb b
+feast e l
+succumb e",planning_suite,mystery_blocksworld,hard,low,type=planbench_mystery | dataset=planbench | filename=instance-185.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-185.pddl,verify_mystery_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=2,11 blocks clean-start mystery instance
 MBW_10,canonical,"""You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks d, e, a, b, and f. Goal: craves d e, craves e a, craves a b, and craves b f are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_10,W1,"""You are a robotic manipulator. Permitted operations: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current configuration: harmony is true. planet and province are true for blocks d, e, a, b, and f. Objective:craves d e, craves e a, craves a b, and craves b f are true. Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack b
 overcome b f
 attack a
 overcome a b
@@ -2056,13 +2770,144 @@ overcome e a
 attack d
 overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
 MBW_10,W3,"""You are a diplomat brokering alliances. Available actions: provoke X (requires goodwill, sovereignty X, and influence X to be true), appease X (requires tension X to be true), broker X Y (requires sovereignty Y and tension X to be true), negotiate X Y (requires alliance X Y, sovereignty X, and goodwill to be true). Current state: goodwill is true. influence and sovereignty are true for nations Denmark, Ethiopia, Argentina, Brazil, and France. Goal: Denmark allies with Ethiopia, Ethiopia allies with Argentina, Argentina allies with Brazil, and Brazil allies with France. Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.""","provoke Brazil
-overcome Brazil France
+broker Brazil France
 provoke Argentina
-overcome Argentina Brazil
+broker Argentina Brazil
 provoke Ethiopia
-overcome Ethiopia Argentina
+broker Ethiopia Argentina
 provoke Denmark
-overcome Denmark Ethiopia
+broker Denmark Ethiopia",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_10,W4,"PLANNING PROBLEM
+==============================
+
+FORMAL DEFINITION:
+π = ⟨B, S₀, S*, A⟩
+
+BLOCKS:
+B = {d, e, a, b, f}
+
+INITIAL STATE S₀:
+Harmony,
+Planet(d), Planet(e), Planet(a), Planet(b), Planet(f),
+Province(d), Province(e), Province(a), Province(b), Province(f)
+
+GOAL STATE S*:
+Craves(d,e), Craves(e,a), Craves(a,b), Craves(b,f)
+
+ACTIONS (Preconditions → Add Effects | Delete Effects):
+
+1. attack(x):
+   Pre:  Harmony, Province(x), Planet(x)
+   Add:  Pain(x)
+   Del:  Harmony, Province(x), Planet(x)
+
+2. succumb(x):
+   Pre:  Pain(x)
+   Add:  Harmony, Province(x), Planet(x)
+   Del:  Pain(x)
+
+3. overcome(x, y):
+   Pre:  Province(y), Pain(x)
+   Add:  Harmony, Province(x), Craves(x,y)
+   Del:  Province(y), Pain(x)
+
+4. feast(x, y):
+   Pre:  Craves(x,y), Province(x), Harmony
+   Add:  Pain(x), Province(y)
+   Del:  Craves(x,y), Province(x), Harmony
+
+CONSTRAINTS:
+- x ≠ y for all two-argument actions
+- Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+
+TASK:
+Find plan π = (a₁, a₂, ..., aₙ) such that:
+S₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ
+
+OUTPUT FORMAT:
+Return a numbered list of actions only.
+Each action must be exactly one of:
+  attack X
+  succumb X
+  overcome X Y
+  feast X Y
+No explanation. No extra text.","attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_10,W5,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true).
+Current state: harmony is true. planet and province are true for blocks d, e, a, b, and f. craves d e, craves e a, craves a b, and craves b f are true.
+Goal: harmony is true. planet and province are true for all blocks d, e, a, b, and f. No craves relationships exist.
+Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","feast d e
+succumb d
+feast e a
+succumb e
+feast a b
+succumb a
+feast b f
+succumb b",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=2,6 blocks clean-start mystery instance
+MBW_10,canonical,"""You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks d, e, a, b, and f. Goal: craves d e, craves e a, craves a b, and craves b f are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_10,W1,"""You are a robotic manipulator. Permitted operations: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current configuration: harmony is true. planet and province are true for blocks j, d, g, i, c, h, a, b, e, and l. Objective: craves j d, craves d g, craves g i, craves i c, craves c h, craves h a, craves a b, craves b e, and craves e l are true. Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.""","attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_10,W2,"Action Reference:
+| Action      | Preconditions                                  | Effect    |
+|-------------|------------------------------------------------|-----------|
+| attack X    | harmony, province X, planet X are true         | pain X    |
+| succumb X   | pain X is true                                 | harmony   |
+| overcome X Y| province Y and pain X are true                 | craves X Y|
+| feast X Y   | craves X Y, province X, and harmony are true   | pain X    |
+
+Current State:
+| Block | Planet? | Province? |
+|-------|---------|-----------|
+| d     | yes     | yes       |
+| e     | yes     | yes       |
+| a     | yes     | yes       |
+| b     | yes     | yes       |
+| f     | yes     | yes       |
+Note: harmony is true.
+
+Goal:
+| Block | Must crave |
+|-------|------------|
+| d     | e          |
+| e     | a          |
+| a     | b          |
+| b     | f          |
+
+Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
+MBW_10,W3,"""You are a diplomat brokering alliances. Available actions: provoke X (requires goodwill, sovereignty X, and influence X to be true), appease X (requires tension X to be true), broker X Y (requires sovereignty Y and tension X to be true), negotiate X Y (requires alliance X Y, sovereignty X, and goodwill to be true). Current state: goodwill is true. influence and sovereignty are true for nations Denmark, Ethiopia, Argentina, Brazil, and France. Goal: Denmark allies with Ethiopia, Ethiopia allies with Argentina, Argentina allies with Brazil, and Brazil allies with France. Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.""","provoke Brazil
+broker Brazil France
+provoke Argentina
+broker Argentina Brazil
+provoke Ethiopia
+broker Ethiopia Argentina
+provoke Denmark
+broker Denmark Ethiopia
 ",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
 MBW_10,W4,"PLANNING PROBLEM
 ==============================
@@ -2126,7 +2971,7 @@ attack e
 overcome e a
 attack d
 overcome d e",planning_suite,mystery_blocksworld,easy,low,type=planbench_mystery | dataset=planbench | filename=instance-10.pddl | path=plan-bench/instances/blocksworld/mystery/generated/instance-10.pddl,verify_mystery_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,5 blocks clean-start mystery instance
-BW_155_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block e is on block i. Block f is on the table. Block h is on block f. Block i is on the table. Block j is on the table. The hand is empty. Goal: Block e is on the table, block f is on block h, block h is on block e, block i is on block f, block j is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack e i
+BW_155_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block e is on block i. Block f is on the table. Block h is on block f. Block i is on the table. Block j is on the table. The hand is empty. Goal: Block e is on the table, block f is on block h, block h is on block e, block i is on block f, block j is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack e i
 put-down e
 unstack h f
 stack h e
@@ -2135,8 +2980,8 @@ stack f h
 pick-up i
 stack i f
 pick-up j
-stack j i",planning_suite,blocksworld,easy,low,generated_seed_227616149,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_010_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block d. Block d is on block f. Block e is on the table. Block f is on the table. The hand is empty. Goal: Block a is on block d, block b is on block e, block d is on the table, block e is on block f, block f is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack b d
+stack j i",planning_suite,blocksworld,easy,low,generated_seed_227616149,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_010_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block d. Block d is on block f. Block e is on the table. Block f is on the table. The hand is empty. Goal: Block a is on block d, block b is on block e, block d is on the table, block e is on block f, block f is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack b d
 put-down b
 unstack d f
 put-down d
@@ -2145,8 +2990,8 @@ stack e f
 pick-up a
 stack a d
 pick-up b
-stack b e",planning_suite,blocksworld,easy,low,generated_seed_4024874569,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_001_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block b is on the table. Block d is on the table. Block f is on block d. Block g is on block l. Block h is on block j. Block i is on block g. Block j is on block f. Block l is on block h. The hand is empty. Goal: Block b is on the table, block d is on the table, block f is on the table, block g is on block d, block h is on the table, block i is on the table, block j is on block g, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack i g
+stack b e",planning_suite,blocksworld,easy,low,generated_seed_4024874569,verify_blocksworld_plan,num_blocks=5 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_001_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block b is on the table. Block d is on the table. Block f is on block d. Block g is on block l. Block h is on block j. Block i is on block g. Block j is on block f. Block l is on block h. The hand is empty. Goal: Block b is on the table, block d is on the table, block f is on the table, block g is on block d, block h is on the table, block i is on the table, block j is on block g, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack i g
 put-down i
 unstack g l
 put-down g
@@ -2161,8 +3006,8 @@ put-down f
 pick-up g
 stack g d
 pick-up j
-stack j g",planning_suite,blocksworld,medium,low,generated_seed_420965222,verify_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_011_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block a. Block c is on block k. Block e is on block l. Block g is on block i. Block h is on block g. Block i is on block j. Block j is on block c. Block k is on block e. Block l is on block b. The hand is empty. Goal: Block a is on the table, block b is on the table, block c is on block j, block e is on block h, block g is on the table, block h is on the table, block i is on block a, block j is on the table, block k is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack h g
+stack j g",planning_suite,blocksworld,medium,low,generated_seed_420965222,verify_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_011_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block a. Block c is on block k. Block e is on block l. Block g is on block i. Block h is on block g. Block i is on block j. Block j is on block c. Block k is on block e. Block l is on block b. The hand is empty. Goal: Block a is on the table, block b is on the table, block c is on block j, block e is on block h, block g is on the table, block h is on the table, block i is on block a, block j is on the table, block k is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack h g
 put-down h
 unstack g i
 put-down g
@@ -2181,16 +3026,16 @@ put-down l
 unstack b a
 put-down b
 pick-up i
-stack i a",planning_suite,blocksworld,hard,low,generated_seed_3177481038,verify_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_120_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on the table. Block f is on the table. Block g is on block f. Block j is on the table. The hand is empty. Goal: Block c is on the table, block f is on block c, block g is on block j, block j is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack g f
+stack i a",planning_suite,blocksworld,hard,low,generated_seed_3177481038,verify_blocksworld_plan,num_blocks=10 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_120_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on the table. Block f is on the table. Block g is on block f. Block j is on the table. The hand is empty. Goal: Block c is on the table, block f is on block c, block g is on block j, block j is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack g f
 put-down g
 pick-up f
 stack f c
 pick-up j
 stack j f
 pick-up g
-stack g j",planning_suite,blocksworld,easy,low,generated_seed_3777948407,verify_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_227_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block f. Block c is on the table. Block d is on the table. Block f is on the table. Block g is on block j. Block i is on the table. Block j is on the table. Block k is on block c. Block l is on the table. The hand is empty. Goal: Block a is on the table, block c is on block i, block d is on the table, block f is on the table, block g is on the table, block i is on block g, block j is on the table, block k is on block f, block l is on block c. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack g j
+stack g j",planning_suite,blocksworld,easy,low,generated_seed_3777948407,verify_blocksworld_plan,num_blocks=4 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_227_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block f. Block c is on the table. Block d is on the table. Block f is on the table. Block g is on block j. Block i is on the table. Block j is on the table. Block k is on block c. Block l is on the table. The hand is empty. Goal: Block a is on the table, block c is on block i, block d is on the table, block f is on the table, block g is on the table, block i is on block g, block j is on the table, block k is on block f, block l is on block c. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack g j
 put-down g
 pick-up i
 stack i g
@@ -2201,8 +3046,8 @@ stack k f
 pick-up c
 stack c i
 pick-up l
-stack l c",planning_suite,blocksworld,hard,low,generated_seed_2479329937,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false |,W5 procedurally generated
-BW_137_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block i. Block b is on block c. Block c is on block l. Block d is on block j. Block e is on block b. Block f is on the table. Block g is on block a. Block h is on block e. Block i is on block f. Block j is on block g. Block l is on block d. The hand is empty. Goal: Block a is on block i, block b is on block g, block c is on the table, block d is on block l, block e is on the table, block f is on the table, block g is on block j, block h is on the table, block i is on the table, block j is on the table, block l is on block c. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack h e
+stack l c",planning_suite,blocksworld,hard,low,generated_seed_2479329937,verify_blocksworld_plan,num_blocks=9 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_137_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block i. Block b is on block c. Block c is on block l. Block d is on block j. Block e is on block b. Block f is on the table. Block g is on block a. Block h is on block e. Block i is on block f. Block j is on block g. Block l is on block d. The hand is empty. Goal: Block a is on block i, block b is on block g, block c is on the table, block d is on block l, block e is on the table, block f is on the table, block g is on block j, block h is on the table, block i is on the table, block j is on the table, block l is on block c. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack h e
 put-down h
 unstack e b
 put-down e
@@ -2225,8 +3070,8 @@ put-down a
 unstack i f
 put-down i
 pick-up a
-stack a i",planning_suite,blocksworld,hard,low,generated_seed_2265743528,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_172_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block k. Block b is on block g. Block d is on block l. Block e is on block h. Block f is on the table. Block g is on the table. Block h is on the table. Block i is on block j. Block j is on block e. Block k is on the table. Block l is on the table. The hand is empty. Goal: Block a is on block k, block b is on block d, block d is on the table, block e is on block i, block f is on block b, block g is on block e, block h is on the table, block i is on the table, block j is on the table, block k is on block h, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack d l
+stack a i",planning_suite,blocksworld,hard,low,generated_seed_2265743528,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_172_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block k. Block b is on block g. Block d is on block l. Block e is on block h. Block f is on the table. Block g is on the table. Block h is on the table. Block i is on block j. Block j is on block e. Block k is on the table. Block l is on the table. The hand is empty. Goal: Block a is on block k, block b is on block d, block d is on the table, block e is on block i, block f is on block b, block g is on block e, block h is on the table, block i is on the table, block j is on the table, block k is on block h, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack d l
 put-down d
 unstack b g
 stack b d
@@ -2245,8 +3090,8 @@ put-down a
 pick-up k
 stack k h
 pick-up a
-stack a k",planning_suite,blocksworld,hard,low,generated_seed_3906466348,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_467_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block i. Block f is on block h. Block g is on block l. Block h is on the table. Block i is on block g. Block j is on block a. Block l is on block f. The hand is empty. Goal: Block a is on block i, block f is on the table, block g is on block l, block h is on the table, block i is on block h, block j is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack j a
+stack a k",planning_suite,blocksworld,hard,low,generated_seed_3906466348,verify_blocksworld_plan,num_blocks=11 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_467_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block i. Block f is on block h. Block g is on block l. Block h is on the table. Block i is on block g. Block j is on block a. Block l is on block f. The hand is empty. Goal: Block a is on block i, block f is on the table, block g is on block l, block h is on the table, block i is on block h, block j is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack j a
 put-down j
 unstack a i
 put-down a
@@ -2263,10 +3108,32 @@ stack g l
 pick-up i
 stack i h
 pick-up a
-stack a i",planning_suite,blocksworld,medium,low,generated_seed_1198332387,verify_blocksworld_plan,num_blocks=7 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
-BW_080_W5,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block i. Block e is on the table. Block f is on block j. Block i is on the table. Block j is on block l. Block l is on the table. The hand is empty. Goal: Block c is on block i, block e is on block c, block f is on the table, block i is on the table, block j is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+stack a i",planning_suite,blocksworld,medium,low,generated_seed_1198332387,verify_blocksworld_plan,num_blocks=7 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_080_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block i. Block e is on the table. Block f is on block j. Block i is on the table. Block j is on block l. Block l is on the table. The hand is empty. Goal: Block c is on block i, block e is on block c, block f is on the table, block i is on the table, block j is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
 stack e c
 unstack f j
 put-down f
 unstack j l
-put-down j",planning_suite,blocksworld,medium,low,generated_seed_3455343178,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,W5 procedurally generated
+put-down j",planning_suite,blocksworld,medium,low,generated_seed_3455343178,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated
+BW_E002_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block a. Block c is on the table. The hand is empty. Goal: Block a is on the table, block b is on the table, block c is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack b a
+put-down b",planning_suite,blocksworld,easy,low,generated_seed_2267335406,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,W6 procedurally generated
+BW_E015_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block a. Block c is on block b. The hand is empty. Goal: Block a is on the table, block b is on block c, block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack c b
+put-down c
+unstack b a
+put-down b
+pick-up c
+stack c a
+pick-up b
+stack b c",planning_suite,blocksworld,easy,low,generated_seed_2011636105,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,W6 procedurally generated
+BW_E017_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block c. Block c is on block a. The hand is empty. Goal: Block a is on the table, block b is on the table, block c is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack b c
+put-down b
+unstack c a
+put-down c",planning_suite,blocksworld,easy,low,generated_seed_1543131558,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,W6 procedurally generated
+BW_E019_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on the table. Block c is on block b. The hand is empty. Goal: Block a is on the table, block b is on block c, block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack c b
+stack c a
+pick-up b
+stack b c",planning_suite,blocksworld,easy,low,generated_seed_4280093645,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,W6 procedurally generated
+BW_E100_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on the table. Block b is on block a. Block c is on the table. The hand is empty. Goal: Block a is on the table, block b is on the table, block c is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack b a
+put-down b
+pick-up c
+stack c b",planning_suite,blocksworld,easy,low,generated_seed_1252577391,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,W6 procedurally generated

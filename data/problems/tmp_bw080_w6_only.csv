@@ -1,0 +1,7 @@
+problem_id,variant_type,problem_text,correct_answer,problem_family,problem_subtype,difficulty,contamination_pole,source,verifier_function,difficulty_params,notes
+BW_080_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block c is on block i. Block e is on the table. Block f is on block j. Block i is on the table. Block j is on block l. Block l is on the table. The hand is empty. Goal: Block c is on block i, block e is on block c, block f is on the table, block i is on the table, block j is on the table, block l is on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+stack e c
+unstack f j
+put-down f
+unstack j l
+put-down j",planning_suite,blocksworld,medium,low,generated_seed_3455343178,verify_blocksworld_plan,num_blocks=6 | requires_unstacking=false | max_initial_stack_depth=1,W6 procedurally generated

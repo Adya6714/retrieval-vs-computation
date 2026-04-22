@@ -1,0 +1,1185 @@
+problem_id,model,pddl_path,difficulty,contamination_pole,raw_plan,parsed_plan_json,plan_length
+BW_155,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. pick-up f
+3. stack i f
+4. pick-up e
+5. stack f e
+6. pick-up j
+7. stack e j
+8. pick-up h
+9. stack j h","[""pick-up i"", ""pick-up f"", ""stack i f"", ""pick-up e"", ""stack f e"", ""pick-up j"", ""stack e j"", ""pick-up h"", ""stack j h""]",9
+BW_155,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h","[""pick-up i"", ""stack i f"", ""pick-up f"", ""stack f e"", ""pick-up e"", ""stack e j"", ""pick-up j"", ""stack j h""]",8
+BW_155,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. stack i f
+3. put-down i
+4. pick-up f
+5. stack f e
+6. put-down f
+7. pick-up e
+8. stack e j
+9. put-down e
+10. pick-up j
+11. stack j h
+12. put-down j","[""pick-up i"", ""stack i f"", ""put-down i"", ""pick-up f"", ""stack f e"", ""put-down f"", ""pick-up e"", ""stack e j"", ""put-down e"", ""pick-up j"", ""stack j h"", ""put-down j""]",12
+BW_010,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d  
+2. stack d e  
+3. pick-up e  
+4. stack e a  
+5. pick-up a  
+6. stack a b  
+7. pick-up b  
+8. stack b f","[""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e a"", ""pick-up a"", ""stack a b"", ""pick-up b"", ""stack b f""]",8
+BW_001,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l","[""pick-up j"", ""stack j f"", ""pick-up f"", ""stack f i"", ""pick-up i"", ""stack i g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b h"", ""pick-up h"", ""stack h l""]",14
+BW_011,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b","[""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k g"", ""pick-up g"", ""stack g a"", ""pick-up a"", ""stack a l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e h"", ""pick-up h"", ""stack h i"", ""pick-up i"", ""stack i b""]",18
+BW_120,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,"1. pick-up c  
+2. stack c j  
+3. pick-up j  
+4. stack j g  
+5. pick-up g  
+6. stack g f  ","[""pick-up c"", ""stack c j"", ""pick-up j"", ""stack j g"", ""pick-up g"", ""stack g f""]",6
+BW_227,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a","[""pick-up f"", ""stack f l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j c"", ""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k a""]",16
+BW_137,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i","[""pick-up d"", ""stack d a"", ""pick-up a"", ""stack a b"", ""pick-up b"", ""stack b j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e l"", ""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h c"", ""pick-up c"", ""stack c f"", ""pick-up f"", ""stack f g"", ""pick-up g"", ""stack g i""]",20
+BW_172,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k","[""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b a"", ""pick-up a"", ""stack a j"", ""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k""]",20
+BW_467,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h","[""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f h""]",12
+BW_080,openai/gpt-4o,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f","[""pick-up l"", ""stack l c"", ""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e j"", ""pick-up j"", ""stack j f""]",10
+BW_010,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b","[""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e a"", ""pick-up a"", ""stack a b""]",6
+BW_001,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up l 
+2. stack l h 
+3. pick-up h 
+4. stack h b 
+5. pick-up b 
+6. stack b d 
+7. pick-up d 
+8. stack d g 
+9. pick-up g 
+10. stack g i 
+11. pick-up i 
+12. stack i f 
+13. pick-up f 
+14. stack f j","[""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h b"", ""pick-up b"", ""stack b d"", ""pick-up d"", ""stack d g"", ""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i f"", ""pick-up f"", ""stack f j""]",14
+BW_011,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. stack e l
+2. pick-up e
+3. stack e k
+4. pick-up k
+5. stack a k
+6. pick-up a
+7. stack g a
+8. pick-up g
+9. stack k g
+10. pick-up k
+11. stack c k
+12. put-down c
+13. pick-up b
+14. stack i b
+15. pick-up i
+16. stack h i
+17. pick-up h
+18. stack e h
+19. put-down e
+20. pick-up d (j does not exist and it would be necessary to perform another move to put-down c, so I assume that the response you want is by item and assumes the correct order for the blocks)","[""stack e l"", ""pick-up e"", ""stack e k"", ""pick-up k"", ""stack a k"", ""pick-up a"", ""stack g a"", ""pick-up g"", ""stack k g"", ""pick-up k"", ""stack c k"", ""put-down c"", ""pick-up b"", ""stack i b"", ""pick-up i"", ""stack h i"", ""pick-up h"", ""stack e h"", ""put-down e"", ""pick-up d (j does not exist and it would be necessary to perform another move to put-down c, so i assume that the response you want is by item and assumes the correct order for the blocks)""]",20
+BW_120,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,"1. Pick-up c
+2. Pick-up j
+3. Stack j c
+4. Stack j g
+5. Stack g f
+6. Unstack g j 
+7. Put-down j
+8. Unstack j c 
+9. Put-down c","[""pick-up c"", ""pick-up j"", ""stack j c"", ""stack j g"", ""stack g f"", ""unstack g j"", ""put-down j"", ""unstack j c"", ""put-down c""]",9
+BW_227,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a","[""pick-up f"", ""stack f l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j c"", ""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k a""]",16
+BW_137,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up a
+2. stack d a
+3. pick-up b
+4. stack a b
+5. pick-up j
+6. stack b j
+7. pick-up e
+8. stack j e
+9. pick-up l
+10. stack e l
+11. pick-up h
+12. stack l h
+13. pick-up c
+14. stack h c
+15. pick-up f
+16. stack c f
+17. pick-up g
+18. stack f g
+19. pick-up i
+20. stack g i","[""pick-up a"", ""stack d a"", ""pick-up b"", ""stack a b"", ""pick-up j"", ""stack b j"", ""pick-up e"", ""stack j e"", ""pick-up l"", ""stack e l"", ""pick-up h"", ""stack l h"", ""pick-up c"", ""stack h c"", ""pick-up f"", ""stack c f"", ""pick-up g"", ""stack f g"", ""pick-up i"", ""stack g i""]",20
+BW_172,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k","[""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b a"", ""pick-up a"", ""stack a j"", ""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k""]",20
+BW_467,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h","[""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f h""]",12
+BW_080,meta-llama/llama-3.1-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f","[""pick-up l"", ""stack l c"", ""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e j"", ""pick-up j"", ""stack j f""]",10
+BW_010,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d
+2. pick-up e
+3. stack d e
+4. pick-up a
+5. stack e a
+6. pick-up b
+7. stack a b
+8. pick-up f
+9. put-down f
+10. unstack d e
+11. put-down d
+12. unstack e a
+13. put-down e
+14. unstack a b
+15. put-down a
+16. pick-up d
+17. pick-up e
+18. stack e a
+19. pick-up d
+20. stack d e
+21. pick-up b
+22. stack a b
+23. pick-up f
+24. stack b f","[""pick-up d"", ""pick-up e"", ""stack d e"", ""pick-up a"", ""stack e a"", ""pick-up b"", ""stack a b"", ""pick-up f"", ""put-down f"", ""unstack d e"", ""put-down d"", ""unstack e a"", ""put-down e"", ""unstack a b"", ""put-down a"", ""pick-up d"", ""pick-up e"", ""stack e a"", ""pick-up d"", ""stack d e"", ""pick-up b"", ""stack a b"", ""pick-up f"", ""stack b f""]",24
+BW_001,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up j
+2. pick-up f
+3. stack j f
+4. pick-up i
+5. stack f i
+6. pick-up g
+7. stack i g
+8. pick-up d
+9. stack g d
+10. pick-up b
+11. stack d b
+12. pick-up h
+13. stack b h
+14. pick-up l
+15. put-down l
+16. unstack j f
+17. put-down j
+18. pick-up l
+19. stack h l
+20. pick-up j
+21. stack j f","[""pick-up j"", ""pick-up f"", ""stack j f"", ""pick-up i"", ""stack f i"", ""pick-up g"", ""stack i g"", ""pick-up d"", ""stack g d"", ""pick-up b"", ""stack d b"", ""pick-up h"", ""stack b h"", ""pick-up l"", ""put-down l"", ""unstack j f"", ""put-down j"", ""pick-up l"", ""stack h l"", ""pick-up j"", ""stack j f""]",21
+BW_011,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. pick-up c
+2. pick-up k
+3. pick-up g
+4. pick-up a
+5. pick-up l
+6. pick-up j
+7. pick-up e
+8. pick-up h
+9. pick-up i
+10. pick-up b
+11. put-down b
+12. pick-up i
+13. stack i b
+14. pick-up h
+15. stack h i
+16. pick-up e
+17. stack e h
+18. pick-up j
+19. stack j e
+20. pick-up l
+21. stack l j
+22. pick-up a
+23. stack a l
+24. pick-up g
+25. stack g a
+26. pick-up k
+27. stack k g
+28. pick-up c
+29. stack c k","[""pick-up c"", ""pick-up k"", ""pick-up g"", ""pick-up a"", ""pick-up l"", ""pick-up j"", ""pick-up e"", ""pick-up h"", ""pick-up i"", ""pick-up b"", ""put-down b"", ""pick-up i"", ""stack i b"", ""pick-up h"", ""stack h i"", ""pick-up e"", ""stack e h"", ""pick-up j"", ""stack j e"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k""]",29
+BW_120,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,"1. pick-up c
+2. pick-up j
+3. pick-up g
+4. pick-up f
+5. put-down f
+6. pick-up g
+7. stack g f
+8. pick-up j
+9. stack j g
+10. pick-up c
+11. stack c j","[""pick-up c"", ""pick-up j"", ""pick-up g"", ""pick-up f"", ""put-down f"", ""pick-up g"", ""stack g f"", ""pick-up j"", ""stack j g"", ""pick-up c"", ""stack c j""]",11
+BW_227,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. pick-up g
+4. stack g d
+5. pick-up i
+6. stack i j
+7. pick-up c
+8. stack c k
+9. pick-up a
+10. put-down a
+11. pick-up k
+12. stack k a
+13. pick-up c
+14. stack c k
+15. pick-up j
+16. stack j c
+17. pick-up i
+18. stack i j
+19. pick-up d
+20. stack d i
+21. pick-up g
+22. stack g d
+23. pick-up l
+24. stack l g
+25. pick-up f
+26. stack f l","[""pick-up f"", ""stack f l"", ""pick-up g"", ""stack g d"", ""pick-up i"", ""stack i j"", ""pick-up c"", ""stack c k"", ""pick-up a"", ""put-down a"", ""pick-up k"", ""stack k a"", ""pick-up c"", ""stack c k"", ""pick-up j"", ""stack j c"", ""pick-up i"", ""stack i j"", ""pick-up d"", ""stack d i"", ""pick-up g"", ""stack g d"", ""pick-up l"", ""stack l g"", ""pick-up f"", ""stack f l""]",26
+BW_137,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up d
+2. pick-up a
+3. stack a b
+4. pick-up d
+5. stack d a
+6. pick-up j
+7. pick-up e
+8. stack e l
+9. pick-up h
+10. stack h c
+11. pick-up f
+12. stack f g
+13. pick-up i
+14. put-down i
+15. pick-up g
+16. stack g i
+17. pick-up f
+18. stack f g
+19. pick-up c
+20. stack c f
+21. pick-up h
+22. stack h c
+23. pick-up l
+24. stack l h
+25. pick-up e
+26. stack e l
+27. pick-up j
+28. stack j e
+29. pick-up b
+30. stack b j
+31. pick-up a
+32. stack a b
+33. pick-up d
+34. stack d a","[""pick-up d"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""pick-up j"", ""pick-up e"", ""stack e l"", ""pick-up h"", ""stack h c"", ""pick-up f"", ""stack f g"", ""pick-up i"", ""put-down i"", ""pick-up g"", ""stack g i"", ""pick-up f"", ""stack f g"", ""pick-up c"", ""stack c f"", ""pick-up h"", ""stack h c"", ""pick-up l"", ""stack l h"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a""]",34
+BW_172,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. pick-up l
+3. pick-up g
+4. pick-up e
+5. pick-up d
+6. pick-up b
+7. pick-up a
+8. pick-up j
+9. pick-up h
+10. pick-up f
+11. pick-up k
+12. put-down k
+13. pick-up f
+14. stack f k
+15. pick-up h
+16. stack h f
+17. pick-up j
+18. stack j h
+19. pick-up a
+20. stack a j
+21. pick-up b
+22. stack b a
+23. pick-up d
+24. stack d b
+25. pick-up e
+26. stack e d
+27. pick-up g
+28. stack g e
+29. pick-up l
+30. stack l g
+31. pick-up i
+32. stack i l","[""pick-up i"", ""pick-up l"", ""pick-up g"", ""pick-up e"", ""pick-up d"", ""pick-up b"", ""pick-up a"", ""pick-up j"", ""pick-up h"", ""pick-up f"", ""pick-up k"", ""put-down k"", ""pick-up f"", ""stack f k"", ""pick-up h"", ""stack h f"", ""pick-up j"", ""stack j h"", ""pick-up a"", ""stack a j"", ""pick-up b"", ""stack b a"", ""pick-up d"", ""stack d b"", ""pick-up e"", ""stack e d"", ""pick-up g"", ""stack g e"", ""pick-up l"", ""stack l g"", ""pick-up i"", ""stack i l""]",32
+BW_467,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. pick-up i
+3. stack g i
+4. pick-up l
+5. stack i l
+6. pick-up j
+7. stack l j
+8. pick-up a
+9. stack j a
+10. pick-up f
+11. stack a f
+12. pick-up h
+13. put-down h
+14. pick-up g
+15. put-down g
+16. pick-up i
+17. put-down i
+18. pick-up l
+19. put-down l
+20. pick-up j
+21. put-down j
+22. pick-up a
+23. put-down a
+24. pick-up f
+25. stack f h
+26. pick-up a
+27. stack a f
+28. pick-up j
+29. stack j a
+30. pick-up l
+31. stack l j
+32. pick-up i
+33. stack i l
+34. pick-up g
+35. stack g i","[""pick-up g"", ""pick-up i"", ""stack g i"", ""pick-up l"", ""stack i l"", ""pick-up j"", ""stack l j"", ""pick-up a"", ""stack j a"", ""pick-up f"", ""stack a f"", ""pick-up h"", ""put-down h"", ""pick-up g"", ""put-down g"", ""pick-up i"", ""put-down i"", ""pick-up l"", ""put-down l"", ""pick-up j"", ""put-down j"", ""pick-up a"", ""put-down a"", ""pick-up f"", ""stack f h"", ""pick-up a"", ""stack a f"", ""pick-up j"", ""stack j a"", ""pick-up l"", ""stack l j"", ""pick-up i"", ""stack i l"", ""pick-up g"", ""stack g i""]",35
+BW_080,anthropic/claude-3.7-sonnet,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. pick-up c
+3. stack l c
+4. pick-up i
+5. stack c i
+6. pick-up e
+7. stack i e
+8. pick-up j
+9. stack e j
+10. pick-up f
+11. stack j f","[""pick-up l"", ""pick-up c"", ""stack l c"", ""pick-up i"", ""stack c i"", ""pick-up e"", ""stack i e"", ""pick-up j"", ""stack e j"", ""pick-up f"", ""stack j f""]",11
+BW_E100,anthropic/claude-3.7-sonnet,,easy,low,"This is a blocksworld problem specification in PDDL (Planning Domain Definition Language). Let me analyze it for you:
+
+**Problem Name**: BW-rand-3
+
+**Domain**: blocksworld-4ops (standard blocksworld domain with 4 operators)
+
+**Objects**: Three blocks labeled a, b, and c
+
+**Initial State**:
+- The robot hand is empty
+- Blocks a and b are on the table
+- Block c is on top of block a
+- Blocks b and c are clear (nothing on top of them)
+
+**Goal State**:
+- Block b is on top of block c
+- Block c is on top of block a
+
+To visualize:
+
+Initial state:
+```
+  c   b
+  a   
+ ‾‾‾‾‾‾‾
+```
+
+Goal state:
+```
+  b
+  c
+  a
+ ‾‾‾‾‾‾‾
+```
+
+A valid plan to solve this would be:
+1. Pick up block b from the table
+2. Place block b on top of block c
+
+That's all that's needed because block c is already on block a in the initial state.","[""this is a blocksworld problem specification in pddl (planning domain definition language). let me analyze it for you:"", ""**problem name**: bw-rand-3"", ""**domain**: blocksworld-4ops (standard blocksworld domain with 4 operators)"", ""**objects**: three blocks labeled a, b, and c"", ""**initial state**:"", ""- the robot hand is empty"", ""- blocks a and b are on the table"", ""- block c is on top of block a"", ""- blocks b and c are clear (nothing on top of them)"", ""**goal state**:"", ""- block b is on top of block c"", ""- block c is on top of block a"", ""to visualize:"", ""initial state:"", ""```"", ""c   b"", ""a"", ""\u203e\u203e\u203e\u203e\u203e\u203e\u203e"", ""```"", ""goal state:"", ""```"", ""b"", ""c"", ""a"", ""\u203e\u203e\u203e\u203e\u203e\u203e\u203e"", ""```"", ""a valid plan to solve this would be:"", ""pick up block b from the table"", ""place block b on top of block c"", ""that's all that's needed because block c is already on block a in the initial state.""]",30
+BW_E015,anthropic/claude-3.7-sonnet,,easy,low,"This is a Blocksworld problem specification in PDDL format. Let me analyze it:
+
+## Problem: BW-rand-3
+- **Domain**: blocksworld-4ops (four operators version of Blocksworld)
+- **Objects**: 3 blocks labeled a, b, and c
+
+## Initial State:
+- The robot hand is empty
+- Block a is on the table
+- Block b is on the table
+- Block c is on top of block b
+- Blocks a and c are clear (nothing on top of them)
+
+## Goal:
+- Place block a on top of block b
+
+To solve this problem, we need to:
+1. Pick up block c from block b (making b clear)
+2. Pick up block a from the table
+3. Stack block a on block b
+
+The solution would be:
+1. `pickup-from-block c b`
+2. `put-down c` (or keep it in hand if the domain allows)
+3. `pickup-from-table a`
+4. `stack a b`
+
+After these steps, the goal state with block a on top of block b will be achieved.","[""this is a blocksworld problem specification in pddl format. let me analyze it:"", ""## problem: bw-rand-3"", ""- **domain**: blocksworld-4ops (four operators version of blocksworld)"", ""- **objects**: 3 blocks labeled a, b, and c"", ""## initial state:"", ""- the robot hand is empty"", ""- block a is on the table"", ""- block b is on the table"", ""- block c is on top of block b"", ""- blocks a and c are clear (nothing on top of them)"", ""## goal:"", ""- place block a on top of block b"", ""to solve this problem, we need to:"", ""pick up block c from block b (making b clear)"", ""pick up block a from the table"", ""stack block a on block b"", ""the solution would be:"", ""`pickup-from-block c b`"", ""`put-down c` (or keep it in hand if the domain allows)"", ""`pickup-from-table a`"", ""`stack a b`"", ""after these steps, the goal state with block a on top of block b will be achieved.""]",22
+BW_E017,anthropic/claude-3.7-sonnet,,easy,low,"This is a Blocksworld planning problem named ""BW-rand-3"" with 3 blocks (a, b, and c). Let me analyze it:
+
+**Initial State:**
+- The hand is empty
+- All three blocks (a, b, c) are on the table
+- All three blocks are clear (nothing on top of them)
+
+**Goal State:**
+- Block a must be on top of block b
+- Block c must be on top of block a
+
+So the goal is to build a stack with b at the bottom, a in the middle, and c on top.
+
+A valid solution would be:
+1. Pick up block a
+2. Stack block a on top of block b
+3. Pick up block c
+4. Stack block c on top of block a
+
+This would create the stack c-a-b (reading from top to bottom) as required by the goal.","[""this is a blocksworld planning problem named \""bw-rand-3\"" with 3 blocks (a, b, and c). let me analyze it:"", ""**initial state:**"", ""- the hand is empty"", ""- all three blocks (a, b, c) are on the table"", ""- all three blocks are clear (nothing on top of them)"", ""**goal state:**"", ""- block a must be on top of block b"", ""- block c must be on top of block a"", ""so the goal is to build a stack with b at the bottom, a in the middle, and c on top."", ""a valid solution would be:"", ""pick up block a"", ""stack block a on top of block b"", ""pick up block c"", ""stack block c on top of block a"", ""this would create the stack c-a-b (reading from top to bottom) as required by the goal.""]",15
+BW_E019,anthropic/claude-3.7-sonnet,,easy,low,"This is a problem definition in PDDL (Planning Domain Definition Language) for the classic Blocks World domain. Let me explain what it describes:
+
+# Problem Analysis: BW-rand-3
+
+## Domain
+- This is a problem in the blocksworld-4ops domain (a standard version of Blocks World with 4 operators: pickup, putdown, stack, unstack)
+
+## Objects
+- Three blocks labeled: a, b, and c
+
+## Initial State
+- The hand is empty (`handempty`)
+- Block a is on top of block b (`on a b`)
+- Block b is on the table (`ontable b`)
+- Block c is on the table (`ontable c`) 
+- Blocks a and c have nothing on top of them (`clear a`, `clear c`)
+
+Visual representation of initial state:
+```
+ a
+ b   c
+---------
+ table
+```
+
+## Goal State
+- Block a should be on top of block c (`on a c`)
+- Block b should be on top of block a (`on b a`)
+
+Visual representation of goal state:
+```
+ b
+ a
+ c
+---------
+ table
+```
+
+A planner would need to find a sequence of actions to transform the initial state into the goal state using the domain operators.","[""this is a problem definition in pddl (planning domain definition language) for the classic blocks world domain. let me explain what it describes:"", ""# problem analysis: bw-rand-3"", ""## domain"", ""- this is a problem in the blocksworld-4ops domain (a standard version of blocks world with 4 operators: pickup, putdown, stack, unstack)"", ""## objects"", ""- three blocks labeled: a, b, and c"", ""## initial state"", ""- the hand is empty (`handempty`)"", ""- block a is on top of block b (`on a b`)"", ""- block b is on the table (`ontable b`)"", ""- block c is on the table (`ontable c`)"", ""- blocks a and c have nothing on top of them (`clear a`, `clear c`)"", ""visual representation of initial state:"", ""```"", ""a"", ""b   c"", ""---------"", ""table"", ""```"", ""## goal state"", ""- block a should be on top of block c (`on a c`)"", ""- block b should be on top of block a (`on b a`)"", ""visual representation of goal state:"", ""```"", ""b"", ""a"", ""c"", ""---------"", ""table"", ""```"", ""a planner would need to find a sequence of actions to transform the initial state into the goal state using the domain operators.""]",31
+BW_E002,anthropic/claude-3.7-sonnet,,easy,low,"This is a Blocks World problem in PDDL (Planning Domain Definition Language) format. Let me explain what it defines:
+
+- It's named ""BW-rand-3"" in the domain ""blocksworld-4ops""
+- There are 3 blocks: a, b, and c
+- Initial state:
+  * The robot hand is empty
+  * All three blocks (a, b, c) are directly on the table
+  * All three blocks have nothing on top of them (they are clear)
+- Goal state:
+  * Block a is on top of block c
+  * Block b is on top of block a
+
+Visually:
+- Initial state:
+  ```
+  [a] [b] [c]
+  ------------
+  ```
+
+- Goal state:
+  ```
+   [b]
+   [a]
+   [c]
+  ----
+  ```
+
+To solve this, we need to stack the blocks in the right order to achieve the goal configuration.","[""this is a blocks world problem in pddl (planning domain definition language) format. let me explain what it defines:"", ""- it's named \""bw-rand-3\"" in the domain \""blocksworld-4ops\"""", ""- there are 3 blocks: a, b, and c"", ""- initial state:"", ""* the robot hand is empty"", ""* all three blocks (a, b, c) are directly on the table"", ""* all three blocks have nothing on top of them (they are clear)"", ""- goal state:"", ""* block a is on top of block c"", ""* block b is on top of block a"", ""visually:"", ""- initial state:"", ""```"", ""[a] [b] [c]"", ""------------"", ""```"", ""- goal state:"", ""```"", ""[b]"", ""[a]"", ""[c]"", ""----"", ""```"", ""to solve this, we need to stack the blocks in the right order to achieve the goal configuration.""]",24
+BW_E100,openai/gpt-4o,,easy,low,"This problem definition describes a blocks world problem with three blocks: a, b, and c. The `blocksworld-4ops` domain typically includes four basic operations: `pick-up`, `put-down`, `stack`, and `unstack`. Here's a breakdown of the problem as described:
+
+### Initial State:
+- There are three blocks: a, b, and c.
+- `handempty` indicates that the robotic arm is currently not holding any block.
+- `ontable a` and `ontable b` suggest that blocks a and b are directly on the table.
+- `on c a` means block c is on top of block a.
+- `clear b` and `clear c` mean the tops of blocks b and c are clear (not covered by any other block).
+
+### Goal State:
+- `(on b c)` indicates that block b should be on top of block c.
+- `(on c a)` means block c should remain on top of block a.
+
+### Objective:
+The main goal is to rearrange the blocks such that b is on c, and c remains on a. The initial configuration makes this problem relatively straightforward since block c is already where it needs to be concerning block a. The challenge lies in moving block b from the table to the top of block c.
+
+### Possible Solution:
+To achieve the goal state from the initial configuration, you could follow these steps using typical blocksworld operations:
+
+1. **Pick Up b**: Since `clear b` is true and `handempty` is true, the robot can pick up block b.
+2. **Stack b on c**: Since the robot is holding block b, and `clear c` is true, the robot can stack block b on block c.
+
+After these operations, the goal state is achieved: block b is on block c, and block c is on block a.","[""this problem definition describes a blocks world problem with three blocks: a, b, and c. the `blocksworld-4ops` domain typically includes four basic operations: `pick-up`, `put-down`, `stack`, and `unstack`. here's a breakdown of the problem as described:"", ""### initial state:"", ""- there are three blocks: a, b, and c."", ""- `handempty` indicates that the robotic arm is currently not holding any block."", ""- `ontable a` and `ontable b` suggest that blocks a and b are directly on the table."", ""- `on c a` means block c is on top of block a."", ""- `clear b` and `clear c` mean the tops of blocks b and c are clear (not covered by any other block)."", ""### goal state:"", ""- `(on b c)` indicates that block b should be on top of block c."", ""- `(on c a)` means block c should remain on top of block a."", ""### objective:"", ""the main goal is to rearrange the blocks such that b is on c, and c remains on a. the initial configuration makes this problem relatively straightforward since block c is already where it needs to be concerning block a. the challenge lies in moving block b from the table to the top of block c."", ""### possible solution:"", ""to achieve the goal state from the initial configuration, you could follow these steps using typical blocksworld operations:"", ""**pick up b**: since `clear b` is true and `handempty` is true, the robot can pick up block b."", ""**stack b on c**: since the robot is holding block b, and `clear c` is true, the robot can stack block b on block c."", ""after these operations, the goal state is achieved: block b is on block c, and block c is on block a.""]",17
+BW_E015,openai/gpt-4o,,easy,low,"The problem you've defined, ""BW-rand-3,"" is a Blocks World problem, which is a classic AI planning problem. Your setup specifies a world with three blocks: `a`, `b`, and `c`. 
+
+Here's a breakdown of the initial state and goal:
+
+### Initial State:
+- `handempty`: This indicates that the hand (or gripper) is not holding any block.
+- `ontable a`: Block `a` is directly on the table.
+- `ontable b`: Block `b` is directly on the table.
+- `on c b`: Block `c` is on top of block `b`.
+- `clear a`: Block `a` has no blocks on top of it.
+- `clear c`: Block `c` has no blocks on top of it.
+
+### Goal:
+- You aim to achieve the state where `a` is on top of `b`: `(on a b)`.
+
+### Domain `blocksworld-4ops`:
+This typically includes four basic operations:
+1. **Pick up** a block (requires `handempty` and the block to be `clear`).
+2. **Put down** a block (requires having picked it up).
+3. **Stack** a block on another (requires having picked it up and the target to be `clear`).
+4. **Unstack** a block from another (requires `handempty` and the top block to be `clear`).
+
+### Plan:
+To accomplish the goal `(on a b)`, you generally need to:
+1. **Unstack `c` from `b`:**
+   - Since `c` is on `b` and `c` is clear, you can unstack `c` from `b`.
+2. **Put `c` on the table** if needed.
+3. **Pick up `a`** from the table.
+4. **Stack `a` on `b`.**
+
+This simple plan will achieve the goal given the current initial state you have defined.","[""the problem you've defined, \""bw-rand-3,\"" is a blocks world problem, which is a classic ai planning problem. your setup specifies a world with three blocks: `a`, `b`, and `c`."", ""here's a breakdown of the initial state and goal:"", ""### initial state:"", ""- `handempty`: this indicates that the hand (or gripper) is not holding any block."", ""- `ontable a`: block `a` is directly on the table."", ""- `ontable b`: block `b` is directly on the table."", ""- `on c b`: block `c` is on top of block `b`."", ""- `clear a`: block `a` has no blocks on top of it."", ""- `clear c`: block `c` has no blocks on top of it."", ""### goal:"", ""- you aim to achieve the state where `a` is on top of `b`: `(on a b)`."", ""### domain `blocksworld-4ops`:"", ""this typically includes four basic operations:"", ""**pick up** a block (requires `handempty` and the block to be `clear`)."", ""**put down** a block (requires having picked it up)."", ""**stack** a block on another (requires having picked it up and the target to be `clear`)."", ""**unstack** a block from another (requires `handempty` and the top block to be `clear`)."", ""### plan:"", ""to accomplish the goal `(on a b)`, you generally need to:"", ""**unstack `c` from `b`:**"", ""- since `c` is on `b` and `c` is clear, you can unstack `c` from `b`."", ""**put `c` on the table** if needed."", ""**pick up `a`** from the table."", ""**stack `a` on `b`.**"", ""this simple plan will achieve the goal given the current initial state you have defined.""]",25
+BW_E017,openai/gpt-4o,,easy,low,"The provided code appears to be written in PDDL (Planning Domain Definition Language), which is used in artificial intelligence for automated planning. The code defines a problem, named `BW-rand-3`, in the context of the `blocksworld-4ops` domain, a classic planning domain involving blocks manipulation.
+
+Let's break down each part of the problem definition:
+
+### Objects
+```lisp
+(:objects a b c )
+```
+This section defines the objects involved in the problem. Here, we have three objects: `a`, `b`, and `c`, which are the blocks.
+
+### Initial State
+```lisp
+(:init
+(handempty)
+(ontable a)
+(ontable b)
+(ontable c)
+(clear a)
+(clear b)
+(clear c)
+)
+```
+The initial state specifies the conditions at the start of the problem. The predicates used here are:
+- `(handempty)`: Indicates that the hand (perhaps a robotic arm in this domain) is empty and ready to pick up blocks.
+- `(ontable a)`, `(ontable b)`, `(ontable c)`: Each block is initially on the table.
+- `(clear a)`, `(clear b)`, `(clear c)`: Each block is clear, meaning there are no other blocks on top of them.
+
+### Goal State
+```lisp
+(:goal
+(and
+(on a b)
+(on c a))
+)
+```
+The goal state is to achieve a configuration where:
+- Block `a` is on block `b`.
+- Block `c` is on block `a`.
+
+For solving this problem, you'll need to apply actions that are defined in the `blocksworld-4ops` domain to manipulate the blocks to achieve the specified goal. Model strategies typically involve stacking blocks in a particular order while respecting constraints like `handempty`, `clear`, and surface availability.","[""the provided code appears to be written in pddl (planning domain definition language), which is used in artificial intelligence for automated planning. the code defines a problem, named `bw-rand-3`, in the context of the `blocksworld-4ops` domain, a classic planning domain involving blocks manipulation."", ""let's break down each part of the problem definition:"", ""### objects"", ""```lisp"", ""(:objects a b c )"", ""```"", ""this section defines the objects involved in the problem. here, we have three objects: `a`, `b`, and `c`, which are the blocks."", ""### initial state"", ""```lisp"", ""(:init"", ""(handempty)"", ""(ontable a)"", ""(ontable b)"", ""(ontable c)"", ""(clear a)"", ""(clear b)"", ""(clear c)"", "")"", ""```"", ""the initial state specifies the conditions at the start of the problem. the predicates used here are:"", ""- `(handempty)`: indicates that the hand (perhaps a robotic arm in this domain) is empty and ready to pick up blocks."", ""- `(ontable a)`, `(ontable b)`, `(ontable c)`: each block is initially on the table."", ""- `(clear a)`, `(clear b)`, `(clear c)`: each block is clear, meaning there are no other blocks on top of them."", ""### goal state"", ""```lisp"", ""(:goal"", ""(and"", ""(on a b)"", ""(on c a))"", "")"", ""```"", ""the goal state is to achieve a configuration where:"", ""- block `a` is on block `b`."", ""- block `c` is on block `a`."", ""for solving this problem, you'll need to apply actions that are defined in the `blocksworld-4ops` domain to manipulate the blocks to achieve the specified goal. model strategies typically involve stacking blocks in a particular order while respecting constraints like `handempty`, `clear`, and surface availability.""]",35
+BW_E019,openai/gpt-4o,,easy,low,"The problem you've defined is for a blocksworld scenario with three blocks: a, b, and c. The initial state and the goal state are specified within this problem definition. Let's go through what you've defined:
+
+### Domain
+- **Domain:** `blocksworld-4ops`: This suggests that the problem uses a typical Blocksworld domain with four operations, which are usually `move`, `unstack`, `stack`, and `pickup`.
+  
+### Objects
+- **Blocks:** `a`, `b`, `c`: These are the blocks involved in the problem.
+
+### Initial State
+- **handempty**: The robotic hand is empty initially.
+- **(on a b)**: Block `a` is initially on block `b`.
+- **(ontable b)**: Block `b` is on the table.
+- **(ontable c)**: Block `c` is on the table.
+- **(clear a)**: Block `a` is clear initially (nothing on top of it).
+- **(clear c)**: Block `c` is also clear (nothing on top of it).
+
+### Goal State
+- **(on a c)**: The goal is to have block `a` on block `c`.
+- **(on b a)**: Another goal is to have block `b` on block `a`.
+
+To solve this problem, the agent would need to perform a sequence of operations to move from the initial state to the goal state. Here is one possible sequence of operations based on this problem definition:
+
+1. **Unstack a from b**: Since `a` is clear, it can be lifted off `b`.
+2. **Stack a on c**: With `a` in hand, put `a` on `c` since `c` is clear in the initial state.
+3. **Pickup b from the table**: With the hand empty, `b` can be picked up because `b` is clear once `a` is moved.
+4. **Stack b on a**: Finally, with `b` in hand and `a` now clear, put `b` on top of `a`.
+
+The solution would result in the final configuration meeting the goal requirements.","[""the problem you've defined is for a blocksworld scenario with three blocks: a, b, and c. the initial state and the goal state are specified within this problem definition. let's go through what you've defined:"", ""### domain"", ""- **domain:** `blocksworld-4ops`: this suggests that the problem uses a typical blocksworld domain with four operations, which are usually `move`, `unstack`, `stack`, and `pickup`."", ""### objects"", ""- **blocks:** `a`, `b`, `c`: these are the blocks involved in the problem."", ""### initial state"", ""- **handempty**: the robotic hand is empty initially."", ""- **(on a b)**: block `a` is initially on block `b`."", ""- **(ontable b)**: block `b` is on the table."", ""- **(ontable c)**: block `c` is on the table."", ""- **(clear a)**: block `a` is clear initially (nothing on top of it)."", ""- **(clear c)**: block `c` is also clear (nothing on top of it)."", ""### goal state"", ""- **(on a c)**: the goal is to have block `a` on block `c`."", ""- **(on b a)**: another goal is to have block `b` on block `a`."", ""to solve this problem, the agent would need to perform a sequence of operations to move from the initial state to the goal state. here is one possible sequence of operations based on this problem definition:"", ""**unstack a from b**: since `a` is clear, it can be lifted off `b`."", ""**stack a on c**: with `a` in hand, put `a` on `c` since `c` is clear in the initial state."", ""**pickup b from the table**: with the hand empty, `b` can be picked up because `b` is clear once `a` is moved."", ""**stack b on a**: finally, with `b` in hand and `a` now clear, put `b` on top of `a`."", ""the solution would result in the final configuration meeting the goal requirements.""]",21
+BW_E002,openai/gpt-4o,,easy,low,"The problem `BW-rand-3` is defined for the `blocksworld-4ops` domain, which involves manipulating a set of blocks using four operations: picking up a block from the table, putting it down on the table, stacking it on another block, or unstacking it from another block. 
+
+In this specific problem, you have three blocks: `a`, `b`, and `c`, which initially are all on the table and clear (nothing is on top of them). The robot ""hand"" is also empty, indicating it's not holding any blocks at the start.
+
+The goal is to achieve a configuration where block `a` is on top of block `c` and block `b` is on top of block `a`. Therefore, the desired stack arrangement from bottom to top is (c, a, b).
+
+Here's a breakdown of steps you might take to reach the goal from the initial state:
+
+1. **Pick up block `a`** from the table.
+2. **Stack block `a` on block `c`.** This action results in:
+   - `on(a, c)`
+   - `clear(a)` becomes false
+   - `clear(c)` becomes false
+   - `handempty` becomes true
+3. **Pick up block `b`** from the table.
+4. **Stack block `b` on block `a`.** This final action achieves:
+   - `on(b, a)`
+   - `clear(b)` becomes false
+   - `clear(a)` becomes false
+   - `handempty` becomes true
+
+After these operations, the conditions satisfy the goal criteria:
+- `on a c` (block `a` is on block `c`)
+- `on b a` (block `b` is on block `a`)
+
+This solution sequence should achieve the desired final stack configuration specified in the goal.","[""the problem `bw-rand-3` is defined for the `blocksworld-4ops` domain, which involves manipulating a set of blocks using four operations: picking up a block from the table, putting it down on the table, stacking it on another block, or unstacking it from another block."", ""in this specific problem, you have three blocks: `a`, `b`, and `c`, which initially are all on the table and clear (nothing is on top of them). the robot \""hand\"" is also empty, indicating it's not holding any blocks at the start."", ""the goal is to achieve a configuration where block `a` is on top of block `c` and block `b` is on top of block `a`. therefore, the desired stack arrangement from bottom to top is (c, a, b)."", ""here's a breakdown of steps you might take to reach the goal from the initial state:"", ""**pick up block `a`** from the table."", ""**stack block `a` on block `c`.** this action results in:"", ""- `on(a, c)`"", ""- `clear(a)` becomes false"", ""- `clear(c)` becomes false"", ""- `handempty` becomes true"", ""**pick up block `b`** from the table."", ""**stack block `b` on block `a`.** this final action achieves:"", ""- `on(b, a)`"", ""- `clear(b)` becomes false"", ""- `clear(a)` becomes false"", ""- `handempty` becomes true"", ""after these operations, the conditions satisfy the goal criteria:"", ""- `on a c` (block `a` is on block `c`)"", ""- `on b a` (block `b` is on block `a`)"", ""this solution sequence should achieve the desired final stack configuration specified in the goal.""]",20
+BW_155,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. stack i f
+3. put-down f
+4. pick-up f
+5. stack f e
+6. put-down e
+7. pick-up e
+8. stack e j
+9. put-down j
+10. pick-up j
+11. stack j h
+12. put-down h","[""pick-up i"", ""stack i f"", ""put-down f"", ""pick-up f"", ""stack f e"", ""put-down e"", ""pick-up e"", ""stack e j"", ""put-down j"", ""pick-up j"", ""stack j h"", ""put-down h""]",12
+BW_010,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b f","[""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e a"", ""pick-up a"", ""stack a b"", ""pick-up b"", ""stack b f""]",8
+BW_001,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l","[""pick-up j"", ""stack j f"", ""pick-up f"", ""stack f i"", ""pick-up i"", ""stack i g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b h"", ""pick-up h"", ""stack h l""]",14
+BW_011,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. pick-up c
+2. pick-up k
+3. stack c k
+4. put-down k
+5. pick-up g
+6. pick-up a
+7. stack g a
+8. put-down a
+9. pick-up l
+10. stack g l
+11. put-down l
+12. pick-up j
+13. stack j e
+14. put-down j
+15. pick-up e
+16. stack e h
+17. put-down e
+18. pick-up h
+19. stack h i
+20. put-down h
+21. pick-up i
+22. stack i b
+23. put-down i","[""pick-up c"", ""pick-up k"", ""stack c k"", ""put-down k"", ""pick-up g"", ""pick-up a"", ""stack g a"", ""put-down a"", ""pick-up l"", ""stack g l"", ""put-down l"", ""pick-up j"", ""stack j e"", ""put-down j"", ""pick-up e"", ""stack e h"", ""put-down e"", ""pick-up h"", ""stack h i"", ""put-down h"", ""pick-up i"", ""stack i b"", ""put-down i""]",23
+BW_120,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,1. pick-up c,"[""pick-up c""]",1
+BW_227,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. put-down f
+4. pick-up l
+5. stack l g
+6. put-down l
+7. pick-up g
+8. stack g d
+9. put-down g
+10. pick-up d
+11. stack d i
+12. put-down d
+13. pick-up i
+14. stack i j
+15. put-down i
+16. pick-up j
+17. stack j c
+18. put-down j
+19. pick-up c
+20. stack c k
+21. put-down c
+22. pick-up k
+23. stack k a
+24. put-down k","[""pick-up f"", ""stack f l"", ""put-down f"", ""pick-up l"", ""stack l g"", ""put-down l"", ""pick-up g"", ""stack g d"", ""put-down g"", ""pick-up d"", ""stack d i"", ""put-down d"", ""pick-up i"", ""stack i j"", ""put-down i"", ""pick-up j"", ""stack j c"", ""put-down j"", ""pick-up c"", ""stack c k"", ""put-down c"", ""pick-up k"", ""stack k a"", ""put-down k""]",24
+BW_137,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up d
+2. put-down a
+3. pick-up a
+4. stack a d
+5. pick-up b
+6. put-down j
+7. pick-up j
+8. stack j b
+9. pick-up e
+10. put-down l
+11. pick-up l
+12. stack l e
+13. pick-up h
+14. put-down c
+15. pick-up c
+16. stack c h
+17. pick-up f
+18. put-down g
+19. pick-up g
+20. stack g f
+21. pick-up i","[""pick-up d"", ""put-down a"", ""pick-up a"", ""stack a d"", ""pick-up b"", ""put-down j"", ""pick-up j"", ""stack j b"", ""pick-up e"", ""put-down l"", ""pick-up l"", ""stack l e"", ""pick-up h"", ""put-down c"", ""pick-up c"", ""stack c h"", ""pick-up f"", ""put-down g"", ""pick-up g"", ""stack g f"", ""pick-up i""]",21
+BW_172,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k","[""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b a"", ""pick-up a"", ""stack a j"", ""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k""]",20
+BW_467,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h","[""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f h""]",12
+BW_080,meta-llama/llama-3-8b-instruct,/Users/adya/Desktop/LLMs-Planning/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. pick-up c
+3. stack l c
+4. pick-up i
+5. stack c i
+6. pick-up e
+7. stack i e
+8. pick-up j
+9. stack e j
+10. pick-up f
+11. stack j f","[""pick-up l"", ""pick-up c"", ""stack l c"", ""pick-up i"", ""stack c i"", ""pick-up e"", ""stack i e"", ""pick-up j"", ""stack e j"", ""pick-up f"", ""stack j f""]",11
+BW_E100,meta-llama/llama-3-8b-instruct,,easy,low,"A Blocksworld problem!
+
+Here's the problem statement translated into a human-readable format:
+
+**Domain:** Blocksworld (with 4 operators)
+
+**Objects:** `a`, `b`, `c`
+
+**Initial State:**
+
+* The robot's hand is empty.
+* Block `a` is on the table.
+* Block `b` is on the table.
+* Block `c` is on block `a`.
+* Block `b` is clear.
+* Block `c` is clear.
+
+**Goal:**
+
+* Block `b` is on block `c`.
+* Block `c` is on block `a`.
+
+In other words, we need to stack block `b` on top of block `c`, which is currently on top of block `a`.","[""a blocksworld problem!"", ""here's the problem statement translated into a human-readable format:"", ""**domain:** blocksworld (with 4 operators)"", ""**objects:** `a`, `b`, `c`"", ""**initial state:**"", ""* the robot's hand is empty."", ""* block `a` is on the table."", ""* block `b` is on the table."", ""* block `c` is on block `a`."", ""* block `b` is clear."", ""* block `c` is clear."", ""**goal:**"", ""* block `b` is on block `c`."", ""* block `c` is on block `a`."", ""in other words, we need to stack block `b` on top of block `c`, which is currently on top of block `a`.""]",15
+BW_E015,meta-llama/llama-3-8b-instruct,,easy,low,"It appears to be a problem definition for a planning domain in the context of the Blocksworld-4ops problem, which is a simple block stacking problem. This specific problem is asking the system to move block `a` onto block `b`. 
+
+Below is a step-by-step breakdown of how a planner might solve this problem.
+
+
+## Step 1: Determine the objective
+The goal of the problem is to place block `a` on top of block `b`.
+
+## Step 2: Analyze the initial state
+Blocks `a` and `b` are on the table, and block `c` is on top of `b`. `a` and `c` are clear, and there are no other blocks and no objects are in any hand.
+
+## Step 3: Plan the actions to achieve the goal
+To place `a` on `b`, we first need to move `b` or `a` to a position where they are above each other. Since `c` is already on `b`, moving `c` off `b` and then moving `a` onto `b` is the straightforward plan.
+
+
+## Step 4: Generate the plan
+1. **Move `c` off `b`**: This can be accomplished by picking up `c` and placing it on the table. In action notation, it's (pick-up c 'table).
+2. **Move `a` onto `b`**: With `c` off `b`, we can now move `a` onto `b`, which is (move a b).
+
+## Step 5: Combine the plan into a single plan
+The plan will then be to issue the above two actions one after the other to achieve the goal.
+
+The final answer is: 
+```
+(plan (and (pick-up c 'table) (move a b))
+```","[""it appears to be a problem definition for a planning domain in the context of the blocksworld-4ops problem, which is a simple block stacking problem. this specific problem is asking the system to move block `a` onto block `b`."", ""below is a step-by-step breakdown of how a planner might solve this problem."", ""## step 1: determine the objective"", ""the goal of the problem is to place block `a` on top of block `b`."", ""## step 2: analyze the initial state"", ""blocks `a` and `b` are on the table, and block `c` is on top of `b`. `a` and `c` are clear, and there are no other blocks and no objects are in any hand."", ""## step 3: plan the actions to achieve the goal"", ""to place `a` on `b`, we first need to move `b` or `a` to a position where they are above each other. since `c` is already on `b`, moving `c` off `b` and then moving `a` onto `b` is the straightforward plan."", ""## step 4: generate the plan"", ""**move `c` off `b`**: this can be accomplished by picking up `c` and placing it on the table. in action notation, it's (pick-up c 'table)."", ""**move `a` onto `b`**: with `c` off `b`, we can now move `a` onto `b`, which is (move a b)."", ""## step 5: combine the plan into a single plan"", ""the plan will then be to issue the above two actions one after the other to achieve the goal."", ""the final answer is:"", ""```"", ""(plan (and (pick-up c 'table) (move a b))"", ""```""]",17
+BW_E017,meta-llama/llama-3-8b-instruct,,easy,low,"Here is the solution to the problem:
+
+The goal is to move objects in the Blocked World (BW) to achieve the state where object `a` is on object `b`, and object `c` is on object `a`. 
+
+Here is the solution steps:
+
+1. Move object `c` to the top of the table: (pick-up c) -> (put-down c b)
+2. Move object `a` to the top of object `c`: (pick-up a) -> (put-down a c)
+3. Done!
+
+Here is the solution in Prolog:
+```prolog
+solve([], [(pick-up c), (put-down c b), (pick-up a), (put-down a c)]).
+```
+In this solution, the `solve/2` predicate takes a list of actions and returns the solution. The solution is a list of actions: (1) pick up object `c`, (2) put down object `c` on object `b`, (3) pick up object `a`, and (4) put down object `a` on object `c`.","[""here is the solution to the problem:"", ""the goal is to move objects in the blocked world (bw) to achieve the state where object `a` is on object `b`, and object `c` is on object `a`."", ""here is the solution steps:"", ""move object `c` to the top of the table: (pick-up c) -> (put-down c b)"", ""move object `a` to the top of object `c`: (pick-up a) -> (put-down a c)"", ""done!"", ""here is the solution in prolog:"", ""```prolog"", ""solve([], [(pick-up c), (put-down c b), (pick-up a), (put-down a c)])."", ""```"", ""in this solution, the `solve/2` predicate takes a list of actions and returns the solution. the solution is a list of actions: (1) pick up object `c`, (2) put down object `c` on object `b`, (3) pick up object `a`, and (4) put down object `a` on object `c`.""]",11
+BW_E019,meta-llama/llama-3-8b-instruct,,easy,low,"A Blocksworld planning problem!
+
+Let's break it down:
+
+**Domain**: `blocksworld-4ops`, which is a standard domain for blocks world planning.
+
+**Objects**: `a`, `b`, and `c` are the three blocks.
+
+**Initial State**:
+
+* `handempty`: The agent's hand is empty.
+* `on a b`: Block `a` is placed on top of block `b`.
+* `ontable b`: Block `b` is on the table.
+* `ontable c`: Block `c` is on the table.
+* `clear a`: Block `a` is not blocked by any other block.
+* `clear c`: Block `c` is not blocked by any other block.
+
+**Goal**:
+
+* `(on a c)`: Block `a` should be placed on top of block `c`.
+* `(on b a)`: Block `b` should be placed on top of block `a`.
+
+The goal is to achieve the desired positions of blocks `a`, `b`, and `c`.
+
+How can you plan to achieve this goal?","[""a blocksworld planning problem!"", ""let's break it down:"", ""**domain**: `blocksworld-4ops`, which is a standard domain for blocks world planning."", ""**objects**: `a`, `b`, and `c` are the three blocks."", ""**initial state**:"", ""* `handempty`: the agent's hand is empty."", ""* `on a b`: block `a` is placed on top of block `b`."", ""* `ontable b`: block `b` is on the table."", ""* `ontable c`: block `c` is on the table."", ""* `clear a`: block `a` is not blocked by any other block."", ""* `clear c`: block `c` is not blocked by any other block."", ""**goal**:"", ""* `(on a c)`: block `a` should be placed on top of block `c`."", ""* `(on b a)`: block `b` should be placed on top of block `a`."", ""the goal is to achieve the desired positions of blocks `a`, `b`, and `c`."", ""how can you plan to achieve this goal?""]",16
+BW_E002,meta-llama/llama-3-8b-instruct,,easy,low,"This is a problem definition in the PDDL (Planning Domain Definition Language) format, specifically for the Blocks World domain with 4 actions (pick, drop, clear, and handempty).
+
+Here's a breakdown of the problem:
+
+* `(:domain blocksworld-4ops)`: Specifies the domain as ""blocksworld-4ops"", which is a variation of the classic Blocks World domain.
+* `(:objects a b c)`: Defines three objects, `a`, `b`, and `c`, which are the blocks in the Blocks World.
+* `(:init ...)`: Specifies the initial state of the problem:
+	+ `(handempty)`: The hand is initially empty.
+	+ `(ontable a)`, `(ontable b)`, and `(ontable c)`: Each block is initially on the table.
+	+ `(clear a)`, `(clear b)`, and `(clear c)`: Each block is initially clear of any objects (e.g., other blocks).
+* `(:goal (...))`: Specifies the goal state:
+	+ `(and (on a c) (on b a))`: The goal is to have block `a` on top of block `c`, and block `b` on top of block `a`.
+
+In summary, the problem is to plan a sequence of actions to achieve the goal state, where each action can be one of the following:
+
+* Pick up a block from the table and place it in your hand.
+* Drop a block from your hand onto the table.
+* Clear a block of any other blocks on top of it.
+* Handempty the hand, which means putting down any block currently held.
+
+The goal is to achieve the specific configuration specified in the goal state.","[""this is a problem definition in the pddl (planning domain definition language) format, specifically for the blocks world domain with 4 actions (pick, drop, clear, and handempty)."", ""here's a breakdown of the problem:"", ""* `(:domain blocksworld-4ops)`: specifies the domain as \""blocksworld-4ops\"", which is a variation of the classic blocks world domain."", ""* `(:objects a b c)`: defines three objects, `a`, `b`, and `c`, which are the blocks in the blocks world."", ""* `(:init ...)`: specifies the initial state of the problem:"", ""+ `(handempty)`: the hand is initially empty."", ""+ `(ontable a)`, `(ontable b)`, and `(ontable c)`: each block is initially on the table."", ""+ `(clear a)`, `(clear b)`, and `(clear c)`: each block is initially clear of any objects (e.g., other blocks)."", ""* `(:goal (...))`: specifies the goal state:"", ""+ `(and (on a c) (on b a))`: the goal is to have block `a` on top of block `c`, and block `b` on top of block `a`."", ""in summary, the problem is to plan a sequence of actions to achieve the goal state, where each action can be one of the following:"", ""* pick up a block from the table and place it in your hand."", ""* drop a block from your hand onto the table."", ""* clear a block of any other blocks on top of it."", ""* handempty the hand, which means putting down any block currently held."", ""the goal is to achieve the specific configuration specified in the goal state.""]",16
+BW_E100,meta-llama/llama-3.1-8b-instruct,,easy,low,"This is a definition of a planning problem in the Blocksworld domain, specifically a variant of the 3-block problem.
+
+Here's a breakdown of the different components:
+
+1. `(:domain blocksworld-4ops)`: This specifies the domain of the problem, which is the Blocksworld domain with 4 operations (`move`, `pick-up`, `put-down`, and `clear`).
+2. `(:objects a b c)`: This specifies the objects involved in the problem, which are three blocks named `a`, `b`, and `c`.
+3. `(:init ...)` : This specifies the initial state of the world.
+	* `(handempty)`: The agent's hand is empty.
+	* `(ontable a)`, `(ontable b)`, and `(ontable c)`: Blocks `a`, `b`, and `c` are on the table.
+	* `(on c a)`: Block `c` is on top of block `a`.
+	* `(clear b)`, and `(clear c)`: Blocks `b` and `c` are clear, meaning they are not stacked on top of each other.
+4. `(:goal ...)` : This specifies the goal state of the world.
+	* The goal is to have blocks `b` and `c` stacked on top of each other, with `c` on top of `b`, and both blocks stacked on top of `a`.
+
+The goal is written using logical connectives (`and`) to express the requirement that both conditions must be met.","[""this is a definition of a planning problem in the blocksworld domain, specifically a variant of the 3-block problem."", ""here's a breakdown of the different components:"", ""`(:domain blocksworld-4ops)`: this specifies the domain of the problem, which is the blocksworld domain with 4 operations (`move`, `pick-up`, `put-down`, and `clear`)."", ""`(:objects a b c)`: this specifies the objects involved in the problem, which are three blocks named `a`, `b`, and `c`."", ""`(:init ...)` : this specifies the initial state of the world."", ""* `(handempty)`: the agent's hand is empty."", ""* `(ontable a)`, `(ontable b)`, and `(ontable c)`: blocks `a`, `b`, and `c` are on the table."", ""* `(on c a)`: block `c` is on top of block `a`."", ""* `(clear b)`, and `(clear c)`: blocks `b` and `c` are clear, meaning they are not stacked on top of each other."", ""`(:goal ...)` : this specifies the goal state of the world."", ""* the goal is to have blocks `b` and `c` stacked on top of each other, with `c` on top of `b`, and both blocks stacked on top of `a`."", ""the goal is written using logical connectives (`and`) to express the requirement that both conditions must be met.""]",12
+BW_E015,meta-llama/llama-3.1-8b-instruct,,easy,low,"It appears you've provided a definition for a problem in the planning domain of Blocksworld with 4 operators. I'll break down the key elements of this definition:
+
+### Problem Definition
+
+The problem is defined with the label `BW-rand-3`. This is a naming convention, allowing you to identify the problem uniquely.
+
+### Domain
+
+The domain used here is `blocksworld-4ops`. This specifies the set of operators and fluents (facts) that can be used within the problem. The ""4ops"" suggests that this domain is an extension or variation of the standard Blocksworld domain, which typically involves four basic actions: `pick-up`, `put-down`, `clear`, and `on`.
+
+### Objects
+
+Three objects are defined: `a`, `b`, and `c`. These objects are likely blocks within the Blocksworld scenario.
+
+### Initial State
+
+The initial state is defined by the `(:init...)` section. Key fluents in the initial state are:
+- `handempty`: This is the initial state of the robot's hand, indicating that it's empty.
+- `ontable a` and `ontable b`: These blocks are initially on the table.
+- `on c b`: Block `c` is initially on top of block `b`.
+- `clear a` and `clear c`: Blocks `a` and `c` are initially clear (i.e., not held by the robot or on top of any other block).
+
+### Goal State
+
+The goal state is specified within the `(:goal...)` section. The goal is to have block `a` on top of block `b`, expressed as `(on a b)`. This is the final state the planner should aim to achieve through a sequence of actions from the initial state.","[""it appears you've provided a definition for a problem in the planning domain of blocksworld with 4 operators. i'll break down the key elements of this definition:"", ""### problem definition"", ""the problem is defined with the label `bw-rand-3`. this is a naming convention, allowing you to identify the problem uniquely."", ""### domain"", ""the domain used here is `blocksworld-4ops`. this specifies the set of operators and fluents (facts) that can be used within the problem. the \""4ops\"" suggests that this domain is an extension or variation of the standard blocksworld domain, which typically involves four basic actions: `pick-up`, `put-down`, `clear`, and `on`."", ""### objects"", ""three objects are defined: `a`, `b`, and `c`. these objects are likely blocks within the blocksworld scenario."", ""### initial state"", ""the initial state is defined by the `(:init...)` section. key fluents in the initial state are:"", ""- `handempty`: this is the initial state of the robot's hand, indicating that it's empty."", ""- `ontable a` and `ontable b`: these blocks are initially on the table."", ""- `on c b`: block `c` is initially on top of block `b`."", ""- `clear a` and `clear c`: blocks `a` and `c` are initially clear (i.e., not held by the robot or on top of any other block)."", ""### goal state"", ""the goal state is specified within the `(:goal...)` section. the goal is to have block `a` on top of block `b`, expressed as `(on a b)`. this is the final state the planner should aim to achieve through a sequence of actions from the initial state.""]",15
+BW_E017,meta-llama/llama-3.1-8b-instruct,,easy,low,"A simple block world problem definition in Planning Domain Definition Language (PDDL).
+
+Let's break it down:
+
+**Problem Definition**
+
+* `BW-rand-3` is the name of the problem.
+* The `:domain` keyword specifies the planning domain, which is `blocksworld-4ops` in this case.
+* The `:objects` keyword lists the objects in the domain: `a`, `b`, and `c`.
+
+**Initial State**
+
+* The `:init` keyword defines the initial state of the world.
+* `handempty` indicates that the hand is initially empty.
+* The objects `a`, `b`, and `c` are all on the table.
+* Each object is initially cleared (i.e., not on top of another object).
+
+**Goal State**
+
+* The `:goal` keyword defines the desired goal state of the world.
+* The goal is to achieve two things:
+	+ `on a b`: Object `a` should be on top of object `b`.
+	+ `on c a`: Object `c` should be on top of object `a`.
+
+In other words, the goal is to stack objects `a` and `c` on top of each other, with `b` at the bottom.","[""a simple block world problem definition in planning domain definition language (pddl)."", ""let's break it down:"", ""**problem definition**"", ""* `bw-rand-3` is the name of the problem."", ""* the `:domain` keyword specifies the planning domain, which is `blocksworld-4ops` in this case."", ""* the `:objects` keyword lists the objects in the domain: `a`, `b`, and `c`."", ""**initial state**"", ""* the `:init` keyword defines the initial state of the world."", ""* `handempty` indicates that the hand is initially empty."", ""* the objects `a`, `b`, and `c` are all on the table."", ""* each object is initially cleared (i.e., not on top of another object)."", ""**goal state**"", ""* the `:goal` keyword defines the desired goal state of the world."", ""* the goal is to achieve two things:"", ""+ `on a b`: object `a` should be on top of object `b`."", ""+ `on c a`: object `c` should be on top of object `a`."", ""in other words, the goal is to stack objects `a` and `c` on top of each other, with `b` at the bottom.""]",17
+BW_E019,meta-llama/llama-3.1-8b-instruct,,easy,low,"It looks like you've defined a problem in the planning domain of Blocksworld-4ops. Here's a breakdown of the problem:
+
+**Problem Definition:**
+
+* The problem is named `BW-rand-3`.
+* The domain is `blocksworld-4ops`, which suggests that the problem involves moving blocks around using four available operations.
+
+**Objects:**
+
+* There are three objects in the problem:
+	+ `a`
+	+ `b`
+	+ `c`
+
+**Initial State:**
+
+* The initial state is defined by the following facts:
+	+ The hand is empty (`(handempty)`).
+	+ Block `a` is on top of block `b` (`(on a b)`).
+	+ Both blocks `b` and `c` are on the table (`(ontable b)` and `(ontable c)`).
+	+ Both blocks `a` and `c` are clear (`(clear a)` and `(clear c)`).
+
+**Goal:**
+
+* The goal state is defined by the following facts:
+	+ Block `a` is on top of block `c` (`(on a c)`).
+	+ Block `b` is on top of block `a` (`(on b a)`).
+
+This problem appears to be a variant of the classic Blocksworld problem, where the goal is to stack blocks on top of each other. The problem requires the planning agent to use four available operations ( likely `pickup`, `putdown`, `stack`, and `unstack`) to transform the initial state into the goal state.","[""it looks like you've defined a problem in the planning domain of blocksworld-4ops. here's a breakdown of the problem:"", ""**problem definition:**"", ""* the problem is named `bw-rand-3`."", ""* the domain is `blocksworld-4ops`, which suggests that the problem involves moving blocks around using four available operations."", ""**objects:**"", ""* there are three objects in the problem:"", ""+ `a`"", ""+ `b`"", ""+ `c`"", ""**initial state:**"", ""* the initial state is defined by the following facts:"", ""+ the hand is empty (`(handempty)`)."", ""+ block `a` is on top of block `b` (`(on a b)`)."", ""+ both blocks `b` and `c` are on the table (`(ontable b)` and `(ontable c)`)."", ""+ both blocks `a` and `c` are clear (`(clear a)` and `(clear c)`)."", ""**goal:**"", ""* the goal state is defined by the following facts:"", ""+ block `a` is on top of block `c` (`(on a c)`)."", ""+ block `b` is on top of block `a` (`(on b a)`)."", ""this problem appears to be a variant of the classic blocksworld problem, where the goal is to stack blocks on top of each other. the problem requires the planning agent to use four available operations ( likely `pickup`, `putdown`, `stack`, and `unstack`) to transform the initial state into the goal state.""]",20
+BW_E002,meta-llama/llama-3.1-8b-instruct,,easy,low,"A PDDL (Planning Domain Definition Language) problem definition!
+
+Let me break down the components of this problem definition:
+
+**Domain definition**
+
+The domain is specified as `blocksworld-4ops`. This suggests that the problem is a classic Blocksworld problem, which involves planning to move blocks on a table to achieve a certain goal. The `-4ops` part indicates that this problem uses a specific set of four operators (actions) to manipulate the blocks.
+
+**Problem objects**
+
+The problem involves three objects: `a`, `b`, and `c`. These objects are likely blocks in the Blocksworld problem.
+
+**Initial state**
+
+The initial state is defined by the following facts:
+
+* `(handempty)`: The robot (or agent) has an empty hand.
+* `(ontable a)`, `(ontable b)`, `(ontable c)`: Blocks `a`, `b`, and `c` are all on the table.
+* `(clear a)`, `(clear b)`, `(clear c)`: All blocks are clear (i.e., not stacked on top of each other).
+
+**Goal state**
+
+The goal state is defined by the following conditions:
+
+* `(on a c)`: Block `a` is on top of block `c`.
+* `(on b a)`: Block `b` is on top of block `a`.
+
+In summary, the problem is to plan a sequence of actions to move blocks `a` and `b` on top of each other, with `a` on top of `c`. The agent starts with an empty hand and all blocks on the table.","[""a pddl (planning domain definition language) problem definition!"", ""let me break down the components of this problem definition:"", ""**domain definition**"", ""the domain is specified as `blocksworld-4ops`. this suggests that the problem is a classic blocksworld problem, which involves planning to move blocks on a table to achieve a certain goal. the `-4ops` part indicates that this problem uses a specific set of four operators (actions) to manipulate the blocks."", ""**problem objects**"", ""the problem involves three objects: `a`, `b`, and `c`. these objects are likely blocks in the blocksworld problem."", ""**initial state**"", ""the initial state is defined by the following facts:"", ""* `(handempty)`: the robot (or agent) has an empty hand."", ""* `(ontable a)`, `(ontable b)`, `(ontable c)`: blocks `a`, `b`, and `c` are all on the table."", ""* `(clear a)`, `(clear b)`, `(clear c)`: all blocks are clear (i.e., not stacked on top of each other)."", ""**goal state**"", ""the goal state is defined by the following conditions:"", ""* `(on a c)`: block `a` is on top of block `c`."", ""* `(on b a)`: block `b` is on top of block `a`."", ""in summary, the problem is to plan a sequence of actions to move blocks `a` and `b` on top of each other, with `a` on top of `c`. the agent starts with an empty hand and all blocks on the table.""]",16

@@ -1,0 +1,110 @@
+Loaded 60 plan rows
+
+--- anthropic/claude-3.7-sonnet | 15 problems ---
+  BW_155 | plan_len=9 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_010 | plan_len=24 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_001 | plan_len=21 | running...     API error at step 11: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+CCI=0.0 | exec=11 steps | illegal=11 | goal=False
+  BW_011 | plan_len=29 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_120 | plan_len=11 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_227 | plan_len=26 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_137 | plan_len=34 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_172 | plan_len=32 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_467 | plan_len=35 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_080 | plan_len=11 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E100 | plan_len=30 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E015 | plan_len=22 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E017 | plan_len=15 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E019 | plan_len=31 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E002 | plan_len=24 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+
+--- openai/gpt-4o | 15 problems ---
+  BW_155 | plan_len=8 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_010 | plan_len=8 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_001 | plan_len=14 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_011 | plan_len=18 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_120 | plan_len=6 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_227 | plan_len=16 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_137 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_172 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_467 | plan_len=12 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_080 | plan_len=10 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E100 | plan_len=17 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E015 | plan_len=25 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E017 | plan_len=35 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E019 | plan_len=21 | running... CCI=0.0 | exec=50 steps | illegal=49 | goal=False
+  BW_E002 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=49 | goal=False
+
+--- meta-llama/llama-3.1-8b-instruct | 15 problems ---
+  BW_155 | plan_len=12 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_010 | plan_len=6 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_001 | plan_len=14 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_011 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_120 | plan_len=9 | running... CCI=0.1111 | exec=50 steps | illegal=49 | goal=False
+  BW_227 | plan_len=16 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_137 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_172 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_467 | plan_len=12 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_080 | plan_len=10 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E100 | plan_len=12 | running... CCI=0.0 | exec=50 steps | illegal=49 | goal=False
+  BW_E015 | plan_len=15 | running... CCI=0.0 | exec=50 steps | illegal=49 | goal=False
+  BW_E017 | plan_len=17 | running... CCI=0.0 | exec=50 steps | illegal=49 | goal=False
+  BW_E019 | plan_len=20 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+  BW_E002 | plan_len=16 | running... CCI=0.0 | exec=50 steps | illegal=50 | goal=False
+
+Done. Results in results/probe2a_cci.csv
+Loaded 60 plan rows
+Resuming — 46 pairs already done
+
+--- anthropic/claude-3.7-sonnet | 15 problems ---
+  BW_155 | skipped
+  BW_010 | skipped
+  BW_001 | skipped
+  BW_011 | skipped
+  BW_120 | skipped
+  BW_227 | skipped
+  BW_137 | skipped
+  BW_172 | skipped
+  BW_467 | skipped
+  BW_080 | skipped
+  BW_E100 | skipped
+  BW_E015 | skipped
+  BW_E017 | skipped
+  BW_E019 | skipped
+  BW_E002 | skipped
+
+--- openai/gpt-4o | 15 problems ---
+  BW_155 | skipped
+  BW_010 | skipped
+  BW_001 | skipped
+  BW_011 | skipped
+  BW_120 | skipped
+  BW_227 | skipped
+  BW_137 | skipped
+  BW_172 | skipped
+  BW_467 | skipped
+  BW_080 | skipped
+  BW_E100 | skipped
+  BW_E015 | skipped
+  BW_E017 | skipped
+  BW_E019 | skipped
+  BW_E002 | skipped
+
+--- meta-llama/llama-3.1-8b-instruct | 15 problems ---
+  BW_155 | skipped
+  BW_010 | skipped
+  BW_001 | skipped
+  BW_011 | skipped
+  BW_120 | skipped
+  BW_227 | skipped
+  BW_137 | skipped
+  BW_172 | skipped
+  BW_467 | skipped
+  BW_080 | skipped
+  BW_E100 | skipped
+  BW_E015 | skipped
+  BW_E017 | skipped
+  BW_E019 | skipped
+  BW_E002 | skipped
+
+Done. Results in results/probe2a_cci.csv

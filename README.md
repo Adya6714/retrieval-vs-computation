@@ -4,7 +4,7 @@
 **Affiliation:** BITS Pilani
 **Target venues:** BlackboxNLP 2026, GenBench 2026 (primary); EMNLP Findings (stretch)
 **Research design:** `CHARTER.md`
-**Status:** Infrastructure complete. Problem bank pending. Execution pending API keys + GPU.
+**Status:** Infrastructure complete. Planning-suite question bank active (`140` rows, 20 canonical + variants). Execution partially run; final consolidated rerun pending after CSV freeze.
 
 ---
 
@@ -13,6 +13,19 @@
 We test whether LLMs reason through problems or recognize them from training data. Three independent probes — surface invariance, plan-execution coupling, and contamination indexing — run on the same 45 problem instances. The core contribution is per-instance triangulation: when all three probes agree on the same diagnosis for an instance, that convergence is the evidence.
 
 Full methodology is in `CHARTER.md`. This README covers only the codebase.
+
+---
+
+## Current repo state (Apr 2026)
+
+- Active dataset is `data/problems/question_bank.csv` with unified schema:
+  `problem_id, variant_type, problem_text, correct_answer, problem_family, problem_subtype, difficulty, contamination_pole, source, verifier_function, difficulty_params, notes`.
+- Current bank has full Planning Suite coverage (`planning_suite` only):
+  - 20 canonical instances total (15 Blocksworld + 5 Mystery Blocksworld)
+  - Variants present: `W1=20`, `W2=20`, `W3=20`, `W4=20`, `W5=15`, `W6=25`
+  - Total rows: `140`
+- GSM + Algorithmic family support exists in verifier/metrics pipeline, but those families are not yet loaded into the active question bank.
+- `results/` currently contains mixed historical outputs; treat these as working artifacts, not final paper-grade outputs, until one clean rerun is done from a frozen bank.
 
 ---
 
@@ -57,7 +70,7 @@ retrieval-vs-computation/
 │   │   ├── anthropic_client.py           # Anthropic API client (Layer 2, dormant)
 │   │   ├── openai_client.py              # OpenRouter client (Layer 2, dormant)
 │   │   ├── css.py                        # CSS: variant answer consistency
-│   │   ├── rcs.py                        # RCS: W6 reversal correctness
+│   │   ├── rcs.py                        # RCS: W5 reversal correctness
 │   │   ├── cas.py                        # CAS: consistent failure on hard-tier
 │   │   ├── cci.py                        # CCI: plan-execution coupling (Probe 2)
 │   │   └── tep.py                        # TEP: state corruption response (Probe 2)
@@ -77,7 +90,7 @@ retrieval-vs-computation/
 │   ├── test_api_keys.py                  # Verify keys before sweeps
 │   ├── check_gpu.py                      # Verify GPU before mechanistic runs
 │   ├── check_transformerlens_support.py  # Confirm Qwen2.5-7B in TL registry
-│   ├── generate_w6_variants.py           # Procedural W5 generation (seeded)
+│   ├── generate_w6_variants.py           # Procedural W6 generation (seeded)
 │   ├── run_contamination_triage.py       # Phase 1 entrypoint
 │   ├── run_behavioral_sweep.py           # Phase 3-4 behavioral entrypoint
 │   ├── run_mechanistic_sweep.py          # Phase 3-4 mechanistic entrypoint
@@ -101,6 +114,18 @@ retrieval-vs-computation/
     ├── test_stats.py
     └── test_mock_sweep.py
 ```
+
+### What each top-level area does
+
+- `probes/common/`: shared loaders/parsers/stats used by all probes.
+- `probes/contamination/`: Infini-gram retrieval counts + contamination scoring + answer verification.
+- `probes/behavioral/`: Probe 1 metrics (`css`, `rcs`, `cas`) and Probe 2 metrics (`cci`, `tep`) plus model clients.
+- `probes/mechanistic/`: Probe 3 internals (activation extraction, similarity, logit lens, patching).
+- `probes/triangulation/`: per-instance convergence diagnosis across probes.
+- `scripts/`: runnable entrypoints and dataset utilities (generation, migration, scoring, extraction).
+- `data/problems/`: canonical and variant bank files; `question_bank.csv` is the single source of truth.
+- `results/`: generated probe outputs and regressions used by downstream analysis.
+- `team/`: writing/review process docs for dataset and experiment governance.
 
 ---
 
@@ -129,6 +154,33 @@ python scripts/run_contamination_triage.py --no-resume   # rescore everything
 
 # Gate 1 plot
 python notebooks/probe1_triage_plot.py
+```
+
+### Practical run order for current Blocksworld bank
+```bash
+# 0) Validate schema / row counts manually first
+python - <<'PY'
+import csv, collections
+rows=list(csv.DictReader(open('data/problems/question_bank.csv', newline='', encoding='utf-8')))
+print('rows', len(rows))
+print(collections.Counter(r['variant_type'] for r in rows))
+PY
+
+# 1) Probe 1 behavioral (resume-safe, model by model)
+python scripts/run_behavioral_sweep.py --model anthropic/claude-3.7-sonnet --resume
+python scripts/run_behavioral_sweep.py --model openai/gpt-4o --resume
+python scripts/run_behavioral_sweep.py --model meta-llama/llama-3.1-8b-instruct --resume
+
+# 2) Probe 2 prep + runs
+python scripts/extract_phase1_plans.py
+python scripts/run_probe2a_cci.py --models anthropic/claude-3.7-sonnet openai/gpt-4o meta-llama/llama-3.1-8b-instruct --resume
+python scripts/run_probe2b_tep.py --models anthropic/claude-3.7-sonnet openai/gpt-4o meta-llama/llama-3.1-8b-instruct --resume
+
+# 3) Contamination + triangulation
+python scripts/run_contamination_triage.py --resume
+python scripts/run_triangulation.py --behavioral-model anthropic/claude-3.7-sonnet
+python scripts/run_triangulation.py --behavioral-model openai/gpt-4o --output results/triangulation_per_instance_gpt4o.csv --regression-output results/contamination_regression_gpt4o.txt
+python scripts/run_triangulation.py --behavioral-model meta-llama/llama-3.1-8b-instruct --output results/triangulation_per_instance_llama8b.csv --regression-output results/contamination_regression_llama8b.txt
 ```
 
 ### Phase 3-4 — Behavioral sweep
@@ -189,6 +241,14 @@ make triangulate
 
 ---
 
+## Cleanup plan (recommended before final paper runs)
+
+- Freeze `question_bank.csv` and avoid manual edits between runs; only scripted changes.
+- Normalize naming conventions in `results/` (single canonical output per probe/model, archive old files to `results/archive/`).
+- Keep one authoritative model naming convention (`meta-llama/llama-3.1-8b-instruct` vs legacy aliases).
+- Add a `scripts/audit_question_bank.py` and `scripts/audit_results_coverage.py` so missing rows are detected before spending API credits.
+- After Planning Suite finalization, ingest GSM + Algorithmic families into `question_bank.csv` using the same 7-row (`canonical` + `W1..W6`) structure.
+
 ## Problem families and variant types
 
 Three families, 15 problems each, 45 total. Full justification in `CHARTER.md` Section 10.
@@ -207,10 +267,10 @@ Variant types (W1-W6):
 | W2 | Structural reformat | All families | No |
 | W3 | Entity rename | All families | No |
 | W4 | Formal notation | Planning (BW+Logistics) + Algorithmic | No |
-| W5 | Procedural regeneration | All families | No (new instance, same structure) |
-| W6 | Reversal | BW, Shortest Path, Coin Change only | **Yes** |
+| W6 | Procedural regeneration | All families | No (new instance, same structure) |
+| W5 | Reversal | BW, Shortest Path, Coin Change only | **Yes** |
 
-W6 is never pooled into CSS. It uses its own metric RCS (`probes/behavioral/rcs.py`).
+W5 is never pooled into CSS. It uses its own metric RCS (`probes/behavioral/rcs.py`).
 
 ---
 
@@ -218,8 +278,8 @@ W6 is never pooled into CSS. It uses its own metric RCS (`probes/behavioral/rcs.
 
 | Metric | Module | Probe | What it measures |
 |--------|--------|-------|-----------------|
-| CSS | `behavioral/css.py` | 1 | Fraction of W1-W5 variants with matching answer |
-| RCS | `behavioral/rcs.py` | 1 | W6 reversal answer correctness |
+| CSS | `behavioral/css.py` | 1 | Fraction of W1-W4, W6 variants with matching answer |
+| RCS | `behavioral/rcs.py` | 1 | W5 reversal answer correctness |
 | CAS | `behavioral/cas.py` | 1 | Failure consistency on hard-tier instances |
 | CCI | `behavioral/cci.py` | 2 | Plan-execution step match rate |
 | TEP | `behavioral/tep.py` | 2 | Adaptation after mid-execution state corruption |

@@ -48,10 +48,10 @@ We need this spread so Probe 3's regression has dynamic range. If everything sco
 | W2 — Structural reformat | All | All | All |
 | W3 — Entity rename | All | All | All |
 | W4 — Formal notation | BW + Logistics only | Not applicable | All |
-| W5 — Procedural regeneration | All | All | All |
-| W6 — Reversal | Blocksworld only | Not applicable | SP + Coin Change only |
+| W6 — Procedural regeneration | All | All | All |
+| W5 — Reversal | Blocksworld only | Not applicable | SP + Coin Change only |
 
-W4 and W6 are partial — reported separately from the main CSS computation, not pooled.
+W4 and W5 are partial — reported separately from the main CSS computation, not pooled.
 
 **What makes an adversarial instance:** For the Algorithmic Suite, adversarial means the instance is specifically constructed so that a common heuristic (greedy, nearest-neighbor, earliest-deadline-first) fails to find the optimal answer. This forces genuine computation. Example: Coin Change with denominations {1, 3, 4} and target 6 — greedy picks 4+1+1=3 coins, but optimal is 3+3=2 coins.
 

@@ -98,9 +98,9 @@ def migrate(input_csv: Path, output_csv: Path) -> None:
                 continue
             migrated_rows.append(_variant_row(canonical, text, VARIANT_LABELS[wide_col]))
 
-    with output_csv.open("w", newline="", encoding="utf-8") as handle:
+    with output_csv.open("a", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=QUESTION_BANK_COLUMNS)
-        writer.writeheader()
+        # writer.writeheader()
         writer.writerows(migrated_rows)
 
     canonical_count = sum(1 for row in migrated_rows if row["variant_type"] == "canonical")
