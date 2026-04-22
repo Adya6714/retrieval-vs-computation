@@ -409,16 +409,6 @@ BW_467,blocksworld,W5,mock,The answer is 42.,False,
 BW_080,blocksworld,W2,mock,The answer is 42.,False,
 BW_080,blocksworld,W3,mock,The answer is 42.,False,
 BW_080,blocksworld,W4,mock,The answer is 42.,False,
-BW_155_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_010_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_001_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_011_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_120_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_227_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_137_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_172_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_467_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
-BW_080_W5_TEMP,blocksworld,W6,mock,The answer is 42.,False,
 BW_155,blocksworld,W2,openai/gpt-4o,"1. pick-up i
 2. stack i f
 3. pick-up f
@@ -972,144 +962,6 @@ BW_080,blocksworld,W4,openai/gpt-4o,"1. pick-up l
 8. stack e j
 9. pick-up j
 10. stack j f",False,
-BW_155_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack e i
-2. put-down e
-3. pick-up h
-4. put-down h
-5. pick-up f
-6. stack f h
-7. pick-up i
-8. stack i f
-9. pick-up j
-10. stack j i",False,
-BW_010_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack b d  
-2. put-down b  
-3. pick-up a  
-4. stack a d  
-5. pick-up e  
-6. stack e f  
-7. pick-up b  
-8. stack b e",False,
-BW_001_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack i g
-2. put-down i
-3. unstack g l
-4. stack g d
-5. unstack h j
-6. put-down h
-7. unstack j f
-8. stack j g
-9. unstack l h
-10. put-down l",False,
-BW_011_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack h g
-2. put-down h
-3. unstack g i
-4. put-down g
-5. unstack i j
-6. stack i a
-7. unstack c k
-8. stack c j
-9. unstack j c
-10. put-down j
-11. unstack l b
-12. put-down l
-13. unstack e l
-14. put-down e
-15. pick-up b
-16. put-down b
-17. pick-up k
-18. put-down k
-19. pick-up h
-20. put-down h",False,
-BW_120_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. pick-up g
-2. put-down g
-3. pick-up f
-4. stack f c
-5. pick-up g
-6. stack g j
-7. pick-up j
-8. stack j f",False,
-BW_227_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack a f
-2. put-down a
-3. pick-up k
-4. put-down k
-5. pick-up l
-6. stack l c
-7. pick-up k
-8. stack k f
-9. pick-up g
-10. put-down g
-11. pick-up i
-12. put-down i
-13. unstack g j
-14. put-down g
-15. pick-up i
-16. stack i g
-17. pick-up c
-18. stack c i",False,
-BW_137_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack h e
-2. put-down h
-3. unstack e b
-4. put-down e
-5. unstack b c
-6. put-down b
-7. unstack c l
-8. put-down c
-9. unstack l d
-10. stack l c
-11. unstack d j
-12. put-down d
-13. unstack i f
-14. stack i table
-15. unstack j g
-16. put-down j
-17. unstack a i
-18. put-down a
-19. pick-up j
-20. stack j g
-21. pick-up b
-22. stack b j",False,
-BW_172_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack a k
-2. put-down a
-3. unstack b g
-4. put-down b
-5. unstack d l
-6. put-down d
-7. unstack e h
-8. stack e i
-9. pick-up j
-10. put-down j
-11. pick-up i
-12. put-down i
-13. pick-up g
-14. stack g e
-15. pick-up b
-16. stack b d
-17. pick-up f
-18. stack f b
-19. pick-up a
-20. stack a k
-21. pick-up k
-22. stack k h",False,
-BW_467_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack l f
-2. put-down l
-3. unstack f h
-4. put-down f
-5. unstack i g
-6. stack i h
-7. unstack a i
-8. put-down a
-9. pick-up j
-10. put-down j
-11. pick-up g
-12. stack g l",False,
-BW_080_W5_TEMP,blocksworld,W6,openai/gpt-4o,"1. unstack c i
-2. put-down c
-3. pick-up e
-4. stack e c
-5. unstack f j
-6. put-down f
-7. unstack j l
-8. put-down j",False,
 MBW_001,mystery_blocksworld,W2,openai/gpt-4o,"1. attack j
 2. succumb j
 3. overcome j f
@@ -2040,152 +1892,6 @@ BW_080,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
 9. pick-up j
 10. stack j f
 11. put-down f",False,
-BW_155_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. stack f h 
-2. pick-up h
-3. stack e i
-4. unstack h f
-5. unstack i e
-6. stack j i
-7. stack i f
-8. pick-up e
-9. stack h e 
-10. stack i h",False,
-BW_010_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
-2. stack a d
-3. unstack b d
-4. pick-up b
-5. stack b e
-6. put-down d
-7. unstack e f
-8. pick-up e
-9. stack e f",False,
-BW_001_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
-2. put-down b
-3. pick-up d
-4. stack f d
-5. pick-up f
-6. put-down f
-7. pick-up g
-8. unstack l h
-9. stack h d
-10. unstack f d
-11. pick-up j
-12. stack j g
-13. put-down l
-14. pick-up l 
-15. put-down l
-16. stack b d
-17. put-down b
-18. pick-up h
-19. put-down h
-20. pick-up i
-21. put-down i
-22. pick-up j
-23. put-down j",False,
-BW_011_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
-2. stack a i
-3. put-down a
-4. pick-up c
-5. unstack j c
-6. pick-up j
-7. stack j c
-8. unstack c a
-9. put-down c
-10. unstack i a
-11. pick-up e
-12. unstack l b
-13. put-down e
-14. stack l b
-15. stack e k
-16. unstack k e
-17. unstack e h
-18. stack h e
-19. unstack g i
-20. put-down g
-21. pick-up h
-22. stack h g
-23. put-down h
-24. unstack b l
-25. put-down b
-26. pick-up g
-27. unstack g h
-28. unstack h e",False,
-BW_120_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
-2. put-down c
-3. pick-up f
-4. stack f c
-5. unstack g f
-6. put-down g
-7. pick-up j
-8. stack j g
-9. unstack f c
-10. put-down f
-11. stack f j
-12. put-down f",False,
-BW_227_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
-2. put-down a
-3. stack a f
-4. pick-up c
-5. stack c k
-6. pick-up i
-7. stack i c
-8. pick-up g
-9. stack g i",False,
-BW_137_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
-2. unstack l d
-3. stack l c
-4. put-down l
-5. pick-up j
-6. pick-up e
-7. unstack g e
-8. put-down b
-9. stack b g
-10. pick-up i
-11. unstack f i
-12. put-down i
-13. stack i F
-14. unstack a i
-15. stack a i
-16. stack d l",False,
-BW_172_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up K
-2. stack A K
-3. unstack A K
-4. pick-up D
-5. unstack B G
-6. stack B D
-7. unstack E H
-8. pick-up F
-9. stack F B
-10. pick-up E
-11. unstack E I
-12. unstack I J
-13. stack E I
-14. stack J E
-15. unstack G E
-16. stack G B
-17. stack G I
-18. unstack K H
-19. stack K H",False,
-BW_467_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up h 
-2. put-down h 
-3. stack h i 
-4. unstack a i 
-5. stack a h 
-6. unstack i a 
-7. put-down g 
-8. stack j k",False,
-BW_080_W5_TEMP,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up e
-2. pick-up i
-3. stack e c
-4. pick-up c
-5. stack c i
-6. unstack f j
-7. put-down f
-8. unstack i e
-9. put-down i
-10. unstack j l
-11. put-down j
-12. put-down l",False,
 MBW_001,mystery_blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. overcome b g 
 2. overcome h i 
 3. overcome d f 
@@ -3216,133 +2922,6 @@ BW_080,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up f
 10. stack c i
 11. pick-up l
 12. stack l c",False,
-BW_155_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack e i
-2. put-down e
-3. pick-up j
-4. stack j i
-5. unstack h f
-6. stack h e
-7. pick-up f
-8. stack f h
-9. pick-up i
-10. stack i f",False,
-BW_010_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack b d
-2. stack b e
-3. pick-up a
-4. stack a d",False,
-BW_001_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack i g
-2. put-down i
-3. unstack g l
-4. stack g d
-5. unstack l h
-6. put-down l
-7. unstack h j
-8. put-down h
-9. unstack j f
-10. stack j g
-11. unstack f d
-12. put-down f",False,
-BW_011_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack h g
-2. put-down h
-3. unstack g i
-4. put-down g
-5. unstack i j
-6. stack i a
-7. unstack j c
-8. put-down j
-9. unstack c k
-10. stack c j
-11. unstack k e
-12. put-down k
-13. unstack e l
-14. stack e h
-15. unstack l b
-16. put-down l
-17. unstack b a",False,
-BW_120_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. pick-up g
-2. put-down g
-3. pick-up j
-4. stack j f
-5. pick-up g
-6. stack g j
-7. pick-up f
-8. stack f c",False,
-BW_227_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack a f
-2. put-down a
-3. unstack g j
-4. put-down g
-5. unstack k c
-6. stack k f
-7. pick-up i
-8. stack i g
-9. pick-up c
-10. stack c i
-11. pick-up l
-12. stack l c",False,
-BW_137_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack h e
-2. put-down h
-3. unstack e b
-4. put-down e
-5. unstack j g
-6. put-down j
-7. unstack g a
-8. stack g j
-9. unstack l d
-10. put-down l
-11. unstack d j
-12. stack d l
-13. unstack b c
-14. stack b g
-15. unstack c l
-16. put-down c
-17. stack l c",False,
-BW_172_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack a k
-2. put-down a
-3. unstack b g
-4. stack b d
-5. unstack i j
-6. put-down i
-7. unstack j e
-8. put-down j
-9. unstack e h
-10. stack e i
-11. pick-up g
-12. stack g e
-13. pick-up f
-14. stack f b
-15. pick-up k
-16. stack k h
-17. pick-up a
-18. stack a k",False,
-BW_467_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack j a
-2. put-down j
-3. unstack a i
-4. put-down a
-5. unstack i g
-6. put-down i
-7. unstack g l
-8. put-down g
-9. unstack l f
-10. put-down l
-11. unstack f h
-12. put-down f
-13. pick-up i
-14. stack i h
-15. pick-up a
-16. stack a i
-17. pick-up g
-18. stack g l",False,
-BW_080_W5_TEMP,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack c i
-2. put-down c
-3. pick-up e
-4. stack e c
-5. unstack f j
-6. put-down f
-7. unstack c e
-8. stack c i
-9. stack e c
-10. pick-up j
-11. put-down j",False,
 MBW_001,mystery_blocksworld,canonical,anthropic/claude-3.7-sonnet,"1. attack j
 2. attack f
 3. attack i
@@ -3945,9 +3524,9 @@ To achieve the goal state from the initial configuration, you could follow these
 1. **Pick Up b**: Since `clear b` is true and `handempty` is true, the robot can pick up block b.
 2. **Stack b on c**: Since the robot is holding block b, and `clear c` is true, the robot can stack block b on block c.
 
-After these operations, the goal state is achieved: block b is on block c, and block c is on block a.",False
+After these operations, the goal state is achieved: block b is on block c, and block c is on block a.",False,
 BW_E100,blocksworld,W5,openai/gpt-4o,"1. unstack b c
-2. put-down b",True
+2. put-down b",True,
 BW_E015,blocksworld,canonical,openai/gpt-4o,"The problem you've defined, ""BW-rand-3,"" is a Blocks World problem, which is a classic AI planning problem. Your setup specifies a world with three blocks: `a`, `b`, and `c`. 
 
 Here's a breakdown of the initial state and goal:
@@ -3978,11 +3557,11 @@ To accomplish the goal `(on a b)`, you generally need to:
 3. **Pick up `a`** from the table.
 4. **Stack `a` on `b`.**
 
-This simple plan will achieve the goal given the current initial state you have defined.",False
+This simple plan will achieve the goal given the current initial state you have defined.",False,
 BW_E015,blocksworld,W5,openai/gpt-4o,"1. unstack a b
 2. put-down a
 3. pick-up c
-4. stack c b",True
+4. stack c b",True,
 BW_E017,blocksworld,canonical,openai/gpt-4o,"The provided code appears to be written in PDDL (Planning Domain Definition Language), which is used in artificial intelligence for automated planning. The code defines a problem, named `BW-rand-3`, in the context of the `blocksworld-4ops` domain, a classic planning domain involving blocks manipulation.
 
 Let's break down each part of the problem definition:
@@ -4022,11 +3601,11 @@ The goal state is to achieve a configuration where:
 - Block `a` is on block `b`.
 - Block `c` is on block `a`.
 
-For solving this problem, you'll need to apply actions that are defined in the `blocksworld-4ops` domain to manipulate the blocks to achieve the specified goal. Model strategies typically involve stacking blocks in a particular order while respecting constraints like `handempty`, `clear`, and surface availability.",False
+For solving this problem, you'll need to apply actions that are defined in the `blocksworld-4ops` domain to manipulate the blocks to achieve the specified goal. Model strategies typically involve stacking blocks in a particular order while respecting constraints like `handempty`, `clear`, and surface availability.",False,
 BW_E017,blocksworld,W5,openai/gpt-4o,"1. unstack c a
 2. put-down c
 3. unstack a b
-4. put-down a",True
+4. put-down a",True,
 BW_E019,blocksworld,canonical,openai/gpt-4o,"The problem you've defined is for a blocksworld scenario with three blocks: a, b, and c. The initial state and the goal state are specified within this problem definition. Let's go through what you've defined:
 
 ### Domain
@@ -4054,11 +3633,11 @@ To solve this problem, the agent would need to perform a sequence of operations 
 3. **Pickup b from the table**: With the hand empty, `b` can be picked up because `b` is clear once `a` is moved.
 4. **Stack b on a**: Finally, with `b` in hand and `a` now clear, put `b` on top of `a`.
 
-The solution would result in the final configuration meeting the goal requirements.",False
+The solution would result in the final configuration meeting the goal requirements.",False,
 BW_E019,blocksworld,W5,openai/gpt-4o,"1. Unstack b a
 2. Put-down b
 3. Unstack a c
-4. Stack a b",True
+4. Stack a b",True,
 BW_E002,blocksworld,canonical,openai/gpt-4o,"The problem `BW-rand-3` is defined for the `blocksworld-4ops` domain, which involves manipulating a set of blocks using four operations: picking up a block from the table, putting it down on the table, stacking it on another block, or unstacking it from another block. 
 
 In this specific problem, you have three blocks: `a`, `b`, and `c`, which initially are all on the table and clear (nothing is on top of them). The robot ""hand"" is also empty, indicating it's not holding any blocks at the start.
@@ -4084,11 +3663,11 @@ After these operations, the conditions satisfy the goal criteria:
 - `on a c` (block `a` is on block `c`)
 - `on b a` (block `b` is on block `a`)
 
-This solution sequence should achieve the desired final stack configuration specified in the goal.",False
+This solution sequence should achieve the desired final stack configuration specified in the goal.",False,
 BW_E002,blocksworld,W5,openai/gpt-4o,"1. unstack b a
 2. put-down b
 3. unstack a c
-4. put-down a",True
+4. put-down a",True,
 BW_155_W6,blocksworld,W6,openai/gpt-4o,"1. unstack e i
 2. put-down e
 3. unstack h f
@@ -4096,7 +3675,7 @@ BW_155_W6,blocksworld,W6,openai/gpt-4o,"1. unstack e i
 5. pick-up f
 6. stack f h
 7. stack i f
-8. stack j i",False
+8. stack j i",False,
 BW_010_W6,blocksworld,W6,openai/gpt-4o,"1. unstack b d
 2. put-down b
 3. pick-up d
@@ -4106,7 +3685,7 @@ BW_010_W6,blocksworld,W6,openai/gpt-4o,"1. unstack b d
 7. pick-up b
 8. stack b e
 9. pick-up a
-10. stack a d",False
+10. stack a d",False,
 BW_001_W6,blocksworld,W6,openai/gpt-4o,"1. unstack i g
 2. put-down i
 3. unstack g l
@@ -4116,7 +3695,7 @@ BW_001_W6,blocksworld,W6,openai/gpt-4o,"1. unstack i g
 7. unstack l h
 8. put-down l
 9. unstack j f
-10. stack j g",False
+10. stack j g",False,
 BW_011_W6,blocksworld,W6,openai/gpt-4o,"1. unstack h g
 2. put-down h
 3. unstack g i
@@ -4140,7 +3719,7 @@ BW_011_W6,blocksworld,W6,openai/gpt-4o,"1. unstack h g
 21. pick-up e
 22. stack e h
 23. pick-up i
-24. stack i a",False
+24. stack i a",False,
 BW_120_W6,blocksworld,W6,openai/gpt-4o,"1. pick-up g
 2. put-down g
 3. pick-up j
@@ -4148,7 +3727,7 @@ BW_120_W6,blocksworld,W6,openai/gpt-4o,"1. pick-up g
 5. pick-up g
 6. stack g j
 7. pick-up f
-8. stack f c",False
+8. stack f c",False,
 BW_227_W6,blocksworld,W6,openai/gpt-4o,"1. unstack a f  
 2. put-down a  
 3. unstack g j  
@@ -4161,7 +3740,7 @@ BW_227_W6,blocksworld,W6,openai/gpt-4o,"1. unstack a f
 10. pick-up l  
 11. stack l c  
 12. pick-up a  
-13. put-down a",False
+13. put-down a",False,
 BW_137_W6,blocksworld,W6,openai/gpt-4o,"1. unstack h e
 2. put-down h
 3. unstack e b
@@ -4181,7 +3760,7 @@ BW_137_W6,blocksworld,W6,openai/gpt-4o,"1. unstack h e
 17. pick-up d
 18. stack d l
 19. pick-up b
-20. stack b g",False
+20. stack b g",False,
 BW_172_W6,blocksworld,W6,openai/gpt-4o,"1. unstack i j
 2. put-down i
 3. unstack j e
@@ -4201,7 +3780,7 @@ BW_172_W6,blocksworld,W6,openai/gpt-4o,"1. unstack i j
 17. pick-up a
 18. stack a k
 19. pick-up b
-20. stack b d",False
+20. stack b d",False,
 BW_467_W6,blocksworld,W6,openai/gpt-4o,"1. Unstack j a
 2. Put-down j
 3. Unstack a i
@@ -4211,7 +3790,7 @@ BW_467_W6,blocksworld,W6,openai/gpt-4o,"1. Unstack j a
 7. Unstack i g
 8. Stack i h
 9. Pick-up a
-10. Stack a i",False
+10. Stack a i",False,
 BW_080_W6,blocksworld,W6,openai/gpt-4o,"1. Unstack c i
 2. Put-down c
 3. Unstack f j
@@ -4221,1498 +3800,75 @@ BW_080_W6,blocksworld,W6,openai/gpt-4o,"1. Unstack c i
 7. Pick-up c
 8. Stack c i
 9. Pick-up e
-10. Stack e c",False
+10. Stack e c",False,
 BW_E100_W6,blocksworld,W6,openai/gpt-4o,"1. unstack b a
 2. put-down b
 3. pick-up c
-4. stack c b",True
+4. stack c b",True,
 BW_E015_W6,blocksworld,W6,openai/gpt-4o,"1. unstack c b
 2. unstack b a
 3. put-down b
 4. stack c a
 5. pick-up b
-6. stack b c",False
+6. stack b c",False,
 BW_E017_W6,blocksworld,W6,openai/gpt-4o,"1. unstack b c
 2. put-down b
 3. unstack c a
-4. put-down c",True
+4. put-down c",True,
 BW_E019_W6,blocksworld,W6,openai/gpt-4o,"1. unstack c b
 2. put-down c
 3. pick-up b
 4. stack b c
 5. pick-up c
-6. stack c a",False
+6. stack c a",False,
 BW_E002_W6,blocksworld,W6,openai/gpt-4o,"1. unstack b a
-2. put-down b",True
-BW_155,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. stack i f
-3. put-down f
-4. pick-up f
-5. stack f e
-6. put-down e
-7. pick-up e
-8. stack e j
-9. put-down j
-10. pick-up j
-11. stack j h
-12. put-down h",False
-BW_155,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. stack i f
-3. pick-up f
-4. put-down f
-5. stack f e
-6. pick-up e
-7. put-down e
-8. stack e j
-9. pick-up j
-10. put-down j
-11. stack j h",False
-BW_155,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Ivan
-2. place Ivan under Frank
-3. select Frank
-4. place Frank under Eve
-5. select Eve
-6. place Eve under Jake
-7. select Jake
-8. place Jake under Henry
-9. select Jake
-10. release Jake",False
-BW_155,blocksworld,W4,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. pick-up f
-3. stack i f
-4. pick-up e
-5. stack f e
-6. pick-up j
-7. stack e j
-8. put-down j
-9. put-down e
-10. pick-up h
-11. stack j h
-12. put-down h",False
-BW_155,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up h
-2. unstack h j
-3. unstack j e
-4. unstack e f
-5. unstack f i
-6. put-down i
-7. put-down f
-8. put-down e
-9. put-down j
-10. put-down h",False
-BW_010,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up d
-2. stack d e
-3. pick-up e
-4. stack e a
-5. pick-up a
-6. stack a b
-7. pick-up b
-8. stack b f",False
-BW_010,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. stack a e
-3. stack e b
-4. stack b f
-5. put-down d",False
-BW_010,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Diana
-2. place Diana under Ethan
-3. select Ethan
-4. place Ethan under Alice
-5. select Alice
-6. place Alice under Brian
-7. select Brian
-8. place Brian under Felix",False
-BW_010,blocksworld,W4,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. stack f e
-3. stack e a
-4. stack a b
-5. stack b f
-6. put-down f",False
-BW_010,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. unstack f b
-3. unstack b a
-4. unstack a e
-5. unstack e d
-6. put-down d
-7. put-down e
-8. put-down a
-9. put-down b
-10. put-down f",False
-BW_001,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up j
-2. stack j f
-3. pick-up f
-4. stack f i
-5. pick-up i
-6. stack i g
-7. pick-up g
-8. stack g d
-9. pick-up d
-10. stack d b
-11. pick-up b
-12. stack b h
-13. pick-up h
-14. stack h l",False
-BW_001,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up j
-2. pick-up f
-3. stack j f
-4. pick-up i
-5. stack i f
-6. pick-up g
-7. stack g i
-8. pick-up d
-9. stack d g
-10. pick-up b
-11. stack b d
-12. pick-up h
-13. stack h b
-14. pick-up l
-15. stack l h",False
-BW_001,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select James
-2. place James under Fiona
-3. select Fiona
-4. place Fiona under Ian
-5. select Ian
-6. place Ian under Grace
-7. select Grace
-8. place Grace under Derek
-9. select Derek
-10. place Derek under Ben
-11. select Ben
-12. place Ben under Hannah
-13. select Hannah
-14. place Hannah under Leo",False
-BW_001,blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan π:
-
-1. pick-up j
-2. stack j f
-3. pick-up f
-4. stack f i
-5. pick-up i
-6. stack i g
-7. pick-up g
-8. stack g d
-9. pick-up d
-10. stack d b
-11. pick-up b
-12. stack b h
-13. pick-up h
-14. stack h l
-15. put-down l",False
-BW_001,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up l
-2. pick-up h
-3. unstack h b
-4. pick-up b
-5. unstack b d
-6. pick-up d
-7. unstack d g
-8. pick-up g
-9. unstack g i
-10. pick-up i
-11. unstack i f
-12. pick-up f
-13. unstack f j
-14. put-down j
-15. put-down f
-16. put-down i
-17. put-down g
-18. put-down d
-19. put-down b
-20. put-down h
-21. put-down l",False
-BW_011,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. pick-up k
-3. stack c k
-4. put-down k
-5. pick-up g
-6. pick-up a
-7. stack g a
-8. put-down a
-9. pick-up l
-10. stack g l
-11. put-down l
-12. pick-up j
-13. stack j e
-14. put-down j
-15. pick-up e
-16. stack e h
-17. put-down e
-18. pick-up h
-19. stack h i
-20. put-down h
-21. pick-up i
-22. stack i b
-23. put-down i",False
-BW_011,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. put-down c
-3. stack c k
-4. pick-up k
-5. put-down k
-6. stack k g
-7. pick-up g
-8. put-down g
-9. stack g a
-10. pick-up a
-11. put-down a
-12. stack a l
-13. pick-up l
-14. put-down l
-15. stack l j
-16. pick-up j
-17. put-down j
-18. stack j e
-19. pick-up e
-20. put-down e
-21. stack e h
-22. pick-up h
-23. put-down h
-24. stack h i
-25. pick-up i
-26. put-down i
-27. stack i b
-28. pick-up b
-29. put-down b",False
-BW_011,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Carol
-2. place Carol under Kevin
-3. select Kevin
-4. place Kevin under George
-5. select George
-6. place George under Amy
-7. select Amy
-8. place Amy under Laura
-9. select Laura
-10. place Laura under Jack
-11. select Jack
-12. place Jack under Edward
-13. select Edward
-14. place Edward under Helen
-15. select Helen
-16. place Helen under Ivan
-17. select Ivan
-18. place Ivan under Ben
-19. release George
-20. select George
-21. place George under Amy
-22. release Amy
-23. release Laura
-24. select Laura
-25. place Laura under Jack",False
-BW_011,blocksworld,W4,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. stack c k
-3. pick-up k
-4. stack k g
-5. pick-up g
-6. stack g a
-7. pick-up a
-8. stack a l
-9. pick-up l
-10. stack l j
-11. pick-up j
-12. stack j e
-13. pick-up e
-14. stack e h
-15. pick-up h
-16. stack h i
-17. pick-up i
-18. put-down i
-19. pick-up b
-20. put-down b",False
-BW_011,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up b
-2. put-down b
-3. pick-up a
-4. unstack a l
-5. put-down l
-6. unstack k g
-7. put-down g
-8. pick-up e
-9. unstack e h
-10. put-down h
-11. unstack i b
-12. put-down i
-13. unstack j e
-14. put-down e
-15. unstack c k
-16. put-down k
-17. unstack g a
-18. put-down a
-19. pick-up h
-20. stack h g",False
-BW_120,blocksworld,canonical,meta-llama/llama-3-8b-instruct,1. pick-up c,False
-BW_120,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. stack c j
-3. pick-up j
-4. stack j g
-5. pick-up g
-6. stack g f",False
-BW_120,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Clara
-2. place Clara under Jake
-3. select Jake
-4. place Jake under Grace
-5. select Grace
-6. place Grace under Felix
-7. release Grace",False
-BW_120,blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan:
-
-1. pick-up c
-2. stack c j
-3. pick-up j
-4. stack j g
-5. pick-up g
-6. stack g f
-7. put-down f",False
-BW_120,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. unstack c j
-3. unstack j g
-4. put-down g
-5. unstack g f
-6. put-down c
-7. put-down j
-8. put-down f",False
-BW_227,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. stack f l
-3. put-down f
-4. pick-up l
-5. stack l g
-6. put-down l
-7. pick-up g
-8. stack g d
-9. put-down g
-10. pick-up d
-11. stack d i
-12. put-down d
-13. pick-up i
-14. stack i j
-15. put-down i
-16. pick-up j
-17. stack j c
-18. put-down j
-19. pick-up c
-20. stack c k
-21. put-down c
-22. pick-up k
-23. stack k a
-24. put-down k",False
-BW_227,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. pick-up l
-3. stack f l
-4. put-down l
-5. pick-up g
-6. stack g f
-7. put-down f
-8. pick-up d
-9. stack d g
-10. put-down g
-11. pick-up i
-12. stack i d
-13. put-down d
-14. pick-up j
-15. stack j i
-16. put-down i
-17. pick-up c
-18. stack c j
-19. put-down j
-20. pick-up k
-21. stack k c
-22. put-down c
-23. pick-up a
-24. stack a k
-25. put-down k",False
-BW_227,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Felix
-2. place Felix under Laura
-3. select Laura
-4. place Laura under George
-5. select George
-6. place George under Derek
-7. select Derek
-8. place Derek under Ian
-9. select Ian
-10. place Ian under Jack
-11. select Jack
-12. place Jack under Clara
-13. select Clara
-14. place Clara under Kevin
-15. select Kevin
-16. place Kevin under Amy",False
-BW_227,blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan:
-
-1. pick-up f
-2. pick-up l
-3. pick-up g
-4. stack f l
-5. pick-up d
-6. put-down f
-7. stack l g
-8. pick-up i
-9. put-down l
-10. stack g d
-11. pick-up j
-12. put-down g
-13. stack d i
-14. pick-up c
-15. put-down d
-16. stack i j
-17. pick-up k
-18. put-down i
-19. stack j c
-20. pick-up a
-21. put-down j
-22. stack c k
-23. put-down k
-24. put-down c
-25. put-down a",False
-BW_227,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack a k
-3. unstack k c
-4. unstack c j
-5. unstack j i
-6. unstack i d
-7. unstack d g
-8. unstack g l
-9. unstack l f
-10. put-down f",False
-BW_137,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up d
-2. put-down a
-3. pick-up a
-4. stack a d
-5. pick-up b
-6. put-down j
-7. pick-up j
-8. stack j b
-9. pick-up e
-10. put-down l
-11. pick-up l
-12. stack l e
-13. pick-up h
-14. put-down c
-15. pick-up c
-16. stack c h
-17. pick-up f
-18. put-down g
-19. pick-up g
-20. stack g f
-21. pick-up i",False
-BW_137,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. stack a b
-3. pick-up b
-4. stack b j
-5. pick-up j
-6. stack j e
-7. pick-up e
-8. stack e l
-9. pick-up l
-10. stack l h
-11. pick-up h
-12. stack h c
-13. pick-up c
-14. stack c f
-15. pick-up f
-16. stack f g
-17. pick-up g
-18. stack g i
-19. put-down d",False
-BW_137,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Dana
-2. place Dana under Aaron
-3. select Aaron
-4. place Aaron under Brian
-5. select Brian
-6. place Brian under Julia
-7. select Julia
-8. place Julia under Ethan
-9. select Ethan
-10. place Ethan under Lisa
-11. select Lisa
-12. place Lisa under Harry
-13. select Harry
-14. place Harry under Clara
-15. select Clara
-16. place Clara under Frank
-17. select Frank
-18. place Frank under Gloria
-19. select Gloria
-20. place Gloria under Ivan",False
-BW_137,blocksworld,W4,meta-llama/llama-3-8b-instruct,"1. pick-up d
-2. stack d a
-3. pick-up a
-4. stack a b
-5. pick-up b
-6. stack b j
-7. pick-up j
-8. stack j e
-9. pick-up e
-10. stack e l
-11. pick-up l
-12. stack l h
-13. pick-up h
-14. stack h c
-15. pick-up c
-16. stack c f
-17. pick-up f
-18. stack f g
-19. pick-up g
-20. stack g i
-21. put-down i",False
-BW_137,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. unstack i g
-3. unstack g f
-4. unstack f c
-5. unstack c h
-6. unstack h l
-7. unstack l e
-8. unstack e j
-9. unstack j b
-10. unstack b a
-11. unstack a d
-12. put-down d
-13. put-down a
-14. put-down b
-15. put-down j
-16. put-down e
-17. put-down l
-18. put-down h
-19. put-down c
-20. put-down f
-21. put-down g",False
-BW_172,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. stack i l
-3. pick-up l
-4. stack l g
-5. pick-up g
-6. stack g e
-7. pick-up e
-8. stack e d
-9. pick-up d
-10. stack d b
-11. pick-up b
-12. stack b a
-13. pick-up a
-14. stack a j
-15. pick-up j
-16. stack j h
-17. pick-up h
-18. stack h f
-19. pick-up f
-20. stack f k",False
-BW_172,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. pick-up l
-3. put-down l
-4. stack l g
-5. put-down g
-6. stack g e
-7. put-down e
-8. stack e d
-9. put-down d
-10. stack d b
-11. put-down b
-12. stack b a
-13. put-down a
-14. stack a j
-15. put-down j
-16. stack j h
-17. put-down h
-18. stack h f
-19. put-down f
-20. stack f k",False
-BW_172,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Ivan
-2. place Ivan under Laura
-3. select Laura
-4. place Laura under Gary
-5. select Gary
-6. place Gary under Ethan
-7. select Ethan
-8. place Ethan under Dana
-9. select Dana
-10. place Dana under Ben
-11. select Ben
-12. place Ben under Amy
-13. select Amy
-14. place Amy under Jake
-15. select Jake
-16. place Jake under Helen
-17. select Helen
-18. place Helen under Felix
-19. select Felix
-20. place Felix under Karen",False
-BW_172,blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan:
-
-1. pick-up i
-2. stack i l
-3. pick-up l
-4. stack l g
-5. pick-up g
-6. stack g e
-7. pick-up e
-8. stack e d
-9. pick-up d
-10. stack d b
-11. pick-up b
-12. stack b a
-13. pick-up a
-14. stack a j
-15. pick-up j
-16. stack j h
-17. pick-up h
-18. stack h f
-19. pick-up f
-20. stack f k
-21. pick-up k
-22. put-down k",False
-BW_172,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up k
-2. unstack k f
-3. unstack f h
-4. unstack h j
-5. unstack j a
-6. unstack a b
-7. unstack b d
-8. unstack d e
-9. unstack e g
-10. unstack g l
-11. unstack l i
-12. put-down i
-13. put-down l
-14. put-down g
-15. put-down e
-16. put-down d
-17. put-down b
-18. put-down a
-19. put-down j
-20. put-down h
-21. put-down f",False
-BW_467,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up g
-2. stack g i
-3. pick-up i
-4. stack i l
-5. pick-up l
-6. stack l j
-7. pick-up j
-8. stack j a
-9. pick-up a
-10. stack a f
-11. pick-up f
-12. stack f h",False
-BW_467,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up g
-2. stack g i
-3. unstack i l
-4. pick-up i
-5. stack i l
-6. unstack l j
-7. pick-up l
-8. stack l j
-9. unstack j a
-10. pick-up j
-11. stack j a
-12. unstack a f
-13. pick-up a
-14. stack a f
-15. unstack f h
-16. pick-up f",False
-BW_467,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Gloria
-2. place Gloria under Ian
-3. select Ian
-4. place Ian under Lisa
-5. select Lisa
-6. place Lisa under Jake
-7. select Jake
-8. place Jake under Amy
-9. select Amy
-10. place Amy under Felix
-11. select Felix
-12. place Felix under Hannah",False
-BW_467,blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan π:
-
-1. pick-up g
-2. stack g i
-3. pick-up i
-4. stack i l
-5. pick-up l
-6. stack l j
-7. pick-up j
-8. stack j a
-9. pick-up a
-10. stack a f
-11. pick-up f
-12. stack f h
-13. put-down f",False
-BW_467,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up h
-2. put-down h
-3. unstack j a
-4. put-down a
-5. unstack l i
-6. put-down l
-7. unstack g i
-8. put-down i
-9. unstack f a
-10. put-down f
-11. unstack h f
-12. put-down h
-13. unstack a f
-14. put-down a",False
-BW_080,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. pick-up l
-2. pick-up c
-3. stack l c
-4. pick-up i
-5. stack c i
-6. pick-up e
-7. stack i e
-8. pick-up j
-9. stack e j
-10. pick-up f
-11. stack j f",False
-BW_080,blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. pick-up l
-2. stack l c
-3. put-down l
-4. pick-up c
-5. stack c i
-6. put-down c
-7. pick-up i
-8. stack i e
-9. put-down i
-10. pick-up e
-11. stack e j
-12. put-down e
-13. pick-up j
-14. stack j f
-15. put-down j",False
-BW_080,blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. select Laura
-2. place Laura under Clara
-3. select Clara
-4. place Clara under Ivan
-5. select Ivan
-6. place Ivan under Ethan
-7. select Ethan
-8. place Ethan under Jake
-9. select Jake
-10. place Jake under Felix",False
-BW_080,blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is a plan π = (a₁, a₂, ..., aₙ) that satisfies the conditions:
-
-1. pick-up(l)
-2. pick-up(c)
-3. pick-up(i)
-4. stack(l, c)
-5. pick-up(e)
-6. stack(c, i)
-7. stack(e, c)
-8. pick-up(j)
-9. stack(i, e)
-10. stack(j, i)
-11. unstack(i, e)
-12. stack(e, j)
-13. stack(j, f)
-14. put-down(i)
-15. stack(j, f)
-16. put-down(j)
-17. put-down(e)
-18. unstack(j, f)
-19. put-down(c)
-20. put-down(l)
-21. put-down(f)",False
-MBW_001,mystery_blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. feast j f
-2. attack j
-3. feast f i
-4. attack i
-5. feast i g
-6. attack g
-7. feast g d
-8. attack d
-9. feast d b
-10. attack b
-11. feast b h
-12. attack h",False
-MBW_001,mystery_blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. attack f
-2. overcome i g
-3. feast g d
-4. succumb b
-5. overcome h l
-6. attack j",False
-MBW_001,mystery_blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. provoke Jordan
-2. appease Israel
-3. broker Jordan Finland
-4. negotiate Denmark Finland
-5. plebiscite Israel
-6. broker Iceland Greece
-7. appease Latvia
-8. broker Iceland Greece
-9. appease Estonia
-10. acquire 100 diplomacy points
-11. provide £100 to Finland
-12. provoke Greece
-13. broker Denmark Greece
-14. negotiate Hungary Belgium
-15. appease Jordan
-16. remove negotiator from Poland
-17. provoke Hungary
-18. provoke Iceland
-19. bore Poland
-20. remove negotiator from Norway
-21. negotiate Hungary Denmark 
-22. content with Israel
-23. provoke Belgium
-24. remove negotiator from Turkey",False
-MBW_001,mystery_blocksworld,W4,meta-llama/llama-3-8b-instruct,"1. attack j
-2. overcome i j
-3. attack f
-4. overcome j f
-5. overcome g i
-6. attack d
-7. overcome i g
-8. overcome f d
-9. attack b
-10. overcome d b
-11. attack h
-12. overcome b h
-13. attack l",False
-MBW_100,mystery_blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. feast b j
-2. feast j l
-3. feast l i",False
-MBW_100,mystery_blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. overcome b j
-2. attack j
-3. feast j l
-4. overcome l i",False
-MBW_100,mystery_blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. provoke Thailand
-2. appease Morocco
-3. appease Uruguay
-4. provoke Estonia
-5. broker Uruguay Estonia
-6. negotiate Morocco Thailand",False
-MBW_100,mystery_blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan:
-
-1. attack j
-2. overcome j l
-3. feast j l
-4. overcome l i
-5. feast l i
-6. succumb i",False
-MBW_127,mystery_blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. feast k g
-2. overcome g j e
-3. feast j e
-4. feast e b",False
-MBW_127,mystery_blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. attack g
-2. attack j
-3. attack e
-4. attack b",False
-MBW_127,mystery_blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. provoking Kenya
-2. appease Germany
-3. broker Kenya Germany
-4. brokering Germany Japan
-5. negotiating Japan Egypt
-6. negotiating Egypt Brazil",False
-MBW_127,mystery_blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan π:
-
-1. overcome k g
-2. feast k g
-3. attack e
-4. succumb e
-5. overcome e b
-6. feast e b",False
-MBW_185,mystery_blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. feast j d
-2. feast d g
-3. feast g i
-4. feast i c
-5. feast c h
-6. feast h a
-7. feast a b
-8. feast b e
-9. feast e l
-10. attack d
-11. attack g
-12. attack i
-13. attack c
-14. attack h
-15. attack a
-16. attack b
-17. attack e",False
-MBW_185,mystery_blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. attack d
-2. succumb d
-3. overcome d g
-4. feast g i
-5. attack h
-6. succumb h
-7. overcome a b
-8. feast b e
-9. attack l
-10. succumb l",False
-MBW_185,mystery_blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. provoke Jordan
-2. broker Jordan Denmark
-3. appease Denmark
-4. broker Denmark Ghana
-5. appease Ghana
-6. broker Ghana India
-7. appease India
-8. broker India Chile
-9. appease Chile
-10. broker Chile Hungary
-11. appease Hungary
-12. broker Hungary Austria
-13. appease Austria
-14. broker Austria Bolivia
-15. appease Bolivia
-16. broker Bolivia Ecuador
-17. appease Ecuador
-18. negotiate Ecuador Latvia",False
-MBW_185,mystery_blocksworld,W4,meta-llama/llama-3-8b-instruct,"1. overcome(h, l)
-2. attack l
-3. succumb l
-4. overcome(d, c)
-5. attack c
-6. succumb c
-7. overcome(g, b)
-8. attack b
-9. succumb b
-10. overcome(i, a)
-11. attack a
-12. succumb a
-13. overcome(e, h)
-14. attack h
-15. succumb h
-16. overcome(i, e)
-17. attack e
-18. succumb e
-19. overcome(d, i)
-20. attack i
-21. succumb i
-22. overcome(l, d)
-23. attack d
-24. succumb d",False
-MBW_10,mystery_blocksworld,canonical,meta-llama/llama-3-8b-instruct,"1. attack D
-2. feast D E
-3. overcome D E
-4. feast E A
-5. feast A B
-6. feast B F",False
-MBW_10,mystery_blocksworld,W2,meta-llama/llama-3-8b-instruct,"1. attack e
-2. succumb e
-3. overcome a b
-4. attack a
-5. feast a b",False
-MBW_10,mystery_blocksworld,W3,meta-llama/llama-3-8b-instruct,"1. provoke Denmark
-2. appease Ethiopia
-3. broker Denmark Ethiopia
-4. negotiate Denmark Ethiopia
-5. appease Argentina
-6. broker Argentina Brazil
-7. negotiate Argentina Brazil
-8. appease Brazil
-9. negotiate Brazil France",False
-MBW_10,mystery_blocksworld,W4,meta-llama/llama-3-8b-instruct,"Here is the plan π:
-
-1. attack(d)
-2. overcome(d, e)
-3. attack(e)
-4. overcome(e, a)
-5. attack(a)
-6. overcome(a, b)
-7. attack(b)
-8. overcome(b, f)
-9. attack(f)
-
-Note that this plan transforms the initial state S₀ into the goal state S*.",False
-BW_155_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. stack f h
-3. unstack i e
-4. put-down i
-5. put-down j
-6. stack j i
-7. pick-up e
-8. stack e h
-9. unstack h f
-10. put-down f",False
-BW_010_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. put-down a
-3. pick-up d
-4. stack a d
-5. unstack b d
-6. stack b e
-7. put-down d
-8. pick-up f
-9. stack e f
-10. put-down f",False
-BW_001_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up b
-2. put-down b
-3. pick-up d
-4. put-down d
-5. pick-up f
-6. put-down f
-7. pick-up g
-8. pick-up h
-9. unstack g h
-10. pick-up i
-11. put-down i
-12. stack i g
-13. stack j g
-14. pick-up l
-15. put-down l",False
-BW_011_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. put-down b
-3. unstack k e
-4. pick-up e
-5. stack e h
-6. put-down g
-7. put-down h
-8. pick-up i
-9. put-down a
-10. stack i a
-11. unstack j c
-12. pick-up c
-13. stack c j
-14. put-down j
-15. pick-down k
-16. put-down l
-17. put-down l",False
-BW_120_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. stack f c
-3. pick-up g
-4. unstack g f
-5. put-down g
-6. pick-up j
-7. stack g j
-8. unstack g j
-9. stack j f",False
-BW_227_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. stack c i
-3. put-down c
-4. pick-up k
-5. stack k f
-6. unstack g j
-7. stack g i
-8. pick-up l
-9. stack l c
-10. unstack k f
-11. stack k a
-12. put-down k",False
-BW_137_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. put-down f
-3. pick-up g
-4. put-down l
-5. stack l c
-6. pick-up c
-7. put-down a
-8. stack a i
-9. pick-up b
-10. put-down g
-11. stack g j
-12. unstack e b
-13. put-down e",False
-BW_172_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. stack f k
-3. pick-up a
-4. put-down a k
-5. pick-up b
-6. stack b d
-7. unstack d l
-8. put-down d
-9. pick-up e
-10. stack e i
-11. pick-up g
-12. put-down g e
-13. pick-up j
-14. unstack j e
-15. pick-up h
-16. stack h k
-17. pick-up i
-18. unstack i e
-19. put-down i
-20. pick-up l
-21. put-down l
-22. pick-up g
-23. pick-up e
-24. stack e g
-25. put-down e
-26. pick-up j
-27. unstack j e
-28. pick-up h
-29. stack h k
-30. put-down h",False
-BW_467_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack a j
-3. pick-up j
-4. put-down j
-5. unstack i g
-6. pick-up g
-7. stack g l
-8. put-down g
-9. pick-up i
-10. unstack i h
-11. pick-up h
-12. stack i h
-13. put-down h
-14. unstack f h
-15. pick-up f
-16. put-down f",False
-BW_080_W5_TEMP,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up i
-2. put-down i
-3. pick-up e
-4. stack e i
-5. unstack c i
-6. pick-up c
-7. stack c f 
-8. put-down f",False
-BW_E100,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"A Blocksworld problem!
-
-Here's the problem statement translated into a human-readable format:
-
-**Domain:** Blocksworld (with 4 operators)
-
-**Objects:** `a`, `b`, `c`
-
-**Initial State:**
-
-* The robot's hand is empty.
-* Block `a` is on the table.
-* Block `b` is on the table.
-* Block `c` is on block `a`.
-* Block `b` is clear.
-* Block `c` is clear.
-
-**Goal:**
-
-* Block `b` is on block `c`.
-* Block `c` is on block `a`.
-
-In other words, we need to stack block `b` on top of block `c`, which is currently on top of block `a`.",False
-BW_E100,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack b c
-3. put-down c
-4. unstack c a
-5. put-down b
-6. stack c a",False
-BW_E015,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"It appears to be a problem definition for a planning domain in the context of the Blocksworld-4ops problem, which is a simple block stacking problem. This specific problem is asking the system to move block `a` onto block `b`. 
-
-Below is a step-by-step breakdown of how a planner might solve this problem.
-
-
-## Step 1: Determine the objective
-The goal of the problem is to place block `a` on top of block `b`.
-
-## Step 2: Analyze the initial state
-Blocks `a` and `b` are on the table, and block `c` is on top of `b`. `a` and `c` are clear, and there are no other blocks and no objects are in any hand.
-
-## Step 3: Plan the actions to achieve the goal
-To place `a` on `b`, we first need to move `b` or `a` to a position where they are above each other. Since `c` is already on `b`, moving `c` off `b` and then moving `a` onto `b` is the straightforward plan.
-
-
-## Step 4: Generate the plan
-1. **Move `c` off `b`**: This can be accomplished by picking up `c` and placing it on the table. In action notation, it's (pick-up c 'table).
-2. **Move `a` onto `b`**: With `c` off `b`, we can now move `a` onto `b`, which is (move a b).
-
-## Step 5: Combine the plan into a single plan
-The plan will then be to issue the above two actions one after the other to achieve the goal.
-
-The final answer is: 
-```
-(plan (and (pick-up c 'table) (move a b))
-```",False
-BW_E015,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up b
-2. unstack b c
-3. put-down b
-4. pick-up c
-5. put-down c
-6. stack c b
-7. pick-up a
-8. put-down a",False
-BW_E017,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"Here is the solution to the problem:
-
-The goal is to move objects in the Blocked World (BW) to achieve the state where object `a` is on object `b`, and object `c` is on object `a`. 
-
-Here is the solution steps:
-
-1. Move object `c` to the top of the table: (pick-up c) -> (put-down c b)
-2. Move object `a` to the top of object `c`: (pick-up a) -> (put-down a c)
-3. Done!
-
-Here is the solution in Prolog:
-```prolog
-solve([], [(pick-up c), (put-down c b), (pick-up a), (put-down a c)]).
-```
-In this solution, the `solve/2` predicate takes a list of actions and returns the solution. The solution is a list of actions: (1) pick up object `c`, (2) put down object `c` on object `b`, (3) pick up object `a`, and (4) put down object `a` on object `c`.",False
-BW_E017,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack c a
-3. put-down a
-4. unstack b a
-5. put-down b
-6. put-down c",False
-BW_E019,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"A Blocksworld planning problem!
-
-Let's break it down:
-
-**Domain**: `blocksworld-4ops`, which is a standard domain for blocks world planning.
-
-**Objects**: `a`, `b`, and `c` are the three blocks.
-
-**Initial State**:
-
-* `handempty`: The agent's hand is empty.
-* `on a b`: Block `a` is placed on top of block `b`.
-* `ontable b`: Block `b` is on the table.
-* `ontable c`: Block `c` is on the table.
-* `clear a`: Block `a` is not blocked by any other block.
-* `clear c`: Block `c` is not blocked by any other block.
-
-**Goal**:
-
-* `(on a c)`: Block `a` should be placed on top of block `c`.
-* `(on b a)`: Block `b` should be placed on top of block `a`.
-
-The goal is to achieve the desired positions of blocks `a`, `b`, and `c`.
-
-How can you plan to achieve this goal?",False
-BW_E019,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. pick-up a
-3. unstack a b
-4. put-down b
-5. put-down a",False
-BW_E002,blocksworld,canonical,meta-llama/llama-3-8b-instruct,"This is a problem definition in the PDDL (Planning Domain Definition Language) format, specifically for the Blocks World domain with 4 actions (pick, drop, clear, and handempty).
-
-Here's a breakdown of the problem:
-
-* `(:domain blocksworld-4ops)`: Specifies the domain as ""blocksworld-4ops"", which is a variation of the classic Blocks World domain.
-* `(:objects a b c)`: Defines three objects, `a`, `b`, and `c`, which are the blocks in the Blocks World.
-* `(:init ...)`: Specifies the initial state of the problem:
-	+ `(handempty)`: The hand is initially empty.
-	+ `(ontable a)`, `(ontable b)`, and `(ontable c)`: Each block is initially on the table.
-	+ `(clear a)`, `(clear b)`, and `(clear c)`: Each block is initially clear of any objects (e.g., other blocks).
-* `(:goal (...))`: Specifies the goal state:
-	+ `(and (on a c) (on b a))`: The goal is to have block `a` on top of block `c`, and block `b` on top of block `a`.
-
-In summary, the problem is to plan a sequence of actions to achieve the goal state, where each action can be one of the following:
-
-* Pick up a block from the table and place it in your hand.
-* Drop a block from your hand onto the table.
-* Clear a block of any other blocks on top of it.
-* Handempty the hand, which means putting down any block currently held.
-
-The goal is to achieve the specific configuration specified in the goal state.",False
-BW_E002,blocksworld,W5,meta-llama/llama-3-8b-instruct,"1. stack a c
-2. unstack a c
-3. unstack b c
-4. pick-up a
-5. stack a c
-6. put-down a
-7. pick-up c
-8. put-down c",False
-BW_155_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up e
-2. put-down e
-3. pick-up f
-4. put-down f
-5. stack f h
-6. pick-up h
-7. unstack f h
-8. stack h e
-9. pick-up i
-10. put-down i
-11. stack i f
-12. pick-up j
-13. put-down j
-14. stack j i",False
-BW_010_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. put-down a
-3. unstack b d
-4. pick-up b
-5. stack b e
-6. unstack d f
-7. pick-up d
-8. put-down d
-9. stack e f
-10. put-down f",False
-BW_001_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up b
-2. unstack f d
-3. stack f d
-4. pick-up d
-5. put-down d
-6. unstack g h
-7. stack g h
-8. pick-up h
-9. put-down h
-10. unstack j g
-11. stack j g
-12. pick-up g
-13. put-down g
-14. unstack i g
-15. stack i d
-16. unstack l h
-17. stack l d
-18. pick-up l
-19. put-down l
-20. put-down b",False
-BW_011_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a 
-2. put-down a 
-3. pick-up b 
-4. put-down a 
-5. pick-up c 
-6. pick-down(b) 
-7. pick-up j 
-8. pick-down(c) 
-9. stack c j 
-10. stack i a 
-11. pick-up l 
-12. unstack a i 
-13. put-down i 
-14. stack i a 
-15. unstack a i 
-16. pick-up j 
-17. unstack c j 
-18. stack j i 
-19. unstack a i 
-20. put-down i 
-21. stack i a",False
-BW_120_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. pick-up f
-3. unstack g f
-4. stack f c
-5. stack g j
-6. stack j f",False
-BW_227_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. put-down a
-3. pick-up a
-4. stack a c
-5. unstack k c
-6. pick-up k
-7. put-down f
-8. stack k f
-9. pick-up f
-10. unstack g j
-11. pick-up g
-12. unstack i l
-13. pick-up i
-14. stack c i",False
-BW_137_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack a i
-3. put-down a
-4. pick-up i
-5. stack a i
-6. unstack a i
-7. put-down a
-8. pick-up e
-9. unstack e h
-10. unstack h g
-11. pick-up j
-12. unstack j g
-13. stack j g
-14. put-down e
-15. stack e g
-16. unstack e g
-17. put-down e
-18. pick-up c
-19. unstack c l
-20. stack c l
-21. put-down c",False
-BW_172_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up f
-2. stack f k
-3. pick-up a
-4. put-down a k
-5. pick-up b
-6. put-down b g
-7. pick-up g
-8. stack b d
-9. unstack a k
-10. pick-up e
-11. stack e i
-12. pick-up f
-13. stack f b
-14. pick-up g
-15. stack g e
-16. put-down g e
-17. pick-up d
-18. put-down d
-19. pick-up k
-20. stack k h
-21. put-down k h",False
-BW_467_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. stack a i
-3. unstack j a
-4. pick-up j
-5. put-down j
-6. pick-up h
-7. stack h i
-8. pick-up i
-9. stack i h
-10. pick-up e
-11. stack f e 
-12. unstack f l
-13. pick-up f
-14. put-down f 
-15. stack l g",False
-BW_080_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up c
-2. put-down c
-3. stack c i
-4. pick-up e
-5. stack e c
-6. put-down f
-7. unstack c i",False
-BW_E100_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. put-down a
-3. pick-up c
-4. stack c b
-5. put-down b",False
-BW_E015_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack a b
-3. put-down b
-4. pick-up b
-5. stack b c
-6. put-down c
-7. pick-up c
-8. stack c a",False
-BW_E017_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack c b
-3. unstack a c
-4. put-down c
-5. put-down b
-6. put-down a",False
-BW_E019_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. put-down a
-3. stack a c
-4. pick-up c
-5. unstack c b
-6. stack b c
-7. put-down c
-8. pick-up b
-9. put-down b",False
-BW_E002_W6,blocksworld,W6,meta-llama/llama-3-8b-instruct,"1. pick-up a
-2. unstack b a
-3. put-down a
-4. pick-up a
-5. put-down b",False
+2. put-down b",True,
 BW_E100,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up b
 2. pick-up c
 3. put-down c
 4. stack c a
-5. stack b c",False
+5. stack b c",False,
 BW_E100,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. unstack(c,a)
 2. put-down(c)
 3. pick-up(b)
-4. stack(b,c)",False
+4. stack(b,c)",False,
 BW_E015,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. unstack c b
 2. put-down c
 3. pick-up a
-4. stack a b",True
+4. stack a b",True,
 BW_E015,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. unstack c b
 2. put-down c
 3. pick-up a
-4. stack a b",True
+4. stack a b",True,
 BW_E017,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up a
 2. stack a b
 3. pick-up c
-4. stack c a",True
+4. stack c a",True,
 BW_E017,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(b)
 2. put-down(b)
 3. pick-up(a)
 4. stack(a,b)
 5. pick-up(c)
-6. stack(c,a)",False
+6. stack(c,a)",False,
 BW_E019,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. unstack a b
 2. pick-up c
 3. put-down c
 4. stack a c
 5. pick-up b
-6. stack b a",False
+6. stack b a",False,
 BW_E019,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. unstack(a,b)
 2. put-down(a)
 3. pick-up(c)
 4. stack(c,b)
 5. pick-up(a)
-6. stack(a,c)",False
+6. stack(a,c)",False,
 BW_E002,blocksworld,W2,anthropic/claude-3.7-sonnet,"1. pick-up a
 2. pick-up c
 3. put-down c
 4. pick-up a
 5. stack a c
 6. pick-up b
-7. stack b a",False
+7. stack b a",False,
 BW_E002,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(a)
 2. put-down(a)
 3. pick-up(c)
@@ -5720,28 +3876,28 @@ BW_E002,blocksworld,W4,anthropic/claude-3.7-sonnet,"1. pick-up(a)
 5. pick-up(a)
 6. stack(a,c)
 7. pick-up(b)
-8. stack(b,a)",False
+8. stack(b,a)",False,
 BW_E100,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Clara
 2. place Clara under Aaron
 3. release Clara
 4. select Brian
 5. place Brian under Clara
-6. release Brian",False
+6. release Brian",False,
 BW_E015,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Clara
 2. place Clara under Brian
 3. select Aaron
-4. place Aaron under Brian",False
+4. place Aaron under Brian",False,
 BW_E017,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Brian
 2. release Brian
 3. select Aaron
 4. place Aaron under Brian
 5. select Clara
-6. place Clara under Aaron",False
+6. place Clara under Aaron",False,
 BW_E019,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. remove Aaron from Brian
 2. select Aaron
 3. place Aaron under Clara
 4. select Brian
-5. place Brian under Aaron",False
+5. place Brian under Aaron",False,
 BW_E002,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Aaron
 2. select Brian
 3. release Brian
@@ -5751,23 +3907,23 @@ BW_E002,blocksworld,W3,anthropic/claude-3.7-sonnet,"1. select Aaron
 7. place Brian under Aaron
 8. release Aaron
 9. select Aaron
-10. place Aaron under Clara",False
+10. place Aaron under Clara",False,
 BW_E100,blocksworld,W2,openai/gpt-4o,"1. unstack c a
 2. put-down c
 3. pick-up b
-4. stack b c",False
+4. stack b c",False,
 BW_E100,blocksworld,W3,openai/gpt-4o,"1. select Brian
-2. place Brian under Clara",False
+2. place Brian under Clara",False,
 BW_E100,blocksworld,W4,openai/gpt-4o,"1. unstack c a  
 2. put-down c  
 3. pick-up b  
 4. stack b c  
 5. pick-up c  
-6. stack c a  ",False
+6. stack c a  ",False,
 BW_E015,blocksworld,W2,openai/gpt-4o,"1. pick-up c
 2. put-down c
 3. pick-up a
-4. stack a b",False
+4. stack a b",False,
 BW_E015,blocksworld,W3,openai/gpt-4o,"1. select Clara
 2. remove Clara from Brian
 3. release Clara
@@ -5775,25 +3931,25 @@ BW_E015,blocksworld,W3,openai/gpt-4o,"1. select Clara
 5. remove Brian from Clara
 6. release Brian
 7. select Aaron
-8. place Aaron under Brian",False
+8. place Aaron under Brian",False,
 BW_E015,blocksworld,W4,openai/gpt-4o,"1. pick-up a
 2. stack a c
 3. unstack c b
 4. put-down c
 5. pick-up a
-6. stack a b",False
+6. stack a b",False,
 BW_E017,blocksworld,W2,openai/gpt-4o,"1. pick-up a
 2. stack a b
 3. pick-up c
-4. stack c a",True
+4. stack c a",True,
 BW_E017,blocksworld,W3,openai/gpt-4o,"1. Select Clara
 2. Place Clara under Aaron
 3. Select Aaron
-4. Place Aaron under Brian",False
+4. Place Aaron under Brian",False,
 BW_E017,blocksworld,W4,openai/gpt-4o,"1. pick-up a  
 2. stack a b  
 3. pick-up c  
-4. stack c a  ",True
+4. stack c a  ",True,
 BW_E019,blocksworld,W2,openai/gpt-4o,"1. unstack a b
 2. put-down a
 3. pick-up c
@@ -5801,12 +3957,12 @@ BW_E019,blocksworld,W2,openai/gpt-4o,"1. unstack a b
 5. pick-up a
 6. stack a c
 7. pick-up b
-8. stack b a",False
+8. stack b a",False,
 BW_E019,blocksworld,W3,openai/gpt-4o,"1. select Aaron
 2. remove Aaron from Brian
 3. place Aaron under Clara
 4. select Brian
-5. place Brian under Aaron",False
+5. place Brian under Aaron",False,
 BW_E019,blocksworld,W4,openai/gpt-4o,"1. unstack a b
 2. put-down a
 3. pick-up b
@@ -5814,19 +3970,19 @@ BW_E019,blocksworld,W4,openai/gpt-4o,"1. unstack a b
 5. pick-up a
 6. stack a c
 7. pick-up b
-8. stack b a",False
+8. stack b a",False,
 BW_E002,blocksworld,W2,openai/gpt-4o,"1. pick-up a
 2. stack a c
 3. pick-up b
-4. stack b a",True
+4. stack b a",True,
 BW_E002,blocksworld,W3,openai/gpt-4o,"1. Select Brian
 2. Place Brian under Aaron
 3. Select Aaron
-4. Place Aaron under Clara",False
+4. Place Aaron under Clara",False,
 BW_E002,blocksworld,W4,openai/gpt-4o,"1. pick-up a
 2. stack a c
 3. pick-up b
-4. stack b a",True
+4. stack b a",True,
 BW_E100,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"This is a definition of a planning problem in the Blocksworld domain, specifically a variant of the 3-block problem.
 
 Here's a breakdown of the different components:
@@ -5841,7 +3997,7 @@ Here's a breakdown of the different components:
 4. `(:goal ...)` : This specifies the goal state of the world.
 	* The goal is to have blocks `b` and `c` stacked on top of each other, with `c` on top of `b`, and both blocks stacked on top of `a`.
 
-The goal is written using logical connectives (`and`) to express the requirement that both conditions must be met.",False
+The goal is written using logical connectives (`and`) to express the requirement that both conditions must be met.",False,
 BW_E100,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. pick-up b
 3. pick-up c
@@ -5849,11 +4005,11 @@ BW_E100,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 5. stack c b 
 6. unstack b c
 7. stack b a 
-8. put-down c",False
+8. put-down c",False,
 BW_E100,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Brian
 2. place Brian under Clara
 3. select Clara
-4. place Clara under Aaron",False
+4. place Clara under Aaron",False,
 BW_E100,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a b
 3. pick-up b
@@ -5865,7 +4021,7 @@ BW_E100,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 9. stack b c
 10. unstack c b
 11. unstack a b
-12. stack a c",False
+12. stack a c",False,
 BW_E100,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 2. unstack b c
 3. put-down b
@@ -5873,7 +4029,7 @@ BW_E100,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 5. unstack c b
 6. put-down c
 7. stack b a
-8. put-down b",False
+8. put-down b",False,
 BW_E015,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"It appears you've provided a definition for a problem in the planning domain of Blocksworld with 4 operators. I'll break down the key elements of this definition:
 
 ### Problem Definition
@@ -5898,13 +4054,13 @@ The initial state is defined by the `(:init...)` section. Key fluents in the ini
 
 ### Goal State
 
-The goal state is specified within the `(:goal...)` section. The goal is to have block `a` on top of block `b`, expressed as `(on a b)`. This is the final state the planner should aim to achieve through a sequence of actions from the initial state.",False
+The goal state is specified within the `(:goal...)` section. The goal is to have block `a` on top of block `b`, expressed as `(on a b)`. This is the final state the planner should aim to achieve through a sequence of actions from the initial state.",False,
 BW_E015,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a b
-3. unstack a b",False
+3. unstack a b",False,
 BW_E015,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Aaron
 2. place Aaron under Brian
-3. remove Aaron from Brian",False
+3. remove Aaron from Brian",False,
 BW_E015,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a b
 3. put-down a
@@ -6024,7 +4180,7 @@ BW_E015,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 117. pick-up a
 118. put-down c
 119. pick-up a
-120. stack a b",False
+120. stack a b",False,
 BW_E015,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
 2. unstack a b
 3. pick-up c
@@ -6032,7 +4188,7 @@ BW_E015,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
 5. put-down c 
 6. pick-up a 
 7. unstack c b
-8. put-down a",False
+8. put-down a",False,
 BW_E017,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"A simple block world problem definition in Planning Domain Definition Language (PDDL).
 
 Let's break it down:
@@ -6057,16 +4213,16 @@ Let's break it down:
 	+ `on a b`: Object `a` should be on top of object `b`.
 	+ `on c a`: Object `c` should be on top of object `a`.
 
-In other words, the goal is to stack objects `a` and `c` on top of each other, with `b` at the bottom.",False
+In other words, the goal is to stack objects `a` and `c` on top of each other, with `b` at the bottom.",False,
 BW_E017,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a
-5. put-down c",False
+5. put-down c",False,
 BW_E017,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Aaron
 2. place Aaron under Brian
 3. select Clara
-4. place Clara under Aaron",False
+4. place Clara under Aaron",False,
 BW_E017,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"Here is the plan π:
 
 1. pick-up(a)
@@ -6076,7 +4232,7 @@ BW_E017,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"Here is the plan π:
 5. stack(c, a)
 6. unstack(c, a)
 7. put-down(a)
-8. put-down(c)",False
+8. put-down(c)",False,
 BW_E017,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. unstack c a
 3. pick-up b
@@ -6085,7 +4241,7 @@ BW_E017,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 6. unstack b
 7. put-down b
 8. unstack c
-9. put-down c",False
+9. put-down c",False,
 BW_E019,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"It looks like you've defined a problem in the planning domain of Blocksworld-4ops. Here's a breakdown of the problem:
 
 **Problem Definition:**
@@ -6114,7 +4270,7 @@ BW_E019,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"It looks like yo
 	+ Block `a` is on top of block `c` (`(on a c)`).
 	+ Block `b` is on top of block `a` (`(on b a)`).
 
-This problem appears to be a variant of the classic Blocksworld problem, where the goal is to stack blocks on top of each other. The problem requires the planning agent to use four available operations ( likely `pickup`, `putdown`, `stack`, and `unstack`) to transform the initial state into the goal state.",False
+This problem appears to be a variant of the classic Blocksworld problem, where the goal is to stack blocks on top of each other. The problem requires the planning agent to use four available operations ( likely `pickup`, `putdown`, `stack`, and `unstack`) to transform the initial state into the goal state.",False,
 BW_E019,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
 2. stack b a
 3. pick-up c
@@ -6125,23 +4281,23 @@ BW_E019,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
 8. pick-up b
 9. stack b a
 10. put-down a
-11. unstack b a",False
+11. unstack b a",False,
 BW_E019,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Aaron
 2. place Aaron under Clara
 3. select Brian
-4. place Brian under Aaron",False
+4. place Brian under Aaron",False,
 BW_E019,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
 2. stack b c
 3. unstack b a
 4. stack b a
 5. pick-up a
-6. put-down a",False
+6. put-down a",False,
 BW_E019,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 2. stack c b
 3. pick-up a
 4. unstack b a
 5. put-down a
-6. put-down b",False
+6. put-down b",False,
 BW_E002,blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"A PDDL (Planning Domain Definition Language) problem definition!
 
 Let me break down the components of this problem definition:
@@ -6169,27 +4325,27 @@ The goal state is defined by the following conditions:
 * `(on a c)`: Block `a` is on top of block `c`.
 * `(on b a)`: Block `b` is on top of block `a`.
 
-In summary, the problem is to plan a sequence of actions to move blocks `a` and `b` on top of each other, with `a` on top of `c`. The agent starts with an empty hand and all blocks on the table.",False
+In summary, the problem is to plan a sequence of actions to move blocks `a` and `b` on top of each other, with `a` on top of `c`. The agent starts with an empty hand and all blocks on the table.",False,
 BW_E002,blocksworld,W2,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a c
 3. pick-up b
-4. stack b a",True
+4. stack b a",True,
 BW_E002,blocksworld,W3,meta-llama/llama-3.1-8b-instruct,"1. select Aaron
 2. place Aaron under Clara
 3. select Brian
-4. place Brian under Aaron",False
+4. place Brian under Aaron",False,
 BW_E002,blocksworld,W4,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. pick-up b
 3. stack b a
 4. stack a c
 5. put-down a
-6. put-down b",False
+6. put-down b",False,
 BW_E002,blocksworld,W5,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 2. unstack c a
 3. put-down a
 4. unstack a b
 5. put-down b
-6. put-down c",False
+6. put-down c",False,
 BW_155_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
 2. stack f h
 3. pick-up h
@@ -6197,7 +4353,7 @@ BW_155_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
 5. put-down h
 6. pick-up e
 7. stack i e
-8. stack j i",False
+8. stack j i",False,
 BW_010_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. put-down a
 3. stack a d
@@ -6209,7 +4365,7 @@ BW_010_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 9. pick-up d
 10. stack d e
 11. pick-up b
-12. stack b e",False
+12. stack b e",False,
 BW_001_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
 2. unstack f d
 3. stack f d
@@ -6235,7 +4391,7 @@ BW_001_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up d
 23. put-down i
 24. put-down g
 25. put-down j
-26. put-down b",False
+26. put-down b",False,
 BW_011_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a i
 3. put-down a
@@ -6259,12 +4415,12 @@ BW_011_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 21. put-down h
 22. put-down i
 23. put-down j
-24. put-down k",False
+24. put-down k",False,
 BW_120_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 2. stack c f
 3. pick-up g
 4. stack g j
-5. stack j f",False
+5. stack j f",False,
 BW_227_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. unstack a f
 2. stack a i
 3. pick-up f
@@ -6275,7 +4431,7 @@ BW_227_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. unstack a f
 8. stack k f
 9. pick-up c
 10. stack c i
-11. put-down k",False
+11. put-down k",False,
 BW_137_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
 2. put-down l
 3. pick-up d
@@ -6300,7 +4456,7 @@ BW_137_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up l
 22. pick-up l
 23. put-down l
 24. pick-up c
-25. stack l c",False
+25. stack l c",False,
 BW_172_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
 2. stack f g
 3. pick-up h
@@ -6322,7 +4478,7 @@ BW_172_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up f
 19. pick-up d
 20. stack d b
 21. pick-up a
-22. stack a k",False
+22. stack a k",False,
 BW_467_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up h
 2. stack h i
 3. unstack a i
@@ -6332,7 +4488,7 @@ BW_467_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up h
 7. pick-up f
 8. put-down f
 9. pick-up g
-10. stack g l",False
+10. stack g l",False,
 BW_080_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up e
 2. stack e i
 3. pick-up c
@@ -6342,12 +4498,12 @@ BW_080_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up e
 7. put-down e
 8. stack e c
 9. pick-up f
-10. put-down f",False
+10. put-down f",False,
 BW_E100_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack b a
 3. unstack b a
 4. pick-up b
-5. stack c b",False
+5. stack c b",False,
 BW_E015_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. pick-up b
 3. unstack b a
@@ -6357,23 +4513,23 @@ BW_E015_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 7. put-down b
 8. stack a c
 9. pick-up a
-10. stack b a",False
+10. stack b a",False,
 BW_E017_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack b c
 3. unstack b a
 4. unstack c a
 5. put-down b
-6. put-down c",False
+6. put-down c",False,
 BW_E019_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up b
 2. stack b c
-3. stack a b",False
+3. stack a b",False,
 BW_E002_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack b a
 3. put-down b
 4. pick-up a
 5. unstack b a
 6. put-down a
-7. pick-up c",False
+7. pick-up c",False,
 BW_080_W6,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack c i
 2. put-down c
 3. pick-up e
@@ -6383,7 +4539,7 @@ BW_080_W6,blocksworld,W6,anthropic/claude-3.7-sonnet,"1. unstack c i
 7. unstack j l
 8. put-down j
 9. pick-up c
-10. stack c i",False
+10. stack c i",False,
 BW_080_W6,blocksworld,W6,openai/gpt-4o,"1. unstack c i  
 2. put-down c  
 3. pick-up e  
@@ -6391,7 +4547,7 @@ BW_080_W6,blocksworld,W6,openai/gpt-4o,"1. unstack c i
 5. unstack f j  
 6. put-down f  
 7. unstack j l  
-8. put-down j",False
+8. put-down j",False,
 BW_080_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 2. stack e c
 3. unstack c i
@@ -6403,4 +4559,4 @@ BW_080_W6,blocksworld,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up c
 9. pick-up i
 10. put-down i
 11. pick-up j
-12. put-down j",False
+12. put-down j",False,
