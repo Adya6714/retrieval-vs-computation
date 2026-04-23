@@ -6,6 +6,8 @@ Blocksworld instances (GPT-4o). Only applies to Probe 2 Blocksworld instances.
 
 from __future__ import annotations
 
+import pandas as pd
+
 
 def compute_cci(
     problem_id: str,
@@ -50,3 +52,67 @@ def compute_cci(
         "executed_steps_length": exec_len,
         "length_mismatch": length_mismatch,
     }
+
+
+def aggregate_mean_cci_per_model(df: pd.DataFrame) -> pd.DataFrame:
+    """Aggregate mean CCI per model from a frame containing a cci_score column."""
+    required = {"model", "cci_score"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(f"df missing required columns: {sorted(missing)}")
+    rows: list[dict] = []
+    for model, group in df.groupby("model", dropna=False):
+        vals = pd.to_numeric(group["cci_score"], errors="coerce").dropna()
+        n = int(len(vals))
+        if n == 0:
+            continue
+        rows.append({"model": str(model), "mean_cci": float(vals.mean()), "n": n})
+    out = pd.DataFrame(rows)
+    return out.sort_values(["model"]).reset_index(drop=True) if not out.empty else out
+
+
+def aggregate_mean_tep_per_model(df: pd.DataFrame) -> pd.DataFrame:
+    """Aggregate mean TEP per model from a frame containing a tep_score column."""
+    required = {"model", "tep_score"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(f"df missing required columns: {sorted(missing)}")
+    rows: list[dict] = []
+    for model, group in df.groupby("model", dropna=False):
+        vals = pd.to_numeric(group["tep_score"], errors="coerce").dropna()
+        n = int(len(vals))
+        if n == 0:
+            continue
+        rows.append({"model": str(model), "mean_tep": float(vals.mean()), "n": n})
+    out = pd.DataFrame(rows)
+    return out.sort_values(["model"]).reset_index(drop=True) if not out.empty else out
+
+
+def aggregate_valid_divergence_rate_per_model(df: pd.DataFrame) -> pd.DataFrame:
+    """Aggregate valid_divergence rate per model."""
+    required = {"model", "valid_divergence"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(f"df missing required columns: {sorted(missing)}")
+    rows: list[dict] = []
+    for model, group in df.groupby("model", dropna=False):
+        vals = (
+            group["valid_divergence"]
+            .astype(str)
+            .str.strip()
+            .str.lower()
+            .map({"true": 1.0, "false": 0.0})
+            .dropna()
+        )
+        n = int(len(vals))
+        if n == 0:
+            continue
+        rows.append(
+            {
+                "model": str(model),
+                "valid_divergence_rate": float(vals.mean()),
+                "n": n,
+            }
+        )
+    out = pd.DataFrame(rows)
+    return out.sort_values(["model"]).reset_index(drop=True) if not out.empty else out

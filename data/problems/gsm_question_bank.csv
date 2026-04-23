@@ -1,0 +1,733 @@
+problem_id,variant_type,problem_text,correct_answer,problem_family,problem_subtype,difficulty,contamination_pole,source,verifier_function
+GSM_001,canonical,"To make a call from a hotel room phone, you must pay $0.9 for each minute of your call. After 20 minutes, that price drops to $0.5 per minute. How much would a 86-minute call cost?",51,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=0,verify_gsm_answer
+GSM_002,canonical,"There are 18 girls in the park. If there are two-thirds the number of boys in the park, how many kids are in the park?",30,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=0,verify_gsm_answer
+GSM_003,canonical,"In a set of artist's cards, there are 30 purple cards, and 50% more yellow cards. Blue cards are as many as the sum of purple and yellow cards. How many cards of all mentioned colors are there?",150,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=0,verify_gsm_answer
+GSM_004,canonical,"A painter works for 2 weeks every month and for 6 days every week. If he gets paid â‚£150 every day, how much does he earn if he works for a year?",21600,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=0,verify_gsm_answer
+GSM_005,canonical,There are 6 periods in the day for a normal student but Liam has to take 1 extra classes. Each class is 60 minutes long. He goes to class for 6 days a week. He then spends 1/7 of his weekly minutes each on Saturday and Sunday as extra learning time. How many hours a week does he spend learning?,54,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=0,verify_gsm_answer
+GSM_006,canonical,"Kayla buys 10 shares of a stock for â‚¬56 each. The stock price increases 30% the first year Kayla holds it, then decreases 25% in the second year. What is the final value of all Kayla's shares?",546,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=0,verify_gsm_answer
+GSM_007,canonical,Kai hires a luxury car from 1 PM to 5 PM. He gets 2 hours free. The first paid hour is $10 and each hour after that is twice the cost. How much did he pay?,30,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=0,verify_gsm_answer
+GSM_008,canonical,"A new virus infects 16 people. Every day, each infected person infects 3 others. How many people are infected after 3 days?",1024,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=0,verify_gsm_answer
+GSM_009,canonical,"If Nia eats 5 eggs a day for 84 days and then increases it to 7 eggs a day for 24 days, how many dozens of eggs will Nia need for 108 days?",49,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=0,verify_gsm_answer
+GSM_010,canonical,"Zahra is popping popcorn for a snack. As the pan of kernels heats up, the kernels start popping faster. 60 pop in the first 30 seconds of cooking, then 4 times that amount in the next 30 seconds. The kernels increase to 6 times the initial popping rate in the next 30 seconds, but in the final 30 seconds, the popping slows down to half the rate as the past 30 seconds. After Zahra takes the pan off the heat, a quarter of the number of kernels that popped in the final 30 seconds of cooking also pop from the residual heat. How many pieces of popcorn does Zahra have to eat?",885,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=0,verify_gsm_answer
+GSM_011,canonical,"Pavel wants to make different sized ice cubes with 328 grams of water. He can make giant cubes that use 12 grams per cube, medium cubes that use 11 grams, and small cubes that use 1/5 of gram. If he makes 8 giant cubes, 15 small cubes, and 13 medium cubes, how many grams of water does he have left?",86,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=0,verify_gsm_answer
+GSM_012,canonical,"Camila is an avid gardener. Two days ago, she received 29 new potted plants from her favorite plant nursery. She already has 7 potted plants on each of the 52 window ledges of her large country home. Feeling generous, she has decided that she will give 6 potted plants from each ledge to friends and family tomorrow. How many potted plants will Camila remain with?",81,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=0,verify_gsm_answer
+GSM_013,canonical,"Mia walks 24 kilometers every day on her favorite walking trail, which includes 12 kilometers of walking on the beach and 12 kilometers of walking on the sidewalk. On the sidewalk, Mia walks at two times the rate of speed that she does on the beach. If 60 minutes of her walk is spent on the beach, how long does it take for her to complete the entire 24-kilometer walk, in minutes?",90,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=0,verify_gsm_answer
+GSM_014,canonical,"A maintenance worker has to clean a university with 210 floors. They have 10 days to get it done. It takes them 20 minutes per floor. If they work 10 hours each day, what percentage of their day, on average, is spent cleaning floors?",70,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=0,verify_gsm_answer
+GSM_015,canonical,"Viktor has a plant stand at the town square. He sells three kinds of plants: tulips, roses and sunflowers. He usually sells tulips for â‚¬2.25 per bundle, roses for â‚¬5.13 per bundle and sunflowers for â‚¬5.47 per bundle. Viktor has no change today, so he has decided to round all his prices to the nearest dollar. If Viktor sells 12 bundles of tulips, 29 bundles of roses and 37 bundles of sunflowers, how much will he make?",354,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=0,verify_gsm_answer
+GSM_016,canonical,"A farmer is buying feed for his cows. He buys a variety of apples, corns, cucumbers and wheat. Since wheat are a rare treat, he only buys six 4-pound boxes of them for the whole stable. He only wants enough cucumbers to feed the cows while the vegetables are fresh, so he buys twelve 5-pound bags. Apples are the main diet of his cows, so he buys thirty two 43-pound packs. Corns are a staple to supplement the apples, so he buys eighteen 15-pound sacks. Finally, he buys 43 pounds of grocery, and 27 pounds of tools. A farm truck can carry 120 pounds at a time. How many trips does the farmer need to transport all the items, if he has three trucks?",5,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=0,verify_gsm_answer
+GSM_017,canonical,"Liam is selling cookies and orange pies for a fundraiser. On Friday, he sold 25 boxes of cookie and 13 fewer boxes of orange pie, than on Saturday. On Saturday, he sold 11 more boxes of cookies than on Friday and 22 boxes of orange pie. On Sunday, he sold as much as he did in the past two days combined. If the cookie cost Â¥12 and the orange pie cost Â¥21, how much was Liam's average daily earning?",922,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=0,verify_gsm_answer
+GSM_018,canonical,"In a 80-item quiz, 25% of the questions are physics, 15% are algebra, and the rest are equally divided as chemistry and history questions. If Emma is sure to get 25% of algebra questions, 10% of the physics questions, and 1/3 of the chemistry and history questions correctly, how many points is she sure to get?",21,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=0,verify_gsm_answer
+GSM_019,canonical,"Tariq watches TV after he finishes his homework every night. On Friday and Saturday, he watched 3-hour episodes of his favorite show each night. On Sunday, he watched a few episodes of a 45-minute show. On Monday, he finished homework early and watched a 4-hour episode and a 15-minute show. On Tuesday, he got to stay up late, so he watched four 2-hour episodes. On Wednesday, he watched three episodes, each 30 minutes. If he watched 22 hours of TV in all, how many 45-minute episodes did he watch on Sunday?",3,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=0,verify_gsm_answer
+GSM_020,canonical,"Zahra hid 10 dozen eggs in the yard for the Easter egg hunt. Ava finds 3 eggs. Quinn finds six times as many as Ava. Sophia finds 3 less than Quinn. Esteban finds 1/5 as many as Sophia, and Fatima finds three dozen eggs more than Quinn and Ava combined. How many eggs are still hidden in the yard?",24,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=0,verify_gsm_answer
+GSM_001,w1,"A hotel room phone charges $0.9 per minute for calls. Once the call goes beyond 20 minutes, the rate becomes $0.5 per minute. What is the total cost of a 86-minute call?",51,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=0,verify_gsm_answer
+GSM_002,w1,"In a park, the number of girls is 18. The number of boys is two-thirds of the number of girls. What is the total number of kids in the park?",30,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=0,verify_gsm_answer
+GSM_003,w1,An artist's card set contains 30 purple cards. The number of yellow cards is 50% greater than the purple cards. The number of blue cards equals the combined total of purple and yellow cards. What is the total number of cards across all three colors?,150,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=0,verify_gsm_answer
+GSM_004,w1,"Every month, a painter works 2 weeks, and each week he works 6 days. His daily wage is £150. What are his total earnings over the course of a year?",21600,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=0,verify_gsm_answer
+GSM_005,w1,"A regular school day has 6 periods, but Liam attends 1 additional class each day. Every class lasts 60 minutes. Liam goes to school 6 days a week. On both Saturday and Sunday, he spends 1/7 of his total weekly class minutes on extra learning each day. What is the total number of hours per week Liam spends learning?",54,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=0,verify_gsm_answer
+GSM_006,w1,"Kayla purchases 10 shares of a stock at Û56 per share. During the first year she holds the stock, its price goes up by 30%. In the second year, the price falls by 25%. What is the total value of Kayla's shares at the end of the second year?",546,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=0,verify_gsm_answer
+GSM_007,w1,"Kai rents a luxury car for the period between 1 PM and 5 PM. Of those 4 hours, 2 are free of charge. For the paid hours, the first costs $10, and every hour after that is double the previous hour's cost. What is the total amount Kai paid?",30,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=0,verify_gsm_answer
+GSM_008,w1,"A new virus begins by infecting 16 people. Each day, every person who is infected passes the virus on to 3 other people. What is the total number of infected people after 3 days?",1024,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=0,verify_gsm_answer
+GSM_009,w1,"For 84 days, Nia consumes 5 eggs daily, after which she raises her intake to 7 eggs per day for the next 24 days. How many dozens of eggs does Nia need in total over these 108 days?",49,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=0,verify_gsm_answer
+GSM_010,w1,"Zahra places a pan of popcorn kernels on the heat. In the first 30 seconds, 60 kernels pop. In the following 30 seconds, 4 times that number pop. The 30 seconds after that see the popping rate rise to 6 times the initial rate. In the last 30 seconds on the heat, the rate drops to half of what it was in the previous 30 seconds. Once the pan is removed, residual heat causes a quarter of the kernels that popped in the final 30 seconds to also pop. What is the total number of popcorn pieces Zahra ends up with?",885,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=0,verify_gsm_answer
+GSM_011,w1,"Pavel has 328 grams of water to use for making ice cubes of varying sizes. Giant cubes require 12 grams each, medium cubes need 11 grams each, and small cubes take 1/5 of a gram each. He makes 8 giant cubes, 13 medium cubes, and 15 small cubes. How many grams of water remain unused?",86,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=0,verify_gsm_answer
+GSM_012,w1,"Camila, who is passionate about gardening, already has 7 potted plants placed on each of the 52 window ledges in her large country home. Two days ago, she got 29 additional potted plants from her favorite nursery. Tomorrow, she plans to give away 6 plants from every ledge to her friends and family. How many potted plants will Camila be left with?",81,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=0,verify_gsm_answer
+GSM_013,w1,"Every day, Mia completes a 24-kilometer walk along her favorite trail, split equally between 12 kilometers on the beach and 12 kilometers on the sidewalk. Her walking speed on the sidewalk is twice her speed on the beach. She spends 60 minutes walking on the beach. How many total minutes does it take Mia to finish her full 24-kilometer walk?",90,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=0,verify_gsm_answer
+GSM_014,w1,"A university with 210 floors needs to be cleaned by a maintenance worker, who has 10 days to complete the task. Cleaning each floor takes 20 minutes, and the worker puts in 10 hours of work per day. On average, what percentage of the worker's daily hours is used for cleaning floors?",70,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=0,verify_gsm_answer
+GSM_015,w1,"At his town square plant stand, Viktor sells tulips, roses, and sunflowers. His usual prices are Û2.25 per bundle of tulips, Û5.13 per bundle of roses, and Û5.47 per bundle of sunflowers. Since Viktor has no change available today, he rounds every price to the nearest dollar. He sells 12 bundles of tulips, 29 bundles of roses, and 37 bundles of sunflowers. What is his total revenue?",354,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=0,verify_gsm_answer
+GSM_016,w1,"A farmer purchases feed for his cows, including apples, corns, cucumbers, and wheat. Wheat being a rare treat, he buys only six 4-pound boxes. For cucumbers, he buys twelve 5-pound bags, just enough to last while they are fresh. Apples, being the main diet, are bought in thirty-two 43-pound packs. Corns, which supplement the apples, are purchased in eighteen 15-pound sacks. In addition, he buys 43 pounds of grocery and 27 pounds of tools. Each farm truck holds 120 pounds per trip, and the farmer has three trucks. How many trips are needed to move all the items?",5,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=0,verify_gsm_answer
+GSM_017,w1,"For a fundraiser, Liam sells cookies and orange pies. On Friday, he sold 25 boxes of cookies, and the number of orange pie boxes sold was 13 fewer than the orange pies he would sell on Saturday. On Saturday, he sold 11 more boxes of cookies than on Friday and 22 boxes of orange pie. On Sunday, his total sales matched the combined total of Friday and Saturday. Cookies are priced at £12 per box and orange pies at £21 per box. What were Liam's average daily earnings?",922,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=0,verify_gsm_answer
+GSM_018,w1,"A quiz consists of 80 items, of which 25% are physics questions and 15% are algebra questions. The remaining questions are split equally between chemistry and history. Emma is expected to correctly answer 10% of the physics questions, 25% of the algebra questions, and 1/3 of both the chemistry and history questions. How many points in total is Emma certain to score?",21,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=0,verify_gsm_answer
+GSM_019,w1,"Every night after completing his homework, Tariq watches TV. On both Friday and Saturday, he watched a 3-hour episode of his favorite show. On Sunday, he watched several episodes of a 45-minute show. On Monday, since he finished homework early, he watched a 4-hour episode along with a 15-minute show. On Tuesday, staying up late allowed him to watch four 2-hour episodes. On Wednesday, he watched three 30-minute episodes. His total screen time for the week was 22 hours. How many 45-minute episodes did Tariq watch on Sunday?",3,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=0,verify_gsm_answer
+GSM_020,w1,"For an Easter egg hunt, Zahra hid 10 dozen eggs across the yard. Ava discovers 3 eggs. Quinn finds six times the number Ava found. Sophia collects 3 fewer eggs than Quinn. Esteban finds 1/5 of the number Sophia found. Fatima finds three dozen more eggs than the total found by Quinn and Ava together. How many of the hidden eggs remain in the yard?",24,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=0,verify_gsm_answer
+GSM_001,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Initial rate | $0.9 per minute (first 20 minutes) |
+| Secondary rate | $0.5 per minute (after 20 minutes) |
+| Call duration | 86 minutes |
+| Objective | Calculate the total cost of the call |
+
+**Constraints:**
+* Higher rate applies only to the first 20 minutes
+* Lower rate applies to the remaining 66 minutes
+* Result must be the sum of both billing tiers
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---
+",51,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=0,verify_gsm_answer
+GSM_002,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Number of girls in the park | 18 |
+| Number of boys | Two-thirds the number of girls |
+| Objective | Calculate the total number of kids in the park |
+
+**Constraints:**
+* Boys count is derived as two-thirds of the girls count
+* Total kids = girls + boys
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.",30,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=0,verify_gsm_answer
+GSM_003,w2,"| Parameter | Value |
+|---|---|
+| Purple cards | 30 |
+| Yellow cards | 50% more than purple cards |
+| Blue cards | Equal to purple + yellow |
+| Objective | Total cards |",150,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=0,verify_gsm_answer
+GSM_004,w2,"
+---
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Weeks worked per month | 2 |
+| Days worked per week | 6 |
+| Daily pay | £150 |
+| Duration of work | 1 year |
+| Objective | Calculate total earnings for the year |
+
+**Constraints:**
+* Total working days = weeks per month _ days per week _ months in a year
+* Total earnings = total working days _ daily pay
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---
+
+",21600,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=0,verify_gsm_answer
+GSM_005,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Periods for a normal student per day | 6 |
+| Extra classes Liam takes per day | 1 |
+| Duration of each class | 60 minutes |
+| Days attending class per week | 6 |
+| Extra learning time (Saturday) | 1/7 of weekly class minutes |
+| Extra learning time (Sunday) | 1/7 of weekly class minutes |
+| Objective | Calculate total hours Liam spends learning per week |
+
+**Constraints:**
+* Liam's daily classes = normal periods + extra class
+* Weekly class minutes = daily classes _ class duration _ days per week
+* Saturday and Sunday extra learning = 1/7 of weekly class minutes each
+* Total weekly learning = weekly class minutes + Saturday extra + Sunday extra
+* Final answer must be in hours
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---
+",54,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=0,verify_gsm_answer
+GSM_006,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Number of shares | 10 |
+| Purchase price per share | Û56 |
+| Price change in year 1 | +30% |
+| Price change in year 2 | -25% |
+| Objective | Calculate the final value of all of Kayla's shares |
+
+**Constraints:**
+* Year 1 value = purchase price _ 1.30
+* Year 2 value = Year 1 value _ 0.75
+* Final total value = final price per share _ number of shares
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+",546,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=0,verify_gsm_answer
+GSM_007,w2,"
+---
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Hire duration | 1 PM to 5 PM (4 hours total) |
+| Free hours | 2 |
+| Cost of first paid hour | $10 |
+| Cost of each subsequent paid hour | Twice the cost of the previous hour |
+| Objective | Calculate the total amount Kai paid |
+
+**Constraints:**
+* Total hours = 4; free hours = 2; therefore paid hours = 2
+* First paid hour = $10
+* Each hour after the first paid hour is twice the cost of the previous paid hour
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",30,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=0,verify_gsm_answer
+GSM_008,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Initial number of infected people | 16 |
+| New infections per infected person per day | 3 |
+| Number of days | 3 |
+| Objective | Calculate the total number of people infected after 3 days |
+
+**Constraints:**
+* Each day, every currently infected person infects 3 new people
+* Total infected grows each day by (current infected count _ 3)
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+",1024,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=0,verify_gsm_answer
+GSM_009,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Eggs eaten per day (first period) | 5 |
+| Duration of first period | 84 days |
+| Eggs eaten per day (second period) | 7 |
+| Duration of second period | 24 days |
+| Total duration | 108 days |
+| Objective | Calculate the total number of dozens of eggs Nia will need |
+
+**Constraints:**
+* Total eggs = (5 _ 84) + (7 _ 24)
+* Final answer must be in dozens (1 dozen = 12 eggs)
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",49,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=0,verify_gsm_answer
+GSM_010,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Kernels popped in first 30 seconds | 60 |
+| Kernels popped in next 30 seconds | 4 times the first 30 seconds |
+| Kernels popped in following 30 seconds | 6 times the initial rate |
+| Kernels popped in final 30 seconds | Half the rate of the previous 30 seconds |
+| Kernels popped from residual heat | A quarter of the final 30-second amount |
+| Objective | Calculate the total number of pieces of popcorn |
+
+**Constraints:**
+* Each interval's count is derived from the initial popping rate of 60
+* Residual heat pops an additional quarter of the final 30-second count
+* Total = sum of all four 30-second intervals + residual heat popped kernels
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---
+",885,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=0,verify_gsm_answer
+GSM_011,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Total water available | 328 grams |
+| Water per giant cube | 12 grams |
+| Water per medium cube | 11 grams |
+| Water per small cube | 1/5 gram |
+| Giant cubes made | 8 |
+| Medium cubes made | 13 |
+| Small cubes made | 15 |
+| Objective | Calculate the grams of water left after making all cubes |
+
+**Constraints:**
+* Water used = (giant cubes _ 12) + (medium cubes _ 11) + (small cubes _ 1/5)
+* Remaining water = total water _ water used
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",86,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=0,verify_gsm_answer
+GSM_012,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| New potted plants received two days ago | 29 |
+| Number of window ledges | 52 |
+| Potted plants per ledge (existing) | 7 |
+| Plants to be given away per ledge tomorrow | 6 |
+| Objective | Calculate how many potted plants Camila will have remaining |
+
+**Constraints:**
+* Total plants before giveaway = (ledges _ plants per ledge) + new plants received
+* Plants given away = ledges _ plants given per ledge
+* Remaining plants = total plants _ plants given away
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",81,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=0,verify_gsm_answer
+GSM_013,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Total daily walking distance | 24 kilometers |
+| Beach walking distance | 12 kilometers |
+| Sidewalk walking distance | 12 kilometers |
+| Speed on sidewalk | Two times the speed on the beach |
+| Time spent walking on the beach | 60 minutes |
+| Objective | Calculate the total time to complete the entire 24-kilometer walk, in minutes |
+
+**Constraints:**
+* Beach distance and sidewalk distance are equal (12 km each)
+* Sidewalk speed = 2 _ beach speed
+* Time on sidewalk = time on beach / 2 (since speed is double)
+* Total time = beach time + sidewalk time
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",90,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=0,verify_gsm_answer
+GSM_014,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Total floors to clean | 210 |
+| Days available | 10 |
+| Time per floor | 20 minutes |
+| Work hours per day | 10 hours |
+| Objective | Calculate the average percentage of the workday spent cleaning floors |
+
+**Constraints:**
+* Total cleaning time = total floors _ time per floor
+* Daily cleaning time = total cleaning time / number of days
+* Percentage = (daily cleaning time / total daily work minutes) _ 100
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",70,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=0,verify_gsm_answer
+GSM_015,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Tulip price per bundle (original) | Û2.25 |
+| Rose price per bundle (original) | Û5.13 |
+| Sunflower price per bundle (original) | Û5.47 |
+| Rounding rule | Round all prices to the nearest dollar |
+| Bundles of tulips sold | 12 |
+| Bundles of roses sold | 29 |
+| Bundles of sunflowers sold | 37 |
+| Objective | Calculate total earnings after rounding prices |
+
+**Constraints:**
+* All prices must be rounded to the nearest whole dollar before calculating
+* Total = (rounded tulip price _ 12) + (rounded rose price _ 29) + (rounded sunflower price _ 37)
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---
+",354,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=0,verify_gsm_answer
+GSM_016,w2,"
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Wheat | Six 4-pound boxes |
+| Cucumbers | Twelve 5-pound bags |
+| Apples | Thirty-two 43-pound packs |
+| Corns | Eighteen 15-pound sacks |
+| Grocery | 43 pounds |
+| Tools | 27 pounds |
+| Truck capacity | 120 pounds per trip |
+| Number of trucks | 3 |
+| Objective | Calculate the number of trips needed to transport all items |
+
+**Constraints:**
+* Total weight = sum of all items
+* Effective capacity per trip = truck capacity _ number of trucks
+* Number of trips = total weight / effective capacity per trip, rounded up
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+",5,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=0,verify_gsm_answer
+GSM_017,w2,"
+---
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Cookie boxes sold on Friday | 25 |
+| Orange pie boxes sold on Friday | 13 fewer than Saturday's orange pie sales |
+| Cookie boxes sold on Saturday | 11 more than Friday's cookie sales |
+| Orange pie boxes sold on Saturday | 22 |
+| Sales on Sunday | Equal to combined sales of Friday and Saturday |
+| Cookie price | £12 |
+| Orange pie price | £21 |
+| Objective | Calculate Liam's average daily earnings |
+
+**Constraints:**
+* Friday and Saturday sales must be calculated first before determining Sunday sales
+* Sunday sales (cookies + pies) = Friday total + Saturday total
+* Total earnings = (total cookie boxes _ £12) + (total orange pie boxes _ £21)
+* Average daily earnings = total earnings / 3 days
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+
+---",922,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=0,verify_gsm_answer
+GSM_018,w2,"
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Total quiz items | 80 |
+| Physics questions | 25% of total |
+| Algebra questions | 15% of total |
+| Chemistry questions | Half of remaining questions |
+| History questions | Half of remaining questions |
+| Emma's correct rate for algebra | 25% |
+| Emma's correct rate for physics | 10% |
+| Emma's correct rate for chemistry | 1/3 |
+| Emma's correct rate for history | 1/3 |
+| Objective | Calculate the total points Emma is sure to get |
+
+**Constraints:**
+* Remaining questions after physics and algebra are equally split between chemistry and history
+* Points per question = 1
+* Total sure points = sum of correct answers across all four subjects
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+",21,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=0,verify_gsm_answer
+GSM_019,w2,"
+---
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Friday TV | One 3-hour episode |
+| Saturday TV | One 3-hour episode |
+| Sunday TV | Some episodes of a 45-minute show (unknown) |
+| Monday TV | One 4-hour episode + one 15-minute show |
+| Tuesday TV | Four 2-hour episodes |
+| Wednesday TV | Three 30-minute episodes |
+| Total TV watched | 22 hours |
+| Objective | Calculate how many 45-minute episodes Tariq watched on Sunday |
+
+**Constraints:**
+* Total known TV time (excluding Sunday) must be subtracted from 22 hours
+* Remaining time = Sunday viewing time
+* Number of Sunday episodes = Sunday viewing time / 45 minutes
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.
+",3,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=0,verify_gsm_answer
+GSM_020,w2,"
+---
+
+**Problem Parameters:**
+| Parameter | Value |
+|---|---|
+| Total eggs hidden | 10 dozen |
+| Eggs found by Ava | 3 |
+| Eggs found by Quinn | Six times as many as Ava |
+| Eggs found by Sophia | 3 less than Quinn |
+| Eggs found by Esteban | 1/5 as many as Sophia |
+| Eggs found by Fatima | Three dozen more than Quinn and Ava combined |
+| Objective | Calculate how many eggs are still hidden in the yard |
+
+**Constraints:**
+* Each finder's count is derived from the values above
+* Total found = sum of all individual finds
+* Remaining eggs = total hidden _ total found
+
+Respond in this exact format:
+""number"" (without the quotes)
+No explanation. No other text.",24,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=0,verify_gsm_answer
+GSM_001,w3,"To complete a hiking trail, a hiker burns 0.9 calories for each minute of hiking. After 20 minutes, the terrain becomes easier and the burn rate drops to 0.5 calories per minute. How many calories would an 86-minute hike burn?
+Give just the final answer without units  and nothing else.",51,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=0,verify_gsm_answer
+GSM_002,w3,"There are 18 cats in the shelter. If there are two-thirds the number of dogs in the shelter, how many animals are in the shelter? Give just the final answer without units and nothing else.",30,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=0,verify_gsm_answer
+GSM_003,w3,"In a bag of marbles, there are 30 red marbles, and 50% more green marbles. White marbles are as many as the sum of red and green marbles. How many marbles of all mentioned colors are there?
+Give just the final answer without units and nothing else.",150,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=0,verify_gsm_answer
+GSM_004,w3,"A chef works for 2 weeks every month and for 6 days every week. If he gets paid ₣150 every day, how much does he earn if he works for a year?
+Give just the final answer without units and nothing else.",21600,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=0,verify_gsm_answer
+GSM_005,w3,"There are 6 shifts in the day for a normal worker but Jake has to take 1 extra shift. Each shift is 60 minutes long. He works for 6 days a week. He then spends 1/7 of his weekly minutes each on Saturday and Sunday as overtime. How many hours a week does he spend working?
+Give just the final answer without units and nothing else.",54,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=0,verify_gsm_answer
+GSM_006,w3,"Michael buys 10 paintings for €56 each. The painting value increases 30% the first year Michael holds them, then decreases 25% in the second year. What is the final value of all Michael's paintings?
+Give just the final answer without units and nothing else.",546,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=0,verify_gsm_answer
+GSM_007,w3,"Alex rents a boat from 1 PM to 5 PM. He gets 2 hours free. The first paid hour is $10 and each hour after that is twice the cost. How much did he pay?
+Give just the final answer without units and nothing else.",30,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=0,verify_gsm_answer
+GSM_008,w3,"A new rumor spreads to 16 people. Every day, each person who knows the rumor tells it to 3 others. How many people know the rumor after 3 days?
+Give just the final answer without units and nothing else.",1024,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=0,verify_gsm_answer
+GSM_009,w3,"If Jake plants 5 seeds a day for 84 days and then increases it to 7 seeds a day for 24 days, how many dozens of seeds will Jake need for 108 days?
+Give just the final answer without units and nothing else.",49,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=0,verify_gsm_answer
+GSM_010,w3,"A factory is producing toys as its machines warm up, the production speeds up. 60 toys are made in the first 30 minutes of operation, then 4 times that amount in the next 30 minutes. The production increases to 6 times the initial rate in the next 30 minutes, but in the final 30 minutes, the production slows down to half the rate of the past 30 minutes. After the factory shuts down, a quarter of the number of toys produced in the final 30 minutes are also completed from residual machine momentum. How many toys does the factory produce in total? Give just the final answer without units and nothing else.",885,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=0,verify_gsm_answer
+GSM_011,w3,"Sofia wants to make different sized candles with 328 grams of wax. She can make giant candles that use 12 grams per candle, medium candles that use 11 grams, and small candles that use 1/5 of a gram. If she makes 8 giant candles, 15 small candles, and 13 medium candles, how many grams of wax does she have left?
+Give just the final answer without units and nothing else.",86,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=0,verify_gsm_answer
+GSM_012,w3,"Oliver is an avid collector. Two days ago, he received 29 new figurines from his favorite hobby shop. He already has 7 figurines on each of the 52 shelves of his large country home. Feeling generous, he has decided that he will give 6 figurines from each shelf to friends and family tomorrow. How many figurines will Oliver remain with?
+Give just the final answer without units and nothing else.",81,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=0,verify_gsm_answer
+GSM_013,w3,"Jake cycles 24 kilometers every day on his favorite cycling route, which includes 12 kilometers of cycling through the park and 12 kilometers of cycling on the road. On the road, Jake cycles at two times the rate of speed that he does in the park. If 60 minutes of his ride is spent in the park, how long does it take for him to complete the entire 24-kilometer ride, in minutes?
+Give just the final answer without units and nothing else.",90,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=0,verify_gsm_answer
+GSM_014,w3,"A security guard has to inspect a skyscraper with 210 floors. They have 10 days to get it done. It takes them 20 minutes per floor. If they work 10 hours each day, what percentage of their day, on average, is spent inspecting floors?
+Give just the final answer without units and nothing else.",70,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=0,verify_gsm_answer
+GSM_015,w3,"Maria has a bakery stall at the town market. She sells three kinds of pastries: croissants, muffins and danishes. She usually sells croissants for €2.25 per batch, muffins for €5.13 per batch and danishes for €5.47 per batch. Maria has no change today, so she has decided to round all her prices to the nearest dollar. If Maria sells 12 batches of croissants, 29 batches of muffins and 37 batches of danishes, how much will she make?
+Give just the final answer without units and nothing else.",354,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=0,verify_gsm_answer
+GSM_016,w3,"A warehouse manager is ordering supplies for his workers. He orders a variety of notebooks, pens, staplers and paper. Since paper is a rare requirement, he only buys six 4-pound boxes of them for the whole warehouse. He only wants enough staplers to last while the current project is ongoing, so he buys twelve 5-pound bags. Notebooks are the main supply for his workers, so he buys thirty two 43-pound packs. Pens are a staple to supplement the notebooks, so he buys eighteen 15-pound sacks. Finally, he buys 43 pounds of groceries, and 27 pounds of equipment. A delivery truck can carry 120 pounds at a time. How many trips does the delivery service need to transport all the items, if there are three trucks?
+Give just the final answer without units and nothing else.",5,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=0,verify_gsm_answer
+GSM_017,w3,"Emma is selling brownies and lemon tarts for a fundraiser. On Friday, she sold 25 boxes of brownies and 13 fewer boxes of lemon tarts, than on Saturday. On Saturday, she sold 11 more boxes of brownies than on Friday and 22 boxes of lemon tarts. On Sunday, she sold as much as she did in the past two days combined. If the brownies cost ¥12 and the lemon tarts cost ¥21, how much was Emma's average daily earning?
+Give just the final answer without units and nothing else.",922,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=0,verify_gsm_answer
+GSM_018,w3,"A competitive exam consists of 80 questions, of which 25% are biology questions and 15% are geometry questions. The remaining questions are split equally between economics and geography. Jordan is expected to correctly answer 10% of the biology questions, 25% of the geometry questions, and 1/3 of both the economics and geography questions. How many points in total is Jordan certain to score?",21,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=0,verify_gsm_answer
+GSM_019,w3,"Sofia reads books after she finishes her chores every night. On Friday and Saturday, she read 3-hour chapters of her favorite book each night. On Sunday, she read a few sections of a 45-minute read. On Monday, she finished chores early and read a 4-hour chapter and a 15-minute section. On Tuesday, she got to stay up late, so she read four 2-hour chapters. On Wednesday, she read three sections, each 30 minutes. If she read for 22 hours in all, how many 45-minute sections did she read on Sunday? Give just the final answer without units and nothing else.
+Give just the final answer and nothing else.",3,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=0,verify_gsm_answer
+GSM_020,w3,"A teacher hid 10 dozen gold stars around the classroom for a treasure hunt. Ben finds 3 gold stars. Mia finds six times as many as Ben. Lucas finds 3 less than Mia. Zoe finds 1/5 as many as Lucas, and Ethan finds three dozen gold stars more than Mia and Ben combined. How many gold stars are still hidden in the classroom?
+Give just the final answer without units and nothing else.",24,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=0,verify_gsm_answer
+GSM_001,w4,"Define a piecewise cost function C(t) for a phone call of duration t minutes:
+
+C(t) = 0.9t, if t <= 20
+C(t) = 0.9(20) + 0.5(t - 20), if t > 20
+
+Find C(86). Give just the final answer without units and nothing else.",51,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=0,verify_gsm_answer
+GSM_002,w4,"Let g be the number of girls and b be the number of boys, where:
+
+g = 18
+b = g × (2/3)
+
+Find g + b.
+Give just the final answer without units and nothing else.",30,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=0,verify_gsm_answer
+GSM_003,w4,"Let P, Y, and B denote the number of purple, yellow, and blue cards respectively, where:
+
+P = 30
+Y = P × 1.5
+B = P + Y
+
+Find total number of cards. Give just the final answer without units and nothing else.",150,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=0,verify_gsm_answer
+GSM_004,w4,"Let w be the weeks worked per month, d be the days worked per week, p be the daily pay, and m be the number of months in a year, where:
+
+w = 2
+d = 6
+p = 150
+m = 12
+
+Find the total annual earnings.
+Give just the final answer without units and nothing else.",21600,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=0,verify_gsm_answer
+GSM_005,w4,"Let p = 6, e = 1, d = 60, n = 6.
+w = (p + e) * d * n
+x = w / 7
+y = w / 7
+total_min = w + x + y
+total_hr = total_min / 60
+
+Find total_hr.",54,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=0,verify_gsm_answer
+GSM_006,w4,"Let S be the initial price per share, n be the number of shares, r1 be the first year growth rate, and r2 be the second year decline rate, where:
+
+S = 56
+n = 10
+r1 = 1.30
+r2 = 0.75
+
+Find the final value of shares. Give just the final answer without units and nothing else.",546,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=0,verify_gsm_answer
+GSM_007,w4,"Let t be the total hours hired, f be the free hours, c be the cost of the first paid hour, and m be the multiplier for each subsequent hour, where:
+
+t = 4
+f = 2
+c = 10
+m = 2
+
+Find the total cost. Give just the final answer without units and nothing else.",30,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=0,verify_gsm_answer
+GSM_008,w4,"Let i be the initial number of infected people, r be the number of people each infected person infects per day, and d be the number of days, where:
+
+i = 16
+r = 3
+d = 3
+
+Find the total number of infected people after d days. Give just the final answer without units and nothing else.",1024,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=0,verify_gsm_answer
+GSM_009,w4,"Let e1 be the eggs per day in the first period, e2 be the eggs per day in the second period, d1 be the number of days in the first period, d2 be the number of days in the second period, and z be the number of eggs in a dozen, where:
+
+e1 = 5
+e2 = 7
+d1 = 84
+d2 = 24
+z = 12
+
+Find the total number of dozens needed. Give just the final answer without units and nothing else.",49,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=0,verify_gsm_answer
+GSM_010,w4,"Let k be the initial kernels popped in the first 30 seconds, where:
+
+k = 60
+k2 = 4 × k (kernels popped in the next 30 seconds)
+k3 = 6 × k (kernels popped in the following 30 seconds)
+k4 = k3 / 2 (kernels popped in the final 30 seconds)
+k5 = k4 / 4 (kernels popped from residual heat)
+
+Find the total number of popcorn pieces. Give just the final answer without units and nothing else.",885,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=0,verify_gsm_answer
+GSM_011,w4,"Let w be the total water, g be the grams per giant cube, m be the grams per medium cube, s be the grams per small cube, ng be the number of giant cubes, nm be the number of medium cubes, and ns be the number of small cubes, where:
+
+w = 328
+g = 12
+m = 11
+s = 1/5
+ng = 8
+nm = 13
+ns = 15
+
+Find the remaining grams of water.
+Give just the final answer without units and nothing else.",86,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=0,verify_gsm_answer
+GSM_012,w4,"Let n be the new plants received, l be the number of window ledges, p be the plants per ledge, and g be the plants given away per ledge, where:
+
+n = 29
+l = 52
+p = 7
+g = 6
+
+Find the total number of potted plants remaining.
+Give just the final answer without units and nothing else.",81,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=0,verify_gsm_answer
+GSM_013,w4,"Let db be the distance walked on the beach, ds be the distance walked on the sidewalk, tb be the time spent on the beach, and rs be the speed multiplier on the sidewalk, where:
+
+db = 12
+ds = 12
+tb = 60
+rs = 2
+
+Find the total time to complete the 24-kilometer walk in minutes.
+Give just the final answer without units and nothing else.",90,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=0,verify_gsm_answer
+GSM_014,w4,"Let f be the total floors, d be the number of days, t be the time per floor in minutes, h be the working hours per day, where:
+
+f = 210
+d = 10
+t = 20
+h = 10
+
+Find the percentage of the working day spent cleaning floors on average.
+Give just the final answer without units and nothing else.",70,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=0,verify_gsm_answer
+GSM_015,w4,"Let pt be the price per tulip bundle, pr be the price per rose bundle, ps be the price per sunflower bundle, nt be the number of tulip bundles, nr be the number of rose bundles, and ns be the number of sunflower bundles, where:
+
+pt = round(2.25) to nearest whole number
+pr = round(5.13) to nearest whole number
+ps = round(5.47) to nearest whole number
+nt = 12
+nr = 29
+ns = 37
+
+Find the total revenue.
+Give just the final answer without units and nothing else.",354,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=0,verify_gsm_answer
+GSM_016,w4,"Let wb be the weight per wheat box, cb be the weight per cucumber bag, ab be the weight per apple pack, cb2 be the weight per corn sack, nw be the number of wheat boxes, nc be the number of cucumber bags, na be the number of apple packs, ncorn be the number of corn sacks, g be the grocery weight, t be the tools weight, cap be the truck capacity, and nt be the number of trucks, where:
+
+wb = 4
+cb = 5
+ab = 43
+cb2 = 15
+nw = 6
+nc = 12
+na = 32
+ncorn = 18
+g = 43
+t = 27
+cap = 120
+nt = 3
+
+Find the number of trips needed.
+Give just the final answer without units and nothing else.",5,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=0,verify_gsm_answer
+GSM_017,w4,"Let cf be the cookies sold on Friday, cs be the cookies sold on Saturday, op_s be the orange pies sold on Saturday, op_f be the orange pies sold on Friday, pc be the price per cookie box, and pp be the price per orange pie box, where:
+
+cf = 25
+cs = cf + 11
+op_s = 22
+op_f = op_s - 13
+Sunday sales = Friday sales + Saturday sales
+pc = 12
+pp = 21
+
+Find the average daily earnings over 3 days.
+Give just the final answer without units and nothing else.",922,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=0,verify_gsm_answer
+GSM_018,w4,"Let q be the total number of questions, pp be the proportion of physics questions, pa be the proportion of algebra questions, pc be the proportion of chemistry questions, ph be the proportion of history questions, sp be the score rate for physics, sa be the score rate for algebra, and sc_sh be the score rate for chemistry and history, where:
+
+q = 80
+pp = 0.25
+pa = 0.15
+pc = ph = (1 - pp - pa) / 2
+sp = 0.10
+sa = 0.25
+sc_sh = 1/3
+
+Find the total points Emma is sure to get.
+Give just the final answer without units and nothing else.",21,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=0,verify_gsm_answer
+GSM_019,w4,"Let f be the hours watched on Friday, sa be the hours watched on Saturday, su be the hours watched on Sunday, mo be the hours watched on Monday, tu be the hours watched on Tuesday, we be the hours watched on Wednesday, e be the duration of each Sunday episode in minutes, and total be the total hours watched, where:
+
+f = 3
+sa = 3
+mo = 4 + (15/60)
+tu = 4 × 2
+we = 3 × (30/60)
+e = 45/60
+total = 22
+
+Find the number of 45-minute episodes watched on Sunday.
+Give just the final answer without units and nothing else.",3,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=0,verify_gsm_answer
+GSM_020,w4,"Let t be the total eggs, a be the eggs found by Ava, q be the eggs found by Quinn, s be the eggs found by Sophia, e be the eggs found by Esteban, and f be the eggs found by Fatima, where:
+
+t = 10 × 12
+a = 3
+q = 6 × a
+s = q - 3
+e = s / 5
+f = (q + a) + 3 × 12
+
+Find the number of eggs still hidden in the yard.
+Give just the final answer without units and nothing else.",24,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=0,verify_gsm_answer
+GSM_001,w5,"A hotel room call cost $51. For the first 20 minutes, the rate is $0.9 per minute. After that, the rate drops to $0.5 per minute. How many minutes long was the call? Give just the final answer and nothing else.",86,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=0,verify_gsm_answer
+GSM_002,w5,There are 30 kids in the park. The number of boys is two-thirds the number of girls. How many girls are in the park? Give just the final answer and nothing else.,18,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=0,verify_gsm_answer
+GSM_003,w5,There are 150 artist cards in total across three colors. Purple cards number 30. Yellow cards are 50% more than purple. How many blue cards are there? Give just the final answer and nothing else.,75,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=0,verify_gsm_answer
+GSM_004,w5,A painter earns £21600 in a year. He works 6 days every week and 2 weeks every month for the whole year. How much does he get paid per day? Give just the final answer  and nothing else.,150,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=0,verify_gsm_answer
+GSM_005,w5,"Liam spends 54 hours a week learning. He attends 6 days of school per week, with each class being 60 minutes long. He then spends 1/7 of his weekly school minutes each on Saturday and Sunday as extra learning time. How many classes per day does Liam attend? Give just the final answer and nothing else.",7,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=0,verify_gsm_answer
+GSM_006,w5,Kayla's 10 shares have a final value of €546. The stock price increased 30% in the first year and decreased 25% in the second year. What was the original price per share in euros? Give just the final answer and nothing else.,56,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=0,verify_gsm_answer
+GSM_007,w5,Kai paid $30 to hire a luxury car. He got 2 hours free. The first paid hour costs $10 and each hour after that is twice the cost of the previous. How many total hours did he hire the car for? Give the final answer and nothing else.,4,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=0,verify_gsm_answer
+GSM_008,w5,"After 3 days, 1024 people are infected by a virus. Each day, every infected person infects 3 others. How many people were infected on day 0? Give the final answer and nothing else.",16,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=0,verify_gsm_answer
+GSM_009,w5,"Nia needs 49 dozens of eggs for 108 days. For the first 84 days she eats a fixed number of eggs per day, then increases to 7 eggs a day for the remaining 24 days. How many eggs did she eat per day initially? Give the final answer and nothing else.",5,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=0,verify_gsm_answer
+GSM_010,w5,"Zahra ends up with 885 pieces of popcorn. In the first 30 seconds, a certain number of kernels pop. In the next 30 seconds, 4 times that amount pop. In the third 30 seconds, 6 times the initial rate pop. In the fourth 30 seconds, the rate halves from the previous interval. After removing from heat, a quarter of the final 30 seconds amount also pops. How many kernels popped in the first 30 seconds? Give the final answer and nothing else.",60,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=0,verify_gsm_answer
+GSM_011,w5,"Pavel has 86 grams of water left after making ice cubes. He made 8 giant cubes using 12 grams each, 15 small cubes using 1/5 of a gram each, and 13 medium cubes using 11 grams each. How many grams of water did he start with? Give the final answer and nothing else.",328,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=0,verify_gsm_answer
+GSM_012,w5,Camila ends up with 81 potted plants. Two days ago she received 29 new plants. She already had an equal number of plants on each of her 52 window ledges. Tomorrow she will give away 6 plants from each ledge. How many plants were originally on each ledge? Give the final answer and nothing else.,7,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=0,verify_gsm_answer
+GSM_013,w5,"Mia spends 90 minutes on her walk, with 60 minutes on the beach and the rest on the sidewalk. She walks at twice the speed on the sidewalk as on the beach. Both the beach and sidewalk sections are equal in distance. What is the total distance of her walk in kilometers? Give the final answer and nothing else.",24,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=0,verify_gsm_answer
+GSM_014,w5,A maintenance worker spends 70% of their 10-hour workday cleaning floors. They have 10 days to clean the entire university and it takes 20 minutes per floor. How many floors does the university have? Give the final answer and nothing else.,210,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=0,verify_gsm_answer
+GSM_015,w5,"Viktor makes €354 selling plants at the town square. He sells tulips at €2 per bundle, roses at €5 per bundle and sunflowers at €5 per bundle after rounding to the nearest dollar. He sells 12 bundles of tulips and 29 bundles of roses. How many bundles of sunflowers did he sell? Give the final answer and nothing else.",37,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=0,verify_gsm_answer
+GSM_016,w5,"A farmer needs 5 trips to transport all his items. He has 3 trucks, each carrying 120 pounds at a time. He buys six 4-pound boxes of wheat, twelve 5-pound bags of cucumbers, eighteen 15-pound sacks of corns, 43 pounds of grocery and 27 pounds of tools. He also buys thirty two packs of apples. How many pounds is each pack of apples? Give the final answer and nothing else.",43,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=0,verify_gsm_answer
+GSM_017,w5,Liam's average daily earning from a 3-day fundraiser was ¥922. On Friday he sold 25 boxes of cookies and 13 fewer boxes of orange pie than on Saturday. On Saturday he sold 11 more boxes of cookies than on Friday and 22 boxes of orange pie. On Sunday he sold as much as the past two days combined. Each box of cookies costs ¥12. How much does each box of orange pie cost? Give the final answer and nothing else.,21,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=0,verify_gsm_answer
+GSM_018,w5,"Emma is sure to get 21 points on a quiz. She gets 10% of physics questions, 25% of algebra questions, and 1/3 of both chemistry and history questions correct. Physics makes up 25% of the quiz and algebra makes up 15%. The remaining questions are equally divided between chemistry and history. How many items are in the quiz? Give the final answer and nothing else.",80,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=0,verify_gsm_answer
+GSM_019,w5,Tariq watched 3 episodes of a 45-minute show on Sunday. On Friday and Saturday he watched 3-hour episodes each night. On Monday he watched a 4-hour episode and a 15-minute show. On Tuesday he watched four 2-hour episodes. On Wednesday he watched three 30-minute episodes. How many total hours of TV did he watch across all days? Give the final answer and nothing else.,22,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=0,verify_gsm_answer
+GSM_020,w5,"After the Easter egg hunt, 24 eggs are still hidden in the yard. Ava found 3 eggs. Quinn found six times as many as Ava. Sophia found 3 less than Quinn. Esteban found 1/5 as many as Sophia. Fatima found three dozen eggs more than Quinn and Ava combined. How many dozen eggs did Zahra originally hide in the yard? Give the final answer and nothing else.",10,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=0,verify_gsm_answer
+GSM_001,w6,"To make a call from a phone booth, you must pay ₺0.9 for each minute of your call. After 10 minutes, the price drops to ₺0.6 per minute. After 35 minutes from the start of the call, the price drops even more to ₺0.4 per two minutes. If your total bill is more than ₺25, you get a 20% discount on your total bill. How much would a 115-minute call cost?",32,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=10 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_002,w6,"There are 39 girls in the yard. If there are two-sixths the number of boys in the yard, what percentage of the kids in the yard are girls?",75,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=44 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_003,w6,"In a set of athlete's cards, there are 36 purple cards, and 25% more green cards. Black cards are as many as the sum of purple and green cards. On average, how many cards per color are there?",54,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=62 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_004,w6,A carpenter works for 2 weeks every month and 2 days every week. He gets paid €20 every day. How much does he earn in a year after paying 20% in taxes?,768,arithmetic_reasoning,gsm_symbolic,easy,high,apple/ml-gsm-symbolic | template_id=70 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_005,w6,"There are 9 periods in the day for a normal student but Carlos has to take 2 extra classes. Each class is 35 minutes long, but he spends 5 minutes before each class to review the study materials and prepare. He goes to class for 5 days a week. He then spends 1/10 of his weekly minutes each on Saturday and Sunday as extra learning time. How many hours a week does he spend learning?",44,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=78 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_006,w6,"Sofia buys 6 shares of a stock for $35 each. The stock price increases 50% in the first year Sofia holds it, then decreases 20% in the second year. In the third year, the stock price increases by 25%. By the end of the third year, how much profit has Sofia made?",105,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=84 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_007,w6,Luis hires a boat from 2 PM to 9 PM. He gets 3 hours free. There is a fixed insurance cost of ₺20 as well. The first paid hour is ₺42 and each hour after that is thrice the cost. How much did he pay?,440,arithmetic_reasoning,gsm_symbolic,hard,high,apple/ml-gsm-symbolic | template_id=89 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_008,w6,"A new infection infects 24 people. Every day, each infected person infects 4 others. How many people are infected after 2 days?",600,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=98 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_009,w6,"If Benjamin eats 2 waffles a day for 56 days and then increases it to 11 waffles a day for the rest of the days, how many dozens of waffles will Benjamin need for 12 weeks?",35,arithmetic_reasoning,gsm_symbolic,medium,high,apple/ml-gsm-symbolic | template_id=99 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_010,w6,"Benjamin is popping popcorn for a snack. As the pan of kernels heats up, the kernels start popping faster. 80 pop in the first 26 seconds of cooking, then 2 times that amount in the next 26 seconds. The kernels increase to 3 times the initial popping rate in the next 26 seconds. In the final 26 seconds, the popping slows down to half the rate as the past 26 seconds. After Benjamin takes the pan off the heat, a quarter of the number of kernels that popped in the final 26 seconds of cooking also pop from the residual heat. Benjamin gives 1/7 of the made popcorn to his brother Yusuf. How many more pieces of popcorn does Benjamin have to eat than his brother?",450,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=4 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_011,w6,"Deshawn wants to make different sized ice cubes with 312 ounces of water. He can make giant cubes that use 15 ounces per cube, medium cubes that use 5 ounces, small cubes that use 1/2 of a ounce, and tiny cubes that are half the size of small cubes. He makes 46 total ice cubes, including 8 giant cubes, 14 small cubes, 12 medium cubes, and some tiny cubes. How many ounces of water does DeShawn have left?",122,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=11 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_012,w6,"Daphne is an avid gardener. Two days ago, she received 23 new potted plants from her favorite plant nursery. She already has 8 potted plants on each of the 56 window ledges of her large country home. She also purchased 200 new plants yesterday at a 50% discount. Feeling generous, she has decided that she will give 6 potted plants from each ledge to friends and family tomorrow. How many potted plants will Daphne remain with?",335,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=13 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_013,w6,"Olivia walks 29 miles every day on her favorite walking trail, which includes 13 miles of walking on the beach and 16 miles of walking on the sidewalk. On the sidewalk, Olivia walks at four times the rate of speed that she does on the beach. However, due to a recent injury, Olivia's speed has decreased by half both on the beach and sidewalk. If 65 minutes of her walk is spent on the beach, how long does it take for her to complete the entire 29-mile walk, in minutes?",85,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=17 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_014,w6,"A maintenance worker has to clean a university with 150 floors. They have 6 days to get it done. It takes them 6 minutes per floor. However, due to a recent injury, the maintenance worker has become slower and it will take them twice as long to clean a floor these days. If they work for 10 hours a day, what percentage of their day, on average, is spent cleaning floors?",50,arithmetic_reasoning,gsm_symbolic,medium,medium,apple/ml-gsm-symbolic | template_id=39 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_015,w6,"Luca has a flower stand at the town square. Luca sells three kinds of flowers: roses, sunflowers and daisies. Luca usually sells roses for ₣1.59 per bundle, sunflowers for ₣5.39 per bundle and daisies for ₣5.16 per bundle. Luca has no change today, so Luca has decided to round all his prices to the nearest dollar. Luca sells 6 bundles of roses, 24 bundles of sunflowers and 40 bundles of daisies. How much will Luca make, after receiving a 25% tip on every purchase?",415,arithmetic_reasoning,gsm_symbolic,hard,medium,apple/ml-gsm-symbolic | template_id=51 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_016,w6,"A farmer is buying feed for his sheep. He buys a variety of wheat, corn, beets and oats. Since oats are a rare treat, he only buys five 3-kg boxes of them for the whole stable. He only wants enough beets to feed the sheep while the vegetables are fresh, so he buys eleven 7-kg bags. Wheat are the main diet of his sheep, so he buys thirty four 44-kg packs. Corn are a staple to supplement the wheat, so he buys eighteen 19-kg sacks. Finally, he buys 43 kgs of groceries, and 27 kgs of tools, and 100 kgs of wood. A farm truck can carry 140 kgs at a time. If the farmer has three trucks, how many trips does the farmer need to transport all the purchased items?",5,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=7 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_017,w6,"Benjamin is selling cupcakes and pineapple pies for a fundraiser. On Wednesday, he sold 27 boxes of cupcake and 18 fewer boxes of pineapple pie, than on Thursday. On Thursday, he sold 12 more boxes of cupcakes than on Wednesday and 27 boxes of pineapple pie. On Friday, he sold as much as he did in the past two days combined. If the cupcake cost ¥8 and the pineapple pie cost ¥22, what was Benjamin's average daily earning?",880,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=16 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_018,w6,"In a 80-item quiz, 50% of the questions are chemistry, 5% are biology, and the rest are equally divided as geometry and literature questions. If Keisha is sure to get 25% of the biology questions, 70% of the chemistry questions, and a third of the geometry and literature questions correctly, how many points is she sure to get?",41,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=19 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_019,w6,"Liam watches TV after he finishes his homework every night. On Saturday and Sunday, he watched 5-hour episodes of his favorite show each night. On Monday, he watched a few episodes of a 30-minute show. On Tuesday, he finished homework early and watched a 4-hour episode and a 60-minute show. On Wednesday, he got to stay up late, so he watched three 3-hour episodes. On Thursday, he watched five episodes, each 30 minutes. If he watched 28 hours of TV in all, how many 30-minute episodes did he watch on Monday?",3,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=21 | instance=1 | variant=w6_procedural,verify_gsm_answer
+GSM_020,w6,"Ali initially had 11 dozen cookies, then ate 3 cookies for breakfast, and then hid the rest in the yard for the Easter egg hunt. Faisal finds 5 cookies. Hiroshi finds thrice as many as Faisal. Benjamin finds 3 less than Hiroshi. Wei finds a quarter as many as Benjamin, and Quinn finds three dozen cookies more than Hiroshi and Faisal combined. How many cookies are still hidden in the yard?",38,arithmetic_reasoning,gsm_p1p2,hard,medium,apple/ml-gsm-symbolic | template_id=47 | instance=1 | variant=w6_procedural,verify_gsm_answer

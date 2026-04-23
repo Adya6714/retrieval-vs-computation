@@ -1,0 +1,16 @@
+metric,model,contamination_pole,value,n
+mean_cci_excluding_valid_divergence,anthropic/claude-3.7-sonnet,,0.4677322677322676,13
+mean_cci_excluding_valid_divergence,meta-llama/llama-3.1-8b-instruct,,0.2110177404295051,17
+mean_cci_excluding_valid_divergence,openai/gpt-4o,,0.42170329670329665,13
+mean_tep,anthropic/claude-3.7-sonnet,,0.325,20
+mean_tep,meta-llama/llama-3.1-8b-instruct,,0.20611111111111113,20
+mean_tep,openai/gpt-4o,,0.1,20
+valid_divergence_rate,anthropic/claude-3.7-sonnet,,0.35,20
+valid_divergence_rate,meta-llama/llama-3.1-8b-instruct,,0.15,20
+valid_divergence_rate,openai/gpt-4o,,0.35,20
+mean_cci_by_contamination_excluding_valid_divergence,anthropic/claude-3.7-sonnet,high,0.5119047619047619,6
+mean_cci_by_contamination_excluding_valid_divergence,anthropic/claude-3.7-sonnet,medium,0.42987012987012985,7
+mean_cci_by_contamination_excluding_valid_divergence,meta-llama/llama-3.1-8b-instruct,high,0.2599206349206349,6
+mean_cci_by_contamination_excluding_valid_divergence,meta-llama/llama-3.1-8b-instruct,medium,0.18434343434343434,11
+mean_cci_by_contamination_excluding_valid_divergence,openai/gpt-4o,high,0.4775793650793651,6
+mean_cci_by_contamination_excluding_valid_divergence,openai/gpt-4o,medium,0.37380952380952376,7

@@ -11,7 +11,7 @@ def main():
     parser.add_argument(
         "--results", 
         type=str, 
-        default="results/contamination_triage.csv", 
+        default="results/BW_P3_RES_contamination_triage.csv",
         help="Path to contamination triage CSV"
     )
     args = parser.parse_args()

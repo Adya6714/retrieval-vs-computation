@@ -1,0 +1,1889 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty
+GSM_001,canonical,anthropic/claude-3.7-sonnet,"To solve this problem, I need to calculate the cost of a 86-minute phone call where:
+- First 20 minutes cost $0.9 per minute
+- Remaining minutes cost $0.5 per minute
+
+Step 1: Calculate the cost for the first 20 minutes.
+First 20 minutes = 20 × $0.9 = $18.00
+
+Step 2: Calculate the cost for the remaining minutes (after the first 20).
+Remaining minutes = 86 - 20 = 66 minutes
+Cost for remaining minutes = 66 × $0.5 = $33.00
+
+Step 3: Find the total cost by adding both parts.
+Total cost = $18.00 + $33.00 = $51.00
+
+Therefore, an 86-minute call would cost $51.00.",True,51,arithmetic_reasoning,high,medium
+GSM_002,canonical,anthropic/claude-3.7-sonnet,"I need to find the total number of kids in the park by adding the number of girls and boys.
+
+Given information:
+- There are 18 girls in the park
+- The number of boys is two-thirds the number of girls
+
+Step 1: Calculate the number of boys.
+Number of boys = 2/3 × 18 = 12
+
+Step 2: Find the total number of kids.
+Total number of kids = Number of girls + Number of boys
+Total number of kids = 18 + 12 = 30
+
+Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy
+GSM_003,canonical,anthropic/claude-3.7-sonnet,"# Problem: Finding total number of cards
+
+I'll solve this step by step.
+
+## Given:
+- 30 purple cards
+- Yellow cards are 50% more than purple cards
+- Blue cards equal the sum of purple and yellow cards
+
+## Step 1: Calculate the number of yellow cards.
+Yellow cards = 30 + 50% of 30
+Yellow cards = 30 + 0.5 × 30
+Yellow cards = 30 + 15 = 45
+
+## Step 2: Calculate the number of blue cards.
+Blue cards = Purple cards + Yellow cards
+Blue cards = 30 + 45 = 75
+
+## Step 3: Find the total number of cards.
+Total cards = Purple + Yellow + Blue
+Total cards = 30 + 45 + 75 = 150
+
+Therefore, there are 150 cards of all mentioned colors (purple, yellow, and blue).",True,150,arithmetic_reasoning,high,medium
+GSM_004,canonical,anthropic/claude-3.7-sonnet,"I need to calculate how much the painter earns in a year.
+
+Given:
+- The painter works 2 weeks every month
+- The painter works 6 days every week
+- The painter earns £150 per day
+- I need to find the earnings for 1 year (12 months)
+
+Step 1: Calculate how many days the painter works each month.
+Days per month = 2 weeks × 6 days per week = 12 days
+
+Step 2: Calculate how many days the painter works in a year.
+Days per year = 12 days per month × 12 months = 144 days
+
+Step 3: Calculate the total earnings for the year.
+Total earnings = 144 days × £150 per day = £21,600
+
+Therefore, the painter earns £21,600 in a year.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,canonical,anthropic/claude-3.7-sonnet,"# Finding hours per week Liam spends learning
+
+## School hours
+- Normal student: 6 periods per day
+- Liam: 7 periods per day (6 regular + 1 extra)
+- Each period: 60 minutes
+- School days per week: 6 days
+
+Total school minutes per week = 7 periods × 60 minutes × 6 days = 2,520 minutes
+
+## Weekend learning
+- Liam spends 1/7 of his weekly minutes on Saturday
+- He also spends 1/7 of his weekly minutes on Sunday
+
+Let's call the total weekly learning minutes ""t""
+
+From this information:
+- School minutes (2,520) + Saturday minutes (t/7) + Sunday minutes (t/7) = t
+
+Setting up the equation:
+2,520 + t/7 + t/7 = t
+2,520 + 2t/7 = t
+2,520 = t - 2t/7
+2,520 = 7t/7 - 2t/7
+2,520 = 5t/7
+2,520 × 7/5 = t
+17,640/5 = t
+3,528 = t
+
+Converting to hours:
+3,528 minutes ÷ 60 = 58.8 hours
+
+Therefore, Liam spends 58.8 hours per week learning.",False,54,arithmetic_reasoning,high,hard
+GSM_006,canonical,anthropic/claude-3.7-sonnet,"# Finding the Final Value of Kayla's Stock Shares
+
+I'll calculate the final value of Kayla's stock shares after the price changes over two years.
+
+## Given information:
+- Initial purchase: 10 shares at €56 each
+- First year: Price increases by 30%
+- Second year: Price decreases by 25%
+
+## Step 1: Calculate the initial total investment.
+Initial total value = 10 shares × €56 = €560
+
+## Step 2: Calculate the value after the first year (30% increase).
+Value after first year = €560 × (1 + 0.30) = €560 × 1.3 = €728
+
+## Step 3: Calculate the value after the second year (25% decrease).
+Value after second year = €728 × (1 - 0.25) = €728 × 0.75 = €546
+
+Therefore, the final value of all Kayla's shares is €546.",True,546,arithmetic_reasoning,high,medium
+GSM_007,canonical,anthropic/claude-3.7-sonnet,"I'll solve this step by step.
+
+First, I need to identify what hours Kai pays for and what the cost structure is.
+
+Given:
+- Kai hires a car from 1 PM to 5 PM (4 hours total)
+- He gets 2 hours free
+- The first paid hour costs $10
+- Each subsequent paid hour costs twice the previous hour
+
+Since Kai gets 2 hours free out of the 4 total hours, he pays for 2 hours.
+
+Let's calculate the cost:
+- First paid hour: $10
+- Second paid hour: $10 × 2 = $20
+
+Total payment = $10 + $20 = $30
+
+Therefore, Kai paid $30 for the luxury car rental.",True,30,arithmetic_reasoning,high,hard
+GSM_008,canonical,anthropic/claude-3.7-sonnet,"# Calculating Virus Spread
+
+I need to track the number of infected people over 3 days, where each infected person infects 3 new people daily.
+
+## Initial condition:
+- Day 0: 16 people are already infected
+
+## Calculating the spread:
+- Day 1: Each of the 16 infected people infects 3 new people
+  - New infections: 16 × 3 = 48 people
+  - Total infected by end of day 1: 16 + 48 = 64 people
+
+- Day 2: Each of the 64 infected people infects 3 new people
+  - New infections: 64 × 3 = 192 people
+  - Total infected by end of day 2: 64 + 192 = 256 people
+
+- Day 3: Each of the 256 infected people infects 3 new people
+  - New infections: 256 × 3 = 768 people
+  - Total infected by end of day 3: 256 + 768 = 1,024 people
+
+Therefore, after 3 days, 1,024 people are infected.",True,1024,arithmetic_reasoning,high,medium
+GSM_009,canonical,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the total number of eggs Nia eats over the 108 days, then convert that to dozens.
+
+First, let me calculate the eggs eaten during each period:
+- First 84 days: 5 eggs per day × 84 days = 420 eggs
+- Next 24 days: 7 eggs per day × 24 days = 168 eggs
+
+Total eggs for the entire 108 days:
+420 + 168 = 588 eggs
+
+To convert to dozens:
+588 eggs ÷ 12 eggs per dozen = 49 dozens
+
+Therefore, Nia will need 49 dozens of eggs for the 108 days.",False,49,arithmetic_reasoning,high,medium
+GSM_010,canonical,anthropic/claude-3.7-sonnet,"# Finding the total number of popcorn pieces
+
+Let me work through this step by step, tracking the popping rates and total kernels popped.
+
+## Initial conditions:
+- First 30 seconds: 60 kernels pop
+- This means the initial popping rate is 60 kernels per 30 seconds
+
+## Breaking down each time period:
+
+### First 30 seconds (0-30s):
+- 60 kernels pop
+- Total so far: 60 kernels
+
+### Second 30 seconds (30-60s):
+- 4 times the initial amount = 4 × 60 = 240 kernels
+- Total so far: 60 + 240 = 300 kernels
+
+### Third 30 seconds (60-90s):
+- 6 times the initial popping rate = 6 × 60 = 360 kernels
+- Total so far: 300 + 360 = 660 kernels
+
+### Fourth 30 seconds (90-120s):
+- Half the rate of the previous 30 seconds
+- Previous rate: 360 kernels
+- Half of that: 360 ÷ 2 = 180 kernels
+- Total so far: 660 + 180 = 840 kernels
+
+### After removing from heat (residual popping):
+- A quarter of the number that popped in the final 30 seconds
+- Final 30 seconds had: 180 kernels
+- A quarter of that: 180 × 0.25 = 45 kernels
+- Final total: 840 + 45 = 885 kernels
+
+Therefore, Zahra has 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,canonical,anthropic/claude-3.7-sonnet,"I need to calculate how much water Pavel uses and how much is left.
+
+Given:
+- Pavel has 328 grams of water in total
+- Giant cubes: 12 grams per cube
+- Medium cubes: 11 grams per cube
+- Small cubes: 1/5 gram per cube
+- Pavel makes: 8 giant cubes, 13 medium cubes, and 15 small cubes
+
+First, let's calculate how much water is used for each type of cube:
+- Giant cubes: 8 × 12 grams = 96 grams
+- Medium cubes: 13 × 11 grams = 143 grams
+- Small cubes: 15 × (1/5) gram = 15/5 = 3 grams
+
+Total water used = 96 + 143 + 3 = 242 grams
+
+Water remaining = Total water - Water used
+Water remaining = 328 - 242 = 86 grams
+
+Therefore, Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,canonical,anthropic/claude-3.7-sonnet,"I need to find the total number of potted plants Camila will have left after giving some away.
+
+First, let me find how many potted plants Camila has currently:
+- On each of her 52 window ledges, she has 7 potted plants
+- Total plants on window ledges = 52 × 7 = 364 plants
+- She also received 29 new potted plants
+- Total plants = 364 + 29 = 393 plants
+
+Now, let me determine how many plants Camila will give away:
+- She will give 6 plants from each of the 52 ledges
+- Total plants given away = 52 × 6 = 312 plants
+
+Therefore, the number of plants Camila will remain with:
+393 - 312 = 81 potted plants",True,81,arithmetic_reasoning,medium,medium
+GSM_013,canonical,anthropic/claude-3.7-sonnet,"# Finding the time for Mia to complete her 24-km walk
+
+I need to find:
+- How long it takes Mia to complete her entire walk
+
+Given information:
+- Total distance: 24 km
+- Beach distance: 12 km
+- Sidewalk distance: 12 km
+- Sidewalk speed is twice her beach speed
+- She spends 60 minutes on the beach
+
+Let me denote:
+- Beach speed = v km/min
+- Sidewalk speed = 2v km/min
+
+## Step 1: Use the time spent on the beach to find her beach speed.
+Time = Distance ÷ Speed
+60 minutes = 12 km ÷ v
+v = 12 km ÷ 60 minutes = 0.2 km/min
+
+## Step 2: Calculate her sidewalk speed.
+Sidewalk speed = 2v = 2 × 0.2 km/min = 0.4 km/min
+
+## Step 3: Calculate the time spent on the sidewalk.
+Time on sidewalk = Distance ÷ Speed
+Time on sidewalk = 12 km ÷ 0.4 km/min = 30 minutes
+
+## Step 4: Calculate the total time for the walk.
+Total time = Beach time + Sidewalk time
+Total time = 60 minutes + 30 minutes = 90 minutes
+
+Therefore, it takes Mia 90 minutes to complete her entire 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium
+GSM_014,canonical,anthropic/claude-3.7-sonnet,"# Problem: Finding the percentage of time spent cleaning floors
+
+## Given information:
+- Total floors: 210 floors
+- Time to clean one floor: 20 minutes
+- Available days: 10 days
+- Working hours per day: 10 hours per day
+
+## Step 1: Calculate the total time needed to clean all floors.
+Total cleaning time = 210 floors × 20 minutes/floor = 4,200 minutes
+
+## Step 2: Convert this time to hours.
+4,200 minutes ÷ 60 minutes/hour = 70 hours
+
+## Step 3: Calculate the time spent cleaning per day.
+Time spent cleaning per day = 70 hours ÷ 10 days = 7 hours/day
+
+## Step 4: Calculate the percentage of the workday spent cleaning.
+Percentage = (7 hours / 10 hours) × 100% = 70%
+
+Therefore, the maintenance worker spends 70% of their working day, on average, cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,canonical,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step.
+
+First, I need to round each price to the nearest dollar and then calculate the total sales.
+
+For tulips:
+- Original price: €2.25 per bundle
+- Rounded to nearest dollar: €2 per bundle (since 2.25 is closer to 2 than to 3)
+
+For roses:
+- Original price: €5.13 per bundle
+- Rounded to nearest dollar: €5 per bundle (since 5.13 is closer to 5 than to 6)
+
+For sunflowers:
+- Original price: €5.47 per bundle
+- Rounded to nearest dollar: €5 per bundle (since 5.47 is closer to 5 than to 6)
+
+Now I'll calculate how much Viktor will make:
+- Tulips: 12 bundles × €2 per bundle = €24
+- Roses: 29 bundles × €5 per bundle = €145
+- Sunflowers: 37 bundles × €5 per bundle = €185
+
+Total sales = €24 + €145 + €185 = €354
+
+Therefore, Viktor will make €354.",True,354,arithmetic_reasoning,medium,hard
+GSM_016,canonical,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step, calculating the total weight and determining how many truck trips are needed.
+
+First, let me calculate the weight of each type of item:
+
+1. Wheat: 6 boxes × 4 pounds = 24 pounds
+2. Cucumbers: 12 bags × 5 pounds = 60 pounds
+3. Apples: 32 packs × 43 pounds = 1,376 pounds
+4. Corn: 18 sacks × 15 pounds = 270 pounds
+5. Grocery: 43 pounds
+6. Tools: 27 pounds
+
+Total weight = 24 + 60 + 1,376 + 270 + 43 + 27 = 1,800 pounds
+
+Each truck can carry 120 pounds, and there are 3 trucks.
+Total capacity per trip = 3 trucks × 120 pounds = 360 pounds
+
+Number of trips needed = Total weight ÷ Total capacity per trip
+Number of trips needed = 1,800 ÷ 360 = 5
+
+Therefore, the farmer needs 5 trips to transport all the items using his three trucks.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,canonical,anthropic/claude-3.7-sonnet,"# Problem: Finding Liam's average daily earning from selling cookies and orange pies
+
+Let me organize the information and solve step by step.
+
+## Step 1: Determine how many boxes of each item were sold each day.
+
+**Friday:**
+- Cookies: 25 boxes
+- Orange pies: This is defined in relation to Saturday's orange pies
+
+**Saturday:**
+- Cookies: 25 + 11 = 36 boxes (11 more than Friday)
+- Orange pies: 22 boxes
+
+**For Friday's orange pies:**
+Since Friday had 13 fewer orange pies than Saturday:
+Friday's orange pies = 22 - 13 = 9 boxes
+
+## Step 2: Calculate total sales for Friday and Saturday.
+
+**Friday sales:**
+- Cookies: 25 boxes
+- Orange pies: 9 boxes
+
+**Saturday sales:**
+- Cookies: 36 boxes
+- Orange pies: 22 boxes
+
+## Step 3: Determine Sunday's sales.
+
+Sunday's sales = Friday's sales + Saturday's sales
+
+**Friday + Saturday totals:**
+- Cookies: 25 + 36 = 61 boxes
+- Orange pies: 9 + 22 = 31 boxes
+
+So on Sunday, Liam sold 61 boxes of cookies and 31 boxes of orange pies.
+
+## Step 4: Calculate total earnings for all three days.
+
+**Total boxes sold:**
+- Cookies: 25 + 36 + 61 = 122 boxes
+- Orange pies: 9 + 22 + 31 = 62 boxes
+
+**Total earnings:**
+- From cookies: 122 × ¥12 = ¥1,464
+- From orange pies: 62 × ¥21 = ¥1,302
+- Total earnings: ¥1,464 + ¥1,302 = ¥2,766
+
+## Step 5: Calculate average daily earnings.
+
+Average daily earnings = Total earnings ÷ Number of days
+Average daily earnings = ¥2,766 ÷ 3 = ¥922
+
+Therefore, Liam's average daily earning was ¥922.",True,922,arithmetic_reasoning,medium,hard
+GSM_018,canonical,anthropic/claude-3.7-sonnet,"# Finding the number of points Emma is sure to get
+
+First, I'll determine the number of questions in each subject:
+- Physics: 25% of 80 = 0.25 × 80 = 20 questions
+- Algebra: 15% of 80 = 0.15 × 80 = 12 questions
+- Chemistry and History (combined): 60% of 80 = 0.60 × 80 = 48 questions
+- Since Chemistry and History are equally divided, each has 48 ÷ 2 = 24 questions
+
+Next, I'll calculate how many questions Emma will get correct in each subject:
+- Algebra: 25% of 12 = 0.25 × 12 = 3 questions
+- Physics: 10% of 20 = 0.10 × 20 = 2 questions
+- Chemistry: 1/3 of 24 = 24 ÷ 3 = 8 questions
+- History: 1/3 of 24 = 24 ÷ 3 = 8 questions
+
+Total points Emma is sure to get = 3 + 2 + 8 + 8 = 21 points",True,21,arithmetic_reasoning,medium,hard
+GSM_019,canonical,anthropic/claude-3.7-sonnet,"# Solving for number of 45-minute episodes watched on Sunday
+
+I'll calculate the total TV time for each day, then determine how many 45-minute episodes were watched on Sunday.
+
+## TV watching by day:
+- Friday: 3 hours
+- Saturday: 3 hours
+- Sunday: Unknown number of 45-minute episodes (45 × n minutes)
+- Monday: 4 hours + 15 minutes = 4.25 hours
+- Tuesday: 4 episodes × 2 hours = 8 hours
+- Wednesday: 3 episodes × 30 minutes = 1.5 hours
+
+## Total known TV time:
+3 + 3 + 4.25 + 8 + 1.5 = 19.75 hours
+
+## Remaining time for Sunday:
+Total TV time is 22 hours
+22 - 19.75 = 2.25 hours = 135 minutes
+
+## Calculation:
+To find how many 45-minute episodes were watched on Sunday:
+135 minutes ÷ 45 minutes per episode = 3 episodes
+
+Therefore, Tariq watched 3 episodes of the 45-minute show on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,canonical,anthropic/claude-3.7-sonnet,"# Finding the number of eggs still hidden in the yard
+
+I need to find how many eggs each person found, then calculate how many are still hidden out of the original 10 dozen eggs.
+
+## Given information
+- Zahra hid 10 dozen eggs = 10 × 12 = 120 eggs
+- Ava found 3 eggs
+- Quinn found 6 times as many as Ava
+- Sophia found 3 less than Quinn
+- Esteban found 1/5 as many as Sophia
+- Fatima found three dozen eggs more than Quinn and Ava combined
+
+## Calculate how many eggs each person found
+- Ava: 3 eggs
+- Quinn: 6 × 3 = 18 eggs
+- Sophia: 18 - 3 = 15 eggs
+- Esteban: 1/5 × 15 = 3 eggs
+- Fatima: (Quinn + Ava) + 3 dozen = (18 + 3) + 36 = 21 + 36 = 57 eggs
+
+## Calculate total eggs found
+Total eggs found = Ava + Quinn + Sophia + Esteban + Fatima
+Total eggs found = 3 + 18 + 15 + 3 + 57 = 96 eggs
+
+## Calculate eggs still hidden
+Eggs still hidden = Total eggs - Total eggs found
+Eggs still hidden = 120 - 96 = 24 eggs
+
+Therefore, 24 eggs are still hidden in the yard.",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w1,anthropic/claude-3.7-sonnet,"To find the total cost of an 86-minute call, I need to calculate the charges for the first 20 minutes and then for the remaining 66 minutes at their respective rates.
+
+For the first 20 minutes:
+Cost = 20 minutes × $0.9/minute = $18
+
+For the remaining 66 minutes (from minute 21 to 86):
+Cost = 66 minutes × $0.5/minute = $33
+
+Total cost = $18 + $33 = $51
+
+Therefore, the total cost of an 86-minute call is $51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,w1,anthropic/claude-3.7-sonnet,"I need to find the total number of kids in the park by determining the number of boys and adding it to the given number of girls.
+
+Given:
+- Number of girls = 18
+- Number of boys = two-thirds of the number of girls
+
+Step 1: Calculate the number of boys.
+Number of boys = (2/3) × 18
+Number of boys = 12
+
+Step 2: Find the total number of kids.
+Total number of kids = Number of girls + Number of boys
+Total number of kids = 18 + 12
+Total number of kids = 30
+
+Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy
+GSM_003,w1,anthropic/claude-3.7-sonnet,"I'll solve this problem step by step.
+
+Given:
+- The artist has 30 purple cards
+- The number of yellow cards is 50% greater than the number of purple cards
+- The number of blue cards equals the combined total of purple and yellow cards
+
+Step 1: Find the number of yellow cards.
+Yellow cards = Purple cards + 50% of Purple cards
+Yellow cards = 30 + (50% × 30)
+Yellow cards = 30 + 15 = 45
+
+Step 2: Find the number of blue cards.
+Blue cards = Purple cards + Yellow cards
+Blue cards = 30 + 45 = 75
+
+Step 3: Find the total number of cards.
+Total cards = Purple cards + Yellow cards + Blue cards
+Total cards = 30 + 45 + 75 = 150
+
+Therefore, the total number of cards across all three colors is 150.",True,150,arithmetic_reasoning,high,medium
+GSM_004,w1,anthropic/claude-3.7-sonnet,"I'll solve this step by step to find the painter's annual earnings.
+
+First, I need to determine how many days the painter works in a year:
+
+1) The painter works 2 weeks per month
+2) Each week he works 6 days
+3) So in a month, he works: 2 weeks × 6 days = 12 days
+4) In a year (12 months), he works: 12 months × 12 days = 144 days
+
+Now, with his daily wage of £150, I can calculate his annual earnings:
+
+Annual earnings = Number of days worked × Daily wage
+Annual earnings = 144 days × £150
+Annual earnings = £21,600
+
+Therefore, the painter's total earnings over the course of a year are £21,600.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,w1,anthropic/claude-3.7-sonnet,"# Determining Liam's total learning hours per week
+
+I need to find:
+1. Regular school day class time
+2. Extra learning time on weekends
+3. Total weekly learning hours
+
+## Regular school days (6 days per week)
+- Regular school day: 6 periods at 60 minutes each = 360 minutes
+- Liam takes 1 additional class: 7 periods at 60 minutes each = 420 minutes
+- Weekly regular school time: 420 minutes × 6 days = 2,520 minutes
+
+## Weekend extra learning
+- Total weekly class minutes = 2,520 minutes
+- Fraction spent on extra learning each weekend day = 1/7 of total weekly class minutes
+- Extra learning on Saturday = 2,520 × (1/7) = 360 minutes
+- Extra learning on Sunday = 2,520 × (1/7) = 360 minutes
+- Total weekend extra learning = 360 + 360 = 720 minutes
+
+## Total weekly learning time
+- Regular school days = 2,520 minutes
+- Weekend extra learning = 720 minutes
+- Total weekly learning = 2,520 + 720 = 3,240 minutes
+
+## Converting to hours
+3,240 minutes ÷ 60 = 54 hours
+
+Therefore, Liam spends a total of 54 hours per week learning.",True,54,arithmetic_reasoning,high,hard
+GSM_006,w1,anthropic/claude-3.7-sonnet,"# Finding the total value of Kayla's shares
+
+I need to track how the value of Kayla's shares changes over time.
+
+**Initial purchase:**
+- Number of shares: 10
+- Price per share: $56
+- Total initial value: 10 × $56 = $560
+
+**After first year:**
+- Price increases by 30%
+- New price per share: $56 × (1 + 0.30) = $56 × 1.30 = $72.80
+- Total value after first year: 10 × $72.80 = $728
+
+**After second year:**
+- Price decreases by 25%
+- New price per share: $72.80 × (1 - 0.25) = $72.80 × 0.75 = $54.60
+- Total value after second year: 10 × $54.60 = $546
+
+The total value of Kayla's shares at the end of the second year is $546.",True,546,arithmetic_reasoning,high,medium
+GSM_007,w1,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the total cost of renting the luxury car for the 4-hour period from 1 PM to 5 PM, keeping in mind that 2 hours are free and the paid hours follow a specific pricing pattern.
+
+First, let me establish what I know:
+- Total rental period: 4 hours (1 PM to 5 PM)
+- 2 hours are free of charge
+- 2 hours are paid
+- For paid hours: first hour costs $10, and each subsequent hour costs double the previous hour
+
+For the paid hours, the costs would be:
+- First paid hour: $10
+- Second paid hour: $10 × 2 = $20
+
+So the total cost would be: $10 + $20 = $30
+
+Therefore, Kai paid $30 for the luxury car rental.",True,30,arithmetic_reasoning,high,hard
+GSM_008,w1,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step to find the total number of infected people after 3 days.
+
+Initially: 16 people are infected
+
+Day 1:
+- Each of the 16 initial people infects 3 new people
+- New infections on day 1 = 16 × 3 = 48 people
+- Total infected after day 1 = 16 + 48 = 64 people
+
+Day 2:
+- Each of the 64 infected people infects 3 new people
+- New infections on day 2 = 64 × 3 = 192 people
+- Total infected after day 2 = 64 + 192 = 256 people
+
+Day 3:
+- Each of the 256 infected people infects 3 new people
+- New infections on day 3 = 256 × 3 = 768 people
+- Total infected after day 3 = 256 + 768 = 1,024 people
+
+Therefore, the total number of infected people after 3 days is 1,024.",True,1024,arithmetic_reasoning,high,medium
+GSM_009,w1,anthropic/claude-3.7-sonnet,"I need to find the total number of eggs Nia consumes over the 108-day period.
+
+For the first 84 days:
+- She consumes 5 eggs per day
+- Total eggs for this period = 84 × 5 = 420 eggs
+
+For the next 24 days:
+- She consumes 7 eggs per day
+- Total eggs for this period = 24 × 7 = 168 eggs
+
+Total number of eggs consumed = 420 + 168 = 588 eggs
+
+To convert to dozens:
+588 eggs ÷ 12 eggs per dozen = 49 dozens
+
+Therefore, Nia needs 49 dozens of eggs in total over the 108 days.",False,49,arithmetic_reasoning,high,medium
+GSM_010,w1,anthropic/claude-3.7-sonnet,"# Solution to the Popcorn Popping Problem
+
+I'll track how many kernels pop in each 30-second interval.
+
+**First 30 seconds:**
+- 60 kernels pop
+
+**Second 30 seconds (30-60s):**
+- 4 times the initial rate = 4 × 60 = 240 kernels pop
+
+**Third 30 seconds (60-90s):**
+- 6 times the initial rate = 6 × 60 = 360 kernels pop
+
+**Fourth 30 seconds (90-120s):**
+- Half of the previous rate = 0.5 × 360 = 180 kernels pop
+
+**After removal (residual heat):**
+- Quarter of the kernels from the last 30 seconds = 0.25 × 180 = 45 kernels pop
+
+**Total number of popcorn pieces:**
+- 60 + 240 + 360 + 180 + 45 = 885 popcorn pieces
+
+Therefore, Zahra ends up with 885 pieces of popcorn.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,w1,anthropic/claude-3.7-sonnet,"I need to calculate how many grams of water Pavel uses to make the ice cubes, then subtract from his total to find how much remains.
+
+Given information:
+- Pavel has 328 grams of water total
+- Giant cubes require 12 grams each
+- Medium cubes need 11 grams each
+- Small cubes take 1/5 gram each
+- He makes 8 giant cubes, 13 medium cubes, and 15 small cubes
+
+Step 1: Calculate water used for giant cubes.
+Water for giant cubes = 8 cubes × 12 grams = 96 grams
+
+Step 2: Calculate water used for medium cubes.
+Water for medium cubes = 13 cubes × 11 grams = 143 grams
+
+Step 3: Calculate water used for small cubes.
+Water for small cubes = 15 cubes × (1/5) gram = 3 grams
+
+Step 4: Calculate total water used.
+Total water used = 96 + 143 + 3 = 242 grams
+
+Step 5: Calculate remaining water.
+Remaining water = 328 - 242 = 86 grams
+
+Therefore, Pavel has 86 grams of water remaining unused.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,w1,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step.
+
+First, let's determine how many potted plants Camila started with:
+- She has 52 window ledges
+- Each ledge has 7 potted plants
+- Total initial plants = 52 × 7 = 364 potted plants
+
+Next, let's add the new plants she got from the nursery:
+- Initial plants + new plants = 364 + 29 = 393 potted plants
+
+Now, she plans to give away plants:
+- She'll give away 6 plants from each of the 52 ledges
+- Total plants given away = 52 × 6 = 312 potted plants
+
+Therefore, the number of plants Camila will be left with:
+- Total plants - plants given away = 393 - 312 = 81 potted plants
+
+Camila will have 81 potted plants remaining after giving some away to her friends and family.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,w1,anthropic/claude-3.7-sonnet,"# Finding the total time for Mia's walk
+
+I need to calculate how long it takes Mia to complete her entire 24-kilometer walk.
+
+Given:
+- Total walk is 24 km: 12 km on beach + 12 km on sidewalk
+- Walking speed on sidewalk = 2 × walking speed on beach
+- Time spent on beach = 60 minutes
+
+Step 1: Find Mia's speed on the beach.
+Beach speed = Distance ÷ Time
+Beach speed = 12 km ÷ 60 minutes = 0.2 km/minute
+
+Step 2: Calculate her speed on the sidewalk.
+Sidewalk speed = 2 × Beach speed = 2 × 0.2 km/minute = 0.4 km/minute
+
+Step 3: Calculate time spent on the sidewalk.
+Sidewalk time = Distance ÷ Speed = 12 km ÷ 0.4 km/minute = 30 minutes
+
+Step 4: Calculate total time for the walk.
+Total time = Beach time + Sidewalk time = 60 minutes + 30 minutes = 90 minutes
+
+Therefore, Mia's full 24-kilometer walk takes 90 minutes.",True,90,arithmetic_reasoning,medium,medium
+GSM_014,w1,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find what percentage of the worker's daily hours is spent cleaning floors.
+
+Given:
+- 210 floors total need to be cleaned
+- Each floor takes 20 minutes to clean
+- The worker works 10 hours per day
+- The worker has 10 days to complete the task
+
+Step 1: Calculate the total time needed to clean all floors.
+Total cleaning time = 210 floors × 20 minutes per floor = 4,200 minutes
+
+Step 2: Convert this to hours.
+Total cleaning time in hours = 4,200 minutes ÷ 60 minutes/hour = 70 hours
+
+Step 3: Calculate how many hours the worker works in 10 days.
+Total work hours = 10 days × 10 hours per day = 100 hours
+
+Step 4: Calculate the percentage of work hours spent cleaning floors.
+Percentage = (Cleaning hours ÷ Total work hours) × 100%
+Percentage = (70 hours ÷ 100 hours) × 100% = 70%
+
+Therefore, on average, 70% of the worker's daily hours are used for cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,w1,anthropic/claude-3.7-sonnet,"# Finding Viktor's total revenue with rounded prices
+
+I need to calculate Viktor's revenue based on the rounded prices for each flower type and the given quantities.
+
+**Step 1**: Round each flower price to the nearest dollar.
+- Tulips: Û2.25 rounds to Û2
+- Roses: Û5.13 rounds to Û5
+- Sunflowers: Û5.47 rounds to Û5
+
+**Step 2**: Calculate the revenue for each flower type.
+- Tulips: 12 bundles × Û2 = Û24
+- Roses: 29 bundles × Û5 = Û145
+- Sunflowers: 37 bundles × Û5 = Û185
+
+**Step 3**: Find the total revenue.
+Total = Û24 + Û145 + Û185 = Û354
+
+Viktor's total revenue is Û354.",False,354,arithmetic_reasoning,medium,hard
+GSM_016,w1,anthropic/claude-3.7-sonnet,"# Finding the Number of Trips Needed
+
+I'll calculate the total weight of all items and then determine how many trips are needed with the three trucks.
+
+## Calculate the weight of each item:
+- Wheat: 6 boxes × 4 pounds = 24 pounds
+- Cucumbers: 12 bags × 5 pounds = 60 pounds
+- Apples: 32 packs × 43 pounds = 1,376 pounds
+- Corn: 18 sacks × 15 pounds = 270 pounds
+- Grocery: 43 pounds
+- Tools: 27 pounds
+
+## Calculate the total weight:
+24 + 60 + 1,376 + 270 + 43 + 27 = 1,800 pounds
+
+## Calculate number of trips:
+- Each truck can carry 120 pounds
+- Three trucks can carry 3 × 120 = 360 pounds per trip
+- Number of trips = Total weight ÷ Weight per trip = 1,800 ÷ 360 = 5 trips
+
+Therefore, the farmer needs 5 trips to move all the items.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,w1,anthropic/claude-3.7-sonnet,"# Finding Liam's Average Daily Earnings
+
+Let's work through this step by step, organizing what we know about Liam's sales over the three days.
+
+## Friday:
+- Cookies sold: 25 boxes
+- Orange pies sold: This is 13 fewer than Saturday's orange pies
+- Saturday's orange pies: 22 boxes
+- So Friday's orange pies: 22 - 13 = 9 boxes
+
+## Saturday:
+- Cookies sold: 25 + 11 = 36 boxes
+- Orange pies sold: 22 boxes
+
+## Sunday:
+- Total sales match the combined total of Friday and Saturday
+- Friday total items: 25 + 9 = 34 boxes
+- Saturday total items: 36 + 22 = 58 boxes
+- So Sunday total items: 34 + 58 = 92 boxes
+
+However, we don't know the specific breakdown between cookies and orange pies on Sunday. Let's call these:
+- Sunday cookies: c boxes
+- Sunday orange pies: p boxes
+
+We know:
+c + p = 92
+
+## Revenue Calculations:
+- Cookies: £12 per box
+- Orange pies: £21 per box
+
+For Friday:
+- Revenue = (25 × £12) + (9 × £21)
+- Revenue = £300 + £189 = £489
+
+For Saturday:
+- Revenue = (36 × £12) + (22 × £21)
+- Revenue = £432 + £462 = £894
+
+For Sunday:
+- Revenue = (c × £12) + (p × £21)
+- We know c + p = 92
+- So p = 92 - c
+- Revenue = 12c + 21(92 - c)
+- Revenue = 12c + 1,932 - 21c
+- Revenue = 1,932 - 9c
+
+To find the total revenue, we add all three days:
+Total revenue = £489 + £894 + (1,932 - 9c)
+Total revenue = £3,315 - 9c
+
+Since we don't have enough information to determine c exactly, let's use another approach.
+
+The problem asks for average daily earnings, which is the total revenue divided by 3 days.
+
+If the total items sold on Sunday equals the sum of Friday and Saturday (34 + 58 = 92 items), and the prices are fixed, then the total revenue for the three days must be:
+(Friday revenue + Saturday revenue) × 1.5 = (£489 + £894) × 1.5 = £1,383 × 1.5 = £2,074.50
+
+Therefore, the average daily earnings = £2,074.50 ÷ 3 = £691.50
+
+Actually, I made an error in my reasoning. Let me recalculate carefully.
+
+We need to find how many cookies and orange pies were sold on Sunday.
+
+Let's call them c and p respectively, where c + p = 92.
+
+The revenue for Sunday is 12c + 21p = 12c + 21(92-c) = 12c + 1,932 - 21c = 1,932 - 9c
+
+Total revenue = 489 + 894 + (1,932 - 9c) = 3,315 - 9c
+
+But we don't have a value for c. Let me try another approach.
+
+The key insight is that the total number of items sold on Sunday equals the total from Friday and Saturday combined. However, this doesn't mean the revenue is proportional because cookies and pies have different prices.
+
+Let's use algebra. If we let x = number of cookie boxes and y = number of orange pie boxes sold on Sunday:
+x + y = 92
+12x + 21y = Sunday revenue
+
+We need another constraint to solve this system. The problem doesn't provide another direct constraint, but let's consider what it means that ""his total sales matched the combined total of Friday and Saturday.""
+
+This could mean either:
+1. The number of items sold on Sunday equals the total number sold on Friday and Saturday
+2. The revenue on Sunday equals the total revenue from Friday and Saturday
+
+Let's assume it means the number of items. Then:
+x + y = (25 + 9) + (36 + 22) = 92
+
+Therefore, Sunday revenue = 12x + 21y where x + y = 92
+
+Total revenue = £489 + £894 + (12x + 21y)
+Average daily revenue = (£489 + £894 + (12x + 21y)) ÷ 3
+
+Without more constraints, I need to determine what the problem statement means. Based on careful reading, I believe it means the number of items sold on Sunday equals the total number from Friday and Saturday.
+
+The total revenue is therefore: £489 + £894 + (12x + 21y) where x + y = 92
+
+To calculate the average, we need the total revenue, which requires knowing the values of x and y.
+
+Let me solve this another way.
+
+The total revenue = 
+- Friday: 25 cookies × £12 + 9 pies × £12 = £300 + £189 = £489
+- Saturday: 36 cookies × £12 + 22 pies × £21 = £432 + £462 = £894
+- Sunday: Revenue from 92 items (mix of cookies and pies)
+
+The average daily revenue = (£489 + £894 + Sunday revenue) ÷ 3
+
+The answer must be £691.50.",False,922,arithmetic_reasoning,medium,hard
+GSM_018,w1,anthropic/claude-3.7-sonnet,"# Finding Emma's Expected Quiz Score
+
+I'll solve this step-by-step to find how many points Emma is expected to score.
+
+## Step 1: Find the number of questions in each subject
+The quiz has 80 total items.
+- Physics questions: 25% of 80 = 0.25 × 80 = 20 questions
+- Algebra questions: 15% of 80 = 0.15 × 80 = 12 questions
+- Remaining questions (chemistry and history): 80 - 20 - 12 = 48 questions
+- Since chemistry and history are split equally, each has 48 ÷ 2 = 24 questions
+
+## Step 2: Calculate how many questions Emma will answer correctly in each subject
+- Physics: 10% of 20 = 0.10 × 20 = 2 questions
+- Algebra: 25% of 12 = 0.25 × 12 = 3 questions
+- Chemistry: 1/3 of 24 = 24 ÷ 3 = 8 questions
+- History: 1/3 of 24 = 24 ÷ 3 = 8 questions
+
+## Step 3: Calculate Emma's total score
+Total correct answers = 2 + 3 + 8 + 8 = 21 points
+
+Therefore, Emma is expected to score 21 points on the quiz.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,w1,anthropic/claude-3.7-sonnet,"# Problem
+
+I need to find the number of 45-minute episodes Tariq watched on Sunday.
+
+Given information:
+- Friday: 3-hour episode
+- Saturday: 3-hour episode
+- Sunday: Several 45-minute episodes
+- Monday: 4-hour episode + 15-minute show
+- Tuesday: Four 2-hour episodes
+- Wednesday: Three 30-minute episodes
+- Total screen time for the week: 22 hours
+
+# Solution
+
+First, let's calculate the screen time for all days except Sunday:
+
+- Friday: 3 hours
+- Saturday: 3 hours
+- Monday: 4 hours + 15 minutes = 4.25 hours
+- Tuesday: 4 × 2 hours = 8 hours
+- Wednesday: 3 × 30 minutes = 90 minutes = 1.5 hours
+
+Total screen time (excluding Sunday) = 3 + 3 + 4.25 + 8 + 1.5 = 19.75 hours
+
+Since the total screen time for the week was 22 hours, the time spent watching TV on Sunday was:
+22 - 19.75 = 2.25 hours
+
+To find the number of 45-minute episodes watched on Sunday:
+2.25 hours = 2.25 × 60 = 135 minutes
+
+Number of episodes = 135 minutes ÷ 45 minutes = 3 episodes
+
+Therefore, Tariq watched 3 episodes of the 45-minute show on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,w1,anthropic/claude-3.7-sonnet,"# Solving the Easter Egg Hunt Problem
+
+I'll track how many eggs each person found, then calculate how many remain hidden.
+
+Given:
+- Zahra hid 10 dozen eggs = 10 × 12 = 120 eggs
+- Ava finds 3 eggs
+- Quinn finds 6 times Ava's amount
+- Sophia finds 3 fewer than Quinn
+- Esteban finds 1/5 of Sophia's amount
+- Fatima finds 3 dozen more than Quinn and Ava combined
+
+Let me calculate how many eggs each person found:
+
+1) Ava: 3 eggs
+
+2) Quinn: 6 × 3 = 18 eggs
+
+3) Sophia: 18 - 3 = 15 eggs
+
+4) Esteban: 1/5 × 15 = 3 eggs
+
+5) Fatima: (Quinn + Ava) + 3 dozen
+   = (18 + 3) + 36
+   = 21 + 36
+   = 57 eggs
+
+Total eggs found = Ava + Quinn + Sophia + Esteban + Fatima
+                 = 3 + 18 + 15 + 3 + 57
+                 = 96 eggs
+
+Number of eggs remaining = Total hidden - Total found
+                         = 120 - 96
+                         = 24 eggs
+
+Therefore, 24 eggs remain hidden in the yard.",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w2,anthropic/claude-3.7-sonnet,53,False,51,arithmetic_reasoning,high,medium
+GSM_002,w2,anthropic/claude-3.7-sonnet,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,w2,anthropic/claude-3.7-sonnet,"To find the total number of cards, I need to first determine the number of each color of cards.
+
+Given:
+- Purple cards = 30
+- Yellow cards = 50% more than purple cards
+- Blue cards = Equal to purple + yellow
+
+Step 1: Calculate the number of yellow cards.
+Yellow cards = Purple cards + 50% of Purple cards
+Yellow cards = 30 + (50% × 30)
+Yellow cards = 30 + 15
+Yellow cards = 45
+
+Step 2: Calculate the number of blue cards.
+Blue cards = Purple cards + Yellow cards
+Blue cards = 30 + 45
+Blue cards = 75
+
+Step 3: Calculate the total number of cards.
+Total cards = Purple cards + Yellow cards + Blue cards
+Total cards = 30 + 45 + 75
+Total cards = 150
+
+Therefore, the total number of cards is 150.",True,150,arithmetic_reasoning,high,medium
+GSM_004,w2,anthropic/claude-3.7-sonnet,1800,False,21600,arithmetic_reasoning,high,easy
+GSM_005,w2,anthropic/claude-3.7-sonnet,42,False,54,arithmetic_reasoning,high,hard
+GSM_006,w2,anthropic/claude-3.7-sonnet,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,w2,anthropic/claude-3.7-sonnet,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,w2,anthropic/claude-3.7-sonnet,100,False,1024,arithmetic_reasoning,high,medium
+GSM_009,w2,anthropic/claude-3.7-sonnet,48,False,49,arithmetic_reasoning,high,medium
+GSM_010,w2,anthropic/claude-3.7-sonnet,1185,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w2,anthropic/claude-3.7-sonnet,37.0,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w2,anthropic/claude-3.7-sonnet,79,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w2,anthropic/claude-3.7-sonnet,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,w2,anthropic/claude-3.7-sonnet,70,True,70,arithmetic_reasoning,medium,medium
+GSM_015,w2,anthropic/claude-3.7-sonnet,312,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w2,anthropic/claude-3.7-sonnet,72,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w2,anthropic/claude-3.7-sonnet,1045,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w2,anthropic/claude-3.7-sonnet,20,False,21,arithmetic_reasoning,medium,hard
+GSM_019,w2,anthropic/claude-3.7-sonnet,3,True,3,arithmetic_reasoning,medium,hard
+GSM_020,w2,anthropic/claude-3.7-sonnet,7,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w3,anthropic/claude-3.7-sonnet,51,True,51,arithmetic_reasoning,high,medium
+GSM_002,w3,anthropic/claude-3.7-sonnet,48,False,30,arithmetic_reasoning,high,easy
+GSM_003,w3,anthropic/claude-3.7-sonnet,135,False,150,arithmetic_reasoning,high,medium
+GSM_004,w3,anthropic/claude-3.7-sonnet,150 * 6 * 2 * 12 = 21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,w3,anthropic/claude-3.7-sonnet,49.5,False,54,arithmetic_reasoning,high,hard
+GSM_006,w3,anthropic/claude-3.7-sonnet,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,w3,anthropic/claude-3.7-sonnet,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,w3,anthropic/claude-3.7-sonnet,16 * 4^3 = 16 * 64 = 1024,True,1024,arithmetic_reasoning,high,medium
+GSM_009,w3,anthropic/claude-3.7-sonnet,53.5,False,49,arithmetic_reasoning,high,medium
+GSM_010,w3,anthropic/claude-3.7-sonnet,870,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w3,anthropic/claude-3.7-sonnet,139,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w3,anthropic/claude-3.7-sonnet,7*52+29-6*52=365+29-312=82,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w3,anthropic/claude-3.7-sonnet,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,w3,anthropic/claude-3.7-sonnet,70,True,70,arithmetic_reasoning,medium,medium
+GSM_015,w3,anthropic/claude-3.7-sonnet,328,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w3,anthropic/claude-3.7-sonnet,"I need to find the total weight of all items and then determine how many truck trips are needed.
+
+Total weight calculation:
+- Paper: 6 boxes × 4 pounds = 24 pounds
+- Staplers: 12 bags × 5 pounds = 60 pounds
+- Notebooks: 32 packs × 43 pounds = 1376 pounds
+- Pens: 18 sacks × 15 pounds = 270 pounds
+- Groceries: 43 pounds
+- Equipment: 27 pounds
+
+Total weight = 24 + 60 + 1376 + 270 + 43 + 27 = 1800 pounds
+
+With 3 trucks that can each carry 120 pounds per trip:
+- Capacity per trip = 3 × 120 = 360 pounds
+- Number of trips needed = 1800 ÷ 360 = 5
+
+5",True,5,arithmetic_reasoning,medium,hard
+GSM_017,w3,anthropic/claude-3.7-sonnet,753,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w3,anthropic/claude-3.7-sonnet,"# Finding the number of points Jordan is expected to score
+
+Let's break down this problem step by step.
+
+First, I need to determine the number of questions in each subject:
+- Total questions: 80
+- Biology: 25% of 80 = 0.25 × 80 = 20 questions
+- Geometry: 15% of 80 = 0.15 × 80 = 12 questions
+- Remaining questions: 80 - 20 - 12 = 48 questions
+- These 48 questions are split equally between economics and geography
+- So Economics: 48 ÷ 2 = 24 questions
+- And Geography: 48 ÷ 2 = 24 questions
+
+Now, let's calculate how many questions Jordan will answer correctly in each subject:
+- Biology: 10% of 20 = 0.1 × 20 = 2 questions
+- Geometry: 25% of 12 = 0.25 × 12 = 3 questions
+- Economics: 1/3 of 24 = (1/3) × 24 = 8 questions
+- Geography: 1/3 of 24 = (1/3) × 24 = 8 questions
+
+Total points Jordan is expected to score:
+= 2 + 3 + 8 + 8 = 21 points
+
+Therefore, Jordan is expected to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,w3,anthropic/claude-3.7-sonnet,2,False,3,arithmetic_reasoning,medium,hard
+GSM_020,w3,anthropic/claude-3.7-sonnet,68,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w4,anthropic/claude-3.7-sonnet,53,False,51,arithmetic_reasoning,high,medium
+GSM_002,w4,anthropic/claude-3.7-sonnet,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,w4,anthropic/claude-3.7-sonnet,105,False,150,arithmetic_reasoning,high,medium
+GSM_004,w4,anthropic/claude-3.7-sonnet,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,w4,anthropic/claude-3.7-sonnet,"I'll solve this step by step.
+
+Given:
+- p = 6
+- e = 1
+- d = 60
+- n = 6
+
+First, let's calculate w:
+w = (p + e) * d * n
+w = (6 + 1) * 60 * 6
+w = 7 * 60 * 6
+w = 2520 minutes
+
+Next, let's calculate x:
+x = w / 7
+x = 2520 / 7
+x = 360 minutes
+
+Similarly for y:
+y = w / 7
+y = 2520 / 7
+y = 360 minutes
+
+Now, let's find total_min:
+total_min = w + x + y
+total_min = 2520 + 360 + 360
+total_min = 3240 minutes
+
+Finally, calculate total_hr:
+total_hr = total_min / 60
+total_hr = 3240 / 60
+total_hr = 54 hours
+
+Therefore, total_hr = 54.",True,54,arithmetic_reasoning,high,hard
+GSM_006,w4,anthropic/claude-3.7-sonnet,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,w4,anthropic/claude-3.7-sonnet,70,False,30,arithmetic_reasoning,high,hard
+GSM_008,w4,anthropic/claude-3.7-sonnet,400,False,1024,arithmetic_reasoning,high,medium
+GSM_009,w4,anthropic/claude-3.7-sonnet,49,True,49,arithmetic_reasoning,high,medium
+GSM_010,w4,anthropic/claude-3.7-sonnet,1170,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w4,anthropic/claude-3.7-sonnet,95,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w4,anthropic/claude-3.7-sonnet,"To find the total number of potted plants remaining, I need to:
+
+1. Calculate the starting number of plants: 
+   Starting plants = l × p = 52 × 7 = 364 plants
+
+2. Add the new plants received:
+   After receiving new plants = 364 + 29 = 393 plants
+
+3. Subtract the plants given away:
+   Plants given away = l × g = 52 × 6 = 312 plants
+
+4. Calculate the remaining plants:
+   Remaining plants = 393 - 312 = 81
+
+81",True,81,arithmetic_reasoning,medium,medium
+GSM_013,w4,anthropic/claude-3.7-sonnet,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,w4,anthropic/claude-3.7-sonnet,"To find the percentage of the working day spent cleaning floors on average, I need to:
+
+1) Calculate the total time spent cleaning all floors in minutes:
+   Total cleaning time = f × t = 210 × 20 = 4,200 minutes
+
+2) Calculate the total working time over d days in minutes:
+   Total working time = d × h × 60 = 10 × 10 × 60 = 6,000 minutes
+
+3) Calculate the average percentage of the working day spent cleaning:
+   Percentage = (Total cleaning time / Total working time) × 100
+   Percentage = (4,200 / 6,000) × 100 = 70
+
+70",True,70,arithmetic_reasoning,medium,medium
+GSM_015,w4,anthropic/claude-3.7-sonnet,413,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w4,anthropic/claude-3.7-sonnet,8,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w4,anthropic/claude-3.7-sonnet,"To find the average daily earnings over 3 days, I need to calculate:
+1) Total sales over 3 days
+2) Divide by 3
+
+Given information:
+- Friday cookie sales (cf) = 25 boxes
+- Saturday cookie sales (cs) = cf + 11 = 25 + 11 = 36 boxes
+- Saturday orange pie sales (op_s) = 22 boxes
+- Friday orange pie sales (op_f) = op_s - 13 = 22 - 13 = 9 boxes
+- Sunday sales = Friday sales + Saturday sales
+- Price per cookie box (pc) = $12
+- Price per orange pie box (pp) = $21
+
+First, I calculate earnings for Friday:
+Friday earnings = (cf × pc) + (op_f × pp) = (25 × 12) + (9 × 21) = 300 + 189 = $489
+
+For Saturday:
+Saturday earnings = (cs × pc) + (op_s × pp) = (36 × 12) + (22 × 21) = 432 + 462 = $894
+
+Since Sunday sales = Friday sales + Saturday sales:
+Sunday earnings = Friday earnings + Saturday earnings = 489 + 894 = $1,383
+
+Total earnings over 3 days = 489 + 894 + 1,383 = $2,766
+
+Average daily earnings = 2,766 ÷ 3 = $922
+
+922",True,922,arithmetic_reasoning,medium,hard
+GSM_018,w4,anthropic/claude-3.7-sonnet,17.4,False,21,arithmetic_reasoning,medium,hard
+GSM_019,w4,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the number of episodes watched on Sunday.
+
+I'll first calculate the total hours watched based on the given values:
+- Friday (f) = 3 hours
+- Saturday (sa) = 3 hours
+- Monday (mo) = 4 + (15/60) = 4.25 hours
+- Tuesday (tu) = 4 × 2 = 8 hours
+- Wednesday (we) = 3 × (30/60) = 3 × 0.5 = 1.5 hours
+
+The total hours watched is given as 22 hours.
+
+I need to determine Sunday (su) hours:
+su = total - (f + sa + mo + tu + we)
+su = 22 - (3 + 3 + 4.25 + 8 + 1.5)
+su = 22 - 19.75
+su = 2.25 hours
+
+Since each Sunday episode (e) is 45/60 = 0.75 hours, the number of episodes is:
+Number of episodes = su ÷ e
+Number of episodes = 2.25 ÷ 0.75
+Number of episodes = 3
+
+3",True,3,arithmetic_reasoning,medium,hard
+GSM_020,w4,anthropic/claude-3.7-sonnet,4,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w5,anthropic/claude-3.7-sonnet,82 minutes,False,86,arithmetic_reasoning,high,medium
+GSM_002,w5,anthropic/claude-3.7-sonnet,18,True,18,arithmetic_reasoning,high,easy
+GSM_003,w5,anthropic/claude-3.7-sonnet,75,True,75,arithmetic_reasoning,high,medium
+GSM_004,w5,anthropic/claude-3.7-sonnet,£180,False,150,arithmetic_reasoning,high,easy
+GSM_005,w5,anthropic/claude-3.7-sonnet,8,False,7,arithmetic_reasoning,high,hard
+GSM_006,w5,anthropic/claude-3.7-sonnet,€30,False,56,arithmetic_reasoning,high,medium
+GSM_007,w5,anthropic/claude-3.7-sonnet,3 hours,False,4,arithmetic_reasoning,high,hard
+GSM_008,w5,anthropic/claude-3.7-sonnet,4,False,16,arithmetic_reasoning,high,medium
+GSM_009,w5,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the number of eggs Nia ate per day during the first 84 days.
+
+Given:
+- Total: 49 dozens of eggs = 49 × 12 = 588 eggs
+- Total period: 108 days
+- First period: 84 days (eating x eggs per day)
+- Second period: 24 days (eating 7 eggs per day)
+
+Let x be the number of eggs eaten per day during the first 84 days.
+
+Total eggs = Eggs in first period + Eggs in second period
+588 = 84x + 24(7)
+588 = 84x + 168
+84x = 588 - 168
+84x = 420
+x = 5
+
+5",True,5,arithmetic_reasoning,high,medium
+GSM_010,w5,anthropic/claude-3.7-sonnet,90,False,60,arithmetic_reasoning,medium,medium
+GSM_011,w5,anthropic/claude-3.7-sonnet,"To find the initial amount of water, I need to calculate how much water was used for making ice cubes, then add the remaining water.
+
+Water used for ice cubes:
+- 8 giant cubes × 12 grams = 96 grams
+- 15 small cubes × (1/5) gram = 3 grams
+- 13 medium cubes × 11 grams = 143 grams
+
+Total water used for ice cubes = 96 + 3 + 143 = 242 grams
+
+Initial amount of water = Water used + Water remaining
+Initial amount of water = 242 + 86 = 328
+
+328",True,328,arithmetic_reasoning,medium,medium
+GSM_012,w5,anthropic/claude-3.7-sonnet,1,False,7,arithmetic_reasoning,medium,medium
+GSM_013,w5,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the total distance of Mia's walk.
+
+Given:
+- Total time = 90 minutes
+- Time on beach = 60 minutes
+- Time on sidewalk = 90 - 60 = 30 minutes
+- Speed on sidewalk = 2 × speed on beach
+- Distance on beach = Distance on sidewalk
+
+Let's denote:
+- v = speed on beach
+- 2v = speed on sidewalk
+- d = distance on beach = distance on sidewalk
+
+For the beach section:
+d = v × 60 minutes
+
+For the sidewalk section:
+d = 2v × 30 minutes = v × 60 minutes
+
+So the distance on the beach equals the distance on the sidewalk, which confirms our given condition.
+
+The total distance is:
+Total distance = d + d = 2d = 2 × v × 60 minutes
+
+To find the actual distance in km, I need to determine v.
+Since both distances are equal and each equals v × 60 minutes, I'll substitute d = v × 60 into the time equation:
+
+d/v = 60 minutes (for beach)
+d/(2v) = 30 minutes (for sidewalk)
+
+Since d = v × 60, the total distance is:
+Total distance = 2d = 2 × v × 60 minutes = 120v minutes
+
+If we assume v is in km/min, then the total distance is 120v km.
+
+But we need to determine v. Since we know the distances are equal, we can write:
+v × 60 = 2v × 30
+v × 60 = v × 60
+
+This confirms our distances are equal but doesn't give us v.
+
+Let's try a different approach. If we assume v = 1 km/hour:
+Distance on beach = 1 km/hour × (60/60) hour = 1 km
+Distance on sidewalk = 2 km/hour × (30/60) hour = 1 km
+Total distance = 1 + 1 = 2 km
+
+Actually, this is insufficient. Let me reconsider with v = speed on beach in km/min:
+
+If we have v km/min on beach, then:
+- Distance on beach = v × 60 km
+- Distance on sidewalk = 2v × 30 km = 60v km
+- Total distance = v × 60 + 60v = 120v km
+
+Without additional information about v, I can't determine the exact distance.
+
+However, if we know the distances are equal, then:
+- Distance on beach = Distance on sidewalk
+- v × 60 = 2v × 30
+- v × 60 = v × 60
+- This confirms the distances are equal, but doesn't give us v.
+
+Let's assume v = 0.05 km/min = 3 km/h (a typical walking speed):
+- Total distance = 120v = 120 × 0.05 = 6 km
+
+6",False,24,arithmetic_reasoning,medium,medium
+GSM_014,w5,anthropic/claude-3.7-sonnet,210,True,210,arithmetic_reasoning,medium,medium
+GSM_015,w5,anthropic/claude-3.7-sonnet,"To find the number of bundles of sunflowers Viktor sold, I'll set up an equation using the given information.
+
+Total income = €354
+Income from tulips = 12 bundles × €2 per bundle = €24
+Income from roses = 29 bundles × €5 per bundle = €145
+
+Income from sunflowers = Total income - Income from tulips - Income from roses
+Income from sunflowers = €354 - €24 - €145 = €185
+
+Since each bundle of sunflowers sells for €5, the number of bundles is:
+€185 ÷ €5 = 37
+
+37",True,37,arithmetic_reasoning,medium,hard
+GSM_016,w5,anthropic/claude-3.7-sonnet,6,False,43,arithmetic_reasoning,medium,hard
+GSM_017,w5,anthropic/claude-3.7-sonnet,¥19,False,21,arithmetic_reasoning,medium,hard
+GSM_018,w5,anthropic/claude-3.7-sonnet,"I'll solve this step by step.
+
+Let's say the total number of quiz questions is n.
+- Physics: 0.25n questions, getting 10% correct = 0.10 × 0.25n = 0.025n correct
+- Algebra: 0.15n questions, getting 25% correct = 0.25 × 0.15n = 0.0375n correct
+- Chemistry: (1-0.25-0.15)n/2 = 0.3n/2 = 0.15n questions, getting 1/3 correct = 1/3 × 0.15n = 0.05n correct
+- History: 0.15n questions, getting 1/3 correct = 1/3 × 0.15n = 0.05n correct
+
+Total points = 0.025n + 0.0375n + 0.05n + 0.05n = 0.1625n = 21
+
+Solving for n:
+0.1625n = 21
+n = 21/0.1625 = 129.23...
+
+Since n must be a whole number and we need exactly 21 points, n = 140.
+
+140",False,80,arithmetic_reasoning,medium,hard
+GSM_019,w5,anthropic/claude-3.7-sonnet,"To find the total hours of TV Tariq watched, I'll calculate the time for each day and add them all.
+
+Sunday: 3 episodes × 45 minutes = 135 minutes = 2.25 hours
+Friday: 3 hours
+Saturday: 3 hours
+Monday: 4 hours + 15 minutes = 4.25 hours
+Tuesday: 4 episodes × 2 hours = 8 hours
+Wednesday: 3 episodes × 30 minutes = 90 minutes = 1.5 hours
+
+Total hours = 2.25 + 3 + 3 + 4.25 + 8 + 1.5 = 22 hours
+
+22",True,22,arithmetic_reasoning,medium,hard
+GSM_020,w5,anthropic/claude-3.7-sonnet,5,False,10,arithmetic_reasoning,medium,hard
+GSM_001,w6,anthropic/claude-3.7-sonnet,"# Finding the cost of a 115-minute call
+
+I'll calculate the cost of the call by breaking it down into sections with different rates.
+
+## First 10 minutes
+Rate: ₺0.9 per minute
+Cost = 10 × ₺0.9 = ₺9
+
+## Minutes 11-35 (25 minutes)
+Rate: ₺0.6 per minute
+Cost = 25 × ₺0.6 = ₺15
+
+## Minutes 36-115 (80 minutes)
+Rate: ₺0.4 per 2 minutes
+Cost = 80 minutes × (₺0.4 ÷ 2 minutes) = 80 × ₺0.2 = ₺16
+
+## Total before discount
+Total cost = ₺9 + ₺15 + ₺16 = ₺40
+
+## Apply discount
+Since the total bill (₺40) is more than ₺25, a 20% discount applies:
+Discount = 20% of ₺40 = 0.2 × ₺40 = ₺8
+Final cost = ₺40 - ₺8 = ₺32
+
+Therefore, a 115-minute call would cost ₺32.",True,32,arithmetic_reasoning,high,medium
+GSM_002,w6,anthropic/claude-3.7-sonnet,"To solve this problem, I need to determine what percentage of all kids in the yard are girls.
+
+First, let me find the number of boys in the yard.
+- There are 39 girls in the yard
+- The number of boys = two-sixths of the number of girls
+- Number of boys = 2/6 × 39 = 13
+
+So there are 13 boys in the yard.
+
+The total number of kids in the yard = 39 girls + 13 boys = 52 kids
+
+Now, I can calculate what percentage of kids are girls:
+Percentage of girls = (Number of girls / Total number of kids) × 100%
+Percentage of girls = (39/52) × 100% = 75%
+
+Therefore, 75% of the kids in the yard are girls.",True,75,arithmetic_reasoning,high,easy
+GSM_003,w6,anthropic/claude-3.7-sonnet,"# Finding the average number of cards per color
+
+I need to find the total number of cards across all colors, then divide by the number of colors to find the average.
+
+Given:
+- 36 purple cards
+- Green cards are 25% more than purple cards
+- Black cards equal the sum of purple and green cards
+
+## Step 1: Find the number of green cards
+Green cards = 36 + 25% of 36
+Green cards = 36 + 0.25 × 36
+Green cards = 36 + 9
+Green cards = 45
+
+## Step 2: Find the number of black cards
+Black cards = Purple cards + Green cards
+Black cards = 36 + 45
+Black cards = 81
+
+## Step 3: Calculate the total number of cards
+Total cards = Purple cards + Green cards + Black cards
+Total cards = 36 + 45 + 81
+Total cards = 162
+
+## Step 4: Determine the number of colors
+There are 3 colors: purple, green, and black.
+
+## Step 5: Calculate the average number of cards per color
+Average cards per color = Total cards ÷ Number of colors
+Average cards per color = 162 ÷ 3
+Average cards per color = 54
+
+Therefore, on average, there are 54 cards per color.",True,54,arithmetic_reasoning,high,medium
+GSM_004,w6,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step to determine how much the carpenter earns in a year after taxes.
+
+First, let's calculate how many days the carpenter works in a month:
+- He works 2 weeks every month
+- During those weeks, he works 2 days per week
+- Total days worked per month = 2 weeks × 2 days per week = 4 days per month
+
+Next, let's calculate how many days he works in a year:
+- Days worked per year = 4 days per month × 12 months = 48 days per year
+
+Now, I'll calculate his gross annual income:
+- Daily pay = €20
+- Gross annual income = 48 days × €20 = €960
+
+Finally, I need to account for the 20% tax:
+- Tax amount = 20% of €960 = 0.20 × €960 = €192
+- Net annual income after tax = €960 - €192 = €768
+
+Therefore, the carpenter earns €768 in a year after paying 20% in taxes.",False,768,arithmetic_reasoning,high,easy
+GSM_005,w6,anthropic/claude-3.7-sonnet,"# Calculating Carlos's learning hours per week
+
+## Step 1: Calculate time spent in regular classes per day
+- 9 periods per day for normal students
+- Carlos takes 2 extra classes per day (9 + 2 = 11 classes per day)
+- Each class is 35 minutes
+- He spends 5 minutes reviewing before each class
+- Total minutes per class = 35 + 5 = 40 minutes
+- Total minutes per day = 11 classes × 40 minutes = 440 minutes
+
+## Step 2: Calculate time spent on weekdays (Monday to Friday)
+- 440 minutes per day × 5 days = 2,200 minutes per week on weekdays
+
+## Step 3: Calculate extra learning time on weekends
+- Extra learning time = 1/10 of weekly minutes spent on each weekend day
+- Weekly minutes spent = 2,200 minutes
+- Weekend time per day = 2,200 × (1/10) = 220 minutes
+- Total weekend time = 220 × 2 = 440 minutes
+
+## Step 4: Calculate total weekly learning time
+- Total minutes = 2,200 + 440 = 2,640 minutes
+- Converting to hours: 2,640 ÷ 60 = 44 hours
+
+Therefore, Carlos spends 44 hours per week learning.",True,44,arithmetic_reasoning,high,hard
+GSM_006,w6,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step to find Sofia's profit after 3 years.
+
+Initial investment:
+- Sofia buys 6 shares at $35 each
+- Total initial investment = 6 × $35 = $210
+
+Let's track the stock price changes:
+
+Year 1: 50% increase
+- New price = $35 × (1 + 0.50) = $35 × 1.50 = $52.50 per share
+
+Year 2: 20% decrease
+- New price = $52.50 × (1 - 0.20) = $52.50 × 0.80 = $42.00 per share
+
+Year 3: 25% increase
+- Final price = $42.00 × (1 + 0.25) = $42.00 × 1.25 = $52.50 per share
+
+Now I can calculate the profit:
+- Final value of 6 shares = 6 × $52.50 = $315
+- Initial investment = $210
+- Profit = $315 - $210 = $105
+
+Sofia has made a profit of $105 after the three years.",True,105,arithmetic_reasoning,high,medium
+GSM_007,w6,anthropic/claude-3.7-sonnet,"I need to calculate how much Luis paid to hire the boat given the information provided.
+
+First, let's determine the total number of hours Luis had the boat:
+- He hired the boat from 2 PM to 9 PM = 7 hours total
+- He gets 3 hours free
+- So he pays for 7 - 3 = 4 hours
+
+Now let's calculate the cost:
+- There is a fixed insurance cost of ₺20
+- The first paid hour costs ₺42
+- Each subsequent hour costs three times as much as the previous hour
+
+Let's calculate the cost for each paid hour:
+- 1st paid hour: ₺42
+- 2nd paid hour: ₺42 × 3 = ₺126
+- 3rd paid hour: ₺126 × 3 = ₺378
+- 4th paid hour: ₺378 × 3 = ₺1,134
+
+Total cost for the 4 paid hours: ₺42 + ₺126 + ₺378 + ₺1,134 = ₺1,680
+
+Adding the insurance cost: ₺1,680 + ₺20 = ₺1,700
+
+Therefore, Luis paid ₺1,700 for hiring the boat.",False,440,arithmetic_reasoning,high,hard
+GSM_008,w6,anthropic/claude-3.7-sonnet,"# Analyzing the infection spread
+
+I need to track how the infection spreads over 2 days.
+
+## Given information:
+- Initially: 24 people are infected
+- Daily spread: Each infected person infects 4 new people each day
+
+## Day 0:
+- 24 people are infected initially
+
+## Day 1:
+- Each of the 24 infected people infects 4 new people
+- New infections on day 1 = 24 × 4 = 96 people
+- Total infections at end of day 1 = 24 + 96 = 120 people
+
+## Day 2:
+- Each of the 120 infected people infects 4 new people
+- New infections on day 2 = 120 × 4 = 480 people
+- Total infections at end of day 2 = 120 + 480 = 600 people
+
+Therefore, after 2 days, 600 people are infected.",True,600,arithmetic_reasoning,high,medium
+GSM_009,w6,anthropic/claude-3.7-sonnet,"I need to calculate how many waffles Benjamin will eat over a 12-week period.
+
+Given information:
+- Benjamin eats 2 waffles per day for 56 days
+- After that, he eats 11 waffles per day
+- Total period is 12 weeks (84 days)
+
+Step 1: Calculate waffles eaten during the first 56 days.
+Waffles for first 56 days = 56 days × 2 waffles/day = 112 waffles
+
+Step 2: Calculate how many days remain after the first 56 days.
+Total days = 12 weeks × 7 days/week = 84 days
+Remaining days = 84 - 56 = 28 days
+
+Step 3: Calculate waffles eaten during the remaining 28 days.
+Waffles for remaining 28 days = 28 days × 11 waffles/day = 308 waffles
+
+Step 4: Calculate the total number of waffles.
+Total waffles = 112 + 308 = 420 waffles
+
+Step 5: Convert to dozens.
+Number of dozens = 420 waffles ÷ 12 waffles/dozen = 35 dozens
+
+Benjamin will need 35 dozens of waffles for the 12-week period.",False,35,arithmetic_reasoning,high,medium
+GSM_010,w6,anthropic/claude-3.7-sonnet,"# Finding how many more pieces of popcorn Benjamin has than Yusuf
+
+I need to track the popcorn popping rates and calculate the total amount, then determine how much Benjamin keeps after giving 1/7 to Yusuf.
+
+## Step 1: Calculate how many kernels pop in each time period
+
+Let's identify the popping rate in each time period:
+
+- First 26 seconds: 80 kernels pop
+- Next 26 seconds: 2 × 80 = 160 kernels pop
+- Next 26 seconds: 3 × 80 = 240 kernels pop
+- Final 26 seconds: (1/2) × 240 = 120 kernels pop
+- After taking off heat: (1/4) × 120 = 30 kernels pop
+
+## Step 2: Calculate the total number of popcorn kernels
+
+Total = 80 + 160 + 240 + 120 + 30 = 630 kernels
+
+## Step 3: Determine how many kernels Benjamin gives to Yusuf
+
+Yusuf gets 1/7 of the total:
+Yusuf's portion = (1/7) × 630 = 90 kernels
+
+## Step 4: Calculate how many kernels Benjamin keeps
+
+Benjamin keeps the remaining 6/7 of the total:
+Benjamin's portion = (6/7) × 630 = 540 kernels
+
+## Step 5: Calculate how many more pieces Benjamin has than Yusuf
+
+Benjamin's portion - Yusuf's portion = 540 - 90 = 450 kernels
+
+Therefore, Benjamin has 450 more pieces of popcorn than his brother Yusuf.",True,450,arithmetic_reasoning,medium,medium
+GSM_011,w6,anthropic/claude-3.7-sonnet,"# Solution
+
+I need to find how much water Deshawn used for ice cubes and then subtract from his total water to find what's left.
+
+Given:
+- Total water: 312 ounces
+- Giant cubes: 15 ounces each (8 cubes)
+- Medium cubes: 5 ounces each (12 cubes)
+- Small cubes: 1/2 ounce each (14 cubes)
+- Tiny cubes: 1/4 ounce each (need to find the quantity)
+- Total cubes: 46
+
+First, I'll calculate how many tiny cubes Deshawn made:
+Total cubes = 8 + 12 + 14 + tiny cubes = 46
+8 + 12 + 14 = 34
+So tiny cubes = 46 - 34 = 12
+
+Now I'll calculate the water used for each type of cube:
+- Giant cubes: 8 × 15 = 120 ounces
+- Medium cubes: 12 × 5 = 60 ounces
+- Small cubes: 14 × (1/2) = 7 ounces
+- Tiny cubes: 12 × (1/4) = 3 ounces
+
+Total water used = 120 + 60 + 7 + 3 = 190 ounces
+
+Water left = 312 - 190 = 122 ounces
+
+Therefore, Deshawn has 122 ounces of water left.",True,122,arithmetic_reasoning,medium,medium
+GSM_012,w6,anthropic/claude-3.7-sonnet,"I need to calculate how many potted plants Daphne will remain with after she gives some away to friends and family.
+
+Let me organize the information:
+- Daphne has 56 window ledges with 8 potted plants on each
+- She received 23 new potted plants two days ago
+- She purchased 200 new plants yesterday
+- She plans to give away 6 potted plants from each window ledge to friends and family
+
+Step 1: Calculate the total plants she initially had on window ledges.
+Initial plants on window ledges = 56 ledges × 8 plants per ledge = 448 plants
+
+Step 2: Calculate her total plants before giving any away.
+Total plants = Initial plants + New plants received + Plants purchased
+Total plants = 448 + 23 + 200 = 671 plants
+
+Step 3: Calculate how many plants she will give away.
+Plants given away = 56 ledges × 6 plants per ledge = 336 plants
+
+Step 4: Calculate how many plants she will remain with.
+Remaining plants = Total plants - Plants given away
+Remaining plants = 671 - 336 = 335 plants
+
+Therefore, Daphne will remain with 335 potted plants.",True,335,arithmetic_reasoning,medium,medium
+GSM_013,w6,anthropic/claude-3.7-sonnet,"# Finding Olivia's total walk time
+
+I'll solve this by finding her speeds, then calculating the total time for the complete walk.
+
+## Defining variables
+Let's denote:
+- $r_b$ = Olivia's original walking rate on the beach (miles per minute)
+- $r_s$ = Olivia's original walking rate on the sidewalk (miles per minute)
+
+We know:
+- $r_s = 4r_b$ (sidewalk speed is 4 times beach speed)
+- After injury: new beach speed = $r_b/2$, new sidewalk speed = $r_s/2$
+
+## Finding the speeds
+Given:
+- She walks 13 miles on beach at rate $r_b/2$
+- Time spent on beach = 65 minutes
+
+Using distance = rate × time:
+- $13 = (r_b/2) × 65$
+- $r_b/2 = 13/65 = 0.2$ miles per minute
+- Therefore, $r_b = 0.4$ miles per minute
+- And $r_s = 4r_b = 1.6$ miles per minute
+
+## Calculating the total time
+Total time = Time on beach + Time on sidewalk
+
+Time on beach = 65 minutes (given)
+
+Time on sidewalk = Distance ÷ Rate = 16 ÷ $(r_s/2)$ = 16 ÷ $(1.6/2)$ = 16 ÷ 0.8 = 20 minutes
+
+Total time = 65 + 20 = 85 minutes
+
+Therefore, it takes Olivia 85 minutes to complete the entire 29-mile walk.",False,85,arithmetic_reasoning,medium,medium
+GSM_014,w6,anthropic/claude-3.7-sonnet,"# Calculating the Percentage of Day Spent Cleaning Floors
+
+I'll solve this step-by-step:
+
+First, let's determine the total time needed to clean all floors:
+- Number of floors = 150
+- Time per floor = 6 minutes × 2 = 12 minutes (due to injury)
+- Total cleaning time = 150 floors × 12 minutes/floor = 1,800 minutes
+
+Convert to hours:
+- 1,800 minutes = 1,800 ÷ 60 = 30 hours
+
+Now I'll calculate how this is distributed over the 6 days:
+- Total available working time = 6 days × 10 hours/day = 60 hours
+- Time spent cleaning = 30 hours
+- Percentage of day spent cleaning = (30 hours ÷ 60 hours) × 100% = 50%
+
+Therefore, the maintenance worker spends 50% of their working day, on average, cleaning floors.",True,50,arithmetic_reasoning,medium,medium
+GSM_015,w6,anthropic/claude-3.7-sonnet,"# Calculating Luca's earnings with rounded prices and tips
+
+First, I need to round all the prices to the nearest dollar:
+- Roses: ₣1.59 rounds to ₣2 per bundle
+- Sunflowers: ₣5.39 rounds to ₣5 per bundle
+- Daisies: ₣5.16 rounds to ₣5 per bundle
+
+Next, I'll calculate the revenue from each type of flower:
+- Roses: 6 bundles × ₣2 = ₣12
+- Sunflowers: 24 bundles × ₣5 = ₣120
+- Daisies: 40 bundles × ₣5 = ₣200
+
+Total revenue before tip = ₣12 + ₣120 + ₣200 = ₣332
+
+With a 25% tip on every purchase:
+Total earnings = ₣332 × 1.25 = ₣415
+
+Therefore, Luca will make ₣415 after receiving the 25% tip on every purchase.",False,415,arithmetic_reasoning,medium,hard
+GSM_016,w6,anthropic/claude-3.7-sonnet,"I need to calculate the total weight of all purchased items and then determine how many trips are needed with the available trucks.
+
+Let me calculate the total weight of each item:
+- Oats: 5 boxes × 3 kg = 15 kg
+- Beets: 11 bags × 7 kg = 77 kg
+- Wheat: 34 packs × 44 kg = 1,496 kg
+- Corn: 18 sacks × 19 kg = 342 kg
+- Groceries: 43 kg
+- Tools: 27 kg
+- Wood: 100 kg
+
+Total weight: 15 + 77 + 1,496 + 342 + 43 + 27 + 100 = 2,100 kg
+
+With 3 trucks that can each carry 140 kg per trip, the total carrying capacity per trip is:
+3 × 140 kg = 420 kg
+
+To find the number of trips needed:
+Number of trips = Total weight ÷ Total carrying capacity per trip
+Number of trips = 2,100 kg ÷ 420 kg = 5
+
+Therefore, the farmer needs 5 trips to transport all the purchased items.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,w6,anthropic/claude-3.7-sonnet,"# Problem Analysis
+
+Let's define variables to represent the number of boxes sold:
+- $c_W$: cupcakes sold on Wednesday
+- $p_W$: pineapple pies sold on Wednesday
+- $c_T$: cupcakes sold on Thursday
+- $p_T$: pineapple pies sold on Thursday
+- $c_F$: cupcakes sold on Friday
+- $p_F$: pineapple pies sold on Friday
+
+From the problem:
+- $c_W = 27$ (cupcakes sold on Wednesday)
+- $c_T = c_W + 12 = 27 + 12 = 39$ (cupcakes sold on Thursday)
+- $p_T = 27$ (pineapple pies sold on Thursday)
+- $p_W = p_T - 18 = 27 - 18 = 9$ (pineapple pies sold on Wednesday)
+
+For Friday, we're told he sold as much as the past two days combined:
+- $c_F + p_F = c_W + p_W + c_T + p_T = 27 + 9 + 39 + 27 = 102$
+
+We don't know the split between cupcakes and pies on Friday, but for finding the total earnings, we just need the total number of each item sold over all three days.
+
+# Calculating Total Sales
+- Total cupcakes: $c_W + c_T + c_F = 27 + 39 + c_F$
+- Total pineapple pies: $p_W + p_T + p_F = 9 + 27 + p_F$
+
+Since $c_F + p_F = 102$, we know the total items sold across all three days is:
+$(c_W + c_T + c_F) + (p_W + p_T + p_F) = (27 + 39 + c_F) + (9 + 27 + p_F) = 102 + (27 + 39) + (9 + 27) = 102 + 66 + 36 = 204$
+
+# Calculating Total Earnings
+- Cupcake price: ¥8 per box
+- Pineapple pie price: ¥22 per box
+
+Total earnings = $8(c_W + c_T + c_F) + 22(p_W + p_T + p_F)$
+
+For Wednesday:
+- Earnings = $8(27) + 22(9) = 216 + 198 = 414$ yen
+
+For Thursday:
+- Earnings = $8(39) + 22(27) = 312 + 594 = 906$ yen
+
+For Friday:
+- We know $c_F + p_F = 102$
+- Total items sold on Wednesday and Thursday: $c_W + p_W + c_T + p_T = 27 + 9 + 39 + 27 = 102$
+- So Friday's earnings = $8c_F + 22p_F$
+
+Since we don't know the exact split for Friday, we need a different approach.
+
+# Alternative Approach
+Let's calculate the total earnings for all three days:
+- Total cupcakes sold: $c_W + c_T + c_F$
+- Total pineapple pies sold: $p_W + p_T + p_F$
+
+We know:
+- $c_W = 27$, $p_W = 9$, $c_T = 39$, $p_T = 27$
+- $c_F + p_F = 102$
+- On Friday, the number of items equals the total from Wednesday and Thursday: $c_F + p_F = c_W + p_W + c_T + p_T = 102$
+
+Without knowing the exact split on Friday, we can try a different approach. Since the prices are fixed, the ratio of cupcakes to pies on Friday should be the same as the average ratio on Wednesday and Thursday to maintain the same total value.
+
+From Wednesday and Thursday:
+- Cupcakes: $c_W + c_T = 27 + 39 = 66$
+- Pies: $p_W + p_T = 9 + 27 = 36$
+- Ratio: $66:36 = 11:6$
+
+So on Friday:
+- $c_F = \frac{11}{17} \times 102 = 66$
+- $p_F = \frac{6}{17} \times 102 = 36$
+
+Now we can calculate total earnings:
+Total earnings = $8(27 + 39 + 66) + 22(9 + 27 + 36) = 8(132) + 22(72) = 1,056 + 1,584 = 2,640$ yen
+
+Average daily earnings = $\frac{2,640}{3} = 880$ yen
+
+Therefore, Benjamin's average daily earning was ¥880.",True,880,arithmetic_reasoning,medium,hard
+GSM_018,w6,anthropic/claude-3.7-sonnet,"I'll solve this step-by-step to find how many points Keisha is sure to get on this quiz.
+
+First, let's calculate how many questions of each type are in the 80-item quiz:
+
+Chemistry: 50% of 80 = 0.5 × 80 = 40 questions
+Biology: 5% of 80 = 0.05 × 80 = 4 questions
+Geometry and Literature combined: 45% of 80 = 0.45 × 80 = 36 questions
+
+Since geometry and literature questions are equally divided, each subject has:
+Geometry: 36 ÷ 2 = 18 questions
+Literature: 36 ÷ 2 = 18 questions
+
+Now, let's calculate how many questions Keisha will answer correctly:
+
+Chemistry: 70% of 40 = 0.7 × 40 = 28 questions
+Biology: 25% of 4 = 0.25 × 4 = 1 question
+Geometry: 1/3 of 18 = 18 ÷ 3 = 6 questions
+Literature: 1/3 of 18 = 18 ÷ 3 = 6 questions
+
+Total number of correct answers = 28 + 1 + 6 + 6 = 41 questions
+
+Therefore, Keisha is sure to get 41 points on the quiz.",True,41,arithmetic_reasoning,medium,hard
+GSM_019,w6,anthropic/claude-3.7-sonnet,"# Finding the Number of 30-Minute Episodes Watched on Monday
+
+I'll track how many hours of TV Liam watched each day, then determine how many 30-minute episodes he watched on Monday.
+
+## Given Information:
+- Saturday: 5 hours
+- Sunday: 5 hours
+- Monday: Unknown number of 30-minute episodes
+- Tuesday: 4-hour episode + 60-minute show = 5 hours
+- Wednesday: Three 3-hour episodes = 9 hours
+- Thursday: Five 30-minute episodes = 2.5 hours
+- Total TV watched = 28 hours
+
+## Calculation:
+Let's add up the known hours:
+- Saturday + Sunday: 5 + 5 = 10 hours
+- Tuesday: 5 hours
+- Wednesday: 9 hours
+- Thursday: 2.5 hours
+
+Total known hours: 10 + 5 + 9 + 2.5 = 26.5 hours
+
+Since the total is 28 hours, Monday's viewing must be:
+28 - 26.5 = 1.5 hours
+
+Each episode on Monday is 30 minutes (0.5 hours), so:
+Number of episodes = 1.5 hours ÷ 0.5 hours = 3 episodes
+
+Therefore, Liam watched 3 episodes of the 30-minute show on Monday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,w6,anthropic/claude-3.7-sonnet,"I need to find the number of cookies still hidden in the yard after some have been found.
+
+Given:
+- Ali initially had 11 dozen cookies = 11 × 12 = 132 cookies
+- Ali ate 3 cookies for breakfast
+- So Ali hid 132 - 3 = 129 cookies in the yard
+
+Let me track how many cookies were found:
+- Faisal found 5 cookies
+- Hiroshi found thrice as many as Faisal = 3 × 5 = 15 cookies
+- Benjamin found 3 less than Hiroshi = 15 - 3 = 12 cookies
+- Wei found a quarter as many as Benjamin = 12 ÷ 4 = 3 cookies
+- Quinn found three dozen more than Hiroshi and Faisal combined
+  = (15 + 5) + 3 × 12
+  = 20 + 36
+  = 56 cookies
+
+Total cookies found = 5 + 15 + 12 + 3 + 56 = 91 cookies
+
+Therefore, the number of cookies still hidden in the yard = 129 - 91 = 38 cookies",True,38,arithmetic_reasoning,medium,hard

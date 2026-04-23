@@ -1,0 +1,26 @@
+=== VAR(canonical) regression ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          var_canonical   R-squared:                       0.003
+Model:                            OLS   Adj. R-squared:                 -0.053
+Method:                 Least Squares   F-statistic:                   0.04954
+Date:                Thu, 23 Apr 2026   Prob (F-statistic):              0.826
+Time:                        13:22:03   Log-Likelihood:                -4.2718
+No. Observations:                  20   AIC:                             12.54
+Df Residuals:                      18   BIC:                             14.54
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept               0.8618      0.186      4.645      0.000       0.472       1.252
+contamination_score     0.2884      1.296      0.223      0.826      -2.434       3.011
+==============================================================================
+Omnibus:                       28.931   Durbin-Watson:                   2.193
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               45.064
+Skew:                          -2.656   Prob(JB):                     1.64e-10
+Kurtosis:                       8.085   Cond. No.                         18.7
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

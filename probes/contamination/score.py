@@ -5,8 +5,9 @@ from __future__ import annotations
 from probes.contamination.infinigram_client import get_ngram_count
 
 MIN_NGRAM = 5
-START_NGRAM = 20
-STRIDE = 3 # Skip tokens to reduce API calls while still likely catching any significant contamination
+DEFAULT_MAX_NGRAM = 13
+ARITHMETIC_MAX_NGRAM = 8
+STRIDE = 3  # Skip tokens to reduce API calls while still likely catching significant contamination
 
 
 def _max_count_for_length(problem_text: str, n: int, stop_at_one: bool = False) -> int:
@@ -33,7 +34,11 @@ def _max_count_for_length(problem_text: str, n: int, stop_at_one: bool = False) 
     return max_count
 
 
-def score_problem(problem_text: str) -> dict[str, float | int]:
+def score_problem(
+    problem_text: str,
+    family: str | None = None,
+    max_ngram: int | None = None,
+) -> dict[str, float | int]:
     """Score a problem by longest matched n-gram using binary search for length."""
 
     tokens = problem_text.split()
@@ -44,13 +49,22 @@ def score_problem(problem_text: str) -> dict[str, float | int]:
             "contamination_score": 0.0,
         }
 
-    max_len = len(tokens)
-    if max_len < MIN_NGRAM:
+    token_len = len(tokens)
+    if token_len < MIN_NGRAM:
         return {
             "max_ngram_length": 0,
             "max_ngram_count": 0,
             "contamination_score": 0.0,
         }
+
+    if max_ngram is None:
+        fam = (family or "").strip().lower()
+        if fam == "arithmetic_reasoning":
+            max_ngram = ARITHMETIC_MAX_NGRAM
+        else:
+            max_ngram = DEFAULT_MAX_NGRAM
+    max_ngram = max(int(max_ngram), MIN_NGRAM)
+    max_len = min(token_len, max_ngram)
 
     # Binary search for the longest n-gram that exists (count > 0)
     low = MIN_NGRAM
@@ -81,5 +95,5 @@ def score_problem(problem_text: str) -> dict[str, float | int]:
     return {
         "max_ngram_length": best_len,
         "max_ngram_count": best_count,
-        "contamination_score": round(best_len / max(len(tokens), 1), 4),
+        "contamination_score": round(best_len / max(token_len, 1), 4),
     }

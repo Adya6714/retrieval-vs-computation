@@ -1,0 +1,10 @@
+model,difficulty,rcs,n
+anthropic/claude-3.7-sonnet,easy,0.5,2
+anthropic/claude-3.7-sonnet,hard,0.625,8
+anthropic/claude-3.7-sonnet,medium,0.8,10
+meta-llama/llama-3.1-8b-instruct,easy,0.5,2
+meta-llama/llama-3.1-8b-instruct,hard,0.5,8
+meta-llama/llama-3.1-8b-instruct,medium,0.5,10
+openai/gpt-4o,easy,0.5,2
+openai/gpt-4o,hard,0.625,8
+openai/gpt-4o,medium,0.8,10

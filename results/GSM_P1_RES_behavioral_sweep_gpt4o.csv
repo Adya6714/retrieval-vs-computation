@@ -1,0 +1,1982 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty
+GSM_001,canonical,openai/gpt-4o,"To calculate the cost of an 86-minute call, we need to consider the different rates for the call duration.
+
+The first 20 minutes are charged at $0.9 per minute:  
+\[ 20 \text{ minutes} \times \$0.9/\text{minute} = \$18. \]
+
+For the remaining 66 minutes (since 86 - 20 = 66), the rate drops to $0.5 per minute:  
+\[ 66 \text{ minutes} \times \$0.5/\text{minute} = \$33. \]
+
+Adding these amounts together gives the total cost of the call:  
+\[ \$18 + \$33 = \$51. \]
+
+Therefore, an 86-minute call would cost \$51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,canonical,openai/gpt-4o,"To find out how many kids are in the park, we need to calculate the number of boys first and then sum the boys and girls.
+
+We are given that there are 18 girls in the park and the number of boys is two-thirds the number of girls. We can calculate the number of boys as follows:
+
+\[
+\text{Number of boys} = \frac{2}{3} \times 18 = 12
+\]
+
+Now, we add the number of girls and the number of boys to find the total number of kids in the park:
+
+\[
+\text{Total number of kids} = 18 + 12 = 30
+\]
+
+So, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy
+GSM_003,canonical,openai/gpt-4o,"First, let's determine the number of yellow cards. We know there are 30 purple cards. The problem states there are 50% more yellow cards than purple cards. So, the number of yellow cards is:
+
+\[
+30 + 0.5 \times 30 = 30 + 15 = 45
+\]
+
+Next, we find the number of blue cards, which is equal to the sum of the number of purple and yellow cards:
+
+\[
+30 + 45 = 75
+\]
+
+Now, we can find the total number of cards by adding the purple, yellow, and blue cards together:
+
+\[
+30 + 45 + 75 = 150
+\]
+
+Therefore, there are 150 cards in total.",True,150,arithmetic_reasoning,high,medium
+GSM_004,canonical,openai/gpt-4o,"To calculate the annual earnings of the painter, we need to determine how many days he works in a year and then multiply it by his daily wage.
+
+1. The painter works 2 weeks every month.
+2. He works 6 days each week.
+
+Therefore, he works \(2 \times 6 = 12\) days per month.
+
+Since there are 12 months in a year, he works \(12 \times 12 = 144\) days per year.
+
+Given that he earns £150 per day, his total earnings for the year would be:
+
+\[
+144 \times 150 = £21,600
+\]
+
+Thus, the painter earns £21,600 in a year.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,canonical,openai/gpt-4o,"First, let's calculate the number of minutes Liam spends in class during the 6 school days:
+
+Liam has 7 classes each day, and each class is 60 minutes long, so each day he spends:
+\[ 7 \times 60 = 420 \text{ minutes} \]
+
+Since he goes to class for 6 days a week, he spends:
+\[ 420 \times 6 = 2520 \text{ minutes} \]
+
+Next, Liam spends \( \frac{1}{7} \) of his weekly class time on extra learning during both Saturday and Sunday. Therefore, the extra learning time for each of these days is:
+\[ \frac{1}{7} \times 2520 = 360 \text{ minutes} \]
+per day.
+
+Over both Saturday and Sunday, he spends:
+\[ 360 \times 2 = 720 \text{ minutes} \]
+
+Adding the class time and the extra learning time together gives the total weekly learning time:
+\[ 2520 + 720 = 3240 \text{ minutes} \]
+
+Finally, to convert minutes into hours, divide by 60:
+\[ \frac{3240}{60} = 54 \text{ hours} \]
+
+Therefore, Liam spends 54 hours a week learning.",True,54,arithmetic_reasoning,high,hard
+GSM_006,canonical,openai/gpt-4o,"Kayla initially buys 10 shares at €56 each, so her initial investment is:
+
+\[ 10 \times 56 = €560 \]
+
+In the first year, the stock price increases by 30%. To find the new price per share after this increase, we calculate:
+
+\[ 56 + (0.30 \times 56) = 56 + 16.80 = €72.80 \]
+
+In the second year, the stock price decreases by 25%. To find the new price per share after this decrease, we calculate:
+
+\[ 72.80 - (0.25 \times 72.80) = 72.80 - 18.20 = €54.60 \]
+
+The final value of all Kayla's shares is:
+
+\[ 10 \times 54.60 = €546 \]
+
+So, the final value of all Kayla's shares is €546.",True,546,arithmetic_reasoning,high,medium
+GSM_007,canonical,openai/gpt-4o,"Kai hires the luxury car from 1 PM to 5 PM, which totals 4 hours. Since he gets 2 hours free, he only needs to pay for 2 hours. 
+
+The cost structure is as follows:
+- The first paid hour costs $10.
+- Each subsequent hour doubles the previous hour's cost.
+
+For the hours Kai needs to pay:
+1. The first paid hour (i.e., the 3rd hour overall) costs $10.
+2. The second paid hour (i.e., the 4th hour overall) costs twice the previous hour, which is \(2 \times 10 = $20\).
+
+Adding these costs together, Kai pays:
+\[10 + 20 = $30.\]
+
+Therefore, Kai paid a total of $30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,canonical,openai/gpt-4o,"Let's break down the infection pattern day by day:
+
+- **Day 0:** There are initially 16 infected people.
+- **Day 1:** Each of the 16 infected people infects 3 others, resulting in \(16 \times 3 = 48\) new infections. Adding these to the initial count, the total number of infected people by the end of Day 1 equals \(16 + 48 = 64\).
+
+- **Day 2:** Each of the 64 infected people infects 3 others, resulting in \(64 \times 3 = 192\) new infections. Adding these to the previous total, the total number of infected people by the end of Day 2 equals \(64 + 192 = 256\).
+
+- **Day 3:** Each of the 256 infected people infects 3 others, resulting in \(256 \times 3 = 768\) new infections. Adding these to the previous total, the total number of infected people by the end of Day 3 equals \(256 + 768 = 1024\).
+
+Thus, by the end of Day 3, there are 1,024 infected people in total.",True,1024,arithmetic_reasoning,high,medium
+GSM_009,canonical,openai/gpt-4o,"To determine how many dozens of eggs Nia will need for the 108 days, we can break it down into two parts based on her egg consumption pattern.
+
+1. **First 84 days:**
+   - Nia eats 5 eggs per day.
+   - Total eggs needed for 84 days = \( 5 \, \text{eggs/day} \times 84 \, \text{days} = 420 \, \text{eggs} \).
+
+2. **Next 24 days:**
+   - Nia increases her consumption to 7 eggs per day.
+   - Total eggs needed for 24 days = \( 7 \, \text{eggs/day} \times 24 \, \text{days} = 168 \, \text{eggs} \).
+
+Now, we compute the total eggs needed for the entire 108 days:
+\[ 420 \, \text{eggs} + 168 \, \text{eggs} = 588 \, \text{eggs} \]
+
+Since a dozen equals 12 eggs, we convert the total number of eggs to dozens:
+\[
+\frac{588 \, \text{eggs}}{12 \, \text{eggs/dozen}} = 49 \, \text{dozens}
+\]
+
+Nia will need 49 dozens of eggs for the 108 days.",False,49,arithmetic_reasoning,high,medium
+GSM_010,canonical,openai/gpt-4o,"To determine how much popcorn Zahra has, let's break down the popping process step by step:
+
+1. **First 30 seconds:**
+   - 60 kernels pop.
+
+2. **Next 30 seconds (second 30-second interval):**
+   - The popping rate is 4 times the first interval.
+   - \( 4 \times 60 = 240 \) kernels pop.
+
+3. **Next 30 seconds (third 30-second interval):**
+   - The popping rate is 6 times the first interval.
+   - \( 6 \times 60 = 360 \) kernels pop.
+
+4. **Final 30 seconds (fourth 30-second interval):**
+   - The popping rate is half of the previous interval's rate.
+   - \( \frac{360}{2} = 180 \) kernels pop.
+
+5. **Residual heat after taking the pan off:**
+   - A quarter of the number of kernels that popped in the final 30 seconds pop.
+   - \( \frac{180}{4} = 45 \) kernels pop.
+
+Now, add up all the popped kernels:
+
+\[
+60 + 240 + 360 + 180 + 45 = 885
+\]
+
+Thus, Zahra has a total of 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,canonical,openai/gpt-4o,"To solve this problem, we need to calculate the total grams of water used to make the ice cubes and then subtract this amount from the initial 328 grams of water Pavel has.
+
+First, we calculate how many grams of water are used to make the giant cubes:
+\[ 8 \text{ giant cubes} \times 12 \text{ grams/cube} = 96 \text{ grams} \]
+
+Next, we calculate how many grams of water are used to make the medium cubes:
+\[ 13 \text{ medium cubes} \times 11 \text{ grams/cube} = 143 \text{ grams} \]
+
+Now, we calculate how many grams of water are used to make the small cubes:
+\[ 15 \text{ small cubes} \times \frac{1}{5} \text{ grams/cube} = 3 \text{ grams} \]
+
+We add these amounts together to find the total amount of water used:
+\[ 96 \text{ grams} + 143 \text{ grams} + 3 \text{ grams} = 242 \text{ grams} \]
+
+Finally, we subtract the total amount of water used from the initial amount Pavel has:
+\[ 328 \text{ grams} - 242 \text{ grams} = 86 \text{ grams} \]
+
+Therefore, Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,canonical,openai/gpt-4o,"To find out how many potted plants Camila will have remaining, we can follow these steps:
+
+1. Calculate the total number of potted plants Camila initially has on her window ledges:  
+   She has 7 potted plants on each of the 52 window ledges.  
+   \[
+   7 \text{ plants/ledge} \times 52 \text{ ledges} = 364 \text{ plants}
+   \]
+
+2. Add the 29 new potted plants she received:  
+   \[
+   364 \text{ plants (existing)} + 29 \text{ plants (new)} = 393 \text{ plants}
+   \]
+
+3. Determine how many plants she will give away. Since she gives away 6 plants from each of the 52 ledges:  
+   \[
+   6 \text{ plants/ledge} \times 52 \text{ ledges} = 312 \text{ plants}
+   \]
+
+4. Subtract the number of plants she gives away from her total:  
+   \[
+   393 \text{ plants (total)} - 312 \text{ plants (given away)} = 81 \text{ plants}
+   \]
+
+Thus, Camila will remain with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,canonical,openai/gpt-4o,"To solve this problem, we need to determine both Mia's walking speeds on the beach and on the sidewalk, and then calculate the total time it takes for her to complete her walk.
+
+1. **Determine Mia's walking speeds**:
+
+   Let's denote Mia's walking speed on the beach as \( v \) kilometers per hour. On the sidewalk, her speed is twice that, so it's \( 2v \) kilometers per hour.
+
+2. **Calculate the time spent on the beach**:
+
+   Mia walks 12 kilometers on the beach, and we know this takes her 60 minutes (which is 1 hour). Therefore, using the relation \(\text{Distance} = \text{Speed} \times \text{Time}\), we have:
+   \[
+   12 = v \cdot 1
+   \]
+   Solving for \( v \), we have:
+   \[
+   v = 12 \text{ kilometers per hour}
+   \]
+
+3. **Calculate the speed on the sidewalk**:
+
+   Since Mia's speed on the sidewalk is twice her speed on the beach, it is:
+   \[
+   2v = 2 \times 12 = 24 \text{ kilometers per hour}
+   \]
+
+4. **Calculate the time spent walking on the sidewalk**:
+
+   Mia walks 12 kilometers on the sidewalk with a speed of 24 kilometers per hour. Thus, the time \( t_{\text{sidewalk}} \) spent walking on the sidewalk is:
+   \[
+   t_{\text{sidewalk}} = \frac{\text{Distance}}{\text{Speed}} = \frac{12}{24} = 0.5 \text{ hours}
+   \]
+   Converting hours to minutes gives us:
+   \[
+   t_{\text{sidewalk}} = 0.5 \times 60 = 30 \text{ minutes}
+   \]
+
+5. **Calculate the total time for the walk**:
+
+   The total time for the entire walk is the sum of the time spent on the beach and the time spent on the sidewalk:
+   \[
+   t_{\text{total}} = 60 \text{ minutes} + 30 \text{ minutes} = 90 \text{ minutes}
+   \]
+
+Therefore, it takes Mia 90 minutes to complete her entire 24-kilometer walk.
+
+Thus, the answer is \(\boxed{90}\) minutes.",True,90,arithmetic_reasoning,medium,medium
+GSM_014,canonical,openai/gpt-4o,"To determine what percentage of the maintenance worker's workday is spent cleaning floors, we can follow these calculations:
+
+1. **Total Time for Cleaning All Floors**:
+   - It takes 20 minutes to clean one floor.
+   - There are 210 floors.
+   - So, total time to clean all floors = \( 210 \text{ floors} \times 20 \text{ minutes per floor} = 4200 \text{ minutes} \).
+
+2. **Total Working Time Over 10 Days**:
+   - The worker works 10 hours a day.
+   - Convert hours to minutes: \( 10 \text{ hours} \times 60 \text{ minutes per hour} = 600 \text{ minutes per day} \).
+   - Total working time over 10 days = \( 10 \text{ days} \times 600 \text{ minutes per day} = 6000 \text{ minutes} \).
+
+3. **Percentage of Time Spent Cleaning**:
+   - Percentage of time spent cleaning each day = \(\left( \frac{\text{Total cleaning time}}{\text{Total working time}} \right) \times 100\).
+   - Percentage of time spent cleaning = \(\left( \frac{4200}{6000} \right) \times 100 \approx 70\%\).
+
+Thus, on average, the maintenance worker spends 70% of their workday cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,canonical,openai/gpt-4o,"To solve this problem, we need to round the prices of the plants to the nearest dollar as Viktor has decided to do, and then calculate his total earnings based on the number of bundles sold.
+
+First, let's round the prices:
+
+- Tulips: €2.25 rounds to €2.
+- Roses: €5.13 rounds to €5.
+- Sunflowers: €5.47 rounds to €5.
+
+Next, we'll calculate the earnings from each type of plant by multiplying the rounded price by the number of bundles sold:
+
+1. Earnings from tulips:  
+   \(12 \text{ bundles} \times €2/\text{bundle} = €24\).
+
+2. Earnings from roses:  
+   \(29 \text{ bundles} \times €5/\text{bundle} = €145\).
+
+3. Earnings from sunflowers:  
+   \(37 \text{ bundles} \times €5/\text{bundle} = €185\).
+
+Finally, we add the earnings from each type of plant to find the total earnings:
+
+\[
+€24 + €145 + €185 = €354
+\]
+
+Viktor will make a total of €354.",True,354,arithmetic_reasoning,medium,hard
+GSM_016,canonical,openai/gpt-4o,"First, we calculate the total weight of each type of feed and items the farmer is buying:
+
+- Wheat: \(6 \times 4 = 24\) pounds
+- Cucumbers: \(12 \times 5 = 60\) pounds
+- Apples: \(32 \times 43 = 1376\) pounds
+- Corns: \(18 \times 15 = 270\) pounds
+- Grocery: 43 pounds
+- Tools: 27 pounds
+
+Now, sum up the total weight:
+
+\[
+24 + 60 + 1376 + 270 + 43 + 27 = 1800 \text{ pounds}
+\]
+
+Each farm truck can carry 120 pounds at a time. To determine how many trips are needed, divide the total weight by the carrying capacity of one truck:
+
+\[
+\frac{1800}{120} = 15 \text{ trips}
+\]
+
+The farmer has three trucks available, which means they can make these trips concurrently. Therefore, we divide the total number of trips needed by the number of trucks:
+
+\[
+\frac{15}{3} = 5 \text{ trips per truck}
+\]
+
+The farmer will need a total of 5 trips per truck to transport all the items.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,canonical,openai/gpt-4o,"To solve the problem, let's first determine the number of boxes Liam sold each day:
+
+**Friday:**
+- Cookies: 25 boxes
+- Orange pies: 13 fewer boxes of orange pie than Saturday.
+
+**Saturday:**
+- Cookies: 25 + 11 = 36 boxes (11 more than Friday)
+- Orange pies: 22 boxes
+
+Since on Friday, Liam sold 13 fewer orange pies than on Saturday, on Friday he sold:
+- Orange pies: 22 - 13 = 9 boxes
+
+**Sunday:**
+Liam sold as much as he did in the past two days combined:
+
+Total sold on Friday and Saturday:
+- Cookies: 25 (Friday) + 36 (Saturday) = 61 boxes
+- Orange pies: 9 (Friday) + 22 (Saturday) = 31 boxes
+
+Therefore on Sunday, Liam sold:
+- Cookies: 61 boxes
+- Orange pies: 31 boxes
+
+Now, let's calculate his earnings:
+
+**Friday's Earnings:**
+- Cookies earnings: 25 boxes × ¥12 = ¥300
+- Orange pies earnings: 9 boxes × ¥21 = ¥189
+- Total earnings on Friday = ¥300 + ¥189 = ¥489
+
+**Saturday's Earnings:**
+- Cookies earnings: 36 boxes × ¥12 = ¥432
+- Orange pies earnings: 22 boxes × ¥21 = ¥462
+- Total earnings on Saturday = ¥432 + ¥462 = ¥894
+
+**Sunday's Earnings:**
+- Cookies earnings: 61 boxes × ¥12 = ¥732
+- Orange pies earnings: 31 boxes × ¥21 = ¥651
+- Total earnings on Sunday = ¥732 + ¥651 = ¥1383
+
+**Total earnings for all three days:**
+Total = ¥489 (Friday) + ¥894 (Saturday) + ¥1383 (Sunday) = ¥2766
+
+**Average daily earnings:**
+Total divided by 3 days = ¥2766 / 3 = ¥922
+
+Therefore, Liam's average daily earning is ¥922.",True,922,arithmetic_reasoning,medium,hard
+GSM_018,canonical,openai/gpt-4o,"First, let's determine the number of questions in each subject:
+
+1. **Physics**: 25% of 80 questions = 0.25 × 80 = 20 questions
+2. **Algebra**: 15% of 80 questions = 0.15 × 80 = 12 questions
+
+The remaining questions are divided equally between chemistry and history:
+\[ 
+80 - (20 + 12) = 48 \ (\text{remaining questions})
+\]
+
+Each of chemistry and history will then have:
+\[ 
+\frac{48}{2} = 24 \ \text{questions each}
+\]
+
+Next, let's calculate the number of questions Emma is sure to get correct in each subject:
+
+1. **Physics**: \( 10\% \times 20 = 0.1 \times 20 = 2 \ \text{questions} \)
+2. **Algebra**: \( 25\% \times 12 = 0.25 \times 12 = 3 \ \text{questions} \)
+3. **Chemistry**: \( \frac{1}{3} \times 24 = 8 \ \text{questions} \)
+4. **History**: \( \frac{1}{3} \times 24 = 8 \ \text{questions} \)
+
+Adding up the questions Emma is sure to get correct:
+\[ 
+2 + 3 + 8 + 8 = 21 \ \text{questions}
+\]
+
+Therefore, Emma is sure to get 21 points.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,canonical,openai/gpt-4o,"To find out how many 45-minute episodes Tariq watched on Sunday, we need to calculate how much TV he watched each day and then see how many hours he watched on Sunday.
+
+First, let's convert all viewing times to hours and sum them up:
+
+**Friday and Saturday:**
+- 3-hour episodes each night for 2 nights:  
+  \(3 \text{ hours} \times 2 = 6 \text{ hours}\)
+
+**Sunday:**
+- Let \(x\) be the number of 45-minute episodes.
+
+**Monday:**
+- A 4-hour episode and a 15-minute show:  
+  \(4 \text{ hours} + \frac{15}{60} \text{ hours} = 4.25 \text{ hours}\)
+
+**Tuesday:**
+- Four 2-hour episodes:  
+  \(4 \times 2 = 8 \text{ hours}\)
+
+**Wednesday:**
+- Three 30-minute episodes:  
+  \(3 \times \frac{30}{60} = 1.5 \text{ hours}\)
+
+Now let's set up an equation for the total hours watched:
+
+\[
+6 + \frac{45}{60}x + 4.25 + 8 + 1.5 = 22
+\]
+
+Simplify the equation:
+
+\[
+6 + \frac{3}{4}x + 4.25 + 8 + 1.5 = 22
+\]
+
+Combine like terms:
+
+\[
+19.75 + \frac{3}{4}x = 22
+\]
+
+Subtract 19.75 from both sides:
+
+\[
+\frac{3}{4}x = 2.25
+\]
+
+To solve for \(x\), multiply both sides by \(\frac{4}{3}\):
+
+\[
+x = 2.25 \times \frac{4}{3} = 3
+\]
+
+Therefore, Tariq watched \(\boxed{3}\) 45-minute episodes on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,canonical,openai/gpt-4o,"To find out how many eggs are still hidden, we need to first calculate how many eggs each person found and add them up.
+
+1. **Calculate how many eggs Quinn found:**  
+   Quinn finds six times as many as Ava, who found 3 eggs.  
+   Quinn: \( 6 \times 3 = 18 \) eggs
+
+2. **Calculate how many eggs Sophia found:**  
+   Sophia finds 3 fewer than Quinn.  
+   Sophia: \( 18 - 3 = 15 \) eggs
+
+3. **Calculate how many eggs Esteban found:**  
+   Esteban finds 1/5 as many as Sophia.  
+   Esteban: \( \frac{1}{5} \times 15 = 3 \) eggs
+
+4. **Calculate how many eggs Fatima found:**  
+   Fatima finds three dozen eggs more than Quinn and Ava combined.  
+   Quinn and Ava together found \( 18 + 3 = 21 \) eggs.  
+   Three dozen eggs is \( 3 \times 12 = 36 \).  
+   Fatima: \( 21 + 36 = 57 \) eggs
+
+Now, add all these up to determine the total number of eggs found:
+
+- Ava: 3 eggs
+- Quinn: 18 eggs
+- Sophia: 15 eggs
+- Esteban: 3 eggs
+- Fatima: 57 eggs
+
+Total found: \( 3 + 18 + 15 + 3 + 57 = 96 \) eggs
+
+Zahra originally hid 10 dozen eggs, which is \( 10 \times 12 = 120 \) eggs.
+
+Subtract the total found from the total hidden to get the number of eggs still hidden:
+
+\[
+120 - 96 = 24
+\]
+
+Thus, there are 24 eggs still hidden in the yard.",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w1,openai/gpt-4o,"To calculate the total cost of an 86-minute call with the described rate structure, you need to break it down into two parts: the first 20 minutes and the remaining minutes beyond 20.
+
+1. **First 20 minutes:**
+   - Rate is $0.9 per minute.
+   - Total cost for the first 20 minutes = 20 minutes * $0.9/minute = $18.
+
+2. **Remaining 66 minutes (86 - 20 = 66):**
+   - Rate is $0.5 per minute.
+   - Total cost for the remaining 66 minutes = 66 minutes * $0.5/minute = $33.
+
+3. **Total cost of the 86-minute call:**
+   - Total cost = Cost for the first 20 minutes + Cost for the remaining 66 minutes
+   - Total cost = $18 + $33 = $51.
+
+Hence, the total cost of the 86-minute call is $51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,w1,openai/gpt-4o,"To find the total number of kids in the park, we need to calculate the number of boys first. The problem states that the number of boys is two-thirds of the number of girls. Since there are 18 girls, we can calculate the number of boys as follows:
+
+\[
+\text{Number of boys} = \frac{2}{3} \times 18 = 12
+\]
+
+Now, add the number of girls and the number of boys to find the total number of kids:
+
+\[
+\text{Total number of kids} = \text{Number of girls} + \text{Number of boys} = 18 + 12 = 30
+\]
+
+Therefore, the total number of kids in the park is 30.",True,30,arithmetic_reasoning,high,easy
+GSM_003,w1,openai/gpt-4o,"To determine the total number of cards, we start by calculating the number of each color based on the given information. The artist's card set initially has 30 purple cards.
+
+Next, we calculate the number of yellow cards. The problem states that the number of yellow cards is 50% greater than the number of purple cards. This means:
+
+\[
+\text{Number of yellow cards} = 30 + 0.5 \times 30 = 30 + 15 = 45
+\]
+
+Now, we calculate the number of blue cards. The number of blue cards equals the combined total of purple and yellow cards. Therefore:
+
+\[
+\text{Number of blue cards} = 30 + 45 = 75
+\]
+
+Finally, we find the total number of cards by summing the number of purple, yellow, and blue cards:
+
+\[
+\text{Total number of cards} = 30 + 45 + 75 = 150
+\]
+
+Thus, the total number of cards across all three colors is \(\boxed{150}\).",True,150,arithmetic_reasoning,high,medium
+GSM_004,w1,openai/gpt-4o,"To calculate the painter's total earnings over the course of a year, we need to determine how many days he works in a year and then multiply by his daily wage.
+
+1. **Calculate weekly earnings:**
+   - The painter works 6 days per week and earns £150 per day.
+   - Weekly earnings = 6 days/week × £150/day = £900 per week.
+
+2. **Calculate monthly earnings:**
+   - The painter works 2 weeks per month.
+   - Monthly earnings = 2 weeks/month × £900/week = £1,800 per month.
+
+3. **Calculate annual earnings:**
+   - There are 12 months in a year.
+   - Annual earnings = 12 months/year × £1,800/month = £21,600 per year.
+
+Therefore, the painter's total earnings over the course of a year are £21,600.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,w1,openai/gpt-4o,"First, let's calculate the total number of class periods Liam attends in a regular school day. A regular school day has 6 periods, and Liam attends 1 additional class. Therefore, the total number of periods Liam attends each day is:
+
+\[ 6 + 1 = 7 \]
+
+Each class period lasts 60 minutes, so the total number of minutes Liam spends at school each day is:
+
+\[ 7 \times 60 = 420 \text{ minutes} \]
+
+Next, we calculate the weekly time Liam spends in school. Liam attends school 6 days a week, so the total number of minutes he spends in school each week is:
+
+\[ 420 \times 6 = 2520 \text{ minutes} \]
+
+On both Saturday and Sunday, Liam spends additional time on extra learning. He spends \( \frac{1}{7} \) of his total weekly learning time on extra learning each day. Let's first calculate his total weekly learning time without the extra time on the weekends. This includes his 6 school days of learning:
+
+Let his total weekly learning time be \( x \). The time spent on extra learning each day over the weekend is \( \frac{1}{7}x \).
+
+Summing his weekday and his weekend times, we have:
+
+\[ x = 2520 + 2 \cdot \left(\frac{1}{7}x\right) \]
+
+Simplifying, we get:
+
+\[ x = 2520 + \frac{2}{7}x \]
+
+Rearranging, we have:
+
+\[ x - \frac{2}{7}x = 2520 \]
+\[ \frac{5}{7}x = 2520 \]
+
+To solve for \( x \), multiply both sides by \( \frac{7}{5} \):
+
+\[ x = 2520 \times \frac{7}{5} = 504 \times 7 = 3528 \text{ minutes} \]
+
+So, the total weekly learning minutes is 3528. To convert this into hours, divide by 60:
+
+\[ \frac{3528}{60} = 58.8 \text{ hours} \]
+
+Therefore, the total number of hours per week Liam spends learning is:
+
+\[ \boxed{58.8} \]",False,54,arithmetic_reasoning,high,hard
+GSM_006,w1,openai/gpt-4o,"To find the total value of Kayla's shares at the end of the second year, we can follow these steps:
+
+1. **Initial Purchase:**
+   - Kayla purchases 10 shares at $56 per share. 
+   - Total initial investment = 10 shares × $56/share = $560.
+
+2. **End of the First Year:**
+   - The stock price increases by 30%.
+   - New price per share = $56 + (30% of $56) = $56 + $16.80 = $72.80.
+   - The total value at the end of the first year = 10 shares × $72.80/share = $728.
+
+3. **End of the Second Year:**
+   - The stock price decreases by 25%.
+   - New price per share = $72.80 - (25% of $72.80) = $72.80 - $18.20 = $54.60.
+   - The total value at the end of the second year = 10 shares × $54.60/share = $546.
+
+Therefore, the total value of Kayla's shares at the end of the second year is $546.",True,546,arithmetic_reasoning,high,medium
+GSM_007,w1,openai/gpt-4o,"Kai rents the car for 4 hours, and out of these, 2 hours are free. Therefore, he needs to pay for 2 hours.
+
+Here's the breakdown of the costs for the paid hours:
+
+- The cost for the first paid hour is $10.
+- The cost for the second paid hour is double the first, which is \(2 \times 10 = 20\).
+
+Summing these amounts gives the total amount Kai paid:
+
+\[
+10 + 20 = 30
+\]
+
+Thus, the total amount Kai paid is $30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,w1,openai/gpt-4o,"To find the total number of infected people after 3 days, we can model the spread of the virus using exponential growth. Each infected person gives the virus to 3 other people every day.
+
+We start with 16 initially infected individuals.
+
+- Day 0: 16 people are infected.
+
+From each of these 16 people, 3 new people are infected on the first day.
+
+- Day 1:  
+  New infections = 16 * 3 = 48  
+  Total infected by end of Day 1 = 16 + 48 = 64
+
+On the second day, these 48 newly infected individuals each infect 3 other people.
+
+- Day 2:  
+  New infections = 48 * 3 = 144  
+  Total infected by end of Day 2 = 64 + 144 = 208
+
+On the third day, these 144 newly infected individuals each infect 3 more people.
+
+- Day 3:  
+  New infections = 144 * 3 = 432  
+  Total infected by end of Day 3 = 208 + 432 = 640
+
+Therefore, after 3 days, a total of 640 people are infected.",False,1024,arithmetic_reasoning,high,medium
+GSM_009,w1,openai/gpt-4o,"To determine the total number of dozens of eggs Nia needs, we first calculate the total number of eggs consumed, and then convert this number into dozens.
+
+1. **Calculate eggs consumed in the first 84 days:**
+
+   Nia consumes 5 eggs per day. Over 84 days, the total is:
+   \[
+   5 \text{ eggs/day} \times 84 \text{ days} = 420 \text{ eggs}
+   \]
+
+2. **Calculate eggs consumed in the next 24 days:**
+
+   Nia increases her consumption to 7 eggs per day. Over 24 days, the total is:
+   \[
+   7 \text{ eggs/day} \times 24 \text{ days} = 168 \text{ eggs}
+   \]
+
+3. **Total eggs consumed:**
+
+   Adding the two amounts gives the total number of eggs:
+   \[
+   420 \text{ eggs} + 168 \text{ eggs} = 588 \text{ eggs}
+   \]
+
+4. **Convert eggs to dozens:**
+
+   There are 12 eggs in a dozen. Therefore, the number of dozens is:
+   \[
+   \frac{588 \text{ eggs}}{12 \text{ eggs/dozen}} = 49 \text{ dozens}
+   \]
+
+Thus, Nia needs a total of \( \boxed{49} \) dozens of eggs for the 108 days.",False,49,arithmetic_reasoning,high,medium
+GSM_010,w1,openai/gpt-4o,"To solve this problem, we need to calculate the total number of popcorn pieces that Zahra ends up with, based on the popping rates given.
+
+First, let's summarize the popping activity in each segment of 30 seconds:
+
+1. **First 30 seconds**: 60 kernels pop.
+   \[
+   k_1 = 60
+   \]
+
+2. **Second 30 seconds**: 4 times the initial number pop.
+   \[
+   k_2 = 4 \times 60 = 240
+   \]
+
+3. **Third 30 seconds**: 6 times the initial number pop.
+   \[
+   k_3 = 6 \times 60 = 360
+   \]
+
+4. **Fourth 30 seconds**: Half of the third segment's popping rate.
+   \[
+   k_4 = \frac{1}{2} \times 360 = 180
+   \]
+
+After the pan is removed from the heat:
+
+5. **Residual popping**: A quarter of the kernels that popped in the fourth 30 seconds pop due to residual heat.
+   \[
+   k_{\text{residual}} = \frac{1}{4} \times 180 = 45
+   \]
+
+Adding all these kernels together gives the total number of popcorn pieces:
+
+\[
+k_{\text{total}} = k_1 + k_2 + k_3 + k_4 + k_{\text{residual}}
+\]
+\[
+k_{\text{total}} = 60 + 240 + 360 + 180 + 45
+\]
+\[
+k_{\text{total}} = 885
+\]
+
+Thus, the total number of popcorn pieces Zahra ends up with is \(\boxed{885}\).",True,885,arithmetic_reasoning,medium,medium
+GSM_011,w1,openai/gpt-4o,"Let's calculate the total amount of water used for each size of ice cube and then find the remaining unused water.
+
+First, consider the giant cubes:
+- Each giant cube requires 12 grams of water.
+- Pavel makes 8 giant cubes, so they require: 
+  \[
+  8 \times 12 = 96 \text{ grams}
+  \]
+
+Next, consider the medium cubes:
+- Each medium cube requires 11 grams of water.
+- Pavel makes 13 medium cubes, so they require: 
+  \[
+  13 \times 11 = 143 \text{ grams}
+  \]
+
+Now, consider the small cubes:
+- Each small cube requires \(\frac{1}{5}\) of a gram of water.
+- Pavel makes 15 small cubes, so they require: 
+  \[
+  15 \times \frac{1}{5} = 3 \text{ grams}
+  \]
+
+Calculate the total amount of water used:
+\[
+96 + 143 + 3 = 242 \text{ grams}
+\]
+
+Pavel initially had 328 grams of water. To find out how much water remains unused, subtract the total water used from the initial amount:
+\[
+328 - 242 = 86 \text{ grams}
+\]
+
+Therefore, the amount of water that remains unused is \(\boxed{86}\) grams.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,w1,openai/gpt-4o,"First, let's calculate the total number of potted plants Camila initially has. Since she has 7 potted plants on each of the 52 window ledges, we find the total by multiplying:
+
+\[ 7 \text{ plants/ledge} \times 52 \text{ ledges} = 364 \text{ plants} \]
+
+Then, she acquired 29 additional potted plants:
+
+\[ 364 \text{ plants} + 29 \text{ plants} = 393 \text{ plants} \]
+
+Tomorrow, she plans to give away 6 plants from each ledge. Since there are 52 ledges, the total number of plants she will give away is:
+
+\[ 6 \text{ plants/ledge} \times 52 \text{ ledges} = 312 \text{ plants} \]
+
+Now, subtract the plants that will be given away from the current total to find out how many potted plants Camila will be left with:
+
+\[ 393 \text{ plants} - 312 \text{ plants} = 81 \text{ plants} \]
+
+Therefore, Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,w1,openai/gpt-4o,"To solve this problem, we start by determining Mia's walking speeds on the beach and the sidewalk.
+
+1. **Determine Mia's speed on the beach:**
+
+   Mia walks 12 kilometers on the beach in 60 minutes. To find her speed on the beach, use the formula:
+
+   \[
+   \text{Speed on the beach} = \frac{\text{Distance on the beach}}{\text{Time on the beach}} = \frac{12 \text{ km}}{60 \text{ min}} = \frac{1}{5} \text{ km/min}
+   \]
+
+2. **Determine Mia's speed on the sidewalk:**
+
+   Mia's walking speed on the sidewalk is twice her speed on the beach:
+
+   \[
+   \text{Speed on the sidewalk} = 2 \times \frac{1}{5} \text{ km/min} = \frac{2}{5} \text{ km/min}
+   \]
+
+3. **Calculate the time taken to walk on the sidewalk:**
+
+   Mia walks 12 kilometers on the sidewalk. Use the formula to calculate the time:
+
+   \[
+   \text{Time on the sidewalk} = \frac{\text{Distance on the sidewalk}}{\text{Speed on the sidewalk}} = \frac{12 \text{ km}}{\frac{2}{5} \text{ km/min}} = 12 \times \frac{5}{2} = 30 \text{ min}
+   \]
+
+4. **Calculate the total walking time:**
+
+   Add the time spent walking on the beach and the sidewalk:
+
+   \[
+   \text{Total time} = \text{Time on the beach} + \text{Time on the sidewalk} = 60 \text{ min} + 30 \text{ min} = 90 \text{ min}
+   \]
+
+Thus, it takes Mia a total of 90 minutes to complete her 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium
+GSM_014,w1,openai/gpt-4o,"To solve this problem, we need to calculate how much time the maintenance worker spends on cleaning floors daily and what percentage this constitutes of their total working hours each day.
+
+First, determine the total cleaning time required for all 210 floors:
+- Each floor takes 20 minutes to clean.
+- Total time to clean 210 floors = 210 floors * 20 minutes/floor = 4200 minutes.
+
+The worker has 10 days to clean all floors, so the daily cleaning time is:
+- Daily cleaning time = 4200 minutes / 10 days = 420 minutes/day.
+
+Next, convert the worker's daily working hours into minutes:
+- The worker puts in 10 hours per day.
+- Total minutes per day = 10 hours/day * 60 minutes/hour = 600 minutes/day.
+
+Now, calculate the percentage of daily working time used for cleaning:
+- Percentage of daily time for cleaning = (420 minutes/day) / (600 minutes/day) * 100% = 70%.
+
+Thus, on average, 70% of the worker's daily hours is used for cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,w1,openai/gpt-4o,"To calculate Viktor's total revenue, we first need to round the prices to the nearest dollar and then calculate the revenue for each type of flower.
+
+- **Tulips** are priced at Û2.25 per bundle. Rounding this to the nearest dollar gives us Û2. Viktor sells 12 bundles of tulips, so the revenue from tulips is:
+  \[
+  12 \times 2 = 24 \text{ Û}
+  \]
+
+- **Roses** are priced at Û5.13 per bundle. Rounding this to the nearest dollar gives us Û5. Viktor sells 29 bundles of roses, so the revenue from roses is:
+  \[
+  29 \times 5 = 145 \text{ Û}
+  \]
+
+- **Sunflowers** are priced at Û5.47 per bundle. Rounding this to the nearest dollar gives us Û5. Viktor sells 37 bundles of sunflowers, so the revenue from sunflowers is:
+  \[
+  37 \times 5 = 185 \text{ Û}
+  \]
+
+Finally, to find the total revenue, we sum up the individual revenues:
+\[
+24 + 145 + 185 = 354 \text{ Û}
+\]
+
+Therefore, Viktor's total revenue for the day is 354 Û.",True,354,arithmetic_reasoning,medium,hard
+GSM_016,w1,openai/gpt-4o,"Let's calculate the total weight of each item purchased by the farmer:
+
+1. **Wheat**: 6 boxes × 4 pounds per box = 24 pounds
+2. **Cucumbers**: 12 bags × 5 pounds per bag = 60 pounds
+3. **Apples**: 32 packs × 43 pounds per pack = 1,376 pounds
+4. **Corns**: 18 sacks × 15 pounds per sack = 270 pounds
+5. **Grocery**: 43 pounds
+6. **Tools**: 27 pounds
+
+Now, add up all the weights:
+
+- Total weight of wheat = 24 pounds
+- Total weight of cucumbers = 60 pounds
+- Total weight of apples = 1,376 pounds
+- Total weight of corns = 270 pounds
+- Total weight of grocery = 43 pounds
+- Total weight of tools = 27 pounds
+
+\[ \text{Total weight} = 24 + 60 + 1,376 + 270 + 43 + 27 = 1,800 \text{ pounds} \]
+
+Each farm truck can hold 120 pounds per trip, and the farmer has three trucks. Therefore, let's calculate how many trips are required to transport all the items:
+
+\[ \text{Total trips required} = \frac{1,800 \text{ pounds}}{120 \text{ pounds per trip}} = 15 \text{ trips} \]
+
+Thus, the farmer needs \( \boxed{15} \) trips to move all the items.",False,5,arithmetic_reasoning,medium,hard
+GSM_017,w1,openai/gpt-4o,"To determine Liam's average daily earnings, we first need to calculate his total earnings for each day and then find the daily average.
+
+**Friday's Sales:**
+- Cookies: 25 boxes
+- Orange pies: Let's denote the number of orange pie boxes sold on Friday as \( x \). According to the problem, this is 13 fewer than what he sold on Saturday. So, \( x = y - 13 \), where \( y \) is the number of orange pie boxes sold on Saturday.
+
+**Saturday's Sales:**
+- Cookies: 25 + 11 = 36 boxes
+- Orange pies: 22 boxes (therefore, \( y = 22 \))
+
+From the above, we know:
+\[ x = y - 13 = 22 - 13 = 9 \]
+
+So, on Friday:
+- Orange pies: 9 boxes
+
+**Sunday's Sales:**
+- Sunday’s total sales matched the combined total of Friday and Saturday.
+- Total items sold on Friday = 25 (cookies) + 9 (pies) = 34 boxes
+- Total items sold on Saturday = 36 (cookies) + 22 (pies) = 58 boxes
+
+Thus, on Sunday:
+- Total items sold = 34 boxes + 58 boxes = 92 boxes
+
+Now, let's calculate the earnings:
+
+**Friday's Earnings:**
+- Earnings from cookies: \( 25 \times £12 = £300 \)
+- Earnings from orange pies: \( 9 \times £21 = £189 \)
+- Total Earnings on Friday \( = £300 + £189 = £489 \)
+
+**Saturday's Earnings:**
+- Earnings from cookies: \( 36 \times £12 = £432 \)
+- Earnings from orange pies: \( 22 \times £21 = £462 \)
+- Total Earnings on Saturday \( = £432 + £462 = £894 \)
+
+**Sunday's Earnings:**
+- We need to find how Liam distributed sales on Sunday to get the same total number of boxes but maintaining the types and number proportions.
+  - Let’s assume on Sunday, he sold \( c \) boxes of cookies and \( p \) boxes of pies such that:
+    \[ c + p = 92 \]
+  - Notice that the income from the same total items will be the same as the combined income of Friday and Saturday because they are priced differently. However, the income formula as a total will ensure we are not computing incorrectly.
+  
+**Total earnings from all days:**
+- Total earnings = Friday earnings + Saturday earnings
+\[ = £489 + £894 = £1383 \]
+
+Considering sales match but given no distribution constraints on Sunday beyond item count, calculate potential overall income similarly distributed by proportion (as basic constraint was same total count):
+- Proportion/checking approach: Assume Liam handled similarly priced items consistent with earnings on average from days 1 and 2 (as exact reproduction distribution unchanged income).
+
+**Average Daily Earnings:**
+- Total earnings divided by 3 days:
+\[ \text{Average daily earnings} = \frac{£1383}{3} = £461 \]
+
+Thus, Liam's average daily earnings over the weekend were £461.",False,922,arithmetic_reasoning,medium,hard
+GSM_018,w1,openai/gpt-4o,"Let's start by finding the number of questions for each subject:
+
+1. **Physics Questions:**
+   \[
+   25\% \text{ of } 80 = 0.25 \times 80 = 20
+   \]
+
+2. **Algebra Questions:**
+   \[
+   15\% \text{ of } 80 = 0.15 \times 80 = 12
+   \]
+
+The total number of questions so far is:
+\[
+20 \text{ (physics) } + 12 \text{ (algebra) } = 32
+\]
+
+The remaining number of questions is:
+\[
+80 - 32 = 48
+\]
+
+Since the remaining questions are equally split between chemistry and history, each of these subjects has:
+\[
+\frac{48}{2} = 24
+\]
+
+**Calculating Emma's Expected Score:**
+
+1. **Physics:**
+   Emma answers 10% of the physics questions correctly.
+   \[
+   10\% \text{ of } 20 = 0.10 \times 20 = 2
+   \]
+
+2. **Algebra:**
+   Emma answers 25% of the algebra questions correctly.
+   \[
+   25\% \text{ of } 12 = 0.25 \times 12 = 3
+   \]
+
+3. **Chemistry:**
+   Emma answers \(\frac{1}{3}\) of the chemistry questions correctly.
+   \[
+   \frac{1}{3} \times 24 = 8
+   \]
+
+4. **History:**
+   Emma answers \(\frac{1}{3}\) of the history questions correctly.
+   \[
+   \frac{1}{3} \times 24 = 8
+   \]
+
+Now, add up all the points to find Emma’s total score:
+\[
+2 \text{ (physics) } + 3 \text{ (algebra) } + 8 \text{ (chemistry) } + 8 \text{ (history) } = 21
+\]
+
+Thus, Emma is certain to score a total of \( \boxed{21} \) points.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,w1,openai/gpt-4o,"Let's break down the total screen time for each day and find the number of 45-minute episodes Tariq watched on Sunday.
+
+1. **Friday and Saturday**: 
+   - Each day, Tariq watched a 3-hour episode.
+   - Total for both days = 2 × 3 = 6 hours.
+
+2. **Sunday**:
+   - Tariq watched several 45-minute episodes. Let's denote the number of these episodes as \( x \).
+   - Total screen time for Sunday = \( 45x \) minutes = \( \frac{45x}{60} \) hours = \( \frac{3x}{4} \) hours.
+
+3. **Monday**:
+   - Tariq watched a 4-hour episode and a 15-minute show.
+   - Total screen time = 4 hours + \( \frac{15}{60} \) hour = 4.25 hours.
+
+4. **Tuesday**:
+   - Tariq watched four 2-hour episodes.
+   - Total screen time = 4 × 2 = 8 hours.
+
+5. **Wednesday**:
+   - He watched three 30-minute episodes.
+   - Total screen time = 3 × \( \frac{30}{60} \) = 1.5 hours.
+
+Adding up the total screen time:
+- Friday and Saturday: 6 hours
+- Sunday: \( \frac{3x}{4} \) hours
+- Monday: 4.25 hours
+- Tuesday: 8 hours
+- Wednesday: 1.5 hours
+
+The sum of these is 22 hours:
+\[
+6 + \frac{3x}{4} + 4.25 + 8 + 1.5 = 22
+\]
+
+Simplifying, we combine the constant terms:
+\[
+19.75 + \frac{3x}{4} = 22
+\]
+
+Subtract 19.75 from both sides:
+\[
+\frac{3x}{4} = 2.25
+\]
+
+Multiply both sides by 4 to solve for \( 3x \):
+\[
+3x = 9
+\]
+
+Divide by 3:
+\[
+x = 3
+\]
+
+Thus, Tariq watched **3 episodes** of the 45-minute show on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,w1,openai/gpt-4o,"To solve this problem, we need to calculate the total number of eggs found by all participants and then subtract that from the total number of hidden eggs. Here's how to do it step-by-step:
+
+1. **Total eggs hidden:** Zahra hid \(10\) dozen eggs. Since one dozen equals 12 eggs, the total number of eggs hidden is:
+   \[
+   10 \times 12 = 120 \text{ eggs}
+   \]
+
+2. **Eggs found by Ava:** Ava discovers 3 eggs.
+
+3. **Eggs found by Quinn:** Quinn finds six times the number Ava found, therefore:
+   \[
+   6 \times 3 = 18 \text{ eggs}
+   \]
+
+4. **Eggs found by Sophia:** Sophia collects 3 fewer eggs than Quinn, which means:
+   \[
+   18 - 3 = 15 \text{ eggs}
+   \]
+
+5. **Eggs found by Esteban:** Esteban finds \( \frac{1}{5} \) of the number of eggs Sophia found, thus:
+   \[
+   \frac{1}{5} \times 15 = 3 \text{ eggs}
+   \]
+
+6. **Eggs found by Fatima:** Fatima finds three dozen more eggs than the total found by Quinn and Ava together. First, calculate the total found by Quinn and Ava:
+   \[
+   18 + 3 = 21 \text{ eggs}
+   \]
+   Three dozen eggs amount to:
+   \[
+   3 \times 12 = 36 \text{ eggs}
+   \]
+   So, Fatima finds:
+   \[
+   21 + 36 = 57 \text{ eggs}
+   \]
+
+7. **Total eggs found by all participants:** Sum all the eggs found by Ava, Quinn, Sophia, Esteban, and Fatima:
+   \[
+   3 + 18 + 15 + 3 + 57 = 96 \text{ eggs}
+   \]
+
+8. **Eggs remaining in the yard:** Subtract the total number of eggs found from the total number of eggs hidden:
+   \[
+   120 - 96 = 24 \text{ eggs}
+   \]
+
+Thus, \( \boxed{24} \) eggs remain hidden in the yard.",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w2,openai/gpt-4o,"""53.0""",False,51,arithmetic_reasoning,high,medium
+GSM_002,w2,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,w2,openai/gpt-4o,"To find the total number of cards, we need to calculate the number of yellow and blue cards based on the given conditions and then sum them up with the purple cards.
+
+1. **Purple Cards**: 30
+
+2. **Yellow Cards**:
+   - Yellow cards are 50% more than purple cards.
+   - Thus, yellow cards = 30 + (0.50 × 30) = 30 + 15 = 45
+
+3. **Blue Cards**:
+   - Blue cards are equal to the sum of purple and yellow cards.
+   - Thus, blue cards = 30 (purple) + 45 (yellow) = 75
+
+4. **Total Cards**:
+   - Total cards = Purple + Yellow + Blue = 30 + 45 + 75 = 150
+
+So, the total number of cards is 150.",True,150,arithmetic_reasoning,high,medium
+GSM_004,w2,openai/gpt-4o,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,w2,openai/gpt-4o,55,False,54,arithmetic_reasoning,high,hard
+GSM_006,w2,openai/gpt-4o,54.6,False,546,arithmetic_reasoning,high,medium
+GSM_007,w2,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,w2,openai/gpt-4o,436,False,1024,arithmetic_reasoning,high,medium
+GSM_009,w2,openai/gpt-4o,54,False,49,arithmetic_reasoning,high,medium
+GSM_010,w2,openai/gpt-4o,555,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w2,openai/gpt-4o,225,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w2,openai/gpt-4o,61,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w2,openai/gpt-4o,180,False,90,arithmetic_reasoning,medium,medium
+GSM_014,w2,openai/gpt-4o,70.0,True,70,arithmetic_reasoning,medium,medium
+GSM_015,w2,openai/gpt-4o,396,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w2,openai/gpt-4o,9,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w2,openai/gpt-4o,1092,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w2,openai/gpt-4o,8,False,21,arithmetic_reasoning,medium,hard
+GSM_019,w2,openai/gpt-4o,3,True,3,arithmetic_reasoning,medium,hard
+GSM_020,w2,openai/gpt-4o,49,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w3,openai/gpt-4o,58.4,False,51,arithmetic_reasoning,high,medium
+GSM_002,w3,openai/gpt-4o,45,False,30,arithmetic_reasoning,high,easy
+GSM_003,w3,openai/gpt-4o,135,False,150,arithmetic_reasoning,high,medium
+GSM_004,w3,openai/gpt-4o,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,w3,openai/gpt-4o,56,False,54,arithmetic_reasoning,high,hard
+GSM_006,w3,openai/gpt-4o,5460,False,546,arithmetic_reasoning,high,medium
+GSM_007,w3,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,w3,openai/gpt-4o,112,False,1024,arithmetic_reasoning,high,medium
+GSM_009,w3,openai/gpt-4o,51,False,49,arithmetic_reasoning,high,medium
+GSM_010,w3,openai/gpt-4o,540,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w3,openai/gpt-4o,155,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w3,openai/gpt-4o,125,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w3,openai/gpt-4o,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,w3,openai/gpt-4o,33.33,False,70,arithmetic_reasoning,medium,medium
+GSM_015,w3,openai/gpt-4o,480,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w3,openai/gpt-4o,20,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w3,openai/gpt-4o,4779,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w3,openai/gpt-4o,"First, calculate the number of biology questions in the exam:
+\[ 25\% \text{ of } 80 = 0.25 \times 80 = 20 \text{ biology questions} \]
+
+Next, calculate the number of geometry questions:
+\[ 15\% \text{ of } 80 = 0.15 \times 80 = 12 \text{ geometry questions} \]
+
+There are a total of \(20 + 12 = 32\) questions in biology and geometry, so the remaining questions are:
+\[ 80 - 32 = 48 \text{ questions for economics and geography} \]
+
+Since the economics and geography questions are split equally, each section has:
+\[ \frac{48}{2} = 24 \text{ questions each} \]
+
+Now, calculate the number of questions Jordan is expected to answer correctly in each section:
+
+- Biology: 
+  \[ 10\% \text{ of } 20 = 0.10 \times 20 = 2 \text{ questions} \]
+
+- Geometry: 
+  \[ 25\% \text{ of } 12 = 0.25 \times 12 = 3 \text{ questions} \]
+
+- Economics: 
+  \[ \frac{1}{3} \text{ of } 24 = \frac{24}{3} = 8 \text{ questions} \]
+
+- Geography: 
+  \[ \frac{1}{3} \text{ of } 24 = \frac{24}{3} = 8 \text{ questions} \]
+
+Finally, add up the number of questions Jordan is expected to answer correctly:
+\[ 2 + 3 + 8 + 8 = 21 \]
+
+Jordan is certain to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,w3,openai/gpt-4o,2,False,3,arithmetic_reasoning,medium,hard
+GSM_020,w3,openai/gpt-4o,24,True,24,arithmetic_reasoning,medium,hard
+GSM_001,w4,openai/gpt-4o,57.8,False,51,arithmetic_reasoning,high,medium
+GSM_002,w4,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,w4,openai/gpt-4o,150,True,150,arithmetic_reasoning,high,medium
+GSM_004,w4,openai/gpt-4o,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,w4,openai/gpt-4o,"To find \( \text{total\_hr} \), we will first calculate \( w \), \( x \), \( y \), \( \text{total\_min} \), and finally \( \text{total\_hr} \) using the given formulas.
+
+Given:
+\[ p = 6, \, e = 1, \, d = 60, \, n = 6 \]
+
+First, calculate \( w \):
+\[
+w = (p + e) \times d \times n = (6 + 1) \times 60 \times 6 = 7 \times 60 \times 6 = 2520
+\]
+
+Next, calculate \( x \) and \( y \):
+\[
+x = \frac{w}{7} = \frac{2520}{7} = 360
+\]
+\[
+y = \frac{w}{7} = \frac{2520}{7} = 360
+\]
+
+Now, calculate \( \text{total\_min} \):
+\[
+\text{total\_min} = w + x + y = 2520 + 360 + 360 = 3240
+\]
+
+Finally, calculate \( \text{total\_hr} \):
+\[
+\text{total\_hr} = \frac{\text{total\_min}}{60} = \frac{3240}{60} = 54
+\]
+
+Thus, the value of \( \text{total\_hr} \) is 54.",True,54,arithmetic_reasoning,high,hard
+GSM_006,w4,openai/gpt-4o,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,w4,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,w4,openai/gpt-4o,400,False,1024,arithmetic_reasoning,high,medium
+GSM_009,w4,openai/gpt-4o,65,False,49,arithmetic_reasoning,high,medium
+GSM_010,w4,openai/gpt-4o,690,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w4,openai/gpt-4o,154,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w4,openai/gpt-4o,58,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w4,openai/gpt-4o,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,w4,openai/gpt-4o,33.33,False,70,arithmetic_reasoning,medium,medium
+GSM_015,w4,openai/gpt-4o,394,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w4,openai/gpt-4o,4,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w4,openai/gpt-4o,1030,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w4,openai/gpt-4o,24,False,21,arithmetic_reasoning,medium,hard
+GSM_019,w4,openai/gpt-4o,4,False,3,arithmetic_reasoning,medium,hard
+GSM_020,w4,openai/gpt-4o,65,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w5,openai/gpt-4o,78,False,86,arithmetic_reasoning,high,medium
+GSM_002,w5,openai/gpt-4o,18,True,18,arithmetic_reasoning,high,easy
+GSM_003,w5,openai/gpt-4o,55,False,75,arithmetic_reasoning,high,medium
+GSM_004,w5,openai/gpt-4o,£150 per day.,True,150,arithmetic_reasoning,high,easy
+GSM_005,w5,openai/gpt-4o,9 classes per day.,False,7,arithmetic_reasoning,high,hard
+GSM_006,w5,openai/gpt-4o,€60,False,56,arithmetic_reasoning,high,medium
+GSM_007,w5,openai/gpt-4o,6 hours,False,4,arithmetic_reasoning,high,hard
+GSM_008,w5,openai/gpt-4o,16,True,16,arithmetic_reasoning,high,medium
+GSM_009,w5,openai/gpt-4o,4 eggs per day.,False,5,arithmetic_reasoning,high,medium
+GSM_010,w5,openai/gpt-4o,15,False,60,arithmetic_reasoning,medium,medium
+GSM_011,w5,openai/gpt-4o,355,False,328,arithmetic_reasoning,medium,medium
+GSM_012,w5,openai/gpt-4o,1 plant.,False,7,arithmetic_reasoning,medium,medium
+GSM_013,w5,openai/gpt-4o,6 kilometers,False,24,arithmetic_reasoning,medium,medium
+GSM_014,w5,openai/gpt-4o,210 floors,True,210,arithmetic_reasoning,medium,medium
+GSM_015,w5,openai/gpt-4o,23 bundles,False,37,arithmetic_reasoning,medium,hard
+GSM_016,w5,openai/gpt-4o,3 pounds.,False,43,arithmetic_reasoning,medium,hard
+GSM_017,w5,openai/gpt-4o,¥18,False,21,arithmetic_reasoning,medium,hard
+GSM_018,w5,openai/gpt-4o,60,False,80,arithmetic_reasoning,medium,hard
+GSM_019,w5,openai/gpt-4o,23 hours and 15 minutes,False,22,arithmetic_reasoning,medium,hard
+GSM_020,w5,openai/gpt-4o,8 dozen,False,10,arithmetic_reasoning,medium,hard
+GSM_001,w6,openai/gpt-4o,"To determine the cost of a 115-minute call, we need to break down the call into segments based on the given pricing structure:
+
+1. **First 10 minutes:**
+   - Cost per minute = ₺0.9
+   - Total cost for 10 minutes = 10 minutes × ₺0.9/minute = ₺9
+
+2. **Next 25 minutes (from the 11th to the 35th minute):**
+   - Cost per minute = ₺0.6
+   - Total cost for 25 minutes = 25 minutes × ₺0.6/minute = ₺15
+
+3. **Remaining 80 minutes (from the 36th to the 115th minute):**
+   - Cost is ₺0.4 for every two minutes, which means ₺0.2 per minute.
+   - Total cost for 80 minutes = 80 minutes × ₺0.2/minute = ₺16
+
+Adding these costs together gives the total bill before any discount:
+- Total cost = ₺9 (first 10 minutes) + ₺15 (next 25 minutes) + ₺16 (remaining 80 minutes)
+- Total cost = ₺40
+
+Since the total bill ₺40 is more than ₺25, you qualify for a 20% discount:
+- Discount = 20% of ₺40 = 0.20 × ₺40 = ₺8
+
+Thus, the discounted total cost is:
+- Discounted cost = ₺40 - ₺8 = ₺32
+
+Therefore, the cost of a 115-minute call is **₺32**.",True,32,arithmetic_reasoning,high,medium
+GSM_002,w6,openai/gpt-4o,"To find the percentage of kids in the yard who are girls, we need to determine the total number of kids and then calculate the percentage that are girls.
+
+First, let's find the number of boys in the yard:
+
+We know that the number of girls is 39 and that there are two-sixths (or one-third, when simplified) as many boys as girls.
+
+Let \( b \) be the number of boys. According to the problem:
+
+\[ b = \frac{1}{3} \times 39 = 13 \]
+
+Now that we have the number of boys, we can find the total number of kids in the yard:
+
+\[ \text{Total kids} = 39\, (\text{girls}) + 13\, (\text{boys}) = 52 \]
+
+Next, calculate the percentage of girls:
+
+\[ \text{Percentage of girls} = \left( \frac{\text{Number of girls}}{\text{Total number of kids}} \right) \times 100 \]
+
+\[ \text{Percentage of girls} = \left( \frac{39}{52} \right) \times 100 \approx 75\% \]
+
+Thus, 75% of the kids in the yard are girls.",True,75,arithmetic_reasoning,high,easy
+GSM_003,w6,openai/gpt-4o,"First, let's determine the number of green cards. There are 36 purple cards, and we are told that there are 25% more green cards than purple cards. To find the number of green cards, calculate 25% of 36 and then add that to the original 36:
+
+\[
+25\% \text{ of } 36 = 0.25 \times 36 = 9
+\]
+
+So, the number of green cards is:
+
+\[
+36 + 9 = 45
+\]
+
+Next, let's determine the number of black cards. The number of black cards is equal to the sum of the purple and green cards. Therefore:
+
+\[
+\text{Number of black cards} = 36 + 45 = 81
+\]
+
+Now, let's find out the total number of cards and then calculate the average number of cards per color. The total number of cards is:
+
+\[
+36 \text{ (purple)} + 45 \text{ (green)} + 81 \text{ (black)} = 162
+\]
+
+There are 3 colors: purple, green, and black. To find the average number of cards per color:
+
+\[
+\text{Average number of cards per color} = \frac{162}{3} = 54
+\]
+
+Thus, on average, there are 54 cards per color.",True,54,arithmetic_reasoning,high,medium
+GSM_004,w6,openai/gpt-4o,"To calculate the carpenter's annual earnings after taxes, we can follow these steps:
+
+1. **Calculate the number of days he works in a month:**
+   \[
+   2 \, \text{weeks/month} \times 2 \, \text{days/week} = 4 \, \text{days/month}
+   \]
+
+2. **Calculate the number of days he works in a year:**
+   \[
+   4 \, \text{days/month} \times 12 \, \text{months/year} = 48 \, \text{days/year}
+   \]
+
+3. **Calculate his annual earnings before taxes:**
+   \[
+   48 \, \text{days/year} \times €20/\text{day} = €960/\text{year}
+   \]
+
+4. **Calculate the amount paid in taxes:**
+   \[
+   20\% \text{ of } €960 = 0.2 \times €960 = €192
+   \]
+
+5. **Calculate the earnings after taxes:**
+   \[
+   €960 - €192 = €768
+   \]
+
+Thus, the carpenter earns €768 in a year after paying 20% in taxes.",False,768,arithmetic_reasoning,high,easy
+GSM_005,w6,openai/gpt-4o,"Let's break down Carlos's weekly learning schedule step-by-step:
+
+1. **Regular Classes:**
+   - Each class period is 35 minutes long.
+   - Carlos attends 9 regular classes per day.
+   - The total time for regular classes per day is \(9 \times 35 = 315\) minutes.
+
+2. **Extra Classes:**
+   - Carlos takes 2 extra classes per day.
+   - Each of these classes is also 35 minutes long, so the extra classes take \(2 \times 35 = 70\) minutes per day.
+   - In addition, he spends 5 minutes preparing for each extra class, so that’s an additional \(2 \times 5 = 10\) minutes per day.
+
+3. **Total Time Spent per Day:**
+   - Regular classes: 315 minutes
+   - Extra classes: 70 minutes
+   - Preparation for extra classes: 10 minutes
+   - Total time per day = \(315 + 70 + 10 = 395\) minutes.
+
+4. **Total Time Spent during the Week (Monday to Friday):**
+   - Carlos attends school 5 days a week, so weekly class time is \(5 \times 395 = 1975\) minutes.
+
+5. **Weekend Study Time:**
+   - Carlos spends 1/10 of his total weekly minutes each on Saturday and Sunday.
+   - Total weekly class time = 1975 minutes.
+   - 1/10 of 1975 is \(197.5\) minutes for Saturday and the same for Sunday.
+   - Therefore, the total weekend study time is \(197.5 + 197.5 = 395\) minutes.
+
+6. **Total Weekly Learning Time:**
+   - In-school learning time: 1975 minutes
+   - Weekend learning time: 395 minutes
+   - Total weekly learning time = \(1975 + 395 = 2370\) minutes.
+
+7. **Convert Minutes to Hours:**
+   - There are 60 minutes in an hour.
+   - Total learning time in hours = \(\frac{2370}{60} = 39.5\) hours.
+
+Therefore, Carlos spends 39.5 hours a week learning.",False,44,arithmetic_reasoning,high,hard
+GSM_006,w6,openai/gpt-4o,"To determine how much profit Sofia made, we need to calculate the value of the stock at each stage and then find the difference from the initial investment.
+
+1. **Calculate Initial Investment:**
+   \[
+   \text{Initial price per share} = \$35
+   \]
+   \[
+   \text{Total investment for 6 shares} = 6 \times \$35 = \$210
+   \]
+
+2. **Calculate Price After 1st Year:**
+   \[
+   \text{Increase of 50% means new price per share} = 35 \times (1 + 0.50) = 35 \times 1.50 = \$52.50
+   \]
+
+3. **Calculate Price After 2nd Year:**
+   \[
+   \text{Decrease of 20% means new price per share} = 52.50 \times (1 - 0.20) = 52.50 \times 0.80 = \$42.00
+   \]
+
+4. **Calculate Price After 3rd Year:**
+   \[
+   \text{Increase of 25% means new price per share} = 42.00 \times (1 + 0.25) = 42.00 \times 1.25 = \$52.50
+   \]
+
+5. **Calculate Total Value After 3rd Year:**
+   \[
+   \text{Total value of shares} = 6 \times 52.50 = \$315
+   \]
+
+6. **Calculate Profit:**
+   \[
+   \text{Profit} = \text{Total value after 3 years} - \text{Initial investment}
+   \]
+   \[
+   \text{Profit} = 315 - 210 = \$105
+   \]
+
+Sofia made a profit of \$105 by the end of the third year.",True,105,arithmetic_reasoning,high,medium
+GSM_007,w6,openai/gpt-4o,"Luis hires the boat for a total of 7 hours, from 2 PM to 9 PM. Given that he gets 3 hours free, he only needs to pay for 4 hours.
+
+Here is the breakdown of the cost:
+
+1. Fixed insurance cost: ₺20
+
+2. Hourly charges:
+   - The first paid hour costs ₺42.
+   - The second paid hour costs 3 times ₺42, which is ₺126.
+   - The third paid hour also costs 3 times ₺42, which is ₺126.
+   - The fourth paid hour costs 3 times ₺42, which is ₺126.
+
+To calculate the total payment, add the costs:
+
+Fixed insurance cost: ₺20  
+First hour: ₺42  
+Second hour: ₺126  
+Third hour: ₺126  
+Fourth hour: ₺126  
+
+Total cost = ₺20 + ₺42 + ₺126 + ₺126 + ₺126 = ₺440
+
+Luis paid a total of ₺440.",True,440,arithmetic_reasoning,high,hard
+GSM_008,w6,openai/gpt-4o,"To calculate the total number of people infected after 2 days, we need to look at how the infection spreads.
+
+- **Day 0:** 24 people are initially infected.
+
+- **Day 1:** Each of these 24 people infects 4 more people. Therefore, the number of new infections on Day 1 is \( 24 \times 4 = 96 \). Adding the initial 24 people, the total number of infected people on Day 1 is \( 24 + 96 = 120 \).
+
+- **Day 2:** Each of these 120 people infects 4 more people. Thus, the number of new infections on Day 2 is \( 120 \times 4 = 480 \). Adding the previously infected 120 people, the total number of infected people on Day 2 is \( 120 + 480 = 600 \).
+
+Therefore, after 2 days, 600 people are infected.",True,600,arithmetic_reasoning,high,medium
+GSM_009,w6,openai/gpt-4o,"To determine how many dozens of waffles Benjamin needs for 12 weeks, we need to go through the following steps:
+
+1. **Calculate the Total Number of Days in 12 Weeks:**
+   \[
+   12 \text{ weeks} \times 7 \text{ days/week} = 84 \text{ days}
+   \]
+
+2. **Calculate the Waffles Eaten in the First 56 Days:**
+   \[
+   2 \text{ waffles/day} \times 56 \text{ days} = 112 \text{ waffles}
+   \]
+
+3. **Calculate the Number of Remaining Days:**
+   \[
+   84 \text{ days} - 56 \text{ days} = 28 \text{ days}
+   \]
+
+4. **Calculate the Waffles Eaten in the Remaining 28 Days:**
+   \[
+   11 \text{ waffles/day} \times 28 \text{ days} = 308 \text{ waffles}
+   \]
+
+5. **Calculate the Total Number of Waffles:**
+   \[
+   112 \text{ waffles} + 308 \text{ waffles} = 420 \text{ waffles}
+   \]
+
+6. **Convert the Total Number of Waffles into Dozens:**
+   \[
+   \frac{420 \text{ waffles}}{12 \text{ waffles/dozen}} = 35 \text{ dozens}
+   \]
+
+Therefore, Benjamin will need \(35\) dozens of waffles for 12 weeks.",False,35,arithmetic_reasoning,high,medium
+GSM_010,w6,openai/gpt-4o,"To solve this problem, let's break down the popcorn popping process in each stage and calculate the total number of popcorn kernels.
+
+1. **First 26 seconds:**  
+   - 80 kernels pop.
+
+2. **Next 26 seconds (second interval):**  
+   - The rate is 2 times the initial rate:  
+     \(2 \times 80 = 160\) kernels pop.
+
+3. **Next 26 seconds (third interval):**  
+   - The rate is 3 times the initial rate:  
+     \(3 \times 80 = 240\) kernels pop.
+
+4. **Final 26 seconds (fourth interval):**  
+   - The popping slows down to half the rate of the previous interval:  
+     \(\frac{1}{2} \times 240 = 120\) kernels pop.
+
+5. **After taking the pan off the heat:**  
+   - A quarter of the number of kernels that popped during the final 26 seconds pop due to residual heat:  
+     \(\frac{1}{4} \times 120 = 30\) kernels pop.
+
+Now, let's calculate the total number of popped kernels:
+
+\[
+80 + 160 + 240 + 120 + 30 = 630
+\]
+
+Benjamin gives \(\frac{1}{7}\) of the total popcorn to his brother Yusuf:
+
+\[
+\frac{1}{7} \times 630 = 90
+\]
+
+Therefore, the number of popcorn pieces Benjamin keeps is:
+
+\[
+630 - 90 = 540
+\]
+
+The difference in the number of pieces of popcorn between Benjamin and Yusuf is:
+
+\[
+540 - 90 = 450
+\]
+
+Thus, Benjamin has \( \boxed{450} \) more pieces of popcorn to eat than his brother Yusuf.",True,450,arithmetic_reasoning,medium,medium
+GSM_011,w6,openai/gpt-4o,"To solve this problem, we first need to calculate the total amount of water used for each type of ice cube and then find if any water is left from the initial 312 ounces.
+
+Let's calculate the total water used for each type of ice cube:
+
+1. **Giant cubes:** Deshawn makes 8 giant cubes, and each giant cube uses 15 ounces of water. So the total water used for giant cubes is:
+   \[
+   8 \times 15 = 120 \text{ ounces}
+   \]
+
+2. **Medium cubes:** Deshawn makes 12 medium cubes, and each medium cube uses 5 ounces of water. So the total water used for medium cubes is:
+   \[
+   12 \times 5 = 60 \text{ ounces}
+   \]
+
+3. **Small cubes:** Deshawn makes 14 small cubes, and each small cube uses \( \frac{1}{2} \) ounce of water. So the total water used for small cubes is:
+   \[
+   14 \times \frac{1}{2} = 7 \text{ ounces}
+   \]
+
+4. **Tiny cubes:** First, we need to find how many tiny cubes Deshawn makes. He makes 46 total cubes and the already counted cubes are:
+   \[
+   8 + 12 + 14 = 34 \text{ cubes}
+   \]
+   This means he makes:
+   \[
+   46 - 34 = 12 \text{ tiny cubes}
+   \]
+   Since each tiny cube is half the size of a small cube, it uses \( \frac{1}{4} \) ounce of water. So the total water used for tiny cubes is:
+   \[
+   12 \times \frac{1}{4} = 3 \text{ ounces}
+   \]
+
+Now, we sum up the total water used for all the ice cubes:
+\[
+120 + 60 + 7 + 3 = 190 \text{ ounces}
+\]
+
+Finally, we calculate how many ounces of water Deshawn has left from the initial 312 ounces:
+\[
+312 - 190 = 122 \text{ ounces}
+\]
+
+Deshawn has 122 ounces of water left.",True,122,arithmetic_reasoning,medium,medium
+GSM_012,w6,openai/gpt-4o,"To determine how many potted plants Daphne will remain with, we need to perform a few calculations.
+
+1. **Calculate the initial number of potted plants:**
+   Daphne already has 8 potted plants on each of the 56 window ledges.
+   \[
+   8 \text{ plants} \times 56 \text{ ledges} = 448 \text{ plants}
+   \]
+
+2. **Add the newly received plants:**
+   Daphne received 23 new potted plants two days ago.
+   \[
+   448 \text{ plants (initial)} + 23 \text{ new plants} = 471 \text{ plants}
+   \]
+
+3. **Add the newly purchased plants:**
+   Daphne purchased 200 new plants yesterday.
+   \[
+   471 \text{ plants} + 200 \text{ new plants} = 671 \text{ plants}
+   \]
+
+4. **Calculate the number of plants she will give away:**
+   Daphne plans to give away 6 potted plants from each ledge.
+   \[
+   6 \text{ plants} \times 56 \text{ ledges} = 336 \text{ plants}
+   \]
+
+5. **Determine the final number of plants after giving some away:**
+   Subtract the number of given plants from the current total.
+   \[
+   671 \text{ plants (current total)} - 336 \text{ plants (given away)} = 335 \text{ plants}
+   \]
+
+Daphne will remain with 335 potted plants.",True,335,arithmetic_reasoning,medium,medium
+GSM_013,w6,openai/gpt-4o,"To solve this problem, we first need to find Olivia's walking speeds before and after her injury and then calculate the time taken for the whole 29-mile journey.
+
+1. **Determine Olivia's original speeds**:
+   - Let \( v_b \) be her original speed on the beach.
+   - Her original speed on the sidewalk is then \( 4v_b \).
+
+2. **Calculate her rates after her injury**:
+   - After the injury, her speed on the beach becomes \( \frac{v_b}{2} \).
+   - Her speed on the sidewalk becomes \( \frac{4v_b}{2} = 2v_b \).
+
+3. **Use the given condition**:
+   - 65 minutes are spent walking on the beach after the injury.
+   - Use \( \text{Time} = \frac{\text{Distance}}{\text{Speed}} \).
+   - Hence, \( 65 = \frac{13}{\frac{v_b}{2}} \).
+
+4. **Find \( v_b \)**:
+   \[
+   65 = \frac{13}{\frac{v_b}{2}} = \frac{26}{v_b}
+   \]
+   \[
+   65 v_b = 26
+   \]
+   \[
+   v_b = \frac{26}{65} = \frac{2}{5} \, \text{miles per minute}
+   \]
+
+5. **Determine Olivia’s speed after injury**:
+   - Beach speed: \( \frac{v_b}{2} = \frac{2/5}{2} = \frac{1}{5} \, \text{miles per minute} \).
+   - Sidewalk speed: \( 2v_b = \frac{4}{5} \, \text{miles per minute} \).
+
+6. **Calculate time on the sidewalk**:
+   - Sidewalk distance = 16 miles.
+   - \(\text{Time on sidewalk} = \frac{16}{\frac{4}{5}} = \frac{16 \times 5}{4} = 20 \times 1 = 20\).
+
+7. **Total time of her entire walk**:
+   - Time on beach \(= 65 \) minutes.
+   - Time on sidewalk \(= 20 \) minutes.
+   - Total time = \( 65 + 20 = 85 \) minutes.
+
+Thus, it takes Olivia 85 minutes to complete her entire 29-mile walk.",False,85,arithmetic_reasoning,medium,medium
+GSM_014,w6,openai/gpt-4o,"To find the percentage of the maintenance worker's day spent cleaning floors, we'll first calculate how much time they spend actually cleaning each day.
+
+1. **Calculate the time taken per floor after the injury:**
+
+   Since the maintenance worker now takes twice as long to clean a floor, it will take:
+   \[
+   6 \text{ minutes/ floor} \times 2 = 12 \text{ minutes/ floor}
+   \]
+
+2. **Calculate the total time required to clean all 150 floors:**
+
+   With the new timing, the total time to clean 150 floors is:
+   \[
+   150 \text{ floors} \times 12 \text{ minutes/ floor} = 1800 \text{ minutes}
+   \]
+
+3. **Determine how many minutes are worked per day:**
+
+   The worker works 10 hours a day. Converting this to minutes:
+   \[
+   10 \text{ hours/day} \times 60 \text{ minutes/hour} = 600 \text{ minutes/day}
+   \]
+
+4. **Find the total number of days they need to complete the cleaning:**
+
+   Since they have 6 days to complete the work and the work totals 1800 minutes, each day they must clean:
+   \[
+   \text{Cleaning per day} = \frac{1800 \text{ minutes}}{6 \text{ days}} = 300 \text{ minutes/day}
+   \]
+
+5. **Calculate the percentage of the day spent cleaning:**
+
+   Given that they clean for 300 minutes each day and work for 600 minutes (10 hours each day):
+   \[
+   \text{Percentage of day cleaning} = \left(\frac{300 \text{ minutes}}{600 \text{ minutes}} \right) \times 100\% = 50\%
+   \]
+
+Thus, on average, the maintenance worker spends 50% of their workday cleaning the floors.",True,50,arithmetic_reasoning,medium,medium
+GSM_015,w6,openai/gpt-4o,"First, let's round the prices of each type of flower bundle to the nearest dollar:
+
+- Roses: ₣1.59 rounds to ₣2.
+- Sunflowers: ₣5.39 rounds to ₣5.
+- Daisies: ₣5.16 rounds to ₣5.
+
+Now, calculate the total sales for each type of flower:
+
+- Roses: 6 bundles × ₣2 per bundle = ₣12.
+- Sunflowers: 24 bundles × ₣5 per bundle = ₣120.
+- Daisies: 40 bundles × ₣5 per bundle = ₣200.
+
+Add these amounts to find the total sales:
+
+\[
+₣12 + ₣120 + ₣200 = ₣332
+\]
+
+Next, calculate the 25% tip on this total sales amount:
+
+\[
+25\% \text{ tip of } ₣332 = 0.25 × ₣332 = ₣83
+\]
+
+Finally, add the tip to the total sales to find the total income:
+
+\[
+₣332 + ₣83 = ₣415
+\]
+
+Therefore, Luca will make ₣415 after receiving a 25% tip on every purchase.",False,415,arithmetic_reasoning,medium,hard
+GSM_016,w6,openai/gpt-4o,"First, calculate the total weight of each type of feed and other items:
+
+1. **Oats**: Five 3-kg boxes
+   \[
+   5 \times 3 = 15 \text{ kg}
+   \]
+
+2. **Beets**: Eleven 7-kg bags
+   \[
+   11 \times 7 = 77 \text{ kg}
+   \]
+
+3. **Wheat**: Thirty-four 44-kg packs
+   \[
+   34 \times 44 = 1496 \text{ kg}
+   \]
+
+4. **Corn**: Eighteen 19-kg sacks
+   \[
+   18 \times 19 = 342 \text{ kg}
+   \]
+
+5. **Groceries**: 
+   \[
+   43 \text{ kg}
+   \]
+
+6. **Tools**: 
+   \[
+   27 \text{ kg}
+   \]
+
+7. **Wood**: 
+   \[
+   100 \text{ kg}
+   \]
+
+Next, sum the total weight of all items:
+
+\[
+15 + 77 + 1496 + 342 + 43 + 27 + 100 = 2100 \text{ kg}
+\]
+
+Each farm truck can carry 140 kg in one trip, and there are 3 trucks, so the total capacity per round trip is:
+
+\[
+3 \times 140 = 420 \text{ kg}
+\]
+
+To find the number of trips needed, divide the total weight by the total carrying capacity of all trucks per trip:
+
+\[
+\frac{2100}{420} \approx 5
+\]
+
+The farmer needs 5 trips to transport all the items. Since \( \frac{2100}{420} = 5 \) exactly, additional partial trips are not needed.
+
+Hence, the farmer needs 5 trips in total.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,w6,openai/gpt-4o,"To solve this problem, let's break it down step by step.
+
+1. **Define Variables:**
+   - Let \( C \) be the number of boxes of cupcakes sold on Wednesday.
+   - Let \( P \) be the number of boxes of pineapple pies sold on Wednesday.
+
+2. **Sales on Wednesday:**
+   - Cupcake boxes sold: \( C = 27 \).
+
+3. **Conditions for Wednesday and Thursday:**
+   - He sold 18 fewer boxes of pineapple pies on Wednesday than on Thursday:
+     \[
+     P = 27 - 18 = 9
+     \]
+
+4. **Sales on Thursday:**
+   - He sold 12 more boxes of cupcakes than on Wednesday:
+     \[
+     C + 12 = 27 + 12 = 39
+     \]
+   - Pineapple pie boxes sold on Thursday:
+     \[
+     27 \, (\text{since Thursday pie sales are not conditioned on Wednesday sales})
+     \]
+
+5. **Total Sales for Wednesday and Thursday:**
+   - Cupcakes: \( 27 + 39 = 66 \)
+   - Pineapple pies: \( 9 + 27 = 36 \)
+
+6. **Friday Sales:**
+   - On Friday, he sold as much as Wednesday and Thursday combined:
+     - Cupcakes on Friday: \( 66 \)
+     - Pineapple pies on Friday: \( 36 \)
+
+7. **Revenue Calculation:**
+   - Earnings from cupcakes: \( 8 \times (27 + 39 + 66) = 8 \times 132 = 1056 \)
+   - Earnings from pineapple pies: \( 22 \times (9 + 27 + 36) = 22 \times 72 = 1584 \)
+
+8. **Total Earnings:**
+   - Total earnings over three days: \( 1056 + 1584 = 2640 \)
+
+9. **Average Daily Earnings:**
+   - Average daily earnings: \( \frac{2640}{3} = 880 \)
+
+Therefore, Benjamin's average daily earning was ¥880.",True,880,arithmetic_reasoning,medium,hard
+GSM_018,w6,openai/gpt-4o,"To find out how many points Keisha is sure to get, we first need to determine how many questions belong to each category in the quiz and then calculate how many she will get correct in each category.
+
+1. **Chemistry questions**: 
+   - 50% of the questions are chemistry.
+   - Number of chemistry questions = 50% of 80 = 0.50 × 80 = 40 questions.
+
+2. **Biology questions**: 
+   - 5% of the questions are biology.
+   - Number of biology questions = 5% of 80 = 0.05 × 80 = 4 questions.
+
+3. **Geometry and Literature questions**: 
+   - Since 50% are chemistry and 5% are biology, the remaining percentage for geometry and literature is 100% - (50% + 5%) = 45%.
+   - These questions are equally divided between geometry and literature.
+   - Number of geometry questions = Number of literature questions = 45% of 80 / 2 = 0.45 × 80 / 2 = 36 / 2 = 18 questions each.
+
+Now, we calculate how many questions Keisha is sure to answer correctly in each category:
+
+1. **Correct Chemistry Questions**:
+   - She gets 70% of the chemistry questions correct.
+   - Correct chemistry questions = 70% of 40 = 0.70 × 40 = 28 questions.
+
+2. **Correct Biology Questions**:
+   - She gets 25% of the biology questions correct.
+   - Correct biology questions = 25% of 4 = 0.25 × 4 = 1 question.
+
+3. **Correct Geometry and Literature Questions**:
+   - She gets 1/3 of the geometry questions correct.
+   - Correct geometry questions = 1/3 of 18 = 18 / 3 = 6 questions.
+   - She gets 1/3 of the literature questions correct.
+   - Correct literature questions = 1/3 of 18 = 18 / 3 = 6 questions.
+
+Finally, add the number of correct questions from each category to find out how many points Keisha is sure to get:
+
+\[
+28 \, (\text{chemistry}) + 1 \, (\text{biology}) + 6 \, (\text{geometry}) + 6 \, (\text{literature}) = 41.
+\]
+
+Keisha is sure to get 41 points.",True,41,arithmetic_reasoning,medium,hard
+GSM_019,w6,openai/gpt-4o,"To find out how many 30-minute episodes Liam watched on Monday, we need to total up the number of hours he spent watching TV during the week and compare it to the 28 hours he watched in total.
+
+Liam's TV watching hours throughout the week:
+
+- **Saturday and Sunday:** 
+  \[
+  5 \text{ hours per night} \times 2 \text{ nights} = 10 \text{ hours}
+  \]
+
+- **Tuesday:**
+  - 4-hour episode
+  - 60-minute (1-hour) show
+  \[
+  4 \text{ hours} + 1 \text{ hour} = 5 \text{ hours}
+  \]
+
+- **Wednesday:**
+  - Three 3-hour episodes
+  \[
+  3 \times 3 \text{ hours} = 9 \text{ hours}
+  \]
+
+- **Thursday:**
+  - Five 30-minute episodes
+  \[
+  5 \times 0.5 \text{ hours} = 2.5 \text{ hours}
+  \]
+
+Adding up all these times without Monday:
+
+\[
+10 \text{ (weekend hours)} + 5 \text{ (Tuesday)} + 9 \text{ (Wednesday)} + 2.5 \text{ (Thursday)} = 26.5 \text{ hours}
+\]
+
+He watched a total of 28 hours in the week, so for Monday he must have watched:
+
+\[
+28 \text{ total hours} - 26.5 \text{ hours (from other days)} = 1.5 \text{ hours}
+\]
+
+Since the show on Monday is 30 minutes per episode:
+
+\[
+1.5 \text{ hours} \div 0.5 \text{ hours/episode} = 3 \text{ episodes}
+\]
+
+Thus, Liam watched \(\boxed{3}\) episodes of the 30-minute show on Monday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,w6,openai/gpt-4o,"To determine how many cookies are still hidden in the yard, we can start by calculating the number of cookies Ali initially had:
+
+1. Ali initially had 11 dozen cookies. Since a dozen consists of 12 items, Ali had:
+   \[
+   11 \times 12 = 132 \text{ cookies}
+   \]
+
+2. Ali ate 3 cookies for breakfast, so the number of cookies left is:
+   \[
+   132 - 3 = 129 \text{ cookies}
+   \]
+
+Now, we account for the cookies found by Faisal, Hiroshi, Benjamin, Wei, and Quinn:
+
+3. **Faisal finds 5 cookies.**
+
+4. **Hiroshi finds three times as many cookies as Faisal:**
+   \[
+   3 \times 5 = 15 \text{ cookies}
+   \]
+
+5. **Benjamin finds 3 less than Hiroshi:**
+   \[
+   15 - 3 = 12 \text{ cookies}
+   \]
+
+6. **Wei finds a quarter as many as Benjamin:**
+   \[
+   \frac{12}{4} = 3 \text{ cookies}
+   \]
+
+7. **Quinn finds three dozen cookies more than the combined total found by Hiroshi and Faisal:**
+
+   First, calculate the combined total of cookies found by Hiroshi and Faisal:
+   \[
+   15 + 5 = 20 \text{ cookies}
+   \]
+
+   Quinn finds three dozen more than this combined total. Since a dozen is 12 cookies:
+   \[
+   3 \times 12 = 36 \text{ cookies}
+   \]
+
+   Therefore, Quinn finds:
+   \[
+   20 + 36 = 56 \text{ cookies}
+   \]
+
+Now, calculate the total number of cookies found by all these individuals:
+
+8. **Total cookies found by everyone:**
+   \[
+   5 + 15 + 12 + 3 + 56 = 91 \text{ cookies}
+   \]
+
+Finally, determine how many cookies are still hidden:
+
+9. **Cookies still hidden in the yard:**
+   \[
+   129 - 91 = 38 \text{ cookies}
+   \]
+
+Thus, the number of cookies still hidden in the yard is \(\boxed{38}\).",True,38,arithmetic_reasoning,medium,hard

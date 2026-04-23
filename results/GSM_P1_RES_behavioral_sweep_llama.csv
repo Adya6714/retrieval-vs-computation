@@ -1,0 +1,1452 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty
+GSM_001,canonical,meta-llama/llama-3.1-8b-instruct,"To calculate the cost of the 86-minute call, we need to separate the minutes into two categories: minutes before 20 minutes and minutes after 20 minutes.
+
+Minutes before 20 = 20 minutes
+Minutes after 20 = 86 - 20 = 66 minutes
+
+Cost before 20 minutes: 
+20 minutes * $0.9 per minute = $18
+
+Cost after 20 minutes: 
+66 minutes * $0.5 per minute = $33
+
+Total cost = Cost before 20 minutes + Cost after 20 minutes
+Total cost = $18 + $33
+Total cost = $51
+
+So, the cost of a 86-minute call would be $51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of boys by finding two-thirds of the number of girls.
+To find the number of boys, we multiply the number of girls by 2 and divide by 3. So, the number of boys is (18 * 2) / 3.
+
+## Step 2: Perform the multiplication first.
+18 * 2 = 36.
+
+## Step 3: Then perform the division.
+36 / 3 = 12.
+
+## Step 4: Calculate the total number of kids by adding the number of girls and the number of boys.
+The total number of kids is 18 (girls) + 12 (boys).
+
+## Step 5: Add the number of girls and the number of boys to find the total number of kids.
+18 + 12 = 30.
+
+The final answer is: $\boxed{30}$",True,30,arithmetic_reasoning,high,easy
+GSM_003,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the number of yellow cards, which is 50% more than the number of purple cards.
+First, calculate 50% of the number of purple cards, which is 30 * 0.5 = 15.
+
+## Step 2: Calculate the total number of yellow cards by adding the 50% calculated in step 1 to the total number of purple cards.
+The number of yellow cards is the number of purple cards plus 50% of the number of purple cards, so 30 + 15 = 45 yellow cards.
+
+## Step 3: Determine the number of blue cards, which is as many as the sum of purple and yellow cards.
+Calculate the sum of purple and yellow cards to find out how many blue cards there are, which is 30 (purple cards) + 45 (yellow cards) = 75 blue cards.
+
+## Step 4: Add up the total number of cards of all mentioned colors.
+Sum up the number of purple, yellow, and blue cards to find the total number of cards, which is 30 (purple) + 45 (yellow) + 75 (blue) = 150.
+
+The final answer is: $\boxed{150}$",True,150,arithmetic_reasoning,high,medium
+GSM_004,canonical,meta-llama/llama-3.1-8b-instruct,"To calculate the painter's yearly earnings, we need to calculate the total number of days he works in a year, and then multiply that by his daily earnings.
+
+Since he works for 2 weeks every month, and there are 4 weeks in a month (but not in all months; however, a standard 4-week month will be used here for an average), the total number of weeks worked in a year would be 2 weeks/month * 12 months/year = 24 weeks/year.
+
+Since there are 7 days in a week, the total number of days worked in a year is 24 weeks/year * 7 days/week = 168 days/year.
+
+Now, let's multiply the total number of days worked in a year by the painter's daily earnings: 168 days/year * â‚£150/day = â‚£25,200/year.
+
+So, the painter earns â‚£25,200 in a year.",False,21600,arithmetic_reasoning,high,easy
+GSM_005,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, we calculate the total minutes Liam spends in class each week.
+Since he takes 1 extra class and there are 6 periods in a day plus the extra class, the total number of classes per day is 7. Each class is 60 minutes long, so the number of minutes spent in class per day is 7 classes * 60 minutes per class = 420 minutes. He goes to school for 6 days a week, so the total minutes per week is 420 minutes per day * 6 days = 2520 minutes.
+
+## Step 2: Calculate the minutes spent on Saturday and Sunday for extra learning time.
+Since he spends 1/7 of his weekly class minutes on Saturday and Sunday, we need to first calculate his total weekly minutes for class which is already done in step 1 as 2520 minutes. Then, 1/7 of that time is 2520 minutes * 1/7 = 360 minutes.
+
+## Step 3: Add the minutes spent in class and the extra learning time to get the total minutes spent learning each week.
+To get the total hours spent learning, we need to add the minutes spent in class (2520 minutes) to the extra minutes spent on Saturday and Sunday (360 minutes). 2520 + 360 = 2880 minutes.
+
+## Step 4: Convert the total minutes spent learning to hours.
+To convert minutes to hours, we divide the total minutes by 60. So, 2880 minutes / 60 = 48 hours.
+
+The final answer is: $\boxed{48}$",False,54,arithmetic_reasoning,high,hard
+GSM_006,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the increase in stock price for the first year
+To find the increase in stock price for the first year, we need to calculate 30% of the original price of â‚¬56 and add it to the original price. 30% of â‚¬56 is 0.30 * â‚¬56 = â‚¬16.80. The new price after the first year is â‚¬56 + â‚¬16.80 = â‚¬72.80.
+
+## Step 2: Calculate the decrease in stock price for the second year
+Next, we need to calculate the decrease in stock price for the second year. The stock price decreased by 25% from the new price of â‚¬72.80. 25% of â‚¬72.80 is 0.25 * â‚¬72.80 = â‚¬18.20. The final price after the second year is â‚¬72.80 - â‚¬18.20 = â‚¬54.60.
+
+## Step 3: Calculate the total value of all Kayla's shares after the price changes
+Now that we know the final price of one share, we can find the total value of all Kayla's shares. Since Kayla bought 10 shares, the total value is â‚¬54.60 * 10 = â‚¬546.
+
+The final answer is: $\boxed{546}$",True,546,arithmetic_reasoning,high,medium
+GSM_007,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the total number of hours the car was used
+Kai hired the car from 1 PM to 5 PM, which is 4 hours. He gets 2 hours free, so he only has to pay for 2 hours.
+
+## Step 2: Calculate the cost of the first paid hour
+The first paid hour costs $10.
+
+## Step 3: Calculate the cost of the second paid hour
+Since each hour after the first paid hour costs twice the first paid hour, the second hour costs 2 * $10 = $20.
+
+## Step 4: Add the cost of both paid hours to determine the total amount paid
+Total paid = cost of first paid hour + cost of second paid hour = $10 + $20 = $30.
+
+The final answer is: $\boxed{30}$",True,30,arithmetic_reasoning,high,hard
+GSM_008,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, let's calculate how many new infections occur on the first day.
+Each of the 16 people infects 3 others, so the number of new infections on the first day is 16 * 3 = 48.
+
+## Step 2: Calculate the total number of people infected after the first day.
+The initial 16 people plus the new infections from the first day (48) results in a total of 64 people infected after the first day.
+
+## Step 3: Next, calculate how many new infections occur on the second day.
+Since the total number of infected people is now 64, and each infects 3 others, the number of new infections on the second day is 64 * 3 = 192.
+
+## Step 4: Calculate the total number of people infected after the second day.
+The number of people infected at the end of the second day is the sum of the people infected at the end of the first day (64) and the new infections from the second day (192), which is 64 + 192 = 256.
+
+## Step 5: Calculate how many new infections occur on the third day.
+The total number of infected people after the second day is 256. This number of people, each infecting 3 others, results in 256 * 3 = 768 new infections.
+
+## Step 6: Calculate the total number of people infected after the third day.
+Adding the existing infections (256) to the new infections (768) from the third day gives a total of 256 + 768 = 1024 people infected after the third day.
+
+The final answer is: $\boxed{1024}$",True,1024,arithmetic_reasoning,high,medium
+GSM_009,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, we calculate the total eggs Nia eats in the first 84 days.
+Nia eats 5 eggs a day for 84 days. So, the total number of eggs Nia eats in the first 84 days is 5 * 84.
+
+## Step 2: Then, we calculate the total eggs Nia eats in the next 24 days.
+Nia eats 7 eggs a day for 24 days. So, the total number of eggs Nia eats in the next 24 days is 7 * 24.
+
+## Step 3: After that, we calculate the sum of the total number of eggs in the first 84 days and the next 24 days.
+The total number of eggs Nia eats in 108 days is 5 * 84 + 7 * 24.
+
+## Step 4: Calculate the multiplication of 5 and 84.
+5 * 84 = 420
+
+## Step 5: Calculate the multiplication of 7 and 24.
+7 * 24 = 168
+
+## Step 6: Now we calculate the sum of the total eggs Nia eats in 108 days.
+420 + 168 = 588
+
+## Step 7: Since we need the number of dozens of eggs and there are 12 eggs in a dozen, we need to divide the total number of eggs by 12 to find the final answer.
+588 / 12 = 49.
+
+The final answer is: $\boxed{49}$",True,49,arithmetic_reasoning,high,medium
+GSM_010,canonical,meta-llama/llama-3.1-8b-instruct,"In the first 30 seconds, 60 kernels pop. 
+
+In the next 30 seconds, the kernels pop 4 times the initial rate, so 4 * 60 = 240 kernels pop.
+
+In the next 30 seconds, the kernels pop 6 times the initial rate, so 6 * 60 = 360 kernels pop.
+
+In the final 30 seconds, the kernels pop at half the rate of the past 30 seconds, which is (1/2) * 360 = 180 kernels pop.
+
+So, a total of 60 + 240 + 360 + 180 = 840 kernels pop.
+
+After Zahra takes the pan off the heat, a quarter of the kernels that popped in the final 30 seconds of cooking also pop. A quarter of 180 is (1/4) * 180 = 45 kernels.
+
+Therefore, a total of 840 + 45 = 885 pieces of popcorn are available for Zahra to eat.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, we need to calculate the total weight used by the giant cubes.
+For the giant cubes that use 12 grams each, Pavel makes 8 of them. So, 8 * 12 = 96 grams are used for the giant cubes.
+
+## Step 2: Next, we calculate the total weight used by the medium cubes.
+For the medium cubes that use 11 grams each, Pavel makes 13 of them. So, 13 * 11 = 143 grams are used for the medium cubes.
+
+## Step 3: Then, we calculate the total weight used by the small cubes.
+Since the small cubes use 1/5 of a gram each and Pavel makes 15 of them, we need to first find out the total weight of the water for the small cubes, which is (1/5) * 15 = 3 grams.
+
+## Step 4: We now sum the weights used by the giant, medium, and small cubes to find the total weight of the cubes made from the 328 grams of water.
+Total weight of the cubes = 96 + 143 + 3 = 242 grams.
+
+## Step 5: Subtract the total weight of the cubes from the amount of water Pavel started with to find out how much is left.
+Water left = 328 - 242 = 86.
+
+The final answer is: $\boxed{86}$",True,86,arithmetic_reasoning,medium,medium
+GSM_012,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the initial total number of potted plants on all the ledges.
+Camila already has 7 potted plants on each of the 52 window ledges of her home. The total number of plants can be found by multiplying the number of plants per ledge by the total number of ledges. total_initial_plants = 7 * 52 = 364.
+
+## Step 2: Determine the total number of plants taken from the window ledges.
+Camila has decided to give away 6 potted plants from each of the 52 ledges. The total number of plants given away is found by multiplying the number of plants given away per ledge by the total number of ledges. total_given_away = 6 * 52 = 312.
+
+## Step 3: Calculate the remaining number of potted plants.
+To find the number of plants remaining, subtract the number of plants given away from the initial total of plants. remaining_plants = total_initial_plants - total_given_away = 364 - 312.
+
+The final answer is: $\boxed{52}$",False,81,arithmetic_reasoning,medium,medium
+GSM_013,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1:  First, let's analyze the given information. Mia walks 24 kilometers daily, with 12 kilometers on the beach and the remaining 12 kilometers on the sidewalk.
+## Step 2:  It is mentioned that Mia walks at two times the rate of speed on the sidewalk compared to the beach. This implies that her speed on the sidewalk is twice her speed on the beach.
+## Step 3:  The problem also mentions that 60 minutes of the walk is spent on the beach. Therefore, we need to calculate her walking time on the beach and then determine the total time taken to complete the entire 24-kilometer walk.
+## Step 4:  To find Mia's speed on the beach, we can use the formula $\frac{distance}{time}.$ The distance walked on the beach is 12 kilometers, and the time taken is 60 minutes. So, her speed on the beach is $\frac{12\ km}{60\ minutes} = 0.2\ km/minute.$
+## Step 5:  Let's denote Mia's beach time as $x$ minutes. Therefore, her speed on the sidewalk is $2 \times 0.2 = 0.4\ km/minute.$ It takes her $\frac{12\ km}{0.4\ km/minute}$ = 30 minutes to walk 12 kilometers on the sidewalk.
+## Step 6:  Hence, the total time taken for her walk is the sum of time spent on the beach and time spent on the sidewalk, which is $x + 30.$
+## Step 7:  The total time for the 24-kilometer walk is given as $x + 30$ and is equal to 60 minutes.
+
+## Step 8:  To solve for $x$, we can use the equation $x + 30 = 60$. Solving for $x$ gives $x = 30$.
+
+## Step 9:  Now, we know that Mia's entire 24-kilometer walk takes $x + 30$ minutes, which is $30 + 30 = 60$ minutes.
+
+## Step 10:  Therefore, the time taken for her to complete the entire 24-kilometer walk is $\boxed{60}$ minutes.
+
+The final answer is: $\boxed{60}$",False,90,arithmetic_reasoning,medium,medium
+GSM_014,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the total number of minutes in 10 hours
+Since there are 60 minutes in an hour, there are 10 * 60 = 600 minutes in 10 hours.
+
+## Step 2: Calculate the total number of floors they need to clean in minutes
+They have 20 minutes per floor and there are 210 floors to clean. So, the total number of minutes spent cleaning all the floors is 210 * 20 = 4200 minutes.
+
+## Step 3: Calculate the total minutes spent cleaning during the 10 days
+Since they work 10 hours a day and spend the entirety of those 10 hours working, the total minutes spent working over 10 days is 10 days * 600 minutes per day = 6000 minutes.
+
+## Step 4: Determine the percentage of the day spent cleaning
+To find out what percentage of their workday is spent cleaning floors, we need to divide the total minutes spent cleaning by the total minutes they work over the 10 days, then multiply by 100 to get the percentage. (4200 / 6000) * 100 = 0.7 * 100 = 70%
+
+The final answer is: $\boxed{70}$",True,70,arithmetic_reasoning,medium,medium
+GSM_015,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, we need to round the prices of each plant to the nearest dollar since Viktor has no change and will be rounding all prices.
+- The price of tulips will be rounded to $2, the price of roses will be rounded to $5, and the price of sunflowers will be rounded to $5 as well.
+
+## Step 2: Next, calculate the total income from each type of plant by multiplying the rounded price by the number of bundles sold.
+- For tulips: $2 * 12 bundles = $24
+- For roses: $5 * 29 bundles = $145
+- For sunflowers: $5 * 37 bundles = $185
+
+## Step 3: Then, sum the total income from each type of plant to get the overall income from selling all the plants.
+- Total income = $24 + $145 + $185 = $354
+
+The final answer is: $\boxed{354}$",True,354,arithmetic_reasoning,medium,hard
+GSM_016,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total weight of wheat
+To find the total weight of wheat, multiply the number of boxes by the weight of each box. So, 6 boxes * 4 pounds/box = 24 pounds.
+
+## Step 2: Calculate the total weight of cucumbers
+To find the total weight of cucumbers, multiply the number of bags by the weight of each bag. So, 12 bags * 5 pounds/bag = 60 pounds.
+
+## Step 3: Calculate the total weight of apples
+To find the total weight of apples, multiply the number of packs by the weight of each pack. So, 32 packs * 43 pounds/pack = 1376 pounds.
+
+## Step 4: Calculate the total weight of corns
+To find the total weight of corns, multiply the number of sacks by the weight of each sack. So, 18 sacks * 15 pounds/sack = 270 pounds.
+
+## Step 5: Calculate the total weight of grocery and tools
+To find the total weight of grocery and tools, add the weight of each together. So, 43 pounds + 27 pounds = 70 pounds.
+
+## Step 6: Calculate the total weight of all items
+To find the total weight of all items, add up the weights of each item. So, 24 pounds + 60 pounds + 1376 pounds + 270 pounds + 70 pounds = 1720 pounds.
+
+## Step 7: Calculate the total capacity of all the trucks
+Since the farmer has three trucks, and each truck can carry 120 pounds, the total capacity of the trucks is 3 * 120 pounds = 360 pounds.
+
+## Step 8: Calculate the number of trips needed to transport all the items
+To find the number of trips needed, divide the total weight of all items by the total capacity of all the trucks. So, 1720 pounds / 360 pounds = 4.7777778 trips.
+
+## Step 9: Round up to the nearest whole number
+Since the farmer can't make a fraction of a trip, round up to the nearest whole number. So, 4.7777778 trips becomes 5 trips.
+
+The final answer is: $\boxed{5}$",True,5,arithmetic_reasoning,medium,hard
+GSM_017,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine how many boxes of cookies Liam sold on Saturday.
+He sold 11 more boxes of cookies on Saturday than on Friday. So he sold 25 + 11 = 36 boxes of cookies on Saturday.
+
+## Step 2: Determine how many boxes of orange pie Liam sold on Friday.
+He sold 13 fewer boxes of orange pie on Friday than on Saturday. So he sold 22 - 13 = 9 boxes of orange pie on Friday.
+
+## Step 3: Calculate the total earnings from selling cookies and orange pies on Friday.
+The cost of one box of cookie is ¥12 and the cost of one orange pie is ¥21. The total earnings on Friday is (25*12) + (9*21) = 300 + 189 = ¥489.
+
+## Step 4: Calculate the total earnings from selling cookies and orange pies on Saturday.
+The number of cookie boxes sold on Saturday is 36, and the number of orange pie boxes sold on Saturday is 22. The total earnings on Saturday is (36*12) + (22*21) = 432 + 462 = ¥894.
+
+## Step 5: Determine the total earnings of cookies and orange pies in the past two days combined.
+The total earnings from Friday and Saturday is ¥489 + ¥894 = ¥1383.
+
+## Step 6: Calculate the number of boxes sold of cookies and orange pies in the past two days combined.
+On Saturday, Liam sold 36 boxes of cookie and 22 boxes of orange pie. On Friday, he sold 25 boxes of cookie and 9 boxes of orange pie. The number of cookie box is 25+36 = 61 and the number of orange pie box is 9+22=31.
+
+## Step 7: Calculate the earnings from selling cookies and orange pies on Sunday.
+Liam sold as much as he did in the past two days combined, the number of boxes sold on Sunday is 61boxes of cookie + 31boxes of orange pie. Sunday's box sales were as much as the past two days combined so the number of boxes sold on Sunday is 61 + 31 = 92. The total earnings of Sunday is (92*12) + (92*21) = 1104 + 1932 = ¥3036.
+
+## Step 8: Calculate the total earnings for the three days.
+The total earnings for the three days is ¥1383 + ¥3036 = ¥4419.
+
+## Step 9: Calculate the average daily earnings for the three days.
+The average daily earnings is the total earnings for the three days divided by 3. Average daily earnings is ¥4419 / 3 = ¥1473.
+
+The final answer is: $\boxed{1473}$",False,922,arithmetic_reasoning,medium,hard
+GSM_018,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of physics questions
+To find out how many physics questions there are, we multiply the total number of questions by the percentage of physics questions. 25% of 80 questions is 0.25 * 80 = 20.
+
+## Step 2: Calculate the number of algebra questions
+Next, we calculate the number of algebra questions by multiplying the total number of questions by the percentage of algebra questions. 15% of 80 questions is 0.15 * 80 = 12.
+
+## Step 3: Calculate the number of chemistry and history questions
+Since the rest of the questions are divided equally between chemistry and history, and we already know there are 20 physics and 12 algebra questions, we subtract these from the total to find the number of questions that are either chemistry or history. 80 - 20 - 12 = 48. Since these are equally divided between chemistry and history, we have 48 / 2 = 24 of each.
+
+## Step 4: Calculate the points Emma is sure to get from algebra questions
+Emma is sure to get 25% of the algebra questions correct. Since there are 12 algebra questions, 25% of 12 is 0.25 * 12 = 3.
+
+## Step 5: Calculate the points Emma is sure to get from physics questions
+Emma is sure to get 10% of the physics questions correct. Since there are 20 physics questions, 10% of 20 is 0.10 * 20 = 2.
+
+## Step 6: Calculate the points Emma is sure to get from chemistry and history questions
+Emma is sure to get 1/3 of the chemistry and history questions correct. Since there are 24 of each and 24 + 24 = 48, 1/3 of 48 is 48 / 3 = 16.
+
+## Step 7: Calculate the total points Emma is sure to get
+To find the total points Emma is sure to get, we add the points from algebra, physics, chemistry, and history questions. So, 3 + 2 + 16 = 21.
+
+The final answer is: $\boxed{21}$",True,21,arithmetic_reasoning,medium,hard
+GSM_019,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total time Tariq watched TV on Friday and Saturday
+On Friday and Saturday, Tariq watched 3-hour episodes each night, making a total of 2 * 3 = 6 hours.
+
+## Step 2: Calculate the total time Tariq watched TV on Monday
+On Monday, Tariq watched a 4-hour episode and a 15-minute episode, which can also be represented as 0.25 hours. So the total time is 4 + 0.25 = 4.25 hours.
+
+## Step 3: Calculate the total time Tariq watched TV on Tuesday
+On Tuesday, Tariq watched four 2-hour episodes, which makes a total of 4 * 2 = 8 hours.
+
+## Step 4: Calculate the total time Tariq watched TV on Wednesday
+On Wednesday, Tariq watched three episodes, each 30 minutes, which is 0.5 hours. So the total time is 3 * 0.5 = 1.5 hours.
+
+## Step 5: Calculate the total time Tariq watched TV for all days excluding Sunday
+The total time watched on other days is 6 (Friday and Saturday) + 4.25 (Monday) + 8 (Tuesday) + 1.5 (Wednesday) = 19.75 hours.
+
+## Step 6: Calculate the time Tariq watched TV on Sunday
+Since Tariq watched a total of 22 hours of TV in all and he watched 19.75 hours on the other days, the time he watched on Sunday is 22 - 19.75 = 2.25 hours.
+
+## Step 7: Calculate the number of 45-minute episodes Tariq watched on Sunday
+To convert the time Tariq watched on Sunday into minutes, we multiply 2.25 hours by 60 minutes/hour, which is 2.25 * 60 = 135 minutes.
+Since each episode is 45 minutes long, we can divide the total minutes by the minutes per episode, 135 / 45 = 3.
+
+The final answer is: $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard
+GSM_020,canonical,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of eggs Zahra hid
+First, we need to determine the total number of eggs Zahra hid. Since one dozen is equal to 12, 10 dozen eggs is 10 * 12 = 120 eggs.
+
+## Step 2: Determine the number of eggs found by Ava
+Ava finds 3 eggs.
+
+## Step 3: Calculate the number of eggs found by Quinn
+Quinn finds six times as many as Ava. Quinn finds 6 * 3 = 18 eggs.
+
+## Step 4: Determine the number of eggs found by Sophia
+Sophia finds 3 less than Quinn. Sophia finds 18 - 3 = 15 eggs.
+
+## Step 5: Calculate the number of eggs found by Esteban
+Esteban finds 1/5 as many eggs as Sophia. Esteban finds 15 / 5 = 3 eggs.
+
+## Step 6: Determine the number of eggs found by Fatima
+Fatima finds three dozen eggs more than Quinn and Ava combined. First, find the total number of eggs found by Quinn and Ava, which is 18 + 3 = 21 eggs. Since three dozen is equal to 36, Fatima finds 21 + 36 = 57 eggs.
+
+## Step 7: Add up the total number of eggs found by all children
+Add up the number of eggs found by each child: 3 + 18 + 15 + 3 + 57 = 96.
+
+## Step 8: Calculate the number of eggs still hidden in the yard
+The total number of eggs hidden is 120. To find the number of eggs still hidden in the yard, subtract the number of eggs found: 120 - 96 = 24.
+
+The final answer is: $\boxed{24}$",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the cost for the first 20 minutes of the call.
+The charge for the first 20 minutes is 20 * $0.9 = $18.
+
+## Step 2: Calculate the cost of the call for the minutes beyond the 20-minute mark.
+The call lasted for 86 minutes. 20 minutes are charged at $0.9 per minute, so for the remaining 66 minutes, the rate becomes $0.5 per minute. Therefore, the cost for these additional minutes is 66 * $0.5 = $33.
+
+## Step 3: Find the total cost of the call by adding the cost for the first 20 minutes to the cost for the minutes beyond the 20-minute mark.
+Total cost = cost for the first 20 minutes + cost for the additional minutes = $18 + $33 = $51.
+
+The final answer is: $\boxed{51}$",True,51,arithmetic_reasoning,high,medium
+GSM_002,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the number of girls in the park
+The number of girls in the park is given as 18.
+
+## Step 2: Calculate the number of boys in the park
+The number of boys is stated to be two-thirds of the number of girls. To find this, we need to multiply the number of girls by two-thirds. boys = 2/3 * 18 = 12.
+
+## Step 3: Add the number of girls and boys to find the total number of kids
+To find the total number of kids in the park, we add the number of girls to the number of boys. total_kids = 18 + 12 = 30
+
+The final answer is: $\boxed{30}$",True,30,arithmetic_reasoning,high,easy
+GSM_003,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1:  We start by setting up a system of three equations based on the information given in the problem: one for each color of card.
+## Step 2:  The first equation comes from the given information about the purple cards: P = 30, where P represents the number of purple cards.
+## Step 3:  The second equation tells us that there are 50% more yellow cards than purple cards. This translates to Y = P + 0.5P = 1.5P.
+## Step 4:  Since we know that P = 30, Y can be calculated as Y = 30 + 0.5 * 30 = 45.
+## Step 5:  The third equation states that the number of blue cards equals the combined total of purple and yellow cards. So, B equals P + Y, where B = 30 + 45 = 75.
+## Step 6:  To find the total number of cards across all three colors, we simply add the numbers of purple, yellow, and blue cards: total_cards = P + Y + B.
+
+The final answer is: $\boxed{150}$",True,150,arithmetic_reasoning,high,medium
+GSM_004,w1,meta-llama/llama-3.1-8b-instruct,"There are 52 weeks in a year. The painter works for 2 weeks each month, so he works a total of:
+
+52 weeks/year / 2 weeks/month per 4 weeks = 13 months per year
+
+Now calculate how many days he works in a year:
+
+13 months/year x 2 weeks x 6 days/week = 156 days
+
+His daily wage is £150. Multiply 156 days by £150 to get the total amount the painter earns in a year:
+
+156 days/year x £150/day = £23,400/year",False,21600,arithmetic_reasoning,high,easy
+GSM_005,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of classes Liam attends in a week.
+Liam attends 7 regular classes per day (1 additional class in addition to the 6 regular classes) for 6 days a week, plus extra learning on Saturday and Sunday. This gives us 7 classes/day * 6 days = 42 classes, plus 2 extra classes on Saturday and Sunday, for a total of 42 + 2 = 44 classes per week.
+
+## Step 2: Calculate the total minutes Liam spends learning in a week.
+Each class lasts 60 minutes, so the total number of minutes per week is 44 classes * 60 minutes/class = 2640 minutes.
+
+## Step 3: Calculate the extra learning time on both Saturday and Sunday.
+On both Saturday and Sunday, Liam spends 1/7 of his total weekly class minutes on extra learning each day. So the total extra minutes per day is (1/7) * 2640 minutes, which equals 360 minutes. For both days, this would be 360 minutes/day * 2 days = 720 minutes.
+
+## Step 4: Add the regular class minutes to the extra learning minutes to get the total weekly learning time in minutes.
+The total minutes per week is the sum of the regular class minutes and the extra learning minutes: 2640 minutes (from regular classes) + 720 minutes (from extra learning) = 3360 minutes.
+
+## Step 5: Convert the total weekly learning time from minutes to hours.
+There are 60 minutes in 1 hour. To convert the total minutes to hours, we divide by 60: 3360 minutes / 60 = 56 hours.
+
+The final answer is: $\boxed{56}$",False,54,arithmetic_reasoning,high,hard
+GSM_006,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the initial value of Kayla's shares.
+The initial value of Kayla's shares is the number of shares purchased times the price per share. initial_value = 10 * 56 = 560.
+
+## Step 2: Calculate the price increase after the first year.
+The price increase is 30% of the initial price. price_increase = 0.3 * 56 = 16.8.
+
+## Step 3: Calculate the value of Kayla's shares after the first year.
+The value of Kayla's shares after the first year is the initial value plus the price increase. value_after_year1 = initial_value + price_increase = 560 + 16.8 = 576.8.
+
+## Step 4: Calculate the price decrease after the second year.
+The price decrease is 25% of the value after the first year. price_decrease = 0.25 * 576.8 = 144.2.
+
+## Step 5: Calculate the value of Kayla's shares after the second year.
+The value of Kayla's shares after the second year is the value after the first year minus the price decrease. value_after_year2 = value_after_year1 - price_decrease = 576.8 - 144.2 = 432.6.
+
+The final answer is: $\boxed{432.6}$",False,546,arithmetic_reasoning,high,medium
+GSM_007,w1,meta-llama/llama-3.1-8b-instruct,"Kai rented the car for 4 hours, but 2 of those hours are free. This means he only paid for 2 hours.
+
+The cost for the first hour is $10.
+The cost for the second hour is double the first hour, which is $10 * 2 = $20.
+
+The total amount Kai paid is $10 + $20 = $30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of people infected on the first day after the initial infection.
+On the first day, the 16 initial people infect 3 people each, so there will be an additional 16 * 3 = 48 people infected.
+
+## Step 2: Calculate the number of people infected on the second day.
+The total number of people infected now is 16 (initially infected) + 48 (infected on the first day) = 64. And each of these people infects 3 others, so the additional number of people infected on the second day will be 64 * 3 = 192.
+
+## Step 3: Calculate the number of people infected on the third day.
+The total number of people infected now is 16 (initially infected) + 48 (infected on the first day) + 192 (infected on the second day) = 256. And each of these people infects 3 others, so the number of people infected on the third day will be 256 * 3 = 768.
+
+## Step 4: Find the total number of infected people after 3 days by adding the initial infected people and the people infected on the first, second and third day.
+The total = 16 (initially infected) + 48 (infected on the first day) + 192 (infected on the second day) + 768 (infected on the third day) = 1024.
+
+The final answer is: $\boxed{1024}$",True,1024,arithmetic_reasoning,high,medium
+GSM_009,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of eggs Nia consumes in the first 84 days.
+Nia consumes 5 eggs daily for 84 days. The total number of eggs in these 84 days is 5 eggs/day * 84 days = 420 eggs.
+
+## Step 2: Calculate the total number of eggs Nia consumes in the next 24 days.
+After 84 days, Nia consumes 7 eggs per day for the next 24 days. The total number of eggs in these 24 days is 7 eggs/day * 24 days = 168 eggs.
+
+## Step 3: Find the total number of eggs Nia consumed over the 108 days by adding the eggs from the two periods.
+Total number of eggs = eggs in the first 84 days + eggs in the next 24 days = 420 eggs + 168 eggs = 588 eggs.
+
+## Step 4: Convert the total number of eggs into dozens, remembering that 1 dozen equals 12 eggs.
+To convert the total number of eggs into dozens, we divide the total number of eggs by 12. Total number of dozens = 588 eggs / 12 eggs/dozen = 49 dozens.
+
+The final answer is: $\boxed{49}$",True,49,arithmetic_reasoning,high,medium
+GSM_010,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of kernels that pop in the first 30 seconds.
+60 kernels popped in the first 30 seconds.
+
+## Step 2: Calculate the number of kernels that pop in the next 30 seconds.
+4 times that number popped in the second 30 seconds is 4 * 60 = 240.
+
+## Step 3: Calculate the number of kernels that pop in the third 30 seconds.
+The rate rose to 6 times the initial rate, so 6 * 60 = 360 kernels popped.
+
+## Step 4: Calculate the number of kernels that pop in the last 30 seconds on the heat.
+The rate drops to half of the rate in the previous 30 seconds, so (1/2) * 360 = 180 kernels popped.
+
+## Step 5: Calculate the number of residual kernels that pop after the pan is removed.
+A quarter of the kernels that popped in the final 30 seconds pop due to residual heat, which is (1/4) * 180 = 45 kernels.
+
+## Step 6: Add all the popped kernels together to get the total number of popped kernels.
+60 + 240 + 360 + 180 + 45 = 885 kernels popped.
+
+## Step 7: Remember, Zahra started with a pan of popcorn kernels, but the number of kernels that popped is the number we calculated in the previous step.
+
+
+The final answer is: $\boxed{885}$",True,885,arithmetic_reasoning,medium,medium
+GSM_011,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, let's calculate the total amount of water used to make the giant cubes.
+8 giant cubes will require 8 * 12 = 96 grams of water for the giant cubes.
+
+## Step 2: Calculate the total amount of water used to make the medium cubes.
+13 medium cubes will require 13 * 11 = 143 grams of water for the medium cubes.
+
+## Step 3: Calculate the total amount of water used to make the small cubes.
+15 small cubes will require 15 * 0.2 = 3 grams of water for the small cubes.
+
+## Step 4: Calculate the total amount of water used by adding up the water used for the giant cubes, medium cubes, and small cubes.
+96 + 143 + 3 = 242 grams.
+
+## Step 5: Calculate the amount of water that remains untouched after making the cubes by subtracting the total amount used from the initial amount of water.
+
+328 - 242 = 86 grams.
+
+The final answer is: $\boxed{86}$",True,86,arithmetic_reasoning,medium,medium
+GSM_012,w1,meta-llama/llama-3.1-8b-instruct,"To find out how many plants Camila starts with, we first need to multiply the number of window ledges by the number of potted plants per ledge and then add the 29 additional plants she received.
+
+Number of window ledges: 52
+Number of potted plants per ledge: 7
+Initial total plants: 52 * 7 = 364
+Additional plants: 29
+Total initial plants: 364 + 29 = 393
+
+The next step is to calculate the total number of plants given away. 
+Number of window ledges: 52
+Number of plants given away per ledge: 6
+Total plants given away: 52 * 6 = 312
+
+To find out how many plants Camila will be left with, we subtract the total given away from the total initial plants: 
+393 - 312 = 81
+
+Therefore, Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the time it takes to walk on the beach
+First, we need to calculate the time it takes for Mia to walk on the sidewalk. Given that she spends 60 minutes walking on the beach, we can use the relationship between the beach time and the sidewalk time to find the beach's speed relative to the sidewalk's.
+
+## Step 2: Calculate the time it takes to walk on the sidewalk
+Since her walking speed on the sidewalk is twice her speed on the beach, it will take her half the time to walk the same distance on the sidewalk as it does on the beach.
+
+## Step 3: Determine the distance walked on the sidewalk and beach
+The total distance of the walk is 24 kilometers, with 12 kilometers on each section. We know that she spends 60 minutes on the beach.
+
+## Step 4: Use the time spent on the beach to find the time spent on the sidewalk
+Since we know she spends 60 minutes on the beach, we need to figure out how to find the time she spends on the sidewalk using the relationship of the speeds.
+
+## Step 5: Find the time it takes to walk on the sidewalk
+Because the time for the sidewalk is half that of the beach, the time spent walking on the sidewalk would be 60 / 2 = 30 minutes.
+
+## Step 6: Find the total time to walk the full 24-kilometer distance
+Adding the time spent on the sidewalk and beach, we get 60 minutes for the beach and 30 minutes for the sidewalk, making the total time for the full 24-kilometer walk 90 minutes.
+
+The final answer is: $\boxed{90}$",True,90,arithmetic_reasoning,medium,medium
+GSM_014,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the total time the worker has available in 10 days to work
+The worker works for 10 hours a day for 10 days, so the total time available to work is 10 * 10 = 100 hours.
+
+## Step 2: Calculate the total minutes the worker has available in 10 days to work
+Since the worker works for 10 hours a day, and there are 60 minutes in an hour, the total minutes the worker has available to work in 10 days is 100 hours * 60 minutes per hour = 6000 minutes.
+
+## Step 3: Calculate how many minutes it takes to clean the university
+Since cleaning each floor takes 20 minutes and there are 210 floors, it will take the worker 20 minutes * 210 floors = 4200 minutes to clean the university.
+
+## Step 4: Determine what percentage of the worker's daily hours are used for cleaning floors
+The percentage of the worker's time used for cleaning floors is the time spent cleaning the floors divided by the total time available, multiplied by 100. However, to match the units for comparison, we should divide the total cleaning time in minutes by the total working hours (which is 100 hours) to get hours, and then multiply by 100. So, (4200 minutes / (100 hours * 60 minutes per hour)) * 100.
+
+## Step 5: Simplify the fraction of the worker's daylight hours used for cleaning floors
+We need to convert 4200 minutes into hours to match our units, since the workday is given in hours. There are 60 minutes in an hour, so 4200 minutes is (4200 / 60) hours. This simplifies to 70 hours.
+
+## Step 6: Calculate the final percentage
+Now we can calculate the percentage used for cleaning floors: (70 hours / (100 hours * 10)) * 100
+
+## Step 7: Finalize the calculation for percentage of the worker's time used for cleaning floors
+To finalize the percentage, we calculate 70 / 1000 * 100 which is the same as 0.07 * 100, so 7%.
+
+The final answer is: $\boxed{7}$",False,70,arithmetic_reasoning,medium,medium
+GSM_015,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Round the prices of tulips, roses, and sunflowers to the nearest dollar.
+Viktor sells tulips for $2, roses for $5, and sunflowers for $5.
+
+## Step 2: Calculate the total revenue from selling the tulips.
+Total revenue from tulips = number of tulips sold * price per tulip = 12 * 2 = 24.
+
+## Step 3: Calculate the total revenue from selling the roses.
+Total revenue from roses = number of roses sold * price per rose = 29 * 5 = 145.
+
+## Step 4: Calculate the total revenue from selling the sunflowers.
+Total revenue from sunflowers = number of sunflowers sold * price per sunflower = 37 * 5 = 185.
+
+## Step 5: Calculate the total revenue.
+Total revenue = Total revenue from tulips + Total revenue from roses + Total revenue from sunflowers = 24 + 145 + 185 = 354.
+
+The final answer is: $\boxed{354}$",True,354,arithmetic_reasoning,medium,hard
+GSM_016,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total weight of wheat purchased
+To find the total weight of wheat, we multiply the number of boxes by the weight of each box. So, 6 boxes * 4 pounds/box = 24 pounds of wheat.
+
+## Step 2: Calculate the total weight of cucumbers purchased
+We find the total weight of cucumbers by multiplying the number of bags by the weight of each bag. Thus, 12 bags * 5 pounds/bag = 60 pounds of cucumbers.
+
+## Step 3: Calculate the total weight of apples purchased
+We calculate the total weight of apples by multiplying the number of packs by the weight of each pack. Therefore, 32 packs * 43 pounds/pack = 1376 pounds of apples.
+
+## Step 4: Calculate the total weight of corns purchased
+To find the total weight of corns, we multiply the number of sacks by the weight of each sack. Thus, 18 sacks * 15 pounds/sack = 270 pounds of corns.
+
+## Step 5: Calculate the total weight of grocery and tools purchased
+The farmer buys 43 pounds of grocery and 27 pounds of tools, so the total weight of grocery and tools is 43 pounds + 27 pounds = 70 pounds.
+
+## Step 6: Calculate the total weight of all items purchased
+To find the total weight of all items, we add the weight of each item together: wheat (24 pounds) + cucumbers (60 pounds) + apples (1376 pounds) + corns (270 pounds) + grocery and tools (70 pounds) = 1720 pounds.
+
+## Step 7: Calculate how many trips are needed to move all the items
+Since the farmer has three trucks, each capable of carrying 120 pounds per trip, the total weight in pounds that the farmer's trucks can carry per trip is 3 * 120 pounds = 360 pounds. To find the number of trips needed, we divide the total weight of all items (1720 pounds) by the weight that the trucks can carry per trip (360 pounds).
+
+## Step 8: Calculate the number of trips needed, considering any remainder
+To find the number of trips, we perform the division of the total weight (1720 pounds) by the weight the trucks can carry per trip (360 pounds). So, we get 1720 / 360 = 4.77778, indicating the number of trips is greater than 4 because the remainder is greater than 0.
+
+## Step 9: Determine the exact number of trips by considering the remainder
+Since the remainder 0.77778 is greater than 0.2 (1/5), we have to round up to the nearest whole number. This is because we can't make a partial trip, so we need to add an additional full trip to accommodate the remaining weight.
+
+## Step 10: Round up to the nearest whole number to find the total number of trips
+Therefore, the number of trips is 5.
+
+The final answer is: $\boxed{5}$",True,5,arithmetic_reasoning,medium,hard
+GSM_017,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the number of orange pies sold on Friday
+On Friday, Liam sold 25 boxes of cookies, and the number of orange pie boxes sold was 13 fewer than the orange pies he would sell on Saturday. So, we need to find the number of orange pies sold on Saturday first.
+
+## Step 2: Calculate the number of orange pies sold on Saturday
+We know he sold 22 boxes of orange pie on Saturday. Given that the number of orange pies sold on Saturday is 13 more than the orange pies sold on Friday, the equation to find orange pies sold on Friday is 22 - 13 = x, where x is the number of boxes of orange pie sold on Friday.
+
+## Step 3: Solve the equation to find the number of orange pies sold on Friday
+22 - 13 = 9, so the number of orange pies sold on Friday is 9.
+
+## Step 4: Determine the total sales of Friday
+On Friday, Liam sold 25 boxes of cookies priced at £12 per box, and 9 boxes of orange pie priced at £21 per box. The total sales on Friday is the sum of the sales from cookies and pies. This gives us £12 * 25 + £21 * 9 = £300 + £189 = £489.
+
+## Step 5: Determine the sales of cookies on Saturday
+On Saturday, Liam sold 11 more boxes of cookies than on Friday. He sold 25 boxes on Friday, so on Saturday he sold 25 + 11 = 36 boxes of cookies.
+
+## Step 6: Calculate the total sales of Saturday
+On Saturday, Liam sold 36 boxes of cookies priced at £12 per box, and 22 boxes of orange pie priced at £21 per box. The total sales on Saturday is the sum of the sales from cookies and pies. This gives us £12 * 36 + £21 * 22 = £432 + £462 = £894.
+
+## Step 7: Determine the total sales of Sunday
+Since Liam's total sales on Sunday is equal to the combined total of Friday and Saturday, we add the totals from Friday and Saturday. This is £489 + £894 = £1383.
+
+## Step 8: Determine the total sales of Sunday from cookies and orange pies
+Since we have the combined total sales on Sunday, we need to verify the sales of cookies and orange pies on Sunday by dividing the total by the known sales for cookies and orange pies on the other two days. But for now, we will move to calculating the daily average to ensure understanding of approach.
+
+## Step 9: Find the average daily earnings for the fundraiser
+To calculate the daily average earnings from a 3-day period, we sum up the total earnings from each day and then divide by the number of days. Total earnings are £489 (Friday) + £894 (Saturday) + £1383 (Sunday).
+
+## Step 10: Calculate the total and average earnings
+Total earnings are £489 + £894 + £1383 = £2766. To find the average daily earnings, we divide the total earnings by the number of days, which is 3, so £2766 ÷ 3.
+
+## Step 11: Calculate the final average daily earnings
+£2766 ÷ 3 = £922.
+
+The final answer is: $\boxed{922}$",True,922,arithmetic_reasoning,medium,hard
+GSM_018,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of physics questions
+First, we need to determine the number of physics questions in the quiz. The total number of questions is 80, and 25% of them are physics questions. The number of physics questions is 0.25 times 80, which is 20.
+
+## Step 2: Calculate the number of algebra questions
+Next, we need to determine the number of algebra questions. Since 15% of the 80 questions are algebra questions, we can find the number of algebra questions by multiplying 0.15 by 80, which gives us 12.
+
+## Step 3: Calculate the number of chemistry and history questions
+To find the number of chemistry and history questions, we need to determine the remaining percentage of questions, which is 100% minus 25% minus 15%, which equals to 60%. Since the remaining questions are split equally between chemistry and history, we divide 60% by 2. The result is 30%. We then multiply 30% by 80 to find the number of chemistry and history questions each.
+
+## Step 4: Calculate the total points for each type of question
+To calculate the total points Emma is certain to score for each type of question, we first multiply the number of each type of question by the respective percentage or fraction Emma is expected to answer correctly.
+
+## Step 5: Calculate the points for physics questions
+Emma will correctly answer 10% of the 20 physics questions. 0.1 times 20 is 2.
+
+## Step 6: Calculate the points for algebra questions
+Emma will correctly answer 25% of the 12 algebra questions. 0.25 times 12 is 3.
+
+## Step 7: Calculate the points for chemistry questions
+Emma will correctly answer 1/3 of the 40 chemistry questions. 1/3 times 40 is 40/3, which is approximately 13.33.
+
+## Step 8: Calculate the points for history questions
+Emma will also correctly answer 1/3 of the 40 history questions. 1/3 times 40 is also 40/3, which is approximately 13.33.
+
+## Step 9: Calculate the total points Emma is certain to score
+To find the total points Emma is certain to score, we simply add the points for each type of question together.
+
+## Step 10: Calculate the total points
+Adding the points for each type of question gives 2 for physics, 3 for algebra, 13.33 for chemistry, and 13.33 for history. We then sum these values, which gives 31.66.
+
+The final answer is: $\boxed{31.66}$",False,21,arithmetic_reasoning,medium,hard
+GSM_019,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total screen time from Thursday to Wednesday
+From Thursday to Wednesday, Tariq's total screen time is 22 - 3 (Friday) - 3 (Saturday) = 16 hours.
+
+## Step 2: Calculate Tariq's total screen time in minutes from Thursday to Wednesday
+There are 60 minutes in an hour, so the total screen time from Thursday to Wednesday in minutes is 16 * 60 = 960 minutes.
+
+## Step 3: Calculate Tariq's screen time on Monday, Tuesday, and Wednesday in minutes
+On Monday, he watched a 4-hour episode which is 4 * 60 = 240 minutes and a 15-minute show. Total screen time on Monday is 240 + 15 = 255 minutes.
+On Tuesday, he watched four 2-hour episodes, which is 4 * 2 * 60 = 480 minutes.
+On Wednesday, he watched three 30-minute episodes. Total screen time on Wednesday is 3 * 30 = 90 minutes.
+
+## Step 4: Calculate Tariq's screen time from Monday to Wednesday in minutes
+Total screen time from Monday to Wednesday is 255 + 480 + 90 = 825 minutes.
+
+## Step 5: Calculate the remaining screen time for Tuesday to Sunday in minutes
+Remaining screen time from Thursday to Wednesday is 960 - 825 = 135 minutes.
+
+## Step 6: Calculate Tariq's screen time on Sunday in minutes
+On Sunday, Tariq watched several 45-minute episodes. The remaining screen time was 135 minutes. Total number of episodes is 135 / 45 = 3.
+
+## Step 7: Determine the number of 45-minute episodes Tariq watched on Sunday.
+The number of 45-minute episodes Tariq watched on Sunday is 3.
+
+## Step 8: In order to confirm our reasoning, calculate the total hours of TV.
+3 hours on Friday, 3 hours on Saturday, Total hours = (3 + 3) + (duration_tuosund)+ (4 + 0.25) + (2*2*2)+ (0.5 * 3).
+
+
+
+The final answer is: $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard
+GSM_020,w1,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of eggs Zahra hid.
+Zahra hid 10 dozen eggs, which is 10 * 12 = 120 eggs.
+
+## Step 2: Determine how many eggs Ava found.
+Ava discovered 3 eggs.
+
+## Step 3: Calculate how many eggs Quinn found.
+Quinn found six times the number Ava found. Since Ava found 3 eggs, Quinn found 6 * 3 = 18 eggs.
+
+## Step 4: Calculate how many eggs Sophia found.
+Sophia collected 3 fewer eggs than Quinn. Since Quinn found 18 eggs, Sophia found 18 - 3 = 15 eggs.
+
+## Step 5: Calculate how many eggs Esteban found.
+Esteban found 1/5 of the number Sophia found. Since Sophia found 15 eggs, Esteban found 1/5 * 15 = 3 eggs.
+
+## Step 6: Calculate the total number of eggs found by Quinn and Ava together.
+The total number of eggs found by Quinn and Ava together is 3 + 18 = 21 eggs.
+
+## Step 7: Calculate how many eggs Fatima found.
+Fatima found three dozen more eggs than the total found by Quinn and Ava together. Since Quinn and Ava together found 21 eggs, three dozen is 36 eggs. Fatima found 21 + 36 = 57 eggs.
+
+## Step 8: Calculate the total number of eggs found by everyone.
+Ava found 3 eggs, Quinn found 18 eggs, Sophia found 15 eggs, Esteban found 3 eggs, and Fatima found 57 eggs. So the total number of eggs found is 3 + 18 + 15 + 3 + 57 = 96 eggs.
+
+## Step 9: Calculate the number of eggs that remain in the yard.
+Since there are 120 eggs in total and 96 eggs were found, the number of eggs remaining is 120 - 96 = 24 eggs.
+
+The final answer is: $\boxed{24}$",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w2,meta-llama/llama-3.1-8b-instruct,(0.9 * 20) + (0.5 * 66) = 18 + 33 = 51,True,51,arithmetic_reasoning,high,medium
+GSM_002,w2,meta-llama/llama-3.1-8b-instruct,18 * (2/3) + 18 = 36,False,30,arithmetic_reasoning,high,easy
+GSM_003,w2,meta-llama/llama-3.1-8b-instruct,"To find the number of yellow cards, we need to calculate 50% of the number of purple cards, then add that to the number of purple cards.
+
+There are 30 purple cards. 50% of 30 is 0.5 x 30 = 15. So, there are 15 more yellow cards than purple cards. This means there are 30 + 15 = 45 yellow cards.
+
+To find the number of blue cards, we add the number of purple and yellow cards together. There are 30 purple cards and 45 yellow cards, so 30 + 45 = 75 blue cards.
+
+The objective is to find the total number of cards. This is the sum of all the different colored cards: 30 purple + 45 yellow + 75 blue = 150. The answer is 150.",True,150,arithmetic_reasoning,high,medium
+GSM_004,w2,meta-llama/llama-3.1-8b-instruct,"52 * 6 * 2 * 12
+(52 / 4) * 6 * 2 * 12 * 150",False,21600,arithmetic_reasoning,high,easy
+GSM_005,w2,meta-llama/llama-3.1-8b-instruct,24,False,54,arithmetic_reasoning,high,hard
+GSM_006,w2,meta-llama/llama-3.1-8b-instruct,"2156
+
+(Û56 * 1.30 = Û72.8, then 72.8 * 0.75 = 54.6, finally 54.6 * 10 = Û566)",False,546,arithmetic_reasoning,high,medium
+GSM_007,w2,meta-llama/llama-3.1-8b-instruct,50,False,30,arithmetic_reasoning,high,hard
+GSM_008,w2,meta-llama/llama-3.1-8b-instruct,1024,True,1024,arithmetic_reasoning,high,medium
+GSM_009,w2,meta-llama/llama-3.1-8b-instruct,180,False,49,arithmetic_reasoning,high,medium
+GSM_010,w2,meta-llama/llama-3.1-8b-instruct,60 + 4*60 + 6*60 + 0.5*6*60 + 0.25*0.5*6*60,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w2,meta-llama/llama-3.1-8b-instruct,7,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w2,meta-llama/llama-3.1-8b-instruct,(52 _ 7) + 29 - (52 _ 6),False,81,arithmetic_reasoning,medium,medium
+GSM_013,w2,meta-llama/llama-3.1-8b-instruct,180,False,90,arithmetic_reasoning,medium,medium
+GSM_014,w2,meta-llama/llama-3.1-8b-instruct,"10541.513636 (Time per floor is in minutes but work hours per day is in hours, so it needs to be converted) 
+
+Step 1: Convert work hours to minutes 
+10 hours * 60 minutes per hour = 600 minutes per day
+
+Step 2: Calculate total cleaning time
+Total floors to clean = 210
+Time per floor = 20
+Total cleaning time = 210 * 20 = 4200 minutes
+
+Step 3: Calculate daily cleaning time
+Daily cleaning time = Total cleaning time / number of days
+= 4200 minutes / 10 days
+= 420 minutes 
+
+Step 4: Calculate percentage
+%
+= (Daily cleaning time / total daily work minutes) * 100
+= (420 / 600) * 100
+= 70",True,70,arithmetic_reasoning,medium,medium
+GSM_015,w2,meta-llama/llama-3.1-8b-instruct,(2)(12) + (5)(29) + (5)(37) = 24 + 145 + 185 = 354,True,354,arithmetic_reasoning,medium,hard
+GSM_016,w2,meta-llama/llama-3.1-8b-instruct,768,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w2,meta-llama/llama-3.1-8b-instruct,"Wednesday 
+
+125
+26
+42
+11
+396
+33
+37.5",False,922,arithmetic_reasoning,medium,hard
+GSM_018,w2,meta-llama/llama-3.1-8b-instruct,23,False,21,arithmetic_reasoning,medium,hard
+GSM_019,w2,meta-llama/llama-3.1-8b-instruct,5.5,False,3,arithmetic_reasoning,medium,hard
+GSM_020,w2,meta-llama/llama-3.1-8b-instruct,"1 dozen = 12 eggs
+10 dozen = 120 eggs
+
+Ava: 3 eggs
+Quinn: 6 * 3 = 18 eggs
+Sophia: 18 - 3 = 15 eggs
+Esteban: (1/5) * 15 = 3 eggs
+Fatima: (18 + 3) + 36 = 57 eggs
+Total found: 3 + 18 + 15 + 3 + 57 = 96 eggs
+Remaining eggs: 120 - 96 = 24 eggs
+
+24",True,24,arithmetic_reasoning,medium,hard
+GSM_001,w3,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of calories burned during the first 20 minutes of the hike.
+The hiker burns 0.9 calories per minute for 20 minutes. Multiply 0.9 by 20 to get the total calories burned during the first 20 minutes. calories_burned_first_20_minutes = 0.9 * 20 = 18
+
+## Step 2: Calculate the remaining time after the first 20 minutes.
+The total hike time is 86 minutes. Subtract the first 20 minutes to get the remaining time. remaining_time = 86 - 20 = 66
+
+## Step 3: Calculate the calories burned during the remaining time of the hike.
+From the 21st to the 86th minute, the burn rate drops to 0.5 calories per minute. Multiply the new burn rate by the remaining time to get the calories burned during the rest of the hike. calories_burned_remaining_minutes = 0.5 * 66 = 33
+
+## Step 4: Add the calories burned in the first 20 minutes and the calories burned in the remaining minutes to get the total calories burned.
+total_calories_burned = calories_burned_first_20_minutes + calories_burned_remaining_minutes = 18 + 33 = 51
+
+The final answer is: $\boxed{51}$",True,51,arithmetic_reasoning,high,medium
+GSM_002,w3,meta-llama/llama-3.1-8b-instruct,26,False,30,arithmetic_reasoning,high,easy
+GSM_003,w3,meta-llama/llama-3.1-8b-instruct,30 + 150 + 80 = 260,False,150,arithmetic_reasoning,high,medium
+GSM_004,w3,meta-llama/llama-3.1-8b-instruct,10420,False,21600,arithmetic_reasoning,high,easy
+GSM_005,w3,meta-llama/llama-3.1-8b-instruct,(6+1)*60*7 + (1/7)*((6+1)*60*7) = 5256,False,54,arithmetic_reasoning,high,hard
+GSM_006,w3,meta-llama/llama-3.1-8b-instruct,11500,False,546,arithmetic_reasoning,high,medium
+GSM_007,w3,meta-llama/llama-3.1-8b-instruct,50,False,30,arithmetic_reasoning,high,hard
+GSM_008,w3,meta-llama/llama-3.1-8b-instruct,1 047 552,False,1024,arithmetic_reasoning,high,medium
+GSM_009,w3,meta-llama/llama-3.1-8b-instruct,510,False,49,arithmetic_reasoning,high,medium
+GSM_010,w3,meta-llama/llama-3.1-8b-instruct,1089,False,885,arithmetic_reasoning,medium,medium
+GSM_011,w3,meta-llama/llama-3.1-8b-instruct,594,False,86,arithmetic_reasoning,medium,medium
+GSM_012,w3,meta-llama/llama-3.1-8b-instruct,367,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w3,meta-llama/llama-3.1-8b-instruct,44,False,90,arithmetic_reasoning,medium,medium
+GSM_014,w3,meta-llama/llama-3.1-8b-instruct,4.17,False,70,arithmetic_reasoning,medium,medium
+GSM_015,w3,meta-llama/llama-3.1-8b-instruct,2453,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w3,meta-llama/llama-3.1-8b-instruct,13,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w3,meta-llama/llama-3.1-8b-instruct,3059,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w3,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of biology questions
+First, we calculate the number of biology questions. Since 25% of the 80 questions are biology, we find the number of biology questions as 0.25 * 80 = 20.
+
+## Step 2: Calculate the total number of geometry questions
+Next, we calculate the number of geometry questions. Since 15% of the 80 questions are geometry, we find the number of geometry questions as 0.15 * 80 = 12.
+
+## Step 3: Determine the number of economics and geography questions
+Since the remaining questions after subtracting biology and geometry are split equally between economics and geography, we first calculate the total remaining questions after subtracting biology and geometry. This is 80 - 20 - 12 = 48. Therefore, each of economics and geography will have 48 / 2 = 24 questions.
+
+## Step 4: Calculate the points Jordan will score on biology questions
+Jordan is expected to correctly answer 10% of the biology questions. Since there are 20 biology questions, the points Jordan will score on biology questions is 0.1 * 20 = 2.
+
+## Step 5: Calculate the points Jordan will score on geometry questions
+Jordan is expected to correctly answer 25% of the geometry questions. Since there are 12 geometry questions, the points Jordan will score on geometry questions is 0.25 * 12 = 3.
+
+## Step 6: Calculate the points Jordan will score on economics and geography questions
+Jordan is expected to correctly answer 1/3 of both economics and geography questions. Since each of economics and geography has 24 questions, the points Jordan will score on each of economics and geography is 1/3 * 24 = 8. Thus, the points for both economics and geography combined is 8 * 2 = 16.
+
+## Step 7: Find the total points Jordan is certain to score
+To find the total points Jordan is certain to score, we add up the points from biology, geometry, economics, and geography questions: 2 + 3 + 16 = 21.
+
+The final answer is: $\boxed{21}$",True,21,arithmetic_reasoning,medium,hard
+GSM_019,w3,meta-llama/llama-3.1-8b-instruct,57,False,3,arithmetic_reasoning,medium,hard
+GSM_020,w3,meta-llama/llama-3.1-8b-instruct,20,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w4,meta-llama/llama-3.1-8b-instruct,0.5*166,False,51,arithmetic_reasoning,high,medium
+GSM_002,w4,meta-llama/llama-3.1-8b-instruct,"## Step 1: We are given that the number of girls is g = 18.
+
+## Step 2: We are also given that the number of boys b is g × (2/3). We will calculate b as follows: b = g × (2/3) = 18 × (2/3) = (18 × 2)/3 = 36/3 = 12.
+
+## Step 3: We now need to calculate the sum of girls and boys: g + b = 18 + 12.
+
+The final answer is: $\boxed{30}$",True,30,arithmetic_reasoning,high,easy
+GSM_003,w4,meta-llama/llama-3.1-8b-instruct,60,False,150,arithmetic_reasoning,high,medium
+GSM_004,w4,meta-llama/llama-3.1-8b-instruct,(2*6*150*12)/4 = 27000,False,21600,arithmetic_reasoning,high,easy
+GSM_005,w4,meta-llama/llama-3.1-8b-instruct,"To find the values of w, x, y, total_min, and total_hr, first, find the value of w. 
+
+w = (p + e) * d * n 
+w = (6 + 1) * 60 * 6 
+w = 7 * 360 
+w = 2520 
+
+Now, find the values of x and y.
+x = w / 7 
+x = 2520 / 7 
+x = 360 
+
+y = w / 7 
+y = 2520 / 7 
+y = 360 
+
+Now, find the value of total_min.
+total_min = w + x + y
+total_min = 2520 + 360 + 360
+total_min = 3240
+
+Now, find the value of total_hr.
+total_hr = total_min / 60
+total_hr = 3240 / 60
+total_hr = 54",True,54,arithmetic_reasoning,high,hard
+GSM_006,w4,meta-llama/llama-3.1-8b-instruct,((56 * 10 * 1.30) * 1.75) = 973,False,546,arithmetic_reasoning,high,medium
+GSM_007,w4,meta-llama/llama-3.1-8b-instruct,22,False,30,arithmetic_reasoning,high,hard
+GSM_008,w4,meta-llama/llama-3.1-8b-instruct,"## Step 1: Understand the given information
+We have the initial number of infected people (i) as 16, the number of people each infected person infects per day (r) as 3, and the number of days (d) as 3.
+
+## Step 2: Calculate the total number of infected people after d days using the compound interest formula
+The formula for calculating the total number of infected people after d days is given by:
+Total infected = i * (1 + r)^d.
+
+## Step 3: Apply the given values to the formula
+Substitute the given values into the formula:
+Total infected = 16 * (1 + 3)^3.
+
+## Step 4: Calculate the value
+Now, we need to calculate (1 + 3)^3:
+(1 + 3)^3 = 4^3 = 64.
+Now, substitute the value into the equation:
+Total infected = 16 * 64.
+
+## Step 5: Calculate the final total
+Total infected = 16 * 64 = 1024.
+
+The final answer is: $\boxed{1024}$",True,1024,arithmetic_reasoning,high,medium
+GSM_009,w4,meta-llama/llama-3.1-8b-instruct,312,False,49,arithmetic_reasoning,high,medium
+GSM_010,w4,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the number of kernels popped in the first 30 seconds.
+The problem states that k is the initial kernels popped in the first 30 seconds and gives a value of k = 60.
+
+## Step 2: Calculate the number of kernels popped in the next 30 seconds.
+The problem states that k2 = 4 × k. Substitute the value of k = 60 into the equation to find k2 = 4 × 60 = 240.
+
+## Step 3: Calculate the number of kernels popped in the following 30 seconds.
+The problem states that k3 = 6 × k. Since k is 60, k3 = 6 × 60 = 360.
+
+## Step 4: Calculate the number of kernels popped in the final 30 seconds.
+The problem states that k4 = k3 / 2. Substitute the value of k3 = 360 into the equation to find k4 = 360 / 2 = 180.
+
+## Step 5: Calculate the number of kernels popped from residual heat.
+The problem states that k5 = k4 / 4. Substitute the value of k4 = 180 into the equation to find k5 = 180 / 4 = 45.
+
+## Step 6: Sum the total number of kernels popped.
+Add up the kernels popped in each 30-second interval to get the total number of kernels popped: k + k2 + k3 + k4 + k5. So, 60 + 240 + 360 + 180 + 45.
+
+## Step 7: Perform the summation.
+60 + 240 = 300
+300 + 360 = 660
+660 + 180 = 840
+840 + 45 = 885
+
+The final answer is: $\boxed{885}$",True,885,arithmetic_reasoning,medium,medium
+GSM_011,w4,meta-llama/llama-3.1-8b-instruct,"To find the remaining grams of water, we need to calculate the total amount of water in the cubes, which is given by:
+
+w = g*ng + m*nm + s*ns
+w = 12*8 + 11*13 + (1/5)*15
+w = 96 + 143 + 3
+w = 242
+
+Then, we subtract the total amount of water in the cubes from the initial total water:
+
+remaining grams = w - (g*ng + m*nm + s*ns)
+= 328 - 242
+= 86",True,86,arithmetic_reasoning,medium,medium
+GSM_012,w4,meta-llama/llama-3.1-8b-instruct,299,False,81,arithmetic_reasoning,medium,medium
+GSM_013,w4,meta-llama/llama-3.1-8b-instruct,404,False,90,arithmetic_reasoning,medium,medium
+GSM_014,w4,meta-llama/llama-3.1-8b-instruct,21.95,False,70,arithmetic_reasoning,medium,medium
+GSM_015,w4,meta-llama/llama-3.1-8b-instruct,4324,False,354,arithmetic_reasoning,medium,hard
+GSM_016,w4,meta-llama/llama-3.1-8b-instruct,210,False,5,arithmetic_reasoning,medium,hard
+GSM_017,w4,meta-llama/llama-3.1-8b-instruct,219,False,922,arithmetic_reasoning,medium,hard
+GSM_018,w4,meta-llama/llama-3.1-8b-instruct,"## Step 1:  We are given various proportions of questions in a test as pp (physics), pa (algebra), pc (chemistry), and ph (history) out of a total of q questions.
+## Step 2:  We also have the score rates sp for physics, sa for algebra, and sc_sh for chemistry and history, all on a per question basis.
+## Step 3:  First, using the given information, we find the proportion formulas: pc = ph = (1 - pp - pa) / 2 = (1 - 0.25 - 0.15) / 2 = 0.3.
+## Step 4:  Therefore, ph = 0.3.
+## Step 5:  Now, let's calculate the total number of questions for each type: physics = pp * q = 0.25 * 80 = 20, algebra = pa * q = 0.15 * 80 = 12, chemistry = pc * q = 0.3 * 80 = 24, history = ph * q = 0.3 * 80 = 24.
+## Step 6:  The total score for each subject can be calculated using the score rate per question, so physics = sp * 20 = 0.10 * 20 = 2, algebra = sa * 12 = 0.25 * 12 = 3, chemistry & history = sc_sh * 24 = (1/3) * 24 = 8 (we combine chemistry and history as the score rate is the same for both).
+## Step 7:  The total score is the sum of all these individual scores: total score = physics + algebra + chemistry & history = 2 + 3 + 8 = 13.
+## Step 8:  Hence, the total points Emma is sure to get are 13.
+
+The final answer is: $\boxed{13}$",False,21,arithmetic_reasoning,medium,hard
+GSM_019,w4,meta-llama/llama-3.1-8b-instruct,331,False,3,arithmetic_reasoning,medium,hard
+GSM_020,w4,meta-llama/llama-3.1-8b-instruct,146,False,24,arithmetic_reasoning,medium,hard
+GSM_001,w5,meta-llama/llama-3.1-8b-instruct,23,False,86,arithmetic_reasoning,high,medium
+GSM_002,w5,meta-llama/llama-3.1-8b-instruct,10,False,18,arithmetic_reasoning,high,easy
+GSM_003,w5,meta-llama/llama-3.1-8b-instruct,25,False,75,arithmetic_reasoning,high,medium
+GSM_004,w5,meta-llama/llama-3.1-8b-instruct,£100,False,150,arithmetic_reasoning,high,easy
+GSM_005,w5,meta-llama/llama-3.1-8b-instruct,27,False,7,arithmetic_reasoning,high,hard
+GSM_006,w5,meta-llama/llama-3.1-8b-instruct,73,False,56,arithmetic_reasoning,high,medium
+GSM_007,w5,meta-llama/llama-3.1-8b-instruct,5 hours,False,4,arithmetic_reasoning,high,hard
+GSM_008,w5,meta-llama/llama-3.1-8b-instruct,1000,False,16,arithmetic_reasoning,high,medium
+GSM_009,w5,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of eggs Nia needs for 108 days.
+Total eggs = 49 dozens * 12 eggs/dozen = 588 eggs.
+
+## Step 2: Calculate the number of eggs Nia ate in the last 24 days.
+Total eggs for the last 24 days = 7 eggs/day * 24 days = 168 eggs.
+
+## Step 3: Determine the number of eggs Nia ate in the first 84 days.
+Total eggs for the first 84 days = Total eggs - Total eggs for the last 24 days
+Total eggs for the first 84 days = 588 eggs - 168 eggs = 420 eggs.
+
+## Step 4: Calculate the initial number of eggs Nia ate per day.
+Initial eggs/day = Total eggs for the first 84 days / days
+Initial eggs/day = 420 eggs / 84 days = 5 eggs.
+
+The final answer is: $\boxed{5}$",True,5,arithmetic_reasoning,high,medium
+GSM_010,w5,meta-llama/llama-3.1-8b-instruct,150,False,60,arithmetic_reasoning,medium,medium
+GSM_011,w5,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total amount of water used in the giant cubes.
+To find the total amount of water used in the giant cubes, we multiply the number of giant cubes by the weight of each giant cube: 8 * 12 = 96 grams.
+
+## Step 2: Calculate the total amount of water used in the small cubes.
+To find the total amount of water used in the small cubes, we multiply the number of small cubes by the weight of each small cube, which is 1/5 gram. This results in: 15 * (1/5) = 3 grams.
+
+## Step 3: Calculate the total amount of water used in the medium cubes.
+To find the total amount of water used in the medium cubes, we multiply the number of medium cubes by the weight of each medium cube: 13 * 11 = 143 grams.
+
+## Step 4: Calculate the total amount of water used in all the cubes.
+We sum up the water used in the giant cubes, the small cubes, and the medium cubes: 96 + 3 + 143 = 242 grams.
+
+## Step 5: Find the initial amount of water Pavel had.
+We start by subtracting the total amount of water used from the amount of water left: 86 + 242 = 328 grams.
+
+The final answer is: $\boxed{328}$",True,328,arithmetic_reasoning,medium,medium
+GSM_012,w5,meta-llama/llama-3.1-8b-instruct,45,False,7,arithmetic_reasoning,medium,medium
+GSM_013,w5,meta-llama/llama-3.1-8b-instruct,60/3 * 8,False,24,arithmetic_reasoning,medium,medium
+GSM_014,w5,meta-llama/llama-3.1-8b-instruct,5040,False,210,arithmetic_reasoning,medium,medium
+GSM_015,w5,meta-llama/llama-3.1-8b-instruct,150,False,37,arithmetic_reasoning,medium,hard
+GSM_016,w5,meta-llama/llama-3.1-8b-instruct,195,False,43,arithmetic_reasoning,medium,hard
+GSM_017,w5,meta-llama/llama-3.1-8b-instruct,7.,False,21,arithmetic_reasoning,medium,hard
+GSM_018,w5,meta-llama/llama-3.1-8b-instruct,144,False,80,arithmetic_reasoning,medium,hard
+GSM_019,w5,meta-llama/llama-3.1-8b-instruct,25.25,False,22,arithmetic_reasoning,medium,hard
+GSM_020,w5,meta-llama/llama-3.1-8b-instruct,28,False,10,arithmetic_reasoning,medium,hard
+GSM_001,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the cost of the first 10 minutes of the call
+The first 10 minutes of the call cost ₺0.9 per minute. Therefore, the cost for the first 10 minutes is 10 * ₺0.9 = ₺9.
+
+## Step 2: Calculate the cost of the next 25 minutes of the call
+After the first 10 minutes, the price drops to ₺0.6 per minute for the next 25 minutes. So, the cost for the next 25 minutes is 25 * ₺0.6 = ₺15.
+
+## Step 3: Calculate the total cost of the first 35 minutes of the call
+Adding the cost of the first 10 minutes and the next 25 minutes gives us a total of ₺9 + ₺15 = ₺24 for the first 35 minutes.
+
+## Step 4: Calculate the cost of the remaining 80 minutes of the call
+The price drops to ₺0.4 per two minutes after the first 35 minutes. Therefore, the cost for each minute in this part is actually ₺0.2 per minute. So, the cost for the remaining 80 minutes is 80 * ₺0.2 = ₺16.
+
+## Step 5: Calculate the total cost of the 115-minute call
+Adding the cost of the first 35 minutes and the remaining 80 minutes gives us a total of ₺24 + ₺16 = ₺40.
+
+## Step 6: Determine if a discount is applied
+Since the total bill of ₺40 is more than ₺25, a 20% discount will be applied to the total bill.
+
+## Step 7: Calculate the 20% discount on the total bill
+20% of ₺40 is 0.2 * ₺40 = ₺8.
+
+## Step 8: Calculate the final cost after applying the discount
+Subtracting the discount from the total bill gives us a final cost of ₺40 - ₺8 = ₺32.
+
+The final answer is: $\boxed{32}$",True,32,arithmetic_reasoning,high,medium
+GSM_002,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, we need to find the number of boys in the yard. Since there are two-sixths the number of boys as there are girls, we need to multiply the number of girls by 2/6.
+## Step 2: Multiply 39 by 2/6, we get 39 * (2/6) = 39 * 2/6 = 13.
+## Step 3: Now we know there are 39 girls and 13 boys in the yard. To find the total number of kids in the yard, we add the number of girls and boys.
+## Step 4: The total number of kids is 39 (girls) + 13 (boys) = 52.
+## Step 5: To find the percentage of kids in the yard that are girls, we divide the number of girls by the total number of kids and then multiply by 100.
+## Step 6: 39 / 52 * 100 = 75
+
+The final answer is: $\boxed{75}$",True,75,arithmetic_reasoning,high,easy
+GSM_003,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, let's calculate the number of green cards. Since there are 25% more green cards than purple cards, we need to find 25% of 36.
+To find 25% of 36, we multiply 36 by 0.25, which equals 9.
+
+## Step 2: Next, we add the 25% increase to the number of purple cards to get the total number of green cards.
+So, the number of green cards is 36 + 9 = 45.
+
+## Step 3: Now, we need to find the number of black cards, which is equal to the sum of purple and green cards.
+The sum of purple and green cards is 36 + 45 = 81.
+
+## Step 4: To find the average number of cards per color, we need to add the total number of cards of each color and divide by the number of colors.
+The total number of cards is 36 + 45 + 81 = 162, and the number of colors is 3.
+
+## Step 5: Finally, we divide the total number of cards by the number of colors to get the average number of cards per color.
+The average number of cards per color is 162 / 3 = 54.
+
+The final answer is: $\boxed{54}$",True,54,arithmetic_reasoning,high,medium
+GSM_004,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of days worked by the carpenter in a month.
+The carpenter works for 2 weeks every month, and since there are 7 days in a week, 2 weeks equal 2 * 7 = 14 days. In addition to the 14 days, he works 2 days every week, which results in 2 * 4 = 8 days for the other weeks in the month not specified. So, in total, he works 14 + 8 = 22 days every month.
+
+## Step 2: Calculate the number of days worked by the carpenter in a year.
+There are 12 months in a year, and the carpenter works 22 days each month. Therefore, in a year, he works 22 * 12 = 264 days.
+
+## Step 3: Calculate the total earnings of the carpenter in a year before taxes.
+The carpenter gets paid €20 every day. Therefore, his earnings in a year would be 20 * 264 = €5280.
+
+## Step 4: Calculate the amount of taxes the carpenter has to pay.
+The carpenter pays 20% in taxes. To find the amount of taxes, we multiply his earnings by 20% (or 0.20). So, the taxes paid would be 5280 * 0.20 = €1056.
+
+## Step 5: Calculate the total earnings of the carpenter after paying taxes.
+To find his net earnings, subtract the taxes from his total earnings: 5280 - 1056 = €4224.
+
+The final answer is: $\boxed{4224}$",False,768,arithmetic_reasoning,high,easy
+GSM_005,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the total number of minutes Carlos spends in class each day.
+Carlos has to take 2 extra classes and each class is 35 minutes long, but he also spends 5 minutes before each class to review the study materials and prepare. Therefore, he spends 2 * (35 + 5) = 2 * 40 = 80 minutes just on classes. However, he needs to attend regular classes 8 times in the 9 slots available.
+
+## Step 2: Determine the total number of minutes Carlos spends in class for both regular and extra classes.
+To find out the additional classes minutes, we first multiply the class duration by 2 and add it to the regular 8 times of classes of 35 minutes. First, regular 8 times classes is 8 * 35 = 280 minutes.
+
+## Step 3: Calculate total time for regular and extra classes
+Cardlos attends a total of 10 classes (8 regulars + 2 extras) therefore total minutes he spends in both will be: 280 minutes from regular class + 80 minutes from the 2 extra classes = 360 minutes.
+
+## Step 4: Calculate the total minutes Carlos spends learning in a week.
+Since Carlos goes to class for 5 days a week, the total learning time for the week in class is 360 minutes * 5 days = 1800 minutes.
+
+## Step 5: Calculate the extra learning minutes spent on Saturday and Sunday.
+Carlos spends 1/10 of his weekly minutes each on Saturday and Sunday. Carlos spends 1800 minutes for 5 days of classes then he spends 1/10 * 1800 for Saturday and 1/10 * 1800 for Sunday.
+
+## Step 6: Calculate the total weekly learning time in minutes.
+We calculate the minutes from 1/10 of 1800. This is 180 minutes * 2 (Saturday and Sunday) which totals to 360 minutes.
+
+## Step 7: Add the time spent in class to the extra learning time on Saturday and Sunday.
+Total weekly class and study time is now 1800 minutes + 360 minutes = 2160 minutes.
+
+## Step 8: Convert total weekly learning time into hours
+There are 60 minutes in an hour. The conversion from minutes to hours is 2160 / 60 = 36 hours.
+
+The final answer is: $\boxed{36}$",False,44,arithmetic_reasoning,high,hard
+GSM_006,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the cost of the shares
+Sofia buys 6 shares of a stock for $35 each. So the total cost of the shares is 6 * 35 = $210.
+
+## Step 2: Calculate the stock price at the end of the first year
+The stock price increases by 50% in the first year. This means the stock price becomes 1.5 times its original price. Therefore, the stock price at the end of the first year is 35 * 1.5 = $52.50.
+
+## Step 3: Calculate the stock price at the end of the second year
+The stock price decreases by 20% in the second year. This means the stock price becomes 80% of its price at the end of the first year. Therefore, the stock price at the end of the second year is 52.50 * 0.8 = $42.
+
+## Step 4: Calculate the stock price at the end of the third year
+The stock price increases by 25% in the third year. This means the stock price becomes 1.25 times its price at the end of the second year. Therefore, the stock price at the end of the third year is 42 * 1.25 = $52.50.
+
+## Step 5: Calculate the profit Sofia made
+To find the profit Sofia made, we subtract the initial cost of the shares from the total value of the shares at the end of the third year. Therefore, the profit Sofia made is 6 * 52.50 - 210.
+
+## Step 6: Calculate the profit
+6 * 52.50 = 315. 315 - 210 = 105.
+
+The final answer is: $\boxed{105}$",True,105,arithmetic_reasoning,high,medium
+GSM_007,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the total number of hours Luis used the boat.
+The boat was hired from 2 PM to 9 PM. First, calculate the total hours by subtracting the start time from the end time: 9 PM - 2 PM = 7 hours.
+
+## Step 2: Subtract the free hours from the total hours.
+Since Luis got 3 hours free, subtract these from the total hours: 7 hours - 3 hours = 4 hours.
+
+## Step 3: Calculate the insurance cost.
+The insurance cost is ₺20.
+
+## Step 4: Determine the cost of the first paid hour and the subsequent hours.
+The first paid hour costs ₺42, and each hour after that costs thrice as much. So, each subsequent hour costs 3 * ₺42 = ₺126.
+
+## Step 5: Calculate the total paid hours.
+Since the first hour is paid, there are 3 subsequent paid hours (since 4 total paid hours - 1 first paid hour = 3 paid hours).
+
+## Step 6: Calculate the total cost of the paid hours.
+For the first hour, the cost is ₺42. For the subsequent 3 hours, the cost is ₺126 * 3 = ₺378. Therefore, the total cost for paid hours is ₺42 + ₺378 = ₺420.
+
+## Step 7: Add the total cost of the paid hours to the insurance cost to find the total amount Luis paid.
+Total amount paid = cost of paid hours + insurance cost = ₺420 + ₺20 = ₺440.
+
+The final answer is: $\boxed{440}$",True,440,arithmetic_reasoning,high,hard
+GSM_008,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, we need to calculate the number of new infections on the first day.
+24 people are infected on the first day, and each infected person infects 4 others. So, the number of new infections on the first day is 24 * 4 = 96.
+
+## Step 2: Then, we need to calculate the total number of people infected after the first day.
+The total number of people infected after the first day is the sum of the initial 24 people and the 96 new infections, which is 24 + 96 = 120.
+
+## Step 3: Next, we need to calculate the number of new infections on the second day.
+On the second day, the number of infected people who will infect others is the total number of people infected after the first day, which is 120. Since each infected person infects 4 others, the number of new infections on the second day is 120 * 4 = 480.
+
+## Step 4: Finally, we need to calculate the total number of people infected after the second day.
+The total number of people infected after the second day is the sum of the 120 people infected after the first day and the 480 new infections on the second day, which is 120 + 480 = 600.
+
+The final answer is: $\boxed{600}$",True,600,arithmetic_reasoning,high,medium
+GSM_009,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total number of days in 12 weeks
+To find the total number of days in 12 weeks, we multiply the number of weeks by 7, as there are 7 days in a week. This gives us 12 * 7 = 84 days.
+
+## Step 2: Determine the number of days Benjamin eats 2 waffles and the number of days he eats 11 waffles
+Benjamin eats 2 waffles a day for the first 56 days, and then increases it to 11 waffles a day for the rest of the days. Since he eats for a total of 84 days, he eats 2 waffles for 56 days and 11 waffles for 84 - 56 = 28 days.
+
+## Step 3: Calculate the total number of waffles Benjamin eats in 56 days at 2 waffles per day
+We multiply the number of days he eats 2 waffles (56) by the number of waffles per day (2). This gives us 56 * 2 = 112 waffles.
+
+## Step 4: Calculate the total number of waffles Benjamin eats in 28 days at 11 waffles per day
+We multiply the number of days he eats 11 waffles (28) by the number of waffles per day (11). This gives us 28 * 11 = 308 waffles.
+
+## Step 5: Find the total number of waffles Benjamin eats in 84 days
+We add the number of waffles from the first period (112) to the number of waffles from the second period (308). This gives us 112 + 308 = 420 waffles.
+
+## Step 6: Convert the total number of waffles into dozens of waffles
+To convert the total number of waffles into dozens, we divide the total number of waffles by 12, as 1 dozen is equal to 12. This gives us 420 / 12 = 35.
+
+The final answer is: $\boxed{35}$",True,35,arithmetic_reasoning,high,medium
+GSM_010,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of kernels that popped in the first 26 seconds.
+In the first 26 seconds, 80 kernels popped.
+
+## Step 2: Calculate the number of kernels that popped in the next 26 seconds.
+The kernels popped 2 times the amount from the first 26 seconds, so 2 * 80 = 160 kernels popped in the next 26 seconds.
+
+## Step 3: Calculate the number of kernels that popped in the 26 seconds after that.
+The kernels popped 3 times the amount from the initial 26 seconds, so 3 * 80 = 240 kernels popped in the next 26 seconds.
+
+## Step 4: Calculate the number of kernels that popped in the final 26 seconds of cooking.
+The kernels popped at half the rate of the 26 seconds before that, so 240 / 2 = 120 kernels popped in the final 26 seconds.
+
+## Step 5: Calculate the number of kernels that popped after Benjamin took the pan off the heat from residual heat.
+A quarter of the kernels that popped in the final 26 seconds also popped from residual heat, so (1/4) * 120 = 30 kernels popped.
+
+## Step 6: Calculate the total number of kernels that popped.
+The total number of kernels is the sum of the number of kernels that popped in each time segment, so total = 80 + 160 + 240 + 120 + 30 = 530.
+
+## Step 7: Calculate the number of kernels that Benjamin gave to his brother.
+Benjamin gave 1/7 of the total number of kernels to his brother, so kernels_given_to_brother = (1/7) * 530 = 75.71, which we'll round down to 75 as we cannot provide a fraction of a kernel.
+
+## Step 8: Calculate the number of kernels that Benjamin has left for himself.
+The kernels Benjamin has left for himself is the total number of kernels minus the kernels given to his brother, so kernels_left_for_Benjamin = 530 - 75 = 455.
+
+## Step 9: Calculate the difference in the number of kernels that Benjamin and his brother have.
+Since Benjamin gave his brother 75 kernels, we can calculate the difference by subtracting the number of kernels his brother has from the number of kernels Benjamin has, so kernels_diff = kernels_left_for_Benjamin - 75 = 380.
+
+The final answer is: $\boxed{380}$",False,450,arithmetic_reasoning,medium,medium
+GSM_011,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total ounces used by giant cubes.
+46 total cubes, 8 are giant cubes, so (8 * 15) = 120 ounces used.
+
+## Step 2: Calculate the total ounces used by medium cubes.
+46 total cubes, 12 are medium cubes, so (12 * 5) = 60 ounces used.
+
+## Step 3: Calculate the total ounces used by small cubes.
+46 total cubes, 14 are small cubes, so (14 * 0.5) = 7 ounces used.
+
+## Step 4: Let x be the number of tiny cubes and set up the equation.
+46 = 8 + 14 + 12 + x, so x = 46 - 8 - 14 - 12 = 12.
+
+## Step 5: Calculate the total ounces used by tiny cubes.
+12 tiny cubes that use 0.5 ounces each, so (12 * 0.5) = 6 ounces used.
+
+## Step 6: Calculate the total ounces used by all cubes of DeShawn.
+Total ounces = 120 + 60 + 7 + 6 = 193 ounces used.
+
+## Step 7: Calculate the ounces of water that DeShawn has left.
+312 total ounces, so DeShawn has 312 - 193 = 119 ounces of water left.
+
+The final answer is: $\boxed{119}$",False,122,arithmetic_reasoning,medium,medium
+GSM_012,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of potted plants Daphne already has on the window ledges.
+Daphne has 8 potted plants on each of the 56 window ledges, so the total number of potted plants she initially has is 8 * 56 = 448.
+
+## Step 2: Calculate the number of new potted plants Daphne received 2 days ago.
+Daphne received 23 new potted plants 2 days ago.
+
+## Step 3: Calculate the number of potted plants Daphne purchased yesterday at a 50% discount.
+Daphne bought 200 new plants at a 50% discount. So, that means she paid 50% of the original price for these plants. Therefore, she got 50% of 200 which is 0.5 * 200 = 100 free plants.
+
+## Step 4: Calculate the total number of potted plants Daphne has now, without considering the redistribution.
+The total number of potted plants she has now is the initial plants plus the new ones received and the ones she was given. That is 448 + 23 + 100 = 571.
+
+## Step 5: Calculate the total number of potted plants Daphne will give away to her friends and family.
+Daphne will give 6 plants from each of the 56 window ledges, so that's a total of 6 * 56 = 336 plants.
+
+## Step 6: Calculate the number of potted plants Daphne will remain with after giving away the 336 potted plants to her friends and family.
+After giving away 336 plants, Daphne will have 571 - 336 = 235 plants.
+
+The final answer is: $\boxed{235}$",False,335,arithmetic_reasoning,medium,medium
+GSM_013,w6,meta-llama/llama-3.1-8b-instruct,"To find Olivia's speed, we'll first find her rate of speed before the injury. Since she walks 13 miles on the beach and 65 minutes is spent on the beach, we'll first calculate her time per mile before the injury.
+
+Before the injury, her time per mile is unknown. However, her speed before the injury will be the same as after the injury in both locations relative to each other. So, we can use this to find her beach speed by first finding out how long she spent walking the 13 miles of beach before she got injured.
+
+Assume the rate of speed before injury was 'x'. So she spends 13/x hours or 13/x * 60 minutes walking the beach. Since she spends 65 minutes walking the beach before injury (her speed decreased by 50%), the equation becomes:
+
+- 13 / x = (65) / (x/2)
+- Cross-multiply
+  26x = 130
+- Divide both sides by 26 
+  x = 5
+
+Her speed on the beach before the injury was 5 miles per hour. We know that on the sidewalk, she walks four times the beach speed. So, the beach speed is 5 mph.
+
+Before injury, her sidewalk speed was:
+Sidewalk speed = 4 * 5 = 20 mph
+
+Now that we know her speeds in mph, we can find her time on the beach before the injury. 
+Time spent before injury = 13 / 5 = 2.6 hours or 156 minutes per 13 miles.
+Time before injury = 156 minutes.
+Time spent on the beach after the injury is 156 minutes divided by two since speed is halved.
+Time after the injury = 78 minutes
+Since we know how much time Olivia spends on the beach after injury and we know her walk consists of a total 29 miles, we can divide the walk up to see how much time she spends on the sidewalk. 
+
+The beach portion of her walk was 13 miles and she spends 78 minutes on the beach, so her remaining walk will be 16 miles on the sidewalk. We will find the sidewalk time in minutes per mile by first finding time spent on the sidewalk before injury, using sidewalk speed.
+
+Time before the sidewalk injury = 16 / 20 = 0.8 hours = 0.8 * 60 = 48 minutes per mile.
+
+As we already established, the sidewalk time is halved. 
+Time per mile of sidewalk walk after injury = 48 / 2 = 24 minutes.
+
+Time spent walking the sidewalk = 16 * 24 = 384 minutes.
+
+Olivia spends 78 minutes walking on the beach and 384 minutes walking on the sidewalk. 
+Time to complete the walk = 78 + 384 = 462 minutes.",False,85,arithmetic_reasoning,medium,medium
+GSM_014,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: First, let's find out how many floors the worker was originally going to clean in 6 days at a rate of 6 minutes per floor.
+The total number of floors is 150.
+
+## Step 2: Calculate the total number of minutes the worker originally would work in 6 days, considering a 10-hour workday.
+6 days multiplied by 10 hours per day gives us 60 hours total.
+
+## Step 3: Calculate the number of floors the worker can clean in 1 hour.
+Since the worker takes 6 minutes to clean one floor, in a 60-minute hour, they can clean 60 / 6 = 10 floors per hour.
+
+## Step 4: Calculate the total number of floors the worker can clean in 60 hours at the original rate.
+10 floors per hour multiplied by 60 hours is 600 floors in total.
+
+## Step 5: Calculate the number of floors the worker actually can clean now that they're twice as slow.
+At the new rate, the worker takes 12 minutes per floor, and in 60 minutes (1 hour), they can clean 60 / 12 = 5 floors.
+
+## Step 6: Calculate the actual number of floors the worker can clean in 60 hours at the new rate.
+5 floors per hour multiplied by 60 hours is 300 floors in total.
+
+## Step 7: Divide the number of floors cleaned at the new rate by the original 600 floors to see what fraction of the job they complete.
+300 / 600 simplifies to 1/2.
+
+## Step 8: Calculate the actual number of floors that need to be cleaned at the new rate.
+Since they're only cleaning half the floors, that means 150 / 2 = 75 floors remain to be cleaned at the new rate.
+
+## Step 9: Calculate the number of hours at the new rate to clean the remaining floors.
+75 floors divided by 5 floors per hour equals 15 hours.
+
+## Step 10: Subtract the hours needed to clean the remaining floors from the total hours worked per day to find the effective hours spent cleaning at the slower rate.
+100% of 10 hours is available, but only 15 of those hours are spent cleaning. 10 - 15 = -5, but since time can't be negative, this indicates an inconsistency in earlier steps that suggests the timeframes and rates were misunderstood. Let's correct this calculation by focusing on what matters—the actual fraction of the time spent on the job at the slower rate in a single day, not overall hours.
+
+## Step 11: Recognize the error in calculation in Step 10 and note that the solution process became complicated. Instead, directly calculate the fraction of the day spent cleaning at the new rate to avoid the mistake.
+At the new rate, the worker cleans 5 floors/hr. In 60 minutes, that's 1/12 of the day elapsed. However, the correct approach to find out the percentage of their day spent cleaning at this new rate is simpler. Given the misunderstanding, we only need to understand how much of their time is actually spent cleaning at the slower rate. They spend 10 hours of their 10-hour day to clean 75 floors (as recalculated in step 8 to properly address the incorrect time calculation made in the prior steps) at the slower rate, which actually just means the whole 10 hours in this case.
+
+## Step 12: Determine the time spent cleaning floors at the new rate, if cleaning 75 floors takes all the 10 hours of their day.
+They spend the whole 10 hours cleaning at this new rate.
+
+
+## Step 13: Calculate the percentage of the day spent cleaning.
+The percentage of the day spent cleaning is 100% of their time if they spend the whole day cleaning.
+
+The final answer is: $\boxed{100}$",False,50,arithmetic_reasoning,medium,medium
+GSM_015,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the rounded prices for each type of flower
+Luca sells roses for ₣1.59 per bundle, which rounds to $1.59. Sunflowers are sold for ₣5.39 per bundle, which rounds to $5.39. Daisies are sold for ₣5.16 per bundle, which rounds to $5.16.
+
+## Step 2: Calculate the total revenue from selling each type of flower
+Luca sells 6 bundles of roses at $1.59 each, so the total revenue from roses is 6 * $1.59 = $9.54.
+Luca sells 24 bundles of sunflowers at $5.39 each, so the total revenue from sunflowers is 24 * $5.39 = $129.36.
+Luca sells 40 bundles of daisies at $5.16 each, so the total revenue from daisies is 40 * $5.16 = $206.40.
+
+## Step 3: Calculate the total revenue from all the flowers
+The total revenue is the sum of the revenues from roses, sunflowers, and daisies. So, the total revenue is $9.54 + $129.36 + $206.40 = $345.30.
+
+## Step 4: Calculate the total tip
+Luca receives a 25% tip on every purchase. Since the total revenue is $345.30, a 25% tip would be 0.25 * $345.30.
+
+## Step 5: Calculate the total amount received by Luca
+This includes the total revenue plus the tip calculated in step 4. Total amount received = $345.30 (total revenue) + (0.25 * $345.30) = $345.30 + $86.325 = $431.625.
+
+## Step 6: Convert the total amount received to dollars and cents
+ Rounding the total amount to two decimal places as we have calculated the total in dollars, gives us $431.63.
+
+The final answer is: $\boxed{431.63}$",False,415,arithmetic_reasoning,medium,hard
+GSM_016,w6,meta-llama/llama-3.1-8b-instruct,"To find out the total number of trips the farmer needs to transport all the items, we need to calculate the total weight of all the items.
+
+1. Oats: 
+5 boxes * 3 kg = 15 kg
+
+2. Beets:
+11 bags * 7 kg = 77 kg
+
+3. Wheat:
+34 packs * 44 kg = 1496 kg
+
+4. Corn:
+18 sacks * 19 kg = 342 kg
+
+5. Non-perishable or other items:
+43 kg + 27 kg + 100 kg = 170 kg
+
+Total weight of items = 15 kg + 77 kg + 1496 kg + 342 kg + 170 kg = 2000 kg.
+
+Since the farm truck can carry 140 kg at a time, we need to divide the total weight by the weight a truck can carry.
+
+Total trips = Total weight / Weight per trip
+= 2000 kg / 140 kg
+= 14.29
+
+Since we can't make a fraction of a trip, we round up to the nearest whole number.
+
+Total trips = 15",False,5,arithmetic_reasoning,medium,hard
+GSM_017,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Determine the number of cupcake boxes sold on Wednesday and Thursday.
+Benjamin sold 27 boxes of cupcakes on Wednesday. On Thursday, he sold 12 more boxes of cupcakes than on Wednesday, so he sold 27 + 12 = 39 boxes of cupcakes on Thursday.
+
+## Step 2: Determine the number of pineapple pie boxes sold on Wednesday and Thursday.
+Benjamin sold 18 fewer boxes of pineapples on Wednesday than on Thursday. On Thursday, he sold 27 boxes of pineapple pie.
+
+## Step 3: First, calculate how many more boxes of pineapple pie he sold on Thursday than on Wednesday. 27 Thursday - 18 fewer = 27 + 18 = 45 boxes of pineapple pie on Wednesday.
+
+## Step 4: Calculate the total number of cupcake boxes sold over the three days.
+- On Wednesday: 27 boxes of cupcakes
+- On Thursday: 39 boxes of cupcakes
+- On Friday: Same as the combined of Wednesday and Thursday. Wednesday and Thursday cupcakes combined is 27 + 39 = 66. So, he sold 66 on Friday. Total for the 3 days: 66 + 66 = 132
+
+## Step 5: Calculate the total number of pineapple pie boxes sold over the three days.
+- On Wednesday: 45 boxes of pineapple pie
+- On Thursday: 27 boxes of pineapple pie
+- On Friday: Combined of Wednesday and Thursday, which is 45 + 27 = 72 boxes
+The total number of pineapple pies is 45 + 27 + 72 = 144
+
+## Step 6: Multiply the amount of each thing by its respective price.
+- Cupcakes per day: 132 * ¥8 = ¥1056 
+- Pies sold per day: 144 * ¥22 = ¥3168
+
+## Step 7: Total earnings from cupcake and pies
+Gain over the three days on cupcakes: 1056 + 1056 + 1056 = 3168
+Gain from pies: 3168
+Total gain: 3168 + 3168 = 6336 
+
+## Step 8: Calculate average
+To determine the average sales per day, add the total sales over 3 days, 6336, and divide by 3.
+Average daily = 6336 / 3 = 2112.",False,880,arithmetic_reasoning,medium,hard
+GSM_018,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the number of chemistry questions.
+There are 80 questions in total, and 50% of the questions are chemistry. So, the number of chemistry questions is 80 * 0.5 = 40.
+
+## Step 2: Calculate the number of biology questions.
+There are 80 questions in total, and 5% of the questions are biology. So, the number of biology questions is 80 * 0.05 = 4.
+
+## Step 3: Calculate the number of geometry and literature questions.
+The rest of the questions that are not chemistry or biology are geometry and literature questions. Since we have 80 - 40 - 4 = 36, this means 36 / 2 = 18 of each.
+
+## Step 4: Calculate the number of correct biology questions.
+Keisha is sure to get 25% of the biology questions correct. This will be 25% of 4 which is 0.25 * 4 = 1.
+
+## Step 5: Calculate the number of correct chemistry questions.
+Keisha is sure to get 70% of the chemistry questions correct. This will be 70% of 40 which is 0.7 * 40 = 28.
+
+## Step 6: Calculate the number of correct geometry and literature questions.
+Keisha is sure to get a third (1/3) of the geometry and literature questions correct. A third of 18 is 18/3 = 6. So, the number of correct geometry and literature questions together would be 6 + 6 = 12.
+
+## Step 7: Calculate the total number of points Keisha is sure to get.
+Add up the numbers of correct questions for each subject: 1 (biology) + 28 (chemistry) + 12 (geometry and literature).
+
+The final answer is: $\boxed{41}$",True,41,arithmetic_reasoning,medium,hard
+GSM_019,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the total hours watched on Saturday and Sunday
+Liam watched 5-hour episodes of his favorite show each night on Saturday and Sunday. That's a total of 2 nights * 5 hours/night = 10 hours.
+
+## Step 2: Calculate the total hours watched on Tuesday
+On Tuesday, Liam watched a 4-hour episode and a 60-minute show. First, we need to convert the 60-minute show to hours, which is 1 hour. So, the total hours watched on Tuesday is 4 hours + 1 hour = 5 hours.
+
+## Step 3: Calculate the total hours watched on Wednesday
+Liam watched three 3-hour episodes on Wednesday, so the total hours watched on Wednesday is 3 hours/episode * 3 episodes = 9 hours.
+
+## Step 4: Calculate the total hours watched on Thursday
+On Thursday, Liam watched five 30-minute episodes. First, we need to convert the 30-minute episodes to hours, which is 0.5 hours. So, the total hours watched on Thursday is 5 episodes * 0.5 hours/episode = 2.5 hours.
+
+## Step 5: Calculate the total hours watched excluding Monday
+The total hours watched on other days (Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday) is 10 hours + 5 hours + 9 hours + 2.5 hours = 26.5 hours.
+
+## Step 6: Find out the total hours left for Monday
+The total hours Liam watched in all is 28 hours. To find out the hours left for Monday, we subtract the total hours watched excluding Monday (26.5 hours) from the total hours watched in all (28 hours). So, the hours left for Monday is 28 hours - 26.5 hours = 1.5 hours.
+
+## Step 7: Convert the hours watched on Monday to 30-minute episodes
+Since we are given that the episodes are 30 minutes, we'll convert the total hours watched on Monday (1.5 hours) to 30-minute episodes. First, we multiply the hours by 60 (to get minutes) and then divide by 30 (to get episodes). So, 1.5 hours * 60 minutes/hour = 90 minutes, and then 90 minutes / 30 minutes/episode = 3 episodes.
+
+The final answer is: $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard
+GSM_020,w6,meta-llama/llama-3.1-8b-instruct,"## Step 1: Calculate the initial number of cookies Ali had.
+Ali initially had 11 dozen cookies. Since a dozen is 12 cookies, the initial number of cookies she had is 11 * 12 = 132 cookies.
+
+## Step 2: Determine how many cookies Ali ate for breakfast.
+Ali ate 3 cookies for breakfast.
+
+## Step 3: Calculate the number of cookies left after Ali ate 3 for breakfast.
+Subtract the 3 cookies eaten for breakfast from the initial number of cookies: 132 - 3 = 129 cookies.
+
+## Step 4: Calculate how many cookies Faisal found.
+Faisal finds 5 cookies.
+
+## Step 5: Determine how many cookies Hiroshi found.
+Hiroshi finds thrice as many as Faisal. Since Faisal found 5 cookies, Hiroshi found 3 * 5 = 15 cookies.
+
+## Step 6: Determine how many cookies Benjamin found.
+Benjamin finds 3 less than Hiroshi, so he found 15 - 3 = 12 cookies.
+
+## Step 7: Calculate how many cookies Wei found.
+Wei finds a quarter as many as Benjamin. To find a quarter of Benjamin's cookies, divide the number of cookies Benjamin found by 4: 12 / 4 = 3 cookies.
+
+## Step 8: Determine how many cookies Quinn found.
+Quinn finds three dozen cookies more than Hiroshi and Faisal combined. First, calculate how many cookies Hiroshi and Faisal found combined: 5 (Faisal) + 15 (Hiroshi) = 20 cookies. Three dozen cookies is 36 cookies, so Quinn found 20 + 36 = 56 cookies.
+
+## Step 9: Calculate the total number of cookies found by everyone.
+Add the cookies found by Faisal, Hiroshi, Benjamin, Wei, and Quinn: 5 (Faisal) + 15 (Hiroshi) + 12 (Benjamin) + 3 (Wei) + 56 (Quinn) = 91 cookies.
+
+## Step 10: Calculate the number of cookies still hidden in the yard.
+Subtract the total number of cookies found by everyone from the number of cookies left after Ali ate 3 for breakfast: 129 - 91 = 38 cookies.
+
+The final answer is: $\boxed{38}$",True,38,arithmetic_reasoning,medium,hard

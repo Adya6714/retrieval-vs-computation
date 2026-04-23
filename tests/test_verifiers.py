@@ -57,3 +57,29 @@ def test_never_crash_very_long_string():
     """Test that a very long string does not cause regex timeouts or crashes."""
     long_string = "x" * 10000
     assert verify_answer("dummy_id", long_string, "42", "gsm") is False
+
+
+@pytest.mark.parametrize(
+    "model_answer, correct_answer, expected",
+    [
+        ("#### 51", "51", True),
+        ("51.0", "51", True),
+        ("The answer is 51.", "51", True),
+        ("$51", "51", True),
+        ("21,600", "21600", True),
+        ("-5", "-5", True),
+        ("52", "51", False),
+        ("", "51", False),
+    ],
+)
+def test_arithmetic_reasoning_verifier(model_answer, correct_answer, expected):
+    """Arithmetic reasoning should route through GSM-specific verifier."""
+    assert (
+        verify_answer(
+            "dummy_id",
+            model_answer,
+            correct_answer,
+            "arithmetic_reasoning",
+        )
+        is expected
+    )

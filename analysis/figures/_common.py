@@ -41,6 +41,7 @@ def load_csv_candidate(paths: Iterable[str]) -> pd.DataFrame:
 def load_behavioral() -> pd.DataFrame:
     df = load_csv_candidate(
         [
+            "results/BW_P1_RES_behavioral_sweep.csv",
             "results/BW_RES_P1_behavioral_sweep.csv",
             "results/behavioral_sweep.csv",
             "data/BW_RES_P1_behavioral_sweep.csv",

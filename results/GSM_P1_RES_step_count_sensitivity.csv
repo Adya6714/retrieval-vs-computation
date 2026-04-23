@@ -1,0 +1,7 @@
+model,problem_subtype,mean_css,n
+anthropic/claude-3.7-sonnet,gsm_p1p2,0.45,5
+anthropic/claude-3.7-sonnet,gsm_symbolic,0.55,15
+meta-llama/llama-3.1-8b-instruct,gsm_p1p2,0.3,5
+meta-llama/llama-3.1-8b-instruct,gsm_symbolic,0.36666666666666664,15
+openai/gpt-4o,gsm_p1p2,0.35,5
+openai/gpt-4o,gsm_symbolic,0.48333333333333334,15

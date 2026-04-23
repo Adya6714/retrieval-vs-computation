@@ -32,6 +32,9 @@ def infer_family(pid: str, fam: str) -> str:
 def main():
     tri = load_csv_candidate(
         [
+            "results/BW_P3_RES_triangulation_per_instance_claude37.csv",
+            "results/BW_P3_RES_triangulation_per_instance_gpt4o.csv",
+            "results/BW_P3_RES_triangulation_per_instance_llama8b.csv",
             "results/triangulation_per_instance.csv",
             "results/triangulation_per_instance_gpt4o.csv",
             "results/triangulation_per_instance_llama8b.csv",

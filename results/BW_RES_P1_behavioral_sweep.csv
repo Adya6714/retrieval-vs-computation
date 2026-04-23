@@ -1,0 +1,6 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty
+GSM_001,canonical,mock,The answer is 42.,False,51,arithmetic_reasoning,high,medium
+GSM_002,canonical,mock,The answer is 42.,False,30,arithmetic_reasoning,high,easy
+GSM_003,canonical,mock,The answer is 42.,False,150,arithmetic_reasoning,high,medium
+GSM_004,canonical,mock,The answer is 42.,False,21600,arithmetic_reasoning,high,easy
+GSM_005,canonical,mock,The answer is 42.,False,54,arithmetic_reasoning,high,hard

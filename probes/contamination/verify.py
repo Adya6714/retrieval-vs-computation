@@ -83,6 +83,35 @@ def _verify_numeric(model_answer, ground_truth) -> bool:
         return False
 
 
+def verify_gsm_answer(model_response: str, correct_answer) -> bool:
+    """Verify GSM-style numeric answers with tolerant extraction."""
+    try:
+        gt_val = float(str(correct_answer).replace(",", "").strip())
+    except (TypeError, ValueError):
+        return False
+
+    response = str(model_response or "")
+
+    tagged = re.search(r"####\s*(-?[\d,]+(?:\.\d+)?)", response)
+    if tagged:
+        try:
+            pred_val = float(tagged.group(1).replace(",", ""))
+            return abs(pred_val - gt_val) < 0.01
+        except ValueError:
+            return False
+
+    numbers = re.findall(r"(?<![\w])\$?-?[\d,]+(?:\.\d+)?(?![\w])", response)
+    if not numbers:
+        return False
+
+    candidate = numbers[-1].replace("$", "").replace(",", "")
+    try:
+        pred_val = float(candidate)
+    except ValueError:
+        return False
+    return abs(pred_val - gt_val) < 0.01
+
+
 def _verify_shortest_path(model_answer, ground_truth) -> bool:
     parts = re.split(r"[,\- \>]+", str(model_answer).strip().upper())
     model_path = "".join([p for p in parts if len(p) == 1 and p.isalpha()])
@@ -283,6 +312,9 @@ def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=N
 
     if family == "shortest_path":
         return _verify_shortest_path(model_answer, ground_truth)
+
+    elif family == "arithmetic_reasoning":
+        return verify_gsm_answer(model_answer, ground_truth)
 
     elif family in numeric_families:
         return _verify_numeric(model_answer, ground_truth)

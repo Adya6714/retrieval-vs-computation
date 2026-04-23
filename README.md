@@ -26,6 +26,33 @@ Full methodology is in `CHARTER.md`. This README covers only the codebase.
   - Total rows: `140`
 - GSM + Algorithmic family support exists in verifier/metrics pipeline, but those families are not yet loaded into the active question bank.
 - `results/` currently contains mixed historical outputs; treat these as working artifacts, not final paper-grade outputs, until one clean rerun is done from a frozen bank.
+- Probe 2 metrics are implemented and in active use: `CCI` (`probes/behavioral/cci.py`) and `TEP` (`probes/behavioral/tep.py`).
+
+## Artifact naming convention (BW-first)
+
+To keep probe ownership and purpose obvious, use this pattern for scripts, results, figures, and logs:
+
+- `BW_<PROBE>_<TYPE>_<PURPOSE>.<ext>`
+- `<PROBE>`: `P1`, `P2`, `P3`, `PX` (cross-probe/shared)
+- `<TYPE>`: `SCR` (script), `RES` (result), `FIG` (figure), `LOG` (log), `UTIL` (one-off utility)
+
+Examples:
+
+- `BW_P1_SCR_run_behavioral_sweep.py`
+- `BW_P2_RES_cci.csv`
+- `BW_P3_FIG_contamination_scatter.pdf`
+- `BW_P3_LOG_contamination_triage_20260422.log`
+
+This convention is the target for ongoing cleanup; some legacy files still use older names.
+
+## Probe 3 Colab mechanistic artifacts
+
+These two root-level artifacts are Probe 3 mechanistic outputs produced in Google Colab runs:
+
+- `RvC Mechanistic Sweep.csv`
+- `RvC Mechanistic Sweep.ipynb`
+
+Keep them linked to Probe 3 in documentation and archive decisions.
 
 ---
 
@@ -91,10 +118,10 @@ retrieval-vs-computation/
 │   ├── check_gpu.py                      # Verify GPU before mechanistic runs
 │   ├── check_transformerlens_support.py  # Confirm Qwen2.5-7B in TL registry
 │   ├── generate_w6_variants.py           # Procedural W6 generation (seeded)
-│   ├── run_contamination_triage.py       # Phase 1 entrypoint
-│   ├── run_behavioral_sweep.py           # Phase 3-4 behavioral entrypoint
+│   ├── BW_P3_SCR_run_contamination_triage.py  # Probe 3 contamination entrypoint
+│   ├── BW_P1_SCR_run_behavioral_sweep.py      # Probe 1 behavioral entrypoint
 │   ├── run_mechanistic_sweep.py          # Phase 3-4 mechanistic entrypoint
-│   └── run_triangulation.py              # Final cross-probe analysis
+│   └── BW_P3_SCR_run_triangulation.py         # Final cross-probe analysis
 │
 ├── notebooks/
 │   └── probe1_triage_plot.py             # Phase 1 go/no-go scatter plot
@@ -148,9 +175,9 @@ make test
 make triage                             # full run
 
 # Partial/safe runs — already-scored rows skipped automatically
-python scripts/run_contamination_triage.py --limit 5
-python scripts/run_contamination_triage.py --family blocksworld
-python scripts/run_contamination_triage.py --no-resume   # rescore everything
+python scripts/BW_P3_SCR_run_contamination_triage.py --limit 5
+python scripts/BW_P3_SCR_run_contamination_triage.py --family blocksworld
+python scripts/BW_P3_SCR_run_contamination_triage.py --no-resume   # rescore everything
 
 # Gate 1 plot
 python notebooks/probe1_triage_plot.py
@@ -167,30 +194,30 @@ print(collections.Counter(r['variant_type'] for r in rows))
 PY
 
 # 1) Probe 1 behavioral (resume-safe, model by model)
-python scripts/run_behavioral_sweep.py --model anthropic/claude-3.7-sonnet --resume
-python scripts/run_behavioral_sweep.py --model openai/gpt-4o --resume
-python scripts/run_behavioral_sweep.py --model meta-llama/llama-3.1-8b-instruct --resume
+python scripts/BW_P1_SCR_run_behavioral_sweep.py --model anthropic/claude-3.7-sonnet --resume
+python scripts/BW_P1_SCR_run_behavioral_sweep.py --model openai/gpt-4o --resume
+python scripts/BW_P1_SCR_run_behavioral_sweep.py --model meta-llama/llama-3.1-8b-instruct --resume
 
 # 2) Probe 2 prep + runs
-python scripts/extract_phase1_plans.py
-python scripts/run_probe2a_cci.py --models anthropic/claude-3.7-sonnet openai/gpt-4o meta-llama/llama-3.1-8b-instruct --resume
-python scripts/run_probe2b_tep.py --models anthropic/claude-3.7-sonnet openai/gpt-4o meta-llama/llama-3.1-8b-instruct --resume
+python scripts/BW_P2_SCR_extract_phase1_plans.py
+python scripts/BW_P2_SCR_run_cci.py --models anthropic/claude-3.7-sonnet openai/gpt-4o meta-llama/llama-3.1-8b-instruct --resume
+python scripts/BW_P2_SCR_run_tep.py --models anthropic/claude-3.7-sonnet openai/gpt-4o meta-llama/llama-3.1-8b-instruct --resume
 
 # 3) Contamination + triangulation
-python scripts/run_contamination_triage.py --resume
-python scripts/run_triangulation.py --behavioral-model anthropic/claude-3.7-sonnet
-python scripts/run_triangulation.py --behavioral-model openai/gpt-4o --output results/triangulation_per_instance_gpt4o.csv --regression-output results/contamination_regression_gpt4o.txt
-python scripts/run_triangulation.py --behavioral-model meta-llama/llama-3.1-8b-instruct --output results/triangulation_per_instance_llama8b.csv --regression-output results/contamination_regression_llama8b.txt
+python scripts/BW_P3_SCR_run_contamination_triage.py --resume
+python scripts/BW_P3_SCR_run_triangulation.py --behavioral-model anthropic/claude-3.7-sonnet
+python scripts/BW_P3_SCR_run_triangulation.py --behavioral-model openai/gpt-4o --output results/BW_P3_RES_triangulation_per_instance_gpt4o.csv --regression-output results/BW_P3_RES_contamination_regression_gpt4o.txt
+python scripts/BW_P3_SCR_run_triangulation.py --behavioral-model meta-llama/llama-3.1-8b-instruct --output results/BW_P3_RES_triangulation_per_instance_llama8b.csv --regression-output results/BW_P3_RES_contamination_regression_llama8b.txt
 ```
 
 ### Phase 3-4 — Behavioral sweep
 ```bash
 # Dry run: zero API credits, uses mock_client
-python scripts/run_behavioral_sweep.py --dry-run --limit 5
+python scripts/BW_P1_SCR_run_behavioral_sweep.py --dry-run --limit 5
 
 # Real run (needs API key in .env)
-python scripts/run_behavioral_sweep.py --model claude-sonnet-3-7 --family blocksworld
-python scripts/run_behavioral_sweep.py --resume    # safe to interrupt and resume
+python scripts/BW_P1_SCR_run_behavioral_sweep.py --model claude-sonnet-3-7 --family blocksworld
+python scripts/BW_P1_SCR_run_behavioral_sweep.py --resume    # safe to interrupt and resume
 ```
 
 ### Phase 3-4 — Mechanistic sweep
@@ -256,15 +283,15 @@ make triangulate
 ### Core files to keep
 
 - `data/problems/question_bank.csv`: source of truth for all canonical + variant prompts and answers.
-- `results/behavioral_sweep.csv`: Probe 1 run log (all model responses and correctness flags).
-- `results/probe2a_cci.csv`: Probe 2A execution-coupling outputs.
-- `results/probe2b_tep.csv`: Probe 2B perturbation outputs.
-- `results/contamination_triage.csv`: contamination scores for canonical set.
-- `results/triangulation_per_instance.csv` (+ model-specific variants): merged per-instance diagnosis.
-- `scripts/run_behavioral_sweep.py`: primary Probe 1 runner.
-- `scripts/run_probe2a_cci.py`, `scripts/run_probe2b_tep.py`: Probe 2 runners.
-- `scripts/run_contamination_triage.py`: contamination runner.
-- `scripts/run_triangulation.py`: final merge + regression analysis.
+- `results/BW_P1_RES_behavioral_sweep.csv`: Probe 1 run log (all model responses and correctness flags).
+- `results/BW_P2_RES_cci.csv`: Probe 2A execution-coupling outputs.
+- `results/BW_P2_RES_tep.csv`: Probe 2B perturbation outputs.
+- `results/BW_P3_RES_contamination_triage.csv`: contamination scores for canonical set.
+- `results/BW_P3_RES_triangulation_per_instance_*.csv`: merged per-instance diagnosis.
+- `scripts/BW_P1_SCR_run_behavioral_sweep.py`: primary Probe 1 runner.
+- `scripts/BW_P2_SCR_run_cci.py`, `scripts/BW_P2_SCR_run_tep.py`: Probe 2 runners.
+- `scripts/BW_P3_SCR_run_contamination_triage.py`: contamination runner.
+- `scripts/BW_P3_SCR_run_triangulation.py`: final merge + regression analysis.
 - `probes/contamination/verify.py`: verifier logic used across scoring and gates.
 
 ### Utility/one-off scripts (safe cleanup candidates after freeze)
@@ -277,14 +304,14 @@ make triangulate
 
 ### Figures and analysis scripts
 
-- `scripts/generate_probe2_figures.py`: Probe 2 figure bundle using `results/probe2*.csv`.
+- `scripts/BW_P2_SCR_generate_figures.py`: Probe 2 figure bundle using `results/BW_P2_RES_*.csv`.
 - `analysis/figures/*.py`: modular figure scripts for Section 8 graphs.
 - `analysis/figures/output/`: generated publication figures (PNG/PDF).
 
 ### Path/naming note
 
 - The repo now supports both legacy and prefixed output names in several scripts (fallback logic added).
-- Current active outputs are still mostly legacy (`results/behavioral_sweep.csv`, `results/probe2a_cci.csv`, etc.).
+- Current active outputs use probe-prefixed names (`results/BW_P1_RES_*`, `results/BW_P2_RES_*`, `results/BW_P3_RES_*`).
 - Before final archival, choose one naming convention and migrate consistently.
 
 ### Suggested cleanup workflow
