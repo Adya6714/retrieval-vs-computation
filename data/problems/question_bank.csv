@@ -3144,3 +3144,517 @@ BW_E100_W6,W6,"You are a robot arm. Available actions: pick-up X (X must be clea
 put-down b
 pick-up c
 stack c b",planning_suite,blocksworld,easy,low,generated_seed_1252577391,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=2,W6 procedurally generated,ok
+CC_01,W6,"""You have coins with the following denominations: [1, 4, 5, 27]. You need to make exact change for 8 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [4, 4]",Coin Change,Algorithmic,Easy,Low,procedural,verify_coinchange,,,
+CC_02,W6,"""You have coins with the following denominations: [1, 6, 10, 27]. You need to make exact change for 13 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 3
+Coins: [6, 6, 1]",Coin Change,Algorithmic,Easy,Low,procedural,verify_coinchange,,,
+CC_03,W6,"""You have coins with the following denominations: [1, 7, 9, 12, 21]. You need to make exact change for 16 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [9, 7]",Coin Change,Algorithmic,Medium,Low,procedural,verify_coinchange,,,
+CC_04,W6,"""You have coins with the following denominations: [1, 5, 18, 21, 34, 45]. You need to make exact change for 23 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [18, 5]",Coin Change,Algorithmic,Medium,Low,procedural,verify_coinchange,,,
+CC_05,W6,"""You have coins with the following denominations: [1, 6, 8, 12, 23]. You need to make exact change for 14 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [8, 6]",Coin Change,Algorithmic,Hard,Low,procedural,verify_coinchange,,,
+CC_06,W6,"""You have coins with the following denominations: [1, 3, 8, 14, 15]. You need to make exact change for 22 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [14, 8]",Coin Change,Algorithmic,Hard,Low,procedural,verify_coinchange,,,
+CC_07,W6,"""You have coins with the following denominations: [1, 5, 11, 19, 38]. You need to make exact change for 15 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 3
+Coins: [5, 5, 5]",Coin Change,Algorithmic,Hard,Low,procedural,verify_coinchange,,,
+CC_08,W6,"""You have coins with the following denominations: [1, 5, 17, 23, 46]. You need to make exact change for 34 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [17, 17]",Coin Change,Algorithmic,Easy,Low,procedural,verify_coinchange,,,
+CC_09,W6,"""You have coins with the following denominations: [73, 79, 81, 127, 217, 221]. You need to make exact change for 496 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 4
+Coins: [217, 127, 79, 73]",Coin Change,Algorithmic,Medium,Low,procedural,verify_coinchange,,,
+CC_10,W6,"""You have coins with the following denominations: [27, 36, 60, 78, 177, 192, 224]. You need to make exact change for 950 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 6
+Coins: [224, 224, 224, 224, 27, 27]",Coin Change,Algorithmic,Medium,Low,procedural,verify_coinchange,,,
+SP_001,W6,"A delivery driver starts their shift at Warehouse 0 and needs to deliver a 
+package to Customer 11 across a city of 12 locations (0-11). Every road is 
+one-way. The one-way road network and travel times in minutes are:
+
+- 0 -> 3: 2
+- 0 -> 4: 18
+- 0 -> 7: 14
+- 1 -> 0: 9
+- 1 -> 3: 9
+- 1 -> 9: 11
+- 2 -> 11: 4
+- 3 -> 4: 15
+- 3 -> 8: 2
+- 4 -> 2: 4
+- 5 -> 1: 7
+- 8 -> 3: 5
+- 8 -> 4: 3
+- 8 -> 9: 15
+- 8 -> 11: 5
+- 9 -> 1: 16
+- 9 -> 2: 16
+- 9 -> 4: 14
+- 9 -> 6: 16
+- 10 -> 4: 16
+- 10 -> 9: 12
+- 11 -> 1: 16
+- 11 -> 6: 15
+
+What is the fastest route from Warehouse 0 to Customer 11, and how long 
+will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 8 -> 11, Cost: 9",Algorithmic Suit,Shortest Path,Easy,Low,procedural,Dijkstra,num_vertices=12 | num_edges=23 | directed=true | optimal_hops=3 | optimal_cost=17,"12 nodes, bidirectional",
+SP_002,W6,"An expedition team sets out from Base Camp 16 and must reach Summit Lodge 11 
+across a mountain range. The range has 25 locations (0-24) connected by 
+two-way trails. The trail network and travel times in hours are:
+
+- 0 -- 14: 12
+- 0 -- 16: 6
+- 0 -- 19: 13
+- 1 -- 16: 14
+- 1 -- 22: 12
+- 2 -- 18: 17
+- 2 -- 24: 14
+- 3 -- 6: 13
+- 3 -- 10: 1
+- 3 -- 16: 3
+- 3 -- 19: 12
+- 4 -- 10: 18
+- 4 -- 24: 17
+- 5 -- 9: 13
+- 5 -- 14: 18
+- 5 -- 17: 8
+- 5 -- 23: 18
+- 6 -- 10: 8
+- 6 -- 11: 10
+- 6 -- 17: 11
+- 6 -- 18: 11
+- 6 -- 20: 15
+- 6 -- 22: 12
+- 6 -- 24: 2
+- 7 -- 14: 5
+- 7 -- 16: 12
+- 7 -- 19: 11
+- 8 -- 11: 18
+- 8 -- 23: 17
+- 9 -- 11: 14
+- 9 -- 15: 12
+- 9 -- 21: 10
+- 10 -- 14: 14
+- 10 -- 16: 13
+- 10 -- 20: 13
+- 11 -- 23: 12
+- 11 -- 24: 4
+- 12 -- 18: 5
+- 13 -- 20: 6
+- 13 -- 24: 16
+- 15 -- 17: 5
+- 16 -- 18: 15
+- 16 -- 22: 5
+- 16 -- 24: 15
+- 18 -- 19: 6
+- 19 -- 21: 6
+- 19 -- 23: 14
+- 20 -- 21: 10
+- 21 -- 23: 10
+
+What is the fastest route from Base Camp 16 to Summit Lodge 11, and how 
+long will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 16 -> 3 -> 10 -> 6 -> 24 -> 11, Cost: 18",Algorithmic Suit,Shortest Path,Medium,Low,procedural,Dijkstra,num_vertices=25 | num_edges=50 | directed=false | optimal_hops=10 | optimal_cost=40 ,"25 nodes, bidirectional",
+SP_003,W6,"A courier working for an underground network must transport a package from 
+Safe House 11 to Drop Point 9 across a city of 20 locations (0-19). Every 
+road is one-way. The one-way road network and travel times in minutes are:
+
+- 0 -> 8: 13
+- 0 -> 15: 17
+- 1 -> 2: 13
+- 1 -> 7: 6
+- 1 -> 16: 13
+- 1 -> 17: 10
+- 2 -> 6: 5
+- 2 -> 9: 18
+- 3 -> 4: 18
+- 3 -> 10: 14
+- 3 -> 13: 8
+- 4 -> 0: 17
+- 4 -> 2: 9
+- 4 -> 8: 13
+- 4 -> 10: 7
+- 4 -> 18: 9
+- 5 -> 4: 14
+- 5 -> 18: 13
+- 5 -> 19: 16
+- 6 -> 1: 8
+- 6 -> 2: 15
+- 6 -> 7: 11
+- 6 -> 9: 14
+- 6 -> 10: 15
+- 6 -> 13: 12
+- 7 -> 9: 6
+- 7 -> 12: 12
+- 8 -> 3: 12
+- 8 -> 4: 17
+- 8 -> 10: 10
+- 8 -> 19: 4
+- 9 -> 1: 10
+- 9 -> 2: 14
+- 9 -> 7: 7
+- 9 -> 10: 7
+- 9 -> 13: 6
+- 9 -> 15: 8
+- 9 -> 17: 16
+- 9 -> 18: 8
+- 10 -> 1: 16
+- 10 -> 2: 13
+- 10 -> 3: 11
+- 10 -> 5: 9
+- 10 -> 12: 5
+- 10 -> 17: 9
+- 11 -> 2: 6
+- 11 -> 13: 12
+- 11 -> 15: 14
+- 11 -> 18: 1
+- 12 -> 1: 18
+- 12 -> 2: 10
+- 13 -> 15: 17
+- 13 -> 19: 15
+- 14 -> 1: 13
+- 14 -> 4: 16
+- 14 -> 8: 10
+- 14 -> 10: 6
+- 14 -> 11: 17
+- 14 -> 12: 18
+- 14 -> 19: 18
+- 15 -> 9: 3
+- 15 -> 16: 16
+- 16 -> 5: 18
+- 16 -> 12: 15
+- 16 -> 17: 12
+- 17 -> 6: 9
+- 17 -> 9: 7
+- 17 -> 10: 5
+- 17 -> 11: 18
+- 18 -> 0: 16
+- 18 -> 1: 11
+- 18 -> 8: 2
+- 18 -> 12: 12
+- 18 -> 15: 13
+- 18 -> 17: 8
+- 18 -> 19: 18
+- 19 -> 3: 7
+- 19 -> 6: 15
+- 19 -> 7: 15
+- 19 -> 15: 2
+- 19 -> 17: 13
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 11 -> 18 -> 8 -> 19 -> 15 -> 9, Cost: 12",Algorithmic Suit,Shortest Path,Hard,Low,procedural,Dijkstra,num_vertices=20 | num_edges=81 | directed=true | optimal_hops=5 | optimal_cost=22 ,"20 nodes, unidirectional",
+SP_004,W6,"A route-planning task over weighted one-way roads. Edge list and travel times are:
+
+- 0 -> 1: 3
+- 0 -> 3: 14
+- 1 -> 5: 11
+- 1 -> 7: 1
+- 2 -> 3: 15
+- 6 -> 0: 6
+- 6 -> 4: 14
+- 6 -> 5: 13
+- 7 -> 4: 7
+- 7 -> 8: 4
+- 8 -> 2: 8
+- 8 -> 9: 3
+
+What is the fastest route from Base Lodge 0 to Summit Hut 9, and what is 
+the total travel time?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 7 -> 8 -> 9, Cost: 11",Algorithmic Suit,Shortest Path,Hard,Low,procedural,Bellman-Ford,num_vertices=10 | num_edges=12 | directed=true | time_dependent=true | negative_weights=true | optimal_hops=5 | optimal_cost=8 ,"10 nodes, unidirectional and time dependent",
+SP_005,W6,"A smuggler needs to transport contraband from Safe House A (node 0) to 
+Destination X (node 15) through an underground network of 16 safe locations 
+(0-15). Every tunnel is one-way. The tunnel network and transit times in 
+minutes are:
+
+- 0 -> 3: 18
+- 0 -> 4: 16
+- 0 -> 14: 2
+- 0 -> 15: 14
+- 1 -> 0: 18
+- 1 -> 2: 9
+- 1 -> 3: 6
+- 1 -> 6: 9
+- 1 -> 12: 4
+- 1 -> 14: 16
+- 2 -> 4: 14
+- 2 -> 5: 9
+- 2 -> 13: 8
+- 3 -> 1: 10
+- 3 -> 8: 8
+- 3 -> 11: 18
+- 3 -> 12: 10
+- 3 -> 15: 10
+- 4 -> 5: 13
+- 4 -> 10: 9
+- 4 -> 12: 11
+- 5 -> 0: 7
+- 5 -> 1: 10
+- 5 -> 7: 13
+- 5 -> 10: 16
+- 5 -> 14: 8
+- 6 -> 1: 2
+- 6 -> 4: 8
+- 6 -> 9: 6
+- 7 -> 4: 15
+- 7 -> 14: 15
+- 8 -> 0: 13
+- 8 -> 10: 8
+- 8 -> 14: 15
+- 9 -> 12: 18
+- 11 -> 15: 17
+- 12 -> 5: 16
+- 12 -> 15: 4
+- 13 -> 4: 7
+- 13 -> 6: 10
+- 13 -> 10: 12
+- 13 -> 12: 7
+- 13 -> 15: 6
+- 14 -> 2: 8
+- 14 -> 4: 17
+- 14 -> 6: 3
+- 14 -> 8: 8
+- 14 -> 13: 5
+- 14 -> 15: 8
+- 15 -> 9: 6
+- 15 -> 12: 6
+- 15 -> 14: 16
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 -> 14 -> 15, Cost: 10",Algorithmic Suit,Shortest Path,medium,Low,procedural,Dijkstra,num_vertices=16 | num_edges=52 | directed=true | optimal_hops=7 | optimal_cost=32,,
+WIS_001,W6,"A farmer owns plots of land along a straight road. The plots are numbered 
+0 through 9 from west to east. Due to access restrictions, no two adjacent 
+plots can be harvested in the same season. Each plot has an expected crop 
+yield in tonnes:
+
+Plot 0: 8 tonnes
+Plot 1: 3 tonnes
+Plot 2: 6 tonnes
+Plot 3: 2 tonnes
+Plot 4: 9 tonnes
+Plot 5: 4 tonnes
+Plot 6: 7 tonnes
+Plot 7: 1 tonne
+Plot 8: 5 tonnes
+Plot 9: 10 tonnes
+
+Adjacent plots (cannot both be harvested):
+0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9
+
+Which plots should the farmer harvest to maximise total yield, and what 
+is that maximum yield?
+
+Reply with only the selected plots and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X
+
+Node weights:
+Node 0: 10
+Node 1: 17
+Node 2: 14
+Node 3: 16
+Node 4: 6
+Node 5: 11
+Node 6: 5
+Node 7: 15
+Node 8: 12
+Node 9: 11
+
+Direct connections (cannot both be selected):
+0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9
+","Selected: {1, 3, 5, 7, 9}, Total: 70",Algorithmic Suit,WIS,Easy,Low,procedural,veryify_WIS,num_items=10 | num_conflicts=9 | graph_type=path | optimal_set_size=5 | optimal_weight=40 | greedy_succeeds=true | algorithm=path_dp ,,
+WIS_002,W6,"A city has a hierarchical road network with 12 districts (0-11). 
+Roadworks mean that if two directly connected districts are both chosen 
+for a festival event, there will be traffic chaos. The city wants to 
+select as many districts as possible — weighted by expected attendance 
+— while avoiding any two directly connected districts.
+
+Expected attendance (thousands) per district:
+Node 0: 8
+Node 1: 6
+Node 2: 12
+Node 3: 8
+Node 4: 7
+Node 5: 8
+Node 6: 11
+Node 7: 13
+Node 8: 9
+Node 9: 9
+Node 10: 6
+Node 11: 11
+
+Direct connections (cannot both be selected):
+0-9, 1-2, 2-3, 2-5, 4-6, 5-7, 6-8, 7-8, 7-11, 8-10, 9-11
+
+Which districts should host the festival to maximise total attendance, 
+and what is that maximum?
+
+Reply with only the selected districts and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 1, 3, 5, 6, 10, 11}, Total: 58",Algorithmic Suit,WIS,medium,Low,procedural,veryify_WIS,num_nodes=12 | num_edges=11 | graph_type=tree | optimal_set_size=5 | optimal_weight=52 | greedy_succeeds=false | mixed_level_selection=true | algorithm=tree_dp ,,
+WIS_003,W6,"A cybersecurity firm is deploying monitoring sensors across 14 server 
+nodes in a network. Two servers that are directly connected share traffic 
+logs, meaning deploying sensors on both would be redundant. Each server 
+has an importance score. The firm wants to maximise total importance 
+of monitored servers while avoiding any two directly connected servers.
+
+Importance scores:
+Node 0: 7
+Node 1: 10
+Node 2: 15
+Node 3: 16
+Node 4: 9
+Node 5: 9
+Node 6: 17
+Node 7: 10
+Node 8: 8
+Node 9: 11
+Node 10: 6
+Node 11: 13
+Node 12: 6
+Node 13: 13
+
+Direct connections (cannot both be selected):
+0-1, 0-4, 0-9, 1-4, 2-5, 3-5, 3-9, 3-11, 3-12, 3-13, 4-13, 5-7, 5-9, 5-10, 7-8, 7-12, 9-11, 9-12, 11-13
+
+Which servers should be monitored to maximise total importance, and 
+what is that maximum?
+
+Reply with only the selected servers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 6, 7, 9, 10, 13}, Total: 82",Algorithmic Suit,WIS,medium,Low,procedural,veryify_WIS,num_nodes=14 | num_edges=19 | graph_type=general | optimal_set_size=7 | optimal_weight=55 | greedy_weight=50 | greedy_gap=5 | greedy_succeeds=false | num_competing_cliques=3 | algorithm=brute_force_or_branch_and_bound ,,
+WIS_004,W6,"A radio network has 16 transmission towers (0-15). Towers that are 
+directly linked interfere with each other and cannot broadcast on the 
+same frequency band simultaneously. Each tower has a coverage score. 
+Find the set of towers that can all broadcast simultaneously with the 
+maximum total coverage.
+
+Coverage scores:
+Tower 0: 5    Tower 1: 5    Tower 2: 4    Tower 3: 8
+Tower 4: 7    Tower 5: 4    Tower 6: 5    Tower 7: 4
+Tower 8: 4    Tower 9: 5    Tower 10: 4   Tower 11: 4
+Tower 12: 5   Tower 13: 6   Tower 14: 4   Tower 15: 3
+
+Direct links (cannot broadcast simultaneously):
+7-9, 9-5, 5-6, 6-14, 14-7
+10-12, 12-8, 8-1, 1-2, 2-10
+5-8, 14-10
+13-7, 13-6, 13-12, 13-2
+15-9, 15-12
+4-6, 4-1
+11-10, 11-5
+0-8, 0-14
+3-2, 3-7, 3-13
+
+Which towers should broadcast to maximise total coverage, and what is 
+that maximum?
+
+Reply with only the selected towers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X
+
+Node weights:
+Node 0: 4
+Node 1: 6
+Node 2: 4
+Node 3: 12
+Node 4: 4
+Node 5: 6
+Node 6: 5
+Node 7: 8
+Node 8: 8
+Node 9: 6
+Node 10: 15
+Node 11: 11
+Node 12: 15
+Node 13: 4
+Node 14: 7
+Node 15: 5
+
+Direct connections (cannot both be selected):
+0-9, 0-12, 0-14, 0-15, 1-3, 1-15, 2-3, 2-9, 2-10, 3-7, 3-13, 4-8, 4-15, 5-6, 6-7, 6-8, 6-11, 6-13, 6-14, 7-8, 7-14, 7-15, 8-10, 10-12, 10-15, 12-14, 14-15
+","Selected: {3, 5, 8, 9, 11, 12, 15}, Total: 63",Algorithmic Suit,WIS,hard,Low,procedural,veryify_WIS,num_nodes=16 | num_edges=27 | graph_type=general | optimal_set_size=7 | optimal_weight=37 | greedy_weight=34 | greedy_gap=3 | greedy_succeeds=false | contains_odd_cycles=true | node_labels_jumbled=true | algorithm=brute_force_or_branch_and_bound,,
+WIS_005,W6,"A logistics company manages 18 distribution centers across a region. Due to 
+inventory management constraints, if two directly connected centers both 
+process the same product line, it creates supply chain inefficiencies. Each 
+center has a profitability score based on its operational capacity and market 
+demand. The company wants to select centers for a new product deployment to 
+maximize total profitability while ensuring no two directly connected centers 
+are selected.
+
+Profitability scores (in millions):
+Node 0: 12
+Node 1: 9
+Node 2: 9
+Node 3: 15
+Node 4: 11
+Node 5: 8
+Node 6: 17
+Node 7: 17
+Node 8: 13
+Node 9: 18
+Node 10: 17
+Node 11: 12
+Node 12: 6
+Node 13: 5
+Node 14: 12
+Node 15: 6
+Node 16: 11
+Node 17: 8
+
+Direct connections (cannot both be selected):
+0-3, 0-4, 0-9, 0-15, 0-16, 1-3, 1-4, 1-8, 1-15, 2-3, 2-7, 2-11, 2-15, 3-7, 3-10, 3-12, 3-13, 3-14, 3-16, 4-6, 4-7, 5-11, 5-16, 6-7, 6-8, 6-15, 6-16, 8-10, 8-14, 8-15, 9-16, 10-17, 11-15, 11-16, 12-14, 12-17, 13-14, 14-16, 15-17
+
+Which distribution centers should be selected for the new product 
+deployment to maximize total profitability, and what is that maximum?
+
+Reply with only the selected centers and the total profitability.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 5, 6, 9, 10, 14}, Total: 90",Algorithmic Suit,WIS,hard,Low,procedural,veryify_WIS,num_nodes=18 | num_edges=39 | graph_type=general | optimal_set_size=8 | optimal_weight=89 | greedy_weight=82 | greedy_gap=7 | greedy_succeeds=false | num_dense_regions=4 | contains_triangles=true | algorithm=brute_force_or_branch_and_bound,,

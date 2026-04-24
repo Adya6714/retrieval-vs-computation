@@ -1,0 +1,28 @@
+ALGO TRIANGULATION REGRESSION SUMMARY
+
+anthropic/claude-3.7-sonnet
+  instance_contamination_score: 0.0000 (95% CI 0.0000, 0.0000)
+  greedy_succeeds: 0.0000 (95% CI 0.0000, 0.0000)
+  n=20
+
+meta-llama/llama-3.1-8b-instruct
+  instance_contamination_score: 0.0000 (95% CI 0.0000, 0.0000)
+  greedy_succeeds: 0.0000 (95% CI 0.0000, 0.0000)
+  n=20
+
+openai/gpt-4o
+  instance_contamination_score: 0.0000 (95% CI 0.0000, 0.0000)
+  greedy_succeeds: 0.0000 (95% CI 0.0000, 0.0000)
+  n=20
+
+TABLE 1 (CROSS-FAMILY)
+family  VAR(canonical)  VAR(W3)  VRI_gap  GSS/PDAS  Contamination-VAR slope  Convergence rate
+    CC        0.500000 0.000000 0.500000       0.0                      NaN               0.0
+    SP        0.333333 0.000000 0.333333       0.0                      NaN               0.0
+   WIS        0.066667 0.066667 0.000000       0.0                      NaN               0.4
+
+REGRESSION ROWS
+                           model  coef_instance_contamination_score  coef_instance_contamination_score_ci_lower  coef_instance_contamination_score_ci_upper  coef_greedy_succeeds  coef_greedy_succeeds_ci_lower  coef_greedy_succeeds_ci_upper  n_rows
+     anthropic/claude-3.7-sonnet                                0.0                                         0.0                                         0.0                   0.0                            0.0                            0.0      20
+meta-llama/llama-3.1-8b-instruct                                0.0                                         0.0                                         0.0                   0.0                            0.0                            0.0      20
+                   openai/gpt-4o                                0.0                                         0.0                                         0.0                   0.0                            0.0                            0.0      20

@@ -1,0 +1,21 @@
+problem_id,variant_type,model,model_answer,ground_truth,verified,parse_status,correct_alternative,human_review_flag,correct_canonical,greedy_answer,gave_greedy_answer,difficulty_params_instance_type
+CC_01,canonical,mock,"Count: 2
+ Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W1,mock,"Count: 2
+ Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W2,mock,"Count: 2
+ Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W3,mock,"Total: 2
+ Scoops: [3, 3]","Total: 2
+ Scoops: [3, 3]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W4,mock,"Count: 2
+ Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard

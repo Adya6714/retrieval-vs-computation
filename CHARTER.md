@@ -1,306 +1,377 @@
-# Beyond Accuracy — Retrieval vs Computation in LLM Reasoning
+# RESEARCH REPORT  
+## Beyond Accuracy — Retrieval vs Computation in LLM Reasoning  
 
-**Authors:** Adya
-**Affiliation:** BITS Pilani
-**Target venues:** BlackboxNLP 2026, GenBench 2026 (primary); EMNLP Findings (stretch)
-**Status:** Design locked. Problem selection and execution pending.
+**Version 2.0 | April 22, 2026**
 
----
-
-## Research Question
-
-When an LLM produces a correct answer to a reasoning problem, is that correctness causally dependent on **surface features** of the input (words, phrasings, entity names seen in training), or on **structural features** (abstract relationships, invariant under surface change)?
-
-> The model is a black box. Throughout the paper, we use the framing **"behavior consistent with retrieval-like processing"** vs **"behavior consistent with computation-like processing."** This framing is non-negotiable.
+**Authors:** Adya (lead), Shaswat, Nandini Banka  
+**Affiliation:** BITS Pilani  
+**Target Venues:** BlackboxNLP 2026, GenBench 2026 (primary); EMNLP Findings (stretch)  
+**Repo:** https://github.com/Adya6714/retrieval-vs-computation  
 
 ---
 
-## Contribution
+# PART 0: HOW TO READ THIS DOCUMENT
 
-Three independent probes run on the same problem instances converge on the same per-instance diagnosis. The contribution is the **per-instance triangulation across three independent axes**, not any single probe. We use established benchmarks deliberately to inherit their validation.
+This document is the single authoritative reference for the research design, methodology, current empirical state, what we know, what is broken, what needs to be done, and how to frame the work for publication. It supersedes all prior research reports.
 
----
+Every section is written so that a new collaborator, or you yourself returning after a two-week gap, can understand exactly what is happening and why.
 
-## Theoretical Framework: Triangulation
+## Structure
 
-The three axes of evidence are genuinely independent — each measures a different dimension:
-
-| Axis | What it measures |
-|------|-----------------|
-| **Input axis** | Change what goes in; observe behavioral change |
-| **Process axis** | Hold input fixed; check internal step-by-step consistency |
-| **Data axis** | Use information external to the model (training data) |
-
-A fourth direction — the **internals axis** (activation similarity, logit lens) — is not a standalone probe but a mechanistic depth check paired with each behavioral probe on Qwen2.5-7B.
-
----
-
-## The Three Probes
-
-### Probe 1 — Surface Invariance *(Input axis)*
-
-Each canonical problem is rewritten in multiple surface variants, presented in separate sessions. If the model is surface-invariant, answers should agree across variants.
-
-**Variants:**
-
-| ID | Description |
-|----|-------------|
-| W1 | Lexical paraphrase |
-| W2 | Structural reformat (prose ↔ table, etc.) |
-| W3 | Entity rename |
-| W4 | Formal notation *(applicable families only)* |
-| W6 | Procedural regeneration (scripted, documented random seed) |
-| W5 | Forward-backward reversal *(applicable families only — answer changes)* |
-
-
-**Metrics:**
-- **CSS** (Consistency Surface Score): fraction of applicable variants where model answer matches the original
-- **RCS** (Reversal Correctness Score): for W5 — did the model produce the correctly-reversed answer?
-- **CAS** (Consistent Answer Signature): for hard-tier problems — did the model fail consistently (structural) or differently across variants (noisy)?
-
-**Mechanistic partner (Qwen2.5-7B only):** Layer-wise cosine similarity between residual-stream activations at matched token positions across variants. Activation patching on a subset with random-position control.
-
-| Hypothesis | Prediction |
-|-----------|------------|
-| Retrieval | Behavior fragile to surface change; activations diverge across variants |
-| Computation | Behavior robust to surface change; activations converge in middle/late layers |
+- **Parts 1–2:** Research question, theoretical framework, novelty  
+- **Parts 3–5:** Three probes (design, measurement, results)  
+- **Part 6:** Empirical findings (valid, invalid, missing)  
+- **Part 7:** New metric system  
+- **Part 8:** Prior work positioning  
+- **Part 9:** Limitations  
+- **Part 10:** Problem set design  
+- **Part 11:** Visualization plan  
+- **Part 12:** Novelty + publication strategy  
 
 ---
 
-### Probe 2 — Plan-Execution Coupling *(Process axis)*
+# PART 1: THE RESEARCH QUESTION
 
-Applied to **Blocksworld only**.
+## 1.1 The Core Problem
 
-**Two-phase protocol:**
-1. **Phase 1** — Model generates a complete plan in a single response
-2. **Phase 2** — In a separate session (no memory of Phase 1), model executes the same problem step by step
+When an LLM produces a correct answer, that correctness is **epistemically ambiguous**:
 
-**Metrics:**
-- **CCI** (Cross-session Commitment Index): fraction of execution steps matching the Phase 1 plan. Low CCI = plan confabulation.
-- **TEP** (Trajectory Error Propagation): mid-execution, a false state statement is injected. Does the model adapt, or continue as if the corruption didn't happen? (Diagnostic only when paired with CCI.)
+### Interpretation A — Retrieval
+- Model has seen similar problem during training  
+- Performs pattern matching  
+- Reasoning is *retrieval disguised as inference*
 
-**Mechanistic partner (Qwen2.5-7B only):** Logit lens at action token positions in both phases. Compare the "crystallization layer" (first layer where the action becomes the top prediction) between Phase 1 and Phase 2.
+### Interpretation B — Computation
+- Model constructs solution from structure  
+- Tracks state, applies rules, plans  
+- Output derived from logic, not memory  
 
-> Tuned lens was considered and rejected — pretrained weights for Qwen2.5-7B don't exist publicly, and training one is a nontrivial side project. We use logit lens (Belrose et al., 2023) and acknowledge the trade-off.
+### Key Behavioral Difference
 
-**Pilot result (GPT-4o, 7 Blocksworld instances):** CCI = 0.26, TEP = 0.70. The model follows its own plan 26% of the time and adapts to corrupted states 70% of the time — suggesting the plan was decorative and execution was state-reactive.
+| Property | Retrieval | Computation |
+|--------|----------|------------|
+| Surface changes | Breaks | Stable |
+| Rephrasing | Fails | Consistent |
+| Entity renaming | Fails | Consistent |
 
-| Hypothesis | Prediction |
-|-----------|------------|
-| Retrieval/confabulation | Low CCI; crystallization layers diverge between phases |
-| Computation | High CCI; crystallization layers align between phases |
-
----
-
-### Probe 3 — Contamination Indexing *(Data axis)*
-
-For every problem instance, generate n-gram fingerprints from the canonical problem statement and query the **Infini-gram API** (Liu et al., COLM 2024) against The Pile and DCLM indexes. Record maximum matched n-gram length and occurrence frequency → single contamination score per instance.
-
-> Specific fingerprinting methodology (n-gram length, sliding windows, score combination) is deferred to Phase 1. Requires reading Magar & Schwartz, Golchin & Surdeanu, and Carlini's extraction work.
-
-**Primary analysis:** Per-instance behavioral correctness regressed on contamination score with problem-family fixed effects (OLS, statsmodels). Report coefficient, bootstrap 95% CI, and effect size.
-
-**Mechanistic bridge (Qwen2.5-7B only):** Compare crystallization layers for high- vs low-contamination instances. Under retrieval hypothesis, high-contamination instances should crystallize earlier.
-
-| Hypothesis | Prediction |
-|-----------|------------|
-| Retrieval | Strong positive correlation: contamination → correctness; earlier crystallization |
-| Computation | Weak/no correlation; crystallization depth independent of contamination |
+**Central Question:**  
+Can we determine which mode is operating per instance, model, and domain?
 
 ---
 
-## Models
+## 1.2 Why This Matters
 
-| Role | Models |
-|------|--------|
-| Mechanistic analysis | Qwen2.5-7B (fallback: OLMo-7B if tooling issues) |
-| Behavioral analysis | Qwen2.5-7B + one closed-model pair: GPT-4o vs o3 **or** Claude Sonnet 3.7 |
+### Practical Stakes
+- Benchmarks may reflect **contamination**, not reasoning  
+- Models may fail on **novel problems**  
+- Deployment in reasoning-critical tasks becomes risky  
 
-> Final closed-model pair decided at Phase 3. Currently leaning Claude on cost and API stability grounds. No mechanistic analysis on closed models — the paper is explicit about this asymmetry.
-
----
-
-## Statistical Requirements *(Non-Negotiable)*
-
-- Bootstrap 95% confidence intervals on every reported aggregate (10,000 resamples, `scipy.stats`)
-- Wilcoxon signed-rank test for all paired comparisons
-- Problem-family fixed effects in the contamination regression (`statsmodels` OLS)
-- Random-position patching control for all activation patching experiments
-- Report effect sizes, not just p-values
+### Scientific Stakes
+- Revisits **connectionist vs symbolist debate (1980s)**  
+- LLMs are the modern testbed  
 
 ---
 
-## Problem Set
+## 1.3 Why Existing Work Falls Short
 
-### Scale
+| Area | Limitation |
+|------|-----------|
+| Behavioral probing | Cannot isolate surface vs structural effects |
+| Contamination studies | Confounded with difficulty |
+| Mechanistic work | Limited to toy tasks |
 
-**45 total problems — 15 per family** across 3 families.
-
-Rationale: below 25 total, CIs become too wide for defensible claims at target venues. Above 60, variant-writing labor is unmanageable for a 3-person team. Sits within the 30–100 instance norm for behavioral eval papers at BlackboxNLP/GenBench.
-
----
-
-### Family 1 — Planning Suite
-
-*Primary function: anchor Probe 2; contributes to Probes 1 and 3.*
-
-| Sub-type | Count | Notes |
-|----------|-------|-------|
-| Blocksworld | 8 | 3 easy (3-4 blocks), 3 medium (5-7 blocks), 2 hard (10-12 blocks). Probes 1, 2, 3. Verifier: Fast Downward. |
-| Logistics | 4 | PDDL trucks+packages. Tests within-PDDL generalization. Probes 1, 3 only. Verifier: Fast Downward. |
-| Mystery Blocksworld | 3 | Kambhampati's variant: logically identical to Blocksworld, predicate names replaced by nonsense words. Probes 1, 3 only. Verifier: Fast Downward (after de-obfuscation). |
-
-**Why Mystery Blocksworld?** A retrieval-dependent model should fail here (training targets are gone); a genuinely reasoning model should barely degrade. Novel contribution: combining Mystery Blocksworld with contamination scoring and mechanistic analysis has not been published.
-
-**Contamination targets:**
-- High: 3 classic PlanBench Blocksworld phrasings, 2 canonical Logistics instances
-- Medium: 2 adapted Blocksworld, 2 adapted Logistics
-- Low: 3 procedurally generated Blocksworld, 3 Mystery Blocksworld (inherently low due to nonsense predicates)
+### Contribution
+**Triangulation:**  
+Run all three probes on same instances → check agreement  
 
 ---
 
-### Family 2 — Arithmetic Reasoning
+# PART 2: THEORETICAL FRAMEWORK
 
-*Primary function: Probes 1 and 3. Not used in Probe 2.*
+## 2.1 Triangulation Metaphor
 
-All sub-types from Mirzadeh et al.'s GSM-Symbolic toolkit — same verifier style, same contamination approach throughout.
+We infer hidden processing mode using **three independent axes**:
 
-| Sub-type | Count | Notes |
-|----------|-------|-------|
-| GSM-Symbolic standard | 8 | 5 easy (2-3 step), 3 medium (4-5 step). Verifier: numeric equality with tolerance. |
-| GSM-P1/P2 | 4 | Depth-increased variants with additional arithmetic steps. Hard tier. |
-| GSM-NoOp | 3 | Distractor-containing variants used as naturally-hard instances, not as a variant generation method. |
+- **Input axis:** sensitivity to surface form  
+- **Process axis:** plan vs execution consistency  
+- **Data axis:** training data proximity  
 
-> W4 (formal notation) and W5 (reversal) do not apply to this family — arithmetic word problems don't have clean formal notation counterparts or natural reverse directions.
-
-**Contamination targets:** 5 high / 5 medium / 5 low (procedurally re-templated with fresh parameter seeds).
+Agreement across axes = strong evidence
 
 ---
 
-### Family 3 — Algorithmic Suite
+## 2.2 Retrieval vs Computation (Clarification)
 
-*Primary function: Probes 1 and 3. Not used in Probe 2.*
+Not mechanistic distinctions → **behavioral signatures**
 
-Four algorithmic sub-types within one family — consistent variant-writing guidelines and verifier style across all. Adversarial instances are the key discriminators: constructed so retrieval-of-heuristic fails and genuine computation is required.
-
-| Sub-type | Count | Notes |
-|----------|-------|-------|
-| Shortest Path | 4 | 2 standard (4-6 nodes, unique path), 2 adversarial (greedy fails). Verifier: NetworkX `shortest_path`. |
-| Weighted Interval Scheduling | 4 | 2 standard, 2 adversarial (earliest-deadline-first fails). Verifier: DP solver. Pilot: CSS=0.00 motivates inclusion as a known-failure anchor. |
-| Coin Change | 4 | 2 standard (canonical denominations), 2 adversarial (e.g. {1,3,4} for target 6 — greedy fails). Verifier: DP solver. |
-| Knapsack | 3 | 1 standard, 2 adversarial (value/weight-ratio greedy fails). Verifier: DP solver. |
-
-**W5 applicability:** Shortest Path (undirected graphs trivially reversible, directed with care) and Coin Change (target-to-denominations reversal is meaningful). Not applicable to WIS or Knapsack.
-
-**Contamination targets:** 5 high / 5 medium / 5 low.
+- **Retrieval-like:** surface-dependent + contamination-correlated  
+- **Computation-like:** structure-stable + contamination-independent  
 
 ---
 
-### Cross-Family Summary
+## 2.3 Falsifying Retrieval Hypothesis
 
-| Family | Count | Probe 1 | Probe 2 | Probe 3 |
-|--------|-------|---------|---------|---------|
-| Planning Suite | 15 | All | Blocksworld subset only | All |
-| Arithmetic Reasoning | 15 | All | None | All |
-| Algorithmic Suite | 15 | All | None | All |
-| **Total** | **45** | **45** | **8** | **45** |
+Would require:
+- High CSS across variants  
+- No contamination correlation  
+- High CCI  
+- Strong MBW performance  
 
----
-
-### Variant Applicability Matrix
-
-| Variant | Planning Suite | Arithmetic | Algorithmic |
-|---------|---------------|------------|-------------|
-| W1 Lexical paraphrase | All | All | All |
-| W2 Structural reformat | All | All | All |
-| W3 Entity rename | All | All | All |
-| W4 Formal notation | Partial (BW, Logistics via PDDL) | Not applicable | All |
-| W6 Procedural regeneration | All | All | All |
-| W5 Reversal | Blocksworld only | Not applicable | SP and Coin Change only |
-
-W4 and W5 are partial variants — reported on applicable subsets only, not pooled into the main CSS computation.
+**Current results:** consistent with retrieval
 
 ---
 
-### Contamination Balance
+# PART 3: PROBE 1 — SURFACE INVARIANCE
 
-|  | Planning Suite | Arithmetic | Algorithmic | Total |
-|--|---------------|------------|-------------|-------|
-| High contamination | 5 | 5 | 5 | 15 |
-| Medium contamination | 5 | 5 | 5 | 15 |
-| Low contamination | 5 | 5 | 5 | 15 |
+## 3.1 What It Measures
+
+Same problem → multiple variants → compare outputs
 
 ---
 
-## Execution Plan
+## 3.2 Variant Types
 
-| Phase | Description | Status |
-|-------|-------------|--------|
-| **0** | Infrastructure: repo, Python env, API access, compute planning | Largely complete |
-| **1** | Contamination triage: ~15 problems against Infini-gram; go/no-go for Probe 3 | Pending |
-| **2** | Mechanistic tooling: stand up Qwen2.5-7B, activation extraction, logit lens, sanity-check on published finding (IOI or equivalent) | Pending |
-| **3** | Probe 1: finalize problem set, write/review all surface variants, run behavioral CSS on all models, mechanistic CSS on Qwen | Pending |
-| **4** | Probes 2 and 3: plan-vs-execute + lens on Qwen; full contamination sweep; triangulation analysis | Pending |
-| **5** | Writing: figures → methods → results → discussion → related work → intro → abstract. No "future work" section. | Pending |
-| **6** | Revision and submission: internal review, critical overclaim pass, reproducibility check, anonymize | Pending |
-
----
-
-## Pending Documents *(Must exist before execution begins)*
-
-### `shasshy.md` — Instance Selection Criteria
-Must specify per family: difficulty tier definitions, contamination-tier criteria, answer unambiguity requirements, source documentation requirements, exclusion criteria, and a review checklist. **Written by Adya before instance selection begins.**
-
-### `CONTRIBUTING_VARIANTS.md` — Variant Writing Guidelines
-Must specify per variant type: what is preserved, what changes, what must not change, worked examples (at least one per family), and cross-review protocol (each variant reviewed by someone who didn't write it). **Written by Adya before any variant writing begins.**
+| Variant | Description | Expected Effect |
+|--------|------------|----------------|
+| W1 | Paraphrase | Minimal change |
+| W2 | Format change | Small effect |
+| W3 | Vocabulary rename | Catastrophic |
+| W4 | PDDL format | Mixed |
+| W5 | Reverse task | Separate metric |
+| W6 | New instance | Contamination control |
 
 ---
 
-## Open Questions *(Resolve before their phase)*
+## 3.3 Valid Results
 
-1. Does BITS Pilani provide student GPU cluster access sufficient for Qwen2.5-7B inference?
-2. What specific fingerprinting method for contamination scoring? (Requires reading Magar & Schwartz, Golchin & Surdeanu, Carlini.)
-3. Does TransformerLens cleanly support Qwen2.5-7B? Alternatives: nnsight or raw HuggingFace hooks.
-4. Closed-model pair: GPT-4o vs o3, or Claude Sonnet 3.7? (Decide at Phase 3.)
-
----
-
-## Decisions Explicitly Deferred
-
-The following are **not settled** and must not be treated as such in any implementation work:
-
-- Final confirmation of the three-family structure (Planning, Arithmetic, Algorithmic)
-- Inclusion/exclusion of Mystery Blocksworld within the Planning Suite
-- Inclusion/exclusion of Logistics within the Planning Suite
-- Final mix within Family 3 (current proposal: 4 SP + 4 WIS + 4 Coin Change + 3 Knapsack)
-- Final mix within Family 2 (current proposal: 8 GSM-Symbolic standard + 4 GSM-P1/P2 + 3 GSM-NoOp)
-- Hard-tier instance specifications for each family
+- **Canonical:** 0% across all models  
+- **W3:** 0% universally  
+- **MBW:** 0% universally  
+- **W2/W4:** sometimes improve (15–20%)  
+- **W5 (teardown):**
+  - Claude: ~93%
+  - GPT-4o: ~57%
+  - Llama: 0%
 
 ---
 
-## What Was Considered and Rejected
+## 3.4 Invalid Results
 
-### Probes and strategies
-- **S3–S8** (reasoning trace audit, linked-question consistency, confidence-vs-correctness, forward-backward as standalone, skill composition, generative problem construction): each addresses a different research question. Saved for future papers.
-- **A3 (adversarial distractors) as Probe 1**: same input axis as surface invariance, no pilot data, weaker mechanistic partner.
-- **D1 (reversal) as a fourth probe**: same axis as Probe 1 — would break three-axis triangulation. Bundled as W5 with its own metric (RCS) instead.
-- **LLM-generated variants**: introduces systematic bias correlated with the evaluating model's training distribution. Human-written variants only.
-
-### Problem set
-- **More than three families**: dilutes statistical power per family; multiplies labor.
-- **Game of 24**: cannot be meaningfully paraphrased — no surface to vary.
-- **Logic grid puzzles, cryptarithmetic, river crossing, propositional SAT, graph coloring, Sokoban, Berglund sanity anchor**: outside the probes' structural needs or scope creep.
-- **GSM8K separately from GSM-Symbolic**: too heavily contaminated across all instances — no dynamic range for Probe 3.
-- **Single-algorithm Family 3**: over-concentrates on one algorithm's failure modes.
+- MBW W3 → wrong action schema  
+- BW_E rows → incorrect answers  
+- Lowercase variant labels → not evaluated  
+- Contamination labels incorrect  
 
 ---
 
-## Prior Work
+## 3.5 Primary Metric: CSS
 
-**Behavioral probing:** Kambhampati et al. (2024), Mirzadeh et al. (2024), Wu et al. (NAACL 2024), Razeghi et al. (EMNLP Findings 2022), Berglund et al. (ICLR 2024), Turpin et al. (NeurIPS 2023), Lanham et al. (2023)
+**Consistency Surface Score**
 
-**Mechanistic interpretability:** Belrose et al. (NeurIPS 2023), Meng et al. (NeurIPS 2022), Wang et al. (ICLR 2023), Conmy et al. (NeurIPS 2023), Geva et al. (2021), Olsson et al. (2022)
+At 0% accuracy → measures **consistency of failure**, not correctness  
 
-**Contamination:** Liu et al. (COLM 2024), Xu et al. (EMNLP 2025)
+---
 
-**Contribution gap:** No prior paper coordinates behavioral probes, activation-level analysis, and training-data contamination indexing on multi-step reasoning tasks at the per-instance level. Prior work either runs behavioral probes without internal access, or runs mechanistic analysis on toy single-token tasks.
+## 3.6 Secondary Metrics
+
+- RCS (reversal correctness)  
+- CAS (failure consistency)  
+
+---
+
+# PART 4: PROBE 2 — PLAN-EXECUTION COUPLING
+
+## 4.1 Design
+
+- Phase 1: generate full plan  
+- Phase 2: execute step-by-step  
+
+Compare alignment  
+
+---
+
+## 4.2 State Injection
+
+Inject false state → observe reaction  
+
+---
+
+## 4.3 Critical Bug
+
+Parser mismatch caused:
+- All actions invalid  
+- No state updates  
+- Infinite loops  
+
+→ **All Phase 2 results invalid**
+
+---
+
+## 4.4 Metrics
+
+- CCI (plan alignment)  
+- TEP (state sensitivity)  
+- RR, FIS, PGA (new)
+
+---
+
+# PART 5: PROBE 3 — CONTAMINATION INDEXING
+
+## 5.1 Method
+
+Uses **Infini-gram API** to compute contamination score  
+
+---
+
+## 5.2 Regression Results
+
+| Model | β | R² | Significant |
+|------|--|----|------------|
+| GPT-4o | 1.573 | 0.424 | Yes |
+| Llama | 0.433 | 0.346 | Yes |
+| Claude | ~0.3 | ~0.12 | No |
+
+---
+
+## 5.3 Limitations
+
+- Non-normal residuals  
+- Bimodal contamination  
+- CSS floor effect  
+- Mislabelled data  
+
+---
+
+## 5.4 Score Issue
+
+Mixes:
+- Template contamination  
+- Instance contamination  
+
+---
+
+# PART 6: KEY FINDINGS
+
+## 6.1 Universal Failure
+All models fail Blocksworld
+
+---
+
+## 6.2 W3 Collapse
+Vocabulary change → total failure  
+
+---
+
+## 6.3 MBW Collapse
+Predicate renaming → zero performance  
+
+---
+
+## 6.4 Planning Direction Asymmetry
+
+| Model | Forward | Teardown |
+|------|--------|----------|
+| Claude | 0% | ~93% |
+| GPT-4o | 0% | ~57% |
+| Llama | 0% | 0% |
+
+### PDAS
+- Claude: 0.929  
+- GPT-4o: 0.571  
+
+---
+
+## 6.5 Representation Effect
+W2/W4 improvements → likely retrieval alignment  
+
+---
+
+## 6.6 Contamination Correlation
+Strong but driven by BW_E cluster  
+
+---
+
+# PART 7: NEW METRICS
+
+- **VAR:** accuracy per variant  
+- **PDAS:** direction asymmetry  
+- **VRI:** vocabulary vs structure robustness  
+- **DTS:** domain transfer  
+- **CFS:** failure consistency  
+- **PVR:** validity breakdown  
+
+---
+
+# PART 8: PRIOR WORK
+
+- PlanBench (Valmeekam)  
+- Kambhampati (planning limits)  
+- Mirzadeh (robustness)  
+- Berglund (reversal curse)  
+- Liu (Infini-gram)  
+- Wei (CoT)  
+
+---
+
+# PART 9: LIMITATIONS
+
+- Small N  
+- CSS floor effect  
+- Contamination ambiguity  
+- Single domain  
+- No mechanistic results  
+- Missing W1  
+- Behavioral (not mechanistic) claims  
+
+---
+
+# PART 10: PROBLEM SET DESIGN
+
+## Target
+45 problems (3 families)
+
+### Families
+1. Planning  
+2. Arithmetic  
+3. Algorithmic  
+
+---
+
+# PART 11: VISUALIZATION PLAN
+
+Key figures:
+- Variant heatmap  
+- PDAS bar chart  
+- Domain transfer  
+- Contamination scatter  
+- Failure taxonomy  
+
+---
+
+# PART 12: NOVELTY & STRATEGY
+
+## Contributions
+
+1. Multi-axis triangulation  
+2. W3 total collapse  
+3. Planning asymmetry (PDAS)  
+4. MBW collapse  
+5. (Pending) step-by-step failure  
+
+---
+
+## Publication Plan
+
+- Submit to **BlackboxNLP 2026** (pilot)  
+- Extend → **EMNLP Findings**
+
+---
+
+## Compute Note
+
+- 7B cannot run on T4  
+- Use:
+  - Colab Pro (A100)  
+  - Institutional GPU  
+
+---

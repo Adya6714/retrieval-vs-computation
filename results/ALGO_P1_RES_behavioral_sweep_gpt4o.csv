@@ -1,0 +1,884 @@
+problem_id,variant_type,model,model_answer,ground_truth,verified,parse_status,correct_alternative,human_review_flag,correct_canonical,greedy_answer,gave_greedy_answer,difficulty_params_instance_type
+CC_01,canonical,openai/gpt-4o,"Count: 2  
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W1,openai/gpt-4o,"Count: 2 Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W2,openai/gpt-4o,"Count: 2  
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W3,openai/gpt-4o,"Total: 2 Scoops: [3 g, 3 g]","Total: 2
+ Scoops: [3, 3]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W4,openai/gpt-4o,"Count: 2  
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_02,canonical,openai/gpt-4o,"Count: 2  
+Coins: [6, 5]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W1,openai/gpt-4o,"Count: 2 Coins: [5, 6]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W2,openai/gpt-4o,"Count: 2  
+Coins: [6, 5]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W3,openai/gpt-4o,"Total: 2 Scoops: [6 g, 5 g]","Total: 2
+ Scoops: [5, 6]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W4,openai/gpt-4o,"Count: 2
+Coins: [5, 6]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_03,canonical,openai/gpt-4o,"Count: 2
+Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W1,openai/gpt-4o,"Count: 2 Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W2,openai/gpt-4o,"Count: 2  
+Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W3,openai/gpt-4o,"Total: 2 Scoops: [6, 7]","Total: 2
+ Scoops: [6, 7]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W4,openai/gpt-4o,"```
+Count: 2
+Coins: [6, 7]
+```","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_04,canonical,openai/gpt-4o,"Count: 3
+Coins: [10, 10, 7]","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W1,openai/gpt-4o,"Count: 3 Coins: [17, 7, 3]","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W2,openai/gpt-4o,"Count: 3  
+Coins: [10, 10, 7]","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W3,openai/gpt-4o,"Total: 2 Scoops: [17, 10]","Total: 2
+Scoops: [17, 10]",False,parse_failed,False,True,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W4,openai/gpt-4o,"```
+Count: 3
+Coins: [10, 10, 7]
+```","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_05,canonical,openai/gpt-4o,"Count: 2  
+Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W1,openai/gpt-4o,"Count: 3 Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",False,parsed_clean,False,False,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W2,openai/gpt-4o,"Count: 2
+Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W3,openai/gpt-4o,"Total: 2 Scoops: [7 g, 7 g]","Total: 2
+ Scoops: [7, 7]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W4,openai/gpt-4o,"```
+Count: 2
+Coins: [7, 7]
+```","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_06,canonical,openai/gpt-4o,"Count: 3
+Coins: [12, 7, 7]","Count: 3
+ Coins: [12, 7, 7]",True,parsed_clean,False,False,True,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W1,openai/gpt-4o,"Count: 3 Coins: [8, 8, 10]","Count: 3
+ Coins: [12, 7, 7]",False,parsed_clean,False,False,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W2,openai/gpt-4o,"Count: 3  
+Coins: [12, 8, 6]","Count: 3
+ Coins: [12, 7, 7]",False,parsed_clean,False,False,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W3,openai/gpt-4o,"Total: 3 Scoops: [15, 8, 3]","Total: 3
+ Scoops: [12, 7, 7]",False,parse_failed,False,True,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W4,openai/gpt-4o,"```
+Count: 3
+Coins: [8, 8, 10]
+```","Count: 3
+ Coins: [12, 7, 7]",False,parsed_clean,False,False,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_07,canonical,openai/gpt-4o,"Count: 3  
+Coins: [4, 4, 4]","Count: 2
+Coins: [8, 4]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W1,openai/gpt-4o,"Count: 3 Coins: [4, 4, 4]","Count: 2
+Coins: [8, 4]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W2,openai/gpt-4o,"Count: 2  
+Coins: [4, 8]","Count: 2
+Coins: [8, 4]",True,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W3,openai/gpt-4o,"Total: 2 Scoops: [4, 8]","Total: 2
+Scoops: [8, 4]",False,parse_failed,False,True,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W4,openai/gpt-4o,"Count: 3
+Coins: [4, 4, 4]","Count: 2
+Coins: [8, 4]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_08,canonical,openai/gpt-4o,"Count: 2  
+Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W1,openai/gpt-4o,"Count: 2 Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W2,openai/gpt-4o,"Count: 2  
+Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W3,openai/gpt-4o,"Total: 2 Scoops: [25 g, 5 g]","Total: 2
+ Scoops: [15, 15]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W4,openai/gpt-4o,"Count: 2  
+Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_09,canonical,openai/gpt-4o,"Count: 4  
+Coins: [197, 197, 17, 7]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W1,openai/gpt-4o,"Count: 6 Coins: [197, 67, 67, 31, 31, 31]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W2,openai/gpt-4o,"Count: 6  
+Coins: [197, 197, 11, 11, 7]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W3,openai/gpt-4o,"Total: 5 Scoops: [197, 197, 17, 7, 5]","Total: 5
+ Scoops: [197, 197, 11, 11, 7]",False,parse_failed,False,True,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W4,openai/gpt-4o,"```
+Count: 7
+Coins: [197, 197, 17, 7, 5]
+```","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_10,canonical,openai/gpt-4o,"Count: 7
+Coins: [197, 197, 197, 197, 67, 67, 33]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W1,openai/gpt-4o,"Count: 5 Coins: [197, 197, 197, 197, 177]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W2,openai/gpt-4o,"Count: 13 Coins: [197, 197, 197, 197, 67, 67, 31, 7, 7, 7, 7, 7, 7]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W3,openai/gpt-4o,"Total: 8 Scoops: [201, 201, 201, 201, 11, 7, 7, 7]","Total: 7
+ Scoops: [201, 201, 201, 197, 67, 67, 31]",False,parse_failed,False,True,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W4,openai/gpt-4o,"```plaintext
+Count: 8
+Coins: [197, 197, 197, 197, 31, 31, 67, 31]
+```","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+SP_001,canonical,openai/gpt-4o,"Path: Warehouse 0 -> Depot 2 -> Parkway 4 -> Terminal 7 -> Customer 11, Cost: 22 mins","Path: 0 → 5 → 10 → 11, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W1,openai/gpt-4o,"Path: 0 -> 2 -> 4 -> 9 -> 10 -> 11, Cost: 20","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_clean,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W2,openai/gpt-4o,"To determine the fastest route from Warehouse 0 to Customer 11, we need to evaluate the possible paths and their respective travel times:
+
+1. **Warehouse 0 → Depot 2 → Parkway 4 → Bypass 9 → Crossing 10 → Customer 11**
+   - 3 + 5 + 4 + 5 + 3 = 20 minutes
+
+2. **Warehouse 0 → Depot 2 → Parkway 4 → Terminal 7 → Customer 11**
+   - 3 + 5 + 8 + 6 = 22 minutes
+
+3. **Warehouse 0 → Suburb 1 → Junction 3 → Terminal 7 → Customer 11**
+   - 6 + 4 + 3 + 6 = 19 minutes
+
+4. **Warehouse 0 → Suburb 1 → Overpass 6 → Shelter 8 → Customer 11**
+   - 6 + 7 + 5 + 4 = 22 minutes
+
+5. **Warehouse 0 → Stopover 5 → Bypass 9 → Crossing 10 → Customer 11**
+   - 8 + 3 + 5 + 3 = 19 minutes
+
+6. **Warehouse 0 → Terminal 7 → Customer 11**
+   - 18 + 6 = 24 minutes
+
+The fastest route is option 5:
+**Path: Warehouse 0 → Stopover 5 → Bypass 9 → Crossing 10 → Customer 11, Cost: 19**","Path: 0 → 5 → 10 → 11, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W3,openai/gpt-4o,"Path: A -> B -> D -> I -> L, Cost: 14 mins","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W4,openai/gpt-4o,"To find the shortest path from node 0 to node 11 in the given directed, weighted graph, we need to apply Dijkstra's algorithm, which is efficient for graphs with non-negative weights.
+
+Let's outline the steps and find the shortest path:
+
+1. **Initialize**: Set the distance to the start node (0) to 0 and to all other nodes to infinity. Maintain a priority queue to explore nodes with the smallest known distances first.
+
+2. **Process Nodes**: Extract the node with the smallest distance from the queue, update its neighbors by considering the path through the current node, and update distances if a shorter path is found.
+
+3. **Repeat**: Continue the process until the shortest path to node 11 is determined.
+
+Let's perform these steps:
+
+- Start at node 0 with distance 0. 
+- From node 0, the possible paths and updated distances are:
+  - (0, 2, 3) -> Distance to node 2 is 3.
+  - (0, 5, 8) -> Distance to node 5 is 8.
+  - (0, 1, 6) -> Distance to node 1 is 6.
+  - (0, 7, 18) -> Distance to node 7 is 18.
+
+- Choose the smallest distance. Move to node 2 (distance 3):
+  - (2, 4, 5) -> Distance to node 4 is 3 + 5 = 8.
+  - (2, 6, 9) -> Distance to node 6 is 3 + 9 = 12.
+  - (2, 8, 14) -> Distance to node 8 is 3 + 14 = 17.
+
+- The next smallest distance is to node 1 (6):
+  - (1, 3, 4) -> Distance to node 3 is 6 + 4 = 10.
+  - (1, 6, 7) -> Distance to node 6 is 6 + 7 = 13 (no update, 12 from previous is smaller).
+  - (1, 9, 12) -> Distance to node 9 is 6 + 12 = 18.
+
+- Choose node 5 (8):
+  - (5, 9, 3) -> Distance to node 9 is 8 + 3 = 11.
+  - (5, 10, 6) -> Distance to node 10 is 8 + 6 = 14.
+
+- Choose node 4 (8):
+  - (4, 7, 8) -> Distance to node 7 is 8 + 8 = 16 (update from 18).
+  - (4, 9, 4) -> Distance to node 9 is 8 + 4 = 12 (update only if smaller).
+
+- Choose node 3 (10):
+  - (3, 7, 3) -> Distance to node 7 is 10 + 3 = 13 (better than 16).
+  - (3, 8, 6) -> Distance to node 8 is 10 + 6 = 16.
+  - (3, 11, 15) -> Distance to node 11 is 10 + 15 = 25.
+
+- Choose node 9 (11):
+  - (9, 10, 5) -> Distance to node 10 is 11 + 5 = 16.
+
+- Choose node 7 (13):
+  - (7, 11, 6) -> Distance to node 11 is 13 + 6 = 19.
+
+- Choose node 6 (12):
+  - (6, 10, 4) -> Distance to node 10 is 12 + 4 = 16 (update if it's smaller).
+  - (6, 8, 5) -> Distance to node 8 is 12 + 5 = 17 (update if it's smaller).
+
+- Choose node 8 (16, path not optimal to 11 yet).
+
+- Choose node 10 (16):
+  - (10, 11, 3) -> Distance to node 11 is 16 + 3 = 19 (no new optimal path found).
+
+
+From the process, the shortest path was found as 0 → 2 → 4 → 9 → 10 → 11 with a total cost of 19:
+
+**Path**: 0 -> 2 -> 4 -> 9 -> 10 -> 11, **Cost**: 19","Path: 0 → 5 → 10 → 11, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_002,canonical,openai/gpt-4o,"Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 19 -> Waypoint 18 -> Waypoint 6 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W1,openai/gpt-4o,"Path: Home Base 16 -> Checkpoint 12 -> Checkpoint 9 -> Checkpoint 19 -> Checkpoint 18 -> Checkpoint 6 -> Checkpoint 5 -> Checkpoint 10 -> Checkpoint 15 -> Peak Refuge 11, Cost: 36 hrs","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W2,openai/gpt-4o,"To find the fastest route from Base Camp 16 to Summit Lodge 11, we need to determine the path with the minimum total time. Using the data provided, we can apply a shortest path algorithm like Dijkstra's Algorithm, accounting for the hours between each point.
+
+Let's determine the fastest route:
+
+1. Start from **Base Camp 16**:
+   - Direct paths:
+     - To Waypoint 12: 4 hours
+     - To Waypoint 9: 9 hours
+
+2. From **Waypoint 12**:
+   - Waypoint 9: Adds 3 hours (total 7 hours from Base Camp)
+   - Waypoint 19: Adds 10 hours (total 14 hours from Base Camp)
+   - Waypoint 18: Adds 14 hours (total 18 hours from Base Camp)
+
+3. From **Waypoint 9**:
+   - Waypoint 19: Adds 5 hours (total 12 hours from Base Camp)
+   - Waypoint 18: Adds 11 hours (total 20 hours from Base Camp)
+
+4. From **Waypoint 19**:
+   - Waypoint 18: Adds 4 hours (total 16 hours from Base Camp)
+
+5. From **Waypoint 18**:
+   - Waypoint 6: Adds 3 hours (total 19 hours from Base Camp)
+
+6. From **Waypoint 6**:
+   - Waypoint 5: Adds 5 hours (total 24 hours from Base Camp)
+
+7. From **Waypoint 5**:
+   - Waypoint 10: Adds 4 hours (total 28 hours from Base Camp)
+
+8. From **Waypoint 10**:
+   - Waypoint 15: Adds 3 hours (total 31 hours from Base Camp)
+   
+9. From **Waypoint 15**:
+   - Waypoint 21: Adds 5 hours (total 36 hours from Base Camp)
+
+10. Finally, from **Waypoint 21**:
+    - To Summit Lodge 11: Adds 4 hours (total 40 hours from Base Camp)
+
+Therefore, the shortest path considering the above steps is:
+
+**Path:** Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Waypoint 21 → Summit Lodge 11
+
+**Cost:** 40 hours","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W3,openai/gpt-4o,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W4,openai/gpt-4o,"To find the shortest path from node 16 to node 11 in the given weighted undirected graph using Dijkstra's algorithm, we first initialize the distances from the source node (16) to all other nodes as infinity, except for the source itself, which is set to 0. Then, we iteratively update the shortest paths to every node until we reach node 11. Here's the step-by-step analysis:
+
+1. Initialize the shortest path estimates for each node from node 16.
+2. Use a priority queue to repeatedly extract the node with the minimum estimate.
+3. For each node, update the estimates of its neighbors.
+4. Continue the process until we extract the target node (11) from the queue and determine the minimum cost.
+
+Following this process, we determine the shortest path from node 16 to 11:
+
+Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 11
+
+Cost: 38
+
+This path satisfies the condition of being the valid path with the minimum cost from node 16 to node 11.","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_clean,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_003,canonical,openai/gpt-4o,"Path: Safe House 11 -> Shortcut 17 -> Flyover 7 -> Sidestreet 1 -> Outpost 14 -> Junction 0 -> Crossing 15 -> Warehouse 12 -> Overpass 3 -> Drop Point 9, Cost: 49","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W1,openai/gpt-4o,"Path: Hideout 11 -> Relay Station 18 -> Outstation 14 -> Intersection 0 -> Crossroads 15 -> Storage Unit 5 -> Stockroom 12 -> Flyover 3 -> Collection Point 9, Cost: 28 mins","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W2,openai/gpt-4o,"To find the fastest route from Safe House 11 to Drop Point 9, we will examine various paths and calculate their travel times using the provided data. After evaluating possible routes and their aggregate times, the optimal route can be determined.
+
+Upon analyzing the given routes and their corresponding times, one ideal path is:
+
+- **Safe House 11** → **Relay 18** → **Outpost 14** → **Junction 0** → **Crossing 15** → **Depot 5** → **Warehouse 12** → **Overpass 3** → **Drop Point 9**
+
+The corresponding travel times for this path are:
+
+- Safe House 11 to Relay 18: 3 mins
+- Relay 18 to Outpost 14: 4 mins
+- Outpost 14 to Junction 0: 3 mins
+- Junction 0 to Crossing 15: 4 mins
+- Crossing 15 to Depot 5: 3 mins
+- Depot 5 to Warehouse 12: 4 mins
+- Warehouse 12 to Overpass 3: 4 mins
+- Overpass 3 to Drop Point 9: 3 mins
+
+Adding these times up gives us a total travel time of 3 + 4 + 3 + 4 + 3 + 4 + 4 + 3 = **28 minutes**.
+
+Thus, the fastest route is:
+- **Path**: Safe House 11 → Relay 18 → Outpost 14 → Junction 0 → Crossing 15 → Depot 5 → Warehouse 12 → Overpass 3 → Drop Point 9
+- **Cost**: 28 minutes","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W3,openai/gpt-4o,"Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 3 -> 9, Cost: 34","Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W4,openai/gpt-4o,"To find the shortest path from node 11 to node 9 in the given weighted directed graph using Dijkstra's algorithm, we will follow these steps:
+
+1. Initialize a priority queue with a tuple (cost, node), starting with (0, 11).
+2. Maintain a dictionary to store the minimum cost to reach each node, with the initial cost to reach node 11 set to 0 and infinity for all others.
+3. Maintain a dictionary to store the parent of each node to reconstruct the path.
+4. While the priority queue is not empty:
+   - Extract the node with the lowest accumulated cost.
+   - If it's node 9, we have found the optimal path.
+   - For each neighbor of the current node, calculate the cost to reach that neighbor.
+   - If this calculated cost is lower than the recorded cost, update the cost and set the current node as the parent.
+   - Push the neighbor with the updated cost into the priority queue.
+5. Reconstruct the path from node 11 to node 9 using the parent dictionary.
+
+Following this procedure, the shortest path from node 11 to node 9 and its cost is found to be:
+
+**Path:** 11 -> 14 -> 0 -> 15 -> 5 -> 9  
+**Cost:** 26","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_004,canonical,openai/gpt-4o,"Path: 0 -> 1 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_clean,True,False,True,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W1,openai/gpt-4o,"Path: 0 -> 1 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_clean,True,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W2,openai/gpt-4o,"To determine the fastest route from Base Lodge 0 to Summit Hut 9, we need to consider both the fixed and time-dependent routes, as well as the effect of the current hour on the time-dependent costs.
+
+### Possible Routes:
+
+1. **Route via Waypoint 3, Waypoint 6:**
+   - Base Lodge 0 → Waypoint 3 (4 hrs)
+   - Waypoint 3 → Waypoint 6 (3 hrs, cumulative time: 7 hrs)
+   - Waypoint 6 → Summit Hut 9 (8 hrs, cumulative time: 15 hrs)
+
+2. **Route via Waypoint 3, Waypoint 6 with Cable Car:**
+   - Base Lodge 0 → Waypoint 3 (4 hrs)
+   - Waypoint 3 → Waypoint 6 (3 hrs, cumulative time: 7 hrs)
+   - **Waypoint 6 → Waypoint 4 (cable car at hour 7, costs -5 hrs, cumulative time: 2 hrs)**
+   - Waypoint 4 → Summit Hut 9 (7 hrs, cumulative time: 9 hrs)
+
+3. **Route via Waypoint 2:**
+   - Base Lodge 0 → Waypoint 2 (5 hrs)
+   - Waypoint 2 → Waypoint 5 (4 hrs, cumulative time: 9 hrs)
+   - Waypoint 5 → Summit Hut 9 (3 hrs, cumulative time: 12 hrs)
+
+4. **Route via Waypoint 7:**
+   - Base Lodge 0 → Waypoint 7 (9 hrs)
+   - Waypoint 7 → Waypoint 5 (4 hrs, cumulative time: 13 hrs)
+   - Waypoint 5 → Summit Hut 9 (3 hrs, cumulative time: 16 hrs)
+
+5. **Route via Waypoint 1:**
+   - Base Lodge 0 → Waypoint 1 (2 hrs)
+   - Arrive at Waypoint 1 at hour 2. Waypoint 1 → Waypoint 5 (12 hrs, cumulative time: 14 hrs)
+   - Waypoint 5 → Summit Hut 9 (3 hrs, cumulative time: 17 hrs)
+
+### Analysis:
+The fastest route is found to be the one using the cable car route:
+
+- **Path:** Base Lodge 0 → Waypoint 3 → Waypoint 6 → Waypoint 4 → Summit Hut 9
+- **Cost:** 9 hours
+
+This route takes advantage of the cable car at Waypoint 6 which reduces travel time by 5 hours if boarded by hour 10, leading to the shortest total travel time of 9 hours to reach Summit Hut 9.","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parse_failed,False,True,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W3,openai/gpt-4o,"Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8 ms","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",False,parse_failed,False,True,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W4,openai/gpt-4o,"To determine the optimal path from node 0 to node 9 that minimizes the total travel time in a weighted directed graph with both fixed and time-dependent edge weights, we need to evaluate the potential paths and their associated costs based on the rules provided. Here's how we approach this problem:
+
+1. **Identify Fixed and Time-Dependent Edges:**
+   - Fixed edges with constant weights include: (0,3,4), (3,6,3), (4,5,3), (5,9,3), (0,2,5), (2,5,4), (0,7,9), (7,5,4), (4,9,7), (6,9,8).
+   - Time-dependent edges include: 
+     - w(0,1,t) = 2 for all t
+     - w(1,5,t) = 3 if t <= 1, else 12
+     - w(6,4,t) = -5 if t <= 10, else 4
+
+2. **Analyse Paths:**
+   - Begin at node 0 at time 0.
+   - Calculate the total cost of each valid path using the timing rules for each edge.
+
+3. **Evaluate Path Costs:**
+   - Calculate path costs by sequentially adding the weight of each edge to the total travel time, keeping in mind both fixed and time-dependent weights.
+
+4. **Select Optimal Path:**
+   - Choose the path with the smallest total cost that satisfies the condition of having non-negative costs and ending at node 9.
+
+Let's evaluate and uncover suitable paths. Here's one possible path:
+
+**Path A: 0 -> 3 -> 6 -> 9**
+
+- **0 to 3:** Leave at t = 0, fixed weight 4. Arrive at node 3 at t = 4.
+- **3 to 6:** Leave at t = 4, fixed weight 3. Arrive at node 6 at t = 7.
+- **6 to 9:** Leave at t = 7, fixed weight 8. Arrive at node 9 at t = 15.
+
+The total cost for Path A is 15.
+
+Upon analysis, Path A results in the shortest travel time with non-negative costs at each step. Other paths may not result in a lower travel time due to either longer fixed weights or higher time-dependent weights.
+
+Therefore, the optimal solution is:
+
+**Path: 0 -> 3 -> 6 -> 9, Cost: 15**","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parse_failed,False,True,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_005,canonical,openai/gpt-4o,"Path: 0 -> 1 -> 5 -> 6 -> 10 -> 12 -> 15, Cost: 33","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W1,openai/gpt-4o,"Path: 0 -> 4 -> 5 -> 6 -> 10 -> 12 -> 15, Cost: 34","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W2,openai/gpt-4o,"To find the path of minimum total pressure loss from Central Reservoir 0 to Final Treatment Plant 15, we need to analyze all possible routes and calculate the total pressure loss for each route. Then, we'll identify the route with the minimum pressure loss.
+
+Let's calculate the pressure loss for different possible paths:
+
+1. **Path: Central Reservoir 0 → Primary Node 1 → Access Corridor 2 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15:**  
+   - Pressure Loss = 5 + 4 + 5 + 4 + 5 + 4 + 6 + 4 = 37 kPa
+
+2. **Path: Central Reservoir 0 → Waypoint 3 → Distribution Hall 7 → Transfer Junction 9 → Checkpoint 11 → Staging Area 13 → Final Treatment Plant 15:**  
+   - Pressure Loss = 8 + 6 + 7 + 6 + 8 + 11 = 46 kPa
+   
+3. **Path: Central Reservoir 0 → Outreach Point 4 → Observation Post 5 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15:**  
+   - Pressure Loss = 7 + 4 + 3 + 4 + 5 + 4 + 6 + 4 = 37 kPa
+
+Upon examining these paths, the first and third paths have the same minimum total pressure loss of 37 kPa.
+
+Thus, the path of minimum total pressure loss is:
+
+`Path: Central Reservoir 0 → Primary Node 1 → Access Corridor 2 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15, Cost: 37`","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W3,openai/gpt-4o,"Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 38","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W4,openai/gpt-4o,"To solve the problem of finding the shortest path from node 0 to node 15 in the given weighted directed graph, we need to find the path with the minimum total pressure loss. This can be done efficiently using Dijkstra's algorithm, which is appropriate for graphs with non-negative edge weights.
+
+### Steps:
+
+1. **Initialize**:
+   - Set the starting node 0 with a cost of 0 (since there's no cost to stay at the initial node).
+   - Set all other nodes with a cost of infinity initially.
+   - Use a priority queue (min-heap) to explore the least costly paths first. Initialize it with the starting node and its current cost.
+   - Keep a predecessor map to reconstruct the shortest path once the algorithm completes.
+
+2. **Algorithm**:
+   - Extract the node with the smallest current cost from the priority queue.
+   - For each neighbor (reachable node) of this node, calculate the potential new total cost via the current node.
+   - If this new total cost is lower than the previously known cost for the neighbor, update it and push this neighbor with its updated cost onto the queue.
+   - Continue this way until all nodes have been processed, and especially until node 15 is processed.
+
+3. **Reconstruct Path**:
+   - Using the predecessor map, backtrack from node 15 to node 0 to find the shortest path.
+
+Using the data from the graph, here is the shortest path calculation:
+
+### Execution:
+
+1. Starting at node 0 with a cost of 0.
+2. Explore neighbors:
+   - (0, 1) with cost 5
+   - (0, 3) with cost 8
+   - (0, 4) with cost 7
+
+Continue this process, always selecting the path with the current minimum cumulative pressure loss.
+
+Finally, by running Dijkstra's algorithm, you will obtain:
+
+### Shortest Path:
+
+- Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15
+- Cost: 37
+
+This is because the cumulative cost of the path is calculated as follows:
+
+- 0 to 1: 5
+- 1 to 2: 4
+- 2 to 6: 5
+- 6 to 8: 4
+- 8 to 10: 5
+- 10 to 12: 4
+- 12 to 14: 6
+- 14 to 15: 4
+
+**Total cost = 5 + 4 + 5 + 4 + 5 + 4 + 6 + 4 = 37 kPa**","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+WIS_001,canonical,openai/gpt-4o,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40",True,parsed_clean,False,False,True,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W1,openai/gpt-4o,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40",True,parsed_clean,False,False,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W2,openai/gpt-4o,"To solve this problem, we'll use a dynamic programming approach to ensure that no two adjacent plots are harvested while maximizing the total yield.
+
+Given the yields:
+- Plot 0: 8
+- Plot 1: 3
+- Plot 2: 6
+- Plot 3: 2
+- Plot 4: 9
+- Plot 5: 4
+- Plot 6: 7
+- Plot 7: 1
+- Plot 8: 5
+- Plot 9: 10
+
+Define `dp[i]` as the maximum yield attainable from plots 0 to i while following the given constraints. The relation can be expressed as:
+- `dp[i] = max(dp[i-1], yield[i] + dp[i-2])`
+
+We need to compute this for each plot:
+
+1. `dp[0] = 8` (Choosing the only plot available)
+2. `dp[1] = max(8, 3) = 8`
+3. `dp[2] = max(8, 6 + 0) = 8`
+4. `dp[3] = max(8, 2 + 8) = 10`
+5. `dp[4] = max(10, 9 + 8) = 17`
+6. `dp[5] = max(17, 4 + 10) = 17`
+7. `dp[6] = max(17, 7 + 17) = 24`
+8. `dp[7] = max(24, 1 + 17) = 24`
+9. `dp[8] = max(24, 5 + 24) = 29`
+10. `dp[9] = max(29, 10 + 24) = 34`
+
+The maximum possible yield is 34.
+
+To find out which plots contribute to this yield, we backtrack:
+- At `dp[9]`, we use plot 9 because `dp[9] = yield[9] + dp[7]`, thus plot 9 is included.
+- At `dp[8]`, we skip because `dp[8] == dp[9]`.
+- At `dp[7]`, we skip because `dp[7] == dp[6]`.
+- At `dp[6]`, we use plot 6 because `dp[6] = yield[6] + dp[4]`, thus plot 6 is included.
+- At `dp[5]`, we skip because `dp[5] == dp[6]`.
+- At `dp[4]`, we use plot 4 because `dp[4] = yield[4] + dp[2]`, thus plot 4 is included.
+- At `dp[3]`, we skip because `dp[3] == dp[4]`.
+- At `dp[2]`, we skip because `dp[2] == dp[0]`.
+- At `dp[1]`, we skip because `dp[1] == dp[3]`.
+- At `dp[0]`, we use plot 0 because `dp[0] = yield[0]`, thus plot 0 is included.
+
+The selected plots are therefore 0, 4, 6, and 9.
+
+**Selected:** {0, 4, 6, 9}, **Total:** 34","Selected: {0, 2, 4, 6, 9}, Total: 40",False,parse_failed,False,True,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W3,openai/gpt-4o,"Selected: {0, 2, 4, 6, 8, 9}, Total: 45K","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",False,parsed_clean,False,False,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W4,openai/gpt-4o,"To find an independent set \( S \) in the graph \( G = (V, E) \) such that the sum of the weights \( W(S) \) is maximized, we need to choose vertices such that no two vertices in \( S \) are adjacent and the sum of their weights is maximized.
+
+Given the chain-like structure of the graph \( G \), we can apply a greedy approach by considering every alternate node from two possibilities:
+
+1. Choose all odd-indexed vertices (or a subset where no nodes are consecutive and maximize the weight).
+2. Choose all even-indexed vertices (or a subset where no nodes are consecutive and maximize the weight).
+
+Weights for the odd vertices \( \{1, 3, 5, 7, 9\} \):
+
+- \( w(1) = 3 \)
+- \( w(3) = 2 \)
+- \( w(5) = 4 \)
+- \( w(7) = 1 \)
+- \( w(9) = 10 \)
+
+Total weight for this selection = \( 3 + 2 + 4 + 1 + 10 = 20 \)
+
+Weights for the even vertices \( \{0, 2, 4, 6, 8\} \):
+
+- \( w(0) = 8 \)
+- \( w(2) = 6 \)
+- \( w(4) = 9 \)
+- \( w(6) = 7 \)
+- \( w(8) = 5 \)
+
+Total weight for this selection = \( 8 + 6 + 9 + 7 + 5 = 35 \)
+
+Thus, choosing the vertices with highest possible independent weight yields:
+
+**Selected:** \(\{0, 2, 4, 6, 8\}\), **Total:** \( W(S) = 35 \)","Selected: {0, 2, 4, 6, 9}, Total: 40",False,parse_failed,False,True,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_002,canonical,openai/gpt-4o,"Selected: {1, 3, 11, 7}, Total: 44","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W1,openai/gpt-4o,"Selected: {1, 3, 4, 7, 10, 11}, Total: 46","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W2,openai/gpt-4o,"To solve the problem of maximizing total attendance while ensuring that no two directly connected districts host events, we can model the problem as a Maximum Independent Set problem on a graph derived from the district layout and their connections.
+
+Given the adjacency table and the attendance for each district, we aim to select the districts such that the total attendance is maximized, without selecting two connected nodes.
+
+We can apply a dynamic programming approach on a tree derived from the adjacency table. Here, we organize the districts based on their hierarchical connections, choosing a root and calculating solutions based on parent-child relationships.
+
+Starting with district 0 as the root, we will consider every combination of including or excluding a district (sub-tree rooted at that node) under the constraint that if a node is included, its children cannot be included.
+
+Below is one potential maximized selection and its computed total attendance:
+
+Selected Districts: {1, 2, 8, 9, 10, 11}
+
+Calculation details:
+- District 1 attendance = 14 (exclude its children 5, 6)
+- District 2 attendance = 3 (exclude child 7)
+- District 8 attendance = 4 (since its parent district 3 is not selected)
+- District 9 attendance = 5 (since its parent district 3 is not selected)
+- District 10 attendance = 8 (since its parent district 4 is not selected)
+- District 11 attendance = 10 (since its parent district 4 is not selected)
+
+Total Attendance = 14 + 3 + 4 + 5 + 8 + 10 = 44
+
+This selection ensures no two directly connected districts are chosen, and it maximizes the total attendance possible based on the constraints provided.
+
+Selected: {1, 2, 8, 9, 10, 11}, Total: 44","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W3,openai/gpt-4o,"Selected: {1, 2, 3, 5, 6, 7, 8, 9, 10, 11}, Total: 69","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W4,openai/gpt-4o,"To find an independent set \( S \subseteq V \) that maximizes the total weight \( W(S) \) while ensuring that no two vertices in \( S \) are connected by an edge in \( E \), we begin by considering the structure of the graph \( G \) and the weights assigned to each vertex.
+
+Given the description of the graph, it appears structured such that vertex 0 is connected to four other vertices (1, 2, 3, and 4), creating a slight star-like shape. Each of these vertices then branches to two other vertices, forming a tree-like structure.
+
+Looking for an independent set means we should prioritize selecting vertices without common edges and with higher weights, as they contribute more to \( W(S) \).
+
+- First, note the weights associated with each vertex:
+  - Vertex 0: Weight 6
+  - Vertex 1: Weight 14
+  - Vertex 2: Weight 3
+  - Vertex 3: Weight 11
+  - Vertex 4: Weight 2
+  - Vertex 5: Weight 3
+  - Vertex 6: Weight 4
+  - Vertex 7: Weight 9
+  - Vertex 8: Weight 4
+  - Vertex 9: Weight 5
+  - Vertex 10: Weight 8
+  - Vertex 11: Weight 10
+
+Given the tree structure, to maximize the weight, we would avoid choosing entire branches stemming from a single node when a higher-weighted node is present elsewhere.
+
+Possible selections include:
+
+1. Choose vertex 1 (weight 14) instead of 0, blocking out vertices connected directly (i.e., 5 and 6).
+2. Choose vertex 3 (weight 11) over 0, blocking out vertices connected directly (8 and 9).
+3. Choose vertex 4 (weight 2) over 0, blocking out vertices (10 and 11).
+4. Choose other leaf vertices not directly connected to the chosen center node with high weights.
+
+Therefore, an optimal independent set, considering individual selection of unconnected high-weight vertices for maximization, is as follows:
+
+Selected: {1, 7, 8, 10}
+
+Total: 
+- Vertex 1 \( \rightarrow \) Weight 14
+- Vertex 7 \( \rightarrow \) Weight 9
+- Vertex 8 \( \rightarrow \) Weight 4
+- Vertex 10 \( \rightarrow \) Weight 8
+
+Summing these weights, we find \( W(S) = 14 + 9 + 4 + 8 = 35 \).
+
+Thus, the independent set maximizing the weight sum is:
+
+**Selected: {1, 7, 8, 10}, Total: 35**","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_003,canonical,openai/gpt-4o,"Selected: {0, 4, 8, 12}, Total: 48","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W1,openai/gpt-4o,"Selected: {1, 3, 4, 11, 12, 13}, Total: 55","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W2,openai/gpt-4o,"To tackle this problem, we need to find a subset of the servers that maximizes the total importance score and ensures that no two directly connected servers are monitored. This is an instance of the ""maximum-weight independent set"" problem on graphs. Given the adjacency list and the importance scores, we will proceed with a strategic selection:
+
+1. Analyze the graph to understand the connections:
+   - Notice the connections form several subgraphs. Let's address each separately where directly connected nodes should not both be selected.
+
+2. Choose servers to maximize importance while avoiding directly connected ones:
+
+   - **Component 1 (0, 1, 2, 3, 4)**:
+     - Option 1: Select nodes 0 and 4: Total importance = 15 + 13 = 28
+     - Option 2: Select nodes 1, 2, and 3: Total importance = 6 + 7 + 8 = 21
+     - Option 3: Select node 4 alone (disconnects its connections): Importance = 13
+     - Best choice: 0 and 4 (importance 28)
+
+   - **Component 2 (5, 8, 9, 10, 11, 13)**:
+     - Option 1: Select nodes 5 and 11: Total importance = 9 + 7 = 16
+     - Option 2: Select nodes 8 and 11: Total importance = 11 + 7 = 18
+     - Option 3: Select nodes 8 and 13: Total importance = 11 + 8 = 19
+     - Best choice: 8 and 13 (importance 19)
+
+   - **Component 3 (12, 4)**: 
+     - Already selected 4 in previous steps, hence don't select 12 again.
+   
+3. Compiling all selected servers from components, we get:
+   - Selected: {0, 4, 8, 13}
+   - Total Importance: 15 + 13 + 11 + 8 = 47
+
+Finally, taking into account all calculations and selections:
+
+   - **Selected**: {0, 4, 8, 13}
+   - **Total**: 47
+
+So, we ensure that no two nodes in any connected subgraph are selected if directly connected. This approach maximizes the total importance score for the given network of servers.","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parse_failed,False,True,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W3,openai/gpt-4o,"Selected: {0, 4, 9, 11, 12}, Total: 53","Selected: {Item B, Item C, Item D, Item E, Item K, Item L, Item N}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W4,openai/gpt-4o,"To find the independent set \( S \) that maximizes the sum of weights \( W(S) \), we need to choose vertices such that no two vertices in \( S \) are adjacent (based on the edge set \( E \)) and the sum of their corresponding weights is maximized according to the weight function \( w \).
+
+One potential approach to solving this problem is to consider individual vertices based on their weights, while ensuring that adding a vertex doesn't include any adjacencies with vertices already in the set.
+
+Based on the given graph details and weights, a suitable independent set would be:
+
+- Start with vertex 0 (weight 15) to maximize the weight contribution from the beginning.
+- Avoid any vertex connected to 0, which are 1, 2, 3, 4.
+- Pick vertex 6 (weight 8), which is not adjacent to 0 and contributes significantly to the weight.
+- Choose vertex 9 (weight 5) as it's not adjacent to the selected vertices and adds a moderate sum to our weight.
+- Add vertex 12 (weight 9), which is not adjacent to 0, 6, 9, and contributes well to the maximized sum.
+- Finally, vertex 10 (weight 6) can be added, as it is not adjacent to any already selected vertex.
+
+The selected independent set \( S = \{0, 6, 9, 12, 10\} \).
+
+Calculate \( W(S) \):
+
+- \( W(S) = w(0) + w(6) + w(9) + w(12) + w(10) \)
+- \( W(S) = 15 + 8 + 5 + 9 + 6 = 43 \)
+
+Thus:
+- Selected: \(\{0, 6, 9, 12, 10\}\)
+- Total: \( W(S) = 43 \)","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parse_failed,False,True,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_004,canonical,openai/gpt-4o,"Selected: {0, 3, 4, 11, 13, 15}, Total: 31","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W1,openai/gpt-4o,"Selected: {0, 3, 4, 5, 7, 8, 11, 13}, Total: 42","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W2,openai/gpt-4o,"To solve this problem, we aim to select a set of transmission towers such that no two directly linked towers are selected, while maximizing the total coverage score. This is a variant of the ""independent set"" or ""maximum weight independent set"" problem in a graph, where the vertices are towers and the edges are the direct connections between them.
+
+Let's outline an approach to solve this:
+
+1. **Understand the Graph:**
+   - Each tower is a node.
+   - Each connection (linkage) is an edge.
+   - We aim to select nodes such that no two nodes connected by an edge are selected.
+
+2. **Considering each tower:**
+   - Start by considering high-scoring towers and validate neighboring towers.
+   - Make sure not to choose directly connected towers.
+
+3. **Strategize based on the scores:**
+   - Towers with higher scores should be prioritized unless they are heavily interconnected which may block several other high or equally important nodes.
+
+Here's one possible selection that maximizes the total coverage score:
+
+Selected Towers:  
+- T3 (score 8)
+- T4 (score 7)
+- T0 (score 5)
+- T9 (score 5)
+- T2 (score 4)
+- T11 (score 4)
+- T13 (score 6)
+
+Calculating Total Coverage: 8 + 7 + 5 + 5 + 4 + 4 + 6 = 39
+
+Thus, the optimized selection is:
+
+Selected: {3, 4, 0, 9, 2, 11, 13}, Total: 39","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W3,openai/gpt-4o,"Selected: {3, 4, 11, 15}, Total: 24","Selected: {Item A, Item B, Item D, Item G, Item J, Item L, Item M}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W4,openai/gpt-4o,"To find an independent set \( S \subseteq V \) such that the sum of the weights of vertices in \( S \) is maximized, we approach this problem by considering both the weights of the vertices and the edges of the graph. The independent set \( S \) must contain vertices that are not adjacent.
+
+Starting with vertices of higher weight and avoiding their neighbors is an effective strategy. Given the definition of the graph and the weight function \( w \), let's identify possible selections:
+
+1. Consider the vertex with the highest weight, which is vertex 3 with a weight of 8. Add vertex 3 to \( S \). The adjacent vertices {2, 7, 13} cannot be in \( S \).
+2. Next, consider vertex 13 with a weight of 6 (highest remaining). The adjacent vertices {2, 6, 7, 12} cannot be in \( S \).
+3. Check for other high-weight vertices that are not adjacent to those already in \( S \). 
+
+Finally, let's build the set \( S \): 
+- Vertex 0 with weight 5 (not adjacent to any selected).
+- Vertex 11 with weight 4 (not adjacent to any selected).
+- Vertex 15 with weight 3 (not adjacent to any selected).
+
+The independent set is \( S = \{3, 0, 11, 15\} \) with the total weight:
+
+\( W(S) = w(3) + w(0) + w(11) + w(15) = 8 + 5 + 4 + 3 = 20 \).
+
+**Selected**: {3, 0, 11, 15}, **Total**: 20","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parse_failed,False,True,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_005,canonical,openai/gpt-4o,"Selected: {0, 3, 5, 8, 11, 13, 16}, Total: 80","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W1,openai/gpt-4o,"Selected: {0, 2, 6, 9, 11, 13, 16}, Total: 79","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W2,openai/gpt-4o,"To solve this problem, we need to select distribution centers such that no two directly connected centers are chosen, while maximizing total profitability. We can approach this like a graph problem, specifically a maximum weighted independent set problem. 
+
+Given the adjacency table, here's how we can formulate a solution:
+
+First, note that the connections form a graph where each node is associated with a profitability value. We want to select nodes in such a way that we maximize the sum of the profitability values without choosing two nodes that share an edge.
+
+Let's examine potential distribution centers that can be selected while ensuring no two adjacent nodes are chosen:
+
+1. Start selecting high profitability centers and check their neighbors:
+
+- Center 8: Profit 15
+  - Connected to: 0, 1, 12, 16
+  - Do not select: 0, 1, 12, 16
+
+- Center 2: Profit 14
+  - Connected to: 1, 3, 6, 10, 12
+  - Do not select: 1, 3, 6, 10, 12
+
+- Center 16: Profit 13
+  - Connected to: 8, 12, 17
+  - Do not select: 8, 12, 17
+
+- Center 5: Profit 13
+  - Connected to: 0, 1, 4, 6
+  - Do not select: 0, 1, 4, 6
+
+- Center 13: Profit 12
+  - Connected to: 5, 9, 12, 14, 17
+  - Do not select: 5, 9, 12, 14, 17
+
+- Center 0: Profit 12 (since it's not adjacent to 8, which we've excluded)
+  - Connected to: 1, 4, 5, 8
+  - Do not select: 1, 4, 5, 8
+
+Following this logic and prioritizing centers with the highest profitability, one possible optimal set of selections could be: {2, 10, 16, 13, 0}.
+
+We compute the total profitability:  
+- Center 2: 14  
+- Center 10: 11  
+- Center 16: 13  
+- Center 13: 12  
+- Center 0: 12
+
+Total profitability = 14 + 11 + 13 + 12 + 12 = 62
+
+Selected: {2, 10, 16, 13, 0}, Total: 62","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W3,openai/gpt-4o,"Selected: {0, 2, 5, 8, 11, 13, 16}, Total: 87","Selected: {Item C, Item F, Item H, Item I, Item L, Item O}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W4,openai/gpt-4o,"To find an independent set \( S \subseteq V \) that maximizes the sum of the weights of the vertices in \( S \) and satisfies the condition that no two vertices in \( S \) are adjacent, we can use a greedy algorithm. This algorithm involves selecting vertices based on descending weight order while ensuring that no two selected vertices are adjacent.
+
+First, let's sort the vertices by weight in descending order:
+
+- 8 (weight 15)
+- 0 (weight 12)
+- 13 (weight 12)
+- 2 (weight 14)
+- 5 (weight 13)
+- 16 (weight 13)
+- 3 (weight 11)
+- 10 (weight 11)
+- 6 (weight 10)
+- 1 (weight 9)
+- 11 (weight 9)
+- 9 (weight 7)
+- 15 (weight 7)
+- 4 (weight 8)
+- 12 (weight 8)
+- 7 (weight 6)
+- 17 (weight 6)
+- 14 (weight 10)
+
+Now, we select vertices while ensuring no two selected vertices are adjacent by checking edges in \( E \):
+
+1. **Select 8** (weight 15): No neighbors included yet.
+
+2. **Select 5** (weight 13): Its neighbors {0, 1, 4, 9, 13} not included.
+
+3. **Select 16** (weight 13): Neighbors {8, 11, 17} not included.
+
+4. **Select 2** (weight 14): Its neighbors {0, 1, 6, 12} are not included.
+
+5. **Select 10** (weight 11): Neighbors {4, 9, 13, 14} not included.
+
+6. **Select 7** (weight 6): Neighbors {3, 6, 15} not included.
+
+These selections ensure no adjacent vertices are in the set.
+
+Thus, the selected independent set is:
+
+- \( S = \{8, 5, 16, 2, 10, 7\} \)
+
+Calculating \( W(S) = 15 + 13 + 13 + 14 + 11 + 6 = 72 \)
+
+**Selected**: \{8, 5, 16, 2, 10, 7\}, **Total**: \( W(S) = 72 \)","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parse_failed,False,True,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard

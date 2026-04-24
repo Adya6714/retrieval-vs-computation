@@ -1,0 +1,652 @@
+problem_id,problem_family,problem_subtype,problem_text,correct_answer,max_ngram_length,max_ngram_count,contamination_score,template_contamination_score,instance_contamination_score,difficulty_numeric
+CC_01,Coin Change,coin_change,"You have coins with the following denominations: [1,3,4,7]. You need to make exact change for 6 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [3, 3]",7,260,0.1148,1.0,0.0,4
+CC_02,Coin Change,coin_change,"You have coins with the following denominations: [1, 5, 6, 9]. You need to make exact change for 11 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [5, 6]",7,260,0.1094,1.0,0.0,4
+CC_03,Coin Change,coin_change,"You have coins with the following denominations: [1, 6, 7, 9, 11]. You need to make exact change for 13 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [6, 7]",7,260,0.1077,1.0,0.0,5
+CC_04,Coin Change,coin_change,"You have coins with the following denominations: [1, 7, 10, 14, 17, 23]. You need to make exact change for 27 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+Coins: [17, 10]",8,26,0.1212,1.0,0.0,6
+CC_05,Coin Change,coin_change,"You have coins with the following denominations: [1, 4, 6, 7, 11]. You need to make exact change for 14 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [7, 7]",7,260,0.1077,1.0,0.0,5
+CC_06,Coin Change,coin_change,"You have coins with the following denominations: [1, 7, 8, 12, 15]. You need to make exact change for 26 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 3
+ Coins: [12, 7, 7]",7,260,0.1077,1.0,0.0,5
+CC_07,Coin Change,coin_change,"You have coins with the following denominations: [1, 4, 5, 8, 9]. You need to make exact change for 12 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+Coins: [8, 4]",7,260,0.1077,1.0,0.0,5
+CC_08,Coin Change,coin_change,"You have coins with the following denominations: [1, 6, 10, 15, 25]. You need to make exact change for 30 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [15, 15]",7,260,0.1077,1.0,0.0,5
+CC_09,Coin Change,coin_change,"You have coins with the following denominations: [7, 11, 17, 31, 67, 197]. You need to make exact change for 423 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 5
+ Coins: [197, 197, 11, 11, 7]",8,26,0.1212,1.0,0.0,6
+CC_10,Coin Change,coin_change,"You have coins with the following denominations: [7, 11, 17, 31, 67, 197, 201]. You need to make exact change for 965 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",7,260,0.1045,1.0,0.0,7
+SP_001,Algorithmic Suit,shortest_path,"A delivery driver starts their shift at Warehouse 0 and needs to deliver a 
+package to Customer 11 across a city of 12 locations (0-11). Every road is 
+one-way. The one-way road network and travel times in minutes are:
+
+- Warehouse 0 to Depot 2: 3 mins
+- Warehouse 0 to Stopover 5: 8 mins
+- Warehouse 0 to Suburb 1: 6 mins
+- Suburb 1 to Junction 3: 4 mins
+- Suburb 1 to Overpass 6: 7 mins
+- Depot 2 to Parkway 4: 5 mins
+- Depot 2 to Overpass 6: 9 mins
+- Junction 3 to Terminal 7: 3 mins
+- Junction 3 to Shelter 8: 6 mins
+- Parkway 4 to Terminal 7: 8 mins
+- Parkway 4 to Bypass 9: 4 mins
+- Stopover 5 to Bypass 9: 3 mins
+- Stopover 5 to Crossing 10: 6 mins
+- Overpass 6 to Crossing 10: 4 mins
+- Overpass 6 to Shelter 8: 5 mins
+- Terminal 7 to Customer 11: 6 mins
+- Shelter 8 to Customer 11: 4 mins
+- Bypass 9 to Crossing 10: 5 mins
+- Crossing 10 to Customer 11: 3 mins
+- Junction 3 to Customer 11: 15 mins
+- Suburb 1 to Bypass 9: 12 mins
+- Warehouse 0 to Terminal 7: 18 mins
+- Depot 2 to Shelter 8: 14 mins
+
+What is the fastest route from Warehouse 0 to Customer 11, and how long 
+will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 5 → 10 → 11, Cost: 17",7,8,0.0266,1.0,0.0,23
+SP_002,Algorithmic Suit,shortest_path,"An expedition team sets out from Base Camp 16 and must reach Summit Lodge 11 
+across a mountain range. The range has 25 locations (0-24) connected by 
+two-way trails. The trail network and travel times in hours are:
+
+- Base Camp 16 and Waypoint 12: 4 hrs
+- Waypoint 12 and Waypoint 9: 3 hrs
+- Waypoint 9 and Waypoint 19: 5 hrs
+- Waypoint 19 and Waypoint 18: 4 hrs
+- Waypoint 18 and Waypoint 6: 3 hrs
+- Waypoint 6 and Waypoint 5: 5 hrs
+- Waypoint 5 and Waypoint 10: 4 hrs
+- Waypoint 10 and Waypoint 15: 3 hrs
+- Waypoint 15 and Waypoint 21: 5 hrs
+- Waypoint 21 and Summit Lodge 11: 4 hrs
+- Base Camp 16 and Waypoint 9: 9 hrs
+- Base Camp 16 and Waypoint 19: 14 hrs
+- Waypoint 12 and Waypoint 19: 10 hrs
+- Waypoint 12 and Waypoint 18: 14 hrs
+- Waypoint 9 and Waypoint 18: 11 hrs
+- Waypoint 9 and Waypoint 6: 14 hrs
+- Waypoint 19 and Waypoint 6: 9 hrs
+- Waypoint 5 and Waypoint 15: 9 hrs
+- Waypoint 5 and Waypoint 21: 14 hrs
+- Waypoint 10 and Waypoint 21: 10 hrs
+- Waypoint 10 and Summit Lodge 11: 14 hrs
+- Waypoint 15 and Summit Lodge 11: 11 hrs
+- Base Camp 16 and Side Camp 17: 6 hrs
+- Base Camp 16 and Side Camp 1: 8 hrs
+- Waypoint 12 and Side Camp 14: 5 hrs
+- Waypoint 12 and Side Camp 22: 7 hrs
+- Waypoint 9 and Side Camp 13: 6 hrs
+- Waypoint 9 and Side Camp 2: 8 hrs
+- Waypoint 19 and Side Camp 23: 7 hrs
+- Waypoint 19 and Side Camp 4: 5 hrs
+- Waypoint 18 and Side Camp 24: 6 hrs
+- Waypoint 18 and Side Camp 7: 8 hrs
+- Waypoint 6 and Side Camp 8: 7 hrs
+- Waypoint 6 and Side Camp 0: 5 hrs
+- Side Camp 17 and Side Camp 14: 4 hrs
+- Side Camp 17 and Side Camp 13: 6 hrs
+- Side Camp 1 and Side Camp 22: 5 hrs
+- Side Camp 1 and Side Camp 2: 7 hrs
+- Side Camp 14 and Side Camp 23: 4 hrs
+- Side Camp 22 and Side Camp 4: 6 hrs
+- Side Camp 13 and Side Camp 24: 5 hrs
+- Side Camp 2 and Side Camp 7: 7 hrs
+- Side Camp 23 and Side Camp 8: 4 hrs
+- Side Camp 4 and Side Camp 0: 6 hrs
+- Side Camp 24 and Side Camp 3: 5 hrs
+- Side Camp 7 and Side Camp 20: 7 hrs
+- Side Camp 8 and Side Camp 3: 4 hrs
+- Side Camp 0 and Side Camp 20: 6 hrs
+- Side Camp 3 and Side Camp 20: 3 hrs
+- Side Camp 17 and Side Camp 20: 9 hrs
+
+What is the fastest route from Base Camp 16 to Summit Lodge 11, and how 
+long will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",6,26395,0.0113,1.0,0.0,50
+SP_003,Algorithmic Suit,shortest_path,"A courier working for an underground network must transport a package from 
+Safe House 11 to Drop Point 9 across a city of 20 locations (0-19). Every 
+road is one-way. The one-way road network and travel times in minutes are:
+
+- Safe House 11 to Relay 18: 3 mins
+- Relay 18 to Outpost 14: 4 mins
+- Outpost 14 to Junction 0: 3 mins
+- Junction 0 to Crossing 15: 4 mins
+- Crossing 15 to Depot 5: 3 mins
+- Depot 5 to Warehouse 12: 4 mins
+- Warehouse 12 to Checkpoint 2: 3 mins
+- Checkpoint 2 to Overpass 3: 4 mins
+- Overpass 3 to Drop Point 9: 3 mins
+- Safe House 11 to Outpost 14: 9 mins
+- Safe House 11 to Junction 0: 12 mins
+- Safe House 11 to Crossing 15: 16 mins
+- Relay 18 to Junction 0: 9 mins
+- Relay 18 to Crossing 15: 13 mins
+- Relay 18 to Depot 5: 16 mins
+- Outpost 14 to Crossing 15: 9 mins
+- Outpost 14 to Depot 5: 12 mins
+- Outpost 14 to Warehouse 12: 16 mins
+- Junction 0 to Depot 5: 9 mins
+- Junction 0 to Warehouse 12: 13 mins
+- Junction 0 to Checkpoint 2: 16 mins
+- Crossing 15 to Warehouse 12: 9 mins
+- Crossing 15 to Checkpoint 2: 12 mins
+- Crossing 15 to Overpass 3: 16 mins
+- Depot 5 to Checkpoint 2: 9 mins
+- Depot 5 to Overpass 3: 13 mins
+- Depot 5 to Drop Point 9: 16 mins
+- Warehouse 12 to Overpass 3: 9 mins
+- Warehouse 12 to Drop Point 9: 12 mins
+- Checkpoint 2 to Drop Point 9: 9 mins
+- Safe House 11 to Alley 19: 6 mins
+- Alley 19 to Backstreet 16: 7 mins
+- Backstreet 16 to Underpass 4: 6 mins
+- Underpass 4 to Overpass 3: 10 mins
+- Safe House 11 to Sidestreet 1: 9 mins
+- Sidestreet 1 to Laneway 13: 12 mins
+- Laneway 13 to Overpass 3: 8 mins
+- Safe House 11 to Shortcut 17: 5 mins
+- Shortcut 17 to Flyover 7: 8 mins
+- Flyover 7 to Interchange 6: 7 mins
+- Interchange 6 to Overpass 3: 9 mins
+- Safe House 11 to Bypass 10: 11 mins
+- Bypass 10 to Tunnel 8: 10 mins
+- Tunnel 8 to Overpass 3: 9 mins
+- Alley 19 to Sidestreet 1: 4 mins
+- Sidestreet 1 to Backstreet 16: 5 mins
+- Backstreet 16 to Shortcut 17: 6 mins
+- Underpass 4 to Flyover 7: 4 mins
+- Laneway 13 to Interchange 6: 5 mins
+- Flyover 7 to Tunnel 8: 6 mins
+- Shortcut 17 to Bypass 10: 4 mins
+- Interchange 6 to Alley 19: 7 mins
+- Tunnel 8 to Underpass 4: 5 mins
+- Bypass 10 to Backstreet 16: 6 mins
+- Alley 19 to Flyover 7: 5 mins
+- Sidestreet 1 to Interchange 6: 6 mins
+- Underpass 4 to Tunnel 8: 7 mins
+- Laneway 13 to Alley 19: 5 mins
+- Backstreet 16 to Bypass 10: 8 mins
+- Flyover 7 to Sidestreet 1: 4 mins
+- Interchange 6 to Shortcut 17: 6 mins
+- Tunnel 8 to Interchange 6: 4 mins
+- Relay 18 to Alley 19: 3 mins
+- Outpost 14 to Sidestreet 1: 4 mins
+- Junction 0 to Shortcut 17: 5 mins
+- Crossing 15 to Backstreet 16: 4 mins
+- Depot 5 to Laneway 13: 5 mins
+- Warehouse 12 to Flyover 7: 4 mins
+- Checkpoint 2 to Bypass 10: 5 mins
+- Junction 0 to Alley 19: 6 mins
+- Depot 5 to Underpass 4: 7 mins
+- Alley 19 to Junction 0: 8 mins
+- Backstreet 16 to Crossing 15: 7 mins
+- Underpass 4 to Depot 5: 9 mins
+- Sidestreet 1 to Outpost 14: 8 mins
+- Laneway 13 to Warehouse 12: 8 mins
+- Shortcut 17 to Crossing 15: 9 mins
+- Flyover 7 to Depot 5: 7 mins
+- Interchange 6 to Warehouse 12: 8 mins
+- Bypass 10 to Checkpoint 2: 6 mins
+- Tunnel 8 to Depot 5: 9 mins
+
+What is the fastest route from Safe House 11 to Drop Point 9, and how long 
+will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",6,26395,0.0081,1.0,0.0,81
+SP_004,Algorithmic Suit,shortest_path,"Climber Mara starts at Base Lodge (node 0) at time zero and needs to reach 
+Summit Hut (node 9) as fast as possible across a network of 10 one-way 
+mountain routes. Travel times are in hours. Critically, two routes are 
+time-dependent — their cost changes depending on what time you arrive at 
+the departure point:
+
+Fixed routes (cost never changes):
+- Base Lodge 0 to Waypoint 3: 4 hrs
+- Waypoint 3 to Waypoint 6: 3 hrs
+- Waypoint 4 to Waypoint 5: 3 hrs
+- Waypoint 5 to Summit Hut 9: 3 hrs
+- Base Lodge 0 to Waypoint 2: 5 hrs
+- Waypoint 2 to Waypoint 5: 4 hrs
+- Base Lodge 0 to Waypoint 7: 9 hrs
+- Waypoint 7 to Waypoint 5: 4 hrs
+- Waypoint 4 to Summit Hut 9: 7 hrs
+- Waypoint 6 to Summit Hut 9: 8 hrs
+
+Time-dependent routes:
+- Base Lodge 0 to Waypoint 1: always 2 hrs
+- Waypoint 1 to Waypoint 5: costs 3 hrs if you arrive at Waypoint 1 
+  before or at hour 1, but costs 12 hrs if you arrive after hour 1
+  (the morning fast-track closes after the first hour)
+- Waypoint 6 to Waypoint 4: costs -5 hrs (saves 5 hrs — a cable car that 
+  skips a long switchback) if you board before or at hour 10, but costs 
+  4 hrs if you board after hour 10
+
+Note: a negative cost means that route saves time — your cumulative 
+travel time decreases by that amount.
+
+What is the fastest route from Base Lodge 0 to Summit Hut 9, and what is 
+the total travel time?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",8,61,0.027,1.0,0.0,13
+SP_005,Algorithmic Suit,shortest_path,"A smuggler needs to transport contraband from Safe House A (node 0) to 
+Destination X (node 15) through an underground network of 16 safe locations 
+(0-15). Every tunnel is one-way. The tunnel network and transit times in 
+minutes are:
+ 
+- Safe House A (0) to Junction B (1): 5 mins
+- Safe House A (0) to Checkpoint C (3): 8 mins
+- Safe House A (0) to Hideout D (4): 7 mins
+- Junction B (1) to Tunnel E (2): 4 mins
+- Junction B (1) to Lookout F (5): 6 mins
+- Junction B (1) to Chamber G (7): 9 mins
+- Tunnel E (2) to Passage H (6): 5 mins
+- Tunnel E (2) to Vault I (8): 7 mins
+- Checkpoint C (3) to Chamber G (7): 6 mins
+- Checkpoint C (3) to Crossing J (9): 8 mins
+- Hideout D (4) to Lookout F (5): 4 mins
+- Hideout D (4) to Crossing J (9): 7 mins
+- Lookout F (5) to Passage H (6): 3 mins
+- Lookout F (5) to Relay K (10): 8 mins
+- Passage H (6) to Vault I (8): 4 mins
+- Passage H (6) to Relay K (10): 6 mins
+- Chamber G (7) to Vault I (8): 5 mins
+- Chamber G (7) to Crossing J (9): 7 mins
+- Vault I (8) to Relay K (10): 5 mins
+- Vault I (8) to Waypoint L (11): 8 mins
+- Crossing J (9) to Waypoint L (11): 6 mins
+- Crossing J (9) to Outpost M (12): 9 mins
+- Relay K (10) to Outpost M (12): 4 mins
+- Relay K (10) to Staging N (13): 7 mins
+- Waypoint L (11) to Staging N (13): 5 mins
+- Waypoint L (11) to Terminal O (14): 8 mins
+- Outpost M (12) to Terminal O (14): 6 mins
+- Outpost M (12) to Destination X (15): 10 mins
+- Staging N (13) to Terminal O (14): 3 mins
+- Staging N (13) to Destination X (15): 11 mins
+- Terminal O (14) to Destination X (15): 4 mins
+ 
+What is the fastest route from Safe House A (0) to Destination X (15), and 
+how long will it take?
+ 
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",7,8,0.0177,1.0,0.0,31
+SP_005,Algorithmic Suit,shortest_path,"A smuggler needs to transport contraband from Safe House A (node 0) to 
+Destination X (node 15) through an underground network of 16 safe locations 
+(0-15). Every tunnel is one-way. The tunnel network and transit times in 
+minutes are:
+ 
+- Safe House A (0) to Junction B (1): 5 mins
+- Safe House A (0) to Checkpoint C (3): 8 mins
+- Safe House A (0) to Hideout D (4): 7 mins
+- Junction B (1) to Tunnel E (2): 4 mins
+- Junction B (1) to Lookout F (5): 6 mins
+- Junction B (1) to Chamber G (7): 9 mins
+- Tunnel E (2) to Passage H (6): 5 mins
+- Tunnel E (2) to Vault I (8): 7 mins
+- Checkpoint C (3) to Chamber G (7): 6 mins
+- Checkpoint C (3) to Crossing J (9): 8 mins
+- Hideout D (4) to Lookout F (5): 4 mins
+- Hideout D (4) to Crossing J (9): 7 mins
+- Lookout F (5) to Passage H (6): 3 mins
+- Lookout F (5) to Relay K (10): 8 mins
+- Passage H (6) to Vault I (8): 4 mins
+- Passage H (6) to Relay K (10): 6 mins
+- Chamber G (7) to Vault I (8): 5 mins
+- Chamber G (7) to Crossing J (9): 7 mins
+- Vault I (8) to Relay K (10): 5 mins
+- Vault I (8) to Waypoint L (11): 8 mins
+- Crossing J (9) to Waypoint L (11): 6 mins
+- Crossing J (9) to Outpost M (12): 9 mins
+- Relay K (10) to Outpost M (12): 4 mins
+- Relay K (10) to Staging N (13): 7 mins
+- Waypoint L (11) to Staging N (13): 5 mins
+- Waypoint L (11) to Terminal O (14): 8 mins
+- Outpost M (12) to Terminal O (14): 6 mins
+- Outpost M (12) to Destination X (15): 10 mins
+- Staging N (13) to Terminal O (14): 3 mins
+- Staging N (13) to Destination X (15): 11 mins
+- Terminal O (14) to Destination X (15): 4 mins
+ 
+What is the fastest route from Safe House A (0) to Destination X (15), and 
+how long will it take?
+ 
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",7,8,0.0177,1.0,0.0,31
+WIS_001,Algorithmic Suit,wis,"A farmer owns plots of land along a straight road. The plots are numbered 
+0 through 9 from west to east. Due to access restrictions, no two adjacent 
+plots can be harvested in the same season. Each plot has an expected crop 
+yield in tonnes:
+
+Plot 0: 8 tonnes
+Plot 1: 3 tonnes
+Plot 2: 6 tonnes
+Plot 3: 2 tonnes
+Plot 4: 9 tonnes
+Plot 5: 4 tonnes
+Plot 6: 7 tonnes
+Plot 7: 1 tonne
+Plot 8: 5 tonnes
+Plot 9: 10 tonnes
+
+Adjacent plots (cannot both be harvested):
+0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9
+
+Which plots should the farmer harvest to maximise total yield, and what 
+is that maximum yield?
+
+Reply with only the selected plots and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 2, 4, 6, 9}, Total: 40",7,150,0.0522,0.0,0.0,10
+WIS_001,Algorithmic Suit,wis,"A farmer owns plots of land along a straight road. The plots are numbered 
+0 through 9 from west to east. Due to access restrictions, no two adjacent 
+plots can be harvested in the same season. Each plot has an expected crop 
+yield in tonnes:
+
+Plot 0: 8 tonnes
+Plot 1: 3 tonnes
+Plot 2: 6 tonnes
+Plot 3: 2 tonnes
+Plot 4: 9 tonnes
+Plot 5: 4 tonnes
+Plot 6: 7 tonnes
+Plot 7: 1 tonne
+Plot 8: 5 tonnes
+Plot 9: 10 tonnes
+
+Adjacent plots (cannot both be harvested):
+0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9
+
+Which plots should the farmer harvest to maximise total yield, and what 
+is that maximum yield?
+
+Reply with only the selected plots and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 2, 4, 6, 9}, Total: 40",7,150,0.0522,0.0,0.0,10
+WIS_002,Algorithmic Suit,wis,"A city has a hierarchical road network with 12 districts (0-11). 
+Roadworks mean that if two directly connected districts are both chosen 
+for a festival event, there will be traffic chaos. The city wants to 
+select as many districts as possible — weighted by expected attendance 
+— while avoiding any two directly connected districts.
+
+Expected attendance (thousands) per district:
+District 0: 6    District 1: 14   District 2: 3    District 3: 11
+District 4: 2    District 5: 3    District 6: 4    District 7: 9
+District 8: 4    District 9: 5    District 10: 8   District 11: 10
+
+Direct connections (cannot both host an event):
+0-1, 0-2, 0-3, 0-4
+1-5, 1-6
+2-7
+3-8, 3-9
+4-10, 4-11
+
+Which districts should host the festival to maximise total attendance, 
+and what is that maximum?
+
+Reply with only the selected districts and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 3, 7, 10, 11}, Total: 52",6,10,0.0411,0.0,0.0,12
+WIS_002,Algorithmic Suit,wis,"A city has a hierarchical road network with 12 districts (0-11). 
+Roadworks mean that if two directly connected districts are both chosen 
+for a festival event, there will be traffic chaos. The city wants to 
+select as many districts as possible — weighted by expected attendance 
+— while avoiding any two directly connected districts.
+
+Expected attendance (thousands) per district:
+District 0: 6    District 1: 14   District 2: 3    District 3: 11
+District 4: 2    District 5: 3    District 6: 4    District 7: 9
+District 8: 4    District 9: 5    District 10: 8   District 11: 10
+
+Direct connections (cannot both host an event):
+0-1, 0-2, 0-3, 0-4
+1-5, 1-6
+2-7
+3-8, 3-9
+4-10, 4-11
+
+Which districts should host the festival to maximise total attendance, 
+and what is that maximum?
+
+Reply with only the selected districts and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 3, 7, 10, 11}, Total: 52",6,10,0.0411,0.0,0.0,12
+WIS_003,Algorithmic Suit,wis,"A cybersecurity firm is deploying monitoring sensors across 14 server 
+nodes in a network. Two servers that are directly connected share traffic 
+logs, meaning deploying sensors on both would be redundant. Each server 
+has an importance score. The firm wants to maximise total importance 
+of monitored servers while avoiding any two directly connected servers.
+
+Importance scores:
+Server 0: 15    Server 1: 6     Server 2: 7     Server 3: 8
+Server 4: 13    Server 5: 9     Server 6: 8     Server 7: 7
+Server 8: 11    Server 9: 5     Server 10: 6    Server 11: 7
+Server 12: 9    Server 13: 8
+
+Direct connections (cannot both be monitored):
+0-1, 0-2, 0-3
+4-5, 4-6, 4-7
+8-9, 8-10, 8-11
+1-5, 3-6, 2-9, 7-10, 6-11
+4-12, 12-13, 8-13
+0-4, 5-8
+
+Which servers should be monitored to maximise total importance, and 
+what is that maximum?
+
+Reply with only the selected servers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",5,216,0.0323,0.0,0.0,14
+WIS_003,Algorithmic Suit,wis,"A cybersecurity firm is deploying monitoring sensors across 14 server 
+nodes in a network. Two servers that are directly connected share traffic 
+logs, meaning deploying sensors on both would be redundant. Each server 
+has an importance score. The firm wants to maximise total importance 
+of monitored servers while avoiding any two directly connected servers.
+
+Importance scores:
+Server 0: 15    Server 1: 6     Server 2: 7     Server 3: 8
+Server 4: 13    Server 5: 9     Server 6: 8     Server 7: 7
+Server 8: 11    Server 9: 5     Server 10: 6    Server 11: 7
+Server 12: 9    Server 13: 8
+
+Direct connections (cannot both be monitored):
+0-1, 0-2, 0-3
+4-5, 4-6, 4-7
+8-9, 8-10, 8-11
+1-5, 3-6, 2-9, 7-10, 6-11
+4-12, 12-13, 8-13
+0-4, 5-8
+
+Which servers should be monitored to maximise total importance, and 
+what is that maximum?
+
+Reply with only the selected servers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",5,216,0.0323,0.0,0.0,14
+WIS_004,Algorithmic Suit,wis,"A radio network has 16 transmission towers (0-15). Towers that are 
+directly linked interfere with each other and cannot broadcast on the 
+same frequency band simultaneously. Each tower has a coverage score. 
+Find the set of towers that can all broadcast simultaneously with the 
+maximum total coverage.
+
+Coverage scores:
+Tower 0: 5    Tower 1: 5    Tower 2: 4    Tower 3: 8
+Tower 4: 7    Tower 5: 4    Tower 6: 5    Tower 7: 4
+Tower 8: 4    Tower 9: 5    Tower 10: 4   Tower 11: 4
+Tower 12: 5   Tower 13: 6   Tower 14: 4   Tower 15: 3
+
+Direct links (cannot broadcast simultaneously):
+7-9, 9-5, 5-6, 6-14, 14-7
+10-12, 12-8, 8-1, 1-2, 2-10
+5-8, 14-10
+13-7, 13-6, 13-12, 13-2
+15-9, 15-12
+4-6, 4-1
+11-10, 11-5
+0-8, 0-14
+3-2, 3-7, 3-13
+
+Which towers should broadcast to maximise total coverage, and what is 
+that maximum?
+
+Reply with only the selected towers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",6,139,0.0375,0.0,0.0,16
+WIS_004,Algorithmic Suit,wis,"A radio network has 16 transmission towers (0-15). Towers that are 
+directly linked interfere with each other and cannot broadcast on the 
+same frequency band simultaneously. Each tower has a coverage score. 
+Find the set of towers that can all broadcast simultaneously with the 
+maximum total coverage.
+
+Coverage scores:
+Tower 0: 5    Tower 1: 5    Tower 2: 4    Tower 3: 8
+Tower 4: 7    Tower 5: 4    Tower 6: 5    Tower 7: 4
+Tower 8: 4    Tower 9: 5    Tower 10: 4   Tower 11: 4
+Tower 12: 5   Tower 13: 6   Tower 14: 4   Tower 15: 3
+
+Direct links (cannot broadcast simultaneously):
+7-9, 9-5, 5-6, 6-14, 14-7
+10-12, 12-8, 8-1, 1-2, 2-10
+5-8, 14-10
+13-7, 13-6, 13-12, 13-2
+15-9, 15-12
+4-6, 4-1
+11-10, 11-5
+0-8, 0-14
+3-2, 3-7, 3-13
+
+Which towers should broadcast to maximise total coverage, and what is 
+that maximum?
+
+Reply with only the selected towers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",6,139,0.0375,0.0,0.0,16
+WIS_005,Algorithmic Suit,wis,"A logistics company manages 18 distribution centers across a region. Due to 
+inventory management constraints, if two directly connected centers both 
+process the same product line, it creates supply chain inefficiencies. Each 
+center has a profitability score based on its operational capacity and market 
+demand. The company wants to select centers for a new product deployment to 
+maximize total profitability while ensuring no two directly connected centers 
+are selected.
+
+Profitability scores (in millions):
+Center 0: 12    Center 1: 9     Center 2: 14    Center 3: 11
+Center 4: 8     Center 5: 13    Center 6: 10    Center 7: 6
+Center 8: 15    Center 9: 7     Center 10: 11   Center 11: 9
+Center 12: 8    Center 13: 12   Center 14: 10   Center 15: 7
+Center 16: 13   Center 17: 6
+
+Direct connections (cannot both be selected):
+0-1, 0-4, 0-8
+1-2, 1-5, 1-9
+2-3, 2-6, 2-10
+3-7, 3-11
+4-5, 4-12
+5-6, 5-13
+6-7, 6-14
+7-15
+8-9, 8-12, 8-16
+9-10, 9-13
+10-11, 10-14
+11-15, 11-17
+12-13, 12-16
+13-14, 13-17
+14-15
+16-17
+0-5, 1-8, 2-12, 3-13, 4-10, 6-16, 7-12, 9-14, 11-16
+
+Which distribution centers should be selected for the new product 
+deployment to maximize total profitability, and what is that maximum?
+
+Reply with only the selected centers and the total profitability.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",5,14324,0.0235,0.0,0.0,18
+WIS_005,Algorithmic Suit,wis,"A logistics company manages 18 distribution centers across a region. Due to 
+inventory management constraints, if two directly connected centers both 
+process the same product line, it creates supply chain inefficiencies. Each 
+center has a profitability score based on its operational capacity and market 
+demand. The company wants to select centers for a new product deployment to 
+maximize total profitability while ensuring no two directly connected centers 
+are selected.
+
+Profitability scores (in millions):
+Center 0: 12    Center 1: 9     Center 2: 14    Center 3: 11
+Center 4: 8     Center 5: 13    Center 6: 10    Center 7: 6
+Center 8: 15    Center 9: 7     Center 10: 11   Center 11: 9
+Center 12: 8    Center 13: 12   Center 14: 10   Center 15: 7
+Center 16: 13   Center 17: 6
+
+Direct connections (cannot both be selected):
+0-1, 0-4, 0-8
+1-2, 1-5, 1-9
+2-3, 2-6, 2-10
+3-7, 3-11
+4-5, 4-12
+5-6, 5-13
+6-7, 6-14
+7-15
+8-9, 8-12, 8-16
+9-10, 9-13
+10-11, 10-14
+11-15, 11-17
+12-13, 12-16
+13-14, 13-17
+14-15
+16-17
+0-5, 1-8, 2-12, 3-13, 4-10, 6-16, 7-12, 9-14, 11-16
+
+Which distribution centers should be selected for the new product 
+deployment to maximize total profitability, and what is that maximum?
+
+Reply with only the selected centers and the total profitability.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",5,14324,0.0235,0.0,0.0,18

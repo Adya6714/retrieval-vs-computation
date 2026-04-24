@@ -1,0 +1,1718 @@
+problem_id,variant_type,problem_text,correct_answer,problem_family,problem_subtype,difficulty,contamination_pole,source,verifier_function,difficulty_params,notes
+CC_01,canonical,"""You have coins with the following denominations: [1,3,4,7]. You need to make exact change for 6 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [3, 3]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,3,4,7],""target"":6,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [3, 3]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_01,W1,"The available coin denominations are [1, 3, 4, 7]. Using the fewest coins possible, what combination of these coins adds up exactly to 6? Each denomination may be repeated as needed. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+ Coins: [3, 3]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,3,4,7],""target"":6,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [3, 3]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_01,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 3, 4, 7] |
+ | Target amount | 6 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [3, 3]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,3,4,7],""target"":6,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [3, 3]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_01,W3,"""A chef is preparing a dish and needs to measure out exactly 6 grams of a spice. She has measuring scoops of the following sizes: 1 g, 3 g, 4 g, 7 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 2
+ Scoops: [3, 3]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,3,4,7],""target"":6,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [3, 3]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_01,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 3, 4, 7\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 6$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 6$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 6$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [3, 3]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,3,4,7],""target"":6,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [3, 3]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_02,canonical,"""You have coins with the following denominations: [1, 5, 6, 9]. You need to make exact change for 11 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [5, 6]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,5,6,9],""target"":11,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [5, 6]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_02,W1,"Given coin denominations of [1, 5, 6, 9], what is the smallest number of coins that can be combined to total exactly 11? Any denomination can be used more than once. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+ Coins: [5, 6]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,5,6,9],""target"":11,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [5, 6]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_02,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 5, 6, 9] |
+ | Target amount | 11 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [5, 6]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,5,6,9],""target"":11,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [5, 6]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_02,W3,"A chef is preparing a dish and needs to measure out exactly 11 grams of a spice. She has measuring scoops of the following sizes: 1 g, 5 g, 6 g, 9 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.","Total: 2
+ Scoops: [5, 6]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,5,6,9],""target"":11,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [5, 6]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_02,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 5, 6, 9\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 11$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 11$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 11$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [5, 6]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,5,6,9],""target"":11,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [5, 6]"",""difficulty_numeric"":4,""critical_step_index"":0}",
+CC_03,canonical,"""You have coins with the following denominations: [1, 6, 7, 9, 11]. You need to make exact change for 13 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [6, 7]",Coin Change,coin_change,Medium,Medium,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,7,9,11],""target"":13,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [6, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_03,W1,"With coins of denominations [1, 6, 7, 9, 11] at your disposal, find the minimum number of coins required to reach a total of exactly 13. Denominations may be reused any number of times. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+ Coins: [6, 7]",Coin Change,coin_change,Medium,Medium,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,7,9,11],""target"":13,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [6, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_03,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 6, 7, 9, 11] |
+ | Target amount | 13 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [6, 7]",Coin Change,coin_change,Medium,Medium,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,7,9,11],""target"":13,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [6, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_03,W3,"A chef is preparing a dish and needs to measure out exactly 13 grams of a spice. She has measuring scoops of the following sizes: 1 g, 6 g, 7 g, 9 g, 11 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.","Total: 2
+ Scoops: [6, 7]",Coin Change,coin_change,Medium,Medium,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,7,9,11],""target"":13,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [6, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_03,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 6, 7, 9, 11\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 13$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 13$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 13$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [6, 7]",Coin Change,coin_change,Medium,Medium,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,7,9,11],""target"":13,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [6, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_04,canonical,"""You have coins with the following denominations: [1, 7, 10, 14, 17, 23]. You need to make exact change for 27 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [17, 10]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,10,14,17,23],""target"":27,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [17, 10]"",""difficulty_numeric"":6,""critical_step_index"":0}",
+CC_04,W1,"Using coins from the denominations [1, 7, 10, 14, 17, 23], what is the least number of coins needed to make exactly 27? Each denomination can be used as many times as necessary. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+Coins: [17, 10]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,10,14,17,23],""target"":27,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [17, 10]"",""difficulty_numeric"":6,""critical_step_index"":0}",
+CC_04,W2," **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 7, 10, 14, 17, 23] |
+ | Target amount | 27 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [17, 10]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,10,14,17,23],""target"":27,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [17, 10]"",""difficulty_numeric"":6,""critical_step_index"":0}",
+CC_04,W3,"""A chef is preparing a dish and needs to measure out exactly 27 grams of a spice. She has measuring scoops of the following sizes: 1 g, 7 g, 10 g, 14 g, 17 g, 23 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 2
+Scoops: [17, 10]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,10,14,17,23],""target"":27,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [17, 10]"",""difficulty_numeric"":6,""critical_step_index"":0}",
+CC_04,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 7, 10, 14, 17, 23\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 27$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (CurrentSum + c) <= 27$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach CurrentSum = 27.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+Coins: [17, 10]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,10,14,17,23],""target"":27,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [17, 10]"",""difficulty_numeric"":6,""critical_step_index"":0}",
+CC_05,canonical,"""You have coins with the following denominations: [1, 4, 6, 7, 11]. You need to make exact change for 14 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,6,7,11],""target"":14,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_05,W1,"From the denominations [1, 4, 6, 7, 11], determine the minimum number of coins that sum to exactly 14. You are free to use any denomination multiple times. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+ Coins: [7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,6,7,11],""target"":14,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_05,W2," **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 4, 6, 7, 11] |
+ | Target amount | 14 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,6,7,11],""target"":14,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_05,W3,"""A chef is preparing a dish and needs to measure out exactly 14 grams of a spice. She has measuring scoops of the following sizes: 1 g, 4 g, 6 g, 7 g, 11 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 2
+ Scoops: [7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,6,7,11],""target"":14,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_05,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 4, 6, 7, 11\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 14$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (CurrentSum + c) <= 14$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach CurrentSum = 14.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,6,7,11],""target"":14,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_06,canonical,"""You have coins with the following denominations: [1, 7, 8, 12, 15]. You need to make exact change for 26 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 3
+ Coins: [12, 7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,8,12,15],""target"":26,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 3\n Coins: [12, 7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_06,W1,"Given that the available denominations are [1, 7, 8, 12, 15], what is the fewest number of coins that can be used to make exact change for 26? Repetition of denominations is allowed. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 3
+ Coins: [12, 7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,8,12,15],""target"":26,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 3\n Coins: [12, 7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_06,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 7, 8, 12, 15] |
+ | Target amount | 26 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 3
+ Coins: [12, 7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,8,12,15],""target"":26,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 3\n Coins: [12, 7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_06,W3,"""A chef is preparing a dish and needs to measure out exactly 26 grams of a spice. She has measuring scoops of the following sizes: 1 g, 7 g, 8 g, 12 g, 15g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 3
+ Scoops: [12, 7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,8,12,15],""target"":26,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 3\n Coins: [12, 7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_06,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 7, 8, 12, 15\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 26$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 26$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 26$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 3
+ Coins: [12, 7, 7]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,7,8,12,15],""target"":26,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 3\n Coins: [12, 7, 7]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_07,canonical,"""You have coins with the following denominations: [1, 4, 5, 8, 9]. You need to make exact change for 12 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [8, 4]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,5,8,9],""target"":12,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [8, 4]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_07,W1,"With denominations [1, 4, 5, 8, 9] available, what is the minimum number of coins required to total exactly 12? Each denomination may be used any number of times. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+Coins: [8, 4]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,5,8,9],""target"":12,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [8, 4]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_07,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 4, 5, 8, 9] |
+ | Target amount | 12 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+Coins: [8, 4]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,5,8,9],""target"":12,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [8, 4]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_07,W3,"""A chef is preparing a dish and needs to measure out exactly 12 grams of a spice. She has measuring scoops of the following sizes: 1 g, 4 g, 5 g, 8 g, 9 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 2
+Scoops: [8, 4]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,5,8,9],""target"":12,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [8, 4]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_07,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 4, 5, 8, 9\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 12$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 12$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 12$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+Coins: [8, 4]",Coin Change,coin_change,Hard,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,4,5,8,9],""target"":12,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\nCoins: [8, 4]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_08,canonical,"""You have coins with the following denominations: [1, 6, 10, 15, 25]. You need to make exact change for 30 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [15, 15]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,10,15,25],""target"":30,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [15, 15]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_08,W1,"Using only coins from the denominations [1, 6, 10, 15, 25], what is the smallest number of coins that combine to make exactly 30? Any denomination can be used more than once. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 2
+ Coins: [15, 15]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,10,15,25],""target"":30,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [15, 15]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_08,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [1, 6, 10, 15, 25] |
+ | Target amount | 30 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 2
+ Coins: [15, 15]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,10,15,25],""target"":30,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [15, 15]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_08,W3,"""A chef is preparing a dish and needs to measure out exactly 30 grams of a spice. She has measuring scoops of the following sizes: 1 g, 6 g, 10 g, 15 g, 25 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 2
+ Scoops: [15, 15]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,10,15,25],""target"":30,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [15, 15]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_08,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{1, 6, 10, 15, 25\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 30$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 30$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 30$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 2
+ Coins: [15, 15]",Coin Change,coin_change,Easy,High,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[1,6,10,15,25],""target"":30,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 2\n Coins: [15, 15]"",""difficulty_numeric"":5,""critical_step_index"":0}",
+CC_09,canonical,"""You have coins with the following denominations: [7, 11, 17, 31, 67, 197]. You need to make exact change for 423 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 5
+ Coins: [197, 197, 11, 11, 7]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197],""target"":423,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 5\n Coins: [197, 197, 11, 11, 7]"",""difficulty_numeric"":6,""critical_step_index"":2}",
+CC_09,W1,"From the set of coin denominations [7, 11, 17, 31, 67, 197], find the fewest coins that add up to exactly 423. You may reuse any denomination as many times as needed. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 5
+ Coins: [197, 197, 11, 11, 7]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197],""target"":423,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 5\n Coins: [197, 197, 11, 11, 7]"",""difficulty_numeric"":6,""critical_step_index"":2}",
+CC_09,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [7, 11, 17, 31, 67, 197] |
+ | Target amount | 423 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 5
+ Coins: [197, 197, 11, 11, 7]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197],""target"":423,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 5\n Coins: [197, 197, 11, 11, 7]"",""difficulty_numeric"":6,""critical_step_index"":2}",
+CC_09,W3,"""A chef is preparing a dish and needs to measure out exactly 423 grams of a spice. She has measuring scoops of the following sizes: 7 g, 11 g, 17 g, 31 g, 67 g, 197 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 5
+ Scoops: [197, 197, 11, 11, 7]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197],""target"":423,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 5\n Coins: [197, 197, 11, 11, 7]"",""difficulty_numeric"":6,""critical_step_index"":2}",
+CC_09,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{7, 11, 17, 31, 67, 197\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 423$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 423$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 423$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 5
+ Coins: [197, 197, 11, 11, 7]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197],""target"":423,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 5\n Coins: [197, 197, 11, 11, 7]"",""difficulty_numeric"":6,""critical_step_index"":2}",
+CC_10,canonical,"""You have coins with the following denominations: [7, 11, 17, 31, 67, 197, 201]. You need to make exact change for 965 using the minimum number of coins. You may use each denomination any number of times.
+ What is the minimum number of coins needed and which coins do you use?
+ Respond in this exact format:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.""","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197,201],""target"":965,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 7\n Coins: [201, 201, 201, 197, 67, 67, 31]"",""difficulty_numeric"":7,""critical_step_index"":3}",
+CC_10,W1,"Given denominations [7, 11, 17, 31, 67, 197, 201], what is the minimum number of coins needed to reach a total of exactly 965? Each denomination is available for unlimited use. Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197,201],""target"":965,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 7\n Coins: [201, 201, 201, 197, 67, 67, 31]"",""difficulty_numeric"":7,""critical_step_index"":3}",
+CC_10,W2,"---
+ 
+ **Problem Parameters:**
+ 
+ | Parameter | Value |
+ | ----------------------- | ------------------------------------------------------------- |
+ | Available denominations | [7, 11, 17, 31, 67, 197, 201] |
+ | Target amount | 965 |
+ | Coin supply | Unlimited (each denomination can be used any number of times) |
+ | Objective | Minimize the total number of coins used |
+ 
+ **Constraints:**
+ 
+ * You may only use the denominations listed above
+ * You must reach the target amount exactly
+ * Each denomination may be used multiple times
+ 
+ Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text.""","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197,201],""target"":965,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 7\n Coins: [201, 201, 201, 197, 67, 67, 31]"",""difficulty_numeric"":7,""critical_step_index"":3}",
+CC_10,W3,"""A chef is preparing a dish and needs to measure out exactly 965 grams of a spice. She has measuring scoops of the following sizes: 7 g, 11 g, 17 g, 31 g, 67 g, 197 g, 201 g. She wants to use the fewest scoops possible, and can reuse any scoop size as many times as needed.
+ What is the minimum number of scoops needed, and which scoop sizes does she use?
+ Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text.""","Total: 7
+ Scoops: [201, 201, 201, 197, 67, 67, 31]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197,201],""target"":965,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 7\n Coins: [201, 201, 201, 197, 67, 67, 31]"",""difficulty_numeric"":7,""critical_step_index"":3}",
+CC_10,W4,"FORMAL DEFINITION: $\pi = \langle D, S_0, S^*, A \rangle$
+ DENOMINATIONS: $D = \{7, 11, 17, 31, 67, 197, 201\}$
+ INITIAL STATE $S_0$: $\text{CurrentSum} = 0$
+ GOAL STATE $S^*$: $\text{CurrentSum} = 965$
+ ACTIONS:
+ SelectCoin($c$):
+ Pre: $c \in D, (\text{CurrentSum} + c) \le 965$
+ Effect: $\text{CurrentSum} \leftarrow \text{CurrentSum} + c$
+ TASK: Find the shortest sequence of actions to reach $\text{CurrentSum} = 965$.
+ OUTPUT FORMAT:
+ Count: [integer]
+ Coins: [denomination1, denomination2, ...]
+ No explanation. No other text.","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",Coin Change,coin_change,Medium,Low,,verify_coinchange,"{""subtype"":""CC"",""denominations"":[7,11,17,31,67,197,201],""target"":965,""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Count: 7\n Coins: [201, 201, 201, 197, 67, 67, 31]"",""difficulty_numeric"":7,""critical_step_index"":3}",
+SP_001,canonical,"A delivery driver starts their shift at Warehouse 0 and needs to deliver a 
+package to Customer 11 across a city of 12 locations (0-11). Every road is 
+one-way. The one-way road network and travel times in minutes are:
+
+- Warehouse 0 to Depot 2: 3 mins
+- Warehouse 0 to Stopover 5: 8 mins
+- Warehouse 0 to Suburb 1: 6 mins
+- Suburb 1 to Junction 3: 4 mins
+- Suburb 1 to Overpass 6: 7 mins
+- Depot 2 to Parkway 4: 5 mins
+- Depot 2 to Overpass 6: 9 mins
+- Junction 3 to Terminal 7: 3 mins
+- Junction 3 to Shelter 8: 6 mins
+- Parkway 4 to Terminal 7: 8 mins
+- Parkway 4 to Bypass 9: 4 mins
+- Stopover 5 to Bypass 9: 3 mins
+- Stopover 5 to Crossing 10: 6 mins
+- Overpass 6 to Crossing 10: 4 mins
+- Overpass 6 to Shelter 8: 5 mins
+- Terminal 7 to Customer 11: 6 mins
+- Shelter 8 to Customer 11: 4 mins
+- Bypass 9 to Crossing 10: 5 mins
+- Crossing 10 to Customer 11: 3 mins
+- Junction 3 to Customer 11: 15 mins
+- Suburb 1 to Bypass 9: 12 mins
+- Warehouse 0 to Terminal 7: 18 mins
+- Depot 2 to Shelter 8: 14 mins
+
+What is the fastest route from Warehouse 0 to Customer 11, and how long 
+will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 5 → 10 → 11, Cost: 17",Algorithmic Suit,shortest_path,Easy,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":11,""graph"":[{""u"":0,""v"":2,""w"":3},{""u"":0,""v"":5,""w"":8},{""u"":0,""v"":1,""w"":6},{""u"":1,""v"":3,""w"":4},{""u"":1,""v"":6,""w"":7},{""u"":2,""v"":4,""w"":5},{""u"":2,""v"":6,""w"":9},{""u"":3,""v"":7,""w"":3},{""u"":3,""v"":8,""w"":6},{""u"":4,""v"":7,""w"":8},{""u"":4,""v"":9,""w"":4},{""u"":5,""v"":9,""w"":3},{""u"":5,""v"":10,""w"":6},{""u"":6,""v"":10,""w"":4},{""u"":6,""v"":8,""w"":5},{""u"":7,""v"":11,""w"":6},{""u"":8,""v"":11,""w"":4},{""u"":9,""v"":10,""w"":5},{""u"":10,""v"":11,""w"":3},{""u"":3,""v"":11,""w"":15},{""u"":1,""v"":9,""w"":12},{""u"":0,""v"":7,""w"":18},{""u"":2,""v"":8,""w"":14}],""num_vertices"":12,""instance_type"":""standard"",""greedy_answer"":""Path: 0 \u2192 5 \u2192 10 \u2192 11, Cost: 17"",""greedy_succeeds"":true,""difficulty_numeric"":12,""critical_step_index"":-1}","12 nodes, bidirectional"
+SP_001,W1,"A courier begins their work shift at Distribution Hub 0 and must drop off a parcel to Recipient 11 across a metropolitan area containing 12 stops (numbered 0 through 11). All streets run in a single direction only. The one-way street layout and transit durations in minutes are: - Distribution Hub 0 to Sorting Center 2: 3 mins - Distribution Hub 0 to Midpoint 5: 8 mins - Distribution Hub 0 to Residential Zone 1: 6 mins - Residential Zone 1 to Interchange 3: 4 mins - Residential Zone 1 to Flyover 6: 7 mins - Sorting Center 2 to Boulevard 4: 5 mins - Sorting Center 2 to Flyover 6: 9 mins - Interchange 3 to Hub 7: 3 mins - Interchange 3 to Waystation 8: 6 mins - Boulevard 4 to Hub 7: 8 mins - Boulevard 4 to Detour 9: 4 mins - Midpoint 5 to Detour 9: 3 mins - Midpoint 5 to Intersection 10: 6 mins - Flyover 6 to Intersection 10: 4 mins - Flyover 6 to Waystation 8: 5 mins - Hub 7 to Recipient 11: 6 mins - Waystation 8 to Recipient 11: 4 mins - Detour 9 to Intersection 10: 5 mins - Intersection 10 to Recipient 11: 3 mins - Interchange 3 to Recipient 11: 15 mins - Residential Zone 1 to Detour 9: 12 mins - Distribution Hub 0 to Hub 7: 18 mins - Sorting Center 2 to Waystation 8: 14 mins What is the shortest route from Distribution Hub 0 to Recipient 11, and what will the total travel time be? Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X","Path: 0 → 5 → 10 → 11, Cost: 17",Algorithmic Suit,shortest_path,Easy,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":11,""graph"":[{""u"":0,""v"":2,""w"":3},{""u"":0,""v"":5,""w"":8},{""u"":0,""v"":1,""w"":6},{""u"":1,""v"":3,""w"":4},{""u"":1,""v"":6,""w"":7},{""u"":2,""v"":4,""w"":5},{""u"":2,""v"":6,""w"":9},{""u"":3,""v"":7,""w"":3},{""u"":3,""v"":8,""w"":6},{""u"":4,""v"":7,""w"":8},{""u"":4,""v"":9,""w"":4},{""u"":5,""v"":9,""w"":3},{""u"":5,""v"":10,""w"":6},{""u"":6,""v"":10,""w"":4},{""u"":6,""v"":8,""w"":5},{""u"":7,""v"":11,""w"":6},{""u"":8,""v"":11,""w"":4},{""u"":9,""v"":10,""w"":5},{""u"":10,""v"":11,""w"":3},{""u"":3,""v"":11,""w"":15},{""u"":1,""v"":9,""w"":12},{""u"":0,""v"":7,""w"":18},{""u"":2,""v"":8,""w"":14}],""num_vertices"":12,""instance_type"":""standard"",""greedy_answer"":""Path: 0 \u2192 5 \u2192 10 \u2192 11, Cost: 17"",""greedy_succeeds"":true,""difficulty_numeric"":12,""critical_step_index"":-1}","12 nodes, bidirectional"
+SP_001,W2,"| From | To | Time (mins) |
+|------|----|-------------|
+| Warehouse 0 | Depot 2 | 3 |
+| Warehouse 0 | Stopover 5 | 8 |
+| Warehouse 0 | Suburb 1 | 6 |
+| Suburb 1 | Junction 3 | 4 |
+| Suburb 1 | Overpass 6 | 7 |
+| Suburb 1 | Bypass 9 | 12 |
+| Depot 2 | Parkway 4 | 5 |
+| Depot 2 | Overpass 6 | 9 |
+| Depot 2 | Shelter 8 | 14 |
+| Junction 3 | Terminal 7 | 3 |
+| Junction 3 | Shelter 8 | 6 |
+| Junction 3 | Customer 11 | 15 |
+| Parkway 4 | Terminal 7 | 8 |
+| Parkway 4 | Bypass 9 | 4 |
+| Stopover 5 | Bypass 9 | 3 |
+| Stopover 5 | Crossing 10 | 6 |
+| Overpass 6 | Crossing 10 | 4 |
+| Overpass 6 | Shelter 8 | 5 |
+| Terminal 7 | Customer 11 | 6 |
+| Shelter 8 | Customer 11 | 4 |
+| Bypass 9 | Crossing 10 | 5 |
+| Crossing 10 | Customer 11 | 3 |
+| Warehouse 0 | Terminal 7 | 18 |
+
+**Question:** What is the fastest route from Warehouse 0 to Customer 11 in a 12-node (0–11) one-way road network? Reply as: `Path: X → X → X, Cost: X`","Path: 0 → 5 → 10 → 11, Cost: 17",Algorithmic Suit,shortest_path,Easy,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":11,""graph"":[{""u"":0,""v"":2,""w"":3},{""u"":0,""v"":5,""w"":8},{""u"":0,""v"":1,""w"":6},{""u"":1,""v"":3,""w"":4},{""u"":1,""v"":6,""w"":7},{""u"":2,""v"":4,""w"":5},{""u"":2,""v"":6,""w"":9},{""u"":3,""v"":7,""w"":3},{""u"":3,""v"":8,""w"":6},{""u"":4,""v"":7,""w"":8},{""u"":4,""v"":9,""w"":4},{""u"":5,""v"":9,""w"":3},{""u"":5,""v"":10,""w"":6},{""u"":6,""v"":10,""w"":4},{""u"":6,""v"":8,""w"":5},{""u"":7,""v"":11,""w"":6},{""u"":8,""v"":11,""w"":4},{""u"":9,""v"":10,""w"":5},{""u"":10,""v"":11,""w"":3},{""u"":3,""v"":11,""w"":15},{""u"":1,""v"":9,""w"":12},{""u"":0,""v"":7,""w"":18},{""u"":2,""v"":8,""w"":14}],""num_vertices"":12,""instance_type"":""standard"",""greedy_answer"":""Path: 0 \u2192 5 \u2192 10 \u2192 11, Cost: 17"",""greedy_succeeds"":true,""difficulty_numeric"":12,""critical_step_index"":-1}","12 nodes, bidirectional"
+SP_001,W3,"""A courier sets out from Hub A and must reach Destination L, navigating through a city comprising 12 checkpoints (A through L). All streets are strictly one-directional, meaning there is no possibility of reversing along a used road. The available routes and their corresponding travel durations are: Hub A → Hub C: 3 mins, Hub A → Hub F: 8 mins, Hub A → Hub B: 6 mins, Hub B → Hub D: 4 mins, Hub B → Hub G: 7 mins, Hub C → Hub E: 5 mins, Hub C → Hub G: 9 mins, Hub D → Hub H: 3 mins, Hub D → Hub I: 6 mins, Hub E → Hub H: 8 mins, Hub E → Hub J: 4 mins, Hub F → Hub J: 3 mins, Hub F → Hub K: 6 mins, Hub G → Hub K: 4 mins, Hub G → Hub I: 5 mins, Hub H → Destination L: 6 mins, Hub I → Destination L: 4 mins, Hub J → Hub K: 5 mins, Hub K → Destination L: 3 mins, Hub D → Destination L: 15 mins, Hub B → Hub J: 12 mins, Hub A → Hub H: 18 mins, Hub C → Hub I: 14 mins. Among all possible routes from Hub A to Destination L, which sequence of checkpoints results in the least total travel time, and what is that minimum duration?
+Reply with only the path as a sequence of hubs and the total cost.
+Format: Path: X -> X -> X, Cost: X""","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",Algorithmic Suit,shortest_path,Easy,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":11,""graph"":[{""u"":0,""v"":2,""w"":3},{""u"":0,""v"":5,""w"":8},{""u"":0,""v"":1,""w"":6},{""u"":1,""v"":3,""w"":4},{""u"":1,""v"":6,""w"":7},{""u"":2,""v"":4,""w"":5},{""u"":2,""v"":6,""w"":9},{""u"":3,""v"":7,""w"":3},{""u"":3,""v"":8,""w"":6},{""u"":4,""v"":7,""w"":8},{""u"":4,""v"":9,""w"":4},{""u"":5,""v"":9,""w"":3},{""u"":5,""v"":10,""w"":6},{""u"":6,""v"":10,""w"":4},{""u"":6,""v"":8,""w"":5},{""u"":7,""v"":11,""w"":6},{""u"":8,""v"":11,""w"":4},{""u"":9,""v"":10,""w"":5},{""u"":10,""v"":11,""w"":3},{""u"":3,""v"":11,""w"":15},{""u"":1,""v"":9,""w"":12},{""u"":0,""v"":7,""w"":18},{""u"":2,""v"":8,""w"":14}],""num_vertices"":12,""instance_type"":""standard"",""greedy_answer"":""Path: 0 \u2192 5 \u2192 10 \u2192 11, Cost: 17"",""greedy_succeeds"":true,""difficulty_numeric"":12,""critical_step_index"":-1,""node_mapping"":{""0"":""Hub A"",""1"":""Hub B"",""2"":""Hub C"",""3"":""Hub D"",""4"":""Hub E"",""5"":""Hub F"",""6"":""Hub G"",""7"":""Hub H"",""8"":""Hub I"",""9"":""Hub J"",""10"":""Hub K"",""11"":""Hub L""}}","12 nodes, bidirectional"
+SP_001,W4,"Let G = (V, E, w) be a weighted directed graph where:
+
+- V = {0, 1, 2, ..., 11} is the set of nodes
+- E is the set of directed edges (one-way roads)
+- w(u, v) is the travel time in minutes for edge (u, v)
+
+Edge list in the form (u, v, w(u,v)):
+
+(0,2,3), (0,5,8), (0,1,6), (1,3,4), (1,6,7), (2,4,5), (2,6,9), (3,7,3), (3,8,6), (4,7,8), (4,9,4), (5,9,3), (5,10,6), (6,10,4), (6,8,5), (7,11,6), (8,11,4), (9,10,5), (10,11,3), (3,11,15), (1,9,12), (0,7,18), (2,8,14)
+
+Objective:
+
+Find a directed path P* = (v_0, v_1, ..., v_k) where v_0 = 0, v_k = 11, and each (v_i, v_{i+1}) is in E, such that the total cost:
+
+cost(P) = sum of w(v_i, v_{i+1}) for all consecutive pairs in P
+
+is minimized over all valid directed paths from node 0 to node 11.
+
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 5 → 10 → 11, Cost: 17",Algorithmic Suit,shortest_path,Easy,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":11,""graph"":[{""u"":0,""v"":2,""w"":3},{""u"":0,""v"":5,""w"":8},{""u"":0,""v"":1,""w"":6},{""u"":1,""v"":3,""w"":4},{""u"":1,""v"":6,""w"":7},{""u"":2,""v"":4,""w"":5},{""u"":2,""v"":6,""w"":9},{""u"":3,""v"":7,""w"":3},{""u"":3,""v"":8,""w"":6},{""u"":4,""v"":7,""w"":8},{""u"":4,""v"":9,""w"":4},{""u"":5,""v"":9,""w"":3},{""u"":5,""v"":10,""w"":6},{""u"":6,""v"":10,""w"":4},{""u"":6,""v"":8,""w"":5},{""u"":7,""v"":11,""w"":6},{""u"":8,""v"":11,""w"":4},{""u"":9,""v"":10,""w"":5},{""u"":10,""v"":11,""w"":3},{""u"":3,""v"":11,""w"":15},{""u"":1,""v"":9,""w"":12},{""u"":0,""v"":7,""w"":18},{""u"":2,""v"":8,""w"":14}],""num_vertices"":12,""instance_type"":""standard"",""greedy_answer"":""Path: 0 \u2192 5 \u2192 10 \u2192 11, Cost: 17"",""greedy_succeeds"":true,""difficulty_numeric"":12,""critical_step_index"":-1}","12 nodes, bidirectional"
+SP_002,canonical,"An expedition team sets out from Base Camp 16 and must reach Summit Lodge 11 
+across a mountain range. The range has 25 locations (0-24) connected by 
+two-way trails. The trail network and travel times in hours are:
+
+- Base Camp 16 and Waypoint 12: 4 hrs
+- Waypoint 12 and Waypoint 9: 3 hrs
+- Waypoint 9 and Waypoint 19: 5 hrs
+- Waypoint 19 and Waypoint 18: 4 hrs
+- Waypoint 18 and Waypoint 6: 3 hrs
+- Waypoint 6 and Waypoint 5: 5 hrs
+- Waypoint 5 and Waypoint 10: 4 hrs
+- Waypoint 10 and Waypoint 15: 3 hrs
+- Waypoint 15 and Waypoint 21: 5 hrs
+- Waypoint 21 and Summit Lodge 11: 4 hrs
+- Base Camp 16 and Waypoint 9: 9 hrs
+- Base Camp 16 and Waypoint 19: 14 hrs
+- Waypoint 12 and Waypoint 19: 10 hrs
+- Waypoint 12 and Waypoint 18: 14 hrs
+- Waypoint 9 and Waypoint 18: 11 hrs
+- Waypoint 9 and Waypoint 6: 14 hrs
+- Waypoint 19 and Waypoint 6: 9 hrs
+- Waypoint 5 and Waypoint 15: 9 hrs
+- Waypoint 5 and Waypoint 21: 14 hrs
+- Waypoint 10 and Waypoint 21: 10 hrs
+- Waypoint 10 and Summit Lodge 11: 14 hrs
+- Waypoint 15 and Summit Lodge 11: 11 hrs
+- Base Camp 16 and Side Camp 17: 6 hrs
+- Base Camp 16 and Side Camp 1: 8 hrs
+- Waypoint 12 and Side Camp 14: 5 hrs
+- Waypoint 12 and Side Camp 22: 7 hrs
+- Waypoint 9 and Side Camp 13: 6 hrs
+- Waypoint 9 and Side Camp 2: 8 hrs
+- Waypoint 19 and Side Camp 23: 7 hrs
+- Waypoint 19 and Side Camp 4: 5 hrs
+- Waypoint 18 and Side Camp 24: 6 hrs
+- Waypoint 18 and Side Camp 7: 8 hrs
+- Waypoint 6 and Side Camp 8: 7 hrs
+- Waypoint 6 and Side Camp 0: 5 hrs
+- Side Camp 17 and Side Camp 14: 4 hrs
+- Side Camp 17 and Side Camp 13: 6 hrs
+- Side Camp 1 and Side Camp 22: 5 hrs
+- Side Camp 1 and Side Camp 2: 7 hrs
+- Side Camp 14 and Side Camp 23: 4 hrs
+- Side Camp 22 and Side Camp 4: 6 hrs
+- Side Camp 13 and Side Camp 24: 5 hrs
+- Side Camp 2 and Side Camp 7: 7 hrs
+- Side Camp 23 and Side Camp 8: 4 hrs
+- Side Camp 4 and Side Camp 0: 6 hrs
+- Side Camp 24 and Side Camp 3: 5 hrs
+- Side Camp 7 and Side Camp 20: 7 hrs
+- Side Camp 8 and Side Camp 3: 4 hrs
+- Side Camp 0 and Side Camp 20: 6 hrs
+- Side Camp 3 and Side Camp 20: 3 hrs
+- Side Camp 17 and Side Camp 20: 9 hrs
+
+What is the fastest route from Base Camp 16 to Summit Lodge 11, and how 
+long will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",Algorithmic Suit,shortest_path,Medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":16,""target"":11,""graph"":[{""u"":16,""v"":12,""w"":4},{""u"":12,""v"":9,""w"":3},{""u"":9,""v"":19,""w"":5},{""u"":19,""v"":18,""w"":4},{""u"":18,""v"":6,""w"":3},{""u"":6,""v"":5,""w"":5},{""u"":5,""v"":10,""w"":4},{""u"":10,""v"":15,""w"":3},{""u"":15,""v"":21,""w"":5},{""u"":21,""v"":11,""w"":4},{""u"":16,""v"":9,""w"":9},{""u"":16,""v"":19,""w"":14},{""u"":12,""v"":19,""w"":10},{""u"":12,""v"":18,""w"":14},{""u"":9,""v"":18,""w"":11},{""u"":9,""v"":6,""w"":14},{""u"":19,""v"":6,""w"":9},{""u"":5,""v"":15,""w"":9},{""u"":5,""v"":21,""w"":14},{""u"":10,""v"":21,""w"":10},{""u"":10,""v"":11,""w"":14},{""u"":15,""v"":11,""w"":11},{""u"":16,""v"":17,""w"":6},{""u"":16,""v"":1,""w"":8},{""u"":12,""v"":14,""w"":5},{""u"":12,""v"":22,""w"":7},{""u"":9,""v"":13,""w"":6},{""u"":9,""v"":2,""w"":8},{""u"":19,""v"":23,""w"":7},{""u"":19,""v"":4,""w"":5},{""u"":18,""v"":24,""w"":6},{""u"":18,""v"":7,""w"":8},{""u"":6,""v"":8,""w"":7},{""u"":6,""v"":0,""w"":5},{""u"":17,""v"":14,""w"":4},{""u"":17,""v"":13,""w"":6},{""u"":1,""v"":22,""w"":5},{""u"":1,""v"":2,""w"":7},{""u"":14,""v"":23,""w"":4},{""u"":22,""v"":4,""w"":6},{""u"":13,""v"":24,""w"":5},{""u"":2,""v"":7,""w"":7},{""u"":23,""v"":8,""w"":4},{""u"":4,""v"":0,""w"":6},{""u"":24,""v"":3,""w"":5},{""u"":7,""v"":20,""w"":7},{""u"":8,""v"":3,""w"":4},{""u"":0,""v"":20,""w"":6},{""u"":3,""v"":20,""w"":3},{""u"":17,""v"":20,""w"":9}],""num_vertices"":25,""instance_type"":""standard"",""greedy_answer"":""Path: 16 \u2192 12 \u2192 9 \u2192 19 \u2192 18 \u2192 6 \u2192 5 \u2192 10 \u2192 15 \u2192 21 \u2192 11, Cost: 40"",""greedy_succeeds"":true,""difficulty_numeric"":25,""critical_step_index"":-1}","25 nodes, bidirectional"
+SP_002,W1,"A mountaineering crew departs from Home Base 16 and must arrive at Peak Refuge 11 across a highland terrain. The terrain contains 25 checkpoints (0-24) linked by bidirectional footpaths. The footpath layout and journey durations in hours are: - Home Base 16 and Checkpoint 12: 4 hrs - Checkpoint 12 and Checkpoint 9: 3 hrs - Checkpoint 9 and Checkpoint 19: 5 hrs - Checkpoint 19 and Checkpoint 18: 4 hrs - Checkpoint 18 and Checkpoint 6: 3 hrs - Checkpoint 6 and Checkpoint 5: 5 hrs - Checkpoint 5 and Checkpoint 10: 4 hrs - Checkpoint 10 and Checkpoint 15: 3 hrs - Checkpoint 15 and Checkpoint 21: 5 hrs - Checkpoint 21 and Peak Refuge 11: 4 hrs - Home Base 16 and Checkpoint 9: 9 hrs - Home Base 16 and Checkpoint 19: 14 hrs - Checkpoint 12 and Checkpoint 19: 10 hrs - Checkpoint 12 and Checkpoint 18: 14 hrs - Checkpoint 9 and Checkpoint 18: 11 hrs - Checkpoint 9 and Checkpoint 6: 14 hrs - Checkpoint 19 and Checkpoint 6: 9 hrs - Checkpoint 5 and Checkpoint 15: 9 hrs - Checkpoint 5 and Checkpoint 21: 14 hrs - Checkpoint 10 and Checkpoint 21: 10 hrs - Checkpoint 10 and Peak Refuge 11: 14 hrs - Checkpoint 15 and Peak Refuge 11: 11 hrs - Home Base 16 and Outpost 17: 6 hrs - Home Base 16 and Outpost 1: 8 hrs - Checkpoint 12 and Outpost 14: 5 hrs - Checkpoint 12 and Outpost 22: 7 hrs - Checkpoint 9 and Outpost 13: 6 hrs - Checkpoint 9 and Outpost 2: 8 hrs - Checkpoint 19 and Outpost 23: 7 hrs - Checkpoint 19 and Outpost 4: 5 hrs - Checkpoint 18 and Outpost 24: 6 hrs - Checkpoint 18 and Outpost 7: 8 hrs - Checkpoint 6 and Outpost 8: 7 hrs - Checkpoint 6 and Outpost 0: 5 hrs - Outpost 17 and Outpost 14: 4 hrs - Outpost 17 and Outpost 13: 6 hrs - Outpost 1 and Outpost 22: 5 hrs - Outpost 1 and Outpost 2: 7 hrs - Outpost 14 and Outpost 23: 4 hrs - Outpost 22 and Outpost 4: 6 hrs - Outpost 13 and Outpost 24: 5 hrs - Outpost 2 and Outpost 7: 7 hrs - Outpost 23 and Outpost 8: 4 hrs - Outpost 4 and Outpost 0: 6 hrs - Outpost 24 and Outpost 3: 5 hrs - Outpost 7 and Outpost 20: 7 hrs - Outpost 8 and Outpost 3: 4 hrs - Outpost 0 and Outpost 20: 6 hrs - Outpost 3 and Outpost 20: 3 hrs - Outpost 17 and Outpost 20: 9 hrs What is the quickest path from Home Base 16 to Peak Refuge 11, and what will the total travel duration be? Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",Algorithmic Suit,shortest_path,Medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":16,""target"":11,""graph"":[{""u"":16,""v"":12,""w"":4},{""u"":12,""v"":9,""w"":3},{""u"":9,""v"":19,""w"":5},{""u"":19,""v"":18,""w"":4},{""u"":18,""v"":6,""w"":3},{""u"":6,""v"":5,""w"":5},{""u"":5,""v"":10,""w"":4},{""u"":10,""v"":15,""w"":3},{""u"":15,""v"":21,""w"":5},{""u"":21,""v"":11,""w"":4},{""u"":16,""v"":9,""w"":9},{""u"":16,""v"":19,""w"":14},{""u"":12,""v"":19,""w"":10},{""u"":12,""v"":18,""w"":14},{""u"":9,""v"":18,""w"":11},{""u"":9,""v"":6,""w"":14},{""u"":19,""v"":6,""w"":9},{""u"":5,""v"":15,""w"":9},{""u"":5,""v"":21,""w"":14},{""u"":10,""v"":21,""w"":10},{""u"":10,""v"":11,""w"":14},{""u"":15,""v"":11,""w"":11},{""u"":16,""v"":17,""w"":6},{""u"":16,""v"":1,""w"":8},{""u"":12,""v"":14,""w"":5},{""u"":12,""v"":22,""w"":7},{""u"":9,""v"":13,""w"":6},{""u"":9,""v"":2,""w"":8},{""u"":19,""v"":23,""w"":7},{""u"":19,""v"":4,""w"":5},{""u"":18,""v"":24,""w"":6},{""u"":18,""v"":7,""w"":8},{""u"":6,""v"":8,""w"":7},{""u"":6,""v"":0,""w"":5},{""u"":17,""v"":14,""w"":4},{""u"":17,""v"":13,""w"":6},{""u"":1,""v"":22,""w"":5},{""u"":1,""v"":2,""w"":7},{""u"":14,""v"":23,""w"":4},{""u"":22,""v"":4,""w"":6},{""u"":13,""v"":24,""w"":5},{""u"":2,""v"":7,""w"":7},{""u"":23,""v"":8,""w"":4},{""u"":4,""v"":0,""w"":6},{""u"":24,""v"":3,""w"":5},{""u"":7,""v"":20,""w"":7},{""u"":8,""v"":3,""w"":4},{""u"":0,""v"":20,""w"":6},{""u"":3,""v"":20,""w"":3},{""u"":17,""v"":20,""w"":9}],""num_vertices"":25,""instance_type"":""standard"",""greedy_answer"":""Path: 16 \u2192 12 \u2192 9 \u2192 19 \u2192 18 \u2192 6 \u2192 5 \u2192 10 \u2192 15 \u2192 21 \u2192 11, Cost: 40"",""greedy_succeeds"":true,""difficulty_numeric"":25,""critical_step_index"":-1}","25 nodes, bidirectional"
+SP_002,W2,"| From | To | Time (hrs) |
+|------|----|------------|
+| Base Camp 16 | Waypoint 12 | 4 |
+| Waypoint 12 | Waypoint 9 | 3 |
+| Waypoint 9 | Waypoint 19 | 5 |
+| Waypoint 19 | Waypoint 18 | 4 |
+| Waypoint 18 | Waypoint 6 | 3 |
+| Waypoint 6 | Waypoint 5 | 5 |
+| Waypoint 5 | Waypoint 10 | 4 |
+| Waypoint 10 | Waypoint 15 | 3 |
+| Waypoint 15 | Waypoint 21 | 5 |
+| Waypoint 21 | Summit Lodge 11 | 4 |
+| Base Camp 16 | Waypoint 9 | 9 |
+| Base Camp 16 | Waypoint 19 | 14 |
+| Waypoint 12 | Waypoint 19 | 10 |
+| Waypoint 12 | Waypoint 18 | 14 |
+| Waypoint 9 | Waypoint 18 | 11 |
+| Waypoint 9 | Waypoint 6 | 14 |
+| Waypoint 19 | Waypoint 6 | 9 |
+| Waypoint 5 | Waypoint 15 | 9 |
+| Waypoint 5 | Waypoint 21 | 14 |
+| Waypoint 10 | Waypoint 21 | 10 |
+| Waypoint 10 | Summit Lodge 11 | 14 |
+| Waypoint 15 | Summit Lodge 11 | 11 |
+| Base Camp 16 | Side Camp 17 | 6 |
+| Base Camp 16 | Side Camp 1 | 8 |
+| Waypoint 12 | Side Camp 14 | 5 |
+| Waypoint 12 | Side Camp 22 | 7 |
+| Waypoint 9 | Side Camp 13 | 6 |
+| Waypoint 9 | Side Camp 2 | 8 |
+| Waypoint 19 | Side Camp 23 | 7 |
+| Waypoint 19 | Side Camp 4 | 5 |
+| Waypoint 18 | Side Camp 24 | 6 |
+| Waypoint 18 | Side Camp 7 | 8 |
+| Waypoint 6 | Side Camp 8 | 7 |
+| Waypoint 6 | Side Camp 0 | 5 |
+| Side Camp 17 | Side Camp 14 | 4 |
+| Side Camp 17 | Side Camp 13 | 6 |
+| Side Camp 1 | Side Camp 22 | 5 |
+| Side Camp 1 | Side Camp 2 | 7 |
+| Side Camp 14 | Side Camp 23 | 4 |
+| Side Camp 22 | Side Camp 4 | 6 |
+| Side Camp 13 | Side Camp 24 | 5 |
+| Side Camp 2 | Side Camp 7 | 7 |
+| Side Camp 23 | Side Camp 8 | 4 |
+| Side Camp 4 | Side Camp 0 | 6 |
+| Side Camp 24 | Side Camp 3 | 5 |
+| Side Camp 7 | Side Camp 20 | 7 |
+| Side Camp 8 | Side Camp 3 | 4 |
+| Side Camp 0 | Side Camp 20 | 6 |
+| Side Camp 3 | Side Camp 20 | 3 |
+| Side Camp 17 | Side Camp 20 | 9 |
+
+**Note:** All trails are two-way.
+
+**Question:** What is the fastest route from Base Camp 16 to Summit Lodge 11 across the 25-location (0–24) mountain range? Reply as: `Path: X → X → X, Cost: X`","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",Algorithmic Suit,shortest_path,Medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":16,""target"":11,""graph"":[{""u"":16,""v"":12,""w"":4},{""u"":12,""v"":9,""w"":3},{""u"":9,""v"":19,""w"":5},{""u"":19,""v"":18,""w"":4},{""u"":18,""v"":6,""w"":3},{""u"":6,""v"":5,""w"":5},{""u"":5,""v"":10,""w"":4},{""u"":10,""v"":15,""w"":3},{""u"":15,""v"":21,""w"":5},{""u"":21,""v"":11,""w"":4},{""u"":16,""v"":9,""w"":9},{""u"":16,""v"":19,""w"":14},{""u"":12,""v"":19,""w"":10},{""u"":12,""v"":18,""w"":14},{""u"":9,""v"":18,""w"":11},{""u"":9,""v"":6,""w"":14},{""u"":19,""v"":6,""w"":9},{""u"":5,""v"":15,""w"":9},{""u"":5,""v"":21,""w"":14},{""u"":10,""v"":21,""w"":10},{""u"":10,""v"":11,""w"":14},{""u"":15,""v"":11,""w"":11},{""u"":16,""v"":17,""w"":6},{""u"":16,""v"":1,""w"":8},{""u"":12,""v"":14,""w"":5},{""u"":12,""v"":22,""w"":7},{""u"":9,""v"":13,""w"":6},{""u"":9,""v"":2,""w"":8},{""u"":19,""v"":23,""w"":7},{""u"":19,""v"":4,""w"":5},{""u"":18,""v"":24,""w"":6},{""u"":18,""v"":7,""w"":8},{""u"":6,""v"":8,""w"":7},{""u"":6,""v"":0,""w"":5},{""u"":17,""v"":14,""w"":4},{""u"":17,""v"":13,""w"":6},{""u"":1,""v"":22,""w"":5},{""u"":1,""v"":2,""w"":7},{""u"":14,""v"":23,""w"":4},{""u"":22,""v"":4,""w"":6},{""u"":13,""v"":24,""w"":5},{""u"":2,""v"":7,""w"":7},{""u"":23,""v"":8,""w"":4},{""u"":4,""v"":0,""w"":6},{""u"":24,""v"":3,""w"":5},{""u"":7,""v"":20,""w"":7},{""u"":8,""v"":3,""w"":4},{""u"":0,""v"":20,""w"":6},{""u"":3,""v"":20,""w"":3},{""u"":17,""v"":20,""w"":9}],""num_vertices"":25,""instance_type"":""standard"",""greedy_answer"":""Path: 16 \u2192 12 \u2192 9 \u2192 19 \u2192 18 \u2192 6 \u2192 5 \u2192 10 \u2192 15 \u2192 21 \u2192 11, Cost: 40"",""greedy_succeeds"":true,""difficulty_numeric"":25,""critical_step_index"":-1}","25 nodes, bidirectional"
+SP_002,W3,"""A network of 25 pumping stations (numbered 0–24) are interconnected by bidirectional pipelines, each carrying a flow resistance value measured in units. Water must be routed from Station 16 to Station 11 through the least resistant path. The resistance values between connected stations are: (16,12,4), (12,9,3), (9,19,5), (19,18,4), (18,6,3), (6,5,5), (5,10,4), (10,15,3), (15,21,5), (21,11,4), (16,9,9), (16,19,14), (12,19,10), (12,18,14), (9,18,11), (9,6,14), (19,6,9), (5,15,9), (5,21,14), (10,21,10), (10,11,14), (15,11,11), (16,17,6), (16,1,8), (12,14,5), (12,22,7), (9,13,6), (9,2,8), (19,23,7), (19,4,5), (18,24,6), (18,7,8), (6,8,7), (6,0,5), (17,14,4), (17,13,6), (1,22,5), (1,2,7), (14,23,4), (22,4,6), (13,24,5), (2,7,7), (23,8,4), (4,0,6), (24,3,5), (7,20,7), (8,3,4), (0,20,6), (3,20,3), (17,20,9). Through which sequence of stations should water be routed to minimize total resistance, and what is that minimum resistance value?
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X""","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",Algorithmic Suit,shortest_path,Medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":16,""target"":11,""graph"":[{""u"":16,""v"":12,""w"":4},{""u"":12,""v"":9,""w"":3},{""u"":9,""v"":19,""w"":5},{""u"":19,""v"":18,""w"":4},{""u"":18,""v"":6,""w"":3},{""u"":6,""v"":5,""w"":5},{""u"":5,""v"":10,""w"":4},{""u"":10,""v"":15,""w"":3},{""u"":15,""v"":21,""w"":5},{""u"":21,""v"":11,""w"":4},{""u"":16,""v"":9,""w"":9},{""u"":16,""v"":19,""w"":14},{""u"":12,""v"":19,""w"":10},{""u"":12,""v"":18,""w"":14},{""u"":9,""v"":18,""w"":11},{""u"":9,""v"":6,""w"":14},{""u"":19,""v"":6,""w"":9},{""u"":5,""v"":15,""w"":9},{""u"":5,""v"":21,""w"":14},{""u"":10,""v"":21,""w"":10},{""u"":10,""v"":11,""w"":14},{""u"":15,""v"":11,""w"":11},{""u"":16,""v"":17,""w"":6},{""u"":16,""v"":1,""w"":8},{""u"":12,""v"":14,""w"":5},{""u"":12,""v"":22,""w"":7},{""u"":9,""v"":13,""w"":6},{""u"":9,""v"":2,""w"":8},{""u"":19,""v"":23,""w"":7},{""u"":19,""v"":4,""w"":5},{""u"":18,""v"":24,""w"":6},{""u"":18,""v"":7,""w"":8},{""u"":6,""v"":8,""w"":7},{""u"":6,""v"":0,""w"":5},{""u"":17,""v"":14,""w"":4},{""u"":17,""v"":13,""w"":6},{""u"":1,""v"":22,""w"":5},{""u"":1,""v"":2,""w"":7},{""u"":14,""v"":23,""w"":4},{""u"":22,""v"":4,""w"":6},{""u"":13,""v"":24,""w"":5},{""u"":2,""v"":7,""w"":7},{""u"":23,""v"":8,""w"":4},{""u"":4,""v"":0,""w"":6},{""u"":24,""v"":3,""w"":5},{""u"":7,""v"":20,""w"":7},{""u"":8,""v"":3,""w"":4},{""u"":0,""v"":20,""w"":6},{""u"":3,""v"":20,""w"":3},{""u"":17,""v"":20,""w"":9}],""num_vertices"":25,""instance_type"":""standard"",""greedy_answer"":""Path: 16 \u2192 12 \u2192 9 \u2192 19 \u2192 18 \u2192 6 \u2192 5 \u2192 10 \u2192 15 \u2192 21 \u2192 11, Cost: 40"",""greedy_succeeds"":true,""difficulty_numeric"":25,""critical_step_index"":-1,""node_mapping"":{""0"":""Hub A"",""1"":""Hub B"",""2"":""Hub C"",""3"":""Hub D"",""4"":""Hub E"",""5"":""Hub F"",""6"":""Hub G"",""7"":""Hub H"",""8"":""Hub I"",""9"":""Hub J"",""10"":""Hub K"",""11"":""Hub L"",""12"":""Hub M"",""13"":""Hub N"",""14"":""Hub O"",""15"":""Hub P"",""16"":""Hub Q"",""17"":""Hub R"",""18"":""Hub S"",""19"":""Hub T"",""20"":""Hub U"",""21"":""Hub V"",""22"":""Hub W"",""23"":""Hub X"",""24"":""Hub Y""}}","25 nodes, bidirectional"
+SP_002,W4,"Let G = (V, E, w) be a weighted undirected graph where:
+
+- V = {0, 1, 2, ..., 24} is the set of nodes
+- E is the set of undirected edges (two-way trails)
+- w(u, v) is the travel time in hours for edge {u, v}
+
+Edge list in the form (u, v, w(u,v)):
+
+(16,12,4), (12,9,3), (9,19,5), (19,18,4), (18,6,3), (6,5,5), (5,10,4), (10,15,3), (15,21,5), (21,11,4), (16,9,9), (16,19,14), (12,19,10), (12,18,14), (9,18,11), (9,6,14), (19,6,9), (5,15,9), (5,21,14), (10,21,10), (10,11,14), (15,11,11), (16,17,6), (16,1,8), (12,14,5), (12,22,7), (9,13,6), (9,2,8), (19,23,7), (19,4,5), (18,24,6), (18,7,8), (6,8,7), (6,0,5), (17,14,4), (17,13,6), (1,22,5), (1,2,7), (14,23,4), (22,4,6), (13,24,5), (2,7,7), (23,8,4), (4,0,6), (24,3,5), (7,20,7), (8,3,4), (0,20,6), (3,20,3), (17,20,9)
+
+Objective:
+
+Find a path P* = (v_0, v_1, ..., v_k) where v_0 = 16, v_k = 11, and each {v_i, v_{i+1}} is in E, such that the total cost:
+
+cost(P) = sum of w(v_i, v_{i+1}) for all consecutive pairs in P
+
+is minimized over all valid paths from node 16 to node 11.
+
+Format: Path: X -> X -> X, Cost: X","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",Algorithmic Suit,shortest_path,Medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":16,""target"":11,""graph"":[{""u"":16,""v"":12,""w"":4},{""u"":12,""v"":9,""w"":3},{""u"":9,""v"":19,""w"":5},{""u"":19,""v"":18,""w"":4},{""u"":18,""v"":6,""w"":3},{""u"":6,""v"":5,""w"":5},{""u"":5,""v"":10,""w"":4},{""u"":10,""v"":15,""w"":3},{""u"":15,""v"":21,""w"":5},{""u"":21,""v"":11,""w"":4},{""u"":16,""v"":9,""w"":9},{""u"":16,""v"":19,""w"":14},{""u"":12,""v"":19,""w"":10},{""u"":12,""v"":18,""w"":14},{""u"":9,""v"":18,""w"":11},{""u"":9,""v"":6,""w"":14},{""u"":19,""v"":6,""w"":9},{""u"":5,""v"":15,""w"":9},{""u"":5,""v"":21,""w"":14},{""u"":10,""v"":21,""w"":10},{""u"":10,""v"":11,""w"":14},{""u"":15,""v"":11,""w"":11},{""u"":16,""v"":17,""w"":6},{""u"":16,""v"":1,""w"":8},{""u"":12,""v"":14,""w"":5},{""u"":12,""v"":22,""w"":7},{""u"":9,""v"":13,""w"":6},{""u"":9,""v"":2,""w"":8},{""u"":19,""v"":23,""w"":7},{""u"":19,""v"":4,""w"":5},{""u"":18,""v"":24,""w"":6},{""u"":18,""v"":7,""w"":8},{""u"":6,""v"":8,""w"":7},{""u"":6,""v"":0,""w"":5},{""u"":17,""v"":14,""w"":4},{""u"":17,""v"":13,""w"":6},{""u"":1,""v"":22,""w"":5},{""u"":1,""v"":2,""w"":7},{""u"":14,""v"":23,""w"":4},{""u"":22,""v"":4,""w"":6},{""u"":13,""v"":24,""w"":5},{""u"":2,""v"":7,""w"":7},{""u"":23,""v"":8,""w"":4},{""u"":4,""v"":0,""w"":6},{""u"":24,""v"":3,""w"":5},{""u"":7,""v"":20,""w"":7},{""u"":8,""v"":3,""w"":4},{""u"":0,""v"":20,""w"":6},{""u"":3,""v"":20,""w"":3},{""u"":17,""v"":20,""w"":9}],""num_vertices"":25,""instance_type"":""standard"",""greedy_answer"":""Path: 16 \u2192 12 \u2192 9 \u2192 19 \u2192 18 \u2192 6 \u2192 5 \u2192 10 \u2192 15 \u2192 21 \u2192 11, Cost: 40"",""greedy_succeeds"":true,""difficulty_numeric"":25,""critical_step_index"":-1}","25 nodes, bidirectional"
+SP_003,canonical,"A courier working for an underground network must transport a package from 
+Safe House 11 to Drop Point 9 across a city of 20 locations (0-19). Every 
+road is one-way. The one-way road network and travel times in minutes are:
+
+- Safe House 11 to Relay 18: 3 mins
+- Relay 18 to Outpost 14: 4 mins
+- Outpost 14 to Junction 0: 3 mins
+- Junction 0 to Crossing 15: 4 mins
+- Crossing 15 to Depot 5: 3 mins
+- Depot 5 to Warehouse 12: 4 mins
+- Warehouse 12 to Checkpoint 2: 3 mins
+- Checkpoint 2 to Overpass 3: 4 mins
+- Overpass 3 to Drop Point 9: 3 mins
+- Safe House 11 to Outpost 14: 9 mins
+- Safe House 11 to Junction 0: 12 mins
+- Safe House 11 to Crossing 15: 16 mins
+- Relay 18 to Junction 0: 9 mins
+- Relay 18 to Crossing 15: 13 mins
+- Relay 18 to Depot 5: 16 mins
+- Outpost 14 to Crossing 15: 9 mins
+- Outpost 14 to Depot 5: 12 mins
+- Outpost 14 to Warehouse 12: 16 mins
+- Junction 0 to Depot 5: 9 mins
+- Junction 0 to Warehouse 12: 13 mins
+- Junction 0 to Checkpoint 2: 16 mins
+- Crossing 15 to Warehouse 12: 9 mins
+- Crossing 15 to Checkpoint 2: 12 mins
+- Crossing 15 to Overpass 3: 16 mins
+- Depot 5 to Checkpoint 2: 9 mins
+- Depot 5 to Overpass 3: 13 mins
+- Depot 5 to Drop Point 9: 16 mins
+- Warehouse 12 to Overpass 3: 9 mins
+- Warehouse 12 to Drop Point 9: 12 mins
+- Checkpoint 2 to Drop Point 9: 9 mins
+- Safe House 11 to Alley 19: 6 mins
+- Alley 19 to Backstreet 16: 7 mins
+- Backstreet 16 to Underpass 4: 6 mins
+- Underpass 4 to Overpass 3: 10 mins
+- Safe House 11 to Sidestreet 1: 9 mins
+- Sidestreet 1 to Laneway 13: 12 mins
+- Laneway 13 to Overpass 3: 8 mins
+- Safe House 11 to Shortcut 17: 5 mins
+- Shortcut 17 to Flyover 7: 8 mins
+- Flyover 7 to Interchange 6: 7 mins
+- Interchange 6 to Overpass 3: 9 mins
+- Safe House 11 to Bypass 10: 11 mins
+- Bypass 10 to Tunnel 8: 10 mins
+- Tunnel 8 to Overpass 3: 9 mins
+- Alley 19 to Sidestreet 1: 4 mins
+- Sidestreet 1 to Backstreet 16: 5 mins
+- Backstreet 16 to Shortcut 17: 6 mins
+- Underpass 4 to Flyover 7: 4 mins
+- Laneway 13 to Interchange 6: 5 mins
+- Flyover 7 to Tunnel 8: 6 mins
+- Shortcut 17 to Bypass 10: 4 mins
+- Interchange 6 to Alley 19: 7 mins
+- Tunnel 8 to Underpass 4: 5 mins
+- Bypass 10 to Backstreet 16: 6 mins
+- Alley 19 to Flyover 7: 5 mins
+- Sidestreet 1 to Interchange 6: 6 mins
+- Underpass 4 to Tunnel 8: 7 mins
+- Laneway 13 to Alley 19: 5 mins
+- Backstreet 16 to Bypass 10: 8 mins
+- Flyover 7 to Sidestreet 1: 4 mins
+- Interchange 6 to Shortcut 17: 6 mins
+- Tunnel 8 to Interchange 6: 4 mins
+- Relay 18 to Alley 19: 3 mins
+- Outpost 14 to Sidestreet 1: 4 mins
+- Junction 0 to Shortcut 17: 5 mins
+- Crossing 15 to Backstreet 16: 4 mins
+- Depot 5 to Laneway 13: 5 mins
+- Warehouse 12 to Flyover 7: 4 mins
+- Checkpoint 2 to Bypass 10: 5 mins
+- Junction 0 to Alley 19: 6 mins
+- Depot 5 to Underpass 4: 7 mins
+- Alley 19 to Junction 0: 8 mins
+- Backstreet 16 to Crossing 15: 7 mins
+- Underpass 4 to Depot 5: 9 mins
+- Sidestreet 1 to Outpost 14: 8 mins
+- Laneway 13 to Warehouse 12: 8 mins
+- Shortcut 17 to Crossing 15: 9 mins
+- Flyover 7 to Depot 5: 7 mins
+- Interchange 6 to Warehouse 12: 8 mins
+- Bypass 10 to Checkpoint 2: 6 mins
+- Tunnel 8 to Depot 5: 9 mins
+
+What is the fastest route from Safe House 11 to Drop Point 9, and how long 
+will it take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",Algorithmic Suit,shortest_path,Hard,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":11,""target"":9,""graph"":[{""u"":11,""v"":18,""w"":3},{""u"":18,""v"":14,""w"":4},{""u"":14,""v"":0,""w"":3},{""u"":0,""v"":15,""w"":4},{""u"":15,""v"":5,""w"":3},{""u"":5,""v"":12,""w"":4},{""u"":12,""v"":2,""w"":3},{""u"":2,""v"":3,""w"":4},{""u"":3,""v"":9,""w"":3},{""u"":11,""v"":14,""w"":9},{""u"":11,""v"":0,""w"":12},{""u"":11,""v"":15,""w"":16},{""u"":18,""v"":0,""w"":9},{""u"":18,""v"":15,""w"":13},{""u"":18,""v"":5,""w"":16},{""u"":14,""v"":15,""w"":9},{""u"":14,""v"":5,""w"":12},{""u"":14,""v"":12,""w"":16},{""u"":0,""v"":5,""w"":9},{""u"":0,""v"":12,""w"":13},{""u"":0,""v"":2,""w"":16},{""u"":15,""v"":12,""w"":9},{""u"":15,""v"":2,""w"":12},{""u"":15,""v"":3,""w"":16},{""u"":5,""v"":2,""w"":9},{""u"":5,""v"":3,""w"":13},{""u"":5,""v"":9,""w"":16},{""u"":12,""v"":3,""w"":9},{""u"":12,""v"":9,""w"":12},{""u"":2,""v"":9,""w"":9},{""u"":11,""v"":19,""w"":6},{""u"":19,""v"":16,""w"":7},{""u"":16,""v"":4,""w"":6},{""u"":4,""v"":3,""w"":10},{""u"":11,""v"":1,""w"":9},{""u"":1,""v"":13,""w"":12},{""u"":13,""v"":3,""w"":8},{""u"":11,""v"":17,""w"":5},{""u"":17,""v"":7,""w"":8},{""u"":7,""v"":6,""w"":7},{""u"":6,""v"":3,""w"":9},{""u"":11,""v"":10,""w"":11},{""u"":10,""v"":8,""w"":10},{""u"":8,""v"":3,""w"":9},{""u"":19,""v"":1,""w"":4},{""u"":1,""v"":16,""w"":5},{""u"":16,""v"":17,""w"":6},{""u"":4,""v"":7,""w"":4},{""u"":13,""v"":6,""w"":5},{""u"":7,""v"":8,""w"":6},{""u"":17,""v"":10,""w"":4},{""u"":6,""v"":19,""w"":7},{""u"":8,""v"":4,""w"":5},{""u"":10,""v"":16,""w"":6},{""u"":19,""v"":7,""w"":5},{""u"":1,""v"":6,""w"":6},{""u"":4,""v"":8,""w"":7},{""u"":13,""v"":19,""w"":5},{""u"":16,""v"":10,""w"":8},{""u"":7,""v"":1,""w"":4},{""u"":6,""v"":17,""w"":6},{""u"":8,""v"":6,""w"":4},{""u"":18,""v"":19,""w"":3},{""u"":14,""v"":1,""w"":4},{""u"":0,""v"":17,""w"":5},{""u"":15,""v"":16,""w"":4},{""u"":5,""v"":13,""w"":5},{""u"":12,""v"":7,""w"":4},{""u"":2,""v"":10,""w"":5},{""u"":0,""v"":19,""w"":6},{""u"":5,""v"":4,""w"":7},{""u"":19,""v"":0,""w"":8},{""u"":16,""v"":15,""w"":7},{""u"":4,""v"":5,""w"":9},{""u"":1,""v"":14,""w"":8},{""u"":13,""v"":12,""w"":8},{""u"":17,""v"":15,""w"":9},{""u"":7,""v"":5,""w"":7},{""u"":6,""v"":12,""w"":8},{""u"":10,""v"":2,""w"":6},{""u"":8,""v"":5,""w"":9}],""num_vertices"":20,""instance_type"":""adversarial"",""greedy_answer"":""Path: 11 \u2192 17 \u2192 10 \u2192 2 \u2192 3 \u2192 9, Cost: 22"",""greedy_succeeds"":false,""difficulty_numeric"":20,""critical_step_index"":1}","20 nodes, unidirectional"
+SP_003,W1,"A messenger employed by a clandestine organization must carry a parcel from Hideout 11 to Collection Point 9 across an urban area of 20 locations (0-19). All streets run in a single direction only. The one-way street layout and transit durations in minutes are: - Hideout 11 to Relay Station 18: 3 mins - Relay Station 18 to Outstation 14: 4 mins - Outstation 14 to Intersection 0: 3 mins - Intersection 0 to Crossroads 15: 4 mins - Crossroads 15 to Storage Unit 5: 3 mins - Storage Unit 5 to Stockroom 12: 4 mins - Stockroom 12 to Checkpoint 2: 3 mins - Checkpoint 2 to Flyover 3: 4 mins - Flyover 3 to Collection Point 9: 3 mins - Hideout 11 to Outstation 14: 9 mins - Hideout 11 to Intersection 0: 12 mins - Hideout 11 to Crossroads 15: 16 mins - Relay Station 18 to Intersection 0: 9 mins - Relay Station 18 to Crossroads 15: 13 mins - Relay Station 18 to Storage Unit 5: 16 mins - Outstation 14 to Crossroads 15: 9 mins - Outstation 14 to Storage Unit 5: 12 mins - Outstation 14 to Stockroom 12: 16 mins - Intersection 0 to Storage Unit 5: 9 mins - Intersection 0 to Stockroom 12: 13 mins - Intersection 0 to Checkpoint 2: 16 mins - Crossroads 15 to Stockroom 12: 9 mins - Crossroads 15 to Checkpoint 2: 12 mins - Crossroads 15 to Flyover 3: 16 mins - Storage Unit 5 to Checkpoint 2: 9 mins - Storage Unit 5 to Flyover 3: 13 mins - Storage Unit 5 to Collection Point 9: 16 mins - Stockroom 12 to Flyover 3: 9 mins - Stockroom 12 to Collection Point 9: 12 mins - Checkpoint 2 to Collection Point 9: 9 mins - Hideout 11 to Back Alley 19: 6 mins - Back Alley 19 to Side Street 16: 7 mins - Side Street 16 to Underpass 4: 6 mins - Underpass 4 to Flyover 3: 10 mins - Hideout 11 to Narrow Lane 1: 9 mins - Narrow Lane 1 to Passageway 13: 12 mins - Passageway 13 to Flyover 3: 8 mins - Hideout 11 to Shortcut 17: 5 mins - Shortcut 17 to Overbridge 7: 8 mins - Overbridge 7 to Connector 6: 7 mins - Connector 6 to Flyover 3: 9 mins - Hideout 11 to Detour 10: 11 mins - Detour 10 to Tunnel 8: 10 mins - Tunnel 8 to Flyover 3: 9 mins - Back Alley 19 to Narrow Lane 1: 4 mins - Narrow Lane 1 to Side Street 16: 5 mins - Side Street 16 to Shortcut 17: 6 mins - Underpass 4 to Overbridge 7: 4 mins - Passageway 13 to Connector 6: 5 mins - Overbridge 7 to Tunnel 8: 6 mins - Shortcut 17 to Detour 10: 4 mins - Connector 6 to Back Alley 19: 7 mins - Tunnel 8 to Underpass 4: 5 mins - Detour 10 to Side Street 16: 6 mins - Back Alley 19 to Overbridge 7: 5 mins - Narrow Lane 1 to Connector 6: 6 mins - Underpass 4 to Tunnel 8: 7 mins - Passageway 13 to Back Alley 19: 5 mins - Side Street 16 to Detour 10: 8 mins - Overbridge 7 to Narrow Lane 1: 4 mins - Connector 6 to Shortcut 17: 6 mins - Tunnel 8 to Connector 6: 4 mins - Relay Station 18 to Back Alley 19: 3 mins - Outstation 14 to Narrow Lane 1: 4 mins - Intersection 0 to Shortcut 17: 5 mins - Crossroads 15 to Side Street 16: 4 mins - Storage Unit 5 to Passageway 13: 5 mins - Stockroom 12 to Overbridge 7: 4 mins - Checkpoint 2 to Detour 10: 5 mins - Intersection 0 to Back Alley 19: 6 mins - Storage Unit 5 to Underpass 4: 7 mins - Back Alley 19 to Intersection 0: 8 mins - Side Street 16 to Crossroads 15: 7 mins - Underpass 4 to Storage Unit 5: 9 mins - Narrow Lane 1 to Outstation 14: 8 mins - Passageway 13 to Stockroom 12: 8 mins - Shortcut 17 to Crossroads 15: 9 mins - Overbridge 7 to Storage Unit 5: 7 mins - Connector 6 to Stockroom 12: 8 mins - Detour 10 to Checkpoint 2: 6 mins - Tunnel 8 to Storage Unit 5: 9 mins What is the quickest path from Hideout 11 to Collection Point 9, and what will the total transit time be? Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",Algorithmic Suit,shortest_path,Hard,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":11,""target"":9,""graph"":[{""u"":11,""v"":18,""w"":3},{""u"":18,""v"":14,""w"":4},{""u"":14,""v"":0,""w"":3},{""u"":0,""v"":15,""w"":4},{""u"":15,""v"":5,""w"":3},{""u"":5,""v"":12,""w"":4},{""u"":12,""v"":2,""w"":3},{""u"":2,""v"":3,""w"":4},{""u"":3,""v"":9,""w"":3},{""u"":11,""v"":14,""w"":9},{""u"":11,""v"":0,""w"":12},{""u"":11,""v"":15,""w"":16},{""u"":18,""v"":0,""w"":9},{""u"":18,""v"":15,""w"":13},{""u"":18,""v"":5,""w"":16},{""u"":14,""v"":15,""w"":9},{""u"":14,""v"":5,""w"":12},{""u"":14,""v"":12,""w"":16},{""u"":0,""v"":5,""w"":9},{""u"":0,""v"":12,""w"":13},{""u"":0,""v"":2,""w"":16},{""u"":15,""v"":12,""w"":9},{""u"":15,""v"":2,""w"":12},{""u"":15,""v"":3,""w"":16},{""u"":5,""v"":2,""w"":9},{""u"":5,""v"":3,""w"":13},{""u"":5,""v"":9,""w"":16},{""u"":12,""v"":3,""w"":9},{""u"":12,""v"":9,""w"":12},{""u"":2,""v"":9,""w"":9},{""u"":11,""v"":19,""w"":6},{""u"":19,""v"":16,""w"":7},{""u"":16,""v"":4,""w"":6},{""u"":4,""v"":3,""w"":10},{""u"":11,""v"":1,""w"":9},{""u"":1,""v"":13,""w"":12},{""u"":13,""v"":3,""w"":8},{""u"":11,""v"":17,""w"":5},{""u"":17,""v"":7,""w"":8},{""u"":7,""v"":6,""w"":7},{""u"":6,""v"":3,""w"":9},{""u"":11,""v"":10,""w"":11},{""u"":10,""v"":8,""w"":10},{""u"":8,""v"":3,""w"":9},{""u"":19,""v"":1,""w"":4},{""u"":1,""v"":16,""w"":5},{""u"":16,""v"":17,""w"":6},{""u"":4,""v"":7,""w"":4},{""u"":13,""v"":6,""w"":5},{""u"":7,""v"":8,""w"":6},{""u"":17,""v"":10,""w"":4},{""u"":6,""v"":19,""w"":7},{""u"":8,""v"":4,""w"":5},{""u"":10,""v"":16,""w"":6},{""u"":19,""v"":7,""w"":5},{""u"":1,""v"":6,""w"":6},{""u"":4,""v"":8,""w"":7},{""u"":13,""v"":19,""w"":5},{""u"":16,""v"":10,""w"":8},{""u"":7,""v"":1,""w"":4},{""u"":6,""v"":17,""w"":6},{""u"":8,""v"":6,""w"":4},{""u"":18,""v"":19,""w"":3},{""u"":14,""v"":1,""w"":4},{""u"":0,""v"":17,""w"":5},{""u"":15,""v"":16,""w"":4},{""u"":5,""v"":13,""w"":5},{""u"":12,""v"":7,""w"":4},{""u"":2,""v"":10,""w"":5},{""u"":0,""v"":19,""w"":6},{""u"":5,""v"":4,""w"":7},{""u"":19,""v"":0,""w"":8},{""u"":16,""v"":15,""w"":7},{""u"":4,""v"":5,""w"":9},{""u"":1,""v"":14,""w"":8},{""u"":13,""v"":12,""w"":8},{""u"":17,""v"":15,""w"":9},{""u"":7,""v"":5,""w"":7},{""u"":6,""v"":12,""w"":8},{""u"":10,""v"":2,""w"":6},{""u"":8,""v"":5,""w"":9}],""num_vertices"":20,""instance_type"":""adversarial"",""greedy_answer"":""Path: 11 \u2192 17 \u2192 10 \u2192 2 \u2192 3 \u2192 9, Cost: 22"",""greedy_succeeds"":false,""difficulty_numeric"":20,""critical_step_index"":1}","20 nodes, unidirectional"
+SP_003,W2,"| From | To | Time (mins) |
+|------|----|-------------|
+| Safe House 11 | Relay 18 | 3 |
+| Relay 18 | Outpost 14 | 4 |
+| Outpost 14 | Junction 0 | 3 |
+| Junction 0 | Crossing 15 | 4 |
+| Crossing 15 | Depot 5 | 3 |
+| Depot 5 | Warehouse 12 | 4 |
+| Warehouse 12 | Checkpoint 2 | 3 |
+| Checkpoint 2 | Overpass 3 | 4 |
+| Overpass 3 | Drop Point 9 | 3 |
+| Safe House 11 | Outpost 14 | 9 |
+| Safe House 11 | Junction 0 | 12 |
+| Safe House 11 | Crossing 15 | 16 |
+| Relay 18 | Junction 0 | 9 |
+| Relay 18 | Crossing 15 | 13 |
+| Relay 18 | Depot 5 | 16 |
+| Outpost 14 | Crossing 15 | 9 |
+| Outpost 14 | Depot 5 | 12 |
+| Outpost 14 | Warehouse 12 | 16 |
+| Junction 0 | Depot 5 | 9 |
+| Junction 0 | Warehouse 12 | 13 |
+| Junction 0 | Checkpoint 2 | 16 |
+| Crossing 15 | Warehouse 12 | 9 |
+| Crossing 15 | Checkpoint 2 | 12 |
+| Crossing 15 | Overpass 3 | 16 |
+| Depot 5 | Checkpoint 2 | 9 |
+| Depot 5 | Overpass 3 | 13 |
+| Depot 5 | Drop Point 9 | 16 |
+| Warehouse 12 | Overpass 3 | 9 |
+| Warehouse 12 | Drop Point 9 | 12 |
+| Checkpoint 2 | Drop Point 9 | 9 |
+| Safe House 11 | Alley 19 | 6 |
+| Alley 19 | Backstreet 16 | 7 |
+| Backstreet 16 | Underpass 4 | 6 |
+| Underpass 4 | Overpass 3 | 10 |
+| Safe House 11 | Sidestreet 1 | 9 |
+| Sidestreet 1 | Laneway 13 | 12 |
+| Laneway 13 | Overpass 3 | 8 |
+| Safe House 11 | Shortcut 17 | 5 |
+| Shortcut 17 | Flyover 7 | 8 |
+| Flyover 7 | Interchange 6 | 7 |
+| Interchange 6 | Overpass 3 | 9 |
+| Safe House 11 | Bypass 10 | 11 |
+| Bypass 10 | Tunnel 8 | 10 |
+| Tunnel 8 | Overpass 3 | 9 |
+| Alley 19 | Sidestreet 1 | 4 |
+| Sidestreet 1 | Backstreet 16 | 5 |
+| Backstreet 16 | Shortcut 17 | 6 |
+| Underpass 4 | Flyover 7 | 4 |
+| Laneway 13 | Interchange 6 | 5 |
+| Flyover 7 | Tunnel 8 | 6 |
+| Shortcut 17 | Bypass 10 | 4 |
+| Interchange 6 | Alley 19 | 7 |
+| Tunnel 8 | Underpass 4 | 5 |
+| Bypass 10 | Backstreet 16 | 6 |
+| Alley 19 | Flyover 7 | 5 |
+| Sidestreet 1 | Interchange 6 | 6 |
+| Underpass 4 | Tunnel 8 | 7 |
+| Laneway 13 | Alley 19 | 5 |
+| Backstreet 16 | Bypass 10 | 8 |
+| Flyover 7 | Sidestreet 1 | 4 |
+| Interchange 6 | Shortcut 17 | 6 |
+| Tunnel 8 | Interchange 6 | 4 |
+| Relay 18 | Alley 19 | 3 |
+| Outpost 14 | Sidestreet 1 | 4 |
+| Junction 0 | Shortcut 17 | 5 |
+| Crossing 15 | Backstreet 16 | 4 |
+| Depot 5 | Laneway 13 | 5 |
+| Warehouse 12 | Flyover 7 | 4 |
+| Checkpoint 2 | Bypass 10 | 5 |
+| Junction 0 | Alley 19 | 6 |
+| Depot 5 | Underpass 4 | 7 |
+| Alley 19 | Junction 0 | 8 |
+| Backstreet 16 | Crossing 15 | 7 |
+| Underpass 4 | Depot 5 | 9 |
+| Sidestreet 1 | Outpost 14 | 8 |
+| Laneway 13 | Warehouse 12 | 8 |
+| Shortcut 17 | Crossing 15 | 9 |
+| Flyover 7 | Depot 5 | 7 |
+| Interchange 6 | Warehouse 12 | 8 |
+| Bypass 10 | Checkpoint 2 | 6 |
+| Tunnel 8 | Depot 5 | 9 |
+
+**Note:** All roads are one-way.
+
+**Question:** What is the fastest route from Safe House 11 to Drop Point 9 across the 20-location (0–19) one-way road network? Reply as: `Path: X → X → X, Cost: X`","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",Algorithmic Suit,shortest_path,Hard,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":11,""target"":9,""graph"":[{""u"":11,""v"":18,""w"":3},{""u"":18,""v"":14,""w"":4},{""u"":14,""v"":0,""w"":3},{""u"":0,""v"":15,""w"":4},{""u"":15,""v"":5,""w"":3},{""u"":5,""v"":12,""w"":4},{""u"":12,""v"":2,""w"":3},{""u"":2,""v"":3,""w"":4},{""u"":3,""v"":9,""w"":3},{""u"":11,""v"":14,""w"":9},{""u"":11,""v"":0,""w"":12},{""u"":11,""v"":15,""w"":16},{""u"":18,""v"":0,""w"":9},{""u"":18,""v"":15,""w"":13},{""u"":18,""v"":5,""w"":16},{""u"":14,""v"":15,""w"":9},{""u"":14,""v"":5,""w"":12},{""u"":14,""v"":12,""w"":16},{""u"":0,""v"":5,""w"":9},{""u"":0,""v"":12,""w"":13},{""u"":0,""v"":2,""w"":16},{""u"":15,""v"":12,""w"":9},{""u"":15,""v"":2,""w"":12},{""u"":15,""v"":3,""w"":16},{""u"":5,""v"":2,""w"":9},{""u"":5,""v"":3,""w"":13},{""u"":5,""v"":9,""w"":16},{""u"":12,""v"":3,""w"":9},{""u"":12,""v"":9,""w"":12},{""u"":2,""v"":9,""w"":9},{""u"":11,""v"":19,""w"":6},{""u"":19,""v"":16,""w"":7},{""u"":16,""v"":4,""w"":6},{""u"":4,""v"":3,""w"":10},{""u"":11,""v"":1,""w"":9},{""u"":1,""v"":13,""w"":12},{""u"":13,""v"":3,""w"":8},{""u"":11,""v"":17,""w"":5},{""u"":17,""v"":7,""w"":8},{""u"":7,""v"":6,""w"":7},{""u"":6,""v"":3,""w"":9},{""u"":11,""v"":10,""w"":11},{""u"":10,""v"":8,""w"":10},{""u"":8,""v"":3,""w"":9},{""u"":19,""v"":1,""w"":4},{""u"":1,""v"":16,""w"":5},{""u"":16,""v"":17,""w"":6},{""u"":4,""v"":7,""w"":4},{""u"":13,""v"":6,""w"":5},{""u"":7,""v"":8,""w"":6},{""u"":17,""v"":10,""w"":4},{""u"":6,""v"":19,""w"":7},{""u"":8,""v"":4,""w"":5},{""u"":10,""v"":16,""w"":6},{""u"":19,""v"":7,""w"":5},{""u"":1,""v"":6,""w"":6},{""u"":4,""v"":8,""w"":7},{""u"":13,""v"":19,""w"":5},{""u"":16,""v"":10,""w"":8},{""u"":7,""v"":1,""w"":4},{""u"":6,""v"":17,""w"":6},{""u"":8,""v"":6,""w"":4},{""u"":18,""v"":19,""w"":3},{""u"":14,""v"":1,""w"":4},{""u"":0,""v"":17,""w"":5},{""u"":15,""v"":16,""w"":4},{""u"":5,""v"":13,""w"":5},{""u"":12,""v"":7,""w"":4},{""u"":2,""v"":10,""w"":5},{""u"":0,""v"":19,""w"":6},{""u"":5,""v"":4,""w"":7},{""u"":19,""v"":0,""w"":8},{""u"":16,""v"":15,""w"":7},{""u"":4,""v"":5,""w"":9},{""u"":1,""v"":14,""w"":8},{""u"":13,""v"":12,""w"":8},{""u"":17,""v"":15,""w"":9},{""u"":7,""v"":5,""w"":7},{""u"":6,""v"":12,""w"":8},{""u"":10,""v"":2,""w"":6},{""u"":8,""v"":5,""w"":9}],""num_vertices"":20,""instance_type"":""adversarial"",""greedy_answer"":""Path: 11 \u2192 17 \u2192 10 \u2192 2 \u2192 3 \u2192 9, Cost: 22"",""greedy_succeeds"":false,""difficulty_numeric"":20,""critical_step_index"":1}","20 nodes, unidirectional"
+SP_003,W3,"""In an electrical circuit consisting of 20 nodes (0–19), current must flow from node 11 to node 9 through a network of one-way conducting pathways, each with a specific resistance value in ohms. The goal is to find the path of least cumulative resistance through which current can travel. The directed connections and their resistance values are: (11→18,3), (18→14,4), (14→0,3), (0→15,4), (15→5,3), (5→12,4), (12→2,3), (2→3,4), (3→9,3), (11→14,9), (11→0,12), (11→15,16), (18→0,9), (18→15,13), (18→5,16), (14→15,9), (14→5,12), (14→12,16), (0→5,9), (0→12,13), (0→2,16), (15→12,9), (15→2,12), (15→3,16), (5→2,9), (5→3,13), (5→9,16), (12→3,9), (12→9,12), (2→9,9), (11→19,6), (19→16,7), (16→4,6), (4→3,10), (11→1,9), (1→13,12), (13→3,8), (11→17,5), (17→7,8), (7→6,7), (6→3,9), (11→10,11), (10→8,10), (8→3,9), (19→1,4), (1→16,5), (16→17,6), (4→7,4), (13→6,5), (7→8,6), (17→10,4), (6→19,7), (8→4,5), (10→16,6), (19→7,5), (1→6,6), (4→8,7), (13→19,5), (16→10,8), (7→1,4), (6→17,6), (8→6,4), (18→19,3), (14→1,4), (0→17,5), (15→16,4), (5→13,5), (12→7,4), (2→10,5), (0→19,6), (5→4,7), (19→0,8), (16→15,7), (4→5,9), (1→14,8), (13→12,8), (17→15,9), (7→5,7), (6→12,8), (10→2,6), (8→5,9). Determine the path of minimum total resistance from node 11 to node 9 and report the sequence of nodes along with the cumulative resistance.
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X""","Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",Algorithmic Suit,shortest_path,Hard,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":11,""target"":9,""graph"":[{""u"":11,""v"":18,""w"":3},{""u"":18,""v"":14,""w"":4},{""u"":14,""v"":0,""w"":3},{""u"":0,""v"":15,""w"":4},{""u"":15,""v"":5,""w"":3},{""u"":5,""v"":12,""w"":4},{""u"":12,""v"":2,""w"":3},{""u"":2,""v"":3,""w"":4},{""u"":3,""v"":9,""w"":3},{""u"":11,""v"":14,""w"":9},{""u"":11,""v"":0,""w"":12},{""u"":11,""v"":15,""w"":16},{""u"":18,""v"":0,""w"":9},{""u"":18,""v"":15,""w"":13},{""u"":18,""v"":5,""w"":16},{""u"":14,""v"":15,""w"":9},{""u"":14,""v"":5,""w"":12},{""u"":14,""v"":12,""w"":16},{""u"":0,""v"":5,""w"":9},{""u"":0,""v"":12,""w"":13},{""u"":0,""v"":2,""w"":16},{""u"":15,""v"":12,""w"":9},{""u"":15,""v"":2,""w"":12},{""u"":15,""v"":3,""w"":16},{""u"":5,""v"":2,""w"":9},{""u"":5,""v"":3,""w"":13},{""u"":5,""v"":9,""w"":16},{""u"":12,""v"":3,""w"":9},{""u"":12,""v"":9,""w"":12},{""u"":2,""v"":9,""w"":9},{""u"":11,""v"":19,""w"":6},{""u"":19,""v"":16,""w"":7},{""u"":16,""v"":4,""w"":6},{""u"":4,""v"":3,""w"":10},{""u"":11,""v"":1,""w"":9},{""u"":1,""v"":13,""w"":12},{""u"":13,""v"":3,""w"":8},{""u"":11,""v"":17,""w"":5},{""u"":17,""v"":7,""w"":8},{""u"":7,""v"":6,""w"":7},{""u"":6,""v"":3,""w"":9},{""u"":11,""v"":10,""w"":11},{""u"":10,""v"":8,""w"":10},{""u"":8,""v"":3,""w"":9},{""u"":19,""v"":1,""w"":4},{""u"":1,""v"":16,""w"":5},{""u"":16,""v"":17,""w"":6},{""u"":4,""v"":7,""w"":4},{""u"":13,""v"":6,""w"":5},{""u"":7,""v"":8,""w"":6},{""u"":17,""v"":10,""w"":4},{""u"":6,""v"":19,""w"":7},{""u"":8,""v"":4,""w"":5},{""u"":10,""v"":16,""w"":6},{""u"":19,""v"":7,""w"":5},{""u"":1,""v"":6,""w"":6},{""u"":4,""v"":8,""w"":7},{""u"":13,""v"":19,""w"":5},{""u"":16,""v"":10,""w"":8},{""u"":7,""v"":1,""w"":4},{""u"":6,""v"":17,""w"":6},{""u"":8,""v"":6,""w"":4},{""u"":18,""v"":19,""w"":3},{""u"":14,""v"":1,""w"":4},{""u"":0,""v"":17,""w"":5},{""u"":15,""v"":16,""w"":4},{""u"":5,""v"":13,""w"":5},{""u"":12,""v"":7,""w"":4},{""u"":2,""v"":10,""w"":5},{""u"":0,""v"":19,""w"":6},{""u"":5,""v"":4,""w"":7},{""u"":19,""v"":0,""w"":8},{""u"":16,""v"":15,""w"":7},{""u"":4,""v"":5,""w"":9},{""u"":1,""v"":14,""w"":8},{""u"":13,""v"":12,""w"":8},{""u"":17,""v"":15,""w"":9},{""u"":7,""v"":5,""w"":7},{""u"":6,""v"":12,""w"":8},{""u"":10,""v"":2,""w"":6},{""u"":8,""v"":5,""w"":9}],""num_vertices"":20,""instance_type"":""adversarial"",""greedy_answer"":""Path: 11 \u2192 17 \u2192 10 \u2192 2 \u2192 3 \u2192 9, Cost: 22"",""greedy_succeeds"":false,""difficulty_numeric"":20,""critical_step_index"":1,""node_mapping"":{""0"":""Hub A"",""1"":""Hub B"",""2"":""Hub C"",""3"":""Hub D"",""4"":""Hub E"",""5"":""Hub F"",""6"":""Hub G"",""7"":""Hub H"",""8"":""Hub I"",""9"":""Hub J"",""10"":""Hub K"",""11"":""Hub L"",""12"":""Hub M"",""13"":""Hub N"",""14"":""Hub O"",""15"":""Hub P"",""16"":""Hub Q"",""17"":""Hub R"",""18"":""Hub S"",""19"":""Hub T""}}","20 nodes, unidirectional"
+SP_003,W4,"Let G = (V, E, w) be a weighted directed graph where:
+
+- V = {0, 1, 2, ..., 19} is the set of nodes
+- E is the set of directed edges (one-way roads)
+- w(u, v) is the travel time in minutes for edge (u, v)
+
+Edge list in the form (u, v, w(u,v)):
+
+(11,18,3), (18,14,4), (14,0,3), (0,15,4), (15,5,3), (5,12,4), (12,2,3), (2,3,4), (3,9,3), (11,14,9), (11,0,12), (11,15,16), (18,0,9), (18,15,13), (18,5,16), (14,15,9), (14,5,12), (14,12,16), (0,5,9), (0,12,13), (0,2,16), (15,12,9), (15,2,12), (15,3,16), (5,2,9), (5,3,13), (5,9,16), (12,3,9), (12,9,12), (2,9,9), (11,19,6), (19,16,7), (16,4,6), (4,3,10), (11,1,9), (1,13,12), (13,3,8), (11,17,5), (17,7,8), (7,6,7), (11,10,11), (10,8,10), (8,3,9), (19,1,4), (1,16,5), (16,17,6), (4,7,4), (13,6,5), (7,8,6), (17,10,4), (6,3,9), (8,4,5), (10,16,6), (19,7,5), (1,6,6), (4,8,7), (13,19,5), (16,10,8), (7,1,4), (6,17,6), (8,6,4), (18,19,3), (14,1,4), (0,17,5), (15,16,4), (5,13,5), (12,7,4), (2,10,5), (0,19,6), (5,4,7), (19,0,8), (16,15,7), (4,5,9), (1,14,8), (13,12,8), (17,15,9), (7,5,7), (6,12,8), (10,2,6), (8,5,9)
+
+Objective:
+
+Find a directed path P* = (v_0, v_1, ..., v_k) where v_0 = 11, v_k = 9, and each (v_i, v_{i+1}) is in E, such that the total cost:
+
+cost(P) = sum of w(v_i, v_{i+1}) for all consecutive pairs in P
+
+is minimized over all valid directed paths from node 11 to node 9.
+
+Format: Path: X -> X -> X, Cost: X","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",Algorithmic Suit,shortest_path,Hard,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":11,""target"":9,""graph"":[{""u"":11,""v"":18,""w"":3},{""u"":18,""v"":14,""w"":4},{""u"":14,""v"":0,""w"":3},{""u"":0,""v"":15,""w"":4},{""u"":15,""v"":5,""w"":3},{""u"":5,""v"":12,""w"":4},{""u"":12,""v"":2,""w"":3},{""u"":2,""v"":3,""w"":4},{""u"":3,""v"":9,""w"":3},{""u"":11,""v"":14,""w"":9},{""u"":11,""v"":0,""w"":12},{""u"":11,""v"":15,""w"":16},{""u"":18,""v"":0,""w"":9},{""u"":18,""v"":15,""w"":13},{""u"":18,""v"":5,""w"":16},{""u"":14,""v"":15,""w"":9},{""u"":14,""v"":5,""w"":12},{""u"":14,""v"":12,""w"":16},{""u"":0,""v"":5,""w"":9},{""u"":0,""v"":12,""w"":13},{""u"":0,""v"":2,""w"":16},{""u"":15,""v"":12,""w"":9},{""u"":15,""v"":2,""w"":12},{""u"":15,""v"":3,""w"":16},{""u"":5,""v"":2,""w"":9},{""u"":5,""v"":3,""w"":13},{""u"":5,""v"":9,""w"":16},{""u"":12,""v"":3,""w"":9},{""u"":12,""v"":9,""w"":12},{""u"":2,""v"":9,""w"":9},{""u"":11,""v"":19,""w"":6},{""u"":19,""v"":16,""w"":7},{""u"":16,""v"":4,""w"":6},{""u"":4,""v"":3,""w"":10},{""u"":11,""v"":1,""w"":9},{""u"":1,""v"":13,""w"":12},{""u"":13,""v"":3,""w"":8},{""u"":11,""v"":17,""w"":5},{""u"":17,""v"":7,""w"":8},{""u"":7,""v"":6,""w"":7},{""u"":6,""v"":3,""w"":9},{""u"":11,""v"":10,""w"":11},{""u"":10,""v"":8,""w"":10},{""u"":8,""v"":3,""w"":9},{""u"":19,""v"":1,""w"":4},{""u"":1,""v"":16,""w"":5},{""u"":16,""v"":17,""w"":6},{""u"":4,""v"":7,""w"":4},{""u"":13,""v"":6,""w"":5},{""u"":7,""v"":8,""w"":6},{""u"":17,""v"":10,""w"":4},{""u"":6,""v"":19,""w"":7},{""u"":8,""v"":4,""w"":5},{""u"":10,""v"":16,""w"":6},{""u"":19,""v"":7,""w"":5},{""u"":1,""v"":6,""w"":6},{""u"":4,""v"":8,""w"":7},{""u"":13,""v"":19,""w"":5},{""u"":16,""v"":10,""w"":8},{""u"":7,""v"":1,""w"":4},{""u"":6,""v"":17,""w"":6},{""u"":8,""v"":6,""w"":4},{""u"":18,""v"":19,""w"":3},{""u"":14,""v"":1,""w"":4},{""u"":0,""v"":17,""w"":5},{""u"":15,""v"":16,""w"":4},{""u"":5,""v"":13,""w"":5},{""u"":12,""v"":7,""w"":4},{""u"":2,""v"":10,""w"":5},{""u"":0,""v"":19,""w"":6},{""u"":5,""v"":4,""w"":7},{""u"":19,""v"":0,""w"":8},{""u"":16,""v"":15,""w"":7},{""u"":4,""v"":5,""w"":9},{""u"":1,""v"":14,""w"":8},{""u"":13,""v"":12,""w"":8},{""u"":17,""v"":15,""w"":9},{""u"":7,""v"":5,""w"":7},{""u"":6,""v"":12,""w"":8},{""u"":10,""v"":2,""w"":6},{""u"":8,""v"":5,""w"":9}],""num_vertices"":20,""instance_type"":""adversarial"",""greedy_answer"":""Path: 11 \u2192 17 \u2192 10 \u2192 2 \u2192 3 \u2192 9, Cost: 22"",""greedy_succeeds"":false,""difficulty_numeric"":20,""critical_step_index"":1}","20 nodes, unidirectional"
+SP_004,canonical,"Climber Mara starts at Base Lodge (node 0) at time zero and needs to reach 
+Summit Hut (node 9) as fast as possible across a network of 10 one-way 
+mountain routes. Travel times are in hours. Critically, two routes are 
+time-dependent — their cost changes depending on what time you arrive at 
+the departure point:
+
+Fixed routes (cost never changes):
+- Base Lodge 0 to Waypoint 3: 4 hrs
+- Waypoint 3 to Waypoint 6: 3 hrs
+- Waypoint 4 to Waypoint 5: 3 hrs
+- Waypoint 5 to Summit Hut 9: 3 hrs
+- Base Lodge 0 to Waypoint 2: 5 hrs
+- Waypoint 2 to Waypoint 5: 4 hrs
+- Base Lodge 0 to Waypoint 7: 9 hrs
+- Waypoint 7 to Waypoint 5: 4 hrs
+- Waypoint 4 to Summit Hut 9: 7 hrs
+- Waypoint 6 to Summit Hut 9: 8 hrs
+
+Time-dependent routes:
+- Base Lodge 0 to Waypoint 1: always 2 hrs
+- Waypoint 1 to Waypoint 5: costs 3 hrs if you arrive at Waypoint 1 
+  before or at hour 1, but costs 12 hrs if you arrive after hour 1
+  (the morning fast-track closes after the first hour)
+- Waypoint 6 to Waypoint 4: costs -5 hrs (saves 5 hrs — a cable car that 
+  skips a long switchback) if you board before or at hour 10, but costs 
+  4 hrs if you board after hour 10
+
+Note: a negative cost means that route saves time — your cumulative 
+travel time decreases by that amount.
+
+What is the fastest route from Base Lodge 0 to Summit Hut 9, and what is 
+the total travel time?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",Algorithmic Suit,shortest_path,Hard,Low,,Bellman-Ford,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":9,""graph"":[{""u"":0,""v"":3,""w"":4},{""u"":3,""v"":6,""w"":3},{""u"":4,""v"":5,""w"":3},{""u"":5,""v"":9,""w"":3},{""u"":0,""v"":2,""w"":5},{""u"":2,""v"":5,""w"":4},{""u"":0,""v"":7,""w"":9},{""u"":7,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":6,""v"":9,""w"":8},{""u"":0,""v"":1,""w"":2},{""u"":1,""v"":5,""w"":3},{""u"":6,""v"":4,""w"":-5}],""num_vertices"":10,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 3 \u2192 6 \u2192 4 \u2192 5 \u2192 9, Cost: 8"",""greedy_succeeds"":false,""difficulty_numeric"":10,""critical_step_index"":0}","10 nodes, unidirectional and time dependent"
+SP_004,W1,"Mountaineer Mara departs from Starting Cabin (node 0) at time zero and must arrive at Peak Shelter (node 9) as quickly as possible through a network of 10 single-direction alpine trails. Journey durations are measured in hours. Notably, two trails are time-sensitive — their duration shifts depending on what hour you reach the departure point: Constant trails (duration never varies): - Starting Cabin 0 to Stopover 3: 4 hrs - Stopover 3 to Stopover 6: 3 hrs - Stopover 4 to Stopover 5: 3 hrs - Stopover 5 to Peak Shelter 9: 3 hrs - Starting Cabin 0 to Stopover 2: 5 hrs - Stopover 2 to Stopover 5: 4 hrs - Starting Cabin 0 to Stopover 7: 9 hrs - Stopover 7 to Stopover 5: 4 hrs - Stopover 4 to Peak Shelter 9: 7 hrs - Stopover 6 to Peak Shelter 9: 8 hrs Time-sensitive trails: - Starting Cabin 0 to Stopover 1: always 2 hrs - Stopover 1 to Stopover 5: takes 3 hrs if you reach Stopover 1 by or at hour 1, but takes 12 hrs if you arrive after hour 1 (the early morning express trail shuts down after the opening hour) - Stopover 6 to Stopover 4: saves 5 hrs (a gondola that bypasses a lengthy zigzag path) if you board by or at hour 10, but takes 4 hrs if you board after hour 10 Note: a negative duration means that trail reduces your total elapsed time. What is the quickest path from Starting Cabin 0 to Peak Shelter 9, and what is the total journey time? Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",Algorithmic Suit,shortest_path,Hard,Low,,Bellman-Ford,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":9,""graph"":[{""u"":0,""v"":3,""w"":4},{""u"":3,""v"":6,""w"":3},{""u"":4,""v"":5,""w"":3},{""u"":5,""v"":9,""w"":3},{""u"":0,""v"":2,""w"":5},{""u"":2,""v"":5,""w"":4},{""u"":0,""v"":7,""w"":9},{""u"":7,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":6,""v"":9,""w"":8},{""u"":0,""v"":1,""w"":2},{""u"":1,""v"":5,""w"":3},{""u"":6,""v"":4,""w"":-5}],""num_vertices"":10,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 3 \u2192 6 \u2192 4 \u2192 5 \u2192 9, Cost: 8"",""greedy_succeeds"":false,""difficulty_numeric"":10,""critical_step_index"":0}","10 nodes, unidirectional and time dependent"
+SP_004,W2,"| Category | From | To | Cost/Condition |
+|----------|------|----|----------------|
+| **Fixed Routes** | Base Lodge 0 | Waypoint 3 | 4 hrs |
+| | Waypoint 3 | Waypoint 6 | 3 hrs |
+| | Waypoint 4 | Waypoint 5 | 3 hrs |
+| | Waypoint 5 | Summit Hut 9 | 3 hrs |
+| | Base Lodge 0 | Waypoint 2 | 5 hrs |
+| | Waypoint 2 | Waypoint 5 | 4 hrs |
+| | Base Lodge 0 | Waypoint 7 | 9 hrs |
+| | Waypoint 7 | Waypoint 5 | 4 hrs |
+| | Waypoint 4 | Summit Hut 9 | 7 hrs |
+| | Waypoint 6 | Summit Hut 9 | 8 hrs |
+| **Time-Dependent Routes** | Base Lodge 0 | Waypoint 1 | Always 2 hrs |
+| | Waypoint 1 | Waypoint 5 | 3 hrs if arrive at Waypoint 1 ≤ hour 1; else 12 hrs |
+| | Waypoint 6 | Waypoint 4 | −5 hrs (cable car) if board ≤ hour 10; else 4 hrs |
+
+**Note:** All routes are one-way. A negative cost means cumulative travel time decreases by that amount.
+
+**Question:** What is the fastest route from Base Lodge 0 to Summit Hut 9 across the 10-node (0–9) one-way mountain network, considering time-dependent route costs? Reply as: `Path: X → X → X, Cost: X`","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",Algorithmic Suit,shortest_path,Hard,Low,,Bellman-Ford,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":9,""graph"":[{""u"":0,""v"":3,""w"":4},{""u"":3,""v"":6,""w"":3},{""u"":4,""v"":5,""w"":3},{""u"":5,""v"":9,""w"":3},{""u"":0,""v"":2,""w"":5},{""u"":2,""v"":5,""w"":4},{""u"":0,""v"":7,""w"":9},{""u"":7,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":6,""v"":9,""w"":8},{""u"":0,""v"":1,""w"":2},{""u"":1,""v"":5,""w"":3},{""u"":6,""v"":4,""w"":-5}],""num_vertices"":10,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 3 \u2192 6 \u2192 4 \u2192 5 \u2192 9, Cost: 8"",""greedy_succeeds"":false,""difficulty_numeric"":10,""critical_step_index"":0}","10 nodes, unidirectional and time dependent"
+SP_004,W3,"""A data packet is injected into a communication network at Router 0 at timestamp zero and must reach Server 9 across 10 nodes with one-way transmission links. Transmission delays are measured in milliseconds. Two links in the network are time-sensitive — their transmission delay varies depending on the timestamp at which the packet arrives at the source router of that link. Fixed delay links (delay remains constant regardless of arrival time): (0→3: 4ms), (3→6: 3ms), (4→5: 3ms), (5→9: 3ms), (0→2: 5ms), (2→5: 4ms), (0→7: 9ms), (7→5: 4ms), (4→9: 7ms), (6→9: 8ms). Time-sensitive links: (0→1: always 2ms), (1→5: costs 3ms if packet arrives at node 1 at or before timestamp 1, but costs 12ms if it arrives after timestamp 1 — the high-speed channel closes after the first millisecond window), (6→4: saves 5ms, i.e. cost of -5ms, if packet arrives at node 6 at or before timestamp 10 — a hardware accelerator that reduces cumulative delay — but costs 4ms if it arrives after timestamp 10). Note that a negative cost on a link implies the route actively reduces the packet's cumulative travel time. Determine the sequence of routers through which the packet should be transmitted to minimize total end-to-end delay from Router 0 to Server 9, and report that minimum delay.
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X""","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",Algorithmic Suit,shortest_path,Hard,Low,,Bellman-Ford,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":9,""graph"":[{""u"":0,""v"":3,""w"":4},{""u"":3,""v"":6,""w"":3},{""u"":4,""v"":5,""w"":3},{""u"":5,""v"":9,""w"":3},{""u"":0,""v"":2,""w"":5},{""u"":2,""v"":5,""w"":4},{""u"":0,""v"":7,""w"":9},{""u"":7,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":6,""v"":9,""w"":8},{""u"":0,""v"":1,""w"":2},{""u"":1,""v"":5,""w"":3},{""u"":6,""v"":4,""w"":-5}],""num_vertices"":10,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 3 \u2192 6 \u2192 4 \u2192 5 \u2192 9, Cost: 8"",""greedy_succeeds"":false,""difficulty_numeric"":10,""critical_step_index"":0,""node_mapping"":{""0"":""Hub A"",""1"":""Hub B"",""2"":""Hub C"",""3"":""Hub D"",""4"":""Hub E"",""5"":""Hub F"",""6"":""Hub G"",""7"":""Hub H"",""8"":""Hub I"",""9"":""Hub J""}}","10 nodes, unidirectional and time dependent"
+SP_004,W4,"Let G = (V, E, w) be a weighted directed graph where:
+
+- V = {0, 1, 2, ..., 9} is the set of nodes
+- E is the set of directed edges (one-way routes)
+- w(u, v, t) is the travel time in hours for edge (u, v) when departing at time t
+
+Fixed edges where w(u, v, t) = w(u, v) for all t:
+
+(0,3,4), (3,6,3), (4,5,3), (5,9,3), (0,2,5), (2,5,4), (0,7,9), (7,5,4), (4,9,7), (6,9,8)
+
+Time-dependent edges:
+
+w(0,1,t) = 2 for all t
+
+w(1,5,t) = 3 if t <= 1, else 12
+
+w(6,4,t) = -5 if t <= 10, else 4
+
+Objective:
+
+Find a directed path P* = (v_0, v_1, ..., v_k) where v_0 = 0, v_k = 9, and each (v_i, v_{i+1}) is in E, such that the total cost:
+
+Let t_0 = 0 and t_{i+1} = t_i + w(v_i, v_{i+1}, t_i) for all i.
+
+cost(P) = t_k
+
+is minimized over all valid directed paths from node 0 to node 9, where t_k >= 0 must hold at every step.
+
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",Algorithmic Suit,shortest_path,Hard,Low,,Bellman-Ford,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":9,""graph"":[{""u"":0,""v"":3,""w"":4},{""u"":3,""v"":6,""w"":3},{""u"":4,""v"":5,""w"":3},{""u"":5,""v"":9,""w"":3},{""u"":0,""v"":2,""w"":5},{""u"":2,""v"":5,""w"":4},{""u"":0,""v"":7,""w"":9},{""u"":7,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":6,""v"":9,""w"":8},{""u"":0,""v"":1,""w"":2},{""u"":1,""v"":5,""w"":3},{""u"":6,""v"":4,""w"":-5}],""num_vertices"":10,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 3 \u2192 6 \u2192 4 \u2192 5 \u2192 9, Cost: 8"",""greedy_succeeds"":false,""difficulty_numeric"":10,""critical_step_index"":0}","10 nodes, unidirectional and time dependent"
+SP_005,canonical,"A smuggler needs to transport contraband from Safe House A (node 0) to 
+Destination X (node 15) through an underground network of 16 safe locations 
+(0-15). Every tunnel is one-way. The tunnel network and transit times in 
+minutes are:
+ 
+- Safe House A (0) to Junction B (1): 5 mins
+- Safe House A (0) to Checkpoint C (3): 8 mins
+- Safe House A (0) to Hideout D (4): 7 mins
+- Junction B (1) to Tunnel E (2): 4 mins
+- Junction B (1) to Lookout F (5): 6 mins
+- Junction B (1) to Chamber G (7): 9 mins
+- Tunnel E (2) to Passage H (6): 5 mins
+- Tunnel E (2) to Vault I (8): 7 mins
+- Checkpoint C (3) to Chamber G (7): 6 mins
+- Checkpoint C (3) to Crossing J (9): 8 mins
+- Hideout D (4) to Lookout F (5): 4 mins
+- Hideout D (4) to Crossing J (9): 7 mins
+- Lookout F (5) to Passage H (6): 3 mins
+- Lookout F (5) to Relay K (10): 8 mins
+- Passage H (6) to Vault I (8): 4 mins
+- Passage H (6) to Relay K (10): 6 mins
+- Chamber G (7) to Vault I (8): 5 mins
+- Chamber G (7) to Crossing J (9): 7 mins
+- Vault I (8) to Relay K (10): 5 mins
+- Vault I (8) to Waypoint L (11): 8 mins
+- Crossing J (9) to Waypoint L (11): 6 mins
+- Crossing J (9) to Outpost M (12): 9 mins
+- Relay K (10) to Outpost M (12): 4 mins
+- Relay K (10) to Staging N (13): 7 mins
+- Waypoint L (11) to Staging N (13): 5 mins
+- Waypoint L (11) to Terminal O (14): 8 mins
+- Outpost M (12) to Terminal O (14): 6 mins
+- Outpost M (12) to Destination X (15): 10 mins
+- Staging N (13) to Terminal O (14): 3 mins
+- Staging N (13) to Destination X (15): 11 mins
+- Terminal O (14) to Destination X (15): 4 mins
+ 
+What is the fastest route from Safe House A (0) to Destination X (15), and 
+how long will it take?
+ 
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",Algorithmic Suit,shortest_path,medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":15,""graph"":[{""u"":0,""v"":1,""w"":5},{""u"":0,""v"":3,""w"":8},{""u"":0,""v"":4,""w"":7},{""u"":1,""v"":2,""w"":4},{""u"":1,""v"":5,""w"":6},{""u"":1,""v"":7,""w"":9},{""u"":2,""v"":6,""w"":5},{""u"":2,""v"":8,""w"":7},{""u"":3,""v"":7,""w"":6},{""u"":3,""v"":9,""w"":8},{""u"":4,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":5,""v"":6,""w"":3},{""u"":5,""v"":10,""w"":8},{""u"":6,""v"":8,""w"":4},{""u"":6,""v"":10,""w"":6},{""u"":7,""v"":8,""w"":5},{""u"":7,""v"":9,""w"":7},{""u"":8,""v"":10,""w"":5},{""u"":8,""v"":11,""w"":8},{""u"":9,""v"":11,""w"":6},{""u"":9,""v"":12,""w"":9},{""u"":10,""v"":12,""w"":4},{""u"":10,""v"":13,""w"":7},{""u"":11,""v"":13,""w"":5},{""u"":11,""v"":14,""w"":8},{""u"":12,""v"":14,""w"":6},{""u"":12,""v"":15,""w"":10},{""u"":13,""v"":14,""w"":3},{""u"":13,""v"":15,""w"":11},{""u"":14,""v"":15,""w"":4}],""num_vertices"":16,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 4 \u2192 9 \u2192 11 \u2192 14 \u2192 15, Cost: 32"",""greedy_succeeds"":false,""difficulty_numeric"":16,""critical_step_index"":1}",
+SP_005,W1,"A logistics coordinator dispatches a messenger from Central Station 0 and 
+requires delivery to Terminal Endpoint 15 across a sprawling network of 16 
+distribution points (0-15). Every passageway operates as a one-directional 
+route. The directional passage network and travel durations in minutes are:
+
+- Central Station 0 to Primary Node 1: 5 mins
+- Central Station 0 to Waypoint C 3: 8 mins
+- Central Station 0 to Outreach Point 4: 7 mins
+- Primary Node 1 to Access Corridor 2: 4 mins
+- Primary Node 1 to Observation Post 5: 6 mins
+- Primary Node 1 to Distribution Hall 7: 9 mins
+- Access Corridor 2 to Transit Passage 6: 5 mins
+- Access Corridor 2 to Storage Vault 8: 7 mins
+- Waypoint C 3 to Distribution Hall 7: 6 mins
+- Waypoint C 3 to Transfer Junction 9: 8 mins
+- Outreach Point 4 to Observation Post 5: 4 mins
+- Outreach Point 4 to Transfer Junction 9: 7 mins
+- Observation Post 5 to Transit Passage 6: 3 mins
+- Observation Post 5 to Relay Station 10: 8 mins
+- Transit Passage 6 to Storage Vault 8: 4 mins
+- Transit Passage 6 to Relay Station 10: 6 mins
+- Distribution Hall 7 to Storage Vault 8: 5 mins
+- Distribution Hall 7 to Transfer Junction 9: 7 mins
+- Storage Vault 8 to Relay Station 10: 5 mins
+- Storage Vault 8 to Checkpoint 11: 8 mins
+- Transfer Junction 9 to Checkpoint 11: 6 mins
+- Transfer Junction 9 to Assembly Point 12: 9 mins
+- Relay Station 10 to Assembly Point 12: 4 mins
+- Relay Station 10 to Staging Area 13: 7 mins
+- Checkpoint 11 to Staging Area 13: 5 mins
+- Checkpoint 11 to Processing Hub 14: 8 mins
+- Assembly Point 12 to Processing Hub 14: 6 mins
+- Assembly Point 12 to Terminal Endpoint 15: 10 mins
+- Staging Area 13 to Processing Hub 14: 3 mins
+- Staging Area 13 to Terminal Endpoint 15: 11 mins
+- Processing Hub 14 to Terminal Endpoint 15: 4 mins
+
+What is the fastest route from Central Station 0 to Terminal Endpoint 15, 
+and how long will the journey take?
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",Algorithmic Suit,shortest_path,medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":15,""graph"":[{""u"":0,""v"":1,""w"":5},{""u"":0,""v"":3,""w"":8},{""u"":0,""v"":4,""w"":7},{""u"":1,""v"":2,""w"":4},{""u"":1,""v"":5,""w"":6},{""u"":1,""v"":7,""w"":9},{""u"":2,""v"":6,""w"":5},{""u"":2,""v"":8,""w"":7},{""u"":3,""v"":7,""w"":6},{""u"":3,""v"":9,""w"":8},{""u"":4,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":5,""v"":6,""w"":3},{""u"":5,""v"":10,""w"":8},{""u"":6,""v"":8,""w"":4},{""u"":6,""v"":10,""w"":6},{""u"":7,""v"":8,""w"":5},{""u"":7,""v"":9,""w"":7},{""u"":8,""v"":10,""w"":5},{""u"":8,""v"":11,""w"":8},{""u"":9,""v"":11,""w"":6},{""u"":9,""v"":12,""w"":9},{""u"":10,""v"":12,""w"":4},{""u"":10,""v"":13,""w"":7},{""u"":11,""v"":13,""w"":5},{""u"":11,""v"":14,""w"":8},{""u"":12,""v"":14,""w"":6},{""u"":12,""v"":15,""w"":10},{""u"":13,""v"":14,""w"":3},{""u"":13,""v"":15,""w"":11},{""u"":14,""v"":15,""w"":4}],""num_vertices"":16,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 4 \u2192 9 \u2192 11 \u2192 14 \u2192 15, Cost: 32"",""greedy_succeeds"":false,""difficulty_numeric"":16,""critical_step_index"":1}",
+SP_005,W2,"| From | To | Pressure Loss (kPa) |
+|------|----|--------------------|
+| Central Reservoir 0 | Primary Node 1 | 5 |
+| Primary Node 1 | Access Corridor 2 | 4 |
+| Access Corridor 2 | Transit Passage 6 | 5 |
+| Transit Passage 6 | Storage Vault 8 | 4 |
+| Storage Vault 8 | Relay Station 10 | 5 |
+| Relay Station 10 | Assembly Point 12 | 4 |
+| Assembly Point 12 | Processing Hub 14 | 6 |
+| Processing Hub 14 | Final Treatment Plant 15 | 4 |
+| Central Reservoir 0 | Waypoint 3 | 8 |
+| Waypoint 3 | Distribution Hall 7 | 6 |
+| Distribution Hall 7 | Transfer Junction 9 | 7 |
+| Transfer Junction 9 | Checkpoint 11 | 6 |
+| Checkpoint 11 | Staging Area 13 | 8 |
+| Staging Area 13 | Final Treatment Plant 15 | 11 |
+| Central Reservoir 0 | Outreach Point 4 | 7 |
+| Outreach Point 4 | Observation Post 5 | 4 |
+| Observation Post 5 | Transit Passage 6 | 3 |
+| Transit Passage 6 | Storage Vault 8 | 4 |
+| Storage Vault 8 | Relay Station 10 | 5 |
+| Relay Station 10 | Assembly Point 12 | 4 |
+| Assembly Point 12 | Processing Hub 14 | 6 |
+| Processing Hub 14 | Final Treatment Plant 15 | 4 |
+| Primary Node 1 | Observation Post 5 | 6 |
+| Primary Node 1 | Distribution Hall 7 | 9 |
+| Access Corridor 2 | Storage Vault 8 | 7 |
+| Waypoint 3 | Transfer Junction 9 | 8 |
+| Outreach Point 4 | Transfer Junction 9 | 7 |
+| Observation Post 5 | Relay Station 10 | 8 |
+| Distribution Hall 7 | Storage Vault 8 | 5 |
+| Distribution Hall 7 | Transfer Junction 9 | 7 |
+| Transfer Junction 9 | Assembly Point 12 | 9 |
+
+**Question:** What is the path of minimum total pressure loss from Central Reservoir 0 to Final Treatment Plant 15 in this 16-node one-way pipeline network?
+
+Reply as: `Path: X → X → X, Cost: X`","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",Algorithmic Suit,shortest_path,medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":15,""graph"":[{""u"":0,""v"":1,""w"":5},{""u"":0,""v"":3,""w"":8},{""u"":0,""v"":4,""w"":7},{""u"":1,""v"":2,""w"":4},{""u"":1,""v"":5,""w"":6},{""u"":1,""v"":7,""w"":9},{""u"":2,""v"":6,""w"":5},{""u"":2,""v"":8,""w"":7},{""u"":3,""v"":7,""w"":6},{""u"":3,""v"":9,""w"":8},{""u"":4,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":5,""v"":6,""w"":3},{""u"":5,""v"":10,""w"":8},{""u"":6,""v"":8,""w"":4},{""u"":6,""v"":10,""w"":6},{""u"":7,""v"":8,""w"":5},{""u"":7,""v"":9,""w"":7},{""u"":8,""v"":10,""w"":5},{""u"":8,""v"":11,""w"":8},{""u"":9,""v"":11,""w"":6},{""u"":9,""v"":12,""w"":9},{""u"":10,""v"":12,""w"":4},{""u"":10,""v"":13,""w"":7},{""u"":11,""v"":13,""w"":5},{""u"":11,""v"":14,""w"":8},{""u"":12,""v"":14,""w"":6},{""u"":12,""v"":15,""w"":10},{""u"":13,""v"":14,""w"":3},{""u"":13,""v"":15,""w"":11},{""u"":14,""v"":15,""w"":4}],""num_vertices"":16,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 4 \u2192 9 \u2192 11 \u2192 14 \u2192 15, Cost: 32"",""greedy_succeeds"":false,""difficulty_numeric"":16,""critical_step_index"":1}",
+SP_005,W3,"A municipal water authority operates a distribution system consisting of 16 
+pumping stations (0–15) where water must flow from Central Reservoir 0 to 
+Final Treatment Plant 15 through a network of one-way pipelines, each with 
+a specific pressure loss value in kilopascals (kPa). The goal is to find 
+the path of least cumulative pressure loss through which water can travel 
+most efficiently. The directed connections and their pressure loss values are:
+
+(0→1,5), (1→2,4), (2→6,5), (6→8,4), (8→10,5), (10→12,4), (12→14,6), 
+(14→15,4),
+
+(0→3,8), (3→7,6), (7→9,8), (9→11,6), (11→13,8), (13→15,11),
+
+(0→4,7), (4→5,4), (5→6,3), (6→8,4), (8→10,5), (10→12,4), (12→14,6), 
+(14→15,4),
+
+(1→5,6), (1→7,9), (2→8,7), (3→9,8), (4→10,7), (5→11,8), (6→12,9), 
+(7→13,7), (8→14,8), (9→15,6),
+
+(0→8,25), (0→10,35), (0→12,45), (0→14,58), (1→14,55), (2→15,50), 
+(3→15,48), (4→15,47), (5→15,42), (6→15,38), (7→15,34), (8→15,28), 
+(9→15,22), (10→15,18), (11→15,15), (12→15,13), (13→15,12),
+
+(1→3,9), (2→4,8), (3→5,7), (4→6,6), (5→7,5), (6→9,7), (7→11,6), 
+(8→12,5), (9→13,8), (10→14,7), (11→3,5), (12→5,7), (13→6,4), 
+(14→7,5), (15→8,3)
+
+Determine the path of minimum total pressure loss from Central Reservoir 0 
+to Final Treatment Plant 15 and report the sequence of pumping stations 
+along with the cumulative pressure loss.
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",Algorithmic Suit,shortest_path,medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":15,""graph"":[{""u"":0,""v"":1,""w"":5},{""u"":0,""v"":3,""w"":8},{""u"":0,""v"":4,""w"":7},{""u"":1,""v"":2,""w"":4},{""u"":1,""v"":5,""w"":6},{""u"":1,""v"":7,""w"":9},{""u"":2,""v"":6,""w"":5},{""u"":2,""v"":8,""w"":7},{""u"":3,""v"":7,""w"":6},{""u"":3,""v"":9,""w"":8},{""u"":4,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":5,""v"":6,""w"":3},{""u"":5,""v"":10,""w"":8},{""u"":6,""v"":8,""w"":4},{""u"":6,""v"":10,""w"":6},{""u"":7,""v"":8,""w"":5},{""u"":7,""v"":9,""w"":7},{""u"":8,""v"":10,""w"":5},{""u"":8,""v"":11,""w"":8},{""u"":9,""v"":11,""w"":6},{""u"":9,""v"":12,""w"":9},{""u"":10,""v"":12,""w"":4},{""u"":10,""v"":13,""w"":7},{""u"":11,""v"":13,""w"":5},{""u"":11,""v"":14,""w"":8},{""u"":12,""v"":14,""w"":6},{""u"":12,""v"":15,""w"":10},{""u"":13,""v"":14,""w"":3},{""u"":13,""v"":15,""w"":11},{""u"":14,""v"":15,""w"":4}],""num_vertices"":16,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 4 \u2192 9 \u2192 11 \u2192 14 \u2192 15, Cost: 32"",""greedy_succeeds"":false,""difficulty_numeric"":16,""critical_step_index"":1,""node_mapping"":{""0"":""Hub A"",""1"":""Hub B"",""2"":""Hub C"",""3"":""Hub D"",""4"":""Hub E"",""5"":""Hub F"",""6"":""Hub G"",""7"":""Hub H"",""8"":""Hub I"",""9"":""Hub J"",""10"":""Hub K"",""11"":""Hub L"",""12"":""Hub M"",""13"":""Hub N"",""14"":""Hub O"",""15"":""Hub P""}}",
+SP_005,W4,"Let G = (V, E, w) be a weighted directed graph where:
+- V = {0, 1, 2, ..., 15} is the set of pumping stations
+- E is the set of directed edges (one-way pipelines)
+- w(u, v) is the pressure loss in kilopascals (kPa) for edge (u, v)
+
+Edge list in the form (u, v, w(u,v)):
+(0,1,5), (1,2,4), (2,6,5), (6,8,4), (8,10,5), (10,12,4), (12,14,6), (14,15,4),
+(0,3,8), (3,7,6), (7,9,8), (9,11,6), (11,13,8), (13,15,11),
+(0,4,7), (4,5,4), (5,6,3), (6,8,4), (8,10,5), (10,12,4), (12,14,6), (14,15,4),
+(1,5,6), (1,7,9), (2,8,7), (3,9,8), (4,10,7), (5,11,8), (6,12,9), (7,13,7), (8,14,8), (9,15,6)
+
+Objective: Find a path P* = (v_0, v_1, ..., v_k) where v_0 = 0, v_k = 15, and each (v_i, v_{i+1}) is in E, such that the total cost:
+
+cost(P) = sum of w(v_i, v_{i+1}) for i = 0 to k-1
+
+is minimized over all valid paths from node 0 to node 15.
+
+Format: Path: X -> X -> X, Cost: X","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",Algorithmic Suit,shortest_path,medium,Medium,,Dijkstra,"{""subtype"":""SP"",""directed"":true,""source"":0,""target"":15,""graph"":[{""u"":0,""v"":1,""w"":5},{""u"":0,""v"":3,""w"":8},{""u"":0,""v"":4,""w"":7},{""u"":1,""v"":2,""w"":4},{""u"":1,""v"":5,""w"":6},{""u"":1,""v"":7,""w"":9},{""u"":2,""v"":6,""w"":5},{""u"":2,""v"":8,""w"":7},{""u"":3,""v"":7,""w"":6},{""u"":3,""v"":9,""w"":8},{""u"":4,""v"":5,""w"":4},{""u"":4,""v"":9,""w"":7},{""u"":5,""v"":6,""w"":3},{""u"":5,""v"":10,""w"":8},{""u"":6,""v"":8,""w"":4},{""u"":6,""v"":10,""w"":6},{""u"":7,""v"":8,""w"":5},{""u"":7,""v"":9,""w"":7},{""u"":8,""v"":10,""w"":5},{""u"":8,""v"":11,""w"":8},{""u"":9,""v"":11,""w"":6},{""u"":9,""v"":12,""w"":9},{""u"":10,""v"":12,""w"":4},{""u"":10,""v"":13,""w"":7},{""u"":11,""v"":13,""w"":5},{""u"":11,""v"":14,""w"":8},{""u"":12,""v"":14,""w"":6},{""u"":12,""v"":15,""w"":10},{""u"":13,""v"":14,""w"":3},{""u"":13,""v"":15,""w"":11},{""u"":14,""v"":15,""w"":4}],""num_vertices"":16,""instance_type"":""adversarial"",""greedy_answer"":""Path: 0 \u2192 4 \u2192 9 \u2192 11 \u2192 14 \u2192 15, Cost: 32"",""greedy_succeeds"":false,""difficulty_numeric"":16,""critical_step_index"":1}",
+WIS_001,canonical,"A farmer owns plots of land along a straight road. The plots are numbered 
+0 through 9 from west to east. Due to access restrictions, no two adjacent 
+plots can be harvested in the same season. Each plot has an expected crop 
+yield in tonnes:
+
+Plot 0: 8 tonnes
+Plot 1: 3 tonnes
+Plot 2: 6 tonnes
+Plot 3: 2 tonnes
+Plot 4: 9 tonnes
+Plot 5: 4 tonnes
+Plot 6: 7 tonnes
+Plot 7: 1 tonne
+Plot 8: 5 tonnes
+Plot 9: 10 tonnes
+
+Adjacent plots (cannot both be harvested):
+0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9
+
+Which plots should the farmer harvest to maximise total yield, and what 
+is that maximum yield?
+
+Reply with only the selected plots and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 2, 4, 6, 9}, Total: 40",Algorithmic Suit,wis,Easy,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":8},{""id"":1,""start"":2,""end"":3,""weight"":3},{""id"":2,""start"":4,""end"":5,""weight"":6},{""id"":3,""start"":6,""end"":7,""weight"":2},{""id"":4,""start"":8,""end"":9,""weight"":9},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":7},{""id"":7,""start"":14,""end"":15,""weight"":1},{""id"":8,""start"":16,""end"":17,""weight"":5},{""id"":9,""start"":18,""end"":19,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {0, 2, 4, 6, 9}, Total: 40"",""difficulty_numeric"":10,""critical_step_index"":-1}",
+WIS_001,W1,"A landowner possesses parcels of farmland along a linear country lane. The parcels are labeled 0 through 9 from the western end to the eastern end. Due to land access regulations, no two neighboring parcels can be reaped during the same growing period. Each parcel has an anticipated harvest output in tonnes: Parcel 0: 8 tonnes Parcel 1: 3 tonnes Parcel 2: 6 tonnes Parcel 3: 2 tonnes Parcel 4: 9 tonnes Parcel 5: 4 tonnes Parcel 6: 7 tonnes Parcel 7: 1 tonne Parcel 8: 5 tonnes Parcel 9: 10 tonnes Neighboring parcels (cannot both be reaped): 0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9 Which parcels should the landowner reap to maximize total harvest output, and what is that peak yield? Reply with only the chosen parcels and the total weight. Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 2, 4, 6, 9}, Total: 40",Algorithmic Suit,wis,Easy,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":8},{""id"":1,""start"":2,""end"":3,""weight"":3},{""id"":2,""start"":4,""end"":5,""weight"":6},{""id"":3,""start"":6,""end"":7,""weight"":2},{""id"":4,""start"":8,""end"":9,""weight"":9},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":7},{""id"":7,""start"":14,""end"":15,""weight"":1},{""id"":8,""start"":16,""end"":17,""weight"":5},{""id"":9,""start"":18,""end"":19,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {0, 2, 4, 6, 9}, Total: 40"",""difficulty_numeric"":10,""critical_step_index"":-1}",
+WIS_001,W2,"| Field | Details |
+|-------|---------|
+| Problem | Select plots to maximise total yield; no two adjacent plots can be harvested in the same season |
+| Layout | Plots numbered 0–9 from west to east (straight road) |
+
+| Plot | Yield (tonnes) |
+|------|---------------|
+| 0 | 8 |
+| 1 | 3 |
+| 2 | 6 |
+| 3 | 2 |
+| 4 | 9 |
+| 5 | 4 |
+| 6 | 7 |
+| 7 | 1 |
+| 8 | 5 |
+| 9 | 10 |
+
+| Adjacency Table | |
+|--------|--------|
+| Plot A | Plot B |
+| 0 | 1 |
+| 1 | 2 |
+| 2 | 3 |
+| 3 | 4 |
+| 4 | 5 |
+| 5 | 6 |
+| 6 | 7 |
+| 7 | 8 |
+| 8 | 9 |
+
+Question: Which plots should the farmer harvest to maximise total yield, given no two adjacent plots can be selected? Reply as: Selected: {X, X, X, ...}, Total: X","Selected: {0, 2, 4, 6, 9}, Total: 40",Algorithmic Suit,wis,Easy,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":8},{""id"":1,""start"":2,""end"":3,""weight"":3},{""id"":2,""start"":4,""end"":5,""weight"":6},{""id"":3,""start"":6,""end"":7,""weight"":2},{""id"":4,""start"":8,""end"":9,""weight"":9},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":7},{""id"":7,""start"":14,""end"":15,""weight"":1},{""id"":8,""start"":16,""end"":17,""weight"":5},{""id"":9,""start"":18,""end"":19,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {0, 2, 4, 6, 9}, Total: 40"",""difficulty_numeric"":10,""critical_step_index"":-1}",
+WIS_001,W3,"""A thief breaks into a street of 10 houses numbered 0 to 9. Security systems link every pair of neighboring houses, meaning robbing two directly adjacent houses will trigger an alarm. Each house contains valuables worth: House 0: $8K, House 1: $3K, House 2: $6K, House 3: $2K, House 4: $9K, House 5: $4K, House 6: $7K, House 7: $1K, House 8: $5K, House 9: $10K. Which combination of houses should the thief rob to maximize the total stolen value without triggering any alarm, and what is that maximum value?
+Reply with only the selected houses and the total value.
+Format: Selected: {X, X, X, ...}, Total: X""","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",Algorithmic Suit,wis,Easy,High,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":8},{""id"":1,""start"":2,""end"":3,""weight"":3},{""id"":2,""start"":4,""end"":5,""weight"":6},{""id"":3,""start"":6,""end"":7,""weight"":2},{""id"":4,""start"":8,""end"":9,""weight"":9},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":7},{""id"":7,""start"":14,""end"":15,""weight"":1},{""id"":8,""start"":16,""end"":17,""weight"":5},{""id"":9,""start"":18,""end"":19,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {0, 2, 4, 6, 9}, Total: 40"",""difficulty_numeric"":10,""critical_step_index"":-1,""item_mapping"":{""0"":""Item A"",""1"":""Item B"",""2"":""Item C"",""3"":""Item D"",""4"":""Item E"",""5"":""Item F"",""6"":""Item G"",""7"":""Item H"",""8"":""Item I"",""9"":""Item J""}}",
+WIS_001,W4,"Let G = (V, E) be an undirected graph where:
+
+V = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+E = {{0,1}, {1,2}, {2,3}, {3,4}, {4,5}, {5,6}, {6,7}, {7,8}, {8,9}}
+
+Let the weight function w: V -> R+ be defined as:
+
+w = {0->8, 1->3, 2->6, 3->2, 4->9, 5->4, 6->7, 7->1, 8->5, 9->10}
+
+Find an independent set S ⊆ V such that:
+
+maximise W(S) = sum of w(v) for all v in S
+
+subject to: for all u, v in S: {u, v} not in E
+
+Report only S and W(S).
+
+Format: Selected: {x1, x2, ...}, Total: W(S)","Selected: {0, 2, 4, 6, 9}, Total: 40",Algorithmic Suit,wis,Easy,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":8},{""id"":1,""start"":2,""end"":3,""weight"":3},{""id"":2,""start"":4,""end"":5,""weight"":6},{""id"":3,""start"":6,""end"":7,""weight"":2},{""id"":4,""start"":8,""end"":9,""weight"":9},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":7},{""id"":7,""start"":14,""end"":15,""weight"":1},{""id"":8,""start"":16,""end"":17,""weight"":5},{""id"":9,""start"":18,""end"":19,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {0, 2, 4, 6, 9}, Total: 40"",""difficulty_numeric"":10,""critical_step_index"":-1}",
+WIS_002,canonical,"A city has a hierarchical road network with 12 districts (0-11). 
+Roadworks mean that if two directly connected districts are both chosen 
+for a festival event, there will be traffic chaos. The city wants to 
+select as many districts as possible — weighted by expected attendance 
+— while avoiding any two directly connected districts.
+
+Expected attendance (thousands) per district:
+District 0: 6    District 1: 14   District 2: 3    District 3: 11
+District 4: 2    District 5: 3    District 6: 4    District 7: 9
+District 8: 4    District 9: 5    District 10: 8   District 11: 10
+
+Direct connections (cannot both host an event):
+0-1, 0-2, 0-3, 0-4
+1-5, 1-6
+2-7
+3-8, 3-9
+4-10, 4-11
+
+Which districts should host the festival to maximise total attendance, 
+and what is that maximum?
+
+Reply with only the selected districts and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 3, 7, 10, 11}, Total: 52",Algorithmic Suit,wis,medium,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":6},{""id"":1,""start"":2,""end"":3,""weight"":14},{""id"":2,""start"":4,""end"":5,""weight"":3},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":2},{""id"":5,""start"":10,""end"":11,""weight"":3},{""id"":6,""start"":12,""end"":13,""weight"":4},{""id"":7,""start"":14,""end"":15,""weight"":9},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":8},{""id"":11,""start"":22,""end"":23,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {1, 3, 7, 10, 11}, Total: 52"",""difficulty_numeric"":12,""critical_step_index"":-1}",
+WIS_002,W1,"A metropolis contains a tiered street network with 12 zones (0-11). Construction work means that if two directly linked zones are both selected for a carnival gathering, there will be gridlock. The city aims to pick as many zones as possible — weighted by projected turnout — while ensuring no two directly linked zones are both chosen. Projected turnout (thousands) per zone: Zone 0: 6 Zone 1: 14 Zone 2: 3 Zone 3: 11 Zone 4: 2 Zone 5: 3 Zone 6: 4 Zone 7: 9 Zone 8: 4 Zone 9: 5 Zone 10: 8 Zone 11: 10 Direct links (cannot both stage a gathering): 0-1, 0-2, 0-3, 0-4 1-5, 1-6 2-7 3-8, 3-9 4-10, 4-11 Which zones should stage the carnival to maximize total turnout, and what is that peak figure? Reply with only the chosen zones and the total weight. Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 3, 7, 10, 11}, Total: 52",Algorithmic Suit,wis,medium,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":6},{""id"":1,""start"":2,""end"":3,""weight"":14},{""id"":2,""start"":4,""end"":5,""weight"":3},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":2},{""id"":5,""start"":10,""end"":11,""weight"":3},{""id"":6,""start"":12,""end"":13,""weight"":4},{""id"":7,""start"":14,""end"":15,""weight"":9},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":8},{""id"":11,""start"":22,""end"":23,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {1, 3, 7, 10, 11}, Total: 52"",""difficulty_numeric"":12,""critical_step_index"":-1}",
+WIS_002,W2,"| Field | Details |
+|-------|---------|
+| Problem | Select districts to maximise total attendance; no two directly connected districts can both host an event |
+| Layout | 12 districts (0–11) in a hierarchical road network |
+
+| District | Attendance (thousands) |
+|----------|----------------------|
+| 0 | 6 |
+| 1 | 14 |
+| 2 | 3 |
+| 3 | 11 |
+| 4 | 2 |
+| 5 | 3 |
+| 6 | 4 |
+| 7 | 9 |
+| 8 | 4 |
+| 9 | 5 |
+| 10 | 8 |
+| 11 | 10 |
+
+| Adjacency Table | |
+|------------|------------|
+| District A | District B |
+| 0 | 1 |
+| 0 | 2 |
+| 0 | 3 |
+| 0 | 4 |
+| 1 | 5 |
+| 1 | 6 |
+| 2 | 7 |
+| 3 | 8 |
+| 3 | 9 |
+| 4 | 10 |
+| 4 | 11 |
+
+Question: Which districts should host the festival to maximise total attendance, given no two directly connected districts can both be selected? Reply as: Selected: {X, X, X, ...}, Total: X","Selected: {1, 3, 7, 10, 11}, Total: 52",Algorithmic Suit,wis,medium,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":6},{""id"":1,""start"":2,""end"":3,""weight"":14},{""id"":2,""start"":4,""end"":5,""weight"":3},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":2},{""id"":5,""start"":10,""end"":11,""weight"":3},{""id"":6,""start"":12,""end"":13,""weight"":4},{""id"":7,""start"":14,""end"":15,""weight"":9},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":8},{""id"":11,""start"":22,""end"":23,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {1, 3, 7, 10, 11}, Total: 52"",""difficulty_numeric"":12,""critical_step_index"":-1}",
+WIS_002,W3,"""A corporate network has 12 servers (0–11) arranged in a hierarchy. Due to bandwidth constraints, activating two directly linked servers simultaneously causes a system overload. The network administrator wants to activate the maximum number of servers weighted by their processing capacity in gigaflops: Server 0: 6, Server 1: 14, Server 2: 3, Server 3: 11, Server 4: 2, Server 5: 3, Server 6: 4, Server 7: 9, Server 8: 4, Server 9: 5, Server 10: 8, Server 11: 10. Direct links between servers that cannot both be active simultaneously: (0,1), (0,2), (0,3), (0,4), (1,5), (1,6), (2,7), (3,8), (3,9), (4,10), (4,11). Which combination of servers should be activated to maximize total processing capacity without causing any overload, and what is that maximum capacity?
+Reply with only the selected servers and the total capacity.
+Format: Selected: {X, X, X, ...}, Total: X""","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52",Algorithmic Suit,wis,medium,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":6},{""id"":1,""start"":2,""end"":3,""weight"":14},{""id"":2,""start"":4,""end"":5,""weight"":3},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":2},{""id"":5,""start"":10,""end"":11,""weight"":3},{""id"":6,""start"":12,""end"":13,""weight"":4},{""id"":7,""start"":14,""end"":15,""weight"":9},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":8},{""id"":11,""start"":22,""end"":23,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {1, 3, 7, 10, 11}, Total: 52"",""difficulty_numeric"":12,""critical_step_index"":-1,""item_mapping"":{""0"":""Item A"",""1"":""Item B"",""2"":""Item C"",""3"":""Item D"",""4"":""Item E"",""5"":""Item F"",""6"":""Item G"",""7"":""Item H"",""8"":""Item I"",""9"":""Item J"",""10"":""Item K"",""11"":""Item L""}}",
+WIS_002,W4,"Let G = (V, E) be an undirected graph where:
+V = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+E = {{0,1}, {0,2}, {0,3}, {0,4}, {1,5}, {1,6}, {2,7}, {3,8}, {3,9}, {4,10}, {4,11}}
+Let the weight function w: V -> R+ be defined as:
+w = {0->6, 1->14, 2->3, 3->11, 4->2, 5->3, 6->4, 7->9, 8->4, 9->5, 10->8, 11->10}
+Find an independent set S ⊆ V such that:
+maximise W(S) = sum of w(v) for all v in S
+subject to: for all u, v in S: {u, v} not in E
+Report only S and W(S).
+Format: Selected: {x1, x2, ...}, Total: W(S)","Selected: {1, 3, 7, 10, 11}, Total: 52",Algorithmic Suit,wis,medium,Medium,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":6},{""id"":1,""start"":2,""end"":3,""weight"":14},{""id"":2,""start"":4,""end"":5,""weight"":3},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":2},{""id"":5,""start"":10,""end"":11,""weight"":3},{""id"":6,""start"":12,""end"":13,""weight"":4},{""id"":7,""start"":14,""end"":15,""weight"":9},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":8},{""id"":11,""start"":22,""end"":23,""weight"":10}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {1, 3, 7, 10, 11}, Total: 52"",""difficulty_numeric"":12,""critical_step_index"":-1}",
+WIS_003,canonical,"A cybersecurity firm is deploying monitoring sensors across 14 server 
+nodes in a network. Two servers that are directly connected share traffic 
+logs, meaning deploying sensors on both would be redundant. Each server 
+has an importance score. The firm wants to maximise total importance 
+of monitored servers while avoiding any two directly connected servers.
+
+Importance scores:
+Server 0: 15    Server 1: 6     Server 2: 7     Server 3: 8
+Server 4: 13    Server 5: 9     Server 6: 8     Server 7: 7
+Server 8: 11    Server 9: 5     Server 10: 6    Server 11: 7
+Server 12: 9    Server 13: 8
+
+Direct connections (cannot both be monitored):
+0-1, 0-2, 0-3
+4-5, 4-6, 4-7
+8-9, 8-10, 8-11
+1-5, 3-6, 2-9, 7-10, 6-11
+4-12, 12-13, 8-13
+0-4, 5-8
+
+Which servers should be monitored to maximise total importance, and 
+what is that maximum?
+
+Reply with only the selected servers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",Algorithmic Suit,wis,medium,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":15},{""id"":1,""start"":2,""end"":3,""weight"":6},{""id"":2,""start"":4,""end"":5,""weight"":7},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":13},{""id"":5,""start"":10,""end"":11,""weight"":9},{""id"":6,""start"":12,""end"":13,""weight"":8},{""id"":7,""start"":14,""end"":15,""weight"":7},{""id"":8,""start"":16,""end"":17,""weight"":11},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":6},{""id"":11,""start"":22,""end"":23,""weight"":7},{""id"":12,""start"":24,""end"":25,""weight"":9},{""id"":13,""start"":26,""end"":27,""weight"":8}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55"",""difficulty_numeric"":14,""critical_step_index"":0}",
+WIS_003,W1,"A network security company is installing surveillance sensors across 14 computing nodes in a digital infrastructure. Two computing nodes that are directly linked exchange traffic data, meaning placing sensors on both would be duplicative. Each computing node carries a criticality rating. The company aims to maximize the total criticality of surveilled nodes while ensuring no two directly linked nodes are both selected. Criticality ratings: Node 0: 15 Node 1: 6 Node 2: 7 Node 3: 8 Node 4: 13 Node 5: 9 Node 6: 8 Node 7: 7 Node 8: 11 Node 9: 5 Node 10: 6 Node 11: 7 Node 12: 9 Node 13: 8 Direct links (cannot both be surveilled): 0-1, 0-2, 0-3 4-5, 4-6, 4-7 8-9, 8-10, 8-11 1-5, 3-6, 2-9, 7-10, 6-11 4-12, 12-13, 8-13 0-4, 5-8 Which computing nodes should be surveilled to maximize total criticality, and what is that peak value? Reply with only the chosen nodes and the total weight. Format: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",Algorithmic Suit,wis,medium,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":15},{""id"":1,""start"":2,""end"":3,""weight"":6},{""id"":2,""start"":4,""end"":5,""weight"":7},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":13},{""id"":5,""start"":10,""end"":11,""weight"":9},{""id"":6,""start"":12,""end"":13,""weight"":8},{""id"":7,""start"":14,""end"":15,""weight"":7},{""id"":8,""start"":16,""end"":17,""weight"":11},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":6},{""id"":11,""start"":22,""end"":23,""weight"":7},{""id"":12,""start"":24,""end"":25,""weight"":9},{""id"":13,""start"":26,""end"":27,""weight"":8}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55"",""difficulty_numeric"":14,""critical_step_index"":0}",
+WIS_003,W2,"| Field | Details |
+|-------|---------|
+| Problem | Select servers to maximise total importance; no two directly connected servers can both be monitored |
+| Layout | 14 server nodes (0–13) in a network |
+
+| Server | Importance Score |
+|--------|-----------------|
+| 0 | 15 |
+| 1 | 6 |
+| 2 | 7 |
+| 3 | 8 |
+| 4 | 13 |
+| 5 | 9 |
+| 6 | 8 |
+| 7 | 7 |
+| 8 | 11 |
+| 9 | 5 |
+| 10 | 6 |
+| 11 | 7 |
+| 12 | 9 |
+| 13 | 8 |
+
+| Adjacency Table | |
+|----------|----------|
+| Server A | Server B |
+| 0 | 1 |
+| 0 | 2 |
+| 0 | 3 |
+| 4 | 5 |
+| 4 | 6 |
+| 4 | 7 |
+| 8 | 9 |
+| 8 | 10 |
+| 8 | 11 |
+| 1 | 5 |
+| 3 | 6 |
+| 2 | 9 |
+| 7 | 10 |
+| 6 | 11 |
+| 4 | 12 |
+| 12 | 13 |
+| 8 | 13 |
+| 0 | 4 |
+| 5 | 8 |
+
+Question: Which servers should be monitored to maximise total importance, given no two directly connected servers can both be selected? Reply as: Selected: {X, X, X, ...}, Total: X","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",Algorithmic Suit,wis,medium,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":15},{""id"":1,""start"":2,""end"":3,""weight"":6},{""id"":2,""start"":4,""end"":5,""weight"":7},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":13},{""id"":5,""start"":10,""end"":11,""weight"":9},{""id"":6,""start"":12,""end"":13,""weight"":8},{""id"":7,""start"":14,""end"":15,""weight"":7},{""id"":8,""start"":16,""end"":17,""weight"":11},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":6},{""id"":11,""start"":22,""end"":23,""weight"":7},{""id"":12,""start"":24,""end"":25,""weight"":9},{""id"":13,""start"":26,""end"":27,""weight"":8}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55"",""difficulty_numeric"":14,""critical_step_index"":0}",
+WIS_003,W3,"""A university is scheduling final exams across 14 classrooms (0–13). Two classrooms that share a wall have overlapping noise interference, meaning exams cannot be held in both simultaneously. Each classroom has a student capacity score representing how many students can be examined at once. The university wants to maximize the total number of students examined in a single time slot while avoiding any two noise-interfering classrooms. Capacity scores: Room 0: 15, Room 1: 6, Room 2: 7, Room 3: 8, Room 4: 13, Room 5: 9, Room 6: 8, Room 7: 7, Room 8: 11, Room 9: 5, Room 10: 6, Room 11: 7, Room 12: 9, Room 13: 8. Pairs of classrooms with noise interference that cannot both host exams simultaneously: (0,1), (0,2), (0,3), (4,5), (4,6), (4,7), (8,9), (8,10), (8,11), (1,5), (3,6), (2,9), (7,10), (6,11), (4,12), (12,13), (8,13), (0,4), (5,8). Which combination of classrooms should be scheduled to maximize the total number of students examined, and what is that maximum count?
+Reply with only the selected classrooms and the total capacity.
+Format: Selected: {X, X, X, ...}, Total: X""","Selected: {Item B, Item C, Item D, Item E, Item K, Item L, Item N}, Total: 55",Algorithmic Suit,wis,medium,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":15},{""id"":1,""start"":2,""end"":3,""weight"":6},{""id"":2,""start"":4,""end"":5,""weight"":7},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":13},{""id"":5,""start"":10,""end"":11,""weight"":9},{""id"":6,""start"":12,""end"":13,""weight"":8},{""id"":7,""start"":14,""end"":15,""weight"":7},{""id"":8,""start"":16,""end"":17,""weight"":11},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":6},{""id"":11,""start"":22,""end"":23,""weight"":7},{""id"":12,""start"":24,""end"":25,""weight"":9},{""id"":13,""start"":26,""end"":27,""weight"":8}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55"",""difficulty_numeric"":14,""critical_step_index"":0,""item_mapping"":{""0"":""Item A"",""1"":""Item B"",""2"":""Item C"",""3"":""Item D"",""4"":""Item E"",""5"":""Item F"",""6"":""Item G"",""7"":""Item H"",""8"":""Item I"",""9"":""Item J"",""10"":""Item K"",""11"":""Item L"",""12"":""Item M"",""13"":""Item N""}}",
+WIS_003,W4,"Let G = (V, E) be an undirected graph where:
+
+V = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
+
+E = {{0,1}, {0,2}, {0,3}, {4,5}, {4,6}, {4,7}, {8,9}, {8,10}, {8,11}, {1,5}, {3,6}, {2,9}, {7,10}, {6,11}, {4,12}, {12,13}, {8,13}, {0,4}, {5,8}}
+
+Let the weight function w: V -> R+ be defined as:
+
+w = {0->15, 1->6, 2->7, 3->8, 4->13, 5->9, 6->8, 7->7, 8->11, 9->5, 10->6, 11->7, 12->9, 13->8}
+
+Find an independent set S ⊆ V such that:
+
+maximise W(S) = sum of w(v) for all v in S
+
+subject to: for all u, v in S: {u, v} not in E
+
+Report only S and W(S).
+
+Format: Selected: {x1, x2, ...}, Total: W(S)","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",Algorithmic Suit,wis,medium,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":15},{""id"":1,""start"":2,""end"":3,""weight"":6},{""id"":2,""start"":4,""end"":5,""weight"":7},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":13},{""id"":5,""start"":10,""end"":11,""weight"":9},{""id"":6,""start"":12,""end"":13,""weight"":8},{""id"":7,""start"":14,""end"":15,""weight"":7},{""id"":8,""start"":16,""end"":17,""weight"":11},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":6},{""id"":11,""start"":22,""end"":23,""weight"":7},{""id"":12,""start"":24,""end"":25,""weight"":9},{""id"":13,""start"":26,""end"":27,""weight"":8}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55"",""difficulty_numeric"":14,""critical_step_index"":0}",
+WIS_004,canonical,"A radio network has 16 transmission towers (0-15). Towers that are 
+directly linked interfere with each other and cannot broadcast on the 
+same frequency band simultaneously. Each tower has a coverage score. 
+Find the set of towers that can all broadcast simultaneously with the 
+maximum total coverage.
+
+Coverage scores:
+Tower 0: 5    Tower 1: 5    Tower 2: 4    Tower 3: 8
+Tower 4: 7    Tower 5: 4    Tower 6: 5    Tower 7: 4
+Tower 8: 4    Tower 9: 5    Tower 10: 4   Tower 11: 4
+Tower 12: 5   Tower 13: 6   Tower 14: 4   Tower 15: 3
+
+Direct links (cannot broadcast simultaneously):
+7-9, 9-5, 5-6, 6-14, 14-7
+10-12, 12-8, 8-1, 1-2, 2-10
+5-8, 14-10
+13-7, 13-6, 13-12, 13-2
+15-9, 15-12
+4-6, 4-1
+11-10, 11-5
+0-8, 0-14
+3-2, 3-7, 3-13
+
+Which towers should broadcast to maximise total coverage, and what is 
+that maximum?
+
+Reply with only the selected towers and the total weight.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":5},{""id"":1,""start"":2,""end"":3,""weight"":5},{""id"":2,""start"":4,""end"":5,""weight"":4},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":7},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":5},{""id"":7,""start"":14,""end"":15,""weight"":4},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":4},{""id"":11,""start"":22,""end"":23,""weight"":4},{""id"":12,""start"":24,""end"":25,""weight"":5},{""id"":13,""start"":26,""end"":27,""weight"":6},{""id"":14,""start"":28,""end"":29,""weight"":4},{""id"":15,""start"":30,""end"":31,""weight"":3}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"",""difficulty_numeric"":16,""critical_step_index"":1}",
+WIS_004,W1,"A wireless network contains 16 broadcasting masts (0-15). Masts that are directly linked cause signal interference and cannot transmit on the same frequency channel at the same time. Each mast has a reception score. Identify the collection of masts that can all transmit simultaneously with the greatest total reception. Reception scores: Mast 0: 5 Mast 1: 5 Mast 2: 4 Mast 3: 8 Mast 4: 7 Mast 5: 4 Mast 6: 5 Mast 7: 4 Mast 8: 4 Mast 9: 5 Mast 10: 4 Mast 11: 4 Mast 12: 5 Mast 13: 6 Mast 14: 4 Mast 15: 3 Direct links (cannot transmit simultaneously): 7-9, 9-5, 5-6, 6-14, 14-7 10-12, 12-8, 8-1, 1-2, 2-10 5-8, 14-10 13-7, 13-6, 13-12, 13-2 15-9, 15-12 4-6, 4-1 11-10, 11-5 0-8, 0-14 3-2, 3-7, 3-13 Which masts should transmit to maximize total reception, and what is that peak value? Reply with only the chosen masts and the total weight. Format: Selected: {X, X, X, ...}, Total: X","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":5},{""id"":1,""start"":2,""end"":3,""weight"":5},{""id"":2,""start"":4,""end"":5,""weight"":4},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":7},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":5},{""id"":7,""start"":14,""end"":15,""weight"":4},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":4},{""id"":11,""start"":22,""end"":23,""weight"":4},{""id"":12,""start"":24,""end"":25,""weight"":5},{""id"":13,""start"":26,""end"":27,""weight"":6},{""id"":14,""start"":28,""end"":29,""weight"":4},{""id"":15,""start"":30,""end"":31,""weight"":3}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"",""difficulty_numeric"":16,""critical_step_index"":1}",
+WIS_004,W2,"| Field | Details |
+|-------|---------|
+| Problem | Select towers to maximise total coverage; no two directly linked towers can broadcast simultaneously |
+| Layout | 16 transmission towers (0–15) in a radio network |
+
+| Tower | Coverage Score |
+|-------|---------------|
+| 0 | 5 |
+| 1 | 5 |
+| 2 | 4 |
+| 3 | 8 |
+| 4 | 7 |
+| 5 | 4 |
+| 6 | 5 |
+| 7 | 4 |
+| 8 | 4 |
+| 9 | 5 |
+| 10 | 4 |
+| 11 | 4 |
+| 12 | 5 |
+| 13 | 6 |
+| 14 | 4 |
+| 15 | 3 |
+
+| Adjacency Table | |
+|---------|---------|
+| Tower A | Tower B |
+| 7 | 9 |
+| 9 | 5 |
+| 5 | 6 |
+| 6 | 14 |
+| 14 | 7 |
+| 10 | 12 |
+| 12 | 8 |
+| 8 | 1 |
+| 1 | 2 |
+| 2 | 10 |
+| 5 | 8 |
+| 14 | 10 |
+| 13 | 7 |
+| 13 | 6 |
+| 13 | 12 |
+| 13 | 2 |
+| 15 | 9 |
+| 15 | 12 |
+| 4 | 6 |
+| 4 | 1 |
+| 11 | 10 |
+| 11 | 5 |
+| 0 | 8 |
+| 0 | 14 |
+| 3 | 2 |
+| 3 | 7 |
+| 3 | 13 |
+
+Question: Which towers should broadcast simultaneously to maximise total coverage, given no two directly linked towers can broadcast at the same time? Reply as: Selected: {X, X, X, ...}, Total: X","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":5},{""id"":1,""start"":2,""end"":3,""weight"":5},{""id"":2,""start"":4,""end"":5,""weight"":4},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":7},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":5},{""id"":7,""start"":14,""end"":15,""weight"":4},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":4},{""id"":11,""start"":22,""end"":23,""weight"":4},{""id"":12,""start"":24,""end"":25,""weight"":5},{""id"":13,""start"":26,""end"":27,""weight"":6},{""id"":14,""start"":28,""end"":29,""weight"":4},{""id"":15,""start"":30,""end"":31,""weight"":3}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"",""difficulty_numeric"":16,""critical_step_index"":1}",
+WIS_004,W3,"""A pharmaceutical company is selecting drug compounds (0–15) to advance into clinical trials. Any two compounds that share a biochemical interaction pathway cannot be tested simultaneously due to cross-reactivity risks. Each compound has a therapeutic potential score. The company wants to identify the largest set of non-interacting compounds that maximizes total therapeutic potential. Potential scores: Compound 0: 5, Compound 1: 5, Compound 2: 4, Compound 3: 8, Compound 4: 7, Compound 5: 4, Compound 6: 5, Compound 7: 4, Compound 8: 4, Compound 9: 5, Compound 10: 4, Compound 11: 4, Compound 12: 5, Compound 13: 6, Compound 14: 4, Compound 15: 3. Pairs of compounds with cross-reactive interactions that cannot be tested together: (7,9), (9,5), (5,6), (6,14), (14,7), (10,12), (12,8), (8,1), (1,2), (2,10), (5,8), (14,10), (13,7), (13,6), (13,12), (13,2), (15,9), (15,12), (4,6), (4,1), (11,10), (11,5), (0,8), (0,14), (3,2), (3,7), (3,13). Which combination of compounds should be selected to maximize total therapeutic potential without any cross-reactivity, and what is that maximum score?
+Reply with only the selected compounds and the total potential.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {Item A, Item B, Item D, Item G, Item J, Item L, Item M}, Total: 37",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":5},{""id"":1,""start"":2,""end"":3,""weight"":5},{""id"":2,""start"":4,""end"":5,""weight"":4},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":7},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":5},{""id"":7,""start"":14,""end"":15,""weight"":4},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":4},{""id"":11,""start"":22,""end"":23,""weight"":4},{""id"":12,""start"":24,""end"":25,""weight"":5},{""id"":13,""start"":26,""end"":27,""weight"":6},{""id"":14,""start"":28,""end"":29,""weight"":4},{""id"":15,""start"":30,""end"":31,""weight"":3}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"",""difficulty_numeric"":16,""critical_step_index"":1,""item_mapping"":{""0"":""Item A"",""1"":""Item B"",""2"":""Item C"",""3"":""Item D"",""4"":""Item E"",""5"":""Item F"",""6"":""Item G"",""7"":""Item H"",""8"":""Item I"",""9"":""Item J"",""10"":""Item K"",""11"":""Item L"",""12"":""Item M"",""13"":""Item N"",""14"":""Item O"",""15"":""Item P""}}",
+WIS_004,W4,"Let G = (V, E) be an undirected graph where:
+
+V = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+
+E = {{7,9}, {9,5}, {5,6}, {6,14}, {14,7}, {10,12}, {12,8}, {8,1}, {1,2}, {2,10}, {5,8}, {14,10}, {13,7}, {13,6}, {13,12}, {13,2}, {15,9}, {15,12}, {4,6}, {4,1}, {8,1}, {11,5}, {0,8}, {0,14}, {3,2}, {3,7}, {3,13}}
+
+Let the weight function w: V -> R+ be defined as:
+
+w = {0->5, 1->5, 2->4, 3->8, 4->7, 5->4, 6->5, 7->4, 8->4, 9->5, 10->4, 11->4, 12->5, 13->6, 14->4, 15->3}
+
+Find an independent set S ⊆ V such that:
+
+maximise W(S) = sum of w(v) for all v in S
+
+subject to: for all u, v in S: {u, v} not in E
+
+Report only S and W(S).
+
+Format: Selected: {x1, x2, ...}, Total: W(S)","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":5},{""id"":1,""start"":2,""end"":3,""weight"":5},{""id"":2,""start"":4,""end"":5,""weight"":4},{""id"":3,""start"":6,""end"":7,""weight"":8},{""id"":4,""start"":8,""end"":9,""weight"":7},{""id"":5,""start"":10,""end"":11,""weight"":4},{""id"":6,""start"":12,""end"":13,""weight"":5},{""id"":7,""start"":14,""end"":15,""weight"":4},{""id"":8,""start"":16,""end"":17,""weight"":4},{""id"":9,""start"":18,""end"":19,""weight"":5},{""id"":10,""start"":20,""end"":21,""weight"":4},{""id"":11,""start"":22,""end"":23,""weight"":4},{""id"":12,""start"":24,""end"":25,""weight"":5},{""id"":13,""start"":26,""end"":27,""weight"":6},{""id"":14,""start"":28,""end"":29,""weight"":4},{""id"":15,""start"":30,""end"":31,""weight"":3}],""greedy_succeeds"":false,""instance_type"":""adversarial"",""greedy_answer"":""Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"",""difficulty_numeric"":16,""critical_step_index"":1}",
+WIS_005,canonical,"A logistics company manages 18 distribution centers across a region. Due to 
+inventory management constraints, if two directly connected centers both 
+process the same product line, it creates supply chain inefficiencies. Each 
+center has a profitability score based on its operational capacity and market 
+demand. The company wants to select centers for a new product deployment to 
+maximize total profitability while ensuring no two directly connected centers 
+are selected.
+
+Profitability scores (in millions):
+Center 0: 12    Center 1: 9     Center 2: 14    Center 3: 11
+Center 4: 8     Center 5: 13    Center 6: 10    Center 7: 6
+Center 8: 15    Center 9: 7     Center 10: 11   Center 11: 9
+Center 12: 8    Center 13: 12   Center 14: 10   Center 15: 7
+Center 16: 13   Center 17: 6
+
+Direct connections (cannot both be selected):
+0-1, 0-4, 0-8
+1-2, 1-5, 1-9
+2-3, 2-6, 2-10
+3-7, 3-11
+4-5, 4-12
+5-6, 5-13
+6-7, 6-14
+7-15
+8-9, 8-12, 8-16
+9-10, 9-13
+10-11, 10-14
+11-15, 11-17
+12-13, 12-16
+13-14, 13-17
+14-15
+16-17
+0-5, 1-8, 2-12, 3-13, 4-10, 6-16, 7-12, 9-14, 11-16
+
+Which distribution centers should be selected for the new product 
+deployment to maximize total profitability, and what is that maximum?
+
+Reply with only the selected centers and the total profitability.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":12},{""id"":1,""start"":2,""end"":3,""weight"":9},{""id"":2,""start"":4,""end"":5,""weight"":14},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":8},{""id"":5,""start"":10,""end"":11,""weight"":13},{""id"":6,""start"":12,""end"":13,""weight"":10},{""id"":7,""start"":14,""end"":15,""weight"":6},{""id"":8,""start"":16,""end"":17,""weight"":15},{""id"":9,""start"":18,""end"":19,""weight"":7},{""id"":10,""start"":20,""end"":21,""weight"":11},{""id"":11,""start"":22,""end"":23,""weight"":9},{""id"":12,""start"":24,""end"":25,""weight"":8},{""id"":13,""start"":26,""end"":27,""weight"":12},{""id"":14,""start"":28,""end"":29,""weight"":10},{""id"":15,""start"":30,""end"":31,""weight"":7},{""id"":16,""start"":32,""end"":33,""weight"":13},{""id"":17,""start"":34,""end"":35,""weight"":6}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {2, 5, 7, 8, 11, 14}, Total: 67"",""difficulty_numeric"":18,""critical_step_index"":-1}",
+WIS_005,W1,"A university department is assembling 18 research teams across various 
+laboratories. Due to resource-sharing constraints, if two directly 
+connected laboratories both contribute researchers to the same project, 
+it creates operational conflicts and reduces efficiency. Each laboratory 
+has a research productivity score based on its equipment capacity and 
+faculty expertise. The department wants to select laboratories for a 
+major interdisciplinary initiative to maximize total research output 
+while ensuring no two directly connected laboratories are selected.
+
+Research productivity scores (in units):
+Laboratory 0: 12    Laboratory 1: 9     Laboratory 2: 14    Laboratory 3: 11
+Laboratory 4: 8     Laboratory 5: 13    Laboratory 6: 10    Laboratory 7: 6
+Laboratory 8: 15    Laboratory 9: 7     Laboratory 10: 11   Laboratory 11: 9
+Laboratory 12: 8    Laboratory 13: 12   Laboratory 14: 10   Laboratory 15: 7
+Laboratory 16: 13   Laboratory 17: 6
+
+Direct connections (cannot both be selected):
+0-1, 0-4, 0-8
+1-2, 1-5, 1-9
+2-3, 2-6, 2-10
+3-7, 3-11
+4-5, 4-12
+5-6, 5-13
+6-7, 6-14
+7-15
+8-9, 8-12, 8-16
+9-10, 9-13
+10-11, 10-14
+11-15, 11-17
+12-13, 12-16
+13-14, 13-17
+14-15
+16-17
+0-5, 1-8, 2-12, 3-13, 4-10, 6-16, 7-12, 9-14, 11-16
+
+Which laboratories should be selected for the interdisciplinary 
+initiative to maximize total research productivity, and what is that 
+maximum?
+
+Reply with only the selected laboratories and the total productivity.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":12},{""id"":1,""start"":2,""end"":3,""weight"":9},{""id"":2,""start"":4,""end"":5,""weight"":14},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":8},{""id"":5,""start"":10,""end"":11,""weight"":13},{""id"":6,""start"":12,""end"":13,""weight"":10},{""id"":7,""start"":14,""end"":15,""weight"":6},{""id"":8,""start"":16,""end"":17,""weight"":15},{""id"":9,""start"":18,""end"":19,""weight"":7},{""id"":10,""start"":20,""end"":21,""weight"":11},{""id"":11,""start"":22,""end"":23,""weight"":9},{""id"":12,""start"":24,""end"":25,""weight"":8},{""id"":13,""start"":26,""end"":27,""weight"":12},{""id"":14,""start"":28,""end"":29,""weight"":10},{""id"":15,""start"":30,""end"":31,""weight"":7},{""id"":16,""start"":32,""end"":33,""weight"":13},{""id"":17,""start"":34,""end"":35,""weight"":6}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {2, 5, 7, 8, 11, 14}, Total: 67"",""difficulty_numeric"":18,""critical_step_index"":-1}",
+WIS_005,W2,"| Field | Details |
+|-------|---------|
+| Problem | Select distribution centers to maximise total profitability; no two directly connected centers can both be selected |
+| Layout | 18 distribution centers (0–17) across a region |
+
+| Center | Profitability (millions) |
+|--------|------------------------|
+| 0 | 12 |
+| 1 | 9 |
+| 2 | 14 |
+| 3 | 11 |
+| 4 | 8 |
+| 5 | 13 |
+| 6 | 10 |
+| 7 | 6 |
+| 8 | 15 |
+| 9 | 7 |
+| 10 | 11 |
+| 11 | 9 |
+| 12 | 8 |
+| 13 | 12 |
+| 14 | 10 |
+| 15 | 7 |
+| 16 | 13 |
+| 17 | 6 |
+
+| Adjacency Table | |
+|----------|----------|
+| Center A | Center B |
+| 0 | 1 |
+| 0 | 4 |
+| 0 | 8 |
+| 1 | 2 |
+| 1 | 5 |
+| 1 | 9 |
+| 2 | 3 |
+| 2 | 6 |
+| 2 | 10 |
+| 3 | 7 |
+| 3 | 11 |
+| 4 | 5 |
+| 4 | 12 |
+| 5 | 6 |
+| 5 | 13 |
+| 6 | 7 |
+| 6 | 14 |
+| 7 | 15 |
+| 8 | 9 |
+| 8 | 12 |
+| 8 | 16 |
+| 9 | 10 |
+| 9 | 13 |
+| 10 | 11 |
+| 10 | 14 |
+| 11 | 15 |
+| 11 | 17 |
+| 12 | 13 |
+| 12 | 16 |
+| 13 | 14 |
+| 13 | 17 |
+| 14 | 15 |
+| 16 | 17 |
+| 0 | 5 |
+| 1 | 8 |
+| 2 | 12 |
+| 3 | 13 |
+| 4 | 10 |
+| 6 | 16 |
+| 7 | 12 |
+| 9 | 14 |
+| 11 | 16 |
+
+Question: Which distribution centers should be selected for the new product deployment to maximise total profitability, given no two directly connected centers can both be selected? Reply as: Selected: {X, X, X, ...}, Total: X","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":12},{""id"":1,""start"":2,""end"":3,""weight"":9},{""id"":2,""start"":4,""end"":5,""weight"":14},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":8},{""id"":5,""start"":10,""end"":11,""weight"":13},{""id"":6,""start"":12,""end"":13,""weight"":10},{""id"":7,""start"":14,""end"":15,""weight"":6},{""id"":8,""start"":16,""end"":17,""weight"":15},{""id"":9,""start"":18,""end"":19,""weight"":7},{""id"":10,""start"":20,""end"":21,""weight"":11},{""id"":11,""start"":22,""end"":23,""weight"":9},{""id"":12,""start"":24,""end"":25,""weight"":8},{""id"":13,""start"":26,""end"":27,""weight"":12},{""id"":14,""start"":28,""end"":29,""weight"":10},{""id"":15,""start"":30,""end"":31,""weight"":7},{""id"":16,""start"":32,""end"":33,""weight"":13},{""id"":17,""start"":34,""end"":35,""weight"":6}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {2, 5, 7, 8, 11, 14}, Total: 67"",""difficulty_numeric"":18,""critical_step_index"":-1}",
+WIS_005,W3,"A multinational corporation is planning a major office reorganization across 
+18 floor spaces in their headquarters building (0-17). Two floor spaces 
+that are vertically or horizontally adjacent share electrical infrastructure, 
+meaning if both are allocated to the same department, it creates power 
+distribution bottlenecks and reduces operational efficiency. Each floor 
+space has a worker capacity score representing how many employees can be 
+accommodated in that area. The corporation wants to maximize the total 
+number of employees that can be allocated in a single operational phase 
+while avoiding any two adjacent floor spaces.
+
+Capacity scores:
+Space 0: 12, Space 1: 9, Space 2: 14, Space 3: 11, Space 4: 8, Space 5: 13, 
+Space 6: 10, Space 7: 6, Space 8: 15, Space 9: 7, Space 10: 11, Space 11: 9, 
+Space 12: 8, Space 13: 12, Space 14: 10, Space 15: 7, Space 16: 13, Space 17: 6
+
+Pairs of floor spaces with shared electrical infrastructure that cannot 
+both be allocated simultaneously:
+(0,1), (0,4), (0,8), (1,2), (1,5), (1,9), (2,3), (2,6), (2,10), (3,7), (3,11), 
+(4,5), (4,12), (5,6), (5,13), (6,7), (6,14), (7,15), (8,9), (8,12), (8,16), 
+(9,10), (9,13), (10,11), (10,14), (11,15), (11,17), (12,13), (12,16), 
+(13,14), (13,17), (14,15), (16,17), (0,5), (1,8), (2,12), (3,13), (4,10), 
+(6,16), (7,12), (9,14), (11,16)
+
+Which combination of floor spaces should be allocated to maximize the total 
+number of employees that can be accommodated, and what is that maximum count?
+
+Reply with only the selected floor spaces and the total capacity.
+Format: Selected: {X, X, X, ...}, Total: X","Selected: {Item C, Item F, Item H, Item I, Item L, Item O}, Total: 67",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":12},{""id"":1,""start"":2,""end"":3,""weight"":9},{""id"":2,""start"":4,""end"":5,""weight"":14},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":8},{""id"":5,""start"":10,""end"":11,""weight"":13},{""id"":6,""start"":12,""end"":13,""weight"":10},{""id"":7,""start"":14,""end"":15,""weight"":6},{""id"":8,""start"":16,""end"":17,""weight"":15},{""id"":9,""start"":18,""end"":19,""weight"":7},{""id"":10,""start"":20,""end"":21,""weight"":11},{""id"":11,""start"":22,""end"":23,""weight"":9},{""id"":12,""start"":24,""end"":25,""weight"":8},{""id"":13,""start"":26,""end"":27,""weight"":12},{""id"":14,""start"":28,""end"":29,""weight"":10},{""id"":15,""start"":30,""end"":31,""weight"":7},{""id"":16,""start"":32,""end"":33,""weight"":13},{""id"":17,""start"":34,""end"":35,""weight"":6}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {2, 5, 7, 8, 11, 14}, Total: 67"",""difficulty_numeric"":18,""critical_step_index"":-1,""item_mapping"":{""0"":""Item A"",""1"":""Item B"",""2"":""Item C"",""3"":""Item D"",""4"":""Item E"",""5"":""Item F"",""6"":""Item G"",""7"":""Item H"",""8"":""Item I"",""9"":""Item J"",""10"":""Item K"",""11"":""Item L"",""12"":""Item M"",""13"":""Item N"",""14"":""Item O"",""15"":""Item P"",""16"":""Item Q"",""17"":""Item R""}}",
+WIS_005,W4,"Let G = (V, E) be an undirected graph where:
+
+V = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+
+E = {{0,1}, {0,4}, {0,8}, {1,2}, {1,5}, {1,9}, {2,3}, {2,6}, {2,10}, {3,7}, {3,11}, {4,5}, {4,12}, {5,6}, {5,13}, {6,7}, {6,14}, {7,15}, {8,9}, {8,12}, {8,16}, {9,10}, {9,13}, {10,11}, {10,14}, {11,15}, {11,17}, {12,13}, {12,16}, {13,14}, {13,17}, {14,15}, {16,17}, {0,5}, {1,8}, {2,12}, {3,13}, {4,10}, {6,16}, {7,12}, {9,14}, {11,16}}
+
+Let the weight function w: V -> R+ be defined as:
+
+w = {0->12, 1->9, 2->14, 3->11, 4->8, 5->13, 6->10, 7->6, 8->15, 9->7, 10->11, 11->9, 12->8, 13->12, 14->10, 15->7, 16->13, 17->6}
+
+Find an independent set S ⊆ V such that:
+
+maximise W(S) = sum of w(v) for all v in S
+
+subject to: for all u, v in S: {u, v} not in E
+
+Report only S and W(S).
+
+Format: Selected: {x1, x2, ...}, Total: W(S)","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",Algorithmic Suit,wis,hard,Low,,veryify_WIS,"{""subtype"":""WIS"",""intervals"":[{""id"":0,""start"":0,""end"":1,""weight"":12},{""id"":1,""start"":2,""end"":3,""weight"":9},{""id"":2,""start"":4,""end"":5,""weight"":14},{""id"":3,""start"":6,""end"":7,""weight"":11},{""id"":4,""start"":8,""end"":9,""weight"":8},{""id"":5,""start"":10,""end"":11,""weight"":13},{""id"":6,""start"":12,""end"":13,""weight"":10},{""id"":7,""start"":14,""end"":15,""weight"":6},{""id"":8,""start"":16,""end"":17,""weight"":15},{""id"":9,""start"":18,""end"":19,""weight"":7},{""id"":10,""start"":20,""end"":21,""weight"":11},{""id"":11,""start"":22,""end"":23,""weight"":9},{""id"":12,""start"":24,""end"":25,""weight"":8},{""id"":13,""start"":26,""end"":27,""weight"":12},{""id"":14,""start"":28,""end"":29,""weight"":10},{""id"":15,""start"":30,""end"":31,""weight"":7},{""id"":16,""start"":32,""end"":33,""weight"":13},{""id"":17,""start"":34,""end"":35,""weight"":6}],""greedy_succeeds"":true,""instance_type"":""standard"",""greedy_answer"":""Selected: {2, 5, 7, 8, 11, 14}, Total: 67"",""difficulty_numeric"":18,""critical_step_index"":-1}",

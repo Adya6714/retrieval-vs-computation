@@ -4,7 +4,58 @@
 **Affiliation:** BITS Pilani
 **Target venues:** BlackboxNLP 2026, GenBench 2026 (primary); EMNLP Findings (stretch)
 **Research design:** `CHARTER.md`
-**Status:** Infrastructure complete. Planning-suite question bank active (`140` rows, 20 canonical + variants). Execution partially run; final consolidated rerun pending after CSV freeze.
+**Status:** Multi-family evaluation code is active for **Blocksworld (BW)**, **GSM**, and **Algorithmic (ALGO)**. Outputs in `results/` include historical + refreshed runs; always use the family-specific sections below to pick canonical files for analysis.
+
+---
+
+## Start Here (for analysis)
+
+If you only read one part of this README, read this section.
+
+### 1) Core theory in one paragraph
+
+The project asks whether LLM performance is driven by:
+- **retrieval** (pattern recall from training-like inputs), or
+- **computation** (actual stepwise reasoning on structure).
+
+This is tested with **three probes** on aligned instances:
+- **Probe 1 (behavioral invariance):** how answers change under controlled variants (`W1..W6`).
+- **Probe 2 (process coupling):** whether declared strategy/plans match stepwise execution and reaction to injection.
+- **Probe 3 (contamination):** whether behavior correlates with training-data proximity (Infini-gram scores).
+
+### 2) Family map (what “CW/BW, GSM, ALGO” each means)
+
+- **BW** (`blocksworld` / planning suite): planning and action validity stress-test.
+- **GSM** (`arithmetic_reasoning`): arithmetic reasoning robustness.
+- **ALGO** (`coin_change`, `shortest_path`, `wis`): algorithmic reasoning and greedy-vs-optimal structure.
+
+### 3) Canonical outputs to open first
+
+- **BW**
+  - Probe 1 sweep: `results/BW_P1_RES_behavioral_sweep.csv`
+  - Probe 2: `results/BW_P2_RES_cci.csv`, `results/BW_P2_RES_tep.csv`
+  - Probe 3 triage: `results/BW_P3_RES_contamination_triage.csv`
+  - Triangulation: `results/BW_P3_RES_triangulation_per_instance_*.csv`
+- **GSM**
+  - Probe 1 sweep: `results/GSM_P1_RES_behavioral_sweep_*.csv`
+  - Probe 1 metrics: `results/GSM_P1_RES_*.csv`
+  - Probe 2: `results/GSM_P2_RES_cci.csv`, `results/GSM_P2_RES_metrics_summary.csv`
+  - Probe 3: `results/GSM_P3_RES_contamination_triage.csv`, `results/GSM_P3_RES_contamination_regression_*.txt`
+- **ALGO**
+  - Question bank: `data/problems/question_bank_algo.csv`
+  - Probe 1 sweep: `results/ALGO_P1_RES_behavioral_sweep_*.csv`
+  - Probe 1 metrics: `results/ALGO_P1_RES_metrics.csv`
+  - Probe 2 phase outputs: `results/ALGO_P2_RES_phase1_*.csv`, `results/ALGO_P2_RES_phase2_normal.csv`, `results/ALGO_P2_RES_phase2_injected.csv`
+  - Probe 2 metrics: `results/ALGO_P2_RES_metrics.csv`
+  - Probe 3 triage: `results/ALGO_P3_RES_contamination.csv`
+  - Triangulation: `results/ALGO_P3_RES_triangulation.csv`, `results/ALGO_P3_RES_regression.txt`
+
+### 4) Where logs and run traces live
+
+- `PROJECT_LOG.md`: high-level timeline, decisions, bugs, checkpoints.
+- `results/`: probe outputs and metric tables.
+- `logs/`: command/run logs where present.
+- `figures/` or `results/figures/`: generated publication figures.
 
 ---
 
@@ -13,6 +64,182 @@
 We test whether LLMs reason through problems or recognize them from training data. Three independent probes — surface invariance, plan-execution coupling, and contamination indexing — run on the same 45 problem instances. The core contribution is per-instance triangulation: when all three probes agree on the same diagnosis for an instance, that convergence is the evidence.
 
 Full methodology is in `CHARTER.md`. This README covers only the codebase.
+
+---
+
+## Evaluation pipelines by family (clear run map)
+
+### Blocksworld (BW) pipeline
+
+1. **Probe 1**
+   - Run: `scripts/BW_P1_SCR_run_behavioral_sweep.py`
+   - Output: `results/BW_P1_RES_behavioral_sweep.csv`
+2. **Probe 2**
+   - Plan/execution: `scripts/BW_P2_SCR_run_cci.py`, `scripts/BW_P2_SCR_run_tep.py`
+   - Outputs: `results/BW_P2_RES_cci.csv`, `results/BW_P2_RES_tep.csv`
+3. **Probe 3 + Triangulation**
+   - Triage: `scripts/BW_P3_SCR_run_contamination_triage.py`
+   - Merge/regression: `scripts/BW_P3_SCR_run_triangulation.py`
+   - Outputs: `results/BW_P3_RES_contamination_triage.csv`, `results/BW_P3_RES_triangulation_per_instance_*.csv`
+
+### GSM pipeline
+
+1. **Bank prep**
+   - `scripts/GSM_PX_SCR_fix_question_bank.py`
+   - `scripts/GSM_PX_SCR_generate_w6.py`
+2. **Probe 1**
+   - Sweep: `scripts/BW_P1_SCR_run_behavioral_sweep.py --family arithmetic_reasoning ...`
+   - Metrics: `scripts/GSM_P1_SCR_compute_metrics.py`
+3. **Probe 2**
+   - Run: `scripts/GSM_P2_SCR_run_probe2.py`
+   - Metrics: `scripts/GSM_P2_SCR_compute_metrics.py`
+4. **Probe 3**
+   - Triage: `scripts/BW_P3_SCR_run_contamination_triage.py --family arithmetic_reasoning ...`
+   - Triangulation/regression: `scripts/BW_P3_SCR_run_triangulation.py --family arithmetic_reasoning ...`
+5. **Figures**
+   - `scripts/GSM_P1_FIG_generate.py`, `scripts/GSM_P2_FIG_generate.py`, `scripts/GSM_P3_FIG_generate.py`
+
+### Algorithmic (ALGO) pipeline
+
+1. **Bank prep and auditing**
+   - Fixes: `scripts/ALGO_PX_SCR_fix_question_bank.py`
+   - Backfills: `scripts/ALGO_PX_SCR_backfill_greedy_metadata.py`, `scripts/ALGO_PX_SCR_add_critical_step.py`
+   - Audit: `scripts/ALGO_PX_SCR_audit_bank.py`
+2. **Probe 1**
+   - Sweep: `scripts/ALGO_P1_SCR_run_behavioral_sweep.py`
+   - Metrics: `scripts/ALGO_P1_SCR_compute_metrics.py`
+3. **Probe 2**
+   - Phase 1: `scripts/ALGO_P2_SCR_run_phase1.py`
+   - Phase 2: `scripts/ALGO_P2_SCR_run_phase2.py`
+   - Metrics: `scripts/ALGO_P2_SCR_compute_metrics.py`
+4. **Probe 3**
+   - Triage/decomposition: `scripts/BW_P3_SCR_run_contamination_triage.py --family algorithmic --decompose-contamination ...`
+   - Triangulation: `scripts/ALGO_P3_SCR_triangulation.py`
+5. **Figures**
+   - `scripts/ALGO_P1_FIG_generate.py`, `scripts/ALGO_P2_FIG_generate.py`, `scripts/ALGO_P3_FIG_generate.py`
+
+---
+
+## Exactly Which Result Files To Analyze
+
+This section is the canonical analysis checklist. Use it as your "what to open next" guide.
+
+### BW (Blocksworld / planning suite)
+
+- **Probe 1 (behavioral)**
+  - Primary: `results/BW_P1_RES_behavioral_sweep.csv`
+  - Legacy compatibility artifact: `results/BW_RES_P1_behavioral_sweep.csv`
+- **Probe 2 (process)**
+  - `results/BW_P2_RES_phase1_plans.csv`
+  - `results/BW_P2_RES_cci.csv`
+  - `results/BW_P2_RES_tep.csv`
+  - `results/BW_P2_RES_validity_comparison.csv`
+  - `results/BW_P2_RES_validity_summary.txt`
+  - Debug trace: `results/BW_P2_LOG_injection_trace.txt`
+- **Probe 3 (contamination + triangulation)**
+  - `results/BW_P3_RES_contamination_triage.csv`
+  - `results/BW_P3_RES_triangulation_per_instance_claude37.csv`
+  - `results/BW_P3_RES_triangulation_per_instance_gpt4o.csv`
+  - `results/BW_P3_RES_triangulation_per_instance_llama8b.csv`
+  - `results/BW_P3_RES_contamination_regression_claude37.txt`
+  - `results/BW_P3_RES_contamination_regression_gpt4o.txt`
+  - `results/BW_P3_RES_contamination_regression_llama8b.txt`
+
+### GSM (arithmetic_reasoning)
+
+- **Probe 1 (behavioral + metrics)**
+  - `results/GSM_P1_RES_behavioral_sweep_claude.csv`
+  - `results/GSM_P1_RES_behavioral_sweep_gpt4o.csv`
+  - `results/GSM_P1_RES_behavioral_sweep_llama.csv`
+  - `results/GSM_P1_RES_css.csv`
+  - `results/GSM_P1_RES_var.csv`
+  - `results/GSM_P1_RES_vri.csv`
+  - `results/GSM_P1_RES_rcs.csv`
+  - `results/GSM_P1_RES_rcs_by_difficulty.csv`
+  - `results/GSM_P1_RES_step_count_sensitivity.csv`
+  - `results/GSM_P1_RES_w4_gap.csv`
+- **Probe 2**
+  - `results/GSM_P2_RES_cci.csv`
+  - `results/GSM_P2_RES_metrics_summary.csv`
+  - `results/GSM_P2_LOG_human_approval_queue.csv`
+- **Probe 3**
+  - `results/GSM_P3_RES_contamination_triage.csv`
+  - `results/GSM_P3_RES_triangulation_per_instance_claude.csv`
+  - `results/GSM_P3_RES_triangulation_per_instance_gpt4o.csv`
+  - `results/GSM_P3_RES_contamination_regression_claude.txt`
+  - `results/GSM_P3_RES_contamination_regression_gpt4o.txt`
+
+### ALGO (coin_change / shortest_path / wis)
+
+- **Probe 1 (behavioral + metrics)**
+  - `results/ALGO_P1_RES_behavioral_sweep_claude.csv`
+  - `results/ALGO_P1_RES_behavioral_sweep_gpt4o.csv`
+  - `results/ALGO_P1_RES_behavioral_sweep_llama.csv`
+  - `results/ALGO_P1_RES_behavioral_sweep_mock.csv`
+  - `results/ALGO_P1_RES_human_review_queue.csv`
+  - `results/ALGO_P1_RES_metrics.csv`
+- **Probe 2**
+  - `results/ALGO_P2_RES_phase1_claude.csv`
+  - `results/ALGO_P2_RES_phase1_gpt4o.csv`
+  - `results/ALGO_P2_RES_phase1_llama.csv`
+  - `results/ALGO_P2_RES_phase2_normal.csv`
+  - `results/ALGO_P2_RES_phase2_injected.csv`
+  - `results/ALGO_P2_RES_metrics.csv`
+- **Probe 3**
+  - `results/ALGO_P3_RES_contamination.csv`
+  - `results/ALGO_P3_RES_triangulation.csv`
+  - `results/ALGO_P3_RES_regression.txt`
+  - `results/ALGO_PX_RES_bank_audit.csv` (bank quality gate; use before interpreting ALGO outputs)
+
+---
+
+## Script-to-Output Responsibility Map (complete)
+
+### ALGO scripts
+
+- `scripts/ALGO_PX_SCR_fix_question_bank.py`: fixes/normalizes ALGO bank rows and metadata.
+- `scripts/ALGO_PX_SCR_backfill_greedy_metadata.py`: fills `greedy_succeeds` + `instance_type` in ALGO bank.
+- `scripts/ALGO_PX_SCR_add_critical_step.py`: fills `critical_step_index` in ALGO bank.
+- `scripts/ALGO_PX_SCR_audit_bank.py`: strict structural/content audit -> `results/ALGO_PX_RES_bank_audit.csv`.
+- `scripts/ALGO_PX_SCR_generate_w6.py`: procedural W6 generation for ALGO rows.
+- `scripts/ALGO_PX_SCR_verify_sp005.py`, `scripts/ALGO_PX_SCR_verify_wis005.py`: one-off solver verification utilities.
+- `scripts/ALGO_P1_SCR_run_behavioral_sweep.py`: Probe 1 ALGO sweeps.
+- `scripts/ALGO_P1_SCR_compute_metrics.py`: Probe 1 ALGO metric aggregation.
+- `scripts/ALGO_P2_SCR_run_phase1.py`: Probe 2 Phase 1 strategy elicitation.
+- `scripts/ALGO_P2_SCR_run_phase2.py`: Probe 2 Phase 2 stepwise execution + injection.
+- `scripts/ALGO_P2_SCR_compute_metrics.py`: Probe 2 metric table generation.
+- `scripts/BW_P3_SCR_run_contamination_triage.py`: shared triage runner also used for ALGO contamination decomposition.
+- `scripts/ALGO_P3_SCR_triangulation.py`: ALGO-only cross-probe merge + labeling + regression summary.
+- `scripts/ALGO_P1_FIG_generate.py`, `scripts/ALGO_P2_FIG_generate.py`, `scripts/ALGO_P3_FIG_generate.py`: ALGO figure generation.
+
+### GSM scripts
+
+- `scripts/GSM_PX_SCR_fix_question_bank.py`, `scripts/GSM_PX_SCR_generate_w6.py`: GSM bank prep.
+- `scripts/GSM_P1_SCR_compute_metrics.py`: Probe 1 GSM metrics.
+- `scripts/GSM_P2_SCR_run_probe2.py`, `scripts/GSM_P2_SCR_compute_metrics.py`: Probe 2 GSM run + summary.
+- `scripts/GSM_P1_FIG_generate.py`, `scripts/GSM_P2_FIG_generate.py`, `scripts/GSM_P3_FIG_generate.py`: GSM figures.
+
+### BW scripts
+
+- `scripts/BW_P1_SCR_run_behavioral_sweep.py`: Probe 1 BW sweeps.
+- `scripts/BW_P2_SCR_extract_phase1_plans.py`: Probe 2 plan extraction.
+- `scripts/BW_P2_SCR_run_cci.py`, `scripts/BW_P2_SCR_run_tep.py`: Probe 2 BW metrics.
+- `scripts/BW_P2_SCR_generate_figures.py`: BW Probe 2 figures.
+- `scripts/BW_P3_SCR_run_contamination_triage.py`: Probe 3 triage.
+- `scripts/BW_P3_SCR_run_triangulation.py`: Probe 3 triangulation/regression.
+
+### Shared / support scripts
+
+- `scripts/run_mechanistic_sweep.py`: mechanistic runs.
+- `scripts/check_transformerlens_support.py`: mechanistic stack compatibility check.
+- `scripts/test_api_keys.py`: endpoint readiness check.
+- `scripts/maintenance/`: helper/admin utilities.
+
+## How to read findings quickly
+
+- **Retrieval-like evidence:** collapse on `W3`, positive contamination slope, high local-greedy behavior on adversarial rows.
+- **Computation-like evidence:** robust structural variants (`W2/W4`), stable stepwise behavior, low contamination dependence.
+- **Triangulation decision point:** prefer conclusions where Probe 1 + Probe 2 + Probe 3 agree for the same instance/model.
 
 ---
 

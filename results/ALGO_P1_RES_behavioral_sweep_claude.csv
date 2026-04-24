@@ -1,0 +1,756 @@
+problem_id,variant_type,model,model_answer,ground_truth,verified,parse_status,correct_alternative,human_review_flag,correct_canonical,greedy_answer,gave_greedy_answer,difficulty_params_instance_type
+CC_01,canonical,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W1,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W2,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W3,anthropic/claude-3.7-sonnet,"Total: 2 Scoops: [3, 3]","Total: 2
+ Scoops: [3, 3]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_01,W4,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [3, 3]","Count: 2
+ Coins: [3, 3]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [3, 3]",,standard
+CC_02,canonical,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [5, 6]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W1,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [5, 6]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W2,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [5, 6]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W3,anthropic/claude-3.7-sonnet,"Total: 2 Scoops: [5, 6]","Total: 2
+ Scoops: [5, 6]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_02,W4,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [5, 6]","Count: 2
+ Coins: [5, 6]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [5, 6]",,standard
+CC_03,canonical,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W1,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W2,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W3,anthropic/claude-3.7-sonnet,"Total: 3 Scoops: [1, 6, 6]","Total: 2
+ Scoops: [6, 7]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_03,W4,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [6, 7]","Count: 2
+ Coins: [6, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [6, 7]",,standard
+CC_04,canonical,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [10, 17]","Count: 2
+Coins: [17, 10]",True,parsed_clean,False,False,True,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W1,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [10, 17]","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W2,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [10, 17]","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W3,anthropic/claude-3.7-sonnet,"Total: 3 Scoops: [7, 10, 10]","Total: 2
+Scoops: [17, 10]",False,parse_failed,False,True,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_04,W4,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [10, 17]","Count: 2
+Coins: [17, 10]",False,parsed_clean,False,False,False,"Count: 2
+Coins: [17, 10]",,standard
+CC_05,canonical,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,True,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W1,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W2,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W3,anthropic/claude-3.7-sonnet,"Total: 2 Scoops: [7, 7]","Total: 2
+ Scoops: [7, 7]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_05,W4,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [7, 7]","Count: 2
+ Coins: [7, 7]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [7, 7]",,standard
+CC_06,canonical,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [7, 7, 12]","Count: 3
+ Coins: [12, 7, 7]",True,parsed_clean,False,False,True,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W1,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [7, 7, 12]","Count: 3
+ Coins: [12, 7, 7]",True,parsed_clean,False,False,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W2,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [7, 7, 12]","Count: 3
+ Coins: [12, 7, 7]",True,parsed_clean,False,False,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W3,anthropic/claude-3.7-sonnet,"Total: 3 Scoops: [7, 7, 12]","Total: 3
+ Scoops: [12, 7, 7]",False,parse_failed,False,True,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_06,W4,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [7, 7, 12]","Count: 3
+ Coins: [12, 7, 7]",True,parsed_clean,False,False,False,"Count: 3
+ Coins: [12, 7, 7]",,standard
+CC_07,canonical,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [4, 8]","Count: 2
+Coins: [8, 4]",True,parsed_clean,False,False,True,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W1,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [4, 8]","Count: 2
+Coins: [8, 4]",True,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W2,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [4, 8]","Count: 2
+Coins: [8, 4]",True,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W3,anthropic/claude-3.7-sonnet,"Total: 2 Scoops: [4, 8]","Total: 2
+Scoops: [8, 4]",False,parse_failed,False,True,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_07,W4,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [4, 8]","Count: 2
+Coins: [8, 4]",True,parsed_clean,False,False,False,"Count: 2
+Coins: [8, 4]",,standard
+CC_08,canonical,anthropic/claude-3.7-sonnet,"Count: 3
+Coins: [10, 10, 10]","Count: 2
+ Coins: [15, 15]",False,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W1,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W2,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W3,anthropic/claude-3.7-sonnet,"Total: 2 Scoops: [5, 25]","Total: 2
+ Scoops: [15, 15]",False,parse_failed,False,True,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_08,W4,anthropic/claude-3.7-sonnet,"Count: 2
+Coins: [15, 15]","Count: 2
+ Coins: [15, 15]",True,parsed_clean,False,False,False,"Count: 2
+ Coins: [15, 15]",,standard
+CC_09,canonical,anthropic/claude-3.7-sonnet,"Count: 7
+Coins: [197, 197, 7, 7, 7, 4*7]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W1,anthropic/claude-3.7-sonnet,"Count: 5
+Coins: [197, 197, 11, 11, 7]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",True,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W2,anthropic/claude-3.7-sonnet,"Count: 9
+Coins: [31, 67, 67, 67, 67, 67, 67, 67, 67]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W3,anthropic/claude-3.7-sonnet,"Total: 8 Scoops: [197, 197, 11, 11, 7]","Total: 5
+ Scoops: [197, 197, 11, 11, 7]",False,parse_failed,False,True,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_09,W4,anthropic/claude-3.7-sonnet,"Count: 9
+Coins: [67, 67, 67, 67, 31, 31, 31, 31, 31]","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_clean,False,False,False,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",,standard
+CC_10,canonical,anthropic/claude-3.7-sonnet,"Count: 9
+Coins: [197, 197, 197, 67, 67, 67, 67, 67, 31]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W1,anthropic/claude-3.7-sonnet,"Count: 6
+Coins: [197, 197, 197, 197, 177]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W2,anthropic/claude-3.7-sonnet,"Count: 11 Coins: [11, 31, 67, 67, 197, 197, 197, 197, 1, 0]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W3,anthropic/claude-3.7-sonnet,"Total: 6 Scoops: [201, 201, 201, 201, 67, 94]","Total: 7
+ Scoops: [201, 201, 201, 197, 67, 67, 31]",False,parse_failed,False,True,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+CC_10,W4,anthropic/claude-3.7-sonnet,"Count: 10
+Coins: [201, 201, 197, 67, 67, 67, 67, 31, 31, 36]","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_clean,False,False,False,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",,standard
+SP_001,canonical,anthropic/claude-3.7-sonnet,"Path: 0 -> 5 -> 10 -> 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",True,parsed_clean,False,False,True,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W1,anthropic/claude-3.7-sonnet,"Path: 0 -> 5 -> 10 -> 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W2,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the shortest path from Warehouse 0 to Customer 11 using the given travel times.
+
+I'll use Dijkstra's algorithm to find the shortest path through the network.
+
+Starting from Warehouse 0, I'll track the shortest path to each node until I reach Customer 11.
+
+After analyzing all possible paths through the network, I found:
+
+The fastest route from Warehouse 0 to Customer 11 is:
+Warehouse 0 → Stopover 5 → Crossing 10 → Customer 11
+
+Let me calculate the total time:
+- Warehouse 0 to Stopover 5: 8 minutes
+- Stopover 5 to Crossing 10: 6 minutes
+- Crossing 10 to Customer 11: 3 minutes
+- Total: 8 + 6 + 3 = 17 minutes
+
+Path: 0 → 5 → 10 → 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W3,anthropic/claude-3.7-sonnet,"Path: A -> C -> E -> J -> K -> L, Cost: 20","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_001,W4,anthropic/claude-3.7-sonnet,"# Finding the Shortest Path from Node 0 to Node 11
+
+I'll solve this problem using Dijkstra's algorithm, which is ideal for finding the shortest path in a weighted graph.
+
+## Step 1: Building the Graph
+I'll represent the graph using an adjacency list where each node maps to its neighbors and their weights.
+
+## Step 2: Running Dijkstra's Algorithm
+Starting from node 0, I'll:
+- Track distances to each node
+- Keep track of predecessors to reconstruct the path
+- Visit nodes in order of increasing distance
+
+## Step 3: Implementation
+```
+Initialization:
+- Set distance to node 0 as 0
+- Set all other distances to infinity
+- Add node 0 to priority queue
+
+Main Loop:
+- Extract node with minimum distance
+- For each neighbor, update distance if shorter path found
+- Track predecessor for path reconstruction
+```
+
+## Result
+After running Dijkstra's algorithm, the shortest path from node 0 to node 11 is:
+
+Path: 0 -> 2 -> 6 -> 8 -> 11, Cost: 21
+
+This path visits nodes 0, 2, 6, 8, and 11 with a total travel time of 21 minutes.","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_clean,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard
+SP_002,canonical,anthropic/claude-3.7-sonnet,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_clean,False,False,True,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W1,anthropic/claude-3.7-sonnet,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_clean,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W2,anthropic/claude-3.7-sonnet,"To find the fastest route from Base Camp 16 to Summit Lodge 11, I'll use a shortest path algorithm considering all the locations and connections between them.
+
+Looking at the data systematically and analyzing all possible paths:
+
+The optimal path follows the main waypoints through the mountain:
+Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Summit Lodge 11
+
+This route takes:
+4 + 3 + 5 + 4 + 3 + 5 + 4 + 3 = 31 hours
+
+I verified there are no faster alternative routes by checking all other possible combinations, including those using side camps.
+
+Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 11, Cost: 31","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_clean,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W3,anthropic/claude-3.7-sonnet,"Path: 16 -> 12 -> 14 -> 23 -> 8 -> 3 -> 20 -> 0 -> 4 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 11, Cost: 61","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_002,W4,anthropic/claude-3.7-sonnet,"# Finding the Shortest Path from Node 16 to Node 11
+
+I'll apply Dijkstra's algorithm to find the shortest path from node 16 to node 11 in the given weighted undirected graph.
+
+## Step 1: Set up Dijkstra's algorithm
+- Start node: 16
+- End node: 11
+- Initialize distances: dist[16] = 0, dist[v] = ∞ for all other nodes
+- Initialize previous node pointers for path reconstruction
+
+## Step 2: Execute Dijkstra's algorithm
+After running the algorithm, I'll track the minimum distance to each node and the path taken.
+
+## Step 3: Results
+After complete execution of Dijkstra's algorithm on the given graph, the shortest path from node 16 to node 11 is:
+
+Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 11, Cost: 41
+
+This represents the minimum possible travel time (41 hours) to go from node 16 to node 11 following the edges in the graph.","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_clean,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard
+SP_003,canonical,anthropic/claude-3.7-sonnet,"Path: 11 -> 17 -> 7 -> 6 -> 3 -> 9, Cost: 34","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_clean,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W1,anthropic/claude-3.7-sonnet,"Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 2 -> 3 -> 9, Cost: 31","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_clean,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W2,anthropic/claude-3.7-sonnet,"To find the fastest route from Safe House 11 to Drop Point 9, I'll apply Dijkstra's shortest path algorithm on the given one-way road network.
+
+Starting from Safe House 11, I need to find the shortest path to Drop Point 9, considering all possible routes through the network.
+
+After analyzing all possible paths through the network, I've found the fastest route:
+
+Path: Safe House 11 → Shortcut 17 → Flyover 7 → Interchange 6 → Overpass 3 → Drop Point 9, Cost: 32
+
+This route takes a total of 32 minutes:
+- Safe House 11 to Shortcut 17: 5 minutes
+- Shortcut 17 to Flyover 7: 8 minutes
+- Flyover 7 to Interchange 6: 7 minutes
+- Interchange 6 to Overpass 3: 9 minutes
+- Overpass 3 to Drop Point 9: 3 minutes","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W3,anthropic/claude-3.7-sonnet,"Path: 11 -> 19 -> 16 -> 4 -> 7 -> 6 -> 12 -> 9, Cost: 38","Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_003,W4,anthropic/claude-3.7-sonnet,"# Shortest Path from Node 11 to Node 9
+
+To solve this problem, I'll apply Dijkstra's algorithm to find the shortest path from node 11 to node 9 in the given weighted directed graph.
+
+After analyzing the graph with Dijkstra's algorithm:
+
+Path: 11 -> 18 -> 0 -> 15 -> 5 -> 9, Cost: 35
+
+The minimum cost path from node 11 to node 9 has a total travel time of 35 minutes, following the route through nodes 11, 18, 0, 15, 5, and finally reaching node 9.","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_clean,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard
+SP_004,canonical,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the shortest path in a time-dependent network.
+
+Working through the potential paths:
+
+Path 1: 0 -> 1 -> 5 -> 9
+- Start at 0, arrive at 1 at hour 2 (too late for the fast-track)
+- Travel 1 -> 5 costs 12 hours (arriving at hour 14)
+- Travel 5 -> 9 costs 3 hours
+Total: 2 + 12 + 3 = 17 hours
+
+Path 2: 0 -> 3 -> 6 -> 9
+- 0 -> 3: 4 hours
+- 3 -> 6: 3 hours (arrive at 6 at hour 7)
+- 6 -> 9: 8 hours
+Total: 4 + 3 + 8 = 15 hours
+
+Path 3: 0 -> 3 -> 6 -> 4 -> 9
+- 0 -> 3: 4 hours
+- 3 -> 6: 3 hours (arrive at 6 at hour 7)
+- 6 -> 4: -5 hours (cable car is available before hour 10)
+- 4 -> 9: 7 hours
+Total: 4 + 3 + (-5) + 7 = 9 hours
+
+Path 4: 0 -> 3 -> 6 -> 4 -> 5 -> 9
+- Similar to path 3, but longer: 4 + 3 + (-5) + 3 + 3 = 8 hours
+
+Path 5: 0 -> 2 -> 5 -> 9
+- 0 -> 2: 5 hours
+- 2 -> 5: 4 hours
+- 5 -> 9: 3 hours
+Total: 5 + 4 + 3 = 12 hours
+
+Path 6: 0 -> 7 -> 5 -> 9
+- 0 -> 7: 9 hours
+- 7 -> 5: 4 hours
+- 5 -> 9: 3 hours
+Total: 9 + 4 + 3 = 16 hours
+
+The fastest path is: 0 -> 3 -> 6 -> 4 -> 5 -> 9 with a total cost of 8 hours.
+
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_clean,False,False,True,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W1,anthropic/claude-3.7-sonnet,"Path: 0 -> 1 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_clean,True,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W2,anthropic/claude-3.7-sonnet,"I need to find the shortest path from Base Lodge 0 to Summit Hut 9 in this time-dependent network.
+
+First, I'll analyze the time-dependent routes:
+- Base Lodge 0 → Waypoint 1 takes 2 hours
+- Waypoint 1 → Waypoint 5 takes 3 hours if arriving at Waypoint 1 by hour 1, otherwise 12 hours
+- Waypoint 6 → Waypoint 4 takes -5 hours (time savings) if arriving at Waypoint 6 by hour 10, otherwise 4 hours
+
+Let me explore possible paths systematically, tracking arrival times at each waypoint:
+
+Path 1: 0 → 1 → 5 → 9
+- Arrive at 1 at hour 2 (too late for the shortcut)
+- So 0→1→5 takes 2+12=14 hours
+- Then 5→9 takes 3 hours
+- Total: 17 hours
+
+Path 2: 0 → 3 → 6 → 4 → 9
+- Arrive at 3 at hour 4
+- Arrive at 6 at hour 7 (within hour 10 limit)
+- Using cable car, arrive at 4 at hour 2 (7-5=2)
+- Then 4→9 takes 7 hours
+- Total: 9 hours
+
+Path 3: 0 → 3 → 6 → 9
+- Arrive at 3 at hour 4
+- Arrive at 6 at hour 7
+- Then 6→9 takes 8 hours
+- Total: 15 hours
+
+Path 4: 0 → 2 → 5 → 9
+- Arrive at 5 at hour 9
+- Then 5→9 takes 3 hours
+- Total: 12 hours
+
+Path 5: 0 → 7 → 5 → 9
+- Arrive at 5 at hour 13
+- Then 5→9 takes 3 hours
+- Total: 16 hours
+
+The fastest path is 0 → 3 → 6 → 4 → 9, with a total time of 9 hours.
+
+Path: 0 → 3 → 6 → 4 → 9, Cost: 9","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W3,anthropic/claude-3.7-sonnet,"Path: 0 -> 1 -> 5 -> 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",False,parse_failed,False,True,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_004,W4,anthropic/claude-3.7-sonnet,"# Optimal Path Analysis in Time-Dependent Network
+
+To solve this problem, I need to find the shortest path in a time-dependent network from node 0 to node 9, where the edge weights (travel times) may depend on the departure time.
+
+## Edge Analysis
+
+Let me first organize all the edges with their weights:
+
+### Fixed edges:
+- (0,3): 4 hours
+- (3,6): 3 hours
+- (4,5): 3 hours
+- (5,9): 3 hours
+- (0,2): 5 hours
+- (2,5): 4 hours
+- (0,7): 9 hours
+- (7,5): 4 hours
+- (4,9): 7 hours
+- (6,9): 8 hours
+
+### Time-dependent edges:
+- (0,1): 2 hours (always)
+- (1,5): 3 hours if departing at t≤1, otherwise 12 hours
+- (6,4): -5 hours if departing at t≤10, otherwise 4 hours
+
+## Path Computation
+
+Starting at node 0 at time t=0, I'll explore all possible paths:
+
+1. Path through (0,1):
+   - Arrive at 1 at t=2
+   - Since 2>1, w(1,5)=12
+   - Arrive at 5 at t=14
+   - Arrive at 9 at t=17
+
+2. Path (0,3,6):
+   - Arrive at 3 at t=4
+   - Arrive at 6 at t=7
+   - Consider two options from 6:
+     a. To 9 directly: Arrive at 9 at t=15
+     b. To 4 then to paths to 9:
+        - Since 7≤10, w(6,4)=-5
+        - Arrive at 4 at t=2
+        - Can go to 5 then 9: Arrive at 9 at t=8
+        - Or directly to 9: Arrive at 9 at t=9
+
+3. Path (0,2,5):
+   - Arrive at 2 at t=5
+   - Arrive at 5 at t=9
+   - Arrive at 9 at t=12
+
+4. Path (0,7,5):
+   - Arrive at 7 at t=9
+   - Arrive at 5 at t=13
+   - Arrive at 9 at t=16
+
+## Optimal Path
+
+After analyzing all possible paths, the minimum cost path is:
+
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8
+
+This path involves:
+1. Start at node 0 at t=0
+2. Travel to node 3, arriving at t=4
+3. Travel to node 6, arriving at t=7
+4. Travel to node 4 using the negative weight edge (since 7≤10), arriving at t=2
+5. Travel to node 5, arriving at t=5
+6. Finally travel to node 9, arriving at t=8
+
+The negative weight on edge (6,4) creates a situation where time ""goes backward"" but this is allowed in the problem statement as long as time remains non-negative.","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_clean,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",,standard
+SP_005,canonical,anthropic/claude-3.7-sonnet,"Path: 0 -> 4 -> 5 -> 10 -> 12 -> 15, Cost: 33","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W1,anthropic/claude-3.7-sonnet,"Path: 0 -> 4 -> 5 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 43","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W2,anthropic/claude-3.7-sonnet,"To find the path of minimum total pressure loss from Central Reservoir 0 to Final Treatment Plant 15, I'll apply Dijkstra's algorithm to find the shortest path in the network.
+
+Starting from Central Reservoir 0, I'll track the minimum pressure loss to reach each node, updating as I discover shorter paths.
+
+After working through the algorithm systematically, I find:
+
+The minimum pressure loss path is:
+Central Reservoir 0 → Primary Node 1 → Access Corridor 2 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15
+
+Calculating the total pressure loss:
+5 + 4 + 5 + 4 + 5 + 4 + 6 + 4 = 37 kPa
+
+Path: 0 → 1 → 2 → 6 → 8 → 10 → 12 → 14 → 15, Cost: 37","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W3,anthropic/claude-3.7-sonnet,"Path: 0 -> 1 -> 2 -> 6 -> 8 -> 15 -> 8 -> 10 -> 15, Cost: 62","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+SP_005,W4,anthropic/claude-3.7-sonnet,"# Shortest Path in Pumping Station Network
+
+To find the shortest path from node 0 to node 15 in this weighted directed graph, I'll use Dijkstra's algorithm.
+
+First, I'll organize the graph data:
+
+1. The vertices are {0, 1, 2, ..., 15}
+2. The edges are weighted one-way pipelines
+3. We need to minimize the total pressure loss (kPa) from station 0 to station 15
+
+## Solution Using Dijkstra's Algorithm
+
+After running Dijkstra's algorithm on the given graph:
+
+- The algorithm explores nodes in increasing order of distance from source
+- It gradually builds the shortest path by relaxing edges
+- It terminates when reaching node 15
+
+## Result
+
+Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 37
+
+This path represents the sequence of pumping stations that minimizes the total pressure loss while traveling from station 0 to station 15.","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard
+WIS_001,canonical,anthropic/claude-3.7-sonnet,"Selected: {0, 2, 4, 6, 8}, Total: 35","Selected: {0, 2, 4, 6, 9}, Total: 40",False,parsed_clean,False,False,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W1,anthropic/claude-3.7-sonnet,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40",True,parsed_clean,False,False,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W2,anthropic/claude-3.7-sonnet,"I need to determine which plots to select to maximize yield while ensuring no adjacent plots are harvested.
+
+Since the plots are arranged linearly from 0-9, with each plot adjacent only to its immediate neighbors, this is a classic maximum independent set problem on a path graph.
+
+For this type of problem, I can use dynamic programming to find the optimal solution:
+
+Let's define:
+- include[i] = maximum yield when including plot i and considering plots 0 to i
+- exclude[i] = maximum yield when excluding plot i and considering plots 0 to i
+
+For plot 0:
+- include[0] = 8
+- exclude[0] = 0
+
+For plot 1:
+- include[1] = 3 (can't include plot 0)
+- exclude[1] = 8 (from including plot 0)
+
+For plot 2:
+- include[2] = 6 + exclude[1] = 6 + 8 = 14
+- exclude[2] = max(include[1], exclude[1]) = max(3, 8) = 8
+
+Continuing this process:
+- include[3] = 2 + exclude[2] = 2 + 8 = 10
+- exclude[3] = max(include[2], exclude[2]) = max(14, 8) = 14
+
+- include[4] = 9 + exclude[3] = 9 + 14 = 23
+- exclude[4] = max(include[3], exclude[3]) = max(10, 14) = 14
+
+- include[5] = 4 + exclude[4] = 4 + 14 = 18
+- exclude[5] = max(include[4], exclude[4]) = max(23, 14) = 23
+
+- include[6] = 7 + exclude[5] = 7 + 23 = 30
+- exclude[6] = max(include[5], exclude[5]) = max(18, 23) = 23
+
+- include[7] = 1 + exclude[6] = 1 + 23 = 24
+- exclude[7] = max(include[6], exclude[6]) = max(30, 23) = 30
+
+- include[8] = 5 + exclude[7] = 5 + 30 = 35
+- exclude[8] = max(include[7], exclude[7]) = max(24, 30) = 30
+
+- include[9] = 10 + exclude[8] = 10 + 30 = 40
+- exclude[9] = max(include[8], exclude[8]) = max(35, 30) = 35
+
+The maximum yield is max(include[9], exclude[9]) = max(40, 35) = 40.
+
+To find which plots were selected, I'll trace back through the solution:
+- At plot 9, include[9] > exclude[9], so plot 9 is selected
+- Since plot 9 is selected, plot 8 must be excluded
+- At plot 7, exclude[7] > include[7], so plot 7 is excluded
+- At plot 6, include[6] > exclude[6], so plot 6 is selected
+- Since plot 6 is selected, plot 5 must be excluded
+- At plot 4, include[4] > exclude[4], so plot 4 is selected
+- Since plot 4 is selected, plot 3 must be excluded
+- At plot 2, include[2] > exclude[2], so plot 2 is selected
+- Since plot 2 is selected, plot 1 must be excluded
+- At plot 0, include[0] > exclude[0], so plot 0 is selected
+
+Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40",True,parsed_clean,False,False,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W3,anthropic/claude-3.7-sonnet,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",False,parse_failed,False,True,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_001,W4,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find an independent set S (no adjacent vertices) that maximizes the total weight.
+
+Looking at the graph structure, it's a simple path from vertex 0 to 9. In a path graph, I can select at most every other vertex for an independent set.
+
+Let me analyze two possible independent sets:
+- Even-indexed vertices: {0,2,4,6,8}
+- Odd-indexed vertices: {1,3,5,7,9}
+
+For even-indexed vertices:
+Weight = w(0) + w(2) + w(4) + w(6) + w(8) = 8 + 6 + 9 + 7 + 5 = 35
+
+For odd-indexed vertices:
+Weight = w(1) + w(3) + w(5) + w(7) + w(9) = 3 + 2 + 4 + 1 + 10 = 20
+
+Since 35 > 20, the maximum weight independent set is:
+
+Selected: {0, 2, 4, 6, 8}, Total: 35","Selected: {0, 2, 4, 6, 9}, Total: 40",False,parsed_clean,False,False,False,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard
+WIS_002,canonical,anthropic/claude-3.7-sonnet,"Selected: {1, 2, 3, 4, 7, 8, 9, 10, 11}, Total: 67","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W1,anthropic/claude-3.7-sonnet,"Selected: {1, 2, 3, 4, 7, 8, 9, 10, 11}, Total: 66","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W2,anthropic/claude-3.7-sonnet,"I need to solve a maximum independent set problem on this graph, where each node (district) has a weight (attendance) and I want to maximize the total weight.
+
+First, let me understand the graph structure:
+- District 0 is connected to districts 1, 2, 3, and 4
+- District 1 is connected to districts 0, 5, and 6
+- District 2 is connected to districts 0 and 7
+- District 3 is connected to districts 0, 8, and 9
+- District 4 is connected to districts 0, 10, and 11
+
+Since this is a hierarchical network with district 0 as the central node, I can observe that selecting district 0 would prevent selecting districts 1, 2, 3, and 4. Alternatively, not selecting district 0 would allow consideration of those four districts.
+
+Let me evaluate the two main options:
+
+Option 1: Select district 0 (6,000 attendance)
+- Cannot select districts 1, 2, 3, or 4
+- Can select districts 5, 6, 7, 8, 9, 10, 11
+- Total: 6 + 3 + 4 + 9 + 4 + 5 + 8 + 10 = 49 thousand
+
+Option 2: Don't select district 0
+- Can select districts 1, 2, 3, and 4, but must respect their connections
+- If selecting district 1 (14), cannot select 5 or 6
+- If selecting district 2 (3), cannot select 7
+- If selecting district 3 (11), cannot select 8 or 9
+- If selecting district 4 (2), cannot select 10 or 11
+
+Maximum for option 2:
+- Select 1, 2, 3, 4: 14 + 3 + 11 + 2 = 30 thousand (but can't select any others)
+- Select 1, 2, 3: 14 + 3 + 11 = 28 thousand (can also select 10, 11: 28 + 8 + 10 = 46)
+- Select 1, 2, 4: 14 + 3 + 2 = 19 thousand (can also select 8, 9: 19 + 4 + 5 = 28)
+- Select 1, 3, 4: 14 + 11 + 2 = 27 thousand (can also select 7: 27 + 9 = 36)
+- Select 2, 3, 4: 3 + 11 + 2 = 16 thousand (can also select 5, 6: 16 + 3 + 4 = 23)
+
+The best configuration is Option 1, selecting districts 0, 5, 6, 7, 8, 9, 10, and 11.
+
+Selected: {0, 5, 6, 7, 8, 9, 10, 11}, Total: 49","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W3,anthropic/claude-3.7-sonnet,"Selected: {1, 2, 3, 4, 7, 8, 9, 10, 11}, Total: 62","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_002,W4,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find an independent set with maximum total weight.
+
+An independent set is a set of vertices where no two vertices are adjacent (connected by an edge).
+
+First, I'll analyze the graph structure:
+- Vertex 0 connects to vertices 1, 2, 3, 4
+- Vertex 1 connects to vertices 0, 5, 6
+- Vertex 2 connects to vertices 0, 7
+- Vertex 3 connects to vertices 0, 8, 9
+- Vertex 4 connects to vertices 0, 10, 11
+
+Since this is a tree with vertex 0 as the root, I can observe that:
+- If vertex 0 is in the set, none of vertices 1, 2, 3, 4 can be included
+- If vertex 1 is in the set, vertices 0, 5, 6 cannot be included
+- And so on
+
+The optimal independent set must either include vertex 0 or exclude it. Let me analyze both cases:
+
+If vertex 0 is included (weight 6):
+- Cannot include vertices 1, 2, 3, 4
+- Can include vertices 5, 6, 7, 8, 9, 10, 11
+- Total weight: 6 + 3 + 4 + 9 + 4 + 5 + 8 + 10 = 49
+
+If vertex 0 is excluded:
+- Can include vertices 1, 2, 3, 4
+- If these are included, cannot include their neighbors
+- Total weight: 14 + 3 + 11 + 2 = 30
+
+The first option gives a higher weight, so:
+
+Selected: {0, 5, 6, 7, 8, 9, 10, 11}, Total: 49","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,False,False,False,"Selected: {1, 3, 7, 10, 11}, Total: 52",,standard
+WIS_003,canonical,anthropic/claude-3.7-sonnet,"Selected: {0, 5, 6, 7, 9, 11, 12}, Total: 61","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W1,anthropic/claude-3.7-sonnet,"Selected: {0, 5, 6, 7, 9, 10, 12, 13}, Total: 67","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W2,anthropic/claude-3.7-sonnet,"I need to solve an independent set problem where I want to select servers that maximize total importance, with the constraint that no two adjacent servers can be selected.
+
+First, I'll build the graph from the adjacency table:
+- Server 0 is connected to: 1, 2, 3, 4
+- Server 1 is connected to: 0, 5
+- Server 2 is connected to: 0, 9
+- Server 3 is connected to: 0, 6
+- Server 4 is connected to: 0, 5, 6, 7, 12
+- Server 5 is connected to: 1, 4, 8
+- Server 6 is connected to: 3, 4, 11
+- Server 7 is connected to: 4, 10
+- Server 8 is connected to: 5, 9, 10, 11, 13
+- Server 9 is connected to: 2, 8
+- Server 10 is connected to: 7, 8
+- Server 11 is connected to: 6, 8
+- Server 12 is connected to: 4, 13
+- Server 13 is connected to: 8, 12
+
+Since this is a complex graph, I'll analyze it systematically. Looking at the importance scores and connections, I can see that selecting nodes 0, 8, and 12 would be valuable as they have high importance scores.
+
+After evaluating different combinations while respecting the constraint that no adjacent servers can be selected, I find that the optimal selection is:
+
+Selected: {0, 3, 5, 7, 9, 11, 13}, Total: 59
+
+This selection ensures no two adjacent servers are monitored while maximizing the total importance score.","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W3,anthropic/claude-3.7-sonnet,"Selected: {0, 6, 7, 9, 12}, Total: 47","Selected: {Item B, Item C, Item D, Item E, Item K, Item L, Item N}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_003,W4,anthropic/claude-3.7-sonnet,"I need to find a maximum weight independent set in the given graph G.
+
+An independent set is a subset of vertices where no two vertices are adjacent. I'll analyze the graph structure and find the independent set that maximizes the total weight.
+
+First, I'll identify the connected components and analyze possible independent sets:
+
+Looking at the edges, I can see this is a connected graph with some clear structures. I'll systematically build an independent set by considering vertex weights and their connections.
+
+After checking all possible valid independent sets and their weights, I've found:
+
+Selected: {0, 6, 9, 10, 12}
+Total: 43
+
+This independent set has a total weight of w(0) + w(6) + w(9) + w(10) + w(12) = 15 + 8 + 5 + 6 + 9 = 43, and no two vertices in this set share an edge, making it a valid independent set with maximum total weight.","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,False,False,False,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",,standard
+WIS_004,canonical,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find an independent set in a graph where vertices are towers and edges represent interference, maximizing the total coverage score.
+
+After analyzing the interference constraints and coverage scores, I've determined the optimal solution.
+
+Selected: {0, 1, 3, 4, 9, 11}, Total: 34","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W1,anthropic/claude-3.7-sonnet,"Selected: {0, 1, 3, 4, 5, 11, 15}, Total: 36","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W2,anthropic/claude-3.7-sonnet,"I need to solve this problem by finding the maximum independent set in the graph of transmission towers, where each vertex (tower) has a weight equal to its coverage score.
+
+First, I'll analyze the graph structure based on the adjacency table and then apply an algorithm to find the maximum weighted independent set.
+
+Looking at the connections and coverage scores, I need to select towers that are not adjacent to each other while maximizing the total coverage score.
+
+After analyzing the graph and the constraints:
+- No two directly linked towers can broadcast simultaneously
+- Need to maximize the total coverage score
+
+The optimal solution is:
+
+Selected: {0, 1, 3, 4, 11}, Total: 29
+
+This selection ensures that no two adjacent towers are broadcasting simultaneously, and the total coverage score of 29 is the maximum possible under these constraints.","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W3,anthropic/claude-3.7-sonnet,"Selected: {0, 1, 3, 4, 9, 11}, Total: 35","Selected: {Item A, Item B, Item D, Item G, Item J, Item L, Item M}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_004,W4,anthropic/claude-3.7-sonnet,"I need to find a maximum weight independent set in the given graph.
+
+An independent set is a set of vertices where no two vertices in the set are adjacent. I'll analyze the graph structure and find the optimal solution.
+
+First, I'll identify the constraints by examining the edges, then use this information to build the maximum weight independent set.
+
+After analyzing all possible independent sets and their weights, I've determined the optimal solution:
+
+Selected: {0, 3, 4, 8, 11, 15}
+Total: 31
+
+The set {0, 3, 4, 8, 11, 15} forms an independent set because no two vertices in this set share an edge. The total weight is 5 + 8 + 7 + 4 + 4 + 3 = 31, which is the maximum possible for an independent set in this graph.","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",,standard
+WIS_005,canonical,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the set of distribution centers that maximizes profitability while ensuring no two connected centers are selected.
+
+After analyzing the network constraints and profitability scores, I've determined the optimal selection.
+
+Selected: {0, 2, 7, 10, 13, 16}, Total: 68","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W1,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the maximum independent set weighted by productivity scores.
+
+After analyzing the graph of laboratory connections and their productivity scores, I can determine which combination of laboratories maximizes total productivity while ensuring no two connected laboratories are selected.
+
+Selected: {0, 2, 7, 8, 13, 16}, Total: 68","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W2,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the maximum independent set in the graph where each vertex (distribution center) has a weight (profitability).
+
+I'll use a graph-based approach to determine which centers can be selected while ensuring no two adjacent centers are both chosen, and maximizing the total profitability.
+
+After constructing the graph from the adjacency table and applying an optimization algorithm:
+
+Selected: {0, 2, 5, 7, 9, 11, 13, 16}, Total: 81
+
+These 8 centers (0, 2, 5, 7, 9, 11, 13, 16) provide the maximum possible profitability of 81 million while satisfying the constraint that no two directly connected centers are selected.","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W3,anthropic/claude-3.7-sonnet,"To solve this problem, I need to find the maximum independent set in the graph where each floor space is a vertex with a weight (capacity) and each pair with shared electrical infrastructure forms an edge.
+
+After analyzing the constraints and capacity scores, I can determine the optimal solution:
+
+Selected: {0, 2, 7, 9, 11, 13, 16}, Total: 72","Selected: {Item C, Item F, Item H, Item I, Item L, Item O}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
+WIS_005,W4,anthropic/claude-3.7-sonnet,"To find the maximum weight independent set, I need to find a set of vertices such that no two are connected by an edge, and the sum of their weights is maximized.
+
+I'll analyze the graph to identify an independent set with maximum weight.
+
+After analyzing the graph structure and vertex weights, I found the maximum weight independent set:
+
+Selected: {0, 3, 5, 10, 15, 17}
+Total: 58
+
+This set contains vertices that are not adjacent to each other, and their combined weight (12+11+13+11+7+6) gives us 58, which is the maximum possible weight for an independent set in this graph.","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,False,False,False,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",,standard
