@@ -1,7 +1,6 @@
 # Beyond Accuracy — Retrieval vs Computation in LLM Reasoning
 
-> **Anonymous submission.** Author and affiliation details are intentionally omitted.  
-> **Venues:** BlackboxNLP / GenBench 2026
+> **Anonymous submission.** Author, affiliation, and target venue are intentionally omitted.
 
 This repository implements a **three-probe evaluation framework** across three problem families — **Blocksworld (BW)**, **GSM arithmetic**, and **Algorithmic (ALGO)** — to test whether LLM success reflects **retrieval** (pattern recall) or **computation** (structure-sensitive reasoning). The core empirical object is **per-instance triangulation**: when behavioral invariance, plan–execution coupling, and contamination signals agree on the same diagnosis for one problem, that convergence is the evidence.
 
