@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Orchestrate new-model sweeps with logging. Run from repo root.
 set -euo pipefail
-REPO="/Users/adya/Desktop/rvc"
+REPO="<REPO_ROOT>"
 cd "$REPO"
 LOGDIR="$REPO/results/raw/new_model_sweep_logs"
 mkdir -p "$LOGDIR"

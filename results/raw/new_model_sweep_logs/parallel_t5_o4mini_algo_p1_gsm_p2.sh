@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eu
-cd /Users/adya/Desktop/rvc
+cd <REPO_ROOT>
 LOG=results/raw/new_model_sweep_logs/t5_o4mini_algo_p1_gsm_p2.log
 exec > >(tee -a "$LOG") 2>&1
 MODEL=openai/o4-mini

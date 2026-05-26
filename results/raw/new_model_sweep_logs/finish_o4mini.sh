@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Finish remaining o4-mini sweeps (resume retries ERROR rows only).
 set -eu
-cd /Users/adya/Desktop/rvc
+cd <REPO_ROOT>
 export OPENROUTER_MAX_TOKENS=4096
 LOG=results/raw/new_model_sweep_logs/finish_o4mini.log
 exec > >(tee -a "$LOG") 2>&1

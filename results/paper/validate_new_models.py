@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-REPO = Path("/Users/adya/Desktop/rvc")
+REPO = Path("<REPO_ROOT>")
 RAW = REPO / "results/raw"
 PAPER = REPO / "results/paper"
 PAPER.mkdir(parents=True, exist_ok=True)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eu
-cd /Users/adya/Desktop/rvc
+cd <REPO_ROOT>
 LOG=results/raw/new_model_sweep_logs/t2_gemini_algo_p1.log
 exec > >(tee -a "$LOG") 2>&1
 echo "=== T2 Gemini ALGO P1 start $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="

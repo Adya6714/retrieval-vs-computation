@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Poll OpenRouter until key limit resets, then run remaining o4-mini sweeps.
 set -eu
-cd /Users/adya/Desktop/rvc
+cd <REPO_ROOT>
 export OPENROUTER_MAX_TOKENS=4096
 LOG=results/raw/new_model_sweep_logs/wait_and_finish.log
 exec >>"$LOG" 2>&1

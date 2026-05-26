@@ -1,4 +1,4 @@
-BASE=/Users/adya/Desktop/rvc/uploadrd
+BASE=<REPO_ROOT>/uploadrd
 ======================================================================
 LAYER 1: UNIVARIATE ANOMALIES
 ======================================================================

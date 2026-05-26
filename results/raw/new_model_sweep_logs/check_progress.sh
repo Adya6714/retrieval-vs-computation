@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quick progress checker — run anytime: bash results/raw/new_model_sweep_logs/check_progress.sh
-cd /Users/adya/Desktop/rvc
+cd <REPO_ROOT>
 python3 - <<'PY'
 from pathlib import Path
 import pandas as pd

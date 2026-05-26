@@ -1,5 +1,6 @@
-%% custom.bib — rvc_paper_final.tex
-%% All entries used in paper. New additions marked %% NEW
+%% references.bib — rvc_paper
+%% All entries used in paper.
+%% NEW entries marked %% NEW at top of entry.
 
 @inproceedings{mirzadeh2024gsm,
   title     = {{GSM-Symbolic}: Understanding the Limitations of Mathematical Reasoning in Large Language Models},
@@ -104,8 +105,6 @@
   url     = {https://arxiv.org/abs/2406.11020}
 }
 
-%% NEW — W1/W12 novelty and concurrent work
-
 @inproceedings{li2024gsm,
   title     = {{GSM-Plus}: A Comprehensive Benchmark for Evaluating the Robustness of {LLM}s as Mathematical Problem Solvers},
   author    = {Li, Qintong and Cui, Leyang and Zhao, Xueliang and Kong, Lingpeng and Bi, Wei},
@@ -133,8 +132,6 @@
   url       = {https://arxiv.org/abs/2310.13548}
 }
 
-%% NEW — W9 contamination validation / W12 related work
-
 @inproceedings{shi2024detecting,
   title     = {Detecting Pretraining Data from Large Language Models},
   author    = {Shi, Weijia and Ajith, Anirudh and Xia, Mengzhou and Huang, Yangsibo and Liu, Daogao and Blevins, Terra and Chen, Danqi and Zettlemoyer, Luke},
@@ -142,8 +139,6 @@
   year      = {2024},
   url       = {https://arxiv.org/abs/2310.16789}
 }
-
-%% NEW — W3 reasoning model baseline (cited in Limitations)
 
 @article{guo2025deepseek,
   title   = {{DeepSeek-R1}: Incentivizing Reasoning Capability in {LLM}s via Reinforcement Learning},
@@ -153,12 +148,40 @@
   url     = {https://arxiv.org/abs/2501.12948}
 }
 
-%% KEPT for completeness (cited by lightman/uesato if added)
-
 @inproceedings{lightman2023let,
   title     = {Let's Verify Step by Step},
   author    = {Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and Sutskever, Ilya and Cobbe, Karl},
   booktitle = {International Conference on Learning Representations},
   year      = {2024},
   url       = {https://arxiv.org/abs/2305.20050}
+}
+
+%% NEW — EMNLP 2025 Outstanding Paper on CoT faithfulness via unlearning.
+%% Cited in Related Work (CoT faithfulness paragraph) to differentiate
+%% our cross-session CCI (behavioural, session-isolated) from parametric
+%% faithfulness measurement (within-model weight intervention).
+@inproceedings{tutek2025measuring,
+  title     = {Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps},
+  author    = {Tutek, Martin and Hashemi Chaleshtori, Fateme and Marasovic, Ana and Belinkov, Yonatan},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {9935--9960},
+  year      = {2025},
+  publisher = {Association for Computational Linguistics},
+  address   = {Suzhou, China},
+  doi       = {10.18653/v1/2025.emnlp-main.504},
+  url       = {https://aclanthology.org/2025.emnlp-main.504/}
+}
+
+%% NEW — ICLR 2026 paper on reasoning LLM robustness to CoT interventions.
+%% Most directly competing concurrent work. Differentiation stated in
+%% Related Work §2 (new "Concurrent work" paragraph): they intervene on
+%% the model's own CoT tokens mid-generation; we intervene on externally
+%% provided state in a fresh session with no prior reasoning context.
+@inproceedings{vonrecum2026reasoning,
+  title     = {Are Reasoning {LLM}s Robust to Interventions on Their Chain-of-Thought?},
+  author    = {von Recum, Alexander and Girrbach, Leander and Akata, Zeynep},
+  booktitle = {The Fourteenth International Conference on Learning Representations ({ICLR})},
+  year      = {2026},
+  note      = {Poster; \url{https://openreview.net/forum?id=aQZIpELFwp}},
+  url       = {https://arxiv.org/abs/2602.07470}
 }
