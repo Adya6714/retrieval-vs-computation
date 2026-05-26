@@ -11,6 +11,8 @@ import json
 import re
 from typing import Any
 
+import networkx as nx
+
 
 LAST_VERIFY_META: dict[str, Any] = {}
 
@@ -41,6 +43,19 @@ def _parse_cc_ground_truth_count(ground_truth: str) -> int:
     return int(m.group(1))
 
 
+def _parse_cc_total_and_items(raw_text: str) -> tuple[int, list[int]]:
+    # Extract the first integer after an explicit total/count marker.
+    total_match = re.search(r"(?:Total|Count)[:\s]+(\d+)", str(raw_text), re.IGNORECASE)
+    if not total_match:
+        raise ValueError("parse_failed: no total found")
+    total = int(total_match.group(1))
+
+    # Domain-agnostic item extraction: take all integers after the total marker.
+    after_total = str(raw_text)[total_match.end() :]
+    items = [int(x) for x in re.findall(r"\d+", after_total)]
+    return total, sorted(items)
+
+
 def _extract_int_list_candidates(text: str) -> list[list[int]]:
     candidates: list[list[int]] = []
     for m in re.finditer(r"\[([^\]]+)\]", text):
@@ -52,6 +67,56 @@ def _extract_int_list_candidates(text: str) -> list[list[int]]:
         if nums:
             candidates.append(nums)
     return candidates
+
+
+def _extract_named_list_candidates(
+    text: str, name_to_value: dict[str, int] | None
+) -> list[list[int]]:
+    """Parse bracketed item lists, supporting either numbers or renamed domain labels."""
+    if not name_to_value:
+        return []
+    lower_map = {str(k).strip().lower(): int(v) for k, v in name_to_value.items()}
+    candidates: list[list[int]] = []
+    for m in re.finditer(r"\[([^\]]+)\]", text):
+        raw_tokens = [t.strip() for t in m.group(1).split(",") if t.strip()]
+        if not raw_tokens:
+            continue
+        parsed: list[int] = []
+        ok = True
+        for tok in raw_tokens:
+            norm = tok.lower()
+            num = re.fullmatch(r"-?\d+", norm)
+            if num:
+                parsed.append(int(norm))
+                continue
+            if norm in lower_map:
+                parsed.append(lower_map[norm])
+                continue
+            ok = False
+            break
+        if ok and parsed:
+            candidates.append(parsed)
+    return candidates
+
+
+def _extract_any_item_name_mapping(params: dict[str, Any]) -> dict[str, int]:
+    """Accept any `<domain>_names` mapping (e.g., scoop_names, token_names, ...)."""
+    mapping: dict[str, int] = {}
+    for key, value in params.items():
+        if not (isinstance(key, str) and key.lower().endswith("_names")):
+            continue
+        if value is None:
+            continue
+        if not isinstance(value, dict):
+            raise ValueError(f"{key} must be a mapping when provided.")
+        for name, mapped in value.items():
+            if not isinstance(name, str):
+                continue
+            try:
+                mapping[name] = int(mapped)
+            except (TypeError, ValueError):
+                continue
+    return mapping
 
 
 def _extract_claimed_count(text: str, target: int) -> int | None:
@@ -126,107 +191,38 @@ def verify_coinchange_scoops(
 ) -> tuple[bool, str]:
     try:
         params = _parse_params(difficulty_params)
-        denoms = [int(x) for x in params["denominations"]]
-        target = int(params["target"])
-        gt_count = _parse_cc_ground_truth_count(ground_truth)
-        scoop_map = params.get("scoop_names", {})
-        if scoop_map is not None and not isinstance(scoop_map, dict):
-            raise ValueError("scoop_names must be a mapping when provided.")
+        gt_total, gt_items = _parse_cc_total_and_items(str(ground_truth))
+        pred_total, pred_items = _parse_cc_total_and_items(str(model_answer or ""))
     except Exception as exc:
         _set_meta(parse_status="parse_failed")
         return False, f"parse_failed: {exc}"
 
-    raw_text = str(model_answer or "")
-    normalized = raw_text.lower().replace("\n", " ")
-    # Remove unit annotations like "1g" / "1 g".
-    normalized = re.sub(r"(\d)\s*g\b", r"\1", normalized)
-    normalized = re.sub(r"\bg\b", "", normalized)
-    # Normalize punctuation/spaces.
-    normalized = normalized.replace(";", ",")
-    normalized = re.sub(r"\s*,\s*", ", ", normalized)
-    normalized = re.sub(r"\s+", " ", normalized).strip()
+    if not pred_items:
+        name_map = _extract_any_item_name_mapping(params)
+        lower_map = {str(k).strip().lower(): int(v) for k, v in name_map.items()}
+        marker = re.search(r"(?:Total|Count)[:\s]+\d+", str(model_answer or ""), re.IGNORECASE)
+        after_total = str(model_answer or "")[marker.end() :] if marker else str(model_answer or "")
+        bracket = re.search(r"\[([^\]]*)\]", after_total)
+        if bracket:
+            parsed_items: list[int] = []
+            for token in [t.strip() for t in bracket.group(1).split(",") if t.strip()]:
+                m_num = re.search(r"\d+", token)
+                if m_num:
+                    parsed_items.append(int(m_num.group(0)))
+                    continue
+                mapped = lower_map.get(token.lower())
+                if mapped is not None:
+                    parsed_items.append(mapped)
+            pred_items = sorted(parsed_items)
 
-    used_mapping = False
-    for name, value in (scoop_map or {}).items():
-        if not isinstance(name, str):
-            continue
-        key = name.lower()
-        if re.search(rf"\b{re.escape(key)}\b", normalized):
-            used_mapping = True
-            normalized = re.sub(
-                rf"\b{re.escape(key)}\b", str(int(value)), normalized
-            )
+    if pred_total != gt_total:
+        _set_meta(parse_status="parsed_clean", coin_list_provided=bool(pred_items))
+        return False, f"wrong_count: predicted={pred_total}, expected={gt_total}"
+    if sorted(pred_items) != sorted(gt_items):
+        _set_meta(parse_status="parsed_clean", coin_list_provided=bool(pred_items))
+        return False, "wrong_items: predicted list does not match ground truth"
 
-    # Step 2: extract count.
-    claimed_count: int | None = None
-    m = re.search(r"total\s*:\s*(\d+)", normalized)
-    if m:
-        claimed_count = int(m.group(1))
-    if claimed_count is None:
-        m = re.search(r"(\d+)\s*scoops?\b", normalized)
-        if m:
-            claimed_count = int(m.group(1))
-    all_numbers = [int(x) for x in re.findall(r"\d+", normalized)]
-    if claimed_count is None:
-        for n in all_numbers:
-            if 0 <= n <= target:
-                claimed_count = n
-                break
-
-    # Step 3: extract candidate coins from all integers, dropping first count occurrence.
-    coins: list[int] = []
-    if all_numbers and claimed_count is not None:
-        removed = False
-        for n in all_numbers:
-            if not removed and n == claimed_count:
-                removed = True
-                continue
-            coins.append(n)
-    elif all_numbers:
-        coins = list(all_numbers)
-
-    if claimed_count is None and not coins:
-        _set_meta(parse_status="parse_failed")
-        return False, "parse_failed: unable to extract count or scoops"
-
-    parse_status = "parsed_clean"
-    if (
-        "\n" in raw_text
-        or "g" in raw_text.lower()
-        or "[" not in raw_text
-        or "total:" not in raw_text.lower()
-        or used_mapping
-    ):
-        parse_status = "parsed_with_normalization"
-
-    coin_list_provided = len(coins) > 0
-    if coin_list_provided:
-        # Edge case: explanation numbers after scoops; only use first N after count.
-        if claimed_count is not None and claimed_count >= 0 and len(coins) > claimed_count:
-            coins = coins[:claimed_count]
-        if claimed_count is None:
-            claimed_count = len(coins)
-        if any(c not in denoms for c in coins):
-            _set_meta(parse_status=parse_status, coin_list_provided=True)
-            return False, "invalid_coin_list: contains value outside denomination set"
-        if sum(coins) != target:
-            _set_meta(parse_status=parse_status, coin_list_provided=True)
-            return False, f"invalid_coin_list: sum={sum(coins)} target={target}"
-        if len(coins) != claimed_count:
-            _set_meta(parse_status=parse_status, coin_list_provided=True)
-            return (
-                False,
-                f"invalid_coin_list: len={len(coins)} does not match count={claimed_count}",
-            )
-
-    if claimed_count is None:
-        _set_meta(parse_status="parse_failed")
-        return False, "parse_failed: no valid count extracted"
-    if claimed_count != gt_count:
-        _set_meta(parse_status=parse_status, coin_list_provided=coin_list_provided)
-        return False, f"wrong_count: predicted={claimed_count}, expected={gt_count}"
-
-    _set_meta(parse_status=parse_status, coin_list_provided=coin_list_provided)
+    _set_meta(parse_status="parsed_clean", coin_list_provided=bool(pred_items))
     return True, "correct"
 
 
@@ -264,9 +260,14 @@ def verify_sp(
         params = _parse_params(difficulty_params)
         edges = params["graph"]
         directed = bool(params.get("directed", True))
+        requires_bellman_ford_raw = params.get("requires_bellman_ford", False)
+        if isinstance(requires_bellman_ford_raw, str):
+            requires_bellman_ford = requires_bellman_ford_raw.strip().lower() == "true"
+        else:
+            requires_bellman_ford = bool(requires_bellman_ford_raw)
         source = int(params["source"])
         target = int(params["target"])
-        _, gt_cost = _parse_sp_ground_truth(ground_truth)
+        _gt_path, _gt_cost = _parse_sp_ground_truth(ground_truth)
     except Exception as exc:
         _set_meta(parse_status="parse_failed")
         return False, f"parse_failed: {exc}"
@@ -299,6 +300,21 @@ def verify_sp(
         edge_cost[(u, v)] = w
         if not directed:
             edge_cost[(v, u)] = w
+    try:
+        graph = nx.DiGraph() if directed else nx.Graph()
+        graph.add_nodes_from([source, target])
+        for e in edges:
+            graph.add_edge(int(e["u"]), int(e["v"]), weight=int(e["w"]))
+        if requires_bellman_ford:
+            expected_cost = int(nx.bellman_ford_path_length(graph, source, target, weight="weight"))
+        else:
+            expected_cost = int(nx.dijkstra_path_length(graph, source, target, weight="weight"))
+    except nx.NetworkXUnbounded:
+        _set_meta(parse_status="parse_failed")
+        return False, "parse_failed: negative cycle detected in SP graph"
+    except (nx.NetworkXNoPath, nx.NodeNotFound) as exc:
+        _set_meta(parse_status="parse_failed")
+        return False, f"parse_failed: {exc}"
 
     # STEP 3/4: extract ALL arrow sequences and pick best candidate by claimed cost.
     arrow_chunks = re.findall(
@@ -396,7 +412,7 @@ def verify_sp(
 
     if chosen_nodes is None:
         # cost-only answer accepted if it matches ground truth cost.
-        ok = claimed_cost == gt_cost
+        ok = claimed_cost == expected_cost
         _set_meta(
             parse_status=parse_state[0] if parse_state[0] else "parsed_with_normalization",
             path_provided=False,
@@ -404,7 +420,7 @@ def verify_sp(
         )
         if ok:
             return True, "correct_cost_only"
-        return False, f"wrong_cost: predicted={claimed_cost}, expected={gt_cost}"
+        return False, f"wrong_cost: predicted={claimed_cost}, expected={expected_cost}"
 
     nodes = chosen_nodes
     parse_status = parse_state[0]
@@ -426,9 +442,9 @@ def verify_sp(
     if computed != claimed_cost:
         _set_meta(parse_status=parse_status, path_provided=True)
         return False, f"path_cost_mismatch: path_sum={computed}, claimed={claimed_cost}"
-    if claimed_cost != gt_cost:
+    if claimed_cost != expected_cost:
         _set_meta(parse_status=parse_status, path_provided=True)
-        return False, f"wrong_cost: predicted={claimed_cost}, expected={gt_cost}"
+        return False, f"wrong_cost: predicted={claimed_cost}, expected={expected_cost}"
 
     gt_path, _ = _parse_sp_ground_truth(ground_truth)
     alt = nodes != gt_path
@@ -441,7 +457,9 @@ def verify_sp(
 
 
 def _parse_wis_ground_truth_total(ground_truth: str) -> int:
-    m = re.search(r"Total:\s*(\d+)", str(ground_truth))
+    m = re.search(r"total(?:\s+weight)?\s*[:=]\s*(\d+)", str(ground_truth), flags=re.IGNORECASE)
+    if not m:
+        m = re.search(r"\b(\d+)\b", str(ground_truth))
     if not m:
         raise ValueError(f"Unable to parse WIS ground truth total: {ground_truth!r}")
     return int(m.group(1))
@@ -449,7 +467,9 @@ def _parse_wis_ground_truth_total(ground_truth: str) -> int:
 
 def _parse_wis_model_answer(text: str) -> tuple[list[str] | None, int | None, str]:
     status = "parsed_clean"
-    total_match = re.search(r"Total:\s*(\d+)", text, flags=re.IGNORECASE)
+    total_match = re.search(r"total(?:\s+weight)?\s*[:=]\s*(\d+)", text, flags=re.IGNORECASE)
+    if total_match is None:
+        total_match = re.search(r"\b(\d+)\b", text, flags=re.IGNORECASE)
     total = int(total_match.group(1)) if total_match else None
 
     selected: list[str] | None = None
@@ -541,6 +561,78 @@ def verify_wis(
     return True, "correct"
 
 
+def verify_wis_independent_set(
+    problem_id: str,
+    model_answer: str,
+    ground_truth: str,
+    difficulty_params: str | dict[str, Any],
+) -> tuple[bool, str]:
+    _ = problem_id
+    try:
+        params = _parse_params(difficulty_params)
+        intervals = params["intervals"]
+        gt_total = _parse_wis_ground_truth_total(ground_truth)
+        weights_by_id = {
+            int(iv["id"]): int(iv["weight"])
+            for iv in intervals
+            if isinstance(iv, dict) and "id" in iv and "weight" in iv
+        }
+    except Exception as exc:
+        _set_meta(parse_status="parse_failed")
+        return False, f"parse_failed: {exc}"
+
+    selected_tokens, claimed_total, parse_status = _parse_wis_model_answer(str(model_answer or ""))
+    if selected_tokens is None:
+        _set_meta(parse_status="parse_failed")
+        return False, "parse_failed: selected set not found"
+    if claimed_total is None:
+        _set_meta(parse_status="parse_failed")
+        return False, "parse_failed: total not found"
+
+    label_to_idx = {str(v): int(k) for k, v in params.get("item_mapping", {}).items()}
+    try:
+        if label_to_idx:
+            selected = sorted({label_to_idx[t] for t in selected_tokens})
+            parse_status = "parsed_with_normalization"
+        else:
+            selected = sorted({int(t) for t in selected_tokens})
+    except Exception:
+        _set_meta(parse_status="parse_failed")
+        return False, "parse_failed: selected set parsing failed"
+
+    for idx in selected:
+        if idx not in weights_by_id:
+            _set_meta(parse_status=parse_status)
+            return False, f"selected_index_out_of_range: {idx}"
+
+    for i in range(len(selected)):
+        for j in range(i + 1, len(selected)):
+            if abs(selected[i] - selected[j]) == 1:
+                _set_meta(parse_status=parse_status)
+                return False, "selected_adjacent_indices"
+
+    computed = sum(weights_by_id[idx] for idx in selected)
+    if computed != claimed_total:
+        _set_meta(parse_status=parse_status)
+        return False, f"selected_weight_mismatch: computed={computed}, claimed={claimed_total}"
+    if claimed_total != gt_total:
+        _set_meta(parse_status=parse_status)
+        return False, f"wrong_total: predicted={claimed_total}, expected={gt_total}"
+
+    alt = False
+    m_gt = re.search(r"\{([^}]*)\}", str(ground_truth))
+    if m_gt:
+        gt_set = sorted(int(x.strip()) for x in m_gt.group(1).split(",") if x.strip())
+        alt = selected != gt_set
+
+    _set_meta(
+        parse_status=parse_status,
+        correct_alternative_set=alt,
+        set_provided=True,
+    )
+    return True, "correct"
+
+
 def verify_algo(
     problem_id: str,
     model_answer: str,
@@ -565,6 +657,10 @@ def verify_algo(
         verified, reason = verify_sp(model_answer, ground_truth, difficulty_params)
     elif subtype == "wis":
         verified, reason = verify_wis(model_answer, ground_truth, difficulty_params)
+    elif subtype == "wis_independent_set":
+        verified, reason = verify_wis_independent_set(
+            problem_id, model_answer, ground_truth, difficulty_params
+        )
     else:
         raise ValueError(f"Unknown subtype: {problem_subtype}")
 

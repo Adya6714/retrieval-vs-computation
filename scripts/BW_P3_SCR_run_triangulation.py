@@ -1,12 +1,23 @@
 """
-Final triangulation analysis. Run after all three probes
-are complete. Safe to run with partial data — missing probes produce None signals
-rather than crashing.
+Blocksworld (BW) per-instance triangulation across Probe 1–3.
+
+Paper honesty notes (read before interpreting outputs):
+- Probe 2 CCI/TEP require a valid ``pddl_path`` and live plan execution. Problems
+  without PDDL (notably many ``BW_E*`` extended IDs) were never executed; their CCI
+  is legitimately missing, not "ambiguous convergence."
+- This script labels those rows ``execution_unavailable`` instead of lumping them
+  into ambiguous triangulation diagnoses.
+- Reported CCI coverage is the subset with PDDL-backed execution (~90/150 plans
+  rows in a typical run); only non-null CCI values (often ~29/150 sessions) carry
+  ``cci_signal``.
+- Safe to run with partial data — missing probes produce empty signals rather than
+  crashing.
 """
 
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -27,6 +38,82 @@ from probes.behavioral.css import (
     compute_cfs,
 )
 from probes.triangulation.per_instance import align_instance
+
+
+def _base_problem_id(pid: str) -> str:
+    """Normalize variant-suffixed IDs to canonical base problem_id."""
+    pid = str(pid).strip()
+    pid = re.sub(r"_W5_TEMP$", "", pid)
+    pid = re.sub(r"_W[0-9]+$", "", pid)
+    return pid
+
+
+def _is_execution_unavailable(problem_id: str, model: str, pddl_by_pair: dict[tuple[str, str], bool]) -> bool:
+    """True when Probe 2 execution was not available (BW_E* or missing PDDL)."""
+    base = _base_problem_id(problem_id)
+    if re.match(r"^BW_E", base):
+        return True
+    if model:
+        has_pddl = pddl_by_pair.get((base, model))
+        if has_pddl is False:
+            return True
+    return False
+
+
+def _load_probe2_cci(df_probe2: pd.DataFrame, model: str | None) -> pd.DataFrame:
+    """Load BW Probe 2 CCI keyed by base problem_id for one behavioral model."""
+    if df_probe2.empty or "problem_id" not in df_probe2.columns:
+        return pd.DataFrame(columns=["base_id", "cci"])
+
+    score_col = None
+    for candidate in ("cci", "cci_score"):
+        if candidate in df_probe2.columns:
+            score_col = candidate
+            break
+    if score_col is None:
+        print(
+            "WARNING: probe2 CCI file has no 'cci' or 'cci_score' column; "
+            "cci_signal will be empty."
+        )
+        return pd.DataFrame(columns=["base_id", "cci"])
+
+    p2 = df_probe2.copy()
+    if "valid_divergence" in p2.columns:
+        vd = (
+            p2["valid_divergence"]
+            .astype(str)
+            .str.strip()
+            .str.lower()
+            .map({"true": True, "false": False})
+            .fillna(False)
+        )
+        p2 = p2.loc[~vd].copy()
+    if model and "model" in p2.columns:
+        p2 = p2[p2["model"].astype(str).str.strip() == str(model).strip()].copy()
+
+    p2["base_id"] = p2["problem_id"].astype(str).apply(_base_problem_id)
+    p2["cci"] = pd.to_numeric(p2[score_col], errors="coerce")
+    # Keep rows with numeric CCI (including 0.0); drop only NaN.
+    p2 = p2.dropna(subset=["cci"])
+    if p2.empty:
+        return pd.DataFrame(columns=["base_id", "cci"])
+
+    return p2.groupby("base_id", as_index=False)["cci"].mean()
+
+
+def _pddl_lookup(plans: pd.DataFrame) -> dict[tuple[str, str], bool]:
+    """(base_problem_id, model) -> whether pddl_path is present for execution."""
+    if plans.empty or "problem_id" not in plans.columns:
+        return {}
+    out: dict[tuple[str, str], bool] = {}
+    for _, row in plans.iterrows():
+        pid = _base_problem_id(row["problem_id"])
+        m = str(row.get("model", "")).strip()
+        pddl = row.get("pddl_path", "")
+        has = bool(str(pddl).strip()) and str(pddl).strip().lower() not in ("nan", "none")
+        if m:
+            out[(pid, m)] = has
+    return out
 
 
 def _question_bank_meta_lookup(path: str) -> dict[tuple[str, str], dict[str, str]]:
@@ -86,7 +173,7 @@ def main():
         "--behavioral-results",
         dest="behavioral",
         type=str,
-        default="results/BW_P1_RES_behavioral_sweep.csv",
+        default="results/raw/BW_P1_behavioral.csv",
     )
     parser.add_argument(
         "--behavioral-model",
@@ -97,19 +184,27 @@ def main():
             "Required when the CSV contains more than one non-mock model."
         ),
     )
-    parser.add_argument("--mechanistic", type=str, default="results/BW_RES_P3_probe1_mechanistic.csv")
+    parser.add_argument("--mechanistic", type=str, default="results/raw/BW_P3_mechanistic.csv")
     parser.add_argument(
         "--contamination",
         "--contamination-results",
         dest="contamination",
         type=str,
-        default="results/BW_P3_RES_contamination_triage.csv",
+        default="results/raw/BW_P3_contamination.csv",
     )
     parser.add_argument(
         "--probe2-results",
+        "--probe2-cci",
+        dest="probe2_results",
         type=str,
-        default="results/GSM_P2_RES_cci.csv",
-        help="Probe 2 results containing cci_score by problem/model",
+        default="results/raw/BW_P2_cci.csv",
+        help="BW Probe 2 CCI CSV (columns: cci or cci_score; filtered by --behavioral-model)",
+    )
+    parser.add_argument(
+        "--probe2-plans",
+        type=str,
+        default="results/raw/BW_P2_plans.csv",
+        help="BW Probe 2 plans CSV (pddl_path) for execution_unavailable labeling",
     )
     parser.add_argument(
         "--family",
@@ -124,30 +219,32 @@ def main():
         help="Used to fill correct_answer / problem_text for CSS when missing from behavioral CSV",
     )
     # Available output name choices: per-model files are written by the caller via --output
-    parser.add_argument("--output", type=str, default="results/BW_P3_RES_triangulation_per_instance_claude37.csv")
+    parser.add_argument("--output", type=str, default="results/derived/BW_P3_triangulation_claude.csv")
     parser.add_argument(
         "--regression-output",
         type=str,
-        default="results/BW_P3_RES_contamination_regression_claude37.txt",
-        help="Where to write the OLS summary (default: results/BW_P3_RES_contamination_regression_claude37.txt)",
+        default="results/derived/BW_P3_contamination_regression_claude.txt",
+        help="Where to write the OLS summary",
     )
     args = parser.parse_args()
 
     # 1. Load data safely
     behavioral_path = args.behavioral
-    if not Path(behavioral_path).exists() and behavioral_path == "results/BW_P1_RES_behavioral_sweep.csv":
+    if not Path(behavioral_path).exists() and behavioral_path == "results/raw/BW_P1_behavioral.csv":
         behavioral_path = "results/behavioral_sweep.csv"
     mechanistic_path = args.mechanistic
-    if not Path(mechanistic_path).exists() and mechanistic_path == "results/BW_RES_P3_probe1_mechanistic.csv":
+    if not Path(mechanistic_path).exists() and mechanistic_path == "results/raw/BW_P3_mechanistic.csv":
         mechanistic_path = "results/probe1_mechanistic.csv"
     contamination_path = args.contamination
-    if not Path(contamination_path).exists() and contamination_path == "results/BW_P3_RES_contamination_triage.csv":
+    if not Path(contamination_path).exists() and contamination_path == "results/raw/BW_P3_contamination.csv":
         contamination_path = "results/contamination_triage.csv"
 
     df_beh = load_results(behavioral_path)
     df_mech = load_results(mechanistic_path)
     df_cont = load_results(contamination_path)
     df_probe2 = load_results(args.probe2_results)
+    df_plans = load_results(args.probe2_plans)
+    pddl_by_pair = _pddl_lookup(df_plans)
 
     # Section-1 style cleanup for analysis consistency.
     if not df_beh.empty:
@@ -181,13 +278,6 @@ def main():
         # Normalize problem_id to base canonical ID.
         # Old W5 rows were stored as BW_001_W5_TEMP; W6 rows as BW_001_W6 or BW_E002_W6.
         # Strip all these suffixes so they group under their canonical base problem.
-        def _base_id(pid: str) -> str:
-            import re
-            pid = pid.strip()
-            pid = re.sub(r"_W5_TEMP$", "", pid)
-            pid = re.sub(r"_W[0-9]+$", "", pid)
-            return pid
-
         def _infer_vtype(pid: str, existing_vtype: str) -> str:
             """If problem_id encodes the variant, use that; otherwise keep existing."""
             import re
@@ -200,7 +290,7 @@ def main():
             match = re.search(r"_(W[0-9]+)(?:_TEMP)?$", pid.strip())
             return match.group(1) if match else existing_vtype
 
-        df_beh["base_id"] = df_beh["problem_id"].astype(str).apply(_base_id)
+        df_beh["base_id"] = df_beh["problem_id"].astype(str).apply(_base_problem_id)
         df_beh["variant_type"] = df_beh.apply(
             lambda r: _infer_vtype(str(r["problem_id"]), str(r.get("variant_type", ""))),
             axis=1,
@@ -248,6 +338,8 @@ def main():
                     fam = ""
                 if not fam:
                     fam = families.get(pid_str, "blocksworld")
+                if fam == "planning_suite":
+                    fam = "blocksworld"
 
                 canonical_correct = ""
                 canonical_bool = None
@@ -326,39 +418,30 @@ def main():
     else:
         df_mech_filt = pd.DataFrame(columns=["problem_id", "crystallization_layer"])
 
-    if not df_probe2.empty and "problem_id" in df_probe2.columns and "cci_score" in df_probe2.columns:
-        p2 = df_probe2.copy()
-        if "valid_divergence" in p2.columns:
-            vd = (
-                p2["valid_divergence"]
-                .astype(str)
-                .str.strip()
-                .str.lower()
-                .map({"true": True, "false": False})
-                .fillna(False)
-            )
-            p2 = p2.loc[~vd].copy()
-        if "model" in p2.columns and behavioral_model_resolved:
-            p2 = p2[p2["model"].astype(str).str.strip() == behavioral_model_resolved].copy()
-        p2["problem_id"] = p2["problem_id"].astype(str).str.strip()
-        p2["cci_score"] = pd.to_numeric(p2["cci_score"], errors="coerce")
-        p2 = p2.dropna(subset=["cci_score"])
-        df_p2_filt = (
-            p2.groupby("problem_id", as_index=False)["cci_score"]
-            .mean()
-            .rename(columns={"cci_score": "cci"})
+    df_p2_filt = _load_probe2_cci(df_probe2, behavioral_model_resolved)
+    if not df_p2_filt.empty:
+        n_cci = len(df_p2_filt)
+        print(
+            f"Probe 2 CCI: {n_cci} base problems with numeric CCI "
+            f"(model={behavioral_model_resolved!r})"
         )
-    else:
-        df_p2_filt = pd.DataFrame(columns=["problem_id", "cci"])
+    elif not df_probe2.empty:
+        print(
+            "WARNING: probe2 CCI file loaded but no numeric CCI rows after filter; "
+            "check --probe2-results path and --behavioral-model."
+        )
 
     # 5. Outer join all datasets 
     all_pids = set()
-    for df in [df_css_agg, df_cont_filt, df_mech_filt, df_p2_filt]:
+    for df in [df_css_agg, df_cont_filt, df_mech_filt]:
         if "problem_id" in df.columns:
             all_pids.update(df["problem_id"].tolist())
-    
+    if not df_p2_filt.empty:
+        all_pids.update(df_p2_filt["base_id"].tolist())
+
     df_merged = pd.DataFrame({"problem_id": list(all_pids)})
-    
+    df_merged["base_id"] = df_merged["problem_id"].astype(str).apply(_base_problem_id)
+
     if not df_css_agg.empty:
         df_merged = df_merged.merge(df_css_agg, on="problem_id", how="left")
     if not df_cont_filt.empty:
@@ -366,9 +449,17 @@ def main():
     if not df_mech_filt.empty:
         df_merged = df_merged.merge(df_mech_filt, on="problem_id", how="left")
     if not df_p2_filt.empty:
-        df_merged = df_merged.merge(df_p2_filt, on="problem_id", how="left")
+        df_merged = df_merged.merge(df_p2_filt, on="base_id", how="left")
 
     df_merged["problem_family"] = df_merged["problem_id"].map(families)
+    df_merged["execution_unavailable"] = df_merged.apply(
+        lambda r: _is_execution_unavailable(
+            str(r["problem_id"]),
+            behavioral_model_resolved,
+            pddl_by_pair,
+        ),
+        axis=1,
+    )
 
     # 6. Apply per-instance alignment via properties
     final_rows = []
@@ -394,6 +485,9 @@ def main():
         
         d = row.to_dict()
         d.update(alignment_dict)
+        if bool(row.get("execution_unavailable", False)):
+            d["diagnosis"] = "execution_unavailable"
+            d["agreement"] = "execution_unavailable"
         final_rows.append(d)
 
     df_final = pd.DataFrame(final_rows)
@@ -499,19 +593,31 @@ def main():
     # 9. Triangulation Metrics Summaries Display
     print("\n--- Final Triangulation Summary ---")
     print(f"Total problems triangulated: {len(df_final)}")
-    
+
     if not df_final.empty:
-        valid_mask = df_final["agreement"] != "insufficient"
-        valid_count = valid_mask.sum()
-        converging_count = (df_final["agreement"] == "converging").sum()
-        
+        if "execution_unavailable" in df_final.columns:
+            n_unavail = int(df_final["execution_unavailable"].fillna(False).astype(bool).sum())
+            print(
+                f"Execution unavailable (no PDDL / BW_E*): {n_unavail} "
+                f"({100.0 * n_unavail / len(df_final):.1f}%)"
+            )
+        if "cci_signal" in df_final.columns:
+            n_cci_sig = int(df_final["cci_signal"].notna().sum())
+            print(f"Rows with cci_signal: {n_cci_sig}")
+
+        valid_mask = ~df_final["agreement"].isin(
+            ["insufficient", "execution_unavailable"]
+        )
+        valid_count = int(valid_mask.sum())
+        converging_count = int((df_final["agreement"] == "converging").sum())
+
         if valid_count > 0:
             rate = converging_count / valid_count
-            print(f"Convergence rate (on valid instances): {rate:.2%}")
+            print(f"Convergence rate (PDDL-executable subset): {rate:.2%}")
         else:
             print("Convergence rate: N/A (no valid instances with >=2 signals)")
-            
-        print("\nBreakdown:")
+
+        print("\nDiagnosis breakdown:")
         print(df_final["diagnosis"].value_counts().to_string())
 
 

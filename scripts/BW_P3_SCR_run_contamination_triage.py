@@ -1,10 +1,23 @@
-"""Run contamination triage over Probe 1 instances."""
+"""Run contamination triage over Probe 1 instances.
+
+Primary score: ``contamination_score`` = longest matching n-gram in full ``problem_text``
+(via InfiniGram), stored with ``max_ngram_length`` / ``max_ngram_count``.
+
+Optional decomposition (``--decompose-contamination``) adds:
+- ``template_contamination_score``: InfiniGram score on a subtype template phrase
+- ``instance_contamination_score``: InfiniGram score on instance-specific text (goal/state)
+- ``difficulty_numeric``: structural size proxy (ALGO: params JSON; BW: num_blocks)
+
+BW blocksworld rows require ``--decompose-contamination``; without it, template/instance
+columns are intentionally left empty (not a failed InfiniGram run).
+"""
 
 from __future__ import annotations
 
 import argparse
 import csv
 import json
+import re
 import time
 from pathlib import Path
 import sys
@@ -23,7 +36,7 @@ from probes.contamination.score import score_problem
 from probes.common.io import QUESTION_BANK_PATH
 
 INPUT_PATH = Path(QUESTION_BANK_PATH)
-OUTPUT_PATH = Path("results/BW_P3_RES_contamination_triage.csv")
+OUTPUT_PATH = Path("results/raw/BW_P3_contamination.csv")
 
 OUTPUT_COLUMNS = [
     "problem_id",
@@ -49,6 +62,64 @@ def _existing_problem_ids(output_path: Path) -> set[str]:
         return {str(row.get("problem_id", "")).strip() for row in reader if row.get("problem_id")}
 
 
+def _load_existing_rows(output_path: Path) -> dict[str, dict[str, str]]:
+    if not output_path.exists() or output_path.stat().st_size == 0:
+        return {}
+    with output_path.open("r", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        rows = [dict(r) for r in reader if str(r.get("problem_id", "")).strip()]
+    out: dict[str, dict[str, str]] = {}
+    for row in rows:
+        pid = str(row["problem_id"]).strip()
+        out[pid] = row  # last wins (resume duplicates)
+    return out
+
+
+def _parse_bw_pipe_params(raw: str) -> dict[str, str]:
+    """Parse ``num_blocks=8 | requires_unstacking=false`` style difficulty_params."""
+    text = str(raw or "").strip()
+    if not text:
+        return {}
+    out: dict[str, str] = {}
+    for part in text.split("|"):
+        part = part.strip()
+        if "=" in part:
+            k, v = part.split("=", 1)
+            out[k.strip()] = v.strip()
+    return out
+
+
+def _extract_goal_snippet(problem_text: str) -> str:
+    text = str(problem_text).strip()
+    for marker in ("Goal:", "Objective:", "goal:", "objective:"):
+        if marker in text:
+            return text.split(marker, 1)[1].strip()
+    return text
+
+
+def _infer_bw_num_blocks(problem_text: str, params: dict[str, str]) -> int:
+    raw = params.get("num_blocks", "")
+    if str(raw).strip().isdigit():
+        return int(raw)
+    # Fallback when bank row lacks pipe-params (e.g. legacy canonical rows).
+    text = str(problem_text)
+    m = re.search(r"Blocks?\s+([a-z](?:,\s*[a-z])*)", text, flags=re.IGNORECASE)
+    if m:
+        letters = re.findall(r"[a-z]", m.group(1).lower())
+        if letters:
+            return len(set(letters))
+    return 8
+
+
+def _build_bw_instance_query(
+    problem_id: str, subtype: str, params: dict[str, str], problem_text: str = ""
+) -> tuple[str, int]:
+    """Build instance-specific InfiniGram query for blocksworld / mystery_blocksworld."""
+    _ = subtype
+    num_blocks = _infer_bw_num_blocks(problem_text, params)
+    return f"blocksworld num_blocks {num_blocks}", num_blocks
+
+
 def run_triage(
     limit: int | None = None,
     family: str | None = None,
@@ -57,6 +128,7 @@ def run_triage(
     output_path: Path = OUTPUT_PATH,
     max_ngram: int | None = None,
     decompose_contamination: bool = False,
+    fill_decompose_only: bool = False,
 ) -> None:
     # Comparability guardrail:
     # - contamination_score must remain the legacy score_problem(problem_text, ...)
@@ -71,8 +143,8 @@ def run_triage(
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    processed_ids = _existing_problem_ids(output_path) if resume else set()
-    write_header = not output_path.exists() or output_path.stat().st_size == 0
+    existing_by_id = _load_existing_rows(output_path) if (resume or fill_decompose_only) else {}
+    processed_ids = set(existing_by_id.keys()) if resume and not fill_decompose_only else set()
 
     with input_path.open("r", newline="", encoding="utf-8") as infile:
         reader = csv.DictReader(infile)
@@ -123,6 +195,12 @@ def run_triage(
         "coin_change": "minimum number of coins to make change for",
         "shortest_path": "find the shortest path in a weighted graph",
         "wis": "weighted interval scheduling maximum weight independent set",
+        "blocksworld": (
+            "pick-up put-down stack unstack blocksworld robot arm blocks clear hand empty table"
+        ),
+        "mystery_blocksworld": (
+            "pick-up put-down stack unstack mystery blocksworld robot arm blocks clear hand empty"
+        ),
     }
 
     def _score_query_with_retry(query: str, fam: str, retries: int = 2) -> float:
@@ -155,12 +233,14 @@ def run_triage(
         return -1.0
 
     def _parse_difficulty_params(problem_id: str, raw: str) -> dict:
-        if not str(raw).strip():
-            raise ValueError(f"{problem_id}: missing difficulty_params")
+        text = str(raw or "").strip()
+        if not text or text in ("{}", "null", "nan", ""):
+            return {}
         try:
-            return json.loads(raw)
-        except json.JSONDecodeError as e:
-            raise ValueError(f"{problem_id}: invalid difficulty_params JSON: {e}") from e
+            parsed = json.loads(text)
+            return parsed if isinstance(parsed, dict) else {}
+        except json.JSONDecodeError:
+            return {}
 
     def _build_instance_query_and_difficulty(problem_id: str, subtype: str, params: dict) -> tuple[str, int]:
         if subtype == "coin_change":
@@ -210,47 +290,69 @@ def run_triage(
         raise ValueError(f"{problem_id}: unsupported problem_subtype {subtype!r}")
 
     gradient_rows: list[dict] = []
+    output_rows: list[dict[str, str | int | float]] = []
 
-    with output_path.open("a", newline="", encoding="utf-8") as outfile:
-        writer = csv.DictWriter(outfile, fieldnames=OUTPUT_COLUMNS)
+    print(f"Processing {len(rows)} problems...")
+    for row in tqdm(rows, desc="Contamination Triage"):
+        problem_id = str(row.get("problem_id", "")).strip()
+        if not problem_id:
+            continue
+        if resume and not fill_decompose_only and problem_id in processed_ids:
+            continue
 
-        if write_header:
-            writer.writeheader()
-            outfile.flush()
+        problem_text = str(row.get("problem_text", "")).strip().strip('"')
+        problem_subtype = str(row.get("problem_subtype", "")).strip().lower()
+        fam = str(row.get("problem_family", ""))
 
-        print(f"Processing {len(rows)} problems...")
-        for row in tqdm(rows, desc="Contamination Triage"):
-            problem_id = str(row.get("problem_id", "")).strip()
-            if problem_id and problem_id in processed_ids:
-                continue
+        prior = existing_by_id.get(problem_id, {})
+        if fill_decompose_only and not prior:
+            continue
 
-            problem_text = str(row.get("problem_text", "")).strip().strip('"')
-            problem_subtype = str(row.get("problem_subtype", "")).strip().lower()
-            params = _parse_difficulty_params(problem_id, str(row.get("difficulty_params", "")))
-            score = score_problem(
-                problem_text,
-                family=str(row.get("problem_family", "")),
-                max_ngram=max_ngram,
-            )
+        if fill_decompose_only and prior:
+            score = {
+                "max_ngram_length": prior.get("max_ngram_length", ""),
+                "max_ngram_count": prior.get("max_ngram_count", ""),
+                "contamination_score": prior.get("contamination_score", ""),
+            }
+            problem_text = str(prior.get("problem_text", problem_text))
+        else:
+            score = score_problem(problem_text, family=fam, max_ngram=max_ngram)
 
-            template_score = ""
-            instance_score = ""
-            difficulty_numeric: int | str = ""
-            if decompose_contamination:
-                if problem_subtype not in template_queries:
-                    raise ValueError(
-                        f"{problem_id}: unsupported problem_subtype for decomposition: {problem_subtype!r}"
-                    )
+        template_score: str | float = prior.get("template_contamination_score", "")
+        instance_score: str | float = prior.get("instance_contamination_score", "")
+        difficulty_numeric: int | str = prior.get("difficulty_numeric", "")
+
+        if decompose_contamination:
+            if problem_subtype in {"blocksworld", "mystery_blocksworld"}:
+                bw_params = _parse_bw_pipe_params(str(row.get("difficulty_params", "")))
+                template_query = template_queries[problem_subtype]
+                goal_snippet = _extract_goal_snippet(problem_text)
+                _fallback_query, diff_n = _build_bw_instance_query(
+                    problem_id, problem_subtype, bw_params, problem_text
+                )
+                instance_query = goal_snippet if goal_snippet else _fallback_query
+                if not str(difficulty_numeric).strip():
+                    difficulty_numeric = diff_n
+            elif problem_subtype in template_queries:
+                params = _parse_difficulty_params(problem_id, str(row.get("difficulty_params", "")))
                 template_query = template_queries[problem_subtype]
                 instance_query, difficulty_numeric = _build_instance_query_and_difficulty(
                     problem_id, problem_subtype, params
                 )
-                template_score = _score_query_with_retry(
-                    template_query, fam=str(row.get("problem_family", ""))
+            else:
+                raise ValueError(
+                    f"{problem_id}: unsupported problem_subtype for decomposition: {problem_subtype!r}"
                 )
-                instance_score = _score_query_with_retry(
-                    instance_query, fam=str(row.get("problem_family", ""))
-                )
+
+            need_template = str(template_score).strip() in ("", "nan", "none")
+            need_instance = str(instance_score).strip() in ("", "nan", "none")
+            if need_template:
+                template_score = _score_query_with_retry(template_query, fam=fam)
+            if need_instance:
+                instance_score = _score_query_with_retry(instance_query, fam=fam)
+
+            if problem_subtype in {"coin_change", "shortest_path", "wis"}:
+                params = _parse_difficulty_params(problem_id, str(row.get("difficulty_params", "")))
                 gradient_rows.append(
                     {
                         "problem_id": problem_id,
@@ -260,7 +362,8 @@ def run_triage(
                     }
                 )
 
-            output_row = {
+        output_rows.append(
+            {
                 "problem_id": problem_id,
                 "problem_family": row.get("problem_family", row.get("problem_subtype", "")),
                 "problem_subtype": row.get("problem_subtype", ""),
@@ -273,11 +376,13 @@ def run_triage(
                 "instance_contamination_score": instance_score,
                 "difficulty_numeric": difficulty_numeric,
             }
-            writer.writerow(output_row)
-            outfile.flush()
+        )
 
-            if problem_id:
-                processed_ids.add(problem_id)
+    with output_path.open("w", newline="", encoding="utf-8") as outfile:
+        writer = csv.DictWriter(outfile, fieldnames=OUTPUT_COLUMNS)
+        writer.writeheader()
+        for output_row in output_rows:
+            writer.writerow(output_row)
 
     if decompose_contamination and gradient_rows:
         cc_std = [
@@ -367,6 +472,11 @@ if __name__ == "__main__":
         action="store_true",
         help="Compute template_contamination_score + instance_contamination_score + difficulty_numeric",
     )
+    parser.add_argument(
+        "--fill-decompose-only",
+        action="store_true",
+        help="Keep existing contamination_score rows; only fill empty template/instance fields (implies --decompose-contamination)",
+    )
 
     args = parser.parse_args()
     if not args.bank_path:
@@ -374,6 +484,7 @@ if __name__ == "__main__":
     if not args.output:
         raise ValueError("--output is required")
 
+    decompose = bool(args.decompose_contamination or args.fill_decompose_only)
     run_triage(
         limit=args.limit,
         family=args.family,
@@ -381,5 +492,6 @@ if __name__ == "__main__":
         input_path=Path(args.bank_path or args.question_bank_path),
         output_path=Path(args.output),
         max_ngram=args.max_ngram,
-        decompose_contamination=args.decompose_contamination,
+        decompose_contamination=decompose,
+        fill_decompose_only=args.fill_decompose_only,
     )

@@ -156,7 +156,20 @@ def parse_decision_reason(raw: str, subtype: str) -> tuple[str, str, str, str]:
     return response_type, decision, parse_status, reason
 
 
-def _cc_prompt(denoms: list[int], target: int, coins: list[int], remaining: int) -> str:
+# Optional elicitation suffix appended to the Reason instruction when --elicit-algorithm is on.
+# Designed to be additive, not coercive: invites the model to name an algorithm if one fits,
+# while preserving the original "one sentence explaining why" format.
+_ELICIT_SUFFIX = (
+    " If a standard algorithm is appropriate (e.g., Dijkstra, dynamic programming, "
+    "greedy interval scheduling), name it explicitly in your reason."
+)
+
+
+def _reason_instruction(base: str, elicit: bool) -> str:
+    return base + (_ELICIT_SUFFIX if elicit else "")
+
+
+def _cc_prompt(denoms: list[int], target: int, coins: list[int], remaining: int, *, elicit: bool = False) -> str:
     return (
         "Coin change problem.\n"
         f"Denominations: {denoms}\n"
@@ -165,11 +178,11 @@ def _cc_prompt(denoms: list[int], target: int, coins: list[int], remaining: int)
         f"Remaining: {remaining}\n\n"
         "Make your next single decision.\n"
         "Decision: [write only the denomination value]\n"
-        "Reason: [write one sentence explaining why you chose this]"
+        f"Reason: [{_reason_instruction('write one sentence explaining why you chose this', elicit)}]"
     )
 
 
-def _sp_prompt(edges: list[tuple[int, int, int]], source: int, target: int, cur: int, path: list[int], cost: int) -> str:
+def _sp_prompt(edges: list[tuple[int, int, int]], source: int, target: int, cur: int, path: list[int], cost: int, *, elicit: bool = False) -> str:
     neighbors = [(v, w) for u, v, w in edges if u == cur]
     return (
         "Shortest path problem.\n"
@@ -180,11 +193,11 @@ def _sp_prompt(edges: list[tuple[int, int, int]], source: int, target: int, cur:
         f"Unvisited neighbors of current node: {neighbors}\n\n"
         "Make your next single decision.\n"
         "Decision: [write only the next node to move to]\n"
-        "Reason: [write one sentence explaining why you chose this node]"
+        f"Reason: [{_reason_instruction('write one sentence explaining why you chose this node', elicit)}]"
     )
 
 
-def _wis_prompt(intervals: list[dict], selected: list[int], ruled_out: list[int]) -> str:
+def _wis_prompt(intervals: list[dict], selected: list[int], ruled_out: list[int], *, elicit: bool = False) -> str:
     all_ids = [int(x["id"]) for x in intervals]
     available = [i for i in all_ids if i not in selected and i not in ruled_out]
     cur_w = sum(int(intervals[i]["weight"]) for i in selected if 0 <= i < len(intervals))
@@ -197,7 +210,7 @@ def _wis_prompt(intervals: list[dict], selected: list[int], ruled_out: list[int]
         f"Available (not selected, not ruled out): {available}\n\n"
         "Make your next single decision.\n"
         "Decision: [write \"SELECT X\" or \"RULE OUT X\" where X is the interval index]\n"
-        "Reason: [write one sentence explaining why]"
+        f"Reason: [{_reason_instruction('write one sentence explaining why', elicit)}]"
     )
 
 
@@ -249,6 +262,8 @@ def run_one(
     model: str,
     client: OpenRouterClient,
     condition: str,
+    elicit: bool = False,
+    injection_mode: str = "plausible",
 ) -> list[dict]:
     pid = str(row["problem_id"])
     subtype = str(row["problem_subtype"]).strip().lower()
@@ -271,7 +286,7 @@ def run_one(
         for step in range(max_steps):
             use_state = injected if (condition == "injected" and critical_step == step) else state
             true_state = dict(state)
-            prompt = _cc_prompt(denoms, target, use_state["coins"], use_state["remaining"])
+            prompt = _cc_prompt(denoms, target, use_state["coins"], use_state["remaining"], elicit=elicit)
             raw = client.complete(pid, prompt).get("response", "")
             rtype, dec_raw, pstatus, reason = parse_decision_reason(raw, subtype)
             decision = _parse_cc_decision(dec_raw) if pstatus != "parse_failed" else None
@@ -279,9 +294,13 @@ def run_one(
                 state["coins"].append(decision)
                 state["remaining"] -= decision
             if condition == "injected" and critical_step == step:
-                # simple injected perturbation: report a shifted remaining to the model.
                 injected["coins"] = list(state["coins"])
-                injected["remaining"] = max(0, state["remaining"] + 1)
+                if injection_mode == "implausible":
+                    # Implausible: remaining far exceeds the target (impossible if we have been making progress).
+                    injected["remaining"] = state["remaining"] + max(target, 999)
+                else:
+                    # Plausible: small +1 perturbation (original behaviour).
+                    injected["remaining"] = max(0, state["remaining"] + 1)
             final_ok = False
             if step == max_steps - 1:
                 ans = f"Count: {len(state['coins'])}\nCoins: [{', '.join(str(c) for c in state['coins'])}]"
@@ -333,7 +352,7 @@ def run_one(
         for step in range(max_steps):
             use = injected_state if (condition == "injected" and critical_step == step) else state
             true_state = dict(state)
-            prompt = _sp_prompt(edges, source, target, use["cur"], use["path"], use["cost"])
+            prompt = _sp_prompt(edges, source, target, use["cur"], use["path"], use["cost"], elicit=elicit)
             raw = client.complete(pid, prompt).get("response", "")
             rtype, dec_raw, pstatus, reason = parse_decision_reason(raw, subtype)
             decision = _parse_sp_decision(dec_raw) if pstatus != "parse_failed" else None
@@ -345,8 +364,12 @@ def run_one(
                     state["path"].append(decision)
                     state["cost"] += w
             if condition == "injected" and critical_step == step:
-                # injected perturbation: pretend cost is off by +1.
-                injected_state = {"cur": state["cur"], "path": list(state["path"]), "cost": state["cost"] + 1}
+                if injection_mode == "implausible":
+                    # Implausible: cost becomes negative (which cannot happen on a positively-weighted graph).
+                    injected_state = {"cur": state["cur"], "path": list(state["path"]), "cost": -abs(state["cost"]) - 100}
+                else:
+                    # Plausible: small +1 perturbation (original behaviour).
+                    injected_state = {"cur": state["cur"], "path": list(state["path"]), "cost": state["cost"] + 1}
             final_ok = False
             if step == max_steps - 1:
                 ans = f"Path: {' -> '.join(str(x) for x in state['path'])}, Cost: {state['cost']}"
@@ -403,7 +426,7 @@ def run_one(
             use_sel = injected_selected if (condition == "injected" and critical_step == step) else selected
             use_ruled = injected_ruled_out if (condition == "injected" and critical_step == step) else ruled_out
             true_state = {"selected": list(selected), "ruled_out": sorted(ruled_out)}
-            prompt = _wis_prompt(iv, use_sel, sorted(use_ruled))
+            prompt = _wis_prompt(iv, use_sel, sorted(use_ruled), elicit=elicit)
             raw = client.complete(pid, prompt).get("response", "")
             rtype, dec_raw, pstatus, reason = parse_decision_reason(raw, subtype)
             parsed = _parse_wis_decision(dec_raw) if pstatus != "parse_failed" else None
@@ -426,10 +449,15 @@ def run_one(
             if condition == "injected" and critical_step == step:
                 injected_selected = list(selected)
                 injected_ruled_out = set(ruled_out)
-                # perturb by ruling out one extra available item if any
-                avail = [x["id"] for x in iv if x["id"] not in injected_selected and x["id"] not in injected_ruled_out]
-                if avail:
-                    injected_ruled_out.add(avail[0])
+                if injection_mode == "implausible":
+                    # Implausible: rule out a non-existent interval id (max+999 — definitely not in the bank).
+                    fake_id = max(int(x["id"]) for x in iv) + 999
+                    injected_ruled_out.add(fake_id)
+                else:
+                    # Plausible: rule out one extra available item (original behaviour).
+                    avail = [x["id"] for x in iv if x["id"] not in injected_selected and x["id"] not in injected_ruled_out]
+                    if avail:
+                        injected_ruled_out.add(avail[0])
             final_ok = False
             if step == max_steps - 1:
                 total = sum(next(x["weight"] for x in iv if x["id"] == i) for i in selected if any(x["id"] == i for x in iv))
@@ -489,6 +517,39 @@ def main() -> None:
     parser.add_argument("--models", nargs="+", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument(
+        "--problem-ids",
+        default=None,
+        help="Comma-separated problem_id allowlist (e.g. 'SP_002,SP_004,WIS_003').",
+    )
+    parser.add_argument(
+        "--subtype",
+        default=None,
+        choices=["coin_change", "shortest_path", "wis"],
+        help="Restrict to one canonical subtype.",
+    )
+    parser.add_argument(
+        "--elicit-algorithm",
+        action="store_true",
+        help="Append elicitation suffix to the reason field (R-P1b).",
+    )
+    parser.add_argument(
+        "--injection-mode",
+        default="plausible",
+        choices=["plausible", "implausible"],
+        help="Injection perturbation severity (R-P2c). Default keeps original behaviour.",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Use mock client (no API spend).",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Process only the first N matched problems.",
+    )
     args = parser.parse_args()
 
     bank = pd.read_csv(Path(args.bank), dtype=str).fillna("")
@@ -496,30 +557,59 @@ def main() -> None:
     if rows.empty:
         raise ValueError("No canonical rows matched filters.")
 
+    if args.subtype:
+        rows = rows[rows["problem_subtype"].str.lower().str.strip() == args.subtype]
+        if rows.empty:
+            raise ValueError(f"No rows matched subtype filter {args.subtype!r}.")
+    if args.problem_ids:
+        allow = {pid.strip() for pid in args.problem_ids.split(",") if pid.strip()}
+        rows = rows[rows["problem_id"].isin(allow)]
+        if rows.empty:
+            raise ValueError(f"No rows matched problem-ids allowlist.")
+    if args.limit is not None:
+        rows = rows.head(args.limit)
+
     out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     cols = NORMAL_COLUMNS if args.condition == "normal" else INJECTED_COLUMNS
     done = _done_pairs(out_path, args.condition) if args.resume else set()
 
+    # Client wiring (mock for dry-run; OpenRouter otherwise).
+    if args.dry_run:
+        from probes.behavioral.mock_client import MockClient
+        clients = {m: MockClient(default_response="Decision: 0\nReason: dry-run") for m in args.models}
+    else:
+        clients = {m: OpenRouterClient(model=m) for m in args.models}
+
     write_header = not out_path.exists() or out_path.stat().st_size == 0
+    n_total = 0
     with out_path.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=cols)
         if write_header:
             writer.writeheader()
 
         for model in args.models:
-            client = OpenRouterClient(model=model)
+            client = clients[model]
             for _, row in rows.iterrows():
                 pid = str(row["problem_id"])
                 if args.resume and (pid, model) in done:
                     continue
-                out_rows = run_one(row=row, model=model, client=client, condition=args.condition)
+                out_rows = run_one(
+                    row=row,
+                    model=model,
+                    client=client,
+                    condition=args.condition,
+                    elicit=args.elicit_algorithm,
+                    injection_mode=args.injection_mode,
+                )
                 for r in out_rows:
                     writer.writerow(r)
                 f.flush()
                 done.add((pid, model))
+                n_total += len(out_rows)
 
     print(f"Wrote phase2 output: {out_path}")
+    print(f"Sessions processed: {len({(p, m) for p, m in done})} | step rows: {n_total}")
 
 
 if __name__ == "__main__":

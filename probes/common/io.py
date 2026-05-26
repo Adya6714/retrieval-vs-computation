@@ -7,7 +7,7 @@ import csv
 from pathlib import Path
 import pandas as pd
 
-QUESTION_BANK_PATH = "data/problems/question_bank.csv"
+QUESTION_BANK_PATH = "data/problems/question_bank_bw.csv"
 QUESTION_BANK_COLUMNS = [
     "problem_id",
     "variant_type",

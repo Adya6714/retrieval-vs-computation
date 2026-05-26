@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Compute ALGO Probe-2 metrics from Phase1/Phase2 outputs (offline only)."""
+"""Compute ALGO Probe-2 metrics from Phase1/Phase2 outputs (offline only).
+
+Removed metrics (paper refactor — not named paper outputs):
+  ADC (derived columns; raw stated_algorithm and greedy_assessment_correct stay in
+  phase1 CSVs), CPP, SC, FDI, RDI, RTDA summary statistic columns.
+
+Primary CSV outputs: CCI, TEP (same definitions as Probe 2 run scripts).
+Phase2 CSVs retain raw reasoning_type for RTDA prose; no RTDA aggregate columns here.
+"""
 
 from __future__ import annotations
 
@@ -39,13 +47,7 @@ def _warn(msg: str) -> None:
     print(f"WARNING: {msg}", file=sys.stderr)
 
 
-def _parse_int(text: Any) -> int | None:
-    m = re.search(r"-?\d+", str(text))
-    return int(m.group(0)) if m else None
-
-
 def _normalize_step_base(df: pd.DataFrame) -> pd.DataFrame:
-    """Normalize step_index_int to 0-based per (problem_id, model) run."""
     if df.empty:
         return df
     out = df.copy()
@@ -127,7 +129,6 @@ def _optimal_for_step(subtype: str, correct_answer: str, step_index_int: int, pa
         selected = _wis_optimal_set(correct_answer)
         if action == "SELECT":
             return idx in selected
-        # Rule-outs are treated as suboptimal if they remove optimal items.
         return idx not in selected
     raise ValueError(f"Unknown subtype: {subtype}")
 
@@ -167,15 +168,23 @@ def main() -> None:
     parser.add_argument("--phase2-injected", required=True)
     parser.add_argument("--bank", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--per-instance-output",
+        default="results/derived/ALGO_P2_per_instance_cci.csv",
+        help="Per (problem_id, model) CCI components for triangulation.",
+    )
     parser.add_argument("--bootstrap-n", type=int, default=10000)
     args = parser.parse_args()
 
-    np.random.seed(42)  # deterministic bootstrap draws
+    np.random.seed(42)
 
     p1_frames = [pd.read_csv(Path(p), dtype=str).fillna("") for p in args.phase1]
     phase1 = pd.concat(p1_frames, ignore_index=True)
     phase2_normal = pd.read_csv(Path(args.phase2_normal), dtype=str).fillna("")
     phase2_injected = pd.read_csv(Path(args.phase2_injected), dtype=str).fillna("")
+    phase1 = phase1[phase1["model"].astype(str).str.lower() != "mock"].copy()
+    phase2_normal = phase2_normal[phase2_normal["model"].astype(str).str.lower() != "mock"].copy()
+    phase2_injected = phase2_injected[phase2_injected["model"].astype(str).str.lower() != "mock"].copy()
     bank = pd.read_csv(Path(args.bank), dtype=str).fillna("")
 
     _require_columns(
@@ -186,9 +195,7 @@ def main() -> None:
             "subtype",
             "instance_type",
             "stated_algorithm",
-            "greedy_assessment_correct",
             "predicted_first_decision",
-            "critical_point_identified",
             "phase1_parseable",
         },
         "phase1",
@@ -204,7 +211,6 @@ def main() -> None:
             "response_type",
             "parsed_decision",
             "reasoning_type",
-            "final_answer_correct",
         },
         "phase2_normal",
     )
@@ -220,7 +226,6 @@ def main() -> None:
             "response_type",
             "parsed_decision",
             "reasoning_type",
-            "post_injection_correct",
         },
         "phase2_injected",
     )
@@ -243,10 +248,11 @@ def main() -> None:
 
     bank["params"] = bank["difficulty_params"].map(parse_params)
     bank["instance_type_bank"] = bank["params"].map(lambda p: str(p.get("instance_type", "")).strip().lower())
-    bank["greedy_succeeds"] = bank["params"].map(lambda p: p.get("greedy_succeeds", None))
-    bank["critical_step_index_bank"] = bank["params"].map(lambda p: int(p.get("critical_step_index", -1)) if str(p.get("critical_step_index", "")).strip() != "" else -1)
+    bank["critical_step_index_bank"] = bank["params"].map(
+        lambda p: int(p.get("critical_step_index", -1)) if str(p.get("critical_step_index", "")).strip() != "" else -1
+    )
     bank_small = bank[
-        ["problem_id", "problem_subtype", "correct_answer", "instance_type_bank", "greedy_succeeds", "critical_step_index_bank"]
+        ["problem_id", "problem_subtype", "correct_answer", "instance_type_bank", "critical_step_index_bank"]
     ].copy()
 
     if phase1.duplicated(subset=["problem_id", "model"]).any():
@@ -257,14 +263,11 @@ def main() -> None:
     if phase1.empty:
         raise ValueError("No overlap between phase1 and bank by problem_id.")
 
-    # Validate subtype consistency (warn for mismatch, prefer bank subtype).
     mismatch = phase1[phase1["subtype"].str.strip().str.lower() != phase1["problem_subtype"].str.strip().str.lower()]
     if not mismatch.empty:
         _warn(f"{len(mismatch)} Phase1 rows subtype mismatch with bank; using bank subtype.")
     phase1["subtype"] = phase1["problem_subtype"].str.strip().str.lower()
 
-    # Parse bools and step indices.
-    phase1["greedy_assessment_correct_bool"] = phase1["greedy_assessment_correct"].map(_to_bool)
     phase1["phase1_parseable_bool"] = phase1["phase1_parseable"].map(_to_bool)
     for _, r in phase1.iterrows():
         if r["phase1_parseable_bool"] is not True:
@@ -282,7 +285,6 @@ def main() -> None:
     phase2_normal = _normalize_step_base(phase2_normal)
     phase2_injected = _normalize_step_base(phase2_injected)
 
-    # Basic join integrity check on (problem_id, model).
     p1_pairs = set(zip(phase1["problem_id"], phase1["model"]))
     n_pairs = set(zip(phase2_normal["problem_id"], phase2_normal["model"]))
     i_pairs = set(zip(phase2_injected["problem_id"], phase2_injected["model"]))
@@ -294,6 +296,7 @@ def main() -> None:
         raise ValueError(f"phase2_injected has pairs missing in phase1 (sample): {miss}")
 
     out_rows: list[dict[str, Any]] = []
+    per_instance_rows: list[dict[str, Any]] = []
     models = sorted(phase1["model"].unique().tolist())
     subtypes = sorted(phase1["subtype"].unique().tolist())
 
@@ -305,77 +308,35 @@ def main() -> None:
             if p1s.empty:
                 continue
 
-            # ADC standard/adversarial from structured field only.
-            std = p1s[p1s["instance_type_bank"] == "standard"]
             adv = p1s[p1s["instance_type_bank"] == "adversarial"]
-            adc_std_vals = [
-                1.0 if v is True else 0.0
-                for v in std["greedy_assessment_correct_bool"].tolist()
-                if v is not None
-            ]
-            adc_adv_vals = [
-                1.0 if v is True else 0.0
-                for v in adv["greedy_assessment_correct_bool"].tolist()
-                if v is not None
-            ]
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="ADC_standard", values=adc_std_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="ADC_adversarial", values=adc_adv_vals, bootstrap_n=args.bootstrap_n))
-
-            # CPP adversarial only.
-            cpp_vals: list[float] = []
-            for _, r in adv.iterrows():
-                expected = int(r["critical_step_index_bank"])
-                got = _parse_int(r["critical_point_identified"])
-                if expected == -1:
-                    _warn(f"missing critical_step_index (-1) for adversarial {r['problem_id']}")
-                cpp_match = False
-                if got is not None:
-                    # Accept both 0-based and 1-based mentions from free-form Q4 text.
-                    cpp_match = (got == expected) or (got - 1 == expected)
-                cpp_vals.append(1.0 if cpp_match else 0.0)
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="CPP", values=cpp_vals, bootstrap_n=args.bootstrap_n))
-
-            # Gather Phase2 rows for this model/subtype.
             p2n = phase2_normal[(phase2_normal["model"] == model) & (phase2_normal["subtype"] == subtype)].copy()
             p2i = phase2_injected[(phase2_injected["model"] == model) & (phase2_injected["subtype"] == subtype)].copy()
             p2n = p2n.merge(
-                p1s[["problem_id", "instance_type_bank", "correct_answer", "critical_step_index_bank", "predicted_first_decision", "stated_algorithm"]],
+                p1s[["problem_id", "correct_answer", "critical_step_index_bank", "predicted_first_decision", "stated_algorithm"]],
                 on="problem_id",
                 how="inner",
                 validate="many_to_one",
             )
             p2i = p2i.merge(
-                p1s[["problem_id", "instance_type_bank", "correct_answer", "critical_step_index_bank", "predicted_first_decision", "stated_algorithm"]],
+                p1s[["problem_id", "correct_answer", "critical_step_index_bank", "predicted_first_decision", "stated_algorithm"]],
                 on="problem_id",
                 how="inner",
                 validate="many_to_one",
             )
 
-            # CCI components per (problem_id, model), adversarial only.
-            cci_alg_vals: list[float] = []
-            cci_first_vals: list[float] = []
-            cci_critical_vals: list[float] = []
-            cci_comp_vals: list[float] = []
-            fdi0_vals: list[float] = []
-            fdi_later_vals: list[float] = []
-            sc_vals: list[float] = []
+            cci_vals: list[float] = []
             tep_vals: list[float] = []
 
-            adv_pids = sorted(set(adv["problem_id"].tolist()))
-            for pid in adv_pids:
+            for pid in sorted(set(adv["problem_id"].tolist())):
                 a_n = p2n[(p2n["problem_id"] == pid)].sort_values("step_index_int")
                 a_i = p2i[(p2i["problem_id"] == pid)].sort_values("step_index_int")
                 if a_n.empty:
                     raise ValueError(f"Missing phase2_normal steps for adversarial pair: {pid} {model}")
-                p1row = adv[adv["problem_id"] == pid]
-                if p1row.empty:
-                    raise ValueError(f"Missing phase1 row for adversarial pair: {pid} {model}")
-                p1row = p1row.iloc[0]
+                p1row = adv[adv["problem_id"] == pid].iloc[0]
                 expected_critical = int(p1row["critical_step_index_bank"])
                 if expected_critical < 0:
                     _warn(f"adversarial row has invalid critical_step_index={expected_critical}: {pid} {model}")
 
-                # CCI_algorithm
                 intent = _phase1_intent(str(p1row["stated_algorithm"]))
                 rtypes = [str(x).strip().lower() for x in a_n["reasoning_type"].tolist() if str(x).strip()]
                 if not rtypes:
@@ -390,73 +351,52 @@ def main() -> None:
                         cci_alg = 1.0 if local >= forward_algo else 0.0
                     else:
                         cci_alg = 0.0
-                cci_alg_vals.append(cci_alg)
 
-                # CCI_first_decision and FDI step0
                 first_norm = _first_step_decision(a_n)
                 pred = str(p1row["predicted_first_decision"])
-                match_first = 1.0 if _normalize_decision(subtype, first_norm) == _normalize_decision(subtype, pred) else 0.0
-                cci_first_vals.append(match_first)
-                fdi0_vals.append(match_first)
+                match_first = (
+                    1.0
+                    if _normalize_decision(subtype, first_norm) == _normalize_decision(subtype, pred)
+                    else 0.0
+                )
 
-                # CCI_critical from normal at critical step.
                 crit_row = a_n[a_n["step_index_int"] == expected_critical]
                 if crit_row.empty:
                     _warn(f"critical step {expected_critical} missing in phase2_normal for {pid} {model}")
                     cci_crit = 0.0
                 else:
                     d = str(crit_row.iloc[0]["parsed_decision"])
-                    cci_crit = 1.0 if _optimal_for_step(subtype, str(p1row["correct_answer"]), expected_critical, d) else 0.0
-                cci_critical_vals.append(cci_crit)
-                cci_comp_vals.append(float(np.mean([cci_alg, match_first, cci_crit])))
+                    cci_crit = (
+                        1.0
+                        if _optimal_for_step(subtype, str(p1row["correct_answer"]), expected_critical, d)
+                        else 0.0
+                    )
+                cci_composite = float(np.mean([cci_alg, match_first, cci_crit]))
+                cci_vals.append(cci_composite)
+                per_instance_rows.append(
+                    {
+                        "problem_id": pid,
+                        "model": model,
+                        "cci_alg": cci_alg,
+                        "cci_crit": cci_crit,
+                        "match_first": match_first,
+                        "cci_composite": cci_composite,
+                    }
+                )
 
-                # SC: if step0 incorrect, cascade on later steps.
-                if len(a_n) >= 3:
-                    first_idx = int(a_n.iloc[0]["step_index_int"])
-                    first_ok = _optimal_for_step(subtype, str(p1row["correct_answer"]), first_idx, str(a_n.iloc[0]["parsed_decision"]))
-                    if not first_ok:
-                        later = a_n.iloc[1:]
-                        later_eval = []
-                        for _, rr in later.iterrows():
-                            later_eval.append(
-                                0.0 if _optimal_for_step(subtype, str(p1row["correct_answer"]), int(rr["step_index_int"]), str(rr["parsed_decision"])) else 1.0
-                            )
-                        if later_eval:
-                            sc_vals.append(float(np.mean(later_eval)))
-
-                # FDI later: compare injected vs normal post-first steps on compliant pairs.
                 merged_steps = a_n.merge(
                     a_i[["step_index_int", "parsed_decision", "response_type"]],
                     on="step_index_int",
                     how="inner",
                     suffixes=("_n", "_i"),
                 )
-                later = merged_steps[merged_steps["step_index_int"] > merged_steps["step_index_int"].min()]
-                later = later[
-                    (later["response_type_n"] == "compliant")
-                    & (later["response_type_i"] == "compliant")
-                ]
-                if not later.empty:
-                    same = (
-                        later.apply(
-                            lambda rr: _normalize_decision(subtype, rr["parsed_decision_n"]) == _normalize_decision(subtype, rr["parsed_decision_i"]),
-                            axis=1,
-                        )
-                        .astype(float)
-                        .tolist()
-                    )
-                    fdi_later_vals.append(float(np.mean(same)))
-
-                # TEP refined on compliant rows after critical step, adversarial only.
                 post = merged_steps[merged_steps["step_index_int"] > expected_critical]
-                post = post[
-                    (post["response_type_n"] == "compliant")
-                    & (post["response_type_i"] == "compliant")
-                ]
+                post = post[(post["response_type_n"] == "compliant") & (post["response_type_i"] == "compliant")]
                 if not post.empty:
                     diff = (
                         post.apply(
-                            lambda rr: _normalize_decision(subtype, rr["parsed_decision_n"]) != _normalize_decision(subtype, rr["parsed_decision_i"]),
+                            lambda rr: _normalize_decision(subtype, rr["parsed_decision_n"])
+                            != _normalize_decision(subtype, rr["parsed_decision_i"]),
                             axis=1,
                         )
                         .astype(float)
@@ -464,77 +404,23 @@ def main() -> None:
                     )
                     tep_vals.append(float(np.mean(diff)))
 
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="CCI_algorithm", values=cci_alg_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="CCI_first_decision", values=cci_first_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="CCI_critical", values=cci_critical_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="CCI_composite", values=cci_comp_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="TEP_refined", values=tep_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="FDI_step0", values=fdi0_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="FDI_later_stability", values=fdi_later_vals, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="SC", values=sc_vals, bootstrap_n=args.bootstrap_n))
-
-            # RDI on normal condition: standard vs adversarial.
-            p2n_sub = p2n.copy()
-            def _rdi_values(df: pd.DataFrame) -> list[float]:
-                vals = []
-                for pid, g in df.groupby("problem_id"):
-                    rt = [str(x).strip().lower() for x in g["reasoning_type"].tolist() if str(x).strip()]
-                    if not rt:
-                        _warn(f"missing reasoning_type for RDI: {pid} {model}")
-                        continue
-                    num = sum(t in {"forward_simulation", "algorithm_invocation"} for t in rt)
-                    den = sum(t in {"forward_simulation", "algorithm_invocation", "local_greedy", "unclear"} for t in rt)
-                    if den == 0:
-                        continue
-                    vals.append(num / den)
-                return vals
-            rdi_std = _rdi_values(p2n_sub[p2n_sub["instance_type_bank"] == "standard"])
-            rdi_adv = _rdi_values(p2n_sub[p2n_sub["instance_type_bank"] == "adversarial"])
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="RDI_standard", values=rdi_std, bootstrap_n=args.bootstrap_n))
-            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="RDI_adversarial", values=rdi_adv, bootstrap_n=args.bootstrap_n))
-
-        # RTDA across all subtypes for this model on normal run.
-        p2m = phase2_normal[phase2_normal["model"] == model].copy()
-        p2m = p2m.merge(
-            phase1[["problem_id", "model", "instance_type_bank"]],
-            on=["problem_id", "model"],
-            how="inner",
-            validate="many_to_one",
-        )
-        tracked = ["local_greedy", "forward_simulation", "algorithm_invocation", "unclear"]
-        for inst in ["standard", "adversarial"]:
-            dfi = p2m[p2m["instance_type_bank"] == inst].copy()
-            if dfi.empty:
-                for rtype in tracked:
-                    out_rows.append(
-                        {
-                            "model": model,
-                            "subtype": "all",
-                            "metric_name": f"RTDA_{inst}_{rtype}",
-                            "metric_value": np.nan,
-                            "ci_lower": np.nan,
-                            "ci_upper": np.nan,
-                        }
-                    )
-                continue
-            rt = dfi["reasoning_type"].astype(str).str.strip().str.lower().tolist()
-            for rtype in tracked:
-                vals = [1.0 if x == rtype else 0.0 for x in rt]
-                out_rows.append(
-                    _metric_rows(
-                        model=model,
-                        subtype="all",
-                        metric_name=f"RTDA_{inst}_{rtype}",
-                        values=vals,
-                        bootstrap_n=args.bootstrap_n,
-                    )
-                )
+            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="CCI", values=cci_vals, bootstrap_n=args.bootstrap_n))
+            out_rows.append(_metric_rows(model=model, subtype=subtype, metric_name="TEP", values=tep_vals, bootstrap_n=args.bootstrap_n))
 
     out = pd.DataFrame(out_rows, columns=["model", "subtype", "metric_name", "metric_value", "ci_lower", "ci_upper"])
     out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(out_path, index=False)
     print(f"Wrote metrics: {out_path} ({len(out)} rows)")
+
+    per_path = Path(args.per_instance_output)
+    per_path.parent.mkdir(parents=True, exist_ok=True)
+    per_cols = ["problem_id", "model", "cci_alg", "cci_crit", "match_first", "cci_composite"]
+    per_out = pd.DataFrame(per_instance_rows, columns=per_cols)
+    if per_out.duplicated(subset=["problem_id", "model"]).any():
+        raise ValueError("Per-instance CCI has duplicate (problem_id, model) rows.")
+    per_out.to_csv(per_path, index=False)
+    print(f"Wrote per-instance CCI: {per_path} ({len(per_out)} rows)")
 
 
 if __name__ == "__main__":

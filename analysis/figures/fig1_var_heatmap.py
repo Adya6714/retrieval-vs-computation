@@ -31,6 +31,7 @@ def build_matrix(df, family: str):
 
 def main():
     df = load_behavioral()
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     if "problem_family" not in df.columns:
         df = add_problem_family_from_qb(df)
 

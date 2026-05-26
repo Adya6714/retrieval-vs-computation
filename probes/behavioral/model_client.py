@@ -2,7 +2,7 @@ import os
 import requests
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-PDDL_ROOT = "/Users/adya/Desktop/LLMs-Planning"
+PDDL_ROOT = os.environ.get("PDDL_ROOT", "data/sources/planbench")
 
 
 class ModelClient:

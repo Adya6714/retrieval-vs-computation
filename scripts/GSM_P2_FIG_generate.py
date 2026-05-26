@@ -34,10 +34,11 @@ def _save(fig: plt.Figure, stem: str) -> None:
 
 
 def _load() -> pd.DataFrame:
-    path = RESULTS_DIR / "GSM_P2_RES_cci.csv"
+    path = Path("results/raw/GSM_P2_cci.csv")
     if not path.exists():
         raise FileNotFoundError(path)
     df = pd.read_csv(path, dtype=str)
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     for c in ["cci_score", "tep_score"]:
         df[c] = pd.to_numeric(df[c], errors="coerce")
     df["contamination_pole"] = df["contamination_pole"].astype(str).str.strip().str.lower()

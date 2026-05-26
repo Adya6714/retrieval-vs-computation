@@ -1,0 +1,11 @@
+Cross-family regression summary
+
+BW | Claude | n=65 | beta=-2.5375 | 95%CI=(-4.9274,-0.2215) | r2=0.0171 | p_ols=0.2987 | p_boot=0.0366 | high_leverage=BW_120;BW_E015;BW_E019
+BW | GPT-4o | n=65 | beta=-3.2136 | 95%CI=(-9.5366,1.7471) | r2=0.0219 | p_ols=0.2395 | p_boot=0.218 | high_leverage=MBW_185;MBW_498
+BW | Llama | n=65 | beta=-2.0146 | 95%CI=(-4.6336,-0.2737) | r2=0.0629 | p_ols=0.04385 | p_boot=0.0124 | high_leverage=BW_172;BW_227;BW_467;BW_509;MBW_498
+GSM | Claude | n=44 | beta=nan | 95%CI=(nan,nan) | r2=nan | p_ols=nan | p_boot=nan | high_leverage=none | note=degenerate: CSS variance < 1e-6
+GSM | GPT-4o | n=20 | beta=nan | 95%CI=(nan,nan) | r2=nan | p_ols=nan | p_boot=nan | high_leverage=none | note=degenerate: CSS variance < 1e-6
+GSM | Llama | n=20 | beta=nan | 95%CI=(nan,nan) | r2=nan | p_ols=nan | p_boot=nan | high_leverage=none | note=degenerate: CSS variance < 1e-6
+ALGO | Claude | n=110 | beta=1.9605 | 95%CI=(1.0227,2.9769) | r2=0.1966 | p_ols=1.223e-06 | p_boot=0 | high_leverage=CC_01;CC_02;CC_03;CC_04;CC_05;CC_06;CC_07;CC_08
+ALGO | GPT-4o | n=110 | beta=-0.4697 | 95%CI=(-1.2279,0.3588) | r2=0.0190 | p_ols=0.1514 | p_boot=0.2504 | high_leverage=CC_01;CC_08;WIS_006;WIS_007;WIS_016;WIS_017;WIS_019;WIS_024;WIS_025;WIS_027
+ALGO | Llama | n=110 | beta=0.2079 | 95%CI=(0.0334,0.4325) | r2=0.0367 | p_ols=0.04483 | p_boot=0.0024 | high_leverage=CC_035;CC_042;SP_029;SP_035;SP_049;SP_054;SP_058

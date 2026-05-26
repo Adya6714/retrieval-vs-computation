@@ -1,62 +1,79 @@
-# Python
+# ─── Python ─────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 .Python
 *.egg-info/
-dist/
-build/
-*.egg
 .eggs/
+build/
+dist/
+*.egg
 
-# Environments
+# ─── Environments ───────────────────────────────────────────────────
 .env
-.venv
+.env.*
+.venv/
 venv/
 env/
 rvc/
 *.conda
 
-# Jupyter
+# ─── Secrets / keys ─────────────────────────────────────────────────
+secrets.json
+api_keys.py
+
+# ─── Caches ─────────────────────────────────────────────────────────
+.pytest_cache/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data (large files — keep small CSVs only)
+# ─── OS ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── IDE ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Node (used only by docx export, not part of the pipeline) ──────
+node_modules/
+package.json
+package-lock.json
+
+# ─── External upstream sources (re-clone via `make bootstrap`) ──────
+data/sources/
+tools/fast-downward/
+
+# ─── Large data dumps (keep small CSVs only) ────────────────────────
 data/*.jsonl
 data/*.parquet
 data/*.hdf5
 data/*.h5
-data/raw/
 data/cache/
+data/raw/
 
-# Model weights / activations (large)
+# ─── Model weights / activations ────────────────────────────────────
 *.pt
 *.bin
 *.safetensors
 *.npz
 *.npy
 
-# API keys / secrets
-.env
-secrets.json
-api_keys.py
+# ─── Backups / scratch ──────────────────────────────────────────────
+*.bak
+*.bak_*
+*.orig
+*~
 
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Results — DO commit CSVs, do NOT commit large dumps
+# ─── Results: commit CSVs, ignore large dumps and archives ──────────
 results/*.jsonl
-results/raw/
+results/archive/
+results/**/*.bak_*
 
-# LaTeX build artifacts
+# ─── LaTeX build artifacts ──────────────────────────────────────────
 paper/*.aux
 paper/*.log
 paper/*.out
@@ -67,3 +84,7 @@ paper/*.fls
 paper/*.fdb_latexmk
 paper/*.synctex.gz
 paper/_minted*/
+
+# ─── Logs ───────────────────────────────────────────────────────────
+logs/
+*.log

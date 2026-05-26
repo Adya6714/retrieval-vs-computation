@@ -26,12 +26,12 @@ BLUE = "#3B82F6"
 GREY = "#9CA3AF"
 
 MODEL_ORDER = [
-    "anthropic/claude-3.7-sonnet",
+    "anthropic/claude-sonnet-4",
     "openai/gpt-4o",
     "meta-llama/llama-3.1-8b-instruct",
 ]
 MODEL_LABEL = {
-    "anthropic/claude-3.7-sonnet": "Claude 3.7",
+    "anthropic/claude-sonnet-4": "Claude 3.7",
     "openai/gpt-4o": "GPT-4o",
     "meta-llama/llama-3.1-8b-instruct": "Llama 3.1 8B",
 }
@@ -47,20 +47,22 @@ def _save(fig: plt.Figure, stem: str) -> None:
 
 
 def _load_phase2_normal() -> pd.DataFrame:
-    p = RESULTS_DIR / "ALGO_P2_RES_phase2_normal.csv"
+    p = Path("results/raw/ALGO_P2_phase2_normal.csv")
     if not p.exists():
         raise FileNotFoundError(p)
     d = pd.read_csv(p, dtype=str).fillna("")
+    d = d[d["model"].astype(str).str.lower() != "mock"].copy()
     for c in ["step_index"]:
         d[c] = pd.to_numeric(d[c], errors="coerce")
     return d
 
 
 def _load_phase2_injected() -> pd.DataFrame:
-    p = RESULTS_DIR / "ALGO_P2_RES_phase2_injected.csv"
+    p = Path("results/raw/ALGO_P2_phase2_injected.csv")
     if not p.exists():
         raise FileNotFoundError(p)
     d = pd.read_csv(p, dtype=str).fillna("")
+    d = d[d["model"].astype(str).str.lower() != "mock"].copy()
     for c in ["step_index", "critical_step_index"]:
         d[c] = pd.to_numeric(d[c], errors="coerce")
     return d
@@ -68,14 +70,15 @@ def _load_phase2_injected() -> pd.DataFrame:
 
 def _load_phase1() -> pd.DataFrame:
     paths = [
-        RESULTS_DIR / "ALGO_P2_RES_phase1_claude.csv",
-        RESULTS_DIR / "ALGO_P2_RES_phase1_gpt4o.csv",
-        RESULTS_DIR / "ALGO_P2_RES_phase1_llama.csv",
+        Path("results/raw/ALGO_P2_phase1_claude_new.csv"),
+        Path("results/raw/ALGO_P2_phase1_gpt4o_new.csv"),
+        Path("results/raw/ALGO_P2_phase1_llama_new.csv"),
     ]
     for p in paths:
         if not p.exists():
             raise FileNotFoundError(p)
-    return pd.concat([pd.read_csv(p, dtype=str).fillna("") for p in paths], ignore_index=True)
+    d = pd.concat([pd.read_csv(p, dtype=str).fillna("") for p in paths], ignore_index=True)
+    return d[d["model"].astype(str).str.lower() != "mock"].copy()
 
 
 def _compute_instance_tep(normal: pd.DataFrame, injected: pd.DataFrame) -> pd.DataFrame:

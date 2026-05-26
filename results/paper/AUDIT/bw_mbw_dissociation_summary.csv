@@ -1,0 +1,10 @@
+subset,model,n_sessions,complete,abort_illegal,abort_loop,goal_reached,solve_rate,mean_pga,total_illegal_steps
+BW_original_PDDL_strict,anthropic/claude-sonnet-4,50,8,22,0,0,0.0,0.0251,400
+BW_original_PDDL_strict,meta-llama/llama-3.1-8b-instruct,50,1,19,0,0,0.0,0.1355,818
+BW_original_PDDL_strict,openai/gpt-4o,50,0,20,0,0,0.0,0.0083,769
+BW_NL_tolerant,anthropic/claude-sonnet-4,50,20,19,11,8,0.16,0.3482,426
+BW_NL_tolerant,meta-llama/llama-3.1-8b-instruct,50,8,42,0,1,0.02,0.2363,1050
+BW_NL_tolerant,openai/gpt-4o,50,11,39,0,5,0.1,0.3119,971
+MBW_NL_tolerant,anthropic/claude-sonnet-4,15,7,0,8,0,0.0,0.0389,314
+MBW_NL_tolerant,meta-llama/llama-3.1-8b-instruct,15,0,15,0,0,0.0,0.0,181
+MBW_NL_tolerant,openai/gpt-4o,15,9,6,0,0,0.0,0.0167,602

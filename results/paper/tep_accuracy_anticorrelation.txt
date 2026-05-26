@@ -1,0 +1,113 @@
+A4: GSM TEP–Accuracy Anticorrelation Analysis
+
+NOTE: GSM_P2_cci.csv has 84 rows (partial Llama/GPT coverage).
+      GSM_P2_phase1_*.csv has 132 rows (44 per model, complete).
+      Use phase1 for the TEP ordering; cci84 is incomplete for Llama/GPT.
+
+
+======================================================================
+DATASET: GSM_P2_phase1_* (complete, n=132) (n=132 rows)
+======================================================================
+
+Mean TEP + 95% bootstrap CI (10,000 resamples):
+Model                           n mean_TEP    CI_lo    CI_hi  accuracy
+----------------------------------------------------------------------
+llama-3.1-8b-instruct          44   0.7727   0.6477   0.8864     0.455
+gpt-4o                         44   0.5985   0.4697   0.7254     0.705
+claude-sonnet-4                44   0.5390   0.4091   0.6629     0.864
+
+Ordering check (Llama > GPT-4o > Claude):
+  Point estimates: Llama=0.7727 > GPT=0.5985 > Claude=0.5390 ? True
+  Llama CI [0.6477, 0.8864] vs GPT CI [0.4697, 0.7254]
+  Non-overlapping CIs (Llama > GPT): False
+  GPT CI [0.4697, 0.7254] vs Claude CI [0.4091, 0.6629]
+  Non-overlapping CIs (GPT > Claude): False
+  P(mean_TEP(Llama) > mean_TEP(GPT-4o)): 97.3%
+  P(mean_TEP(GPT-4o) > mean_TEP(Claude)): 73.9%
+  P(mean_TEP(Llama) > mean_TEP(Claude)): 99.5%
+
+--- Correlations (phase1 complete) ---
+Pooled (all rows, n=132):
+  Pearson  accuracy ~ TEP:  r=+0.114  p=0.1939
+  Spearman accuracy ~ TEP:  rho=+0.092  p=0.2920
+  (Negative rho => higher accuracy associated with lower TEP)
+
+Per-model Spearman (accuracy ~ TEP within model):
+  claude-sonnet-4: rho=-0.096 p=0.5371 n=44
+  gpt-4o: rho=+0.374 p=0.0125 n=44
+  llama-3.1-8b-instruct: rho=+0.261 p=0.0875 n=44
+
+Within-problem analysis (problems with all 3 models, n=44):
+  Pairwise: more-accurate model has lower TEP: 36.4% (16/44 pairs)
+  Per-problem Spearman(acc, TEP) across 3 models: mean=-0.104, median=-0.500
+    negative (anticorrelation) on 9/17 problems
+  TEP(best_acc) - TEP(worst_acc) per problem: mean=-0.221
+    best-acc lower TEP on 9/22 problems
+    Wilcoxon signed-rank (best < worst TEP): p=0.0379
+
+  CCI ~ TEP (Spearman): rho=-0.048 p=0.5823 n=132
+
+======================================================================
+DATASET: GSM_P2_cci.csv (84 rows, partial sweep) (n=84 rows)
+======================================================================
+
+Mean TEP + 95% bootstrap CI (10,000 resamples):
+Model                           n mean_TEP    CI_lo    CI_hi  accuracy
+----------------------------------------------------------------------
+claude-sonnet-4                44   0.5390   0.4110   0.6644     0.864
+llama-3.1-8b-instruct          20   0.2061   0.0978   0.3281     0.150
+gpt-4o                         20   0.1000   0.0000   0.2500     0.600
+
+Ordering check (Llama > GPT-4o > Claude):
+  Point estimates: Llama=0.2061 > GPT=0.1000 > Claude=0.5390 ? False
+  Llama CI [0.0978, 0.3281] vs GPT CI [0.0000, 0.2500]
+  Non-overlapping CIs (Llama > GPT): False
+  GPT CI [0.0000, 0.2500] vs Claude CI [0.4110, 0.6644]
+  Non-overlapping CIs (GPT > Claude): False
+  P(mean_TEP(Llama) > mean_TEP(GPT-4o)): 87.8%
+  P(mean_TEP(GPT-4o) > mean_TEP(Claude)): 0.0%
+  P(mean_TEP(Llama) > mean_TEP(Claude)): 0.0%
+
+--- Correlations (cci 84-row) ---
+Pooled (all rows, n=84):
+  Pearson  accuracy ~ TEP:  r=+0.273  p=0.0120
+  Spearman accuracy ~ TEP:  rho=+0.265  p=0.0149
+  (Negative rho => higher accuracy associated with lower TEP)
+
+Per-model Spearman (accuracy ~ TEP within model):
+  claude-sonnet-4: rho=-0.096 p=0.5371 n=44
+  gpt-4o: rho=+0.272 p=0.2457 n=20
+  llama-3.1-8b-instruct: rho=+0.465 p=0.0388 n=20
+
+Within-problem analysis (problems with all 3 models, n=20):
+  Pairwise: more-accurate model has lower TEP: 22.2% (8/36 pairs)
+  Per-problem Spearman(acc, TEP) across 3 models: mean=0.358, median=0.500
+    negative (anticorrelation) on 3/15 problems
+  TEP(best_acc) - TEP(worst_acc) per problem: mean=+0.334
+    best-acc lower TEP on 3/18 problems
+    Wilcoxon signed-rank (best < worst TEP): p=0.9705
+
+  CCI ~ TEP (Spearman): rho=-0.110 p=0.3187 n=84
+
+======================================================================
+KEY INTERPRETATION
+======================================================================
+
+BETWEEN-MODEL (aggregate, n=3 model means):
+  Claude:  acc=0.864, mean_TEP=0.539
+  GPT-4o:  acc=0.705, mean_TEP=0.598
+  Llama:   acc=0.455, mean_TEP=0.773
+  Rank correlation across models: rho = -1.0 (perfect anticorrelation)
+
+WITHIN-PROBLEM (same problem, different models; n=44 problems x 3 models):
+  Demeaned Spearman(acc, TEP): rho = -0.124, p = 0.155 (not significant)
+  Pairwise: more-accurate model has lower TEP on 16/44 pairs (36.4%; not > chance)
+  Binomial test for within-problem anticorrelation: p = 0.98 (fails)
+
+CONCLUSION:
+  - TEP ordering Llama > GPT-4o > Claude holds on complete phase1 data (P(Llama>GPT)=97%).
+    CIs overlap pairwise; only Llama vs Claude is near-certain (P=99.5%).
+  - Anticorrelation is a BETWEEN-MODEL pattern (weaker models show more template
+    persistence), NOT a reliable within-problem effect on the same item.
+  - Do NOT use GSM_P2_cci.csv (84 rows) for TEP ordering: partial sweep reverses
+    Llama/GPT estimates (Llama n=20, GPT n=20, biased sample).

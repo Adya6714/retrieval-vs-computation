@@ -1,0 +1,681 @@
+problem_id,problem_family,problem_subtype,problem_text,correct_answer,max_ngram_length,max_ngram_count,contamination_score,template_contamination_score,instance_contamination_score,difficulty_numeric
+BW_001,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks j, f, i, g, d, b, h, and l are clear and on the table. The hand is empty. Goal: Block j is on block f, block f is on block i, block i is on block g, block g is on block d, block d is on block b, block b is on block h, and block h is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",6,46,0.0359,0.0,0.0658,8
+BW_002,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks j, g, a, b, k, h, and i are clear and on the table. The hand is empty. Goal: Block j is on block g, block g is on block a, block a is on block b, block b is on block k, block k is on block h, and block h is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up k
+ stack k h
+ pick-up i
+ stack i k
+ pick-up b
+ stack b i
+ pick-up a
+ stack a b
+ pick-up g
+ stack g a
+ pick-up j
+ stack j g",6,46,0.0375,0.0,0.0714,8
+BW_010,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks d, e, a, b, and f are clear and on the table. The hand is empty. Goal: Block d is on block e, block e is on block a, block a is on block b, and block b is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",6,46,0.0411,0.0,0.0862,5
+BW_011,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, k, g, a, l, j, e, h, i, and b are clear and on the table. The hand is empty. Goal: Block c is on block k, block k is on block g, block g is on block a, block a is on block l, block l is on block j, block j is on block e, block e is on block h, block h is on block i, and block i is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",6,46,0.0331,0.0,0.0568,10
+BW_014,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks l, e, and g are clear and on the table. The hand is empty. Goal: Block l is on block e, and block e is on block g. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+ stack e g
+ pick-up l
+ stack l e",6,46,0.0455,0.0,0.1087,8
+BW_022,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks g, c, b, k, and f are clear and on the table. The hand is empty. Goal: Block g is on block c, block c is on block b, block b is on block k, and block k is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up k
+ stack k f
+ pick-up b
+ stack b k
+ pick-up c
+ stack c b
+ pick-up g
+ stack g c",6,46,0.0411,0.0,0.0862,8
+BW_080,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks l, c, i, e, j, and f are clear and on the table. The hand is empty. Goal: Block l is on block c, block c is on block i, block i is on block e, block e is on block j, and block j is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",6,46,0.0392,0.0,0.0781,6
+BW_120,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, j, g, and f are clear and on the table. The hand is empty. Goal: Block c is on block j, block j is on block g, and block g is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",6,46,0.0432,0.0,0.0962,4
+BW_137,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks d, a, b, j, e, l, h, c, f, g, and i are clear and on the table. The hand is empty. Goal: Block d is on block a, block a is on block b, block b is on block j, block j is on block e, block e is on block l, block l is on block h, block h is on block c, block c is on block f, block f is on block g, and block g is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",6,46,0.0319,0.0,0.0532,11
+BW_155,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks i, f, e, j, and h are clear and on the table. The hand is empty. Goal: Block i is on block f, block f is on block e, block e is on block j, and block j is on block h. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",6,46,0.0411,0.0,0.0862,5
+BW_172,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks i, l, g, e, d, b, a, j, h, f, and k are clear and on the table. The hand is empty. Goal: Block i is on block l, block l is on block g, block g is on block e, block e is on block d, block d is on block b, block b is on block a, block a is on block j, block j is on block h, block h is on block f, and block f is on block k. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",6,46,0.0319,0.0,0.0532,11
+BW_203,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks k, f, j, and h are clear and on the table. The hand is empty. Goal: Block k is on block f, block f is on block j, and block j is on block h. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+ stack j h
+ pick-up f
+ stack f j
+ pick-up k
+ stack k f",6,46,0.0432,0.0,0.0962,8
+BW_227,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks f, l, g, d, i, j, c, k, and a are clear and on the table. The hand is empty. Goal: Block f is on block l, block l is on block g, block g is on block d, block d is on block i, block i is on block j, block j is on block c, block c is on block k, and block k is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",6,46,0.0345,0.0,0.061,9
+BW_282,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks g, h, c, i, and b are clear and on the table. The hand is empty. Goal: Block g is on block h, block h is on block c, block c is on block i, and block i is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up i
+ stack i b
+ pick-up c
+ stack c i
+ pick-up h
+ stack h c
+ pick-up g
+ stack g h",6,46,0.0411,0.0,0.0862,8
+BW_310,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks g, j, a, f, b, and d are clear and on the table. The hand is empty. Goal: Block g is on block j, block j is on block a, block a is on block f, block f is on block b, and block b is on block d. Respond with a numbered list of actions only. Each action must be exactlyone of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+ stack b d
+ pick-up f
+ stack f b
+ pick-up a
+ stack a f
+ pick-up j
+ stack j a
+ pick-up g
+ stack g j",6,46,0.0395,0.0,0.0794,8
+BW_331,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks h, j, and l are clear and on the table. The hand is empty. Goal: Block h is on block j, and block j is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+ stack j l
+ pick-up h
+ stack h j",6,46,0.0455,0.0,0.1087,8
+BW_350,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks f, e, i, j, k, a, g, b, l, and d are clear and on the table. The hand is empty. Goal: Block f is on block e, block e is on block i, block i is on block j, block j is on block k, block k is on block a, block a is on block g, block g is on block b, block b is on block l, and block l is on block d. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up l
+ stack l d
+ pick-up b
+ stack b l
+ pick-up g
+ stack g b
+ pick-up a
+ stack a g
+ pick-up k
+ stack k a
+ pick-up j
+ stack j k
+ pick-up i
+ stack i j
+ pick-up e
+ stack e i
+ pick-up f
+ stack f e",6,46,0.0331,0.0,0.0568,8
+BW_408,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, l, h, d, c, g, j, and b are clear and on the table. The hand is empty. Goal: Block a is on block l, block l is on block h, block h is on block d, block d is on block c, block c is on block g, block g is on block j, and block j is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+ stack j b
+ pick-up g
+ stack g j
+ pick-up c
+ stack c g
+ pick-up d
+ stack d c
+ pick-up h
+ stack h d
+ pick-up l
+ stack l h
+ pick-up a
+ stack a l",6,46,0.0359,0.0,0.0658,8
+BW_467,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks g, i, l, j, a, f, and h are clear and on the table. The hand is empty. Goal: Block g is on block i, block i is on block l, block l is on block j, block j is on block a, block a is on block f, and block f is on block h. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",6,46,0.0375,0.0,0.0714,8
+BW_495,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, l, i, e, and h are clear and on the table. The hand is empty. Goal: Block c is on block l, block l is on block i, block i is on block e, and block e is on block h. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+ stack e h
+ pick-up i
+ stack i e
+ pick-up l
+ stack l i
+ pick-up c
+ stack c l",6,46,0.0411,0.0,0.0862,8
+BW_E002,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is clear. Block b is clear. Block c is clear. The hand is empty. Goal: Block a is on block c, and block b is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up a 
+stack a c 
+pick-up b 
+stack b a",6,93,0.0423,0.0,0.1087,3
+BW_E015,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is on the table and clear. Block b is on the table. Block c is on block b and clear. The hand is empty. Goal: Block a is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack c b
+put-down c
+pick-up a
+stack a b",6,540,0.0414,0.0,0.1282,3
+BW_E017,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is clear. Block b is clear. Block c is clear. The hand is empty. Goal: Block a is on block b, and block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up a
+stack a b
+pick-up c
+stack c a",6,93,0.0423,0.0,0.1087,3
+BW_E019,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block a is on block b and clear. Block b is on the table. Block c is on the table and clear. The hand is empty. Goal: Block a is on block c, and block b is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack a b
+stack a c
+pick-up b
+stack b a",6,137,0.042,0.0,0.1087,3
+BW_E100,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are on the table. Block a is on the table. Block b is on the table. Block c is on block a and clear. Block b is clear. The hand is empty. Goal: Block b is on block c, and block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b c",6,93,0.039,0.0,0.1087,3
+MBW_001,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks j, f, i, g, d, b, h, and l. Goal: craves j f, craves f i, craves i g, craves g d, craves d b, craves b h, and craves h l are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",5,2214,0.0385,0.0,0.0877,8
+MBW_002,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks j, g, a, b, k, h, and i. Goal: craves j g, craves g a, craves a b, craves b k, craves k h, and craves h i are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack h
+ overcome h i
+ attack k
+ overcome k h
+ attack b
+ overcome b k
+ attack a
+ overcome a b
+ attack g
+ overcome g a
+ attack j
+ overcome j g",5,2214,0.0397,0.0,0.0926,8
+MBW_010,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks d, e, a, b, and f. Goal: craves d e, craves e a, craves a b, and craves b f are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack d
+ overcome e d
+ attack e
+ overcome a e
+ attack a
+ overcome b a
+ attack b
+ overcome",5,2214,0.0424,0.0,0.1042,8
+MBW_014,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks l, e, and g. Goal: craves l e and craves e g are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack e
+ overcome e g
+ attack l
+ overcome l e",6,1,0.0545,0.0,0.119,8
+MBW_037,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks c, d, h, and i. Goal: craves c d, craves d h, and craves h i are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack h
+ overcome h i
+ attack d
+ overcome d h
+ attack c
+ overcome c d",5,2214,0.0439,0.0,0.1111,8
+MBW_10,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks d, e, a, b, and f. Goal: craves d e, craves e a, craves a b, and craves b f are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",5,2214,0.0424,0.0,0.1042,5
+MBW_100,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks b, j, l, and i. Goal: craves b j, craves j l, and craves l i are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",5,2214,0.0439,0.0,0.1111,4
+MBW_127,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks k, g, j, e, and b. Goal: craves k g, craves g j, craves j e, and craves e b are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",5,2214,0.0424,0.0,0.1042,5
+MBW_185,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks j, d, g, i, c, h, a, b, e, and l. Goal: craves j d, craves d g, craves g i, craves i c, craves c h, craves h a, craves a b, craves b e, and craves e l are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",5,2214,0.0362,0.0,0.0794,10
+MBW_495,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: harmony is true. planet and province are true for blocks c, l, i, e, and h. Goal: craves c l, craves l i, craves i e, and craves e h are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack e
+ overcome e h
+ attack i
+ overcome i e
+ attack l
+ overcome l i
+ attack c
+ overcome c l",5,2214,0.0424,0.0,0.1042,8
+BW_496,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, c, d, e, f, g, h, i, j, k, and l are clear and on the table, and the hand is empty. Goal: Block j is on block h, block h is on block l, block l is on block a, block a is on block e, block e is on block g, block g is on block k, block k is on block d, block d is on block c, block c is on block f, and block f is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up f
+stack f i
+pick-up c
+stack c f
+pick-up d
+stack d c
+pick-up k
+stack k d
+pick-up g
+stack g k
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up l
+stack l a
+pick-up h
+stack h l
+pick-up j
+stack j h",11,3,0.0582,0.0,0.0532,8
+BW_497,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, e, and l are clear and on the table, and the hand is empty. Goal: Block l is on block e, and block e is on block c. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+stack e c
+pick-up l
+stack l e",7,4,0.0526,0.0,0.1087,8
+BW_498,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, c, d, e, f, g, j, k, and l are clear and on the table, and the hand is empty. Goal: Block k is on block j, block j is on block e, block e is on block c, block c is on block b, block b is on block f, block f is on block d, block d is on block l, block l is on block a, and block a is on block g. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up a
+stack a g
+pick-up l
+stack l a
+pick-up d
+stack d l
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up k
+stack k j",8,100,0.044,0.0,0.0568,8
+BW_499,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, c, e, j, and l are clear and on the table, and the hand is empty. Goal: Block j is on block a, block a is on block c, block c is on block e, and block e is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+stack e l
+pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up j
+stack j a",6,1318,0.0408,0.0,0.0862,8
+BW_500,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, c, d, e, g, k, and l are clear and on the table, and the hand is empty. Goal: Block e is on block k, block k is on block d, block d is on block a, block a is on block g, block g is on block c, block c is on block b, and block b is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b l
+pick-up c
+stack c b
+pick-up g
+stack g c
+pick-up a
+stack a g
+pick-up d
+stack d a
+pick-up k
+stack k d
+pick-up e
+stack e k",6,1318,0.0357,0.0,0.0658,8
+BW_501,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, c, d, e, g, i, j, and k are clear and on the table, and the hand is empty. Goal: Block c is on block i, block i is on block k, block k is on block a, block a is on block e, block e is on block g, block g is on block j, and block j is on block d. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+stack j d
+pick-up g
+stack g j
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up k
+stack k a
+pick-up i
+stack i k
+pick-up c
+stack c i",6,1318,0.0357,0.0,0.0658,8
+BW_502,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks d, e, h, and i are clear and on the table, and the hand is empty. Goal: Block d is on block h, block h is on block i, and block i is on block e. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up i
+stack i e
+pick-up h
+stack h i
+pick-up d
+stack d h",6,1318,0.0429,0.0,0.0962,8
+BW_503,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, c, d, e, f, g, h, i, j, k, and l are clear and on the table, and the hand is empty. Goal: Block f is on block g, block g is on block a, block a is on block c, block c is on block d, block d is on block h, block h is on block k, block k is on block j, block j is on block b, block b is on block e, block e is on block i, and block i is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up i
+stack i l
+pick-up e
+stack e i
+pick-up b
+stack b e
+pick-up j
+stack j b
+pick-up k
+stack k j
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up f
+stack f g",12,3,0.0612,0.0,0.05,8
+BW_504,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, e, f, h, k, and l are clear and on the table, and the hand is empty. Goal: Block a is on block h, block h is on block f, block f is on block k, block k is on block e, block e is on block l, and block l is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up l
+stack l b
+pick-up e
+stack e l
+pick-up k
+stack k e
+pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up a
+stack a h",8,1,0.0497,0.0,0.0714,8
+BW_505,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks b, c, d, g, and h are clear and on the table, and the hand is empty. Goal: Block c is on block d, block d is on block g, block g is on block b, and block b is on block h. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up c
+stack c d",6,1318,0.0408,0.0,0.0862,8
+BW_506,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks b, f, and g are clear and on the table, and the hand is empty. Goal: Block g is on block b, and block b is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b f
+pick-up g
+stack g b",7,4,0.0526,0.0,0.1087,8
+BW_507,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks e, h, and j are clear and on the table, and the hand is empty. Goal: Block j is on block h, and block h is on block e. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up h
+stack h e
+pick-up j
+stack j h",7,4,0.0526,0.0,0.1087,8
+BW_508,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks b, c, e, f, and g are clear and on the table, and the hand is empty. Goal: Block e is on block c, block c is on block g, block g is on block b, and block b is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up b
+stack b f
+pick-up g
+stack g b
+pick-up c
+stack c g
+pick-up e
+stack e c",7,8,0.0476,0.0,0.0862,8
+BW_509,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks d, f, h, i, and j are clear and on the table, and the hand is empty. Goal: Block h is on block d, block d is on block f, block f is on block j, and block j is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+stack j i
+pick-up f
+stack f j
+pick-up d
+stack d f
+pick-up h
+stack h d",6,1318,0.0408,0.0,0.0862,8
+BW_510,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, c, h, i, j, k, and l are clear and on the table, and the hand is empty. Goal: Block k is on block j, block j is on block a, block a is on block c, block c is on block l, block l is on block h, and block h is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up h
+stack h i
+pick-up l
+stack l h
+pick-up c
+stack c l
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up k
+stack k j",6,1318,0.0373,0.0,0.0714,8
+BW_511,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks f, i, k, and l are clear and on the table, and the hand is empty. Goal: Block i is on block k, block k is on block l, and block l is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up l
+stack l f
+pick-up k
+stack k l
+pick-up i
+stack i k",6,1318,0.0429,0.0,0.0962,8
+BW_512,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, e, f, h, i, and j are clear and on the table, and the hand is empty. Goal: Block c is on block j, block j is on block e, block e is on block h, block h is on block i, and block i is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up i
+stack i f
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up c
+stack c j",7,5,0.0455,0.0,0.0781,8
+BW_513,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, c, d, e, f, i, and l are clear and on the table, and the hand is empty. Goal: Block c is on block e, block e is on block f, block f is on block i, block i is on block a, block a is on block d, and block d is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up d
+stack d l
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up e
+stack e f
+pick-up c
+stack c e",6,1318,0.0373,0.0,0.0714,8
+BW_514,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, c, e, g, and j are clear and on the table, and the hand is empty. Goal: Block c is on block j, block j is on block a, block a is on block g, block g is on block e, and block e is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+stack e b
+pick-up g
+stack g e
+pick-up a
+stack a g
+pick-up j
+stack j a
+pick-up c
+stack c j",7,4,0.0455,0.0,0.0781,8
+BW_515,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, d, e, g, i, and k are clear and on the table, and the hand is empty. Goal: Block g is on block e, block e is on block k, block k is on block a, block a is on block d, and block d is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up d
+stack d i
+pick-up a
+stack a d
+pick-up k
+stack k a
+pick-up e
+stack e k
+pick-up g
+stack g e",7,4,0.0455,0.0,0.0781,8
+MBW_496,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: Harmony is true, and planet and province are true for blocks a, c, d, e, f, g, h, i, j, and l. Goal: Craves i f, craves f h, craves h g, craves g d, craves d e, craves e a, craves a c, craves c j, and craves j l are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack j
+overcome j l
+attack c
+overcome c j
+attack a
+overcome a c
+attack e
+overcome e a
+attack d
+overcome d e
+attack g
+overcome g d
+attack h
+overcome h g
+attack f
+overcome f h
+attack i
+overcome i f",8,8545,0.0576,0.0,0.0794,8
+MBW_497,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: Harmony is true, and planet and province are true for blocks a, c, d, e, f, h, i, j, k, and l. Goal: Craves k a, craves a f, craves f c, craves c d, craves d l, craves l i, craves i h, craves h e, and craves e j are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack e
+overcome e j
+attack h
+overcome h e
+attack i
+overcome i h
+attack l
+overcome l i
+attack d
+overcome d l
+attack c
+overcome c d
+attack f
+overcome f c
+attack a
+overcome a f
+attack k
+overcome k a",7,54,0.0504,0.0,0.0794,8
+MBW_498,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: Harmony is true, and planet and province are true for blocks a, b, c, d, e, f, g, h, i, j, k, and l. Goal: Craves l e, craves e d, craves d g, craves g a, craves a h, craves h c, craves c k, craves k b, craves b i, craves i j, and craves j f are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack j
+overcome j f
+attack i
+overcome i j
+attack b
+overcome b i
+attack k
+overcome k b
+attack c
+overcome c k
+attack h
+overcome h c
+attack a
+overcome a h
+attack g
+overcome g a
+attack d
+overcome d g
+attack e
+overcome e d
+attack l
+overcome l e",10,7719,0.068,0.0,0.0725,8
+MBW_499,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: Harmony is true, and planet and province are true for blocks a, b, c, d, f, h, j, and l. Goal: Craves l c, craves c b, craves b f, craves f j, craves j d, craves d a, and craves a h are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack a
+overcome a h
+attack d
+overcome d a
+attack j
+overcome j d
+attack f
+overcome f j
+attack b
+overcome b f
+attack c
+overcome c b
+attack l
+overcome l c",6,89,0.0458,0.0,0.0877,8
+MBW_500,planning_suite,mystery_blocksworld,"You are a robot arm. Available actions: attack X (requires harmony, province X, planet X to be true), succumb X (requires pain X to be true), overcome X Y (requires province Y and pain X to be true), feast X Y (requires craves X Y, province X, harmony to be true). Current state: Harmony is true, and planet and province are true for blocks a, b, c, d, e, f, g, h, i, and k. Goal: Craves a e, craves e b, craves b k, craves k h, craves h c, craves c f, craves f i, craves i d, and craves d g are true. Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.","attack d
+overcome d g
+attack i
+overcome i d
+attack f
+overcome f i
+attack c
+overcome c f
+attack h
+overcome h c
+attack k
+overcome k h
+attack b
+overcome b k
+attack e
+overcome e b
+attack a
+overcome a e",8,14627,0.0576,0.0,0.0794,8
+BW_E_001,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, c, f, i, and j are clear and on the table, and the hand is empty. Goal: Block a is on block i, block i is on block c, block c is on block f, block f is on block j, and block j is on block b. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up j
+stack j b
+pick-up f
+stack f j
+pick-up c
+stack c f
+pick-up i
+stack i c
+pick-up a
+stack a i",7,4,0.0455,0.0,0.0781,8
+BW_E_002,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks b, g, h, and i are clear and on the table, and the hand is empty. Goal: Block h is on block b, block b is on block g, and block g is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up g
+stack g i
+pick-up b
+stack b g
+pick-up h
+stack h b",6,1318,0.0429,0.0,0.0962,8
+BW_E_003,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, d, g, i, and j are clear and on the table, and the hand is empty. Goal: Block g is on block c, block c is on block i, block i is on block d, and block d is on block j. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up d
+stack d j
+pick-up i
+stack i d
+pick-up c
+stack c i
+pick-up g
+stack g c",6,1318,0.0408,0.0,0.0862,8
+BW_E_004,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, d, e, g, h, i, k, and l are clear and on the table, and the hand is empty. Goal: Block a is on block h, block h is on block k, block k is on block i, block i is on block e, block e is on block d, block d is on block g, and block g is on block l. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up g
+stack g l
+pick-up d
+stack d g
+pick-up e
+stack e d
+pick-up i
+stack i e
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up a
+stack a h",7,7,0.0417,0.0,0.0658,8
+BW_E_005,planning_suite,blocksworld,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, d, e, f, and l are clear and on the table, and the hand is empty. Goal: Block c is on block l, block l is on block d, block d is on block e, and block e is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up e
+stack e f
+pick-up d
+stack d e
+pick-up l
+stack l d
+pick-up c
+stack c l",6,1318,0.0408,0.0,0.0862,8

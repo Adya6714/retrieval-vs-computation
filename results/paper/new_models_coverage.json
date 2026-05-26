@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-05-24T14:46:13.257576+00:00",
+  "files": {
+    "GSM_P1_behavioral_gemini.csv": {
+      "target": 288,
+      "model": "google/gemini-2.5-flash",
+      "rows": 288,
+      "good_keys": 288,
+      "errors": 0,
+      "complete": true
+    },
+    "BW_P1_behavioral_gemini.csv": {
+      "target": 455,
+      "model": "google/gemini-2.5-flash",
+      "rows": 455,
+      "good_keys": 455,
+      "errors": 0,
+      "complete": true
+    },
+    "ALGO_P1_behavioral_gemini.csv": {
+      "target": 640,
+      "model": "google/gemini-2.5-flash",
+      "rows": 690,
+      "good_keys": 617,
+      "errors": 73,
+      "complete": false
+    },
+    "GSM_P2_phase1_gemini.csv": {
+      "target": 44,
+      "model": "google/gemini-2.5-flash",
+      "rows": 44,
+      "good_keys": 44,
+      "errors": 0,
+      "complete": true
+    },
+    "ALGO_P2_phase1_gemini.csv": {
+      "target": 110,
+      "model": "google/gemini-2.5-flash",
+      "rows": 110,
+      "good_keys": 110,
+      "errors": 0,
+      "complete": true
+    },
+    "GSM_P1_behavioral_o1mini.csv": {
+      "target": 288,
+      "model": "openai/o4-mini",
+      "rows": 299,
+      "good_keys": 277,
+      "errors": 22,
+      "complete": false
+    },
+    "BW_P1_behavioral_o1mini.csv": {
+      "target": 455,
+      "model": "openai/o4-mini",
+      "rows": 795,
+      "good_keys": 0,
+      "errors": 795,
+      "complete": false
+    },
+    "ALGO_P1_behavioral_o1mini.csv": {
+      "target": 640,
+      "model": "openai/o4-mini",
+      "rows": 690,
+      "good_keys": 100,
+      "errors": 590,
+      "complete": false
+    },
+    "GSM_P2_phase1_o1mini.csv": {
+      "target": 44,
+      "model": "openai/o4-mini",
+      "rows": 44,
+      "good_keys": 44,
+      "errors": 0,
+      "complete": true
+    }
+  }
+}

@@ -105,6 +105,108 @@ def test_cc_w3_scoops_correct():
     assert ok
 
 
+def test_cc_w3_accepts_any_domain_names_mapping_key():
+    params = {
+        "denominations": [10, 17],
+        "target": 27,
+        "greedy_succeeds": False,
+        "scoop_names": {"flavor_a": 17, "flavor_b": 10},
+        "flavor_names": {"flavor_a": 17, "flavor_b": 10},
+    }
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 2, Flavors: [flavor_a, flavor_b]",
+        "Count: 2\nCoins: [17, 10]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert ok
+
+
+def test_cc_w3_accepts_non_scoop_names_only():
+    params = {
+        "denominations": [10, 17],
+        "target": 27,
+        "greedy_succeeds": False,
+        "flavor_names": {"flavor_a": 17, "flavor_b": 10},
+    }
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 2, Flavors: [flavor_a, flavor_b]",
+        "Count: 2\nCoins: [17, 10]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert ok
+
+
+def test_cc_w3_domain_agnostic_parser_cases():
+    params = {"denominations": [3, 4, 6, 7, 8], "target": 14, "greedy_succeeds": False}
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 2 Scoops: [3, 3]",
+        "Total: 2\n Scoops: [3, 3]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert ok
+
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 2 Scoops: [7 g, 7 g]",
+        "Total: 2\n Scoops: [7, 7]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert ok
+
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 2 Scoops: [4, 8]",
+        "Total: 2\n Scoops: [8, 4]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert ok
+
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 3 Scoops: [1, 6, 6]",
+        "Total: 2\n Scoops: [6, 7]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert not ok
+
+    ok, _, _meta = verify_algo(
+        "CC_W3",
+        "Total: 4 Scoops: 1 g, 1 g, 1 g, 7 g",
+        "Total: 2\n Scoops: [3, 3]",
+        "coin_change",
+        "W3",
+        params,
+    )
+    assert not ok
+
+
+def test_wis_verifier_accepts_numeric_total_variants():
+    ok, _, _meta = verify_algo(
+        "WIS_X",
+        "Total weight: 24",
+        "Total: 24",
+        "wis",
+        "canonical",
+        _wis_params(),
+    )
+    assert ok
+
+
 def _sp_params():
     return {
         "graph": [

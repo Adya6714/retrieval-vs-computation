@@ -1,7 +1,11 @@
 import sys, os, re, json, csv, argparse, copy
 sys.path.insert(0, ".")
 
-from cci_pipeline import (
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from probes.behavioral.bw_cci_pipeline import (
     parse_pddl, execute_action,
     make_turn1_prompt, make_followup_prompt,
     goal_reached, state_to_narrative,
@@ -186,6 +190,10 @@ def run_cci_session(problem_id, pddl_path, generated_plan,
 
     executed_steps = []
     illegal_count  = 0
+    skip_count = 0
+    error_count = 0
+    last_error = None
+    session_status = "complete"
 
     last_action = ""
     for step in range(max_steps):
@@ -205,19 +213,52 @@ def run_cci_session(problem_id, pddl_path, generated_plan,
 
         action = parse_single_action(response)
         if not action:
-            break
+            current_error = "parse_error"
+            if current_error == last_error:
+                error_count += 1
+            else:
+                error_count = 1
+                last_error = current_error
+
+            if error_count >= 2:
+                executed_steps.append("STEP_SKIP")
+                skip_count += 1
+                error_count = 0
+                last_error = None
+                if skip_count > 5:
+                    session_status = "aborted: excessive illegal steps"
+                    break
+            continue
 
         try:
             new_state = execute_action(copy.deepcopy(state), action)
             executed_steps.append(action)
             last_action = action
             state = new_state
+            error_count = 0
+            last_error = None
             if goal_reached(state, goal):
                 break
         except ValueError:
-            executed_steps.append(action)
-            last_action = action
             illegal_count += 1
+            current_error = f"illegal:{action}"
+            if current_error == last_error:
+                error_count += 1
+            else:
+                error_count = 1
+                last_error = current_error
+
+            if error_count >= 2:
+                executed_steps.append("STEP_SKIP")
+                skip_count += 1
+                error_count = 0
+                last_error = None
+                if skip_count > 5:
+                    session_status = "aborted: excessive illegal steps"
+                    break
+            else:
+                executed_steps.append(action)
+                last_action = action
             # state unchanged on illegal action
 
     # Repetition Rate: fraction of consecutive identical actions
@@ -260,7 +301,15 @@ def run_cci_session(problem_id, pddl_path, generated_plan,
 
     svr = semantic_validity_rate(executed_steps)
 
-    cci_result = compute_cci(problem_id, generated_plan, executed_steps)
+    filtered_steps = [s for s in executed_steps if s != "STEP_SKIP"]
+    if session_status.startswith("aborted:"):
+        cci_result = {
+            "cci": None,
+            "matched_steps": 0,
+            "total_steps_compared": 0,
+        }
+    else:
+        cci_result = compute_cci(problem_id, generated_plan, filtered_steps)
 
     return {
         "problem_id":            problem_id,
@@ -270,6 +319,8 @@ def run_cci_session(problem_id, pddl_path, generated_plan,
         "generated_plan_length": len(generated_plan),
         "executed_length":       len(executed_steps),
         "illegal_action_count":  illegal_count,
+        "skip_count":            skip_count,
+        "session_status":        session_status,
         "repetition_rate":       rr,
         "first_illegal_step":    fis,
         "partial_goal_achievement": pga,
@@ -291,11 +342,12 @@ def run_cci_session(problem_id, pddl_path, generated_plan,
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--models", nargs="+",
-                        default=["anthropic/claude-3.7-sonnet",
+                        default=["anthropic/claude-sonnet-4",
                                  "openai/gpt-4o"])
-    parser.add_argument("--output",    default="results/BW_P2_RES_cci.csv")
+    parser.add_argument("--output",    default="results/raw/BW_P2_cci.csv")
     parser.add_argument("--max-steps", type=int, default=50)
     parser.add_argument("--resume",    action="store_true")
+    parser.add_argument("--problem-ids", nargs="+", default=None)
     args = parser.parse_args()
 
     if not os.environ.get("OPENROUTER_API_KEY"):
@@ -306,7 +358,7 @@ def main():
         print("  export OPENROUTER_API_KEY='...'", file=sys.stderr)
         sys.exit(1)
 
-    plans_path = "results/BW_P2_RES_phase1_plans.csv"
+    plans_path = "results/raw/BW_P2_plans.csv"
     if not os.path.exists(plans_path):
         plans_path = "results/phase1_plans.csv"
     plans = pd.read_csv(plans_path)
@@ -323,7 +375,7 @@ def main():
         "problem_id", "model", "difficulty", "contamination_pole",
         "cci", "matched_steps", "total_steps_compared",
         "generated_plan_length", "executed_length",
-        "illegal_action_count",
+        "illegal_action_count", "skip_count", "session_status",
         "repetition_rate", "first_illegal_step",
         "partial_goal_achievement", "goals_met",
         "violation_hand_not_empty",
@@ -349,6 +401,11 @@ def main():
         model_plans = plans[plans["model"].str.contains(
             model_tail, case=False, na=False
         )]
+        if args.problem_ids:
+            allowed = set(str(x) for x in args.problem_ids)
+            model_plans = model_plans[
+                model_plans["problem_id"].astype(str).isin(allowed)
+            ]
 
         if len(model_plans) == 0:
             print(f"WARNING: no plans for '{model_tail}' — skipping")

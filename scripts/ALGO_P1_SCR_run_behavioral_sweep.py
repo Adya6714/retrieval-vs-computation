@@ -103,14 +103,12 @@ def main() -> None:
     if not bank_path.exists():
         raise FileNotFoundError(f"Bank not found: {bank_path}")
 
-    safe_model = re.sub(r"[^A-Za-z0-9._-]+", "_", args.model)
-    output_path = (
-        Path(args.output)
-        if args.output
-        else Path("results") / f"ALGO_P1_RES_behavioral_sweep_{safe_model}.csv"
-    )
+    from probes.common.results_paths import algo_p1_behavioral, ALGO_P1_REVIEW_QUEUE, ensure_dirs
+
+    ensure_dirs()
+    output_path = Path(args.output) if args.output else algo_p1_behavioral(args.model)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    review_path = Path("results/ALGO_P1_RES_human_review_queue.csv")
+    review_path = ALGO_P1_REVIEW_QUEUE
     review_path.parent.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(bank_path, dtype=str).fillna("")

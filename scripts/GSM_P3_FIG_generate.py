@@ -16,10 +16,23 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from probes.behavioral.css import compute_css
 from probes.common.stats import bootstrap_ci
 
 
 RESULTS_DIR = Path("results")
+GSM_CONTAM_PATH = Path("results/raw/GSM_P3_contamination.csv")
+GSM_MECH_PATH = Path("results/raw/GSM_P3_mechanistic.csv")
+GSM_TRIANG_PATHS = {
+    "anthropic/claude-sonnet-4": Path("results/derived/GSM_P3_triangulation_per_instance_claude.csv"),
+    "openai/gpt-4o": Path("results/derived/GSM_P3_triangulation_per_instance_gpt4o.csv"),
+}
+GSM_P1_BEHAVIORAL_PATHS = [
+    Path("results/raw/GSM_P1_behavioral_claude.csv"),
+    Path("results/raw/GSM_P1_behavioral_gpt4o.csv"),
+    Path("results/raw/GSM_P1_behavioral_llama.csv"),
+]
+GSM_P1_CSS_FALLBACK = Path("results/paper/GSM_P1_RES_css.csv")
 FIG_DIR = Path("figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -35,18 +48,113 @@ def _save(fig: plt.Figure, stem: str) -> None:
     plt.close(fig)
 
 
+def _load_gsm_per_problem_css(model_name: str) -> pd.DataFrame:
+    """Per-problem CSS for scatter plots.
+
+    ``results/derived/GSM_P1_metrics.csv`` is aggregate VAR/W6_Gap only (no problem_id).
+    Prefer triangulation ``css``; else ``results/paper/GSM_P1_RES_css.csv`` or P1 behavioral sweeps.
+    """
+    metrics_path = Path("results/derived/GSM_P1_metrics.csv")
+    if metrics_path.exists():
+        m = pd.read_csv(metrics_path, dtype=str).fillna("")
+        if {"problem_id", "css", "model"}.issubset(m.columns):
+            css = m[m["model"].astype(str).str.strip() == model_name]
+            out = css[["problem_id", "css"]].copy()
+            out["css"] = pd.to_numeric(out["css"], errors="coerce")
+            if "contamination_pole" in css.columns:
+                out["contamination_pole"] = css["contamination_pole"]
+            return out.drop_duplicates("problem_id")
+
+    css_models = {model_name, "anthropic/claude-3.7-sonnet" if model_name == "anthropic/claude-sonnet-4" else model_name}
+    if GSM_P1_CSS_FALLBACK.exists():
+        css = pd.read_csv(GSM_P1_CSS_FALLBACK, dtype=str).fillna("")
+        css = css[css["model"].astype(str).str.strip().isin(css_models)]
+        if {"problem_id", "css"}.issubset(css.columns):
+            out = css[["problem_id", "css"]].copy()
+            if "contamination_pole" in css.columns:
+                out["contamination_pole"] = css["contamination_pole"]
+            out["css"] = pd.to_numeric(out["css"], errors="coerce")
+            return out.drop_duplicates("problem_id")
+
+    bank = pd.read_csv("data/problems/question_bank_gsm.csv", dtype=str).fillna("")
+    bank = bank[bank["variant_type"].astype(str).str.strip().str.lower() == "canonical"]
+    pole = bank[["problem_id", "contamination_pole"]].drop_duplicates("problem_id")
+
+    frames = []
+    for p in GSM_P1_BEHAVIORAL_PATHS:
+        if not p.exists() or p.stat().st_size <= 200:
+            continue
+        frames.append(pd.read_csv(p, dtype=str).fillna(""))
+    if not frames:
+        return pd.DataFrame(columns=["problem_id", "css", "contamination_pole"])
+
+    beh = pd.concat(frames, ignore_index=True)
+    beh = beh[beh["model"].astype(str).str.strip() == model_name].copy()
+    rows: list[dict] = []
+    for pid, grp in beh.groupby("problem_id"):
+        can = grp[grp["variant_type"].astype(str).str.strip().str.lower() == "canonical"]
+        if can.empty:
+            continue
+        canonical_answer = str(can.iloc[0].get("correct_answer", ""))
+        family = str(can.iloc[0].get("problem_family", "arithmetic_reasoning"))
+        variants = []
+        for _, r in grp.iterrows():
+            vt = str(r.get("variant_type", "")).strip()
+            if vt.lower() in ("canonical", "w5"):
+                continue
+            variants.append(
+                {
+                    "variant_type": vt,
+                    "model_answer": str(r.get("raw_response", "")),
+                    "correct_answer": str(r.get("correct_answer", "")),
+                    "problem_text": str(r.get("problem_text", "")),
+                }
+            )
+        try:
+            css_dict = compute_css(str(pid), canonical_answer, variants, family)
+        except ValueError:
+            continue
+        if css_dict.get("css") is None:
+            continue
+        rows.append({"problem_id": str(pid), "css": css_dict["css"]})
+    if not rows:
+        return pd.DataFrame(columns=["problem_id", "css", "contamination_pole"])
+    out = pd.DataFrame(rows)
+    return out.merge(pole, on="problem_id", how="left")
+
+
 def _load_css_contam(model_name: str, triang_path: Path) -> pd.DataFrame:
-    tri = pd.read_csv(triang_path, dtype=str)
-    tri = tri[["problem_id", "behavioral_model"]].drop_duplicates("problem_id")
-    tri = tri[tri["behavioral_model"] == model_name]
-    css = pd.read_csv(RESULTS_DIR / "GSM_P1_RES_css.csv", dtype=str)
-    css = css[(css["model"] == model_name)][["problem_id", "css", "contamination_pole"]]
-    css["css"] = pd.to_numeric(css["css"], errors="coerce")
-    contam = pd.read_csv(RESULTS_DIR / "GSM_P3_RES_contamination_triage.csv", dtype=str)[
-        ["problem_id", "contamination_score"]
-    ]
+    if not triang_path.exists():
+        return pd.DataFrame()
+    tri = pd.read_csv(triang_path, dtype=str).fillna("")
+    tri["problem_id"] = tri["problem_id"].astype(str).str.strip()
+    if "behavioral_model" in tri.columns:
+        tri = tri[tri["behavioral_model"].astype(str).str.strip() == model_name].copy()
+    tri = tri.drop_duplicates("problem_id")
+
+    if "css" in tri.columns and tri["css"].astype(str).str.strip().ne("").any():
+        css = tri[["problem_id", "css"]].copy()
+        css["css"] = pd.to_numeric(css["css"], errors="coerce")
+    else:
+        css = _load_gsm_per_problem_css(model_name)
+
+    if not GSM_CONTAM_PATH.exists():
+        return pd.DataFrame()
+    contam = pd.read_csv(GSM_CONTAM_PATH, dtype=str)[["problem_id", "contamination_score"]]
+    contam["problem_id"] = contam["problem_id"].astype(str).str.strip()
     contam["contamination_score"] = pd.to_numeric(contam["contamination_score"], errors="coerce")
-    df = tri.merge(css, on="problem_id", how="left").merge(contam, on="problem_id", how="left")
+
+    df = tri[["problem_id"]].drop_duplicates().merge(css, on="problem_id", how="left").merge(
+        contam, on="problem_id", how="left"
+    )
+    if "contamination_pole" not in df.columns and "contamination_pole" in css.columns:
+        pass
+    elif "contamination_pole" not in df.columns:
+        bank = pd.read_csv("data/problems/question_bank_gsm.csv", dtype=str).fillna("")
+        pole = bank[bank["variant_type"].astype(str).str.strip().str.lower() == "canonical"][
+            ["problem_id", "contamination_pole"]
+        ].drop_duplicates("problem_id")
+        df = df.merge(pole, on="problem_id", how="left")
     return df.dropna(subset=["css", "contamination_score"])
 
 
@@ -69,8 +177,8 @@ def _bootstrap_regression_band(x: np.ndarray, y: np.ndarray, xs: np.ndarray, n_b
 
 def fig_contamination_scatter() -> None:
     models = [
-        ("anthropic/claude-3.7-sonnet", RESULTS_DIR / "GSM_P3_RES_triangulation_per_instance_claude.csv"),
-        ("openai/gpt-4o", RESULTS_DIR / "GSM_P3_RES_triangulation_per_instance_gpt4o.csv"),
+        ("anthropic/claude-sonnet-4", GSM_TRIANG_PATHS["anthropic/claude-sonnet-4"]),
+        ("openai/gpt-4o", GSM_TRIANG_PATHS["openai/gpt-4o"]),
     ]
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), sharey=True)
     for ax, (model, path) in zip(axes, models):
@@ -111,16 +219,22 @@ def fig_contamination_scatter() -> None:
 
 
 def fig_crystallization_layer() -> None:
-    mech_paths = sorted(RESULTS_DIR.glob("*mechanistic*.csv"))
     fig, ax = plt.subplots(figsize=(8, 4.5))
-    if not mech_paths:
+    if not GSM_MECH_PATH.exists():
         ax.text(0.5, 0.5, "No mechanistic results found", ha="center", va="center")
         ax.axis("off")
         _save(fig, "GSM_P3_FIG_crystallization_layer")
         return
 
-    frames = [pd.read_csv(p, dtype=str) for p in mech_paths]
-    df = pd.concat(frames, ignore_index=True)
+    df = pd.read_csv(GSM_MECH_PATH, dtype=str)
+    if "model" in df.columns:
+        df = df[df["model"].astype(str).str.lower() != "mock"].copy()
+    if "contamination_pole" not in df.columns and "problem_id" in df.columns:
+        bank = pd.read_csv("data/problems/question_bank_gsm.csv", dtype=str).fillna("")
+        pole = bank[bank["variant_type"].astype(str).str.strip().str.lower() == "canonical"][
+            ["problem_id", "contamination_pole"]
+        ].drop_duplicates("problem_id")
+        df = df.merge(pole, on="problem_id", how="left")
     need = {"crystallization_layer", "contamination_pole"}
     if not need.issubset(df.columns):
         ax.text(0.5, 0.5, "Missing crystallization columns", ha="center", va="center")

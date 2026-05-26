@@ -1,0 +1,151 @@
+problem_id,model,subtype,orig_status,orig_goal_reached,orig_illegal_count,orig_executed_len,orig_cci,new_status,new_goal_reached,new_executed_len,new_illegal_count,parser_recoveries,preamble_drops
+BW_155,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_010,openai/gpt-4o,blocksworld,,False,48,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_001,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_011,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,13,1,1
+BW_120,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_227,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,15,1,1
+BW_137,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_172,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_467,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,1
+BW_080,openai/gpt-4o,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,13,1,1
+BW_E100,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E015,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E017,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E019,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E002,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_155,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,49,50,0.0833,aborted: excessive illegal steps,False,2,12,1,0
+BW_010,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,48,50,0.5,complete,False,2,48,0,0
+BW_001,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,0
+BW_011,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,49,50,0.0,aborted: excessive illegal steps,False,2,12,1,0
+BW_120,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,47,50,0.1111,aborted: excessive illegal steps,False,4,41,1,0
+BW_227,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,47,50,0.125,aborted: excessive illegal steps,False,4,14,1,0
+BW_137,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,48,50,0.0,aborted: excessive illegal steps,False,2,18,0,0
+BW_172,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,47,50,0.1,aborted: excessive illegal steps,False,3,33,0,0
+BW_467,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,49,50,0.0833,aborted: excessive illegal steps,False,2,12,1,0
+BW_080,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,48,50,0.2,aborted: excessive illegal steps,False,2,12,0,0
+BW_E100,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E015,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E017,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E019,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E002,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_001,anthropic/claude-sonnet-4,blocksworld,complete,False,43,50,0.0,complete,False,4,45,1,1
+BW_002,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_010,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_011,anthropic/claude-sonnet-4,blocksworld,complete,False,18,50,0.1,complete,False,32,17,1,1
+BW_014,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_022,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_080,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,16,,complete,False,4,5,1,1
+BW_120,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_137,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_155,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,15,16,,complete,False,2,7,1,1
+BW_172,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,29,32,,complete,False,4,21,1,1
+BW_203,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_227,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_282,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_310,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_331,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_350,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_408,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_467,anthropic/claude-sonnet-4,blocksworld,complete,False,1,50,0.0,complete,False,49,0,0,1
+BW_495,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E002,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E015,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E017,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E019,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E100,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_496,anthropic/claude-sonnet-4,blocksworld,complete,False,1,50,0.0,complete,False,49,0,0,1
+BW_497,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_498,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_499,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_500,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_501,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,21,35,,complete,False,14,14,1,1
+BW_502,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,14,15,,complete,False,2,6,1,1
+BW_503,anthropic/claude-sonnet-4,blocksworld,complete,False,15,50,0.0,complete,False,36,9,1,1
+BW_504,anthropic/claude-sonnet-4,blocksworld,complete,False,1,50,0.0,complete,False,49,0,0,1
+BW_505,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_506,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_507,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_508,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,14,17,,complete,False,4,6,1,1
+BW_509,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_510,anthropic/claude-sonnet-4,blocksworld,complete,False,1,50,0.0,complete,False,49,0,0,1
+BW_511,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,14,16,,complete,False,2,7,1,1
+BW_512,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,16,,complete,False,4,5,1,1
+BW_513,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,17,34,,complete,False,18,9,2,1
+BW_514,anthropic/claude-sonnet-4,blocksworld,complete,False,1,50,0.0,complete,False,49,0,0,1
+BW_515,anthropic/claude-sonnet-4,blocksworld,aborted: excessive illegal steps,False,13,32,,complete,False,20,5,1,1
+BW_E_001,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_002,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_003,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_004,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_005,anthropic/claude-sonnet-4,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_495,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_408,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_350,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_331,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_310,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_282,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_203,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_022,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_014,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_002,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_496,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,15,16,,complete,False,2,7,1,1
+BW_497,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,15,16,,complete,False,2,7,1,1
+BW_498,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_499,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_500,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_501,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,20,21,,complete,False,2,12,1,1
+BW_502,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_503,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_504,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,15,16,,complete,False,2,7,1,1
+BW_505,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_506,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,14,15,,complete,False,2,6,1,1
+BW_507,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,16,17,,complete,False,2,8,1,1
+BW_508,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,14,15,,complete,False,2,6,1,1
+BW_509,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_510,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_511,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,15,18,,complete,False,4,7,1,1
+BW_512,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_513,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_514,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,14,15,,complete,False,2,6,1,1
+BW_515,openai/gpt-4o,blocksworld,aborted: excessive illegal steps,False,13,14,,complete,False,2,5,1,1
+BW_E_001,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_002,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_003,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_004,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_005,openai/gpt-4o,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_495,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_408,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_350,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_331,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_310,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_282,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_203,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_022,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_014,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_002,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_496,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_497,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,14,,complete,False,2,6,0,0
+BW_498,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_499,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_500,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_501,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_502,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,47,50,,complete,False,4,40,1,0
+BW_503,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,14,16,,complete,False,2,8,0,0
+BW_504,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_505,meta-llama/llama-3.1-8b-instruct,blocksworld,complete,False,47,50,0.0,complete,False,3,46,0,0
+BW_506,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,14,,complete,False,2,6,0,0
+BW_507,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,16,19,,complete,False,4,9,1,0
+BW_508,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,14,18,,complete,False,4,2,0,0
+BW_509,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_510,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_511,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,15,18,,complete,False,3,9,0,0
+BW_512,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,14,15,,complete,False,2,7,1,0
+BW_513,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_514,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,12,13,,complete,False,2,5,1,0
+BW_515,meta-llama/llama-3.1-8b-instruct,blocksworld,aborted: excessive illegal steps,False,26,29,,complete,False,4,19,1,0
+BW_E_001,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_002,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_003,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_004,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0
+BW_E_005,meta-llama/llama-3.1-8b-instruct,blocksworld,,False,0,0,,complete,False,0,0,0,0

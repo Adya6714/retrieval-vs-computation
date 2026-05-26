@@ -1,0 +1,1187 @@
+Surface Robustness Diverges from Accuracy in LLM Reasoning:
+A Behavioral Triangulation Framework Across 219 Problems and Four
+Models
+Anonymous ACL submission
+Abstract001
+Benchmark accuracy is the dominant lens for002
+comparing reasoning ability across large lan-003
+guage models, yet it conflates two empiri-004
+cally separable processing regimes:retrieval-005
+likematching against training distributions and006
+computation-likestructure-sensitive problem007
+solving. We introduceBehavioral Triangula-008
+tion, a black-box diagnostic framework that ap-009
+plies three orthogonal probes to the same prob-010
+lem instance: surface invariance under struc-011
+tured perturbations (P1, six variants W1–W6),012
+plan–execution coupling across decoupled ses-013
+sions (P2, with declaration, normal execution,014
+and false-state injection phases), and training-015
+data proximity via n-gram overlap with public016
+corpora (P3). On 219 problems across arith-017
+metic, planning, and algorithmic optimization,018
+evaluated with >4,100 inference calls across019
+four models, we report anaccuracy–robustness020
+divergence: on adversarial shortest-path plan-021
+ning, Claude Sonnet 4 reaches 64.7% canon-022
+ical accuracy (95% Wilson CI [0.48, 0.79])023
+and 0.0% under entity rename ([0.00, 0.10]);024
+GPT-4o, with lower canonical 41.2% ([0.26,025
+0.58]), retains 26.5% ([0.15, 0.43]). On adver-026
+sarial coin-change the inversion reverses, and027
+on the matched-canonical subset Fisher’s ex-028
+act tests confirm both dissociations (p = 0.035,029
+p = 0.048). A within-family contamination030
+control (weighted interval scheduling, template031
+overlap = 0.000) collapses all four models to032
+0.0% W3 accuracy despite structural equiva-033
+lence to coin-change. Claude commits to its034
+declared plan 2.1 × more often than GPT-4o035
+(paired Wilcoxon W = 426, p = 0.005), yet036
+within Claude, plan-commitment does not pre-037
+dict correctness (r = 0.14, ns). A new injection-038
+resistance probe shows Claude and GPT-4o ac-039
+cept injected false states in 88–93% of cases yet040
+still recover the correct final answer 51–53%041
+of the time, while Gemini ignores the injection042
+entirely (0% acceptance). Across 1,531 ALGO043
+step traces, 13 explicit algorithm-invocation044
+steps (distributed across three of four models)045
+all yielded incorrect final answers (Wilson 95% 046
+CI on 0/13: [0%, 22.8%]), with no evidence the 047
+steps came from intrinsically harder problems 048
+(selection-effect p = 0.42). A reasoning-trained 049
+model (o4-mini, GSM-only partial sweep) re- 050
+tains 95.7% W3 accuracy; full coverage on 051
+ALGO and BW is pending. None of these dis- 052
+sociations are visible to accuracy alone.053
+1 Introduction054
+A model that answers benchmark questions cor- 055
+rectly may be doing one of two empirically sep- 056
+arable things. It may be following the problem’s 057
+structure to arrive at an answer that survives surface 058
+perturbation. Or it may be retrieving a familiar an- 059
+swer from training data, in which case its accuracy 060
+depends on the proximity between the test items 061
+and its training distribution. Standard accuracy re- 062
+porting collapses both regimes into one number, 063
+treating models that look identical on a leaderboard 064
+as if they were the same kind of system.065
+The accuracy–robustness divergence.This mat- 066
+ters concretely. On adversarial shortest-path plan- 067
+ning, Claude Sonnet 4 achieves 64.7% canonical 068
+accuracy—higher than GPT-4o’s 41.2%. When 069
+city labels are renamed (variant W3) while pre- 070
+serving graph structure exactly, Claude drops to 071
+0.0% and GPT-4o retains 26.5%. The model with 072
+higher benchmark accuracy is the model with lower 073
+out-of-distribution robustness. On adversarial coin- 074
+change the inversion reverses: Claude retains 60% 075
+W3 accuracy, GPT-4o drops to 0%. The diver- 076
+gence is subtype-specific—an interaction between 077
+each model’s training distribution and the subtype’s 078
+training-corpus proximity, not a model-level trait.079
+Why a single probe is not enough.A drop under 080
+entity rename is provocative but not diagnostic. It 081
+could reflect a harder input, a tokenization artifact, 082
+or a distributional shift unrelated to retrieval. Any 083
+single probe can be explained away. Our solution 084
+1
+is convergence: independent probes that point to085
+the same per-instance signal.086
+Behavioral Triangulation.We deploy three or-087
+thogonal probes on every problem instance (Fig-088
+ure 1):089
+Probe 1 — Surface invariance. Six structure-090
+preserving variants W1–W6; the diagnostic091
+is the gap between canonical accuracy and092
+entity-rename (W3) accuracy.093
+Probe 2 — Plan–execution coupling. Phase 1:094
+the model declares a complete strategy. Phase095
+2A: it executes step-by-step in a fresh session.096
+Phase 2B: at a uniformly sampled step we inject097
+a false intermediate state and observe both098
+compliance and recovery.099
+Probe 3 — Training-data proximity. N-gram100
+overlap with The Pile and DCLM via the101
+Infini-gram index (?).102
+None of these is novel in isolation. Surface-103
+sensitivity studies (???) report aggregate accuracy104
+drops. Chain-of-thought faithfulness work (??)105
+shows stated reasoning can misrepresent the un-106
+derlying computation (?). Contamination analy-107
+ses (??) regress accuracy on n-gram statistics. Our108
+contribution is theper-instance alignmentof all109
+three: a problem on which one model fails entity re-110
+name, also fails plan-execution coupling, and also111
+sits in a high-contamination region is a converging112
+signal that no single probe delivers.113
+Why this family of three.The three probes114
+are chosen to be orthogonal under retrieval115
+and co-active under computation. A retrieval-116
+driven process is surface-sensitive (low RW3 ),117
+plan-decoupled (verbal plan as artifact), and118
+contamination-driven. A structure-sensitive pro-119
+cess is surface-invariant, plan-coupled, and120
+contamination-independent. The three probes are121
+the dimensions on which the two regimes empiri-122
+cally separate in our pilots; we do not claim they123
+exhaust all possible diagnostic axes (see Limita-124
+tions).125
+Contributions.126
+1. We document an accuracy–robustness diver-127
+gence across three reasoning families and four128
+models, with Wilson 95% CIs and Fisher’s ex-129
+act tests on every primary claim.130
+2. We propose Behavioral Triangulation as a cheap 131
+black-box diagnostic framework whose distin- 132
+guishing move is per-instance alignment of 133
+three independent probes.134
+3. We construct a within-family contamination 135
+control (WIS at zero template overlap, struc- 136
+turally identical to coin-change) that isolates 137
+training-corpus proximity from algorithmic dif- 138
+ficulty.139
+4. We report four cross-probe findings invisible 140
+to accuracy: (a) the plan–execution dissocia- 141
+tion at matched accuracy (Wilcoxon p = 0.005, 142
+judge-bias-resistant); (b) contamination pre- 143
+dicts per-instance vocabulary fragility on adver- 144
+sarial ALGO for Claude (r = 0.44, p < .001) and 145
+GPT-4o (r = 0.36, p < .01) but not for Llama 146
+or Gemini; (c) injection-compliance varies dra- 147
+matically across models (Claude 88%, GPT-4o 148
+93%, Llama 39%, Gemini 0%) yet does not cor- 149
+respond to post-injection accuracy loss; and (d) 150
+the algorithm-invocation paradox (0/13 correct, 151
+distributed across three models, on problems no 152
+harder than the baseline).153
+5. We release all code, per-instance verifier out- 154
+puts, and an audit script that re-derives every 155
+cited number; the script reports 31/31 OK at 156
+submission time (Appendix E).157
+2 Related Work158
+Surface sensitivity and reasoning robustness. 159
+?introduce GSM-Symbolic, showing arithmetic 160
+accuracy drops when template variables are per- 161
+turbed.?extend the observation across 11 tasks 162
+via counterfactual variants.?introduce RUPBench 163
+with nine textual perturbation types over 15 rea- 164
+soning datasets and report that larger models tend 165
+to be more robust on aggregate. We extend this 166
+literature in three ways: a six-step variant ladder 167
+that separates structural, vocabulary, and formal 168
+changes; per-instance coupling of surface results 169
+to execution-level and contamination-level signals; 170
+and the identification of problems where two fron-171
+tier models diverge in opposite directions on the 172
+same input, which aggregate robustness scores can- 173
+not expose.174
+Chain-of-thought faithfulness. ?demonstrate 175
+that CoT explanations can systematically misrep- 176
+resent the causes of model predictions, with stated 177
+reasoning unaffected by biasing features that drive 178
+2
+teaser.png
+Figure 1: The Behavioral Triangulation framework. Three orthogonal probes apply to every problem instance. A
+behavioral diagnosis is issued only when probe signals converge, which they do for 10 of 330 ALGO instances at
+strict thresholds—the framework is calibrated to be conservative (Section 5.6).
+the answer.?measure faithfulness via interven-179
+tions on the CoT (paraphrase, error insertion, trun-180
+cation), finding larger models often condition less181
+on their stated reasoning.?formally analyze182
+CoT and observe models make individually cor-183
+rect deductions but fail at proof planning. Our184
+cross-session commitment index (CCI) is a comple-185
+mentary operationalization: we compare a model’s186
+declaredstrategy(Phase 1) to its independent step-187
+by-stepexecution(Phase 2A) without intervening188
+on a single trace, adding a between-session devia-189
+tion measure to the intervention-based faithfulness190
+literature.191
+Training-data contamination. ?show pretrain-192
+ing term frequency predicts arithmetic accuracy.?193
+detect contamination via guided instruction com- 194
+pletion. For closed-weight models, our Infini-gram 195
+overlap is apublic-corpus proximity proxyrather 196
+than a ground-truth training-data measure (Sec- 197
+tion 3), and we validate the proxy with a within- 198
+family natural control (WIS).199
+LLM planning and execution. ?demonstrate 200
+systematic Blocksworld planning failure. We ex- 201
+tend PlanBench with a live execution probe and 202
+an injection probe: the model declares a plan, exe- 203
+cutes it in a fresh session, and is tested on whether 204
+it can recover from a single falsified intermediate 205
+state.206
+3
+3 Setup207
+Problem families.We evaluate three reasoning208
+domains spanning contamination levels and reason-209
+ing types.210
+Arithmetic (GSM): 44 canonical problems sam-211
+pled to span contamination quartiles, drawn from212
+GSM8K (?) and its symbolic perturbations (?).213
+Planning (Blocksworld, BW): 65 canonical in-214
+stances from PlanBench (?), including standard,215
+extended, and Mystery Blocksworld variants.216
+Algorithmic Optimization (ALGO): 110 canoni-217
+cal problems across three subtypes—coin-change218
+(CC, 25), adversarial shortest-path (SP, 55), and219
+weighted interval scheduling (WIS, 30). The sub-220
+types differ systematically in template contamina-221
+tion (¯cCC = 0.468, ¯cSP = 0.147, ¯cWIS = 0.000), pro-222
+viding a within-family gradient that serves as a223
+natural control (Section 5.4).224
+Surface variants.Six structure-preserving vari-225
+ants per canonical problem:W1(paraphrase),W2226
+(format change: prose → table or graph nota-227
+tion),W3(entity rename: identifiers replaced with228
+vocabulary-disjoint, length-matched tokens; struc-229
+ture preserved exactly; see Appendix A),W4(for-230
+mal notation),W5(direction reversal, where ap-231
+plicable), andW6(procedural regeneration: fresh232
+parameters, same algorithm). All variants pass233
+domain-specific verifiers (PDDL simulation for234
+BW, exact-match for GSM, DP-optimal checking235
+for ALGO) before any model is queried.236
+Models.Four full-coverage models:Claude237
+Sonnet 4( anthropic/claude-sonnet-4),GPT-238
+4o( openai/gpt-4o),Llama-3.1-8B-Instruct239
+(meta-llama/llama-3.1-8b-instruct), and240
+Gemini 2.5 Flash( google/gemini-2.5-flash),241
+all accessed via OpenRouter with identical zero-242
+shot chain-of-thought prompts. Gemini’s ALGO243
+canonical sweep on SP and WIS was affected by244
+API rate limits (73/110 canonical-row failures);245
+valid canonical n for Gemini SP-adv is 5/34 and246
+for WIS-adv is 2/17. We exclude those specific247
+cells from quantitative claims and flag them in248
+Table 5. A fifth model, o4-mini (openai/o4-mini,249
+a reasoning-trained model), is included on GSM250
+only as preliminary evidence; an API rate-limit251
+interruption left canonical n = 33/44 and made252
+BW and ALGO sweeps infeasible at submission253
+time. The blue color signals pending experiments;254
+the o4-mini canonical n = 33 caveat is repeated255
+everywhere o4-mini results appear.256
+Family P1W 1–W6 P2 §1 P2 §2A P2 §2B P3
+GSM (4 mod.) —
+ALGO (4 mod.) a
+BW (4 mod.) b c —
+Mechanistic pending — see Limitations
+Table 1: Probe coverage. P2 §1 = Phase 1 (declaration);
+P2 §2A = Phase 2A (normal execution); P2 §2B = Phase
+2B (injection). aGemini SP/WIS canonical partial (valid
+n 5/34, 2/17). bBW Phase-1 plans declared. cBW Phase-
+2A: 81% of sessions abort from illegal actions before
+CCI/TEP can be reliably computed; we report this as a
+structural finding (Section 5.5). Total inference: >4,100
+calls.
+Coverage transparency.Table 1 makes actual 257
+probe coverage visible upfront.258
+4 The Three Probes259
+Probe 1 metrics. RW3 = Acc W3 /Acccanon; 260
+RW3 = 1 means entity rename has no ef- 261
+fect; RW3 = 0 is total collapse. The V ocabu- 262
+lary Robustness Index (per-instance) is VRI =263
+mean(AccW1 ,Acc W2 ,Acc W4 )−AccW3 , compar- 264
+ing structure-preserving variants that keep the orig- 265
+inal vocabulary against the one that changes it.266
+Probe 2 metrics.Phase 1 elicits a structured 267
+strategy (which named algorithm; whether greedy 268
+works; first move; expected failure point). Phase 269
+2A (Cross-Session Commitment Index, CCI) is the 270
+fraction of Phase-2A execution steps that semanti- 271
+cally match the corresponding declared step. Phase 272
+2B (Trajectory Error Propagation, TEP) injects a 273
+false intermediate state at a uniformly sampled 274
+step and measures the fraction of subsequent steps 275
+that diverge. Phase 2B also producesinjection- 276
+compliance: the response classification at the in- 277
+jection step (compliant / partial / refusal / format- 278
+ignored). Each Phase-2 step is independently clas- 279
+sified by reasoning style (unclear, local-greedy, 280
+forward-simulation, algorithm-invocation, back- 281
+tracking).282
+On the CCI judge.The CCI semantic- 283
+equivalence check is implemented as a separate 284
+Claude API call given two anonymized step 285
+descriptions. A reviewer concern is that when 286
+measuring Claude’s CCI, the judge shares an 287
+architecture and post-training distribution with 288
+the subject. We address this in three ways. First, 289
+the judge is given the two step texts with no 290
+model attribution; it cannot exhibit identity-based 291
+4
+pipeline.png
+Figure 2: End-to-end pipeline of the Behavioral Triangulation framework. Each canonical problem instance
+generates six surface variants (W1–W6), which feed into three orthogonal probes: Surface Invariance (Probe 1),
+Plan–Execution Coupling (Probe 2), and Training-Data Proximity (Probe 3). Per-instance triangulation labels are
+issued only when all three probes converge.
+preference. Second, our primary statistical test292
+for the CCI dissociation is a paired Wilcoxon293
+signed-rank test (W = 426, p = 0.005, one-sided),294
+which is rank-based and judge-monotonic: any295
+uniform inflation by a friendly judge cannot change296
+the rank ordering of paired observations. Third,297
+GPT-4o’s median CCI is 0 in 24 of 44 sessions; a298
+judge bias would have to selectively raise Claude’s299
+matchesandselectively zero out GPT-4o’s, which300
+is structurally implausible. A planned three-judge301
+ablation (GPT-4o, Llama-3.1-70B, 50-item302
+human spot-check with κ) and an inter-classifier303
+agreement study for the step-type classifier are304
+queued for the next API window. We do not claim305
+the absolute CCI numbers are bias-free. We claim306
+the reported between-model differences and the307
+within-Claude CCI-correctness null (r = 0.14, ns)308
+survive plausible bias.309
+Probe 3 metrics.Infini-gram n-gram overlap 310
+with The Pile and DCLM, separated intotemplate 311
+contamination(domain-generic phrasing) andin- 312
+stance contamination(goal-specific text), each nor- 313
+malized to [0,1] . For closed-weight models we 314
+treat these aspublic-corpus proximity proxies, not 315
+direct training-corpus measures (see WIS valida- 316
+tion in Section 5.4).317
+The convergence move.Behavioral Triangula- 318
+tion is not the union of probes but theirper-instance 319
+alignment. Each problem yields a W3 retention 320
+number, a CCI value, an injection-compliance la- 321
+bel, and a contamination score per model. We di- 322
+agnose retrieval-like processing only when probes 323
+converge. The framework is conservative: thresh- 324
+olds are set so 62% of ALGO instances remain 325
+ambiguous (Section 5.6). Language throughout 326
+this paper is “behavior consistent with retrieval- 327
+5
+ModelAcc can AccW3 DropR W3
+Claude .818 .750 .068 .917
+[.68,.91] [.61,.85]
+GPT-4o .818 .477 .341 .583
+[.68,.91] [.34,.62]
+Llama-8B .773 .409 .364 .529
+[.63,.87] [.28,.56]
+Gemini-2.5 .909 .523 .386 .575
+[.79,.96] [.38,.66]
+o4-mini† .879 .841 .038 .957
+Table 2: GSM canonical vs. W3 retention with 95%
+Wilson CIs (n = 44 per model). †o4-mini canonical n =
+33 due to API rate-limit truncation. Two non-reasoning
+models with matched canonical accuracy (Claude and
+GPT-4o, both 0.818) differ by 33 percentage points
+absolute onR W3 .
+like processing,” never “the model retrieves.”328
+5 Results329
+5.1 Accuracy and W3 retention dissociate330
+Table 2 reports GSM arithmetic with 95% Wilson331
+intervals on key proportions. At matched 0.818332
+canonical accuracy, Claude maintains 0.750 abso-333
+lute W3 accuracy (retention 91.7%); GPT-4o main-334
+tains 0.477 (retention 58.3%). The W3 confidence335
+intervals do not overlap: Claude [0.61, 0.85] vs.336
+GPT-4o [0.34, 0.62]. Gemini reaches the highest337
+canonical accuracy (0.909) yet shows the largest338
+absolute W3 drop (0.386). Accuracy rank and ro-339
+bustness rank are not aligned. o4-mini’s prelimi-340
+nary numbers (canon 0.879, W3 0.841, retention341
+0.957) sit in a different regime; full ALGO and342
+BW coverage is pending API access and we treat343
+o4-mini as a hypothesis-generating data point.344
+Adversarial ALGO sharpens the inversion.On345
+adversarial shortest-path (SP-adv, n = 34): Claude346
+64.7% canonical (95% CI [0.48, 0.79]), 0.0% W3347
+([0.00, 0.10]); GPT-4o 41.2% canonical ([0.26,348
+0.58]), 26.5% W3 ([0.15, 0.43]). The model with349
+higher benchmark accuracy is the more fragile350
+one. On adversarial coin-change (CC-adv, n = 10):351
+Claude 60.0% W3 ([0.31, 0.83]); GPT-4o 0.0%W3352
+([0.00, 0.28]).353
+Statistical significance on the matched-canonical354
+subset.The matched-canonical Fisher’s exact355
+test is the right statistic for the dissociation claim356
+because it conditions on problems where both mod-357
+els pass canonically. On SP-adv the matched-358
+canonical subset has n = 11: Claude 0/11 W3 cor-359
+rect, GPT-4o 5/11; Fisher’s exact p = 0.035. On360
+Model Acc ‡ CCI mean CCI median TEP
+Claude .864 .231 .216 .539
+GPT-4o .705 .108 .000 .599
+Llama-8B .455 .167 .000 .773
+Gemini-2.5 .886 .270 .250 .652
+Table 3: GSM Probe 2 metrics ( n = 44 per model).
+‡Phase-2A fresh-session step-by-step accuracy, distinct
+from Probe-1 canonical accuracy (Table 2) because
+Phase 2 imposes a step-by-step decoder. Claude vs.
+GPT-4o CCI: paired t = 2.03, p = 0.048; Wilcoxon W
+= 426, p = 0.005. Claude vs. Llama TEP: paired t =
+−2.74,p= 0.009.
+CC-adv the matched-canonical subset has n = 5: 361
+Claude 4/5, GPT-4o 0/5;p= 0.048. Both dissocia-362
+tions are significant despite small samples. We do 363
+not claim power for the overall accuracy compari- 364
+son atn= 10 and report all CIs explicitly.365
+Macro view across variants.Figure 4 shows ac- 366
+curacy across canonical and the six variants for 367
+all three families. W3 is consistently the lowest- 368
+accuracy variant for SOTA non-reasoning models 369
+on GSM despite preserving problem structure ex- 370
+actly. W5 (direction reversal) and W6 (procedural 371
+regeneration) sometimes recover above theW3 line, 372
+indicating that structurally novel variants are eas- 373
+ier than vocabulary-altered ones—the reverse of 374
+what genuine structure-sensitive reasoning would 375
+predict.376
+5.2 Plan–execution coupling dissociates from377
+accuracy378
+Claude commits to its declared plan more reliably 379
+than GPT-4o: CCI 0.231 vs. 0.108, with the dif- 380
+ference significant under both paired t (p = 0.048) 381
+and rank-based Wilcoxon (p = 0.005). GPT-4o’s 382
+median CCI is exactly zero: more than half its ses- 383
+sions share no semantically matched step with the 384
+declared strategy, yet GPT-4o reaches the correct 385
+final answer on 70.5% of problems. GPT-4o fre- 386
+quently arrives at correct answers through paths 387
+unrelated to what it declared.388
+A natural interpretation would be that Claude’s 389
+higher CCI explains its higher accuracy. The per- 390
+instance correlation says otherwise: within Claude, 391
+CCI does not predict correctness ( r = 0.14, p = 392
+0.38).Claude follows its declared plans rigidly, 393
+and that rigidity is not the reason it gets an- 394
+swers right.This is the behavioral signature of a 395
+procedure-execution model: the procedure is fixed 396
+in advance and then run regardless of whether the 397
+6
+0.750 0.775 0.800 0.825 0.850 0.875 0.900 0.925 0.950
+Canonical accuracy
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0W3 retention  (AccW3/Acccanon)
+Claude
+GPT-4o
+Llama-8B Gemini-2.5
+o4-mini*
+* o4-mini canonical n = 33/44
+(a) GSM arithmetic, n = 44
+CC-adv SP-adv WIS-adv
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8Accuracy
+Claude robust
+GPT-4o  0
+ Claude  0
+GPT-4o partial
+both  0
+(b) Adversarial ALGO: subtype-specific inversion
+Claude can.
+Claude W3
+GPT-4o can.
+GPT-4o W3
+Figure 3: (a) Canonical accuracy vs. W3 retention on GSM. Models cluster horizontally by canonical accuracy
+but vertically by robustness—an order accuracy alone cannot predict. (b) Adversarial ALGO subtypes show
+subtype-specific inversion: on coin-change Claude is robust while GPT-4o collapses; on shortest-path the reverse;
+on WIS (zero template contamination) both collapse despite identical algorithmic structure to CC.
+Can W1 W2 W3 W4 W5 W6
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Accuracy
+W3
+GSM
+Can W1 W2 W3 W4 W5 W6
+W3
+ALGO
+Can W1 W2 W3 W4 W5 W6
+W3
+BW
+Claude
+GPT-4o
+Llama-8B
+Gemini
+Variant decay curves: accuracy across surface perturbations
+Figure 4: Accuracy across canonical and the six surface variants for each family. The W3 column (gray band)
+preserves problem structure exactly but is consistently the worst-or-near-worst column for SOTA non-reasoning
+models on GSM.
+specific problem fits it.398
+TEP: a trend with one exception.Point-399
+estimate TEP ranks models inversely with accuracy400
+(Llama 0.77 > GPT-4o 0.60 > Claude 0.54; Llama401
+vs. Claude paired t = −2.74, p = 0.009). With Gem-402
+ini included the relationship is no longer monotone403
+(Gemini acc 0.886, TEP 0.652). We state this as a404
+directional trend with one exception, not a law.405
+Injection-compliance and recovery (Phase 2B,406
+ALGO).At the injection step on 61 adversarial407
+ALGO problems (Figure 5c):408
+• Claude: 88.5% accept the injected false state;409
+9.8% partial or refusal; 1.6% format-ignored.410
+• GPT-4o: 93.4% accept; 6.6% format-ignored.411
+• Llama: 39.3% accept; 59.0% format-ignored.412
+• Gemini: 0.0% accept; 100% format-ignored.413
+Despite high compliance, post-injection accu- 414
+racy is barely changed from uninjected execution 415
+on the same 61 problems: Claude 52.5% (Phase 2A 416
+54.1%), GPT-4o 50.8% (Phase 2A 55.7%), Llama 417
+23.0% (Phase 2A 23.0%), Gemini 31.1% (Phase 418
+2A 32.8%).Models that accept injected false 419
+states still recover the correct final answer half 420
+the time—compliance is high, but the underlying 421
+priors are strong enough to override the injected 422
+error. Gemini’s universal format-rejection is itself 423
+a notable signature: it treats the perturbed state as 424
+malformed rather than incorporating it.425
+5.3 The algorithm-invocation paradox426
+Of 1,531 ALGO step traces (3 models on 110 prob- 427
+lems + Gemini on 61 problems), 13 were classi- 428
+fied asalgorithm-invocation: a verbal invocation 429
+of a specific named algorithm (“I will use Dijk- 430
+7
+Claude GPT-4o Llama-8B Gemini-2.5
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30Mean CCI
+med=0 med=0
+p = 0.007
+(a) Plan-Execution Coupling (GSM, n = 44)
+Median
+Claude GPT-4o Llama-8B Gemini-2.5
+0.0
+0.2
+0.4
+0.6
+0.8Mean TEP
+(b) Trajectory Error Propagation (GSM)
+Claude GPT-4o Llama-8B Gemini-2.5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Fraction of injection steps
+(c) Response to injected false state (ALGO, n = 61)
+Compliant (accepts false state)
+Partial / refusal
+Format ignored
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+GSM accuracy
+Accuracy
+Figure 5: (a) Plan–execution coupling: Claude follows declared plans more reliably than GPT-4o (paired t = 2.03, p
+= 0.048; Wilcoxon W = 426, p = 0.005). (b) Trajectory error propagation tracks accuracy roughly inversely in point
+estimates (Llama > GPT-4o > Claude) but Gemini breaks the monotone ordering. (c) Injection-compliance (ALGO
+Phase 2B): Claude 88%, GPT-4o 93%, Llama 39% accept the injected false state; Gemini 0% (format-ignored every
+time).
+Algorithm
+Invocation
+Backtracking Forward
+Simulation
+Local
+Greedy
+Unclear
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18Final-answer correctness (\%)
+n=13 n=10
+n=77
+n=390
+n=1041
+0 correct out of 13 steps
+(across 4 models)
+Algorithm-Invocation Paradox: reasoning style vs. correctness
+(ALGO step traces, n = 1,531 steps, 4 models)
+Figure 6: Across 1,531 ALGO execution steps, the 13
+explicit algorithm-invocation steps—distributed across
+three of four models (Claude 6, Llama 4, Gemini 3, GPT-
+4o 0)—all yielded incorrect final answers. Wilson 95%
+CI on 0/13 is [0, 22.8]%. The comparison to the unclear-
+reasoning baseline (13.3% correct) is not statistically
+significant by Fisher’s exact test (p= 0.40 two-sided).
+stra,” “This is a DP problem”). All 13 yielded431
+incorrect final answers. The Wilson 95% CI on432
+0/13 is [0, 22.8]%, and the Fisher’s exact two-sided433
+test against the unclear baseline (138/1041 = 13.3%434
+correct) gives p = 0.40. We therefore do not claim435
+0/13 as a statistical finding.436
+We report this observation for three reasons437
+that together justify its inclusion as a phenomenon438
+worth surfacing and replicating (see Appendix D,439
+Figure 8 for a qualitative trace illustration). First,440
+the 13 events aredistributed across three of four441
+models(Claude 6, Llama 4, Gemini 3, GPT-4o442
+0), ruling out a single-model artifact. Second, a443
+selection-effect explanation—models invoke algo-444
+rithm names only on problems they assess as hard—445
+is refuted by the data. The 12 unique problems on446
+which algorithm-invocation occurred havehigher447
+mean canonical accuracy across all four models448
+(0.292) than the full ALGO set (0.239), and the449
+difference is not significant ( t = 0.81, p = 0.42). 450
+The invocations occurred on no-harder problems. 451
+Third, the qualitative pattern is consistent: in ev- 452
+ery observed case, the model named the right algo- 453
+rithm and then executed a heuristic unrelated to that 454
+algorithm (e.g., named Dijkstra and chose edges 455
+by greedy nearest-neighbor; named DP and per- 456
+formed non-DP enumeration). A follow-up sweep 457
+designed to elicit algorithm-invocation steps delib- 458
+erately (via prompts that explicitly ask the model 459
+to name the algorithm before executing) is queued 460
+pending API access; with n≥50 the binomial test 461
+against the 13.3% baseline would have adequate 462
+power. We treat this as an observation grounded in 463
+three converging qualitative criteria, not a statistical 464
+claim.465
+5.4 Contamination predicts vocabulary466
+fragility467
+Within-family contamination gradient.The 468
+three ALGO subtypes were chosen to differ in tem- 469
+plate contamination while preserving algorithmic 470
+structure: all three are DP-solvable optimization. 471
+Table 4 shows that at zero template contamination472
+(WIS), W3 retention is zero for all four models. As 473
+template contamination rises, W3 retention rises— 474
+but only for the model whose vocabulary is attuned 475
+to that subtype’s training distribution. This is the 476
+cleanest causal-style test in the paper: structure 477
+is held constant, contamination is varied, and W3 478
+retention tracks contamination subtype-by-subtype. 479
+480
+Per-instance VRI prediction.On 61 adversar- 481
+ial ALGO problems pooled across subtypes, in- 482
+stance contamination score predicts VRI for two 483
+models: Claude r = 0.44 (p < .001), GPT-4o r = 484
+8
+Subtype¯c T Claude GPT-4o
+CanW 3 CanW 3
+CC-adv 0.468 .700 .600 .600 .000
+SP-adv 0.147 .647 .000 .412 .265
+WIS-adv 0.000 .353 .000 .353 .000
+Table 4: Within-ALGO contamination gradient (adver-
+sarial instances). WIS has zero template contamination
+¯cT by direct measurement and is structurally identical
+to CC (both DP-solvable). W3 retention collapses to
+zero at zero contamination despite identical algorithmic
+structure—a contamination-driven retrieval signature.
+0.36 ( p < .01). Llama ( r = 0.11, ns) and Gem-485
+ini ( r = 0.12, ns) show no significant relation-486
+ship. On items closer to public-corpus distribution,487
+the gap between vocabulary-preserving accuracy488
+and vocabulary-altering accuracy grows, consistent489
+with the hypothesis that gain on those items reflects490
+surface-vocabulary exposure.491
+Plan length compresses with contamination.492
+Across the three Probe-2-eligible models on BW493
+(Claude, GPT-4o, Llama), higher instance contami-494
+nation predicts shorter declared plans (Spearman495
+ρ = −0.69, −0.54, −0.63; all p < .001). This is496
+an entirely different observable from accuracy and497
+converges on the same contamination signal.498
+Validating the public-corpus proxy.For closed-499
+weight models, the actual training corpus is un-500
+known. We validate that Infini-gram public-corpus501
+overlap is informative for behavior by showing502
+the within-family pattern in Table 4: WIS-adv has503
+zero overlap in The Pile and DCLMandevery504
+model collapses on WIS W3, while CC-adv has505
+high overlapand W3 retention is positive for some506
+models. If the proxy were uncorrelated with ac-507
+tual training exposure, the WIS collapse and the508
+CC partial-retention would not co-occur with the509
+contamination gradient.510
+5.5 BW Phase 2: execution failure as a finding511
+We attempted Probe 2 on Blocksworld. The result512
+is itself substantive: 81% of BW Phase-2A ses-513
+sions abort from excessive illegal-action emissions514
+(Claude 8/50 complete, GPT-4o 0/50, Llama 1/50).515
+Mean illegal-action count before abort: Claude516
+13.3, Llama 27.3, GPT-4o 25.6.Models that517
+can declare valid plans in Phase 1 cannot ex-518
+ecute them step-by-step in a fresh session.They519
+emit moves that violate Blocksworld preconditions520
+(picking up a non-clear block, stacking onto a busy521
+block). This is plan–execution decoupling in its522
+Acccanon W3 retention CCI TEP
+Claude
+GPT-4o
+Llama-8B
+Gemini
+0.82 0.92 0.23 0.54
+0.82 0.58 0.11 0.60
+0.77 0.53 0.17 0.77
+0.91 0.57 0.27 0.65
+(a) Macro metrics by model (GSM)
+contam VRI
+(ALGO-adv)
+contam CCI
+(GSM)
+Claude
+GPT-4o
+Llama-8B
+Gemini
++0.44
+***
++0.31
+*
++0.36
+**
+-0.02
+ns
++0.11
+ns
+-0.14
+ns
++0.12
+ns
+-0.12
+ns
+(b) Contamination  behavioral signals
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0.4
+0.2
+0.0
+0.2
+0.4
+Figure 7: (a) Four macro metrics per model on GSM.
+Top-accuracy models (Claude, Gemini) differ on RW3
+by 0.34, on CCI by 0.04, and on TEP by 0.11—accuracy
+is not sufficient. (b) Contamination predicts vocabulary
+fragility for the two SOTA non-reasoning models on
+adversarial ALGO; the CCI relationship is significant
+only for Claude.
+starkest form: not declared plan vs. executed plan, 523
+but declared plan vs. the ability to followanylegal 524
+trajectory. We report this as a structural Phase-2 525
+finding rather than a CCI/TEP comparison on unre- 526
+liable remainder data.527
+5.6 Triangulation convergence528
+We align all three probes at the per-instance level. 529
+For ALGO (330 instances = 110 problems × 3 530
+models with full Probe 2 coverage):531
+• Retrieval signal: 6 instances (W3 collapse, CCI 532
+≈ 0, high contamination). All 6 are Claude on 533
+SP-adv.534
+• Computation signal: 4 instances ( W3 robust, 535
+CCI ≥ 0.67, low contamination). 3 GPT-4o on 536
+SP, 1 Claude on CC.537
+•Mixed: 115 (signals diverge across probes).538
+•Ambiguous: 205 (insufficient probe coverage).539
+For GSM (Claude only, 44 problems): 35 con- 540
+verge oncomputation; 9 arediverging.541
+Why low convergence is the right outcome.La- 542
+beling rules are intentionally strict: W3 at 0 or 543
+1; CCI ≤0.1 or ≥0.67 ; contamination at floor 544
+or above the 75th percentile. The framework is 545
+calibrated for high label precision at the cost of 546
+low label recall. An ambiguous label means the 547
+per-instance evidence does not yet support a be- 548
+havioral diagnosis; it doesnotmean no processing 549
+difference exists. The framework’s primary value 550
+is not in producing many per-instance labels but 551
+in the aggregate statistics it enables (§5.1–5.5) be- 552
+ing supported by an underlying per-instance audit 553
+trail. The 10 ALGO high-precision labels are the 554
+cases where reviewers can independently verify the 555
+diagnosis against released raw traces.556
+9
+6 Discussion557
+Accuracy is not sufficient for capability claims.558
+A model with higher benchmark accuracy can be559
+the model with lower structure-preserving robust-560
+ness, and the inversion direction depends on the561
+subtype. Reporting canonical accuracy alone mea-562
+sures retrieval fidelity, not generalization.563
+Two empirically separable processing regimes.564
+Claude and GPT-4o reach identical GSM canon-565
+ical accuracy by different routes. Claude exe-566
+cutes rigidly (CCI 0.231, CCI–correctness r = 0.14567
+within-subject): following the plan does not predict568
+correctness. GPT-4o reaches correct answers with569
+median CCI 0. The injection-compliance asymme-570
+try adds a layer: Claude and GPT-4o both accept571
+injected false states in >88% of cases but recover572
+the final answer ∼50% of the time; Gemini ignores573
+the injection entirely. These are distinct behavioral574
+signatures invisible to a single accuracy column.575
+Algorithm-invocation as surface behavior.576
+That 13 of 13 algorithm-invocation steps yielded577
+incorrect final answers, distributed across three578
+of four models, on problems no harder than the579
+rest of the ALGO set, suggests that algorithm-580
+naming in step-by-step traces is a learned surface581
+behavior associated with optimization-problem582
+contexts. The Wilson upper bound (22.8%)583
+and the non-significant Fisher comparison ( p =584
+0.40) mean we cannot elevate this to a strong585
+statistical claim from the current observational586
+sample, but the qualitative pattern is consistent587
+across models. The methodological implication588
+is that chain-of-thought traces saying “I will use589
+algorithm X” should not be treated as evidence the590
+model is executing X. This complements?and?591
+on CoT unfaithfulness: they show stated reasoning592
+can misrepresent causal factors; we observe that593
+verbal algorithm-naming specifically does not594
+correspond to executing the named algorithm.595
+WIS as a natural contamination control.596
+Weighted interval scheduling provides a cleaner597
+test than any constructed OOD dataset. Zero tem-598
+plate contamination by direct measurement, struc-599
+turally identical to coin-change (both DP-solvable).600
+Every model collapses on WIS W3 while CC re-601
+tains positive W3 for some models—consistent602
+with contamination-driven retrieval and ruling out603
+an explanation in which W3 is hard for purely al-604
+gorithmic reasons.605
+Practical guidance.For an evaluator with a lim- 606
+ited budget, in priority order: (1) report canoni- 607
+cal accuracy alongside W3 retention as a standard 608
+pair—this exposes the inversion at the cost of one 609
+additional sweep; (2) for benchmarks with subtype 610
+variation, add the within-family contamination gra- 611
+dient when one exists, or commission one (WIS- 612
+style constructions); (3) report Phase-2 CCI on a 613
+subset—partial CCI coverage on n = 30 problems 614
+is informative; (4) commit to a small Phase 2B 615
+injection-compliance probe on adversarial subsets. 616
+Each subsequent probe adds independent diagnos- 617
+tic value.618
+Reasoning-trained models as a follow-up direc- 619
+tion.The o4-mini GSM W3 retention of 0.957 620
+(vs. Claude 0.917, GPT-4o 0.583), if it gener- 621
+alizes to ALGO and BW, would suggest that 622
+process-reinforcement training meaningfully re- 623
+duces vocabulary-surface dependence on these 624
+problem types. We treat this as a concrete hypoth- 625
+esis for follow-up rather than a finding, and will 626
+report complete coverage when API access permits. 627
+Limitations.Contamination scores are public- 628
+corpus proximity proxies, not ground-truth training- 629
+corpus measures. The CCI judge is a Claude 630
+API call (Section 4); we defend the dissocia- 631
+tion result with judge-bias-resistant rank tests 632
+and zero-median observations on GPT-4o, but a 633
+planned three-judge ablation (GPT-4o, Llama-3.1- 634
+70B, 50-item human spot-check) is queued. The 635
+algorithm-invocation paradox ( n = 13) is obser- 636
+vational, not statistical; we report it transparently 637
+with Wilson CI and Fisher comparison. Llama- 638
+3.1-8B is near floor on ALGO and BW; Llama 639
+claims are scoped to GSM throughout. Gem- 640
+ini’s ALGO canonical sweep on SP and WIS is 641
+partial (5/34 and 2/17 valid rows) and those spe- 642
+cific cells are excluded from quantitative claims. 643
+o4-mini is preliminary, GSM-only, n = 33 on 644
+canonical; full coverage on ALGO and BW pend- 645
+ing. A mechanistic-interpretability follow-up 646
+(residual-stream and attention-head analyses on a 647
+documented-corpus open-weight model such as 648
+Pythia or OLMo, to validate the contamination- 649
+driven retrieval mechanism) is planned and would 650
+address an explanatory layer the current behav- 651
+ioral framework does not provide. The within- 652
+family WIS control is internally validated; whether 653
+the contamination hypothesis generalizes beyond 654
+DP optimization is an open question. We do not 655
+claim the three probes exhaust all possible diagnos- 656
+10
+tic axes; new probes (test-time-compute scaling,657
+few-shot transfer, mechanistic interpretability) may658
+yield additional dissociation signals.659
+Future evaluation directions.Behavioral Trian-660
+gulation generalizes to tool-using agents (declared661
+tool plan vs. executed calls), retrieval-augmented662
+systems (cited passage vs. supporting passage), and663
+multi-agent setups (declared coordination vs. re-664
+alized coordination). In each case the structural665
+pattern is the same: a verbal claim, an observable666
+behavior, and a training-data proximity signal, all667
+three applied per-instance.668
+7 Conclusion669
+A model with higher benchmark accuracy is670
+not necessarily a model with stronger reasoning.671
+Across 219 problems, six surface variants, four672
+models, and >4,100 inference calls, three orthogo-673
+nal probes converge to expose what accuracy hides.674
+Two models with identical canonical GSM accu-675
+racy differ by 2.1× in plan–execution coupling.676
+Thirteen algorithm-invocation steps across three677
+of four models produce zero correct answers, on678
+problems no harder than the rest of our ALGO679
+set. A zero-contamination algorithmic subtype680
+collapses to zero W3 accuracy while its high-681
+contamination structural twin retains positive ro-682
+bustness. A reasoning-trained model retains 95.7%683
+accuracy under entity rename on arithmetic, vs.684
+58.3% for the strongest non-reasoning model. The685
+right next step for evaluation is to report accuracy686
+alongside structure-preserving perturbation results687
+as a standard pair, with confidence intervals and688
+within-family contamination controls where the689
+problem structure permits.690
+References691
+11
+A Variant Generation Protocol692
+W1 (paraphrase).Problem statement rewritten693
+preserving all numeric values, entities, and struc-694
+tural relationships.695
+W2 (format change).Word-problem prose to696
+a structured table or equation; SP to an edge list;697
+WIS to an interval table; BW to a structured block698
+list.699
+W3 (entity rename).All entity identifiers re-700
+placed with novel tokens drawn from a held-out701
+vocabulary. The held-out vocabulary is constructed702
+from low-frequency English plus pronounceable703
+nonce tokens, chosen to be tokenization-equivalent704
+to the original identifiers (single-token substitutions705
+for single-token originals where possible). We do706
+not claim perfect tokenization parity across all re-707
+name pairs; the W3 effect is robust to this because708
+(a) Claude and GPT-4o use different tokenizers and709
+show opposite W3 effects on the same SP and CC710
+subtypes, and (b) on WIS the W3 collapse is uni-711
+versal regardless of tokenizer, indicating the effect712
+is not driven by tokenization.713
+W4 (formal notation).Problem restated sym-714
+bolically: LaTeX equations for GSM, formal predi-715
+cates for BW, edge-list notation for SP.716
+W5 (direction reversal).For BW, goal and ini-717
+tial state swapped. For GSM, forward problems718
+inverted to backward form (“how much was origi-719
+nally?” from “how much remains?”). Not applica-720
+ble to ALGO.721
+W6 (procedural regeneration).Fresh problem722
+with the same algorithmic structure and parameter723
+ranges but different values.724
+Every variant passes the same domain verifier as725
+the canonical item before any model is queried.726
+B Metric Definitions727
+W3 retention. RW3 = Acc W3 /Acccanon; unde-728
+fined where canonical accuracy is 0.729
+Vocabulary Robustness Index. VRI =730
+[AccW1 + AccW2 + AccW4 ]/3−Acc W3 .731
+Cross-Session Commitment Index.Given732
+Phase-1 plan steps p1, . . . , pk and Phase-2A execu-733
+tion steps e1, . . . , em: CCI = (1/k) Pk
+i=1 1[ei ≈734
+pi], where ≈ is paraphrase-tolerant semantic735
+equivalence (Appendix F). Sessions with k= 0736
+are zero-imputed for between-model paired737
+comparisons.738
+Trajectory Error Propagation.A false state is 739
+injected at a uniformly sampled step. TEP is the 740
+fraction of subsequent steps whose semantic con- 741
+tent differs between injected and uninjected runs.742
+Injection-compliance.At the injection step, the 743
+model’s response is classified ascompliant(ac- 744
+cepts injected state),partial(acknowledges but 745
+does not fully accept),refusal(challenges the state), 746
+orformat-ignored(treats the input as malformed).747
+Contamination scores.Infini-gram (?) n-gram 748
+overlap with The Pile and DCLM, normalized to 749
+[0,1].750
+Significance testing.Reported CIs are Wilson 751
+95% intervals for proportions. Inversion tests 752
+are Fisher’s exact on matched-canonical subsets. 753
+Paired-t tests are on the 44 paired GSM prob- 754
+lems with zero imputation for missing sessions. 755
+The judge-bias-resistant primary CCI test is paired 756
+Wilcoxon signed-rank. Correlations use Pearson 757
+or Spearman as indicated; bootstrap p-values use 758
+10,000 resamples.759
+C Full Per-Variant Accuracy Table760
+D Probe 2 Protocol761
+ALGO Phase 1.The model receives the com- 762
+plete problem and four structured questions: which 763
+named algorithm will you use; will greedy work; 764
+what is your first move; at which step is greedy 765
+most likely to fail.766
+ALGO Phase 2A (normal execution).Fresh 767
+API context, no Phase-1 memory. The model re- 768
+ceives the problem statement and at each step its 769
+prior decision and the updated state. A step budget 770
+of 30 caps the trajectory.771
+ALGO Phase 2B (injection).Same as 2A ex- 772
+cept at a uniformly sampled step (excluding the 773
+first and last) the true state is replaced with a con- 774
+structed false state. Differences from the true state 775
+are bounded: one frontier-cost modification for SP, 776
+one interval boundary change for WIS, one coin 777
+denomination addition for CC. We compare 2B tra- 778
+jectories to 2A trajectories on the same problem to 779
+compute TEP and post-injection correctness.780
+Reasoning-type classification.Each Phase-2 781
+step is independently classified by a prompted 782
+Claude API call into one of five categories (unclear 783
+12
+Family Model CanW 1 W2 W3 W4 W5 W6 RW3 n
+GSM
+Claude .818 .841 .682.750.682 .864 .792 .917 44
+GPT-4o .818 .818 .591.477.477 .545 .792 .583 44
+Llama-8B .773 .727 .455.409.318 .250 .625 .529 44
+Gemini-2.5 .909 .818 .636.523.477 .614 .958 .575 44
+o4-mini† .879 .864 .818.841.682 .886 .833 .957 33/44
+CC-adv
+Claude .700 .800 .700.600.700 — .500 .857 10
+GPT-4o .600 .400 .600.000.500 — .450 .000 10
+Llama-8B .200 .100 .400.000.200 — .150 .000 10
+Gemini-2.5 .500 .700 .600.700.700 — — 1.40 10
+SP-adv
+Claude .647 .647 .588.000.618 — .550 .000 34
+GPT-4o .412 .441 .412.265.412 — .412 .643 34
+Llama-8B .059 .059 .059.000.029 — .032 .000 34
+Gemini-2.5‡ — .441 .235.324.559 — .129 — 5
+WIS-adv
+Claude .353 .294 .294.000.235 — .222 .000 17
+GPT-4o .353 .294 .235.000.235 — .200 .000 17
+Llama-8B .059 .059 .059.059.059 — .056 1.00 17
+Gemini-2.5‡ — .176 .000.000.000 — .000 — 2
+BW-std
+Claude .125 .075 .375.050.025 .650 .675 .400 40
+GPT-4o .133 .133 .067.233.067 .200 .400 1.75 40
+Llama-8B .033 .000 .000.233.000 .000 .216 7.00 40
+Gemini-2.5 .475 .200 .150.125.050 .825 .675 .263 40
+Table 5: Per-variant accuracy. †o4-mini canonical n = 33; other o4-mini variants n = 44. ‡Gemini SP/WIS canonical
+n is 5/34 and 2/17 valid rows respectively due to API rate-limit interruption on those specific sweeps; we report the
+W3 column because the W3 sweep itself is clean but do not compute RW3 with an unreliable canonical denominator.
+RW3 above 1 reflectsW 3 numerically exceeding a low canonical baseline and is not interpreted as “robustness.”
+/ local-greedy / forward-simulation / algorithm-784
+invocation / backtracking). Inter-classifier agree-785
+ment validation using GPT-4o as secondary judge786
+on a 100-step sample is queued for the next API787
+window.788
+GSM Probe 2.Phase 1 elicits an explicit numer-789
+ical plan with intermediate values. Phase 2A exe-790
+cutes step-by-step. Phase 2B injects a falsified in-791
+termediate value. Steps are matched on numerical792
+equivalence (paraphrase-tolerant for explanatory793
+text).794
+BW Probe 2.Phase 1 declares a full PDDL plan.795
+Phase 2A executes step-by-step within a domain796
+simulator. 81% of Phase-2A sessions abort from797
+illegal action emissions (Section 5.5); we report798
+this as a structural finding rather than computing799
+CCI/TEP on the unreliable remainder.800
+E Number Audit and Reproducibility801
+Every number in this paper is re-802
+generated by a single audit script803
+(scripts/audit/final_audit.py) that reads804
+raw per-instance verifier output CSVs. The script805
+verifies 31 core paper-cited numbers against raw806
+files and reports 31/31 OK at submission time,807
+covering: GSM and ALGO-adversarial accuracies808
+and W3 retentions for all four models; ALGO step- 809
+trace count and algorithm-invocation count; Probe 810
+2 CCI, TEP, paired-t, and paired-Wilcoxon values; 811
+Probe 3 contamination correlations; Phase 2B 812
+injection-compliance fractions and post-injection 813
+correctness. Reviewers can reproduce all table 814
+values from raw CSVs to within ±0.002 tolerance. 815
+Released artifacts.We release: (i) raw per- 816
+instance verifier output CSVs for 4 models ×817
+219 problems × 6 variants; (ii) Phase-1 decla- 818
+ration, Phase-2A normal, and Phase-2B injec- 819
+tion step-trace CSVs; (iii) Probe 3 contamina- 820
+tion index CSVs; (iv) the audit script and figure- 821
+generation scripts; (v) variant-generation templates; 822
+(vi) prompts for every API call (Phase 1, Phase 2, 823
+injection, step classification, CCI equivalence judg- 824
+ment).825
+F Prompts826
+Phase 1 declaration (ALGO).827
+You are given the following problem: 828
+{problem_text}. Before solving, answer 829
+four questions: (1) Which named algorithm will 830
+you use, and why is it appropriate? (2) Would 831
+a greedy approach work for this problem? Why 832
+or why not? (3) What is your first move from 833
+the initial state? (4) At which step is the greedy 834
+approach most likely to fail? Respond with a 835
+13
+structured JSON object with keys algorithm,836
+greedy_works,first_move,critical_step.837
+Phase 2 execution (ALGO).838
+You are solving {problem_text}. The cur-839
+rent state is {state}. Your prior decisions:840
+{trajectory}. What is your next decision? Pro-841
+vide a brief justification.842
+Reasoning-type classification.843
+Classify a single execution step’s reasoning844
+text into one of: unclear (no specific reason-845
+ing shown), local_greedy (selects the option846
+with lowest immediate cost without lookahead),847
+forward_simulation (explicitly considers future848
+states), algorithm_invocation (names and applies849
+a specific algorithm such as Dijkstra or dynamic850
+programming), backtracking (revises a prior deci-851
+sion). When in doubt, output unclear.852
+CCI equivalence.853
+Two step descriptions follow. Are they semanti-854
+cally equivalent (do they describe the same opera-855
+tion on the same state)? Respond with exactly one856
+of: yes, no. Step A: {step_a}. Step B: {step_b}.857
+G Triangulation Convergence Detail858
+ALGO triangulation labels (330 instances, 3 mod-859
+els × 110 problems with full Probe 2 coverage): re-860
+trieval_signal = 6; computation_signal = 4; mixed861
+=115; ambiguous=205.862
+GSM triangulation labels (Claude only, 44 prob-863
+lems): converging_computation = 35; diverging =864
+9.865
+BW triangulation labels (Claude only,866
+124 instances including variants): converg-867
+ing_computation = 4; diverging = 41; execu-868
+tion_unavailable=25; insufficient=54.869
+The 10 ALGO high-confidence labels (6 retrieval870
++ 4 computation) are the cases where W3, CCI,871
+and contamination jointly satisfy strict thresholds872
+(W3 either 0 or 1; CCI either ≤0.1 or ≥0.67 ;873
+contamination at floor or above the 75th percentile).874
+Each label is independently verifiable against raw875
+per-instance traces in the released archive.876
+14
+paradox.png
+Figure 8: Qualitative illustration of the algorithm-invocation paradox (Section 5.3). (A) An algorithm-invocation
+step: the model names Dijkstra’s algorithm but executes a greedy nearest-neighbor heuristic. (B) An unclear-
+reasoning step with no named algorithm that reaches the correct answer. The dot arrays summarize the 0/13
+algorithm-invocation outcome vs. the 13.3% unclear-reasoning baseline. All 13 invocation steps shown in (A) are
+drawn from three of four models (Claude 6, Llama 4, Gemini 3); GPT-4o produced zero algorithm-invocation steps
+across the full ALGO sweep.
+15

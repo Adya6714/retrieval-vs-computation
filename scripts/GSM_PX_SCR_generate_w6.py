@@ -12,7 +12,7 @@ from pathlib import Path
 TEMPLATE_RE = re.compile(r"template_id=(\d+)")
 ANSWER_RE = re.compile(r"####\s*([^\n\r]+)")
 
-BANK_PATH = Path("data/problems/gsm_question_bank.csv")
+BANK_PATH = Path("data/problems/question_bank_gsm.csv")
 FALLBACK_BANK_PATH = Path("data/problems/question_bank_gsm.csv")
 GENERATED_JSONL_PATHS = [
     Path("~/Desktop/ml-gsm-symbolic/generated_data/GSM_symbolic.jsonl").expanduser(),

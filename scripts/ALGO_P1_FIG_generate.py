@@ -31,12 +31,12 @@ GOLD = "#F59E0B"
 RED = "#EF4444"
 
 MODEL_ORDER = [
-    "anthropic/claude-3.7-sonnet",
+    "anthropic/claude-sonnet-4",
     "openai/gpt-4o",
     "meta-llama/llama-3.1-8b-instruct",
 ]
 MODEL_LABEL = {
-    "anthropic/claude-3.7-sonnet": "Claude 3.7",
+    "anthropic/claude-sonnet-4": "Claude 3.7",
     "openai/gpt-4o": "GPT-4o",
     "meta-llama/llama-3.1-8b-instruct": "Llama 3.1 8B",
 }
@@ -54,14 +54,15 @@ def _save(fig: plt.Figure, stem: str) -> None:
 
 def _load_behavioral() -> pd.DataFrame:
     paths = [
-        RESULTS_DIR / "ALGO_P1_RES_behavioral_sweep_claude.csv",
-        RESULTS_DIR / "ALGO_P1_RES_behavioral_sweep_gpt4o.csv",
-        RESULTS_DIR / "ALGO_P1_RES_behavioral_sweep_llama.csv",
+        Path("results/raw/ALGO_P1_behavioral_claude.csv"),
+        Path("results/raw/ALGO_P1_behavioral_gpt4o.csv"),
+        Path("results/raw/ALGO_P1_behavioral_llama.csv"),
     ]
     for p in paths:
         if not p.exists():
             raise FileNotFoundError(p)
     df = pd.concat([pd.read_csv(p, dtype=str).fillna("") for p in paths], ignore_index=True)
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     required = {"problem_id", "variant_type", "model", "verified", "correct_canonical", "gave_greedy_answer"}
     missing = required - set(df.columns)
     if missing:
@@ -71,7 +72,9 @@ def _load_behavioral() -> pd.DataFrame:
 
 
 def _load_bank_meta() -> pd.DataFrame:
-    bank = pd.read_csv(RESULTS_DIR.parent / "data/problems/question_bank_algo.csv", dtype=str).fillna("")
+    fixed_path = RESULTS_DIR.parent / "data/problems/question_bank_algo_fixed.csv"
+    bank_path = fixed_path if fixed_path.exists() else (RESULTS_DIR.parent / "data/problems/question_bank_algo.csv")
+    bank = pd.read_csv(bank_path, dtype=str).fillna("")
     bank = bank[bank["variant_type"].str.strip().str.lower() == "canonical"].copy()
     bank["problem_subtype"] = bank["problem_subtype"].str.strip().str.lower()
 
@@ -87,10 +90,12 @@ def _load_bank_meta() -> pd.DataFrame:
 
 
 def _load_metrics() -> pd.DataFrame:
-    path = RESULTS_DIR / "ALGO_P1_RES_metrics.csv"
+    path = Path("results/derived/ALGO_P1_metrics.csv")
     if not path.exists():
         raise FileNotFoundError(path)
     m = pd.read_csv(path, dtype=str).fillna("")
+    if "model" in m.columns:
+        m = m[m["model"].astype(str).str.lower() != "mock"].copy()
     m["metric_value_num"] = pd.to_numeric(m["metric_value"], errors="coerce")
     m["ci_lower_num"] = pd.to_numeric(m["ci_lower"], errors="coerce")
     m["ci_upper_num"] = pd.to_numeric(m["ci_upper"], errors="coerce")
@@ -98,7 +103,7 @@ def _load_metrics() -> pd.DataFrame:
 
 
 def _load_contam() -> pd.DataFrame:
-    path = RESULTS_DIR / "ALGO_P3_RES_contamination.csv"
+    path = Path("results/raw/ALGO_P3_contamination.csv")
     if not path.exists():
         raise FileNotFoundError(path)
     c = pd.read_csv(path, dtype=str).fillna("")
@@ -122,6 +127,8 @@ def plot_var_heatmap(beh: pd.DataFrame, bank: pd.DataFrame) -> None:
     cmap = mcolors.LinearSegmentedColormap.from_list("white_blue_algo", ["#FFFFFF", P1_ACCENT])
 
     fig, axes = plt.subplots(2, 3, figsize=(16, 7), sharey=True)
+    ci_lo = np.full((2, 3, len(MODEL_ORDER), len(VARIANTS)), np.nan)
+    ci_hi = np.full((2, 3, len(MODEL_ORDER), len(VARIANTS)), np.nan)
     for r, inst in enumerate(["standard", "adversarial"]):
         for c, subtype in enumerate(SUBTYPE_ORDER):
             ax = axes[r, c]
@@ -132,11 +139,21 @@ def plot_var_heatmap(beh: pd.DataFrame, bank: pd.DataFrame) -> None:
                     vals = sub[(sub["model"] == model) & (sub["variant_type"] == variant)]["verified_bool"].dropna().astype(float).tolist()
                     if vals:
                         mat[i, j] = float(np.mean(vals))
+                        lo, hi = bootstrap_ci(vals, n_resamples=10000)
+                        ci_lo[r, c, i, j] = float(lo)
+                        ci_hi[r, c, i, j] = float(hi)
             im = ax.imshow(mat, aspect="auto", vmin=0, vmax=1, cmap=cmap)
             for i in range(len(MODEL_ORDER)):
                 for j in range(len(VARIANTS)):
                     if not np.isnan(mat[i, j]):
-                        ax.text(j, i, f"{mat[i, j]:.2f}", ha="center", va="center", fontsize=8)
+                        ax.text(
+                            j,
+                            i,
+                            f"{mat[i, j]:.2f}\n[{ci_lo[r,c,i,j]:.2f},{ci_hi[r,c,i,j]:.2f}]",
+                            ha="center",
+                            va="center",
+                            fontsize=6,
+                        )
             ax.set_xticks(range(len(VARIANTS)))
             ax.set_xticklabels(VARIANTS, rotation=45, ha="right")
             ax.set_yticks(range(len(MODEL_ORDER)))
@@ -269,20 +286,22 @@ def plot_contamination_scatter(beh: pd.DataFrame, bank: pd.DataFrame, contam: pd
 
 
 def plot_cross_family(beh: pd.DataFrame, bank: pd.DataFrame) -> None:
-    # Algo GSS-like score per model.
+    # Algo GSS per model and subtype.
     algo = beh[beh["variant_type"] == "canonical"].merge(bank, on="problem_id", how="left", validate="many_to_one")
     algo_rows = []
     for model in MODEL_ORDER:
-        sub = algo[algo["model"] == model]
-        good = sub[sub["greedy_succeeds_expected"].astype(str).str.lower() == "true"]["verified_bool"].dropna().astype(float)
-        bad = sub[sub["greedy_succeeds_expected"].astype(str).str.lower() == "false"]["verified_bool"].dropna().astype(float)
-        val = float(good.mean() - bad.mean()) if len(good) and len(bad) else np.nan
-        algo_rows.append((model, val))
-    algo_df = pd.DataFrame(algo_rows, columns=["model", "algo_gss"])
+        for subtype in SUBTYPE_ORDER:
+            sub = algo[(algo["model"] == model) & (algo["problem_subtype"] == subtype)]
+            good = sub[sub["greedy_succeeds_expected"].astype(str).str.lower() == "true"]["verified_bool"].dropna().astype(float)
+            bad = sub[sub["greedy_succeeds_expected"].astype(str).str.lower() == "false"]["verified_bool"].dropna().astype(float)
+            val = float(good.mean() - bad.mean()) if len(good) and len(bad) else np.nan
+            algo_rows.append((model, subtype, val))
+    algo_df = pd.DataFrame(algo_rows, columns=["model", "subtype", "algo_gss"])
 
     # BW PDAS proxy from BW behavioral: W5 - canonical accuracy.
-    bw_path = RESULTS_DIR / "BW_P1_RES_behavioral_sweep.csv"
+    bw_path = Path("results/raw/BW_P1_behavioral.csv")
     bw = pd.read_csv(bw_path, dtype=str).fillna("")
+    bw = bw[bw["model"].astype(str).str.lower() != "mock"].copy()
     bw["behavioral_correct_bool"] = bw["behavioral_correct"].astype(str).str.strip().str.lower().map({"true": 1.0, "false": 0.0})
     bw_rows = []
     for model in MODEL_ORDER:
@@ -299,11 +318,12 @@ def plot_cross_family(beh: pd.DataFrame, bank: pd.DataFrame) -> None:
     fig, ax = plt.subplots(figsize=(10, 5))
     for i, model in enumerate(MODEL_ORDER):
         g = merged[merged["model"] == model]
+        gs = algo_df[algo_df["model"] == model].set_index("subtype")
         vals = [
             float(g["bw_pdas"].iloc[0]) if len(g) else np.nan,
-            float(g["algo_gss"].iloc[0]) if len(g) else np.nan,
-            float(g["algo_gss"].iloc[0]) if len(g) else np.nan,
-            float(g["algo_gss"].iloc[0]) if len(g) else np.nan,
+            float(gs.loc["coin_change", "algo_gss"]) if "coin_change" in gs.index else np.nan,
+            float(gs.loc["shortest_path", "algo_gss"]) if "shortest_path" in gs.index else np.nan,
+            float(gs.loc["wis", "algo_gss"]) if "wis" in gs.index else np.nan,
         ]
         bars = ax.bar(
             x + (i - 1) * width,

@@ -21,8 +21,8 @@ from probes.behavioral.gsm_metrics import cci_by_contamination
 from probes.common.stats import bootstrap_ci
 
 
-INPUT_PATH = Path("results/GSM_P2_RES_cci.csv")
-OUTPUT_PATH = Path("results/GSM_P2_RES_metrics_summary.csv")
+INPUT_PATH = Path("results/raw/GSM_P2_cci.csv")
+OUTPUT_PATH = Path("results/derived/GSM_P2_metrics.csv")
 
 
 def _bootstrap_bounds(values: list[float]) -> tuple[float, float]:
@@ -58,6 +58,7 @@ def main() -> None:
         raise FileNotFoundError(f"Input not found: {INPUT_PATH}")
 
     df = pd.read_csv(INPUT_PATH, dtype=str)
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     if df.empty:
         raise ValueError(f"No rows found in {INPUT_PATH}")
 

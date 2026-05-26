@@ -1,0 +1,8 @@
+problem_family,variant_type,n,median_final_rank,mean_final_rank
+algorithmic,W6,90,156.5,8776.233333333334
+algorithmic,canonical,100,22472.5,13571.61
+arithmetic_reasoning,W6,24,3201.0,16442.333333333332
+arithmetic_reasoning,canonical,44,2985.5,23275.159090909092
+coin change,canonical,10,15302.5,16352.1
+planning_suite,W6,65,49.0,1610.9846153846154
+planning_suite,canonical,65,419.0,3473.8

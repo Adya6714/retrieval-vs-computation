@@ -1,0 +1,334 @@
+BASE=/Users/adya/Desktop/rvc/uploadrd
+======================================================================
+LAYER 1: UNIVARIATE ANOMALIES
+======================================================================
+
+AGENT_1_P1_Behavioral_Patterns/ALGO_P1_metrics.csv:
+  ci_lower: high_cv=1.71 | n=66 mean=0.106
+
+AGENT_1_P1_Behavioral_Patterns/BW_P1_metrics.csv:
+  ci_lower: high_cv=1.64 | n=88 mean=0.153
+
+AGENT_1_P1_Behavioral_Patterns/P1_metrics_by_model_family.csv:
+  W6_Gap: high_cv=9.02 | n=9 mean=0.021
+
+AGENT_1_P1_Behavioral_Patterns/P1_metrics_by_model_subtype.csv:
+  W6_Gap: high_cv=3.03 | n=18 mean=0.063
+
+AGENT_1_P1_Behavioral_Patterns/P1_per_problem_var.csv:
+  acc_W2: high_cv=1.68 | n=617 mean=0.263
+  acc_W3: high_cv=1.94 | n=617 mean=0.211
+  acc_W5: high_cv=1.68 | n=437 mean=0.263
+  acc_W6: high_cv=1.74 | n=537 mean=0.250
+
+AGENT_2_P2_ALGO_Execution/ALGO_P2_metrics.csv:
+  ci_lower: skewed=2.76 | n=17 mean=0.192
+
+AGENT_2_P2_ALGO_Execution/ALGO_P2_phase2_injected.csv:
+  critical_step_index: high_cv=2.62, skewed=2.87 | n=543 mean=0.265
+
+AGENT_3_P2_GSM_Execution/GSM_P2_cci.csv:
+  injected_value: high_cv=4.20, skewed=7.56 | n=74 mean=78.856
+  correct_answer: high_cv=5.02, skewed=7.78 | n=84 mean=2558.699
+
+AGENT_3_P2_GSM_Execution/GSM_P2_phase1_claude.csv:
+  phase1_final_answer: high_cv=5.25, skewed=6.26 | n=41 mean=3876.537
+  injected_value: high_cv=3.65, skewed=5.76 | n=42 mean=119.223
+  true_value_at_injection: high_cv=3.65, skewed=5.76 | n=42 mean=103.672
+  correct_answer: high_cv=4.64, skewed=6.14 | n=44 mean=3699.562
+
+AGENT_3_P2_GSM_Execution/GSM_P2_phase1_gpt4o.csv:
+  phase1_final_answer: high_cv=3.58, skewed=5.42 | n=33 mean=787.394
+  cci_score: high_cv=1.64 | n=44 mean=0.108
+  cci_matched: high_cv=1.70 | n=44 mean=0.636
+  inject_at_step: skewed=2.61 | n=44 mean=1.955
+  injected_value: high_cv=2.49, skewed=3.81 | n=27 mean=416.404
+  true_value_at_injection: high_cv=2.49, skewed=3.81 | n=27 mean=362.091
+  tep_diverged_steps: skewed=2.57 | n=44 mean=1.386
+  correct_answer: high_cv=4.64, skewed=6.14 | n=44 mean=3699.562
+
+AGENT_3_P2_GSM_Execution/GSM_P2_phase1_llama.csv:
+  phase1_final_answer: high_cv=2.40, skewed=4.76 | n=32 mean=397.709
+  cci_total: high_cv=4.98, skewed=6.60 | n=44 mean=16.295
+  inject_at_step: high_cv=4.92, skewed=6.61 | n=44 mean=8.250
+  injected_value: high_cv=3.24, skewed=5.17 | n=31 mean=152.755
+  true_value_at_injection: high_cv=3.24, skewed=5.17 | n=31 mean=132.831
+  correct_answer: high_cv=4.64, skewed=6.14 | n=44 mean=3699.562
+
+AGENT_4_P2_BW/BW_P2_cci.csv:
+  cci: high_cv=2.28, skewed=3.48 | n=29 mean=0.045
+  matched_steps: high_cv=3.80, skewed=4.75 | n=90 mean=0.189
+  total_steps_compared: high_cv=1.73, skewed=2.20 | n=90 mean=5.044
+  generated_plan_length: skewed=5.55, wide_range=6.2 | n=90 mean=16.400
+  skip_count: skewed=-2.43 | n=70 mean=5.300
+  repetition_rate: high_cv=2.02 | n=90 mean=0.182
+  first_illegal_step: high_cv=1.53 | n=90 mean=0.511
+  partial_goal_achievement: high_cv=2.18, skewed=2.31 | n=90 mean=0.056
+  goals_met: high_cv=1.88 | n=90 mean=0.222
+  violation_hand_not_empty: high_cv=5.89, skewed=7.59 | n=90 mean=0.411
+  violation_other: high_cv=3.45, skewed=4.36, wide_range=5.7 | n=90 mean=2.456
+
+AGENT_4_P2_BW/BW_P2_plans.csv:
+  plan_length: skewed=6.43 | n=150 mean=15.013
+
+AGENT_4_P2_BW/BW_P2_tep.csv:
+  plan_length: skewed=6.33, wide_range=7.3 | n=536 mean=16.252
+  inject_at_step: skewed=7.12 | n=536 mean=6.474
+  skip_count: skewed=-2.16 | n=247 mean=5.194
+  adapted_count: high_cv=7.09, skewed=7.87, wide_range=5.1 | n=365 mean=0.027
+  ambiguous_count: high_cv=3.37, skewed=3.37 | n=365 mean=3.159
+
+AGENT_5_P3_Contamination/ALGO_P3_contamination.csv:
+  max_ngram_count: high_cv=4.74, skewed=5.82, wide_range=6.3 | n=116 mean=818.784
+  template_contamination_score: high_cv=1.85, skewed=2.07 | n=116 mean=0.179
+  instance_contamination_score: high_cv=1.67 | n=116 mean=0.145
+  difficulty_numeric: high_cv=1.67, skewed=5.38 | n=116 mean=5.819
+
+AGENT_5_P3_Contamination/BW_P3_contamination.csv:
+  max_ngram_length: skewed=2.53, wide_range=5.0 | n=65 mean=6.369
+  max_ngram_count: high_cv=2.17, skewed=4.21 | n=65 mean=1058.523
+
+AGENT_5_P3_Contamination/GSM_P3_contamination.csv:
+  correct_answer: high_cv=4.64, skewed=6.14 | n=44 mean=3699.562
+  max_ngram_count: high_cv=2.16, skewed=4.09 | n=44 mean=1017.750
+
+AGENT_5_P3_Contamination/cross_family_regression.csv:
+  beta: high_cv=1.92 | n=6 mean=-1.011
+  ci_upper: high_cv=1.53 | n=6 mean=0.837
+  r2: skewed=2.14 | n=6 mean=0.059
+
+AGENT_6_Triangulation_Convergence/ALGO_P3_triangulation.csv:
+  VAR_canonical: high_cv=1.60 | n=330 mean=0.282
+  VAR_W3: high_cv=3.11, skewed=2.80 | n=330 mean=0.094
+  VRI_gap: high_cv=2.39 | n=330 mean=0.188
+  critical_step_index: high_cv=1.81 | n=330 mean=-0.373
+  instance_contamination_score: high_cv=1.61 | n=330 mean=0.153
+  template_contamination_score: high_cv=1.83, skewed=2.07 | n=330 mean=0.180
+  difficulty_numeric: high_cv=1.81, skewed=6.03, wide_range=5.1 | n=330 mean=5.218
+  match_first: high_cv=3.13, skewed=2.83 | n=183 mean=0.093
+  critical_point_identified_num: high_cv=1.82 | n=330 mean=0.233
+
+AGENT_6_Triangulation_Convergence/BW_P3_triangulation_claude.csv:
+  crystallization_layer: high_cv=12.91, skewed=5.92 | n=35 mean=-0.314
+  cci: high_cv=2.22 | n=11 mean=0.018
+
+AGENT_6_Triangulation_Convergence/GSM_P3_triangulation_per_instance_claude.csv:
+  n_signals: skewed=2.19 | n=44 mean=2.136
+
+AGENT_6_Triangulation_Convergence/TABLE1_cross_family.csv:
+  n: skewed=2.60 | n=9 mean=82.778
+
+AGENT_7_Overall_Scientific_Synthesis/ALGO_P2_metrics.csv:
+  ci_lower: skewed=2.76 | n=17 mean=0.192
+
+AGENT_7_Overall_Scientific_Synthesis/P1_metrics_by_model_family.csv:
+  W6_Gap: high_cv=9.02 | n=9 mean=0.021
+
+AGENT_7_Overall_Scientific_Synthesis/TABLE1_cross_family.csv:
+  n: skewed=2.60 | n=9 mean=82.778
+
+AGENT_7_Overall_Scientific_Synthesis/cross_family_regression.csv:
+  beta: high_cv=1.92 | n=6 mean=-1.011
+  ci_upper: high_cv=1.53 | n=6 mean=0.837
+  r2: skewed=2.14 | n=6 mean=0.059
+
+======================================================================
+LAYER 2: BIVARIATE CORRELATIONS
+======================================================================
+
+ALGO triangulation — |r|>0.3, p<0.05:
+  ACI × cci_composite: r=1.000 p=0.0000 rho=1.000 n=183
+  VAR_canonical × VRI_gap: r=0.789 p=0.0000 rho=0.803 n=330
+  CCI × TEP: r=-0.761 p=0.0000 rho=-0.933 n=300
+  template_contamination_score × difficulty_numeric: r=0.469 p=0.0000 rho=-0.002 n=330
+  VAR_canonical × VAR_W3: r=0.329 p=0.0000 rho=0.329 n=330
+  VAR_W3 × VRI_gap: r=-0.320 p=0.0000 rho=-0.295 n=330
+  greedy_assessment_correct_bool × critical_point_identified_num: r=0.305 p=0.0000 rho=0.305 n=280
+
+BW triangulation (claude) — |r|>0.3, p<0.05:
+  var_canonical × css: r=0.802 p=0.0000 rho=0.796 n=109
+  css × n_signals: r=-0.752 p=0.0000 rho=-0.769 n=109
+  var_canonical × n_signals: r=-0.637 p=0.0000 rho=-0.657 n=109
+  var_w5 × css: r=0.341 p=0.0003 rho=0.352 n=109
+  var_w5 × n_signals: r=-0.326 p=0.0005 rho=-0.341 n=109
+
+GSM triangulation (claude) — |r|>0.3, p<0.05:
+  var_canonical × css: r=0.583 p=0.0000 rho=0.469 n=44
+  css × n_signals: r=-0.497 p=0.0006 rho=-0.363 n=44
+  var_canonical × n_signals: r=-0.370 p=0.0133 rho=-0.370 n=44
+
+P1 per-problem VAR — |r|>0.3, p<0.05:
+  acc_canonical × acc_W1: r=0.625 p=0.0000 rho=0.625 n=617
+  acc_W2 × acc_W4: r=0.440 p=0.0000 rho=0.440 n=617
+  acc_canonical × acc_W2: r=0.432 p=0.0000 rho=0.432 n=617
+  acc_W1 × acc_W4: r=0.416 p=0.0000 rho=0.416 n=617
+  acc_W5 × acc_W6: r=0.406 p=0.0000 rho=0.406 n=377
+  VAR × acc_W1: r=0.406 p=0.0000 rho=0.406 n=621
+  acc_W2 × acc_W6: r=0.360 p=0.0000 rho=0.360 n=497
+  acc_W1 × acc_W2: r=0.360 p=0.0000 rho=0.360 n=617
+  acc_canonical × acc_W3: r=0.358 p=0.0000 rho=0.358 n=617
+  acc_W1 × acc_W3: r=0.356 p=0.0000 rho=0.356 n=617
+  acc_canonical × acc_W4: r=0.346 p=0.0000 rho=0.346 n=617
+  VAR × acc_W4: r=0.345 p=0.0000 rho=0.345 n=617
+  acc_canonical × acc_W6: r=0.337 p=0.0000 rho=0.337 n=497
+  VAR × acc_W6: r=0.337 p=0.0000 rho=0.337 n=537
+  acc_W3 × acc_W5: r=0.319 p=0.0000 rho=0.319 n=437
+  acc_W1 × acc_W6: r=0.316 p=0.0000 rho=0.316 n=501
+
+======================================================================
+LAYER 3: CONDITIONAL PATTERNS
+======================================================================
+
+GSM: contamination ~ CCI by model:
+  gpt-4o: r=0.147 p=0.5372 n=20
+  llama-3.1-8b-instruct: r=0.023 p=0.9240 n=20
+  claude-sonnet-4: r=0.331 p=0.0282 n=44
+
+GSM: contamination ~ session_b_correct by model:
+  gpt-4o: r=0.541 p=0.0138
+  llama-3.1-8b-instruct: r=0.361 p=0.1180
+  claude-sonnet-4: r=-0.114 p=0.4631
+
+ALGO: ACI ~ execution accuracy: rho=0.535 p=0.0000 n=183
+ALGO: cci_composite ~ execution accuracy: rho=0.535 p=0.0000
+
+======================================================================
+LAYER 4: SUBGROUP HETEROGENEITY
+======================================================================
+
+BW CCI by difficulty (valid sessions):
+                mean  count
+difficulty                 
+easy        0.115733      6
+hard        0.029545     11
+medium      0.023608     12
+
+BW violation profile by model:
+                                  violation_hand_not_empty  violation_block_not_clear  violation_block_not_on_table  violation_wrong_stack_source  violation_target_not_clear  violation_format_error  violation_other
+model                                                                                                                                                                                                                 
+anthropic/claude-sonnet-4                            1.167                        0.0                           0.0                           0.0                         0.0                  10.900            1.267
+meta-llama/llama-3.1-8b-instruct                     0.067                        0.0                           0.0                           0.0                         0.0                  21.100            6.100
+openai/gpt-4o                                        0.000                        0.0                           0.0                           0.0                         0.0                  25.633            0.000
+
+ALGO: ACI by instance_type:
+                                                    mean  count
+model                            instance_type                 
+anthropic/claude-sonnet-4        adversarial    0.349727     61
+                                 standard            NaN      0
+meta-llama/llama-3.1-8b-instruct adversarial    0.273224     61
+                                 standard            NaN      0
+openai/gpt-4o                    adversarial    0.284153     61
+                                 standard            NaN      0
+
+GSM Claude: inject_at_step ~ cci_score: rho=0.197 p=0.1991
+  Early injection CCI=0.242 vs Late=0.217
+
+======================================================================
+LAYER 5: UNEXPECTED PATTERNS
+======================================================================
+
+ALGO canonical=1, W3=0 (retrieval sig): 70
+model                             problem_subtype
+anthropic/claude-sonnet-4         coin_change         5
+                                  shortest_path      22
+                                  wis                 7
+meta-llama/llama-3.1-8b-instruct  coin_change         2
+                                  shortest_path       3
+                                  wis                 1
+openai/gpt-4o                     coin_change         9
+                                  shortest_path      13
+                                  wis                 8
+
+ALGO canonical=1, W3=1 (computation sig): 23
+model                      problem_subtype
+anthropic/claude-sonnet-4  coin_change         6
+openai/gpt-4o              coin_change         1
+                           shortest_path      16
+
+ALGO PARADOX canonical=0, W3=1: 8
+model                             problem_subtype
+anthropic/claude-sonnet-4         coin_change        3
+                                  shortest_path      1
+meta-llama/llama-3.1-8b-instruct  wis                2
+openai/gpt-4o                     shortest_path      2
+    problem_id                             model problem_subtype  VAR_canonical  VAR_W3
+9        CC_10         anthropic/claude-sonnet-4     coin_change            0.0     1.0
+11      SP_002         anthropic/claude-sonnet-4   shortest_path            0.0     1.0
+21      CC_032         anthropic/claude-sonnet-4     coin_change            0.0     1.0
+28      CC_039         anthropic/claude-sonnet-4     coin_change            0.0     1.0
+151     SP_027                     openai/gpt-4o   shortest_path            0.0     1.0
+194     SP_073                     openai/gpt-4o   shortest_path            0.0     1.0
+236    WIS_002  meta-llama/llama-3.1-8b-instruct             wis            0.0     1.0
+314    WIS_017  meta-llama/llama-3.1-8b-instruct             wis            0.0     1.0
+
+Algorithm invocation + correct: 0 cases
+
+GSM Claude CCI=0 but correct: 11 cases
+
+BW anomalously long plans: 2
+
+======================================================================
+LAYER 6: CROSS-FILE JOINS
+======================================================================
+
+BW: contamination ~ plan_length: rho=-0.375 p=0.0000
+
+ALGO: contamination_score ~ ACI: rho=-0.060 p=0.4091 n=192
+
+ALGO: template_contamination_score ~ ACI: rho=-0.142 p=0.0493 n=192
+
+ALGO: instance_contamination_score ~ ACI: rho=-0.212 p=0.0032 n=192
+
+Cross-family regression (all rows):
+family  model   n      beta  ci_lower  ci_upper       r2  p_value_ols  p_value_bootstrap                                                     high_leverage_instances                            note
+    BW Claude  65 -2.537528 -4.927437 -0.221525 0.017134     0.298656             0.0366                                                      BW_120;BW_E015;BW_E019                             NaN
+    BW GPT-4o  65 -3.213589 -9.536649  1.747092 0.021891     0.239519             0.2180                                                             MBW_185;MBW_498                             NaN
+    BW  Llama  65 -2.014590 -4.633586 -0.273650 0.062923     0.043855             0.0124                                         BW_172;BW_227;BW_467;BW_509;MBW_498                             NaN
+   GSM Claude  44       NaN       NaN       NaN      NaN          NaN                NaN                                                                         NaN degenerate: CSS variance < 1e-6
+   GSM GPT-4o  20       NaN       NaN       NaN      NaN          NaN                NaN                                                                         NaN degenerate: CSS variance < 1e-6
+   GSM  Llama  20       NaN       NaN       NaN      NaN          NaN                NaN                                                                         NaN degenerate: CSS variance < 1e-6
+  ALGO Claude 110  1.960472  1.022723  2.976865 0.196643     0.000001             0.0000                             CC_01;CC_02;CC_03;CC_04;CC_05;CC_06;CC_07;CC_08                             NaN
+  ALGO GPT-4o 110 -0.469734 -1.227871  0.358792 0.018965     0.151378             0.2504 CC_01;CC_08;WIS_006;WIS_007;WIS_016;WIS_017;WIS_019;WIS_024;WIS_025;WIS_027                             NaN
+  ALGO  Llama 110  0.207911  0.033435  0.432484 0.036750     0.044828             0.0024                            CC_035;CC_042;SP_029;SP_035;SP_049;SP_054;SP_058                             NaN
+
+======================================================================
+LAYER 7: EXTENDED SCANS (all agents)
+======================================================================
+
+ALGO convergence_label distribution:
+convergence_label                 ambiguous  computation_signal  mixed  retrieval_signal
+model                                                                                   
+anthropic/claude-sonnet-4                54                   1     49                 6
+meta-llama/llama-3.1-8b-instruct         65                   0     45                 0
+openai/gpt-4o                            86                   3     21                 0
+
+ALGO diagnosis (BW-style) — subtype × instance_type mean VAR:
+                               VAR_canonical  VAR_W3  VRI_gap    ACI
+problem_subtype instance_type                                       
+coin_change     adversarial            0.500   0.200    0.300  0.289
+                standard               0.178   0.089    0.089    NaN
+shortest_path   adversarial            0.373   0.088    0.284  0.284
+                standard               0.254   0.159    0.095    NaN
+wis             adversarial            0.255   0.020    0.235  0.346
+                standard               0.077   0.026    0.051    NaN
+
+BW TEP valid rows: 2/536
+
+P1 family rollup — largest cross-family gaps (acc_W3 - acc_canonical):
+                           model family  acc_canonical   acc_W3    w3_gap
+meta-llama/llama-3.1-8b-instruct    GSM       0.772727 0.409091 -0.363636
+                   openai/gpt-4o    GSM       0.818182 0.477273 -0.340909
+       anthropic/claude-sonnet-4   ALGO       0.363636 0.090909 -0.272727
+                   openai/gpt-4o   ALGO       0.427273 0.172727 -0.254545
+       anthropic/claude-sonnet-4    GSM       0.818182 0.750000 -0.068182
+meta-llama/llama-3.1-8b-instruct   ALGO       0.054545 0.018182 -0.036364
+       anthropic/claude-sonnet-4     BW       0.153846 0.138462 -0.015385
+meta-llama/llama-3.1-8b-instruct     BW       0.022222 0.155556  0.133333
+                   openai/gpt-4o     BW       0.088889 0.244444  0.155556
+
+GSM triangulation claude — diagnosis counts:
+diagnosis
+converging_computation    35
+diverging                  9
+
+=== ANALYSIS COMPLETE ===

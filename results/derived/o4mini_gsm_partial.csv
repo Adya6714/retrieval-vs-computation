@@ -1,0 +1,8 @@
+variant_type,n,acc,family,model
+W1,44,0.8636363636363636,GSM,openai/o4-mini
+W2,44,0.8181818181818182,GSM,openai/o4-mini
+W3,44,0.8409090909090909,GSM,openai/o4-mini
+W4,44,0.6818181818181818,GSM,openai/o4-mini
+W5,44,0.8863636363636364,GSM,openai/o4-mini
+W6,24,0.8333333333333334,GSM,openai/o4-mini
+canonical,33,0.8787878787878788,GSM,openai/o4-mini

@@ -32,6 +32,7 @@ def classify_row(raw: str, ok: bool):
 
 def main():
     df = load_behavioral()
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     cats = [
         "valid_correct_goal",
         "valid_wrong_goal",

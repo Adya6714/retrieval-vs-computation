@@ -1,18 +1,26 @@
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from analysis.figures._common import (
+_FIG = Path(__file__).resolve().parent
+if str(_FIG) not in sys.path:
+    sys.path.insert(0, str(_FIG))
+
+from _common import (
     MODEL_LABELS,
     MODEL_ORDER,
     P1_ACCENT_BLUE,
     P1_LIGHT_BLUE,
     P1_PRIMARY_BLUE,
     bootstrap_ci_bool,
+    bw_standard_blocksworld_mask,
     load_behavioral,
     output_dir,
     to_bool_series,
@@ -34,6 +42,8 @@ def metric_with_ci(df, model: str, variant: str):
 
 def main():
     df = load_behavioral()
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
+    df = df[bw_standard_blocksworld_mask(df["problem_id"])].copy()
     x = np.arange(len(MODEL_ORDER))
     width = 0.24
     variants = ["canonical", "W5", "W6"]
@@ -76,7 +86,20 @@ def main():
     ax.set_title("Figure 2 — Planning Direction Asymmetry (PDAS)")
     ax.legend(fontsize=9)
     ax.spines[["top", "right"]].set_visible(False)
-    fig.tight_layout()
+    fig.suptitle(
+        "Standard BW instances only (BW_* numeric IDs; excludes BW_E* extended and MBW mystery).",
+        fontsize=9,
+        y=0.98,
+    )
+    fig.tight_layout(rect=[0, 0.04, 1, 0.92])
+    fig.text(
+        0.5,
+        0.01,
+        "Note: MBW W1 variants carry N=3 in some probes (bank limitation; defer full W1 parity). "
+        "BW_E extended instances are excluded from PDAS here by design.",
+        ha="center",
+        fontsize=7,
+    )
     out = output_dir()
     fig.savefig(out / "BW_FIG_P1_pdas_bars.png", dpi=300, bbox_inches="tight")
     fig.savefig(out / "BW_FIG_P1_pdas_bars.pdf", dpi=300, bbox_inches="tight")

@@ -4,13 +4,13 @@ import json
 import sys
 import pandas as pd
 
-SWEEP_PATH = "results/BW_P1_RES_behavioral_sweep.csv"
-BANK_PATH  = "data/problems/question_bank.csv"
-OUT_PATH   = "results/BW_P2_RES_phase1_plans.csv"
-PDDL_ROOT  = "/Users/adya/Desktop/LLMs-Planning"
+SWEEP_PATH = "results/raw/BW_P1_behavioral.csv"
+BANK_PATH  = "data/problems/question_bank_bw.csv"
+OUT_PATH   = "results/raw/BW_P2_plans.csv"
+PDDL_ROOT  = os.environ.get("PDDL_ROOT", "data/sources/planbench")
 
 PROBE2_MODELS = {
-    "anthropic/claude-3.7-sonnet",
+    "anthropic/claude-sonnet-4",
     "openai/gpt-4o",
     "meta-llama/llama-3.1-8b-instruct",
     "meta-llama/llama-3-8b-instruct",
@@ -44,7 +44,7 @@ def parse_plan(raw_text):
 
 
 def main():
-    sweep_path = SWEEP_PATH if os.path.exists(SWEEP_PATH) else "results/BW_P1_RES_behavioral_sweep.csv"
+    sweep_path = SWEEP_PATH if os.path.exists(SWEEP_PATH) else "results/raw/BW_P1_behavioral.csv"
     sweep = pd.read_csv(sweep_path)
     bank  = pd.read_csv(BANK_PATH)
 
@@ -54,18 +54,22 @@ def main():
     ][["problem_id", "source", "difficulty", "contamination_pole"]].copy()
 
     bw_bank["pddl_path"] = bw_bank["source"].apply(extract_pddl_path)
+    bw_bank["pddl_path"] = bw_bank["pddl_path"].apply(
+        lambda p: p if (isinstance(p, str) and p.strip() and os.path.exists(p)) else ""
+    )
 
-    missing = bw_bank[~bw_bank["pddl_path"].apply(
-        lambda p: os.path.exists(p) if isinstance(p, str) and p.strip() else False
-    )]
+    missing = bw_bank[bw_bank["pddl_path"] == ""]
     if len(missing):
-        print("WARNING — PDDL files not found:")
-        print(missing[["problem_id", "pddl_path"]].to_string())
+        print("WARNING — PDDL files not found (plans still extracted):")
+        print(missing[["problem_id", "source"]].to_string())
 
     sweep_bw = sweep[
         (sweep["variant_type"] == "canonical") &
         (sweep["model"].isin(PROBE2_MODELS))
     ]
+    sweep_bw = sweep_bw.drop(
+        columns=[c for c in ("difficulty", "contamination_pole") if c in sweep_bw.columns]
+    )
 
     merged = sweep_bw.merge(bw_bank, on="problem_id", how="inner")
     print(f"Matched rows: {len(merged)}  "
@@ -79,9 +83,9 @@ def main():
         rows.append({
             "problem_id":         row["problem_id"],
             "model":              row["model"],
-            "pddl_path":          row["pddl_path"],
-            "difficulty":         row["difficulty"],
-            "contamination_pole": row["contamination_pole"],
+            "pddl_path":          str(row.get("pddl_path") or ""),
+            "difficulty":         row.get("difficulty", ""),
+            "contamination_pole": row.get("contamination_pole", ""),
             "raw_plan":           str(raw),
             "parsed_plan_json":   json.dumps(parsed),
             "plan_length":        len(parsed),

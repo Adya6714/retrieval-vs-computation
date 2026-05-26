@@ -1,0 +1,5 @@
+model,n_problems,canonical,W3,canon_minus_W3,scope
+claude,44,0.818,0.75,0.068,full GSM bank (n=44)
+gpt4o,44,0.818,0.477,0.341,full GSM bank (n=44)
+llama,44,0.773,0.409,0.364,full GSM bank (n=44)
+o4mini,44,0.879,0.841,0.038,"partial o4-mini (canonical n=33, W3 n=44)"

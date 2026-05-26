@@ -30,6 +30,12 @@ MODEL_LABELS = {
 VARIANT_ORDER = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
 
 
+def bw_standard_blocksworld_mask(problem_id: pd.Series) -> pd.Series:
+    """Standard BW instances only (exclude BW_E* extended and MBW* mystery)."""
+    s = problem_id.astype(str)
+    return s.str.match(r"^BW_\d+$", case=False)
+
+
 def load_csv_candidate(paths: Iterable[str]) -> pd.DataFrame:
     for p in paths:
         path = Path(p)
@@ -41,8 +47,8 @@ def load_csv_candidate(paths: Iterable[str]) -> pd.DataFrame:
 def load_behavioral() -> pd.DataFrame:
     df = load_csv_candidate(
         [
-            "results/BW_P1_RES_behavioral_sweep.csv",
-            "results/BW_RES_P1_behavioral_sweep.csv",
+            "results/raw/BW_P1_behavioral.csv",
+            "results/raw/BW_P1_behavioral.csv",
             "results/behavioral_sweep.csv",
             "data/BW_RES_P1_behavioral_sweep.csv",
             "data/behavioral_sweep.csv",
@@ -57,7 +63,7 @@ def load_behavioral() -> pd.DataFrame:
 
 
 def load_qb() -> pd.DataFrame:
-    return pd.read_csv("data/problems/question_bank.csv", dtype=str)
+    return pd.read_csv("data/problems/question_bank_bw.csv", dtype=str)
 
 
 def output_dir() -> Path:

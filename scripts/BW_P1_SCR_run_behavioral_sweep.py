@@ -36,9 +36,63 @@ OUTPUT_COLUMNS = [
 ]
 
 
+def _resolve_verifier_family(
+    *,
+    pid: str,
+    problem_family: str,
+    problem_subtype: str,
+) -> str:
+    """Resolve verifier routing family from bank metadata.
+
+    The verifier expects concrete family names (e.g. blocksworld), while
+    question banks can use umbrella labels such as planning_suite.
+    """
+    fam = str(problem_family or "").strip().lower()
+    sub = str(problem_subtype or "").strip().lower()
+    allowed = {
+        "blocksworld",
+        "mystery_blocksworld",
+        "logistics",
+        "arithmetic_reasoning",
+        "shortest_path",
+        "weighted_interval_scheduling",
+        "coin_change",
+        "knapsack",
+        "gsm",
+    }
+    if sub in allowed:
+        return sub
+    if fam in allowed:
+        return fam
+
+    # Handle umbrella planning label used by some banks.
+    if fam == "planning_suite":
+        pid_up = str(pid or "").strip().upper()
+        if pid_up.startswith("MBW_"):
+            return "mystery_blocksworld"
+        if pid_up.startswith("BW_"):
+            return "blocksworld"
+        if pid_up.startswith("LOG_"):
+            return "logistics"
+        return "blocksworld"
+    return fam
+
+
 def _load_paths() -> dict:
     with open("configs/paths.yaml", "r") as f:
         return yaml.safe_load(f)
+
+
+def _write_columns(output_path: Path) -> list[str]:
+    """Use existing CSV header order when appending; else script default."""
+    if output_path.exists() and output_path.stat().st_size > 0:
+        return pd.read_csv(output_path, nrows=0).columns.tolist()
+    return list(OUTPUT_COLUMNS)
+
+
+def _row_for_csv(row_data: dict, write_columns: list[str]) -> dict:
+    """Reorder row fields to match write_columns; fill missing with empty string."""
+    return {col: row_data.get(col, "") for col in write_columns}
 
 
 def _existing_pairs(output_path: Path) -> set[tuple[str, str, str]]:
@@ -88,15 +142,15 @@ def main() -> None:
     parser.add_argument(
         "--model",
         type=str,
-        default="anthropic/claude-3.7-sonnet",
-        help="OpenRouter model id (default: anthropic/claude-3.7-sonnet)",
+        default="anthropic/claude-sonnet-4",
+        help="OpenRouter model id (default: anthropic/claude-sonnet-4)",
     )
     parser.add_argument("--probe", type=str, choices=["probe1", "probe2"],
                         default="probe1")
     parser.add_argument(
         "--question-bank-path",
         type=str,
-        default="data/problems/question_bank.csv",
+        default="data/problems/question_bank_bw.csv",
         help="Path to unified question bank CSV (used for probe1)",
     )
     parser.add_argument(
@@ -128,15 +182,10 @@ def main() -> None:
         instances_path = Path(args.question_bank_path)
     else:
         instances_path = problems_dir / f"{args.probe}_instances.csv"
-    output_path = (
-        Path(args.output)
-        if args.output is not None
-        else results_dir / "BW_RES_P1_behavioral_sweep.csv"
-    )
-    # Backward-compat: if legacy file exists and new file does not, continue using legacy.
-    legacy_output_path = results_dir / "behavioral_sweep.csv"
-    if legacy_output_path.exists() and not output_path.exists():
-        output_path = legacy_output_path
+    from probes.common.results_paths import BW_P1_BEHAVIORAL, ensure_dirs
+
+    ensure_dirs()
+    output_path = Path(args.output) if args.output is not None else BW_P1_BEHAVIORAL
 
     # 2. Load question bank rows (canonical + W2–W6 variants, etc.)
     if not instances_path.exists():
@@ -184,6 +233,7 @@ def main() -> None:
             {
                 "problem_id": str(inst["problem_id"]).strip(),
                 "problem_family": str(inst.get("problem_family", "")).strip().lower(),
+                "problem_subtype": str(inst.get("problem_subtype", "")).strip().lower(),
                 "problem_text": str(inst.get("problem_text", "")),
                 "correct_answer": correct_answer,
                 "variant_type": str(inst.get("variant_type", "")).strip(),
@@ -220,13 +270,14 @@ def main() -> None:
         done_pairs = _existing_pairs(output_path)
 
     write_header = not output_path.exists() or output_path.stat().st_size == 0
+    write_columns = _write_columns(output_path) if not write_header else list(OUTPUT_COLUMNS)
 
     n_processed = 0
     n_skipped = 0
     n_errors = 0
 
     with output_path.open("a", newline="", encoding="utf-8") as outfile:
-        writer = csv.DictWriter(outfile, fieldnames=OUTPUT_COLUMNS)
+        writer = csv.DictWriter(outfile, fieldnames=write_columns, extrasaction="ignore")
         if write_header:
             writer.writeheader()
             outfile.flush()
@@ -235,6 +286,10 @@ def main() -> None:
             pid = row["problem_id"]
             vtype = row["variant_type"]
             family = row["problem_family"]
+            subtype = row.get("problem_subtype", "")
+            verifier_family = _resolve_verifier_family(
+                pid=pid, problem_family=family, problem_subtype=subtype
+            )
             problem_text = row["problem_text"]
             correct_answer = row["correct_answer"]
 
@@ -250,28 +305,33 @@ def main() -> None:
 
                 # 7b. Verify answer
                 try:
-                    is_correct = verify_answer(pid, raw_response, correct_answer, family)
+                    is_correct = verify_answer(
+                        pid,
+                        raw_response,
+                        correct_answer,
+                        verifier_family,
+                        problem_text=problem_text,
+                    )
                 except ValueError:
                     # Unrecognized family — log and treat as unscored
-                    print(f"WARNING: unrecognized family '{family}' for {pid}. "
+                    print(f"WARNING: unrecognized family '{verifier_family}' for {pid}. "
                           "behavioral_correct set to empty.")
                     is_correct = ""
 
-                # 7c. Write row
-                writer.writerow(
-                    {
-                        "problem_id": pid,
-                        "problem_family": family,
-                        "variant_type": vtype,
-                        "model": model_name,
-                        "raw_response": raw_response,
-                        "behavioral_correct": is_correct,
-                        "correct_answer": correct_answer,
-                        "problem_family": family,
-                        "contamination_pole": row.get("contamination_pole", ""),
-                        "difficulty": row.get("difficulty", ""),
-                    }
-                )
+                # 7c. Write row (column order matches existing file header when appending)
+                row_data = {
+                    "problem_id": pid,
+                    "problem_family": family,
+                    "variant_type": vtype,
+                    "model": model_name,
+                    "raw_response": raw_response,
+                    "behavioral_correct": is_correct,
+                    "notes": "",
+                    "correct_answer": correct_answer,
+                    "contamination_pole": row.get("contamination_pole", ""),
+                    "difficulty": row.get("difficulty", ""),
+                }
+                writer.writerow(_row_for_csv(row_data, write_columns))
                 outfile.flush()  # 7d
 
                 done_pairs.add((pid, vtype, model_name))

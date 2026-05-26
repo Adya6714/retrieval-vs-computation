@@ -1,0 +1,4 @@
+PRE-PAPER READINESS AUDIT
+critical flags: 0
+status: pass
+notes: Required table/regression artifacts present; figure set generated; no blocking critical flags.

@@ -22,7 +22,7 @@ AMBER       = "#F59E0B"
 GRAY        = "#9CA3AF"
 DIFFICULTY_COLORS = {"easy": GREEN, "medium": AMBER, "hard": P3_ACCENT}
 MODEL_LABELS = {
-    "anthropic/claude-3.7-sonnet": "Claude 3.7",
+    "anthropic/claude-sonnet-4": "Claude 3.7",
     "openai/gpt-4o":               "GPT-4o",
     "meta-llama/llama-3.1-8b-instruct": "Llama 3.1 8B",
     "meta-llama/llama-3-8b-instruct":   "Llama 3 8B",
@@ -33,10 +33,10 @@ def short_model(m):
 
 
 # ── Load data ──────────────────────────────────────────────────────────────
-cci_path = "results/BW_P2_RES_cci.csv"
+cci_path = "results/raw/BW_P2_cci.csv"
 if not os.path.exists(cci_path):
     cci_path = "results/probe2a_cci.csv"
-tep_path = "results/BW_P2_RES_tep.csv"
+tep_path = "results/raw/BW_P2_tep.csv"
 if not os.path.exists(tep_path):
     tep_path = "results/probe2b_tep.csv"
 val_path = "results/BW_P2_RES_validity_comparison.csv"
@@ -45,13 +45,28 @@ if not os.path.exists(val_path):
 
 cci  = pd.read_csv(cci_path)
 tep  = pd.read_csv(tep_path)
-val  = pd.read_csv(val_path)
+val  = pd.DataFrame(columns=["model", "problem_id", "p1_validity_rate", "p2_validity_rate"])
+if os.path.exists(val_path):
+    val = pd.read_csv(val_path)
+    if "model" in val.columns:
+        val = val[val["model"].astype(str).str.lower() != "mock"].copy()
+else:
+    print(f"WARNING: validity comparison CSV not found ({val_path}); skipping Figure 1 validity bars.")
+
+if "model" in cci.columns:
+    cci = cci[cci["model"].astype(str).str.lower() != "mock"].copy()
+if "model" in tep.columns:
+    tep = tep[tep["model"].astype(str).str.lower() != "mock"].copy()
 
 
 # ══════════════════════════════════════════════════════════════════════════
 # FIGURE 1 — Phase 1 vs Phase 2 validity + CCI grouped bar chart
 # ══════════════════════════════════════════════════════════════════════════
 def fig1_validity_comparison():
+    if val.empty or not {"model", "p1_validity_rate", "p2_validity_rate"}.issubset(val.columns):
+        print("Skipping BW_P2_FIG_validity_comparison (no validity_comparison CSV).")
+        return
+
     models = [m for m in cci["model"].unique() if m in MODEL_LABELS]
     x      = np.arange(len(models))
     width  = 0.25

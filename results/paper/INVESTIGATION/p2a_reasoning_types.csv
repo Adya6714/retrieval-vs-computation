@@ -1,0 +1,6 @@
+reasoning_type,n_steps,pct_correct_final,n_problems
+unclear,1041,0.13256484149855907,110
+local_greedy,390,0.038461538461538464,84
+forward_simulation,77,0.012987012987012988,50
+algorithm_invocation,13,0.0,12
+backtracking,10,0.0,10

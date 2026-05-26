@@ -28,6 +28,31 @@ def _to_bool(x: Any) -> bool | None:
     return None
 
 
+def _load_phase1(paths: list[str]) -> pd.DataFrame:
+    parts = []
+    for p in paths:
+        path = Path(p)
+        if not path.exists():
+            raise FileNotFoundError(f"Phase1 results file not found: {path}")
+        parts.append(pd.read_csv(path, dtype=str).fillna(""))
+    phase1 = pd.concat(parts, ignore_index=True)
+    phase1 = phase1[phase1["model"].astype(str).str.strip().str.lower() != "mock"].copy()
+    _require_columns(
+        phase1,
+        {
+            "problem_id",
+            "model",
+            "greedy_assessment_correct",
+            "critical_point_identified",
+        },
+        "phase1",
+    )
+    phase1 = phase1[
+        ["problem_id", "model", "greedy_assessment_correct", "critical_point_identified"]
+    ].drop_duplicates(subset=["problem_id", "model"], keep="last")
+    return phase1
+
+
 def load_data(args: argparse.Namespace) -> dict[str, pd.DataFrame]:
     behavioral_parts = []
     for p in args.behavioral_results:
@@ -50,12 +75,33 @@ def load_data(args: argparse.Namespace) -> dict[str, pd.DataFrame]:
             raise FileNotFoundError(f"BW metrics baseline file not found: {bw_path}")
         bw_metrics = pd.read_csv(bw_path, dtype=str).fillna("")
 
+    phase1 = pd.DataFrame()
+    if getattr(args, "phase1_results", None):
+        phase1 = _load_phase1(args.phase1_results)
+
+    per_instance_cci = pd.DataFrame()
+    if getattr(args, "per_instance_cci", None):
+        cci_path = Path(args.per_instance_cci)
+        if not cci_path.exists():
+            raise FileNotFoundError(f"Per-instance CCI file not found: {cci_path}")
+        per_instance_cci = pd.read_csv(cci_path, dtype=str).fillna("")
+        _require_columns(
+            per_instance_cci,
+            {"problem_id", "model", "cci_alg", "cci_crit", "cci_composite"},
+            "per_instance_cci",
+        )
+        for col in ["cci_alg", "cci_crit", "cci_composite"]:
+            per_instance_cci[col] = pd.to_numeric(per_instance_cci[col], errors="coerce")
+        per_instance_cci = per_instance_cci.drop_duplicates(subset=["problem_id", "model"], keep="last")
+
     return {
         "behavioral": behavioral,
         "probe2": pd.read_csv(probe2_path, dtype=str).fillna(""),
         "contamination": pd.read_csv(contamination_path, dtype=str).fillna(""),
         "bank": pd.read_csv(bank_path, dtype=str).fillna(""),
         "bw_metrics": bw_metrics,
+        "phase1": phase1,
+        "per_instance_cci": per_instance_cci,
     }
 
 
@@ -78,7 +124,16 @@ def _parse_bank(bank: pd.DataFrame) -> pd.DataFrame:
             raise ValueError(f"{pid}: invalid difficulty_params JSON: {e}") from e
 
     b["params"] = [parse_params(pid, raw) for pid, raw in zip(b["problem_id"], b["difficulty_params"])]
-    b["instance_type"] = b["params"].map(lambda p: str(p.get("instance_type", "")).strip().lower())
+
+    def _instance_type(row: pd.Series) -> str:
+        if "instance_type" in row.index:
+            col = str(row.get("instance_type", "")).strip().lower()
+            if col in {"standard", "adversarial"}:
+                return col
+        p = row["params"]
+        return str(p.get("instance_type", "")).strip().lower()
+
+    b["instance_type"] = b.apply(_instance_type, axis=1)
     b["greedy_succeeds_expected"] = b["params"].map(lambda p: p.get("greedy_succeeds", None))
     b["critical_step_index"] = b["params"].map(
         lambda p: int(p.get("critical_step_index", -1))
@@ -102,6 +157,7 @@ def _build_per_instance_behavioral(behavioral: pd.DataFrame) -> pd.DataFrame:
         "behavioral",
     )
     b = behavioral.copy()
+    b = b[b["model"].astype(str).str.strip().str.lower() != "mock"].copy()
     b["variant_type"] = b["variant_type"].str.strip()
     b["verified_bool"] = b["verified"].map(_to_bool)
     b["correct_canonical_bool"] = b["correct_canonical"].map(_to_bool)
@@ -181,6 +237,22 @@ def merge_data(data: dict[str, pd.DataFrame]) -> pd.DataFrame:
         validate="many_to_one",
     ).drop(columns=["subtype"])
 
+    if not data["phase1"].empty:
+        merged = merged.merge(
+            data["phase1"],
+            on=["problem_id", "model"],
+            how="left",
+            validate="many_to_one",
+        )
+
+    if not data["per_instance_cci"].empty:
+        merged = merged.merge(
+            data["per_instance_cci"],
+            on=["problem_id", "model"],
+            how="left",
+            validate="many_to_one",
+        )
+
     if merged.duplicated(subset=["problem_id", "model"]).any():
         raise ValueError("Merge produced duplicate (problem_id, model) rows.")
     print(f"merge coverage: {len(merged)} rows ({merged['problem_id'].nunique()} problems x {merged['model'].nunique()} models)")
@@ -193,7 +265,13 @@ def compute_convergence_labels(df: pd.DataFrame) -> pd.DataFrame:
         if col not in out.columns:
             out[col] = ""
     out["greedy_assessment_correct_bool"] = out["greedy_assessment_correct"].map(_to_bool)
-    out["critical_point_identified_num"] = pd.to_numeric(out["critical_point_identified"], errors="coerce")
+    def _bool_to_num(x: Any) -> float:
+        b = _to_bool(x)
+        if b is None:
+            return np.nan
+        return 1.0 if b else 0.0
+
+    out["critical_point_identified_num"] = out["critical_point_identified"].map(_bool_to_num)
     out["gave_greedy_answer_bool"] = out["gave_greedy_answer"].map(_to_bool)
     out["greedy_succeeds_expected_bool"] = out["greedy_succeeds_expected"].map(
         lambda x: x if isinstance(x, bool) else _to_bool(x)
@@ -206,11 +284,21 @@ def compute_convergence_labels(df: pd.DataFrame) -> pd.DataFrame:
 
     out["instance_rank_pct"] = out.groupby("problem_subtype")["instance_contamination_score"].rank(method="average", pct=True)
     out["instance_contamination_half"] = np.where(out["instance_rank_pct"] > 0.5, "top", "bottom")
-    out["ACI"] = pd.to_numeric(out["CCI_algorithm"], errors="coerce") if "CCI_algorithm" in out.columns else np.nan
+    if "cci_composite" in out.columns:
+        out["ACI"] = pd.to_numeric(out["cci_composite"], errors="coerce")
+    elif "CCI_algorithm" in out.columns:
+        out["ACI"] = pd.to_numeric(out["CCI_algorithm"], errors="coerce")
+    else:
+        out["ACI"] = np.nan
 
     required_for_label = ["VAR_canonical", "VAR_W3", "instance_contamination_score", "greedy_succeeds"]
     out["missing_core"] = out[required_for_label].isna().any(axis=1)
-    out["missing_phase2"] = out["CCI_composite"].isna() if "CCI_composite" in out.columns else True
+    if "cci_composite" in out.columns:
+        out["missing_phase2"] = out["cci_composite"].isna()
+    elif "CCI_composite" in out.columns:
+        out["missing_phase2"] = out["CCI_composite"].isna()
+    else:
+        out["missing_phase2"] = True
     out["parse_failure_or_missing"] = out["any_parse_failed"].fillna(False).astype(bool)
 
     out["convergence_label"] = "mixed"
@@ -339,9 +427,46 @@ def run_regression(df: pd.DataFrame, bootstrap_n: int, rng: np.random.Generator)
     return pd.DataFrame(out), "\n\n".join(text_parts)
 
 
+def _convergence_distribution(df: pd.DataFrame, group_col: str | None = None) -> pd.DataFrame:
+    if group_col:
+        counts = (
+            df.groupby([group_col, "convergence_label"], dropna=False)
+            .size()
+            .unstack(fill_value=0)
+        )
+        pct = counts.div(counts.sum(axis=1), axis=0).mul(100).round(1)
+        return counts.join(pct, rsuffix="_pct")
+    return df["convergence_label"].value_counts().to_frame("count")
+
+
+def _format_convergence_report(df: pd.DataFrame) -> str:
+    lines = ["CONVERGENCE_LABEL BY INSTANCE_TYPE", ""]
+    for inst in ["standard", "adversarial"]:
+        sub = df[df["instance_type"] == inst]
+        if sub.empty:
+            continue
+        lines.append(f"--- {inst} (n={len(sub)} rows, {sub['problem_id'].nunique()} problems) ---")
+        vc = sub["convergence_label"].value_counts()
+        for label, cnt in vc.items():
+            lines.append(f"  {label}: {cnt} ({100.0 * cnt / len(sub):.1f}%)")
+        lines.append("")
+    return "\n".join(lines)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="ALGO P3 triangulation pipeline.")
     parser.add_argument("--behavioral-results", nargs="+", required=True)
+    parser.add_argument(
+        "--phase1-results",
+        nargs="+",
+        default=None,
+        help="ALGO Phase1 CSVs with greedy_assessment_correct and critical_point_identified.",
+    )
+    parser.add_argument(
+        "--per-instance-cci",
+        default=None,
+        help="Per (problem_id, model) CCI components from ALGO_P2_SCR_compute_metrics.py.",
+    )
     parser.add_argument("--probe2-metrics", required=True)
     parser.add_argument("--contamination", required=True)
     parser.add_argument("--bank", required=True)
@@ -365,21 +490,52 @@ def main() -> None:
     table1 = build_table1(diagnosed, data["bw_metrics"])
     reg_df, reg_text = run_regression(diagnosed, args.bootstrap_n, rng)
 
+    split_parts = [_format_convergence_report(diagnosed)]
+    split_reg_rows: list[pd.DataFrame] = []
+    for inst in ["standard", "adversarial"]:
+        sub = diagnosed[diagnosed["instance_type"] == inst].copy()
+        if sub.empty:
+            continue
+        inst_reg, inst_text = run_regression(sub, args.bootstrap_n, rng)
+        if not inst_reg.empty:
+            inst_reg = inst_reg.copy()
+            inst_reg.insert(0, "instance_type", inst)
+            split_reg_rows.append(inst_reg)
+        split_parts.append(f"REGRESSION — {inst} instances only (n_rows per model varies)\n\n{inst_text}")
+
+    split_reg_df = pd.concat(split_reg_rows, ignore_index=True) if split_reg_rows else pd.DataFrame()
+    convergence_report = _format_convergence_report(diagnosed)
+
     reg_path = Path(args.regression_output)
     reg_path.parent.mkdir(parents=True, exist_ok=True)
     with reg_path.open("w", encoding="utf-8") as f:
         f.write("ALGO TRIANGULATION REGRESSION SUMMARY\n\n")
+        f.write(convergence_report + "\n\n")
+        f.write("=" * 60 + "\n")
+        f.write("POOLED (all instance types)\n")
+        f.write("=" * 60 + "\n\n")
         f.write(reg_text + "\n\n")
+        for part in split_parts[1:]:
+            f.write("=" * 60 + "\n")
+            f.write(part + "\n\n")
         f.write("TABLE 1 (CROSS-FAMILY)\n")
         f.write(table1.to_string(index=False))
-        f.write("\n\nREGRESSION ROWS\n")
+        f.write("\n\nREGRESSION ROWS (pooled)\n")
         if reg_df.empty:
             f.write("(none)\n")
         else:
             f.write(reg_df.to_string(index=False))
             f.write("\n")
+        f.write("\nREGRESSION ROWS (by instance_type)\n")
+        if split_reg_df.empty:
+            f.write("(none)\n")
+        else:
+            f.write(split_reg_df.to_string(index=False))
+            f.write("\n")
 
-    print(f"Wrote triangulation dataset: {out_path} ({len(diagnosed)} rows)")
+    print(convergence_report)
+    print(f"\nWrote triangulation dataset: {out_path} ({len(diagnosed)} rows)")
+    print(f"  instance_type counts: {diagnosed['instance_type'].value_counts().to_dict()}")
     print(f"Wrote regression summary: {reg_path}")
 
 

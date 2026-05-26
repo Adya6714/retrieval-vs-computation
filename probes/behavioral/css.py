@@ -39,7 +39,7 @@ def compute_css(
     for variant in variant_responses:
         variant_type = variant["variant_type"]
         
-        if variant_type == "W5":
+        if str(variant_type).strip().upper() == "W5":
             raise ValueError(f"W5 variant encountered for {problem_id}. CSS is undefined for W5.")
             
         is_correct = bool(verify_answer(

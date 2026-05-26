@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+import argparse
+import json
 import random
 import re
 from pathlib import Path
@@ -13,8 +15,8 @@ import pandas as pd
 
 
 SEED = 42
-TARGET_BANK = Path("data/problems/question_bank.csv")
-SOURCE_FALLBACK_BANK = Path("data/problems/question_bank_algo.csv")
+TARGET_BANK = Path("data/problems/question_bank_algo.csv")
+SOURCE_FALLBACK_BANK = Path("data/problems/question_bank_bw.csv")
 
 
 def parse_kv_blob(blob: str) -> dict[str, str]:
@@ -26,6 +28,19 @@ def parse_kv_blob(blob: str) -> dict[str, str]:
         key, value = token.split("=", 1)
         out[key.strip()] = value.strip()
     return out
+
+
+def parse_difficulty_params(raw: str) -> dict[str, object]:
+    text = str(raw).strip()
+    if not text:
+        return {}
+    try:
+        parsed = json.loads(text)
+        if isinstance(parsed, dict):
+            return parsed
+    except json.JSONDecodeError:
+        pass
+    return parse_kv_blob(text)
 
 
 def parse_first_int(text: str, pattern: str) -> int:
@@ -221,6 +236,17 @@ def extract_bool_param(difficulty_params: str, key: str) -> bool:
     return value == "true"
 
 
+def extract_bool_from_params(params: dict[str, object], key: str) -> bool:
+    value = params.get(key)
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        vl = value.strip().lower()
+        if vl in {"true", "false"}:
+            return vl == "true"
+    raise ValueError(f"Missing or invalid boolean {key} in difficulty_params.")
+
+
 def greedy_wis(graph: nx.Graph, weights: dict[int, int]) -> tuple[list[int], int]:
     remaining = set(graph.nodes())
     chosen: list[int] = []
@@ -391,24 +417,113 @@ def format_wis_answer(selected: Sequence[int], total: int) -> str:
     return f"Selected: {{{', '.join(str(x) for x in selected)}}}, Total: {total}"
 
 
+def _intervals_non_overlapping(a: dict[str, int], b: dict[str, int]) -> bool:
+    return int(a["end"]) <= int(b["start"]) or int(b["end"]) <= int(a["start"])
+
+
+def wis_interval_optimal(intervals: list[dict[str, int]]) -> tuple[list[int], int]:
+    ordered = sorted(intervals, key=lambda it: (int(it["end"]), int(it["start"])))
+    n = len(ordered)
+    p = [-1] * n
+    for i in range(n):
+        for j in range(i - 1, -1, -1):
+            if _intervals_non_overlapping(ordered[j], ordered[i]):
+                p[i] = j
+                break
+    dp = [0] * (n + 1)
+    take = [False] * n
+    for i in range(1, n + 1):
+        w = int(ordered[i - 1]["weight"])
+        incl = w + dp[p[i - 1] + 1]
+        excl = dp[i - 1]
+        if incl >= excl:
+            dp[i] = incl
+            take[i - 1] = True
+        else:
+            dp[i] = excl
+    selected: list[int] = []
+    i = n
+    while i > 0:
+        if take[i - 1]:
+            selected.append(int(ordered[i - 1]["id"]))
+            i = p[i - 1] + 1
+        else:
+            i -= 1
+    selected.sort()
+    return selected, int(dp[n])
+
+
+def wis_interval_greedy(intervals: list[dict[str, int]]) -> tuple[list[int], int]:
+    remaining = sorted(
+        intervals,
+        key=lambda it: (-int(it["weight"]), int(it["start"]), int(it["id"])),
+    )
+    chosen: list[dict[str, int]] = []
+    for cand in remaining:
+        if all(_intervals_non_overlapping(cand, picked) for picked in chosen):
+            chosen.append(cand)
+    ids = sorted(int(it["id"]) for it in chosen)
+    total = sum(int(it["weight"]) for it in chosen)
+    return ids, int(total)
+
+
+def render_wis_text_with_weights(canonical_text: str, weights: dict[int, int]) -> str:
+    text = canonical_text
+    for idx, value in sorted(weights.items()):
+        text = re.sub(
+            rf"(?i)(Plot\s+{idx}\s*:\s*)\d+",
+            rf"\g<1>{value}",
+            text,
+        )
+        text = re.sub(
+            rf"(?i)(House\s+{idx}\s*:\s*\$?)\d+",
+            rf"\g<1>{value}",
+            text,
+        )
+        text = re.sub(
+            rf"(?i)(Node\s+{idx}\s*:\s*)\d+",
+            rf"\g<1>{value}",
+            text,
+        )
+        text = re.sub(
+            rf"(?m)^(\|\s*{idx}\s*\|\s*)\d+(\s*\|)",
+            rf"\g<1>{value}\g<2>",
+            text,
+        )
+
+    w_match = re.search(r"(?is)w\s*=\s*\{[^}]+\}", text)
+    if w_match:
+        mapping = ", ".join(f"{i}->{weights[i]}" for i in sorted(weights))
+        text = text[: w_match.start()] + f"w = {{{mapping}}}" + text[w_match.end() :]
+    return text
+
+
 def main() -> None:
-    rng = random.Random(SEED)
+    parser = argparse.ArgumentParser(description="Generate ALGO W6 variants.")
+    parser.add_argument("--target-bank", default=str(TARGET_BANK))
+    parser.add_argument("--source-fallback-bank", default=str(SOURCE_FALLBACK_BANK))
+    parser.add_argument("--seed", type=int, default=SEED)
+    args = parser.parse_args()
 
-    if not TARGET_BANK.exists():
-        raise FileNotFoundError(f"Missing target CSV: {TARGET_BANK}")
+    target_bank = Path(args.target_bank)
+    source_fallback_bank = Path(args.source_fallback_bank)
+    rng = random.Random(args.seed)
 
-    target_df = pd.read_csv(TARGET_BANK)
+    if not target_bank.exists():
+        raise FileNotFoundError(f"Missing target CSV: {target_bank}")
+
+    target_df = pd.read_csv(target_bank)
     source_df = target_df
     source_canon = source_df[
         (source_df["variant_type"] == "canonical")
         & source_df["problem_id"].astype(str).str.match(r"^(CC|SP|WIS)_")
     ]
     if source_canon.empty:
-        if not SOURCE_FALLBACK_BANK.exists():
+        if not source_fallback_bank.exists():
             raise ValueError(
                 "No algorithmic canonical rows in question_bank.csv and fallback missing."
             )
-        source_df = pd.read_csv(SOURCE_FALLBACK_BANK)
+        source_df = pd.read_csv(source_fallback_bank)
         source_canon = source_df[
             (source_df["variant_type"] == "canonical")
             & source_df["problem_id"].astype(str).str.match(r"^(CC|SP|WIS)_")
@@ -433,6 +548,7 @@ def main() -> None:
         answer = str(row["correct_answer"])
         verifier = str(row["verifier_function"])
         dparams = str(row.get("difficulty_params", ""))
+        dparams_obj = parse_difficulty_params(dparams)
 
         if pid.startswith("CC_"):
             denoms, target = parse_cc_instance(text)
@@ -471,12 +587,26 @@ def main() -> None:
             new_denoms, new_target, dp_count, dp_coins = solved
             new_text = render_cc_text_from_canonical(text, new_denoms, new_target)
             new_answer = format_cc_answer(dp_count, dp_coins)
+            greedy = greedy_coin_change(new_denoms, new_target)
+            dparams_obj["denominations"] = list(new_denoms)
+            dparams_obj["target"] = int(new_target)
+            if greedy is not None:
+                dparams_obj["greedy_answer"] = format_cc_answer(greedy[0], greedy[1])
+                dparams_obj["greedy_succeeds"] = bool(greedy[0] == dp_count)
 
         elif pid.startswith("SP_"):
-            kv = parse_kv_blob(dparams)
-            n = int(kv.get("num_vertices", "0"))
-            m = int(kv.get("num_edges", "0"))
-            directed = kv.get("directed", "").lower() == "true"
+            n = int(dparams_obj.get("num_vertices", 0))
+            if "num_edges" in dparams_obj:
+                m = int(dparams_obj.get("num_edges", 0))
+            else:
+                graph_edges = dparams_obj.get("graph", [])
+                m = len(graph_edges) if isinstance(graph_edges, list) else 0
+            directed_raw = dparams_obj.get("directed", False)
+            directed = (
+                directed_raw
+                if isinstance(directed_raw, bool)
+                else str(directed_raw).strip().lower() == "true"
+            )
             if n <= 0 or m <= 0:
                 raise ValueError(f"Invalid SP difficulty_params for {pid}: {dparams}")
             src, tgt = parse_src_tgt_from_sp_text(text, answer)
@@ -489,25 +619,46 @@ def main() -> None:
             ]
             new_text = render_sp_text_from_canonical(text, edge_triplets, directed)
             new_answer = format_sp_answer(path, cost)
+            dparams_obj["graph"] = [
+                {"u": int(u), "v": int(v), "w": int(w)} for (u, v, w) in edge_triplets
+            ]
+            dparams_obj["num_vertices"] = int(n)
+            dparams_obj["num_edges"] = int(len(edge_triplets))
+            dparams_obj["source"] = int(src)
+            dparams_obj["target"] = int(tgt)
+            dparams_obj["directed"] = bool(directed)
 
         elif pid.startswith("WIS_"):
-            kv = parse_kv_blob(dparams)
-            n = int(kv.get("num_nodes", kv.get("num_items", "0")))
-            if n <= 0:
+            intervals_raw = dparams_obj.get("intervals", [])
+            if not isinstance(intervals_raw, list) or not intervals_raw:
                 raise ValueError(f"Invalid WIS difficulty_params for {pid}: {dparams}")
-            graph_type = kv.get("graph_type", "general").strip().lower()
-            greedy_succeeds = extract_bool_param(dparams, "greedy_succeeds")
-            num_edges_hint = int(kv["num_edges"]) if "num_edges" in kv else None
-            graph, weights, optimal_set, optimal_weight = generate_wis_graph(
-                rng,
-                n,
-                graph_type=graph_type,
-                greedy_succeeds=greedy_succeeds,
-                num_edges_hint=num_edges_hint,
-            )
-            edges = sorted((min(u, v), max(u, v)) for u, v in graph.edges())
-            new_text = render_wis_text_from_canonical(text, weights, edges)
+            canonical_total = parse_first_int(answer, r"Total:\s*(\d+)")
+            solved = None
+            for _ in range(4000):
+                intervals: list[dict[str, int]] = []
+                for i, base in enumerate(intervals_raw):
+                    if not isinstance(base, dict):
+                        raise ValueError(f"Invalid interval object for {pid}: {base!r}")
+                    s = int(base["start"])
+                    e = int(base["end"])
+                    bw = int(base["weight"])
+                    nw = max(1, bw + rng.randint(-4, 4))
+                    intervals.append({"id": i, "start": s, "end": e, "weight": nw})
+                optimal_set, optimal_weight = wis_interval_optimal(intervals)
+                greedy_set, greedy_weight = wis_interval_greedy(intervals)
+                if optimal_weight == canonical_total:
+                    continue
+                solved = (intervals, optimal_set, optimal_weight, greedy_set, greedy_weight)
+                break
+            if solved is None:
+                raise RuntimeError(f"Could not generate valid WIS W6 for {pid}")
+            intervals, optimal_set, optimal_weight, _greedy_set, greedy_weight = solved
+            weight_map = {int(it["id"]): int(it["weight"]) for it in intervals}
+            new_text = render_wis_text_with_weights(text, weight_map)
             new_answer = format_wis_answer(optimal_set, optimal_weight)
+            dparams_obj["intervals"] = intervals
+            dparams_obj["greedy_answer"] = format_wis_answer(wis_interval_greedy(intervals)[0], greedy_weight)
+            dparams_obj["greedy_succeeds"] = bool(greedy_weight == optimal_weight)
 
         else:
             continue
@@ -517,10 +668,11 @@ def main() -> None:
         new_row["problem_text"] = new_text
         new_row["correct_answer"] = new_answer
         new_row["contamination_pole"] = "Low"
-        new_row["source"] = "procedural"
+        new_row["source"] = f"procedural_seed_{args.seed}"
         new_row["verifier_function"] = row["verifier_function"]
         new_row["problem_family"] = row["problem_family"]
         new_row["difficulty"] = row["difficulty"]
+        new_row["difficulty_params"] = json.dumps(dparams_obj, separators=(",", ":"))
         generated_rows.append(new_row)
 
     if not generated_rows:
@@ -531,13 +683,13 @@ def main() -> None:
     append_df = pd.DataFrame(generated_rows)
     append_df = append_df.reindex(columns=target_df.columns, fill_value="")
     final_df = pd.concat([target_df, append_df], ignore_index=True)
-    final_df.to_csv(TARGET_BANK, index=False)
+    final_df.to_csv(target_bank, index=False)
 
-    print(f"Seed: {SEED}")
+    print(f"Seed: {args.seed}")
     print(f"Source canonical rows: {len(source_canon)}")
     print(f"Generated W6 rows: {len(generated_rows)}")
     print(f"Skipped existing W6 rows: {skipped_existing}")
-    print(f"Appended to: {TARGET_BANK}")
+    print(f"Appended to: {target_bank}")
     by_prefix: dict[str, int] = {"CC": 0, "SP": 0, "WIS": 0}
     for r in generated_rows:
         prefix = str(r["problem_id"]).split("_", 1)[0]

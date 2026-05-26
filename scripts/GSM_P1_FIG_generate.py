@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import matplotlib.colors as mcolors
@@ -27,13 +28,36 @@ def _save(fig: plt.Figure, stem: str) -> None:
     plt.close(fig)
 
 
+def _norm_gsm_variant(v: object) -> str:
+    s = str(v).strip()
+    if not s:
+        return s
+    low = s.lower()
+    if low == "canonical":
+        return "canonical"
+    if re.fullmatch(r"w[1-6]", low):
+        return f"W{low[1]}"
+    return s
+
+
 def _load_behavioral() -> pd.DataFrame:
-    paths = sorted(RESULTS_DIR.glob("GSM_P1_RES_behavioral_sweep_*.csv"))
-    if not paths:
-        raise FileNotFoundError("No GSM_P1_RES_behavioral_sweep_*.csv files found.")
+    paths = [
+        Path("results/raw/GSM_P1_behavioral_claude.csv"),
+        Path("results/raw/GSM_P1_behavioral_gpt4o.csv"),
+        Path("results/raw/GSM_P1_behavioral_llama.csv"),
+    ]
+    for p in paths:
+        if not p.exists():
+            raise FileNotFoundError(p)
     frames = [pd.read_csv(p, dtype=str) for p in paths]
     df = pd.concat(frames, ignore_index=True)
-    df["variant_type"] = df["variant_type"].astype(str).str.strip().str.lower()
+    df = df[df["model"].astype(str).str.lower() != "mock"].copy()
+    df["variant_type"] = df["variant_type"].map(_norm_gsm_variant)
+    bank = pd.read_csv(Path("data/problems/question_bank_gsm.csv"), dtype=str)
+    pole = bank[bank["variant_type"].astype(str).str.strip().str.lower() == "canonical"][
+        ["problem_id", "contamination_pole"]
+    ].drop_duplicates("problem_id")
+    df = df.drop(columns=["contamination_pole"], errors="ignore").merge(pole, on="problem_id", how="left")
     df["contamination_pole"] = df["contamination_pole"].astype(str).str.strip().str.lower()
     df["behavioral_correct_bool"] = (
         df["behavioral_correct"].astype(str).str.strip().str.lower().map({"true": 1.0, "false": 0.0})
@@ -42,7 +66,7 @@ def _load_behavioral() -> pd.DataFrame:
 
 
 def fig_var_heatmap(df: pd.DataFrame) -> None:
-    variants = ["canonical", "w1", "w2", "w3", "w4", "w5"]
+    variants = ["canonical", "W1", "W2", "W3", "W4", "W5"]
     poles = ["high", "medium"]
     models = sorted(df["model"].astype(str).unique())
 
@@ -70,7 +94,19 @@ def fig_var_heatmap(df: pd.DataFrame) -> None:
             for j in range(len(variants)):
                 if np.isnan(mat[i, j]):
                     continue
-                ax.text(j, i, f"{mat[i, j]:.2f}", ha="center", va="center", fontsize=8, color="black")
+                boots = []
+                vv = sub[
+                    (sub["model"] == models[i]) & (sub["variant_type"] == variants[j])
+                ]["behavioral_correct_bool"].dropna().astype(float).to_numpy()
+                if len(vv):
+                    rng = np.random.default_rng(42)
+                    for _ in range(3000):
+                        boots.append(float(vv[rng.integers(0, len(vv), len(vv))].mean()))
+                    lo, hi = float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
+                    txt = f"{mat[i, j]:.2f}\n[{lo:.2f},{hi:.2f}]"
+                else:
+                    txt = f"{mat[i, j]:.2f}"
+                ax.text(j, i, txt, ha="center", va="center", fontsize=6, color="black")
 
     cbar = fig.colorbar(im, ax=axes.ravel().tolist(), shrink=0.9)
     cbar.set_label("VAR score")
@@ -82,6 +118,8 @@ def fig_w4_gap() -> None:
     if not path.exists():
         return
     df = pd.read_csv(path, dtype=str)
+    if "model" in df.columns:
+        df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     for c in ["prose_var", "w4_var", "gap"]:
         df[c] = pd.to_numeric(df[c], errors="coerce")
     agg = df.groupby("model", as_index=False)[["prose_var", "w4_var", "gap"]].mean()
@@ -107,6 +145,8 @@ def fig_rcs_by_difficulty() -> None:
     if not path.exists():
         return
     df = pd.read_csv(path, dtype=str)
+    if "model" in df.columns:
+        df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     df["rcs"] = pd.to_numeric(df["rcs"], errors="coerce")
     order = ["easy", "medium", "hard"]
     models = sorted(df["model"].astype(str).unique())
@@ -131,6 +171,8 @@ def fig_step_sensitivity() -> None:
     if not path.exists():
         return
     df = pd.read_csv(path, dtype=str)
+    if "model" in df.columns:
+        df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     df["mean_css"] = pd.to_numeric(df["mean_css"], errors="coerce")
     subtype_to_x = {"gsm_symbolic": 0, "gsm_p1p2": 1}
     fig, ax = plt.subplots(figsize=(8, 4.5))

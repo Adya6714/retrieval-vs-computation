@@ -32,8 +32,9 @@ def point_color(pid: str, fam: str) -> str:
 
 def main():
     beh = load_behavioral()
-    cont = load_csv_candidate(["results/BW_P3_RES_contamination_triage.csv", "results/contamination_triage.csv"])
-    qb = pd.read_csv("data/problems/question_bank.csv", dtype=str)
+    beh = beh[beh["model"].astype(str).str.lower() != "mock"].copy()
+    cont = load_csv_candidate(["results/raw/BW_P3_contamination.csv", "results/contamination_triage.csv"])
+    qb = pd.read_csv("data/problems/question_bank_bw.csv", dtype=str)
 
     canon = beh[beh["variant_type"].astype(str).str.upper() == "CANONICAL"].copy()
     canon["var"] = to_bool_series(canon["behavioral_correct"]).astype(float)
