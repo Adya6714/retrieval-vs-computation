@@ -1,0 +1,109 @@
+ALGO TRIANGULATION REGRESSION SUMMARY
+
+CONVERGENCE_LABEL BY INSTANCE_TYPE
+
+--- standard (n=156 rows, 39 problems) ---
+  ambiguous: 86 (55.1%)
+  mixed: 59 (37.8%)
+  retrieval_signal: 8 (5.1%)
+  computation_signal: 3 (1.9%)
+
+--- adversarial (n=284 rows, 71 problems) ---
+  ambiguous: 185 (65.1%)
+  mixed: 98 (34.5%)
+  computation_signal: 1 (0.4%)
+
+
+============================================================
+POOLED (all instance types)
+============================================================
+
+anthropic/claude-sonnet-4
+  instance_contamination_score: -0.0705 (95% CI -0.4332, 0.2772)
+  greedy_succeeds: 0.4061 (95% CI 0.2259, 0.5820)
+  n=110
+
+google/gemini-2.5-flash
+  instance_contamination_score: -0.0626 (95% CI -0.4258, 0.3221)
+  greedy_succeeds: 0.1181 (95% CI -0.0723, 0.3028)
+  n=110
+
+meta-llama/llama-3.1-8b-instruct
+  instance_contamination_score: -0.1222 (95% CI -0.2902, 0.0000)
+  greedy_succeeds: 0.0490 (95% CI -0.0517, 0.1439)
+  n=110
+
+openai/gpt-4o
+  instance_contamination_score: -0.1458 (95% CI -0.5449, 0.2961)
+  greedy_succeeds: 0.0212 (95% CI -0.1993, 0.2459)
+  n=110
+
+============================================================
+REGRESSION — standard instances only (n_rows per model varies)
+
+anthropic/claude-sonnet-4
+  instance_contamination_score: 0.1342 (95% CI -0.3479, 0.5942)
+  greedy_succeeds: 0.3372 (95% CI 0.1982, 0.4576)
+  n=39
+
+google/gemini-2.5-flash
+  instance_contamination_score: 0.0202 (95% CI -0.5344, 0.5523)
+  greedy_succeeds: -0.1100 (95% CI -0.4601, 0.3245)
+  n=39
+
+meta-llama/llama-3.1-8b-instruct
+  instance_contamination_score: -0.0606 (95% CI -0.2231, 0.0000)
+  greedy_succeeds: 0.0563 (95% CI 0.0000, 0.1882)
+  n=39
+
+openai/gpt-4o
+  instance_contamination_score: -0.6467 (95% CI -1.2029, -0.0650)
+  greedy_succeeds: 0.5882 (95% CI -0.0066, 0.7909)
+  n=39
+
+============================================================
+REGRESSION — adversarial instances only (n_rows per model varies)
+
+anthropic/claude-sonnet-4
+  instance_contamination_score: -0.0703 (95% CI -0.2776, 0.1444)
+  greedy_succeeds: 0.0205 (95% CI -0.1575, 0.2158)
+  n=71
+
+google/gemini-2.5-flash
+  instance_contamination_score: 0.0306 (95% CI -0.5098, 0.6162)
+  greedy_succeeds: 0.1288 (95% CI -0.0941, 0.3610)
+  n=71
+
+meta-llama/llama-3.1-8b-instruct
+  instance_contamination_score: -0.1712 (95% CI -0.5215, 0.0559)
+  greedy_succeeds: 0.0251 (95% CI -0.1193, 0.1669)
+  n=71
+
+openai/gpt-4o
+  instance_contamination_score: 0.2886 (95% CI -0.2960, 0.9782)
+  greedy_succeeds: 0.0007 (95% CI -0.3557, 0.3244)
+  n=71
+
+TABLE 1 (CROSS-FAMILY)
+family  VAR(canonical)  VAR(W3)  VRI_gap  GSS/PDAS  Contamination-VAR slope  Convergence rate
+    CC        0.320000 0.170000 0.150000  0.290000                -0.384507          0.200000
+    SP        0.409091 0.181818 0.227273  0.554545                -0.111486          0.459091
+   WIS        0.183333 0.016667 0.166667  0.483333                -0.360089          0.400000
+
+REGRESSION ROWS (pooled)
+                           model  coef_instance_contamination_score  coef_instance_contamination_score_ci_lower  coef_instance_contamination_score_ci_upper  coef_greedy_succeeds  coef_greedy_succeeds_ci_lower  coef_greedy_succeeds_ci_upper  n_rows
+       anthropic/claude-sonnet-4                          -0.070521                                   -0.433248                                    0.277219              0.406118                       0.225880                       0.582010     110
+         google/gemini-2.5-flash                          -0.062640                                   -0.425776                                    0.322124              0.118077                      -0.072259                       0.302825     110
+meta-llama/llama-3.1-8b-instruct                          -0.122246                                   -0.290229                                    0.000000              0.049019                      -0.051724                       0.143870     110
+                   openai/gpt-4o                          -0.145836                                   -0.544928                                    0.296056              0.021195                      -0.199337                       0.245930     110
+
+REGRESSION ROWS (by instance_type)
+instance_type                            model  coef_instance_contamination_score  coef_instance_contamination_score_ci_lower  coef_instance_contamination_score_ci_upper  coef_greedy_succeeds  coef_greedy_succeeds_ci_lower  coef_greedy_succeeds_ci_upper  n_rows
+     standard        anthropic/claude-sonnet-4                           0.134181                                   -0.347870                                    0.594177              0.337236                       0.198180                       0.457633      39
+     standard          google/gemini-2.5-flash                           0.020155                                   -0.534448                                    0.552276             -0.109991                      -0.460098                       0.324502      39
+     standard meta-llama/llama-3.1-8b-instruct                          -0.060580                                   -0.223126                                    0.000000              0.056273                       0.000000                       0.188161      39
+     standard                    openai/gpt-4o                          -0.646651                                   -1.202862                                   -0.065031              0.588180                      -0.006564                       0.790930      39
+  adversarial        anthropic/claude-sonnet-4                          -0.070342                                   -0.277585                                    0.144431              0.020528                      -0.157456                       0.215762      71
+  adversarial          google/gemini-2.5-flash                           0.030626                                   -0.509828                                    0.616166              0.128794                      -0.094069                       0.361020      71
+  adversarial meta-llama/llama-3.1-8b-instruct                          -0.171233                                   -0.521492                                    0.055871              0.025084                      -0.119317                       0.166936      71
+  adversarial                    openai/gpt-4o                           0.288575                                   -0.296021                                    0.978182              0.000700                      -0.355705                       0.324392      71

@@ -1,0 +1,13 @@
+subtype,model,n,canon,W5,W3,PDAS
+extended,claude,10,0.5,0.8,0.2,0.3
+extended,gemini,10,0.6,0.4,0.0,-0.2
+extended,gpt4o,10,0.0,0.4,0.0,0.4
+extended,llama,10,0.0,0.0,0.0,0.0
+mbw,claude,15,0.0,0.0,0.333,0.0
+mbw,gemini,15,0.0,0.0,0.133,0.0
+mbw,gpt4o,15,0.0,0.0,0.4,0.0
+mbw,llama,15,0.0,0.0,0.0,0.0
+standard,claude,40,0.125,0.65,0.05,0.525
+standard,gemini,40,0.475,0.825,0.125,0.35
+standard,gpt4o,40,0.133,0.2,0.233,0.067
+standard,llama,40,0.033,0.0,0.233,-0.033

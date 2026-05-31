@@ -1,0 +1,2326 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty
+GSM_001,canonical,openai/o4-mini,"The first 20 min cost 20·\$0.90 = \$18.  
+The remaining 86–20 = 66 min cost 66·\$0.50 = \$33.  
+Total cost = \$18 + \$33 = \$51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,canonical,openai/o4-mini,"If boys are two-thirds as many as the 18 girls, then  
+boys = (2/3)·18 = 12.  
+Total kids = girls + boys = 18 + 12 = 30.",True,30,arithmetic_reasoning,high,easy
+GSM_003,canonical,openai/o4-mini,"Purple cards: 30  
+Yellow cards: 30 + 50% of 30 = 30 + 15 = 45  
+Blue cards: 30 + 45 = 75  
+Total cards: 30 + 45 + 75 = 150",True,150,arithmetic_reasoning,high,medium
+GSM_004,canonical,openai/o4-mini,"He works 2 weeks × 6 days = 12 days each month, so in 12 months he works  
+12 × 12 = 144 days.  
+At £150 per day his annual pay is  
+144 × 150 = £21,600.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,canonical,openai/o4-mini,"Liam’s in‐class time per week  
+= (6 days)·(7 classes/day)·(60 min/class)  
+= 6·7·60 = 2 520 min  
+
+Weekend extra learning  
+= 1/7 of 2 520 min on Saturday + the same on Sunday  
+= 360 min + 360 min = 720 min  
+
+Total learning time per week  
+= 2 520 min + 720 min = 3 240 min  
+= 3 240 ÷ 60 = 54 hours  
+
+Answer: He spends 54 hours a week learning.",True,54,arithmetic_reasoning,high,hard
+GSM_006,canonical,openai/o4-mini,"First-year price:  
+56 € × 1.30 = 72.80 €  
+
+Second‐year price:  
+72.80 € × 0.75 = 54.60 €  
+
+Total for 10 shares:  
+10 × 54.60 € = 546 €",True,546,arithmetic_reasoning,high,medium
+GSM_007,canonical,openai/o4-mini,"Kai is liable for 4 h – 2 h free = 2 paid hours.  
+• 1st paid hour: \$10  
+• 2nd paid hour: \$10×2 = \$20  
+Total = \$10 + \$20 = \$30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,canonical,openai/o4-mini,"Each day the total infected quadruples (each person infects 3 new, plus they remain infected), so after 3 days:
+  
+Total = 16 × 4³ = 16 × 64 = 1024.",True,1024,arithmetic_reasoning,high,medium
+GSM_009,canonical,openai/o4-mini,"Nia eats a total of  
+ 84 days·5 eggs/day + 24 days·7 eggs/day  
+= 420 + 168 = 588 eggs,  
+and 588 ÷ 12 = 49 dozen eggs.  
+So she needs 49 dozen.",True,49,arithmetic_reasoning,high,medium
+GSM_010,canonical,openai/o4-mini,"First 30 s: 60 popped  
+Next 30 s: 4×60 = 240 popped  
+Third 30 s: rate = 6×(initial rate) ⇒ 6×60 per 30 s = 360 popped  
+Fourth 30 s: half the previous rate ⇒ ½×360 = 180 popped  
+Residual popping: ¼×180 = 45 popped  
+
+Total = 60 + 240 + 360 + 180 + 45 = 885  
+
+Zahra ends up with 885 pieces of popcorn.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,canonical,openai/o4-mini,"First compute how much water he used:
+
+- Giant: 8 × 12 g = 96 g  
+- Medium: 13 × 11 g = 143 g  
+- Small: 15 × (1/5 g) = 15 × 0.2 g = 3 g  
+
+Total used = 96 + 143 + 3 = 242 g  
+Remaining = 328 g – 242 g = 86 g  
+
+He has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,canonical,openai/o4-mini,"First, find how many plants she had before gifting:
+
+• On the 52 ledges: 7 plants/ledge · 52 ledges = 364  
+• Plus the 29 new plants = 364 + 29 = 393 total
+
+She gives away 6 plants from each of the 52 ledges:
+
+• 6 plants/ledge · 52 ledges = 312 given away
+
+Remaining plants:
+
+393 – 312 = 81
+
+Answer: Camila will have 81 potted plants left.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,canonical,openai/o4-mini,"Mia’s beach‐walking speed is  
+   v_b = 12 km ÷ 1 h = 12 km/h.  
+On the sidewalk she goes twice as fast, v_s = 24 km/h, so the 12 km there take  
+   12 km ÷ 24 km/h = 0.5 h = 30 min.  
+Total time = 60 min + 30 min = 90 minutes.",True,90,arithmetic_reasoning,medium,medium
+GSM_014,canonical,openai/o4-mini,"First, total cleaning time:
+
+210 floors × 20 min/floor = 4 200 minutes = 70 hours.
+
+Total available time:
+
+10 days × 10 hours/day = 100 hours.
+
+So the fraction of their time spent cleaning is
+
+70 hours ÷ 100 hours = 0.70 = 70%
+
+On average they spend 70% of each workday cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,canonical,openai/o4-mini,"Rounding each price to the nearest euro gives
+
+• Tulips: €2.25 → €2  
+• Roses: €5.13 → €5  
+• Sunflowers: €5.47 → €5  
+
+So his takings are  
+12·2 + 29·5 + 37·5 = 24 + 145 + 185 = €354.",True,354,arithmetic_reasoning,medium,hard
+GSM_016,canonical,openai/o4-mini,"First, compute the total weight:
+
+· Wheat: 6 boxes × 4 lb = 24 lb  
+· Cucumbers: 12 bags × 5 lb = 60 lb  
+· Apples: 32 packs × 43 lb = 1 376 lb  
+· Corn: 18 sacks × 15 lb = 270 lb  
+· Grocery = 43 lb  
+· Tools = 27 lb  
+
+Total = 24+60+1 376+270+43+27 = 1 800 lb
+
+Each truck holds 120 lb, so three trucks together carry 3×120 = 360 lb per run.  
+Number of runs needed = 1 800 ÷ 360 = 5 exactly.
+
+Answer: He must make 5 trips (with all three trucks each time).",True,5,arithmetic_reasoning,medium,hard
+GSM_017,canonical,openai/o4-mini,"First, organize what he sold on Friday and Saturday:
+
+Friday  
+• Cookies: 25 boxes  
+• Orange pies: 13 fewer than Saturday  
+
+Saturday  
+• Cookies: 25 + 11 = 36 boxes  
+• Orange pies: 22 boxes  
+
+So on Friday he sold 22 − 13 = 9 pies.
+
+Next, “On Sunday, he sold as much as he did in the past two days combined.”  Interpreting that to mean for each item he sold the sum of Friday + Saturday:
+
+Sunday  
+• Cookies: 25 + 36 = 61 boxes  
+• Orange pies: 9 + 22 = 31 boxes  
+
+Now compute daily earnings at ¥12 per cookie‐box and ¥21 per pie‐box:
+
+Friday earnings = 25·12 + 9·21 = 300 + 189 = ¥489  
+Saturday earnings = 36·12 + 22·21 = 432 + 462 = ¥894  
+Sunday earnings = 61·12 + 31·21 = 732 + 651 = ¥1,383  
+
+Total over three days = 489 + 894 + 1,383 = ¥2,766  
+Average per day = 2,766 ÷ 3 = ¥922  
+
+Answer: ¥922.",True,922,arithmetic_reasoning,medium,hard
+GSM_018,canonical,openai/o4-mini,"First compute the number of questions in each subject:
+
+- Physics: 25% of 80 = 0.25·80 = 20  
+- Algebra: 15% of 80 = 0.15·80 = 12  
+- Remaining = 80 − (20+12) = 48, split equally  
+  • Chemistry = 24  
+  • History   = 24  
+
+Now compute how many she’s sure to get right:
+
+- Physics: 10% of 20 = 2  
+- Algebra: 25% of 12 = 3  
+- Chemistry: (1/3)·24 = 8  
+- History:   (1/3)·24 = 8  
+
+Total sure‐point score = 2 + 3 + 8 + 8 = 21.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,canonical,openai/o4-mini,"Let x be the number of 45-minute episodes on Sunday.  Converting everything to hours:
+
+Friday: 3  
+Saturday: 3  
+Sunday: (45 min)·x = (45/60)x = 0.75x  
+Monday: 4 h + 15 min = 4 + 0.25 = 4.25  
+Tuesday: 4·2 h = 8  
+Wednesday: 3·0.5 h = 1.5  
+
+Total: 3 + 3 + 0.75x + 4.25 + 8 + 1.5 = 22  
+Combine constants: 19.75 + 0.75x = 22  
+0.75x = 22 – 19.75 = 2.25  
+x = 2.25 / 0.75 = 3  
+
+He watched 3 of the 45-minute episodes on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,canonical,openai/o4-mini,"First convert 10 dozen to eggs:  
+10 dozen = 10×12 = 120 eggs total.  
+
+Now find how many each child found:  
+• Ava: 3 eggs  
+• Quinn: 6×3 = 18 eggs  
+• Sophia: 18 − 3 = 15 eggs  
+• Esteban: (1/5)×15 = 3 eggs  
+• Fatima: (Quinn + Ava) + 3 dozen = (18 + 3) + 36 = 21 + 36 = 57 eggs  
+
+Total found = 3 + 18 + 15 + 3 + 57 = 96 eggs  
+
+Eggs still hidden = 120 − 96 = 24 eggs.",True,24,arithmetic_reasoning,medium,hard
+GSM_001,W1,openai/o4-mini,"First 20 min cost: 20 × \$0.90 = \$18  
+Remaining 86 – 20 = 66 min at \$0.50 = 66 × \$0.50 = \$33  
+Total = \$18 + \$33 = \$51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,W1,openai/o4-mini,"The number of boys is (2/3)×18=12, so the total number of kids is 18+12=30.",True,30,arithmetic_reasoning,high,easy
+GSM_003,W1,openai/o4-mini,"Purple cards: 30  
+Yellow cards: 50% more than 30 = 30 + 0.5·30 = 45  
+Blue cards: equal to purple + yellow = 30 + 45 = 75  
+
+Total cards = 30 + 45 + 75 = 150",True,150,arithmetic_reasoning,high,medium
+GSM_004,W1,openai/o4-mini,"The painter works  
+• 2 weeks per month × 12 months = 24 weeks per year  
+• 6 days per week ⇒ 24 weeks × 6 days = 144 working days per year  
+At £150 per day ⇒ 144 × £150 = £21 600  
+
+So his total earnings for the year are £21 600.",False,21600,arithmetic_reasoning,high,easy
+GSM_005,W1,openai/o4-mini,"Liam has 7 classes a day (6 regular + 1 extra), 6 days a week, so
+
+• Classes per week = 7 × 6 = 42  
+• Class minutes per week = 42 × 60 = 2520  
+
+On Saturday and again on Sunday he does extra learning equal to 1/7 of 2520 min, i.e.  
+2520 ÷ 7 = 360 min per day → 2 days = 720 min extra.
+
+Total learning minutes = 2520 + 720 = 3240  
+Total learning hours = 3240 ÷ 60 = 54
+
+Answer: 54 hours per week.",True,54,arithmetic_reasoning,high,hard
+GSM_006,W1,openai/o4-mini,"After a 30% rise, the share price becomes  
+56 × 1.30 = 72.80.  
+After a 25% drop, it becomes  
+72.80 × 0.75 = 54.60.  
+For 10 shares the total value is  
+10 × 54.60 = 546.  
+
+So Kayla’s holdings are worth Û546 at the end of year 2.",False,546,arithmetic_reasoning,high,medium
+GSM_007,W1,openai/o4-mini,"Kai pays for only 2 of the 4 hours.  The first paid hour costs \$10, the second (double the first) costs \$20, so in all he pays
+
+10 + 20 = \$30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,W1,openai/o4-mini,"We can track day by day.  Let I₀=16 be the number infected initially (day 0).  Each day every infected person remains infected and also infects 3 new people, so the total multiplies by 4 each day.
+
+Day 1: I₁ = 4·I₀ = 4·16 = 64  
+Day 2: I₂ = 4·I₁ = 4·64 = 256  
+Day 3: I₃ = 4·I₂ = 4·256 = 1024  
+
+Hence after 3 days there are 1,024 people infected.",True,1024,arithmetic_reasoning,high,medium
+GSM_009,W1,openai/o4-mini,"Nia eats a total of  
+84 days×5 eggs/day + 24 days×7 eggs/day  
+= 420 + 168  
+= 588 eggs,  
+and 588 ÷ 12 = 49 dozens.  
+So she needs 49 dozen eggs.",True,49,arithmetic_reasoning,high,medium
+GSM_010,W1,openai/o4-mini,"First 30 s: 60 pop  
+Next 30 s: 4·60 = 240 pop  
+Next 30 s: 6·60 = 360 pop  
+Last 30 s on heat: ½·360 = 180 pop  
+Residual (off‐heat): ¼·180 = 45 pop  
+
+Total = 60 + 240 + 360 + 180 + 45 = 885 popcorn pieces.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,W1,openai/o4-mini,"First, compute the water used for each size:
+
+• Giant cubes: 8 × 12 g = 96 g  
+• Medium cubes: 13 × 11 g = 143 g  
+• Small cubes: 15 × (1/5 g) = 3 g  
+
+Total used = 96 + 143 + 3 = 242 g  
+Remaining = 328 g − 242 g = 86 g
+
+So, 86 grams of water remain unused.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,W1,openai/o4-mini,"Camila starts with 7·52 = 364 plants, then adds 29 more for a total of 364 + 29 = 393.  
+Gifting away 6·52 = 312 plants leaves her with 393 − 312 = 81 plants.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,W1,openai/o4-mini,"Mia’s beach speed is  
+  12 km ÷ 1 h = 12 km/h.  
+Her sidewalk speed is twice that, 24 km/h, so her 12 km sidewalk leg takes  
+  12 km ÷ 24 km/h = 0.5 h = 30 min.  
+Total time = 60 min + 30 min = 90 minutes.",True,90,arithmetic_reasoning,medium,medium
+GSM_014,W1,openai/o4-mini,"Total cleaning time = 210 floors × 20 min = 4 200 min = 70 hours.  
+Spread over 10 days ⇒ 7 hours of cleaning per day.  
+Worker’s day = 10 hours, so  
+7 / 10 = 0.7 ⇒ 70% of daily hours.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,W1,openai/o4-mini,"First round each per‐bundle price to the nearest dollar:
+
+• Tulips: \$2.25 → \$2  
+• Roses:  \$5.13 → \$5  
+• Sunflowers: \$5.47 → \$5  
+
+Then compute revenue:
+
+• Tulips: 12×\$2 = \$24  
+• Roses:  29×\$5 = \$145  
+• Sunflowers: 37×\$5 = \$185  
+
+Total revenue = 24 + 145 + 185 = \$354",True,354,arithmetic_reasoning,medium,hard
+GSM_016,W1,openai/o4-mini,"First, compute the total weight of everything:
+
+– Wheat: 6 boxes × 4 lb = 24 lb  
+– Cucumbers: 12 bags × 5 lb = 60 lb  
+– Apples: 32 packs × 43 lb = 1 376 lb  
+– Corns: 18 sacks × 15 lb = 270 lb  
+– Grocery = 43 lb  
+– Tools = 27 lb  
+
+Total = 24 + 60 + 1 376 + 270 + 43 + 27 = 1 800 lb
+
+Each truck holds 120 lb per trip, so the three trucks together can carry 3 × 120 = 360 lb in one “round” of trips.  
+Number of full‐fleet trips needed = ⌈1 800 ÷ 360⌉ = ⌈5⌉ = 5
+
+Alternatively, you can think of it as 1 800 ÷ 120 = 15 individual truck‐loads, which, at 3 trucks per run, again comes out to 5 runs of the full fleet.
+
+Answer: 5 trips.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,W1,openai/o4-mini,"First compute Friday and Saturday revenues:
+
+Friday  
+• Cookies: 25 boxes at £12 ⇒ 25·12 = £300  
+• Pies: (Saturday’s 22 pies − 13) = 9 pies at £21 ⇒ 9·21 = £189  
+→ Friday total = 300 + 189 = £489  
+
+Saturday  
+• Cookies: 25 + 11 = 36 boxes at £12 ⇒ 36·12 = £432  
+• Pies: 22 boxes at £21 ⇒ 22·21 = £462  
+→ Saturday total = 432 + 462 = £894  
+
+Sunday’s revenue “matched the combined total of Friday and Saturday,” so  
+Sunday = 489 + 894 = £1 383  
+
+Total over three days = 489 + 894 + 1 383 = £2 766  
+Average per day = 2 766 ÷ 3 = £922  
+
+Answer: £922.",True,922,arithmetic_reasoning,medium,hard
+GSM_018,W1,openai/o4-mini,"There are 80·0.25=20 physics, 80·0.15=12 algebra, and the remaining 80−20−12=48 split equally into 24 chemistry and 24 history.  
+Emma will get  
+• 10% of 20 physics = 2  
+• 25% of 12 algebra = 3  
+• (1/3)·24 = 8 chemistry  
+• (1/3)·24 = 8 history  
+for a total of 2+3+8+8 = 21 points.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,W1,openai/o4-mini,"Let x = number of 45-minute episodes on Sunday.  Convert everything to hours:
+
+• Friday: 3 h  
+• Saturday: 3 h  
+• Sunday: 0.75 h·x  
+• Monday: 4 h + 0.25 h = 4.25 h  
+• Tuesday: 4×2 h = 8 h  
+• Wednesday: 3×0.5 h = 1.5 h  
+
+Total screen time:  
+3 + 3 + 0.75x + 4.25 + 8 + 1.5 = 22  
+19.75 + 0.75x = 22  
+0.75x = 2.25  
+x = 2.25 ÷ 0.75 = 3  
+
+Tariq watched 3 of the 45-minute episodes on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,W1,openai/o4-mini,"First, compute how many each child found:
+
+• Ava: 3  
+• Quinn: 6 × 3 = 18  
+• Sophia: 18 – 3 = 15  
+• Esteban: (1/5) × 15 = 3  
+• Quinn + Ava = 18 + 3 = 21, so  
+  Fatima: 21 + 36 (three dozen) = 57  
+
+Total found = 3 + 18 + 15 + 3 + 57 = 96  
+Initially hidden = 10 dozen = 120  
+Remaining = 120 – 96 = 24  
+
+Answer: 24 eggs remain unfound.",True,24,arithmetic_reasoning,medium,hard
+GSM_001,W2,openai/o4-mini,51,True,51,arithmetic_reasoning,high,medium
+GSM_002,W2,openai/o4-mini,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,W2,openai/o4-mini,"Step 1: Find the number of yellow cards  
+– “50% more than purple cards” means  
+  Yellow = Purple + 0.50 × Purple  
+  = 30 + 0.50 × 30  
+  = 30 + 15  
+  = 45  
+
+Step 2: Find the number of blue cards  
+– “Equal to purple + yellow” means  
+  Blue = 30 + 45  
+  = 75  
+
+Step 3: Compute the total  
+Total = Purple + Yellow + Blue  
+      = 30 + 45 + 75  
+      = 150  
+
+Answer: There are 150 cards in total.",True,150,arithmetic_reasoning,high,medium
+GSM_004,W2,openai/o4-mini,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,W2,openai/o4-mini,54,True,54,arithmetic_reasoning,high,hard
+GSM_006,W2,openai/o4-mini,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,W2,openai/o4-mini,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,W2,openai/o4-mini,"""1024""",True,1024,arithmetic_reasoning,high,medium
+GSM_009,W2,openai/o4-mini,49,True,49,arithmetic_reasoning,high,medium
+GSM_010,W2,openai/o4-mini,885,True,885,arithmetic_reasoning,medium,medium
+GSM_011,W2,openai/o4-mini,86,True,86,arithmetic_reasoning,medium,medium
+GSM_012,W2,openai/o4-mini,81,True,81,arithmetic_reasoning,medium,medium
+GSM_013,W2,openai/o4-mini,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,W2,openai/o4-mini,70,True,70,arithmetic_reasoning,medium,medium
+GSM_015,W2,openai/o4-mini,354,True,354,arithmetic_reasoning,medium,hard
+GSM_016,W2,openai/o4-mini,5,True,5,arithmetic_reasoning,medium,hard
+GSM_017,W2,openai/o4-mini,922,True,922,arithmetic_reasoning,medium,hard
+GSM_018,W2,openai/o4-mini,21,True,21,arithmetic_reasoning,medium,hard
+GSM_019,W2,openai/o4-mini,3,True,3,arithmetic_reasoning,medium,hard
+GSM_020,W2,openai/o4-mini,24,True,24,arithmetic_reasoning,medium,hard
+GSM_001,W3,openai/o4-mini,51,True,51,arithmetic_reasoning,high,medium
+GSM_002,W3,openai/o4-mini,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,W3,openai/o4-mini,150,True,150,arithmetic_reasoning,high,medium
+GSM_004,W3,openai/o4-mini,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,W3,openai/o4-mini,54,True,54,arithmetic_reasoning,high,hard
+GSM_006,W3,openai/o4-mini,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,W3,openai/o4-mini,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,W3,openai/o4-mini,1024,True,1024,arithmetic_reasoning,high,medium
+GSM_009,W3,openai/o4-mini,49,True,49,arithmetic_reasoning,high,medium
+GSM_010,W3,openai/o4-mini,885,True,885,arithmetic_reasoning,medium,medium
+GSM_011,W3,openai/o4-mini,86,True,86,arithmetic_reasoning,medium,medium
+GSM_012,W3,openai/o4-mini,81,True,81,arithmetic_reasoning,medium,medium
+GSM_013,W3,openai/o4-mini,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,W3,openai/o4-mini,70,True,70,arithmetic_reasoning,medium,medium
+GSM_015,W3,openai/o4-mini,354,True,354,arithmetic_reasoning,medium,hard
+GSM_016,W3,openai/o4-mini,5,True,5,arithmetic_reasoning,medium,hard
+GSM_017,W3,openai/o4-mini,922,True,922,arithmetic_reasoning,medium,hard
+GSM_018,W3,openai/o4-mini,"First compute the number of questions in each subject:
+
+• Biology: 25% of 80 = 0.25·80 = 20  
+• Geometry: 15% of 80 = 0.15·80 = 12  
+• Remaining = 80 – 20 – 12 = 48, split equally → 24 economics, 24 geography  
+
+Now the number Jordan will certainly get right in each:
+
+• Biology: 10% of 20 = 2  
+• Geometry: 25% of 12 = 3  
+• Economics: (1/3)·24 = 8  
+• Geography: (1/3)·24 = 8  
+
+Total certain points = 2 + 3 + 8 + 8 = 21.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,W3,openai/o4-mini,3,True,3,arithmetic_reasoning,medium,hard
+GSM_020,W3,openai/o4-mini,24,True,24,arithmetic_reasoning,medium,hard
+GSM_001,W4,openai/o4-mini,51,True,51,arithmetic_reasoning,high,medium
+GSM_002,W4,openai/o4-mini,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,W4,openai/o4-mini,150,True,150,arithmetic_reasoning,high,medium
+GSM_004,W4,openai/o4-mini,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,W4,openai/o4-mini,"First compute w:
+
+w = (p + e) · d · n  
+  = (6 + 1) · 60 · 6  
+  = 7 · 60 · 6  
+  = 2520  
+
+Then  
+x = w/7 = 2520/7 = 360  
+y = w/7 = 360  
+
+So  
+total_min = w + x + y  
+          = 2520 + 360 + 360  
+          = 3240 minutes  
+
+Finally  
+total_hr = total_min / 60  
+         = 3240 / 60  
+         = 54  
+
+Answer: 54 hours.",True,54,arithmetic_reasoning,high,hard
+GSM_006,W4,openai/o4-mini,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,W4,openai/o4-mini,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,W4,openai/o4-mini,432,False,1024,arithmetic_reasoning,high,medium
+GSM_009,W4,openai/o4-mini,49,True,49,arithmetic_reasoning,high,medium
+GSM_010,W4,openai/o4-mini,885,True,885,arithmetic_reasoning,medium,medium
+GSM_011,W4,openai/o4-mini,86,True,86,arithmetic_reasoning,medium,medium
+GSM_012,W4,openai/o4-mini,81,True,81,arithmetic_reasoning,medium,medium
+GSM_013,W4,openai/o4-mini,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,W4,openai/o4-mini,70,True,70,arithmetic_reasoning,medium,medium
+GSM_015,W4,openai/o4-mini,354,True,354,arithmetic_reasoning,medium,hard
+GSM_016,W4,openai/o4-mini,5,True,5,arithmetic_reasoning,medium,hard
+GSM_017,W4,openai/o4-mini,922,True,922,arithmetic_reasoning,medium,hard
+GSM_018,W4,openai/o4-mini,21,True,21,arithmetic_reasoning,medium,hard
+GSM_019,W4,openai/o4-mini,3,True,3,arithmetic_reasoning,medium,hard
+GSM_020,W4,openai/o4-mini,24,True,24,arithmetic_reasoning,medium,hard
+GSM_001,W5,openai/o4-mini,86,True,86,arithmetic_reasoning,high,medium
+GSM_002,W5,openai/o4-mini,18,True,18,arithmetic_reasoning,high,easy
+GSM_003,W5,openai/o4-mini,75,True,75,arithmetic_reasoning,high,medium
+GSM_004,W5,openai/o4-mini,£150,True,150,arithmetic_reasoning,high,easy
+GSM_005,W5,openai/o4-mini,7,True,7,arithmetic_reasoning,high,hard
+GSM_006,W5,openai/o4-mini,€56,True,56,arithmetic_reasoning,high,medium
+GSM_007,W5,openai/o4-mini,4,True,4,arithmetic_reasoning,high,hard
+GSM_008,W5,openai/o4-mini,16,True,16,arithmetic_reasoning,high,medium
+GSM_009,W5,openai/o4-mini,5,True,5,arithmetic_reasoning,high,medium
+GSM_010,W5,openai/o4-mini,60,True,60,arithmetic_reasoning,medium,medium
+GSM_011,W5,openai/o4-mini,328,True,328,arithmetic_reasoning,medium,medium
+GSM_012,W5,openai/o4-mini,7,True,7,arithmetic_reasoning,medium,medium
+GSM_013,W5,openai/o4-mini,6,False,24,arithmetic_reasoning,medium,medium
+GSM_014,W5,openai/o4-mini,210,True,210,arithmetic_reasoning,medium,medium
+GSM_015,W5,openai/o4-mini,37,True,37,arithmetic_reasoning,medium,hard
+GSM_016,W5,openai/o4-mini,43,True,43,arithmetic_reasoning,medium,hard
+GSM_017,W5,openai/o4-mini,¥21,True,21,arithmetic_reasoning,medium,hard
+GSM_018,W5,openai/o4-mini,80,True,80,arithmetic_reasoning,medium,hard
+GSM_019,W5,openai/o4-mini,22,True,22,arithmetic_reasoning,medium,hard
+GSM_020,W5,openai/o4-mini,10,True,10,arithmetic_reasoning,medium,hard
+GSM_041,W1,openai/o4-mini,"First note that 190 – (19 + 7) = 164 students are left for baking or hiking.  
+Since hiking = 2 × football = 2 × 7 = 14,  
+the number who bake = 164 – 14 = 150.  
+
+Answer: 150 students like to bake.",True,150,arithmetic_reasoning,high,easy
+GSM_041,W2,openai/o4-mini,"First note that “the rest of the students” must total 190 – (19 + 7) = 164, and that this “rest” is exactly those who like to bake or to hike.  Since the hikers number twice the football‐players:
+
+  • Football = 7  
+  • Hiking = 2 × 7 = 14  
+
+so
+
+  Bake + Hike = 164  
+  ⇒ Bake = 164 – 14 = 150.  
+
+Answer: 150 students like to bake.",True,150,arithmetic_reasoning,high,easy
+GSM_041,W3,openai/o4-mini,"Let Q be the number who like quality control.  We’re told  
+Q = 2 × (7) = 14.  
+So the totals by category are  
+– Welding: 19  
+– Forklift-operation: 7  
+– Quality control: 14  
+– Assembly: the rest.  
+
+Since there are 190 workers in all,  
+Assembly = 190 – (19 + 7 + 14) = 190 – 40 = 150.",True,150,arithmetic_reasoning,high,easy
+GSM_041,W4,openai/o4-mini,"Let b = number who bake and h = number who hike.  We are given
+
+1. Total students:  
+   19 (paint) + 7 (football) + b + h = 190
+
+2. “The number that like to hike is twice the number that prefer playing football,” so  
+   h = 2 × 7 = 14.
+
+Plug h = 14 into the total:
+
+19 + 7 + b + 14 = 190  
+⇒ b + 40 = 190  
+⇒ b = 190 − 40 = 150.
+
+Answer: 150 students like to bake.",True,150,arithmetic_reasoning,high,easy
+GSM_041,W6,openai/o4-mini,"Let P be the number who paint and B the number who bake.  We have  
+Total = 54 = (dance)35 + (badminton)2 + P + B  
+⇒ P + B = 54 − 35 − 2 = 17.  
+Also B = 2×(badminton) = 2·2 = 4.  
+Hence P = 17 − B = 17 − 4 = 13.  
+
+Answer: 13 students like to paint.",True,13,arithmetic_reasoning,high,easy
+GSM_042,W1,openai/o4-mini,"Pavel’s total annual harvest is  
+30 sq yd × 94 oranges/sq yd × 1 harvest/year = 2820 oranges.",True,2820,arithmetic_reasoning,high,easy
+GSM_042,W2,openai/o4-mini,"Pavel’s annual harvest = (field area) × (oranges per sq yd) × (harvests per year)
+  
+  = 30 sq yd × 94 oranges/sq yd × 1  
+  = 2 820 oranges  
+  
+So he can harvest 2 820 oranges in one year.",False,2820,arithmetic_reasoning,high,easy
+GSM_042,W3,openai/o4-mini,"The factory’s annual output is simply  
+30 lines × 94 widgets/line = 2,820 widgets per 12‐month period.  
+So in one year the factory can produce 2,820 widgets.",True,2820,arithmetic_reasoning,high,easy
+GSM_042,W4,openai/o4-mini,"Pavel’s annual harvest is  
+ 30 yd² × 94 oranges/yd² × (12 months/12 months per harvest)  
+= 30 × 94 × 1  
+= 2 820 oranges per year.",False,2820,arithmetic_reasoning,high,easy
+GSM_042,W6,openai/o4-mini,"Benjamin’s annual harvest is  
+75 square yards × 77 pomegranates/sq yd  
+= 5 775 pomegranates per year.",False,5775,arithmetic_reasoning,high,easy
+GSM_043,W1,openai/o4-mini,"First compute the number of tennis balls:
+
+  640 × (1/8) = 80 tennis balls.
+
+Then the number of white tennis balls is
+
+  80 × (1/10) = 8.
+
+So there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy
+GSM_043,W2,openai/o4-mini,"First find the number of tennis balls:  
+640 × (1/8) = 80.  
+
+Then find how many of those are white:  
+80 × (1/10) = 8.  
+
+Answer: 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy
+GSM_043,W3,openai/o4-mini,"First find the number of plastic containers:
+640 ÷ 8 = 80.
+
+Then find the number of labeled plastic containers:
+80 ÷ 10 = 8.
+
+Answer: There are 8 labeled plastic containers.",True,8,arithmetic_reasoning,high,easy
+GSM_043,W4,openai/o4-mini,"Let T be the total balls, t the tennis balls, and w the white tennis balls.
+
+1. T = 640  
+2. t = (1/8)·T = (1/8)·640 = 80  
+3. w = (1/10)·t = (1/10)·80 = 8  
+
+Answer: There are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy
+GSM_043,W6,openai/o4-mini,"Half of 420 is 210 tennis balls.  
+One third of those are teal:  
+210 ÷ 3 = 70.  
+So there are 70 teal tennis balls.",True,70,arithmetic_reasoning,high,easy
+GSM_044,W1,openai/o4-mini,"Let x be the number of bouncy balls. We have:
+
+71 (blocks) + 45 (stuffed animals) + 29 (rings) + x = 204
+
+First sum the known toys:
+71 + 45 + 29 = 145
+
+Then solve for x:
+145 + x = 204  
+x = 204 – 145  
+x = 59
+
+There were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy
+GSM_044,W2,openai/o4-mini,"71 + 45 + 29 = 145 total toys before the tube.  
+After buying the tube she has 204 toys, so the tube must have added  
+204 – 145 = 59 bouncy balls.",True,59,arithmetic_reasoning,high,easy
+GSM_044,W3,openai/o4-mini,"First sum the known materials:  
+71 (metal sheets) + 45 (plastic pellets) + 29 (rubber gaskets) = 145.  
+
+Since the grand total is 204, the number of ceramic tiles is  
+204 – 145 = 59.  
+
+Answer: 59 ceramic tiles.",True,59,arithmetic_reasoning,high,easy
+GSM_044,W4,openai/o4-mini,"Let x be the number of bouncy balls in the tube.  Before Mei bought them she already had  
+71 blocks + 45 stuffed animals + 29 rings = 145 toys.  
+After adding x balls her total is 204, so  
+145 + x = 204  
+x = 204 − 145  
+x = 59  
+
+There were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy
+GSM_044,W6,openai/o4-mini,"First add up the known toys:  
+74 (blocks) + 42 (stuffed animals) + 32 (rings) = 148  
+
+Then subtract from the total:  
+189 – 148 = 41  
+
+So the tube contained 41 bouncy balls.",True,41,arithmetic_reasoning,high,easy
+GSM_045,W1,openai/o4-mini,"Liam picks a total of 205 (Wed) + 97 (Thu) + 4×205 (Fri) = 205 + 97 + 820 = 1,122 pineapples.",True,1122,arithmetic_reasoning,high,medium
+GSM_045,W2,openai/o4-mini,"First compute Friday’s harvest:  
+Friday = 4 × 205 = 820  
+
+Now add them all up:  
+Total = Wednesday + Thursday + Friday  
+Total = 205 + 97 + 820 = 1,122  
+
+Liam has picked 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium
+GSM_045,W3,openai/o4-mini,"Robot-X7 assembles on Station-C: 4 × 205 = 820 boards.  
+Total = 205 + 97 + 820 = 1,122 circuit boards.",True,1122,arithmetic_reasoning,high,medium
+GSM_045,W4,openai/o4-mini,"Liam’s total is just the sum of what he picked on the two days:
+
+n₁ + n₂ = 205 + 97 = 302
+
+So he has 302 pineapples in all.",False,1122,arithmetic_reasoning,high,medium
+GSM_045,W6,openai/o4-mini,"Kai picked a total of  
+Sunday: 194  
+Monday: 212  
+Tuesday: 3 × 194 = 582  
+
+So altogether he has 194 + 212 + 582 = 988 apricots.",True,988,arithmetic_reasoning,high,medium
+GSM_046,W1,openai/o4-mini,"First, figure out how many calories you have left for the day:  
+ 2395 – 1350 = 1045 calories  
+
+Each serving is 475 calories and weighs 275 oz ÷ 5 = 55 oz, so each ounce has  
+ 475 cal ÷ 55 oz ≈ 8.636 cal/oz  
+
+The maximum ounces you can eat is therefore  
+ 1045 cal ÷ (8.636 cal/oz) ≈ 121 oz  
+
+So you can consume up to about 121 ounces of bread.",True,121,arithmetic_reasoning,high,medium
+GSM_046,W2,openai/o4-mini,"1. Compute remaining calories:  
+   2395 – 1350 = 1045 kcal
+
+2. Find calories per ounce of bread:  
+   – One serving = 275 oz ÷ 5 servings = 55 oz  
+   – Calories per ounce = 475 kcal ÷ 55 oz ≈ 8.636 kcal/oz
+
+3. Calculate allowable ounces:  
+   1045 kcal ÷ 8.636 kcal/oz ≈ 121 oz
+
+You can therefore eat about 121 ounces of this bread without exceeding your remaining 1045 calorie allowance.",False,121,arithmetic_reasoning,high,medium
+GSM_046,W3,openai/o4-mini,"You still need  
+  2395 kW – 1350 kW = 1045 kW  
+
+Each “cycle” gives 475 kW and consumes  
+  275 L ÷ 5 servings = 55 L per cycle  
+
+So the number of cycles you need is  
+  1045 kW ÷ 475 kW / cycle ≃ 2.2 cycles  
+
+And the total liters processed will be  
+  2.2 cycles × 55 L / cycle ≃ 121 L",True,121,arithmetic_reasoning,high,medium
+GSM_046,W4,openai/o4-mini,"First, note that one serving is  
+  275 oz ÷ 5 servings = 55 oz/serving,  
+and one serving contains 475 cal, so the bread is  
+  475 cal ÷ 55 oz ≈ 8.636 cal/oz.
+
+You’ve got  
+  Daily target:   2395 cal  
+– Already eaten: 1350 cal  
+= 1045 cal remaining.
+
+At ≈ 8.636 cal per ounce, you can eat  
+  1045 cal ÷ (475 cal / 55 oz)  
+= 1045 × 55 ÷ 475  
+= 2.2 servings × 55 oz/serving  
+= 121 oz.",True,121,arithmetic_reasoning,high,medium
+GSM_046,W6,openai/o4-mini,"First find your remaining calories:
+
+1905 – 1725 = 180 cal
+
+Next, find calories per ounce in the bread:
+
+• 1 bag = 100 oz, 5 servings ⇒ each serving = 100 ÷ 5 = 20 oz  
+• 450 cal per 20 oz ⇒ 450 ÷ 20 = 22.5 cal/oz
+
+Finally, how many ounces for 180 cal:
+
+180 cal ÷ 22.5 cal/oz = 8 oz
+
+You can eat 8 ounces of the bread.",True,8,arithmetic_reasoning,high,medium
+GSM_047,W1,openai/o4-mini,"Start by finding how many rooms are empty initially:
+
+• Total rooms = 1800  
+• Filled initially = (1/4)·1800 = 450  
+• Empty initially = 1800 – 450 = 1350  
+
+Over 3 weeks (21 days) at 40 new patients/day, the clinic admits  
+40 × 21 = 840 new patients (each taking one room).  
+
+So empty rooms after 3 weeks = 1350 – 840 = 510.",True,510,arithmetic_reasoning,high,hard
+GSM_047,W2,openai/o4-mini,"First, compute the initial numbers:
+
+• Total rooms = 1800  
+• Initially occupied = ¼·1800 = 450  
+• Initially unoccupied = 1800 – 450 = 1350  
+
+Over 3 weeks (21 days) at 40 admissions/day:
+
+• Newly occupied rooms = 40 × 21 = 840  
+
+Since 840 ≤ 1350, all new patients find rooms.  
+Remaining unoccupied after 21 days:
+
+1350 – 840 = 510
+
+Answer: 510 unoccupied rooms.",True,510,arithmetic_reasoning,high,hard
+GSM_047,W3,openai/o4-mini,"Step 1:  Compute initial occupancy  
+• Capacity = 1800 units  
+• Initially occupied = ¼·1800 = 450 units  
+• Initially unoccupied = 1800 − 450 = 1350 units  
+
+Step 2:  Compute new occupancy over 3 weeks  
+• 3 weeks = 21 days  
+• 40 data streams/day ⇒ 40·21 = 840 new occupied units  
+
+Step 3:  Compute remaining unoccupied  
+• Remaining unoccupied = 1350 − 840 = 510 units  
+
+Answer: 510 unoccupied server units.",True,510,arithmetic_reasoning,high,hard
+GSM_047,W4,openai/o4-mini,"Here’s the step‐by‐step:
+
+1. Total capacity: 1800 rooms.  
+2. Initially occupied: 1/4 of 1800 = 1800 × (1/4) = 450 rooms.  
+3. Initially unoccupied: 1800 − 450 = 1350 rooms.  
+4. Patients admitted each day: 40.  
+5. Over 3 weeks (3 × 7 = 21 days): 40 × 21 = 840 new patients (i.e. 840 more occupied rooms).  
+6. Final occupied rooms: 450 + 840 = 1290.  
+7. Final unoccupied rooms: 1800 − 1290 = 510.
+
+Answer: 510 unoccupied rooms after 3 weeks.",False,510,arithmetic_reasoning,high,hard
+GSM_047,W6,openai/o4-mini,"Initial occupied rooms: (2/5)·1900 = 760  
+Initial unoccupied rooms: 1900 − 760 = 1140  
+
+Over 2 weeks (14 days), additional occupants = 80·14 = 1120  
+New total occupied = 760 + 1120 = 1880  
+
+Unoccupied rooms after 2 weeks = 1900 − 1880 = 20",True,20,arithmetic_reasoning,high,hard
+GSM_048,W1,openai/o4-mini,"The pricier tea costs 20 ₺ + 20 ₺·45% = 20 ₺·1.45 = 29 ₺/kg.  
+For 7 kg: 7·29 ₺ = 203 ₺.  
+Plus the 3 ₺ bagel gives a total of 203 ₺ + 3 ₺ = 206 ₺.",True,206,arithmetic_reasoning,high,hard
+GSM_048,W2,openai/o4-mini,"First compute the price of the “more expensive” tea:
+
+• Normal price = ₺20/kg  
+• Mark-up = 45% → 0.45·20 = ₺9  
+→ New price = 20 + 9 = ₺29 per kg
+
+Over one week at 1 kg/day:
+
+• Tea cost = 7 kg·₺29/kg = ₺203  
+
+Add the one bagel at ₺3:
+
+• Total = 203 + 3 = ₺206",True,206,arithmetic_reasoning,high,hard
+GSM_048,W3,openai/o4-mini,"The new steel costs  
+20 ₺ × (1 + 0.45) = 20 ₺ × 1.45 = 29 ₺ per ton.  
+For a week (7 days × 1 ton/day) he needs 7 tons, so steel costs  
+7 × 29 ₺ = 203 ₺.  
+Adding the 3 ₺ lubricant gives  
+203 ₺ + 3 ₺ = 206 ₺ total.",True,206,arithmetic_reasoning,high,hard
+GSM_048,W4,openai/o4-mini,"Step 1: Compute the price per kilogram of the more expensive tea  
+  Normal price = ₺20/kg  
+  Mark-up = 45% ⇒ new price = 20 × (1 + 0.45) = 20 × 1.45 = ₺29/kg  
+
+Step 2: Compute total tea needed for a week  
+  Usage = 1 kg/day × 7 days = 7 kg  
+
+Step 3: Compute cost of the tea  
+  7 kg × ₺29/kg = ₺203  
+
+Step 4: Add the cost of the bagel  
+  Bagel = ₺3  
+
+Total cost = ₺203 + ₺3 = ₺206.",True,206,arithmetic_reasoning,high,hard
+GSM_048,W6,openai/o4-mini,"First, compute the new rice price:
+
+20 ₣/kg × (1 + 30%) = 20 ₣/kg × 1.3 = 26 ₣/kg
+
+He needs 2 kg/day × 7 days = 14 kg, so
+
+Rice cost = 14 kg × 26 ₣/kg = 364 ₣
+
+Add the cookie (2 ₣):
+
+Total = 364 ₣ + 2 ₣ = 366 ₣",True,366,arithmetic_reasoning,high,hard
+GSM_049,W1,openai/o4-mini,"First, find the number of apartments in each complex:
+
+• Complex 1: 450 apartments  
+• Complex 2: 450 apartments  
+• Complex 3: 20% more than (450 + 450)=900 ⇒ 900 × 1.20 = 1 080 apartments  
+
+Each week he visits each complex twice, so total “apartment‐collections” per week is  
+(450+450+1080) × 2 = 1 980 × 2 = 3 960  
+
+At ₣0.45 per apartment, his weekly income is  
+3 960 × 0.45 = ₣1 782.",False,1782,arithmetic_reasoning,high,hard
+GSM_049,W2,openai/o4-mini,"First two complexes together have 450 + 450 = 900 apartments.  
+The third is 20% larger, so it has 900 × 1.20 = 1 080 apartments.  
+Total apartments = 450 + 450 + 1 080 = 1 980.  
+
+He collects twice a week from each apartment, at ₣0.45 per collection, so per apartment per week he earns  
+2 × 0.45 = ₣0.90.  
+
+Hence his weekly take is  
+1 980 apartments × ₣0.90 = ₣1 782.",False,1782,arithmetic_reasoning,high,hard
+GSM_049,W3,openai/o4-mini,"First facility: 450 workstations  
+Second facility: 450 workstations  
+Combined these two = 900 workstations  
+Third facility: 20% bigger ⇒ 900 × 1.2 = 1 080 workstations  
+
+Total workstations = 450 + 450 + 1 080 = 1 980  
+Assemblies/week = 2 per workstation ⇒ 1 980 × 2 = 3 960  
+Pay = ₣0.45 per assembly ⇒ 3 960 × 0.45 = ₣1 782  
+
+So Robot-7 makes ₣1 782 in a week.",False,1782,arithmetic_reasoning,high,hard
+GSM_049,W4,openai/o4-mini,"First, compute the number of apartments in each complex:
+
+  • Complex 1: 450  
+  • Complex 2: 450  
+  • Complex 3: 20% bigger than the other two combined  
+    – Other two combined = 450 + 450 = 900  
+    – 20% of 900 = 0.20 × 900 = 180  
+    – Complex 3 = 900 + 180 = 1 080  
+
+Total apartments = 450 + 450 + 1 080 = 1 980
+
+He collects twice a week, so total weekly collections = 1 980 × 2 = 3 960
+
+At ₣0.45 per collection, weekly pay = 3 960 × 0.45 = ₣1 782
+
+Answer: Umar makes ₣1 782 in a week.",False,1782,arithmetic_reasoning,high,hard
+GSM_049,W6,openai/o4-mini,"First, find the number of apartments in each complex:
+
+• Complex 1: 200  
+• Complex 2: 200  
+• Complex 3 is 60% bigger than the other two combined.  
+  – Other two combined = 200 + 200 = 400  
+  – 60% bigger ⇒ 400 × 1.6 = 640  
+
+So total apartments = 200 + 200 + 640 = 1 040.
+
+He services each apartment 2 times a week at ¥0.3 per collection, so revenue per apartment per week = 2 × 0.3 = ¥0.6.
+
+Total weekly pay = 1 040 apartments × ¥0.6/apartment = ¥624.",True,624,arithmetic_reasoning,high,hard
+GSM_050,W1,openai/o4-mini,"After 1/4 of the 16 remoras (i.e. 4) leave, 12 remain.  Since each is 1 ft long, their total length is 12 ft, and
+
+(12 ft ÷ 60 ft) × 100% = 20%
+
+So the remoras’ combined length is 20% of the dolphin’s length.",True,20,arithmetic_reasoning,medium,medium
+GSM_050,W2,openai/o4-mini,"First compute how many remoras remain:
+
+- Initial remoras: 16  
+- Fraction that leave: 1/4 → Number that leave = 16·(1/4) = 4  
+- Remaining remoras = 16 − 4 = 12  
+
+Each remora is 12 inches = 1 foot long, so total length of the 12 remoras is  
+12 remoras × 1 ft/remora = 12 ft.
+
+The dolphin is 60 ft long, so the remoras’ combined length as a percentage is  
+(12 ft ÷ 60 ft) × 100% = 20%.",True,20,arithmetic_reasoning,medium,medium
+GSM_050,W3,openai/o4-mini,"First, a quarter of 16 drones is 4, so 16 – 4 = 12 drones remain.  
+Their combined length is 12 drones × 12 inches = 144 inches = 12 feet.  
+As a percentage of the 60-foot spacecraft:  
+(12 ft / 60 ft) × 100% = 20%.",True,20,arithmetic_reasoning,medium,medium
+GSM_050,W4,openai/o4-mini,"First convert everything to the same units.  
+– Dolphin length = 60 ft  
+– Each remora = 12 in = 1 ft  
+– Total remora length = 16 remoras×1 ft/remora = 16 ft  
+
+Now compute the percentage of the dolphin’s length:  
+(16 ft ÷ 60 ft)×100% = 0.2666…×100% ≃ 26.67%
+
+Answer: the remoras’ combined length is about 26.7 % of the dolphin’s body length.",False,20,arithmetic_reasoning,medium,medium
+GSM_050,W6,openai/o4-mini,"First, convert everything to the same units.  
+– Dolphin: 70 ft = 70 × 12 in = 840 in  
+– Each remora: 12 in  
+
+Originally there are 14 remoras (total length 14 × 12 = 168 in). Half leave, so 7 remain:  
+7 × 12 in = 84 in  
+
+As a percentage of the dolphin’s 840 in body length:  
+(84 ÷ 840) × 100% = 10%",True,10,arithmetic_reasoning,medium,medium
+GSM_051,W1,openai/o4-mini,"The fog advances at 2 mi per 64 min ⇒ 1 mi per 32 min.  
+A tenth of the 80 mi city is 8 mi, so time = 8 mi·(32 min/mi) = 256 minutes.",True,256,arithmetic_reasoning,medium,easy
+GSM_051,W2,openai/o4-mini,"The fog travels at  
+  2 miles / 64 min = 1 mile / 32 min.  
+
+A tenth of the city is 80 miles × (1/10) = 8 miles.  
+Time to go 8 miles = 8 miles × 32 min / mile = 256 minutes.",True,256,arithmetic_reasoning,medium,easy
+GSM_051,W3,openai/o4-mini,"The virus spreads at 2 GB every 64 min ⇒ 1 GB in 32 min.  
+A tenth of an 80 GB network is 8 GB, so it takes  
+8 GB × 32 min/GB = 256 minutes.",True,256,arithmetic_reasoning,medium,easy
+GSM_051,W4,openai/o4-mini,"First, find the fog’s speed:
+
+– It covers 2 mi in 64 min ⇒ speed = 2 mi / 64 min = 1 mi / 32 min.
+
+A tenth of the city is 80 mi / 10 = 8 mi.
+
+Time to cover 8 mi at 1 mi/32 min is  
+8 mi × 32 min/mi = 256 minutes.",True,256,arithmetic_reasoning,medium,easy
+GSM_051,W6,openai/o4-mini,"Since 1/5 of the city’s 60 mi width is 12 mi, and at 107 min per 6 mi the fog travels at (107/6) min/mi, the time to cover 12 mi is
+
+12 mi×(107 min ÷ 6 mi) = 2×107 min = 214 minutes.",True,214,arithmetic_reasoning,medium,easy
+GSM_052,W1,openai/o4-mini,"First, compute each probability:
+
+1. P(roll > 6) on a fair 12-sided die  
+   Faces greater than 6 are {7, 8, 9, 10, 11, 12} ⇒ 6 outcomes out of 12  
+   ⇒ P₁ = 6/12 = 0.50 = 50%
+
+2. P(4 odd rolls in a row)  
+   There are 6 odd faces (1,3,5,7,9,11) out of 12 ⇒ P(odd) = 6/12 = 0.50  
+   Rolls are independent ⇒ P₂ = (0.50)⁴ = 1/16 = 0.0625 = 6.25%
+
+The difference in their percentages is  
+  50% – 6.25% = 43.75 percentage points.  
+
+So the probability of rolling > 6 is 43.75 pp higher than that of four consecutive odd rolls.",True,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W2,openai/o4-mini,"First note
+
+  P(A) = “roll > 6 on a d12” = 6 faces out of 12 = 6/12 = 0.5 = 50%  
+  P(B) = “four odds in a row” = (½)^4 = 1/16 = 0.0625 = 6.25%
+
+Ratio and relative increase
+
+  Ratio  P(A)/P(B)  = 0.50 / 0.0625  = 8  
+  ⇒ A is 8 times as likely as B (i.e. 800% of B’s likelihood)  
+  ⇒ “How much more likely?” = (8 – 1)×100% = 700% more likely
+
+You can also say
+
+  • Absolute probabilities: 50% vs. 6.25% ⇒ difference = 43.75 percentage points  
+  • Or A is 8× as likely (700% more likely) than B.",False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W3,openai/o4-mini,"Let X be one roll of the 12‐slot randomizer (uniform on {1,…,12}).
+
+1.  P(code > 6)  
+   There are 6 numbers above 6 (7–12) out of 12, so  
+   P(code>6) = 6/12 = 0.5 = 50%.
+
+2.  P(four odd numbers in a row)  
+   On one roll, P(odd) = 6/12 = 0.5.  Four independent rolls gives  
+   P(odd, odd, odd, odd) = (0.5)^4 = 1/16 = 0.0625 = 6.25%.
+
+3.  Difference in likelihood  
+   50.00% − 6.25% = 43.75%.
+
+Answer: It’s 43.75 percentage points more likely to roll a code > 6 than to get four odds in a row.",False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W4,openai/o4-mini,"First, compute each probability:
+
+1. “Roll > 6” on a d12  
+   – Favorable faces: 7, 8, 9, 10, 11, 12 → 6 outcomes  
+   – Total faces: 12  
+   P(>6) = 6/12 = 1/2 = 50%
+
+2. “Four odd rolls in a row”  
+   – On one roll, odd faces are {1,3,5,7,9,11} → 6/12 = 1/2  
+   – Four independent rolls: (1/2)^4 = 1/16 = 6.25%
+
+Difference (how much more likely, in percentage points):  
+50% – 6.25% = 43.75%
+
+Answer: It’s 43.75 percentage points more likely that he rolls a number greater than 6 than that he rolls four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W6,openai/o4-mini,"First note  
+• P(roll > 1 in one throw) = 3/4 = 0.75  
+• P(roll four odd numbers in a row) = (chance of odd in one throw)\^4 = (2/4)\^4 = (1/2)\^4 = 1/16 = 0.0625  
+
+So the difference in probabilities is  
+0.75 − 0.0625 = 0.6875  
+
+Expressed as a percentage, that’s 68.75%.  
+
+Answer: 68.75% more likely.",True,68.75,arithmetic_reasoning,medium,medium
+GSM_053,W1,openai/o4-mini,"Let W be the number of cups of water.  
+From the 63 : 21 sugar–water ratio, sugar S= (63/21)·W = 3W teaspoons.  
+From the 7 cups water : 7 tbsp milk ratio, milk M = W tablespoons.  
+Total items = S + W + M = 3W + W + W = 5W = 630 ⇒ W = 126.  
+Thus sugar S = 3·126 = 378 teaspoons.",True,378,arithmetic_reasoning,medium,easy
+GSM_053,W2,openai/o4-mini,"Let w = cups of water.  Then from the ratios:
+
+• Sugar : water = 63 : 21 ⇒ s/w = 63/21 = 3 ⇒ s = 3w  
+• Milk : water = 7 Tbsp : 7 cups ⇒ m/w = 1 ⇒ m = w  
+
+The total “units” is  
+   s + w + m = 3w + w + w = 5w = 630  
+⇒ w = 630/5 = 126  
+
+Hence sugar s = 3w = 3·126 = 378  
+
+Answer: She used 378 teaspoonfuls of sugar.",True,378,arithmetic_reasoning,medium,easy
+GSM_053,W3,openai/o4-mini,"Let c (in g), i (in L) and z (in kg) be the amounts of copper, iron and zinc used.  From the data we have  
+
+1.  Copper : iron = 63 : 21 = 3 : 1  
+   ⇒ c = 3k, i = k  
+
+2.  Zinc : iron = 7 kg : 7 L = 1 kg : 1 L  
+   ⇒ z = i = k  
+
+3.  Total “units” consumed = c + i + z = 630  
+   ⇒ 3k + k + k = 5k = 630  ⇒  k = 126  
+
+Hence  
+  c = 3k = 378 g  
+  i = 126 L  
+  z = 126 kg  
+
+We want the number of teaspoonfuls of copper.  A teaspoon holds about 5 mL, and solid copper has density ρ ≃ 8.96 g/cm³, so  
+
+  Volume of copper = mass/density = 378 g ÷ (8.96 g/cm³) ≃ 42.19 cm³  
+
+Since 1 teaspoon ≃ 5 cm³, the number of teaspoons is  
+
+  42.19 cm³ ÷ 5 cm³/tsp ≃ 8.44 tsp.  
+
+Answer: she consumed about 8.44 teaspoonfuls of copper.",False,378,arithmetic_reasoning,medium,easy
+GSM_053,W4,openai/o4-mini,"Let S = teaspoons of sugar, W = cups of water, M = tablespoons of milk.  
+From the ratios:  
+  S:W = 63:21 ⇒ S/W = 63/21 = 3 ⇒ S = 3 W  
+  M:W = 7:7  ⇒ M/W = 1   ⇒ M = W  
+
+The total used is  
+  S + W + M = 630  
+Substitute S = 3 W and M = W:  
+  3 W + W + W = 630  
+  5 W = 630  
+  W = 126  
+
+Hence  
+  S = 3 W = 3·126 = 378  
+
+Kimia used 378 teaspoons of sugar.",True,378,arithmetic_reasoning,medium,easy
+GSM_053,W6,openai/o4-mini,"First note that  
+– Sugar : Water = 66 tsp : 48 cups  
+– Milk : Water = 8 tbsp : 8 cups = 1 tbsp / 1 cup
+
+So for every 48 cups of water you use  
+• Sugar = 66 tsp  
+• Milk = (1 tbsp / 1 cup) × 48 cups = 48 tbsp  
+
+That “batch” has 66 + 48 + 48 = 162 total units.  Since she used 810 total units, the number of such batches is  
+810 ÷ 162 = 5.  
+
+Thus sugar used = 5 × 66 = 330 teaspoons.",True,330,arithmetic_reasoning,medium,easy
+GSM_054,W1,openai/o4-mini,"First 10 min at \$0.60/min:  
+  10·0.60 = \$6.00  
+
+Next 20 min (from minute 11 to 30) at \$0.40/min:  
+  20·0.40 = \$8.00  
+
+Remaining 40 min (from minute 31 to 70) at \$0.10 per 2 min = \$0.05/min:  
+  40·0.05 = \$2.00  
+
+Total cost = 6 + 8 + 2 = \$16.00",True,16,arithmetic_reasoning,medium,hard
+GSM_054,W2,openai/o4-mini,"Breakdown by interval:
+
+1. First 10 min at \$0.6/min:  
+   10 × 0.6 = \$6.00
+
+2. Next 20 min (minutes 11–30) at \$0.4/min:  
+   20 × 0.4 = \$8.00
+
+3. Remaining 70 – 30 = 40 min at \$0.1 per 2 min ⇒ \$0.05/min:  
+   40 × 0.05 = \$2.00
+
+Total cost = 6 + 8 + 2 = \$16.00",True,16,arithmetic_reasoning,medium,hard
+GSM_054,W3,openai/o4-mini,"Assuming you process 1 unit/minute, a 70-unit run takes 70 min, so
+
+• Minutes 0–10 ⇒ 10 units @ \$0.60 = \$6.00  
+• Minutes 10–30 ⇒ 20 units @ \$0.40 = \$8.00  
+• Minutes 30–70 ⇒ 40 units @ (\$0.10 per 2 units = \$0.05/unit) = \$2.00  
+
+Total = 6 + 8 + 2 = \$16.00.",True,16,arithmetic_reasoning,medium,hard
+GSM_054,W4,openai/o4-mini,"First 10 min cost 0.6 $/min ⇒ 10·0.6 = 6 $  
+Next 20 min (from minute 10 to 30) cost 0.4 $/min ⇒ 20·0.4 = 8 $  
+Last 40 min (from minute 30 to 70) are billed at 0.1 $ per 2 min ⇒ 40 min=20 ×2 min blocks ⇒ 20·0.1 = 2 $  
+Total cost = 6 + 8 + 2 = 16 $",True,16,arithmetic_reasoning,medium,hard
+GSM_054,W6,openai/o4-mini,"Here’s the breakdown:
+
+• First 10 min at ₺0.9/min:  
+  10 × 0.9 = ₺9.0  
+• Next 14 min (minutes 11–24) at ₺0.5/min:  
+  14 × 0.5 = ₺7.0  
+• Remaining 70 min (minutes 25–94) at ₺0.2 per 2 min ⇒ ₺0.1/min:  
+  70 × 0.1 = ₺7.0  
+
+Total cost = 9.0 + 7.0 + 7.0 = ₺23.00",True,23,arithmetic_reasoning,medium,hard
+GSM_055,W1,openai/o4-mini,"Theo starts with 621 almonds.  He eats one‐third of them, i.e. 621÷3 = 207, leaving 621−207 = 414 almonds.  
+His 11 tables hold 11×24 = 264 almonds, and his 3 bowls hold 3×48 = 144, for a total capacity of 264 + 144 = 408.  
+Since 414 − 408 = 6, there are 6 almonds he cannot place.",True,6,arithmetic_reasoning,medium,medium
+GSM_055,W2,openai/o4-mini,"First compute how many almonds Theo has left after eating 1/3 of 621:
+
+ Almonds eaten = (1/3)·621 = 207  
+ Almonds remaining = 621 − 207 = 414
+
+Next find the total capacity of the tables and bowls:
+
+ Tables: 11·24 = 264  
+ Bowls:  3·48 = 144  
+ Total capacity = 264 + 144 = 408
+
+Since he has 414 almonds but only 408 spots, the number that won’t fit is
+
+ 414 − 408 = 6
+
+Answer: 6 almonds.",True,6,arithmetic_reasoning,medium,medium
+GSM_055,W3,openai/o4-mini,"First, after deleting one third of 621 chips he has left  
+621 × (2/3) = 414 chips.  
+
+Storage capacity:  
+• 11 servers × 24 = 264  
+• 3 databases × (2×24)=48 each → 3×48=144  
+Total capacity = 264+144=408  
+
+Chips that won’t fit = 414–408=6.",True,6,arithmetic_reasoning,medium,medium
+GSM_055,W4,openai/o4-mini,"First compute the total capacity:
+
+• almonds per table = 24  
+• almonds per bowl = 2 × 24 = 48  
+• tables = 11 ⇒ 11 × 24 = 264  
+• bowls = 3 ⇒ 3 × 48 = 144  
+• total capacity = 264 + 144 = 408  
+
+Theo has 621 almonds, so the number he can’t place is
+
+621 − 408 = 213.
+
+Answer: 213 almonds won’t fit.",False,6,arithmetic_reasoning,medium,medium
+GSM_055,W6,openai/o4-mini,"First compute the total capacity:
+
+• Tables: 9 × 20 = 180  
+• Plates: 5 × (2×20) = 5 × 40 = 200  
+Total capacity = 180 + 200 = 380.
+
+He eats one‐third of 711, i.e. 711÷3 = 237, so he has 711 – 237 = 474 cookies left.
+
+The number he can’t place is 474 – 380 = 94.
+
+Answer: 94 cookies.",True,94,arithmetic_reasoning,medium,medium
+GSM_056,W1,openai/o4-mini,"First compute the walking times:
+
+– To the grocery corner: 26 min  
+– From there to the cinema: 27 min  
+  ⇒ so far 26+27 = 53 min  
+– From the cinema to the park takes twice that, i.e. 2·53 = 106 min  
+
+Total walking time = 26 + 27 + 106 = 159 min.  
+They already spent 35 min on coffee, so used so far 35 + 159 = 194 min.
+
+They must be at the gym by 263 min, so their remaining “slack” is
+
+263 − 194 = 69 minutes.",True,69,arithmetic_reasoning,medium,medium
+GSM_056,W2,openai/o4-mini,"First compute the total walking‐time you still need:
+
+  1. to the corner: 26 min  
+  2. corner → cinema: 27 min  
+  3. cinema → park: 2×(26+27)=2×53=106 min  
+  ⇒ total walk = 26+27+106 = 159 min  
+
+You have 263 min in all, but you’ve already “lost” 35 min getting coffee, so only 263–35=228 min remain.  
+
+To finish your walk in time you need 159 min, so your slack is  
+228−159 = 69 minutes.  
+
+Answer: You can afford to waste another 69 minutes and still make it to the gym on time.",True,69,arithmetic_reasoning,medium,medium
+GSM_056,W3,openai/o4-mini,"First, let’s add up the time they’ll spend before the final leg:
+
+• System‐update “waste”: 35 min  
+• To the repair‐depot junction: 26 min  
+• From there to the data‐center: 27 min  
+–––  
+Subtotal (before the power‐grid leg): 35 + 26 + 27 = 88 min
+
+The problem says the trip to the power grid then takes “double the combined amount they have spent so far” – i.e. double  (26+27)=53 min of navigation so far, so
+
+• Time to power grid = 2 × 53 = 106 min
+
+Total up through reaching the power grid:
+
+88 + 106 = 194 min
+
+They have 263 min total, so the time remaining (“how much longer they have to get to the charging station”) is
+
+263 – 194 = 69 minutes.",True,69,arithmetic_reasoning,medium,medium
+GSM_056,W4,openai/o4-mini,"Let total allowed time be T=263 min.  They waste 35 min getting coffee, then must walk 26 min + 27 min = 53 min.  
+Remaining “slack” time = 263 − (35 + 53) = 263 − 88 = 175 minutes.",False,69,arithmetic_reasoning,medium,medium
+GSM_056,W6,openai/o4-mini,"Total allowed time: 267 min  
+Time already gone:  
+ • coffee before setting out: 48 min  
+ • to grocery‐corner: 11 min  
+ • to the bank: 13 min  
+Subtotal before the park = 48+11+13 = 72 min  
+Time to the park = 3×(11+13) = 3×24 = 72 min  
+Total used up so far = 72+72 = 144 min  
+Remaining = 267−144 = 123 min  
+
+They have 123 minutes left to reach the gym without being late.",True,123,arithmetic_reasoning,medium,medium
+GSM_057,W1,openai/o4-mini,"First, tally up the totals:
+
+Umar’s litter  
+• Total puppies: 113  
+• Spotted puppies: 17  
+
+Xena’s litter  
+• Total puppies: 47  
+• Spotted puppies: 15  
+
+Sophia’s litters  
+• Number of mothers: 64  
+• Spotted puppies per mother: 10  
+→ Total puppies (all spotted): 64 × 10 = 640  
+
+Now sum across all three owners:
+
+• Total puppies = 113 + 47 + 640 = 800  
+• Total spotted = 17 + 15 + 640 = 672  
+
+Percentage spotted = (672 ÷ 800) × 100% = 84%",True,84,arithmetic_reasoning,medium,medium
+GSM_057,W2,openai/o4-mini,"First, let’s tally up total puppies and total spotted puppies (taking “Sophia’s puppies” to be 64 total, of which 10 have spots):
+
+• Umar’s puppies: 113 total, 17 spotted  
+• Xena’s puppies: 47 total, 15 spotted  
+• Sophia’s puppies: 64 total, 10 spotted  
+
+Totals:  
+– Total puppies = 113 + 47 + 64 = 224  
+– Total spotted = 17 + 15 + 10 = 42  
+
+Percentage spotted = (42 ÷ 224) × 100% = 18.75%",False,84,arithmetic_reasoning,medium,medium
+GSM_057,W3,openai/o4-mini,"First, tally totals for each factory:
+
+Factory A  
+• Total units: 113  
+• With sensors: 17  
+
+Factory B  
+• Total units: 47  
+• With sensors: 15  
+
+Factory C  
+• 64 lines × 10 units per line = 640 total units  
+• All 10 per line have sensors ⇒ 640 with sensors  
+
+Now sum across all factories:  
+• Total units = 113 + 47 + 640 = 800  
+• Units with sensors = 17 + 15 + 640 = 672  
+
+Percentage with sensors = (672 ÷ 800) × 100% = 84%",True,84,arithmetic_reasoning,medium,medium
+GSM_057,W4,openai/o4-mini,"First, compute the total number of puppies and the total number with spots:
+
+  Umar’s puppies:      113 total, 17 spotted  
+  Xena’s puppies:       47 total, 15 spotted  
+  Sophia’s puppies:   64 dogs × 10 spotted each = 640 total, 640 spotted  
+
+Totals:  
+  Total puppies = 113 + 47 + 640 = 800  
+  Total spotted  =  17 + 15 + 640 = 672  
+
+Percentage spotted = (672 / 800) × 100% = 84%",True,84,arithmetic_reasoning,medium,medium
+GSM_057,W6,openai/o4-mini,"First, compute total puppies and total spotted puppies:
+
+Carlos  
+– Puppies: 96  
+– Spotted: 20  
+
+Gabriel  
+– Puppies: 63  
+– Spotted: 13  
+
+Esteban  
+– Dogs: 57, each has 13 spotted puppies ⇒ Puppies: 57·13 = 741 (all spotted)  
+
+Totals  
+– Puppies: 96 + 63 + 741 = 900  
+– Spotted: 20 + 13 + 741 = 774  
+
+Percentage spotted = (774 ÷ 900)·100% = 86%",True,86,arithmetic_reasoning,medium,medium
+GSM_058,W1,openai/o4-mini,"First compute the undiscounted total:
+
+16·¥2.75  = ¥44  
+10·¥17.00 = ¥170  
+1 rim bond paper = ¥20  
+6·¥11.00  = ¥66  
+——————————  
+Subtotal   = ¥44 + ¥170 + ¥20 + ¥66 = ¥300  
+
+Apply 5% discount:  
+Discount = 0.05·¥300 = ¥15  
+
+Total paid = ¥300 – ¥15 = ¥285",True,285,arithmetic_reasoning,medium,hard
+GSM_058,W2,openai/o4-mini,"Step 1: Compute the undiscounted total  
+– Colored pencils: 16 × ¥2.75 = ¥44  
+– Crayons:         10 × ¥17.00 = ¥170  
+– Folders:          6 × ¥11.00 = ¥66  
+– Bond paper:                   = ¥20  
+
+Undiscounted sum = 44 + 170 + 66 + 20 = ¥300  
+
+Step 2: Apply the 5% discount  
+– Discount = 5% of ¥300 = 0.05 × 300 = ¥15  
+
+Step 3: Subtract discount from the total  
+– Total spent = 300 – 15 = ¥285
+
+Answer: Bodhi spent ¥285 on everything.",True,285,arithmetic_reasoning,medium,hard
+GSM_058,W3,openai/o4-mini,"First compute the undiscounted total:
+
+• 16 boards × ¥2.75 = ¥44.00  
+• 10 sensors × ¥17.00 = ¥170.00  
+• 1 steel sheet         = ¥20.00  
+• 6 actuators × ¥11.00 = ¥66.00  
+––––––––––––––––––––––––––––  
+  Subtotal = ¥300.00  
+
+A 5% discount on ¥300 is 0.05 × 300 = ¥15.00  
+
+So the amount paid is  
+  300 – 15 = ¥285.00",True,285,arithmetic_reasoning,medium,hard
+GSM_058,W4,openai/o4-mini,"First compute the undiscounted total:
+
+– Colored pencils: 16 × ¥2.75 = ¥44  
+– Crayons: 10 × ¥17.00 = ¥170  
+– Ream of bond paper: ¥20  
+– Folders: 6 × ¥11 = ¥66  
+
+Undiscounted sum = 44 + 170 + 20 + 66 = ¥300
+
+With a 5% discount he pays 95% of ¥300:
+
+ 300 × 0.95 = ¥285
+
+Answer: He spent ¥285 in all.",True,285,arithmetic_reasoning,medium,hard
+GSM_058,W6,openai/o4-mini,"First compute the full price:
+
+- Folders: 20 × \$2.50 = \$50  
+- Crayons: 4 × \$14.50 = \$58  
+- Bond paper (1 rim): \$20  
+- Pencils: 4 × \$8.00 = \$32  
+
+Total before discount = 50 + 58 + 20 + 32 = \$160
+
+25% discount on \$160 = 0.25 × 160 = \$40
+
+Amount paid = 160 – 40 = \$120
+
+So Viktor spends \$120 in total.",True,120,arithmetic_reasoning,medium,hard
+GSM_059,W1,openai/o4-mini,"Let x be the number of forks in the pack Zahra bought.  Then
+
+Total forks acquired = x (Zahra’s pack) + 9 (husband’s pack) + 2·14 (guests’ packs)  
+                     = x + 9 + 28  
+                     = x + 37.
+
+She used 11 for tasting, so forks remaining = (x + 37) – 11 = x + 26.  This equals the 55 she counted at setting time:
+
+x + 26 = 55  
+x = 55 – 26  
+x = 29.
+
+Zahra’s pack contained 29 forks.",True,29,arithmetic_reasoning,medium,easy
+GSM_059,W2,openai/o4-mini,"Let x be the number of forks in Zahra’s package.  We have
+
+  (starting forks)  9  
+  + (Zahra’s forks)  x  
+  + (guests’ forks)  2·14 = 28  
+  – (forks used)    11  
+  = (ending total)  55  
+
+So  
+  9 + x + 28 – 11 = 55  
+  ⇔ x + 26 = 55  
+  ⇔ x = 29.  
+
+Zahra bought a package of 29 forks.",True,29,arithmetic_reasoning,medium,easy
+GSM_059,W3,openai/o4-mini,"Let x be the number Marcus bought.  Then her total is
+
+x (her purchase)
++ 9 (from her supervisor)
++ 2·14 = 28 (from the technicians)
+– 11 (used in testing)
+ = 55.
+
+So x + 9 + 28 – 11 = 55 ⇒ x + 26 = 55 ⇒ x = 29.
+
+Marcus’s package contained 29 screwdrivers.",True,29,arithmetic_reasoning,medium,easy
+GSM_059,W4,openai/o4-mini,"Let x be the number of forks in the package Zahra bought.  Then after her husband’s 9 forks and the guests’ 2×14=28 forks, she has
+
+  x + 9 + 28 = 55  
+
+⇒ x = 55 – 9 – 28 = 18.  
+
+So Zahra’s original package contained 18 forks.",False,29,arithmetic_reasoning,medium,easy
+GSM_059,W6,openai/o4-mini,"Let x be the number of forks in the package Tara bought.  Then her total forks before sampling were
+
+ x (her purchase)  
+ + 8 (husband’s)  
+ + 3 × 6 = 18 (guests’)  
+= x + 26.
+
+After she sampled 19, she had (x + 26) − 19 forks, which equals the 47 she counted:
+
+ (x + 26) − 19 = 47  
+ x + 7 = 47  
+ x = 40.
+
+So Tara’s package contained 40 forks.",True,40,arithmetic_reasoning,medium,easy
+GSM_060,W1,openai/o4-mini,"First, compute the numbers in each group:
+
+• Total students = 125  
+• Soccer players = 40% of 125 = 0.40·125 = 50  
+• Non–soccer players = 125 – 50 = 75  
+• Choir + dancers = 17% of those 75 = 0.17·75 = 12.75 ≃ 13 students  
+
+Today:
+
+1.  Soccer players present = half of 50 = 25  
+2.  Choir + dancers departing = 13  
+3.  Cheerleaders: there are 3 groups (soccer, choir, dancers), and each is accompanied by 3 cheerleaders, so 3·3 = 9 cheerleaders  
+
+Total departing = 25 + 13 + 9 = 47 students.",False,46,arithmetic_reasoning,medium,hard
+GSM_060,W2,openai/o4-mini,"Step 1.  Soccer players  
+• Total students = 125  
+• 40% of 125 = 0.4·125 = 50 soccer players  
+• Half of those are out sick ⇒ 50·½ = 25 absent ⇒ 25 soccer players actually go  
+
+Step 2.  Choir‐/dance‐team from the non-soccer students  
+• Non-soccer students = 125 – 50 = 75  
+• 17% of those are choir members or dancers ⇒ 0.17·75 = 12.75 ≈ 13 go  
+
+Step 3.  Cheerleaders  
+• There are 3 groups going to the competition (soccer, choir/dance, …)  
+• Each group is accompanied by 3 cheerleaders ⇒ 3·3 = 9 cheerleaders  
+
+Step 4.  Total leaving early  
+25 (soccer) + 13 (choir/dance) + 9 (cheerleaders) = 47 students.",False,46,arithmetic_reasoning,medium,hard
+GSM_060,W3,openai/o4-mini,"First, compute the size of each group:
+
+1. Total workers = 125  
+2. Welders = 40% of 125 = 0.40×125 = 50  
+3. Remaining workers = 125 – 50 = 75  
+4. Electricians + mechanics = 17% of those 75 = 0.17×75 = 12.75 ≈ 13 workers  
+
+(We round 12.75 to 13 since you can’t have a fraction of a person.)
+
+Next, who actually goes to the conference:
+
+– Welders: half of the 50 are injured and absent, so 50÷2 = 25 go.  
+– Electricians + mechanics: 13 go.  
+– Supervisors: 3 accompany each of the three groups ⇒ 3×3 = 9  
+
+Total leaving = 25 (welders) + 13 (elec / mech) + 9 (supervisors) = 47  
+
+Answer: 47 workers are leaving early to the conference.",False,46,arithmetic_reasoning,medium,hard
+GSM_060,W4,openai/o4-mini,"First, let’s translate the story into one line of arithmetic.  Let
+
+ S = number of soccer players  
+ C = number of choir ∪ dancer students  
+ L = total number leaving early (including the cheerleaders)
+
+We have:
+
+1. Total in class n = 125  
+2. 40 % of 125 are soccer players  
+   S = 0.40·125 = 50  
+
+3. Remaining students = 125 − 50 = 75  
+4. 17 % of those remaining are choir members or dancers  
+   C = 0.17·75 = 12.75 ≈ 13 (you can’t have ¾ of a student, so you’d round to 13)  
+
+5. There are 3 groups going (soccer, choir, dancers), and 3 cheerleaders accompany each group  
+   total cheerleaders = 3 groups·3 cheerleaders = 9  
+
+Putting it all together,
+
+ L ≈ S + C + (cheerleaders)  
+ L ≈ 50 + 13 + 9  
+ L = 72
+
+Answer: 72 students will be leaving early.",False,46,arithmetic_reasoning,medium,hard
+GSM_060,W6,openai/o4-mini,"First, find the size of each group before absences or cheerleaders:
+
+1. Total students = 125  
+2. Basketball players = 40% of 125 = 0.40·125 = 50  
+   Remaining students = 125 – 50 = 75  
+3. Choir + Debate = 38% of those 75 = 0.38·75 = 28.5  
+   (In practice you’d round to the nearest whole student, 29.)
+
+So initially the three traveling groups consist of  
+  – Basketball players: 50  
+  – Choir members + Debate members: ≈29  
+
+Next, adjust for absences:
+
+– Half of the basketball players are out sick, so only 50÷2 = 25 of them actually go.  
+– All of the choir & debate students go (≈29).
+
+That makes 25 + 29 = 54 students so far.
+
+Finally, three cheerleaders go with each of the three groups (basketball, choir, debate):  
+  3 groups × 3 cheerleaders each = 9 cheerleaders.
+
+Total students leaving early ≈ 54 + 9 = 63.",False,62,arithmetic_reasoning,medium,hard
+GSM_061,W1,openai/o4-mini,"First note:
+
+• Father eats 4 pizzas/day  
+• Mother eats 6 pizzas/day  
+→ Parents together eat 4 + 6 = 10 pizzas/day.  
+
+Daughter eats (3/6) of her parents’ total minus 1 pizza:  
+(3/6)·10 − 1 = (1/2)·10 − 1 = 5 − 1 = 4 pizzas/day.  
+
+So the whole family eats each day 4 + 6 + 4 = 14 pizzas.  
+
+Assuming a 30-day month, over the month they eat  
+14 pizzas/day × 30 days = 420 pizzas.",True,420,arithmetic_reasoning,medium,easy
+GSM_061,W2,openai/o4-mini,"First compute daily consumption:
+
+1. Parents together eat  
+   4 (father) + 6 (wife) = 10 pizzas/day.
+
+2. Daughter eats  
+   three-sixths of 10 minus 1 = (3/6)·10 – 1 = 5 – 1 = 4 pizzas/day.
+
+3. Total per day  
+   4 + 6 + 4 = 14 pizzas.
+
+Assuming the month has 30 days, total for the month is  
+14 pizzas/day × 30 days = 420 pizzas.",True,420,arithmetic_reasoning,medium,easy
+GSM_061,W3,openai/o4-mini,"First, note that the primary and secondary machines together do  
+4 + 6 = 10 sheets per shift.  
+The auxiliary does “one less than three-sixths of” that 10, i.e.  
+(3/6)×10 – 1 = 5 – 1 = 4 sheets per shift.  
+So in one full cycle (one shift) the three machines process  
+4 + 6 + 4 = 14 metal sheets.",False,420,arithmetic_reasoning,medium,easy
+GSM_061,W4,openai/o4-mini,"Let n₁=4 (father), n₂=6 (mother).  
+Daughter’s daily intake n₃ = “one less than three-sixths of (n₁+n₂)”  
+  = (3/6)·(4+6) – 1  
+  = ½·10 – 1  
+  = 5 – 1  
+  = 4 pizzas/day.  
+
+Daily total = n₁ + n₂ + n₃ = 4 + 6 + 4 = 14 pizzas.  
+Assuming a 30-day month, monthly total = 14 · 30 = 420 pizzas.",True,420,arithmetic_reasoning,medium,easy
+GSM_061,W6,openai/o4-mini,"First note that per day
+
+• Uncle eats 7 burritos  
+• Spouse eats 5 burritos  
+• Together they eat 7 + 5 = 12 burritos  
+
+The grandchild eats one less than five-sixths of those 12:
+
+five-sixths of 12 = (5/6)·12 = 10  
+one less than that = 10 − 1 = 9 burritos
+
+So the whole family eats per day  
+7 + 5 + 9 = 21 burritos.
+
+In a 30-day month they eat  
+21 × 30 = 630 burritos.",True,630,arithmetic_reasoning,medium,easy
+GSM_062,W1,openai/o4-mini,"Mrs. Lee’s effective “selling price” after a 20% discount is  
+ 600 000 × (1 – 0.20) = 480 000.
+
+The fees (both calculated on that discounted price) are  
+ brokerage: 3% of 480 000 = 0.03 × 480 000 = 14 400  
+ transfer: 12% of 480 000 = 0.12 × 480 000 = 57 600
+
+Total fees = 14 400 + 57 600 = 72 000
+
+So her total outlay = discounted price + fees = 480 000 + 72 000 = 552 000
+
+Against a budget of 440 000, she is over by  
+ 552 000 – 440 000 = 112 000
+
+Answer: Her total cost exceeds her budget by \$112 000.",False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W2,openai/o4-mini,"First compute the net purchase price after the 20% discount:
+
+  Discount = 20% × \$600 000 = \$120 000  
+  Net price = \$600 000 – \$120 000 = \$480 000  
+
+Next compute the fees (each is taken on the original selling price of \$600 000):
+
+  Brokerage fee (3%) = 0.03 × \$600 000 = \$18 000  
+  Transfer fee (12%) = 0.12 × \$600 000 = \$72 000  
+
+Total cost = Net price + Brokerage + Transfer  
+           = \$480 000 + \$18 000 + \$72 000  
+           = \$570 000  
+
+Mrs. Lee’s budget is \$440 000, so she is over budget by
+
+  \$570 000 – \$440 000 = \$130 000.",False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W3,openai/o4-mini,"First compute the discounted base price and the fees:
+
+1. Discounted base price  
+   = 600 000 × (1 − 0.20)  
+   = 600 000 × 0.80  
+   = 480 000
+
+2. Docking fee (3% of original base)  
+   = 600 000 × 0.03  
+   = 18 000
+
+3. Transport fee (12% of original base)  
+   = 600 000 × 0.12  
+   = 72 000
+
+Total payment = 480 000 + 18 000 + 72 000 = 570 000
+
+Credit limit = 440 000
+
+Amount over limit = 570 000 − 440 000 = 130 000
+
+Answer: Captain Zara’s total cost exceeds her limit by 130 000 credits.",False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W4,openai/o4-mini,"Step 1: write down the givens  
+  • Lee’s budget = \$440 000  
+  • List price (P) = \$600 000  
+  • Discount = 20% of P  
+  • Brokerage fee = 3% of P  
+  • Transfer fee = 12% of P  
+
+Step 2: compute each component  
+  1. Discounted selling price  
+     = P × (1 – 20%)  
+     = \$600 000 × 0.80  
+     = \$480 000  
+  2. Brokerage fee  
+     = P × 3%  
+     = \$600 000 × 0.03  
+     = \$18 000  
+  3. Transfer fee  
+     = P × 12%  
+     = \$600 000 × 0.12  
+     = \$72 000  
+
+Step 3: total cost to Lee  
+  Total cost = discounted price + brokerage + transfer  
+             = \$480 000 + \$18 000 + \$72 000  
+             = \$570 000  
+
+Step 4: compare to her budget  
+  Excess over budget = Total cost – Budget  
+                     = \$570 000 – \$440 000  
+                     = \$130 000  
+
+Answer: Lee’s total outlay would be \$570 000, which is \$130 000 more than her \$440 000 budget.",False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W6,openai/o4-mini,"1. Compute the discounted selling price:  
+   480 000 × (1 − 0.25) = 480 000 × 0.75 = 360 000  
+
+2. Compute the fees (both based on the agreed selling price of \$360 000):  
+   – Brokerage fee: 7% of 360 000 = 0.07 × 360 000 = 25 200  
+   – Transfer fee: 14% of 360 000 = 0.14 × 360 000 = 50 400  
+
+3. Total cost = discounted price + fees  
+   = 360 000 + 25 200 + 50 400  
+   = 435 600  
+
+4. Difference from Mrs. Lee’s \$370 000 budget:  
+   435 600 − 370 000 = 65 600  
+
+Answer: Even after the 25% discount, the total cost would be \$435 600, which is \$65 600 more than Mrs. Lee’s budget.",False,65600,arithmetic_reasoning,medium,hard
+GSM_063,W1,openai/o4-mini,"Prof. Rodriguez’s net proceeds are calculated as follows:
+
+1. Sale price:                    $220,000  
+2. Less registration fees (2%):    – 4,400  
+3. Less agent’s commission (2%):   – 4,400  
+4. Less outstanding loan payoff: – 180,000  
+5. Less closing costs:            – 15,000  
+————————————————————  
+Net proceeds:                    $ 16,200 ",True,16200,arithmetic_reasoning,medium,hard
+GSM_063,W2,openai/o4-mini,"Here’s the breakdown:
+
+1. Gross sale price  
+   = \$220 000
+
+2. Deductions  
+   – Registration fees (2%)  
+     = 0.02 × 220 000 = \$4 400  
+   – Agent’s fee (2%)  
+     = 0.02 × 220 000 = \$4 400  
+   – Loan payoff  
+     = \$180 000  
+   – Closing costs  
+     = \$15 000  
+
+   Total deductions = 4 400 + 4 400 + 180 000 + 15 000 = \$203 800
+
+3. Net proceeds  
+   = Gross sale price – Total deductions  
+   = 220 000 – 203 800  
+   = \$16 200
+
+Answer: Net proceeds = \$16 200.",False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W3,openai/o4-mini,"First compute the 2% fees on the $220 000 sale price:
+
+• Docking fee: 0.02 × 220 000 = $4 400  
+• Broker fee: 0.02 × 220 000 = $4 400  
+
+Add those to the other out‐of‐pocket costs:
+
+• Total fees: 4 400 + 4 400 = $8 800  
+• Lease balance:      $180 000  
+• Departure costs:    $15 000  
+• Total deductions:  8 800 + 180 000 + 15 000 = $203 800  
+
+Net return = 220 000 – 203 800 = $16 200",False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W4,openai/o4-mini,"Let S=220 000.  Registration fee=2%·S=4 400, agent’s fee=2%·S=4 400.  Plus loan payoff 180 000 and closing costs 15 000.
+
+Net proceeds = 220 000 − (4 400+4 400+180 000+15 000)
+             = 220 000 − 203 800
+             = 16 200.
+
+So Rodriguez walks away with \$16 200.",False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W6,openai/o4-mini,"First compute each cost:
+
+• Transfer fee: 1% of \$790 000 = 0.01×790 000 = \$7 900  
+• Brokerage fee: 2% of \$790 000 = 0.02×790 000 = \$15 800  
+• Loan payoff: \$510 000  
+• Closing costs: \$10 000  
+
+Total costs = 7 900 + 15 800 + 510 000 + 10 000 = \$543 700  
+
+Net proceeds = Sale price – Total costs  
+= 790 000 – 543 700 = \$246 300  
+
+So Mr. Davis’s net proceeds are \$246,300.",True,246300,arithmetic_reasoning,medium,hard
+GSM_064,W1,openai/o4-mini,"There are 39 girls and (1/3)·39 = 13 boys, for a total of 39 + 13 = 52 children.  
+The fraction who are girls is 39/52 = 0.75, or 75%.",True,75,arithmetic_reasoning,medium,easy
+GSM_064,W2,openai/o4-mini,"First compute the number of boys:
+
+ boys = (1/3)·39 = 13
+
+Then the total number of kids is
+
+ total = girls + boys = 39 + 13 = 52
+
+So the percentage of girls is
+
+ (39 ÷ 52) × 100% = 0.75 × 100% = 75%
+
+Answer: 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy
+GSM_064,W3,openai/o4-mini,"First find the number of hybrids:
+
+hybrids = (1/3)·39 = 13
+
+Total vehicles = 39 electric + 13 hybrid = 52
+
+Percentage electric = (39/52)·100% = 75%",True,75,arithmetic_reasoning,medium,easy
+GSM_064,W4,openai/o4-mini,"There are 39 girls, and “girls are 1/3 the number of boys” means  
+girls = (1/3)·boys ⇒ boys = 3·girls = 3×39 = 117.  
+Total kids = 39 + 117 = 156.  
+% girls = (39/156)·100% = 25%.",False,75,arithmetic_reasoning,medium,easy
+GSM_064,W6,openai/o4-mini,"First note that “two‐sixths the number of boys” means the ratio of girls to boys is  
+   
+   girls : boys = 2 : 6 = 1 : 3.  
+   
+Since there are 6 girls, and the ratio is 1 : 3, there must be 3 × 6 = 18 boys.  
+   
+Total kids = 6 girls + 18 boys = 24  
+   
+Percent girls = (6 ÷ 24)×100% = 25%",False,75,arithmetic_reasoning,medium,easy
+GSM_041,W5,openai/o4-mini,"To find the total, first note
+
+• Paint: 19  
+• Football: 7  
+• Bake: 150  
+• Hike = 2 × (football) = 2 × 7 = 14  
+
+Since every student falls into exactly one of these four hobbies, the total number is
+
+19 + 7 + 150 + 14 = 190.",True,190,arithmetic_reasoning,high,easy
+GSM_042,W5,openai/o4-mini,"Pavel’s yield per square yard is  
+2820 oranges ÷ 30 yd² = 94 oranges per square yard.",True,94,arithmetic_reasoning,high,easy
+GSM_043,W5,openai/o4-mini,"Let the total number of balls be N.  
+Number of tennis balls = N/8.  
+We’re told 1/10 of the tennis balls are white, and that there are 8 white tennis balls, so  
+ (N/8)·(1/10) = 8  
+⇒ N/80 = 8  
+⇒ N = 8·80 = 640.  
+
+So the juggler has 640 balls in all.",True,640,arithmetic_reasoning,high,easy
+GSM_044,W5,openai/o4-mini,"Let S be the number of stuffed animals. We know
+
+71 (blocks) + S (stuffed animals) + 29 (rings) + 59 (bouncy balls) = 204
+
+Combine the known counts:
+
+71 + 29 + 59 = 159
+
+So
+
+159 + S = 204  
+S = 204 – 159  
+S = 45
+
+There are 45 stuffed animals in the bin.",True,45,arithmetic_reasoning,high,easy
+GSM_045,W5,openai/o4-mini,"Let W be the number picked on Wednesday.  
+Then Thursday = 97, Friday = 4W, and total is  
+
+W + 97 + 4W = 1122  
+5W + 97 = 1122  
+5W = 1025  
+W = 205  
+
+Liam picked 205 pineapples on Wednesday.",True,205,arithmetic_reasoning,high,medium
+GSM_046,W5,openai/o4-mini,"First compute how many calories you have left for bread:
+
+ 2395 – 1350 = 1045 calories
+
+Each serving is 475 cal, so the number of servings you can eat is
+
+ 1045 ÷ 475 ≈ 2.2 servings
+
+You’ve been told that 2.2 servings weigh 121 oz, so one serving weighs
+
+ 121 oz ÷ 2.2 = 55 oz/serving
+
+Since the bag has 5 servings, its total weight is
+
+ 5 × 55 oz = 275 oz",True,275,arithmetic_reasoning,high,medium
+GSM_047,W5,openai/o4-mini,"Let C be the total number of rooms.  
+Initially ¼ of them are occupied, so unoccupied = ¾ C.  
+Over 3 weeks (21 days) 40 patients/day arrive, i.e. 21·40 = 840 new occupied rooms.  
+Afterwards unoccupied rooms = ¾ C − 840, and we’re told this equals 510.  
+
+So  
+ ¾ C − 840 = 510  
+ ¾ C = 510 + 840 = 1350  
+ C = 1350·(4/3) = 1800.  
+
+Answer: There are 1,800 rooms in total.",True,1800,arithmetic_reasoning,high,hard
+GSM_048,W5,openai/o4-mini,"Let x be the normal price (₺/kg).  The more expensive tea costs 1.45 x per kg.  He buys 7 kg at that price, so tea costs 7·1.45 x=10.15 x.  Adding the ₺3 bagel gives
+
+10.15 x + 3 = 206  
+10.15 x = 203  
+x = 203 / 10.15 = 20.
+
+Answer: ₺20 per kilogram.",True,20,arithmetic_reasoning,high,hard
+GSM_049,W5,openai/o4-mini,"Let x = number of apartments in each of the first two complexes.  
+Then the third complex has 20% more apartments than those two combined, i.e.  
+ third = 1.2·(x + x) = 2.4 x.  
+
+Each week Umar makes 2 collections per apartment, at ₣0.45 per collection, so his weekly pay is  
+  Pay = 0.45 × 2 × (x + x + 2.4 x)  
+      = 0.9 × (4.4 x)  
+      = 3.96 x.  
+
+We are told this equals ₣1782, so  
+  3.96 x = 1782  
+  x = 1782 ÷ 3.96  
+  x = 450.  
+
+Therefore each of the first two complexes has 450 apartments.",True,450,arithmetic_reasoning,high,hard
+GSM_050,W5,openai/o4-mini,"Let N be the original number of remoras. Each is 12 in = 1 ft long, so the total length of the remaining remoras is
+
+remaining count × 1 ft = (¾N) × 1 ft
+
+We’re told this equals 20% of the dolphin’s 60 ft body, i.e. 0.20×60 ft = 12 ft. Hence
+
+(¾)N = 12
+N = 12 × (4/3) = 16
+
+So there were originally 16 remoras.",True,16,arithmetic_reasoning,medium,medium
+GSM_051,W5,openai/o4-mini,"The fog advances at 2 miles∕64 min = 1∕32 mile per minute.  In 256 min it therefore travels  
+  (1/32)·256 = 8 miles,  
+which is said to be one-tenth of the city’s width.  Hence the full width is 8·10 = 80 miles.",True,80,arithmetic_reasoning,medium,easy
+GSM_052,W5,openai/o4-mini,"A d12 has 12 faces.  “Rolling four odd numbers in a row” has probability  
+ (odd faces / 12)^4.  
+“Rolling >6” on the standard 1–12 die is 6/12 = 0.5.  
+The problem says that 0.5 exceeds (O/12)^4 by 43.75% (i.e. by 0.4375):  
+ 0.5 – (O/12)^4 = 0.4375  
+⇒ (O/12)^4 = 0.0625 = (1/2)^4  
+⇒ O/12 = 1/2  
+⇒ O = 6.  
+
+So there are 6 odd numbers on a d12.",True,6,arithmetic_reasoning,medium,medium
+GSM_053,W5,openai/o4-mini,"First, note that the sugar : water ratio 63 : 21 simplifies to 3 : 1.  
+– Let the “unit” be k, so sugar = 63 k and water = 21 k.  
+– Since sugar = 378 tsp, 63 k = 378 ⇒ k = 6.  
+– Thus water = 21·6 = 126 cups.
+
+Next, milk : water = 7 tbsp : 7 cups = 1 : 1, so milk (in tbsp) = water (in cups) = 126.
+
+Answer:  
+• Sugar: 378 teaspoons  
+• Water: 126 cups  
+• Milk: 126 tablespoons",False,630,arithmetic_reasoning,medium,easy
+GSM_054,W5,openai/o4-mini,"Let M be the minute (counting from the start) when the rate drops to \$0.10 per 2 min (i.e. \$0.05/min).  The total 70 min is then split into
+
+• first 10 min at \$0.60/min  
+• next (M–10) min at \$0.40/min  
+• last (70–M) min at \$0.05/min  
+
+So the total cost is  
+  10·0.60  +  (M–10)·0.40  +  (70–M)·0.05  
+= 6   +  0.4M–4   +  3.5–0.05M  
+= 5.5  +  0.35M  
+
+We are told this equals \$16, so  
+  5.5  +  0.35M  = 16  
+  0.35M  = 10.5  
+  M  = 10.5/0.35  = 30.  
+
+Answer: The rate drops to \$0.10 per two minutes after 30 minutes.",True,30,arithmetic_reasoning,medium,hard
+GSM_055,W5,openai/o4-mini,"Let N be the number of almonds Theo started with.
+
+• After eating one third, he has 2/3 N almonds left.  
+• Each table holds 24, so 11 tables hold 11·24=264.  
+• Each bowl holds twice that, 48, so 3 bowls hold 3·48=144.  
+• Total capacity = 264+144 = 408 almonds.  
+• He ends up with 6 almonds too many, so  
+ 2/3 N = 408 + 6 = 414  
+⇒ N = (3/2)·414 = 621.
+
+Answer: Theo originally had 621 almonds.",True,621,arithmetic_reasoning,medium,medium
+GSM_056,W5,openai/o4-mini,"First, note that the 35 minutes spent on coffee was “before their walk,” so it does not count toward walking time.  From the start of their walk:
+
+– Corner of the grocery store: 26 min  
+– Cinema: another 27 min  
+  ⇒ time spent so far walking = 26 + 27 = 53 min  
+
+Next they will spend “double the combined amount they have spent so far” to get to the park.  Here “spent so far” means all of the time from the start of their walk—that is, the 53 minutes above—so
+
+– Park segment = 2 × 53 = 106 min  
+
+Hence their total walking time is
+
+26 + 27 + 106 = 159 + —whoops, sorry—let me re-add carefully:
+
+26 + 27 = 53  
+53 + 106 = 159
+
+So they will actually walk 159 minutes from the grocery‐corner start all the way to the park.  
+
+If, however, you interpret “combined amount spent so far” to include the 35 minutes of coffee‐shop time as well, then “spent so far” = 35 + 26 + 27 = 88, and
+
+– Park segment = 2 × 88 = 176  
+– Total walking time = 26 + 27 + 176 = 229 minutes.
+
+Which reading the puzzle‐setter intended is a bit unclear, but the most straightforward parse (“spent so far” = walking time up to the cinema) gives
+
+Answer: 159 minutes of walking.",False,104,arithmetic_reasoning,medium,medium
+GSM_057,W5,openai/o4-mini,"Let n = the number of dogs Sophia has.  
+Each of her dogs has 10 puppies, all of which are spotted, so her total puppies = 10n and her spotted puppies = 10n.
+
+Across all three breeders:
+• total puppies = 113 + 47 + 10n = 160 + 10n  
+• total spotted   = 17  + 15 + 10n = 32  + 10n  
+
+We’re told 84% of all puppies are spotted, so
+(32 + 10n) / (160 + 10n) = 0.84 = 21/25.
+
+Solve:
+25(32 + 10n) = 21(160 + 10n)  
+800 + 250n = 3360 + 210n  
+250n – 210n = 3360 – 800  
+40n = 2560  
+n = 64
+
+Sophia has 64 dogs.",True,64,arithmetic_reasoning,medium,medium
+GSM_058,W5,openai/o4-mini,"First undo the 5% discount:  
+Let the original total be T. Then  
+ 0.95 T = 285  
+ T = 285 ÷ 0.95 = 300  
+
+Compute the cost of the known items:  
+• 16 colored pencils at ¥2.75: 16 × 2.75 = ¥44  
+• 10 crayons at ¥17.00: 10 × 17 = ¥170  
+• 6 folders at ¥11: 6 × 11 = ¥66  
+Total of these three = 44 + 170 + 66 = ¥280  
+
+So the rim of bond paper must have cost  
+ 300 – 280 = ¥20",True,20,arithmetic_reasoning,medium,hard
+GSM_059,W5,openai/o4-mini,"Zahra ends up with 29 + 9 = 38 forks of her own, the guests bring 2×14 = 28 more, for a total of 38 + 28 = 66.  Since she’s already used 11, she has 66 – 11 = 55 forks left to set the table.",True,55,arithmetic_reasoning,medium,easy
+GSM_060,W5,openai/o4-mini,"Let N = total number of students in the class.
+
+1. 40% of the class are soccer players, so  
+   S = 0.4 N.  
+   Of those, half are out sick, so the number of soccer players on the trip is  
+   S_trip = ½ S = 0.2 N.
+
+2. All the choir members (C) and all the dancers (D) go on the trip, and we’re told  
+   C + D = 17.
+
+3. Three cheerleaders accompany each of the three groups (soccer, choir, dancers), for a total of 3×3 = 9 cheerleaders on the trip.
+
+4. The total going on the trip is 46, so  
+   S_trip + (C + D) + 9 = 46  
+   ⇒ 0.2 N + 17 + 9 = 46  
+   ⇒ 0.2 N + 26 = 46  
+   ⇒ 0.2 N = 20  
+   ⇒ N = 100.
+
+Answer: There are 100 students in Ms. Johnson’s class.",True,100,arithmetic_reasoning,medium,hard
+GSM_061,W5,openai/o4-mini,"Let w be the number of pizzas the wife eats per day.  Then
+
+Father = 4/day  
+Daughter = ½·(father + wife) – 1 = ½·(4 + w) – 1  
+
+So daily total S is
+ S = 4 + w + [½·(4 + w) – 1]  
+   = 4 + w + 2 + ½w – 1  
+   = 1.5 w + 5.
+
+In one 30-day month they eat 420 pizzas, so
+ 30·S = 420  
+ S = 14  
+ 1.5 w + 5 = 14  
+ 1.5 w = 9  
+ w = 6.
+
+Answer: The wife eats 6 pizzas per day.",True,6,arithmetic_reasoning,medium,easy
+GSM_062,W5,openai/o4-mini,"Let S = \$600 000 be the listed price.  
+After a 20% discount her purchase price is  
+  0.8·S = 0.8·600 000 = \$480 000.  
+
+The two fees are each a percentage of that (actually “selling”) price, so she also pays  
+  brokerage: 3% of 480 000 = 0.03·480 000 = \$14 400  
+  transfer : 12% of 480 000 = 0.12·480 000 = \$57 600  
+
+Total out-lay = 480 000 + 14 400 + 57 600 = \$552 000.  
+
+We are told this exceeds her budget by \$112 000, i.e.  
+  budget + 112 000 = 552 000  
+so  
+  budget = 552 000 − 112 000 = \$440 000.",False,458000,arithmetic_reasoning,medium,hard
+GSM_063,W5,openai/o4-mini,"Let S be the selling price.  Prof. Rodriguez’s net proceeds come from
+
+  Revenue S  
+– Registration fee (2% of S) = 0.02 S  
+– Agent fee (2% of S)          = 0.02 S  
+– Loan payoff                  = \$180\,000  
+– Closing costs                = \$15\,000  
+= Net proceeds (\$16 200).
+
+So:
+  S – 0.02S – 0.02S – 180 000 – 15 000 = 16 200  
+⇔ 0.96 S – 195 000 = 16 200  
+⇔ 0.96 S = 211 200  
+⇔ S = 211 200 ÷ 0.96 = \$220 000.
+
+Answer: The villa sold for \$220 000.",False,220000,arithmetic_reasoning,medium,hard
+GSM_064,W5,openai/o4-mini,"Let the total number of kids be T.  
+We know 75% of them are girls, and there are 39 girls, so  
+0.75 T = 39  
+T = 39 ÷ 0.75 = 52  
+
+Therefore, the number of boys is  
+52 – 39 = 13.",True,13,arithmetic_reasoning,medium,easy
+GSM_041,canonical,openai/o4-mini,"Let the number who bake be B and the number who hike be H.  
+Total students = 190, of which  
+19 paint, 7 play football, and the remaining 190 – (19 + 7)=164 either bake or hike.  
+So  
+1) B + H = 164  
+2) H = 2 × (the number who play football) = 2·7 = 14  
+Substitute into (1):  
+B + 14 = 164  
+B = 164 – 14 = 150  
+Answer: 150 students like to bake.",True,150,arithmetic_reasoning,high,easy
+GSM_042,canonical,openai/o4-mini,"Pavel’s annual harvest is  
+30 sq yd × 94 oranges/sq yd = 2 820 oranges.",False,2820,arithmetic_reasoning,high,easy
+GSM_043,canonical,openai/o4-mini,"First find the number of tennis balls:  
+640 × (1/8) = 80  
+
+Then find the white ones:  
+80 × (1/10) = 8  
+
+Answer: 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy
+GSM_044,canonical,openai/o4-mini,"First find how many toys Mei already had before the bouncy balls:
+
+71 (blocks) + 45 (stuffed animals) + 29 (rings) = 145
+
+She ends up with 204 toys total, so the number of bouncy balls is
+
+204 – 145 = 59
+
+Answer: 59 bouncy balls.",True,59,arithmetic_reasoning,high,easy
+GSM_045,canonical,openai/o4-mini,"Liam picks  
+• Wednesday: 205 pineapples  
+• Thursday: 97 pineapples  
+• Friday: 4 × 205 = 820 pineapples  
+
+Total = 205 + 97 + 820 = 1,122 pineapples.",True,1122,arithmetic_reasoning,high,medium
+GSM_046,canonical,openai/o4-mini,"First, work out how many calories per ounce the bread is:
+
+• One serving = 475 cal for 275 oz ÷ 5 servings = 55 oz  
+• Calories per ounce = 475 cal ÷ 55 oz ≈ 8.64 cal/oz  
+
+You’ve got 2,395 – 1,350 = 1,045 calories left for the day.  
+Maximum ounces you can eat = 1,045 cal ÷ (8.64 cal/oz) ≈ 121 oz  
+
+Or, in servings: 1,045 cal ÷ 475 cal/serving ≈ 2.2 servings (2 ⅕ × 55 oz ≈ 121 oz).",True,121,arithmetic_reasoning,high,medium
+GSM_047,canonical,openai/o4-mini,"Initial data  
+- Total rooms = 1,800  
+- Initially occupied = ¼·1,800 = 450  
+- Initially unoccupied = 1,800 – 450 = 1,350  
+
+Admissions over 3 weeks  
+- 3 weeks = 21 days  
+- New admissions = 40 patients/day × 21 days = 840 patients  
+
+Assuming one patient per room, these occupy 840 additional rooms.  
+Unoccupied after 3 weeks = 1,350 – 840 = 510 rooms.",True,510,arithmetic_reasoning,high,hard
+GSM_048,canonical,openai/o4-mini,"First, find the cost per kilogram of the more expensive tea:
+
+Normal price = ₺20/kg  
+Markup = 45% of ₺20 = 0.45·20 = ₺9  
+New price = 20 + 9 = ₺29/kg  
+
+He uses 1 kg per day for 7 days, so tea cost = 7 kg·₺29/kg = ₺203  
+Add the bagel: ₺203 + ₺3 = ₺206  
+
+Answer: Everything cost ₺206.",True,206,arithmetic_reasoning,high,hard
+GSM_049,canonical,openai/o4-mini,"First, find the number of apartments in the third complex:  
+– The first two have 450 + 450 = 900 apartments combined.  
+– The third is 20% bigger, so it has 900 × 1.20 = 1 080 apartments.
+
+Total apartments = 450 + 450 + 1 080 = 1 980.
+
+He collects twice a week from each apartment, so total collections per week = 1 980 × 2 = 3 960.
+
+At ₣0.45 per collection, his weekly earnings are  
+3 960 × ₣0.45 = ₣1 782.",False,1782,arithmetic_reasoning,high,hard
+GSM_050,canonical,openai/o4-mini,"Each remora is 12 in = 1 ft.  
+After a quarter leave, 16 × ¾ = 12 remoras remain.  
+Total remora length = 12 × 1 ft = 12 ft.  
+Percentage of 60 ft dolphin = (12 ft ÷ 60 ft)·100% = 20%.",True,20,arithmetic_reasoning,medium,medium
+GSM_051,canonical,openai/o4-mini,"Since the fog advances 2 mi in 64 min, its speed is (2 mi)/(64 min)=1/32 mi/min. A tenth of an 80 mi city is 8 mi, so the time is
+
+t = 8 mi ÷ (1/32 mi/min) = 8×32 = 256 minutes.",True,256,arithmetic_reasoning,medium,easy
+GSM_052,canonical,openai/o4-mini,"First note:
+
+• P(roll > 6 on one d12) = 6/12 = 0.50 = 50%  
+• P(roll an odd number on one d12) = 6/12 = 0.50,  
+  so P(4 odds in a row) = (0.50)^4 = 0.0625 = 6.25%
+
+So a “> 6” is 50% likely, while “4 odds” is 6.25% likely.  
+
+Difference in probability (“percentage‐point” difference) = 50% − 6.25% = 43.75 pp.  
+
+Relative to the smaller event it is  
+  (0.50 − 0.0625) / 0.0625 = 7  ⇒ 700% more likely.  
+
+Answer: It’s 43.75 percentage points more likely, which is 8 times as likely (i.e. 700% more likely).",False,43.75,arithmetic_reasoning,medium,medium
+GSM_053,canonical,openai/o4-mini,"Let S, W, M be the amounts of sugar (teaspoons), water (cups) and milk (tablespoons).  We have
+
+1.  S : W = 63 : 21 ⇒ S/W = 3/1 ⇒ S = 3W.
+2.  M : W = 7 : 7 ⇒ M/W = 1 ⇒ M = W.
+3.  S + W + M = 630.
+
+Substitute S = 3W and M = W into the total:
+
+3W + W + W = 5W = 630  
+⇒ W = 630/5 = 126.
+
+Then S = 3W = 3·126 = 378.
+
+Answer: She used 378 teaspoonfuls of sugar.",True,378,arithmetic_reasoning,medium,easy
+GSM_054,canonical,openai/o4-mini,"Here’s the breakdown for a 70-minute call:
+
+• First 10 min at \$0.60/min:  
+  10 min × \$0.60 = \$6.00  
+• Next 20 min (from minute 10 to 30) at \$0.40/min:  
+  20 min × \$0.40 = \$8.00  
+• Remaining 40 min (from minute 30 to 70) at \$0.10 per 2 min (i.e.\ \$0.05/min):  
+  40 min ÷ 2 = 20 blocks ⇒ 20 × \$0.10 = \$2.00  
+
+Total cost = \$6.00 + \$8.00 + \$2.00 = \$16.00.",True,16,arithmetic_reasoning,medium,hard
+GSM_055,canonical,openai/o4-mini,"First note each table holds 24 almonds and each bowl holds 2·24=48, so total capacity is  
+11·24 + 3·48 = 264 + 144 = 408 almonds.  
+Theo eats one‐third of his 621 almonds:  
+621÷3 = 207,  
+so he has 621−207 = 414 left to place.  
+Since he can only fit 408, the number he cannot place is  
+414−408 = 6.",True,6,arithmetic_reasoning,medium,medium
+GSM_056,canonical,openai/o4-mini,"Here’s the breakdown:
+
+1. Total time allowed: 263 min  
+2. Time already “wasted” getting coffee: 35 min  
+3. Walk to grocery corner: 26 min  
+4. Walk to cinema: 27 min  
+5. Time to the park = 2 × (time spent walking so far) = 2 × (26+27) = 106 min  
+
+Total time used = 35 + 26 + 27 + 106 = 194 min  
+Time remaining = 263 – 194 = 69 min  
+
+They have 69 minutes left to reach the gym without being late.",True,69,arithmetic_reasoning,medium,medium
+GSM_057,canonical,openai/o4-mini,"First, tally up the totals:
+
+• Umar: 113 puppies, 17 spotted  
+• Xena: 47 puppies, 15 spotted  
+• Sophia: 64 dogs × 10 spotted puppies each = 640 puppies (all spotted)
+
+Total puppies = 113 + 47 + 640 = 800  
+Total spotted = 17 + 15 + 640 = 672  
+
+Percent spotted = (672 ÷ 800) × 100% = 84%",True,84,arithmetic_reasoning,medium,medium
+GSM_058,canonical,openai/o4-mini,"First compute the subtotal:
+
+• 16 colored pencils at ¥2.75 each:  
+  16 × 2.75 = ¥44.00  
+• 10 crayons at ¥17.00 each:  
+  10 × 17.00 = ¥170.00  
+• 1 rim of bond paper:  
+  = ¥20.00  
+• 6 folders at ¥11.00 each:  
+  6 × 11.00 = ¥66.00  
+
+Subtotal = 44 + 170 + 20 + 66 = ¥300.00  
+
+5% discount on ¥300:  
+  0.05 × 300 = ¥15.00  
+
+Total after discount:  
+  300 − 15 = ¥285.00  
+
+Answer: Bodhi spent ¥285.00 in all.",True,285,arithmetic_reasoning,medium,hard
+GSM_059,canonical,openai/o4-mini,"Let x be the number of forks in Zahra’s package.  Then by setting up the “start + added – used = final” relation:
+
+x (her package)  
++ 9 (husband’s)  
++ 2·14 = 28 (guests’)  
+− 11 (used for sampling)  
+= 55 (total on the table)
+
+So
+x + 9 + 28 − 11 = 55  
+x + 26 = 55  
+x = 55 − 26  
+x = 29
+
+Answer: Zahra’s package contained 29 forks.",True,29,arithmetic_reasoning,medium,easy
+GSM_060,canonical,openai/o4-mini,"First, break the class into the three groups:
+
+1. Soccer players  
+   – 40% of 125 = 0.40·125 = 50 total soccer players  
+   – Half of them are out sick, so only 50⁄2 = 25 will actually travel
+
+2. Choir + Dancers  
+   – “Out of the remaining class” means out of the 125 – 50 = 75 non-soccer students  
+   – 17% of those 75 are in choir or on the dance team: 0.17·75 = 12.75 ≈ 13 students  
+     (rounding to the nearest whole student)
+
+3. Cheerleaders  
+   – We’re told 3 cheerleaders will accompany each of the 3 groups (soccer, choir, dancers)  
+   – That’s 3·3 = 9 cheerleaders in all
+
+Now add up everyone who actually leaves early:
+
+ Soccer players traveling: 25  
+ Choir + dancers: 13  
+ Cheerleaders: 9  
+ Total = 25 + 13 + 9 = 47
+
+Answer: 47 students leave early for the competition.",False,46,arithmetic_reasoning,medium,hard
+GSM_061,canonical,openai/o4-mini,"First note:
+
+- Father eats 4 pizzas/day.  
+- Mother eats 6 pizzas/day.  
+- So the two together eat 4 + 6 = 10 pizzas/day.  
+
+Daughter eats “one less than three-sixths of” that 10, i.e.  
+(3/6)·10 − 1 = 5 − 1 = 4 pizzas/day.
+
+Hence the whole family eats  
+4 + 6 + 4 = 14 pizzas per day.  
+
+Assuming a 30-day month, that’s  
+14 × 30 = 420 pizzas.",True,420,arithmetic_reasoning,medium,easy
+GSM_062,canonical,openai/o4-mini,"First compute the negotiated selling price after the 20% discount:  
+ 600 000 × (1 – 0.20) = 600 000 × 0.80 = 480 000  
+
+Then compute the two fees (both percentages applied to the actual selling price, i.e. the discounted price):  
+ • Brokerage fee = 3% of 480 000 = 0.03 × 480 000 = 14 400  
+ • Transfer fee   = 12% of 480 000 = 0.12 × 480 000 = 57 600  
+
+So Mrs. Lee’s total outlay is  
+ 480 000 + 14 400 + 57 600 = 552 000  
+
+Her budget is 440 000, so she is over budget by  
+ 552 000 − 440 000 = 112 000  
+
+Answer: She would exceed her budget by \$112 000.",False,112000,arithmetic_reasoning,medium,hard
+GSM_063,canonical,openai/o4-mini,"Here’s the breakdown:
+
+• Sale price: \$220 000  
+• Registration fee (2% of \$220 000): 0.02·220 000 = \$4 400  
+• Agent fee (2% of \$220 000): 0.02·220 000 = \$4 400  
+• Loan payoff: \$180 000  
+• Closing costs: \$15 000  
+
+Total deductions = 4 400 + 4 400 + 180 000 + 15 000 = \$203 800  
+
+Net proceeds = 220 000 – 203 800 = \$16 200",False,16200,arithmetic_reasoning,medium,hard
+GSM_064,canonical,openai/o4-mini,"First note that “there are one‐third as many boys as girls” means
+
+ Number of boys = (1/3) × 39 = 13.
+
+So total kids = 39 girls + 13 boys = 52 children.
+
+Percentage who are girls = (39 ÷ 52) × 100% = 75%.",True,75,arithmetic_reasoning,medium,easy

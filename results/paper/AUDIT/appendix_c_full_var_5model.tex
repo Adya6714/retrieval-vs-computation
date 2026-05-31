@@ -1,0 +1,49 @@
+% Appendix C — full variant accuracy (audit-regenerated)
+% Paste into rvc_paper_v2.tex when ready
+\begin{table}[t]
+\centering
+\small
+\caption{Per-variant accuracy by family, slice, and model (Probe~1). Gemini and o4-mini rows use behavioral sweeps; o4-mini GSM canonical is partial ($n{=}33$).}
+\label{tab:appendix-c-var}
+\begin{tabular}{lllr*{7}{r}}
+\toprule
+Family & Slice & Model & $n$ & Can. & W1 & W2 & W3 & W4 & W5 & W6 \\
+\midrule
+GSM & - & Claude & 44 & 0.818 & 0.841 & 0.682 & 0.750 & 0.682 & 0.864 & 0.792 \\
+GSM & - & GPT-4o & 44 & 0.818 & 0.818 & 0.591 & 0.477 & 0.477 & 0.545 & 0.792 \\
+GSM & - & Gemini & 44 & 0.909 & 0.818 & 0.636 & 0.523 & 0.477 & 0.614 & 0.958 \\
+GSM & - & Llama & 44 & 0.773 & 0.727 & 0.455 & 0.409 & 0.318 & 0.250 & 0.625 \\
+GSM & - & o4-mini & 44 & 0.879 & 0.864 & 0.818 & 0.841 & 0.682 & 0.886 & 0.833 \\
+\midrule
+ALGO & coin_change-adversarial & Claude & 10 & 0.700 & 0.700 & 0.700 & 0.600 & 0.800 & --- & --- \\
+ALGO & coin_change-adversarial & GPT-4o & 10 & 0.600 & 0.400 & 0.600 & 0.000 & 0.500 & --- & --- \\
+ALGO & coin_change-adversarial & Gemini & 10 & 0.500 & 0.700 & 0.600 & 0.700 & 0.700 & --- & --- \\
+ALGO & coin_change-adversarial & Llama & 10 & 0.200 & 0.100 & 0.400 & 0.000 & 0.200 & --- & --- \\
+ALGO & coin_change-standard & Claude & 15 & 0.267 & 0.467 & 0.067 & 0.200 & 0.667 & --- & 0.067 \\
+ALGO & coin_change-standard & GPT-4o & 15 & 0.267 & 0.400 & 0.000 & 0.067 & 0.867 & --- & 0.200 \\
+ALGO & coin_change-standard & Gemini & 15 & 0.267 & 0.133 & 0.000 & 0.000 & 0.267 & --- & 0.267 \\
+ALGO & coin_change-standard & Llama & 15 & 0.000 & 0.067 & 0.067 & 0.000 & 0.000 & --- & 0.067 \\
+ALGO & shortest_path-adversarial & Claude & 34 & 0.647 & 0.618 & 0.676 & 0.000 & 0.824 & 0.000 & 0.258 \\
+ALGO & shortest_path-adversarial & GPT-4o & 34 & 0.412 & 0.529 & 0.147 & 0.265 & 0.588 & 0.000 & 0.258 \\
+ALGO & shortest_path-adversarial & Gemini & 34 & 0.059 & 0.441 & 0.235 & 0.324 & 0.559 & 0.032 & 0.129 \\
+ALGO & shortest_path-adversarial & Llama & 34 & 0.059 & 0.147 & 0.029 & 0.000 & 0.088 & 0.000 & 0.065 \\
+ALGO & shortest_path-standard & Claude & 21 & 0.000 & 0.190 & 0.667 & 0.048 & 0.952 & 0.000 & 0.000 \\
+ALGO & shortest_path-standard & GPT-4o & 21 & 0.714 & 0.667 & 0.048 & 0.429 & 0.524 & 0.000 & 0.368 \\
+ALGO & shortest_path-standard & Gemini & 21 & 0.048 & 0.762 & 0.762 & 0.476 & 0.857 & 0.000 & 0.263 \\
+ALGO & shortest_path-standard & Llama & 21 & 0.048 & 0.095 & 0.000 & 0.000 & 0.143 & 0.000 & 0.105 \\
+ALGO & wis-adversarial & Claude & 17 & 0.353 & 0.176 & 0.118 & 0.000 & 0.059 & --- & 0.000 \\
+ALGO & wis-adversarial & GPT-4o & 17 & 0.353 & 0.176 & 0.000 & 0.000 & 0.000 & --- & 0.000 \\
+ALGO & wis-adversarial & Gemini & 17 & 0.000 & 0.176 & 0.000 & 0.000 & 0.000 & --- & 0.000 \\
+ALGO & wis-adversarial & Llama & 17 & 0.059 & 0.000 & 0.000 & 0.059 & 0.000 & --- & 0.000 \\
+ALGO & wis-standard & Claude & 13 & 0.077 & 0.231 & 0.231 & 0.000 & 0.077 & --- & 0.000 \\
+ALGO & wis-standard & GPT-4o & 13 & 0.154 & 0.231 & 0.000 & 0.000 & 0.000 & --- & 0.000 \\
+ALGO & wis-standard & Gemini & 13 & 0.000 & 0.000 & 0.231 & 0.000 & 0.000 & --- & 0.000 \\
+ALGO & wis-standard & Llama & 13 & 0.000 & 0.000 & 0.000 & 0.077 & 0.000 & --- & 0.000 \\
+\midrule
+BW & - & Claude & 65 & 0.154 & 0.062 & 0.231 & 0.138 & 0.015 & 0.523 & 0.508 \\
+BW & - & GPT-4o & 65 & 0.089 & 0.085 & 0.067 & 0.244 & 0.044 & 0.178 & 0.215 \\
+BW & - & Gemini & 65 & 0.385 & 0.138 & 0.108 & 0.108 & 0.031 & 0.569 & 0.338 \\
+BW & - & Llama & 65 & 0.022 & 0.000 & 0.000 & 0.156 & 0.000 & 0.000 & 0.031 \\
+\bottomrule
+\end{tabular}
+\end{table}

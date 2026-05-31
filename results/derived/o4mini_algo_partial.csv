@@ -1,0 +1,6 @@
+variant_type,n,acc,family,model
+W1,20,0.95,ALGO,openai/o4-mini
+W2,20,0.95,ALGO,openai/o4-mini
+W3,20,0.7,ALGO,openai/o4-mini
+W4,20,0.85,ALGO,openai/o4-mini
+canonical,20,1.0,ALGO,openai/o4-mini

@@ -1,0 +1,54 @@
+=== VAR(canonical) regression ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          var_canonical   R-squared:                       0.001
+Model:                            OLS   Adj. R-squared:                 -0.014
+Method:                 Least Squares   F-statistic:                   0.08777
+Date:                Sat, 23 May 2026   Prob (F-statistic):              0.768
+Time:                        02:28:29   Log-Likelihood:                0.49145
+No. Observations:                  65   AIC:                             3.017
+Df Residuals:                      63   BIC:                             7.366
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept               0.0064      0.188      0.034      0.973      -0.370       0.383
+contamination_score     1.2762      4.308      0.296      0.768      -7.332       9.884
+==============================================================================
+Omnibus:                       75.159   Durbin-Watson:                   2.127
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              488.285
+Skew:                           3.641   Prob(JB):                    9.34e-107
+Kurtosis:                      14.281   Cond. No.                         143.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+=== VAR(W5) regression ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 var_w5   R-squared:                       0.023
+Model:                            OLS   Adj. R-squared:                  0.008
+Method:                 Least Squares   F-statistic:                     1.504
+Date:                Sat, 23 May 2026   Prob (F-statistic):              0.225
+Time:                        02:28:29   Log-Likelihood:                -36.722
+No. Observations:                  65   AIC:                             77.44
+Df Residuals:                      63   BIC:                             81.79
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept               0.6505      0.334      1.947      0.056      -0.017       1.318
+contamination_score    -9.3649      7.636     -1.226      0.225     -24.625       5.895
+==============================================================================
+Omnibus:                       13.256   Durbin-Watson:                   1.963
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               14.494
+Skew:                           1.107   Prob(JB):                     0.000712
+Kurtosis:                       2.331   Cond. No.                         143.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

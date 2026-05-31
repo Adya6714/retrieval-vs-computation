@@ -1,0 +1,6 @@
+metric,value,n_instances,pct,note
+instances_any_flip,492,1249,0.3939151321056846,Distinct labels across 6 reference configs
+instances_all_same,757,1249,0.6060848678943155,Stable label across reference configs
+flip_default_vs_best_sweep_id_204,301,1249,0.2409927942353883,Instance label changed between configs
+flip_default_vs_min_votes_3,231,1249,0.18494795836669337,Instance label changed between configs
+flip_default_vs_vote_margin_1,294,1249,0.2353883106485188,Instance label changed between configs

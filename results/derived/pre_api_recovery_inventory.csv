@@ -1,0 +1,9 @@
+gap,status,source_file,log_ref,observed,est_api_saved,action
+GSM P2 o4-mini,recovered_no_api,results/raw/GSM_P2_phase1_o1mini.csv,results/raw/new_model_sweep_logs/finish_o4mini.log (44/44 complete 2026-05-24),44/44,616,Merge into GSM P2 derivations; coverage now counts o4-mini from this file
+GSM P1 GPT-4o,remap_invalid,results/raw/GSM_P1_behavioral_gpt4o.csv,No archived logs for GSM_041–064,20/44 bank-valid,0,Exclude 20 duplicate IDs (GSM_021–040 = GSM_001–020); API still needed for 24 missing IDs (GSM_041–064)
+GSM P1 Llama,remap_invalid,results/raw/GSM_P1_behavioral_llama.csv,No archived logs for GSM_041–064,20/44 bank-valid,0,Exclude 20 duplicate IDs (GSM_021–040 = GSM_001–020); API still needed for 24 missing IDs (GSM_041–064)
+ALGO P2A elicited Claude,needs_api,results/raw/ALGO_P2_phase2_normal_elicited.csv,No separate elicited logs; 61/110 pilot (CC_031+ missing),61/110 problems,0,~49 sessions × 4 steps ≈ 196 API calls
+ALGO P2A elicited Gemini,needs_api,results/raw/ALGO_P2_phase2_normal_elicited.csv,No separate elicited logs; 61/110 pilot (CC_031+ missing),61/110 problems,0,~49 sessions × 4 steps ≈ 196 API calls
+ALGO P2A elicited Llama,needs_api,results/raw/ALGO_P2_phase2_normal_elicited.csv,No separate elicited logs; 61/110 pilot (CC_031+ missing),61/110 problems,0,~49 sessions × 4 steps ≈ 196 API calls
+BW P2 Gemini,needs_api,results/raw/BW_P2_tep.csv (pilot),No BW P2 sweep logs for these models,0/65,0,~1000 calls/model for 50-problem pilot (Step 20 optional)
+BW P2 o4-mini,needs_api,results/raw/BW_P2_tep.csv (pilot),No BW P2 sweep logs for these models,0/65,0,~1000 calls/model for 50-problem pilot (Step 20 optional)

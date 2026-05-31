@@ -1,0 +1,14 @@
+slice,model,sessions,correct_rate
+phase2A_normal,anthropic/claude-sonnet-4,110,0.5
+phase2A_normal,google/gemini-2.5-flash,61,0.32786885245901637
+phase2A_normal,meta-llama/llama-3.1-8b-instruct,110,0.21818181818181817
+phase2A_normal,openai/gpt-4o,110,0.5
+phase2A_elicited,anthropic/claude-sonnet-4,61,0.45901639344262296
+phase2A_elicited,google/gemini-2.5-flash,61,0.3114754098360656
+phase2A_elicited,meta-llama/llama-3.1-8b-instruct,61,0.14754098360655737
+phase2B_plausible,anthropic/claude-sonnet-4,61,0.5245901639344263
+phase2B_plausible,google/gemini-2.5-flash,61,0.3114754098360656
+phase2B_plausible,meta-llama/llama-3.1-8b-instruct,61,0.22950819672131148
+phase2B_plausible,openai/gpt-4o,61,0.5081967213114754
+phase2B_implausible,anthropic/claude-sonnet-4,61,0.5245901639344263
+phase2B_implausible,openai/gpt-4o,61,0.5573770491803278

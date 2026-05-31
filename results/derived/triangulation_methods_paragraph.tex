@@ -1,0 +1,21 @@
+% Step 13 — paste-ready methods fragment (triangulation v2, official config)
+% Source: triangulation_framing_decision.md · config: triangulation_official_config.json
+
+\paragraph{Per-instance convergence (triangulation).}
+For each problem--model instance we aggregate thirteen binary probe signals
+(five retrieval-oriented, eight computation-oriented) into a signed vote score
+$\mathrm{tri\_score} = n_{\mathrm{comp}} - n_{\mathrm{ret}}$.
+An instance receives a \emph{retrieval-consistent} label when
+$\mathrm{tri\_score} \le -2$, a \emph{computation-consistent} label when
+$\mathrm{tri\_score} \ge +2$, and \emph{insufficient} when fewer than two
+signals fire; intermediate scores yield \emph{weak} or \emph{mixed} labels
+(Appendix~\ref{app:triangulation}).
+Retrieval votes: canonical-correct with $W_3$ accuracy below 0.2, VRI gap
+${>}0.5$, CCI $\le 0.3$, implausible-injection failure, contamination
+$\ge 0.6$.
+Computation votes: canonical-correct with $W_3$ accuracy above 0.5, multi-variant
+robustness, CCI $\ge 0.5$, first-decision match, critical-step CCI,
+post-injection recovery, contamination $\le 0.4$, mechanistic depth
+$\ge 0.55$ (when available).
+Main-text convergence counts include ALGO and GSM only; Blocksworld is excluded
+because strict P2 aborts leave too few valid process signals (Section~\ref{subsec:bw_p2}).

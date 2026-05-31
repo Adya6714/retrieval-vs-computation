@@ -1,0 +1,4 @@
+model,acc_canonical,acc_W3
+anthropic/claude-sonnet-4,0.818,0.75
+meta-llama/llama-3.1-8b-instruct,0.773,0.409
+openai/gpt-4o,0.818,0.477

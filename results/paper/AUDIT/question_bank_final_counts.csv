@@ -1,0 +1,4 @@
+family,rows,unique_problem_ids,variant_canonical,variant_W1,variant_W2,variant_W3,variant_W4,variant_W6,variant_W5
+ALGO,690,110,110,110,110,110,110,90,50
+BW,455,65,65,65,65,65,65,65,65
+GSM,288,44,44,44,44,44,44,24,44

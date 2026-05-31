@@ -1,0 +1,100 @@
+# New models validation report — 2026-05-23T19:13:39Z
+
+## gemini_gsm_p1
+```json
+{
+  "path": "./results/raw/GSM_P1_behavioral_gemini.csv",
+  "exists": true,
+  "rows": 288,
+  "cols": [
+    "problem_id",
+    "variant_type",
+    "model",
+    "raw_response",
+    "behavioral_correct",
+    "correct_answer",
+    "problem_family",
+    "contamination_pole",
+    "difficulty"
+  ],
+  "cols_ok": true,
+  "errors": 0,
+  "empty_correct": 0,
+  "accuracy": 0.6875,
+  "expected_rows": 288,
+  "complete": true,
+  "cols_match_ref": true,
+  "acc_by_variant": {
+    "CANONICAL": 0.909,
+    "W1": 0.818,
+    "W2": 0.636,
+    "W3": 0.523,
+    "W4": 0.477,
+    "W5": 0.614,
+    "W6": 0.958
+  }
+}
+```
+
+## gemini_bw_p1
+```json
+{
+  "path": "./results/raw/BW_P1_behavioral_gemini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```
+
+## gemini_algo_p1
+```json
+{
+  "path": "./results/raw/ALGO_P1_behavioral_gemini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```
+
+## o1mini_gsm_p1
+```json
+{
+  "path": "./results/raw/GSM_P1_behavioral_o1mini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```
+
+## o1mini_bw_p1
+```json
+{
+  "path": "./results/raw/BW_P1_behavioral_o1mini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```
+
+## o1mini_algo_p1
+```json
+{
+  "path": "./results/raw/ALGO_P1_behavioral_o1mini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```
+
+## gemini_gsm_p2
+```json
+{
+  "path": "./results/raw/GSM_P2_phase1_gemini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```
+
+## o1mini_gsm_p2
+```json
+{
+  "path": "./results/raw/GSM_P2_phase1_o1mini.csv",
+  "exists": false,
+  "error": "missing"
+}
+```

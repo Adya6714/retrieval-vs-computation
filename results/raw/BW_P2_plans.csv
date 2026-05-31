@@ -1,0 +1,2327 @@
+problem_id,model,pddl_path,difficulty,contamination_pole,raw_plan,parsed_plan_json,plan_length
+BW_155,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h","[""pick-up i"", ""stack i f"", ""pick-up f"", ""stack f e"", ""pick-up e"", ""stack e j"", ""pick-up j"", ""stack j h""]",8
+BW_155,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. stack i f
+3. put-down i
+4. pick-up f
+5. stack f e
+6. put-down f
+7. pick-up e
+8. stack e j
+9. put-down e
+10. pick-up j
+11. stack j h
+12. put-down j","[""pick-up i"", ""stack i f"", ""put-down i"", ""pick-up f"", ""stack f e"", ""put-down f"", ""pick-up e"", ""stack e j"", ""put-down e"", ""pick-up j"", ""stack j h"", ""put-down j""]",12
+BW_010,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d  
+2. stack d e  
+3. pick-up e  
+4. stack e a  
+5. pick-up a  
+6. stack a b  
+7. pick-up b  
+8. stack b f","[""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e a"", ""pick-up a"", ""stack a b"", ""pick-up b"", ""stack b f""]",8
+BW_001,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l","[""pick-up j"", ""stack j f"", ""pick-up f"", ""stack f i"", ""pick-up i"", ""stack i g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b h"", ""pick-up h"", ""stack h l""]",14
+BW_011,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b","[""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k g"", ""pick-up g"", ""stack g a"", ""pick-up a"", ""stack a l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e h"", ""pick-up h"", ""stack h i"", ""pick-up i"", ""stack i b""]",18
+BW_120,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,"1. pick-up c  
+2. stack c j  
+3. pick-up j  
+4. stack j g  
+5. pick-up g  
+6. stack g f  ","[""pick-up c"", ""stack c j"", ""pick-up j"", ""stack j g"", ""pick-up g"", ""stack g f""]",6
+BW_227,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a","[""pick-up f"", ""stack f l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j c"", ""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k a""]",16
+BW_137,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i","[""pick-up d"", ""stack d a"", ""pick-up a"", ""stack a b"", ""pick-up b"", ""stack b j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e l"", ""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h c"", ""pick-up c"", ""stack c f"", ""pick-up f"", ""stack f g"", ""pick-up g"", ""stack g i""]",20
+BW_172,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k","[""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b a"", ""pick-up a"", ""stack a j"", ""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k""]",20
+BW_467,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h","[""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f h""]",12
+BW_080,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f","[""pick-up l"", ""stack l c"", ""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e j"", ""pick-up j"", ""stack j f""]",10
+BW_010,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b","[""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e a"", ""pick-up a"", ""stack a b""]",6
+BW_001,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up l 
+2. stack l h 
+3. pick-up h 
+4. stack h b 
+5. pick-up b 
+6. stack b d 
+7. pick-up d 
+8. stack d g 
+9. pick-up g 
+10. stack g i 
+11. pick-up i 
+12. stack i f 
+13. pick-up f 
+14. stack f j","[""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h b"", ""pick-up b"", ""stack b d"", ""pick-up d"", ""stack d g"", ""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i f"", ""pick-up f"", ""stack f j""]",14
+BW_011,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. stack e l
+2. pick-up e
+3. stack e k
+4. pick-up k
+5. stack a k
+6. pick-up a
+7. stack g a
+8. pick-up g
+9. stack k g
+10. pick-up k
+11. stack c k
+12. put-down c
+13. pick-up b
+14. stack i b
+15. pick-up i
+16. stack h i
+17. pick-up h
+18. stack e h
+19. put-down e
+20. pick-up d (j does not exist and it would be necessary to perform another move to put-down c, so I assume that the response you want is by item and assumes the correct order for the blocks)","[""stack e l"", ""pick-up e"", ""stack e k"", ""pick-up k"", ""stack a k"", ""pick-up a"", ""stack g a"", ""pick-up g"", ""stack k g"", ""pick-up k"", ""stack c k"", ""put-down c"", ""pick-up b"", ""stack i b"", ""pick-up i"", ""stack h i"", ""pick-up h"", ""stack e h"", ""put-down e"", ""pick-up d (j does not exist and it would be necessary to perform another move to put-down c, so i assume that the response you want is by item and assumes the correct order for the blocks)""]",20
+BW_120,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,"1. Pick-up c
+2. Pick-up j
+3. Stack j c
+4. Stack j g
+5. Stack g f
+6. Unstack g j 
+7. Put-down j
+8. Unstack j c 
+9. Put-down c","[""pick-up c"", ""pick-up j"", ""stack j c"", ""stack j g"", ""stack g f"", ""unstack g j"", ""put-down j"", ""unstack j c"", ""put-down c""]",9
+BW_227,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a","[""pick-up f"", ""stack f l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j c"", ""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k a""]",16
+BW_137,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up a
+2. stack d a
+3. pick-up b
+4. stack a b
+5. pick-up j
+6. stack b j
+7. pick-up e
+8. stack j e
+9. pick-up l
+10. stack e l
+11. pick-up h
+12. stack l h
+13. pick-up c
+14. stack h c
+15. pick-up f
+16. stack c f
+17. pick-up g
+18. stack f g
+19. pick-up i
+20. stack g i","[""pick-up a"", ""stack d a"", ""pick-up b"", ""stack a b"", ""pick-up j"", ""stack b j"", ""pick-up e"", ""stack j e"", ""pick-up l"", ""stack e l"", ""pick-up h"", ""stack l h"", ""pick-up c"", ""stack h c"", ""pick-up f"", ""stack c f"", ""pick-up g"", ""stack f g"", ""pick-up i"", ""stack g i""]",20
+BW_172,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k","[""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b a"", ""pick-up a"", ""stack a j"", ""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k""]",20
+BW_467,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h","[""pick-up g"", ""stack g i"", ""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f h""]",12
+BW_080,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f","[""pick-up l"", ""stack l c"", ""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e j"", ""pick-up j"", ""stack j f""]",10
+BW_E100,openai/gpt-4o,,easy,low,"This problem definition describes a blocks world problem with three blocks: a, b, and c. The `blocksworld-4ops` domain typically includes four basic operations: `pick-up`, `put-down`, `stack`, and `unstack`. Here's a breakdown of the problem as described:
+
+### Initial State:
+- There are three blocks: a, b, and c.
+- `handempty` indicates that the robotic arm is currently not holding any block.
+- `ontable a` and `ontable b` suggest that blocks a and b are directly on the table.
+- `on c a` means block c is on top of block a.
+- `clear b` and `clear c` mean the tops of blocks b and c are clear (not covered by any other block).
+
+### Goal State:
+- `(on b c)` indicates that block b should be on top of block c.
+- `(on c a)` means block c should remain on top of block a.
+
+### Objective:
+The main goal is to rearrange the blocks such that b is on c, and c remains on a. The initial configuration makes this problem relatively straightforward since block c is already where it needs to be concerning block a. The challenge lies in moving block b from the table to the top of block c.
+
+### Possible Solution:
+To achieve the goal state from the initial configuration, you could follow these steps using typical blocksworld operations:
+
+1. **Pick Up b**: Since `clear b` is true and `handempty` is true, the robot can pick up block b.
+2. **Stack b on c**: Since the robot is holding block b, and `clear c` is true, the robot can stack block b on block c.
+
+After these operations, the goal state is achieved: block b is on block c, and block c is on block a.","[""this problem definition describes a blocks world problem with three blocks: a, b, and c. the `blocksworld-4ops` domain typically includes four basic operations: `pick-up`, `put-down`, `stack`, and `unstack`. here's a breakdown of the problem as described:"", ""### initial state:"", ""- there are three blocks: a, b, and c."", ""- `handempty` indicates that the robotic arm is currently not holding any block."", ""- `ontable a` and `ontable b` suggest that blocks a and b are directly on the table."", ""- `on c a` means block c is on top of block a."", ""- `clear b` and `clear c` mean the tops of blocks b and c are clear (not covered by any other block)."", ""### goal state:"", ""- `(on b c)` indicates that block b should be on top of block c."", ""- `(on c a)` means block c should remain on top of block a."", ""### objective:"", ""the main goal is to rearrange the blocks such that b is on c, and c remains on a. the initial configuration makes this problem relatively straightforward since block c is already where it needs to be concerning block a. the challenge lies in moving block b from the table to the top of block c."", ""### possible solution:"", ""to achieve the goal state from the initial configuration, you could follow these steps using typical blocksworld operations:"", ""**pick up b**: since `clear b` is true and `handempty` is true, the robot can pick up block b."", ""**stack b on c**: since the robot is holding block b, and `clear c` is true, the robot can stack block b on block c."", ""after these operations, the goal state is achieved: block b is on block c, and block c is on block a.""]",17
+BW_E015,openai/gpt-4o,,easy,low,"The problem you've defined, ""BW-rand-3,"" is a Blocks World problem, which is a classic AI planning problem. Your setup specifies a world with three blocks: `a`, `b`, and `c`. 
+
+Here's a breakdown of the initial state and goal:
+
+### Initial State:
+- `handempty`: This indicates that the hand (or gripper) is not holding any block.
+- `ontable a`: Block `a` is directly on the table.
+- `ontable b`: Block `b` is directly on the table.
+- `on c b`: Block `c` is on top of block `b`.
+- `clear a`: Block `a` has no blocks on top of it.
+- `clear c`: Block `c` has no blocks on top of it.
+
+### Goal:
+- You aim to achieve the state where `a` is on top of `b`: `(on a b)`.
+
+### Domain `blocksworld-4ops`:
+This typically includes four basic operations:
+1. **Pick up** a block (requires `handempty` and the block to be `clear`).
+2. **Put down** a block (requires having picked it up).
+3. **Stack** a block on another (requires having picked it up and the target to be `clear`).
+4. **Unstack** a block from another (requires `handempty` and the top block to be `clear`).
+
+### Plan:
+To accomplish the goal `(on a b)`, you generally need to:
+1. **Unstack `c` from `b`:**
+   - Since `c` is on `b` and `c` is clear, you can unstack `c` from `b`.
+2. **Put `c` on the table** if needed.
+3. **Pick up `a`** from the table.
+4. **Stack `a` on `b`.**
+
+This simple plan will achieve the goal given the current initial state you have defined.","[""the problem you've defined, \""bw-rand-3,\"" is a blocks world problem, which is a classic ai planning problem. your setup specifies a world with three blocks: `a`, `b`, and `c`."", ""here's a breakdown of the initial state and goal:"", ""### initial state:"", ""- `handempty`: this indicates that the hand (or gripper) is not holding any block."", ""- `ontable a`: block `a` is directly on the table."", ""- `ontable b`: block `b` is directly on the table."", ""- `on c b`: block `c` is on top of block `b`."", ""- `clear a`: block `a` has no blocks on top of it."", ""- `clear c`: block `c` has no blocks on top of it."", ""### goal:"", ""- you aim to achieve the state where `a` is on top of `b`: `(on a b)`."", ""### domain `blocksworld-4ops`:"", ""this typically includes four basic operations:"", ""**pick up** a block (requires `handempty` and the block to be `clear`)."", ""**put down** a block (requires having picked it up)."", ""**stack** a block on another (requires having picked it up and the target to be `clear`)."", ""**unstack** a block from another (requires `handempty` and the top block to be `clear`)."", ""### plan:"", ""to accomplish the goal `(on a b)`, you generally need to:"", ""**unstack `c` from `b`:**"", ""- since `c` is on `b` and `c` is clear, you can unstack `c` from `b`."", ""**put `c` on the table** if needed."", ""**pick up `a`** from the table."", ""**stack `a` on `b`.**"", ""this simple plan will achieve the goal given the current initial state you have defined.""]",25
+BW_E017,openai/gpt-4o,,easy,low,"The provided code appears to be written in PDDL (Planning Domain Definition Language), which is used in artificial intelligence for automated planning. The code defines a problem, named `BW-rand-3`, in the context of the `blocksworld-4ops` domain, a classic planning domain involving blocks manipulation.
+
+Let's break down each part of the problem definition:
+
+### Objects
+```lisp
+(:objects a b c )
+```
+This section defines the objects involved in the problem. Here, we have three objects: `a`, `b`, and `c`, which are the blocks.
+
+### Initial State
+```lisp
+(:init
+(handempty)
+(ontable a)
+(ontable b)
+(ontable c)
+(clear a)
+(clear b)
+(clear c)
+)
+```
+The initial state specifies the conditions at the start of the problem. The predicates used here are:
+- `(handempty)`: Indicates that the hand (perhaps a robotic arm in this domain) is empty and ready to pick up blocks.
+- `(ontable a)`, `(ontable b)`, `(ontable c)`: Each block is initially on the table.
+- `(clear a)`, `(clear b)`, `(clear c)`: Each block is clear, meaning there are no other blocks on top of them.
+
+### Goal State
+```lisp
+(:goal
+(and
+(on a b)
+(on c a))
+)
+```
+The goal state is to achieve a configuration where:
+- Block `a` is on block `b`.
+- Block `c` is on block `a`.
+
+For solving this problem, you'll need to apply actions that are defined in the `blocksworld-4ops` domain to manipulate the blocks to achieve the specified goal. Model strategies typically involve stacking blocks in a particular order while respecting constraints like `handempty`, `clear`, and surface availability.","[""the provided code appears to be written in pddl (planning domain definition language), which is used in artificial intelligence for automated planning. the code defines a problem, named `bw-rand-3`, in the context of the `blocksworld-4ops` domain, a classic planning domain involving blocks manipulation."", ""let's break down each part of the problem definition:"", ""### objects"", ""```lisp"", ""(:objects a b c )"", ""```"", ""this section defines the objects involved in the problem. here, we have three objects: `a`, `b`, and `c`, which are the blocks."", ""### initial state"", ""```lisp"", ""(:init"", ""(handempty)"", ""(ontable a)"", ""(ontable b)"", ""(ontable c)"", ""(clear a)"", ""(clear b)"", ""(clear c)"", "")"", ""```"", ""the initial state specifies the conditions at the start of the problem. the predicates used here are:"", ""- `(handempty)`: indicates that the hand (perhaps a robotic arm in this domain) is empty and ready to pick up blocks."", ""- `(ontable a)`, `(ontable b)`, `(ontable c)`: each block is initially on the table."", ""- `(clear a)`, `(clear b)`, `(clear c)`: each block is clear, meaning there are no other blocks on top of them."", ""### goal state"", ""```lisp"", ""(:goal"", ""(and"", ""(on a b)"", ""(on c a))"", "")"", ""```"", ""the goal state is to achieve a configuration where:"", ""- block `a` is on block `b`."", ""- block `c` is on block `a`."", ""for solving this problem, you'll need to apply actions that are defined in the `blocksworld-4ops` domain to manipulate the blocks to achieve the specified goal. model strategies typically involve stacking blocks in a particular order while respecting constraints like `handempty`, `clear`, and surface availability.""]",35
+BW_E019,openai/gpt-4o,,easy,low,"The problem you've defined is for a blocksworld scenario with three blocks: a, b, and c. The initial state and the goal state are specified within this problem definition. Let's go through what you've defined:
+
+### Domain
+- **Domain:** `blocksworld-4ops`: This suggests that the problem uses a typical Blocksworld domain with four operations, which are usually `move`, `unstack`, `stack`, and `pickup`.
+  
+### Objects
+- **Blocks:** `a`, `b`, `c`: These are the blocks involved in the problem.
+
+### Initial State
+- **handempty**: The robotic hand is empty initially.
+- **(on a b)**: Block `a` is initially on block `b`.
+- **(ontable b)**: Block `b` is on the table.
+- **(ontable c)**: Block `c` is on the table.
+- **(clear a)**: Block `a` is clear initially (nothing on top of it).
+- **(clear c)**: Block `c` is also clear (nothing on top of it).
+
+### Goal State
+- **(on a c)**: The goal is to have block `a` on block `c`.
+- **(on b a)**: Another goal is to have block `b` on block `a`.
+
+To solve this problem, the agent would need to perform a sequence of operations to move from the initial state to the goal state. Here is one possible sequence of operations based on this problem definition:
+
+1. **Unstack a from b**: Since `a` is clear, it can be lifted off `b`.
+2. **Stack a on c**: With `a` in hand, put `a` on `c` since `c` is clear in the initial state.
+3. **Pickup b from the table**: With the hand empty, `b` can be picked up because `b` is clear once `a` is moved.
+4. **Stack b on a**: Finally, with `b` in hand and `a` now clear, put `b` on top of `a`.
+
+The solution would result in the final configuration meeting the goal requirements.","[""the problem you've defined is for a blocksworld scenario with three blocks: a, b, and c. the initial state and the goal state are specified within this problem definition. let's go through what you've defined:"", ""### domain"", ""- **domain:** `blocksworld-4ops`: this suggests that the problem uses a typical blocksworld domain with four operations, which are usually `move`, `unstack`, `stack`, and `pickup`."", ""### objects"", ""- **blocks:** `a`, `b`, `c`: these are the blocks involved in the problem."", ""### initial state"", ""- **handempty**: the robotic hand is empty initially."", ""- **(on a b)**: block `a` is initially on block `b`."", ""- **(ontable b)**: block `b` is on the table."", ""- **(ontable c)**: block `c` is on the table."", ""- **(clear a)**: block `a` is clear initially (nothing on top of it)."", ""- **(clear c)**: block `c` is also clear (nothing on top of it)."", ""### goal state"", ""- **(on a c)**: the goal is to have block `a` on block `c`."", ""- **(on b a)**: another goal is to have block `b` on block `a`."", ""to solve this problem, the agent would need to perform a sequence of operations to move from the initial state to the goal state. here is one possible sequence of operations based on this problem definition:"", ""**unstack a from b**: since `a` is clear, it can be lifted off `b`."", ""**stack a on c**: with `a` in hand, put `a` on `c` since `c` is clear in the initial state."", ""**pickup b from the table**: with the hand empty, `b` can be picked up because `b` is clear once `a` is moved."", ""**stack b on a**: finally, with `b` in hand and `a` now clear, put `b` on top of `a`."", ""the solution would result in the final configuration meeting the goal requirements.""]",21
+BW_E002,openai/gpt-4o,,easy,low,"The problem `BW-rand-3` is defined for the `blocksworld-4ops` domain, which involves manipulating a set of blocks using four operations: picking up a block from the table, putting it down on the table, stacking it on another block, or unstacking it from another block. 
+
+In this specific problem, you have three blocks: `a`, `b`, and `c`, which initially are all on the table and clear (nothing is on top of them). The robot ""hand"" is also empty, indicating it's not holding any blocks at the start.
+
+The goal is to achieve a configuration where block `a` is on top of block `c` and block `b` is on top of block `a`. Therefore, the desired stack arrangement from bottom to top is (c, a, b).
+
+Here's a breakdown of steps you might take to reach the goal from the initial state:
+
+1. **Pick up block `a`** from the table.
+2. **Stack block `a` on block `c`.** This action results in:
+   - `on(a, c)`
+   - `clear(a)` becomes false
+   - `clear(c)` becomes false
+   - `handempty` becomes true
+3. **Pick up block `b`** from the table.
+4. **Stack block `b` on block `a`.** This final action achieves:
+   - `on(b, a)`
+   - `clear(b)` becomes false
+   - `clear(a)` becomes false
+   - `handempty` becomes true
+
+After these operations, the conditions satisfy the goal criteria:
+- `on a c` (block `a` is on block `c`)
+- `on b a` (block `b` is on block `a`)
+
+This solution sequence should achieve the desired final stack configuration specified in the goal.","[""the problem `bw-rand-3` is defined for the `blocksworld-4ops` domain, which involves manipulating a set of blocks using four operations: picking up a block from the table, putting it down on the table, stacking it on another block, or unstacking it from another block."", ""in this specific problem, you have three blocks: `a`, `b`, and `c`, which initially are all on the table and clear (nothing is on top of them). the robot \""hand\"" is also empty, indicating it's not holding any blocks at the start."", ""the goal is to achieve a configuration where block `a` is on top of block `c` and block `b` is on top of block `a`. therefore, the desired stack arrangement from bottom to top is (c, a, b)."", ""here's a breakdown of steps you might take to reach the goal from the initial state:"", ""**pick up block `a`** from the table."", ""**stack block `a` on block `c`.** this action results in:"", ""- `on(a, c)`"", ""- `clear(a)` becomes false"", ""- `clear(c)` becomes false"", ""- `handempty` becomes true"", ""**pick up block `b`** from the table."", ""**stack block `b` on block `a`.** this final action achieves:"", ""- `on(b, a)`"", ""- `clear(b)` becomes false"", ""- `clear(a)` becomes false"", ""- `handempty` becomes true"", ""after these operations, the conditions satisfy the goal criteria:"", ""- `on a c` (block `a` is on block `c`)"", ""- `on b a` (block `b` is on block `a`)"", ""this solution sequence should achieve the desired final stack configuration specified in the goal.""]",20
+BW_E100,meta-llama/llama-3.1-8b-instruct,,easy,low,"This is a definition of a planning problem in the Blocksworld domain, specifically a variant of the 3-block problem.
+
+Here's a breakdown of the different components:
+
+1. `(:domain blocksworld-4ops)`: This specifies the domain of the problem, which is the Blocksworld domain with 4 operations (`move`, `pick-up`, `put-down`, and `clear`).
+2. `(:objects a b c)`: This specifies the objects involved in the problem, which are three blocks named `a`, `b`, and `c`.
+3. `(:init ...)` : This specifies the initial state of the world.
+	* `(handempty)`: The agent's hand is empty.
+	* `(ontable a)`, `(ontable b)`, and `(ontable c)`: Blocks `a`, `b`, and `c` are on the table.
+	* `(on c a)`: Block `c` is on top of block `a`.
+	* `(clear b)`, and `(clear c)`: Blocks `b` and `c` are clear, meaning they are not stacked on top of each other.
+4. `(:goal ...)` : This specifies the goal state of the world.
+	* The goal is to have blocks `b` and `c` stacked on top of each other, with `c` on top of `b`, and both blocks stacked on top of `a`.
+
+The goal is written using logical connectives (`and`) to express the requirement that both conditions must be met.","[""this is a definition of a planning problem in the blocksworld domain, specifically a variant of the 3-block problem."", ""here's a breakdown of the different components:"", ""`(:domain blocksworld-4ops)`: this specifies the domain of the problem, which is the blocksworld domain with 4 operations (`move`, `pick-up`, `put-down`, and `clear`)."", ""`(:objects a b c)`: this specifies the objects involved in the problem, which are three blocks named `a`, `b`, and `c`."", ""`(:init ...)` : this specifies the initial state of the world."", ""* `(handempty)`: the agent's hand is empty."", ""* `(ontable a)`, `(ontable b)`, and `(ontable c)`: blocks `a`, `b`, and `c` are on the table."", ""* `(on c a)`: block `c` is on top of block `a`."", ""* `(clear b)`, and `(clear c)`: blocks `b` and `c` are clear, meaning they are not stacked on top of each other."", ""`(:goal ...)` : this specifies the goal state of the world."", ""* the goal is to have blocks `b` and `c` stacked on top of each other, with `c` on top of `b`, and both blocks stacked on top of `a`."", ""the goal is written using logical connectives (`and`) to express the requirement that both conditions must be met.""]",12
+BW_E015,meta-llama/llama-3.1-8b-instruct,,easy,low,"It appears you've provided a definition for a problem in the planning domain of Blocksworld with 4 operators. I'll break down the key elements of this definition:
+
+### Problem Definition
+
+The problem is defined with the label `BW-rand-3`. This is a naming convention, allowing you to identify the problem uniquely.
+
+### Domain
+
+The domain used here is `blocksworld-4ops`. This specifies the set of operators and fluents (facts) that can be used within the problem. The ""4ops"" suggests that this domain is an extension or variation of the standard Blocksworld domain, which typically involves four basic actions: `pick-up`, `put-down`, `clear`, and `on`.
+
+### Objects
+
+Three objects are defined: `a`, `b`, and `c`. These objects are likely blocks within the Blocksworld scenario.
+
+### Initial State
+
+The initial state is defined by the `(:init...)` section. Key fluents in the initial state are:
+- `handempty`: This is the initial state of the robot's hand, indicating that it's empty.
+- `ontable a` and `ontable b`: These blocks are initially on the table.
+- `on c b`: Block `c` is initially on top of block `b`.
+- `clear a` and `clear c`: Blocks `a` and `c` are initially clear (i.e., not held by the robot or on top of any other block).
+
+### Goal State
+
+The goal state is specified within the `(:goal...)` section. The goal is to have block `a` on top of block `b`, expressed as `(on a b)`. This is the final state the planner should aim to achieve through a sequence of actions from the initial state.","[""it appears you've provided a definition for a problem in the planning domain of blocksworld with 4 operators. i'll break down the key elements of this definition:"", ""### problem definition"", ""the problem is defined with the label `bw-rand-3`. this is a naming convention, allowing you to identify the problem uniquely."", ""### domain"", ""the domain used here is `blocksworld-4ops`. this specifies the set of operators and fluents (facts) that can be used within the problem. the \""4ops\"" suggests that this domain is an extension or variation of the standard blocksworld domain, which typically involves four basic actions: `pick-up`, `put-down`, `clear`, and `on`."", ""### objects"", ""three objects are defined: `a`, `b`, and `c`. these objects are likely blocks within the blocksworld scenario."", ""### initial state"", ""the initial state is defined by the `(:init...)` section. key fluents in the initial state are:"", ""- `handempty`: this is the initial state of the robot's hand, indicating that it's empty."", ""- `ontable a` and `ontable b`: these blocks are initially on the table."", ""- `on c b`: block `c` is initially on top of block `b`."", ""- `clear a` and `clear c`: blocks `a` and `c` are initially clear (i.e., not held by the robot or on top of any other block)."", ""### goal state"", ""the goal state is specified within the `(:goal...)` section. the goal is to have block `a` on top of block `b`, expressed as `(on a b)`. this is the final state the planner should aim to achieve through a sequence of actions from the initial state.""]",15
+BW_E017,meta-llama/llama-3.1-8b-instruct,,easy,low,"A simple block world problem definition in Planning Domain Definition Language (PDDL).
+
+Let's break it down:
+
+**Problem Definition**
+
+* `BW-rand-3` is the name of the problem.
+* The `:domain` keyword specifies the planning domain, which is `blocksworld-4ops` in this case.
+* The `:objects` keyword lists the objects in the domain: `a`, `b`, and `c`.
+
+**Initial State**
+
+* The `:init` keyword defines the initial state of the world.
+* `handempty` indicates that the hand is initially empty.
+* The objects `a`, `b`, and `c` are all on the table.
+* Each object is initially cleared (i.e., not on top of another object).
+
+**Goal State**
+
+* The `:goal` keyword defines the desired goal state of the world.
+* The goal is to achieve two things:
+	+ `on a b`: Object `a` should be on top of object `b`.
+	+ `on c a`: Object `c` should be on top of object `a`.
+
+In other words, the goal is to stack objects `a` and `c` on top of each other, with `b` at the bottom.","[""a simple block world problem definition in planning domain definition language (pddl)."", ""let's break it down:"", ""**problem definition**"", ""* `bw-rand-3` is the name of the problem."", ""* the `:domain` keyword specifies the planning domain, which is `blocksworld-4ops` in this case."", ""* the `:objects` keyword lists the objects in the domain: `a`, `b`, and `c`."", ""**initial state**"", ""* the `:init` keyword defines the initial state of the world."", ""* `handempty` indicates that the hand is initially empty."", ""* the objects `a`, `b`, and `c` are all on the table."", ""* each object is initially cleared (i.e., not on top of another object)."", ""**goal state**"", ""* the `:goal` keyword defines the desired goal state of the world."", ""* the goal is to achieve two things:"", ""+ `on a b`: object `a` should be on top of object `b`."", ""+ `on c a`: object `c` should be on top of object `a`."", ""in other words, the goal is to stack objects `a` and `c` on top of each other, with `b` at the bottom.""]",17
+BW_E019,meta-llama/llama-3.1-8b-instruct,,easy,low,"It looks like you've defined a problem in the planning domain of Blocksworld-4ops. Here's a breakdown of the problem:
+
+**Problem Definition:**
+
+* The problem is named `BW-rand-3`.
+* The domain is `blocksworld-4ops`, which suggests that the problem involves moving blocks around using four available operations.
+
+**Objects:**
+
+* There are three objects in the problem:
+	+ `a`
+	+ `b`
+	+ `c`
+
+**Initial State:**
+
+* The initial state is defined by the following facts:
+	+ The hand is empty (`(handempty)`).
+	+ Block `a` is on top of block `b` (`(on a b)`).
+	+ Both blocks `b` and `c` are on the table (`(ontable b)` and `(ontable c)`).
+	+ Both blocks `a` and `c` are clear (`(clear a)` and `(clear c)`).
+
+**Goal:**
+
+* The goal state is defined by the following facts:
+	+ Block `a` is on top of block `c` (`(on a c)`).
+	+ Block `b` is on top of block `a` (`(on b a)`).
+
+This problem appears to be a variant of the classic Blocksworld problem, where the goal is to stack blocks on top of each other. The problem requires the planning agent to use four available operations ( likely `pickup`, `putdown`, `stack`, and `unstack`) to transform the initial state into the goal state.","[""it looks like you've defined a problem in the planning domain of blocksworld-4ops. here's a breakdown of the problem:"", ""**problem definition:**"", ""* the problem is named `bw-rand-3`."", ""* the domain is `blocksworld-4ops`, which suggests that the problem involves moving blocks around using four available operations."", ""**objects:**"", ""* there are three objects in the problem:"", ""+ `a`"", ""+ `b`"", ""+ `c`"", ""**initial state:**"", ""* the initial state is defined by the following facts:"", ""+ the hand is empty (`(handempty)`)."", ""+ block `a` is on top of block `b` (`(on a b)`)."", ""+ both blocks `b` and `c` are on the table (`(ontable b)` and `(ontable c)`)."", ""+ both blocks `a` and `c` are clear (`(clear a)` and `(clear c)`)."", ""**goal:**"", ""* the goal state is defined by the following facts:"", ""+ block `a` is on top of block `c` (`(on a c)`)."", ""+ block `b` is on top of block `a` (`(on b a)`)."", ""this problem appears to be a variant of the classic blocksworld problem, where the goal is to stack blocks on top of each other. the problem requires the planning agent to use four available operations ( likely `pickup`, `putdown`, `stack`, and `unstack`) to transform the initial state into the goal state.""]",20
+BW_E002,meta-llama/llama-3.1-8b-instruct,,easy,low,"A PDDL (Planning Domain Definition Language) problem definition!
+
+Let me break down the components of this problem definition:
+
+**Domain definition**
+
+The domain is specified as `blocksworld-4ops`. This suggests that the problem is a classic Blocksworld problem, which involves planning to move blocks on a table to achieve a certain goal. The `-4ops` part indicates that this problem uses a specific set of four operators (actions) to manipulate the blocks.
+
+**Problem objects**
+
+The problem involves three objects: `a`, `b`, and `c`. These objects are likely blocks in the Blocksworld problem.
+
+**Initial state**
+
+The initial state is defined by the following facts:
+
+* `(handempty)`: The robot (or agent) has an empty hand.
+* `(ontable a)`, `(ontable b)`, `(ontable c)`: Blocks `a`, `b`, and `c` are all on the table.
+* `(clear a)`, `(clear b)`, `(clear c)`: All blocks are clear (i.e., not stacked on top of each other).
+
+**Goal state**
+
+The goal state is defined by the following conditions:
+
+* `(on a c)`: Block `a` is on top of block `c`.
+* `(on b a)`: Block `b` is on top of block `a`.
+
+In summary, the problem is to plan a sequence of actions to move blocks `a` and `b` on top of each other, with `a` on top of `c`. The agent starts with an empty hand and all blocks on the table.","[""a pddl (planning domain definition language) problem definition!"", ""let me break down the components of this problem definition:"", ""**domain definition**"", ""the domain is specified as `blocksworld-4ops`. this suggests that the problem is a classic blocksworld problem, which involves planning to move blocks on a table to achieve a certain goal. the `-4ops` part indicates that this problem uses a specific set of four operators (actions) to manipulate the blocks."", ""**problem objects**"", ""the problem involves three objects: `a`, `b`, and `c`. these objects are likely blocks in the blocksworld problem."", ""**initial state**"", ""the initial state is defined by the following facts:"", ""* `(handempty)`: the robot (or agent) has an empty hand."", ""* `(ontable a)`, `(ontable b)`, `(ontable c)`: blocks `a`, `b`, and `c` are all on the table."", ""* `(clear a)`, `(clear b)`, `(clear c)`: all blocks are clear (i.e., not stacked on top of each other)."", ""**goal state**"", ""the goal state is defined by the following conditions:"", ""* `(on a c)`: block `a` is on top of block `c`."", ""* `(on b a)`: block `b` is on top of block `a`."", ""in summary, the problem is to plan a sequence of actions to move blocks `a` and `b` on top of each other, with `a` on top of `c`. the agent starts with an empty hand and all blocks on the table.""]",16
+BW_495,openai/gpt-4o,,medium,high,"1. pick-up c
+2. stack c l
+3. pick-up l
+4. stack l i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e h","[""pick-up c"", ""stack c l"", ""pick-up l"", ""stack l i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e h""]",8
+BW_408,openai/gpt-4o,,hard,high,"1. pick-up a
+2. stack a l
+3. pick-up l
+4. stack l h
+5. pick-up h
+6. stack h d
+7. pick-up d
+8. stack d c
+9. pick-up c
+10. stack c g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j b","[""pick-up a"", ""stack a l"", ""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h d"", ""pick-up d"", ""stack d c"", ""pick-up c"", ""stack c g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j b""]",14
+BW_350,openai/gpt-4o,,hard,high,"1. pick-up f
+2. stack f e
+3. pick-up e
+4. stack e i
+5. pick-up i
+6. stack i j
+7. pick-up j
+8. stack j k
+9. pick-up k
+10. stack k a
+11. pick-up a
+12. stack a g
+13. pick-up g
+14. stack g b
+15. pick-up b
+16. stack b l
+17. pick-up l
+18. stack l d","[""pick-up f"", ""stack f e"", ""pick-up e"", ""stack e i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j k"", ""pick-up k"", ""stack k a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g b"", ""pick-up b"", ""stack b l"", ""pick-up l"", ""stack l d""]",18
+BW_331,openai/gpt-4o,,easy,high,"1. pick-up h
+2. stack h j
+3. pick-up j
+4. stack j l","[""pick-up h"", ""stack h j"", ""pick-up j"", ""stack j l""]",4
+BW_310,openai/gpt-4o,,medium,high,"1. pick-up g
+2. stack g j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a f
+7. pick-up f
+8. stack f b
+9. pick-up b
+10. stack b d","[""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f b"", ""pick-up b"", ""stack b d""]",10
+BW_282,openai/gpt-4o,,medium,high,"1. pick-up g
+2. stack g h
+3. pick-up h
+4. stack h c
+5. pick-up c
+6. stack c i
+7. pick-up i
+8. stack i b","[""pick-up g"", ""stack g h"", ""pick-up h"", ""stack h c"", ""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i b""]",8
+BW_203,openai/gpt-4o,,easy,high,"1. pick-up k
+2. stack k f
+3. pick-up f
+4. stack f j
+5. pick-up j
+6. stack j h","[""pick-up k"", ""stack k f"", ""pick-up f"", ""stack f j"", ""pick-up j"", ""stack j h""]",6
+BW_022,openai/gpt-4o,,medium,high,"1. pick-up g
+2. stack g c
+3. pick-up c
+4. stack c b
+5. pick-up b
+6. stack b k
+7. pick-up k
+8. stack k f","[""pick-up g"", ""stack g c"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b k"", ""pick-up k"", ""stack k f""]",8
+BW_014,openai/gpt-4o,,easy,high,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e g","[""pick-up l"", ""stack l e"", ""pick-up e"", ""stack e g""]",4
+BW_002,openai/gpt-4o,,hard,high,"1. pick-up j
+2. stack j g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b k
+9. pick-up k
+10. stack k h
+11. pick-up h
+12. stack h i","[""pick-up j"", ""stack j g"", ""pick-up g"", ""stack g a"", ""pick-up a"", ""stack a b"", ""pick-up b"", ""stack b k"", ""pick-up k"", ""stack k h"", ""pick-up h"", ""stack h i""]",12
+BW_495,meta-llama/llama-3.1-8b-instruct,,medium,high,"1. pick-up c
+2. pick-up l
+3. unstack c l
+4. stack c l
+5. stack l i
+6. pick-up e
+7. stack i e
+8. unstack e i
+9. stack l i
+10. stack i h
+11. pick-up h
+12. unstack l h
+13. put-down h","[""pick-up c"", ""pick-up l"", ""unstack c l"", ""stack c l"", ""stack l i"", ""pick-up e"", ""stack i e"", ""unstack e i"", ""stack l i"", ""stack i h"", ""pick-up h"", ""unstack l h"", ""put-down h""]",13
+BW_408,meta-llama/llama-3.1-8b-instruct,,hard,high,"1. pick-up a
+2. stack a l
+3. pick-up l
+4. stack l h
+5. pick-up h
+6. stack h d
+7. pick-up d
+8. stack d c
+9. pick-up c
+10. stack c g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j b","[""pick-up a"", ""stack a l"", ""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h d"", ""pick-up d"", ""stack d c"", ""pick-up c"", ""stack c g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j b""]",14
+BW_350,meta-llama/llama-3.1-8b-instruct,,hard,high,"1. pick-up f
+2. stack f e
+3. pick-up e
+4. stack e i
+5. pick-up i
+6. stack i j
+7. pick-up j
+8. stack j k
+9. pick-up k
+10. stack k a
+11. pick-up a
+12. stack a g
+13. pick-up g
+14. stack g b
+15. pick-up b
+16. stack b l
+17. pick-up l
+18. stack l d","[""pick-up f"", ""stack f e"", ""pick-up e"", ""stack e i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j k"", ""pick-up k"", ""stack k a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g b"", ""pick-up b"", ""stack b l"", ""pick-up l"", ""stack l d""]",18
+BW_331,meta-llama/llama-3.1-8b-instruct,,easy,high,"1. pick-up h
+2. stack h j
+3. pick-up j
+4. stack j l","[""pick-up h"", ""stack h j"", ""pick-up j"", ""stack j l""]",4
+BW_310,meta-llama/llama-3.1-8b-instruct,,medium,high,"1. pick-up a
+2. pick-up j
+3. stack j a
+4. pick-up f
+5. stack f a
+6. pick-up b
+7. stack b f
+8. pick-up g
+9. stack g j","[""pick-up a"", ""pick-up j"", ""stack j a"", ""pick-up f"", ""stack f a"", ""pick-up b"", ""stack b f"", ""pick-up g"", ""stack g j""]",9
+BW_282,meta-llama/llama-3.1-8b-instruct,,medium,high,"1. pick-up g
+2. stack g h
+3. pick-up h
+4. stack h c
+5. pick-up c
+6. stack c i
+7. pick-up i
+8. stack i b","[""pick-up g"", ""stack g h"", ""pick-up h"", ""stack h c"", ""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i b""]",8
+BW_203,meta-llama/llama-3.1-8b-instruct,,easy,high,"1. pick-up f
+2. stack f k
+3. stack j f","[""pick-up f"", ""stack f k"", ""stack j f""]",3
+BW_022,meta-llama/llama-3.1-8b-instruct,,medium,high,"1. pick-up g
+2. stack g c
+3. pick-up c
+4. stack c b
+5. pick-up b
+6. stack b k
+7. pick-up k
+8. stack k f","[""pick-up g"", ""stack g c"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b k"", ""pick-up k"", ""stack k f""]",8
+BW_014,meta-llama/llama-3.1-8b-instruct,,easy,high,"1. pick-up e
+2. stack e l
+3. stack l g
+4. unstack e l
+5. put-down e","[""pick-up e"", ""stack e l"", ""stack l g"", ""unstack e l"", ""put-down e""]",5
+BW_002,meta-llama/llama-3.1-8b-instruct,,hard,high,"1. stack j g
+2. unstack j g
+3. pick-up j
+4. put-down j
+5. stack a j
+6. unstack a j
+7. pick-up g
+8. put-down g
+9. stack a g
+10. unstack j b
+11. stack j k
+12. unstack k i
+13. pick-up b
+14. put-down b
+15. stack b k
+16. unstack b g
+17. pick-up h
+18. put-down h
+19. stack h b
+20. stack g a","[""stack j g"", ""unstack j g"", ""pick-up j"", ""put-down j"", ""stack a j"", ""unstack a j"", ""pick-up g"", ""put-down g"", ""stack a g"", ""unstack j b"", ""stack j k"", ""unstack k i"", ""pick-up b"", ""put-down b"", ""stack b k"", ""unstack b g"", ""pick-up h"", ""put-down h"", ""stack h b"", ""stack g a""]",20
+BW_496,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-101.pddl,hard,high,"1. pick-up a 
+2. stack a f 
+3. unstack f a 
+4. unstack a c 
+5. unstack c d 
+6. pick-up d 
+7. stack d c 
+8. stack c a 
+9. unstack a e 
+10. stack e a 
+11. unstack a l 
+12. pick-up l 
+13. unstack a l 
+14. stack l h 
+15. unstack l h 
+16. pick-up h 
+17. stack h l 
+18. put-down l 
+19. stack l a 
+20. pick-up a","[""pick-up a"", ""stack a f"", ""unstack f a"", ""unstack a c"", ""unstack c d"", ""pick-up d"", ""stack d c"", ""stack c a"", ""unstack a e"", ""stack e a"", ""unstack a l"", ""pick-up l"", ""unstack a l"", ""stack l h"", ""unstack l h"", ""pick-up h"", ""stack h l"", ""put-down l"", ""stack l a"", ""pick-up a""]",20
+BW_497,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-102.pddl,easy,high,"1. pick-up c
+2. stack c e
+3. pick-up e
+4. stack e l","[""pick-up c"", ""stack c e"", ""pick-up e"", ""stack e l""]",4
+BW_498,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-103.pddl,hard,high,"1. pick-up k
+2. stack k j
+3. pick-up j
+4. stack j e
+5. pick-up e
+6. stack e c
+7. pick-up c
+8. stack c b
+9. pick-up b
+10. stack b f
+11. pick-up f
+12. stack f d
+13. pick-up d
+14. stack d l
+15. pick-up l
+16. stack l a
+17. pick-up a
+18. stack a g
+19. unstack k j
+20. unstack j e
+21. unstack e c
+22. unstack c b
+23. unstack b f
+24. unstack f d
+25. unstack d l
+26. unstack l a","[""pick-up k"", ""stack k j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e c"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b f"", ""pick-up f"", ""stack f d"", ""pick-up d"", ""stack d l"", ""pick-up l"", ""stack l a"", ""pick-up a"", ""stack a g"", ""unstack k j"", ""unstack j e"", ""unstack e c"", ""unstack c b"", ""unstack b f"", ""unstack f d"", ""unstack d l"", ""unstack l a""]",26
+BW_499,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-104.pddl,medium,high,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e c
+5. pick-up c
+6. stack c a
+7. pick-up a
+8. stack a j","[""pick-up l"", ""stack l e"", ""pick-up e"", ""stack e c"", ""pick-up c"", ""stack c a"", ""pick-up a"", ""stack a j""]",8
+BW_500,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-105.pddl,hard,high,"1. pick-up e
+2. unstack e k
+3. put-down e
+4. pick-up k
+5. unstack k d
+6. put-down k
+7. pick-up d
+8. unstack d a
+9. put-down d
+10. pick-up a
+11. unstack a g
+12. put-down a
+13. pick-up g
+14. unstack g c
+15. put-down g
+16. pick-up c
+17. unstack c b
+18. put-down c
+19. pick-up b
+20. unstack b l
+21. put-down b","[""pick-up e"", ""unstack e k"", ""put-down e"", ""pick-up k"", ""unstack k d"", ""put-down k"", ""pick-up d"", ""unstack d a"", ""put-down d"", ""pick-up a"", ""unstack a g"", ""put-down a"", ""pick-up g"", ""unstack g c"", ""put-down g"", ""pick-up c"", ""unstack c b"", ""put-down c"", ""pick-up b"", ""unstack b l"", ""put-down b""]",21
+BW_501,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-106.pddl,hard,high,"1. pick-up c
+2. stack c i
+3. pick-up i
+4. stack i k
+5. pick-up k
+6. stack k a
+7. pick-up a
+8. stack a e
+9. pick-up e
+10. stack e g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j d","[""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i k"", ""pick-up k"", ""stack k a"", ""pick-up a"", ""stack a e"", ""pick-up e"", ""stack e g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j d""]",14
+BW_502,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-107.pddl,easy,high,"1. pick-up h
+2. stack h d
+3. stack h i
+4. pick-up e
+5. stack i e","[""pick-up h"", ""stack h d"", ""stack h i"", ""pick-up e"", ""stack i e""]",5
+BW_503,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-108.pddl,hard,high,"1. pick-up f
+2. stack f g
+3. pick-up a
+4. stack a c
+5. pick-up c
+6. stack c d
+7. pick-up d
+8. stack d h
+9. pick-up h
+10. stack h k
+11. pick-up k
+12. stack k j
+13. pick-up j
+14. stack j b
+15. pick-up b
+16. stack b e
+17. pick-up e
+18. stack e i
+19. pick-up i
+20. stack i l
+21. unstack a c
+22. unstack d h
+23. unstack g f
+24. unstack k j
+25. unstack j b
+26. unstack e i
+27. pick-up c
+28. stack a g
+29. pick-up h
+30. stack d k
+31. pick-up k
+32. stack h j
+33. pick-up j
+34. stack k b
+35. pick-up b
+36. stack j e
+37. pick-up e
+38. stack b i
+39. pick-up i
+40. stack e l","[""pick-up f"", ""stack f g"", ""pick-up a"", ""stack a c"", ""pick-up c"", ""stack c d"", ""pick-up d"", ""stack d h"", ""pick-up h"", ""stack h k"", ""pick-up k"", ""stack k j"", ""pick-up j"", ""stack j b"", ""pick-up b"", ""stack b e"", ""pick-up e"", ""stack e i"", ""pick-up i"", ""stack i l"", ""unstack a c"", ""unstack d h"", ""unstack g f"", ""unstack k j"", ""unstack j b"", ""unstack e i"", ""pick-up c"", ""stack a g"", ""pick-up h"", ""stack d k"", ""pick-up k"", ""stack h j"", ""pick-up j"", ""stack k b"", ""pick-up b"", ""stack j e"", ""pick-up e"", ""stack b i"", ""pick-up i"", ""stack e l""]",40
+BW_504,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-109.pddl,medium,high,"1. pick-up k
+2. stack k l
+3. pick-up l
+4. stack l e
+5. pick-up e
+6. stack e k
+7. pick-up f
+8. stack f k","[""pick-up k"", ""stack k l"", ""pick-up l"", ""stack l e"", ""pick-up e"", ""stack e k"", ""pick-up f"", ""stack f k""]",8
+BW_505,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-110.pddl,medium,high,"1. pick-up b
+2. stack b h
+3. pick-up g
+4. stack g b
+5. pick-up d
+6. stack d g
+7. pick-up c
+8. stack c d","[""pick-up b"", ""stack b h"", ""pick-up g"", ""stack g b"", ""pick-up d"", ""stack d g"", ""pick-up c"", ""stack c d""]",8
+BW_506,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-113.pddl,easy,high,"1. pick-up b
+2. pick-up g
+3. stack g b
+4. unstack b f","[""pick-up b"", ""pick-up g"", ""stack g b"", ""unstack b f""]",4
+BW_507,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-115.pddl,easy,high,"1. stack e j
+2. pick-up h
+3. stack h e
+4. unstack j e","[""stack e j"", ""pick-up h"", ""stack h e"", ""unstack j e""]",4
+BW_508,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-116.pddl,medium,high,"1. pick-up b
+2. stack b g
+3. pick-up c
+4. stack c g
+5. pick-up e
+6. stack e c
+7. pick-up f
+8. stack f b","[""pick-up b"", ""stack b g"", ""pick-up c"", ""stack c g"", ""pick-up e"", ""stack e c"", ""pick-up f"", ""stack f b""]",8
+BW_509,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-117.pddl,medium,high,"1. pick-up h
+2. stack h d
+3. pick-up d
+4. stack d f
+5. pick-up f
+6. stack f j
+7. pick-up j
+8. stack j i","[""pick-up h"", ""stack h d"", ""pick-up d"", ""stack d f"", ""pick-up f"", ""stack f j"", ""pick-up j"", ""stack j i""]",8
+BW_510,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-119.pddl,medium,high,"1. pick-up k
+2. unstack k j
+3. stack j a
+4. unstack a c
+5. stack a k
+6. unstack k a
+7. stack a c
+8. unstack c l
+9. stack c k
+10. unstack k c
+11. stack c a
+12. unstack a j
+13. stack j k
+14. unstack k j
+15. stack j a
+16. unstack a c
+17. stack a l
+18. unstack l c
+19. stack l k
+20. unstack k l
+21. stack l c
+22. unstack c a
+23. stack c h
+24. unstack h l
+25. stack h k
+26. unstack k h
+27. stack h l
+28. unstack l i
+29. stack l k
+30. unstack k l
+31. stack k h
+32. unstack h i
+33. stack h k
+34. unstack k h","[""pick-up k"", ""unstack k j"", ""stack j a"", ""unstack a c"", ""stack a k"", ""unstack k a"", ""stack a c"", ""unstack c l"", ""stack c k"", ""unstack k c"", ""stack c a"", ""unstack a j"", ""stack j k"", ""unstack k j"", ""stack j a"", ""unstack a c"", ""stack a l"", ""unstack l c"", ""stack l k"", ""unstack k l"", ""stack l c"", ""unstack c a"", ""stack c h"", ""unstack h l"", ""stack h k"", ""unstack k h"", ""stack h l"", ""unstack l i"", ""stack l k"", ""unstack k l"", ""stack k h"", ""unstack h i"", ""stack h k"", ""unstack k h""]",34
+BW_511,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-12.pddl,easy,high,"1. pick-up f
+2. stack f l
+3. pick-up k
+4. stack k l
+5. pick-up i
+6. stack i k","[""pick-up f"", ""stack f l"", ""pick-up k"", ""stack k l"", ""pick-up i"", ""stack i k""]",6
+BW_512,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-121.pddl,medium,high,"1. pick-up f
+2. pick-up i
+3. pick-up h
+4. pick-up e
+5. stack e h
+6. pick-up j
+7. stack j e
+8. pick-up c
+9. stack c j
+10. stack i e","[""pick-up f"", ""pick-up i"", ""pick-up h"", ""pick-up e"", ""stack e h"", ""pick-up j"", ""stack j e"", ""pick-up c"", ""stack c j"", ""stack i e""]",10
+BW_513,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-129.pddl,medium,high,"1. pick-up c
+2. pick-up e
+3. stack e c
+4. pick-up f
+5. unstack e c
+6. stack f e
+7. pick-up i
+8. unstack f e
+9. stack i f
+10. pick-up a
+11. unstack i f
+12. stack a i
+13. pick-up d
+14. unstack a i
+15. stack d a
+16. pick-up l
+17. unstack d a
+18. stack l d","[""pick-up c"", ""pick-up e"", ""stack e c"", ""pick-up f"", ""unstack e c"", ""stack f e"", ""pick-up i"", ""unstack f e"", ""stack i f"", ""pick-up a"", ""unstack i f"", ""stack a i"", ""pick-up d"", ""unstack a i"", ""stack d a"", ""pick-up l"", ""unstack d a"", ""stack l d""]",18
+BW_514,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-144.pddl,medium,high,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a g
+7. pick-up g
+8. stack g e
+9. pick-up e
+10. stack e b","[""pick-up c"", ""stack c j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e b""]",10
+BW_515,meta-llama/llama-3.1-8b-instruct,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-146.pddl,medium,high,"1. pick-up a
+2. pick-up d
+3. pick-up k
+4. stack a k
+5. pick-up e
+6. stack k e
+7. stack a e
+8. pick-up i
+9. stack e i
+10. stack d i
+11. pick-up g
+12. stack g e","[""pick-up a"", ""pick-up d"", ""pick-up k"", ""stack a k"", ""pick-up e"", ""stack k e"", ""stack a e"", ""pick-up i"", ""stack e i"", ""stack d i"", ""pick-up g"", ""stack g e""]",12
+BW_E_001,meta-llama/llama-3.1-8b-instruct,,medium,low,"1. pick-up a
+2. stack a i
+3. pick-up i
+4. stack i c
+5. pick-up c
+6. stack c f
+7. pick-up f
+8. stack f j
+9. pick-up j
+10. stack j b","[""pick-up a"", ""stack a i"", ""pick-up i"", ""stack i c"", ""pick-up c"", ""stack c f"", ""pick-up f"", ""stack f j"", ""pick-up j"", ""stack j b""]",10
+BW_E_002,meta-llama/llama-3.1-8b-instruct,,easy,low,"1. pick-up h
+2. stack h b
+3. pick-up b
+4. unstack h b
+5. stack b g
+6. pick-up g
+7. stack g i
+8. put-down g
+9. unstack b g
+10. put-down b
+11. pick-up i","[""pick-up h"", ""stack h b"", ""pick-up b"", ""unstack h b"", ""stack b g"", ""pick-up g"", ""stack g i"", ""put-down g"", ""unstack b g"", ""put-down b"", ""pick-up i""]",11
+BW_E_003,meta-llama/llama-3.1-8b-instruct,,medium,low,"1. pick-up c
+2. pick-up g
+3. unstack g c
+4. stack g c
+5. pick-up d
+6. pick-up i
+7. unstack i c
+8. unstack c d
+9. unstack g c
+10. stack i c
+11. stack d i","[""pick-up c"", ""pick-up g"", ""unstack g c"", ""stack g c"", ""pick-up d"", ""pick-up i"", ""unstack i c"", ""unstack c d"", ""unstack g c"", ""stack i c"", ""stack d i""]",11
+BW_E_004,meta-llama/llama-3.1-8b-instruct,,hard,low,"1. pick-up e
+2. stack e d
+3. pick-up k
+4. put-down e
+5. stack k h
+6. pick-up i
+7. stack i e
+8. pick-up d
+9. stack d g
+10. unstack g l
+11. stack g h
+12. pick-up h
+13. stack h k
+14. put-down d","[""pick-up e"", ""stack e d"", ""pick-up k"", ""put-down e"", ""stack k h"", ""pick-up i"", ""stack i e"", ""pick-up d"", ""stack d g"", ""unstack g l"", ""stack g h"", ""pick-up h"", ""stack h k"", ""put-down d""]",14
+BW_E_005,meta-llama/llama-3.1-8b-instruct,,medium,low,"1. pick-up c
+2. stack c l
+3. pick-up l
+4. stack l d
+5. pick-up d
+6. stack d e
+7. pick-up e
+8. stack e f","[""pick-up c"", ""stack c l"", ""pick-up l"", ""stack l d"", ""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e f""]",8
+BW_001,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-1.pddl,medium,high,"1. pick-up j
+2. stack j f
+3. pick-up i
+4. stack i g
+5. pick-up d
+6. stack d b
+7. pick-up b
+8. stack b h
+9. pick-up h
+10. stack h l
+11. unstack i g
+12. stack f i
+13. pick-up g
+14. stack g d","[""pick-up j"", ""stack j f"", ""pick-up i"", ""stack i g"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b h"", ""pick-up h"", ""stack h l"", ""unstack i g"", ""stack f i"", ""pick-up g"", ""stack g d""]",14
+BW_002,anthropic/claude-sonnet-4,,hard,high,"1. pick-up j
+2. stack j g
+3. unstack j g
+4. pick-up g
+5. stack g a
+6. unstack g a
+7. pick-up a
+8. stack a b
+9. unstack a b
+10. pick-up b
+11. stack b k
+12. unstack b k
+13. pick-up k
+14. stack k h
+15. unstack k h
+16. pick-up h
+17. stack h i
+18. pick-up k
+19. stack k h
+20. pick-up b
+21. stack b k
+22. pick-up a
+23. stack a b
+24. pick-up g
+25. stack g a
+26. pick-up j
+27. stack j g","[""pick-up j"", ""stack j g"", ""unstack j g"", ""pick-up g"", ""stack g a"", ""unstack g a"", ""pick-up a"", ""stack a b"", ""unstack a b"", ""pick-up b"", ""stack b k"", ""unstack b k"", ""pick-up k"", ""stack k h"", ""unstack k h"", ""pick-up h"", ""stack h i"", ""pick-up k"", ""stack k h"", ""pick-up b"", ""stack b k"", ""pick-up a"", ""stack a b"", ""pick-up g"", ""stack g a"", ""pick-up j"", ""stack j g""]",27
+BW_010,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-10.pddl,easy,high,"1. pick-up d
+2. stack d e
+3. pick-up a
+4. stack a b
+5. pick-up e
+6. stack e a
+7. unstack d e
+8. unstack e a
+9. unstack a b
+10. pick-up b
+11. stack b f
+12. pick-up a
+13. stack a b
+14. pick-up e
+15. stack e a
+16. pick-up d
+17. stack d e","[""pick-up d"", ""stack d e"", ""pick-up a"", ""stack a b"", ""pick-up e"", ""stack e a"", ""unstack d e"", ""unstack e a"", ""unstack a b"", ""pick-up b"", ""stack b f"", ""pick-up a"", ""stack a b"", ""pick-up e"", ""stack e a"", ""pick-up d"", ""stack d e""]",17
+BW_011,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-11.pddl,hard,high,"1. pick-up c
+2. stack c k
+3. unstack c k
+4. pick-up k
+5. stack k g
+6. pick-up c
+7. stack c k
+8. unstack c k
+9. unstack k g
+10. pick-up g
+11. stack g a
+12. pick-up k
+13. stack k g
+14. pick-up c
+15. stack c k
+16. unstack c k
+17. unstack k g
+18. unstack g a
+19. pick-up a
+20. stack a l
+21. pick-up g
+22. stack g a
+23. pick-up k
+24. stack k g
+25. pick-up c
+26. stack c k
+27. unstack c k
+28. unstack k g
+29. unstack g a
+30. unstack a l
+31. pick-up l
+32. stack l j
+33. pick-up a
+34. stack a l
+35. pick-up g
+36. stack g a
+37. pick-up k
+38. stack k g
+39. pick-up c
+40. stack c k
+41. unstack c k
+42. unstack k g
+43. unstack g a
+44. unstack a l
+45. unstack l j
+46. pick-up j
+47. stack j e
+48. pick-up l
+49. stack l j
+50. pick-up a
+51. stack a l
+52. pick-up g
+53. stack g a
+54. pick-up k
+55. stack k g
+56. pick-up c
+57. stack c k
+58. unstack c k
+59. unstack k g
+60. unstack g a
+61. unstack a l
+62. unstack l j
+63. unstack j e
+64. pick-up e
+65. stack e h
+66. pick-up j
+67. stack j e
+68. pick-up l
+69. stack l j
+70. pick-up a
+71. stack a l
+72. pick-up g
+73. stack g a
+74. pick-up k
+75. stack k g
+76. pick-up c
+77. stack c k
+78. unstack c k
+79. unstack k g
+80. unstack g a
+81. unstack a l
+82. unstack l j
+83. unstack j e
+84. unstack e h
+85. pick-up h
+86. stack h i
+87. pick-up e
+88. stack e h
+89. pick-up j
+90. stack j e
+91. pick-up l
+92. stack l j
+93. pick-up a
+94. stack a l
+95. pick-up g
+96. stack g a
+97. pick-up k
+98. stack k g
+99. pick-up c
+100. stack c k
+101. unstack c k
+102. unstack k g
+103. unstack g a
+104. unstack a l
+105. unstack l j
+106. unstack j e
+107. unstack e h
+108. unstack h i
+109. pick-up i
+110. stack i b
+111. pick-up h
+112. stack h i
+113. pick-up e
+114. stack e h
+115. pick-up j
+116. stack j e
+117. pick-up l
+118. stack l j
+119. pick-up a
+120. stack a l
+121. pick-up g
+122. stack g a
+123. pick-up k
+124. stack k g
+125. pick-up c
+126. stack c k","[""pick-up c"", ""stack c k"", ""unstack c k"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""unstack g a"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""unstack g a"", ""unstack a l"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""unstack g a"", ""unstack a l"", ""unstack l j"", ""pick-up j"", ""stack j e"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""unstack g a"", ""unstack a l"", ""unstack l j"", ""unstack j e"", ""pick-up e"", ""stack e h"", ""pick-up j"", ""stack j e"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""unstack g a"", ""unstack a l"", ""unstack l j"", ""unstack j e"", ""unstack e h"", ""pick-up h"", ""stack h i"", ""pick-up e"", ""stack e h"", ""pick-up j"", ""stack j e"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k"", ""unstack c k"", ""unstack k g"", ""unstack g a"", ""unstack a l"", ""unstack l j"", ""unstack j e"", ""unstack e h"", ""unstack h i"", ""pick-up i"", ""stack i b"", ""pick-up h"", ""stack h i"", ""pick-up e"", ""stack e h"", ""pick-up j"", ""stack j e"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a l"", ""pick-up g"", ""stack g a"", ""pick-up k"", ""stack k g"", ""pick-up c"", ""stack c k""]",126
+BW_014,anthropic/claude-sonnet-4,,easy,high,"1. pick-up l
+2. stack l e
+3. unstack l e
+4. pick-up e
+5. stack e g
+6. pick-up l
+7. stack l e","[""pick-up l"", ""stack l e"", ""unstack l e"", ""pick-up e"", ""stack e g"", ""pick-up l"", ""stack l e""]",7
+BW_022,anthropic/claude-sonnet-4,,medium,high,"1. pick-up g
+2. stack g c
+3. pick-up b
+4. stack b k
+5. pick-up f
+6. put-down f
+7. pick-up k
+8. stack k f
+9. unstack b k
+10. put-down b
+11. unstack g c
+12. put-down g
+13. pick-up c
+14. stack c b
+15. pick-up b
+16. stack b k
+17. pick-up g
+18. stack g c","[""pick-up g"", ""stack g c"", ""pick-up b"", ""stack b k"", ""pick-up f"", ""put-down f"", ""pick-up k"", ""stack k f"", ""unstack b k"", ""put-down b"", ""unstack g c"", ""put-down g"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b k"", ""pick-up g"", ""stack g c""]",18
+BW_080,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-80.pddl,medium,high,"1. pick-up l
+2. stack l c
+3. pick-up i
+4. stack i e
+5. pick-up j
+6. stack j f
+7. unstack l c
+8. unstack i e
+9. stack c i
+10. stack l c
+11. unstack j f
+12. stack e j
+13. stack i e
+14. stack c i
+15. stack l c","[""pick-up l"", ""stack l c"", ""pick-up i"", ""stack i e"", ""pick-up j"", ""stack j f"", ""unstack l c"", ""unstack i e"", ""stack c i"", ""stack l c"", ""unstack j f"", ""stack e j"", ""stack i e"", ""stack c i"", ""stack l c""]",15
+BW_120,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-120.pddl,easy,high,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j g
+5. pick-up g
+6. stack g f","[""pick-up c"", ""stack c j"", ""pick-up j"", ""stack j g"", ""pick-up g"", ""stack g f""]",6
+BW_137,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-137.pddl,hard,high,"1. pick-up d
+2. stack d a
+3. unstack d a
+4. pick-up a
+5. stack a b
+6. pick-up d
+7. stack d a
+8. unstack d a
+9. unstack a b
+10. pick-up b
+11. stack b j
+12. pick-up a
+13. stack a b
+14. pick-up d
+15. stack d a
+16. unstack d a
+17. unstack a b
+18. unstack b j
+19. pick-up j
+20. stack j e
+21. pick-up b
+22. stack b j
+23. pick-up a
+24. stack a b
+25. pick-up d
+26. stack d a
+27. unstack d a
+28. unstack a b
+29. unstack b j
+30. unstack j e
+31. pick-up e
+32. stack e l
+33. pick-up j
+34. stack j e
+35. pick-up b
+36. stack b j
+37. pick-up a
+38. stack a b
+39. pick-up d
+40. stack d a
+41. unstack d a
+42. unstack a b
+43. unstack b j
+44. unstack j e
+45. unstack e l
+46. pick-up l
+47. stack l h
+48. pick-up e
+49. stack e l
+50. pick-up j
+51. stack j e
+52. pick-up b
+53. stack b j
+54. pick-up a
+55. stack a b
+56. pick-up d
+57. stack d a
+58. unstack d a
+59. unstack a b
+60. unstack b j
+61. unstack j e
+62. unstack e l
+63. unstack l h
+64. pick-up h
+65. stack h c
+66. pick-up l
+67. stack l h
+68. pick-up e
+69. stack e l
+70. pick-up j
+71. stack j e
+72. pick-up b
+73. stack b j
+74. pick-up a
+75. stack a b
+76. pick-up d
+77. stack d a
+78. unstack d a
+79. unstack a b
+80. unstack b j
+81. unstack j e
+82. unstack e l
+83. unstack l h
+84. unstack h c
+85. pick-up c
+86. stack c f
+87. pick-up h
+88. stack h c
+89. pick-up l
+90. stack l h
+91. pick-up e
+92. stack e l
+93. pick-up j
+94. stack j e
+95. pick-up b
+96. stack b j
+97. pick-up a
+98. stack a b
+99. pick-up d
+100. stack d a
+101. unstack d a
+102. unstack a b
+103. unstack b j
+104. unstack j e
+105. unstack e l
+106. unstack l h
+107. unstack h c
+108. unstack c f
+109. pick-up f
+110. stack f g
+111. pick-up c
+112. stack c f
+113. pick-up h
+114. stack h c
+115. pick-up l
+116. stack l h
+117. pick-up e
+118. stack e l
+119. pick-up j
+120. stack j e
+121. pick-up b
+122. stack b j
+123. pick-up a
+124. stack a b
+125. pick-up d
+126. stack d a
+127. unstack d a
+128. unstack a b
+129. unstack b j
+130. unstack j e
+131. unstack e l
+132. unstack l h
+133. unstack h c
+134. unstack c f
+135. unstack f g
+136. pick-up g
+137. stack g i
+138. pick-up f
+139. stack f g
+140. pick-up c
+141. stack c f
+142. pick-up h
+143. stack h c
+144. pick-up l
+145. stack l h
+146. pick-up e
+147. stack e l
+148. pick-up j
+149. stack j e
+150. pick-up b
+151. stack b j
+152. pick-up a
+153. stack a b
+154. pick-up d
+155. stack d a","[""pick-up d"", ""stack d a"", ""unstack d a"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""unstack j e"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""unstack j e"", ""unstack e l"", ""pick-up l"", ""stack l h"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""unstack j e"", ""unstack e l"", ""unstack l h"", ""pick-up h"", ""stack h c"", ""pick-up l"", ""stack l h"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""unstack j e"", ""unstack e l"", ""unstack l h"", ""unstack h c"", ""pick-up c"", ""stack c f"", ""pick-up h"", ""stack h c"", ""pick-up l"", ""stack l h"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""unstack j e"", ""unstack e l"", ""unstack l h"", ""unstack h c"", ""unstack c f"", ""pick-up f"", ""stack f g"", ""pick-up c"", ""stack c f"", ""pick-up h"", ""stack h c"", ""pick-up l"", ""stack l h"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a"", ""unstack d a"", ""unstack a b"", ""unstack b j"", ""unstack j e"", ""unstack e l"", ""unstack l h"", ""unstack h c"", ""unstack c f"", ""unstack f g"", ""pick-up g"", ""stack g i"", ""pick-up f"", ""stack f g"", ""pick-up c"", ""stack c f"", ""pick-up h"", ""stack h c"", ""pick-up l"", ""stack l h"", ""pick-up e"", ""stack e l"", ""pick-up j"", ""stack j e"", ""pick-up b"", ""stack b j"", ""pick-up a"", ""stack a b"", ""pick-up d"", ""stack d a""]",155
+BW_155,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-155.pddl,easy,high,"1. pick-up i
+2. stack i f
+3. pick-up e
+4. stack e j
+5. pick-up f
+6. stack f e
+7. unstack i f
+8. pick-up j
+9. stack j h
+10. pick-up e
+11. stack e j
+12. pick-up f
+13. stack f e
+14. pick-up i
+15. stack i f","[""pick-up i"", ""stack i f"", ""pick-up e"", ""stack e j"", ""pick-up f"", ""stack f e"", ""unstack i f"", ""pick-up j"", ""stack j h"", ""pick-up e"", ""stack e j"", ""pick-up f"", ""stack f e"", ""pick-up i"", ""stack i f""]",15
+BW_172,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-172.pddl,hard,high,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k","[""pick-up i"", ""stack i l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d b"", ""pick-up b"", ""stack b a"", ""pick-up a"", ""stack a j"", ""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k""]",20
+BW_203,anthropic/claude-sonnet-4,,easy,high,"1. pick-up k
+2. stack k f
+3. pick-up j
+4. stack j h
+5. unstack k f
+6. put-down k
+7. pick-up f
+8. stack f j
+9. pick-up k
+10. stack k f","[""pick-up k"", ""stack k f"", ""pick-up j"", ""stack j h"", ""unstack k f"", ""put-down k"", ""pick-up f"", ""stack f j"", ""pick-up k"", ""stack k f""]",10
+BW_227,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-227.pddl,hard,high,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a","[""pick-up f"", ""stack f l"", ""pick-up l"", ""stack l g"", ""pick-up g"", ""stack g d"", ""pick-up d"", ""stack d i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j c"", ""pick-up c"", ""stack c k"", ""pick-up k"", ""stack k a""]",16
+BW_282,anthropic/claude-sonnet-4,,medium,high,"1. pick-up g
+2. stack g h
+3. pick-up c
+4. stack c i
+5. pick-up b
+6. stack b c
+7. unstack g h
+8. unstack b c
+9. unstack c i
+10. pick-up i
+11. stack i b
+12. pick-up c
+13. stack c i
+14. pick-up h
+15. stack h c
+16. pick-up g
+17. stack g h","[""pick-up g"", ""stack g h"", ""pick-up c"", ""stack c i"", ""pick-up b"", ""stack b c"", ""unstack g h"", ""unstack b c"", ""unstack c i"", ""pick-up i"", ""stack i b"", ""pick-up c"", ""stack c i"", ""pick-up h"", ""stack h c"", ""pick-up g"", ""stack g h""]",17
+BW_310,anthropic/claude-sonnet-4,,medium,high,"1. pick-up g
+2. stack g j
+3. pick-up a
+4. stack a f
+5. pick-up b
+6. stack b d
+7. unstack a f
+8. stack a b
+9. unstack g j
+10. stack j a
+11. stack g j","[""pick-up g"", ""stack g j"", ""pick-up a"", ""stack a f"", ""pick-up b"", ""stack b d"", ""unstack a f"", ""stack a b"", ""unstack g j"", ""stack j a"", ""stack g j""]",11
+BW_331,anthropic/claude-sonnet-4,,easy,high,"1. pick-up h
+2. stack h j
+3. unstack h j
+4. pick-up j
+5. stack j l
+6. stack h j","[""pick-up h"", ""stack h j"", ""unstack h j"", ""pick-up j"", ""stack j l"", ""stack h j""]",6
+BW_350,anthropic/claude-sonnet-4,,hard,high,"1. pick-up f
+2. stack f e
+3. pick-up e
+4. stack e i
+5. pick-up i
+6. stack i j
+7. pick-up j
+8. stack j k
+9. pick-up k
+10. stack k a
+11. pick-up a
+12. stack a g
+13. pick-up g
+14. stack g b
+15. pick-up b
+16. stack b l
+17. pick-up l
+18. stack l d","[""pick-up f"", ""stack f e"", ""pick-up e"", ""stack e i"", ""pick-up i"", ""stack i j"", ""pick-up j"", ""stack j k"", ""pick-up k"", ""stack k a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g b"", ""pick-up b"", ""stack b l"", ""pick-up l"", ""stack l d""]",18
+BW_408,anthropic/claude-sonnet-4,,hard,high,"1. pick-up a
+2. stack a l
+3. pick-up h
+4. stack h d
+5. pick-up c
+6. stack c g
+7. pick-up g
+8. stack g j
+9. pick-up j
+10. stack j b
+11. unstack a l
+12. unstack h d
+13. unstack c g
+14. unstack g j
+15. unstack j b
+16. pick-up l
+17. stack l h
+18. pick-up h
+19. stack h d
+20. pick-up d
+21. stack d c
+22. pick-up c
+23. stack c g
+24. pick-up g
+25. stack g j
+26. pick-up j
+27. stack j b
+28. pick-up a
+29. stack a l","[""pick-up a"", ""stack a l"", ""pick-up h"", ""stack h d"", ""pick-up c"", ""stack c g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j b"", ""unstack a l"", ""unstack h d"", ""unstack c g"", ""unstack g j"", ""unstack j b"", ""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h d"", ""pick-up d"", ""stack d c"", ""pick-up c"", ""stack c g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j b"", ""pick-up a"", ""stack a l""]",29
+BW_467,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-467.pddl,medium,high,"1. pick-up g
+2. stack g i
+3. pick-up l
+4. stack l j
+5. pick-up a
+6. stack a f
+7. pick-up f
+8. stack f h
+9. unstack a f
+10. unstack l j
+11. pick-up j
+12. stack j a
+13. pick-up l
+14. stack l j
+15. unstack g i
+16. pick-up i
+17. stack i l
+18. pick-up g
+19. stack g i","[""pick-up g"", ""stack g i"", ""pick-up l"", ""stack l j"", ""pick-up a"", ""stack a f"", ""pick-up f"", ""stack f h"", ""unstack a f"", ""unstack l j"", ""pick-up j"", ""stack j a"", ""pick-up l"", ""stack l j"", ""unstack g i"", ""pick-up i"", ""stack i l"", ""pick-up g"", ""stack g i""]",19
+BW_495,anthropic/claude-sonnet-4,,medium,high,"1. pick-up c
+2. stack c l
+3. pick-up i
+4. stack i e
+5. pick-up h
+6. stack h i
+7. unstack c l
+8. unstack l table
+9. pick-up l
+10. stack l i
+11. pick-up c
+12. stack c l
+
+Wait, let me reconsider this more carefully:
+
+1. pick-up e
+2. stack e h
+3. pick-up i
+4. stack i e
+5. pick-up l
+6. stack l i
+7. pick-up c
+8. stack c l","[""pick-up c"", ""stack c l"", ""pick-up i"", ""stack i e"", ""pick-up h"", ""stack h i"", ""unstack c l"", ""unstack l table"", ""pick-up l"", ""stack l i"", ""pick-up c"", ""stack c l"", ""wait, let me reconsider this more carefully:"", ""pick-up e"", ""stack e h"", ""pick-up i"", ""stack i e"", ""pick-up l"", ""stack l i"", ""pick-up c"", ""stack c l""]",21
+BW_E002,anthropic/claude-sonnet-4,,easy,low,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b a","[""pick-up a"", ""stack a c"", ""pick-up b"", ""stack b a""]",4
+BW_E015,anthropic/claude-sonnet-4,,easy,low,"1. unstack c b
+2. put-down c
+3. pick-up a
+4. stack a b","[""unstack c b"", ""put-down c"", ""pick-up a"", ""stack a b""]",4
+BW_E017,anthropic/claude-sonnet-4,,easy,low,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a","[""pick-up a"", ""stack a b"", ""pick-up c"", ""stack c a""]",4
+BW_E019,anthropic/claude-sonnet-4,,easy,low,"1. unstack a b
+2. stack a c
+3. pick-up b
+4. stack b a","[""unstack a b"", ""stack a c"", ""pick-up b"", ""stack b a""]",4
+BW_E100,anthropic/claude-sonnet-4,,easy,low,"1. pick-up b
+2. stack b c
+3. unstack b c
+4. put-down b
+5. unstack c a
+6. stack c a
+7. pick-up b
+8. stack b c","[""pick-up b"", ""stack b c"", ""unstack b c"", ""put-down b"", ""unstack c a"", ""stack c a"", ""pick-up b"", ""stack b c""]",8
+BW_496,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-101.pddl,hard,high,"1. pick-up j
+2. stack j h
+3. pick-up h
+4. stack h l
+5. pick-up l
+6. stack l a
+7. pick-up a
+8. stack a e
+9. pick-up e
+10. stack e g
+11. pick-up g
+12. stack g k
+13. pick-up k
+14. stack k d
+15. pick-up d
+16. stack d c
+17. pick-up c
+18. stack c f
+19. pick-up f
+20. stack f i","[""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h l"", ""pick-up l"", ""stack l a"", ""pick-up a"", ""stack a e"", ""pick-up e"", ""stack e g"", ""pick-up g"", ""stack g k"", ""pick-up k"", ""stack k d"", ""pick-up d"", ""stack d c"", ""pick-up c"", ""stack c f"", ""pick-up f"", ""stack f i""]",20
+BW_497,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-102.pddl,easy,high,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e c","[""pick-up l"", ""stack l e"", ""pick-up e"", ""stack e c""]",4
+BW_498,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-103.pddl,hard,high,"1. pick-up k
+2. stack k j
+3. pick-up j
+4. stack j e
+5. pick-up e
+6. stack e c
+7. pick-up c
+8. stack c b
+9. pick-up b
+10. stack b f
+11. pick-up f
+12. stack f d
+13. pick-up d
+14. stack d l
+15. pick-up l
+16. stack l a
+17. pick-up a
+18. stack a g","[""pick-up k"", ""stack k j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e c"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b f"", ""pick-up f"", ""stack f d"", ""pick-up d"", ""stack d l"", ""pick-up l"", ""stack l a"", ""pick-up a"", ""stack a g""]",18
+BW_499,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-104.pddl,medium,high,"1. pick-up j
+2. stack j a
+3. unstack j a
+4. put-down j
+5. pick-up a
+6. stack a c
+7. unstack a c
+8. put-down a
+9. pick-up c
+10. stack c e
+11. unstack c e
+12. put-down c
+13. pick-up e
+14. stack e l
+15. pick-up c
+16. stack c e
+17. pick-up a
+18. stack a c
+19. pick-up j
+20. stack j a","[""pick-up j"", ""stack j a"", ""unstack j a"", ""put-down j"", ""pick-up a"", ""stack a c"", ""unstack a c"", ""put-down a"", ""pick-up c"", ""stack c e"", ""unstack c e"", ""put-down c"", ""pick-up e"", ""stack e l"", ""pick-up c"", ""stack c e"", ""pick-up a"", ""stack a c"", ""pick-up j"", ""stack j a""]",20
+BW_500,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-105.pddl,hard,high,"1. pick-up e
+2. stack e k
+3. pick-up k
+4. stack k d
+5. pick-up d
+6. stack d a
+7. pick-up a
+8. stack a g
+9. pick-up g
+10. stack g c
+11. pick-up c
+12. stack c b
+13. pick-up b
+14. stack b l","[""pick-up e"", ""stack e k"", ""pick-up k"", ""stack k d"", ""pick-up d"", ""stack d a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g c"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b l""]",14
+BW_501,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-106.pddl,hard,high,"1. pick-up c
+2. stack c i
+3. pick-up k
+4. stack k a
+5. unstack c i
+6. stack c k
+7. pick-up i
+8. stack i c
+9. unstack i c
+10. unstack c k
+11. stack c i
+12. pick-up a
+13. stack a e
+14. pick-up e
+15. stack e g
+16. pick-up g
+17. stack g j
+18. pick-up j
+19. stack j d
+20. unstack j d
+21. unstack g j
+22. unstack e g
+23. unstack a e
+24. pick-up k
+25. stack k a
+26. unstack c i
+27. stack c i
+28. pick-up e
+29. stack e g
+30. pick-up g
+31. stack g j
+32. pick-up j
+33. stack j d","[""pick-up c"", ""stack c i"", ""pick-up k"", ""stack k a"", ""unstack c i"", ""stack c k"", ""pick-up i"", ""stack i c"", ""unstack i c"", ""unstack c k"", ""stack c i"", ""pick-up a"", ""stack a e"", ""pick-up e"", ""stack e g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j d"", ""unstack j d"", ""unstack g j"", ""unstack e g"", ""unstack a e"", ""pick-up k"", ""stack k a"", ""unstack c i"", ""stack c i"", ""pick-up e"", ""stack e g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j d""]",33
+BW_502,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-107.pddl,easy,high,"1. pick-up d
+2. stack d h
+3. unstack d h
+4. put-down d
+5. pick-up h
+6. stack h i
+7. unstack h i
+8. put-down h
+9. pick-up i
+10. stack i e
+11. pick-up h
+12. stack h i
+13. pick-up d
+14. stack d h","[""pick-up d"", ""stack d h"", ""unstack d h"", ""put-down d"", ""pick-up h"", ""stack h i"", ""unstack h i"", ""put-down h"", ""pick-up i"", ""stack i e"", ""pick-up h"", ""stack h i"", ""pick-up d"", ""stack d h""]",14
+BW_503,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-108.pddl,hard,high,"1. pick-up f
+2. stack f g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a c
+7. pick-up c
+8. stack c d
+9. pick-up d
+10. stack d h
+11. pick-up h
+12. stack h k
+13. pick-up k
+14. stack k j
+15. pick-up j
+16. stack j b
+17. pick-up b
+18. stack b e
+19. pick-up e
+20. stack e i
+21. pick-up i
+22. stack i l","[""pick-up f"", ""stack f g"", ""pick-up g"", ""stack g a"", ""pick-up a"", ""stack a c"", ""pick-up c"", ""stack c d"", ""pick-up d"", ""stack d h"", ""pick-up h"", ""stack h k"", ""pick-up k"", ""stack k j"", ""pick-up j"", ""stack j b"", ""pick-up b"", ""stack b e"", ""pick-up e"", ""stack e i"", ""pick-up i"", ""stack i l""]",22
+BW_504,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-109.pddl,medium,high,"1. pick-up a
+2. stack a h
+3. pick-up f
+4. stack f k
+5. pick-up e
+6. stack e l
+7. pick-up b
+8. stack b l
+9. unstack b l
+10. unstack e l
+11. pick-up l
+12. stack l b
+13. pick-up e
+14. stack e l
+15. pick-up k
+16. stack k e
+17. unstack f k
+18. pick-up f
+19. stack f k
+20. unstack a h
+21. pick-up h
+22. stack h f
+23. pick-up a
+24. stack a h","[""pick-up a"", ""stack a h"", ""pick-up f"", ""stack f k"", ""pick-up e"", ""stack e l"", ""pick-up b"", ""stack b l"", ""unstack b l"", ""unstack e l"", ""pick-up l"", ""stack l b"", ""pick-up e"", ""stack e l"", ""pick-up k"", ""stack k e"", ""unstack f k"", ""pick-up f"", ""stack f k"", ""unstack a h"", ""pick-up h"", ""stack h f"", ""pick-up a"", ""stack a h""]",24
+BW_505,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-110.pddl,medium,high,"1. pick-up c
+2. stack c d
+3. pick-up g
+4. stack g b
+5. unstack c d
+6. put-down c
+7. pick-up d
+8. stack d g
+9. pick-up b
+10. stack b h
+11. unstack d g
+12. put-down d
+13. unstack g b
+14. put-down g
+15. unstack b h
+16. put-down b
+17. pick-up g
+18. stack g b
+19. pick-up d
+20. stack d g
+21. pick-up c
+22. stack c d","[""pick-up c"", ""stack c d"", ""pick-up g"", ""stack g b"", ""unstack c d"", ""put-down c"", ""pick-up d"", ""stack d g"", ""pick-up b"", ""stack b h"", ""unstack d g"", ""put-down d"", ""unstack g b"", ""put-down g"", ""unstack b h"", ""put-down b"", ""pick-up g"", ""stack g b"", ""pick-up d"", ""stack d g"", ""pick-up c"", ""stack c d""]",22
+BW_506,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-113.pddl,easy,high,"1. pick-up g
+2. stack g b
+3. unstack g b
+4. pick-up b
+5. stack b f
+6. stack g b","[""pick-up g"", ""stack g b"", ""unstack g b"", ""pick-up b"", ""stack b f"", ""stack g b""]",6
+BW_507,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-115.pddl,easy,high,"1. pick-up j
+2. stack j h
+3. pick-up h
+4. stack h e","[""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h e""]",4
+BW_508,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-116.pddl,medium,high,"1. pick-up e
+2. stack e c
+3. pick-up g
+4. stack g b
+5. unstack e c
+6. put-down e
+7. pick-up c
+8. stack c g
+9. unstack c g
+10. put-down c
+11. unstack g b
+12. put-down g
+13. pick-up b
+14. stack b f
+15. pick-up g
+16. stack g b
+17. pick-up c
+18. stack c g
+19. pick-up e
+20. stack e c","[""pick-up e"", ""stack e c"", ""pick-up g"", ""stack g b"", ""unstack e c"", ""put-down e"", ""pick-up c"", ""stack c g"", ""unstack c g"", ""put-down c"", ""unstack g b"", ""put-down g"", ""pick-up b"", ""stack b f"", ""pick-up g"", ""stack g b"", ""pick-up c"", ""stack c g"", ""pick-up e"", ""stack e c""]",20
+BW_509,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-117.pddl,medium,high,"1. pick-up h
+2. stack h d
+3. unstack h d
+4. pick-up d
+5. stack d f
+6. pick-up j
+7. stack j i
+8. unstack d f
+9. pick-up f
+10. stack f j
+11. pick-up d
+12. stack d f
+13. stack h d","[""pick-up h"", ""stack h d"", ""unstack h d"", ""pick-up d"", ""stack d f"", ""pick-up j"", ""stack j i"", ""unstack d f"", ""pick-up f"", ""stack f j"", ""pick-up d"", ""stack d f"", ""stack h d""]",13
+BW_510,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-119.pddl,medium,high,"1. pick-up k
+2. stack k j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a c
+7. pick-up c
+8. stack c l
+9. pick-up l
+10. stack l h
+11. pick-up h
+12. stack h i","[""pick-up k"", ""stack k j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a c"", ""pick-up c"", ""stack c l"", ""pick-up l"", ""stack l h"", ""pick-up h"", ""stack h i""]",12
+BW_511,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-12.pddl,easy,high,"1. pick-up i
+2. stack i k
+3. unstack i k
+4. put-down i
+5. pick-up k
+6. stack k l
+7. unstack k l
+8. put-down k
+9. pick-up l
+10. stack l f
+11. pick-up k
+12. stack k l
+13. pick-up i
+14. stack i k","[""pick-up i"", ""stack i k"", ""unstack i k"", ""put-down i"", ""pick-up k"", ""stack k l"", ""unstack k l"", ""put-down k"", ""pick-up l"", ""stack l f"", ""pick-up k"", ""stack k l"", ""pick-up i"", ""stack i k""]",14
+BW_512,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-121.pddl,medium,high,"1. pick-up c
+2. stack c j
+3. pick-up e
+4. stack e h
+5. pick-up i
+6. stack i f
+7. unstack e h
+8. stack e i
+9. unstack c j
+10. pick-up h
+11. stack h e
+12. pick-up j
+13. stack j h
+14. pick-up c
+15. stack c j","[""pick-up c"", ""stack c j"", ""pick-up e"", ""stack e h"", ""pick-up i"", ""stack i f"", ""unstack e h"", ""stack e i"", ""unstack c j"", ""pick-up h"", ""stack h e"", ""pick-up j"", ""stack j h"", ""pick-up c"", ""stack c j""]",15
+BW_513,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-129.pddl,medium,high,"1. pick-up c
+2. stack c e
+3. pick-up f
+4. stack f i
+5. unstack c e
+6. stack e f
+7. stack c e
+8. pick-up a
+9. stack a d
+10. pick-up i
+11. stack i a
+12. unstack f i
+13. stack f i
+14. unstack e f
+15. stack e f
+16. unstack c e
+17. stack c e","[""pick-up c"", ""stack c e"", ""pick-up f"", ""stack f i"", ""unstack c e"", ""stack e f"", ""stack c e"", ""pick-up a"", ""stack a d"", ""pick-up i"", ""stack i a"", ""unstack f i"", ""stack f i"", ""unstack e f"", ""stack e f"", ""unstack c e"", ""stack c e""]",17
+BW_514,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-144.pddl,medium,high,"1. pick-up c
+2. stack c j
+3. pick-up a
+4. stack a g
+5. unstack c j
+6. put-down c
+7. pick-up j
+8. stack j a
+9. pick-up g
+10. stack g e
+11. pick-up e
+12. stack e b
+13. pick-up c
+14. stack c j","[""pick-up c"", ""stack c j"", ""pick-up a"", ""stack a g"", ""unstack c j"", ""put-down c"", ""pick-up j"", ""stack j a"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e b"", ""pick-up c"", ""stack c j""]",14
+BW_515,anthropic/claude-sonnet-4,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-146.pddl,medium,high,"1. pick-up g
+2. stack g e
+3. pick-up k
+4. stack k a
+5. unstack g e
+6. pick-up e
+7. stack e k
+8. stack g e
+9. unstack e k
+10. unstack k a
+11. pick-up a
+12. stack a d
+13. pick-up d
+14. stack d i
+15. pick-up k
+16. stack k a
+17. stack e k
+18. stack g e","[""pick-up g"", ""stack g e"", ""pick-up k"", ""stack k a"", ""unstack g e"", ""pick-up e"", ""stack e k"", ""stack g e"", ""unstack e k"", ""unstack k a"", ""pick-up a"", ""stack a d"", ""pick-up d"", ""stack d i"", ""pick-up k"", ""stack k a"", ""stack e k"", ""stack g e""]",18
+BW_E_001,anthropic/claude-sonnet-4,,medium,low,"1. pick-up a
+2. stack a i
+3. pick-up c
+4. stack c f
+5. pick-up j
+6. stack j b
+7. unstack a i
+8. put-down a
+9. pick-up i
+10. unstack c f
+11. stack i c
+12. pick-up f
+13. unstack j b
+14. stack f j
+15. pick-up c
+16. stack c f
+17. pick-up a
+18. stack a i","[""pick-up a"", ""stack a i"", ""pick-up c"", ""stack c f"", ""pick-up j"", ""stack j b"", ""unstack a i"", ""put-down a"", ""pick-up i"", ""unstack c f"", ""stack i c"", ""pick-up f"", ""unstack j b"", ""stack f j"", ""pick-up c"", ""stack c f"", ""pick-up a"", ""stack a i""]",18
+BW_E_002,anthropic/claude-sonnet-4,,easy,low,"1. pick-up h
+2. stack h b
+3. unstack h b
+4. put-down h
+5. pick-up b
+6. stack b g
+7. unstack b g
+8. put-down b
+9. pick-up g
+10. stack g i
+11. pick-up b
+12. stack b g
+13. pick-up h
+14. stack h b","[""pick-up h"", ""stack h b"", ""unstack h b"", ""put-down h"", ""pick-up b"", ""stack b g"", ""unstack b g"", ""put-down b"", ""pick-up g"", ""stack g i"", ""pick-up b"", ""stack b g"", ""pick-up h"", ""stack h b""]",14
+BW_E_003,anthropic/claude-sonnet-4,,medium,low,"1. pick-up g
+2. stack g c
+3. pick-up i
+4. stack i d
+5. unstack g c
+6. put-down g
+7. pick-up c
+8. stack c i
+9. pick-up j
+10. stack j d
+11. unstack c i
+12. put-down c
+13. unstack i d
+14. put-down i
+15. unstack j d
+16. put-down j
+17. pick-up d
+18. stack d j
+19. pick-up i
+20. stack i d
+21. pick-up c
+22. stack c i
+23. pick-up g
+24. stack g c","[""pick-up g"", ""stack g c"", ""pick-up i"", ""stack i d"", ""unstack g c"", ""put-down g"", ""pick-up c"", ""stack c i"", ""pick-up j"", ""stack j d"", ""unstack c i"", ""put-down c"", ""unstack i d"", ""put-down i"", ""unstack j d"", ""put-down j"", ""pick-up d"", ""stack d j"", ""pick-up i"", ""stack i d"", ""pick-up c"", ""stack c i"", ""pick-up g"", ""stack g c""]",24
+BW_E_004,anthropic/claude-sonnet-4,,hard,low,"1. pick-up a
+2. stack a h
+3. pick-up h
+4. stack h k
+5. pick-up k
+6. stack k i
+7. pick-up i
+8. stack i e
+9. pick-up e
+10. stack e d
+11. pick-up d
+12. stack d g
+13. pick-up g
+14. stack g l","[""pick-up a"", ""stack a h"", ""pick-up h"", ""stack h k"", ""pick-up k"", ""stack k i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d g"", ""pick-up g"", ""stack g l""]",14
+BW_E_005,anthropic/claude-sonnet-4,,medium,low,"1. pick-up c
+2. stack c l
+3. unstack c l
+4. pick-up l
+5. stack l d
+6. pick-up c
+7. stack c l
+8. unstack c l
+9. unstack l d
+10. pick-up d
+11. stack d e
+12. pick-up l
+13. stack l d
+14. pick-up c
+15. stack c l
+16. unstack c l
+17. unstack l d
+18. unstack d e
+19. pick-up e
+20. stack e f
+21. pick-up d
+22. stack d e
+23. pick-up l
+24. stack l d
+25. pick-up c
+26. stack c l","[""pick-up c"", ""stack c l"", ""unstack c l"", ""pick-up l"", ""stack l d"", ""pick-up c"", ""stack c l"", ""unstack c l"", ""unstack l d"", ""pick-up d"", ""stack d e"", ""pick-up l"", ""stack l d"", ""pick-up c"", ""stack c l"", ""unstack c l"", ""unstack l d"", ""unstack d e"", ""pick-up e"", ""stack e f"", ""pick-up d"", ""stack d e"", ""pick-up l"", ""stack l d"", ""pick-up c"", ""stack c l""]",26
+BW_496,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-101.pddl,hard,high,"1. pick-up j  
+2. stack j h  
+3. pick-up h  
+4. stack h l  
+5. pick-up l  
+6. stack l a  
+7. pick-up a  
+8. stack a e  
+9. pick-up e  
+10. stack e g  
+11. pick-up g  
+12. stack g k  
+13. pick-up k  
+14. stack k d  
+15. pick-up d  
+16. stack d c  
+17. pick-up c  
+18. stack c f  
+19. pick-up f  
+20. stack f i","[""pick-up j"", ""stack j h"", ""pick-up h"", ""stack h l"", ""pick-up l"", ""stack l a"", ""pick-up a"", ""stack a e"", ""pick-up e"", ""stack e g"", ""pick-up g"", ""stack g k"", ""pick-up k"", ""stack k d"", ""pick-up d"", ""stack d c"", ""pick-up c"", ""stack c f"", ""pick-up f"", ""stack f i""]",20
+BW_497,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-102.pddl,easy,high,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e c","[""pick-up l"", ""stack l e"", ""pick-up e"", ""stack e c""]",4
+BW_498,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-103.pddl,hard,high,"1. pick-up a
+2. stack a g
+3. pick-up l
+4. stack l a
+5. pick-up d
+6. stack d l
+7. pick-up f
+8. stack f d
+9. pick-up b
+10. stack b f
+11. pick-up c
+12. stack c b
+13. pick-up e
+14. stack e c
+15. pick-up j
+16. stack j e
+17. pick-up k
+18. stack k j","[""pick-up a"", ""stack a g"", ""pick-up l"", ""stack l a"", ""pick-up d"", ""stack d l"", ""pick-up f"", ""stack f d"", ""pick-up b"", ""stack b f"", ""pick-up c"", ""stack c b"", ""pick-up e"", ""stack e c"", ""pick-up j"", ""stack j e"", ""pick-up k"", ""stack k j""]",18
+BW_499,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-104.pddl,medium,high,"1. pick-up j
+2. stack j a
+3. pick-up a
+4. stack a c
+5. pick-up c
+6. stack c e
+7. pick-up e
+8. stack e l","[""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a c"", ""pick-up c"", ""stack c e"", ""pick-up e"", ""stack e l""]",8
+BW_500,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-105.pddl,hard,high,"1. pick-up e
+2. stack e k
+3. pick-up k
+4. stack k d
+5. pick-up d
+6. stack d a
+7. pick-up a
+8. stack a g
+9. pick-up g
+10. stack g c
+11. pick-up c
+12. stack c b
+13. pick-up b
+14. stack b l","[""pick-up e"", ""stack e k"", ""pick-up k"", ""stack k d"", ""pick-up d"", ""stack d a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g c"", ""pick-up c"", ""stack c b"", ""pick-up b"", ""stack b l""]",14
+BW_501,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-106.pddl,hard,high,"1. pick-up c
+2. stack c i
+3. pick-up i
+4. stack i k
+5. pick-up k
+6. stack k a
+7. pick-up a
+8. stack a e
+9. pick-up e
+10. stack e g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j d","[""pick-up c"", ""stack c i"", ""pick-up i"", ""stack i k"", ""pick-up k"", ""stack k a"", ""pick-up a"", ""stack a e"", ""pick-up e"", ""stack e g"", ""pick-up g"", ""stack g j"", ""pick-up j"", ""stack j d""]",14
+BW_502,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-107.pddl,easy,high,"1. pick-up d  
+2. stack d h  
+3. pick-up h  
+4. stack h i  
+5. pick-up i  
+6. stack i e  ","[""pick-up d"", ""stack d h"", ""pick-up h"", ""stack h i"", ""pick-up i"", ""stack i e""]",6
+BW_503,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-108.pddl,hard,high,"1. pick-up f
+2. stack f g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a c
+7. pick-up c
+8. stack c d
+9. pick-up d
+10. stack d h
+11. pick-up h
+12. stack h k
+13. pick-up k
+14. stack k j
+15. pick-up j
+16. stack j b
+17. pick-up b
+18. stack b e
+19. pick-up e
+20. stack e i
+21. pick-up i
+22. stack i l","[""pick-up f"", ""stack f g"", ""pick-up g"", ""stack g a"", ""pick-up a"", ""stack a c"", ""pick-up c"", ""stack c d"", ""pick-up d"", ""stack d h"", ""pick-up h"", ""stack h k"", ""pick-up k"", ""stack k j"", ""pick-up j"", ""stack j b"", ""pick-up b"", ""stack b e"", ""pick-up e"", ""stack e i"", ""pick-up i"", ""stack i l""]",22
+BW_504,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-109.pddl,medium,high,"1. pick-up a  
+2. stack a h  
+3. pick-up h  
+4. stack h f  
+5. pick-up f  
+6. stack f k  
+7. pick-up k  
+8. stack k e  
+9. pick-up e  
+10. stack e l  
+11. pick-up l  
+12. stack l b","[""pick-up a"", ""stack a h"", ""pick-up h"", ""stack h f"", ""pick-up f"", ""stack f k"", ""pick-up k"", ""stack k e"", ""pick-up e"", ""stack e l"", ""pick-up l"", ""stack l b""]",12
+BW_505,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-110.pddl,medium,high,"1. pick-up g
+2. stack g b
+3. pick-up d
+4. stack d g
+5. pick-up c
+6. stack c d
+7. pick-up b
+8. stack b h","[""pick-up g"", ""stack g b"", ""pick-up d"", ""stack d g"", ""pick-up c"", ""stack c d"", ""pick-up b"", ""stack b h""]",8
+BW_506,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-113.pddl,easy,high,"1. pick-up g
+2. stack g b
+3. pick-up b
+4. stack b f","[""pick-up g"", ""stack g b"", ""pick-up b"", ""stack b f""]",4
+BW_507,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-115.pddl,easy,high,"1. pick-up h
+2. stack h e
+3. pick-up j
+4. stack j h","[""pick-up h"", ""stack h e"", ""pick-up j"", ""stack j h""]",4
+BW_508,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-116.pddl,medium,high,"1. pick-up e
+2. stack e c
+3. pick-up c
+4. stack c g
+5. pick-up g
+6. stack g b
+7. pick-up b
+8. stack b f","[""pick-up e"", ""stack e c"", ""pick-up c"", ""stack c g"", ""pick-up g"", ""stack g b"", ""pick-up b"", ""stack b f""]",8
+BW_509,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-117.pddl,medium,high,"1. pick-up h
+2. stack h d
+3. pick-up d
+4. stack d f
+5. pick-up f
+6. stack f j
+7. pick-up j
+8. stack j i","[""pick-up h"", ""stack h d"", ""pick-up d"", ""stack d f"", ""pick-up f"", ""stack f j"", ""pick-up j"", ""stack j i""]",8
+BW_510,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-119.pddl,medium,high,"1. pick-up h
+2. stack h i
+3. pick-up l
+4. stack l h
+5. pick-up c
+6. stack c l
+7. pick-up a
+8. stack a c
+9. pick-up j
+10. stack j a
+11. pick-up k
+12. stack k j","[""pick-up h"", ""stack h i"", ""pick-up l"", ""stack l h"", ""pick-up c"", ""stack c l"", ""pick-up a"", ""stack a c"", ""pick-up j"", ""stack j a"", ""pick-up k"", ""stack k j""]",12
+BW_511,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-12.pddl,easy,high,"1. pick-up l
+2. stack l f
+3. pick-up k
+4. stack k l
+5. pick-up i
+6. stack i k","[""pick-up l"", ""stack l f"", ""pick-up k"", ""stack k l"", ""pick-up i"", ""stack i k""]",6
+BW_512,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-121.pddl,medium,high,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j e
+5. pick-up e
+6. stack e h
+7. pick-up h
+8. stack h i
+9. pick-up i
+10. stack i f","[""pick-up c"", ""stack c j"", ""pick-up j"", ""stack j e"", ""pick-up e"", ""stack e h"", ""pick-up h"", ""stack h i"", ""pick-up i"", ""stack i f""]",10
+BW_513,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-129.pddl,medium,high,"1. pick-up c
+2. stack c e
+3. pick-up e
+4. stack e f
+5. pick-up f
+6. stack f i
+7. pick-up i
+8. stack i a
+9. pick-up a
+10. stack a d
+11. pick-up d
+12. stack d l","[""pick-up c"", ""stack c e"", ""pick-up e"", ""stack e f"", ""pick-up f"", ""stack f i"", ""pick-up i"", ""stack i a"", ""pick-up a"", ""stack a d"", ""pick-up d"", ""stack d l""]",12
+BW_514,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-144.pddl,medium,high,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a g
+7. pick-up g
+8. stack g e
+9. pick-up e
+10. stack e b","[""pick-up c"", ""stack c j"", ""pick-up j"", ""stack j a"", ""pick-up a"", ""stack a g"", ""pick-up g"", ""stack g e"", ""pick-up e"", ""stack e b""]",10
+BW_515,openai/gpt-4o,data/sources/planbench/plan-bench/instances/blocksworld/generated/instance-146.pddl,medium,high,"1. pick-up a
+2. stack a d
+3. pick-up d
+4. stack d i
+5. pick-up k
+6. stack k a
+7. pick-up e
+8. stack e k
+9. pick-up g
+10. stack g e","[""pick-up a"", ""stack a d"", ""pick-up d"", ""stack d i"", ""pick-up k"", ""stack k a"", ""pick-up e"", ""stack e k"", ""pick-up g"", ""stack g e""]",10
+BW_E_001,openai/gpt-4o,,medium,low,"1. pick-up a
+2. stack a i
+3. pick-up i
+4. stack i c
+5. pick-up c
+6. stack c f
+7. pick-up f
+8. stack f j
+9. pick-up j
+10. stack j b","[""pick-up a"", ""stack a i"", ""pick-up i"", ""stack i c"", ""pick-up c"", ""stack c f"", ""pick-up f"", ""stack f j"", ""pick-up j"", ""stack j b""]",10
+BW_E_002,openai/gpt-4o,,easy,low,"1. pick-up h
+2. stack h b
+3. pick-up b
+4. stack b g
+5. pick-up g
+6. stack g i","[""pick-up h"", ""stack h b"", ""pick-up b"", ""stack b g"", ""pick-up g"", ""stack g i""]",6
+BW_E_003,openai/gpt-4o,,medium,low,"1. pick-up c
+2. stack c i
+3. pick-up g
+4. stack g c
+5. pick-up i
+6. stack i d
+7. pick-up d
+8. stack d j","[""pick-up c"", ""stack c i"", ""pick-up g"", ""stack g c"", ""pick-up i"", ""stack i d"", ""pick-up d"", ""stack d j""]",8
+BW_E_004,openai/gpt-4o,,hard,low,"1. pick-up a
+2. stack a h
+3. pick-up h
+4. stack h k
+5. pick-up k
+6. stack k i
+7. pick-up i
+8. stack i e
+9. pick-up e
+10. stack e d
+11. pick-up d
+12. stack d g
+13. pick-up g
+14. stack g l","[""pick-up a"", ""stack a h"", ""pick-up h"", ""stack h k"", ""pick-up k"", ""stack k i"", ""pick-up i"", ""stack i e"", ""pick-up e"", ""stack e d"", ""pick-up d"", ""stack d g"", ""pick-up g"", ""stack g l""]",14
+BW_E_005,openai/gpt-4o,,medium,low,"1. pick-up c  
+2. stack c l  
+3. pick-up l  
+4. stack l d  
+5. pick-up d  
+6. stack d e  
+7. pick-up e  
+8. stack e f","[""pick-up c"", ""stack c l"", ""pick-up l"", ""stack l d"", ""pick-up d"", ""stack d e"", ""pick-up e"", ""stack e f""]",8

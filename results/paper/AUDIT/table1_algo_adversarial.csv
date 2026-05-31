@@ -1,0 +1,10 @@
+problem_subtype,model,acc_canonical,acc_W3
+coin_change,anthropic/claude-sonnet-4,0.7,0.6
+coin_change,meta-llama/llama-3.1-8b-instruct,0.2,0.0
+coin_change,openai/gpt-4o,0.6,0.0
+shortest_path,anthropic/claude-sonnet-4,0.647,0.0
+shortest_path,meta-llama/llama-3.1-8b-instruct,0.059,0.0
+shortest_path,openai/gpt-4o,0.412,0.265
+wis,anthropic/claude-sonnet-4,0.353,0.0
+wis,meta-llama/llama-3.1-8b-instruct,0.059,0.059
+wis,openai/gpt-4o,0.353,0.0

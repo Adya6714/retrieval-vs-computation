@@ -1,0 +1,4 @@
+family,model,n,mean_crystallization_depth_norm,mean_cosine_tail5,corr_depth_vs_contamination,corr_depth_vs_w3_drop
+ALGO,Qwen/Qwen2.5-0.5B-Instruct,20,-0.04166666666666666,0.7887070000000002,,
+GSM,Qwen/Qwen2.5-0.5B-Instruct,20,-0.04166666666666666,,5.856892799970894e-16,
+BW,Qwen/Qwen2.5-0.5B-Instruct,35,-0.01309523809523809,0.6633925714285714,,

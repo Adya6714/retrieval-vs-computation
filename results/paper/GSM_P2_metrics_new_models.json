@@ -1,0 +1,16 @@
+{
+  "gemini": {
+    "n": 0,
+    "accuracy": null,
+    "cci_mean": null,
+    "tep_mean": null,
+    "phase1_parseable": null
+  },
+  "o4mini": {
+    "n": 44,
+    "accuracy": 0.0,
+    "cci_mean": 0.0,
+    "tep_mean": 0.0,
+    "phase1_parseable": 0.0
+  }
+}

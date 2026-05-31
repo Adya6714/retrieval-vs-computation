@@ -1,0 +1,8 @@
+family,variant,n,n_with_sims,mean_min_cosine,crystallization_not_computed
+Algorithmic Suit,W6,10,10,0.76548,10
+Algorithmic Suit,canonical,10,10,0.48546000000000006,10
+Coin Change,W6,10,10,0.9992599999999999,10
+Coin Change,canonical,10,10,0.74861,10
+arithmetic_reasoning,canonical,20,0,,20
+planning_suite,W6,15,15,0.50836,15
+planning_suite,canonical,20,20,0.48206999999999994,19

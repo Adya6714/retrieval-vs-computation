@@ -1,0 +1,4 @@
+model,subtype,n_sessions,orig_abort_n,orig_abort_rate,new_abort_n,new_abort_rate,recovered_n,recovery_rate_of_aborts,orig_goal_reached_n,new_goal_reached_n,new_goals_from_orig_aborted,parser_recoveries_total,preamble_drops_total
+anthropic/claude-sonnet-4,blocksworld,50,22,0.44,0,0.0,22,1.0,0,0,0,26,30
+meta-llama/llama-3.1-8b-instruct,blocksworld,50,19,0.38,9,0.18,19,1.0,0,0,0,20,0
+openai/gpt-4o,blocksworld,50,20,0.4,10,0.2,20,1.0,0,0,0,30,29

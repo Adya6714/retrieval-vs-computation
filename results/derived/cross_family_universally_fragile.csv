@@ -1,0 +1,5 @@
+family,problem_id,n_models_canon_correct,n_models_w3_collapse
+ALGO,CC_034,4,4
+ALGO,WIS_018,4,4
+GSM,GSM_012,5,4
+BW,BW_511,4,4

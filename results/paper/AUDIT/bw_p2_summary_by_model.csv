@@ -1,0 +1,4 @@
+model,n_sessions,orig_complete,orig_abort_illegal,orig_abort_loop,orig_goal_reached,orig_mean_pga,new_complete,new_abort_illegal,new_abort_loop,new_goal_reached,new_mean_pga,delta_goal_reached,delta_abort_illegal,recovered_from_illegal,new_solves_among_orig_aborted
+anthropic/claude-sonnet-4,50,8,22,0,0,0.025,20,19,11,8,0.348,8,-3,13,3
+meta-llama/llama-3.1-8b-instruct,50,1,19,0,0,0.136,8,42,0,1,0.236,1,23,2,0
+openai/gpt-4o,50,0,20,0,0,0.008,11,39,0,5,0.312,5,19,4,2

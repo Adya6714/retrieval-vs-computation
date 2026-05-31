@@ -1,0 +1,90 @@
+# ─── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# ─── Environments ───────────────────────────────────────────────────
+.env
+.env.*
+.venv/
+venv/
+env/
+rvc/
+*.conda
+
+# ─── Secrets / keys ─────────────────────────────────────────────────
+secrets.json
+api_keys.py
+
+# ─── Caches ─────────────────────────────────────────────────────────
+.pytest_cache/
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── OS ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── IDE ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Node (used only by docx export, not part of the pipeline) ──────
+node_modules/
+package.json
+package-lock.json
+
+# ─── External upstream sources (re-clone via `make bootstrap`) ──────
+data/sources/
+tools/fast-downward/
+
+# ─── Large data dumps (keep small CSVs only) ────────────────────────
+data/*.jsonl
+data/*.parquet
+data/*.hdf5
+data/*.h5
+data/cache/
+data/raw/
+
+# ─── Model weights / activations ────────────────────────────────────
+*.pt
+*.bin
+*.safetensors
+*.npz
+*.npy
+
+# ─── Backups / scratch ──────────────────────────────────────────────
+*.bak
+*.bak_*
+*.orig
+*~
+
+# ─── Results: commit CSVs, ignore large dumps and archives ──────────
+results/*.jsonl
+results/archive/
+results/**/*.bak_*
+
+# ─── LaTeX build artifacts ──────────────────────────────────────────
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/_minted*/
+
+# ─── Logs ───────────────────────────────────────────────────────────
+logs/
+*.log

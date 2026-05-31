@@ -1,0 +1,3904 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty
+GSM_001,canonical,openai/gpt-4o,"To calculate the cost of an 86-minute call, you can break down the cost into two parts based on the rates provided:
+
+1. **First 20 minutes:**
+   - Rate: $0.9 per minute
+   - Cost for 20 minutes = 20 minutes × $0.9/minute = $18
+
+2. **Additional 66 minutes (86 total minutes - 20 minutes):**
+   - Rate: $0.5 per minute
+   - Cost for 66 minutes = 66 minutes × $0.5/minute = $33
+
+Now, add the two amounts to find the total cost of the call: 
+
+\[ \$18 + \$33 = \$51 \]
+
+Therefore, the cost of an 86-minute call would be \$51.",True,51,arithmetic_reasoning,high,medium
+GSM_002,canonical,openai/gpt-4o,"To find out how many kids are in the park, we need to determine both the number of girls and boys, and then add them together.
+
+We're given that there are 18 girls in the park. According to the problem, the number of boys is two-thirds the number of girls. We can calculate the number of boys as follows:
+
+\[ \text{Number of boys} = \frac{2}{3} \times 18 = 12 \]
+
+Now, we add the number of girls and boys to get the total number of kids in the park:
+
+\[ \text{Total number of kids} = 18 \text{ (girls)} + 12 \text{ (boys)} = 30 \]
+
+Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy
+GSM_003,canonical,openai/gpt-4o,"To find the total number of cards, we need to determine the number of each color of card and sum them up.
+
+1. **Purple Cards**: Given as 30 cards.
+
+2. **Yellow Cards**: There are 50% more yellow cards than purple cards. This means:
+   \[
+   \text{Number of Yellow Cards} = 30 + 0.5 \times 30 = 30 + 15 = 45
+   \]
+
+3. **Blue Cards**: The number of blue cards is equal to the sum of the number of purple and yellow cards:
+   \[
+   \text{Number of Blue Cards} = 30 + 45 = 75
+   \]
+
+Now, sum up the number of each type of card to get the total number of cards:
+\[
+\text{Total Number of Cards} = 30 \text{ (Purple)} + 45 \text{ (Yellow)} + 75 \text{ (Blue)} = 150
+\]
+
+Thus, there are a total of 150 cards of all mentioned colors.",True,150,arithmetic_reasoning,high,medium
+GSM_004,canonical,openai/gpt-4o,"To calculate the annual earnings of the painter, we need to determine the number of days he works in a year and then multiply by his daily wage.
+
+1. **Calculate the number of weeks he works in a year:**
+
+   A year has 12 months. The painter works for 2 weeks per month.
+
+   \[
+   12 \text{ months/year} \times 2 \text{ weeks/month} = 24 \text{ weeks/year}
+   \]
+
+2. **Calculate the total number of days he works in a year:**
+
+   He works 6 days per week.
+
+   \[
+   24 \text{ weeks/year} \times 6 \text{ days/week} = 144 \text{ days/year}
+   \]
+
+3. **Calculate his total earnings for the year:**
+
+   He earns ₣150 per day.
+
+   \[
+   144 \text{ days/year} \times ₣150/\text{day} = ₣21,600
+   \]
+
+Thus, the painter earns ₣21,600 in a year.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,canonical,openai/gpt-4o,"Let's calculate the total number of hours Liam spends learning in a week.
+
+1. **Calculating Daily Class Time:**  
+   Liam has 6 normal classes plus 1 extra class each day.  
+   Total classes per day = 6 + 1 = 7 classes.  
+   Each class is 60 minutes long, so daily class time = 7 classes × 60 minutes/class = 420 minutes. 
+
+2. **Calculating Weekly Class Time:**  
+   Liam attends classes 6 days a week.  
+   Weekly class time = 420 minutes/day × 6 days = 2520 minutes.
+
+3. **Calculating Extra Learning Time on Saturday and Sunday:**  
+   According to the problem, Liam spends \(\frac{1}{7}\) of his total weekly minutes as extra learning time on both Saturday and Sunday.  
+   First, we calculate \(\frac{1}{7}\) of the 2520 minutes.  
+   \(\frac{1}{7} \times 2520 = 360\) minutes.  
+   So, he spends 360 minutes each on Saturday and Sunday for extra learning.  
+   Total extra learning time for Saturday and Sunday = 360 minutes + 360 minutes = 720 minutes.
+
+4. **Calculating Total Weekly Learning Time:**  
+   Total learning time per week = Weekly class time + Extra learning time  
+   = 2520 minutes + 720 minutes  
+   = 3240 minutes.
+
+5. **Converting Minutes to Hours:**  
+   Total hours = \(\frac{3240 \text{ minutes}}{60 \text{ minutes/hour}}\) = 54 hours.
+
+Thus, Liam spends 54 hours a week learning.",True,54,arithmetic_reasoning,high,hard
+GSM_006,canonical,openai/gpt-4o,"To calculate the final value of Kayla's shares, we need to determine the stock price at the end of each year and then calculate the total value of all her shares.
+
+1. **Initial Cost**:  
+Kayla buys 10 shares at €56 each.  
+Initial investment = 10 shares × €56/share = €560.
+
+2. **Price Increase in the First Year**:  
+The stock price increases by 30% the first year.  
+New stock price = €56 + (30% of €56)  
+= €56 + (0.30 × €56)  
+= €56 + €16.80  
+= €72.80.
+
+3. **Price Decrease in the Second Year**:  
+The stock price then decreases by 25% the second year.  
+New stock price = €72.80 - (25% of €72.80)  
+= €72.80 - (0.25 × €72.80)  
+= €72.80 - €18.20  
+= €54.60.
+
+4. **Final Value of All Shares**:  
+The final value of all Kayla's shares is the new stock price multiplied by the number of shares.  
+Final value = 10 shares × €54.60/share = €546.
+
+Thus, the final value of all Kayla's shares is €546.",True,546,arithmetic_reasoning,high,medium
+GSM_007,canonical,openai/gpt-4o,"Kai hires the luxury car for a total of 4 hours, from 1 PM to 5 PM. Since he gets 2 hours free, he only needs to pay for 2 hours.
+
+The cost structure is as follows:
+- The first paid hour costs $10.
+- The second paid hour costs twice the first paid hour, so it would be $10 * 2 = $20.
+
+To calculate the total amount Kai has to pay:
+- First paid hour: $10
+- Second paid hour: $20
+
+Total cost = $10 + $20 = $30
+
+Thus, Kai paid $30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,canonical,openai/gpt-4o,"To determine the number of people infected after 3 days, we need to consider the progression of the infection based on the given spread rate.
+
+- **Day 0**: Initially, there are 16 infected people.
+
+Each day, every infected person infects 3 new people.
+
+**Day 1**:
+- On Day 1, each of the 16 people infects 3 new people.
+- Number of new infections on Day 1 = 16 * 3 = 48.
+
+Therefore, the total number of infected people by the end of Day 1 = 16 (previously infected) + 48 (newly infected) = 64.
+
+**Day 2**:
+- On Day 2, each of the 64 infected people infects 3 new people.
+- Number of new infections on Day 2 = 64 * 3 = 192.
+
+Therefore, the total number of infected people by the end of Day 2 = 64 (previously infected) + 192 (newly infected) = 256.
+
+**Day 3**:
+- On Day 3, each of the 256 infected people infects 3 new people.
+- Number of new infections on Day 3 = 256 * 3 = 768.
+
+Therefore, the total number of infected people by the end of Day 3 = 256 (previously infected) + 768 (newly infected) = 1024.
+
+Thus, after 3 days, a total of 1024 people are infected.",True,1024,arithmetic_reasoning,high,medium
+GSM_009,canonical,openai/gpt-4o,"To determine how many dozens of eggs Nia will need, we first calculate the total number of eggs she consumes over the 108 days and then convert that number into dozens.
+
+1. Calculate the number of eggs eaten in the first 84 days.
+   \[
+   5 \text{ eggs/day} \times 84 \text{ days} = 420 \text{ eggs}
+   \]
+
+2. Calculate the number of eggs eaten in the next 24 days.
+   \[
+   7 \text{ eggs/day} \times 24 \text{ days} = 168 \text{ eggs}
+   \]
+
+3. Add the eggs from both time periods to find the total number consumed over the 108 days.
+   \[
+   420 \text{ eggs} + 168 \text{ eggs} = 588 \text{ eggs}
+   \]
+
+4. Convert the total number of eggs into dozens. Since a dozen is 12 eggs:
+   \[
+   \frac{588 \text{ eggs}}{12 \text{ eggs/dozen}} = 49 \text{ dozens}
+   \]
+
+Nia will need 49 dozens of eggs for 108 days.",False,49,arithmetic_reasoning,high,medium
+GSM_010,canonical,openai/gpt-4o,"To calculate the total number of popped kernels, let's break down the process step by step:
+
+1. **First 30 seconds:**
+   - Kernels popped: \( 60 \)
+
+2. **Second 30 seconds:**
+   - Kernels popped: \( 4 \times 60 = 240 \)
+
+3. **Third 30 seconds:**
+   - Kernels popped: \( 6 \times 60 = 360 \)
+
+4. **Fourth 30 seconds:**
+   - Kernels popped: \( \frac{1}{2} \times 360 = 180 \)
+
+5. **Residual heat after cooking:**
+   - Kernels popped: \( \frac{1}{4} \times 180 = 45 \)
+
+Now, add all these amounts to find the total number of popped kernels:
+
+\[
+60 + 240 + 360 + 180 + 45 = 885
+\]
+
+Zahra has 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium
+GSM_011,canonical,openai/gpt-4o,"To solve this problem, we need to calculate the total amount of water used for the ice cubes and then determine how much water Pavel has left.
+
+1. **Giant cubes:** Pavel makes 8 giant cubes, with each cube using 12 grams of water. Therefore, the total water used for the giant cubes is:
+
+   \[
+   8 \times 12 = 96 \text{ grams}
+   \]
+
+2. **Medium cubes:** Pavel makes 13 medium cubes, with each cube using 11 grams of water. Therefore, the total water used for the medium cubes is:
+
+   \[
+   13 \times 11 = 143 \text{ grams}
+   \]
+
+3. **Small cubes:** Pavel makes 15 small cubes, with each cube using \( \frac{1}{5} \) gram of water. Therefore, the total water used for the small cubes is:
+
+   \[
+   15 \times \frac{1}{5} = 3 \text{ grams}
+   \]
+
+Next, we add up the total water used for all types of cubes:
+
+\[
+96 + 143 + 3 = 242 \text{ grams}
+\]
+
+Finally, we subtract the total water used from the initial amount of water Pavel has:
+
+\[
+328 - 242 = 86 \text{ grams}
+\]
+
+Therefore, Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,canonical,openai/gpt-4o,"To determine how many potted plants Camila will remain with, we need to follow these steps:
+
+1. Calculate the initial number of potted plants Camila had before receiving the new ones:
+   \[
+   7 \text{ potted plants/ledge} \times 52 \text{ ledges} = 364 \text{ potted plants}
+   \]
+
+2. Add the 29 new potted plants she received:
+   \[
+   364 \text{ potted plants} + 29 \text{ new plants} = 393 \text{ potted plants}
+   \]
+
+3. Calculate the number of potted plants Camila will give away:
+   \[
+   6 \text{ potted plants/ledge} \times 52 \text{ ledges} = 312 \text{ potted plants}
+   \]
+
+4. Subtract the number of plants given away from the total to find out how many she will remain with:
+   \[
+   393 \text{ potted plants} - 312 \text{ potted plants} = 81 \text{ potted plants}
+   \]
+
+Thus, Camila will remain with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,canonical,openai/gpt-4o,"To solve this problem, we need to find the time it takes for Mia to complete the entire 24-kilometer walk, knowing she's walking 12 kilometers on the beach and 12 kilometers on the sidewalk at different speeds.
+
+First, let's define Mia's walking speed on the beach. Assume her speed on the beach is \( v \) kilometers per hour. On the sidewalk, she walks at twice this speed, which is \( 2v \) kilometers per hour.
+
+We know that Mia spends 60 minutes (1 hour) walking on the beach:
+
+\[
+\text{Time on the beach} = \frac{\text{Distance on the beach}}{\text{Speed on the beach}} = \frac{12 \text{ km}}{v} = 1 \text{ hour}
+\]
+
+From this equation, we find Mia's speed on the beach:
+
+\[
+v = 12 \text{ km/h}
+\]
+
+Now, let's calculate her speed on the sidewalk:
+
+\[
+2v = 2 \times 12 = 24 \text{ km/h}
+\]
+
+Next, calculate the time taken to walk 12 kilometers on the sidewalk at 24 km/h:
+
+\[
+\text{Time on the sidewalk} = \frac{\text{Distance on the sidewalk}}{\text{Speed on the sidewalk}} = \frac{12 \text{ km}}{24 \text{ km/h}} = 0.5 \text{ hours}
+\]
+
+Finally, compute the total time for the entire walk, combining the time on the beach and the time on the sidewalk:
+
+\[
+\text{Total time} = \text{Time on the beach} + \text{Time on the sidewalk} = 1 \text{ hour} + 0.5 \text{ hours} = 1.5 \text{ hours}
+\]
+
+Convert the total time into minutes:
+
+\[
+1.5 \text{ hours} = 1.5 \times 60 = 90 \text{ minutes}
+\]
+
+Thus, the total time it takes for Mia to complete the entire 24-kilometer walk is \(\boxed{90}\) minutes.",True,90,arithmetic_reasoning,medium,medium
+GSM_014,canonical,openai/gpt-4o,"To solve this problem, we need to first determine the total amount of time the maintenance worker will spend cleaning over the 10 days and then find the percentage of their workday that is spent cleaning floors each day.
+
+First, calculate the total time spent cleaning all the floors:
+- Number of floors: 210
+- Time taken to clean one floor: 20 minutes
+
+Total time in minutes to clean all floors:
+\[ 210 \text{ floors} \times 20 \text{ minutes per floor} = 4200 \text{ minutes} \]
+
+Now, calculate the total work time available over the 10-day period:
+- Hours worked per day: 10
+- Convert hours to minutes (since time spent cleaning is in minutes): 
+  \[ 10 \text{ hours/day} \times 60 \text{ minutes/hour} = 600 \text{ minutes/day} \]
+
+Total time available over 10 days:
+\[ 600 \text{ minutes/day} \times 10 \text{ days} = 6000 \text{ minutes} \]
+
+Next, determine the average percentage of each day spent cleaning. Since 4200 minutes are spent cleaning in total over 10 days, the daily cleaning time in minutes is:
+\[ \frac{4200 \text{ minutes}}{10 \text{ days}} = 420 \text{ minutes/day} \]
+
+With 600 minutes available per day, we calculate the percentage of the day spent cleaning:
+\[ \left(\frac{420 \text{ minutes}}{600 \text{ minutes}}\right) \times 100 = 70\% \]
+
+Therefore, on average, the maintenance worker spends 70% of their day cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,canonical,openai/gpt-4o,"First, we need to round the prices of each type of plant bundle to the nearest dollar:
+
+- Tulips are priced at €2.25 per bundle, which rounds to €2 per bundle.
+- Roses are priced at €5.13 per bundle, which rounds to €5 per bundle.
+- Sunflowers are priced at €5.47 per bundle, which rounds to €5 per bundle.
+
+Next, we calculate the total income from selling the bundles at these rounded prices:
+
+1. For tulips:
+   \[
+   12 \text{ bundles} \times €2/\text{bundle} = €24
+   \]
+
+2. For roses:
+   \[
+   29 \text{ bundles} \times €5/\text{bundle} = €145
+   \]
+
+3. For sunflowers:
+   \[
+   37 \text{ bundles} \times €5/\text{bundle} = €185
+   \]
+
+Finally, we add these amounts together to find the total income:
+
+\[
+€24 + €145 + €185 = €354
+\]
+
+Therefore, Viktor will make a total of €354.",True,354,arithmetic_reasoning,medium,hard
+GSM_016,canonical,openai/gpt-4o,"To determine the total weight the farmer needs to transport, we'll add up the weights of all the items he bought:
+
+- Wheat: 6 boxes * 4 pounds/box = 24 pounds
+- Cucumbers: 12 bags * 5 pounds/bag = 60 pounds
+- Apples: 32 packs * 43 pounds/pack = 1376 pounds
+- Corns: 18 sacks * 15 pounds/sack = 270 pounds
+- Grocery: 43 pounds
+- Tools: 27 pounds
+
+Adding these together gives:
+
+\[ 24 + 60 + 1376 + 270 + 43 + 27 = 1800 \text{ pounds} \]
+
+With each truck able to carry 120 pounds per trip, we need to calculate how many trips are necessary:
+
+\[ \text{Trips per truck} = \frac{\text{Total weight}}{\text{Weight per trip per truck}} = \frac{1800}{120} = 15 \text{ trips with one truck} \]
+
+Since the farmer has 3 trucks, each of them can make trips simultaneously. Therefore, the total number of trips made by the trucks collectively will be divided among the 3 trucks:
+
+\[ \text{Trips needed for all trucks together} = \frac{15}{3} = 5 \text{ trips} \]
+
+This means that the farmer needs to make 5 trips in total, using his 3 trucks, to transport all the items.",False,5,arithmetic_reasoning,medium,hard
+GSM_017,canonical,openai/gpt-4o,"To find Liam's average daily earnings, we need to calculate the total earnings over the three days and then divide by three.
+
+### Friday's Sales
+- **Cookies sold**: 25 boxes
+- **Orange pies sold on Friday**: Let \( x \) be the number of orange pies sold on Saturday. Then, on Friday, he sold \( x - 13 \) orange pies.
+
+### Saturday's Sales
+- **Cookies sold**: \( 25 + 11 = 36 \) boxes
+- **Orange pies sold**: \( x = 22 \) boxes
+
+Since Liam sold 22 boxes of orange pie on Saturday, on Friday he sold:
+
+\[ x - 13 = 22 - 13 = 9 \] boxes of orange pies.
+
+### Sunday's Sales
+- **Total boxes on Friday and Saturday**:
+  - **Cookies**: \( 25 + 36 = 61 \) boxes
+  - **Orange pies**: \( 9 + 22 = 31 \) boxes
+
+On Sunday, Liam sold:
+- **Cookies**: 61 boxes
+- **Orange pies**: 31 boxes
+
+### Total Sales Over Three Days
+- **Cookies**: \( 25 + 36 + 61 = 122 \) boxes
+- **Orange pies**: \( 9 + 22 + 31 = 62 \) boxes
+
+### Earnings Calculation
+- **Total earnings from cookies**: \( 122 \times 12 = ¥1464 \)
+- **Total earnings from orange pies**: \( 62 \times 21 = ¥1302 \)
+
+### Total Earnings and Average Daily Earnings
+- **Total earnings over three days**: \( ¥1464 + ¥1302 = ¥2766 \)
+- **Average daily earnings**: \( \frac{2766}{3} = ¥922 \)
+
+Therefore, Liam's average daily earning was ¥922.",True,922,arithmetic_reasoning,medium,hard
+GSM_018,canonical,openai/gpt-4o,"Let's break down the quiz into its components based on the percentages and calculate how many questions belong to each category:
+
+1. **Physics Questions**: 
+   - 25% of 80 items is \(0.25 \times 80 = 20\) physics questions.
+
+2. **Algebra Questions**:
+   - 15% of 80 items is \(0.15 \times 80 = 12\) algebra questions.
+
+3. **Chemistry and History Questions**:
+   - Since physics and algebra make up 40% of the questions (25% + 15%), the remaining questions are equally divided between chemistry and history, making up 60% of the quiz.
+   - 60% of 80 items is \(0.60 \times 80 = 48\) questions. 
+   - These are divided equally, so there are \(48 \div 2 = 24\) chemistry questions and \(24\) history questions.
+
+Next, let's calculate how many questions Emma is sure to get correct in each category:
+
+1. **Correct Algebra Questions**:
+   - Emma is sure to get 25% of the algebra questions correct, which is \(0.25 \times 12 = 3\) questions.
+
+2. **Correct Physics Questions**:
+   - Emma is sure to get 10% of the physics questions correct, which is \(0.10 \times 20 = 2\) questions.
+
+3. **Correct Chemistry and History Questions**:
+   - Emma is sure to get 1/3 of the chemistry questions correct, which is \(\frac{1}{3} \times 24 = 8\) questions.
+   - Emma is also sure to get 1/3 of the history questions correct, which is \(\frac{1}{3} \times 24 = 8\) questions.
+
+Finally, sum these to find the total number of questions Emma is sure to get correct:
+
+\[
+3 \text{ (algebra) } + 2 \text{ (physics) } + 8 \text{ (chemistry) } + 8 \text{ (history) } = 21 \text{ questions}
+\]
+
+Emma is sure to get 21 questions correct in the quiz.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,canonical,openai/gpt-4o,"To find out how many 45-minute episodes Tariq watched on Sunday, we need to calculate the total hours Tariq watched TV throughout the week and then isolate the time unaccounted for on Sunday.
+
+First, let's tally up the hours based on the given information:
+
+- **Friday and Saturday:** 3-hour episodes each night for 2 nights.  
+  \[
+  2 \times 3 \text{ hours} = 6 \text{ hours}
+  \]
+
+- **Monday:** A 4-hour episode and a 15-minute episode.  
+  \[
+  4 \text{ hours} + \frac{15}{60} \text{ hours} = 4.25 \text{ hours}
+  \]
+
+- **Tuesday:** Four 2-hour episodes.  
+  \[
+  4 \times 2 \text{ hours} = 8 \text{ hours}
+  \]
+
+- **Wednesday:** Three 30-minute episodes.  
+  \[
+  3 \times \frac{30}{60} \text{ hours} = 1.5 \text{ hours}
+  \]
+
+Adding up the total hours watched from Friday to Wednesday, we have:
+\[
+6 \text{ hours (Friday and Saturday)} + 4.25 \text{ hours (Monday)} + 8 \text{ hours (Tuesday)} + 1.5 \text{ hours (Wednesday)} = 19.75 \text{ hours}
+\]
+
+Tariq watched a total of 22 hours of TV for the week. Therefore, the hours watched on Sunday are:
+\[
+22 \text{ total hours} - 19.75 \text{ hours} = 2.25 \text{ hours}
+\]
+
+Each episode on Sunday was 45 minutes long:
+\[
+\frac{45}{60} \text{ hours} = 0.75 \text{ hours per episode}
+\]
+
+Now, to find the number of 45-minute episodes on Sunday, divide the total hours by the duration of each episode:
+\[
+\frac{2.25 \text{ hours}}{0.75 \text{ hours per episode}} = 3 \text{ episodes}
+\]
+
+Therefore, Tariq watched \(\boxed{3}\) 45-minute episodes on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,canonical,openai/gpt-4o,"To solve the problem, we first determine how many eggs each person finds:
+
+1. Ava finds 3 eggs.
+
+2. Quinn finds six times as many eggs as Ava, so Quinn finds:
+   \[
+   6 \times 3 = 18 \, \text{eggs}
+   \]
+
+3. Sophia finds 3 fewer than Quinn, so Sophia finds:
+   \[
+   18 - 3 = 15 \, \text{eggs}
+   \]
+
+4. Esteban finds one-fifth as many as Sophia, so Esteban finds:
+   \[
+   \frac{1}{5} \times 15 = 3 \, \text{eggs}
+   \]
+
+5. Fatima finds three dozen more than the combined total of Quinn and Ava. First, find the total eggs for Quinn and Ava:
+   \[
+   18 + 3 = 21 \, \text{eggs (Quinn and Ava combined)}
+   \]
+
+   Three dozen is:
+   \[
+   3 \times 12 = 36 \, \text{eggs}
+   \]
+
+   Fatima finds:
+   \[
+   21 + 36 = 57 \, \text{eggs}
+   \]
+
+Now, sum all the eggs found by each person:
+\[
+3 + 18 + 15 + 3 + 57 = 96 \, \text{eggs}
+\]
+
+Zahra initially hid 10 dozen eggs:
+\[
+10 \times 12 = 120 \, \text{eggs}
+\]
+
+To find the number of eggs still hidden, subtract the number of eggs found from the total initially hidden:
+\[
+120 - 96 = 24 \, \text{eggs}
+\]
+
+Thus, there are \(\boxed{24}\) eggs still hidden in the yard.",True,24,arithmetic_reasoning,medium,hard
+GSM_021,canonical,openai/gpt-4o,"If the city is 77 miles across from the oceanfront to the opposite inland edge, and the fog bank rolls in at a rate of 77 miles every 50 minutes, then it will take the fog bank 50 minutes to cover the entire city.",True,50,arithmetic_reasoning,high,easy
+GSM_022,canonical,openai/gpt-4o,"To solve this problem, we are given a ratio and the total number of teaspoons of sugar and cups of water used together, and we need to find the amount of sugar used. The ratio of teaspoons of sugar to cups of water is 97:37. This means that for every 97 parts of sugar, there are 37 parts of water.
+
+First, let's define variables for teaspoonfuls of sugar and cups of water:
+- Let \( x \) be the number of teaspoonfuls of sugar.
+- Let \( y \) be the number of cups of water.
+
+Given that the ratio of sugar to water is 97:37, we can set up the equation:
+
+\[
+\frac{x}{y} = \frac{97}{37}
+\]
+
+This can be rearranged to express \( x \) in terms of \( y \):
+
+\[
+x = \frac{97}{37} \cdot y
+\]
+
+We are also told that the total number of teaspoons of sugar and cups of water is 1474:
+
+\[
+x + y = 1474
+\]
+
+Now, use the expression for \( x \) from the ratio equation and substitute into the total equation:
+
+\[
+\frac{97}{37} \cdot y + y = 1474
+\]
+
+Combine the \( y \) terms:
+
+\[
+\left(\frac{97}{37} + 1\right) y = 1474
+\]
+
+Convert the ""+1"" to have a common denominator to combine terms:
+
+\[
+\frac{97}{37} + \frac{37}{37} = \frac{134}{37}
+\]
+
+The equation becomes:
+
+\[
+\frac{134}{37} y = 1474
+\]
+
+Multiply through by 37 to clear the fraction:
+
+\[
+134y = 1474 \cdot 37
+\]
+
+Calculate \( 1474 \cdot 37 \):
+
+\[
+1474 \cdot 37 = 54538
+\]
+
+So, the equation is:
+
+\[
+134y = 54538
+\]
+
+Solve for \( y \) by dividing both sides by 134:
+
+\[
+y = \frac{54538}{134} = 407
+\]
+
+Now that we have \( y = 407 \), we can find \( x \) using the ratio:
+
+\[
+x = \frac{97}{37} \cdot 407
+\]
+
+Perform the multiplication:
+
+First, calculate \(\frac{97}{37} \approx 2.62162162\) (but let's maintain accuracy by keeping it exact in calculations):
+
+\[
+x = \frac{97 \cdot 407}{37} = 1067
+\]
+
+Thus, Sofia used \(\boxed{1067}\) teaspoonfuls of sugar.",True,1067,arithmetic_reasoning,high,easy
+GSM_023,canonical,openai/gpt-4o,"To find out how many minutes Ibrahim needs to exercise on Tuesday, we first need to determine the total amount of time he exercised on Sunday and Monday combined. 
+
+On Sunday, Ibrahim exercised for 23 minutes.  
+On Monday, he exercised for 55 minutes.  
+
+So, the combined exercise time for Sunday and Monday is:
+\[ 23 \text{ minutes} + 55 \text{ minutes} = 78 \text{ minutes} \]
+
+Ibrahim wants to exercise for seven times this total amount on Tuesday. Therefore, we calculate:
+\[ 7 \times 78 \text{ minutes} = 546 \text{ minutes} \]
+
+Thus, Ibrahim needs to exercise for 546 minutes on Tuesday to reach his goal.",True,546,arithmetic_reasoning,high,easy
+GSM_024,canonical,openai/gpt-4o,"To analyze this problem, we need to calculate the probabilities of two different events involving a 4-sided die.
+
+1. **Probability of rolling a number greater than 2:**
+
+   A 4-sided die has the numbers 1, 2, 3, and 4. The numbers greater than 2 are 3 and 4. Thus, there are 2 favorable outcomes (rolling a 3 or 4) out of 4 possible outcomes.
+
+   \[
+   P(\text{number greater than 2}) = \frac{2}{4} = \frac{1}{2}
+   \]
+
+2. **Probability of rolling two odd numbers in a row:**
+
+   The odd numbers on a 4-sided die are 1 and 3. To roll two odd numbers in a row, we look at each roll separately. 
+
+   For the first roll, the probability of an odd number is:
+
+   \[
+   P(\text{odd on first roll}) = \frac{2}{4} = \frac{1}{2}
+   \]
+
+   Similarly, the probability of rolling an odd number on the second roll is:
+
+   \[
+   P(\text{odd on second roll}) = \frac{2}{4} = \frac{1}{2}
+   \]
+
+   Since these rolls are independent events, the probability of both occurring (rolling two odd numbers in sequence) is the product of their individual probabilities:
+
+   \[
+   P(\text{two odd numbers in a row}) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}
+   \]
+
+3. **Difference in likelihood:**
+
+   To find out how much more likely it is to roll a number greater than 2 compared to rolling two odd numbers in sequence, we compare their probabilities:
+
+   \[
+   \text{Difference} = P(\text{number greater than 2}) - P(\text{two odd numbers in a row})
+   \]
+
+   \[
+   = \frac{1}{2} - \frac{1}{4} = \frac{2}{4} - \frac{1}{4} = \frac{1}{4}
+   \]
+
+   We want to express how much more likely it is as a percentage of the probability of rolling two odd numbers in a row. So we compute:
+
+   \[
+   \text{Percentage increase} = \left(\frac{\frac{1}{4}}{\frac{1}{4}}\right) \times 100\% = 100\%
+   \]
+
+   Thus, it is 100% more likely to roll a number greater than 2 than to roll two odd numbers in succession.",False,25,arithmetic_reasoning,high,easy
+GSM_025,canonical,openai/gpt-4o,"First, let's find the total length of the remoras. Each remora is 72 inches long, and there are 7 remoras, so the total length in inches is:
+
+\[ 
+7 \times 72 = 504 \text{ inches} 
+\]
+
+Next, we need to convert the total length of the remoras from inches to feet since the whale's length is given in feet. Since 1 foot is 12 inches:
+
+\[ 
+504 \text{ inches} \div 12 = 42 \text{ feet}
+\]
+
+Now, we can calculate what percentage of the whale's length the total length of the remoras represents. The whale's length is 210 feet. Therefore, the percentage is:
+
+\[ 
+\frac{42}{210} \times 100 = 20\%
+\]
+
+Thus, the combined length of the remoras is 20% of the whale's body length.",True,20,arithmetic_reasoning,high,easy
+GSM_026,canonical,openai/gpt-4o,"To find out how many puzzle pieces Elena placed during that hour, we need to determine both the number of pieces she placed from the first puzzle and the number from the second puzzle.
+
+1. **First Puzzle:**
+   - The first puzzle is a 315 piece puzzle.
+   - Elena finished \( \frac{1}{3} \) of it.
+   - Pieces placed from the first puzzle: \( \frac{1}{3} \times 315 = 105 \) pieces.
+
+2. **Second Puzzle:**
+   - The second puzzle consists of 481 pieces.
+   - Elena finished the entire puzzle.
+   - Pieces placed from the second puzzle: 481 pieces.
+
+Finally, add the pieces from both activities to get the total number of pieces she placed during the hour:
+\[ 105 + 481 = 586 \]
+
+Therefore, Elena placed a total of 586 puzzle pieces during that hour.",True,586,arithmetic_reasoning,high,easy
+GSM_027,canonical,openai/gpt-4o,"To find the percentage of all the puppies that have spots, we first need to determine the total number of puppies and the total number of puppies with spots.
+
+Jasmine's dog has:
+- Total puppies = 1000
+- Puppies with spots = 270
+
+Priya's dog has:
+- Total puppies = 640
+- Puppies with spots = 140
+
+First, calculate the total number of puppies:
+\[ 1000 + 640 = 1640 \]
+
+Next, calculate the total number of puppies with spots:
+\[ 270 + 140 = 410 \]
+
+Now, calculate the percentage of puppies with spots:
+\[ \left( \frac{410}{1640} \right) \times 100 \]
+
+\[ = \frac{410}{1640} \times 100 \]
+
+\[ = 0.25 \times 100 \]
+
+\[ = 25\% \]
+
+Therefore, 25% of all the puppies have spots.",True,25,arithmetic_reasoning,high,easy
+GSM_028,canonical,openai/gpt-4o,"Given that Mateo is 35 years old and is 10 years younger than Santiago, we can determine Santiago's age by adding 10 to Mateo's age:
+
+\[ \text{Santiago's age} = 35 + 10 = 45. \]
+
+To find the average of their ages, we add their ages together and then divide by 2:
+
+\[ \text{Average age} = \frac{35 + 45}{2} = \frac{80}{2} = 40. \]
+
+Thus, the average of Mateo and Santiago's ages is 40.",True,40,arithmetic_reasoning,high,easy
+GSM_029,canonical,openai/gpt-4o,"To find out how many emails Sanjay responds to in a 6-day work week, we first need to determine how many emails he responds to per day.
+
+Sanjay receives 150 emails a day, and 32% of these emails don't require any response. This means that 68% of the emails do require a response. 
+
+First, calculate the number of emails Sanjay responds to each day:
+\[ 
+150 \times 0.68 = 102 
+\]
+
+Sanjay responds to 102 emails each day. 
+
+Since he works 6 days a week, the total number of emails he responds to in a week is:
+\[ 
+102 \times 6 = 612 
+\]
+
+Therefore, Sanjay responds to 612 emails in a 6-day work week.",False,612,arithmetic_reasoning,high,easy
+GSM_030,canonical,openai/gpt-4o,"To find out how long it takes to slide down each waterslide, we can use the formula:
+
+\[
+\text{Time} = \frac{\text{Distance}}{\text{Speed}}
+\]
+
+For the biggest waterslide, which is 330 meters long and slides at 55 meters per minute:
+
+\[
+\text{Time for biggest slide} = \frac{330 \text{ meters}}{55 \text{ meters/minute}} = 6 \text{ minutes}
+\]
+
+For the second biggest waterslide, which is 240 meters long and slides at 80 meters per minute:
+
+\[
+\text{Time for second biggest slide} = \frac{240 \text{ meters}}{80 \text{ meters/minute}} = 3 \text{ minutes}
+\]
+
+The difference in time between descending the biggest slide and the second biggest slide is:
+
+\[
+6 \text{ minutes} - 3 \text{ minutes} = 3 \text{ minutes}
+\]
+
+Therefore, it takes 3 minutes longer to ride the biggest slide compared to the second biggest slide.",True,3,arithmetic_reasoning,high,easy
+GSM_031,canonical,openai/gpt-4o,"To determine how many slices of kiwi Yara, her sister, and her cousin ate together, we start by calculating the number of slices each person ate:
+
+1. **Yara**: Yara ate 4 slices.
+2. **Her Sister**: Her sister ate 6 more slices than Yara. Therefore, her sister ate:
+   \[
+   4 + 6 = 10 \text{ slices}
+   \]
+3. **Her Cousin**: Her cousin ate 3 more slices than Yara's sister. Therefore, her cousin ate:
+   \[
+   10 + 3 = 13 \text{ slices}
+   \]
+
+Now, we add up the slices eaten by all three of them:
+\[
+4 \text{ (Yara)} + 10 \text{ (Her Sister)} + 13 \text{ (Her Cousin)} = 27 \text{ slices}
+\]
+
+Therefore, together they ate a total of 27 slices of kiwi.",True,27,arithmetic_reasoning,high,easy
+GSM_032,canonical,openai/gpt-4o,"To find the perimeter of Diego's rectangular kitchen, we first need to determine the width. We know the area of the room is 390 square meters and the length is 5 meters.
+
+The formula for the area of a rectangle is:
+
+\[ \text{Area} = \text{Length} \times \text{Width} \]
+
+Given the area and length, we can calculate the width:
+
+\[ 390 = 5 \times \text{Width} \]
+
+\[ \text{Width} = \frac{390}{5} = 78 \text{ meters} \]
+
+Now, we can compute the perimeter using the perimeter formula for a rectangle:
+
+\[ \text{Perimeter} = 2 \times (\text{Length} + \text{Width}) \]
+
+Substitute the values for length and width:
+
+\[ \text{Perimeter} = 2 \times (5 + 78) \]
+
+\[ \text{Perimeter} = 2 \times 83 \]
+
+\[ \text{Perimeter} = 166 \text{ meters} \]
+
+Therefore, the perimeter of Diego's kitchen is 166 meters.",True,166,arithmetic_reasoning,high,easy
+GSM_033,canonical,openai/gpt-4o,"To find out how much Bodhi spent on everything, we need to calculate the total cost of each type of item he purchased and then add them together.
+
+1. **Rulers:**
+   \[
+   22 \text{ rulers} \times ¥4.5 \text{ per ruler} = ¥99
+   \]
+
+2. **Colored Pencils:**
+   \[
+   8 \text{ colored pencils} \times ¥14.0 \text{ per colored pencil} = ¥112
+   \]
+
+3. **Rim of Bond Paper:**
+   \[
+   1 \text{ rim of bond paper} \times ¥22 = ¥22
+   \]
+
+Now, add the total costs for all the items:
+\[
+¥99 + ¥112 + ¥22 = ¥233
+\]
+
+Bodhi spent a total of ¥233 on the school supplies.",True,233,arithmetic_reasoning,high,easy
+GSM_034,canonical,openai/gpt-4o,"Leilani's thesis is 160 pages long, and she has already written one-fifth of it. To find out how many pages she has already written, you can calculate one-fifth of 160:
+
+\[
+\frac{1}{5} \times 160 = 32
+\]
+
+Thus, she has written 32 pages so far. To determine how many pages she has left to write, subtract the pages she has completed from the total number of pages:
+
+\[
+160 - 32 = 128
+\]
+
+Leilani has 128 pages left to write.",True,128,arithmetic_reasoning,high,easy
+GSM_035,canonical,openai/gpt-4o,"To find the percentage of white spools, we first need to determine the total number of spools and the number of white spools. 
+
+Aisha has:
+- 47 light white spools
+- 73 dark white spools
+
+So, the total number of white spools is:
+\[ 47 + 73 = 120 \]
+
+Then, calculate the total number of spools, which includes all colors:
+- 47 light white spools
+- 73 dark white spools
+- 32 light brown spools
+- 88 dark brown spools
+
+Total number of spools is:
+\[ 47 + 73 + 32 + 88 = 240 \]
+
+Now, we calculate the percentage of the spools that are white:
+\[ \text{Percentage of white spools} = \left(\frac{120}{240}\right) \times 100\% \]
+
+\[ \text{Percentage of white spools} = 0.5 \times 100\% = 50\% \]
+
+Therefore, 50% of the spools are white.",True,50,arithmetic_reasoning,high,easy
+GSM_036,canonical,openai/gpt-4o,"To find out how many fourth-grade boys were at Pine Valley School on Thursday, we need to follow these steps:
+
+1. Determine the total number of fourth-grade boys at Pine Valley School.
+2. Subtract the number of boys who were absent on Thursday.
+
+**Step 1: Calculate the number of boys in fourth grade:**
+
+We know the total number of fourth graders is 172. Out of these, 83 are girls. So, the number of boys is:
+
+\[
+172 - 83 = 89
+\]
+
+**Step 2: Subtract the number of boys who were absent:**
+
+We are given that 4 fourth-grade boys were absent on Thursday. Therefore, the number of boys present is:
+
+\[
+89 - 4 = 85
+\]
+
+Thus, 85 fourth-grade boys were at Pine Valley School on Thursday.",True,85,arithmetic_reasoning,high,easy
+GSM_037,canonical,openai/gpt-4o,"Let's solve this by setting up an equation. Let's call the amount of fence that Kai gets \( x \).
+
+According to the problem:
+
+1. Mateo gets 100 yards more than Kai, so Mateo will get \( x + 100 \) yards.
+2. The total amount of fence between them is 860 yards.
+
+We can express this situation with the equation:
+
+\[ x + (x + 100) = 860 \]
+
+Simplifying the equation:
+
+\[ 2x + 100 = 860 \]
+
+Subtract 100 from both sides to isolate terms with \( x \):
+
+\[ 2x = 760 \]
+
+Divide both sides by 2 to solve for \( x \):
+
+\[ x = 380 \]
+
+So, Kai gets 380 yards of fence. Thus, there is no ""leftover"" since this is how the total 860 yards are divided between them.",False,380,arithmetic_reasoning,high,medium
+GSM_038,canonical,openai/gpt-4o,"To determine how many crackers Ravi won't be able to place on the trays, we first calculate how many crackers can be placed on the 7 trays without exceeding the capacity of a tray.
+
+Each tray can hold 28 crackers, and he has 7 trays, so the total capacity of the trays is:
+
+\[ 28 \text{ crackers/tray} \times 7 \text{ trays} = 196 \text{ crackers} \]
+
+Ravi has 252 crackers. If the trays can hold 196 crackers, the number of crackers that won't fit on the trays is:
+
+\[ 252 \text{ crackers} - 196 \text{ crackers} = 56 \text{ crackers} \]
+
+Therefore, Ravi won't be able to place 56 crackers on the trays.",True,56,arithmetic_reasoning,high,easy
+GSM_039,canonical,openai/gpt-4o,"To solve this problem, we need to determine Valentina's current age based on the information given.
+
+1. Pavel's current age is 13 years.
+
+2. In 3 years, Pavel will be \( 13 + 3 = 16 \) years old.
+
+3. At that time, Valentina will be 3 times as old as Pavel's current age. Therefore, Valentina will be \( 3 \times 13 = 39 \) years old in 3 years.
+
+4. To find Valentina's current age, subtract 3 years from her age in 3 years:  
+   \( 39 - 3 = 36 \).
+
+Thus, Valentina is currently 36 years old.",True,36,arithmetic_reasoning,high,easy
+GSM_040,canonical,openai/gpt-4o,"To determine how long it will take Kayla to peel and saute 120 mushrooms, we need to break the task into two parts: peeling and sauteing, and calculate the time for each.
+
+**Peeling:**
+- Kayla peels 6 mushrooms per minute.
+- To find out how long it takes to peel 120 mushrooms, we divide the total number of mushrooms by the rate:
+
+  \[
+  \text{Time to peel} = \frac{120 \text{ mushrooms}}{6 \text{ mushrooms/minute}} = 20 \text{ minutes}
+  \]
+
+**Sauteing:**
+- Kayla sautes 40 mushrooms in 17 minutes.
+- First, we calculate the rate at which she sautes: 
+
+  - The rate is \(\frac{40 \text{ mushrooms}}{17 \text{ minutes}} = \frac{40}{17} \text{ mushrooms per minute}\).
+
+- To find out how long it takes to saute 120 mushrooms, we set up a proportion based on her rate:
+
+  \[
+  \text{Time to saute} = \frac{120 \text{ mushrooms}}{\frac{40}{17} \text{ mushrooms/minute}} = \frac{120 \times 17}{40} \text{ minutes}
+  \]
+
+  \[
+  \text{Time to saute} = \frac{2040}{40} = 51 \text{ minutes}
+  \]
+
+**Total Time:**
+- Finally, we add the time taken to peel and saute the mushrooms:
+
+  \[
+  \text{Total time} = 20 \text{ minutes (peeling)} + 51 \text{ minutes (sauteing)} = 71 \text{ minutes}
+  \]
+
+Thus, it will take her a total of 71 minutes to peel and saute 120 mushrooms.",False,71,arithmetic_reasoning,high,medium
+GSM_001,W1,openai/gpt-4o,"To calculate the total cost of an 86-minute call with the given rate structure, we can break down the cost as follows:
+
+1. The first 20 minutes are charged at $0.9 per minute.
+2. Any time beyond 20 minutes is charged at $0.5 per minute.
+
+First, calculate the cost for the initial 20 minutes:
+\[20\ \text{minutes} \times \$0.9/\text{minute} = \$18.\]
+
+Next, calculate the cost for the remaining time. Since the call is for 86 minutes in total, the remaining time is \(86 - 20 = 66\) minutes.
+
+The cost for these 66 minutes at the $0.5 per minute rate is:
+\[66\ \text{minutes} \times \$0.5/\text{minute} = \$33.\]
+
+Now, add the costs of both segments of the call to find the total cost:
+\[\$18 + \$33 = \$51.\]
+
+Therefore, the total cost for the 86-minute call is \(\$51\).",True,51,arithmetic_reasoning,high,medium
+GSM_002,W1,openai/gpt-4o,"To find the total number of kids in the park, we first need to calculate the number of boys. We're given that the number of boys is two-thirds of the number of girls. Since there are 18 girls, we calculate the number of boys as follows:
+
+\[ \text{Number of boys} = \frac{2}{3} \times 18 = 12. \]
+
+Now, to find the total number of kids in the park, we add the number of girls and the number of boys:
+
+\[ \text{Total number of kids} = 18 + 12 = 30. \]
+
+Therefore, the total number of kids in the park is 30.",True,30,arithmetic_reasoning,high,easy
+GSM_003,W1,openai/gpt-4o,"First, we determine the number of yellow cards. According to the problem, the number of yellow cards is 50% greater than the number of purple cards. Since there are 30 purple cards, we calculate the number of yellow cards as follows:
+
+\[
+\text{Number of yellow cards} = 30 + 0.5 \times 30 = 30 + 15 = 45
+\]
+
+Next, we find the number of blue cards. The problem states that the number of blue cards equals the combined total of purple and yellow cards:
+
+\[
+\text{Number of blue cards} = 30 (\text{purple}) + 45 (\text{yellow}) = 75
+\]
+
+Now, we calculate the total number of cards across all three colors by adding the purple, yellow, and blue cards together:
+
+\[
+\text{Total number of cards} = 30 (\text{purple}) + 45 (\text{yellow}) + 75 (\text{blue}) = 150
+\]
+
+Therefore, the total number of cards is \( \boxed{150} \).",True,150,arithmetic_reasoning,high,medium
+GSM_004,W1,openai/gpt-4o,"To calculate the total earnings of the painter over the course of a year, we need to first determine his monthly earnings and then multiply by the number of months in a year. 
+
+1. **Calculate weekly earnings:**
+   - Daily wage: £150
+   - Days worked per week: 6
+   - Weekly earnings = £150 * 6 = £900
+
+2. **Calculate monthly earnings:**
+   - The painter works 2 weeks each month.
+   - Monthly earnings = £900 * 2 = £1800
+
+3. **Calculate annual earnings:**
+   - There are 12 months in a year.
+   - Annual earnings = £1800 * 12 = £21,600
+
+Therefore, the painter's total earnings over the course of a year are £21,600.",True,21600,arithmetic_reasoning,high,easy
+GSM_005,W1,openai/gpt-4o,"To find the total number of hours per week Liam spends learning, we need to consider both his regular classes and the extra learning he does on Saturday and Sunday.
+
+First, let's calculate the total number of minutes Liam spends on classes during the week days:
+
+Liam attends 7 classes each weekday (6 regular classes + 1 additional class), and each class is 60 minutes long. Therefore, the total number of minutes he spends on classes per day is:
+
+\[
+7 \times 60 = 420 \text{ minutes per day}
+\]
+
+He goes to school 6 days a week, so the total number of minutes he spends on classes in those 6 days is:
+
+\[
+420 \times 6 = 2520 \text{ minutes}
+\]
+
+Next, calculate the total weekly minutes including his additional learning on weekends. Each weekend day, he spends \( \frac{1}{7} \) of his total weekly class minutes on extra learning, and this includes both Saturday and Sunday.
+
+Let \( x \) be the total number of weekly class minutes. On each weekend day, he spends:
+
+\[
+\frac{1}{7}x \text{ minutes}
+\]
+
+Thus, over the two weekend days, he spends:
+
+\[
+2 \times \frac{1}{7}x = \frac{2}{7}x \text{ minutes}
+\]
+
+This means:
+
+\[
+2520 + \frac{2}{7}x = x
+\]
+
+Solving for \( x \), we first eliminate the fraction by multiplying through by 7:
+
+\[
+7 \times 2520 + 2x = 7x
+\]
+
+\[
+17640 + 2x = 7x
+\]
+
+\[
+17640 = 5x
+\]
+
+\[
+x = \frac{17640}{5} = 3528
+\]
+
+This gives us the total number of minutes Liam spends learning in a week, \( 3528 \) minutes. Now, convert this to hours:
+
+\[
+3528 \div 60 = 58.8
+\]
+
+Therefore, Liam spends a total of \( 58.8 \) hours per week learning.
+
+So, the total number of hours per week Liam spends learning is:
+
+\[
+\boxed{58.8}
+\]",False,54,arithmetic_reasoning,high,hard
+GSM_006,W1,openai/gpt-4o,"To determine the total value of Kayla's shares at the end of the second year, we must first calculate the price per share at the end of each year.
+
+1. **Initial Purchase:**
+   Kayla purchased 10 shares at $56 per share. Therefore:
+   \[
+   \text{Initial investment} = 10 \times 56 = 560
+   \]
+
+2. **Price Increase in the First Year:**
+   During the first year, the price increases by 30%. The new price per share is calculated as follows:
+   \[
+   \text{New price per share after 30% increase} = 56 + (0.30 \times 56) = 56 \times 1.30 = 72.8
+   \]
+
+3. **Price Decrease in the Second Year:**
+   In the second year, the price falls by 25%. The new price per share is calculated as follows:
+   \[
+   \text{New price per share after 25% decrease} = 72.8 - (0.25 \times 72.8) = 72.8 \times 0.75 = 54.6
+   \]
+
+4. **Total Value of Shares at the End of the Second Year:**
+   Multiply the price per share at the end of the second year by the number of shares:
+   \[
+   \text{Total value} = 10 \times 54.6 = 546
+   \]
+
+Therefore, the total value of Kayla's shares at the end of the second year is $546.",True,546,arithmetic_reasoning,high,medium
+GSM_007,W1,openai/gpt-4o,"Kai rents the luxury car for a total of 4 hours, from 1 PM to 5 PM. Out of these 4 hours, 2 hours are free of charge, which means he only pays for 2 of the hours.
+
+Let's break down the cost for the paid hours:
+
+1. The first paid hour costs $10.
+2. The second paid hour costs double the previous hour's cost, so it would be \(2 \times 10 = 20\).
+
+Therefore, the total amount Kai paid for the two paid hours is:
+
+\[10 + 20 = 30\]
+
+Kai paid a total of $30.",True,30,arithmetic_reasoning,high,hard
+GSM_008,W1,openai/gpt-4o,"To solve the problem, we can use a model where each infected person spreads the virus to 3 new people each day. We start with 16 initial infected individuals and calculate the spread for 3 days:
+
+- **Day 0:** 16 people are initially infected.
+  
+- **Day 1:** Each of the 16 infected people infects 3 other people, so we get:
+  \[
+  16 \times 3 = 48 \text{ new infections}
+  \]
+  Total infected people now: \(16 + 48 = 64\).
+
+- **Day 2:** Each of the 48 newly infected people from Day 1 infects 3 other people, so:
+  \[
+  48 \times 3 = 144 \text{ new infections}
+  \]
+  Total infected people now: \(64 + 144 = 208\).
+
+- **Day 3:** Each of the 144 newly infected people from Day 2 infects 3 other people, so:
+  \[
+  144 \times 3 = 432 \text{ new infections}
+  \]
+  Total infected people now: \(208 + 432 = 640\).
+
+Therefore, the total number of infected people after 3 days is \(640\).",False,1024,arithmetic_reasoning,high,medium
+GSM_009,W1,openai/gpt-4o,"To determine how many dozens of eggs Nia needs, let's calculate the total number of eggs she consumes over the 108 days.
+
+Firstly, for the first 84 days, Nia consumes 5 eggs per day:
+
+\[
+84 \text{ days} \times 5 \text{ eggs/day} = 420 \text{ eggs}
+\]
+
+Next, for the following 24 days, she increases her consumption to 7 eggs per day:
+
+\[
+24 \text{ days} \times 7 \text{ eggs/day} = 168 \text{ eggs}
+\]
+
+Now, add the eggs from both periods together to find the total number of eggs:
+
+\[
+420 \text{ eggs} + 168 \text{ eggs} = 588 \text{ eggs}
+\]
+
+To find out how many dozens of eggs are needed, divide the total number of eggs by 12 (since there are 12 eggs in a dozen):
+
+\[
+\frac{588 \text{ eggs}}{12 \text{ eggs/dozen}} = 49 \text{ dozens}
+\]
+
+Therefore, Nia needs 49 dozens of eggs for the 108 days.",False,49,arithmetic_reasoning,high,medium
+GSM_010,W1,openai/gpt-4o,"To compute the total number of popped popcorn kernels, we need to track how many kernels pop in each 30 second interval, taking into account the initial rate and subsequent changes in the rate during heating and afterwards.
+
+1. **First 30 seconds:**  
+   The initial popping rate results in 60 kernels popping.  
+   \[
+   \text{Popped} = 60
+   \]
+
+2. **Second 30 seconds:**  
+   The popping rate increases to 4 times the initial rate:
+   \[
+   4 \times 60 = 240 \quad \text{kernels pop in this interval}
+   \]
+
+3. **Third 30 seconds:**  
+   The popping rate increases to 6 times the initial rate:
+   \[
+   6 \times 60 = 360 \quad \text{kernels pop in this interval}
+   \]
+
+4. **Fourth 30 seconds:**  
+   The rate drops to half of the rate in the third interval:
+   \[
+   \frac{6 \times 60}{2} = 180 \quad \text{kernels pop in this interval}
+   \]
+
+5. **After the heat is removed:**  
+   A quarter of the kernels that popped in the last interval (fourth) pop due to residual heat:
+   \[
+   \frac{180}{4} = 45 \quad \text{additional kernels pop}
+   \]
+
+Now, sum up all the popped kernels from each phase to find the total number of popped kernels:
+
+\[
+60 + 240 + 360 + 180 + 45 = 885
+\]
+
+Thus, the total number of popcorn pieces Zahra ends up with is \(\boxed{885}\).",True,885,arithmetic_reasoning,medium,medium
+GSM_011,W1,openai/gpt-4o,"To determine how many grams of water remain unused, we need to calculate the total amount of water used and subtract it from the initial 328 grams.
+
+First, calculate the water used for the giant cubes:
+\[ 
+8 \text{ giant cubes} \times 12 \text{ grams per cube} = 96 \text{ grams} 
+\]
+
+Next, calculate the water used for the medium cubes:
+\[ 
+13 \text{ medium cubes} \times 11 \text{ grams per cube} = 143 \text{ grams} 
+\]
+
+Then, calculate the water used for the small cubes:
+\[ 
+15 \text{ small cubes} \times \frac{1}{5} \text{ gram per cube} = 3 \text{ grams} 
+\]
+
+Now, add up the grams of water used for all the cubes:
+\[ 
+96 \text{ grams} + 143 \text{ grams} + 3 \text{ grams} = 242 \text{ grams} 
+\]
+
+Finally, subtract the used water from the initial amount to find the remaining water:
+\[ 
+328 \text{ grams} - 242 \text{ grams} = 86 \text{ grams} 
+\]
+
+Therefore, 86 grams of water remain unused.",True,86,arithmetic_reasoning,medium,medium
+GSM_012,W1,openai/gpt-4o,"To determine how many potted plants Camila will be left with, let's go through the information step by step:
+
+1. **Initial Number of Potted Plants:**
+   - Camila originally has 7 potted plants on each of the 52 window ledges.
+   - Total initial number of plants = 7 plants/ledge × 52 ledges = 364 plants.
+
+2. **Additional Plants:**
+   - Two days ago, she received 29 additional potted plants.
+   - New total = 364 original plants + 29 additional plants = 393 plants.
+
+3. **Plants to be Given Away:**
+   - Camila plans to give away 6 plants from each of the 52 ledges.
+   - Total plants to be given away = 6 plants/ledge × 52 ledges = 312 plants.
+
+4. **Plants Remaining:**
+   - After giving away the plants, the number of remaining plants = 393 plants - 312 plants = 81 plants.
+
+Therefore, Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium
+GSM_013,W1,openai/gpt-4o,"To determine the total time Mia spends on her 24-kilometer walk, we start by finding her walking speed on the beach and sidewalk. Let's denote Mia's speed on the beach as \( v \) kilometers per hour. Since she walks 12 kilometers on the beach and spends 60 minutes (or 1 hour) to do so, her walking speed on the beach is:
+
+\[
+v = \frac{12 \text{ km}}{1 \text{ hour}} = 12 \text{ km/h}
+\]
+
+Given that Mia's walking speed on the sidewalk is twice her speed on the beach, her speed on the sidewalk is:
+
+\[
+2v = 2 \times 12 \text{ km/h} = 24 \text{ km/h}
+\]
+
+Next, we calculate the time she spends walking the 12 kilometers on the sidewalk at a speed of 24 km/h:
+
+\[
+\text{Time on sidewalk} = \frac{12 \text{ km}}{24 \text{ km/h}} = 0.5 \text{ hours}
+\]
+
+Convert this time from hours into minutes:
+
+\[
+0.5 \text{ hours} = 30 \text{ minutes}
+\]
+
+Finally, add the time spent on the beach and the time spent on the sidewalk to find the total time for the entire 24-kilometer walk:
+
+\[
+\text{Total time} = 60 \text{ minutes} + 30 \text{ minutes} = 90 \text{ minutes}
+\]
+
+Thus, it takes Mia a total of \(\boxed{90}\) minutes to finish her 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium
+GSM_014,W1,openai/gpt-4o,"To determine the percentage of the worker's daily hours used for cleaning floors, we first need to calculate how many floors the worker cleans each day and how much time is spent cleaning.
+
+1. **Total time available per day:**
+   The worker has 10 hours per day, which equates to:
+   \[
+   10 \text{ hours/day} \times 60 \text{ minutes/hour} = 600 \text{ minutes/day}
+   \]
+
+2. **Time required to clean one floor:**
+   Cleaning each floor takes 20 minutes.
+
+3. **Total floors to clean:**
+   The university has a total of 210 floors.
+
+4. **Time required to clean all floors:**
+   Cleaning all 210 floors requires:
+   \[
+   210 \text{ floors} \times 20 \text{ minutes/floor} = 4200 \text{ minutes}
+   \]
+
+5. **Daily workload:**
+   The worker has 10 days to complete the task, so each day, he needs to clean:
+   \[
+   \frac{210 \text{ floors}}{10 \text{ days}} = 21 \text{ floors/day}
+   \]
+
+6. **Time spent cleaning per day:**
+   To clean 21 floors, the worker spends:
+   \[
+   21 \text{ floors/day} \times 20 \text{ minutes/floor} = 420 \text{ minutes/day}
+   \]
+
+7. **Percentage of daily work hours spent cleaning:**
+   The percentage of the worker's daily hours used for cleaning is:
+   \[
+   \frac{420 \text{ minutes/day}}{600 \text{ minutes/day}} \times 100\% = 70\%
+   \]
+
+Therefore, on average, 70% of the worker's daily hours are spent cleaning floors.",True,70,arithmetic_reasoning,medium,medium
+GSM_015,W1,openai/gpt-4o,"To calculate Viktor's total revenue, we start by rounding each price to the nearest dollar and then multiply by the number of bundles sold for each type of flower.
+
+1. **Tulips**: The usual price is Û2.25, which rounds to Û2. 
+   - Viktor sells 12 bundles: 
+     \[
+     12 \times 2 = 24 \text{ Û}
+     \]
+
+2. **Roses**: The usual price is Û5.13, which rounds to Û5. 
+   - Viktor sells 29 bundles:
+     \[
+     29 \times 5 = 145 \text{ Û}
+     \]
+
+3. **Sunflowers**: The usual price is Û5.47, which rounds to Û5.
+   - Viktor sells 37 bundles:
+     \[
+     37 \times 5 = 185 \text{ Û}
+     \]
+
+Finally, we find Viktor's total revenue by adding the revenues from each type of flower:
+\[
+24 + 145 + 185 = 354 \text{ Û}
+\]
+
+Therefore, Viktor's total revenue for the day is 354 Û.",True,354,arithmetic_reasoning,medium,hard
+GSM_016,W1,openai/gpt-4o,"To determine the number of trips required to move all the items, we need to calculate the total weight of the items and divide that by the total capacity of the trucks.
+
+1. **Wheat**: 
+   \[
+   6 \text{ boxes} \times 4 \text{ pounds/box} = 24 \text{ pounds}
+   \]
+
+2. **Cucumbers**: 
+   \[
+   12 \text{ bags} \times 5 \text{ pounds/bag} = 60 \text{ pounds}
+   \]
+
+3. **Apples**: 
+   \[
+   32 \text{ packs} \times 43 \text{ pounds/pack} = 1,376 \text{ pounds}
+   \]
+
+4. **Corns**: 
+   \[
+   18 \text{ sacks} \times 15 \text{ pounds/sack} = 270 \text{ pounds}
+   \]
+
+5. **Grocery**: 
+   \[
+   43 \text{ pounds}
+   \]
+
+6. **Tools**: 
+   \[
+   27 \text{ pounds}
+   \]
+
+Next, we calculate the total weight of all the items:
+
+\[
+24 + 60 + 1,376 + 270 + 43 + 27 = 1,800 \text{ pounds}
+\]
+
+Each truck holds 120 pounds, and there are three trucks, so the total capacity per trip is:
+
+\[
+3 \text{ trucks} \times 120 \text{ pounds/truck} = 360 \text{ pounds/trip}
+\]
+
+Now, we divide the total weight by the capacity per trip to determine the number of trips:
+
+\[
+\frac{1,800 \text{ pounds}}{360 \text{ pounds/trip}} = 5 \text{ trips}
+\]
+
+Thus, the farmer will need \( \boxed{5} \) trips to move all the items.",True,5,arithmetic_reasoning,medium,hard
+GSM_017,W1,openai/gpt-4o,"To find Liam's average daily earnings, we need to first determine the total number of boxes sold on each day, calculate the earnings for each day, and then find the average.
+
+**Friday's Sales:**
+- Cookies: 25 boxes
+- Let the number of orange pie boxes sold on Friday be \( x \).
+- Number of orange pies sold on Saturday was \( x + 13 \), and we know from the problem statement he sold 22 boxes of orange pies on Saturday.
+- Therefore, \( x + 13 = 22 \) implies \( x = 22 - 13 = 9 \) orange pie boxes on Friday.
+
+**Saturday's Sales:**
+- Cookies: \( 25 + 11 = 36 \) boxes of cookies
+- Orange pies: 22 boxes (given)
+
+**Total Sales until Saturday:**
+- Total cookies = 25 (Friday) + 36 (Saturday) = 61 boxes
+- Total orange pies = 9 (Friday) + 22 (Saturday) = 31 boxes
+
+**Sunday's Sales:**
+- Total sales on Sunday = combined sales of Friday and Saturday.
+- Sunday sales = 61 cookies + 31 orange pies = 92 boxes in total.
+
+**Calculating Earnings:**
+- Cookie price: \( £12 \) per box
+- Orange pie price: \( £21 \) per box
+
+**Friday Earnings:**
+- Cookies: \( 25 \times 12 = £300 \)
+- Orange pies: \( 9 \times 21 = £189 \)
+- Total for Friday = £300 + £189 = £489
+
+**Saturday Earnings:**
+- Cookies: \( 36 \times 12 = £432 \)
+- Orange pies: \( 22 \times 21 = £462 \)
+- Total for Saturday = £432 + £462 = £894
+
+**Sunday Earnings:**
+- Total on Friday and Saturday was \( 61 \times 12 + 31 \times 21 = £732 + £651 = £1383 \)
+
+**Total Earnings:**
+- Total across all three days = £489 (Friday) + £894 (Saturday) + £1383 (Sunday) = £2766
+
+**Average Daily Earnings:**
+Average earnings = Total earnings / Number of days = \( £2766 / 3 = £922 \).
+
+Therefore, Liam's average daily earnings were £922.",True,922,arithmetic_reasoning,medium,hard
+GSM_018,W1,openai/gpt-4o,"To determine how many points Emma is certain to score, we first need to calculate the number of questions in each subject category based on the given percentages. Then, we calculate how many of those questions Emma is expected to answer correctly.
+
+1. **Physics Questions**:
+   \[
+   \text{Number of Physics questions} = 25\% \times 80 = 0.25 \times 80 = 20
+   \]
+   Emma is expected to correctly answer \(10\%\) of these:
+   \[
+   \text{Correct Physics answers} = 10\% \times 20 = 0.1 \times 20 = 2
+   \]
+
+2. **Algebra Questions**:
+   \[
+   \text{Number of Algebra questions} = 15\% \times 80 = 0.15 \times 80 = 12
+   \]
+   Emma is expected to correctly answer \(25\%\) of these:
+   \[
+   \text{Correct Algebra answers} = 25\% \times 12 = 0.25 \times 12 = 3
+   \]
+
+3. **Remaining Questions**:
+   The remaining questions are divided equally between Chemistry and History. First, calculate the remaining number of questions:
+   \[
+   \text{Total answered so far} = 20 + 12 = 32
+   \]
+   \[
+   \text{Remaining questions} = 80 - 32 = 48
+   \]
+
+   The questions are divided equally between Chemistry and History:
+   \[
+   \text{Number of Chemistry questions} = \frac{48}{2} = 24
+   \]
+   \[
+   \text{Number of History questions} = \frac{48}{2} = 24
+   \]
+
+   Emma is expected to correctly answer \( \frac{1}{3} \) of the Chemistry questions:
+   \[
+   \text{Correct Chemistry answers} = \frac{1}{3} \times 24 = 8
+   \]
+
+   Similarly, for History:
+   \[
+   \text{Correct History answers} = \frac{1}{3} \times 24 = 8
+   \]
+
+4. **Total Correct Answers**:
+   Sum up all the correct answers for each subject:
+   \[
+   \text{Total Correct Answers} = 2 \, (\text{Physics}) + 3 \, (\text{Algebra}) + 8 \, (\text{Chemistry}) + 8 \, (\text{History}) = 21
+   \]
+
+Thus, Emma is certain to score a total of \(\boxed{21}\) points.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,W1,openai/gpt-4o,"First, calculate the total screen time for each day except Sunday, and then find out the remaining time for Sunday.
+
+1. **Friday and Saturday**: 
+   - 3-hour episode each day
+   - Total for Friday and Saturday: \(3 + 3 = 6\) hours
+
+2. **Monday**:
+   - 4-hour episode + 15-minute show
+   - Total: \(4 + 0.25 = 4.25\) hours
+
+3. **Tuesday**:
+   - Four 2-hour episodes
+   - Total: \(4 \times 2 = 8\) hours
+
+4. **Wednesday**:
+   - Three 30-minute episodes
+   - Total: \(3 \times 0.5 = 1.5\) hours
+
+Now, sum these amounts:
+
+\[ 
+6 + 4.25 + 8 + 1.5 = 19.75 \text{ hours}
+\]
+
+Tariq's total screen time for the week is 22 hours, so screen time on Sunday is:
+
+\[ 
+22 - 19.75 = 2.25 \text{ hours}
+\]
+
+He watches 45-minute episodes on Sunday. Convert 2.25 hours to minutes:
+
+\[ 
+2.25 \times 60 = 135 \text{ minutes}
+\]
+
+Now, divide 135 minutes by the duration of each episode to find the number of episodes:
+
+\[ 
+\frac{135}{45} = 3
+\]
+
+Therefore, Tariq watched \(\boxed{3}\) episodes of the 45-minute show on Sunday.",False,3,arithmetic_reasoning,medium,hard
+GSM_020,W1,openai/gpt-4o,"To determine how many of the hidden eggs remain in the yard, let's calculate how many eggs were found by each participant and then add them up.
+
+Here's the breakdown:
+
+1. **Number of eggs Zahra hid:**
+   \[
+   10 \text{ dozen eggs} = 10 \times 12 = 120 \text{ eggs}
+   \]
+
+2. **Eggs found by Ava:**
+   \[
+   3 \text{ eggs}
+   \]
+
+3. **Eggs found by Quinn:**
+   \[
+   6 \times 3 = 18 \text{ eggs}
+   \]
+
+4. **Eggs found by Sophia:**
+   \[
+   18 - 3 = 15 \text{ eggs}
+   \]
+
+5. **Eggs found by Esteban:**
+   \[
+   \frac{1}{5} \times 15 = 3 \text{ eggs}
+   \]
+
+6. **Eggs found by Fatima:**
+   - First, calculate the total eggs found by Quinn and Ava:
+     \[
+     18 + 3 = 21 \text{ eggs}
+     \]
+   - Then, calculate 3 dozen more than this total:
+     \[
+     3 \times 12 = 36 \text{ eggs}
+     \]
+   - Eggs found by Fatima:
+     \[
+     21 + 36 = 57 \text{ eggs}
+     \]
+
+Now, let's find the total number of eggs discovered by all individuals:
+\[
+3 (\text{Ava}) + 18 (\text{Quinn}) + 15 (\text{Sophia}) + 3 (\text{Esteban}) + 57 (\text{Fatima}) = 96 \text{ eggs}
+\]
+
+Finally, determine how many eggs remain in the yard:
+\[
+120 - 96 = 24 \text{ eggs}
+\]
+
+Thus, 24 eggs remain hidden in the yard.",True,24,arithmetic_reasoning,medium,hard
+GSM_021,W1,openai/gpt-4o,"To determine how long it takes for the fog bank to fully cover the city, we note that the city stretches 77 miles from the oceanfront to its inland edge, and the fog bank moves at a rate of 77 miles every 50 minutes.
+
+Since the city is 77 miles wide and the fog bank covers that distance at the same rate of 77 miles per 50 minutes, it will take exactly 50 minutes for the fog bank to cover the entire city.",True,50,arithmetic_reasoning,high,easy
+GSM_022,W1,openai/gpt-4o,"To solve the problem of determining how many teaspoons of sugar Sofia used, we start by understanding the ratio of sugar to water, which is given as 97:37. This means for every 97 units of sugar, there are 37 units of water.
+
+First, let's add the parts of the ratio to find how many total parts there are:
+\[ 97 + 37 = 134 \]
+
+This tells us that in every 134 total parts, 97 parts are sugar and 37 parts are water.
+
+Next, we set up a proportion to determine how many parts of sugar are in the 1474 units combined:
+\[ \frac{97}{134} = \frac{x}{1474} \]
+
+In this equation, \( x \) represents the units of sugar. To solve for \( x \), we cross-multiply:
+\[ 97 \times 1474 = 134 \times x \]
+
+Calculate \( 97 \times 1474 \):
+\[ 97 \times 1474 = 142978 \]
+
+Now, divide both sides by 134 to solve for \( x \):
+\[ x = \frac{142978}{134} \]
+
+Calculate the result:
+\[ x = 1067 \]
+
+Thus, Sofia used \( \boxed{1067} \) teaspoons of sugar.",True,1067,arithmetic_reasoning,high,easy
+GSM_023,W1,openai/gpt-4o,"To find out how many minutes Ibrahim must exercise on Tuesday, we first need to calculate the total time he exercised on Sunday and Monday. 
+
+1. Add the time spent on Sunday and Monday:
+   \[
+   23 \text{ minutes (Sunday)} + 55 \text{ minutes (Monday)} = 78 \text{ minutes}
+   \]
+
+2. Determine the total time Ibrahim plans to exercise on Tuesday, which is seven times the total of Sunday and Monday:
+   \[
+   7 \times 78 = 546 \text{ minutes}
+   \]
+
+Therefore, Ibrahim must exercise for 546 minutes on Tuesday to meet his goal.",True,546,arithmetic_reasoning,high,easy
+GSM_024,W1,openai/gpt-4o,"To solve this, we first calculate the probability of each event:
+
+1. **Rolling a number greater than 2:** 
+   - The possible outcomes on a 4-sided die are 1, 2, 3, and 4.
+   - The numbers greater than 2 are 3 and 4.
+   - Therefore, the probability of rolling a number greater than 2 is:
+     \[
+     P(\text{rolling a number > 2}) = \frac{2}{4} = \frac{1}{2}
+     \]
+
+2. **Rolling two odd numbers in a row:**
+   - The odd numbers on the die are 1 and 3.
+   - The probability of rolling an odd number in one roll is:
+     \[
+     P(\text{rolling an odd number}) = \frac{2}{4} = \frac{1}{2}
+     \]
+   - To roll two odd numbers in a row, Luis needs to roll an odd number twice consecutively:
+     \[
+     P(\text{rolling two odd numbers in a row}) = P(\text{odd}) \times P(\text{odd}) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}
+     \]
+
+Now, we find out by what percentage rolling a number greater than 2 is more likely than rolling two odd numbers in a row. We use the formula for percentage increase:
+
+\[
+\text{Percentage increase} = \left( \frac{\text{Probability difference}}{\text{Probability of two odd numbers}} \right) \times 100
+\]
+
+The probability difference is:
+\[
+\frac{1}{2} - \frac{1}{4} = \frac{2}{4} - \frac{1}{4} = \frac{1}{4}
+\]
+
+Thus, the percentage increase is:
+\[
+\text{Percentage increase} = \left( \frac{\frac{1}{4}}{\frac{1}{4}} \right) \times 100 = 1 \times 100 = 100\%
+\]
+
+Therefore, rolling a number greater than 2 is 100% more likely than rolling two odd numbers in a row.",False,25,arithmetic_reasoning,high,easy
+GSM_025,W1,openai/gpt-4o,"First, let's convert the length of each remora from inches to feet since the whale's length is given in feet. There are 12 inches in a foot, so each remora is:
+
+\[ 
+\frac{72 \text{ inches}}{12 \text{ inches/foot}} = 6 \text{ feet}
+\]
+
+Since there are 7 remoras, their total length in feet is:
+
+\[ 
+7 \times 6 \text{ feet} = 42 \text{ feet}
+\]
+
+Now, we can calculate the percentage of the whale's total body length that is accounted for by all the remoras:
+
+First, find the total combined length of the whale and the remoras:
+
+- The whale alone is 210 feet in length.
+
+Now calculate the proportion of the remoras' combined length to the whale's length:
+
+\[
+\frac{42 \text{ feet (remoras)}}{210 \text{ feet (whale)}} \times 100\% = 20\%
+\]
+
+Thus, all the remoras account for 20% of the whale's total body length.",True,20,arithmetic_reasoning,high,easy
+GSM_026,W1,openai/gpt-4o,"First, we calculate the number of pieces Elena completed from the 315-piece puzzle. Since she completed one-third of it, we divide 315 by 3:
+
+\[
+\frac{315}{3} = 105
+\]
+
+So, Elena placed 105 pieces of the 315-piece puzzle.
+
+Next, she completed the entire 481-piece puzzle, which means she placed 481 pieces from this puzzle.
+
+To find the total number of pieces placed in that hour, we add the pieces from both puzzles:
+
+\[
+105 + 481 = 586
+\]
+
+Therefore, Elena placed a total of 586 puzzle pieces during that hour.",True,586,arithmetic_reasoning,high,easy
+GSM_027,W1,openai/gpt-4o,"To find the percentage of puppies that have spots from both Jasmine's and Priya's dogs combined, we need to calculate the total number of puppies and the total number of spotted puppies.
+
+First, calculate the total number of puppies:
+- Jasmine's dog has 1000 puppies.
+- Priya's dog has 640 puppies.
+- Combined, they have \(1000 + 640 = 1640\) puppies.
+
+Next, calculate the total number of spotted puppies:
+- Jasmine's dog has 270 spotted puppies.
+- Priya's dog has 140 spotted puppies.
+- Combined, they have \(270 + 140 = 410\) spotted puppies.
+
+Now, calculate the percentage of spotted puppies out of the total:
+\[
+\text{Percentage of spotted puppies} = \left(\frac{410}{1640}\right) \times 100
+\]
+
+Calculate the fraction:
+\[
+\frac{410}{1640} = 0.25
+\]
+
+Convert this to a percentage:
+\[
+0.25 \times 100 = 25\%
+\]
+
+So, 25% of the puppies combined have spots.",True,25,arithmetic_reasoning,high,easy
+GSM_028,W1,openai/gpt-4o,"If Mateo is 35 years old and he is the younger of the two, then Santiago must be 10 years older. This means Santiago is \(35 + 10 = 45\) years old.
+
+To find the average of their ages, you can add both ages together and then divide by 2:
+
+\[
+\text{Average age} = \frac{35 + 45}{2} = \frac{80}{2} = 40
+\]
+
+Therefore, the average of their ages is 40 years.",True,40,arithmetic_reasoning,high,easy
+GSM_029,W1,openai/gpt-4o,"To determine how many emails Sanjay responds to over a 6-day work week, we first need to calculate the number of emails he responds to in one day.
+
+1. Sanjay receives 150 emails each day, and 32% of them need no reply. Therefore, 68% of the emails require a response.
+
+2. Calculate the number of emails that need a response each day:
+   \[
+   150 \times 0.68 = 102
+   \]
+   So, Sanjay responds to 102 emails each day.
+
+3. To find out how many emails he responds to over a 6-day work week, multiply the number of emails he responds to daily by 6:
+   \[
+   102 \times 6 = 612
+   \]
+
+Therefore, Sanjay responds to 612 emails over a 6-day work week.",False,612,arithmetic_reasoning,high,easy
+GSM_030,W1,openai/gpt-4o,"To find how many more minutes it takes to ride the biggest slide than the second biggest slide, we first need to calculate the time it takes to ride each slide.
+
+For the largest slide: 
+- Length: 330 meters
+- Sliding speed: 55 meters per minute
+
+Time to ride the largest slide:
+
+\[
+\text{Time} = \frac{\text{Length}}{\text{Speed}} = \frac{330 \text{ meters}}{55 \text{ meters per minute}} = 6 \text{ minutes}
+\]
+
+For the second largest slide:
+- Length: 240 meters
+- Sliding speed: 80 meters per minute
+
+Time to ride the second largest slide:
+
+\[
+\text{Time} = \frac{240 \text{ meters}}{80 \text{ meters per minute}} = 3 \text{ minutes}
+\]
+
+Now, compute the difference in time:
+
+\[
+\text{Difference} = 6 \text{ minutes} - 3 \text{ minutes} = 3 \text{ minutes}
+\]
+
+Therefore, it takes 3 more minutes to ride the biggest slide than the second biggest slide.",True,3,arithmetic_reasoning,high,easy
+GSM_031,W1,openai/gpt-4o,"To find the total number of kiwi slices Yara, her sister, and her cousin ate, we can follow these steps:
+
+1. Yara ate 4 slices.
+
+2. Her sister ate 6 more slices than Yara:
+   \[
+   \text{Sister's slices} = 4 + 6 = 10
+   \]
+
+3. Her cousin ate 3 more slices than the sister:
+   \[
+   \text{Cousin's slices} = 10 + 3 = 13
+   \]
+
+Now, add up the number of slices they all ate:
+\[
+\text{Total slices eaten} = 4 + 10 + 13 = 27
+\]
+
+Therefore, the three of them ate a total of 27 kiwi slices.",True,27,arithmetic_reasoning,high,easy
+GSM_032,W1,openai/gpt-4o,"To find the perimeter of Diego's rectangular kitchen, we first need to determine its dimensions. We are given that the total area is 390 square meters and the length is 5 meters.
+
+The area \( A \) of a rectangle is calculated as:
+
+\[
+A = \text{length} \times \text{width}
+\]
+
+Substituting the given values, we have:
+
+\[
+390 = 5 \times \text{width}
+\]
+
+Solving for the width, we divide both sides by 5:
+
+\[
+\text{width} = \frac{390}{5} = 78 \text{ meters}
+\]
+
+Now that we have both the length and the width of the kitchen, we can calculate the perimeter \( P \), which is given by:
+
+\[
+P = 2 \times (\text{length} + \text{width})
+\]
+
+Substituting the known values:
+
+\[
+P = 2 \times (5 + 78) = 2 \times 83 = 166 \text{ meters}
+\]
+
+Therefore, the perimeter of the kitchen is 166 meters.",True,166,arithmetic_reasoning,high,easy
+GSM_033,W1,openai/gpt-4o,"To calculate Bodhi's total spending, we'll multiply the quantity of each item by its price and then sum these amounts.
+
+1. Rulers: 
+   - Quantity: 22
+   - Price per ruler: ¥4.5
+   - Total cost for rulers: \( 22 \times 4.5 = ¥99 \)
+
+2. Colored pencils:
+   - Quantity: 8
+   - Price per colored pencil: ¥14.0
+   - Total cost for colored pencils: \( 8 \times 14.0 = ¥112 \)
+
+3. Bond paper:
+   - Total cost for bond paper: ¥22
+
+Now, add the costs of all items:
+\[ ¥99 + ¥112 + ¥22 = ¥233 \]
+
+Bodhi's total spending was ¥233.",True,233,arithmetic_reasoning,high,easy
+GSM_034,W1,openai/gpt-4o,"Leilani's thesis is supposed to be 160 pages long. She has completed one-fifth of it so far. To find out how many pages she has completed, calculate one-fifth of 160:
+
+\[ \frac{1}{5} \times 160 = 32 \]
+
+So, Leilani has completed 32 pages. To find out how many pages remain for her to write, subtract the number of pages she has completed from the total number of pages:
+
+\[ 160 - 32 = 128 \]
+
+Therefore, Leilani still needs to write 128 pages.",True,128,arithmetic_reasoning,high,easy
+GSM_035,W1,openai/gpt-4o,"To find the percentage of all Aisha's spools that are white, we first need to calculate the total number of spools and the total number of white spools.
+
+Aisha has:
+- 47 light white spools 
+- 73 dark white spools 
+- 32 light brown spools 
+- 88 dark brown spools
+
+First, we calculate the total number of spools:
+
+\[ 
+47 + 73 + 32 + 88 = 240 
+\]
+
+Next, we calculate the total number of white spools:
+
+\[
+47 + 73 = 120 
+\]
+
+Now, we find the percentage of white spools out of the total number of spools:
+
+\[ 
+\frac{120}{240} \times 100\% = 50\% 
+\]
+
+Therefore, 50% of all her spools are white.",True,50,arithmetic_reasoning,high,easy
+GSM_036,W1,openai/gpt-4o,"To find out how many fourth-grade boys were present at Pine Valley School on Thursday, we can follow these steps:
+
+1. Calculate the total number of boys in the fourth grade.
+2. Determine the number of boys absent on Thursday.
+3. Find out how many boys were present by subtracting the absent boys from the total number of boys.
+
+Firstly, the total number of fourth-graders is 172. Out of these, 83 are girls. Therefore, the number of boys is:
+
+\[ 
+172 - 83 = 89 \text{ boys}
+\]
+
+Next, it is stated that 4 boys were absent on Thursday. To find the number of boys present, subtract the number of boys absent from the total number of boys:
+
+\[ 
+89 - 4 = 85 \text{ boys}
+\]
+
+Therefore, 85 fourth-grade boys were present at school on Thursday.",True,85,arithmetic_reasoning,high,easy
+GSM_037,W1,openai/gpt-4o,"Let's denote the amount of fencing Kai receives as \( x \) yards. According to the problem, Mateo receives 100 yards more than Kai. Therefore, the amount of fencing Mateo receives can be expressed as \( x + 100 \) yards.
+
+Together, the total fencing is 860 yards. So, we can set up the equation:
+
+\[
+x + (x + 100) = 860
+\]
+
+Simplifying the equation, we have:
+
+\[
+2x + 100 = 860
+\]
+
+Subtract 100 from both sides:
+
+\[
+2x = 760
+\]
+
+Now, divide both sides by 2 to solve for \( x \):
+
+\[
+x = 380
+\]
+
+Therefore, Kai receives 380 yards of fencing.",True,380,arithmetic_reasoning,high,medium
+GSM_038,W1,openai/gpt-4o,"To determine how many crackers will be left over after filling all the trays, we need to perform the division of the total number of crackers by the maximum capacity of all the trays.
+
+First, calculate the total capacity of the 7 trays:
+
+\[ 
+7 \text{ trays} \times 28 \text{ crackers/tray} = 196 \text{ crackers} 
+\]
+
+Since Ravi has 252 crackers, fill the trays with 196 crackers. Subtract the total capacity of the trays from the total number of crackers to find the number left over:
+
+\[
+252 \text{ crackers} - 196 \text{ crackers} = 56 \text{ crackers}
+\]
+
+Thus, 56 crackers will be left over after all the trays are filled.",True,56,arithmetic_reasoning,high,easy
+GSM_039,W1,openai/gpt-4o,"To solve the problem, let's first define what we know and what we need to find out.
+
+1. Pavel is currently 13 years old.
+2. Three years from now, Valentina will be three times Pavel's current age.
+
+Pavel's current age is 13. Three times his current age is:
+\[ 3 \times 13 = 39. \]
+
+This means that in three years, Valentina's age will be 39.
+
+Let's denote Valentina's current age as \( V \).
+
+In three years, Valentina will be:
+\[ V + 3. \]
+
+According to the problem, this age equals 39:
+\[ V + 3 = 39. \]
+
+To find Valentina's current age \( V \), we solve the equation:
+\[ V + 3 = 39 \]
+\[ V = 39 - 3 \]
+\[ V = 36. \]
+
+Therefore, Valentina is 36 years old today.",True,36,arithmetic_reasoning,high,easy
+GSM_040,W1,openai/gpt-4o,"To find out how long it will take Kayla to peel and sauté 120 mushrooms in total, we'll break down the process into peeling and sautéing phases.
+
+1. **Peeling:**
+   - Kayla peels mushrooms at a rate of 6 mushrooms per minute.
+   - To peel 120 mushrooms, the time taken is calculated as follows:
+     \[
+     \text{Time to peel} = \frac{120 \text{ mushrooms}}{6 \text{ mushrooms/minute}} = 20 \text{ minutes}
+     \]
+
+2. **Sautéing:**
+   - Kayla can sauté 40 mushrooms in 17 minutes.
+   - To sauté 120 mushrooms, which is 3 batches of 40 mushrooms each (since \(120 \div 40 = 3\)), the time taken is:
+     \[
+     \text{Time to sauté} = 3 \times 17 \text{ minutes} = 51 \text{ minutes}
+     \]
+
+3. **Total Time:**
+   - The total time to peel and sauté 120 mushrooms is the sum of the time taken for each phase:
+     \[
+     \text{Total time} = 20 \text{ minutes (peeling)} + 51 \text{ minutes (sautéing)} = 71 \text{ minutes}
+     \]
+
+Therefore, it will take Kayla a total of 71 minutes to peel and sauté 120 mushrooms.",False,71,arithmetic_reasoning,high,medium
+GSM_001,W2,openai/gpt-4o,46.3,False,51,arithmetic_reasoning,high,medium
+GSM_002,W2,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,W2,openai/gpt-4o,105,False,150,arithmetic_reasoning,high,medium
+GSM_004,W2,openai/gpt-4o,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,W2,openai/gpt-4o,56,False,54,arithmetic_reasoning,high,hard
+GSM_006,W2,openai/gpt-4o,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,W2,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,W2,openai/gpt-4o,400,False,1024,arithmetic_reasoning,high,medium
+GSM_009,W2,openai/gpt-4o,54,False,49,arithmetic_reasoning,high,medium
+GSM_010,W2,openai/gpt-4o,420,False,885,arithmetic_reasoning,medium,medium
+GSM_011,W2,openai/gpt-4o,208,False,86,arithmetic_reasoning,medium,medium
+GSM_012,W2,openai/gpt-4o,73,False,81,arithmetic_reasoning,medium,medium
+GSM_013,W2,openai/gpt-4o,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,W2,openai/gpt-4o,70,True,70,arithmetic_reasoning,medium,medium
+GSM_015,W2,openai/gpt-4o,393,False,354,arithmetic_reasoning,medium,hard
+GSM_016,W2,openai/gpt-4o,14,False,5,arithmetic_reasoning,medium,hard
+GSM_017,W2,openai/gpt-4o,1617,False,922,arithmetic_reasoning,medium,hard
+GSM_018,W2,openai/gpt-4o,10,False,21,arithmetic_reasoning,medium,hard
+GSM_019,W2,openai/gpt-4o,4,False,3,arithmetic_reasoning,medium,hard
+GSM_020,W2,openai/gpt-4o,9,False,24,arithmetic_reasoning,medium,hard
+GSM_021,W2,openai/gpt-4o,50,True,50,arithmetic_reasoning,high,easy
+GSM_022,W2,openai/gpt-4o,1054,False,1067,arithmetic_reasoning,high,easy
+GSM_023,W2,openai/gpt-4o,546,True,546,arithmetic_reasoning,high,easy
+GSM_024,W2,openai/gpt-4o,25,True,25,arithmetic_reasoning,high,easy
+GSM_025,W2,openai/gpt-4o,20,True,20,arithmetic_reasoning,high,easy
+GSM_026,W2,openai/gpt-4o,586,True,586,arithmetic_reasoning,high,easy
+GSM_027,W2,openai/gpt-4o,23.67,False,25,arithmetic_reasoning,high,easy
+GSM_028,W2,openai/gpt-4o,40,True,40,arithmetic_reasoning,high,easy
+GSM_029,W2,openai/gpt-4o,612,True,612,arithmetic_reasoning,high,easy
+GSM_030,W2,openai/gpt-4o,1,False,3,arithmetic_reasoning,high,easy
+GSM_031,W2,openai/gpt-4o,50,False,27,arithmetic_reasoning,high,easy
+GSM_032,W2,openai/gpt-4o,"""166""",True,166,arithmetic_reasoning,high,easy
+GSM_033,W2,openai/gpt-4o,204,False,233,arithmetic_reasoning,high,easy
+GSM_034,W2,openai/gpt-4o,128,True,128,arithmetic_reasoning,high,easy
+GSM_035,W2,openai/gpt-4o,44.31,False,50,arithmetic_reasoning,high,easy
+GSM_036,W2,openai/gpt-4o,82,False,85,arithmetic_reasoning,high,easy
+GSM_037,W2,openai/gpt-4o,"""380""",True,380,arithmetic_reasoning,high,medium
+GSM_038,W2,openai/gpt-4o,4,False,56,arithmetic_reasoning,high,easy
+GSM_039,W2,openai/gpt-4o,36,True,36,arithmetic_reasoning,high,easy
+GSM_040,W2,openai/gpt-4o,64,False,71,arithmetic_reasoning,high,medium
+GSM_001,W3,openai/gpt-4o,55.8,False,51,arithmetic_reasoning,high,medium
+GSM_002,W3,openai/gpt-4o,45,False,30,arithmetic_reasoning,high,easy
+GSM_003,W3,openai/gpt-4o,135,False,150,arithmetic_reasoning,high,medium
+GSM_004,W3,openai/gpt-4o,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,W3,openai/gpt-4o,63,False,54,arithmetic_reasoning,high,hard
+GSM_006,W3,openai/gpt-4o,546,True,546,arithmetic_reasoning,high,medium
+GSM_007,W3,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,W3,openai/gpt-4o,112,False,1024,arithmetic_reasoning,high,medium
+GSM_009,W3,openai/gpt-4o,54,False,49,arithmetic_reasoning,high,medium
+GSM_010,W3,openai/gpt-4o,690,False,885,arithmetic_reasoning,medium,medium
+GSM_011,W3,openai/gpt-4o,71,False,86,arithmetic_reasoning,medium,medium
+GSM_012,W3,openai/gpt-4o,58,False,81,arithmetic_reasoning,medium,medium
+GSM_013,W3,openai/gpt-4o,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,W3,openai/gpt-4o,33.33,False,70,arithmetic_reasoning,medium,medium
+GSM_015,W3,openai/gpt-4o,372,False,354,arithmetic_reasoning,medium,hard
+GSM_016,W3,openai/gpt-4o,10,False,5,arithmetic_reasoning,medium,hard
+GSM_017,W3,openai/gpt-4o,1519,False,922,arithmetic_reasoning,medium,hard
+GSM_018,W3,openai/gpt-4o,"To find out how many points in total Jordan is certain to score, we start by determining the number of questions from each subject and then calculate the number of correct answers Jordan can predictably achieve for each subject.
+
+First, calculate the number of questions per subject:
+
+1. **Biology Questions:**
+   \[
+   \text{Number of Biology Questions} = 25\% \times 80 = 0.25 \times 80 = 20
+   \]
+
+2. **Geometry Questions:**
+   \[
+   \text{Number of Geometry Questions} = 15\% \times 80 = 0.15 \times 80 = 12
+   \]
+
+3. **Remaining Questions:**
+   \[
+   \text{Remaining Questions} = 80 - 20 - 12 = 48
+   \]
+
+These remaining questions are divided equally between Economics and Geography:
+
+4. **Economics and Geography Questions:**
+   \[
+   \text{Number of Economics Questions} = \text{Number of Geography Questions} = \frac{48}{2} = 24
+   \]
+
+Next, calculate the number of correct answers for each subject based on Jordan's expected performance:
+
+1. **Correct Biology Answers:**
+   \[
+   \text{Correct Biology Answers} = 10\% \times 20 = 0.10 \times 20 = 2
+   \]
+
+2. **Correct Geometry Answers:**
+   \[
+   \text{Correct Geometry Answers} = 25\% \times 12 = 0.25 \times 12 = 3
+   \]
+
+3. **Correct Economics Answers:**
+   \[
+   \text{Correct Economics Answers} = \frac{1}{3} \times 24 = 8
+   \]
+
+4. **Correct Geography Answers:**
+   \[
+   \text{Correct Geography Answers} = \frac{1}{3} \times 24 = 8
+   \]
+
+Add all these correct answers to determine the total score:
+
+\[
+\text{Total Score} = 2 + 3 + 8 + 8 = 21
+\]
+
+Thus, Jordan is certain to score \(\boxed{21}\) points in total.",True,21,arithmetic_reasoning,medium,hard
+GSM_019,W3,openai/gpt-4o,3,True,3,arithmetic_reasoning,medium,hard
+GSM_020,W3,openai/gpt-4o,36,False,24,arithmetic_reasoning,medium,hard
+GSM_021,W3,openai/gpt-4o,100,False,50,arithmetic_reasoning,high,easy
+GSM_022,W3,openai/gpt-4o,1036,False,1067,arithmetic_reasoning,high,easy
+GSM_023,W3,openai/gpt-4o,546,True,546,arithmetic_reasoning,high,easy
+GSM_024,W3,openai/gpt-4o,50,False,25,arithmetic_reasoning,high,easy
+GSM_025,W3,openai/gpt-4o,20,True,20,arithmetic_reasoning,high,easy
+GSM_026,W3,openai/gpt-4o,586,True,586,arithmetic_reasoning,high,easy
+GSM_027,W3,openai/gpt-4o,23.7,False,25,arithmetic_reasoning,high,easy
+GSM_028,W3,openai/gpt-4o,40,True,40,arithmetic_reasoning,high,easy
+GSM_029,W3,openai/gpt-4o,612,True,612,arithmetic_reasoning,high,easy
+GSM_030,W3,openai/gpt-4o,1,False,3,arithmetic_reasoning,high,easy
+GSM_031,W3,openai/gpt-4o,31,False,27,arithmetic_reasoning,high,easy
+GSM_032,W3,openai/gpt-4o,88,False,166,arithmetic_reasoning,high,easy
+GSM_033,W3,openai/gpt-4o,172.0,False,233,arithmetic_reasoning,high,easy
+GSM_034,W3,openai/gpt-4o,128,True,128,arithmetic_reasoning,high,easy
+GSM_035,W3,openai/gpt-4o,66,False,50,arithmetic_reasoning,high,easy
+GSM_036,W3,openai/gpt-4o,82,False,85,arithmetic_reasoning,high,easy
+GSM_037,W3,openai/gpt-4o,380,True,380,arithmetic_reasoning,high,medium
+GSM_038,W3,openai/gpt-4o,56,True,56,arithmetic_reasoning,high,easy
+GSM_039,W3,openai/gpt-4o,26,False,36,arithmetic_reasoning,high,easy
+GSM_040,W3,openai/gpt-4o,39,False,71,arithmetic_reasoning,high,medium
+GSM_001,W4,openai/gpt-4o,53.0,False,51,arithmetic_reasoning,high,medium
+GSM_002,W4,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,easy
+GSM_003,W4,openai/gpt-4o,135,False,150,arithmetic_reasoning,high,medium
+GSM_004,W4,openai/gpt-4o,21600,True,21600,arithmetic_reasoning,high,easy
+GSM_005,W4,openai/gpt-4o,44 hours,False,54,arithmetic_reasoning,high,hard
+GSM_006,W4,openai/gpt-4o,423.5,False,546,arithmetic_reasoning,high,medium
+GSM_007,W4,openai/gpt-4o,30,True,30,arithmetic_reasoning,high,hard
+GSM_008,W4,openai/gpt-4o,400,False,1024,arithmetic_reasoning,high,medium
+GSM_009,W4,openai/gpt-4o,63,False,49,arithmetic_reasoning,high,medium
+GSM_010,W4,openai/gpt-4o,870,False,885,arithmetic_reasoning,medium,medium
+GSM_011,W4,openai/gpt-4o,63,False,86,arithmetic_reasoning,medium,medium
+GSM_012,W4,openai/gpt-4o,52,False,81,arithmetic_reasoning,medium,medium
+GSM_013,W4,openai/gpt-4o,90,True,90,arithmetic_reasoning,medium,medium
+GSM_014,W4,openai/gpt-4o,33.33,False,70,arithmetic_reasoning,medium,medium
+GSM_015,W4,openai/gpt-4o,376,False,354,arithmetic_reasoning,medium,hard
+GSM_016,W4,openai/gpt-4o,10,False,5,arithmetic_reasoning,medium,hard
+GSM_017,W4,openai/gpt-4o,434,False,922,arithmetic_reasoning,medium,hard
+GSM_018,W4,openai/gpt-4o,20.,False,21,arithmetic_reasoning,medium,hard
+GSM_019,W4,openai/gpt-4o,2,False,3,arithmetic_reasoning,medium,hard
+GSM_020,W4,openai/gpt-4o,31,False,24,arithmetic_reasoning,medium,hard
+GSM_021,W4,openai/gpt-4o,50,True,50,arithmetic_reasoning,high,easy
+GSM_022,W4,openai/gpt-4o,1102,False,1067,arithmetic_reasoning,high,easy
+GSM_023,W4,openai/gpt-4o,546,True,546,arithmetic_reasoning,high,easy
+GSM_024,W4,openai/gpt-4o,38.75,False,25,arithmetic_reasoning,high,easy
+GSM_025,W4,openai/gpt-4o,2,False,20,arithmetic_reasoning,high,easy
+GSM_026,W4,openai/gpt-4o,586,True,586,arithmetic_reasoning,high,easy
+GSM_027,W4,openai/gpt-4o,25,True,25,arithmetic_reasoning,high,easy
+GSM_028,W4,openai/gpt-4o,40,True,40,arithmetic_reasoning,high,easy
+GSM_029,W4,openai/gpt-4o,612.0,True,612,arithmetic_reasoning,high,easy
+GSM_030,W4,openai/gpt-4o,1.1,False,3,arithmetic_reasoning,high,easy
+GSM_031,W4,openai/gpt-4o,29,False,27,arithmetic_reasoning,high,easy
+GSM_032,W4,openai/gpt-4o,34,False,166,arithmetic_reasoning,high,easy
+GSM_033,W4,openai/gpt-4o,181,False,233,arithmetic_reasoning,high,easy
+GSM_034,W4,openai/gpt-4o,128,True,128,arithmetic_reasoning,high,easy
+GSM_035,W4,openai/gpt-4o,50,True,50,arithmetic_reasoning,high,easy
+GSM_036,W4,openai/gpt-4o,86,False,85,arithmetic_reasoning,high,easy
+GSM_037,W4,openai/gpt-4o,380,True,380,arithmetic_reasoning,high,medium
+GSM_038,W4,openai/gpt-4o,56,True,56,arithmetic_reasoning,high,easy
+GSM_039,W4,openai/gpt-4o,36,True,36,arithmetic_reasoning,high,easy
+GSM_040,W4,openai/gpt-4o,119,False,71,arithmetic_reasoning,high,medium
+GSM_001,W5,openai/gpt-4o,74 minutes,False,86,arithmetic_reasoning,high,medium
+GSM_002,W5,openai/gpt-4o,18,True,18,arithmetic_reasoning,high,easy
+GSM_003,W5,openai/gpt-4o,70,False,75,arithmetic_reasoning,high,medium
+GSM_004,W5,openai/gpt-4o,£150,True,150,arithmetic_reasoning,high,easy
+GSM_005,W5,openai/gpt-4o,7 classes per day.,True,7,arithmetic_reasoning,high,hard
+GSM_006,W5,openai/gpt-4o,€60,False,56,arithmetic_reasoning,high,medium
+GSM_007,W5,openai/gpt-4o,5 hours,False,4,arithmetic_reasoning,high,hard
+GSM_008,W5,openai/gpt-4o,4,False,16,arithmetic_reasoning,high,medium
+GSM_009,W5,openai/gpt-4o,4 eggs per day.,False,5,arithmetic_reasoning,high,medium
+GSM_010,W5,openai/gpt-4o,15,False,60,arithmetic_reasoning,medium,medium
+GSM_011,W5,openai/gpt-4o,331 grams,False,328,arithmetic_reasoning,medium,medium
+GSM_012,W5,openai/gpt-4o,One plant was originally on each ledge.,False,7,arithmetic_reasoning,medium,medium
+GSM_013,W5,openai/gpt-4o,"To calculate the total distance of Mia's walk, we first need to determine her walking speeds on the beach and on the sidewalk, using the information provided.
+
+Mia spends 60 minutes walking on the beach, where she covers a distance of 12 kilometers. This means her speed on the beach is:
+
+\[
+\text{Speed on the beach} = \frac{12 \text{ km}}{60 \text{ min}} = \frac{12}{60} \text{ km/min} = 0.2 \text{ km/min}
+\]
+
+According to the problem, Mia walks at twice this speed on the sidewalk. Therefore, her speed on the sidewalk is:
+
+\[
+\text{Speed on the sidewalk} = 2 \times 0.2 \text{ km/min} = 0.4 \text{ km/min}
+\]
+
+Let \( d \) be the distance in kilometers she covers on the sidewalk. She spends 30 minutes walking on the sidewalk, so we can set up the equation based on her speed and time:
+
+\[
+d = \text{Speed on the sidewalk} \times \text{Time on the sidewalk}
+\]
+
+Substituting in the known values:
+
+\[
+d = 0.4 \text{ km/min} \times 30 \text{ min} = 12 \text{ km}
+\]
+
+Thus, the distance covered on the sidewalk is also 12 kilometers.
+
+Since the problem states that both the beach and sidewalk sections are equal in distance, and we have calculated both to be 12 kilometers each, the total distance she walks on her walk is:
+
+\[
+12 \text{ km (beach)} + 12 \text{ km (sidewalk)} = 24 \text{ km}
+\]
+
+Therefore, the total distance of Mia’s walk is \( \boxed{24} \) kilometers.",True,24,arithmetic_reasoning,medium,medium
+GSM_014,W5,openai/gpt-4o,210 floors,True,210,arithmetic_reasoning,medium,medium
+GSM_015,W5,openai/gpt-4o,11 bundles,False,37,arithmetic_reasoning,medium,hard
+GSM_016,W5,openai/gpt-4o,3 pounds.,False,43,arithmetic_reasoning,medium,hard
+GSM_017,W5,openai/gpt-4o,¥46,False,21,arithmetic_reasoning,medium,hard
+GSM_018,W5,openai/gpt-4o,60,False,80,arithmetic_reasoning,medium,hard
+GSM_019,W5,openai/gpt-4o,26 hours.,False,22,arithmetic_reasoning,medium,hard
+GSM_020,W5,openai/gpt-4o,10 dozen eggs,True,10,arithmetic_reasoning,medium,hard
+GSM_021,W5,openai/gpt-4o,77 miles,True,77,arithmetic_reasoning,high,easy
+GSM_022,W5,openai/gpt-4o,451 cups of water.,False,1474,arithmetic_reasoning,high,easy
+GSM_023,W5,openai/gpt-4o,54,False,55,arithmetic_reasoning,high,easy
+GSM_024,W5,openai/gpt-4o,50%,True,50,arithmetic_reasoning,high,easy
+GSM_025,W5,openai/gpt-4o,14,False,7,arithmetic_reasoning,high,easy
+GSM_026,W5,openai/gpt-4o,315,True,315,arithmetic_reasoning,high,easy
+GSM_027,W5,openai/gpt-4o,90,False,140,arithmetic_reasoning,high,easy
+GSM_028,W5,openai/gpt-4o,35 years old.,True,35,arithmetic_reasoning,high,easy
+GSM_029,W5,openai/gpt-4o,150 emails per day.,True,150,arithmetic_reasoning,high,easy
+GSM_030,W5,openai/gpt-4o,495 meters,False,330,arithmetic_reasoning,high,easy
+GSM_031,W5,openai/gpt-4o,6,False,4,arithmetic_reasoning,high,easy
+GSM_032,W5,openai/gpt-4o,388 square meters.,False,390,arithmetic_reasoning,high,easy
+GSM_033,W5,openai/gpt-4o,¥40,False,22,arithmetic_reasoning,high,easy
+GSM_034,W5,openai/gpt-4o,160 pages,True,160,arithmetic_reasoning,high,easy
+GSM_035,W5,openai/gpt-4o,32,False,88,arithmetic_reasoning,high,easy
+GSM_036,W5,openai/gpt-4o,172,True,172,arithmetic_reasoning,high,easy
+GSM_037,W5,openai/gpt-4o,860 yards,True,860,arithmetic_reasoning,high,medium
+GSM_038,W5,openai/gpt-4o,252 crackers.,True,252,arithmetic_reasoning,high,easy
+GSM_039,W5,openai/gpt-4o,"Valentina is currently 36 years old. In 3 years she will be 39 years old. At that time, her age will be 3 times Pavel's current age. Therefore, Pavel's current age is 13 years old.",True,13,arithmetic_reasoning,high,easy
+GSM_040,W5,openai/gpt-4o,360,False,120,arithmetic_reasoning,high,medium
+GSM_001,w6,openai/gpt-4o,"Let's break down the cost of a 115-minute call by considering the different pricing tiers and apply the 20% discount if applicable.
+
+1. **First 10 minutes:**
+   - Cost per minute: ₺0.9
+   - Total cost for 10 minutes = 10 minutes × ₺0.9/minute = ₺9
+
+2. **Next 25 minutes (from 11th minute to 35th minute):**
+   - Cost per minute: ₺0.6
+   - Total cost for 25 minutes = 25 minutes × ₺0.6/minute = ₺15
+
+3. **Remaining minutes (from 36th minute to 115th minute, totaling 80 minutes):**
+   - Cost per 2 minutes: ₺0.4 (which means ₺0.2 per minute)
+   - Total cost for 80 minutes = 80 minutes × ₺0.2/minute = ₺16
+
+Now, calculate the total bill without discount:
+- Total = Cost for the first 10 minutes + Cost for next 25 minutes + Cost for remaining 80 minutes
+- Total = ₺9 + ₺15 + ₺16 = ₺40
+
+Since the total bill exceeds ₺25, you are eligible for a 20% discount.
+
+4. **Calculate the total cost with the discount:**
+   - Total discount amount = 20% of ₺40 = 0.20 × ₺40 = ₺8
+   - Discounted total = ₺40 - ₺8 = ₺32
+
+Therefore, the total cost of a 115-minute call, after applying the discount, is ₺32.",True,32,arithmetic_reasoning,high,medium
+GSM_002,w6,openai/gpt-4o,"First, calculate the number of boys in the yard. According to the problem, the number of boys is two-sixths the number of girls. 
+
+To find two-sixths of the number of girls:
+\[
+\text{Two-sixths of 39 girls} = \frac{2}{6} \times 39 = \frac{1}{3} \times 39 = 13
+\]
+
+So, there are 13 boys in the yard.
+
+Next, find the total number of kids in the yard by adding the number of girls and boys together:
+\[
+39 (\text{girls}) + 13 (\text{boys}) = 52 \text{ (total kids)}
+\]
+
+Now, calculate the percentage of kids that are girls:
+\[
+\text{Percentage of girls} = \left(\frac{39}{52}\right) \times 100
+\]
+
+Calculate the fraction:
+\[
+\frac{39}{52} = 0.75
+\]
+
+Convert the decimal to a percentage:
+\[
+0.75 \times 100 = 75\%
+\]
+
+Therefore, 75% of the kids in the yard are girls.",True,75,arithmetic_reasoning,high,easy
+GSM_003,w6,openai/gpt-4o,"To solve this problem, we first need to determine the number of cards for each color: purple, green, and black.
+
+1. **Purple Cards**: According to the problem, there are 36 purple cards.
+
+2. **Green Cards**: There are 25% more green cards than purple cards. So, calculate the number of green cards as follows:
+   \[
+   \text{Number of green cards} = 36 + 0.25 \times 36 = 36 + 9 = 45
+   \]
+
+3. **Black Cards**: There are as many black cards as the sum of the purple and green cards. Therefore:
+   \[
+   \text{Number of black cards} = 36 + 45 = 81
+   \]
+
+Now, calculate the total number of cards:
+\[
+\text{Total number of cards} = 36 + 45 + 81 = 162
+\]
+
+To find the average number of cards per color (purple, green, black), divide the total number of cards by the number of colors:
+\[
+\text{Average number of cards per color} = \frac{162}{3} = 54
+\]
+
+Thus, on average, there are 54 cards per color.",True,54,arithmetic_reasoning,high,medium
+GSM_004,w6,openai/gpt-4o,"First, we need to calculate the carpenter's monthly earnings before taxes:
+
+- He works for 2 weeks every month, and within each week, he works for 2 days.
+- Therefore, he works \(2 \text{ days/week} \times 2 \text{ weeks/month} = 4 \text{ days/month}\).
+- He earns €20 per day, so his monthly earnings are \(4 \text{ days/month} \times €20/\text{day} = €80/\text{month}\).
+
+Next, we calculate his annual earnings before taxes:
+
+- There are 12 months in a year, so his annual earnings before taxes are \(€80/\text{month} \times 12 \text{ months/year} = €960/\text{year}\).
+
+Now, calculate the taxes:
+
+- He pays 20% in taxes, so the taxes amount to \(20\% \times €960 = 0.20 \times €960 = €192\).
+
+Finally, calculate his annual earnings after taxes:
+
+- His annual earnings after taxes are €960 - €192 = €768.
+
+Therefore, the carpenter earns €768 in a year after paying 20% in taxes.",False,768,arithmetic_reasoning,high,easy
+GSM_005,w6,openai/gpt-4o,"First, let's determine how many minutes Carlos spends in school each day:
+
+- Normal classes per day: 9 periods
+- Extra classes per day: 2 periods
+- Total classes per day: \(9 + 2 = 11\) periods
+
+Each class is 35 minutes plus 5 minutes for preparation:
+
+- Total time per class: \(35 + 5 = 40\) minutes
+
+Total daily class time:
+
+\[ 
+11 \text{ classes/day} \times 40 \text{ minutes/class} = 440 \text{ minutes/day} 
+\]
+
+Next, calculate the total time Carlos spends learning during the school week:
+
+\[ 
+440 \text{ minutes/day} \times 5 \text{ days/week} = 2200 \text{ minutes/week} 
+\]
+
+Now calculate the extra learning time on the weekend. He spends \( \frac{1}{10} \) of his weekly learning time on each of Saturday and Sunday:
+
+Total weekend learning time:
+
+- Time on Saturday: \( \frac{1}{10} \times 2200 = 220 \text{ minutes} \)
+- Time on Sunday: \( \frac{1}{10} \times 2200 = 220 \text{ minutes} \)
+
+Total weekend time:
+
+\[ 
+220 + 220 = 440 \text{ minutes} 
+\]
+
+Total learning time for the entire week:
+
+\[ 
+2200 \text{ minutes/week} + 440 \text{ minutes/week} = 2640 \text{ minutes/week} 
+\]
+
+Convert minutes to hours:
+
+\[ 
+\frac{2640 \text{ minutes}}{60 \text{ minutes/hour}} = 44 \text{ hours} 
+\]
+
+Therefore, Carlos spends a total of 44 hours a week learning.",True,44,arithmetic_reasoning,high,hard
+GSM_006,w6,openai/gpt-4o,"To determine the profit Sofia made, we need to calculate the stock price at the end of each year and compare the final value with the initial purchase price.
+
+1. **Initial Purchase:**
+   Sofia buys 6 shares at $35 each. The total initial investment is:
+   \[
+   6 \times 35 = 210 \text{ dollars}
+   \]
+
+2. **End of First Year:**
+   The stock price increases by 50%, so the new price per share is:
+   \[
+   35 + (0.50 \times 35) = 35 + 17.5 = 52.5 \text{ dollars}
+   \]
+   Therefore, the total value of 6 shares is:
+   \[
+   6 \times 52.5 = 315 \text{ dollars}
+   \]
+
+3. **End of Second Year:**
+   The stock price decreases by 20%, so the new price per share is:
+   \[
+   52.5 - (0.20 \times 52.5) = 52.5 - 10.5 = 42 \text{ dollars}
+   \]
+   Therefore, the total value of 6 shares is:
+   \[
+   6 \times 42 = 252 \text{ dollars}
+   \]
+
+4. **End of Third Year:**
+   The stock price increases by 25%, so the new price per share is:
+   \[
+   42 + (0.25 \times 42) = 42 + 10.5 = 52.5 \text{ dollars}
+   \]
+   Therefore, the total value of 6 shares is:
+   \[
+   6 \times 52.5 = 315 \text{ dollars}
+   \]
+
+5. **Calculating the Profit:**
+   The final value of the shares is $315. The initial investment was $210. Therefore, the profit is:
+   \[
+   315 - 210 = 105 \text{ dollars}
+   \]
+
+Thus, Sofia has made a profit of $105 by the end of the third year.",True,105,arithmetic_reasoning,high,medium
+GSM_007,w6,openai/gpt-4o,"Luis hires the boat from 2 PM to 9 PM, totaling 7 hours. He gets 3 hours free, so he pays for 4 hours.
+
+Let's break down the costs:
+
+1. Fixed insurance cost: ₺20
+
+2. Cost of the first paid hour: ₺42
+
+3. Cost of the remaining 3 hours after the first paid hour, with each hour being three times the previous hour's cost:
+   - Second hour: ₺42 * 3 = ₺126
+   - Third hour: ₺126 * 3 = ₺378
+   - Fourth hour: ₺378 * 3 = ₺1134
+
+Now, we sum all the costs:
+- Insurance: ₺20
+- First hour: ₺42
+- Second hour: ₺126
+- Third hour: ₺378
+- Fourth hour: ₺1134
+
+Total cost = ₺20 + ₺42 + ₺126 + ₺378 + ₺1134 = ₺1700
+
+Luis paid ₺1700 in total.",False,440,arithmetic_reasoning,high,hard
+GSM_008,w6,openai/gpt-4o,"To solve this problem, let's break down the infection spread over the days.
+
+- **Day 0:** There are initially 24 infected people.
+
+- **Day 1:** Each of these 24 people infects 4 others. Thus, the number of new infections is \( 24 \times 4 = 96 \). The total number of infected people on Day 1 becomes \( 24 + 96 = 120 \).
+
+- **Day 2:** Each of the 120 infected people infects 4 others. Thus, the number of new infections is \( 120 \times 4 = 480 \). The total number of infected people on Day 2 becomes \( 120 + 480 = 600 \).
+
+Therefore, after 2 days, a total of 600 people are infected.",True,600,arithmetic_reasoning,high,medium
+GSM_009,w6,openai/gpt-4o,"First, let's determine the total number of days in 12 weeks. There are 7 days in a week, so:
+
+\[ 12 \text{ weeks} \times 7 \text{ days/week} = 84 \text{ days} \]
+
+Benjamin eats 2 waffles a day for the first 56 days, so:
+
+\[ 56 \text{ days} \times 2 \text{ waffles/day} = 112 \text{ waffles} \]
+
+For the remaining days, he eats 11 waffles a day. The remaining number of days after the initial 56 days is:
+
+\[ 84 \text{ days} - 56 \text{ days} = 28 \text{ days} \]
+
+During these 28 days, he eats:
+
+\[ 28 \text{ days} \times 11 \text{ waffles/day} = 308 \text{ waffles} \]
+
+Adding both amounts gives the total number of waffles Benjamin needs:
+
+\[ 112 \text{ waffles} + 308 \text{ waffles} = 420 \text{ waffles} \]
+
+To find out how many dozens of waffles he needs, we divide by 12 (since there are 12 waffles in a dozen):
+
+\[ \frac{420 \text{ waffles}}{12 \text{ waffles/dozen}} = 35 \text{ dozens} \]
+
+Thus, Benjamin will need 35 dozens of waffles.",True,35,arithmetic_reasoning,high,medium
+GSM_010,w6,openai/gpt-4o,"To solve this problem, we are going to calculate the number of popcorn pieces that pop during each time interval and then find the total number that Benjamin has after giving some to his brother Yusuf.
+
+1. **First 26 seconds:**  
+   80 kernels pop.
+
+2. **Next 26 seconds:**  
+   2 times the amount in the first 26 seconds:  
+   \( 2 \times 80 = 160 \)
+
+3. **Third 26 seconds:**  
+   3 times the initial popping rate:  
+   \( 3 \times 80 = 240 \)
+
+4. **Fourth 26 seconds:**  
+   Half the rate of the third popping rate:  
+   \( \frac{240}{2} = 120 \)
+
+5. **Residual popping:**  
+   A quarter of the amount in the fourth 26 seconds:  
+   \( \frac{120}{4} = 30 \)
+
+Now, let's sum up all the popped kernels:
+
+\[
+80 + 160 + 240 + 120 + 30 = 630
+\]
+
+Benjamin gives 1/7 of the popcorn to his brother Yusuf:
+
+\[
+\frac{630}{7} = 90
+\]
+
+The amount Benjamin has is:
+
+\[
+630 - 90 = 540
+\]
+
+Finally, the difference in the amount Benjamin has compared to his brother:
+
+\[
+540 - 90 = 450
+\]
+
+Thus, Benjamin has 450 more pieces of popcorn to eat than his brother.",True,450,arithmetic_reasoning,medium,medium
+GSM_011,w6,openai/gpt-4o,"To determine how many ounces of water DeShawn has used and how much he has left, we start by calculating the total amount of water used for each size of ice cube:
+
+1. **Giant cubes:** 
+   \[
+   8 \text{ giant cubes} \times 15 \text{ ounces per giant cube} = 120 \text{ ounces}
+   \]
+
+2. **Medium cubes:** 
+   \[
+   12 \text{ medium cubes} \times 5 \text{ ounces per medium cube} = 60 \text{ ounces}
+   \]
+
+3. **Small cubes:** 
+   \[
+   14 \text{ small cubes} \times \frac{1}{2} \text{ ounce per small cube} = 7 \text{ ounces}
+   \]
+
+4. **Tiny cubes:**
+   To find the number of tiny cubes, we first calculate how many cubes he has made so far with the other three sizes:
+   \[
+   8 \text{ (giant) } + 12 \text{ (medium) } + 14 \text{ (small) } = 34 \text{ cubes}
+   \]
+
+   Given that he makes 46 cubes in total, the number of tiny cubes is:
+   \[
+   46 - 34 = 12 \text{ tiny cubes}
+   \]
+
+   Each tiny cube is half the size of a small cube, so:
+   \[
+   \frac{1}{2} \text{ ounce per small cube} \times \frac{1}{2} = \frac{1}{4} \text{ ounce per tiny cube}
+   \]
+
+   Hence, the total amount of water used by the tiny cubes is:
+   \[
+   12 \text{ tiny cubes} \times \frac{1}{4} \text{ ounce per tiny cube} = 3 \text{ ounces}
+   \]
+
+Summing the water used for all the cubes gives us:
+\[
+120 \text{ (giant) } + 60 \text{ (medium) } + 7 \text{ (small) } + 3 \text{ (tiny) } = 190 \text{ ounces}
+\]
+
+DeShawn started with 312 ounces of water, so the amount he has left is:
+\[
+312 \text{ ounces} - 190 \text{ ounces} = 122 \text{ ounces}
+\]
+
+Therefore, DeShawn has \(\boxed{122}\) ounces of water left.",True,122,arithmetic_reasoning,medium,medium
+GSM_012,w6,openai/gpt-4o,"First, let's calculate the total number of potted plants Daphne originally has from the window ledges. She has 8 potted plants on each of the 56 window ledges:
+
+\[ 8 \text{ plants/ledge} \times 56 \text{ ledges} = 448 \text{ plants} \]
+
+Then, Daphne received 23 new potted plants two days ago:
+
+\[ 448 \text{ plants} + 23 \text{ plants} = 471 \text{ plants} \]
+
+She purchased an additional 200 plants yesterday:
+
+\[ 471 \text{ plants} + 200 \text{ plants} = 671 \text{ plants} \]
+
+Daphne decided to give away 6 potted plants from each ledge. With 56 ledges, she will give away:
+
+\[ 6 \text{ plants/ledge} \times 56 \text{ ledges} = 336 \text{ plants} \]
+
+After giving these away, the number of potted plants she remains with is:
+
+\[ 671 \text{ plants} - 336 \text{ plants} = 335 \text{ plants} \]
+
+Thus, Daphne will remain with 335 potted plants.",True,335,arithmetic_reasoning,medium,medium
+GSM_013,w6,openai/gpt-4o,"First, let's establish Olivia's walking speeds before and after her injury. Let \( v \) be Olivia's original speed on the beach (miles per minute). Therefore, her original speed on the sidewalk is \( 4v \).
+
+Due to her injury, both speeds are halved:
+
+- New speed on the beach: \(\frac{v}{2}\)
+- New speed on the sidewalk: \(\frac{4v}{2} = 2v\)
+
+We know that Olivia spends 65 minutes walking 13 miles on the beach:
+
+\[
+\text{Distance} = \text{Speed} \times \text{Time} \implies 13 = \frac{v}{2} \times 65
+\]
+
+By solving for \( v \), we get:
+
+\[
+13 = \frac{65v}{2}
+\]
+\[
+13 \times 2 = 65v
+\]
+\[
+26 = 65v
+\]
+\[
+v = \frac{26}{65} = \frac{2}{5}
+\]
+
+Hence, her current speeds are:
+
+- On the beach: \(\frac{v}{2} = \frac{1}{5}\) miles per minute
+- On the sidewalk: \(2v = 2 \times \frac{2}{5} = \frac{4}{5}\) miles per minute
+
+Now, calculate how long it takes her on the sidewalk, where she walks 16 miles:
+
+\[
+\text{Time on sidewalk} = \frac{\text{Distance}}{\text{Speed}} = \frac{16}{\frac{4}{5}} = 16 \times \frac{5}{4} = 20 \text{ minutes}
+\]
+
+Therefore, to find the total time for the entire 29-mile walk, sum the time spent both on the beach and on the sidewalk:
+
+\[
+\text{Total time} = \text{Time on beach} + \text{Time on sidewalk} = 65 + 20 = 85 \text{ minutes}
+\]
+
+Thus, it takes Olivia 85 minutes to complete the entire walk. The answer is:
+
+\[
+\boxed{85}
+\]",True,85,arithmetic_reasoning,medium,medium
+GSM_014,w6,openai/gpt-4o,"First, let's determine the total time it takes for the maintenance worker to clean each floor, considering their injury. Originally, it took them 6 minutes per floor, and now it takes twice as long:
+
+\[ 6 \text{ minutes} \times 2 = 12 \text{ minutes per floor} \]
+
+Next, calculate the total time needed to clean all 150 floors:
+
+\[ 150 \text{ floors} \times 12 \text{ minutes per floor} = 1800 \text{ minutes} \]
+
+The worker has 6 days to clean these floors, so the daily cleaning time is:
+
+\[ \frac{1800 \text{ minutes}}{6 \text{ days}} = 300 \text{ minutes per day} \]
+
+The worker works 10 hours a day. Let's convert this into minutes for consistency:
+
+\[ 10 \text{ hours} \times 60 \text{ minutes per hour} = 600 \text{ minutes per day} \]
+
+Now, we can calculate the percentage of their day spent cleaning:
+
+\[ \frac{300 \text{ minutes cleaning}}{600 \text{ minutes total}} \times 100 = 50\% \]
+
+Thus, the maintenance worker spends, on average, 50% of their day cleaning floors.",True,50,arithmetic_reasoning,medium,medium
+GSM_015,w6,openai/gpt-4o,"First, we need to round the prices of each type of flower to the nearest franc (₣):
+- The price of a bundle of roses is ₣1.59, which rounds to ₣2.00.
+- The price of a bundle of sunflowers is ₣5.39, which rounds to ₣5.00.
+- The price of a bundle of daisies is ₣5.16, which rounds to ₣5.00.
+
+Next, we calculate the total sales without tips:
+- For roses: 6 bundles × ₣2.00 per bundle = ₣12.00
+- For sunflowers: 24 bundles × ₣5.00 per bundle = ₣120.00
+- For daisies: 40 bundles × ₣5.00 per bundle = ₣200.00
+
+Adding these amounts gives the total sales:
+\[
+₣12.00 + ₣120.00 + ₣200.00 = ₣332.00
+\]
+
+Luca receives a 25% tip on every purchase. To find the total income, including tips, we first calculate 25% of the total sales and then add it to the total sales:
+- 25% of ₣332.00 is calculated as:
+  \[
+  0.25 \times ₣332.00 = ₣83.00
+  \]
+
+Add the tips to the total sales:
+\[
+₣332.00 + ₣83.00 = ₣415.00
+\]
+
+Therefore, Luca will make a total of ₣415.00 after receiving a 25% tip on every purchase.",False,415,arithmetic_reasoning,medium,hard
+GSM_016,w6,openai/gpt-4o,"To determine how many trips the farmer needs to transport all the feed, we first calculate the total weight of each type of feed and then sum these weights to find the total load.
+
+1. **Oats:**
+   \[
+   \text{Weight of oats} = 5 \times 3\,\text{kg} = 15\,\text{kg}
+   \]
+
+2. **Cucumbers:**
+   \[
+   \text{Weight of cucumbers} = 13 \times 6\,\text{kg} = 78\,\text{kg}
+   \]
+
+3. **Apples:**
+   \[
+   \text{Weight of apples} = 31 \times 42\,\text{kg} = 1302\,\text{kg}
+   \]
+
+4. **Wheats:**
+   \[
+   \text{Weight of wheats} = 15 \times 15\,\text{kg} = 225\,\text{kg}
+   \]
+
+Next, calculate the total weight of all the feed:
+\[
+\text{Total weight} = 15\,\text{kg (oats)} + 78\,\text{kg (cucumbers)} + 1302\,\text{kg (apples)} + 225\,\text{kg (wheats)} = 1620\,\text{kg}
+\]
+
+The farm truck can carry 180 kg per trip. Therefore, the number of trips required is:
+\[
+\lceil \frac{1620\,\text{kg}}{180\,\text{kg/trip}} \rceil 
+\]
+
+Calculating the division:
+\[
+\frac{1620}{180} = 9
+\]
+
+Since 1620 kg is exactly divisible by 180 kg, the farmer needs exactly 9 trips to transport all the feed. Therefore, the farmer needs \(\boxed{9}\) trips.",True,9,arithmetic_reasoning,medium,hard
+GSM_017,w6,openai/gpt-4o,"To determine Benjamin's average daily earnings, we need to first establish how many boxes of cupcakes and pineapple pies he sold over the three days and then calculate the corresponding earnings.
+
+Let's break it down step-by-step:
+
+### Wednesday's Sales
+- **Cupcakes:** 27 boxes
+- **Pineapple Pies:** He sold 18 fewer boxes of pineapple pies than cupcakes on Wednesday, which means he sold \( 27 - 18 = 9 \) boxes of pineapple pies.
+
+### Thursday's Sales
+- **Cupcakes:** He sold 12 more boxes of cupcakes on Thursday than he did on Wednesday, which means he sold \( 27 + 12 = 39 \) boxes.
+- **Pineapple Pies:** He sold 27 boxes of pineapple pies on Thursday.
+
+### Total Sold on Wednesday and Thursday
+**Cupcakes:**
+- Wednesday: 27 boxes
+- Thursday: 39 boxes
+
+Total cupcakes sold over the two days: \( 27 + 39 = 66 \)
+
+**Pineapple Pies:**
+- Wednesday: 9 boxes
+- Thursday: 27 boxes
+
+Total pineapple pies sold over the two days: \( 9 + 27 = 36 \)
+
+### Friday's Sales
+Benjamin sold the same amount in total on Friday as he did on Wednesday and Thursday combined.
+
+- **Cupcakes (Friday):** 66 boxes
+- **Pineapple Pies (Friday):** 36 boxes
+
+### Total Sales Over Three Days 
+**Cupcakes Total:**
+- \( 27 + 39 + 66 = 132 \) boxes
+
+**Pineapple Pies Total:**
+- \( 9 + 27 + 36 = 72 \) boxes
+
+### Earnings Calculation
+- **Cupcake Cost:** ¥8 per box
+- **Pineapple Pie Cost:** ¥22 per box
+
+**Earnings from Cupcakes:**
+- \( 132 \times 8 = ¥1,056 \)
+
+**Earnings from Pineapple Pies:**
+- \( 72 \times 22 = ¥1,584 \)
+
+**Total Earnings Over Three Days:**
+- \( ¥1,056 + ¥1,584 = ¥2,640 \)
+
+### Average Daily Earnings
+Since Benjamin sold for three days, the average daily earning is:
+\[
+\frac{¥2,640}{3} = ¥880
+\]
+
+Thus, Benjamin's average daily earning was ¥880.",True,880,arithmetic_reasoning,medium,hard
+GSM_018,w6,openai/gpt-4o,"To solve this problem, we need to first determine the number of questions from each subject category based on the given percentages and then calculate how many of these questions Keisha is likely to answer correctly based on her success rate for each category.
+
+1. **Determine the number of questions per category:**
+
+   - **Chemistry:** 50% of the 80 questions are chemistry questions.
+     \[
+     0.50 \times 80 = 40 \text{ chemistry questions}
+     \]
+
+   - **Biology:** 5% of the 80 questions are biology questions.
+     \[
+     0.05 \times 80 = 4 \text{ biology questions}
+     \]
+
+   - **Geometry and Literature:** The remaining questions, which are equally divided into geometry and literature.
+
+     First, find the total number of chemistry and biology questions:
+     \[
+     40 \text{ (chemistry)} + 4 \text{ (biology)} = 44 \text{ questions}
+     \]
+   
+     Therefore, the remaining questions for geometry and literature:
+     \[
+     80 - 44 = 36 \text{ questions}
+     \]
+
+     These 36 questions are equally divided between geometry and literature:
+     \[
+     36 \div 2 = 18 \text{ geometry questions and 18 literature questions}
+     \]
+
+2. **Calculate the number of questions Keisha is sure to answer correctly:**
+
+   - **Biology:** Keisha is sure to get 25% of the biology questions correct.
+     \[
+     0.25 \times 4 = 1 \text{ biology question correct}
+     \]
+
+   - **Chemistry:** Keisha is sure to get 70% of the chemistry questions correct.
+     \[
+     0.70 \times 40 = 28 \text{ chemistry questions correct}
+     \]
+
+   - **Geometry:** Keisha is sure to get 1/3 of the geometry questions correct.
+     \[
+     \frac{1}{3} \times 18 = 6 \text{ geometry questions correct}
+     \]
+
+   - **Literature:** Keisha is sure to get 1/3 of the literature questions correct (same as geometry).
+     \[
+     \frac{1}{3} \times 18 = 6 \text{ literature questions correct}
+     \]
+
+3. **Calculate the total number of questions Keisha is sure to answer correctly:**
+
+   Add up all the correct answers from each category:
+   \[
+   1 \text{ (biology)} + 28 \text{ (chemistry)} + 6 \text{ (geometry)} + 6 \text{ (literature)} = 41
+   \]
+
+Thus, Keisha is sure to get \(\boxed{41}\) points in the quiz.",True,41,arithmetic_reasoning,medium,hard
+GSM_019,w6,openai/gpt-4o,"To find out how many 45-minute episodes Benjamin watched on Thursday, we first need to calculate the total hours he spent watching TV on all the days mentioned and then solve for Thursday.
+
+**Tuesday and Wednesday:**
+- Each night he watched a 4-hour episode of his favorite show.
+- Total for Tuesday and Wednesday = \(4 + 4 = 8\) hours.
+
+**Friday:**
+- He watched a 6-hour episode and a 0.25-hour (15-minute) show.
+- Total for Friday = \(6 + 0.25 = 6.25\) hours.
+
+**Saturday:**
+- He watched two 4-hour episodes.
+- Total for Saturday = \(4 \times 2 = 8\) hours.
+
+Now we add up the total hours for Tuesday, Wednesday, Friday, and Saturday:
+
+\[ 
+8 \text{ (Tuesday and Wednesday)} + 6.25 \text{ (Friday)} + 8 \text{ (Saturday)} = 22.25 \text{ hours}
+\]
+
+Benjamin watched 23 hours of TV in total, so the time spent watching TV on Thursday is:
+
+\[
+23 - 22.25 = 0.75 \text{ hours}
+\]
+
+Each episode on Thursday is 45 minutes, or 0.75 hours. Therefore, Benjamin watched:
+
+\[
+\frac{0.75}{0.75} = 1
+\]
+
+Thus, Benjamin watched 1 episode of the 45-minute show on Thursday.",False,1,arithmetic_reasoning,medium,hard
+GSM_020,w6,openai/gpt-4o,"First, let's determine the total number of cookies Ali initially had:
+
+\[ 11 \text{ dozen} = 11 \times 12 = 132 \text{ cookies} \]
+
+Ali ate 3 cookies, so the remaining number of cookies is:
+
+\[ 132 - 3 = 129 \text{ cookies} \]
+
+Faisal finds 5 cookies.
+
+Hiroshi finds three times as many cookies as Faisal:
+
+\[ 3 \times 5 = 15 \text{ cookies} \]
+
+Benjamin finds 3 cookies less than Hiroshi:
+
+\[ 15 - 3 = 12 \text{ cookies} \]
+
+Wei finds a quarter as many cookies as Benjamin:
+
+\[ \frac{12}{4} = 3 \text{ cookies} \]
+
+Quinn finds 36 cookies more than Faisal and Hiroshi combined. First, calculate the total cookies found by Faisal and Hiroshi:
+
+\[ 5 + 15 = 20 \text{ cookies} \]
+
+Quinn then finds:
+
+\[ 20 + 36 = 56 \text{ cookies} \]
+
+Now, let's find out the total number of cookies found by all of them combined:
+
+\[
+5 \, (\text{Faisal}) + 15 \, (\text{Hiroshi}) + 12 \, (\text{Benjamin}) + 3 \, (\text{Wei}) + 56 \, (\text{Quinn}) = 91 \text{ cookies}
+\]
+
+Finally, to find how many cookies are still hidden, subtract the number of cookies found from the total remaining cookies:
+
+\[ 129 - 91 = 38 \]
+
+Therefore, there are still \( \boxed{38} \) cookies hidden in the yard.",True,38,arithmetic_reasoning,medium,hard
+GSM_021,w6,openai/gpt-4o,"To solve the problem, we need to determine how far the fog bank will travel before the wind speed is halved, and then adjust the travel time accordingly.
+
+First, the fog bank covers 10 miles every 75 minutes. We need to calculate the time required to cover one-quarter of the city, which is 72 miles / 4 = 18 miles.
+
+Initially, the wind speed is given as covering 10 miles in 75 minutes. Let's calculate how far the fog bank travels in one hour (60 minutes) at the initial speed:
+- In 75 minutes, it covers 10 miles.
+- In 60 minutes, it covers (10 miles / 75 minutes) * 60 minutes = 8 miles.
+
+So, in the first hour, the fog bank will cover 8 miles.
+
+After one hour, the wind speed is halved. Therefore, the fog now covers 5 miles every 75 minutes (10 miles at initial speed halved).
+
+Let's see how much distance is left after the initial 8 miles:
+- Distance left to cover after 1 hour = 18 miles (1/4 of city) - 8 miles = 10 miles.
+
+Now, with the reduced wind speed:
+- Covering 5 miles takes 75 minutes.
+
+Since we need to cover the remaining 10 miles:
+- Time required = 75 minutes per 5 miles * 10 miles / 5 miles = 150 minutes.
+
+Therefore, the total time to cover 18 miles is the time taken to cover the initial 8 miles (60 minutes) plus the time to cover the remaining 10 miles (150 minutes):
+
+Total time = 60 minutes + 150 minutes = 210 minutes. 
+
+Hence, it will take 210 minutes for the fog bank to cover 1/4 of the city.",False,210,arithmetic_reasoning,high,easy
+GSM_022,w6,openai/gpt-4o,"To solve the problem, let's denote:
+- \( s \) as the number of teaspoons of sugar,
+- \( w \) as the number of cups of water,
+- \( m \) as the number of tablespoons of milk,
+- \( c \) as the number of tablespoons of cream.
+
+We know the relationships:
+1. The ratio of sugar to water is \( \frac{48}{10} \), which means:
+   \[
+   \frac{s}{w} = \frac{48}{10}
+   \]
+   Therefore, \( s = \frac{48}{10} \cdot w = 4.8w \).
+
+2. Olga uses 6 tablespoons of milk for every 10 cups of water:
+   \[
+   m = \frac{6}{10} \cdot w = 0.6w
+   \]
+
+3. She uses 2 tablespoons of heavy cream for every teaspoon of sugar:
+   \[
+   c = 2s
+   \]
+
+We know the total amount used is 210:
+\[
+s + w + c + m = 210
+\]
+
+Substitute the expressions for \( c \) and \( m \) in terms of \( s \) and \( w \):
+\[
+s + w + 2s + 0.6w = 210
+\]
+
+Combine the terms:
+\[
+3s + 1.6w = 210
+\]
+
+We also have \( s = 4.8w \), so substitute for \( s \):
+\[
+3(4.8w) + 1.6w = 210
+\]
+\[
+14.4w + 1.6w = 210
+\]
+\[
+16w = 210
+\]
+
+Solving for \( w \):
+\[
+w = \frac{210}{16} = 13.125
+\]
+
+Using \( w = 13.125 \), find \( s \):
+\[
+s = 4.8 \times 13.125 = 63
+\]
+
+Thus, Olga used \(\boxed{63}\) teaspoons of sugar.",True,63,arithmetic_reasoning,high,easy
+GSM_023,w6,openai/gpt-4o,"To determine how much time Mohammed needs to exercise on Tuesday, first calculate the total exercise time on Sunday and Monday combined:
+
+Sunday: 49 minutes  
+Monday: 51 minutes  
+
+Total for Sunday and Monday = 49 + 51 = 100 minutes
+
+Mohammed wants to exercise for three times this amount on Tuesday:
+
+3 times 100 minutes = 300 minutes
+
+Now, convert 300 minutes into hours:
+
+300 minutes ÷ 60 minutes per hour = 5 hours
+
+Therefore, Mohammed needs to exercise for 5 hours on Tuesday to reach his goal.",True,5,arithmetic_reasoning,high,easy
+GSM_024,w6,openai/gpt-4o,"To solve this problem, let's first determine the probability of each event and then calculate the difference in their likelihoods.
+
+1. **Probability of rolling a number greater than 2 twice in a row:**
+
+   A four-sided die (tetrahedron) has faces labeled 1, 2, 3, and 4. The numbers greater than 2 are 3 and 4. So, the probability of rolling a number greater than 2 in one roll is:
+
+   \[
+   P(\text{roll > 2}) = \frac{2}{4} = \frac{1}{2}
+   \]
+
+   Since the die rolls are independent, the probability of rolling a number greater than 2 twice in a row is:
+
+   \[
+   P(\text{two rolls > 2}) = \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4}
+   \]
+
+2. **Probability of rolling four even numbers in a row:**
+
+   On a four-sided die, the even numbers are 2 and 4. So, the probability of rolling an even number in one roll is:
+
+   \[
+   P(\text{even number}) = \frac{2}{4} = \frac{1}{2}
+   \]
+
+   The probability of rolling four even numbers in a row is:
+
+   \[
+   P(\text{four even numbers}) = \left(\frac{1}{2}\right)^4 = \frac{1}{16}
+   \]
+
+3. **Difference in percentage points:**
+
+   First, convert these probabilities to percentages:
+   
+   - Probability of rolling a number greater than 2 twice: \( \frac{1}{4} = 0.25 = 25\% \)
+   - Probability of rolling four even numbers: \( \frac{1}{16} = 0.0625 = 6.25\% \)
+   
+   The difference in likelihood, expressed as a difference in percentage points, is:
+
+   \[
+   25\% - 6.25\% = 18.75 \text{ percentage points}
+   \]
+
+Hence, it is 18.75 percentage points more likely to roll a number greater than 2 twice in a row than to roll four even numbers in a row.",False,18.75,arithmetic_reasoning,high,easy
+GSM_025,w6,openai/gpt-4o,"To find out the average percentage of each whale's body length covered by the remoras, we will consider each whale separately and then find the average.
+
+**For the first whale:**
+
+- Original number of remoras: 18
+- 1/3 of the remoras swim away: \(18 \times \frac{1}{3} = 6\) remoras swim away, leaving \(18 - 6 = 12\) remoras attached.
+- Each remora is 15 inches long, so the total length of remoras is \(12 \times 15 = 180\) inches.
+- The first whale is 30 feet long. Convert feet to inches: \(30 \times 12 = 360\) inches.
+- The percentage of the whale's body covered by the remoras is:
+  \[
+  \frac{180}{360} \times 100\% = 50\%
+  \]
+
+**For the second whale:**
+
+- Number of remoras: 6
+- Each remora is 8 inches long, so the total length of remoras is \(6 \times 8 = 48\) inches.
+- The second whale is 10 feet long. Convert feet to inches: \(10 \times 12 = 120\) inches.
+- The percentage of the whale's body covered by the remoras is:
+  \[
+  \frac{48}{120} \times 100\% = 40\%
+  \]
+
+**Average percentage for both whales:**
+
+- Average percentage covered for both whales:
+  \[
+  \frac{50\% + 40\%}{2} = 45\%
+  \]
+
+Thus, on average, 45% of each whale's body length is covered by the remoras.",True,45.0,arithmetic_reasoning,high,easy
+GSM_026,w6,openai/gpt-4o,"To find out how many puzzle pieces Hiroshi placed during the hour, we need to calculate the number of pieces he completed for each puzzle and then sum them up.
+
+First, let's determine how many pieces Hiroshi finished from the 480 piece puzzle:
+
+\[ 
+\text{Pieces finished from first puzzle} = \frac{1}{6} \times 480 = 80 
+\]
+
+Next, let's find out how many pieces he completed from the 450 piece puzzle:
+
+\[ 
+\text{Pieces finished from second puzzle} = \frac{1}{9} \times 450 = 50 
+\]
+
+Now, we add the pieces from both puzzles to find the total number Hiroshi placed during the hour:
+
+\[ 
+\text{Total pieces placed} = 80 + 50 = 130 
+\]
+
+Therefore, Hiroshi placed a total of 130 puzzle pieces during that hour.",True,130,arithmetic_reasoning,high,easy
+GSM_027,w6,openai/gpt-4o,"To determine the percentage of puppies with spots, we need to calculate the total number of puppies and the number with spots from each owner.
+
+Starting with Oscar's puppies:
+
+- Oscar has 130 puppies in total.
+- Initially, 28 puppies have spots.
+- He discovered that half of his previously unspotted puppies actually have spots. First, calculate the unspotted puppies: \(130 - 28 = 102\) unspotted puppies.
+- Half of these unspotted puppies actually have spots: \( \frac{102}{2} = 51\) puppies.
+- Now, the total number of puppies with spots for Oscar is \(28 + 51 = 79\).
+
+Next, for Andre's puppies:
+
+- Andre has 44 puppies in total.
+- 14 of these puppies have spots.
+- The total number of puppies with spots for Andre is 14.
+
+For Jin's puppies:
+
+- Jin has 66 dogs, each with 11 puppies that have spots.
+- Thus, the total number of puppies with spots is \(66 \times 11 = 726\).
+
+Now, we find the total number of puppies overall:
+
+- Oscar's puppies: 130
+- Andre's puppies: 44
+- Jin's puppies: \(66 \times 11 = 726\), since all of Jin's puppies have spots.
+
+Calculating the total number of puppies:
+\[ 130 + 44 + 726 = 900 \]
+
+Summing up all the puppies with spots:
+- Oscar's puppies with spots: 79
+- Andre's puppies with spots: 14
+- Jin's puppies with spots: 726
+
+The overall number of puppies with spots is:
+\[ 79 + 14 + 726 = 819 \]
+
+Finally, calculate the percentage of puppies with spots:
+\[ \frac{819}{900} \times 100\% \approx 91\% \]
+
+Therefore, approximately \( 91\% \) of all the puppies have spots.",True,91,arithmetic_reasoning,high,easy
+GSM_028,w6,openai/gpt-4o,"To solve this problem, we need to determine the current ages of Chen, Theo, and Tara, and then calculate the average age of all three to see how much younger Tara is compared to this average.
+
+1. Let's start with Chen, who will be 60 in 7 years. This means Chen is currently:
+   \[
+   60 - 7 = 53 \text{ years old.}
+   \]
+
+2. Theo is 10 years older than Chen. Therefore, Theo is currently:
+   \[
+   53 + 10 = 63 \text{ years old.}
+   \]
+
+3. Chen is 7 years older than Tara. Therefore, Tara is currently:
+   \[
+   53 - 7 = 46 \text{ years old.}
+   \]
+
+Now we have their current ages:
+- Chen: 53 years old
+- Theo: 63 years old
+- Tara: 46 years old
+
+4. Next, we calculate the average age of all three:
+   \[
+   \text{Average age} = \frac{53 + 63 + 46}{3} = \frac{162}{3} = 54 \text{ years old.}
+   \]
+
+5. Finally, we determine how much younger Tara is than the average age:
+   \[
+   54 - 46 = 8 \text{ years.}
+   \]
+
+Therefore, Tara is 8 years younger than the average age of all three.",True,8,arithmetic_reasoning,high,easy
+GSM_029,w6,openai/gpt-4o,"To determine how many emails Leon responds to in a 6-day work week, let's follow the calculations step by step:
+
+1. **Calculate the number of emails that do not require a response:**
+   \[
+   20\% \text{ of 30 emails} = 0.20 \times 30 = 6 \text{ emails}
+   \]
+   Therefore, 24 emails require a response each day (since 30 - 6 = 24).
+
+2. **Calculate the number of emails Leon can respond to per day without overtime:**
+   - First, find half of the emails that require a response:
+     \[
+     \frac{24}{2} = 12
+     \]
+   - Leon responds to 2 less than this number:
+     \[
+     12 - 2 = 10 \text{ emails}
+     \]
+
+3. **Calculate the number of emails Leon responds to during a regular 5-day work week:**
+   \[
+   10 \text{ emails/day} \times 5 \text{ days} = 50 \text{ emails}
+   \]
+
+4. **Calculate the number of emails Leon responds to on the last day (overtime day):**
+   - He can respond to 50% more emails than his usual 10:
+     \[
+     50\% \text{ of 10 emails} = 0.50 \times 10 = 5 \text{ additional emails}
+     \]
+   - Therefore, on the overtime day, Leon responds to:
+     \[
+     10 + 5 = 15 \text{ emails}
+     \]
+
+5. **Calculate the total number of emails Leon responds to in a 6-day work week:**
+   \[
+   50 \text{ emails from the first 5 days} + 15 \text{ emails from the overtime day} = 65 \text{ emails}
+   \]
+
+In a 6-day work week, Leon responds to a total of 65 emails.",True,65,arithmetic_reasoning,high,easy
+GSM_030,w6,openai/gpt-4o,"To find out how much longer it takes to ride the biggest slide compared to the second biggest slide, we need to calculate the time taken for each slide.
+
+1. **Time to slide down the biggest slide:**
+   \[
+   \text{Length of the biggest slide} = 400 \text{ yards}
+   \]
+   \[
+   \text{Speed on the biggest slide} = 25 \text{ yards/minute}
+   \]
+   \[
+   \text{Time} = \frac{\text{Length}}{\text{Speed}} = \frac{400}{25} = 16 \text{ minutes}
+   \]
+
+2. **Time to slide down the second biggest slide:**
+   \[
+   \text{Length of the second biggest slide} = 300 \text{ yards}
+   \]
+   \[
+   \text{Speed on the second biggest slide} = 30 \text{ yards/minute}
+   \]
+   \[
+   \text{Time} = \frac{\text{Length}}{\text{Speed}} = \frac{300}{30} = 10 \text{ minutes}
+   \]
+
+3. **Difference in time:**
+   \[
+   \text{Difference} = \text{Time on the biggest slide} - \text{Time on the second biggest slide}
+   \]
+   \[
+   \text{Difference} = 16 \text{ minutes} - 10 \text{ minutes} = 6 \text{ minutes}
+   \]
+
+So, it takes 6 minutes longer to ride the biggest slide compared to the second biggest slide.",True,6,arithmetic_reasoning,high,easy
+GSM_031,w6,openai/gpt-4o,"To determine the average number of kiwi slices eaten by Isabella, her cousin, and her sister, we first calculate the number of slices each person ate:
+
+- Isabella ate 4 slices.
+- Her cousin ate 6 more slices than Isabella, which is \(4 + 6 = 10\) slices.
+- Her sister ate 3 more slices than her cousin, which is \(10 + 3 = 13\) slices.
+
+Next, we find the total number of slices eaten by all three:
+
+\[
+4 + 10 + 13 = 27 \text{ slices}
+\]
+
+Since there are three people, the average number of slices eaten per person is:
+
+\[
+\frac{27}{3} = 9 \text{ slices}
+\]
+
+Therefore, on average, they each ate 9 slices of kiwi.",True,9,arithmetic_reasoning,high,easy
+GSM_032,w6,openai/gpt-4o,"Let's denote the width of the study as \( w \) meters. According to the problem, the length of the room is 16 meters longer than its width, so the length can be expressed as \( w + 16 \).
+
+The area of the rectangle is given by the formula:
+
+\[
+\text{Area} = \text{length} \times \text{width}
+\]
+
+We know that the area is 80 square meters, so:
+
+\[
+w \times (w + 16) = 80
+\]
+
+Expanding the equation, we have:
+
+\[
+w^2 + 16w = 80
+\]
+
+Next, we rearrange this into a standard quadratic equation:
+
+\[
+w^2 + 16w - 80 = 0
+\]
+
+We will solve this quadratic equation using the quadratic formula, where \( a = 1 \), \( b = 16 \), and \( c = -80 \):
+
+\[
+w = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+
+\[
+w = \frac{-16 \pm \sqrt{16^2 - 4 \times 1 \times (-80)}}{2 \times 1}
+\]
+
+\[
+w = \frac{-16 \pm \sqrt{256 + 320}}{2}
+\]
+
+\[
+w = \frac{-16 \pm \sqrt{576}}{2}
+\]
+
+\[
+w = \frac{-16 \pm 24}{2}
+\]
+
+This gives us two possible solutions for \( w \):
+
+\[
+w = \frac{-16 + 24}{2} = \frac{8}{2} = 4
+\]
+
+Or:
+
+\[
+w = \frac{-16 - 24}{2} = \frac{-40}{2} = -20
+\]
+
+Since the width of a room cannot be negative, we have \( w = 4 \).
+
+Now, the length of the room is \( w + 16 = 4 + 16 = 20 \) meters.
+
+The perimeter of a rectangle is given by:
+
+\[
+\text{Perimeter} = 2 \times (\text{length} + \text{width})
+\]
+
+Substituting the dimensions we have:
+
+\[
+\text{Perimeter} = 2 \times (20 + 4) = 2 \times 24 = 48
+\]
+
+Thus, the perimeter of Ibrahim's study is 48 meters.",True,48,arithmetic_reasoning,high,easy
+GSM_033,w6,openai/gpt-4o,"To determine the least amount Bodhi can spend, we need to calculate the total cost with and without becoming a member and then compare the two options.
+
+First, let's calculate the total cost of the items without any discount:
+
+- Cost of folders: \(24 \times €2.75 = €66\)
+- Cost of pencils: \(12 \times €19.25 = €231\)
+- Cost of bond paper: \(€23\)
+- Cost of markers: \(5 \times €8 = €40\)
+
+Add these amounts to find the total cost before discounts:
+\[
+€66 + €231 + €23 + €40 = €360
+\]
+
+**Option 1: Not becoming a member (5% discount)**
+
+With a 5% discount, the discount amount is:
+\[
+0.05 \times €360 = €18
+\]
+
+Thus, the discounted total cost is:
+\[
+€360 - €18 = €342
+\]
+
+**Option 2: Becoming a member (20% discount)**
+
+First, calculate the total discount if Bodhi becomes a member:
+\[
+0.20 \times €360 = €72
+\]
+
+The discounted total cost before adding the membership fee is:
+\[
+€360 - €72 = €288
+\]
+
+Adding the membership fee, the total cost becomes:
+\[
+€288 + €20 = €308
+\]
+
+Finally, compare the costs of the two options:
+- Without membership: €342
+- With membership: €308
+
+The least amount that Bodhi can spend is by becoming a member and it will cost him:
+\[
+\boxed{€308}
+\]",True,308,arithmetic_reasoning,high,easy
+GSM_034,w6,openai/gpt-4o,"Haruka's entire dissertation is 156 pages. She has already completed \( \frac{1}{3} \) of it. To find out how many pages she has finished, calculate:
+
+\[ \frac{1}{3} \times 156 = 52 \text{ pages} \]
+
+She has finished writing 52 pages, leaving her with:
+
+\[ 156 - 52 = 104 \text{ pages} \]
+
+Haruka has 2 days remaining to finish her dissertation. To find out the number of pages she needs to write per day, divide the remaining pages by the number of days:
+
+\[ \frac{104}{2} = 52 \text{ pages per day} \]
+
+Thus, Haruka needs to write an average of 52 pages per day.",True,52,arithmetic_reasoning,high,easy
+GSM_035,w6,openai/gpt-4o,"To find the percentage of spools that are green, we first need to calculate the total number of green spools and the total number of all spools.
+
+First, calculate the total number of green spools:
+
+- Light green: 28
+- Dark green: 44
+
+Number of green spools = 28 (light green) + 44 (dark green) = 72
+
+Next, calculate the total number of white spools. According to the problem, Emma has three times as many white spools as all green spools:
+
+Number of white spools = 3 × 72 = 216
+
+Now, calculate the total number of spools of all colors:
+
+- Light green: 28
+- Dark green: 44
+- Light cyan: 56
+- Dark cyan: 16
+- White: 216
+
+Total number of spools = 28 + 44 + 56 + 16 + 216 = 360
+
+Finally, determine the percentage of spools that are green:
+
+\[
+\text{Percentage of green spools} = \left( \frac{72}{360} \right) \times 100\%
+\]
+
+\[
+\text{Percentage of green spools} = 0.2 \times 100\% = 20\%
+\]
+
+Thus, 20% of Emma's spools are green.",True,20,arithmetic_reasoning,high,easy
+GSM_036,w6,openai/gpt-4o,"To determine what percentage of the present first-grade students were boys on Monday, follow these steps:
+
+1. Calculate the number of first-grade boys at Pine Valley School:
+   \[
+   \text{Total first graders} = 95 
+   \]
+   \[
+   \text{First-grade girls} = 28 
+   \]
+   \[
+   \text{First-grade boys} = 95 - 28 = 67 
+   \]
+
+2. Determine the number of boys present on Monday:
+   - 1 first-grade boy was absent on Monday:
+   \[
+   \text{Boys absent} = 1 
+   \]
+   \[
+   \text{Boys present} = 67 - 1 = 66 
+   \]
+
+3. Determine the number of girls present on Monday:
+   - 6 first-grade girls were absent on Monday:
+   \[
+   \text{Girls absent} = 6 
+   \]
+   \[
+   \text{Girls present} = 28 - 6 = 22 
+   \]
+
+4. Calculate the total number of students present on Monday:
+   \[
+   \text{Total students present} = \text{Boys present} + \text{Girls present} = 66 + 22 = 88 
+   \]
+
+5. Calculate the percentage of the present students who were boys:
+   \[
+   \text{Percentage of boys} = \left( \frac{\text{Boys present}}{\text{Total students present}} \right) \times 100 = \left( \frac{66}{88} \right) \times 100 
+   \]
+   \[
+   \text{Percentage of boys} = 0.75 \times 100 = 75\% 
+   \]
+
+Therefore, 75% of the present first-grade students were boys on Monday.",True,75,arithmetic_reasoning,high,easy
+GSM_037,w6,openai/gpt-4o,"Let's define the amount of fence each person receives:
+
+- Let \( q \) represent the amount of fence (in feet) that Quinn receives.
+- Then, Mia receives \( q + 150 \) feet, since she gets 150 feet more than Quinn.
+- Kayla receives \( (q + 150) + 150 = q + 300 \) feet, since she gets 150 feet more than Mia.
+
+According to the problem, the total amount of fence they have is 480 feet. Therefore, we can set up the equation for the total fence:
+
+\[
+q + (q + 150) + (q + 300) = 480
+\]
+
+Simplify and solve the equation:
+
+\[
+q + q + 150 + q + 300 = 480
+\]
+\[
+3q + 450 = 480
+\]
+
+Subtract 450 from both sides:
+
+\[
+3q = 30
+\]
+
+Divide by 3:
+
+\[
+q = 10
+\]
+
+So, Quinn receives 10 feet of the fence.",True,10,arithmetic_reasoning,high,medium
+GSM_038,w6,openai/gpt-4o,"First, let's determine how many crackers Ali has left after the two plates break and he eats some crackers.
+
+Initially, Ali has 675 crackers. Each plate can hold 80 crackers (as it holds twice the amount of a bowl, which holds 40 crackers). With two plates breaking, only 3 plates remain. Thus, total capacity is:
+\[
+3 \times 80 = 240 \text{ crackers}
+\]
+
+Remaining after the 3 plates:
+\[ 
+675 - 240 = 435 \text{ crackers}
+\]
+
+Next, Ali eats one-ninth of the crackers:
+\[
+\text{Eaten crackers} = \frac{1}{9} \times 675 = 75
+\]
+
+Remaining crackers after Ali eats:
+\[
+675 - 75 = 600 \text{ crackers}
+\]
+
+We'll already determined 240 crackers are on the plates, leaving:
+\[
+600 - 240 = 360 \text{ crackers for bowls}
+\]
+
+Currently, there are 8 bowls, and each can hold 40 crackers. Total capacity for these 8 bowls is:
+\[
+8 \times 40 = 320 \text{ crackers}
+\]
+
+To determine if more bowls are needed:
+\[
+360 - 320 = 40 \text{ crackers do not fit}
+\]
+
+Since each bowl holds 40 crackers, Ali needs 1 additional bowl to accommodate the remaining 40 crackers.
+
+Thus, Ali needs \(\boxed{1}\) more bowl.",True,1,arithmetic_reasoning,high,easy
+GSM_039,w6,openai/gpt-4o,"Let's calculate the ages of all four individuals in 5 years:
+
+1. **Oliver's Age in 5 Years**:
+   - Oliver is currently 15 years old.
+   - In 5 years, Oliver will be: \(15 + 5 = 20\) years old.
+
+2. **Olivia's Current Age**:
+   - In 8 years, Olivia will be 3 times as old as Oliver is now (15 years old).
+   - This means Olivia will be: \(3 \times 15 = 45\) years old in 8 years.
+   - Olivia's current age is: \(45 - 8 = 37\) years old.
+   - In 5 years, Olivia will be: \(37 + 5 = 42\) years old.
+
+3. **Gabriel's Current Age**:
+   - Gabriel is 11 years younger than Oliver.
+   - Gabriel's current age: \(15 - 11 = 4\) years old.
+   - In 5 years, Gabriel will be: \(4 + 5 = 9\) years old.
+
+4. **Fatima's Current Age**:
+   - Fatima is 8 years older than Gabriel.
+   - Fatima's current age: \(4 + 8 = 12\) years old.
+   - In 5 years, Fatima will be: \(12 + 5 = 17\) years old.
+
+Now, we find the average age of Oliver, Olivia, Gabriel, and Fatima in 5 years:
+
+\[
+\text{Average age} = \frac{\text{Oliver's age} + \text{Olivia's age} + \text{Gabriel's age} + \text{Fatima's age}}{4}
+\]
+
+\[
+\text{Average age} = \frac{20 + 42 + 9 + 17}{4} = \frac{88}{4} = 22
+\]
+
+So, the average age of all four in 5 years will be 22 years.",True,22,arithmetic_reasoning,high,easy
+GSM_040,w6,openai/gpt-4o,"To determine how long it will take Tara to peel, saute, and wash 80 carrots, we need to calculate the time for each task separately and then add them up, considering Tara can't work in parallel.
+
+1. **Peeling the carrots:**
+
+   Tara can peel 4 carrots per minute. To find out how long it takes to peel 80 carrots:
+   \[
+   \text{Time to peel} = \frac{80 \text{ carrots}}{4 \text{ carrots/minute}} = 20 \text{ minutes}
+   \]
+
+2. **Sauteing the carrots:**
+
+   Tara can saute 40 carrots in 11 minutes. Since she needs to saute 80 carrots, which is twice as much:
+   \[
+   \text{Time to saute} = 2 \times 11 \text{ minutes} = 22 \text{ minutes}
+   \]
+
+3. **Washing the carrots:**
+
+   It takes 21 minutes to wash all the carrots.
+
+Since Tara cannot perform tasks in parallel, we sum up all the times for each task:
+\[
+\text{Total time} = \text{Time to wash} + \text{Time to peel} + \text{Time to saute} = 21 \text{ minutes} + 20 \text{ minutes} + 22 \text{ minutes} = 63 \text{ minutes}
+\]
+
+Therefore, it will take Tara a total of 63 minutes to wash, peel, and saute 80 carrots.",False,63,arithmetic_reasoning,high,medium
+GSM_041,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,150,arithmetic_reasoning,high,easy
+GSM_041,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,150,arithmetic_reasoning,high,easy
+GSM_041,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,150,arithmetic_reasoning,high,easy
+GSM_041,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,150,arithmetic_reasoning,high,easy
+GSM_041,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,13,arithmetic_reasoning,high,easy
+GSM_042,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,2820,arithmetic_reasoning,high,easy
+GSM_042,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,2820,arithmetic_reasoning,high,easy
+GSM_042,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,2820,arithmetic_reasoning,high,easy
+GSM_042,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,2820,arithmetic_reasoning,high,easy
+GSM_042,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,5775,arithmetic_reasoning,high,easy
+GSM_043,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,8,arithmetic_reasoning,high,easy
+GSM_043,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,8,arithmetic_reasoning,high,easy
+GSM_043,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,8,arithmetic_reasoning,high,easy
+GSM_043,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,8,arithmetic_reasoning,high,easy
+GSM_043,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,70,arithmetic_reasoning,high,easy
+GSM_044,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,59,arithmetic_reasoning,high,easy
+GSM_044,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,59,arithmetic_reasoning,high,easy
+GSM_044,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,59,arithmetic_reasoning,high,easy
+GSM_044,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,59,arithmetic_reasoning,high,easy
+GSM_044,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,41,arithmetic_reasoning,high,easy
+GSM_045,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1122,arithmetic_reasoning,high,medium
+GSM_045,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1122,arithmetic_reasoning,high,medium
+GSM_045,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1122,arithmetic_reasoning,high,medium
+GSM_045,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1122,arithmetic_reasoning,high,medium
+GSM_045,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,988,arithmetic_reasoning,high,medium
+GSM_046,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,121,arithmetic_reasoning,high,medium
+GSM_046,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,121,arithmetic_reasoning,high,medium
+GSM_046,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,121,arithmetic_reasoning,high,medium
+GSM_046,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,121,arithmetic_reasoning,high,medium
+GSM_046,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,8,arithmetic_reasoning,high,medium
+GSM_047,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,510,arithmetic_reasoning,high,hard
+GSM_047,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,510,arithmetic_reasoning,high,hard
+GSM_047,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,510,arithmetic_reasoning,high,hard
+GSM_047,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,510,arithmetic_reasoning,high,hard
+GSM_047,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,high,hard
+GSM_048,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,206,arithmetic_reasoning,high,hard
+GSM_048,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,206,arithmetic_reasoning,high,hard
+GSM_048,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,206,arithmetic_reasoning,high,hard
+GSM_048,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,206,arithmetic_reasoning,high,hard
+GSM_048,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,366,arithmetic_reasoning,high,hard
+GSM_049,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1782,arithmetic_reasoning,high,hard
+GSM_049,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1782,arithmetic_reasoning,high,hard
+GSM_049,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1782,arithmetic_reasoning,high,hard
+GSM_049,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1782,arithmetic_reasoning,high,hard
+GSM_049,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,624,arithmetic_reasoning,high,hard
+GSM_050,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,medium,medium
+GSM_050,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,medium,medium
+GSM_050,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,medium,medium
+GSM_050,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,medium,medium
+GSM_050,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,10,arithmetic_reasoning,medium,medium
+GSM_051,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,256,arithmetic_reasoning,medium,easy
+GSM_051,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,256,arithmetic_reasoning,medium,easy
+GSM_051,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,256,arithmetic_reasoning,medium,easy
+GSM_051,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,256,arithmetic_reasoning,medium,easy
+GSM_051,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,214,arithmetic_reasoning,medium,easy
+GSM_052,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,43.75,arithmetic_reasoning,medium,medium
+GSM_052,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,68.75,arithmetic_reasoning,medium,medium
+GSM_053,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,378,arithmetic_reasoning,medium,easy
+GSM_053,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,378,arithmetic_reasoning,medium,easy
+GSM_053,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,378,arithmetic_reasoning,medium,easy
+GSM_053,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,378,arithmetic_reasoning,medium,easy
+GSM_053,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,330,arithmetic_reasoning,medium,easy
+GSM_054,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16,arithmetic_reasoning,medium,hard
+GSM_054,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16,arithmetic_reasoning,medium,hard
+GSM_054,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16,arithmetic_reasoning,medium,hard
+GSM_054,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16,arithmetic_reasoning,medium,hard
+GSM_054,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,23,arithmetic_reasoning,medium,hard
+GSM_055,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,medium
+GSM_055,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,medium
+GSM_055,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,medium
+GSM_055,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,medium
+GSM_055,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,94,arithmetic_reasoning,medium,medium
+GSM_056,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,69,arithmetic_reasoning,medium,medium
+GSM_056,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,69,arithmetic_reasoning,medium,medium
+GSM_056,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,69,arithmetic_reasoning,medium,medium
+GSM_056,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,69,arithmetic_reasoning,medium,medium
+GSM_056,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,123,arithmetic_reasoning,medium,medium
+GSM_057,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,84,arithmetic_reasoning,medium,medium
+GSM_057,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,84,arithmetic_reasoning,medium,medium
+GSM_057,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,84,arithmetic_reasoning,medium,medium
+GSM_057,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,84,arithmetic_reasoning,medium,medium
+GSM_057,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,86,arithmetic_reasoning,medium,medium
+GSM_058,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,285,arithmetic_reasoning,medium,hard
+GSM_058,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,285,arithmetic_reasoning,medium,hard
+GSM_058,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,285,arithmetic_reasoning,medium,hard
+GSM_058,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,285,arithmetic_reasoning,medium,hard
+GSM_058,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,120,arithmetic_reasoning,medium,hard
+GSM_059,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,29,arithmetic_reasoning,medium,easy
+GSM_059,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,29,arithmetic_reasoning,medium,easy
+GSM_059,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,29,arithmetic_reasoning,medium,easy
+GSM_059,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,29,arithmetic_reasoning,medium,easy
+GSM_059,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,40,arithmetic_reasoning,medium,easy
+GSM_060,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,46,arithmetic_reasoning,medium,hard
+GSM_060,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,46,arithmetic_reasoning,medium,hard
+GSM_060,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,46,arithmetic_reasoning,medium,hard
+GSM_060,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,46,arithmetic_reasoning,medium,hard
+GSM_060,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,62,arithmetic_reasoning,medium,hard
+GSM_061,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,420,arithmetic_reasoning,medium,easy
+GSM_061,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,420,arithmetic_reasoning,medium,easy
+GSM_061,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,420,arithmetic_reasoning,medium,easy
+GSM_061,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,420,arithmetic_reasoning,medium,easy
+GSM_061,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,630,arithmetic_reasoning,medium,easy
+GSM_062,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,112000,arithmetic_reasoning,medium,hard
+GSM_062,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,65600,arithmetic_reasoning,medium,hard
+GSM_063,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16200,arithmetic_reasoning,medium,hard
+GSM_063,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,246300,arithmetic_reasoning,medium,hard
+GSM_064,W1,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,75,arithmetic_reasoning,medium,easy
+GSM_064,W2,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,75,arithmetic_reasoning,medium,easy
+GSM_064,W3,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,75,arithmetic_reasoning,medium,easy
+GSM_064,W4,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,75,arithmetic_reasoning,medium,easy
+GSM_064,W6,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,75,arithmetic_reasoning,medium,easy
+GSM_041,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,190,arithmetic_reasoning,high,easy
+GSM_042,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,94,arithmetic_reasoning,high,easy
+GSM_043,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,640,arithmetic_reasoning,high,easy
+GSM_044,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,45,arithmetic_reasoning,high,easy
+GSM_045,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,205,arithmetic_reasoning,high,medium
+GSM_046,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,275,arithmetic_reasoning,high,medium
+GSM_047,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1800,arithmetic_reasoning,high,hard
+GSM_048,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,high,hard
+GSM_049,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,450,arithmetic_reasoning,high,hard
+GSM_050,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16,arithmetic_reasoning,medium,medium
+GSM_051,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,80,arithmetic_reasoning,medium,easy
+GSM_052,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,medium
+GSM_053,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,630,arithmetic_reasoning,medium,easy
+GSM_054,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,30,arithmetic_reasoning,medium,hard
+GSM_055,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,621,arithmetic_reasoning,medium,medium
+GSM_056,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,104,arithmetic_reasoning,medium,medium
+GSM_057,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,64,arithmetic_reasoning,medium,medium
+GSM_058,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,medium,hard
+GSM_059,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,55,arithmetic_reasoning,medium,easy
+GSM_060,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,100,arithmetic_reasoning,medium,hard
+GSM_061,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,easy
+GSM_062,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,458000,arithmetic_reasoning,medium,hard
+GSM_063,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,220000,arithmetic_reasoning,medium,hard
+GSM_064,W5,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,13,arithmetic_reasoning,medium,easy
+GSM_041,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,150,arithmetic_reasoning,high,easy
+GSM_042,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,2820,arithmetic_reasoning,high,easy
+GSM_043,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,8,arithmetic_reasoning,high,easy
+GSM_044,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,59,arithmetic_reasoning,high,easy
+GSM_045,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1122,arithmetic_reasoning,high,medium
+GSM_046,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,121,arithmetic_reasoning,high,medium
+GSM_047,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,510,arithmetic_reasoning,high,hard
+GSM_048,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,206,arithmetic_reasoning,high,hard
+GSM_049,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,1782,arithmetic_reasoning,high,hard
+GSM_050,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,20,arithmetic_reasoning,medium,medium
+GSM_051,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,256,arithmetic_reasoning,medium,easy
+GSM_052,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,43.75,arithmetic_reasoning,medium,medium
+GSM_053,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,378,arithmetic_reasoning,medium,easy
+GSM_054,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16,arithmetic_reasoning,medium,hard
+GSM_055,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,6,arithmetic_reasoning,medium,medium
+GSM_056,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,69,arithmetic_reasoning,medium,medium
+GSM_057,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,84,arithmetic_reasoning,medium,medium
+GSM_058,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,285,arithmetic_reasoning,medium,hard
+GSM_059,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,29,arithmetic_reasoning,medium,easy
+GSM_060,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,46,arithmetic_reasoning,medium,hard
+GSM_061,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,420,arithmetic_reasoning,medium,easy
+GSM_062,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,112000,arithmetic_reasoning,medium,hard
+GSM_063,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,16200,arithmetic_reasoning,medium,hard
+GSM_064,canonical,openai/gpt-4o,ERROR: 402 Payment Required for https://openrouter.ai/api/v1/chat/completions: Insufficient credits. Add more using https://openrouter.ai/settings/credits,False,75,arithmetic_reasoning,medium,easy

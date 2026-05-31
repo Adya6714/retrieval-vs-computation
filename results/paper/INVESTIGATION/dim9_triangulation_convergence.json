@@ -1,0 +1,18 @@
+{
+  "ALGO_all_models": {
+    "ambiguous": 205,
+    "mixed": 115,
+    "retrieval_signal": 6,
+    "computation_signal": 4
+  },
+  "GSM_claude": {
+    "converging_computation": 35,
+    "diverging": 9
+  },
+  "BW_claude": {
+    "insufficient": 54,
+    "diverging": 41,
+    "execution_unavailable": 25,
+    "converging_computation": 4
+  }
+}

@@ -1,0 +1,4 @@
+family,n_rows,n_unique_problems,template_contam_mean,instance_contam_mean
+ALGO,116,110,0.1790663793103448,0.14469568965517243
+GSM,44,44,,
+BW,65,65,0.0,0.08536461538461539

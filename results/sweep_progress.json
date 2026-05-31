@@ -1,0 +1,123 @@
+{
+  "meta-llama/llama-3.1-8b-instruct": {
+    "BW": {
+      "status": "complete",
+      "started_at": "2026-05-21T17:07:51Z",
+      "rows": 470,
+      "processed": 232,
+      "skipped": 223,
+      "errors": 0,
+      "timestamp": "2026-05-21T18:05:32Z"
+    },
+    "GSM": {
+      "status": "complete",
+      "started_at": "2026-05-21T18:05:39Z",
+      "rows": 288,
+      "processed": 288,
+      "skipped": 0,
+      "errors": 0,
+      "timestamp": "2026-05-21T19:01:27Z"
+    },
+    "ALGO": {
+      "status": "complete",
+      "started_at": "2026-05-21T20:00:29Z",
+      "rows": 710,
+      "processed": 418,
+      "skipped": 0,
+      "errors": 0,
+      "timestamp": "2026-05-21T21:36:37Z"
+    }
+  },
+  "anthropic/claude-sonnet-4": {
+    "BW": {
+      "status": "complete",
+      "started_at": "2026-05-21T21:36:39Z",
+      "rows": 455,
+      "processed": 454,
+      "skipped": 1,
+      "errors": 0,
+      "timestamp": "2026-05-21T22:06:12Z"
+    },
+    "GSM": {
+      "status": "complete",
+      "started_at": "2026-05-21T22:06:14Z",
+      "rows": 288,
+      "processed": 287,
+      "skipped": 1,
+      "errors": 0,
+      "timestamp": "2026-05-21T22:25:59Z"
+    },
+    "ALGO": {
+      "status": "complete",
+      "started_at": "2026-05-21T22:26:02Z",
+      "rows": 690,
+      "processed": 689,
+      "skipped": 0,
+      "errors": 0,
+      "timestamp": "2026-05-21T23:45:13Z"
+    }
+  },
+  "openai/gpt-4o": {
+    "BW": {
+      "status": "complete",
+      "started_at": "2026-05-21T23:45:16Z",
+      "rows": 470,
+      "processed": 232,
+      "skipped": 223,
+      "errors": 0,
+      "timestamp": "2026-05-21T23:52:44Z"
+    },
+    "GSM": {
+      "status": "complete",
+      "started_at": "2026-05-21T23:52:47Z",
+      "rows": 288,
+      "processed": 288,
+      "skipped": 0,
+      "errors": 0,
+      "timestamp": "2026-05-22T00:06:59Z"
+    },
+    "ALGO": {
+      "status": "complete",
+      "started_at": "2026-05-22T00:07:02Z",
+      "rows": 710,
+      "processed": 590,
+      "skipped": 0,
+      "errors": 0,
+      "timestamp": "2026-05-22T00:38:14Z"
+    }
+  },
+  "deepseek/deepseek-r1": {
+    "BW": {
+      "status": "pending"
+    },
+    "GSM": {
+      "status": "pending"
+    },
+    "ALGO": {
+      "status": "pending"
+    }
+  },
+  "qwen/qwen-2.5-72b-instruct": {
+    "BW": {
+      "status": "pending"
+    },
+    "GSM": {
+      "status": "pending"
+    },
+    "ALGO": {
+      "status": "pending"
+    }
+  },
+  "deepseek/deepseek-r1-distill-llama-70b": {
+    "BW": {
+      "status": "in_progress",
+      "started_at": "2026-05-22T00:38:17Z"
+    },
+    "GSM": {
+      "status": "pending"
+    },
+    "ALGO": {
+      "status": "pending"
+    }
+  }
+}

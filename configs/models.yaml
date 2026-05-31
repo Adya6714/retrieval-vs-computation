@@ -1,0 +1,74 @@
+# RVC evaluation model roster
+# Used for: Stage 2 variant generation (default), behavioral sweeps (Probe 1/2), Stage 5 pilot (--real)
+#
+# All sweep models below are accessed via OpenRouter unless noted.
+# OpenRouter IDs: https://openrouter.ai/models
+
+# Default for LLM generation in scripts/generation/ (stage2, stage5 pilot)
+default_openrouter_model: anthropic/claude-sonnet-4
+
+roster:
+  - name: claude-sonnet-4
+    display_name: Claude 3.7 Sonnet
+    via: OpenRouter
+    openrouter_id: anthropic/claude-sonnet-4
+    scientific_role: "Anchor. PDAS=1.000 finding."
+    mechanistic: false
+    behavioral: true
+    priority: required
+
+  - name: gpt-4o
+    display_name: GPT-4o
+    via: OpenRouter
+    openrouter_id: openai/gpt-4o
+    scientific_role: "Frontier closed-source comparison."
+    mechanistic: false
+    behavioral: true
+    priority: required
+
+  - name: llama-3.1-8b
+    display_name: Llama 3.1 8B
+    via: OpenRouter
+    openrouter_id: meta-llama/llama-3.1-8b-instruct
+    scientific_role: "Capability floor. Open-source reproducibility."
+    mechanistic: false
+    behavioral: true
+    priority: required
+
+  - name: deepseek-r1-distill-llama-70b
+    display_name: DeepSeek-R1-Distill-Llama-70B
+    via: OpenRouter
+    openrouter_id: deepseek/deepseek-r1-distill-llama-70b
+    scientific_role: "Reasoning-specialized (cost-efficient distill)."
+    mechanistic: false
+    behavioral: true
+    priority: optional
+
+  - name: qwen2.5-72b
+    display_name: Qwen2.5 72B
+    via: OpenRouter
+    openrouter_id: qwen/qwen-2.5-72b-instruct
+    scientific_role: "Large open-source, different training distribution."
+    mechanistic: false
+    behavioral: true
+    priority: required
+
+# Local / HF mechanistic lane (not OpenRouter behavioral sweeps)
+open_models_local:
+  - name: qwen2.5-7b
+    display_name: Qwen2.5 7B (local HF)
+    hf_id: Qwen/Qwen2.5-7B-Instruct
+    requires_gpu: true
+    mechanistic: true
+    behavioral: false
+    priority: optional
+    notes: mechanistic probes only; behavioral sweeps use qwen2.5-72b via OpenRouter
+
+  - name: mock
+    display_name: Mock (tests)
+    hf_id: null
+    requires_gpu: false
+    mechanistic: false
+    behavioral: true
+    priority: testing
+    notes: hardcoded responses; stage5_pilot.py --mock

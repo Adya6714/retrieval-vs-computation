@@ -1,0 +1,110 @@
+path,layer,family,probe,artifact_type,question_bank,producer_script,tag,present,format,data_rows,bytes,mtime_utc
+results/raw/BW_P1_behavioral.csv,raw,BW,P1,behavioral_sweep,question_bank_bw.csv,scripts/BW_P1_SCR_run_behavioral_sweep.py,bank_run,True,csv,74560,2167540,2026-05-22T06:45:29Z
+results/raw/GSM_P1_behavioral_claude.csv,raw,GSM,P1,behavioral_sweep,question_bank_gsm.csv,scripts/BW_P1_SCR_run_behavioral_sweep.py --family arithmetic_reasoning,bank_run,True,csv,6306,222483,2026-05-22T12:45:29Z
+results/raw/GSM_P1_behavioral_gpt4o.csv,raw,GSM,P1,behavioral_sweep,question_bank_gsm.csv,scripts/BW_P1_SCR_run_behavioral_sweep.py --family arithmetic_reasoning,bank_run,True,csv,3735,137492,2026-05-19T09:17:55Z
+results/raw/GSM_P1_behavioral_llama.csv,raw,GSM,P1,behavioral_sweep,question_bank_gsm.csv,scripts/BW_P1_SCR_run_behavioral_sweep.py --family arithmetic_reasoning,bank_run,True,csv,3708,382109,2026-05-19T09:17:55Z
+results/raw/ALGO_P1_behavioral_claude.csv,raw,ALGO,P1,behavioral_sweep,question_bank_algo.csv,scripts/ALGO_P1_SCR_run_behavioral_sweep.py,bank_run,True,csv,24655,895948,2026-05-21T23:45:13Z
+results/raw/ALGO_P1_behavioral_gpt4o.csv,raw,ALGO,P1,behavioral_sweep,question_bank_algo.csv,scripts/ALGO_P1_SCR_run_behavioral_sweep.py,bank_run,True,csv,10640,563763,2026-05-22T00:38:14Z
+results/raw/ALGO_P1_behavioral_llama.csv,raw,ALGO,P1,behavioral_sweep,question_bank_algo.csv,scripts/ALGO_P1_SCR_run_behavioral_sweep.py,bank_run,True,csv,19890,1563641,2026-05-21T21:36:29Z
+results/raw/ALGO_P1_review_queue.csv,raw,ALGO,P1,review_queue,question_bank_algo.csv,scripts/ALGO_P1_SCR_run_behavioral_sweep.py,bank_run_aux,True,csv,2115,162878,2026-05-22T00:32:27Z
+results/raw/BW_P2_plans.csv,raw,BW,P2,plans,question_bank_bw.csv,scripts/BW_P2_SCR_extract_phase1_plans.py,bank_run,True,csv,2326,103552,2026-05-22T12:18:42Z
+results/raw/BW_P2_cci.csv,raw,BW,P2,cci,question_bank_bw.csv,scripts/BW_P2_SCR_run_cci.py,bank_run,True,csv,150,254786,2026-05-22T14:16:59Z
+results/raw/BW_P2_tep.csv,raw,BW,P2,tep,question_bank_bw.csv,scripts/BW_P2_SCR_run_tep.py,bank_run,True,csv,536,532387,2026-05-22T15:25:07Z
+results/raw/GSM_P2_cci.csv,raw,GSM,P2,cci,question_bank_gsm.csv,scripts/GSM_P2_SCR_run_probe2.py,bank_run,True,csv,84,7808,2026-05-22T12:18:45Z
+results/raw/GSM_P2_phase1_claude.csv,raw,GSM,P2,phase1,question_bank_gsm.csv,scripts/GSM_P2_SCR_run_probe2.py,bank_run,True,csv,44,29021,2026-05-22T09:39:30Z
+results/raw/GSM_P2_phase1_gpt4o.csv,raw,GSM,P2,phase1,question_bank_gsm.csv,scripts/GSM_P2_SCR_run_probe2.py,bank_run,True,csv,44,16819,2026-05-22T10:00:18Z
+results/raw/GSM_P2_phase1_llama.csv,raw,GSM,P2,phase1,question_bank_gsm.csv,scripts/GSM_P2_SCR_run_probe2.py,bank_run,True,csv,44,91813,2026-05-22T10:14:46Z
+results/raw/ALGO_P2_phase1_claude.csv,raw,ALGO,P2,phase1,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase1.py,bank_run,True,csv,0,201,2026-05-21T16:30:47Z
+results/raw/ALGO_P2_phase1_claude_new.csv,raw,ALGO,P2,phase1,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase1.py,bank_run,True,csv,770,210348,2026-05-22T09:28:12Z
+results/raw/ALGO_P2_phase1_gpt4o.csv,raw,ALGO,P2,phase1,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase1.py,bank_run,True,csv,156,37769,2026-04-24T12:32:50Z
+results/raw/ALGO_P2_phase1_gpt4o_new.csv,raw,ALGO,P2,phase1,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase1.py,bank_run,True,csv,581,178396,2026-05-22T09:56:20Z
+results/raw/ALGO_P2_phase1_llama.csv,raw,ALGO,P2,phase1,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase1.py,bank_run,True,csv,198,44639,2026-04-24T12:34:35Z
+results/raw/ALGO_P2_phase1_llama_new.csv,raw,ALGO,P2,phase1,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase1.py,bank_run,True,csv,768,214588,2026-05-22T10:05:34Z
+results/raw/ALGO_P2_phase2_normal.csv,raw,ALGO,P2,phase2_normal,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase2.py,bank_run,True,csv,16088,1292580,2026-05-22T12:55:43Z
+results/raw/ALGO_P2_phase2_injected.csv,raw,ALGO,P2,phase2_injected,question_bank_algo.csv,scripts/ALGO_P2_SCR_run_phase2.py,bank_run,True,csv,1639,312180,2026-05-22T12:42:00Z
+results/raw/BW_P3_contamination.csv,raw,BW,P3,contamination,question_bank_bw.csv,scripts/BW_P3_SCR_run_contamination_triage.py,bank_run,True,csv,1026,80982,2026-05-21T22:02:08Z
+results/raw/GSM_P3_contamination.csv,raw,GSM,P3,contamination,question_bank_gsm.csv,scripts/BW_P3_SCR_run_contamination_triage.py,bank_run,True,csv,44,14913,2026-05-21T21:10:07Z
+results/raw/ALGO_P3_contamination.csv,raw,ALGO,P3,contamination,question_bank_algo.csv,scripts/BW_P3_SCR_run_contamination_triage.py,bank_run,True,csv,2051,80829,2026-05-21T23:23:26Z
+results/raw/BW_P3_mechanistic.csv,raw,BW,P3,mechanistic,question_bank_bw.csv,scripts/run_mechanistic_sweep.py,bank_run,True,csv,35,9051,2026-04-22T21:17:51Z
+results/raw/GSM_P3_mechanistic.csv,raw,GSM,P3,mechanistic,question_bank_gsm.csv,scripts/run_mechanistic_sweep.py,bank_run,True,csv,20,1612,2026-04-23T08:20:44Z
+results/raw/ALGO_P3_mechanistic.csv,raw,ALGO,P3,mechanistic,question_bank_algo.csv,scripts/run_mechanistic_sweep.py,bank_run,True,csv,20,5235,2026-04-24T19:54:39Z
+results/derived/BW_P1_metrics.csv,derived,BW,P1,metrics,question_bank_bw.csv,scripts/BW_P1_SCR_compute_metrics.py,derived_from_raw,True,csv,88,7165,2026-05-22T13:37:43Z
+results/derived/GSM_P1_metrics.csv,derived,GSM,P1,metrics,question_bank_gsm.csv,scripts/GSM_P1_SCR_compute_metrics.py,derived_from_raw,True,csv,45,4209,2026-05-22T13:35:31Z
+results/derived/ALGO_P1_metrics.csv,derived,ALGO,P1,metrics,question_bank_algo.csv,scripts/ALGO_P1_SCR_compute_metrics.py,derived_from_raw,True,csv,66,4776,2026-05-22T13:37:41Z
+results/derived/ALGO_P1_VWC_exploratory.csv,derived,ALGO,P1,metrics_exploratory,question_bank_algo.csv,scripts/ALGO_P1_SCR_compute_metrics.py,derived_from_raw,True,csv,18,1087,2026-05-19T19:11:38Z
+results/derived/ALGO_P2_metrics.csv,derived,ALGO,P2,metrics,question_bank_algo.csv,scripts/ALGO_P2_SCR_compute_metrics.py,derived_from_raw,True,csv,18,1519,2026-05-22T15:27:45Z
+results/derived/GSM_P2_metrics.csv,derived,GSM,P2,metrics,question_bank_gsm.csv,scripts/GSM_P2_SCR_compute_metrics.py,derived_from_raw,True,csv,15,1229,2026-05-22T13:38:01Z
+results/derived/P1_metrics_by_model_family.csv,derived,cross,P1,metrics_aggregate,multi,P1 metrics rollup,derived_from_raw,True,csv,9,2320,2026-05-22T13:37:44Z
+results/derived/P1_metrics_by_model_subtype.csv,derived,cross,P1,metrics_aggregate,multi,P1 metrics rollup,derived_from_raw,True,csv,20,3431,2026-05-22T13:37:44Z
+results/derived/P1_per_problem_var.csv,derived,cross,P1,per_problem_var,multi,P1 metrics rollup,derived_from_raw,True,csv,657,51122,2026-05-22T13:37:44Z
+results/derived/ALGO_P3_triangulation.csv,derived,ALGO,P3,triangulation,question_bank_algo.csv,scripts/ALGO_P3_SCR_triangulation.py,derived_from_raw,True,csv,330,74655,2026-05-22T15:31:45Z
+results/derived/BW_P3_triangulation_claude.csv,derived,BW,P3,triangulation,question_bank_bw.csv,scripts/BW_P3_SCR_run_triangulation.py,derived_from_raw,True,csv,124,14890,2026-05-22T15:33:19Z
+results/derived/BW_P3_triangulation_gpt4o.csv,derived,BW,P3,triangulation,question_bank_bw.csv,scripts/BW_P3_SCR_run_triangulation.py,derived_from_raw,True,csv,124,13473,2026-05-22T15:33:21Z
+results/derived/BW_P3_triangulation_llama.csv,derived,BW,P3,triangulation,question_bank_bw.csv,scripts/BW_P3_SCR_run_triangulation.py,derived_from_raw,True,csv,124,15474,2026-05-22T15:33:22Z
+results/derived/GSM_P3_triangulation_per_instance_claude.csv,derived,GSM,P3,triangulation,question_bank_gsm.csv,scripts/BW_P3_SCR_run_triangulation.py (GSM family),derived_from_raw,True,csv,44,6761,2026-05-22T15:33:33Z
+results/derived/GSM_P3_triangulation_per_instance_gpt4o.csv,derived,GSM,P3,triangulation,question_bank_gsm.csv,scripts/BW_P3_SCR_run_triangulation.py (GSM family),derived_from_raw,True,csv,64,7363,2026-05-22T15:33:34Z
+results/derived/ALGO_P3_contamination_regression.txt,derived,ALGO,P3,regression_summary,question_bank_algo.csv,scripts/ALGO_P3_SCR_triangulation.py,derived_from_raw,True,txt,,1894,2026-05-22T15:33:10Z
+results/derived/BW_P3_contamination_regression_claude.txt,derived,BW,P3,regression_summary,question_bank_bw.csv,scripts/BW_P3_SCR_run_triangulation.py,derived_from_raw,True,txt,,3829,2026-05-22T15:33:19Z
+results/derived/BW_P3_contamination_regression_gpt4o.txt,derived,BW,P3,regression_summary,question_bank_bw.csv,scripts/BW_P3_SCR_run_triangulation.py,derived_from_raw,True,txt,,3829,2026-05-22T15:33:21Z
+results/derived/BW_P3_contamination_regression_llama.txt,derived,BW,P3,regression_summary,question_bank_bw.csv,scripts/BW_P3_SCR_run_triangulation.py,derived_from_raw,True,txt,,1917,2026-05-22T15:33:22Z
+results/derived/GSM_P3_contamination_regression_claude.txt,derived,GSM,P3,regression_summary,question_bank_gsm.csv,scripts/BW_P3_SCR_run_triangulation.py (GSM family),derived_from_raw,True,txt,,3829,2026-05-22T15:33:33Z
+results/derived/GSM_P3_contamination_regression_gpt4o.txt,derived,GSM,P3,regression_summary,question_bank_gsm.csv,scripts/BW_P3_SCR_run_triangulation.py (GSM family),derived_from_raw,True,txt,,3829,2026-05-22T15:33:34Z
+results/paper/TABLE1_cross_family.csv,paper,cross,P1+P2+P3,table,multi,scripts/consolidate/make_table1.py,presentation,True,csv,9,1607,2026-05-22T15:34:11Z
+results/paper/cross_family_regression.csv,paper,cross,P1+P3,regression_table,multi,scripts/consolidate/run_css_regressions.py,presentation,True,csv,9,1224,2026-05-22T15:33:53Z
+results/paper/cross_family_regression.txt,paper,cross,P1+P3,regression_summary,multi,scripts/consolidate/run_css_regressions.py,presentation,True,txt,,1421,2026-05-22T15:33:53Z
+results/paper/PROBE2_consolidated.csv,paper,cross,P2,table,multi,scripts/consolidate/run_paper_consolidation*.py,presentation,True,csv,18,2341,2026-04-27T08:56:31Z
+results/paper/PRE_PAPER_AUDIT.txt,paper,cross,—,audit_notes,multi,manual / audit,presentation_aux,True,txt,,159,2026-04-27T09:04:06Z
+results/paper/GSM_P1_RES_metrics.csv,paper,GSM,P1,metrics_wide,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,45,3499,2026-04-27T09:04:06Z
+results/paper/GSM_P1_RES_var.csv,paper,GSM,P1,var_export,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,21,1003,2026-04-24T22:37:21Z
+results/paper/GSM_P1_RES_css.csv,paper,GSM,P1,css_export,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,60,4541,2026-04-24T22:37:21Z
+results/paper/GSM_P1_RES_rcs.csv,paper,GSM,P1,rcs_export,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,60,3272,2026-04-24T22:37:21Z
+results/paper/GSM_P1_RES_rcs_by_difficulty.csv,paper,GSM,P1,rcs_by_difficulty,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,9,360,2026-04-24T22:37:21Z
+results/paper/GSM_P1_RES_w4_gap.csv,paper,GSM,P1,w4_gap,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,60,4776,2026-04-24T22:37:21Z
+results/paper/GSM_P1_RES_vri.csv,paper,GSM,P1,vri_export,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,3,227,2026-04-24T22:37:21Z
+results/paper/GSM_P1_RES_step_count_sensitivity.csv,paper,GSM,P1,step_sensitivity,question_bank_gsm.csv,legacy GSM P1 export,presentation_legacy,True,csv,6,323,2026-04-24T22:37:21Z
+results/paper/ALGO_P1_RES_metrics.csv,paper,ALGO,P1,metrics_wide,question_bank_algo.csv,legacy ALGO P1 export,presentation_legacy,True,csv,193,12965,2026-04-27T06:36:15Z
+results/paper/BW_P1_RES_metrics.csv,paper,BW,P1,metrics_wide,question_bank_bw.csv,legacy BW P1 export,presentation_legacy,True,csv,63,4076,2026-04-27T00:33:28Z
+results/sweep_progress.json,meta,cross,P1,progress_tracker,multi,sweep runners (--resume),bank_run_meta,True,json,,2639,2026-05-22T00:38:17Z
+figures/GSM_P1_FIG_var_heatmap.png,figures_root,GSM,P1,figure,question_bank_gsm.csv,scripts/GSM_P1_FIG_generate.py,presentation,True,png,,79912,2026-05-22T15:45:16Z
+figures/GSM_P1_FIG_var_heatmap.pdf,figures_root,GSM,P1,figure,question_bank_gsm.csv,scripts/GSM_P1_FIG_generate.py,presentation,True,pdf,,19590,2026-05-22T15:45:16Z
+figures/GSM_P2_FIG_cci_violin.png,figures_root,GSM,P2,figure,question_bank_gsm.csv,scripts/GSM_P2_FIG_generate.py,presentation,True,png,,61011,2026-05-22T15:44:47Z
+figures/GSM_P2_FIG_cci_violin.pdf,figures_root,GSM,P2,figure,question_bank_gsm.csv,scripts/GSM_P2_FIG_generate.py,presentation,True,pdf,,24489,2026-05-22T15:44:47Z
+figures/GSM_P2_FIG_tep_bar.png,figures_root,GSM,P2,figure,question_bank_gsm.csv,scripts/GSM_P2_FIG_generate.py,presentation,True,png,,46470,2026-05-22T15:44:47Z
+figures/GSM_P2_FIG_tep_bar.pdf,figures_root,GSM,P2,figure,question_bank_gsm.csv,scripts/GSM_P2_FIG_generate.py,presentation,True,pdf,,15668,2026-05-22T15:44:47Z
+figures/GSM_P3_FIG_contamination_scatter.png,figures_root,GSM,P3,figure,question_bank_gsm.csv,scripts/GSM_P3_FIG_generate.py,presentation,True,png,,86439,2026-05-22T15:45:07Z
+figures/GSM_P3_FIG_contamination_scatter.pdf,figures_root,GSM,P3,figure,question_bank_gsm.csv,scripts/GSM_P3_FIG_generate.py,presentation,True,pdf,,23160,2026-05-22T15:45:07Z
+figures/GSM_P3_FIG_crystallization_layer.png,figures_root,GSM,P3,figure,question_bank_gsm.csv,scripts/GSM_P3_FIG_generate.py,presentation,True,png,,26612,2026-05-22T15:45:09Z
+figures/GSM_P3_FIG_crystallization_layer.pdf,figures_root,GSM,P3,figure,question_bank_gsm.csv,scripts/GSM_P3_FIG_generate.py,presentation,True,pdf,,12654,2026-05-22T15:45:09Z
+figures/GSM_P3_FIG_cross_family_comparison.png,figures_root,GSM,P3,figure,multi,scripts/GSM_P3_FIG_generate.py,presentation,True,png,,9204,2026-05-22T15:45:09Z
+figures/GSM_P3_FIG_cross_family_comparison.pdf,figures_root,GSM,P3,figure,multi,scripts/GSM_P3_FIG_generate.py,presentation,True,pdf,,7098,2026-05-22T15:45:09Z
+results/figures/ALGO_P1_FIG_01_var_heatmap.png,figures,ALGO,P1,figure,question_bank_algo.csv,scripts/ALGO_P1_FIG_generate.py,presentation,True,png,,441899,2026-05-22T15:45:17Z
+results/figures/ALGO_P1_FIG_01_var_heatmap.pdf,figures,ALGO,P1,figure,question_bank_algo.csv,scripts/ALGO_P1_FIG_generate.py,presentation,True,pdf,,27720,2026-05-22T15:45:17Z
+results/figures/ALGO_P1_FIG_02_gss_bar.png,figures,ALGO,P1,figure,question_bank_algo.csv,scripts/ALGO_P1_FIG_generate.py,presentation,True,png,,104633,2026-05-22T15:45:19Z
+results/figures/ALGO_P1_FIG_02_gss_bar.pdf,figures,ALGO,P1,figure,question_bank_algo.csv,scripts/ALGO_P1_FIG_generate.py,presentation,True,pdf,,18106,2026-05-22T15:45:19Z
+results/figures/ALGO_P1_FIG_04_contamination_scatter.png,figures,ALGO,P1,figure,question_bank_algo.csv,scripts/ALGO_P1_FIG_generate.py,presentation,True,png,,119210,2026-05-22T15:45:19Z
+results/figures/ALGO_P1_FIG_04_contamination_scatter.pdf,figures,ALGO,P1,figure,question_bank_algo.csv,scripts/ALGO_P1_FIG_generate.py,presentation,True,pdf,,20962,2026-05-22T15:45:19Z
+results/figures/ALGO_P1_FIG_05_cross_family_comparison.png,figures,ALGO,P1,figure,multi,scripts/ALGO_P1_FIG_generate.py,presentation,True,png,,110273,2026-05-22T15:45:19Z
+results/figures/ALGO_P1_FIG_05_cross_family_comparison.pdf,figures,ALGO,P1,figure,multi,scripts/ALGO_P1_FIG_generate.py,presentation,True,pdf,,18081,2026-05-22T15:45:19Z
+results/figures/ALGO_P2_FIG_06_cci_tep_side_by_side.png,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,png,,167317,2026-05-22T15:44:52Z
+results/figures/ALGO_P2_FIG_06_cci_tep_side_by_side.pdf,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,pdf,,45060,2026-05-22T15:44:52Z
+results/figures/ALGO_P2_FIG_07_tep_interpretation.png,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,png,,86649,2026-05-22T15:44:53Z
+results/figures/ALGO_P2_FIG_07_tep_interpretation.pdf,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,pdf,,15531,2026-05-22T15:44:53Z
+results/figures/ALGO_P2_FIG_09_reasoning_distribution.png,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,png,,120120,2026-05-22T15:44:53Z
+results/figures/ALGO_P2_FIG_09_reasoning_distribution.pdf,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,pdf,,17160,2026-05-22T15:44:53Z
+results/figures/ALGO_P2_FIG_10_adc_matrix.png,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,png,,92270,2026-05-22T15:44:53Z
+results/figures/ALGO_P2_FIG_10_adc_matrix.pdf,figures,ALGO,P2,figure,question_bank_algo.csv,scripts/ALGO_P2_FIG_generate.py,presentation,True,pdf,,19570,2026-05-22T15:44:53Z
+results/figures/ALGO_P3_FIG_08_regression_forest.png,figures,ALGO,P3,figure,question_bank_algo.csv,scripts/ALGO_P3_FIG_generate.py,presentation,True,png,,138402,2026-05-22T15:45:01Z
+results/figures/ALGO_P3_FIG_08_regression_forest.pdf,figures,ALGO,P3,figure,question_bank_algo.csv,scripts/ALGO_P3_FIG_generate.py,presentation,True,pdf,,19472,2026-05-22T15:45:01Z
+results/figures/BW_P2_FIG_action_heatmap.png,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,png,,720877,2026-05-22T15:45:00Z
+results/figures/BW_P2_FIG_action_heatmap.pdf,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,pdf,,64897,2026-05-22T15:44:59Z
+results/figures/BW_P2_FIG_tep_cascade.png,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,png,,399358,2026-05-22T15:45:01Z
+results/figures/BW_P2_FIG_tep_cascade.pdf,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,pdf,,25063,2026-05-22T15:45:00Z
+results/figures/BW_P2_FIG_repetition_rate.png,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,png,,99554,2026-05-22T15:45:01Z
+results/figures/BW_P2_FIG_repetition_rate.pdf,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,pdf,,17607,2026-05-22T15:45:01Z
+results/figures/BW_P2_FIG_violation_breakdown.png,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,png,,328541,2026-05-22T15:45:03Z
+results/figures/BW_P2_FIG_violation_breakdown.pdf,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,pdf,,33198,2026-05-22T15:45:02Z
+results/figures/BW_P2_FIG_first_illegal_step.png,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,png,,126798,2026-05-22T15:45:03Z
+results/figures/BW_P2_FIG_first_illegal_step.pdf,figures,BW,P2,figure,question_bank_bw.csv,scripts/BW_P2_SCR_generate_figures.py,presentation,True,pdf,,23408,2026-05-22T15:45:03Z
+results/figures/BW_P3_FIG_probe1_triage.png,figures,BW,P3,figure,question_bank_bw.csv,scripts/BW_P3_FIG_probe1_triage_plot.py,presentation,True,png,,94644,2026-05-22T15:44:47Z
+analysis/figures/output/BW_FIG_P1_pdas_bars.png,analysis_figures,BW,P1,figure,question_bank_bw.csv,analysis/figures/fig2_pdas_bars.py,presentation,True,png,,150642,2026-04-24T22:37:33Z
+analysis/figures/output/BW_FIG_P1_pdas_bars.pdf,analysis_figures,BW,P1,figure,question_bank_bw.csv,analysis/figures/fig2_pdas_bars.py,presentation,True,pdf,,21098,2026-04-24T22:37:34Z

@@ -1,0 +1,34 @@
+family,probe,model,flag,severity,n_affected,detail,fix_type,blocks_analysis
+GSM,P1,GPT-4o,duplicate_wrong_ids,high,20,"20 canonical IDs GSM_021–040 not in bank; 20/20 duplicate GSM_001–020 answers — exclude from bank stats, do not remap to 041–060",exclude_from_bank,P1 accuracy/VRI for 24 bank IDs GSM_041–064 still missing
+GSM,P1,Llama,duplicate_wrong_ids,high,20,"20 canonical IDs GSM_021–040 not in bank; 20/20 duplicate GSM_001–020 answers — exclude from bank stats, do not remap to 041–060",exclude_from_bank,P1 accuracy/VRI for 24 bank IDs GSM_041–064 still missing
+BW,P1,"Claude,GPT-4o,Llama",cross_family_contamination,medium,44,BW_P1_behavioral.csv contains 44 GSM problem IDs — filter in derivations (fixed) but raw file unclean,derivation_filter,None if bank-filtered; inflates raw row counts
+BW,P1,Claude,api_error_rows,low,2,2 ERROR: rows in raw — excluded from coverage counts,re_run_errors,2 variant rows unusable
+BW,P1,GPT-4o,api_error_rows,low,2,2 ERROR: rows in raw — excluded from coverage counts,re_run_errors,2 variant rows unusable
+BW,P1,Llama,api_error_rows,low,2,2 ERROR: rows in raw — excluded from coverage counts,re_run_errors,2 variant rows unusable
+GSM,P1,GPT-4o,incomplete_coverage,medium,24,20/44 bank-valid; label=partial,api_run,Any claim needing full bank denominator
+GSM,P1,Llama,incomplete_coverage,medium,24,20/44 bank-valid; label=partial,api_run,Any claim needing full bank denominator
+ALGO,P2A_elicited,Claude,incomplete_coverage,medium,49,61/110 bank-valid; label=partial,api_run,Any claim needing full bank denominator
+ALGO,P2A_elicited,Gemini,incomplete_coverage,medium,49,61/110 bank-valid; label=partial,api_run,Any claim needing full bank denominator
+ALGO,P2A_elicited,Llama,incomplete_coverage,medium,49,61/110 bank-valid; label=partial,api_run,Any claim needing full bank denominator
+BW,P2_tep,Claude,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_tep,Gemini,missing_model,high,65,0/65 problems; BW P2 only 3/5 models — not in master_coverage_table,api_run,Five-model BW P2 claims; full bank comparisons
+BW,P2_tep,GPT-4o,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_tep,Llama,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_tep,o4-mini,missing_model,high,65,0/65 problems; BW P2 only 3/5 models — not in master_coverage_table,api_run,Five-model BW P2 claims; full bank comparisons
+BW,P2_cci,Claude,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_cci,Gemini,missing_model,high,65,0/65 problems; BW P2 only 3/5 models — not in master_coverage_table,api_run,Five-model BW P2 claims; full bank comparisons
+BW,P2_cci,GPT-4o,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_cci,Llama,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_cci,o4-mini,missing_model,high,65,0/65 problems; BW P2 only 3/5 models — not in master_coverage_table,api_run,Five-model BW P2 claims; full bank comparisons
+BW,P2_plans,Claude,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_plans,Gemini,missing_model,high,65,0/65 problems; BW P2 only 3/5 models — not in master_coverage_table,api_run,Five-model BW P2 claims; full bank comparisons
+BW,P2_plans,GPT-4o,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_plans,Llama,pilot_partial,high,15,50/65 problems; BW P2 only 3/5 models — not in master_coverage_table,pilot_scope,Five-model BW P2 claims; full bank comparisons
+BW,P2_plans,o4-mini,missing_model,high,65,0/65 problems; BW P2 only 3/5 models — not in master_coverage_table,api_run,Five-model BW P2 claims; full bank comparisons
+BW,P2,Claude,tep_or_final_unusable,medium,130,TEP valid 47/177; final_ok_rate=0.0; tep_mostly_missing,protocol_fix_or_scope,TEP dissociation / BW P2 process claims for this slice
+BW,P2,GPT-4o,tep_or_final_unusable,medium,167,TEP valid 13/180; final_ok_rate=0.0; tep_mostly_missing,protocol_fix_or_scope,TEP dissociation / BW P2 process claims for this slice
+BW,P2,Llama,tep_or_final_unusable,medium,171,TEP valid 8/179; final_ok_rate=0.0; tep_mostly_missing,protocol_fix_or_scope,TEP dissociation / BW P2 process claims for this slice
+ALGO,P2B_plausible,all,scoped_denominator,info,49,Injection runs cover 61/110 problems (adversarial subset) — not missing data,none,Do not compare P2B counts to 110-problem P2A without label
+GSM,P3_mechanistic,Qwen/Qwen2.5-0.5B-Instruct,single_arch_pilot,info,20,n=20 problems on Qwen/Qwen2.5-0.5B-Instruct — exploratory only,local_compute,Cross-model mechanistic claims
+BW,P3_mechanistic,Qwen/Qwen2.5-0.5B-Instruct,single_arch_pilot,info,35,n=35 problems on Qwen/Qwen2.5-0.5B-Instruct — exploratory only,local_compute,Cross-model mechanistic claims
+ALGO,P3_mechanistic,Qwen/Qwen2.5-0.5B-Instruct,single_arch_pilot,info,20,n=20 problems on Qwen/Qwen2.5-0.5B-Instruct — exploratory only,local_compute,Cross-model mechanistic claims

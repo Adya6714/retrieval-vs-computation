@@ -1,0 +1,1062 @@
+family,problem_id,model,model_short,subtype,tep,cci,final_ok,inject_at_step,instance_type,tep_inclusive,first_response_class,session_status,tep_valid,final_ok_defined,quality_flag,dissoc_label
+GSM,GSM_001,anthropic/claude-sonnet-4,Claude,,0.0,0.25,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_002,anthropic/claude-sonnet-4,Claude,,0.0,0.75,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_003,anthropic/claude-sonnet-4,Claude,,0.0,0.6,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_004,anthropic/claude-sonnet-4,Claude,,1.0,0.5,False,2,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_005,anthropic/claude-sonnet-4,Claude,,1.0,0.0,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_006,anthropic/claude-sonnet-4,Claude,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_007,anthropic/claude-sonnet-4,Claude,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_008,anthropic/claude-sonnet-4,Claude,,1.0,0.2857,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_009,anthropic/claude-sonnet-4,Claude,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_010,anthropic/claude-sonnet-4,Claude,,0.0,0.1667,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_011,anthropic/claude-sonnet-4,Claude,,0.6667,0.2,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_012,anthropic/claude-sonnet-4,Claude,,0.5,0.25,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_013,anthropic/claude-sonnet-4,Claude,,1.0,0.2857,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_014,anthropic/claude-sonnet-4,Claude,,1.0,0.5,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_015,anthropic/claude-sonnet-4,Claude,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_016,anthropic/claude-sonnet-4,Claude,,0.6,0.2222,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_017,anthropic/claude-sonnet-4,Claude,,0.7,0.2105,True,9,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_018,anthropic/claude-sonnet-4,Claude,,0.6667,0.2727,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_019,anthropic/claude-sonnet-4,Claude,,0.6667,0.0909,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_020,anthropic/claude-sonnet-4,Claude,,0.0,0.7,True,5,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_041,anthropic/claude-sonnet-4,Claude,,1.0,0.75,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_042,anthropic/claude-sonnet-4,Claude,,0.0,0.3333,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_043,anthropic/claude-sonnet-4,Claude,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_044,anthropic/claude-sonnet-4,Claude,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_045,anthropic/claude-sonnet-4,Claude,,0.3333,0.4,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_046,anthropic/claude-sonnet-4,Claude,,0.0,0.3333,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_047,anthropic/claude-sonnet-4,Claude,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_048,anthropic/claude-sonnet-4,Claude,,0.3333,0.0,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_049,anthropic/claude-sonnet-4,Claude,,1.0,0.0,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_050,anthropic/claude-sonnet-4,Claude,,0.0,0.0,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_051,anthropic/claude-sonnet-4,Claude,,0.5,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_052,anthropic/claude-sonnet-4,Claude,,1.0,0.1429,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_053,anthropic/claude-sonnet-4,Claude,,0.75,0.25,True,8,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_054,anthropic/claude-sonnet-4,Claude,,0.0,0.2,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_055,anthropic/claude-sonnet-4,Claude,,0.5,0.0,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_056,anthropic/claude-sonnet-4,Claude,,1.0,0.2222,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_057,anthropic/claude-sonnet-4,Claude,,0.0,0.3636,True,5,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_058,anthropic/claude-sonnet-4,Claude,,0.0,0.1429,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_059,anthropic/claude-sonnet-4,Claude,,0.75,0.25,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_060,anthropic/claude-sonnet-4,Claude,,0.75,0.2857,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_061,anthropic/claude-sonnet-4,Claude,,1.0,0.125,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_062,anthropic/claude-sonnet-4,Claude,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_063,anthropic/claude-sonnet-4,Claude,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_064,anthropic/claude-sonnet-4,Claude,,0.0,0.75,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_001,openai/gpt-4o,GPT-4o,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_002,openai/gpt-4o,GPT-4o,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_003,openai/gpt-4o,GPT-4o,,0.5,0.5,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_004,openai/gpt-4o,GPT-4o,,0.0,0.1429,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_005,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_006,openai/gpt-4o,GPT-4o,,0.0,0.1,False,5,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_007,openai/gpt-4o,GPT-4o,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_008,openai/gpt-4o,GPT-4o,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_009,openai/gpt-4o,GPT-4o,,0.5,0.0,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_010,openai/gpt-4o,GPT-4o,,0.0,0.1667,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_011,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_012,openai/gpt-4o,GPT-4o,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_013,openai/gpt-4o,GPT-4o,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_014,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_015,openai/gpt-4o,GPT-4o,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_016,openai/gpt-4o,GPT-4o,,0.5,0.5714,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_017,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_018,openai/gpt-4o,GPT-4o,,1.0,0.0,True,9,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_019,openai/gpt-4o,GPT-4o,,1.0,0.5,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_020,openai/gpt-4o,GPT-4o,,0.75,0.1429,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_041,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_042,openai/gpt-4o,GPT-4o,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_043,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_044,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_045,openai/gpt-4o,GPT-4o,,0.5,0.3333,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_046,openai/gpt-4o,GPT-4o,,0.5,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_047,openai/gpt-4o,GPT-4o,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_048,openai/gpt-4o,GPT-4o,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_049,openai/gpt-4o,GPT-4o,,0.25,0.1429,False,3,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_050,openai/gpt-4o,GPT-4o,,1.0,0.5,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_051,openai/gpt-4o,GPT-4o,,1.0,0.4,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_052,openai/gpt-4o,GPT-4o,,0.6667,0.2,False,2,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_053,openai/gpt-4o,GPT-4o,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_054,openai/gpt-4o,GPT-4o,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_055,openai/gpt-4o,GPT-4o,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_056,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_057,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_058,openai/gpt-4o,GPT-4o,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_059,openai/gpt-4o,GPT-4o,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_060,openai/gpt-4o,GPT-4o,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_061,openai/gpt-4o,GPT-4o,,0.6667,0.4,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_062,openai/gpt-4o,GPT-4o,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_063,openai/gpt-4o,GPT-4o,,0.0,0.0,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_064,openai/gpt-4o,GPT-4o,,0.5,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_001,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_002,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_003,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.2,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_004,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.5,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_005,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.1667,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_006,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.25,False,2,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_007,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_008,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_009,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.5,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_010,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.2222,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_011,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.6,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_012,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.2,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_013,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_014,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.25,False,2,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_015,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.3333,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_016,meta-llama/llama-3.1-8b-instruct,Llama,,0.8333,0.1818,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_017,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0,False,10,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_018,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_019,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0,False,10,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_020,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.3333,False,4,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_041,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_042,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.25,False,2,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_043,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_044,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_045,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.75,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_046,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.1667,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_047,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_048,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_049,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_050,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_051,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_052,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_053,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_054,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_055,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.2857,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_056,meta-llama/llama-3.1-8b-instruct,Llama,,0.6667,0.0,False,2,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_057,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_058,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,1.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_059,meta-llama/llama-3.1-8b-instruct,Llama,,0.5,0.6667,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_060,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,0.0018,False,271,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_061,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_062,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_063,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.5,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_064,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_001,google/gemini-2.5-flash,Gemini,,0.5,0.25,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_002,google/gemini-2.5-flash,Gemini,,0.0,0.5,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_003,google/gemini-2.5-flash,Gemini,,0.3333,0.4,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_004,google/gemini-2.5-flash,Gemini,,0.5,0.3333,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_005,google/gemini-2.5-flash,Gemini,,0.0,0.0,False,1,,,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+GSM,GSM_006,google/gemini-2.5-flash,Gemini,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_007,google/gemini-2.5-flash,Gemini,,0.3333,0.2,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_008,google/gemini-2.5-flash,Gemini,,1.0,0.125,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_009,google/gemini-2.5-flash,Gemini,,0.3333,0.2,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_010,google/gemini-2.5-flash,Gemini,,1.0,0.1667,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_011,google/gemini-2.5-flash,Gemini,,0.6667,0.4,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_012,google/gemini-2.5-flash,Gemini,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_013,google/gemini-2.5-flash,Gemini,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_014,google/gemini-2.5-flash,Gemini,,0.3333,0.0,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_015,google/gemini-2.5-flash,Gemini,,0.6667,0.2727,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_016,google/gemini-2.5-flash,Gemini,,1.0,0.1818,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_017,google/gemini-2.5-flash,Gemini,,0.9,0.1579,True,9,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_018,google/gemini-2.5-flash,Gemini,,0.8333,0.2727,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_019,google/gemini-2.5-flash,Gemini,,1.0,0.3333,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_020,google/gemini-2.5-flash,Gemini,,1.0,0.1111,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_041,google/gemini-2.5-flash,Gemini,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_042,google/gemini-2.5-flash,Gemini,,0.5,0.5,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_043,google/gemini-2.5-flash,Gemini,,0.0,1.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_044,google/gemini-2.5-flash,Gemini,,1.0,0.3333,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_045,google/gemini-2.5-flash,Gemini,,0.0,0.5,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_046,google/gemini-2.5-flash,Gemini,,0.5,0.6667,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_047,google/gemini-2.5-flash,Gemini,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_048,google/gemini-2.5-flash,Gemini,,1.0,0.1667,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_049,google/gemini-2.5-flash,Gemini,,1.0,0.3333,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_050,google/gemini-2.5-flash,Gemini,,0.5,0.4286,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_051,google/gemini-2.5-flash,Gemini,,0.5,0.25,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_052,google/gemini-2.5-flash,Gemini,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_053,google/gemini-2.5-flash,Gemini,,1.0,0.0,True,6,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_054,google/gemini-2.5-flash,Gemini,,1.0,0.0,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_055,google/gemini-2.5-flash,Gemini,,0.5,0.1429,False,3,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_056,google/gemini-2.5-flash,Gemini,,0.6,0.4444,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_057,google/gemini-2.5-flash,Gemini,,0.6667,0.7273,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_058,google/gemini-2.5-flash,Gemini,,0.0,0.2857,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_059,google/gemini-2.5-flash,Gemini,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_060,google/gemini-2.5-flash,Gemini,,1.0,0.25,False,4,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_061,google/gemini-2.5-flash,Gemini,,1.0,0.4,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_062,google/gemini-2.5-flash,Gemini,,0.0,0.2,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_063,google/gemini-2.5-flash,Gemini,,0.5,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_064,google/gemini-2.5-flash,Gemini,,1.0,0.6667,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_001,openai/o4-mini,o4-mini,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_002,openai/o4-mini,o4-mini,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_003,openai/o4-mini,o4-mini,,1.0,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_004,openai/o4-mini,o4-mini,,1.0,0.3333,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_005,openai/o4-mini,o4-mini,,1.0,0.1429,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_006,openai/o4-mini,o4-mini,,0.6667,0.0,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_007,openai/o4-mini,o4-mini,,0.6667,0.2,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_008,openai/o4-mini,o4-mini,,1.0,0.0,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_009,openai/o4-mini,o4-mini,,0.5,0.75,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_010,openai/o4-mini,o4-mini,,1.0,0.0,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_011,openai/o4-mini,o4-mini,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_012,openai/o4-mini,o4-mini,,1.0,0.75,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_013,openai/o4-mini,o4-mini,,0.0,0.75,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_014,openai/o4-mini,o4-mini,,0.3333,0.2,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_015,openai/o4-mini,o4-mini,,0.5,0.625,True,4,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_016,openai/o4-mini,o4-mini,,0.8571,0.4286,True,7,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_017,openai/o4-mini,o4-mini,,0.875,0.1333,True,7,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_018,openai/o4-mini,o4-mini,,0.1667,0.3636,True,5,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_019,openai/o4-mini,o4-mini,,0.3333,0.2727,True,5,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_020,openai/o4-mini,o4-mini,,0.8,0.2,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_041,openai/o4-mini,o4-mini,,0.5,0.25,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_042,openai/o4-mini,o4-mini,,0.5,0.3333,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_043,openai/o4-mini,o4-mini,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_044,openai/o4-mini,o4-mini,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_045,openai/o4-mini,o4-mini,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_046,openai/o4-mini,o4-mini,,0.3333,0.0,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_047,openai/o4-mini,o4-mini,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_048,openai/o4-mini,o4-mini,,0.0,0.0,True,1,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_049,openai/o4-mini,o4-mini,,0.3333,0.6667,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_050,openai/o4-mini,o4-mini,,1.0,0.1429,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_051,openai/o4-mini,o4-mini,,1.0,0.0,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_052,openai/o4-mini,o4-mini,,0.6667,0.0909,True,5,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_053,openai/o4-mini,o4-mini,,0.4,0.3,True,5,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_054,openai/o4-mini,o4-mini,,0.25,0.0,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_055,openai/o4-mini,o4-mini,,1.0,0.1429,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_056,openai/o4-mini,o4-mini,,1.0,0.3333,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_057,openai/o4-mini,o4-mini,,0.0,0.0,True,2,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_058,openai/o4-mini,o4-mini,,0.0,0.1429,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_059,openai/o4-mini,o4-mini,,0.5,0.3333,True,1,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_060,openai/o4-mini,o4-mini,,1.0,0.0,False,1,,,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+GSM,GSM_061,openai/o4-mini,o4-mini,,0.0,0.6667,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_062,openai/o4-mini,o4-mini,,0.3333,0.0,True,3,,,,,True,True,analysis_ready,aligned_low_tep_correct_final
+GSM,GSM_063,openai/o4-mini,o4-mini,,1.0,0.0,True,3,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+GSM,GSM_064,openai/o4-mini,o4-mini,,0.5,0.25,True,2,,,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_01,anthropic/claude-sonnet-4,Claude,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_01,google/gemini-2.5-flash,Gemini,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_01,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_01,openai/gpt-4o,GPT-4o,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_01,openai/o4-mini,o4-mini,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_02,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_02,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_02,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_02,openai/gpt-4o,GPT-4o,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_02,openai/o4-mini,o4-mini,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_03,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_03,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_03,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_03,openai/gpt-4o,GPT-4o,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_03,openai/o4-mini,o4-mini,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_04,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_04,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_04,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_04,openai/gpt-4o,GPT-4o,coin_change,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_04,openai/o4-mini,o4-mini,coin_change,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_05,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_05,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_05,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_05,openai/gpt-4o,GPT-4o,coin_change,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_05,openai/o4-mini,o4-mini,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_06,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_06,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_06,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_06,openai/gpt-4o,GPT-4o,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_06,openai/o4-mini,o4-mini,coin_change,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_07,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_07,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_07,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_07,openai/gpt-4o,GPT-4o,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_07,openai/o4-mini,o4-mini,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_08,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_08,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_08,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_08,openai/gpt-4o,GPT-4o,coin_change,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_08,openai/o4-mini,o4-mini,coin_change,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_09,anthropic/claude-sonnet-4,Claude,coin_change,1.0,,True,2,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_09,google/gemini-2.5-flash,Gemini,coin_change,0.0,,False,2,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_09,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,False,2,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_09,openai/gpt-4o,GPT-4o,coin_change,0.0,,True,2,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,CC_09,openai/o4-mini,o4-mini,coin_change,1.0,,True,2,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,CC_10,anthropic/claude-sonnet-4,Claude,coin_change,0.0,,False,3,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_10,google/gemini-2.5-flash,Gemini,coin_change,0.6666666666666666,,False,3,adversarial,0.6666666666666666,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_10,meta-llama/llama-3.1-8b-instruct,Llama,coin_change,1.0,,False,3,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,CC_10,openai/gpt-4o,GPT-4o,coin_change,0.3333333333333333,,False,3,adversarial,0.3333333333333333,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,CC_10,openai/o4-mini,o4-mini,coin_change,0.6666666666666666,,True,3,adversarial,0.6666666666666666,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_003,anthropic/claude-sonnet-4,Claude,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_003,google/gemini-2.5-flash,Gemini,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_003,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_003,openai/gpt-4o,GPT-4o,shortest_path,0.3333333333333333,,False,1,adversarial,0.3333333333333333,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_003,openai/o4-mini,o4-mini,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_004,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_004,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_004,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.3333333333333333,,False,0,adversarial,0.3333333333333333,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_004,openai/gpt-4o,GPT-4o,shortest_path,0.5,,True,0,adversarial,0.5,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_004,openai/o4-mini,o4-mini,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_005,anthropic/claude-sonnet-4,Claude,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_005,google/gemini-2.5-flash,Gemini,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_005,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.3333333333333333,,False,1,adversarial,0.3333333333333333,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_005,openai/gpt-4o,GPT-4o,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_005,openai/o4-mini,o4-mini,shortest_path,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_019,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_019,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_019,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_019,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_019,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_020,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_020,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_020,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_020,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_020,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_021,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_021,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_021,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_021,openai/gpt-4o,GPT-4o,shortest_path,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_021,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_023,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_023,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_023,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_023,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_023,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_024,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_024,google/gemini-2.5-flash,Gemini,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_024,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_024,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_024,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_026,anthropic/claude-sonnet-4,Claude,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_026,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_026,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_026,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_026,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_027,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_027,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_027,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_027,openai/gpt-4o,GPT-4o,shortest_path,0.5,,True,0,adversarial,0.5,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_027,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_028,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_028,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_028,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_028,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_028,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_029,anthropic/claude-sonnet-4,Claude,shortest_path,0.5,,True,0,adversarial,0.5,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_029,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_029,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_029,openai/gpt-4o,GPT-4o,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_029,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_030,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_030,google/gemini-2.5-flash,Gemini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_030,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_030,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_030,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_037,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_037,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_037,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_037,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_037,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_038,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_038,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_038,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_038,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_038,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_039,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_039,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_039,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_039,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_039,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_040,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_040,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_040,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_040,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_040,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_042,anthropic/claude-sonnet-4,Claude,shortest_path,0.5,,True,0,adversarial,0.5,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_042,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_042,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_042,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_042,openai/o4-mini,o4-mini,shortest_path,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_044,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_044,google/gemini-2.5-flash,Gemini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_044,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_044,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_044,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_045,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_045,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_045,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_045,openai/gpt-4o,GPT-4o,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_045,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_046,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_046,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_046,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_046,openai/gpt-4o,GPT-4o,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_046,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_047,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_047,google/gemini-2.5-flash,Gemini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_047,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_047,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_047,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_048,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_048,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_048,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_048,openai/gpt-4o,GPT-4o,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_048,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_062,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_062,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_062,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_062,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_062,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_063,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_063,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_063,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_063,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_063,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_064,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_064,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_064,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_064,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_064,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_065,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_065,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_065,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_065,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_065,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_066,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_066,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_066,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_066,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_066,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_068,anthropic/claude-sonnet-4,Claude,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_068,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_068,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_068,openai/gpt-4o,GPT-4o,shortest_path,0.5,,True,0,adversarial,0.5,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_068,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_069,anthropic/claude-sonnet-4,Claude,shortest_path,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_069,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_069,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_069,openai/gpt-4o,GPT-4o,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_069,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_070,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_070,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_070,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_070,openai/gpt-4o,GPT-4o,shortest_path,0.5,,True,0,adversarial,0.5,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,SP_070,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_071,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_071,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_071,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_071,openai/gpt-4o,GPT-4o,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_071,openai/o4-mini,o4-mini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_072,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_072,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_072,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_072,openai/gpt-4o,GPT-4o,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_072,openai/o4-mini,o4-mini,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_073,anthropic/claude-sonnet-4,Claude,shortest_path,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,SP_073,google/gemini-2.5-flash,Gemini,shortest_path,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,SP_073,meta-llama/llama-3.1-8b-instruct,Llama,shortest_path,1.0,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_073,openai/gpt-4o,GPT-4o,shortest_path,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,SP_073,openai/o4-mini,o4-mini,shortest_path,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_003,anthropic/claude-sonnet-4,Claude,wis,,,False,0,adversarial,,,,False,True,tep_missing,tep_missing
+ALGO,WIS_003,google/gemini-2.5-flash,Gemini,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_003,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_003,openai/gpt-4o,GPT-4o,wis,0.5,,False,0,adversarial,0.5,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_003,openai/o4-mini,o4-mini,wis,0.8333333333333334,,False,0,adversarial,0.8333333333333334,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_004,anthropic/claude-sonnet-4,Claude,wis,0.0,,False,1,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,WIS_004,google/gemini-2.5-flash,Gemini,wis,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_004,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.8,,False,1,adversarial,0.8,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_004,openai/gpt-4o,GPT-4o,wis,0.8,,True,1,adversarial,0.8,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_004,openai/o4-mini,o4-mini,wis,1.0,,False,1,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_013,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_013,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_013,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_013,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_013,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_014,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_014,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_014,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_014,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_014,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_015,anthropic/claude-sonnet-4,Claude,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_015,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_015,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_015,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_015,openai/o4-mini,o4-mini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_016,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_016,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_016,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_016,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_016,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_017,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_017,google/gemini-2.5-flash,Gemini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_017,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_017,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_017,openai/o4-mini,o4-mini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_018,anthropic/claude-sonnet-4,Claude,wis,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,WIS_018,google/gemini-2.5-flash,Gemini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_018,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_018,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_018,openai/o4-mini,o4-mini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_019,anthropic/claude-sonnet-4,Claude,wis,,,True,0,adversarial,,,,False,True,tep_missing,tep_missing
+ALGO,WIS_019,google/gemini-2.5-flash,Gemini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_019,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_019,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_019,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_020,anthropic/claude-sonnet-4,Claude,wis,,,False,0,adversarial,,,,False,True,tep_missing,tep_missing
+ALGO,WIS_020,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_020,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.0,,False,0,adversarial,0.0,,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+ALGO,WIS_020,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_020,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_023,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_023,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_023,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_023,openai/gpt-4o,GPT-4o,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_023,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_024,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_024,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_024,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_024,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_024,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_025,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_025,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_025,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_025,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_025,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_026,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_026,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_026,meta-llama/llama-3.1-8b-instruct,Llama,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_026,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_026,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_027,anthropic/claude-sonnet-4,Claude,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_027,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_027,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_027,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_027,openai/o4-mini,o4-mini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_028,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_028,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_028,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_028,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_028,openai/o4-mini,o4-mini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+ALGO,WIS_029,anthropic/claude-sonnet-4,Claude,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_029,google/gemini-2.5-flash,Gemini,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_029,meta-llama/llama-3.1-8b-instruct,Llama,wis,1.0,,False,0,adversarial,1.0,,,True,True,analysis_ready,aligned_high_tep_wrong_final
+ALGO,WIS_029,openai/gpt-4o,GPT-4o,wis,0.0,,True,0,adversarial,0.0,,,True,True,analysis_ready,aligned_low_tep_correct_final
+ALGO,WIS_029,openai/o4-mini,o4-mini,wis,1.0,,True,0,adversarial,1.0,,,True,True,analysis_ready,dissociated_high_tep_correct_final
+BW,BW_155,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_155,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_155,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_155,openai/gpt-4o,GPT-4o,,0.0,,False,5,,,ambiguous,,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_010,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_010,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_010,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_010,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_001,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_001,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_001,openai/gpt-4o,GPT-4o,,,,False,7,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_001,openai/gpt-4o,GPT-4o,,,,False,9,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_011,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_011,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_011,openai/gpt-4o,GPT-4o,,,,False,9,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_011,openai/gpt-4o,GPT-4o,,,,False,12,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_120,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_120,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_120,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_227,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_227,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_227,openai/gpt-4o,GPT-4o,,,,False,8,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_227,openai/gpt-4o,GPT-4o,,,,False,10,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_137,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_137,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_137,openai/gpt-4o,GPT-4o,,,,False,10,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_137,openai/gpt-4o,GPT-4o,,,,False,13,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_172,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_172,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_172,openai/gpt-4o,GPT-4o,,,,False,10,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_172,openai/gpt-4o,GPT-4o,,,,False,13,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_467,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_467,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_467,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_467,openai/gpt-4o,GPT-4o,,,,False,8,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_080,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_080,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_080,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_080,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_E100,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,openai/gpt-4o,GPT-4o,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,openai/gpt-4o,GPT-4o,,,,False,11,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,openai/gpt-4o,GPT-4o,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,openai/gpt-4o,GPT-4o,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,openai/gpt-4o,GPT-4o,,,,False,16,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,openai/gpt-4o,GPT-4o,,,,False,11,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,openai/gpt-4o,GPT-4o,,,,False,17,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,openai/gpt-4o,GPT-4o,,,,False,23,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,openai/gpt-4o,GPT-4o,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,openai/gpt-4o,GPT-4o,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,openai/gpt-4o,GPT-4o,,,,False,14,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,openai/gpt-4o,GPT-4o,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,openai/gpt-4o,GPT-4o,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,openai/gpt-4o,GPT-4o,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_155,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_155,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,,False,True,tep_missing,tep_missing
+BW,BW_155,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_155,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_010,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_010,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_010,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_011,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_011,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_011,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_011,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_120,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_120,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_120,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_120,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_227,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_227,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_227,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_227,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_137,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_137,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_137,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_137,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_172,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_172,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_172,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_172,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_467,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_467,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_467,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_467,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_080,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_080,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_080,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_080,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,11,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_001,anthropic/claude-sonnet-4,Claude,,0.0,,False,7,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_001,anthropic/claude-sonnet-4,Claude,,0.0,,False,9,,,illegal_both,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_002,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,anthropic/claude-sonnet-4,Claude,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,anthropic/claude-sonnet-4,Claude,,,,False,18,,,,,False,True,tep_missing,tep_missing
+BW,BW_010,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_010,anthropic/claude-sonnet-4,Claude,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_010,anthropic/claude-sonnet-4,Claude,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_010,anthropic/claude-sonnet-4,Claude,,,,False,11,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_011,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_011,anthropic/claude-sonnet-4,Claude,,1.0,,False,42,,,adapted,complete,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_011,anthropic/claude-sonnet-4,Claude,,,,False,63,,,,complete,False,True,tep_missing,tep_missing
+BW,BW_011,anthropic/claude-sonnet-4,Claude,,,,False,84,,,,complete,False,True,tep_missing,tep_missing
+BW,BW_014,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_014,anthropic/claude-sonnet-4,Claude,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_014,anthropic/claude-sonnet-4,Claude,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_014,anthropic/claude-sonnet-4,Claude,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,anthropic/claude-sonnet-4,Claude,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,anthropic/claude-sonnet-4,Claude,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_080,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_080,anthropic/claude-sonnet-4,Claude,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_080,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_080,anthropic/claude-sonnet-4,Claude,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_120,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_120,anthropic/claude-sonnet-4,Claude,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_120,anthropic/claude-sonnet-4,Claude,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_137,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_137,anthropic/claude-sonnet-4,Claude,,,,False,51,,,,complete,False,True,tep_missing,tep_missing
+BW,BW_137,anthropic/claude-sonnet-4,Claude,,,,False,77,,,,complete,False,True,tep_missing,tep_missing
+BW,BW_137,anthropic/claude-sonnet-4,Claude,,,,False,103,,,,complete,False,True,tep_missing,tep_missing
+BW,BW_155,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_155,anthropic/claude-sonnet-4,Claude,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_155,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_155,anthropic/claude-sonnet-4,Claude,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_172,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_172,anthropic/claude-sonnet-4,Claude,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_172,anthropic/claude-sonnet-4,Claude,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_172,anthropic/claude-sonnet-4,Claude,,,,False,13,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_203,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,anthropic/claude-sonnet-4,Claude,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,anthropic/claude-sonnet-4,Claude,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,anthropic/claude-sonnet-4,Claude,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_227,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_227,anthropic/claude-sonnet-4,Claude,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_227,anthropic/claude-sonnet-4,Claude,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_227,anthropic/claude-sonnet-4,Claude,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_282,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,anthropic/claude-sonnet-4,Claude,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,anthropic/claude-sonnet-4,Claude,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,anthropic/claude-sonnet-4,Claude,,,,False,11,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,anthropic/claude-sonnet-4,Claude,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,anthropic/claude-sonnet-4,Claude,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,anthropic/claude-sonnet-4,Claude,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_331,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_331,anthropic/claude-sonnet-4,Claude,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_331,anthropic/claude-sonnet-4,Claude,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,anthropic/claude-sonnet-4,Claude,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,anthropic/claude-sonnet-4,Claude,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,anthropic/claude-sonnet-4,Claude,,,,False,14,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,anthropic/claude-sonnet-4,Claude,,,,False,19,,,,,False,True,tep_missing,tep_missing
+BW,BW_467,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_467,anthropic/claude-sonnet-4,Claude,,0.0,,False,6,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_467,anthropic/claude-sonnet-4,Claude,,0.0,,False,9,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_467,anthropic/claude-sonnet-4,Claude,,0.0,,False,12,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_495,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,anthropic/claude-sonnet-4,Claude,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,anthropic/claude-sonnet-4,Claude,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,anthropic/claude-sonnet-4,Claude,,,,False,14,,,,,False,True,tep_missing,tep_missing
+BW,BW_E002,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E015,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E017,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E019,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,anthropic/claude-sonnet-4,Claude,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,anthropic/claude-sonnet-4,Claude,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E100,anthropic/claude-sonnet-4,Claude,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_496,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_496,anthropic/claude-sonnet-4,Claude,,0.0,,False,6,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_496,anthropic/claude-sonnet-4,Claude,,0.0,,False,10,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_496,anthropic/claude-sonnet-4,Claude,,0.0,,False,13,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_497,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,anthropic/claude-sonnet-4,Claude,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,anthropic/claude-sonnet-4,Claude,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,anthropic/claude-sonnet-4,Claude,,,,False,12,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,anthropic/claude-sonnet-4,Claude,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,anthropic/claude-sonnet-4,Claude,,1.0,,False,10,,,adapted,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_499,anthropic/claude-sonnet-4,Claude,,,,False,13,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_500,anthropic/claude-sonnet-4,Claude,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,anthropic/claude-sonnet-4,Claude,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_501,anthropic/claude-sonnet-4,Claude,,1.0,,False,11,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_501,anthropic/claude-sonnet-4,Claude,,,,False,16,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,anthropic/claude-sonnet-4,Claude,,,,False,22,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,anthropic/claude-sonnet-4,Claude,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,anthropic/claude-sonnet-4,Claude,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_503,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_503,anthropic/claude-sonnet-4,Claude,,0.0,,False,7,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_503,anthropic/claude-sonnet-4,Claude,,0.0,,False,11,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_503,anthropic/claude-sonnet-4,Claude,,0.0,,False,14,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_504,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_504,anthropic/claude-sonnet-4,Claude,,0.0,,False,8,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_504,anthropic/claude-sonnet-4,Claude,,0.0,,False,12,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_504,anthropic/claude-sonnet-4,Claude,,0.0,,False,16,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_505,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,anthropic/claude-sonnet-4,Claude,,,,False,11,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,anthropic/claude-sonnet-4,Claude,,,,False,14,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_506,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_506,anthropic/claude-sonnet-4,Claude,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_506,anthropic/claude-sonnet-4,Claude,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_507,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_508,anthropic/claude-sonnet-4,Claude,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,anthropic/claude-sonnet-4,Claude,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,anthropic/claude-sonnet-4,Claude,,0.0,,False,13,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_509,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,anthropic/claude-sonnet-4,Claude,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,anthropic/claude-sonnet-4,Claude,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,anthropic/claude-sonnet-4,Claude,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_510,anthropic/claude-sonnet-4,Claude,,0.0,,False,4,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_510,anthropic/claude-sonnet-4,Claude,,0.0,,False,6,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_510,anthropic/claude-sonnet-4,Claude,,0.0,,False,8,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_511,anthropic/claude-sonnet-4,Claude,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,anthropic/claude-sonnet-4,Claude,,,,False,4,,,illegal_both,complete,False,True,tep_missing,tep_missing
+BW,BW_511,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,anthropic/claude-sonnet-4,Claude,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_512,anthropic/claude-sonnet-4,Claude,,0.0,,False,5,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_512,anthropic/claude-sonnet-4,Claude,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,anthropic/claude-sonnet-4,Claude,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_513,anthropic/claude-sonnet-4,Claude,,0.0,,False,5,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_513,anthropic/claude-sonnet-4,Claude,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,anthropic/claude-sonnet-4,Claude,,0.0,,False,11,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_514,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_514,anthropic/claude-sonnet-4,Claude,,0.0,,False,4,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_514,anthropic/claude-sonnet-4,Claude,,0.0,,False,7,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_514,anthropic/claude-sonnet-4,Claude,,0.0,,False,9,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_515,anthropic/claude-sonnet-4,Claude,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_515,anthropic/claude-sonnet-4,Claude,,0.0,,False,6,,,ambiguous,complete,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_515,anthropic/claude-sonnet-4,Claude,,0.0,,False,9,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_515,anthropic/claude-sonnet-4,Claude,,0.0,,False,12,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_E_001,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,anthropic/claude-sonnet-4,Claude,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,anthropic/claude-sonnet-4,Claude,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,anthropic/claude-sonnet-4,Claude,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,anthropic/claude-sonnet-4,Claude,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,anthropic/claude-sonnet-4,Claude,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,anthropic/claude-sonnet-4,Claude,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,anthropic/claude-sonnet-4,Claude,,,,False,16,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,anthropic/claude-sonnet-4,Claude,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,anthropic/claude-sonnet-4,Claude,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,anthropic/claude-sonnet-4,Claude,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,anthropic/claude-sonnet-4,Claude,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,anthropic/claude-sonnet-4,Claude,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,anthropic/claude-sonnet-4,Claude,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,anthropic/claude-sonnet-4,Claude,,,,False,17,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,openai/gpt-4o,GPT-4o,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,openai/gpt-4o,GPT-4o,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,openai/gpt-4o,GPT-4o,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,openai/gpt-4o,GPT-4o,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,openai/gpt-4o,GPT-4o,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_331,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,openai/gpt-4o,GPT-4o,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_014,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,openai/gpt-4o,GPT-4o,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,openai/gpt-4o,GPT-4o,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_496,openai/gpt-4o,GPT-4o,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_496,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_496,openai/gpt-4o,GPT-4o,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_496,openai/gpt-4o,GPT-4o,,,,False,13,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_497,openai/gpt-4o,GPT-4o,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_498,openai/gpt-4o,GPT-4o,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_498,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,openai/gpt-4o,GPT-4o,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,openai/gpt-4o,GPT-4o,,,,False,12,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,openai/gpt-4o,GPT-4o,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,openai/gpt-4o,GPT-4o,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,openai/gpt-4o,GPT-4o,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,openai/gpt-4o,GPT-4o,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,openai/gpt-4o,GPT-4o,,0.0,,False,2,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_502,openai/gpt-4o,GPT-4o,,0.0,,False,3,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_502,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_503,openai/gpt-4o,GPT-4o,,0.0,,False,2,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_503,openai/gpt-4o,GPT-4o,,0.0,,False,7,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_503,openai/gpt-4o,GPT-4o,,,,False,11,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_503,openai/gpt-4o,GPT-4o,,,,False,14,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,openai/gpt-4o,GPT-4o,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_506,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_507,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,openai/gpt-4o,GPT-4o,,0.0,,False,4,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_508,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,openai/gpt-4o,GPT-4o,,0.0,,False,5,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_510,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,openai/gpt-4o,GPT-4o,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,openai/gpt-4o,GPT-4o,,0.0,,False,4,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_512,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,openai/gpt-4o,GPT-4o,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,openai/gpt-4o,GPT-4o,,0.0,,False,6,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_513,openai/gpt-4o,GPT-4o,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,openai/gpt-4o,GPT-4o,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_515,openai/gpt-4o,GPT-4o,,0.0,,False,2,,,illegal_both,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_515,openai/gpt-4o,GPT-4o,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_515,openai/gpt-4o,GPT-4o,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_515,openai/gpt-4o,GPT-4o,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_E_001,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,openai/gpt-4o,GPT-4o,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,openai/gpt-4o,GPT-4o,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,openai/gpt-4o,GPT-4o,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,openai/gpt-4o,GPT-4o,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,openai/gpt-4o,GPT-4o,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,openai/gpt-4o,GPT-4o,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,openai/gpt-4o,GPT-4o,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_495,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_408,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_350,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,12,,,,,False,True,tep_missing,tep_missing
+BW,BW_331,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_310,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_282,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_203,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_022,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_014,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_014,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,,,False,True,tep_missing,tep_missing
+BW,BW_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,,,False,True,tep_missing,tep_missing
+BW,BW_496,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_496,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_496,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_496,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_497,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,8,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_498,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,17,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_499,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,10,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_500,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,14,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_501,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_502,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_503,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_503,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,13,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_503,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,20,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_503,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,26,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_504,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,,False,2,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_505,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_505,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_506,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_507,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,,False,3,,,adapted,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_508,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_508,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_509,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,,False,2,,,adapted,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_510,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,11,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,17,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_510,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,22,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_511,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,,False,3,,,adapted,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_511,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_512,meta-llama/llama-3.1-8b-instruct,Llama,,0.0,,False,6,,,ambiguous,aborted: excessive illegal steps,True,True,analysis_ready,dissociated_low_tep_wrong_final
+BW,BW_513,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,9,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_513,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,12,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_514,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_515,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,,False,2,,,adapted,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_515,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_515,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,illegal_both,aborted: excessive illegal steps,False,True,tep_missing,tep_missing
+BW,BW_515,meta-llama/llama-3.1-8b-instruct,Llama,,1.0,,False,8,,,adapted,aborted: excessive illegal steps,True,True,analysis_ready,aligned_high_tep_wrong_final
+BW,BW_E_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_001,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,6,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_002,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_003,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,7,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_004,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,9,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,2,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,3,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,4,,,,,False,True,tep_missing,tep_missing
+BW,BW_E_005,meta-llama/llama-3.1-8b-instruct,Llama,,,,False,5,,,,,False,True,tep_missing,tep_missing
