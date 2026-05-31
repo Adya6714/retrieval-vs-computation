@@ -4,7 +4,11 @@ This script must be safe to run repeatedly (idempotent). It writes outputs to
 `results/derived/` and `results/paper/AUDIT/` so figures and tables can pick
 them up directly.
 
+Canonical derivation path for all paper numbers — run:
+    python scripts/runs/rederive_all_metrics.py
+
 Sections:
+    0) Coverage audit — master table, gap list, imputed vs complete-case (§0.1)
     1) Coverage matrix (which (probe, model) slices are now full)
     2) Probe 1 — per-model canonical / W1..W6 accuracies, VAR, W3-retention
     3) Probe 2 — GSM CCI/TEP, ALGO P2A invocation, P2B plausible vs implausible
@@ -27,6 +31,13 @@ DER  = ROOT / "results" / "derived"
 AUD  = ROOT / "results" / "paper" / "AUDIT"
 DER.mkdir(parents=True, exist_ok=True)
 AUD.mkdir(parents=True, exist_ok=True)
+
+import sys as _sys
+
+if str(ROOT) not in _sys.path:
+    _sys.path.insert(0, str(ROOT))
+
+from scripts.runs.coverage_audit import filter_p1_to_bank, load_gsm_p2_merged  # noqa: E402
 
 
 MODELS = [
@@ -107,6 +118,11 @@ def coverage_matrix() -> pd.DataFrame:
             if df is None:
                 n = 0; n_err = 0
             else:
+                if "variant_type" in df.columns:
+                    df["variant_type"] = df["variant_type"].astype(str).str.strip().apply(
+                        lambda v: v.upper() if v and v[0].lower() == "w" else v
+                    )
+                    df = filter_p1_to_bank(df, "BW")
                 if "raw_response" in df.columns:
                     n_err = df["raw_response"].astype(str).str.startswith("ERROR:").sum()
                 else:
@@ -123,15 +139,22 @@ def coverage_matrix() -> pd.DataFrame:
                 n_err = sub["raw_response"].astype(str).str.startswith("ERROR:").sum()
             else:
                 n_err = 0
-            n = len(sub) - n_err
+            sub = filter_p1_to_bank(sub, "BW") if not sub.empty else sub
+            n = len(sub) - (sub["raw_response"].astype(str).str.startswith("ERROR:").sum() if "raw_response" in sub.columns else 0)
             rows.append({"probe": "BW_P1", "model": SHORT[m], "n_valid": n, "n_errors": n_err})
     # Probe 2 shared files
-    for fname, label in [("GSM_P2_cci.csv", "GSM_P2"),
-                         ("ALGO_P2_phase2_normal.csv", "ALGO_P2A_normal"),
-                         ("ALGO_P2_phase2_normal_elicited.csv", "ALGO_P2A_elicited"),
-                         ("ALGO_P2_phase2_injected.csv", "ALGO_P2B_plausible"),
-                         ("ALGO_P2_phase2_injected_implausible.csv", "ALGO_P2B_implausible")]:
-        df = _safe_read(RAW / fname)
+    p2_specs: list[tuple[str | None, str]] = [
+        (None, "GSM_P2"),
+        ("ALGO_P2_phase2_normal.csv", "ALGO_P2A_normal"),
+        ("ALGO_P2_phase2_normal_elicited.csv", "ALGO_P2A_elicited"),
+        ("ALGO_P2_phase2_injected.csv", "ALGO_P2B_plausible"),
+        ("ALGO_P2_phase2_injected_implausible.csv", "ALGO_P2B_implausible"),
+    ]
+    for fname, label in p2_specs:
+        if label == "GSM_P2":
+            df = load_gsm_p2_merged()
+        else:
+            df = _safe_read(RAW / fname) if fname else None
         if df is None:
             for m in MODELS:
                 rows.append({"probe": label, "model": SHORT[m], "n_valid": 0, "n_errors": 0})
@@ -186,6 +209,7 @@ def probe1_per_model() -> pd.DataFrame:
                 lambda v: v.upper() if v and v[0].lower() == "w" else v
             )
             df = df.drop_duplicates(["problem_id", "variant_type"], keep="last")
+            df = filter_p1_to_bank(df, fam)
             for v in ["canonical","W1","W2","W3","W4","W5","W6"]:
                 sub = df[df["variant_type"] == v]
                 acc, n_valid, n_att = _accuracy(sub)
@@ -208,6 +232,7 @@ def probe1_per_model() -> pd.DataFrame:
             sub_m = bw_combined[bw_combined["model"] == model]
             if sub_m.empty: continue
             sub_m = sub_m.drop_duplicates(["problem_id","variant_type"], keep="last")
+            sub_m = filter_p1_to_bank(sub_m, "BW")
             for v in ["canonical","W1","W2","W3","W4","W5","W6"]:
                 sub = sub_m[sub_m["variant_type"] == v]
                 acc, n_valid, n_att = _accuracy(sub)
@@ -236,15 +261,7 @@ def probe1_w3_retention(per_model: pd.DataFrame) -> pd.DataFrame:
 # ---------------------- 3. PROBE 2 METRICS ---------------------------------
 
 def gsm_p2_metrics() -> pd.DataFrame:
-    df = _safe_read(RAW / "GSM_P2_cci.csv")
-    # Also pick up o4-mini specific file if it exists separately
-    df2 = _safe_read(RAW / "GSM_P2_phase1_o1mini.csv")
-    if df is not None and df2 is not None:
-        # union of common columns
-        common = sorted(set(df.columns) & set(df2.columns))
-        df = pd.concat([df[common], df2[common]], ignore_index=True)
-    elif df2 is not None and df is None:
-        df = df2
+    df = load_gsm_p2_merged()
     if df is None or "model" not in df.columns:
         return pd.DataFrame()
     rows = []
@@ -360,25 +377,30 @@ def accuracy_robustness_spearman(p1: pd.DataFrame) -> pd.DataFrame:
 # ---------------------- MAIN -----------------------------------------------
 
 def main() -> None:
-    print("[1/5] coverage_matrix"); cov = coverage_matrix()
+    from scripts.runs.coverage_audit import run_audit
+
+    print("[0/6] coverage audit (§0.1)")
+    run_audit()
+
+    print("\n[1/6] coverage_matrix"); cov = coverage_matrix()
     cov.to_csv(DER / "coverage_matrix.csv", index=False)
     cov_piv = cov.pivot(index="probe", columns="model", values="n_valid").fillna(0).astype(int)
     cov_piv.to_csv(DER / "coverage_pivot.csv")
     print(cov_piv.to_string())
 
-    print("\n[2/5] probe1 per-model variant accuracies"); p1 = probe1_per_model()
+    print("\n[2/6] probe1 per-model variant accuracies"); p1 = probe1_per_model()
     p1.to_csv(DER / "probe1_per_model_variant.csv", index=False)
     print(p1.pivot_table(index=["probe","model"], columns="variant", values="accuracy").round(3).to_string())
 
-    print("\n[3/5] probe1 W3-retention"); w3r = probe1_w3_retention(p1)
+    print("\n[3/6] probe1 W3-retention"); w3r = probe1_w3_retention(p1)
     w3r.to_csv(DER / "probe1_w3_retention.csv", index=False)
     print(w3r.round(3).to_string(index=False))
 
-    print("\n[4/5] probe2 GSM CCI/TEP"); gsm = gsm_p2_metrics()
+    print("\n[4/6] probe2 GSM CCI/TEP"); gsm = gsm_p2_metrics()
     gsm.to_csv(DER / "probe2_gsm_metrics.csv", index=False)
     print(gsm.round(3).to_string(index=False))
 
-    print("\n[5/5] probe2 ALGO P2A/P2B"); algo = algo_p2_metrics()
+    print("\n[5/6] probe2 ALGO P2A/P2B"); algo = algo_p2_metrics()
     algo.to_csv(DER / "probe2_algo_metrics.csv", index=False)
     print(algo.round(3).to_string(index=False))
 

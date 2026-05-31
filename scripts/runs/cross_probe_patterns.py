@@ -28,7 +28,62 @@ from scipy import stats
 ROOT = Path(__file__).resolve().parents[2]
 RAW  = ROOT / "results" / "raw"
 DER  = ROOT / "results" / "derived"
+DATA = ROOT / "data" / "problems"
 DER.mkdir(parents=True, exist_ok=True)
+
+BANK_GSM_PATH = DATA / "question_bank_gsm.csv"
+EXPECTED_GSM_CANONICAL_N = {
+    "anthropic/claude-sonnet-4": 44,
+    "google/gemini-2.5-flash": 44,
+    "openai/o4-mini": 44,
+    "openai/gpt-4o": 20,
+    "meta-llama/llama-3.1-8b-instruct": 20,
+}
+
+
+def _load_bank_gsm() -> set[str]:
+    try:
+        bank = pd.read_csv(BANK_GSM_PATH, usecols=["problem_id"])
+        return set(bank["problem_id"].astype(str).unique())
+    except Exception:
+        return {
+            *(f"GSM_{i:03d}" for i in range(1, 21)),
+            *(f"GSM_{i:03d}" for i in range(41, 65)),
+        }
+
+
+BANK_GSM = _load_bank_gsm()
+
+
+def _gsm_response_series(df: pd.DataFrame) -> pd.Series:
+    if "raw_response" in df.columns:
+        return df["raw_response"].astype(str)
+    if "response" in df.columns:
+        return df["response"].astype(str)
+    return pd.Series("", index=df.index)
+
+
+def _filter_gsm_p1(df: pd.DataFrame) -> pd.DataFrame:
+    """Match gen_figures._gsm_p1_unified: bank IDs, drop ERROR/NaN answers."""
+    df = df[df["problem_id"].astype(str).isin(BANK_GSM)].copy()
+    resp = _gsm_response_series(df)
+    df = df[~resp.str.startswith("ERROR")]
+    bc = df["behavioral_correct"].astype(str).str.strip()
+    df = df[bc.ne("") & df["behavioral_correct"].notna()]
+    return df
+
+
+def _assert_gsm_canonical_n(wide: pd.DataFrame) -> None:
+    if "canonical" not in wide.columns:
+        return
+    for model, expected in EXPECTED_GSM_CANONICAL_N.items():
+        n = int(wide[(wide.model == model) & wide.canonical.notna()].shape[0])
+        label = SHORT.get(model, model)
+        print(f"  GSM master canonical n: {label} = {n} (expected {expected})")
+        if n != expected:
+            raise AssertionError(
+                f"GSM master canonical n mismatch for {label}: got {n}, expected {expected}"
+            )
 
 MODELS = [
     "anthropic/claude-sonnet-4",
@@ -71,6 +126,8 @@ def _load_p1(family: str) -> pd.DataFrame:
         if not p.exists(): continue
         df = pd.read_csv(p, dtype=str).fillna("")
         if "variant_type" not in df.columns: continue
+        if family == "GSM":
+            df = _filter_gsm_p1(df)
         df["variant_type"] = df["variant_type"].apply(_norm_variant)
         # accuracy column
         if "behavioral_correct" in df.columns:
@@ -109,6 +166,8 @@ def per_problem_table() -> pd.DataFrame:
         wide = df.pivot_table(index=["problem_id","model"], columns="variant_type",
                               values="_correct", aggfunc="last").reset_index()
         wide["family"] = fam
+        if fam == "GSM":
+            _assert_gsm_canonical_n(wide)
         # per-problem VAR: 1 - mean(W1..W6)
         var_cols = [c for c in ["W1","W2","W3","W4","W5","W6"] if c in wide.columns]
         wide["mean_variant"] = wide[var_cols].astype(float).mean(axis=1)

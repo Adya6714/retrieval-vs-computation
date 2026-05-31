@@ -1,4 +1,4 @@
 probe,n_models,spearman_rho,p_value,models_used
 ALGO,5,0.8999999999999998,0.03738607346849875,"Claude,Gemini,GPT-4o,Llama,o4-mini"
-BW,5,-0.3,0.6238376647810728,"Gemini,o4-mini,Claude,GPT-4o,Llama"
-GSM,5,0.6324555320336759,0.2522154963555042,"Claude,Gemini,GPT-4o,Llama,o4-mini"
+BW,5,-0.9999999999999999,1.4042654220543672e-24,"Gemini,o4-mini,Claude,GPT-4o,Llama"
+GSM,5,0.15389675281277312,0.8048288166080632,"Claude,Gemini,GPT-4o,Llama,o4-mini"

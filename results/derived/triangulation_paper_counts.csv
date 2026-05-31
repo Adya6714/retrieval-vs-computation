@@ -1,0 +1,17 @@
+scope,tri_v2_label,n,pct
+all,insufficient,505,0.3791291291291291
+all,computation,342,0.25675675675675674
+all,weak_retrieval,199,0.1493993993993994
+all,retrieval,160,0.12012012012012012
+all,mixed,67,0.0503003003003003
+all,weak_computation,59,0.044294294294294295
+all,_strong_total,502,0.3768768768768769
+all,_n_instances,1332,1.0
+paper_ALGO_GSM,computation,264,0.34600262123197906
+paper_ALGO_GSM,insufficient,166,0.21756225425950196
+paper_ALGO_GSM,retrieval,118,0.15465268676277852
+paper_ALGO_GSM,weak_retrieval,89,0.11664482306684142
+paper_ALGO_GSM,mixed,67,0.08781127129750983
+paper_ALGO_GSM,weak_computation,59,0.07732634338138926
+paper_ALGO_GSM,_strong_total,382,0.5006553079947575
+paper_ALGO_GSM,_n_instances,763,1.0

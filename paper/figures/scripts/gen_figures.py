@@ -21,6 +21,7 @@ no hard-coded constants for the numbers themselves.
 
 from __future__ import annotations
 
+from functools import lru_cache
 from pathlib import Path
 
 import matplotlib
@@ -96,10 +97,66 @@ def _read_algo_p1(slug: str) -> pd.DataFrame:
     return df.drop_duplicates(subset=["problem_id", "variant_type"])
 
 
+BANK_GSM_PATH = ROOT / "data" / "problems" / "question_bank_gsm.csv"
+
+MODEL_SHORT = {v: k for k, v in MODEL_LONG.items()}
+
+EXPECTED_GSM_CANONICAL_N = {
+    "anthropic/claude-sonnet-4": 44,
+    "google/gemini-2.5-flash": 44,
+    "openai/o4-mini": 44,
+    "openai/gpt-4o": 20,
+    "meta-llama/llama-3.1-8b-instruct": 20,
+}
+
+
+def _load_bank_gsm() -> set[str]:
+    """Bank-valid GSM problem IDs (excludes off-bank GSM_021–040)."""
+    try:
+        bank = pd.read_csv(BANK_GSM_PATH, usecols=["problem_id"])
+        return set(bank["problem_id"].astype(str).unique())
+    except Exception:
+        return {
+            *(f"GSM_{i:03d}" for i in range(1, 21)),
+            *(f"GSM_{i:03d}" for i in range(41, 65)),
+        }
+
+
+BANK_GSM = _load_bank_gsm()
+
+
+def _gsm_response_series(df: pd.DataFrame) -> pd.Series:
+    if "raw_response" in df.columns:
+        return df["raw_response"].astype(str)
+    if "response" in df.columns:
+        return df["response"].astype(str)
+    return pd.Series("", index=df.index)
+
+
+def _assert_gsm_p1_canonical_counts(df: pd.DataFrame) -> None:
+    canon = (
+        df[df.variant_type == "canonical"]
+        .groupby("model")["problem_id"]
+        .nunique()
+    )
+    for mid, expected in EXPECTED_GSM_CANONICAL_N.items():
+        got = int(canon.get(mid, 0))
+        label = MODEL_SHORT.get(mid, mid)
+        print(f"  GSM P1 canonical n: {label} = {got} (expected {expected})")
+        if got != expected:
+            raise AssertionError(
+                f"GSM P1 canonical n mismatch for {label} ({mid}): "
+                f"got {got}, expected {expected}"
+            )
+
+
+@lru_cache(maxsize=1)
 def _gsm_p1_unified() -> pd.DataFrame:
-    """Authoritative GSM P1 frame from per-model raw files (post-R-P0b
-    refresh).  Claude/Gemini/o4-mini have n=44; GPT-4o/Llama have n=40.
-    For o4-mini, use the per-problem derived export.
+    """Authoritative GSM P1 frame from per-model raw files.
+
+    Filters to bank-valid problem IDs only; drops ERROR stubs and rows with
+    empty/NaN behavioral_correct (failed API calls are excluded, not scored
+    as incorrect).  Claude/Gemini/o4-mini: n=44 canonical; GPT-4o/Llama: n=20.
     """
     parts: list[pd.DataFrame] = []
     for slug, model_id in [
@@ -110,6 +167,11 @@ def _gsm_p1_unified() -> pd.DataFrame:
         ("o1mini", "openai/o4-mini"),
     ]:
         df = pd.read_csv(RAW / f"GSM_P1_behavioral_{slug}.csv", dtype=str).fillna("")
+        df = df[df["problem_id"].astype(str).isin(BANK_GSM)]
+        resp = _gsm_response_series(df)
+        df = df[~resp.str.startswith("ERROR")]
+        bc = df["behavioral_correct"].astype(str).str.strip()
+        df = df[bc.ne("") & df["behavioral_correct"].notna()]
         df["variant_type"] = df.variant_type.where(
             ~df.variant_type.str.startswith("w"),
             df.variant_type.str.upper(),
@@ -117,9 +179,33 @@ def _gsm_p1_unified() -> pd.DataFrame:
         df["correct"] = df.behavioral_correct.str.lower().eq("true").astype(int)
         df["model"] = model_id
         parts.append(df[["problem_id", "variant_type", "model", "correct"]])
-    df = pd.concat(parts, ignore_index=True)
-    df = df.drop_duplicates(subset=["problem_id", "variant_type", "model"])
-    return df
+    out = pd.concat(parts, ignore_index=True)
+    out = out.drop_duplicates(subset=["problem_id", "variant_type", "model"])
+    _assert_gsm_p1_canonical_counts(out)
+    return out
+
+
+def dump_gsm_p1_reconciliation() -> pd.DataFrame:
+    """Write GSM P1 accuracies via the same path figures use; print + CSV."""
+    df = _gsm_p1_unified()
+    variants = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
+    rows: list[dict] = []
+    for mid in sorted(df.model.unique()):
+        label = MODEL_SHORT.get(mid, mid)
+        sub = df[df.model == mid]
+        for v in variants:
+            s = sub[sub.variant_type == v]
+            n = int(len(s))
+            acc = float(s.correct.mean()) if n else float("nan")
+            rows.append({"model": label, "variant": v, "accuracy": acc, "n": n})
+    out = pd.DataFrame(rows)
+    path = DER / "gsm_p1_figure_table_reconciliation.csv"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    out.to_csv(path, index=False)
+    print("\nGSM P1 figure-table reconciliation (bank-filtered):")
+    print(out.to_string(index=False, float_format=lambda x: f"{x:.4f}"))
+    print(f"\n  wrote {path}")
+    return out
 
 
 def p1_acc(family: str, slug: str, model_label: str) -> dict[str, float]:
@@ -362,7 +448,7 @@ def fig_robustness() -> None:
 
     # (a)
     ax = axes[0]
-    ax.set_title("(a) GSM arithmetic (n=44; GPT-4o/Llama n=40)", fontsize=10.5)
+    ax.set_title("(a) GSM arithmetic (n=44; GPT-4o/Llama n=20)", fontsize=10.5)
     offsets = {
         "Claude": (0.003, 0.012),
         "GPT-4o": (0.004, -0.025),
@@ -465,7 +551,7 @@ def fig_decay() -> None:
 
     # ---- (a) GSM ----
     ax = axes[0]
-    ax.set_title("(a) GSM: per-variant accuracy (n=44; GPT-4o/Llama n=40)", fontsize=10.5)
+    ax.set_title("(a) GSM: per-variant accuracy (n=44; GPT-4o/Llama n=20)", fontsize=10.5)
     # W3 shaded band
     ax.axvspan(2.6, 3.4, color="#d3d3d3", alpha=0.45, zorder=0)
     ax.text(3.0, 1.04, "$W_3$", ha="center", fontsize=8.5, color="#555")
@@ -1091,11 +1177,15 @@ def fig_population() -> None:
     uni = _gsm_p1_unified()
     for lbl, mid in main_models:
         s = uni[uni.model == mid]
-        c = s[s.variant_type == "canonical"].correct.mean()
-        w = s[s.variant_type == "W3"].correct.mean()
+        c_rows = s[s.variant_type == "canonical"]
+        w_rows = s[s.variant_type == "W3"]
+        if len(c_rows) == 0 or len(w_rows) == 0:
+            continue
+        c = c_rows.correct.mean()
+        w = w_rows.correct.mean()
         if c > 0:
             cells.append({"model": lbl, "family": "GSM", "sub": "GSM",
-                          "can": c, "R": w / c, "n": 44})
+                          "can": c, "R": w / c, "n": int(len(c_rows))})
 
     # BW per-subtype per model.  Split by problem_id prefix (BW_* vs MBW_*).
     bw_main = pd.read_csv(RAW / "BW_P1_behavioral.csv", dtype=str).fillna("")
@@ -1220,6 +1310,7 @@ def fig_population() -> None:
 # ===========================================================================
 def main() -> None:
     print(f"Output dir: {OUT}")
+    dump_gsm_p1_reconciliation()
     fig_robustness()
     fig_decay()
     fig_heatmap()

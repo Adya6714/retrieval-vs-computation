@@ -1,0 +1,115 @@
+file,deduction
+ALGO_P1_behavioral_claude.csv,- Worst canonical->variant fragility: `anthropic/claude-sonnet-4` on `W5` with drop-rate 1.000 (n=50).
+ALGO_P1_behavioral_claude.csv,- Highest rescue effect: `anthropic/claude-sonnet-4` on `W4` with rescue-rate 0.543.
+ALGO_P1_behavioral_claude.csv,"- Mean canonical minus W3 gap across models: 0.273 (max=0.273, min=0.273)."
+ALGO_P1_behavioral_gemini.csv,- Worst canonical->variant fragility: `google/gemini-2.5-flash` on `W5` with drop-rate 0.971 (n=50).
+ALGO_P1_behavioral_gemini.csv,- Highest rescue effect: `google/gemini-2.5-flash` on `W4` with rescue-rate 0.271.
+ALGO_P1_behavioral_gemini.csv,"- Mean canonical minus W3 gap across models: 0.209 (max=0.209, min=0.209)."
+ALGO_P1_behavioral_gpt4o.csv,- Worst canonical->variant fragility: `openai/gpt-4o` on `W5` with drop-rate 1.000 (n=50).
+ALGO_P1_behavioral_gpt4o.csv,- Highest rescue effect: `openai/gpt-4o` on `W4` with rescue-rate 0.381.
+ALGO_P1_behavioral_gpt4o.csv,"- Mean canonical minus W3 gap across models: 0.255 (max=0.255, min=0.255)."
+ALGO_P1_behavioral_llama.csv,- Worst canonical->variant fragility: `meta-llama/llama-3.1-8b-instruct` on `W3` with drop-rate 1.000 (n=110).
+ALGO_P1_behavioral_llama.csv,- Highest rescue effect: `meta-llama/llama-3.1-8b-instruct` on `W1` with rescue-rate 0.077.
+ALGO_P1_behavioral_llama.csv,"- Mean canonical minus W3 gap across models: 0.036 (max=0.036, min=0.036)."
+ALGO_P1_behavioral_o1mini.csv,- Worst canonical->variant fragility: `openai/o4-mini` on `W5` with drop-rate 0.960 (n=50).
+ALGO_P1_behavioral_o1mini.csv,"- Mean canonical minus W3 gap across models: 0.391 (max=0.391, min=0.391)."
+ALGO_P2_phase1_claude_new.csv,- `phase1_parseable` rate: 0.764 over 110 rows.
+ALGO_P2_phase1_claude_new.csv,- `greedy_assessment_correct` rate: 0.769 over 91 rows.
+ALGO_P2_phase1_claude_new.csv,- `critical_point_identified` rate: 0.327 over 110 rows.
+ALGO_P2_phase1_claude_new.csv,- `predicted_first_decision` non-empty rate: 0.964.
+ALGO_P2_phase1_gemini.csv,- `phase1_parseable` rate: 0.655 over 110 rows.
+ALGO_P2_phase1_gemini.csv,- `greedy_assessment_correct` rate: 0.740 over 77 rows.
+ALGO_P2_phase1_gemini.csv,- `critical_point_identified` rate: 0.291 over 110 rows.
+ALGO_P2_phase1_gemini.csv,- `predicted_first_decision` non-empty rate: 0.991.
+ALGO_P2_phase1_gpt4o.csv,- `phase1_parseable` rate: 0.900 over 20 rows.
+ALGO_P2_phase1_gpt4o.csv,- `greedy_assessment_correct` rate: 0.737 over 19 rows.
+ALGO_P2_phase1_gpt4o.csv,- `predicted_first_decision` non-empty rate: 0.950.
+ALGO_P2_phase1_gpt4o_new.csv,- `phase1_parseable` rate: 0.855 over 110 rows.
+ALGO_P2_phase1_gpt4o_new.csv,- `greedy_assessment_correct` rate: 0.788 over 99 rows.
+ALGO_P2_phase1_gpt4o_new.csv,- `critical_point_identified` rate: 0.155 over 110 rows.
+ALGO_P2_phase1_gpt4o_new.csv,- `predicted_first_decision` non-empty rate: 0.973.
+ALGO_P2_phase1_llama.csv,- `phase1_parseable` rate: 0.900 over 20 rows.
+ALGO_P2_phase1_llama.csv,- `greedy_assessment_correct` rate: 0.737 over 19 rows.
+ALGO_P2_phase1_llama.csv,- `predicted_first_decision` non-empty rate: 1.000.
+ALGO_P2_phase1_llama_new.csv,- `phase1_parseable` rate: 0.691 over 110 rows.
+ALGO_P2_phase1_llama_new.csv,- `greedy_assessment_correct` rate: 0.722 over 90 rows.
+ALGO_P2_phase1_llama_new.csv,- `critical_point_identified` rate: 0.218 over 110 rows.
+ALGO_P2_phase1_llama_new.csv,- `predicted_first_decision` non-empty rate: 0.945.
+ALGO_P2_phase2_injected.csv,"- Top `response_type` distribution: compliant:0.61, format_ignored:0.37, partial_compliance:0.02, refusal:0.00."
+ALGO_P2_phase2_injected.csv,- `post_injection_correct` rate: 0.390 (final-step rows only).
+ALGO_P2_phase2_injected.csv,- `injection_applied=True` prevalence: 0.337.
+ALGO_P2_phase2_injected_gemini.csv,"- Top `response_type` distribution: format_ignored:0.99, compliant:0.01."
+ALGO_P2_phase2_injected_gemini.csv,- `post_injection_correct` rate: 0.311 (final-step rows only).
+ALGO_P2_phase2_injected_gemini.csv,- `injection_applied=True` prevalence: 0.337.
+ALGO_P2_phase2_injected_implausible.csv,"- Top `response_type` distribution: compliant:0.63, format_ignored:0.36, partial_compliance:0.01."
+ALGO_P2_phase2_injected_implausible.csv,- `post_injection_correct` rate: 0.410 (final-step rows only).
+ALGO_P2_phase2_injected_implausible.csv,- `injection_applied=True` prevalence: 0.337.
+ALGO_P2_phase2_normal.csv,"- Top `response_type` distribution: compliant:0.57, format_ignored:0.39, partial_compliance:0.03, refusal:0.00."
+ALGO_P2_phase2_normal.csv,- `final_answer_correct` rate: 0.096.
+ALGO_P2_phase2_normal_elicited.csv,"- Top `response_type` distribution: compliant:0.75, format_ignored:0.24, partial_compliance:0.01, refusal:0.00."
+ALGO_P2_phase2_normal_elicited.csv,- `final_answer_correct` rate: 0.110.
+ALGO_P2_phase2_normal_gemini.csv,"- Top `response_type` distribution: format_ignored:0.99, refusal:0.01."
+ALGO_P2_phase2_normal_gemini.csv,- `final_answer_correct` rate: 0.110.
+ALGO_P3_contamination.csv,- `instance_contamination_score` quantiles q10/q50/q90: 0.000/0.000/0.564.
+ALGO_P3_contamination.csv,- `contamination_score` quantiles q10/q50/q90: 0.000/0.054/0.109.
+ALGO_P3_contamination.csv,- `template_contamination_score` quantiles q10/q50/q90: 0.000/0.062/1.000.
+ALGO_P3_mechanistic.csv,- Normalized crystallization depth mean/std: -0.042/0.000.
+ALGO_P3_mechanistic.csv,- `layer_cosine_similarities` non-empty rate: 1.000.
+BW_P1_behavioral.csv,- Worst canonical->variant fragility: `deepseek/deepseek-r1-distill-llama-70b` on `W4` with drop-rate 0.914 (n=49).
+BW_P1_behavioral.csv,- Highest rescue effect: `anthropic/claude-sonnet-4` on `W5` with rescue-rate 0.540.
+BW_P1_behavioral.csv,"- Mean canonical minus W3 gap across models: 0.162 (max=0.607, min=0.000)."
+BW_P1_behavioral_gemini.csv,- Worst canonical->variant fragility: `google/gemini-2.5-flash` on `W4` with drop-rate 0.960 (n=65).
+BW_P1_behavioral_gemini.csv,- Highest rescue effect: `google/gemini-2.5-flash` on `W5` with rescue-rate 0.450.
+BW_P1_behavioral_gemini.csv,"- Mean canonical minus W3 gap across models: 0.277 (max=0.277, min=0.277)."
+BW_P1_behavioral_o1mini.csv,- Worst canonical->variant fragility: `openai/o4-mini` on `W3` with drop-rate 0.860 (n=65).
+BW_P1_behavioral_o1mini.csv,- Highest rescue effect: `openai/o4-mini` on `W3` with rescue-rate 0.333.
+BW_P1_behavioral_o1mini.csv,"- Mean canonical minus W3 gap across models: 0.585 (max=0.585, min=0.585)."
+BW_P3_contamination.csv,- `instance_contamination_score` quantiles q10/q50/q90: 0.058/0.086/0.109.
+BW_P3_contamination.csv,- `contamination_score` quantiles q10/q50/q90: 0.036/0.042/0.053.
+BW_P3_contamination.csv,- `template_contamination_score` quantiles q10/q50/q90: 0.000/0.000/0.000.
+BW_P3_mechanistic.csv,- Normalized crystallization depth mean/std: -0.013/0.169.
+BW_P3_mechanistic.csv,- `layer_cosine_similarities` non-empty rate: 1.000.
+GSM_P1_behavioral_claude.csv,- Worst canonical->variant fragility: `anthropic/claude-sonnet-4` on `W4` with drop-rate 0.297 (n=44).
+GSM_P1_behavioral_claude.csv,- Highest rescue effect: `anthropic/claude-sonnet-4` on `W5` with rescue-rate 0.857.
+GSM_P1_behavioral_claude.csv,"- Mean canonical minus W3 gap across models: 0.091 (max=0.091, min=0.091)."
+GSM_P1_behavioral_gemini.csv,- Worst canonical->variant fragility: `google/gemini-2.5-flash` on `W4` with drop-rate 0.500 (n=44).
+GSM_P1_behavioral_gemini.csv,- Highest rescue effect: `google/gemini-2.5-flash` on `W5` with rescue-rate 0.750.
+GSM_P1_behavioral_gemini.csv,"- Mean canonical minus W3 gap across models: 0.386 (max=0.386, min=0.386)."
+GSM_P1_behavioral_gpt4o.csv,- Worst canonical->variant fragility: `openai/gpt-4o` on `W3` with drop-rate 0.667 (n=40).
+GSM_P1_behavioral_gpt4o.csv,- Highest rescue effect: `openai/gpt-4o` on `W6` with rescue-rate 0.571.
+GSM_P1_behavioral_gpt4o.csv,"- Mean canonical minus W3 gap across models: 0.475 (max=0.475, min=0.475)."
+GSM_P1_behavioral_llama.csv,- Worst canonical->variant fragility: `meta-llama/llama-3.1-8b-instruct` on `W5` with drop-rate 0.939 (n=40).
+GSM_P1_behavioral_llama.csv,- Highest rescue effect: `meta-llama/llama-3.1-8b-instruct` on `W6` with rescue-rate 0.429.
+GSM_P1_behavioral_llama.csv,"- Mean canonical minus W3 gap across models: 0.625 (max=0.625, min=0.625)."
+GSM_P1_behavioral_o1mini.csv,- Worst canonical->variant fragility: `openai/o4-mini` on `W4` with drop-rate 0.216 (n=44).
+GSM_P1_behavioral_o1mini.csv,- Highest rescue effect: `openai/o4-mini` on `W5` with rescue-rate 0.714.
+GSM_P1_behavioral_o1mini.csv,"- Mean canonical minus W3 gap across models: 0.000 (max=0.000, min=0.000)."
+GSM_P2_phase1_claude.csv,- `phase1_parseable` rate: 0.909 over 44 rows.
+GSM_P2_phase1_gemini.csv,- `phase1_parseable` rate: 0.818 over 44 rows.
+GSM_P2_phase1_gpt4o.csv,- `phase1_parseable` rate: 0.455 over 44 rows.
+GSM_P2_phase1_llama.csv,- `phase1_parseable` rate: 0.455 over 44 rows.
+GSM_P2_phase1_o1mini.csv,- `phase1_parseable` rate: 0.977 over 44 rows.
+GSM_P3_contamination.csv,- `contamination_score` quantiles q10/q50/q90: 0.017/0.108/0.187.
+GSM_P3_mechanistic.csv,- Normalized crystallization depth mean/std: -0.042/0.000.
+GSM_P3_mechanistic.csv,- `layer_cosine_similarities` non-empty rate: 1.000.
+ALGO_P1_VWC_exploratory.csv,"- Metrics present (2): VWC_CSS, VWC_VAR."
+ALGO_P1_VWC_exploratory.csv,- `metric_value` mean/min/max: -0.314/-0.809/0.414.
+ALGO_P1_metrics.csv,"- Metrics present (2): VAR, W6_Gap."
+ALGO_P1_metrics.csv,- `metric_value` mean/min/max: 0.203/-0.044/0.873.
+ALGO_P2_metrics.csv,"- Metrics present (2): CCI, TEP."
+ALGO_P2_metrics.csv,- `metric_value` mean/min/max: 0.299/0.000/1.000.
+ALGO_P3_triangulation.csv,"- `convergence_label` distribution: ambiguous:0.62, mixed:0.35, retrieval_signal:0.02, computation_signal:0.01."
+ALGO_P3_triangulation_v2.csv,"- `convergence_label` distribution: ambiguous:0.62, mixed:0.35, retrieval_signal:0.02, computation_signal:0.01."
+ALGO_P3_triangulation_v3.csv,"- `convergence_label` distribution: ambiguous:0.62, mixed:0.36, retrieval_signal:0.02, computation_signal:0.01."
+BW_P1_metrics.csv,"- Metrics present (2): PDAS, VAR."
+BW_P1_metrics.csv,- `metric_value` mean/min/max: 0.255/-0.588/1.000.
+GSM_P1_metrics.csv,"- Metrics present (2): VAR, W6_Gap."
+GSM_P1_metrics.csv,- `metric_value` mean/min/max: 0.549/0.000/0.944.
+GSM_P2_metrics.csv,"- Metrics present (4): mean_cci_by_contamination_excluding_valid_divergence, mean_cci_excluding_valid_divergence, mean_tep, valid_divergence_rate."
+GSM_P2_metrics.csv,- `value` mean/min/max: 0.246/0.000/0.773.
+bw_violation_profile.csv,- `mean_cci` mean/min/max: 0.041/0.000/0.109.
+deep_triangulation_plus.csv,"- `tri_plus_label` distribution: insufficient:0.43, mixed:0.19, weak_computation:0.13, computation_signal_plus:0.13, weak_retrieval:0.09, retrieval_signal_plus:0.03."
+probe1_per_model_variant.csv,- `accuracy` mean/min/max: 0.391/0.000/1.000.
+probe2_gsm_metrics.csv,- `mean_cci` mean/min/max: 0.198/0.108/0.270.
+probe2_gsm_metrics.csv,- `mean_tep` mean/min/max: 0.640/0.539/0.773.
+table_denominator_flags.csv,"- Metrics present (8): Algorithm elicitation sessions, BW P1 canonical accuracy, Claude vs GPT-4o paired CCI, GSM P2 mean CCI, GSM Probe 2 five-model comparison, P1, P1 canonical / W3 accuracy, P2A_elicited."

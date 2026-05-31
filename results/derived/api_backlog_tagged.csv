@@ -1,0 +1,7 @@
+family,probe,model,coverage_label,observed_canonical_n,bank_canonical_n,fix_type,est_api_calls,priority,notes
+GSM,P2,o4-mini,partial,0,44,api_full_probe,616,P0,Full GSM P2 run for 44 problems (~616 step-level calls)
+ALGO,P2A_elicited,Claude,partial,61,110,api_partial_probe,196,P1,49 missing elicited sessions × ~4 API calls each
+ALGO,P2A_elicited,Gemini,partial,61,110,api_partial_probe,196,P1,49 missing elicited sessions × ~4 API calls each
+ALGO,P2A_elicited,Llama,partial,61,110,api_partial_probe,196,P1,49 missing elicited sessions × ~4 API calls each
+GSM,P1,GPT-4o,partial,20,44,remap_and_or_api,168,P1,0 wrong IDs in raw (GSM_021-040?) may remap without API; 24 bank IDs missing → ~168 behavioral calls for this model
+GSM,P1,Llama,partial,20,44,remap_and_or_api,168,P1,0 wrong IDs in raw (GSM_021-040?) may remap without API; 24 bank IDs missing → ~168 behavioral calls for this model

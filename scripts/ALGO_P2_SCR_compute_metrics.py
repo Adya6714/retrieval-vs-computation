@@ -26,6 +26,11 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.stats import bootstrap_ci
+from probes.algo.decision_normalize import (
+    normalize_decision,
+    normalize_phase1_decision,
+    normalize_phase2_decision,
+)
 
 
 def _require_columns(df: pd.DataFrame, required: set[str], name: str) -> None:
@@ -72,13 +77,8 @@ def _first_step_decision(df: pd.DataFrame) -> str:
     return str(d).strip()
 
 
-def _normalize_decision(subtype: str, text: str) -> str:
-    s = str(text).strip()
-    if subtype == "wis":
-        m = re.search(r"\b(SELECT|RULE OUT)\s+(-?\d+)\b", s, flags=re.IGNORECASE)
-        return f"{m.group(1).upper()} {int(m.group(2))}" if m else s.upper()
-    m = re.search(r"-?\d+", s)
-    return str(int(m.group(0))) if m else s
+def _normalize_decision(subtype: str, text: str, *, source: str = "phase2") -> str:
+    return normalize_decision(subtype, text, source=source)
 
 
 def _cc_optimal_sequence(correct_answer: str) -> list[str]:
@@ -356,7 +356,8 @@ def main() -> None:
                 pred = str(p1row["predicted_first_decision"])
                 match_first = (
                     1.0
-                    if _normalize_decision(subtype, first_norm) == _normalize_decision(subtype, pred)
+                    if normalize_phase2_decision(subtype, first_norm)
+                    == normalize_phase1_decision(subtype, pred)
                     else 0.0
                 )
 

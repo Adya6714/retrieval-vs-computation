@@ -98,29 +98,58 @@ class BudgetLogger:
             rec["extra"] = extra
         self._write(rec)
 
-    def live_remaining(self) -> float | None:
-        key = os.environ.get("OPENROUTER_API_KEY")
-        if not key:
+    @staticmethod
+    def fetch_openrouter_balances() -> dict | None:
+        """Return account wallet + per-key cap headroom from OpenRouter.
+
+        402 errors follow **account wallet** (total_credits - total_usage), not
+        auth/key ``limit_remaining`` (per-key spending cap under its limit).
+        """
+        api_key = os.environ.get("OPENROUTER_API_KEY")
+        if not api_key:
             return None
+        headers = {"Authorization": f"Bearer {api_key}"}
         try:
-            r = requests.get(
+            key_r = requests.get(
                 "https://openrouter.ai/api/v1/auth/key",
-                headers={"Authorization": f"Bearer {key}"},
+                headers=headers,
                 timeout=10,
             )
-            if r.status_code != 200:
+            cred_r = requests.get(
+                "https://openrouter.ai/api/v1/credits",
+                headers=headers,
+                timeout=10,
+            )
+            if key_r.status_code != 200:
                 return None
-            d = r.json()["data"]
-            rec = {
-                "event": "budget",
-                "ts": _ts(),
-                "limit_remaining": d.get("limit_remaining"),
-                "usage": d.get("usage"),
+            key_d = key_r.json().get("data", {})
+            wallet: float | None = None
+            total_credits = total_usage = None
+            if cred_r.status_code == 200:
+                cred_d = cred_r.json().get("data", {})
+                total_credits = cred_d.get("total_credits")
+                total_usage = cred_d.get("total_usage")
+                if total_credits is not None and total_usage is not None:
+                    wallet = float(total_credits) - float(total_usage)
+            return {
+                "account_wallet": wallet,
+                "total_credits": total_credits,
+                "total_usage": total_usage,
+                "key_limit_remaining": key_d.get("limit_remaining"),
+                "key_limit": key_d.get("limit"),
+                "key_usage": key_d.get("usage"),
             }
-            self._write(rec)
-            return d.get("limit_remaining")
         except Exception:
             return None
+
+    def live_remaining(self) -> float | None:
+        """Spendable account wallet balance (not per-key cap headroom)."""
+        balances = self.fetch_openrouter_balances()
+        if not balances:
+            return None
+        rec = {"event": "budget", "ts": _ts(), **balances}
+        self._write(rec)
+        return balances.get("account_wallet")
 
     def summary(self) -> dict:
         rec = {

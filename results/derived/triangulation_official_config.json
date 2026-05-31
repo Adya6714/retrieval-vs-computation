@@ -1,0 +1,45 @@
+{
+  "status": "pending_user_decision",
+  "note": "Draft for Option A only. Update after Step 13 checklist sign-off.",
+  "thresholds": {
+    "w3_retrieval_max": 0.2,
+    "w3_computation_min": 0.5,
+    "contam_retrieval_min": 0.6,
+    "contam_computation_max": 0.4,
+    "cci_computation_min": 0.5,
+    "cci_retrieval_max": 0.3,
+    "depth_computation_min": 0.55,
+    "min_votes": 2,
+    "vote_margin": 2
+  },
+  "retrieval_vote_signals": [
+    "p1_rename_fragile",
+    "p1_vri_high",
+    "p2_cci_retr",
+    "p2_impl_fail",
+    "p3_contam_high"
+  ],
+  "computation_vote_signals": [
+    "p1_w3_keep",
+    "p1_multi_variant",
+    "p2_cci_comp",
+    "p2_match_first",
+    "p2_crit_step",
+    "p2_impl_recovery",
+    "p3_contam_low",
+    "p3_depth_high"
+  ],
+  "paper_scope": {
+    "families_in_main_convergence": ["ALGO", "GSM"],
+    "families_appendix_only": ["BW"],
+    "bw_exclusion_reason": "P2 CCI/TEP sparse (87% TEP missing); convergence labels unreliable — report BW P1/P2 process findings separately."
+  },
+  "label_map_for_paper": {
+    "retrieval": "retrieval-consistent (strong)",
+    "computation": "computation-consistent (strong)",
+    "weak_retrieval": "weak retrieval signal (appendix / sensitivity)",
+    "weak_computation": "weak computation signal (appendix / sensitivity)",
+    "mixed": "conflicting probes (report count, no directional claim)",
+    "insufficient": "insufficient probe coverage (exclude from strong-label claims)"
+  }
+}

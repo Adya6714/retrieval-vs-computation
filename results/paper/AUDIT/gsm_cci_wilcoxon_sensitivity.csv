@@ -1,3 +1,3 @@
-analysis,n_pairs,claude_mean_cci,gpt4o_mean_cci,wilcoxon_W,wilcoxon_p_one_sided,paired_t_p
-full_bank_zero_imputed,44,0.23105909090909088,0.10833409090909091,396.0,0.006769157115125539,0.007166488343148346
-complete_case_only,44,0.23105909090909088,0.10833409090909091,396.0,0.006769157115125539,0.007166488343148346
+analysis,comparison,n_pairs,claude_mean_cci,gpt4o_mean_cci,wilcoxon_W,wilcoxon_p_one_sided,paired_t_p,denominator_label
+full_bank_zero_imputed,Claude_vs_GPT4o,44,0.23105909090909088,0.10833409090909091,396.0,0.006769157115125539,0.003583244171574173,zero_imputed
+complete_case_only,Claude_vs_GPT4o,44,0.23105909090909088,0.10833409090909091,396.0,0.006769157115125539,0.003583244171574173,complete_case

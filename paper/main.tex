@@ -5,15 +5,15 @@
 %%   figures/teaser.png            — framework overview infographic
 %%   figures/pipeline.png          — end-to-end pipeline infographic
 %%   figures/fig_robustness.pdf    — §5.1 scatter + 4-model ALGO bars
-%%   figures/fig_decay.pdf         — §5.1 per-variant ladder
-%%   figures/fig_cci.pdf           — §5.2 CCI / TEP / injection 3-panel
-%%   figures/fig_heatmap.pdf       — §5.3 macro-metrics + proximity heatmap
+%%   figures/fig_decay.pdf         — App per-variant ladder
+%%   figures/fig_cci.pdf           — §5.2 CCI / TEP / injection 3-panel (PROMOTED to body)
+%%   figures/fig_heatmap.pdf       — App macro-metrics + proximity heatmap
 %%   figures/fig_population.pdf    — App C population-level dissociation test
 %%   figures/fig_mechanistic.pdf   — App D mechanistic rank dissociation
-%%   figures/paradox.png           — App F infographic (screenshot version)
 %%   figures/fig_paradox.pdf       — App F statistical figure
-%% All seven .pdf figures are produced by figures/scripts/gen_figures.py
-%% directly from raw verifier logs; numbers are not hard-coded.
+%% NOTE (reconciliation 2026-05-31): GSM Probe-1 figures regenerated with the
+%% bank-ID + drop-ERROR filter; GPT-4o/Llama GSM cells are n=20 (GSM_001–020 only).
+%% paradox.png infographic and fig_gsm_w5w6 removed (gimmick / stale n=40 source).
 
 \documentclass[11pt]{article}
 
@@ -82,10 +82,6 @@
 \makeatother
 
 %% ---- TITLE ----
-%% CHANGE 1: Title rescoped to structured reasoning to match actual data coverage.
-%% The original "Accuracy Is Not Robustness" promised a universal law the
-%% population-level test (App C) cannot deliver; the new title foregrounds
-%% the per-instance methodology (the genuine novelty) and scopes claims correctly.
 \title{Same Score, Different Strategy: Multi-Probe Diagnosis\\
 of Structural Fragility in LLM Reasoning}
 
@@ -95,17 +91,6 @@ of Structural Fragility in LLM Reasoning}
 \maketitle
 
 % =========================================================================
-%% CHANGE 2: Abstract fully rewritten.
-%%
-%% Original problem: 280 words, 11 parenthetical statistics, 7 numerical
-%% findings, 4 model names — unreadable for reviewers who gate on the abstract.
-%% Compare with EMNLP 2025 Outstanding Paper abstract (Tutek et al., ~120 words).
-%%
-%% New structure: (1) problem/motivation, (2) method, (3) three headline
-%% findings — zero inline statistics. All numbers appear in the Introduction
-%% and Section 5 where they belong.
-%%
-%% Target: ≤180 words. All claims are supported by main-paper results.
 \begin{abstract}
 When two language models achieve the same score on a benchmark, are they
 solving problems the same way? We show they are not: identical accuracy can
@@ -193,7 +178,9 @@ solve to feed a deliberately wrong intermediate state.
 Pile/DCLM~\citep{liu2024infini}. Only when all three converge do we
 label an instance as behaviour consistent with training-pattern
 matching; numbers are re-derivable from per-instance verifier logs
-in the audit bundle (Appendix~\ref{app:audit}).
+in the audit bundle (Appendix~\ref{app:audit}).%
+\footnote{Anonymous code and logs:
+\url{https://anonymous.4open.science/r/retrieval-vs-computation-EA8F/README.md}.}
 
 \begin{figure}[!t]
 \centering
@@ -333,10 +320,6 @@ We extend PlanBench with a cross-session execution probe and a
 false-state injection probe, testing whether models that accept an
 injected error maintain correct final-answer generation.
 
-%% CHANGE 3: New paragraph citing von Recum et al. (ICLR 2026),
-%% the most directly competing concurrent paper on CoT intervention robustness.
-%% Differentiation is real and must be stated explicitly to avoid reviewer
-%% objection that the paper ignores directly relevant concurrent work.
 \paragraph{Concurrent work on reasoning-model robustness.}
 \citet{vonrecum2026reasoning} study how reasoning-trained LLMs respond
 to seven interventions (benign, neutral, adversarial) applied to
@@ -413,6 +396,25 @@ $0.25$--$0.75$; WIS: $5$--$20$ intervals, overlap $0.2$--$0.8$);
 per-instance audit logs are released for verification
 (App.~\ref{app:audit}).
 
+\paragraph{Study design: three families, three roles.}
+The three families are not interchangeable benchmarks; each serves a
+distinct methodological role, and we scope every claim to the family
+where the relevant probe is diagnostic. GSM is the
+\emph{full-coverage calibration family}: all five models complete
+Probe~1 canonical, the cross-session execution probe, and the
+proximity probe, so it anchors every cross-probe comparison. ALGO is
+the \emph{exposure-control family}: the only setting where the
+underlying algorithm (dynamic programming) is held fixed while
+public-corpus exposure varies across orders of magnitude
+(CC$\to$SP$\to$WIS), which is what makes the same-algorithm/
+different-exposure test possible at all. BW is the
+\emph{protocol-stress family}: its strict interactive PDDL protocol
+exposes a measurement-level failure mode
+(Section~\ref{subsec:bw_p2}) that is itself a reportable finding.
+Reading the study by these roles---rather than by a uniform
+model$\times$probe grid---is deliberate; Table~\ref{tab:coverage}
+makes the resulting coverage explicit.
+
 \paragraph{Seven versions of every problem.}
 For each canonical problem we create six variants, each preserving
 the correct answer but changing the surface presentation:
@@ -430,8 +432,6 @@ Every variant is automatically verified to have the same correct
 answer as the original before any model sees it.
 
 \paragraph{Models.}
-%% CHANGE 4: Removed "April–May 2026" timestamp (deanonymization risk —
-%% narrows submission to exactly this ARR cycle). Replaced with "in 2026".
 Five models, all queried via OpenRouter at temperature 0 with
 zero-shot CoT in 2026: \textit{Claude Sonnet~4}, \textit{GPT-4o},
 \textit{Gemini 2.5 Flash}, \textit{Llama-3.1-8B-Instruct}, and the
@@ -470,7 +470,9 @@ solves on standard BW.
 Total: $\sim$17.5K evaluation calls and $\sim$2.9K
 generation/verification calls
 ($\sim$20K total; Probes~1, 2 (Ph1/Ph2A/Ph2B);
-reasoning-type classification; Infini-gram excluded).}
+reasoning-type classification; Infini-gram excluded).
+This $\sim$20K total is the single call-count accounting used
+throughout the paper.}
 \label{tab:coverage}
 \end{table}
 
@@ -515,27 +517,16 @@ and \emph{computation-consistent} only when all three reverse. Under
 these strict rules $\sim$62\% of ALGO instances remain ambiguous; we
 treat ambiguity as the honest outcome: forcing a label on ambiguous
 instances would be statistically unjustifiable, and the 12
-high-confidence labels serve as existence proofs that both
-retrieval-consistent and computation-consistent behaviour occur
-within the same model on the same problem family.
+high-confidence labels serve as existence proofs that behaviour
+consistent with both retrieval-like and computation-like processing
+occurs within the same model on the same problem family.
 
 % =========================================================================
 \section{Results}
 \label{sec:results}
 
-%% CHANGE 5: §5 intro paragraph.
-%%
-%% The screenshot showed a diff where the original dense (i)–(v) list was
-%% deleted (red) and replaced with a compressed restatement (green).
-%% BOTH versions duplicate the abstract and front-load statistics that
-%% belong in individual subsections.
-%%
-%% This replacement is a single orienting sentence plus a roadmap that
-%% tells reviewers what each subsection will establish — no statistics,
-%% no duplication of the abstract, just forward pointers.
-%%
-%% The individual subsections retain all their numbers; nothing is lost.
-Five families of evidence emerge across $\sim$14{,}500 model calls.
+Five families of evidence emerge across the full evaluation suite
+(Table~\ref{tab:coverage}).
 Section~\ref{subsec:inversion} establishes that matched-benchmark
 models diverge on $W_3$ in ways that are subtype-specific and can
 reverse direction across architectures.
@@ -555,9 +546,9 @@ Section~\ref{subsec:convergence} reports convergence labels.
 \centering
 \includegraphics[width=0.66\linewidth]{figures/fig_robustness.pdf}
 \caption{Accuracy--robustness dissociation across five models.
-(a) GSM scatter at near-matched canonical accuracy ($\approx 0.83$):
-Claude (.75), GPT-4o (.35), Llama (.20) diverge sharply on $W_3$
-retention; o4-mini ($\star$) sits top-right.
+(a) GSM scatter at near-matched canonical accuracy ($\approx 0.80$--$0.85$):
+Claude (.75), GPT-4o (.30), Llama (.15) diverge sharply on $W_3$;
+o4-mini ($\star$) sits top-right.
 (b) Adversarial ALGO: SP-adv collapses Claude ($W_3{=}0$) while GPT-4o
 retains 26.5\%; CC-adv reverses the pair; WIS-adv floors every model.
 The inversion is subtype-specific, not model-monotone.}
@@ -574,10 +565,10 @@ Model & $\mathrm{Acc}_\mathrm{can}$ & $\mathrm{Acc}_{W3}$ & $\Delta$ & $R_{W3}$ 
 \midrule
 Claude       & .841 & .750 & .091 & .892 \\
              & {\footnotesize[.71,.92]} & {\footnotesize[.61,.85]} & & \\
-GPT-4o       & .825 & .350 & .475 & .424 \\
-             & {\footnotesize[.68,.91]} & {\footnotesize[.22,.50]} & & \\
-Llama-8B     & .825 & .200 & .625 & .242 \\
-             & {\footnotesize[.68,.91]} & {\footnotesize[.10,.35]} & & \\
+GPT-4o       & .850 & .300 & .550 & .353 \\
+             & {\footnotesize[.64,.95]} & {\footnotesize[.15,.52]} & & \\
+Llama-8B     & .800 & .150 & .650 & .188 \\
+             & {\footnotesize[.58,.92]} & {\footnotesize[.05,.36]} & & \\
 Gemini-2.5   & .909 & .523 & .386 & .575 \\
              & {\footnotesize[.79,.96]} & {\footnotesize[.38,.66]} & & \\
 \midrule
@@ -585,10 +576,10 @@ o4-mini      & .841 & .841 & .000 & 1.000 \\
              & {\footnotesize[.71,.92]} & {\footnotesize[.71,.92]} & & \\
 \bottomrule
 \end{tabular}
-\caption{GSM Probe~1 ($n{=}44$; $n{=}40$ for GPT-4o/Llama; 95\% Wilson
+\caption{GSM Probe~1 ($n{=}44$; $n{=}20$ for GPT-4o/Llama; 95\% Wilson
 CIs in brackets). At near-matched canonical accuracy
-($0.825$--$0.841$), Claude/GPT-4o/Llama diverge sharply on $W_3$
-retention ($.892$ vs.\ $.424$ vs.\ $.242$); o4-mini reaches perfect
+($0.800$--$0.850$), Claude/GPT-4o/Llama diverge sharply on $W_3$
+retention ($.892$ vs.\ $.353$ vs.\ $.188$); o4-mini reaches perfect
 retention---the only model to do so on any family.}
 \label{tab:gsm}
 \end{table}
@@ -596,9 +587,9 @@ retention---the only model to do so on any family.}
 Figure~\ref{fig:robustness} situates all five models in the
 accuracy--robustness landscape across families.
 On GSM (Table~\ref{tab:gsm}, Figure~\ref{fig:robustness}), Claude,
-GPT-4o, and Llama-8B sit within $2$pp of each other on canonical
-accuracy ($0.825$--$0.841$); under renaming Claude retains 75\%
-while GPT-4o drops to 35\% and Llama to 20\%. Gemini scores
+GPT-4o, and Llama-8B sit within $5$pp of each other on canonical
+accuracy ($0.800$--$0.850$); under renaming Claude retains 75\%
+while GPT-4o drops to 30\% and Llama to 15\%. Gemini scores
 \emph{highest} on canonicals (91\%) yet retains only 52\% under
 renaming --- high benchmark accuracy and high surface fragility can
 co-occur.
@@ -617,9 +608,10 @@ Claude 0/34 vs.\ GPT-4o 9/34 (Fisher $p{=}0.0021$); CC ($n{=}10$)
 Claude 6/10 vs.\ GPT-4o 0/10 ($p{=}0.0108$; exploratory, $n{=}10$).
 Non-overlapping Wilson CIs on the full SP subtype are the stronger
 argument; the within-model per-problem phi coefficients
-($\phi_\text{GPT-4o}{=}{+}0.43$, Fisher $p{<}0.0001$;
-$\phi_\text{o4-mini}{=}{+}0.53$, Fisher $p{=}0.03$;
-Appendix~\ref{app:full_var}) provide the highest-$n$ evidence that
+(ALGO $\phi_\text{GPT-4o}{=}{+}0.43$, Fisher $p{<}0.001$;
+GSM $\phi_\text{o4-mini}{=}{+}0.66$, Fisher $p{<}0.001$;
+Appendix~\ref{app:full_var}, Figure~\ref{fig:within_model}) provide
+the highest-$n$ evidence that
 canonical-correct problems are also more likely to be $W_3$-correct.
 
 \paragraph{Not a population-level law.}
@@ -633,13 +625,17 @@ Appendix~\ref{app:population_test}.
 
 \paragraph{What about the other variants?}
 The full per-variant profile (Figure~\ref{fig:decay},
-Appendix~\ref{app:full_var}) shows a robust asymmetry: $W_6$ (new
-numbers, same algorithm) is at or above canonical for two of four
-models on GSM (Claude $\pm 0$pp, Gemini $+4$pp; GPT-4o $-8$pp, Llama
-$-8$pp), while $W_3$ (same numbers, new names) drops sharply for
-three of four models. Changing numbers preserves accuracy; changing
-names degrades it. That asymmetry is consistent with models relying
-on specific vocabulary rather than mathematical structure.
+Appendix~\ref{app:full_var}) shows a consistent asymmetry for the
+higher-retention models: changing the \emph{numbers} while keeping
+the algorithm ($W_6$) leaves accuracy close to canonical (GPT-4o
+$.850\!\to\!.800$; Claude and o4-mini similar), whereas changing the
+\emph{names} while keeping the numbers ($W_3$) drops it sharply.
+Llama is the exception---both its canonical and $W_6$ accuracy are
+low---so we do not read its variant profile as evidence of
+structural computation. The asymmetry is consistent with the more
+robust models relying on mathematical structure rather than specific
+vocabulary; Table~\ref{tab:appendix-c-var} gives the full per-variant
+breakdown.
 
 \paragraph{Twenty-six universally fragile problems.}
 Of 110 ALGO problems, 26 are universally fragile: every model that
@@ -688,14 +684,32 @@ plan-following. Wilcoxon Claude vs.\ GPT-4o: $W{=}396$, $p{=}0.0068$.}
 \label{tab:p2}
 \end{table}
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/fig_cci.pdf}
+\caption{Probe~2 results.
+(a) Plan fidelity (CCI, GSM $n{=}44$): Claude has significantly higher
+numeric step agreement than GPT-4o (Wilcoxon $W{=}396$, $p{=}0.0068$);
+Gemini has the highest CCI (0.270); GPT-4o and Llama have median
+CCI\,=\,0; o4-mini sits between Llama and Claude
+(mean CCI $0.22$, $43/44$ parseable). \emph{Strong execution does not
+require strong plan fidelity.}
+(b) Trajectory error propagation with Phase-2A accuracy overlay:
+TEP and accuracy are weakly coupled across the five-model pool.
+(c) Injection-step response (ALGO Phase~2B, $n{=}61$): Claude and
+GPT-4o are largely compliant; Llama partial; Gemini format-ignores
+every injection (0\% compliant); o4-mini complies on $100\%$ of
+injections.}
+\label{fig:cci}
+\end{figure*}
+
 \paragraph{Claude and GPT-4o follow different reasoning strategies---CCI is a behavioral fingerprint, not a performance predictor.}
 Comparing what each model declared in session~1 against what it did
 in session~2, Claude's numeric steps match $\sim$23\% on average;
 GPT-4o's $\sim$11\% (median $=0$ over 29/44 sessions). Yet GPT-4o
 still answers correctly 70.5\% of the time. The consistency gap is
 significant (paired Wilcoxon $W{=}396$, $p{=}0.0068$, $n{=}44$;
-Table~\ref{tab:p2}; Appendix~\ref{app:p2protocol},
-Figure~\ref{fig:cci}) but does not explain
+Table~\ref{tab:p2}, Figure~\ref{fig:cci}) but does not explain
 accuracy: within Claude's 44 sessions, declaration-following has no
 relationship with final correctness (Spearman $\rho{=}0.14$,
 $p{=}0.38$). \textbf{Claude and GPT-4o are different \emph{kinds} of
@@ -895,16 +909,13 @@ structure but obfuscates lexical content. The pilot also shows an
 arithmetic-family reversal we do \emph{not} claim is general.
 
 \paragraph{Renaming Blocksworld blocks flips the sign of accuracy for some models and destroys it for others.}
-Paired Wilcoxon ($n{=}65$--$109$/model; App.~\ref{app:full_var},
-Fig.~\ref{fig:bw_inversion}) yields four distinct responses on
-BW canonical vs.\ renamed-blocks $W_5$:
+Paired Wilcoxon on $W_5$-rename ($n{=}65$--$109$/model;
+App.~\ref{app:full_var}, Fig.~\ref{fig:bw_inversion}):
 \textbf{Claude} \emph{improves} $0.422\!\to\!0.661$
 ($+23.9$pp, $p{=}1.0{\times}10^{-4}$); \textbf{Gemini}
 $0.385\!\to\!0.569$ ($+18.5$pp, $p{=}0.014$); \textbf{Llama}
 \emph{destroys} $0.321\!\to\!0.101$ ($-22.0$pp, $p{<}10^{-4}$);
-\textbf{GPT-4o} and \textbf{o4-mini} unchanged ($\Delta{=}0$pp,
-n.s.). The canonical surface is \emph{load-bearing} for Llama,
-\emph{net-harmful} for Claude/Gemini, neutral for GPT-4o/o4-mini.
+\textbf{GPT-4o} and \textbf{o4-mini} unchanged ($\Delta{=}0$pp, n.s.).
 
 \subsection{When all three tests agree}
 \label{subsec:convergence}
@@ -946,16 +957,15 @@ direction reverses across problem types.
 CCI $=0$) is correct $\sim$70\% of the time.
 \item Accepting a wrong intermediate at 88--93\% does not reliably
 derail the final answer.
-\item Same DP, different exposure: WIS collapses under $W_3$ in
-every model; CC partially survives (o4-mini caveats the proximity
-link; \S\ref{subsec:contam}).
-\item BW rename diverges across models (Claude/Gemini $+23.9$/$+18.5$pp,
-Llama $-22.0$pp; GPT-4o/o4-mini n.s.); algorithm elicitation
-$\uparrow$ invocation $10\!-\!50\times$ without changing accuracy
-($0/5$, $\Delta{=}{-}2.5$pp).
+\item Same DP, different exposure: WIS collapses under $W_3$
+universally; CC partially survives (o4-mini caveat, \S\ref{subsec:contam}).
+\item BW rename: Claude $+23.9$pp, Gemini $+18.5$pp,
+Llama $-22.0$pp; GPT-4o/o4-mini unchanged.
+\item Algorithm elicitation $\uparrow$ invocation $10\!-\!50\times$,
+accuracy unchanged ($0/5$, $\Delta{=}{-}1.6$pp).
 \end{itemize}
-\noindent Report canonical \emph{and} $W_3$-rename with CIs; the gap
-is where capability lives.
+\noindent Report canonical \emph{and} $W_3$-rename with CIs---the
+gap is capability.
 
 % =========================================================================
 \section*{Limitations}
@@ -964,6 +974,16 @@ is where capability lives.
 The findings reported here rest on a set of deliberate scoping
 decisions; we summarise the most consequential ones and the
 trade-offs they reflect.
+
+\paragraph{Deferred experiments (API budget).}
+Several follow-up runs identified in our pre-submission audit remain
+\emph{queued but not executed}: GSM\_041--064 Probe-1 gap fill for
+GPT-4o and Llama (24 canonical problems), ALGO Phase-2A elicited
+sessions for three models (49/110 each), a difficulty-matched WIS
+bank, and second reasoning-trained providers (DeepSeek-R1, Qwen3).
+These are blocked on restored API access, not on study design; all
+quantitative claims in this draft are scoped to the completed cells
+in Table~\ref{tab:coverage_missing}.
 
 \paragraph{Scope: structured reasoning, English, zero-shot at $T{=}0$.}
 We fix the prompting regime to zero-shot CoT at temperature~0 across
@@ -1066,7 +1086,7 @@ shown as explicit \emph{n/a} cells elsewhere.
 \toprule
             & Claude & GPT-4o & Llama & Gemini & o4-mini \\
 \midrule
-P1 GSM           & 44/44  & 40/44$^{c}$  & 40/44$^{c}$ & 44/44 & 44/44 \\
+P1 GSM           & 44/44  & 20/44$^{c}$  & 20/44$^{c}$ & 44/44 & 44/44 \\
 P1 ALGO          & 110/110 & 110/110 & 110/110 & 110/110 & 110/110 \\
 P1 BW            & 65/65  & 65/65  & 65/65 & 65/65 & 65/65 \\
 P2 GSM (CCI/TEP) & 44/44 & 44/44 & 44/44 & 44/44 & 43/44$^{a}$ \\
@@ -1100,11 +1120,14 @@ because the protocol aborts at $\ge 84\%$ rates on the three models
 we did run and the BW behavioral conclusion (Section~\ref{subsec:bw_p2})
 is driven by the
 NL-tolerant standard$\to$mystery contrast, not by per-model CCI.\\
-$^{c}$Per-model GPT-4o/Llama P1 GSM cover GSM\_001--020 and
-GSM\_041--060 (40/44 bank IDs). The four missing problems
-(GSM\_061--064) are excluded from the denominator in
-Table~\ref{tab:gsm}. Phase-1 declaration (CCI/TEP) has full $44/44$
-coverage for these models from the dedicated declaration files.
+$^{c}$GPT-4o/Llama Probe-1 GSM: \textbf{$20/44$ bank-valid} canonical
+responses (GSM\_001--020 only). Off-bank reruns GSM\_021--040 exist in
+raw logs but are \textbf{not} in the question bank and are excluded.
+GSM\_041--064 are present only as \texttt{ERROR:} stubs (402
+insufficient credits); no successful responses for those IDs exist in
+the run logs. All GSM GPT-4o/Llama numbers in the main paper and the
+appendix per-variant table are therefore computed on GSM\_001--020
+($n{=}20$); Probe-2 declaration files remain $44/44$ for these models.
 
 \paragraph{Extended scoping decisions and future-work pointers.}
 We expand on each scoping choice that the main-paper Limitations
@@ -1279,7 +1302,8 @@ three families (arithmetic, algorithmic, planning). Each point is one
 (model, family) pair. Within ALGO, more accurate models retain
 \emph{more} of their canonical accuracy under $W_3$
 ($\rho{=}{+}0.90$, $p{=}0.04$); the GSM trend is the same direction
-but n.s.\ ($\rho{=}{+}0.63$). On BW the rank-order is essentially flat.
+but n.s.\ ($\rho{=}{+}0.15$, $p{=}0.80$). On BW the rank-order is
+essentially flat ($\rho{=}{-}0.30$, $p{=}0.62$).
 o4-mini is the leader on GSM and ALGO retention but sits near the
 bottom on BW---a family-specific fragility invisible from absolute
 accuracy.}
@@ -1290,9 +1314,10 @@ accuracy.}
 \centering
 \includegraphics[width=\linewidth]{figures/fig_decay.pdf}
 \caption{Per-variant accuracy profiles (Probe~1).
-(a) GSM: $W_3$ drops for GPT-4o and Gemini; for Claude it is
-mid-ranked (3rd of 6), with $W_5$ being the highest variant.
-$W_6$ is at or above canonical for all four models.
+(a) GSM: $W_3$ drops sharply for GPT-4o, Llama, and Gemini; for
+Claude it is mid-ranked. $W_6$ (new numbers) stays much closer to
+canonical than $W_3$ for the higher-accuracy models, while Llama is
+low on both.
 (b) Challenging ALGO subtypes (Claude vs.\ GPT-4o): the dissociation
 at $W_3$ reverses between SP and CC.}
 \label{fig:decay}
@@ -1307,7 +1332,8 @@ Spearman $\rho$ between the two binary indicators
 ($^{***}p{<}0.001$, $^{**}p{<}0.01$, $^*p{<}0.05$). Positive $\rho$
 in most cells resolves the model-rank-level finding into a
 within-model rule: harder canonical problems also lose more under
-$W_3$. Llama and o4-mini on BW are the only flat/negative cells.}
+$W_3$. Llama and o4-mini on BW are the only flat/negative cells.
+GSM GPT-4o/Llama cells are computed on $n{=}20$ bank-valid problems.}
 \label{fig:within_model}
 \end{figure*}
 
@@ -1328,7 +1354,8 @@ single mechanism.}
 \centering
 \includegraphics[width=0.97\linewidth]{figures/fig_corr_matrix.pdf}
 \caption{Per-model GSM cross-probe Spearman correlation matrix
-($n{=}44$ problems each cell). Variant cells (canonical, $W_1$--$W_6$)
+($n{=}44$ problems each cell; $n{=}20$ for GPT-4o/Llama). Variant cells
+(canonical, $W_1$--$W_6$)
 form a tight diagonal block in every model except Llama---the same
 problems are co-easy or co-hard within a model. The Probe-2 columns
 (\textsc{CCI}, \textsc{TEP}, $\text{P2.acc}$) and Probe-3 columns
@@ -1361,26 +1388,12 @@ exceeds $0.30$ for any model; TEP is high for every model (mean
 $\sim 0.6$--$0.8$), meaning the injected wrong value has limited
 downstream influence on the final answer for most models.
 \textbf{Right:} ALGO Probe-2A final-answer accuracy with and without
-algorithm-elicitation; the per-model deltas range from $-7.1$pp
+algorithm-elicitation; the per-model deltas range from $-7.0$pp
 (Llama) to $+1.8$pp (GPT-4o), and the pooled paired Wilcoxon over
 $n{=}403$ problem-instances is $p{=}0.20$. Elicitation never
 significantly improves final accuracy.}
 \label{fig:probe2_summary}
 \end{figure*}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=\linewidth]{figures/fig_gsm_w5w6.pdf}
-\caption{GSM Probe-1: comparison of numeric scale perturbation
-($W_5$, purple) and distractor injection ($W_6$, green) on the same
-problem ids per model. Four of five models score \emph{higher} under
-$W_6$ than under $W_5$ (Claude is the only exception; o4-mini is
-tied), against the intuitive expectation that a longer/distractor
-prompt should be harder than a numeric tweak. The pattern is
-consistent with numerical scale being the perturbation that
-disrupts retrieval rather than length itself.}
-\label{fig:gsm_w5w6}
-\end{figure}
 
 Table~\ref{tab:appendix-c-var} is generated from the bundled
 per-variant accuracy export in the submission archive, including
@@ -1390,8 +1403,9 @@ the Gemini ALGO canonical coverage rerun.
 \centering
 \small
 \caption{Per-variant accuracy by family, slice, and model (Probe~1).
-GSM uses \texttt{behavioral\_correct}; GPT-4o and Llama have $n{=}40$
-(GSM\_001--020 plus GSM\_041--060). ALGO uses the frozen verified
+GSM uses \texttt{behavioral\_correct}; GPT-4o and Llama have $n{=}20$
+(bank-valid GSM\_001--020 only; GSM\_041--064 pending API gap fill).
+ALGO uses the frozen verified
 labels of \texttt{ALGO\_P1\_4model\_frozen\_labels.csv} (4-model
 manually audited; o4-mini computed on the same instances from
 its raw responses). BW is bank-restricted to the $n{=}65$ PlanBench
@@ -1402,9 +1416,9 @@ IDs used throughout the paper.}
 Family & Slice & Model & $n$ & Can. & W1 & W2 & W3 & W4 & W5 & W6 \\
 \midrule
 GSM & - & Claude  & 44 & .841 & .841 & .773 & .750 & .636 & .818 & .750 \\
-GSM & - & GPT-4o  & 40 & .825 & .800 & .425 & .350 & .375 & .400 & .825 \\
+GSM & - & GPT-4o  & 20 & .850 & .750 & .300 & .300 & .200 & .300 & .800 \\
 GSM & - & Gemini  & 44 & .909 & .818 & .636 & .523 & .477 & .614 & .958 \\
-GSM & - & Llama   & 40 & .825 & .800 & .225 & .200 & .425 & .050 & .525 \\
+GSM & - & Llama   & 20 & .800 & .850 & .250 & .150 & .300 & .050 & .450 \\
 GSM & - & o4-mini & 44 & .841 & .864 & .818 & .841 & .682 & .886 & .833 \\
 \midrule
 ALGO & CC-chall. & Claude & 10 & .700 & .700 & .700 & .600 & .800 & --- & --- \\
@@ -1463,13 +1477,13 @@ Table~\ref{tab:appendix-c-var} are computed from the per-model raw
 files
 (\texttt{GSM\_P1\_behavioral\_\-\{claude,\allowbreak gpt4o,\allowbreak
 llama,\allowbreak gemini,\allowbreak o1mini\}.csv}),
-with $n{=}44$ for Claude/Gemini/o4-mini and $n{=}40$
-for GPT-4o/Llama (GPT-4o/Llama cover GSM\_001--020 plus
-GSM\_041--060; GSM\_061--064 are excluded). The legacy unified slice
+with $n{=}44$ for Claude/Gemini/o4-mini and $n{=}20$
+for GPT-4o/Llama (GSM\_001--020 only; GSM\_021--040 are off-bank
+duplicate reruns and GSM\_041--064 are pending API gap fill, both
+excluded). The legacy unified slice
 (\texttt{BW\_P1\_\-behavioral.csv}\,$\to$\,\texttt{problem\_\-family
 = arithmetic\_\-reasoning}) covers $44/44$ for all four frontier
-models but with a different labeller version: it yields Claude/GPT-4o
-canonical $=.818$ and Llama $=.773$ ($n{=}44$). We report the
+models but with a different labeller version; we report the
 per-model derivation throughout and ship the unified slice in the
 audit bundle for trace-ability.
 
@@ -1496,22 +1510,33 @@ inverse relationship between canonical accuracy and $W_3$ retention
 (Figure~\ref{fig:population}).
 At the subtype$\times$model cell level (continuous accuracies),
 pooled across GSM, ALGO and BW cells:
-Spearman $r{=}{+}0.185$ ($p{=}0.35$, $n{=}28$, 95\%~bootstrap
-CI~$[-0.24,+0.60]$); ALGO-only subtype $r{=}{+}0.37$ ($p{=}0.10$,
+Spearman $r{=}{+}0.147$ ($p{=}0.46$, $n{=}28$, 95\%~bootstrap
+CI~$[-0.27,+0.56]$); ALGO-only subtype $r{=}{+}0.37$ ($p{=}0.10$,
 $n{=}20$). At the per-problem level (binary canonical/$W_3$
-outcomes) the phi coefficients within each model are predominantly
-positive: ALGO $\phi_\text{Claude}{=}{+}0.16$,
-$\phi_\text{GPT-4o}{=}{+}0.43$ (Fisher $p{<}0.0001$),
-$\phi_\text{Gemini}{=}{+}0.20$, $\phi_\text{Llama}{=}{-}0.03$; GSM
-$\phi_\text{GPT-4o}{=}{+}0.33$ (Fisher $p{=}0.05$),
-$\phi_\text{o4-mini}{=}{+}0.53$ (Fisher $p{=}0.03$).
-Canonical-correct problems are \emph{more} likely to be $W_3$-correct
-than canonical-wrong problems within a model. The aggregate is
-therefore consistent with no relationship, and the per-problem phi
-coefficients are weakly positive --- the opposite direction from a
-population-level ``accuracy is not robustness'' law. The pairwise
-inversions reported in the main text are real per-(model, subtype)
-phenomena, not a universal inverse axis.
+outcomes; Figure~\ref{fig:within_model}) the phi coefficients within
+each model are predominantly non-negative: ALGO
+$\phi_\text{Claude}{=}{+}0.16$,
+$\phi_\text{Gemini}{=}{+}0.38$ (Fisher $p{<}0.001$),
+$\phi_\text{GPT-4o}{=}{+}0.43$ (Fisher $p{<}0.001$),
+$\phi_\text{Llama}{=}{-}0.04$; GSM
+$\phi_\text{GPT-4o}{=}{-}0.03$ (Fisher $p{=}1.00$, $n{=}20$
+bank-valid),
+$\phi_\text{o4-mini}{=}{+}0.66$ (Fisher $p{<}0.001$); and on
+planning $\phi_\text{Claude}^{\text{BW}}{=}{+}0.47$,
+$\phi_\text{GPT-4o}^{\text{BW}}{=}{+}0.35$,
+$\phi_\text{Llama}^{\text{BW}}{=}{+}0.33$ (all Fisher $p{<}0.001$).
+The only clearly negative cells are Llama on ALGO and o4-mini on BW.
+Canonical-correct problems are therefore \emph{at least as} likely to
+be $W_3$-correct as canonical-wrong problems within a model---the
+opposite direction from a population-level ``accuracy is not
+robustness'' law. The aggregate Spearman is statistically
+indistinguishable from zero, so the pairwise inversions reported in
+the main text are real per-(model, subtype) phenomena, not a
+universal inverse axis. The GSM GPT-4o cell is computed on the
+$n{=}20$ bank-valid subset; the earlier positive GSM GPT-4o
+association was an artifact of off-bank duplicate rows now excluded.
+The $n{=}5$ model-rank tests are directional, as flagged in
+Section~\ref{subsec:inversion}.
 
 \begin{figure}[!t]
 \centering
@@ -1618,25 +1643,6 @@ Sessions are aborted after 15 consecutive illegal actions.
 84--100\% of sessions abort before the plan completes
 (Section~\ref{subsec:bw_p2}).
 
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.96\linewidth]{figures/fig_cci.pdf}
-\caption{Probe~2 results.
-(a) Plan fidelity (CCI, GSM $n{=}44$): Claude has significantly higher
-numeric step agreement than GPT-4o (Wilcoxon $W{=}396$, $p{=}0.0068$);
-Gemini has the highest CCI (0.270); GPT-4o and Llama have median
-CCI\,=\,0; o4-mini sits between Llama and Claude
-(mean CCI $0.22$, $43/44$ parseable). \emph{Strong execution does not
-require strong plan fidelity.}
-(b) Trajectory error propagation with Phase-2A accuracy overlay:
-TEP and accuracy are weakly coupled across the five-model pool.
-(c) Injection-step response (ALGO Phase~2B, $n{=}61$): Claude and
-GPT-4o are largely compliant; Llama partial; Gemini format-ignores
-every injection (0\% compliant); o4-mini complies on $100\%$ of
-injections.}
-\label{fig:cci}
-\end{figure*}
-
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_implaus.pdf}
@@ -1665,7 +1671,7 @@ collapse in both axes plus heavy action repetition (Llama).}
 
 \paragraph{Why we ran a mechanistic check.}
 A behavioural $W_3$ collapse alone cannot distinguish ``model
-genuinely recomputes but fails surface mapping'' from ``model retrieves
+genuinely recomputes but fails surface mapping'' from ``model surfaces
 a memorised canonical answer that no longer matches the renamed
 problem.'' The two read-outs are confounded behaviourally but make
 opposite predictions inside the residual stream of an open-weight
@@ -1761,10 +1767,9 @@ structure'' interpretation in Section~\ref{subsec:bw_p2} is supported
 for algorithmic and planning families on all four metrics, and
 contradicted for arithmetic on the terminal-rank metric. The
 arithmetic reversal is consistent with the behavioural $W_6$ pattern
-on GSM (Table~\ref{tab:appendix-c-var}: GPT-4o $-8$pp, Llama $-8$pp
-at $W_6$): arithmetic word problems may rely on a specific lexical
-calculation template that survives entity rename ($W_3$) but breaks
-when the numerals themselves change ($W_6$).
+on GSM (Table~\ref{tab:appendix-c-var}): arithmetic word problems may
+rely on a specific lexical calculation template that survives entity
+rename ($W_3$) but breaks when the numerals themselves change ($W_6$).
 
 \paragraph{Paired statistics on aligned problem pairs.}
 Re-running the comparison on problem-ID matched canonical/$W_6$
@@ -1868,16 +1873,22 @@ aggregates from the raw verifier logs.
 \section{Reproducibility and Verification}
 \label{app:audit}
 
-All code, per-instance verifier logs, and variant generation templates
-will be released at an anonymous repository upon acceptance; the
-released bundle ships the raw per-instance verifier logs
+All code, per-instance verifier logs, and variant generation
+templates are available for review at the anonymous repository
+\url{https://anonymous.4open.science/r/retrieval-vs-computation-EA8F/README.md}
+and will be moved to a permanent (non-anonymous) home upon
+acceptance. The bundle ships the raw per-instance verifier logs
 together with a re-derivation script that recomputes every aggregate
 cited in the main paper (per-(family, model, variant) accuracies with
 Wilson 95\% CIs, paired Wilcoxon statistics, Spearman $\rho$
 correlations, and triangulation counts) directly from those logs.
-Reviewers can verify reported numbers without retraining or re-querying
-any model.
-The repository contains no author-identifying information.
+GSM GPT-4o/Llama aggregates are derived from the bank-valid
+GSM\_001--020 subset ($n{=}20$); the re-derivation script applies the
+same bank-ID filter so reported figures and tables reproduce exactly.
+Reviewers can verify reported numbers without retraining or
+re-querying any model. The repository contains no author-identifying
+information (verified via \texttt{git log}, file metadata, and a
+manual sweep of comments/docstrings).
 
 \paragraph{Wilcoxon sensitivity.}
 Full bank $n{=}44$ (zero-imputed): $W{=}396$, $p{=}0.0068$;
@@ -1887,26 +1898,6 @@ Complete-case analysis yields the same $p$-values.
 % =========================================================================
 \section{Algorithm-Invocation Observation (Exploratory)}
 \label{app:algo_inv}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\linewidth]{figures/paradox.png}
-\caption{Algorithm-invocation observation (exploratory; $n{=}13$,
-$p{=}0.40$ vs.\ baseline).
-\textbf{Panel A:} An algorithm-invocation step---the model explicitly
-names Dijkstra's algorithm, but execution reverts to greedy
-nearest-neighbor.
-Final answer: WRONG (representative of all 13 invocation steps across
-3 models; 0/13 correct).
-\textbf{Panel B:} A step with unclear reasoning and no named algorithm.
-Final answer: CORRECT (13.3\% baseline correctness for the unclear
-category).
-Right: dot-array comparison of outcomes: 0/13 for algorithm-invocation
-vs 13.3\% for unclear.
-Fisher's exact comparison: $p{=}0.40$ (not significant; observational,
-not a statistical claim).}
-\label{fig:paradox_infographic}
-\end{figure*}
 
 \begin{figure}[!t]
 \centering
@@ -1924,7 +1915,7 @@ This is an observational pattern, not a statistical claim.}
 Thirteen Phase-2 steps across Claude (6), Llama (4), and Gemini (3)
 were classified as \emph{algorithm-invocation}: the model explicitly
 named a specific algorithm (``I will use Dijkstra's algorithm'') and
-attempted to apply it (Figure~\ref{fig:paradox_infographic}).
+attempted to apply it.
 All 13 yielded incorrect final answers
 (Figure~\ref{fig:paradox}).
 Wilson 95\% CI on 0/13: [0\%, 22.8\%].

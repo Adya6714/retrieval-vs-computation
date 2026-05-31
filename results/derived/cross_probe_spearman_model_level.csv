@@ -1,0 +1,13 @@
+family,pair,n_models,spearman_rho,p_value,models_used
+ALGO,p1_w3_drop vs p2_cci,4,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+ALGO,p1_w3_drop vs p3_contam,5,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+ALGO,p2_cci vs p3_contam,4,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+ALGO,p1_w3_retention vs p2_cci,4,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+BW,p1_w3_drop vs p2_cci,3,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+BW,p1_w3_drop vs p3_contam,5,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+BW,p2_cci vs p3_contam,3,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+BW,p1_w3_retention vs p2_cci,3,,,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+GSM,p1_w3_drop vs p2_cci,5,-0.49999999999999994,0.39100221895577053,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+GSM,p1_w3_drop vs p3_contam,5,0.8660254037844386,0.05766888562243733,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+GSM,p2_cci vs p3_contam,5,-0.8660254037844386,0.05766888562243733,"Claude,GPT-4o,Gemini,Llama,o4-mini"
+GSM,p1_w3_retention vs p2_cci,5,0.49999999999999994,0.39100221895577053,"Claude,GPT-4o,Gemini,Llama,o4-mini"

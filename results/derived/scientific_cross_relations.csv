@@ -1,0 +1,35 @@
+relation,family,model,n,value,interpretation
+contamination_vs_tri_plus_score,ALGO,all,551,-0.38997237256550316,negative => higher contamination associates with retrieval-side votes
+contamination_vs_tri_plus_score,BW,all,405,0.022919888524520118,negative => higher contamination associates with retrieval-side votes
+contamination_vs_tri_plus_score,GSM,all,172,0.013759134353290669,negative => higher contamination associates with retrieval-side votes
+p2a_first_decision_match_rate,ALGO,Claude,25,0.48,subtype=coin_change; final_correct_rate=0.680
+p2a_first_decision_match_rate,ALGO,Claude,55,0.3454545454545454,subtype=shortest_path; final_correct_rate=0.436
+p2a_first_decision_match_rate,ALGO,Claude,30,0.1333333333333333,subtype=wis; final_correct_rate=0.467
+p2a_first_decision_match_rate,ALGO,Gemini,25,0.36,subtype=coin_change; final_correct_rate=0.480
+p2a_first_decision_match_rate,ALGO,Gemini,55,0.1454545454545454,subtype=shortest_path; final_correct_rate=0.091
+p2a_first_decision_match_rate,ALGO,Gemini,30,0.0333333333333333,subtype=wis; final_correct_rate=0.533
+p2a_first_decision_match_rate,ALGO,Llama,25,0.32,subtype=coin_change; final_correct_rate=0.160
+p2a_first_decision_match_rate,ALGO,Llama,55,0.2545454545454545,subtype=shortest_path; final_correct_rate=0.091
+p2a_first_decision_match_rate,ALGO,Llama,30,0.2666666666666666,subtype=wis; final_correct_rate=0.500
+p2a_first_decision_match_rate,ALGO,GPT-4o,25,0.6,subtype=coin_change; final_correct_rate=0.720
+p2a_first_decision_match_rate,ALGO,GPT-4o,55,0.2,subtype=shortest_path; final_correct_rate=0.345
+p2a_first_decision_match_rate,ALGO,GPT-4o,30,0.1666666666666666,subtype=wis; final_correct_rate=0.600
+p2b_plausible_minus_implausible,ALGO,Claude,1,0.1,subtype=coin_change; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Claude,1,0.0,subtype=shortest_path; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Claude,1,-0.0588235294117646,subtype=wis; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,GPT-4o,1,-0.1,subtype=coin_change; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,GPT-4o,1,-0.0588235294117647,subtype=shortest_path; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,GPT-4o,1,0.0,subtype=wis; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Gemini,1,0.0,subtype=coin_change; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Gemini,1,0.0294117647058823,subtype=shortest_path; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Gemini,1,0.0588235294117647,subtype=wis; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Llama,1,0.3,subtype=coin_change; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Llama,1,0.0588235294117647,subtype=shortest_path; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,Llama,1,-0.4117647058823528,subtype=wis; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,o4-mini,1,-0.3,subtype=coin_change; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,o4-mini,1,0.0,subtype=shortest_path; positive => better on plausible than implausible.
+p2b_plausible_minus_implausible,ALGO,o4-mini,1,0.0,subtype=wis; positive => better on plausible than implausible.
+triangulation_original_non_ambiguous_rate,ALGO,all,330,0.3787878787878788,fraction with label != ambiguous in current pipeline
+triangulation_plus_strong_signal_rate,ALGO,all,551,0.2268602540834846,fraction with strong +/-2 vote margin
+triangulation_plus_strong_signal_rate,BW,all,405,0.03209876543209877,fraction with strong +/-2 vote margin
+triangulation_plus_strong_signal_rate,GSM,all,172,0.20930232558139536,fraction with strong +/-2 vote margin

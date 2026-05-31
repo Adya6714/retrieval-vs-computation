@@ -1,0 +1,9 @@
+family,probe,model,task,units,est_api_calls,fix_type,priority,notes
+ALGO,P2A_elicited,Claude,ALGO P2A elicited sessions,49,196,api_partial_probe,P1,49 missing elicited sessions (61/110 have data)
+ALGO,P2A_elicited,Gemini,ALGO P2A elicited sessions,49,196,api_partial_probe,P1,49 missing elicited sessions (61/110 have data)
+ALGO,P2A_elicited,Llama,ALGO P2A elicited sessions,49,196,api_partial_probe,P1,49 missing elicited sessions (61/110 have data)
+BW,P2,Gemini,BW P2 full model run (50-problem pilot),50,1000,api_full_probe,P1,Gemini/o4-mini missing entirely from BW P2 pilot
+BW,P2,o4-mini,BW P2 full model run (50-problem pilot),50,1000,api_full_probe,P1,Gemini/o4-mini missing entirely from BW P2 pilot
+GSM,P1,GPT-4o,P1 behavioral missing bank IDs (GSM_041–064),24,168,api_partial_p1,P1,GSM_021–040 are duplicates of 001–020 — exclude; no zero-API remap
+GSM,P1,Llama,P1 behavioral missing bank IDs (GSM_041–064),24,168,api_partial_p1,P1,GSM_021–040 are duplicates of 001–020 — exclude; no zero-API remap
+BW,P2,all_models,BW P2 extend to full bank (65 problems),15,300,api_partial_probe,P2,Pilot uses 50/65 BW problems — 15 IDs missing per model
