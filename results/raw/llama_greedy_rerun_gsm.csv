@@ -1,0 +1,664 @@
+problem_id,variant_type,model,behavioral_correct,raw_response,family,correct_answer,verify_family
+GSM_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"20 * 0.9 = 18
+66 * 0.5 = 33
+18 + 33 = 51
+51",gsm,51,gsm
+GSM_001,W3,meta-llama/Llama-3.1-8B-Instruct,False,"For the first 20 minutes, the hiker burns 0.9 * 20 = 18 calories. 
+For the remaining 86 - 20 = 66 minutes, the hiker burns 0.5 * 66 = 33 calories. 
+Total calories burned = 18 + 33 = 51.",gsm,51,gsm
+GSM_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,18 + (2/3 * 18) = 18 + 12 = 30,gsm,30,gsm
+GSM_002,W3,meta-llama/Llama-3.1-8B-Instruct,False,18 + (2/3 * 18) = 18 + 12 = 30,gsm,30,gsm
+GSM_003,canonical,meta-llama/Llama-3.1-8B-Instruct,False,30 + (50/100 * 30) + (30 + (50/100 * 30)) = 30 + 15 + 45 = 90,gsm,150,gsm
+GSM_003,W3,meta-llama/Llama-3.1-8B-Instruct,False,"30 + 50% of 30 + 30 + 50% of (30 + 30) 
+= 30 + 15 + 30 + 75 
+= 150",gsm,150,gsm
+GSM_004,canonical,meta-llama/Llama-3.1-8B-Instruct,False,52 * 2 * 6 * 150 = 93600,gsm,21600,gsm
+GSM_004,W3,meta-llama/Llama-3.1-8B-Instruct,False,365 * 2 * 6 * 150 = 219000,gsm,21600,gsm
+GSM_005,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"60 * 7 = 420 minutes per day
+420 * 6 = 2520 minutes per week for classes
+1/7 * 2520 = 360 minutes per week for extra learning time
+2520 + 360 = 2880 minutes per week
+2880 / 60 = 48 hours per week",gsm,54,gsm
+GSM_005,W3,meta-llama/Llama-3.1-8B-Instruct,False,"6 * 60 * 7 + (60 * 60 * 1/7) + (60 * 60 * 1/7) 
+= 2520 + 72 + 72 
+= 2664",gsm,54,gsm
+GSM_006,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the final value of Kayla's shares, we need to calculate the value after the first year and then the value after the second year.
+
+Initial value of shares = 10 shares * €56 = €560
+
+After the first year, the stock price increases by 30%:
+New value = €560 + (30% of €560) = €560 + €168 = €728
+
+After the second year, the stock price decreases by 25%:
+New value = €728 - (25% of €728) = €728 - €182 = €546
+
+The final value of Kayla's shares is €546.",gsm,546,gsm
+GSM_006,W3,meta-llama/Llama-3.1-8B-Instruct,False,"First, calculate the increase in the first year:
+56 * 1.3 = 72.8
+
+Then, calculate the decrease in the second year:
+72.8 * 0.75 = 54.6
+
+Now, multiply the final value of one painting by the total number of paintings:
+54.6 * 10 = 546",gsm,546,gsm
+GSM_007,canonical,meta-llama/Llama-3.1-8B-Instruct,False,2,gsm,30,gsm
+GSM_007,W3,meta-llama/Llama-3.1-8B-Instruct,False,2 * 10 + 2 * 20 = 60,gsm,30,gsm
+GSM_008,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we can use the formula for exponential growth:
+
+A = P(1 + r)^t
+
+Where:
+A = final amount
+P = initial amount (16 people)
+r = growth rate (3 people per person per day)
+t = time (3 days)
+
+A = 16(1 + 3)^3
+A = 16(4)^3
+A = 16 * 64
+A = 1024
+
+However, this formula assumes that the growth is continuous. Since the growth is discrete (each person infects 3 others each day), we need to use a different approach.
+
+Let's calculate the number of people infected each day:
+
+Day 1: 16 people (initially infected) + 16 * 3 = 16 + 48 = 64 people
+Day 2: 64 people (infected on Day 1) + 64 * 3 = 64 + 192 = 256 people
+Day 3: 256 people (infected on Day 1 and 2) + 256 * 3 = 256 + 768 = 1024 people
+
+However, this counts the people who were infected on Day 1 twice (once for each day they",gsm,1024,gsm
+GSM_008,W3,meta-llama/Llama-3.1-8B-Instruct,False,16384,gsm,1024,gsm
+GSM_009,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of eggs Nia eats in 108 days, we need to calculate the total number of eggs she eats in the first 84 days and the next 24 days, then add them together.
+
+In the first 84 days, Nia eats 5 eggs a day for 84 days. 
+5 eggs/day * 84 days = 420 eggs
+
+In the next 24 days, Nia eats 7 eggs a day.
+7 eggs/day * 24 days = 168 eggs
+
+Total number of eggs = 420 + 168 = 588 eggs
+
+Since 1 dozen = 12 eggs, we need to divide the total number of eggs by 12 to get the number of dozens.
+588 / 12 = 49",gsm,49,gsm
+GSM_009,W3,meta-llama/Llama-3.1-8B-Instruct,False,"5 * 84 = 420 
+420 + (7 * 24) = 420 + 168 = 588 
+588 / 12 = 49",gsm,49,gsm
+GSM_010,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"60 + (4 * 60) + (6 * 4 * 60) + (0.5 * 6 * 4 * 60) + (0.25 * 0.5 * 6 * 4 * 60) = 
+60 + 240 + 1440 + 360 + 180 = 2080",gsm,885,gsm
+GSM_010,W3,meta-llama/Llama-3.1-8B-Instruct,False,"60 + (4 * 60) + (6 * 4 * 60) + (0.5 * 6 * 4 * 60) + (0.25 * 0.5 * 6 * 4 * 60) = 
+60 + 240 + 1440 + 360 + 180 = 2080",gsm,885,gsm
+GSM_011,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find out how much water Pavel has left, we need to calculate the total amount of water used for each type of cube and subtract that from the total amount of water he has.
+
+Giant cubes: 8 * 12 = 96 grams
+Medium cubes: 13 * 11 = 143 grams
+Small cubes: 15 * 0.2 = 3 grams
+
+Total water used: 96 + 143 + 3 = 242 grams
+
+Water left: 328 - 242 = 86 grams.",gsm,86,gsm
+GSM_011,W3,meta-llama/Llama-3.1-8B-Instruct,False,"328 - (8 * 12) - (13 * 11) - (15 * 0.2) 
+328 - 96 - 143 - 3 
+86",gsm,86,gsm
+GSM_012,canonical,meta-llama/Llama-3.1-8B-Instruct,False,29 + (7 * 52) - (6 * 52) = 29 + 364 - 312 = 81,gsm,81,gsm
+GSM_012,W3,meta-llama/Llama-3.1-8B-Instruct,False,"29 + (7 * 52) - (6 * 52) 
+= 29 + 364 - 312 
+= 81",gsm,81,gsm
+GSM_013,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to first find Mia's speed on the beach and on the sidewalk. 
+
+Let's assume her speed on the beach is x km/h. Then, her speed on the sidewalk is 2x km/h.
+
+Since she walks 12 km on the beach, the time it takes her to walk on the beach is 12/x hours. Since she walks 12 km on the sidewalk, the time it takes her to walk on the sidewalk is 12/(2x) hours.
+
+We are given that 60 minutes of her walk is spent on the beach. We need to convert this to hours: 60 minutes = 1 hour.
+
+So, we can set up the equation: 12/x = 1.
+
+Solving for x, we get x = 12 km/h.
+
+Now, we can find the time it takes her to walk on the sidewalk: 12/(2x) = 12/(2*12) = 0.5 hours.
+
+The total time it takes her to complete the entire 24-kilometer walk is 1 + 0.5 = 1.5 hours.
+
+To convert this to minutes, we multiply by 60: 1.5 * 60 = 90",gsm,90,gsm
+GSM_013,W3,meta-llama/Llama-3.1-8B-Instruct,False,12,gsm,90,gsm
+GSM_014,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"210 floors / 10 days = 21 floors per day
+21 floors / 10 hours = 2.1 floors per hour
+10 hours * 60 minutes = 600 minutes per day
+2.1 floors * 20 minutes per floor = 42 minutes per day spent cleaning floors
+(42 minutes / 600 minutes) * 100 = 7%",gsm,70,gsm
+GSM_014,W3,meta-llama/Llama-3.1-8B-Instruct,False,0.08333333333333333,gsm,70,gsm
+GSM_015,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total amount Viktor will make, we need to round the prices of each plant to the nearest dollar and multiply by the number of bundles sold.
+
+Tulips: $2.25 rounded to the nearest dollar is $2
+Roses: $5.13 rounded to the nearest dollar is $5
+Sunflowers: $5.47 rounded to the nearest dollar is $5
+
+Now, let's calculate the total amount for each plant:
+Tulips: 12 bundles * $2 = $24
+Roses: 29 bundles * $5 = $145
+Sunflowers: 37 bundles * $5 = $185
+
+Now, let's add the total amount for each plant:
+$24 + $145 + $185 = $354",gsm,354,gsm
+GSM_015,W3,meta-llama/Llama-3.1-8B-Instruct,False,"12 * 2 = 24
+24 * 1 = 24
+24 + (29 * 5) = 24 + 145 = 169
+169 + (37 * 5) = 169 + 185 = 354
+354 * 1 = 354
+354",gsm,354,gsm
+GSM_016,canonical,meta-llama/Llama-3.1-8B-Instruct,False,120,gsm,5,gsm
+GSM_016,W3,meta-llama/Llama-3.1-8B-Instruct,False,"6 * 4 + 12 * 5 + 32 * 43 + 18 * 15 + 43 + 27 = 24 + 60 + 1352 + 270 + 43 + 27 = 1416
+1416 / 120 = 11.8
+Since you can't have a fraction of a trip, you round up to the nearest whole number.
+11.8 -> 12",gsm,5,gsm
+GSM_017,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to find the total earnings for each day and then find the average.
+
+Let's denote the number of boxes of cookies sold on Friday as C and the number of boxes of orange pie sold on Friday as P.
+
+On Friday, Liam sold C boxes of cookies and P boxes of orange pie.
+On Saturday, he sold C + 11 boxes of cookies and P - 13 boxes of orange pie.
+On Sunday, he sold (C + 11) + (C + 11) boxes of cookies and (P - 13) + (P - 13) boxes of orange pie.
+
+We know that on Saturday, he sold 22 boxes of orange pie, so P - 13 = 22.
+P = 35
+
+We also know that on Saturday, he sold 11 more boxes of cookies than on Friday, so C + 11 = C + 11.
+This equation is true for any value of C, so we can't find a specific value for C.
+
+However, we can find the total number of boxes of cookies and orange pie sold on each day.
+On Friday, Liam sold C boxes of cookies and 35 - 13 = 22 boxes of orange pie.
+On Saturday, he sold C",gsm,922,gsm
+GSM_017,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the average daily earnings, we need to calculate the total earnings and divide it by 3.
+
+Let's denote the number of boxes of brownies sold on Friday as Bf, the number of boxes of lemon tarts sold on Friday as Lf, the number of boxes of brownies sold on Saturday as Bs, and the number of boxes of lemon tarts sold on Saturday as Ls.
+
+We know that:
+- Bf = Bs - 11
+- Lf = Ls - 13
+- Ls = 22
+- Bs = Bf + 11
+- Lf = Ls - 13 = 22 - 13 = 9
+- Bf = Bs - 11 = (Bf + 11) - 11 = Bf = Bf
+- Bf = 14
+- Lf = 9
+
+Now we can calculate the total earnings:
+- Total earnings on Friday = (Bf * 12) + (Lf * 21) = (14 * 12) + (9 * 21) = 168 + 189 = 357
+- Total earnings on Saturday = (Bs * 12) + (Ls * 21) = ((14 +",gsm,922,gsm
+GSM_018,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of points Emma is sure to get, we need to calculate the number of questions in each category and multiply it by the percentage she is sure to get.
+
+Physics questions: 80 * 0.25 = 20
+Algebra questions: 80 * 0.15 = 12
+Chemistry and history questions: 80 * 0.60 = 48 (since 100% - 25% - 15% = 60%)
+Chemistry questions: 48 / 2 = 24
+History questions: 48 / 2 = 24
+
+Emma is sure to get:
+- 10% of 20 physics questions: 0.10 * 20 = 2
+- 25% of 12 algebra questions: 0.25 * 12 = 3
+- 1/3 of 24 chemistry questions: 24 * (1/3) = 8
+- 1/3 of 24 history questions: 24 * (1/3) = 8
+
+Total points: 2 + 3 + 8 + 8 = 21",gsm,21,gsm
+GSM_018,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total points Jordan is certain to score, we need to calculate the number of correct answers for each type of question and then add them up.
+
+Number of biology questions: 80 * 0.25 = 20
+Number of geometry questions: 80 * 0.15 = 12
+Number of economics and geography questions: 80 - 20 - 12 = 48
+Number of economics and geography questions each: 48 / 2 = 24
+
+Number of correct biology answers: 20 * 0.1 = 2
+Number of correct geometry answers: 12 * 0.25 = 3
+Number of correct economics answers: 24 * (1/3) = 8
+Number of correct geography answers: 24 * (1/3) = 8
+
+Total points Jordan is certain to score: 2 + 3 + 8 + 8 = 21",gsm,21,gsm
+GSM_019,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to calculate the total time Tariq watched TV and subtract the time he watched on other days to find out how much time he spent on Sunday.
+
+Friday and Saturday: 2 nights * 3 hours/night = 6 hours
+Monday: 4 hours + 0.25 hours = 4.25 hours
+Tuesday: 4 * 2 hours = 8 hours
+Wednesday: 3 * 0.5 hours = 1.5 hours
+
+Total time watched on other days: 6 + 4.25 + 8 + 1.5 = 19.75 hours
+
+Total time watched: 22 hours
+Time watched on Sunday: 22 - 19.75 = 2.25 hours
+
+Since each episode is 45 minutes, we need to convert 2.25 hours to minutes: 2.25 * 60 = 135 minutes
+Now, we need to find out how many 45-minute episodes fit into 135 minutes: 135 / 45 = 3",gsm,3,gsm
+GSM_019,W3,meta-llama/Llama-3.1-8B-Instruct,False,6,gsm,3,gsm
+GSM_020,canonical,meta-llama/Llama-3.1-8B-Instruct,False,Ava finds 3 eggs. Quinn finds 6 * 3 = 18 eggs. Sophia finds 18 - 3 = 15 eggs. Esteban finds 15 / 5 = 3 eggs. Quinn and Ava combined find 3 + 18 = 21 eggs. Fatima finds 21 + 12 = 33 eggs. Total eggs found is 3 + 18 + 15 + 3 + 33 = 72. Total eggs hidden is 12 * 10 = 120. Eggs still hidden is 120 - 72 = 48.,gsm,24,gsm
+GSM_020,W3,meta-llama/Llama-3.1-8B-Instruct,False,"12 * 10 - (3 + 6 * 3 + 6 * 3 - 3 * 3 + 6 * 3 + 3) = 
+12 * 10 - (3 + 18 + 18 - 9 + 18 + 3) = 
+12 * 10 - 49 = 
+120 - 49 = 
+71",gsm,24,gsm
+GSM_041,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"19 + 7 = 26. 
+Since the number that like to hike is twice the number that prefer playing football, the number that like to hike is 7 * 2 = 14. 
+The total number of students that like to either bake or hike is 190 - 26 = 164. 
+The number that like to bake is 164 - 14 = 150.",gsm,150,gsm
+GSM_041,W3,meta-llama/Llama-3.1-8B-Instruct,False,"190 - 19 - 7 = 164. 
+Let x be the number of people who like to operate forklifts. 
+The number of people who like quality control is 2x. 
+164 = 3x 
+x = 164 / 3 
+x = 54.67 (round down to 54 since you can't have a fraction of a person) 
+2x = 108 
+The number of people who like assembly is 190 - 19 - 54 = 117.",gsm,150,gsm
+GSM_042,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"30 * 94 = 2820 
+2820 / 12 = 235",gsm,2820,gsm
+GSM_042,W3,meta-llama/Llama-3.1-8B-Instruct,False,30 * 94 * 12 = 35400,gsm,2820,gsm
+GSM_043,canonical,meta-llama/Llama-3.1-8B-Instruct,False,640 * (1/8) * (1/10) = 8,gsm,8,gsm
+GSM_043,W3,meta-llama/Llama-3.1-8B-Instruct,False,128,gsm,8,gsm
+GSM_044,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"71 + 45 + 29 = 105. 
+204 - 105 = 99.",gsm,59,gsm
+GSM_044,W3,meta-llama/Llama-3.1-8B-Instruct,False,"71 + 45 + 29 = 145. 
+204 - 145 = 59.",gsm,59,gsm
+GSM_045,canonical,meta-llama/Llama-3.1-8B-Instruct,False,205 + 97 + 4 * 205 = 205 + 97 + 820 = 1122,gsm,1122,gsm
+GSM_045,W3,meta-llama/Llama-3.1-8B-Instruct,False,205 + 97 + 4 * 205 = 205 + 97 + 820 = 1122,gsm,1122,gsm
+GSM_046,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total calories you can consume, subtract the calories you've already consumed from your daily target: 
+2395 - 1350 = 1045 calories
+
+Since each serving has 475 calories, divide the remaining calories by the calories per serving:
+1045 / 475 = 2.2 servings
+
+Since the bag has 5 servings, multiply the number of servings you can eat by the total ounces in the bag:
+2.2 * 275 = 605 ounces",gsm,121,gsm
+GSM_046,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to first find out how many cycles are needed to reach the daily kilowatt target. 
+
+Daily kilowatt target: 2395
+Already generated: 1350
+Remaining kilowatts needed: 2395 - 1350 = 1045
+
+Kilowatts per cycle: 475
+Cycles needed: 1045 / 475 = 2.2
+
+Since you have a 275 liters generator with 5 servings, we need to find out how many liters per cycle. 
+
+Total liters: 275
+Servings: 5
+Liters per cycle: 275 / 5 = 55
+
+Now, we can find out the total liters that can be processed.
+
+Liters per cycle: 55
+Cycles needed: 2.2
+Total liters: 55 * 2.2 = 121",gsm,121,gsm
+GSM_047,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1800 * (1 - 1/4) = 1350 rooms initially unoccupied
+1350 * 7 = 9450 rooms unoccupied per week
+9450 * 3 = 28350 rooms unoccupied in 3 weeks
+28350 + 40 * 21 = 28350 + 840 = 29190",gsm,510,gsm
+GSM_047,W3,meta-llama/Llama-3.1-8B-Instruct,False,"1800 * (1/4) = 450 occupied units
+450 occupied units / 7 days per week = 64.29 occupied units per day
+64.29 * 3 = 192.87 occupied units in 3 days
+192.87 * 3 = 578.61 occupied units in 3 weeks
+1800 - 578.61 = 1221.39
+Since you can't have a fraction of a server unit, we round down to 1221 unoccupied units.",gsm,510,gsm
+GSM_048,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total cost, we need to calculate the cost of the tea and the cost of the bagel.
+
+The normal brand of tea costs ₺20 per kilogram. Since Hiroshi uses 1 kilogram of tea per day, a week's worth of tea would be 7 kilograms. The cost of the normal brand of tea would be 7 * 20 = ₺140.
+
+The more expensive brand of tea costs 45% more than the normal brand. 45% of 20 is 0.45 * 20 = ₺9. So the more expensive brand costs 20 + 9 = ₺29 per kilogram.
+
+A week's worth of the more expensive brand would be 7 * 29 = ₺203.
+
+The total cost of the tea is 140 + 203 = ₺343.
+
+The cost of the bagel is ₺3.
+
+The total cost is 343 + 3 = ₺346.",gsm,206,gsm
+GSM_048,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total cost, we need to calculate the cost of the steel and the lubricant. 
+
+First, let's find the cost of the steel. He uses 1 ton of steel per day and he buys a week's worth of steel, which is 7 days. 
+
+The normal grade of steel costs ₺20 per ton. The more expensive grade costs 45% more, so it costs 20 + (20 * 0.45) = ₺29 per ton.
+
+The total cost of the steel is 7 * 29 = ₺203.
+
+The cost of the lubricant is ₺3.
+
+The total cost is 203 + 3 = ₺206.",gsm,206,gsm
+GSM_049,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"First, let's find the total number of apartments in the first 2 complexes: 450 * 2 = 900 apartments.
+The last complex is 20% bigger than the other 2 combined, so it has 900 * 1.2 = 1080 apartments.
+The total number of apartments is 900 + 1080 = 1980 apartments.
+Umar collects garbage 2 times a week from each place, so he collects from 1980 * 2 = 3960 apartments per week.
+He gets paid ₣0.45 per collection for each apartment, so he makes 3960 * 0.45 = ₣1788 per week.",gsm,1782,gsm
+GSM_049,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of workstations, we need to find the number of workstations in the last facility. 
+
+The first 2 facilities have 450 workstations each, so 2 * 450 = 900 workstations. 
+The last facility is 20% bigger than the other 2 combined, so it is 1.2 * 900 = 1080 workstations. 
+The total number of workstations is 900 + 1080 = 1980 workstations. 
+Robot-7 assembles components 2 times a week from each place, so he assembles 2 * 1980 = 3960 components per week. 
+He gets paid ₣0.45 per assembly, so he makes 3960 * 0.45 = ₣1806 per week.",gsm,1782,gsm
+GSM_050,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the combined length of the remaining remoras, we first need to find the number of remoras that remain. 
+
+There are 16 remoras, and a quarter of them go away. A quarter of 16 is 16 / 4 = 4. So, 4 remoras go away, and 16 - 4 = 12 remoras remain.
+
+Each remora is 12 inches long, so the combined length of the remaining remoras is 12 * 12 = 144 inches.
+
+To find the percentage of the dolphin's body length that the combined length of the remaining remoras is, we need to divide the combined length of the remaining remoras by the length of the dolphin and multiply by 100.
+
+The length of the dolphin is 60 feet, which is 60 * 12 = 720 inches.
+
+The percentage is (144 / 720) * 100 = 20.",gsm,20,gsm
+GSM_050,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the combined length of the remaining maintenance drones, we first need to find out how many drones are left after a quarter of them detach. 
+
+16 * 0.25 = 4 drones detach
+16 - 4 = 12 drones are left
+
+Each drone is 12 inches long, so the combined length of the remaining drones is:
+12 * 12 = 144 inches
+
+Now, we need to convert the length of the spacecraft to inches:
+60 * 12 = 720 inches
+
+Now, we can find the percentage of the spacecraft's body length that the combined length of the remaining drones is:
+(144 / 720) * 100 = 20%",gsm,20,gsm
+GSM_051,canonical,meta-llama/Llama-3.1-8B-Instruct,False,40,gsm,256,gsm
+GSM_051,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the time it takes for the virus to cover a tenth of the network, we need to first find the time it takes to cover the entire network, and then divide that by 10.
+
+Time to cover the entire network = 64 minutes / 2 GB * 80 GB
+Time to cover the entire network = 64 * 40
+Time to cover the entire network = 2560 minutes
+
+Time to cover a tenth of the network = 2560 / 10
+Time to cover a tenth of the network = 256 minutes",gsm,256,gsm
+GSM_052,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the probability of rolling a number greater than 6, we have 6 favorable outcomes (7, 8, 9, 10, 11, 12) out of 12 possible outcomes. So the probability is 6/12 = 0.5 or 50%.
+
+To find the probability of rolling four odd numbers in a row, we have 3 favorable outcomes (1, 3, 5) for each roll, so the probability of rolling four odd numbers in a row is (3/12)^4 = 81/20736 = 0.0039 or 0.39%.
+
+The difference in probability is 50% - 0.39% = 49.61%.",gsm,43.75,gsm
+GSM_052,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to calculate the probability of each event and then find the difference between them.
+
+Event 1: Generating a code greater than 6
+There are 6 favorable outcomes (7, 8, 9, 10, 11, 12) out of 12 possible outcomes. 
+Probability = 6/12 = 0.5
+
+Event 2: Generating four odd numbers in a row
+There are 6 odd numbers (1, 3, 5, 7, 9, 11) out of 12 possible outcomes. 
+The probability of getting four odd numbers in a row is (6/12) * (6/12) * (6/12) * (6/12) = 1296/20736 = 0.0625
+
+Now, we need to find the difference between the two probabilities and express it as a percentage.
+Difference = 0.5 - 0.0625 = 0.4375
+Percentage = (0.4375 / 0.5) * 100 = 87.5
+
+The final answer is: 87.5",gsm,43.75,gsm
+GSM_053,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to first find the total number of cups of water and tablespoons of milk used. 
+
+Let's start by finding the number of cups of water used. Since the ratio of sugar to water is 63:21, the total number of parts is 63 + 21 = 84. The fraction of water in the mixture is 21/84. 
+
+Since Kimia used 630 teaspoons of sugar, we can set up the following proportion: 
+63/84 = 630/x, where x is the total number of parts of the mixture. 
+
+Solving for x, we get x = 630 * 84 / 63 = 980. 
+
+Since the fraction of water in the mixture is 21/84, the number of cups of water used is 21/84 * 980 = 245. 
+
+Now, we know that for every 7 cups of water, 7 tablespoons of milk are used. So, the number of tablespoons of milk used is 7 * 245 / 7 = 245. 
+
+The total number of parts of the mixture is 980. The number of teaspoons of sugar used is 63/84 * 980 = 735.",gsm,378,gsm
+GSM_053,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to first find the amount of molten iron and zinc consumed. 
+
+Let's start by finding the amount of molten iron. 
+
+The ratio of copper to molten iron is 63:21. We know that 630 grams of copper were consumed. 
+
+Let's set up a proportion to find the amount of molten iron:
+
+63/21 = 630/x
+
+Cross-multiplying, we get:
+63x = 630 * 21
+63x = 13230
+x = 13230 / 63
+x = 210
+
+So, 210 liters of molten iron were consumed.
+
+Now, we know that 7 kilograms of zinc are used for every 7 liters of molten iron. Since 210 liters of molten iron were consumed, the amount of zinc consumed is:
+7 * 210 / 7 = 210 kilograms
+
+Now, we need to convert the amount of zinc from kilograms to grams:
+210 * 1000 = 210000 grams
+
+Now, we have the amounts of copper, molten iron, and zinc in grams:
+Copper: 630 grams
+Molten iron: 210 liters
+Zinc: 210000 grams
+
+To find the",gsm,378,gsm
+GSM_054,canonical,meta-llama/Llama-3.1-8B-Instruct,False,0.6 * 10 + 0.4 * 20 + 0.1 * 40 = 6 + 8 + 4 = 18,gsm,16,gsm
+GSM_054,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to break it down into parts. 
+
+For the first 10 minutes, the cost is $0.6 per unit. 
+For the next 20 minutes (from 10 to 30 minutes), the cost is $0.4 per unit. 
+For the remaining time (after 30 minutes), the cost is $0.1 per 2 units.
+
+First, let's calculate the cost for the first 10 minutes:
+10 units * $0.6/unit = $6
+
+Next, let's calculate the cost for the next 20 minutes:
+20 units * $0.4/unit = $8
+
+Now, let's calculate the remaining units needed:
+70 units - 10 units - 20 units = 40 units
+
+Since the cost is $0.1 per 2 units, we need to divide the remaining units by 2:
+40 units / 2 = 20 sets of 2 units
+
+Now, let's calculate the cost for the remaining units:
+20 sets * $0.1/2 units = $1
+
+Finally, let's add up the costs for all parts:
+$6 + $8 + $1 = $15
+
+The final answer is: $15",gsm,16,gsm
+GSM_055,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total almonds that can be placed on the tables and bowls, we first need to find the capacity of the tables and bowls.
+
+Each table can hold 24 almonds, and there are 11 tables, so the total capacity of the tables is 24 * 11 = 264 almonds.
+
+Each bowl can hold 2 times the capacity of a table, so each bowl can hold 24 * 2 = 48 almonds. There are 3 bowls, so the total capacity of the bowls is 48 * 3 = 144 almonds.
+
+The total capacity of the tables and bowls is 264 + 144 = 408 almonds.
+
+Theo has 621 almonds initially. He eats a third of them, so he eats 621 / 3 = 207 almonds.
+
+After eating, he has 621 - 207 = 414 almonds left.
+
+The number of almonds that won't fit on the tables and bowls is 414 - 408 = 6.",gsm,6,gsm
+GSM_055,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of data chips that won't be able to store on the servers or databases, we need to first calculate the total capacity of the servers and databases, then subtract the number of data chips that can be stored from the total number of data chips, and finally subtract the number of data chips that are deleted.
+
+Each server can contain 24 data chips, and there are 11 servers, so the total capacity of the servers is 24 * 11 = 264 data chips.
+
+Each database can contain two times the number of data chips that a server can contain, so each database can contain 24 * 2 = 48 data chips. There are 3 databases, so the total capacity of the databases is 48 * 3 = 144 data chips.
+
+The total capacity of the servers and databases is 264 + 144 = 408 data chips.
+
+Alpha-7 has 621 data chips initially. After deleting a third of the data chips, the number of data chips left is 621 - (621 / 3) = 621 - 207 = 414 data chips.
+
+The number of data chips that won't be able to store on the servers or databases is 621 - 408 = 213 data chips.",gsm,6,gsm
+GSM_056,canonical,meta-llama/Llama-3.1-8B-Instruct,False,263 - 35 - 26 - 27 - 2*(26 + 27) = 263 - 35 - 26 - 27 - 2*53 = 263 - 88 - 53 - 106 = 16,gsm,69,gsm
+GSM_056,W3,meta-llama/Llama-3.1-8B-Instruct,False,263 - 35 - 26 - 27 - 2*(26 + 27) = 263 - 35 - 26 - 27 - 106 = 65,gsm,69,gsm
+GSM_057,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of puppies, we need to add the puppies from Umar, Xena, and Sophia.
+
+Umar has 113 puppies.
+Xena has 47 puppies.
+Sophia has 64 * 10 = 640 puppies.
+
+Total puppies = 113 + 47 + 640 = 800
+
+The total number of puppies with spots is 17 + 15 + 640 = 672.
+
+To find the percentage of puppies with spots, we need to divide the number of puppies with spots by the total number of puppies and multiply by 100.
+
+Percentage of puppies with spots = (672 / 800) * 100 = 84.",gsm,84,gsm
+GSM_057,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of robot units with sensors, we need to add the number of robot units with sensors from each factory.
+
+Factory A has 17 robot units with sensors.
+Factory B has 15 robot units with sensors.
+Factory C has 64 assembly lines, each having 10 robot units with sensors, so it has 64 * 10 = 640 robot units with sensors.
+
+Total robot units with sensors = 17 + 15 + 640 = 672
+
+Total robot units = 113 + 47 + (64 * 10) = 113 + 47 + 640 = 800
+
+Percentage of robot units with sensors = (672 / 800) * 100 = 84",gsm,84,gsm
+GSM_058,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"16 * 2.75 = 44
+44 + (10 * 17.0) = 44 + 170 = 214
+214 + 20 = 234
+234 + (6 * 11) = 234 + 66 = 300
+300 * 0.05 = 15
+300 - 15 = 285",gsm,285,gsm
+GSM_058,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total cost, we need to calculate the cost of each item and then apply the discount.
+
+Cost of circuit boards: 16 * ¥2.75 = ¥44
+Cost of sensors: 10 * ¥17.0 = ¥170
+Cost of steel sheet: ¥20
+Cost of actuators: 6 * ¥11 = ¥66
+
+Total cost before discount: ¥44 + ¥170 + ¥20 + ¥66 = ¥300
+
+Discount: 5% of ¥300 = 0.05 * ¥300 = ¥15
+
+Total cost after discount: ¥300 - ¥15 = ¥285",gsm,285,gsm
+GSM_059,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of forks in the package that Zahra bought as x. 
+
+Zahra initially bought x forks. Her husband gave her 9 more forks, so she had x + 9 forks. She used 11 forks, so she had x + 9 - 11 = x - 2 forks left. The guests brought 2 packs of forks, each having 14 forks, so they brought 2 * 14 = 28 forks. In total, Zahra had x - 2 + 28 = x + 26 forks. We know that she had 55 forks in total, so we can set up the equation x + 26 = 55. 
+
+Solving for x, we get x = 55 - 26 = 29.",gsm,29,gsm
+GSM_059,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of screwdrivers in the package that Marcus bought as x.
+
+Marcus initially bought x screwdrivers.
+Her supervisor gave her 9 screwdrivers.
+She used 11 screwdrivers.
+The technicians brought 2 packs of 14 screwdrivers each, so 2 * 14 = 28 screwdrivers.
+
+The total number of screwdrivers is x + 9 - 11 + 28 = 26 + x.
+
+We are given that the total number of screwdrivers is 55, so we can set up the equation:
+26 + x = 55
+
+Subtracting 26 from both sides of the equation:
+x = 29",gsm,29,gsm
+GSM_060,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of students leaving early, we need to find the total number of students in the three groups and add 3 cheerleaders to each group.
+
+First, find the number of soccer players: 40% of 125 = 0.4 * 125 = 50 soccer players.
+
+Since half of the soccer players are absent, the number of soccer players leaving early is 50 / 2 = 25.
+
+Next, find the number of students who are not soccer players: 125 - 50 = 75 students.
+
+17% of the remaining students are choir members or dancers: 0.17 * 75 = 12.75. Since we can't have a fraction of a student, we'll round down to 12 students.
+
+The total number of students leaving early is 25 (soccer) + 12 (choir or dancers) + 3 (cheerleaders) + 3 (cheerleaders) + 3 (cheerleaders) = 46.",gsm,46,gsm
+GSM_060,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of workers leaving early, we need to find the number of welders, electricians/mechanics, and then add 3 supervisors for each group.
+
+First, find the number of welders: 
+40% of 125 workers are welders. 
+0.4 * 125 = 50 welders.
+
+Half of the welders are absent for being injured: 
+50 / 2 = 25 welders are injured and absent.
+
+The remaining welders are: 
+50 - 25 = 25 welders.
+
+Next, find the number of electricians/mechanics: 
+17% of the remaining workers (125 - 50 = 75) are electricians/mechanics. 
+0.17 * 75 = 12.75, round down to 12 electricians/mechanics (since you can't have a fraction of a person).
+
+Now, add the number of welders, electricians/mechanics, and the supervisors: 
+25 + 12 + (3 * 3) = 25 + 12 + 9 = 46.",gsm,46,gsm
+GSM_061,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of pizzas the family eats in a month, we need to first find the total number of pizzas they eat per day. 
+
+The father eats 4 pizzas per day, and the wife eats 6 pizzas per day. So, the total number of pizzas they eat per day is 4 + 6 = 10 pizzas.
+
+The daughter eats one less than three-sixths of the number of pizzas they eat combined per day. Three-sixths of 10 pizzas is 10 * (3/6) = 5 pizzas. One less than that is 5 - 1 = 4 pizzas.
+
+So, the total number of pizzas the family eats per day is 10 + 4 = 14 pizzas.
+
+There are 30 days in a month, so the total number of pizzas the family eats in a month is 14 * 30 = 420 pizzas.",gsm,420,gsm
+GSM_061,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of metal sheets processed by the primary and secondary machines, we add their production rates: 4 + 6 = 10.
+
+The auxiliary machine processes one less than three-sixths of the combined production rate of the primary and secondary machines. Three-sixths of 10 is 5, so the auxiliary machine processes 5 - 1 = 4 metal sheets per shift.
+
+The total number of metal sheets processed per shift is the sum of the production rates of all three machines: 4 + 6 + 4 = 14.",gsm,420,gsm
+GSM_062,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total cost, we need to calculate the selling price after the discount, brokerage fee, and transfer fee.
+
+Selling price after discount = 600000 - (20% of 600000)
+= 600000 - 0.2 * 600000
+= 600000 - 120000
+= 480000
+
+Brokerage fee = 3% of 600000
+= 0.03 * 600000
+= 18000
+
+Transfer fee = 12% of 600000
+= 0.12 * 600000
+= 72000
+
+Total cost = Selling price after discount + Brokerage fee + Transfer fee
+= 480000 + 18000 + 72000
+= 600000
+
+The difference between the total cost and Mrs. Lee's budget is:
+= 600000 - 440000
+= 160000",gsm,112000,gsm
+GSM_062,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total payment, we need to calculate the base price after the discount, docking fee, and transport fee.
+
+Base price = $600000
+Discount = 20% of $600000 = 0.2 * 600000 = $120000
+Price after discount = $600000 - $120000 = $480000
+
+Docking fee = 3% of $600000 = 0.03 * 600000 = $18000
+Transport fee = 12% of $600000 = 0.12 * 600000 = $72000
+
+Total payment = Price after discount + Docking fee + Transport fee
+Total payment = $480000 + $18000 + $72000 = $600000
+
+Since the total payment is $600000, which is more than Captain Zara's credit limit of $440000, we need to find the difference.
+
+Difference = Total payment - Credit limit
+Difference = $600000 - $440000
+Difference = $160000",gsm,112000,gsm
+GSM_063,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the net proceeds, we need to subtract the registration fees, agent fee, loan amount, and closing costs from the selling price.
+
+Registration fees = 2% of $220000 = 0.02 * 220000 = $4400
+Agent fee = 2% of $220000 = 0.02 * 220000 = $4400
+Loan amount = $180000
+Closing costs = $15000
+
+Total deductions = $4400 + $4400 + $180000 + $15000 = $221800
+
+Net proceeds = Selling price - Total deductions
+= $220000 - $221800
+= -$1800",gsm,16200,gsm
+GSM_063,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the net returns, we need to subtract the docking fees, broker fees, lease balance, and departure costs from the selling price.
+
+Selling price = $220000
+Docking fees = 2% of $220000 = 0.02 * $220000 = $4400
+Broker fees = 2% of $220000 = 0.02 * $220000 = $4400
+Lease balance = $180000
+Departure costs = $15000
+
+Total costs = Docking fees + Broker fees + Lease balance + Departure costs
+Total costs = $4400 + $4400 + $180000 + $15000 = $221800
+
+Net returns = Selling price - Total costs
+Net returns = $220000 - $221800
+Net returns = -$1800",gsm,16200,gsm
+GSM_064,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of boys, we need to multiply the number of girls by 3/1 (or 3). 
+Number of boys = 39 * 3 = 117
+
+Total number of kids = 39 + 117 = 156
+
+Percentage of girls = (39 / 156) * 100 = 25.0",gsm,75,gsm
+GSM_064,W3,meta-llama/Llama-3.1-8B-Instruct,False,"To find the percentage of electric cars, we need to first find the number of hybrid cars. 
+
+Number of hybrid cars = 1/3 * 39 = 13
+
+Total number of cars = 39 + 13 = 52
+
+Percentage of electric cars = (39 / 52) * 100 = 75",gsm,75,gsm

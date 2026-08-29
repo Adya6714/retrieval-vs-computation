@@ -279,7 +279,9 @@ def algo_p2b_response() -> dict[str, dict[str, float]]:
     """Return fraction of injection-step response_types per model (ALGO P2B)."""
     a = pd.read_csv(RAW / "ALGO_P2_phase2_injected.csv")
     g = pd.read_csv(RAW / "ALGO_P2_phase2_injected_gemini.csv")
-    inj = pd.concat([a, g], ignore_index=True)
+    # Gemini appears in both files; keep the dedicated rerun only (n=61).
+    a_no_gem = a[a.model != MODEL_LONG["Gemini-2.5"]]
+    inj = pd.concat([a_no_gem, g], ignore_index=True)
     inj = inj[inj.injection_applied == True]  # noqa: E712
     out = {}
     for label, mid in MODEL_LONG.items():
@@ -362,14 +364,18 @@ def contam_cci_pearson() -> dict[str, tuple[float, float, int]]:
 
 
 def algo_p2a_combined() -> pd.DataFrame:
-    """Phase-2A normal across 4 models (n=1531 expected)."""
-    return pd.concat(
-        [
-            pd.read_csv(RAW / "ALGO_P2_phase2_normal.csv"),
-            pd.read_csv(RAW / "ALGO_P2_phase2_normal_gemini.csv"),
-        ],
-        ignore_index=True,
+    """Phase-2A normal across 4 models (Claude, GPT-4o, Llama, Gemini; n=1531)."""
+    a = pd.read_csv(RAW / "ALGO_P2_phase2_normal.csv")
+    g = pd.read_csv(RAW / "ALGO_P2_phase2_normal_gemini.csv")
+    # Gemini appears in both files; keep the dedicated rerun only.
+    a_no_gem = a[a.model != MODEL_LONG["Gemini-2.5"]]
+    df = pd.concat([a_no_gem, g], ignore_index=True)
+    four = [MODEL_LONG[m] for m in ("Claude", "GPT-4o", "Llama-8B", "Gemini-2.5")]
+    df = df[df.model.isin(four)].copy()
+    df["final_answer_correct"] = (
+        df.final_answer_correct.astype(str).str.lower().eq("true")
     )
+    return df
 
 
 def gsm_p2_paired_wilcoxon() -> tuple[float, float]:
@@ -783,10 +789,23 @@ def fig_cci() -> None:
     ax2.set_ylabel("Mean TEP")
     ax2.set_ylim(0, np.nanmax(tep_mean) + 0.18)
     ax2b = ax2.twinx()
-    ax2b.plot(x, acc, "k--o", lw=1.6, ms=6, label="Phase-2A accuracy", zorder=5)
+    acc_line = ax2b.plot(
+        x, acc, color="#222222", ls="--", marker="o", lw=1.6, ms=6,
+        label="Phase-2A accuracy (right axis)", zorder=5,
+    )[0]
+    for i, a_val in enumerate(acc):
+        if np.isfinite(a_val):
+            ax2b.annotate(
+                f"{a_val * 100:.0f}%", (x[i], a_val),
+                textcoords="offset points", xytext=(0, 7),
+                ha="center", fontsize=7, color="#222222",
+            )
     ax2b.set_ylabel("Phase-2A accuracy")
     ax2b.set_ylim(0.2, 1.05)
-    ax2b.legend(loc="upper left", framealpha=0.85, fontsize=7.8)
+    ax2b.spines[["top"]].set_visible(False)
+    tep_patch = mpatches.Patch(facecolor="#777", alpha=0.88, label="Mean TEP (bars)")
+    ax2.legend(handles=[tep_patch, acc_line], loc="upper left",
+               framealpha=0.85, fontsize=7.8)
     ax2.spines[["top"]].set_visible(False)
 
     # (c) injection-step stacked bars (o4-mini included via p2b lookup if present)
@@ -817,15 +836,24 @@ def fig_cci() -> None:
     ax3.bar(x, np.nan_to_num(fig_ig, nan=0.0), width=0.6, bottom=np.nan_to_num(np.add(compl, part), nan=0.0), color="#bbbbbb",
             alpha=0.7, edgecolor="white", lw=0.6, hatch="..", label="Format-ignored")
     for i in range(len(models)):
-        if np.isfinite(compl[i]) and compl[i] >= 0.05:
-            ax3.text(x[i], compl[i] / 2, f"{compl[i]*100:.0f}%",
+        c_i, p_i, f_i = compl[i], part[i], fig_ig[i]
+        if not (np.isfinite(c_i) and np.isfinite(p_i) and np.isfinite(f_i)):
+            continue
+        if c_i >= 0.03:
+            ax3.text(x[i], c_i / 2, f"{c_i * 100:.0f}%",
                      ha="center", va="center", color="white", fontsize=8.5)
-        if np.isfinite(fig_ig[i]) and fig_ig[i] >= 0.5:
-            ax3.text(x[i], compl[i] + part[i] + fig_ig[i] / 2,
-                     f"{fig_ig[i]*100:.0f}%", ha="center", va="center",
-                     color="#444", fontsize=8.5)
+        elif c_i < 0.01 and (p_i + f_i) > 0.99:
+            ax3.text(x[i], 0.012, "0%",
+                     ha="center", va="bottom", color="#333333", fontsize=8.5,
+                     fontweight="bold")
+        if p_i >= 0.03:
+            ax3.text(x[i], c_i + p_i / 2, f"{p_i * 100:.0f}%",
+                     ha="center", va="center", color="#333333", fontsize=8.5)
+        if f_i >= 0.03:
+            ax3.text(x[i], c_i + p_i + f_i / 2, f"{f_i * 100:.0f}%",
+                     ha="center", va="center", color="#444444", fontsize=8.5)
     ax3.set_xticks(x)
-    ax3.set_xticklabels(models, fontsize=9)
+    ax3.set_xticklabels(models, fontsize=9, rotation=15, ha="right")
     ax3.set_ylabel("Fraction of injection steps")
     ax3.set_ylim(0, 1.03)
     legend_handles = [
@@ -874,13 +902,14 @@ def fig_paradox() -> None:
          int((un.final_answer_correct == False).sum())],
     ])
     _, p_fisher = stats.fisher_exact(table, alternative="two-sided")
+    ai_n = int(len(ai))
 
     fig, ax = plt.subplots(figsize=(7.5, 4.2))
     fig.subplots_adjust(top=0.85, bottom=0.16, left=0.10, right=0.97)
     ax.set_title(
         "Algorithm-invocation observation: step-level reasoning vs. correctness\n"
         f"(ALGO Phase-2A, n={len(df):,} steps, 4 models; observational, "
-        f"p={p_fisher:.2f} vs. unclear baseline)",
+        f"Fisher's exact $p={p_fisher:.2f}$ vs. unclear baseline)",
         fontsize=9.5)
 
     bar_colors = ["#D55E00", "#CC79A7", "#E69F00", "#0072B2", "#0072B2"]
@@ -898,16 +927,14 @@ def fig_paradox() -> None:
     ax.axhline(baseline, ls=":", color="#555", lw=1.2, zorder=2)
     ax.text(4.3, baseline + 0.5, f"{baseline:.1f}%\n(unclear baseline)",
             ha="left", va="bottom", fontsize=8.5, color="#444")
-    # n= labels above each bar; skip Algorithm-Invocation (handled separately)
+    # n= labels above each bar
     for i, row in rdf.iterrows():
-        if i == 0:
-            continue
         ax.text(i, row.pct + 0.4, f"n={row.n}",
                 ha="center", fontsize=8.3, color="#333")
     # 0/13 callout for Algorithm-Invocation
     ai_idx = 0
     ax.annotate(
-        f"0/13 correct\n(3 models, n={rdf.iloc[ai_idx].n})",
+        f"0/{ai_n} correct\n(3 models)",
         xy=(ai_idx, 0.6),
         xytext=(ai_idx + 1.05, 7.0),
         fontsize=8.5, color="#A04000",

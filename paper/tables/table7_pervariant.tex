@@ -1,0 +1,55 @@
+\begin{table}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \caption{Per-variant accuracy by family, slice, and model (Probe~1). GSM
+  uses \texttt{behavioral\_correct}; GPT-4o and Llama have $n{=}20$
+  (bank-valid GSM\_001--020 only). ALGO uses the frozen verified labels of
+  the 4-model manually-audited set; \omini{} is computed on the same
+  instances from its raw responses. BW is bank-restricted to the $n{=}65$
+  PlanBench IDs used throughout. All cells are the output of the released
+  per-instance verifiers (Appendix~\ref{app:repro}).}
+  \label{tab:pervariant}
+  \begin{tabular}{lllccccccc}
+    \toprule
+    Family & Slice & Model & Can. & W1 & W2 & W3 & W4 & W5 & W6 \\
+    \midrule
+    GSM & -- & Claude     & .841 & .841 & .773 & .750 & .636 & .818 & .750 \\
+    GSM & -- & GPT-4o     & .850 & .750 & .300 & .300 & .200 & .300 & .800 \\
+    GSM & -- & Gemini     & .909 & .818 & .636 & .523 & .477 & .614 & .958 \\
+    GSM & -- & Llama      & .800 & .850 & .250 & .150 & .300 & .050 & .450 \\
+    GSM & -- & \omini     & .841 & .864 & .818 & .841 & .682 & .886 & .833 \\
+    \midrule
+    ALGO & CC-chall.  & Claude & .700 & .700 & .700 & .600 & .800 & --- & --- \\
+    ALGO & CC-chall.  & GPT-4o & .600 & .400 & .600 & .000 & .500 & --- & --- \\
+    ALGO & CC-chall.  & Gemini & .500 & .700 & .600 & .700 & .700 & --- & --- \\
+    ALGO & CC-chall.  & Llama  & .200 & .100 & .400 & .000 & .200 & --- & --- \\
+    ALGO & CC-std.    & Claude & .267 & .467 & .067 & .200 & .667 & --- & .067 \\
+    ALGO & CC-std.    & GPT-4o & .267 & .400 & .000 & .067 & .867 & --- & .200 \\
+    ALGO & CC-std.    & Gemini & .267 & .133 & .000 & .000 & .267 & --- & .267 \\
+    ALGO & CC-std.    & Llama  & .000 & .067 & .067 & .000 & .000 & --- & .067 \\
+    ALGO & SP-chall.  & Claude & .647 & .618 & .676 & .000 & .824 & .000 & .258 \\
+    ALGO & SP-chall.  & GPT-4o & .412 & .529 & .147 & .265 & .588 & .000 & .258 \\
+    ALGO & SP-chall.  & Gemini & .676 & .441 & .235 & .324 & .559 & .032 & .129 \\
+    ALGO & SP-chall.  & Llama  & .059 & .147 & .029 & .000 & .088 & .000 & .065 \\
+    ALGO & SP-std.    & Claude & .000 & .190 & .667 & .048 & .952 & .000 & .000 \\
+    ALGO & SP-std.    & GPT-4o & .714 & .667 & .048 & .429 & .524 & .000 & .368 \\
+    ALGO & SP-std.    & Gemini & .619 & .762 & .762 & .476 & .857 & .000 & .263 \\
+    ALGO & SP-std.    & Llama  & .048 & .095 & .000 & .000 & .143 & .000 & .105 \\
+    ALGO & WIS-chall. & Claude & .353 & .176 & .118 & .000 & .059 & --- & .000 \\
+    ALGO & WIS-chall. & GPT-4o & .353 & .176 & .000 & .000 & .000 & --- & .000 \\
+    ALGO & WIS-chall. & Gemini & .353 & .176 & .000 & .000 & .000 & --- & .000 \\
+    ALGO & WIS-chall. & Llama  & .059 & .000 & .000 & .059 & .000 & --- & .000 \\
+    ALGO & WIS-std.   & Claude & .077 & .231 & .231 & .000 & .077 & --- & .000 \\
+    ALGO & WIS-std.   & GPT-4o & .154 & .231 & .000 & .000 & .000 & --- & .000 \\
+    ALGO & WIS-std.   & Gemini & .000 & .000 & .231 & .000 & .000 & --- & .000 \\
+    ALGO & WIS-std.   & Llama  & .000 & .000 & .000 & .077 & .000 & --- & .000 \\
+    \midrule
+    BW & -- & Claude  & .154 & .062 & .231 & .138 & .015 & .523 & .508 \\
+    BW & -- & GPT-4o  & .062 & .092 & .092 & .169 & .077 & .246 & .215 \\
+    BW & -- & Gemini  & .385 & .138 & .108 & .108 & .031 & .569 & .338 \\
+    BW & -- & Llama   & .015 & .031 & .015 & .108 & .000 & .000 & .031 \\
+    BW & -- & \omini  & .769 & .754 & .738 & .185 & .415 & .769 & .769 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Triangulation label rates on 440 ALGO instances under strict vs.\
+  liberal threshold configurations. The strong-label rate is a design choice,
+  not a fixed property of the data.}
+  \label{tab:thresholds}
+  \begin{tabular}{lcccc}
+    \toprule
+    Configuration & Retrieval & Computation & Strong total & Ambiguous \\
+    \midrule
+    Legacy strict (paper default) & 1.8\%  & 0.9\%  & 2.7\%  & 61.6\% \\
+    Liberal v2 sweep (param 204)  & 27.3\% & 30.4\% & 57.7\% & 37.9\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}

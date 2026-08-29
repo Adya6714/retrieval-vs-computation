@@ -1,0 +1,399 @@
+problem_id,problem_family,variant_type,subtype,gold_action,gold_token_id,gold_token_decoded,gold_is_format_keyword,scaffold_prefix,content_string,content_rule,gold_content_token_id,gold_content_token_decoded,content_sep,gold_equals_content
+GSM_001,arithmetic_reasoning,canonical,gsm,51,3971,51,False,,51,full_first_action_is_content,3971,51,'',True
+GSM_002,arithmetic_reasoning,canonical,gsm,30,966,30,False,,30,full_first_action_is_content,966,30,'',True
+GSM_003,arithmetic_reasoning,canonical,gsm,150,3965,150,False,,150,full_first_action_is_content,3965,150,'',True
+GSM_004,arithmetic_reasoning,canonical,gsm,21600,12463,216,False,,21600,full_first_action_is_content,12463,216,'',True
+GSM_005,arithmetic_reasoning,canonical,gsm,54,4370,54,False,,54,full_first_action_is_content,4370,54,'',True
+GSM_006,arithmetic_reasoning,canonical,gsm,546,22048,546,False,,546,full_first_action_is_content,22048,546,'',True
+GSM_007,arithmetic_reasoning,canonical,gsm,30,966,30,False,,30,full_first_action_is_content,966,30,'',True
+GSM_008,arithmetic_reasoning,canonical,gsm,1024,4278,102,False,,1024,full_first_action_is_content,4278,102,'',True
+GSM_009,arithmetic_reasoning,canonical,gsm,49,2491,49,False,,49,full_first_action_is_content,2491,49,'',True
+GSM_010,arithmetic_reasoning,canonical,gsm,885,19445,885,False,,885,full_first_action_is_content,19445,885,'',True
+GSM_011,arithmetic_reasoning,canonical,gsm,86,4218,86,False,,86,full_first_action_is_content,4218,86,'',True
+GSM_012,arithmetic_reasoning,canonical,gsm,81,5932,81,False,,81,full_first_action_is_content,5932,81,'',True
+GSM_013,arithmetic_reasoning,canonical,gsm,90,1954,90,False,,90,full_first_action_is_content,1954,90,'',True
+GSM_014,arithmetic_reasoning,canonical,gsm,70,2031,70,False,,70,full_first_action_is_content,2031,70,'',True
+GSM_015,arithmetic_reasoning,canonical,gsm,354,18384,354,False,,354,full_first_action_is_content,18384,354,'',True
+GSM_016,arithmetic_reasoning,canonical,gsm,5,20,5,False,,5,full_first_action_is_content,20,5,'',True
+GSM_017,arithmetic_reasoning,canonical,gsm,922,20275,922,False,,922,full_first_action_is_content,20275,922,'',True
+GSM_018,arithmetic_reasoning,canonical,gsm,21,1691,21,False,,21,full_first_action_is_content,1691,21,'',True
+GSM_019,arithmetic_reasoning,canonical,gsm,3,18,3,False,,3,full_first_action_is_content,18,3,'',True
+GSM_020,arithmetic_reasoning,canonical,gsm,24,1187,24,False,,24,full_first_action_is_content,1187,24,'',True
+GSM_041,arithmetic_reasoning,canonical,gsm,150,3965,150,False,,150,full_first_action_is_content,3965,150,'',True
+GSM_042,arithmetic_reasoning,canonical,gsm,2820,16544,282,False,,2820,full_first_action_is_content,16544,282,'',True
+GSM_043,arithmetic_reasoning,canonical,gsm,8,23,8,False,,8,full_first_action_is_content,23,8,'',True
+GSM_044,arithmetic_reasoning,canonical,gsm,59,2946,59,False,,59,full_first_action_is_content,2946,59,'',True
+GSM_045,arithmetic_reasoning,canonical,gsm,1122,7261,112,False,,1122,full_first_action_is_content,7261,112,'',True
+GSM_046,arithmetic_reasoning,canonical,gsm,121,7994,121,False,,121,full_first_action_is_content,7994,121,'',True
+GSM_047,arithmetic_reasoning,canonical,gsm,510,15633,510,False,,510,full_first_action_is_content,15633,510,'',True
+GSM_048,arithmetic_reasoning,canonical,gsm,206,11056,206,False,,206,full_first_action_is_content,11056,206,'',True
+GSM_049,arithmetic_reasoning,canonical,gsm,1782,11256,178,False,,1782,full_first_action_is_content,11256,178,'',True
+GSM_050,arithmetic_reasoning,canonical,gsm,20,508,20,False,,20,full_first_action_is_content,508,20,'',True
+GSM_051,arithmetic_reasoning,canonical,gsm,256,4146,256,False,,256,full_first_action_is_content,4146,256,'',True
+GSM_052,arithmetic_reasoning,canonical,gsm,75,2075,75,False,,75,full_first_action_is_content,2075,75,'',True
+GSM_053,arithmetic_reasoning,canonical,gsm,378,19166,378,False,,378,full_first_action_is_content,19166,378,'',True
+GSM_054,arithmetic_reasoning,canonical,gsm,16,845,16,False,,16,full_first_action_is_content,845,16,'',True
+GSM_055,arithmetic_reasoning,canonical,gsm,6,21,6,False,,6,full_first_action_is_content,21,6,'',True
+GSM_056,arithmetic_reasoning,canonical,gsm,69,3076,69,False,,69,full_first_action_is_content,3076,69,'',True
+GSM_057,arithmetic_reasoning,canonical,gsm,84,5833,84,False,,84,full_first_action_is_content,5833,84,'',True
+GSM_058,arithmetic_reasoning,canonical,gsm,285,15935,285,False,,285,full_first_action_is_content,15935,285,'',True
+GSM_059,arithmetic_reasoning,canonical,gsm,29,1682,29,False,,29,full_first_action_is_content,1682,29,'',True
+GSM_060,arithmetic_reasoning,canonical,gsm,46,2790,46,False,,46,full_first_action_is_content,2790,46,'',True
+GSM_061,arithmetic_reasoning,canonical,gsm,420,12819,420,False,,420,full_first_action_is_content,12819,420,'',True
+GSM_062,arithmetic_reasoning,canonical,gsm,112000,7261,112,False,,112000,full_first_action_is_content,7261,112,'',True
+GSM_063,arithmetic_reasoning,canonical,gsm,16200,10674,162,False,,16200,full_first_action_is_content,10674,162,'',True
+GSM_064,arithmetic_reasoning,canonical,gsm,75,2075,75,False,,75,full_first_action_is_content,2075,75,'',True
+CC_01,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_02,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_03,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_04,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_05,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_06,coin change,canonical,coin_change,Count: 3,2568,Count,True,Count: ,3,cc_digit_after_Count,18,3,'',False
+CC_07,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_08,coin change,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_09,coin change,canonical,coin_change,Count: 5,2568,Count,True,Count: ,5,cc_digit_after_Count,20,5,'',False
+CC_10,coin change,canonical,coin_change,Count: 7,2568,Count,True,Count: ,7,cc_digit_after_Count,22,7,'',False
+SP_001,algorithmic,canonical,shortest_path,"Path: 0 → 5 → 10 → 11, Cost: 17",1858,Path,True,Path: ,"0 → 5 → 10 → 11, Cost: 17",sp_first_node_after_Path,15,0,'',False
+SP_002,algorithmic,canonical,shortest_path,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",1858,Path,True,Path: ,"16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",sp_first_node_after_Path,845,16,'',False
+SP_003,algorithmic,canonical,shortest_path,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",1858,Path,True,Path: ,"11 → 17 → 10 → 2 → 3 → 9, Cost: 22",sp_first_node_after_Path,806,11,'',False
+SP_004,algorithmic,canonical,shortest_path,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",1858,Path,True,Path: ,"0 → 3 → 6 → 4 → 5 → 9, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_005,algorithmic,canonical,shortest_path,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",1858,Path,True,Path: ,"0 → 4 → 9 → 11 → 14 → 15, Cost: 32",sp_first_node_after_Path,15,0,'',False
+WIS_001,algorithmic,canonical,wis,"Selected: {0, 2, 4, 6, 9}, Total: 40",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_002,algorithmic,canonical,wis,"Selected: {1, 3, 7, 10, 11}, Total: 52",6450,Selected,True,Selected: {,1,wis_first_value,16,1,'',False
+WIS_003,algorithmic,canonical,wis,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",6450,Selected,True,Selected: {,1,wis_first_value,16,1,'',False
+WIS_004,algorithmic,canonical,wis,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_005,algorithmic,canonical,wis,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",6450,Selected,True,Selected: {,2,wis_first_value,17,2,'',False
+CC_031,algorithmic,canonical,coin_change,Count: 5,2568,Count,True,Count: ,5,cc_digit_after_Count,20,5,'',False
+CC_032,algorithmic,canonical,coin_change,Count: 4,2568,Count,True,Count: ,4,cc_digit_after_Count,19,4,'',False
+CC_033,algorithmic,canonical,coin_change,Count: 13,2568,Count,True,Count: ,13,cc_digit_after_Count,1032,13,'',False
+CC_034,algorithmic,canonical,coin_change,Count: 3,2568,Count,True,Count: ,3,cc_digit_after_Count,18,3,'',False
+CC_035,algorithmic,canonical,coin_change,Count: 8,2568,Count,True,Count: ,8,cc_digit_after_Count,23,8,'',False
+CC_036,algorithmic,canonical,coin_change,Count: 12,2568,Count,True,Count: ,12,cc_digit_after_Count,717,12,'',False
+CC_037,algorithmic,canonical,coin_change,Count: 11,2568,Count,True,Count: ,11,cc_digit_after_Count,806,11,'',False
+CC_038,algorithmic,canonical,coin_change,Count: 6,2568,Count,True,Count: ,6,cc_digit_after_Count,21,6,'',False
+CC_039,algorithmic,canonical,coin_change,Count: 4,2568,Count,True,Count: ,4,cc_digit_after_Count,19,4,'',False
+CC_040,algorithmic,canonical,coin_change,Count: 2,2568,Count,True,Count: ,2,cc_digit_after_Count,17,2,'',False
+CC_041,algorithmic,canonical,coin_change,Count: 5,2568,Count,True,Count: ,5,cc_digit_after_Count,20,5,'',False
+CC_042,algorithmic,canonical,coin_change,Count: 10,2568,Count,True,Count: ,10,cc_digit_after_Count,605,10,'',False
+CC_043,algorithmic,canonical,coin_change,Count: 6,2568,Count,True,Count: ,6,cc_digit_after_Count,21,6,'',False
+CC_044,algorithmic,canonical,coin_change,Count: 9,2568,Count,True,Count: ,9,cc_digit_after_Count,24,9,'',False
+CC_045,algorithmic,canonical,coin_change,Count: 8,2568,Count,True,Count: ,8,cc_digit_after_Count,23,8,'',False
+SP_019,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 6, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_020,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 5, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 5, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_021,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 8, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_023,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 5, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 5, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_024,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 7, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 7, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_026,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 8, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 8, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_027,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_028,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_029,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_030,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+WIS_006,algorithmic,canonical,wis,"Selected: {0, 1, 3, 4, 5, 6}, Total: 40",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_007,algorithmic,canonical,wis,"Selected: {0, 2, 3, 4, 5}, Total: 60",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_009,algorithmic,canonical,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 8}, Total: 72",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_010,algorithmic,canonical,wis,"Selected: {0, 2, 4, 5, 6, 7}, Total: 62",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_012,algorithmic,canonical,wis,"Selected: {0, 2, 3, 4, 5, 6, 7, 8}, Total: 83",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_013,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 49",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_014,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 53",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_015,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 49",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_016,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 51",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_017,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 57",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_018,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 55",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_019,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 58",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_020,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 59",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+SP_031,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 3 -> 8, Cost: 22",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 8, Cost: 22",sp_first_node_after_Path,15,0,'',False
+SP_032,algorithmic,canonical,shortest_path,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",1858,Path,True,Path: ,"0 -> 4 -> 5 -> 6 -> 7, Cost: 20",sp_first_node_after_Path,15,0,'',False
+SP_033,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",sp_first_node_after_Path,15,0,'',False
+SP_034,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 7, Cost: 21",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 7, Cost: 21",sp_first_node_after_Path,15,0,'',False
+SP_035,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 4 -> 6, Cost: 19",1858,Path,True,Path: ,"0 -> 1 -> 4 -> 6, Cost: 19",sp_first_node_after_Path,15,0,'',False
+SP_036,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_037,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 6, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_038,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 8, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_039,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 8, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_040,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 7, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 7, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_042,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 8, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 8, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_044,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 6, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 6, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_045,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_046,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_047,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_048,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_049,algorithmic,canonical,shortest_path,"Path: 0 -> 4 -> 6 -> 8, Cost: 10",1858,Path,True,Path: ,"0 -> 4 -> 6 -> 8, Cost: 10",sp_first_node_after_Path,15,0,'',False
+SP_050,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 5 -> 7, Cost: 11",sp_first_node_after_Path,15,0,'',False
+SP_051,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",sp_first_node_after_Path,15,0,'',False
+SP_052,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",sp_first_node_after_Path,15,0,'',False
+SP_053,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 2 -> 5, Cost: 25",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 5, Cost: 25",sp_first_node_after_Path,15,0,'',False
+SP_054,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_055,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 5 -> 6, Cost: 17",sp_first_node_after_Path,15,0,'',False
+SP_056,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 6 -> 7, Cost: 21",sp_first_node_after_Path,15,0,'',False
+SP_057,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 3 -> 6, Cost: 24",sp_first_node_after_Path,15,0,'',False
+SP_058,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 5 -> 7, Cost: 20",1858,Path,True,Path: ,"0 -> 3 -> 5 -> 7, Cost: 20",sp_first_node_after_Path,15,0,'',False
+SP_059,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",sp_first_node_after_Path,15,0,'',False
+SP_060,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",sp_first_node_after_Path,15,0,'',False
+SP_061,algorithmic,canonical,shortest_path,"Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 5 -> 7, Cost: 16",sp_first_node_after_Path,15,0,'',False
+SP_062,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 6, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_063,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 8, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_064,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 6, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_065,algorithmic,canonical,shortest_path,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 6, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_066,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 6, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 6, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_068,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 8, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 8, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_069,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 3 -> 7, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 7, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_070,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_071,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 8, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 8, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_072,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_073,algorithmic,canonical,shortest_path,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+WIS_021,algorithmic,canonical,wis,"Selected: {1, 2, 3, 5, 10}, Total: 73",6450,Selected,True,Selected: {,1,wis_first_value,16,1,'',False
+WIS_022,algorithmic,canonical,wis,"Selected: {0, 2, 4, 6}, Total: 69",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_023,algorithmic,canonical,wis,"Selected: {3, 4}, Total: 47",6450,Selected,True,Selected: {,3,wis_first_value,18,3,'',False
+WIS_024,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 47",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_025,algorithmic,canonical,wis,"Selected: {3, 4}, Total: 44",6450,Selected,True,Selected: {,3,wis_first_value,18,3,'',False
+WIS_026,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 53",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_027,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 56",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_028,algorithmic,canonical,wis,"Selected: {3, 4}, Total: 43",6450,Selected,True,Selected: {,3,wis_first_value,18,3,'',False
+WIS_029,algorithmic,canonical,wis,"Selected: {4, 5}, Total: 47",6450,Selected,True,Selected: {,4,wis_first_value,19,4,'',False
+WIS_030,algorithmic,canonical,wis,"Selected: {1, 2, 4, 5, 6}, Total: 62",6450,Selected,True,Selected: {,1,wis_first_value,16,1,'',False
+WIS_031,algorithmic,canonical,wis,"Selected: {0, 2, 3, 6}, Total: 51",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_032,algorithmic,canonical,wis,"Selected: {0, 2, 4, 5, 6, 8}, Total: 80",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+BW_001,planning_suite,canonical,bw,pick-up h,30345,pick,False,,pick-up h,full_first_action_is_content,30345,pick,'',True
+BW_002,planning_suite,canonical,bw,pick-up k,30345,pick,False,,pick-up k,full_first_action_is_content,30345,pick,'',True
+BW_010,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_011,planning_suite,canonical,bw,pick-up i,30345,pick,False,,pick-up i,full_first_action_is_content,30345,pick,'',True
+BW_014,planning_suite,canonical,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_022,planning_suite,canonical,bw,pick-up k,30345,pick,False,,pick-up k,full_first_action_is_content,30345,pick,'',True
+BW_080,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_120,planning_suite,canonical,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_137,planning_suite,canonical,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_155,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_172,planning_suite,canonical,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_203,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_227,planning_suite,canonical,bw,pick-up k,30345,pick,False,,pick-up k,full_first_action_is_content,30345,pick,'',True
+BW_282,planning_suite,canonical,bw,pick-up i,30345,pick,False,,pick-up i,full_first_action_is_content,30345,pick,'',True
+BW_310,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_331,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_350,planning_suite,canonical,bw,pick-up l,30345,pick,False,,pick-up l,full_first_action_is_content,30345,pick,'',True
+BW_408,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_467,planning_suite,canonical,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_495,planning_suite,canonical,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_E002,planning_suite,canonical,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_E015,planning_suite,canonical,bw,unstack c b,359,un,False,,unstack c b,full_first_action_is_content,359,un,'',True
+BW_E017,planning_suite,canonical,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_E019,planning_suite,canonical,bw,unstack a b,359,un,False,,unstack a b,full_first_action_is_content,359,un,'',True
+BW_E100,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+MBW_001,planning_suite,canonical,mbw,attack h,21208,attack,False,,attack h,full_first_action_is_content,21208,attack,'',True
+MBW_002,planning_suite,canonical,mbw,attack h,21208,attack,False,,attack h,full_first_action_is_content,21208,attack,'',True
+MBW_010,planning_suite,canonical,mbw,attack d,21208,attack,False,,attack d,full_first_action_is_content,21208,attack,'',True
+MBW_014,planning_suite,canonical,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_037,planning_suite,canonical,mbw,attack h,21208,attack,False,,attack h,full_first_action_is_content,21208,attack,'',True
+MBW_10,planning_suite,canonical,mbw,attack b,21208,attack,False,,attack b,full_first_action_is_content,21208,attack,'',True
+MBW_100,planning_suite,canonical,mbw,attack l,21208,attack,False,,attack l,full_first_action_is_content,21208,attack,'',True
+MBW_127,planning_suite,canonical,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_185,planning_suite,canonical,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_495,planning_suite,canonical,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+BW_496,planning_suite,canonical,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_497,planning_suite,canonical,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_498,planning_suite,canonical,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_499,planning_suite,canonical,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_500,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_501,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_502,planning_suite,canonical,bw,pick-up i,30345,pick,False,,pick-up i,full_first_action_is_content,30345,pick,'',True
+BW_503,planning_suite,canonical,bw,pick-up i,30345,pick,False,,pick-up i,full_first_action_is_content,30345,pick,'',True
+BW_504,planning_suite,canonical,bw,pick-up l,30345,pick,False,,pick-up l,full_first_action_is_content,30345,pick,'',True
+BW_505,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_506,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_507,planning_suite,canonical,bw,pick-up h,30345,pick,False,,pick-up h,full_first_action_is_content,30345,pick,'',True
+BW_508,planning_suite,canonical,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_509,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_510,planning_suite,canonical,bw,pick-up h,30345,pick,False,,pick-up h,full_first_action_is_content,30345,pick,'',True
+BW_511,planning_suite,canonical,bw,pick-up l,30345,pick,False,,pick-up l,full_first_action_is_content,30345,pick,'',True
+BW_512,planning_suite,canonical,bw,pick-up i,30345,pick,False,,pick-up i,full_first_action_is_content,30345,pick,'',True
+BW_513,planning_suite,canonical,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_514,planning_suite,canonical,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_515,planning_suite,canonical,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+MBW_496,planning_suite,canonical,mbw,attack j,21208,attack,False,,attack j,full_first_action_is_content,21208,attack,'',True
+MBW_497,planning_suite,canonical,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_498,planning_suite,canonical,mbw,attack j,21208,attack,False,,attack j,full_first_action_is_content,21208,attack,'',True
+MBW_499,planning_suite,canonical,mbw,attack a,21208,attack,False,,attack a,full_first_action_is_content,21208,attack,'',True
+MBW_500,planning_suite,canonical,mbw,attack d,21208,attack,False,,attack d,full_first_action_is_content,21208,attack,'',True
+BW_E_001,planning_suite,canonical,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_E_002,planning_suite,canonical,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_E_003,planning_suite,canonical,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_E_004,planning_suite,canonical,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_E_005,planning_suite,canonical,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+GSM_041_W6,arithmetic_reasoning,W6,gsm,13,1032,13,False,,13,full_first_action_is_content,1032,13,'',True
+GSM_042_W6,arithmetic_reasoning,W6,gsm,5775,23411,577,False,,5775,full_first_action_is_content,23411,577,'',True
+GSM_043_W6,arithmetic_reasoning,W6,gsm,70,2031,70,False,,70,full_first_action_is_content,2031,70,'',True
+GSM_044_W6,arithmetic_reasoning,W6,gsm,41,3174,41,False,,41,full_first_action_is_content,3174,41,'',True
+GSM_045_W6,arithmetic_reasoning,W6,gsm,988,24538,988,False,,988,full_first_action_is_content,24538,988,'',True
+GSM_046_W6,arithmetic_reasoning,W6,gsm,8,23,8,False,,8,full_first_action_is_content,23,8,'',True
+GSM_047_W6,arithmetic_reasoning,W6,gsm,20,508,20,False,,20,full_first_action_is_content,508,20,'',True
+GSM_048_W6,arithmetic_reasoning,W6,gsm,366,18044,366,False,,366,full_first_action_is_content,18044,366,'',True
+GSM_049_W6,arithmetic_reasoning,W6,gsm,624,23000,624,False,,624,full_first_action_is_content,23000,624,'',True
+GSM_050_W6,arithmetic_reasoning,W6,gsm,10,605,10,False,,10,full_first_action_is_content,605,10,'',True
+GSM_051_W6,arithmetic_reasoning,W6,gsm,214,11584,214,False,,214,full_first_action_is_content,11584,214,'',True
+GSM_052_W6,arithmetic_reasoning,W6,gsm,75,2075,75,False,,75,full_first_action_is_content,2075,75,'',True
+GSM_053_W6,arithmetic_reasoning,W6,gsm,330,10568,330,False,,330,full_first_action_is_content,10568,330,'',True
+GSM_054_W6,arithmetic_reasoning,W6,gsm,23,1419,23,False,,23,full_first_action_is_content,1419,23,'',True
+GSM_055_W6,arithmetic_reasoning,W6,gsm,94,6281,94,False,,94,full_first_action_is_content,6281,94,'',True
+GSM_056_W6,arithmetic_reasoning,W6,gsm,123,4513,123,False,,123,full_first_action_is_content,4513,123,'',True
+GSM_057_W6,arithmetic_reasoning,W6,gsm,86,4218,86,False,,86,full_first_action_is_content,4218,86,'',True
+GSM_058_W6,arithmetic_reasoning,W6,gsm,120,4364,120,False,,120,full_first_action_is_content,4364,120,'',True
+GSM_059_W6,arithmetic_reasoning,W6,gsm,40,1272,40,False,,40,full_first_action_is_content,1272,40,'',True
+GSM_060_W6,arithmetic_reasoning,W6,gsm,62,5538,62,False,,62,full_first_action_is_content,5538,62,'',True
+GSM_061_W6,arithmetic_reasoning,W6,gsm,630,18660,630,False,,630,full_first_action_is_content,18660,630,'',True
+GSM_062_W6,arithmetic_reasoning,W6,gsm,65600,20744,656,False,,65600,full_first_action_is_content,20744,656,'',True
+GSM_063_W6,arithmetic_reasoning,W6,gsm,246300,14205,246,False,,246300,full_first_action_is_content,14205,246,'',True
+GSM_064_W6,arithmetic_reasoning,W6,gsm,75,2075,75,False,,75,full_first_action_is_content,2075,75,'',True
+CC_031_W6,algorithmic,W6,coin_change,Count: 4,2568,Count,True,Count: ,4,cc_digit_after_Count,19,4,'',False
+CC_032_W6,algorithmic,W6,coin_change,Count: 6,2568,Count,True,Count: ,6,cc_digit_after_Count,21,6,'',False
+CC_033_W6,algorithmic,W6,coin_change,Count: 1,2568,Count,True,Count: ,1,cc_digit_after_Count,16,1,'',False
+CC_034_W6,algorithmic,W6,coin_change,Count: 3,2568,Count,True,Count: ,3,cc_digit_after_Count,18,3,'',False
+CC_035_W6,algorithmic,W6,coin_change,Count: 8,2568,Count,True,Count: ,8,cc_digit_after_Count,23,8,'',False
+CC_036_W6,algorithmic,W6,coin_change,Count: 7,2568,Count,True,Count: ,7,cc_digit_after_Count,22,7,'',False
+CC_037_W6,algorithmic,W6,coin_change,Count: 10,2568,Count,True,Count: ,10,cc_digit_after_Count,605,10,'',False
+CC_038_W6,algorithmic,W6,coin_change,Count: 6,2568,Count,True,Count: ,6,cc_digit_after_Count,21,6,'',False
+CC_039_W6,algorithmic,W6,coin_change,Count: 11,2568,Count,True,Count: ,11,cc_digit_after_Count,806,11,'',False
+CC_040_W6,algorithmic,W6,coin_change,Count: 7,2568,Count,True,Count: ,7,cc_digit_after_Count,22,7,'',False
+CC_041_W6,algorithmic,W6,coin_change,Count: 14,2568,Count,True,Count: ,14,cc_digit_after_Count,975,14,'',False
+CC_042_W6,algorithmic,W6,coin_change,Count: 29,2568,Count,True,Count: ,29,cc_digit_after_Count,1682,29,'',False
+CC_043_W6,algorithmic,W6,coin_change,Count: 4,2568,Count,True,Count: ,4,cc_digit_after_Count,19,4,'',False
+CC_044_W6,algorithmic,W6,coin_change,Count: 8,2568,Count,True,Count: ,8,cc_digit_after_Count,23,8,'',False
+CC_045_W6,algorithmic,W6,coin_change,Count: 5,2568,Count,True,Count: ,5,cc_digit_after_Count,20,5,'',False
+SP_019_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 6, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 6, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_020_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 15",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 15",sp_first_node_after_Path,15,0,'',False
+SP_021_W6,algorithmic,W6,shortest_path,"Path: 0 -> 6 -> 5 -> 2 -> 8, Cost: 10",1858,Path,True,Path: ,"0 -> 6 -> 5 -> 2 -> 8, Cost: 10",sp_first_node_after_Path,15,0,'',False
+SP_023_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 5, Cost: 7",1858,Path,True,Path: ,"0 -> 1 -> 5, Cost: 7",sp_first_node_after_Path,15,0,'',False
+SP_024_W6,algorithmic,W6,shortest_path,"Path: 0 -> 7, Cost: 9",1858,Path,True,Path: ,"0 -> 7, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_026_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 3 -> 6 -> 8, Cost: 8",1858,Path,True,Path: ,"0 -> 5 -> 3 -> 6 -> 8, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_027_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 5 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_028_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 5 -> 6 -> 7, Cost: 9",1858,Path,True,Path: ,"0 -> 3 -> 5 -> 6 -> 7, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_029_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 7, Cost: 3",1858,Path,True,Path: ,"0 -> 5 -> 7, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_030_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 2 -> 4 -> 7, Cost: 7",1858,Path,True,Path: ,"0 -> 3 -> 2 -> 4 -> 7, Cost: 7",sp_first_node_after_Path,15,0,'',False
+SP_031_W6,algorithmic,W6,shortest_path,"Path: 0 -> 7 -> 3 -> 8, Cost: 8",1858,Path,True,Path: ,"0 -> 7 -> 3 -> 8, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_032_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9",1858,Path,True,Path: ,"0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_033_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10",1858,Path,True,Path: ,"0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10",sp_first_node_after_Path,15,0,'',False
+SP_034_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 7, Cost: 2",1858,Path,True,Path: ,"0 -> 4 -> 7, Cost: 2",sp_first_node_after_Path,15,0,'',False
+SP_035_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 2 -> 6, Cost: 11",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 6, Cost: 11",sp_first_node_after_Path,15,0,'',False
+SP_036_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 7, Cost: 6",1858,Path,True,Path: ,"0 -> 3 -> 7, Cost: 6",sp_first_node_after_Path,15,0,'',False
+SP_037_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 1 -> 3 -> 2 -> 6, Cost: 10",1858,Path,True,Path: ,"0 -> 4 -> 1 -> 3 -> 2 -> 6, Cost: 10",sp_first_node_after_Path,15,0,'',False
+SP_038_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 3 -> 1 -> 8, Cost: 9",1858,Path,True,Path: ,"0 -> 5 -> 3 -> 1 -> 8, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_039_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 5 -> 7 -> 8, Cost: 8",1858,Path,True,Path: ,"0 -> 3 -> 5 -> 7 -> 8, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_040_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 5 -> 7, Cost: 13",1858,Path,True,Path: ,"0 -> 4 -> 5 -> 7, Cost: 13",sp_first_node_after_Path,15,0,'',False
+SP_042_W6,algorithmic,W6,shortest_path,"Path: 0 -> 7 -> 8, Cost: 5",1858,Path,True,Path: ,"0 -> 7 -> 8, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_044_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 3 -> 4 -> 6, Cost: 8",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 4 -> 6, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_045_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 2 -> 6, Cost: 10",1858,Path,True,Path: ,"0 -> 4 -> 2 -> 6, Cost: 10",sp_first_node_after_Path,15,0,'',False
+SP_046_W6,algorithmic,W6,shortest_path,"Path: 0 -> 6 -> 2 -> 7, Cost: 6",1858,Path,True,Path: ,"0 -> 6 -> 2 -> 7, Cost: 6",sp_first_node_after_Path,15,0,'',False
+SP_047_W6,algorithmic,W6,shortest_path,"Path: 0 -> 6, Cost: 7",1858,Path,True,Path: ,"0 -> 6, Cost: 7",sp_first_node_after_Path,15,0,'',False
+SP_048_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 6 -> 7, Cost: 8",1858,Path,True,Path: ,"0 -> 3 -> 6 -> 7, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_049_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17",1858,Path,True,Path: ,"0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17",sp_first_node_after_Path,15,0,'',False
+SP_050_W6,algorithmic,W6,shortest_path,"Path: 0 -> 6 -> 5 -> 7, Cost: 7",1858,Path,True,Path: ,"0 -> 6 -> 5 -> 7, Cost: 7",sp_first_node_after_Path,15,0,'',False
+SP_051_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 3 -> 7, Cost: 6",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 7, Cost: 6",sp_first_node_after_Path,15,0,'',False
+SP_052_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 5 -> 2 -> 8, Cost: 9",1858,Path,True,Path: ,"0 -> 3 -> 5 -> 2 -> 8, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_053_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13",1858,Path,True,Path: ,"0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13",sp_first_node_after_Path,15,0,'',False
+SP_054_W6,algorithmic,W6,shortest_path,"Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8",1858,Path,True,Path: ,"0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_055_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 3 -> 6, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 3 -> 6, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_056_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 2 -> 5 -> 6 -> 7, Cost: 13",1858,Path,True,Path: ,"0 -> 4 -> 2 -> 5 -> 6 -> 7, Cost: 13",sp_first_node_after_Path,15,0,'',False
+SP_057_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8",1858,Path,True,Path: ,"0 -> 1 -> 5 -> 4 -> 6, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_058_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11",1858,Path,True,Path: ,"0 -> 5 -> 2 -> 1 -> 7, Cost: 11",sp_first_node_after_Path,15,0,'',False
+SP_059_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 4 -> 8, Cost: 9",1858,Path,True,Path: ,"0 -> 1 -> 4 -> 8, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_060_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12",1858,Path,True,Path: ,"0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12",sp_first_node_after_Path,15,0,'',False
+SP_061_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 5 -> 4 -> 6 -> 7, Cost: 15",1858,Path,True,Path: ,"0 -> 3 -> 5 -> 4 -> 6 -> 7, Cost: 15",sp_first_node_after_Path,15,0,'',False
+SP_062_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 1 -> 5 -> 6, Cost: 9",1858,Path,True,Path: ,"0 -> 2 -> 1 -> 5 -> 6, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_063_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 8, Cost: 4",1858,Path,True,Path: ,"0 -> 1 -> 8, Cost: 4",sp_first_node_after_Path,15,0,'',False
+SP_064_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 6, Cost: 3",1858,Path,True,Path: ,"0 -> 1 -> 6, Cost: 3",sp_first_node_after_Path,15,0,'',False
+SP_065_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 6, Cost: 5",1858,Path,True,Path: ,"0 -> 2 -> 6, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_066_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 1 -> 6, Cost: 8",1858,Path,True,Path: ,"0 -> 3 -> 1 -> 6, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_068_W6,algorithmic,W6,shortest_path,"Path: 0 -> 3 -> 4 -> 2 -> 8, Cost: 8",1858,Path,True,Path: ,"0 -> 3 -> 4 -> 2 -> 8, Cost: 8",sp_first_node_after_Path,15,0,'',False
+SP_069_W6,algorithmic,W6,shortest_path,"Path: 0 -> 2 -> 7, Cost: 4",1858,Path,True,Path: ,"0 -> 2 -> 7, Cost: 4",sp_first_node_after_Path,15,0,'',False
+SP_070_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 2 -> 6, Cost: 4",1858,Path,True,Path: ,"0 -> 1 -> 2 -> 6, Cost: 4",sp_first_node_after_Path,15,0,'',False
+SP_071_W6,algorithmic,W6,shortest_path,"Path: 0 -> 1 -> 8, Cost: 5",1858,Path,True,Path: ,"0 -> 1 -> 8, Cost: 5",sp_first_node_after_Path,15,0,'',False
+SP_072_W6,algorithmic,W6,shortest_path,"Path: 0 -> 4 -> 1 -> 6, Cost: 9",1858,Path,True,Path: ,"0 -> 4 -> 1 -> 6, Cost: 9",sp_first_node_after_Path,15,0,'',False
+SP_073_W6,algorithmic,W6,shortest_path,"Path: 0 -> 5 -> 4 -> 3 -> 6 -> 7, Cost: 12",1858,Path,True,Path: ,"0 -> 5 -> 4 -> 3 -> 6 -> 7, Cost: 12",sp_first_node_after_Path,15,0,'',False
+WIS_006_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6}, Total: 79",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_007_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 68",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_009_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8}, Total: 81",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_010_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7}, Total: 95",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_012_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8}, Total: 70",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_013_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 74",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_014_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 75",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_015_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 77",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_016_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 72",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_017_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 60",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_018_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 65",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_019_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 71",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_020_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 75",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_021_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, Total: 111",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_022_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8}, Total: 106",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_023_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4}, Total: 62",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_024_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 62",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_025_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4}, Total: 43",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_026_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 69",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_027_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 54",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_028_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4}, Total: 45",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_029_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5}, Total: 63",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_030_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8}, Total: 102",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_031_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8}, Total: 104",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+WIS_032_W6,algorithmic,W6,wis,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8}, Total: 92",6450,Selected,True,Selected: {,0,wis_first_value,15,0,'',False
+BW_001_W6,planning_suite,W6,bw,pick-up h,30345,pick,False,,pick-up h,full_first_action_is_content,30345,pick,'',True
+BW_002_W6,planning_suite,W6,bw,pick-up o,30345,pick,False,,pick-up o,full_first_action_is_content,30345,pick,'',True
+BW_010_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_011_W6,planning_suite,W6,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_014_W6,planning_suite,W6,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_022_W6,planning_suite,W6,bw,pick-up m,30345,pick,False,,pick-up m,full_first_action_is_content,30345,pick,'',True
+BW_080_W6,planning_suite,W6,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_120_W6,planning_suite,W6,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_137_W6,planning_suite,W6,bw,pick-up l,30345,pick,False,,pick-up l,full_first_action_is_content,30345,pick,'',True
+BW_155_W6,planning_suite,W6,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_172_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_203_W6,planning_suite,W6,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_227_W6,planning_suite,W6,bw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+BW_282_W6,planning_suite,W6,bw,pick-up m,30345,pick,False,,pick-up m,full_first_action_is_content,30345,pick,'',True
+BW_310_W6,planning_suite,W6,bw,pick-up h,30345,pick,False,,pick-up h,full_first_action_is_content,30345,pick,'',True
+BW_331_W6,planning_suite,W6,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_350_W6,planning_suite,W6,bw,pick-up u,30345,pick,False,,pick-up u,full_first_action_is_content,30345,pick,'',True
+BW_408_W6,planning_suite,W6,bw,pick-up p,30345,pick,False,,pick-up p,full_first_action_is_content,30345,pick,'',True
+BW_467_W6,planning_suite,W6,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_495_W6,planning_suite,W6,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_E002_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+BW_E015_W6,planning_suite,W6,bw,unstack c b,359,un,False,,unstack c b,full_first_action_is_content,359,un,'',True
+BW_E017_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_E019_W6,planning_suite,W6,bw,unstack a b,359,un,False,,unstack a b,full_first_action_is_content,359,un,'',True
+BW_E100_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+MBW_001_W6,planning_suite,W6,mbw,attack h,21208,attack,False,,attack h,full_first_action_is_content,21208,attack,'',True
+MBW_002_W6,planning_suite,W6,mbw,attack f,21208,attack,False,,attack f,full_first_action_is_content,21208,attack,'',True
+MBW_010_W6,planning_suite,W6,mbw,attack h,21208,attack,False,,attack h,full_first_action_is_content,21208,attack,'',True
+MBW_014_W6,planning_suite,W6,mbw,attack a,21208,attack,False,,attack a,full_first_action_is_content,21208,attack,'',True
+MBW_037_W6,planning_suite,W6,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_10_W6,planning_suite,W6,mbw,attack b,21208,attack,False,,attack b,full_first_action_is_content,21208,attack,'',True
+MBW_100_W6,planning_suite,W6,mbw,attack l,21208,attack,False,,attack l,full_first_action_is_content,21208,attack,'',True
+MBW_127_W6,planning_suite,W6,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_185_W6,planning_suite,W6,mbw,attack e,21208,attack,False,,attack e,full_first_action_is_content,21208,attack,'',True
+MBW_495_W6,planning_suite,W6,mbw,attack b,21208,attack,False,,attack b,full_first_action_is_content,21208,attack,'',True
+BW_496_W6,planning_suite,W6,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_497_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_498_W6,planning_suite,W6,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_499_W6,planning_suite,W6,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_500_W6,planning_suite,W6,bw,pick-up h,30345,pick,False,,pick-up h,full_first_action_is_content,30345,pick,'',True
+BW_501_W6,planning_suite,W6,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_502_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_503_W6,planning_suite,W6,bw,pick-up k,30345,pick,False,,pick-up k,full_first_action_is_content,30345,pick,'',True
+BW_504_W6,planning_suite,W6,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_505_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+BW_506_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+BW_507_W6,planning_suite,W6,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_508_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+BW_509_W6,planning_suite,W6,bw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+BW_510_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_511_W6,planning_suite,W6,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_512_W6,planning_suite,W6,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_513_W6,planning_suite,W6,bw,pick-up g,30345,pick,False,,pick-up g,full_first_action_is_content,30345,pick,'',True
+BW_514_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+BW_515_W6,planning_suite,W6,bw,pick-up b,30345,pick,False,,pick-up b,full_first_action_is_content,30345,pick,'',True
+BW_E_001_W6,planning_suite,W6,bw,pick-up f,30345,pick,False,,pick-up f,full_first_action_is_content,30345,pick,'',True
+BW_E_002_W6,planning_suite,W6,bw,pick-up a,30345,pick,False,,pick-up a,full_first_action_is_content,30345,pick,'',True
+BW_E_003_W6,planning_suite,W6,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+BW_E_004_W6,planning_suite,W6,bw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+BW_E_005_W6,planning_suite,W6,bw,pick-up d,30345,pick,False,,pick-up d,full_first_action_is_content,30345,pick,'',True
+MBW_496_W6,planning_suite,W6,mbw,pick-up j,30345,pick,False,,pick-up j,full_first_action_is_content,30345,pick,'',True
+MBW_497_W6,planning_suite,W6,mbw,pick-up i,30345,pick,False,,pick-up i,full_first_action_is_content,30345,pick,'',True
+MBW_498_W6,planning_suite,W6,mbw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True
+MBW_499_W6,planning_suite,W6,mbw,pick-up e,30345,pick,False,,pick-up e,full_first_action_is_content,30345,pick,'',True
+MBW_500_W6,planning_suite,W6,mbw,pick-up c,30345,pick,False,,pick-up c,full_first_action_is_content,30345,pick,'',True

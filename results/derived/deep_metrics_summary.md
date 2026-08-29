@@ -120,9 +120,9 @@ ALGO,retrieval_signal_plus,31
 BW,insufficient,282
 BW,mixed,110
 BW,computation_signal_plus,13
+GSM,mixed,70
 GSM,weak_computation,67
+GSM,computation_signal_plus,41
 GSM,weak_retrieval,37
-GSM,computation_signal_plus,36
-GSM,mixed,31
-GSM,insufficient,1
+GSM,insufficient,5
 

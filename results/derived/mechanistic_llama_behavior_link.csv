@@ -1,0 +1,5 @@
+family,slice,n_correct,n_incorrect,median_final_rank_correct,median_final_rank_incorrect,mannwhitney_U,mannwhitney_p_correct_less_rank,alternative
+gsm,all_variants,29,83,171.0,90.0,1362.5,0.8553128942363428,correct_final_rank < incorrect_final_rank
+gsm,canonical_only,9,35,133.0,92.0,187.5,0.8126239320513357,correct_final_rank < incorrect_final_rank
+sp,all_variants,3,157,2.0,2.0,192.0,0.2771209092523302,correct_final_rank < incorrect_final_rank
+sp,canonical_only,1,54,4.0,4.0,23.0,0.35956978383049626,correct_final_rank < incorrect_final_rank

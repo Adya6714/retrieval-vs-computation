@@ -1,0 +1,43 @@
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{2pt}
+  \caption{Full-probe novelty map. W1 paraphrase, W2 reformat, W3 entity
+  rename, W4 formal notation, W5 direction reversal, W6 new numbers; P2A
+  cross-session plan-vs-execution, P2B mid-solve false-state injection; P3-I
+  public-corpus $n$-gram proximity (Infini-gram), P3-M mechanistic final-rank
+  analysis; Conv.\ per-instance convergence label combining all probes.
+  MATCHA, RRB, and PutnamGAP each overlap one or two columns; this work
+  uniquely combines all columns on the same instances with a built-in
+  training-exposure control.}
+  \label{tab:novelty}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{l cccccc cc cc c}
+    \toprule
+    & \multicolumn{6}{c}{\textbf{Probe 1: Surface variants}}
+    & \multicolumn{2}{c}{\textbf{Probe 2: Exec.}}
+    & \multicolumn{2}{c}{\textbf{Probe 3: Exp.}} & \\
+    \cmidrule(lr){2-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+    Related work & W1 & W2 & W3 & W4 & W5 & W6 & P2A & P2B & P3-I & P3-M & Conv. \\
+    \midrule
+    GSM-Symbolic \citep{mirzadeh2024gsm}      &   &   &   &   &   & \checkmark &   &   &   &   & \\
+    GSM-Plus \citep{li2024gsm}                & \checkmark & \checkmark &   &   &   & \checkmark &   &   &   &   & \\
+    MATH-Perturb \citep{huang2025mathperturb} &   &   &   &   &   & \checkmark &   &   &   &   & \\
+    RUPBench \citep{wang2024rupbench}         & \checkmark & \checkmark & \checkmark &   &   &   &   &   &   &   & \\
+    Wu et al.\ \citep{wu2024reasoning}        &   &   &   &   &   & \checkmark &   &   &   &   & \\
+    Turpin et al.\ \citep{turpin2023language} &   &   &   &   &   &   & \checkmark &   &   &   & \\
+    Lanham et al.\ \citep{lanham2023measuring}& \checkmark &   &   &   &   &   & \checkmark & \checkmark &   &   & \\
+    Saparov \& He \citep{saparov2023language} &   &   &   &   &   &   & \checkmark &   &   &   & \\
+    Lightman et al.\ \citep{lightman2023let}  &   &   &   &   &   &   & \checkmark &   &   &   & \\
+    Sharma et al.\ \citep{sharma2024sycophancy}&  &   &   &   &   &   &   & \checkmark &   &   & \\
+    Razeghi et al.\ \citep{razeghi2022impact} &   &   &   &   &   &   &   &   & \checkmark &   & \\
+    Golchin \& Surdeanu \citep{golchin2023time}&  &   &   &   &   &   &   &   & \checkmark &   & \\
+    Shi et al.\ \citep{shi2024detecting}      &   &   &   &   &   &   &   &   & \checkmark &   & \\
+    MATCHA \citep{jiang2025matcha}            &   &   &   &   &   &   & \checkmark &   &   &   & \\
+    RRB \citep{rrb2026}                       & \checkmark & \checkmark & \checkmark &   &   & \checkmark &   &   &   &   & \\
+    PutnamGAP \citep{hao2025putnamgap}        &   &   & \checkmark &   &   & \checkmark &   &   &   &   & \\
+    \midrule
+    \textbf{This work} & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+    \bottomrule
+  \end{tabular}}
+\end{table}

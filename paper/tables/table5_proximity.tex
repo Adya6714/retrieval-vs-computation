@@ -1,0 +1,22 @@
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Within-ALGO proximity gradient (challenging instances). Template
+  proximity $\bar{c}_T$ from Infini-gram on The Pile/DCLM. WIS and CC share
+  DP-solvable structure but differ in proximity; importantly, WIS canonical
+  accuracy ($\sim$0.35) is also lower than CC ($\sim$0.65), so task hardness
+  co-varies with proximity---this is a partial control, not a clean
+  isolation.}
+  \label{tab:proximity}
+  \begin{tabular}{lccccc}
+    \toprule
+    & & \multicolumn{2}{c}{Claude} & \multicolumn{2}{c}{GPT-4o} \\
+    \cmidrule(lr){3-4}\cmidrule(lr){5-6}
+    Subtype & $\bar{c}_T$ & Can & W3 & Can & W3 \\
+    \midrule
+    CC (chall.)  & 0.468 & .700 & .600 & .600 & .000 \\
+    SP (chall.)  & 0.147 & .647 & .000 & .412 & .265 \\
+    WIS (chall.) & 0.000 & .353 & .000 & .353 & .000 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

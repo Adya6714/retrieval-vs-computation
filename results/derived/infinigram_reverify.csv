@@ -1,0 +1,6 @@
+check,problem_id,value_recomputed,value_paper,match,n,notes
+table5_c_T_CC,,0.468,0.468,True,25,mean template_contamination_score over CC canonical ids
+table5_c_T_SP,,0.147,0.147,True,55,mean template_contamination_score over SP canonical ids (deduped n=55)
+table5_c_T_WIS,,0.0,0.0,True,30,mean template_contamination_score over WIS
+gsm_prox_coverage,ALL,44.0,42.0,False,44,Paper dropped 2 for missing proximity; CURRENT raw file has proximity for all 44 GSM ids — no live re-query needed to fill gaps; gap was pipeline/historical not API-unavailable
+gsm_claude_prox_cci_pearson_n44,,0.331,0.31,True,44,p=0.0282; paper reported n=42 r=+0.31 p=0.044

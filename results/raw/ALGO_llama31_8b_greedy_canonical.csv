@@ -1,0 +1,161 @@
+problem_id,problem_subtype,variant_type,model,model_answer,ground_truth,verified,parse_status,reason,correct_alternative
+CC_01,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 1, 1, 4","Count: 2
+ Coins: [3, 3]",False,parsed_with_normalization,"wrong_count: predicted=3, expected=2",False
+CC_02,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 2
+Coins: 5, 6","Count: 2
+ Coins: [5, 6]",True,parsed_with_normalization,correct,False
+CC_03,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 6, 6, 1","Count: 2
+ Coins: [6, 7]",False,parsed_with_normalization,"wrong_count: predicted=3, expected=2",False
+CC_04,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 10, 10, 7","Count: 2
+Coins: [17, 10]",False,parsed_with_normalization,"wrong_count: predicted=3, expected=2",False
+CC_05,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 6, 4, 4","Count: 2
+ Coins: [7, 7]",False,parsed_with_normalization,"wrong_count: predicted=3, expected=2",False
+CC_06,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 8, 8, 10","Count: 3
+ Coins: [12, 7, 7]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_07,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 4, 4, 4","Count: 2
+Coins: [8, 4]",False,parsed_with_normalization,"wrong_count: predicted=3, expected=2",False
+CC_08,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 2
+Coins: 10, 20","Count: 2
+ Coins: [15, 15]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_09,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 6
+Coins: 197, 197, 11, 11, 7, 1","Count: 5
+ Coins: [197, 197, 11, 11, 7]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_10,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 5
+Coins: 197, 197, 197, 197, 67","Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+SP_001,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 1 -> 3 -> 7 -> 11, Cost: 30","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,"path_cost_mismatch: path_sum=19, claimed=30",False
+SP_002,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 31","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_with_normalization,"path_invalid_edge: (9,5) missing",False
+SP_003,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: Safe House 11 -> Shortcut 17 -> Flyover 7 -> Interchange 6 -> Overpass 3 -> Drop Point 9, Cost: 33","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,"path_cost_mismatch: path_sum=32, claimed=33",False
+SP_004,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 1 -> 5 -> 9, Cost: 9","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parsed_with_normalization,"path_cost_mismatch: path_sum=8, claimed=9",False
+SP_005,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 15, Cost: 60","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,"path_cost_mismatch: path_sum=37, claimed=60",False
+WIS_001,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 2, 4, 6, 8, Total: 30","Selected: {0, 2, 4, 6, 9}, Total: 40",False,parsed_clean,"wrong_total: predicted=30, expected=40",False
+WIS_002,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: {11, 8, 5, 9, 6, 2, 4, 0, 10, 7, 3, 1}, Total: 96","Selected: {1, 3, 7, 10, 11}, Total: 52",False,parsed_clean,"wrong_total: predicted=96, expected=52",False
+WIS_003,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: {0, 2, 4, 5, 7, 8, 12}, Total: 65","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",False,parsed_clean,"wrong_total: predicted=65, expected=55",False
+WIS_004,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: {3, 4, 8, 9, 11, 12, 13}, Total: 37","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",False,parsed_clean,"selected_weight_mismatch: computed=39, claimed=37",False
+WIS_005,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 2, 8, 10, 13, 16, Total: 63","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",False,parsed_clean,"wrong_total: predicted=63, expected=67",False
+CC_031,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 7
+Coins: 10, 10, 10, 5, 2, 2, 1","Count: 5
+Coins: [10, 10, 10, 10, 2]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_032,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 4
+Coins: 25, 25, 25, 2","Count: 4
+Coins: [25, 25, 25, 2]",True,parsed_with_normalization,correct,False
+CC_033,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 9
+Coins: 10, 10, 10, 10, 10, 1, 1, 1, 1","Count: 13
+Coins: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_034,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 2
+Coins: 100, 2","Count: 3
+Coins: [100, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_035,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 6
+Coins: 10, 10, 10, 10, 10, 1","Count: 8
+Coins: [10, 10, 10, 10, 10, 10, 10, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_036,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 4
+Coins: 10, 10, 10, 10","Count: 12
+Coins: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_037,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 100, 50, 10, 10, 10, 10, 1, 1, 1, 1, 1","Count: 11
+Coins: [50, 10, 10, 10, 1, 1, 1, 1, 1, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_038,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 2
+Coins: 10, 10, 4","Count: 6
+Coins: [10, 10, 1, 1, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_039,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 31, 41, 36","Count: 4
+Coins: [53, 53, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_040,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 11, 11, 8","Count: 2
+Coins: [19, 11]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_041,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 43, 43, 55","Count: 5
+Coins: [43, 43, 43, 11, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_042,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 2
+Coins: 13, 21","Count: 10
+Coins: [13, 13, 1, 1, 1, 1, 1, 1, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_043,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 4
+Coins: 47, 47, 7, 3","Count: 6
+Coins: [47, 47, 7, 1, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_044,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 4
+Coins: 29, 29, 19, 6","Count: 9
+Coins: [29, 29, 19, 1, 1, 1, 1, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+CC_045,coin_change,canonical,meta-llama/Llama-3.1-8B-Instruct,"Count: 3
+Coins: 13, 13, 29","Count: 8
+Coins: [29, 29, 1, 1, 1, 1, 1, 1]",False,parsed_with_normalization,invalid_coin_list: list does not match denominations/target/count,False
+SP_019,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 6, Cost: 39","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_clean,"wrong_cost: predicted=39, expected=12",False
+SP_020,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 4 -> 5, Cost: 39","Path: 0 -> 3 -> 4 -> 5, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=31, claimed=39",False
+SP_021,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 7 -> 8, Cost: 21","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_clean,"wrong_cost: predicted=21, expected=12",False
+SP_023,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 5, Cost: 13","Path: 0 -> 2 -> 3 -> 5, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=13",False
+SP_024,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 7, Cost: 11","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=11",False
+SP_026,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 8, Cost: 11","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=11",False
+SP_027,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 6, Cost: 1","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_028,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 7, Cost: 1","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_029,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 7, Cost: 1","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_030,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 6 -> 7, Cost: 16","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_clean,"wrong_cost: predicted=16, expected=3",False
+WIS_006,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 1, 4, 6, Total: 24","Selected: {0, 1, 3, 4, 5, 6}, Total: 40",False,parsed_clean,"wrong_total: predicted=24, expected=40",False
+WIS_007,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 2, 5, Total: 40","Selected: {0, 2, 3, 4, 5}, Total: 60",False,parsed_clean,"wrong_total: predicted=40, expected=60",False
+WIS_009,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 2, 4, 5, 8, Total: 44","Selected: {0, 1, 2, 3, 4, 5, 6, 8}, Total: 72",False,parsed_clean,"wrong_total: predicted=44, expected=72",False
+WIS_010,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 2, 5, 6, Total: 39","Selected: {0, 2, 4, 5, 6, 7}, Total: 62",False,parsed_clean,"wrong_total: predicted=39, expected=62",False
+WIS_012,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 1, 3, 5, 7, Total: 52","Selected: {0, 2, 3, 4, 5, 6, 7, 8}, Total: 83",False,parsed_clean,"wrong_total: predicted=52, expected=83",False
+WIS_013,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 4, Total: 51","Selected: {4, 5}, Total: 49",False,parsed_clean,"wrong_total: predicted=51, expected=49",False
+WIS_014,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 3, 5, Total: 22","Selected: {4, 5}, Total: 53",False,parsed_clean,"wrong_total: predicted=22, expected=53",False
+WIS_015,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, Total: 44","Selected: {4, 5}, Total: 49",False,parsed_clean,"wrong_total: predicted=44, expected=49",False
+WIS_016,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 4, Total: 52","Selected: {4, 5}, Total: 51",False,parsed_clean,"wrong_total: predicted=52, expected=51",False
+WIS_017,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, 5, Total: 57","Selected: {4, 5}, Total: 57",True,parsed_clean,correct,False
+WIS_018,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 5, Total: 28","Selected: {4, 5}, Total: 55",False,parsed_clean,"wrong_total: predicted=28, expected=55",False
+WIS_019,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, 5, Total: 58","Selected: {4, 5}, Total: 58",True,parsed_clean,correct,False
+WIS_020,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, 5, Total: 59","Selected: {4, 5}, Total: 59",True,parsed_clean,correct,False
+SP_031,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 4 -> 8, Cost: 42","Path: 0 -> 1 -> 3 -> 8, Cost: 22",False,parsed_with_normalization,"path_cost_mismatch: path_sum=62, claimed=42",False
+SP_032,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 52","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",False,parsed_with_normalization,"path_cost_mismatch: path_sum=20, claimed=52",False
+SP_033,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 5 -> 7, Cost: 38","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",False,parsed_with_normalization,"path_invalid_edge: (5,7) missing",False
+SP_034,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 7, Cost: 21","Path: 0 -> 3 -> 4 -> 7, Cost: 21",True,parsed_clean,correct,False
+SP_035,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 6, Cost: 57","Path: 0 -> 1 -> 4 -> 6, Cost: 19",False,parsed_clean,"wrong_cost: predicted=57, expected=19",False
+SP_036,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 5 -> 7, Cost: 27","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=47, claimed=27",False
+SP_037,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 6, Cost: 39","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_clean,"wrong_cost: predicted=39, expected=12",False
+SP_038,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 7 -> 8, Cost: 20","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_clean,"wrong_cost: predicted=20, expected=12",False
+SP_039,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 8, Cost: 18","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=12, claimed=18",False
+SP_040,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 7, Cost: 29","Path: 0 -> 3 -> 4 -> 7, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=39, claimed=29",False
+SP_042,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 8, Cost: 11","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=11",False
+SP_044,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 6, Cost: 11","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=11",False
+SP_045,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 6, Cost: 1","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_046,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 7, Cost: 1","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_047,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 6, Cost: 1","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_048,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 7, Cost: 1","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_049,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 4 -> 6 -> 8, Cost: 30","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,"path_cost_mismatch: path_sum=10, claimed=30",False
+SP_050,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 27","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",False,parsed_with_normalization,"path_cost_mismatch: path_sum=11, claimed=27",False
+SP_051,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 6 -> 7, Cost: 33","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",False,parsed_with_normalization,"path_cost_mismatch: path_sum=53, claimed=33",False
+SP_052,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 8, Cost: 26","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",False,parsed_with_normalization,"path_cost_mismatch: path_sum=46, claimed=26",False
+SP_053,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 5, Cost: 63","Path: 0 -> 1 -> 2 -> 5, Cost: 25",False,parsed_clean,"wrong_cost: predicted=63, expected=25",False
+SP_054,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 5 -> 7, Cost: 27","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=47, claimed=27",False
+SP_055,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 24","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",False,parsed_with_normalization,"path_cost_mismatch: path_sum=17, claimed=24",False
+SP_056,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 4 -> 7, Cost: 58","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",False,parsed_clean,"wrong_cost: predicted=58, expected=21",False
+SP_057,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 4 -> 5 -> 6, Cost: 61","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",False,parsed_clean,"wrong_cost: predicted=61, expected=24",False
+SP_058,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 5 -> 7, Cost: 40","Path: 0 -> 3 -> 5 -> 7, Cost: 20",False,parsed_with_normalization,"path_cost_mismatch: path_sum=20, claimed=40",False
+SP_059,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 54","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",False,parsed_with_normalization,"path_cost_mismatch: path_sum=25, claimed=54",False
+SP_060,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 20","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",False,parsed_with_normalization,"path_cost_mismatch: path_sum=10, claimed=20",False
+SP_061,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 4 -> 7, Cost: 52","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",False,parsed_clean,"wrong_cost: predicted=52, expected=16",False
+SP_062,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 6, Cost: 39","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_clean,"wrong_cost: predicted=39, expected=12",False
+SP_063,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 6 -> 8, Cost: 17","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_clean,"wrong_cost: predicted=17, expected=12",False
+SP_064,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 6, Cost: 24","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=39, claimed=24",False
+SP_065,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 3 -> 2 -> 6, Cost: 29","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,"path_cost_mismatch: path_sum=39, claimed=29",False
+SP_066,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 6, Cost: 11","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=11",False
+SP_068,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 3 -> 8, Cost: 11","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,"path_cost_mismatch: path_sum=5, claimed=11",False
+SP_069,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 1 -> 7, Cost: 6","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_clean,"wrong_cost: predicted=6, expected=5",False
+SP_070,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 6, Cost: 2","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=2",False
+SP_071,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 8, Cost: 1","Path: 0 -> 2 -> 1 -> 8, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_072,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 6, Cost: 1","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+SP_073,shortest_path,canonical,meta-llama/Llama-3.1-8B-Instruct,"Path: 0 -> 2 -> 1 -> 7, Cost: 1","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,"path_cost_mismatch: path_sum=3, claimed=1",False
+WIS_021,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 3, 5, 8, Total: 44","Selected: {1, 2, 3, 5, 10}, Total: 73",False,parsed_clean,"wrong_total: predicted=44, expected=73",False
+WIS_022,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 2, 4, 6, Total: 47","Selected: {0, 2, 4, 6}, Total: 69",False,parsed_clean,"wrong_total: predicted=47, expected=69",False
+WIS_023,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 3, Total: 39","Selected: {3, 4}, Total: 47",False,parsed_clean,"wrong_total: predicted=39, expected=47",False
+WIS_024,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, Total: 40","Selected: {4, 5}, Total: 47",False,parsed_clean,"wrong_total: predicted=40, expected=47",False
+WIS_025,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 1, 3, Total: 54","Selected: {3, 4}, Total: 44",False,parsed_clean,"wrong_total: predicted=54, expected=44",False
+WIS_026,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, Total: 46","Selected: {4, 5}, Total: 53",False,parsed_clean,"wrong_total: predicted=46, expected=53",False
+WIS_027,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 5, Total: 29","Selected: {4, 5}, Total: 56",False,parsed_clean,"wrong_total: predicted=29, expected=56",False
+WIS_028,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 3, Total: 37","Selected: {3, 4}, Total: 43",False,parsed_clean,"wrong_total: predicted=37, expected=43",False
+WIS_029,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 4, Total: 41","Selected: {4, 5}, Total: 47",False,parsed_clean,"wrong_total: predicted=41, expected=47",False
+WIS_030,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 2, 7, Total: 35","Selected: {1, 2, 4, 5, 6}, Total: 62",False,parsed_clean,"wrong_total: predicted=35, expected=62",False
+WIS_031,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 2, 5, 6, Total: 33","Selected: {0, 2, 3, 6}, Total: 51",False,parsed_clean,"wrong_total: predicted=33, expected=51",False
+WIS_032,wis,canonical,meta-llama/Llama-3.1-8B-Instruct,"Selected: 0, 2, 5, 8, Total: 50","Selected: {0, 2, 4, 5, 6, 8}, Total: 80",False,parsed_clean,"wrong_total: predicted=50, expected=80",False

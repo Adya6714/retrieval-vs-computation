@@ -1,0 +1,3972 @@
+problem_id,variant_type,model,behavioral_correct,raw_response,family,correct_answer,verify_family
+BW_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b h
+13. pick-up h
+14. stack h l",bw,"pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",blocksworld
+BW_001,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up l
+2. unstack l h
+3. put-down l
+4. pick-up h
+5. unstack h b
+6. put-down h
+7. pick-up b
+8. unstack b d
+9. put-down b
+10. pick-up d
+11. unstack d g
+12. put-down d
+13. pick-up g
+14. unstack g i
+15. put-down g
+16. pick-up i
+17. unstack i f
+18. put-down i
+19. pick-up f
+20. unstack f j
+21. put-down f
+22. pick-up j
+23. put-down j",bw,"unstack j f
+put-down j
+unstack f i
+put-down f
+unstack i g
+put-down i
+unstack g d
+put-down g
+unstack d b
+put-down d
+unstack b h
+put-down b
+unstack h l
+put-down h",blocksworld
+BW_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up j
+2. stack j g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b k
+9. pick-up k
+10. stack k h
+11. pick-up h
+12. stack h i",bw,"pick-up k
+ stack k h
+ pick-up i
+ stack i k
+ pick-up b
+ stack b i
+ pick-up a
+ stack a b
+ pick-up g
+ stack g a
+ pick-up j
+ stack j g",blocksworld
+BW_002,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up i
+2. unstack h k
+3. pick-up k
+4. unstack b a
+5. pick-up a
+6. unstack g j
+7. pick-up j
+8. unstack h b
+9. pick-up b
+10. unstack g a
+11. pick-up g
+12. put-down i
+13. put-down k
+14. put-down j
+15. put-down a
+16. put-down b
+17. put-down g",bw,"unstack j g
+put-down j
+unstack g a
+put-down g
+unstack a b
+put-down a
+unstack b k
+put-down b
+unstack k h
+put-down k
+unstack h i
+put-down h",blocksworld
+BW_010,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b f",bw,"pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",blocksworld
+BW_010,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. unstack d e
+3. pick-up e
+4. unstack a b
+5. pick-up b
+6. unstack a f
+7. pick-up a
+8. put-down a
+9. put-down b
+10. put-down e
+11. put-down d",bw,"unstack d e
+put-down d
+unstack e a
+put-down e
+unstack a b
+put-down a
+unstack b f
+put-down b",blocksworld
+BW_011,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b",bw,"pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",blocksworld
+BW_011,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. unstack i h
+3. pick-up h
+4. unstack e j
+5. pick-up j
+6. unstack l a
+7. pick-up a
+8. unstack g k
+9. pick-up k
+10. unstack c g
+11. pick-up g
+12. put-down g
+13. put-down k
+14. put-down a
+15. put-down j
+16. put-down h
+17. put-down i
+18. put-down c
+19. put-down e
+20. put-down l",bw,"unstack c k
+put-down c
+unstack k g
+put-down k
+unstack g a
+put-down g
+unstack a l
+put-down a
+unstack l j
+put-down l
+unstack j e
+put-down j
+unstack e h
+put-down e
+unstack h i
+put-down h
+unstack i b
+put-down i",blocksworld
+BW_014,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e g
+5. put-down e",bw,"pick-up e
+ stack e g
+ pick-up l
+ stack l e",blocksworld
+BW_014,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up g
+2. unstack l e
+3. unstack e g
+4. put-down e
+5. put-down l
+6. put-down g",bw,"unstack l e
+put-down l
+unstack e g
+put-down e",blocksworld
+BW_022,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. stack b k
+3. pick-up k
+4. stack k b
+5. pick-up b
+6. stack b c
+7. pick-up c
+8. stack c g
+9. pick-up g
+10. stack g c",bw,"pick-up k
+ stack k f
+ pick-up b
+ stack b k
+ pick-up c
+ stack c b
+ pick-up g
+ stack g c",blocksworld
+BW_022,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. unstack f k
+3. pick-up k
+4. unstack k b
+5. pick-up b
+6. unstack b c
+7. pick-up c
+8. unstack c g
+9. pick-up g
+10. put-down g
+11. put-down c
+12. put-down b
+13. put-down k
+14. put-down f",bw,"unstack g c
+put-down g
+unstack c b
+put-down c
+unstack b k
+put-down b
+unstack k f
+put-down k",blocksworld
+BW_080,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f",bw,"pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",blocksworld
+BW_080,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. unstack f j
+3. pick-up j
+4. unstack j e
+5. pick-up e
+6. unstack e i
+7. pick-up i
+8. unstack i c
+9. pick-up c
+10. unstack c l
+11. pick-up l
+12. put-down l
+13. put-down c
+14. put-down i
+15. put-down e
+16. put-down j",bw,"unstack l c
+put-down l
+unstack c i
+put-down c
+unstack i e
+put-down i
+unstack e j
+put-down e
+unstack j f
+put-down j",blocksworld
+BW_120,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j g
+5. pick-up g
+6. stack g f
+7. put-down g
+8. put-down j
+9. put-down c",bw,"pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",blocksworld
+BW_120,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. unstack f g
+3. pick-up g
+4. unstack g j
+5. pick-up j
+6. unstack j c
+7. pick-up c
+8. put-down c
+9. put-down j
+10. put-down g
+11. put-down f",bw,"unstack c j
+put-down c
+unstack j g
+put-down j
+unstack g f
+put-down g",blocksworld
+BW_137,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i",bw,"pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",blocksworld
+BW_137,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up i
+2. unstack g f
+3. put-down g
+4. unstack f c
+5. put-down f
+6. unstack c h
+7. put-down c
+8. unstack h l
+9. put-down h
+10. unstack l e
+11. put-down l
+12. unstack e j
+13. put-down e
+14. unstack j b
+15. put-down j
+16. unstack b a
+17. put-down b
+18. pick-up a
+19. unstack d a
+20. put-down d
+21. pick-up a
+22. put-down a",bw,"unstack d a
+put-down d
+unstack a b
+put-down a
+unstack b j
+put-down b
+unstack j e
+put-down j
+unstack e l
+put-down e
+unstack l h
+put-down l
+unstack h c
+put-down h
+unstack c f
+put-down c
+unstack f g
+put-down f
+unstack g i
+put-down g",blocksworld
+BW_155,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h",bw,"pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",blocksworld
+BW_155,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. unstack h j
+3. pick-up j
+4. unstack j e
+5. pick-up e
+6. unstack e f
+7. pick-up f
+8. unstack f i
+9. pick-up i
+10. put-down i
+11. put-down f
+12. put-down e
+13. put-down j
+14. put-down h",bw,"unstack i f
+put-down i
+unstack f e
+put-down f
+unstack e j
+put-down e
+unstack j h
+put-down j",blocksworld
+BW_172,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k",bw,"pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",blocksworld
+BW_172,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up k
+2. put-down k
+3. pick-up f
+4. put-down f
+5. pick-up h
+6. put-down h
+7. pick-up j
+8. put-down j
+9. pick-up a
+10. put-down a
+11. pick-up b
+12. put-down b
+13. pick-up d
+14. put-down d
+15. pick-up e
+16. put-down e
+17. pick-up g
+18. put-down g
+19. pick-up l
+20. put-down l
+21. pick-up i",bw,"unstack i l
+put-down i
+unstack l g
+put-down l
+unstack g e
+put-down g
+unstack e d
+put-down e
+unstack d b
+put-down d
+unstack b a
+put-down b
+unstack a j
+put-down a
+unstack j h
+put-down j
+unstack h f
+put-down h
+unstack f k
+put-down f",blocksworld
+BW_203,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up k
+2. stack k f
+3. pick-up f
+4. stack f j
+5. pick-up j
+6. stack j h
+7. put-down j
+8. put-down f
+9. put-down k",bw,"pick-up j
+ stack j h
+ pick-up f
+ stack f j
+ pick-up k
+ stack k f",blocksworld
+BW_203,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. unstack h j
+3. pick-up j
+4. unstack j f
+5. pick-up f
+6. unstack f k
+7. pick-up k
+8. put-down k
+9. put-down f
+10. put-down j
+11. put-down h",bw,"unstack k f
+put-down k
+unstack f j
+put-down f
+unstack j h
+put-down j",blocksworld
+BW_227,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",bw,"pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",blocksworld
+BW_227,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. unstack k a
+3. put-down k
+4. pick-up k
+5. unstack c k
+6. put-down c
+7. pick-up c
+8. unstack j c
+9. put-down j
+10. pick-up j
+11. unstack i j
+12. put-down i
+13. pick-up i
+14. unstack d i
+15. put-down d
+16. pick-up d
+17. unstack g d
+18. put-down g
+19. pick-up g
+20. unstack l g
+21. put-down l
+22. pick-up l
+23. unstack f l
+24. put-down f",bw,"unstack f l
+put-down f
+unstack l g
+put-down l
+unstack g d
+put-down g
+unstack d i
+put-down d
+unstack i j
+put-down i
+unstack j c
+put-down j
+unstack c k
+put-down c
+unstack k a
+put-down k",blocksworld
+BW_282,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c i
+3. pick-up i
+4. stack i b
+5. pick-up b
+6. stack b c
+7. pick-up c
+8. stack c h
+9. pick-up h
+10. stack h g",bw,"pick-up i
+ stack i b
+ pick-up c
+ stack c i
+ pick-up h
+ stack h c
+ pick-up g
+ stack g h",blocksworld
+BW_282,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. unstack b i
+3. pick-up i
+4. unstack i c
+5. pick-up c
+6. unstack c h
+7. pick-up h
+8. unstack h g
+9. pick-up g
+10. put-down g
+11. put-down h
+12. put-down c
+13. put-down i
+14. put-down b",bw,"unstack g h
+put-down g
+unstack h c
+put-down h
+unstack c i
+put-down c
+unstack i b
+put-down i",blocksworld
+BW_310,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up g
+2. stack g j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a f
+7. pick-up f
+8. stack f b
+9. pick-up b
+10. stack b d",bw,"pick-up b
+ stack b d
+ pick-up f
+ stack f b
+ pick-up a
+ stack a f
+ pick-up j
+ stack j a
+ pick-up g
+ stack g j",blocksworld
+BW_310,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up d
+2. unstack f a
+3. pick-up a
+4. unstack b f
+5. pick-up f
+6. unstack j g
+7. pick-up g
+8. unstack a j
+9. pick-up j
+10. put-down d
+11. put-down g
+12. put-down a
+13. put-down f
+14. put-down j
+15. put-down b",bw,"unstack g j
+put-down g
+unstack j a
+put-down j
+unstack a f
+put-down a
+unstack f b
+put-down f
+unstack b d
+put-down b",blocksworld
+BW_331,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. stack h j
+3. pick-up j
+4. stack j l",bw,"pick-up j
+ stack j l
+ pick-up h
+ stack h j",blocksworld
+BW_331,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up l
+2. unstack h j l
+3. put-down l
+4. pick-up j
+5. unstack h j l
+6. put-down j
+7. pick-up h
+8. put-down h",bw,"unstack h j
+put-down h
+unstack j l
+put-down j",blocksworld
+BW_350,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. stack f e
+3. pick-up e
+4. stack e i
+5. pick-up i
+6. stack i j
+7. pick-up j
+8. stack j k
+9. pick-up k
+10. stack k a
+11. pick-up a
+12. stack a g
+13. pick-up g
+14. stack g b
+15. pick-up b
+16. stack b l
+17. pick-up l
+18. stack l d",bw,"pick-up l
+ stack l d
+ pick-up b
+ stack b l
+ pick-up g
+ stack g b
+ pick-up a
+ stack a g
+ pick-up k
+ stack k a
+ pick-up j
+ stack j k
+ pick-up i
+ stack i j
+ pick-up e
+ stack e i
+ pick-up f
+ stack f e",blocksworld
+BW_350,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up d
+2. unstack l d
+3. put-down d
+4. pick-up l
+5. unstack b l
+6. put-down l
+7. pick-up b
+8. unstack g b
+9. put-down b
+10. pick-up g
+11. unstack a g
+12. put-down g
+13. pick-up a
+14. unstack k a
+15. put-down a
+16. pick-up k
+17. unstack j k
+18. put-down k
+19. pick-up j
+20. unstack i j
+21. put-down j
+22. pick-up i
+23. unstack e i
+24. put-down i
+25. pick-up e
+26. unstack f e
+27. put-down e
+28. pick-up f",bw,"unstack f e
+put-down f
+unstack e i
+put-down e
+unstack i j
+put-down i
+unstack j k
+put-down j
+unstack k a
+put-down k
+unstack a g
+put-down a
+unstack g b
+put-down g
+unstack b l
+put-down b
+unstack l d
+put-down l",blocksworld
+BW_408,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a l
+3. pick-up l
+4. stack l h
+5. pick-up h
+6. stack h d
+7. pick-up d
+8. stack d c
+9. pick-up c
+10. stack c g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j b",bw,"pick-up j
+ stack j b
+ pick-up g
+ stack g j
+ pick-up c
+ stack c g
+ pick-up d
+ stack d c
+ pick-up h
+ stack h d
+ pick-up l
+ stack l h
+ pick-up a
+ stack a l",blocksworld
+BW_408,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. unstack j b
+3. pick-up j
+4. unstack g j
+5. pick-up g
+6. unstack c g
+7. pick-up c
+8. unstack d c
+9. pick-up d
+10. unstack h d
+11. pick-up h
+12. unstack l h
+13. pick-up l
+14. unstack a l
+15. pick-up a
+16. put-down a
+17. put-down l
+18. put-down h
+19. put-down d
+20. put-down c
+21. put-down g
+22. put-down j",bw,"unstack a l
+put-down a
+unstack l h
+put-down l
+unstack h d
+put-down h
+unstack d c
+put-down d
+unstack c g
+put-down c
+unstack g j
+put-down g
+unstack j b
+put-down j",blocksworld
+BW_467,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h",bw,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",blocksworld
+BW_467,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. unstack h f
+3. put-down f
+4. pick-up f
+5. unstack f a
+6. put-down a
+7. pick-up a
+8. unstack a j
+9. put-down j
+10. pick-up j
+11. unstack j l
+12. put-down l
+13. pick-up l
+14. unstack l i
+15. put-down i
+16. pick-up i
+17. unstack i g
+18. put-down g",bw,"unstack g i
+put-down g
+unstack i l
+put-down i
+unstack l j
+put-down l
+unstack j a
+put-down j
+unstack a f
+put-down a
+unstack f h
+put-down f",blocksworld
+BW_495,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c l
+3. pick-up l
+4. stack l i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e h",bw,"pick-up e
+ stack e h
+ pick-up i
+ stack i e
+ pick-up l
+ stack l i
+ pick-up c
+ stack c l",blocksworld
+BW_495,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. unstack h e
+3. pick-up e
+4. unstack e i
+5. pick-up i
+6. unstack i l
+7. pick-up l
+8. unstack l c
+9. pick-up c
+10. put-down c
+11. put-down l
+12. put-down i
+13. put-down e
+14. put-down h",bw,"unstack c l
+put-down c
+unstack l i
+put-down l
+unstack i e
+put-down i
+unstack e h
+put-down e",blocksworld
+BW_496,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up j
+2. unstack j h
+3. pick-up h
+4. unstack h l
+5. pick-up l
+6. unstack l a
+7. pick-up a
+8. unstack a e
+9. pick-up e
+10. unstack e g
+11. pick-up g
+12. unstack g k
+13. pick-up k
+14. unstack k d
+15. pick-up d
+16. unstack d c
+17. pick-up c
+18. unstack c f
+19. pick-up f
+20. unstack f i
+21. pick-up i
+22. stack i f
+23. stack c i
+24. stack d c
+25. stack k d
+26. stack g k
+27. stack e g
+28. stack a e
+29. stack l a
+30. stack h l
+31. stack j h
+32. put-down j",bw,"pick-up f
+stack f i
+pick-up c
+stack c f
+pick-up d
+stack d c
+pick-up k
+stack k d
+pick-up g
+stack g k
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up l
+stack l a
+pick-up h
+stack h l
+pick-up j
+stack j h",blocksworld
+BW_496,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up j
+2. unstack l h
+3. unstack a l
+4. unstack e a
+5. unstack g e
+6. unstack k g
+7. unstack d k
+8. unstack c d
+9. unstack f c
+10. unstack i f
+11. put-down i
+12. unstack h i
+13. put-down h
+14. unstack l h
+15. put-down l
+16. unstack a l
+17. put-down a
+18. unstack j a
+19. put-down j",bw,"unstack j h
+put-down j
+unstack h l
+put-down h
+unstack l a
+put-down l
+unstack a e
+put-down a
+unstack e g
+put-down e
+unstack g k
+put-down g
+unstack k d
+put-down k
+unstack d c
+put-down d
+unstack c f
+put-down c
+unstack f i
+put-down f",blocksworld
+BW_497,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c e
+3. pick-up e
+4. stack e l
+5. put-down e",bw,"pick-up e
+stack e c
+pick-up l
+stack l e",blocksworld
+BW_497,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up l
+2. unstack l e
+3. unstack e c
+4. put-down e
+5. put-down c
+6. pick-up e
+7. stack e c
+8. put-down e",bw,"unstack l e
+put-down l
+unstack e c
+put-down e",blocksworld
+BW_498,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a g
+3. pick-up l
+4. unstack l a
+5. stack l a
+6. pick-up d
+7. unstack d l
+8. stack d l
+9. pick-up f
+10. unstack f d
+11. stack f d
+12. pick-up b
+13. unstack b f
+14. stack b f
+15. pick-up c
+16. unstack c b
+17. stack c b
+18. pick-up e
+19. unstack e c
+20. stack e c
+21. pick-up j
+22. unstack j e
+23. stack j e
+24. pick-up k
+25. unstack k j
+26. stack k j",bw,"pick-up a
+stack a g
+pick-up l
+stack l a
+pick-up d
+stack d l
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up k
+stack k j",blocksworld
+BW_498,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up k
+2. unstack l a
+3. put-down l
+4. pick-up l
+5. unstack d f
+6. put-down d
+7. pick-up d
+8. unstack f b
+9. put-down f
+10. pick-up f
+11. unstack b c
+12. put-down b
+13. pick-up b
+14. unstack c e
+15. put-down c
+16. pick-up c
+17. unstack e j
+18. put-down e
+19. pick-up e
+20. unstack j k
+21. put-down j
+22. pick-up j
+23. unstack k a
+24. put-down k
+25. pick-up a
+26. unstack g l
+27. put-down a
+28. pick-up l
+29. unstack g d
+30. put-down l
+31. pick-up d
+32. unstack g b
+33. put-down d
+34. pick-up b
+35. unstack g c
+36. put-down b
+37. pick-up c
+38. unstack g e
+39. put-down c
+40. pick-up e
+41. un",bw,"unstack k j
+put-down k
+unstack j e
+put-down j
+unstack e c
+put-down e
+unstack c b
+put-down c
+unstack b f
+put-down b
+unstack f d
+put-down f
+unstack d l
+put-down d
+unstack l a
+put-down l
+unstack a g
+put-down a",blocksworld
+BW_499,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a j
+3. pick-up c
+4. stack a c
+5. pick-up e
+6. stack c e
+7. pick-up l
+8. stack e l",bw,"pick-up e
+stack e l
+pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up j
+stack j a",blocksworld
+BW_499,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up j
+2. unstack j c
+3. pick-up c
+4. unstack c e
+5. pick-up e
+6. unstack e l
+7. pick-up l
+8. put-down l
+9. put-down e
+10. put-down c
+11. put-down j
+12. put-down a",bw,"unstack j a
+put-down j
+unstack a c
+put-down a
+unstack c e
+put-down c
+unstack e l
+put-down e",blocksworld
+BW_500,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a d
+3. pick-up d
+4. stack d k
+5. pick-up k
+6. stack k e
+7. pick-up e
+8. stack e a
+9. pick-up a
+10. stack a g
+11. pick-up g
+12. stack g c
+13. pick-up c
+14. stack c b
+15. pick-up b
+16. stack b l",bw,"pick-up b
+stack b l
+pick-up c
+stack c b
+pick-up g
+stack g c
+pick-up a
+stack a g
+pick-up d
+stack d a
+pick-up k
+stack k d
+pick-up e
+stack e k",blocksworld
+BW_500,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up e
+2. unstack e k
+3. pick-up k
+4. unstack k d
+5. pick-up d
+6. unstack d a
+7. put-down a
+8. pick-up b
+9. unstack b c
+10. pick-up c
+11. unstack c g
+12. pick-up g
+13. unstack g l
+14. pick-up l
+15. put-down l
+16. put-down c
+17. put-down g
+18. put-down b
+19. put-down e
+20. put-down k
+21. put-down d",bw,"unstack e k
+put-down e
+unstack k d
+put-down k
+unstack d a
+put-down d
+unstack a g
+put-down a
+unstack g c
+put-down g
+unstack c b
+put-down c
+unstack b l
+put-down b",blocksworld
+BW_501,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c i
+3. pick-up i
+4. stack i k
+5. pick-up k
+6. stack k a
+7. pick-up a
+8. stack a e
+9. pick-up e
+10. stack e g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j d",bw,"pick-up j
+stack j d
+pick-up g
+stack g j
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up k
+stack k a
+pick-up i
+stack i k
+pick-up c
+stack c i",blocksworld
+BW_501,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c k
+3. unstack k i
+4. unstack i e
+5. unstack e g
+6. unstack g j
+7. unstack j d
+8. put-down c
+9. pick-up a
+10. unstack k a
+11. put-down a
+12. pick-up k
+13. unstack k a
+14. put-down k
+15. pick-up e
+16. unstack e g
+17. put-down e
+18. pick-up g
+19. unstack g j
+20. put-down g
+21. pick-up j
+22. unstack j d
+23. put-down j
+24. pick-up d
+25. put-down d
+26. pick-up i
+27. unstack i e
+28. put-down i
+29. pick-up e
+30. put-down e",bw,"unstack c i
+put-down c
+unstack i k
+put-down i
+unstack k a
+put-down k
+unstack a e
+put-down a
+unstack e g
+put-down e
+unstack g j
+put-down g
+unstack j d
+put-down j",blocksworld
+BW_502,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up d
+2. stack d h
+3. pick-up h
+4. stack h i
+5. pick-up i
+6. stack i e
+7. put-down i
+8. put-down h
+9. put-down d",bw,"pick-up i
+stack i e
+pick-up h
+stack h i
+pick-up d
+stack d h",blocksworld
+BW_502,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up d
+2. unstack d h
+3. unstack h i
+4. unstack i e
+5. put-down e
+6. put-down h
+7. put-down i
+8. put-down d",bw,"unstack d h
+put-down d
+unstack h i
+put-down h
+unstack i e
+put-down i",blocksworld
+BW_503,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. unstack a g
+3. pick-up g
+4. unstack g f
+5. put-down f
+6. pick-up f
+7. unstack a c
+8. pick-up c
+9. unstack c a
+10. put-down a
+11. pick-up a
+12. unstack c d
+13. pick-up d
+14. unstack d c
+15. put-down c
+16. pick-up c
+17. unstack d h
+18. pick-up h
+19. unstack d c
+20. put-down c
+21. pick-up c
+22. unstack h k
+23. pick-up k
+24. unstack h d
+25. put-down d
+26. pick-up d
+27. unstack k j
+28. pick-up j
+29. unstack k b
+30. pick-up b
+31. unstack j e
+32. pick-up e
+33. unstack j b
+34. put-down b
+35. pick-up b
+36. unstack e i
+37. pick-up i
+38. unstack e l
+39. pick-up l
+40. unstack e i",bw,"pick-up i
+stack i l
+pick-up e
+stack e i
+pick-up b
+stack b e
+pick-up j
+stack j b
+pick-up k
+stack k j
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up f
+stack f g",blocksworld
+BW_503,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up f
+2. unstack f g
+3. pick-up g
+4. unstack g a
+5. put-down g
+6. pick-up a
+7. put-down a
+8. pick-up b
+9. unstack j b
+10. put-down b
+11. pick-up j
+12. unstack k j
+13. put-down j
+14. pick-up k
+15. unstack h k
+16. put-down k
+17. pick-up h
+18. unstack d h
+19. put-down h
+20. pick-up d
+21. unstack c d
+22. put-down d
+23. pick-up c
+24. unstack a c
+25. put-down c
+26. pick-up e
+27. unstack i e
+28. put-down e
+29. pick-up i
+30. unstack l i
+31. put-down i
+32. pick-up l
+33. unstack b l
+34. put-down l
+35. pick-up b",bw,"unstack f g
+put-down f
+unstack g a
+put-down g
+unstack a c
+put-down a
+unstack c d
+put-down c
+unstack d h
+put-down d
+unstack h k
+put-down h
+unstack k j
+put-down k
+unstack j b
+put-down j
+unstack b e
+put-down b
+unstack e i
+put-down e
+unstack i l
+put-down i",blocksworld
+BW_504,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a h
+3. pick-up h
+4. stack h f
+5. pick-up f
+6. stack f k
+7. pick-up k
+8. stack k e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l b",bw,"pick-up l
+stack l b
+pick-up e
+stack e l
+pick-up k
+stack k e
+pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up a
+stack a h",blocksworld
+BW_504,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. unstack a h
+3. unstack h f
+4. unstack f k
+5. unstack k e
+6. unstack e l
+7. unstack l b
+8. put-down a
+9. put-down b
+10. put-down e
+11. put-down f
+12. put-down k
+13. put-down l",bw,"unstack a h
+put-down a
+unstack h f
+put-down h
+unstack f k
+put-down f
+unstack k e
+put-down k
+unstack e l
+put-down e
+unstack l b
+put-down l",blocksworld
+BW_505,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. stack b h
+3. pick-up g
+4. stack g d
+5. pick-up d
+6. stack d c
+7. pick-up c
+8. stack c b",bw,"pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up c
+stack c d",blocksworld
+BW_505,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c d
+3. put-down c
+4. pick-up d
+5. unstack d g
+6. put-down d
+7. pick-up g
+8. unstack g b
+9. put-down g
+10. pick-up b
+11. unstack b h
+12. put-down b",bw,"unstack c d
+put-down c
+unstack d g
+put-down d
+unstack g b
+put-down g
+unstack b h
+put-down b",blocksworld
+BW_506,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. pick-up g
+3. stack g b
+4. put-down g
+5. pick-up b
+6. stack b f
+7. put-down b",bw,"pick-up b
+stack b f
+pick-up g
+stack g b",blocksworld
+BW_506,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up g
+2. unstack g f
+3. put-down f
+4. unstack g b
+5. put-down b",bw,"unstack g b
+put-down g
+unstack b f
+put-down b",blocksworld
+BW_507,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up e
+2. pick-up h
+3. stack h e
+4. pick-up j
+5. stack j h",bw,"pick-up h
+stack h e
+pick-up j
+stack j h",blocksworld
+BW_507,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up e
+2. unstack j h
+3. unstack h e
+4. put-down h
+5. put-down e
+6. put-down j",bw,"unstack j h
+put-down j
+unstack h e
+put-down h",blocksworld
+BW_508,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. stack b g
+3. pick-up c
+4. stack c g
+5. pick-up g
+6. stack g b
+7. pick-up e
+8. stack e c",bw,"pick-up b
+stack b f
+pick-up g
+stack g b
+pick-up c
+stack c g
+pick-up e
+stack e c",blocksworld
+BW_508,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up e
+2. unstack e g
+3. unstack g c
+4. unstack c b
+5. put-down c
+6. unstack g f
+7. put-down g
+8. put-down e
+9. put-down b",bw,"unstack e c
+put-down e
+unstack c g
+put-down c
+unstack g b
+put-down g
+unstack b f
+put-down b",blocksworld
+BW_509,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. stack h d
+3. pick-up d
+4. stack d f
+5. pick-up f
+6. stack f j
+7. pick-up j
+8. stack j i",bw,"pick-up j
+stack j i
+pick-up f
+stack f j
+pick-up d
+stack d f
+pick-up h
+stack h d",blocksworld
+BW_509,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up h
+2. unstack h d
+3. put-down d
+4. pick-up f
+5. unstack f j
+6. put-down j
+7. pick-up i
+8. unstack i",bw,"unstack h d
+put-down h
+unstack d f
+put-down d
+unstack f j
+put-down f
+unstack j i
+put-down j",blocksworld
+BW_510,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a j
+3. pick-up j
+4. stack j c
+5. pick-up c
+6. stack c l
+7. pick-up l
+8. stack l h
+9. pick-up h
+10. stack h i
+11. pick-up i
+12. stack i k",bw,"pick-up h
+stack h i
+pick-up l
+stack l h
+pick-up c
+stack c l
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up k
+stack k j",blocksworld
+BW_510,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up k
+2. unstack k a
+3. pick-up a
+4. unstack a j
+5. pick-up j
+6. unstack j c
+7. pick-up c
+8. unstack c l
+9. pick-up l
+10. unstack l h
+11. pick-up h
+12. unstack h i
+13. pick-up i
+14. put-down i
+15. put-down h
+16. put-down l
+17. put-down c
+18. put-down j
+19. put-down a
+20. put-down k",bw,"unstack k j
+put-down k
+unstack j a
+put-down j
+unstack a c
+put-down a
+unstack c l
+put-down c
+unstack l h
+put-down l
+unstack h i
+put-down h",blocksworld
+BW_511,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up l
+2. stack l k
+3. pick-up k
+4. stack k i
+5. pick-up f
+6. stack f l",bw,"pick-up l
+stack l f
+pick-up k
+stack k l
+pick-up i
+stack i k",blocksworld
+BW_511,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up i
+2. unstack i k
+3. pick-up k
+4. unstack k l
+5. pick-up l
+6. unstack l f
+7. put-down l
+8. put-down k
+9. put-down i",bw,"unstack i k
+put-down i
+unstack k l
+put-down k
+unstack l f
+put-down l",blocksworld
+BW_512,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j e
+5. pick-up e
+6. stack e h
+7. pick-up h
+8. stack h i
+9. pick-up i
+10. stack i f",bw,"pick-up i
+stack i f
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up c
+stack c j",blocksworld
+BW_512,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c j
+3. unstack j e
+4. unstack e h
+5. unstack h i
+6. unstack i f
+7. put-down j
+8. put-down e
+9. put-down h
+10. put-down i
+11. put-down f",bw,"unstack c j
+put-down c
+unstack j e
+put-down j
+unstack e h
+put-down e
+unstack h i
+put-down h
+unstack i f
+put-down i",blocksworld
+BW_513,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c e
+3. pick-up e
+4. stack e f
+5. pick-up f
+6. stack f i
+7. pick-up i
+8. stack i a
+9. pick-up a
+10. stack a d
+11. pick-up d
+12. stack d l",bw,"pick-up d
+stack d l
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up e
+stack e f
+pick-up c
+stack c e",blocksworld
+BW_513,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c e
+3. unstack e f
+4. unstack f i
+5. unstack i a
+6. unstack a d
+7. unstack d l
+8. put-down c
+9. put-down e
+10. put-down f
+11. put-down i
+12. put-down a
+13. put-down d
+14. put-down l",bw,"unstack c e
+put-down c
+unstack e f
+put-down e
+unstack f i
+put-down f
+unstack i a
+put-down i
+unstack a d
+put-down a
+unstack d l
+put-down d",blocksworld
+BW_514,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a g
+7. pick-up g
+8. stack g e
+9. pick-up e
+10. stack e b
+11. pick-up b",bw,"pick-up e
+stack e b
+pick-up g
+stack g e
+pick-up a
+stack a g
+pick-up j
+stack j a
+pick-up c
+stack c j",blocksworld
+BW_514,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c j
+3. unstack j a
+4. unstack a g
+5. unstack g e
+6. unstack e b
+7. put-down c
+8. put-down j
+9. put-down a
+10. put-down g
+11. put-down e
+12. put-down b",bw,"unstack c j
+put-down c
+unstack j a
+put-down j
+unstack a g
+put-down a
+unstack g e
+put-down g
+unstack e b
+put-down e",blocksworld
+BW_515,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a d
+3. pick-up d
+4. stack d i
+5. pick-up i
+6. stack i a
+7. pick-up a
+8. stack a k
+9. pick-up k
+10. stack k e
+11. pick-up e
+12. stack e g",bw,"pick-up d
+stack d i
+pick-up a
+stack a d
+pick-up k
+stack k a
+pick-up e
+stack e k
+pick-up g
+stack g e",blocksworld
+BW_515,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up g
+2. unstack g e
+3. pick-up e
+4. unstack e k
+5. pick-up k
+6. unstack k a
+7. put-down a
+8. pick-up d
+9. unstack d i
+10. put-down d
+11. put-down e
+12. put-down k
+13. put-down g
+14. put-down i",bw,"unstack g e
+put-down g
+unstack e k
+put-down e
+unstack k a
+put-down k
+unstack a d
+put-down a
+unstack d i
+put-down d",blocksworld
+BW_E002,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b a",bw,"pick-up a 
+stack a c 
+pick-up b 
+stack b a",blocksworld
+BW_E002,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c b
+3. put-down c
+4. pick-up b
+5. unstack b a
+6. put-down b
+7. pick-up a
+8. put-down a",bw,"unstack b a
+put-down b
+unstack a c
+put-down a",blocksworld
+BW_E015,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. unstack c b
+3. stack c a
+4. put-down a
+5. pick-up b
+6. stack a b",bw,"unstack c b
+put-down c
+pick-up a
+stack a b",blocksworld
+BW_E015,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. unstack a b
+3. put-down a
+4. pick-up b
+5. unstack b c
+6. put-down b
+7. stack c b",bw,"unstack a b
+put-down a
+pick-up c
+stack c b",blocksworld
+BW_E017,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a",bw,"pick-up a
+stack a b
+pick-up c
+stack c a",blocksworld
+BW_E017,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. unstack c b
+3. put-down c
+4. pick-up a
+5. unstack b a
+6. put-down a
+7. pick-up b
+8. put-down b",bw,"unstack c a
+put-down c
+unstack a b
+put-down a",blocksworld
+BW_E019,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. unstack a b
+3. stack a c
+4. put-down a
+5. pick-up b
+6. stack b a",bw,"unstack a b
+stack a c
+pick-up b
+stack b a",blocksworld
+BW_E019,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c b
+3. put-down c
+4. pick-up a
+5. unstack a b
+6. put-down a
+7. pick-up b
+8. put-down b",bw,"unstack b a
+put-down b
+unstack a c
+stack a b",blocksworld
+BW_E100,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. unstack c a
+3. stack c b
+4. stack b a",bw,"pick-up b
+stack b c",blocksworld
+BW_E100,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. unstack a c
+3. put-down a
+4. pick-up b
+5. unstack b c
+6. put-down b
+7. stack c a",bw,"unstack b c
+put-down b",blocksworld
+BW_E_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a i
+3. pick-up i
+4. stack i c
+5. pick-up c
+6. stack c f
+7. pick-up f
+8. stack f j
+9. pick-up j
+10. stack j b",bw,"pick-up j
+stack j b
+pick-up f
+stack f j
+pick-up c
+stack c f
+pick-up i
+stack i c
+pick-up a
+stack a i",blocksworld
+BW_E_001,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a
+5. pick-up b
+6. stack b f
+7. pick-up d
+8. put-down d
+9. pick-up e
+10. stack e d
+11. pick-up f
+12. stack f e",bw,"pick-up e
+stack e d
+pick-up f
+stack f e
+pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up c
+stack c a",blocksworld
+BW_E_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up b
+2. stack b h
+3. pick-up g
+4. stack b g
+5. pick-up i
+6. stack g i
+7. unstack h b
+8. stack h g",bw,"pick-up g
+stack g i
+pick-up b
+stack b g
+pick-up h
+stack h b",blocksworld
+BW_E_002,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a
+5. pick-up d
+6. stack d b
+7. unstack c a
+8. stack c d",bw,"pick-up b
+stack b d
+pick-up a
+stack a b
+pick-up c
+stack c a",blocksworld
+BW_E_003,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"1. pick-up d
+2. stack d j
+3. pick-up i
+4. stack i d
+5. pick-up c
+6. stack c i
+7. pick-up g
+8. stack g c",bw,"pick-up d
+stack d j
+pick-up i
+stack i d
+pick-up c
+stack c i
+pick-up g
+stack g c",blocksworld
+BW_E_003,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a c
+3. pick-up c
+4. stack c e
+5. pick-up e
+6. stack e a
+7. pick-up b
+8. stack b d
+9. pick-up d
+10. stack d b",bw,"pick-up e
+stack e a
+pick-up c
+stack c e
+pick-up b
+stack b c
+pick-up d
+stack d b",blocksworld
+BW_E_004,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a h
+3. pick-up h
+4. stack h k
+5. pick-up k
+6. stack k i
+7. pick-up i
+8. stack i e
+9. pick-up e
+10. stack e d
+11. pick-up d
+12. stack d g
+13. pick-up g
+14. stack g l",bw,"pick-up g
+stack g l
+pick-up d
+stack d g
+pick-up e
+stack e d
+pick-up i
+stack i e
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up a
+stack a h",blocksworld
+BW_E_004,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a f
+3. pick-up b
+4. stack b e
+5. pick-up c
+6. stack c b
+7. pick-up d
+8. stack d c
+9. pick-up e
+10. stack e g
+11. pick-up f
+12. stack f h
+13. pick-up g
+14. stack g a
+15. pick-up h
+16. put-down h
+17. unstack g a
+18. put-down g
+19. unstack e g
+20. put-down e
+21. unstack d c
+22. put-down d
+23. unstack c b
+24. put-down c
+25. unstack b e
+26. put-down b
+27. unstack a f
+28. put-down a",bw,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up g
+stack g a
+pick-up e
+stack e g
+pick-up b
+stack b e
+pick-up c
+stack c b
+pick-up d
+stack d c",blocksworld
+BW_E_005,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up c
+2. stack c l
+3. pick-up l
+4. stack l d
+5. pick-up d
+6. stack d e
+7. pick-up e
+8. stack e f",bw,"pick-up e
+stack e f
+pick-up d
+stack d e
+pick-up l
+stack l d
+pick-up c
+stack c l",blocksworld
+BW_E_005,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. pick-up a
+2. stack a b
+3. pick-up b
+4. stack b d
+5. pick-up d
+6. stack d e
+7. pick-up e
+8. stack e c
+9. pick-up c
+10. stack c b",bw,"pick-up e
+stack e c
+pick-up d
+stack d e
+pick-up b
+stack b d
+pick-up a
+stack a b",blocksworld
+GSM_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"20 * 0.9 = 18
+66 * 0.5 = 33
+18 + 33 = 51
+51",gsm,51,gsm
+GSM_001,W5,meta-llama/Llama-3.1-8B-Instruct,False,"20 + (51 - 18) / 0.5
+= 20 + 33
+= 53",gsm,86,gsm
+GSM_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,18 + (2/3 * 18) = 18 + 12 = 30,gsm,30,gsm
+GSM_002,W5,meta-llama/Llama-3.1-8B-Instruct,True,18,gsm,18,gsm
+GSM_003,canonical,meta-llama/Llama-3.1-8B-Instruct,False,30 + (50/100 * 30) + (30 + (50/100 * 30)) = 30 + 15 + 45 = 90,gsm,150,gsm
+GSM_003,W5,meta-llama/Llama-3.1-8B-Instruct,False,50,gsm,75,gsm
+GSM_004,canonical,meta-llama/Llama-3.1-8B-Instruct,False,52 * 2 * 6 * 150 = 93600,gsm,21600,gsm
+GSM_004,W5,meta-llama/Llama-3.1-8B-Instruct,False,3660,gsm,150,gsm
+GSM_005,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"60 * 7 = 420 minutes per day
+420 * 6 = 2520 minutes per week for classes
+1/7 * 2520 = 360 minutes per week for extra learning time
+2520 + 360 = 2880 minutes per week
+2880 / 60 = 48 hours per week",gsm,54,gsm
+GSM_005,W5,meta-llama/Llama-3.1-8B-Instruct,False,60,gsm,7,gsm
+GSM_006,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the final value of Kayla's shares, we need to calculate the value after the first year and then the value after the second year.
+
+Initial value of shares = 10 shares * €56 = €560
+
+After the first year, the stock price increases by 30%:
+New value = €560 + (30% of €560) = €560 + €168 = €728
+
+After the second year, the stock price decreases by 25%:
+New value = €728 - (25% of €728) = €728 - €182 = €546
+
+The final value of Kayla's shares is €546.",gsm,546,gsm
+GSM_006,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the original price per share as x.
+
+After the first year, the price per share increased by 30%, so the new price per share is 1.3x.
+
+After the second year, the price per share decreased by 25%, so the final price per share is 0.75(1.3x) = 0.975x.
+
+Since Kayla has 10 shares, the total value of her shares is 10 * 0.975x = 546.
+
+Now, we can solve for x:
+10 * 0.975x = 546
+9.75x = 546
+x = 546 / 9.75
+x = 55.85",gsm,56,gsm
+GSM_007,canonical,meta-llama/Llama-3.1-8B-Instruct,False,2,gsm,30,gsm
+GSM_007,W5,meta-llama/Llama-3.1-8B-Instruct,False,3,gsm,4,gsm
+GSM_008,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we can use the formula for exponential growth:
+
+A = P(1 + r)^t
+
+Where:
+A = final amount
+P = initial amount (16 people)
+r = growth rate (3 people per person per day)
+t = time (3 days)
+
+A = 16(1 + 3)^3
+A = 16(4)^3
+A = 16 * 64
+A = 1024
+
+However, this formula assumes that the growth is continuous. Since the growth is discrete (each person infects 3 others each day), we need to use a different approach.
+
+Let's calculate the number of people infected each day:
+
+Day 1: 16 people (initially infected) + 16 * 3 = 16 + 48 = 64 people
+Day 2: 64 people (infected on Day 1) + 64 * 3 = 64 + 192 = 256 people
+Day 3: 256 people (infected on Day 1 and 2) + 256 * 3 = 256 + 768 = 1024 people
+
+However, this counts the people who were infected on Day 1 twice (once for each day they",gsm,1024,gsm
+GSM_008,W5,meta-llama/Llama-3.1-8B-Instruct,False,1024 / 3^3 = 1024 / 27 = 37.93 (round down to 37.94 is not possible since you can't have a fraction of a person),gsm,16,gsm
+GSM_009,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of eggs Nia eats in 108 days, we need to calculate the total number of eggs she eats in the first 84 days and the next 24 days, then add them together.
+
+In the first 84 days, Nia eats 5 eggs a day for 84 days. 
+5 eggs/day * 84 days = 420 eggs
+
+In the next 24 days, Nia eats 7 eggs a day.
+7 eggs/day * 24 days = 168 eggs
+
+Total number of eggs = 420 + 168 = 588 eggs
+
+Since 1 dozen = 12 eggs, we need to divide the total number of eggs by 12 to get the number of dozens.
+588 / 12 = 49",gsm,49,gsm
+GSM_009,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the initial number of eggs Nia eats per day as x. 
+
+In the first 84 days, she eats 84x eggs. 
+In the remaining 24 days, she eats 24 * 7 = 168 eggs.
+
+The total number of eggs she eats is 49 * 12 = 588 (since 1 dozen = 12 eggs).
+
+So, we can set up the equation: 84x + 168 = 588
+
+Subtract 168 from both sides: 84x = 420
+
+Divide both sides by 84: x = 5",gsm,5,gsm
+GSM_010,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"60 + (4 * 60) + (6 * 4 * 60) + (0.5 * 6 * 4 * 60) + (0.25 * 0.5 * 6 * 4 * 60) = 
+60 + 240 + 1440 + 360 + 180 = 2080",gsm,885,gsm
+GSM_010,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of kernels that popped in the first 30 seconds as x.
+
+In the first 30 seconds, x kernels pop.
+In the next 30 seconds, 4x kernels pop.
+In the third 30 seconds, 6x kernels pop.
+In the fourth 30 seconds, the rate halves from the previous interval, so 3x kernels pop.
+After removing from heat, a quarter of the final 30 seconds amount also pops, which is 3x/4 kernels.
+
+The total number of kernels that popped is x + 4x + 6x + 3x + 3x/4 = 885.
+
+To solve for x, we can multiply the entire equation by 4 to get rid of the fraction:
+4x + 16x + 24x + 12x + 3x = 4 * 885
+55x = 3540
+
+Now, divide both sides by 55:
+x = 3540 / 55
+x = 64.36
+
+Since the number of kernels must be a whole number, we round down to the nearest whole number because you can't have a fraction of a kernel.",gsm,60,gsm
+GSM_011,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find out how much water Pavel has left, we need to calculate the total amount of water used for each type of cube and subtract that from the total amount of water he has.
+
+Giant cubes: 8 * 12 = 96 grams
+Medium cubes: 13 * 11 = 143 grams
+Small cubes: 15 * 0.2 = 3 grams
+
+Total water used: 96 + 143 + 3 = 242 grams
+
+Water left: 328 - 242 = 86 grams.",gsm,86,gsm
+GSM_011,W5,meta-llama/Llama-3.1-8B-Instruct,False,"8 * 12 = 96 
+15 * 0.2 = 3 
+13 * 11 = 143 
+96 + 3 + 143 = 242 
+86 + 242 = 328",gsm,328,gsm
+GSM_012,canonical,meta-llama/Llama-3.1-8B-Instruct,False,29 + (7 * 52) - (6 * 52) = 29 + 364 - 312 = 81,gsm,81,gsm
+GSM_012,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the original number of plants on each ledge as x.
+
+Since Camila had an equal number of plants on each of her 52 window ledges, the total number of plants she had before receiving the new plants is 52x.
+
+Two days ago, she received 29 new plants, so the total number of plants she had is 52x + 29.
+
+Now, she has 81 plants in total. After giving away 6 plants from each ledge, the total number of plants she has is 52x - 6*52 = 52x - 312.
+
+We can set up the equation: 52x + 29 = 81 + 312
+
+52x + 29 = 393
+
+52x = 364
+
+x = 364 / 52
+
+x = 7",gsm,7,gsm
+GSM_013,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to first find Mia's speed on the beach and on the sidewalk. 
+
+Let's assume her speed on the beach is x km/h. Then, her speed on the sidewalk is 2x km/h.
+
+Since she walks 12 km on the beach, the time it takes her to walk on the beach is 12/x hours. Since she walks 12 km on the sidewalk, the time it takes her to walk on the sidewalk is 12/(2x) hours.
+
+We are given that 60 minutes of her walk is spent on the beach. We need to convert this to hours: 60 minutes = 1 hour.
+
+So, we can set up the equation: 12/x = 1.
+
+Solving for x, we get x = 12 km/h.
+
+Now, we can find the time it takes her to walk on the sidewalk: 12/(2x) = 12/(2*12) = 0.5 hours.
+
+The total time it takes her to complete the entire 24-kilometer walk is 1 + 0.5 = 1.5 hours.
+
+To convert this to minutes, we multiply by 60: 1.5 * 60 = 90",gsm,90,gsm
+GSM_013,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the distance on the beach as x. 
+
+Since she walks at twice the speed on the sidewalk as on the beach, her speed on the sidewalk is 2x.
+
+Time on the beach = 60 minutes, time on the sidewalk = 90 - 60 = 30 minutes.
+
+Since distance = speed * time, we can set up the following equations:
+
+x / 60 = 2x / 30 (since distance on the beach = distance on the sidewalk)
+
+Solving for x, we get:
+x = 60 * 30 / 120
+x = 15
+
+Since distance on the beach = x = 15 km, and distance on the sidewalk = 2x = 30 km, the total distance is 15 + 30 = 45 km.",gsm,24,gsm
+GSM_014,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"210 floors / 10 days = 21 floors per day
+21 floors / 10 hours = 2.1 floors per hour
+10 hours * 60 minutes = 600 minutes per day
+2.1 floors * 20 minutes per floor = 42 minutes per day spent cleaning floors
+(42 minutes / 600 minutes) * 100 = 7%",gsm,70,gsm
+GSM_014,W5,meta-llama/Llama-3.1-8B-Instruct,False,"10 * 0.7 = 7 hours spent cleaning per day
+7 hours * 60 minutes/hour = 420 minutes spent cleaning per day
+420 minutes / 20 minutes/floor = 21 floors per day
+21 floors/day * 10 days = 210 floors",gsm,210,gsm
+GSM_015,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total amount Viktor will make, we need to round the prices of each plant to the nearest dollar and multiply by the number of bundles sold.
+
+Tulips: $2.25 rounded to the nearest dollar is $2
+Roses: $5.13 rounded to the nearest dollar is $5
+Sunflowers: $5.47 rounded to the nearest dollar is $5
+
+Now, let's calculate the total amount for each plant:
+Tulips: 12 bundles * $2 = $24
+Roses: 29 bundles * $5 = $145
+Sunflowers: 37 bundles * $5 = $185
+
+Now, let's add the total amount for each plant:
+$24 + $145 + $185 = $354",gsm,354,gsm
+GSM_015,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of sunflowers sold, we first need to find the total amount of money made from selling tulips and roses. 
+
+12 bundles of tulips at €2 per bundle is 12 * 2 = €24.
+29 bundles of roses at €5 per bundle is 29 * 5 = €145.
+
+Total money made from tulips and roses is 24 + 145 = €169.
+
+Viktor made €354 in total. So, the money made from sunflowers is 354 - 169 = €185.
+
+Since sunflowers are sold at €5 per bundle, we divide the total money made from sunflowers by 5 to find the number of bundles sold.
+185 / 5 = 37.",gsm,37,gsm
+GSM_016,canonical,meta-llama/Llama-3.1-8B-Instruct,False,120,gsm,5,gsm
+GSM_016,W5,meta-llama/Llama-3.1-8B-Instruct,False,"120 * 3 * 5 = 1800 pounds of capacity per trip
+6 * 4 = 24 pounds of wheat
+12 * 5 = 60 pounds of cucumbers
+18 * 15 = 270 pounds of corns
+43 + 27 = 70 pounds of grocery and tools
+24 + 60 + 270 + 70 = 324 pounds of other items
+1800 - 324 = 1476 pounds of remaining capacity
+32x = 1476
+x = 1476 / 32
+x = 46.25",gsm,43,gsm
+GSM_017,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to find the total earnings for each day and then find the average.
+
+Let's denote the number of boxes of cookies sold on Friday as C and the number of boxes of orange pie sold on Friday as P.
+
+On Friday, Liam sold C boxes of cookies and P boxes of orange pie.
+On Saturday, he sold C + 11 boxes of cookies and P - 13 boxes of orange pie.
+On Sunday, he sold (C + 11) + (C + 11) boxes of cookies and (P - 13) + (P - 13) boxes of orange pie.
+
+We know that on Saturday, he sold 22 boxes of orange pie, so P - 13 = 22.
+P = 35
+
+We also know that on Saturday, he sold 11 more boxes of cookies than on Friday, so C + 11 = C + 11.
+This equation is true for any value of C, so we can't find a specific value for C.
+
+However, we can find the total number of boxes of cookies and orange pie sold on each day.
+On Friday, Liam sold C boxes of cookies and 35 - 13 = 22 boxes of orange pie.
+On Saturday, he sold C",gsm,922,gsm
+GSM_017,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of boxes of cookies sold on Friday as x. 
+
+On Friday, Liam sold x boxes of cookies and (22 - 13) = 9 boxes of orange pie. 
+On Saturday, he sold (x + 11) boxes of cookies and 22 boxes of orange pie. 
+On Sunday, he sold (x + x + 11) boxes of cookies and (9 + 22) boxes of orange pie.
+
+The total earnings from cookies on the three days is 3 * 922 = 2766. 
+The total earnings from cookies is 12 * (x + x + 11 + x) = 12 * (3x + 11) = 36x + 132.
+
+The total earnings from orange pie is 9 + 22 + (9 + 22) = 62. 
+Let's denote the price of each box of orange pie as y. 
+The total earnings from orange pie is 62y.
+
+The total earnings from cookies and orange pie is 2766. 
+So, 36x + 132 + 62y = 2766.
+
+The total number of boxes of cookies sold is x + (x + 11) + (x + x +",gsm,21,gsm
+GSM_018,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of points Emma is sure to get, we need to calculate the number of questions in each category and multiply it by the percentage she is sure to get.
+
+Physics questions: 80 * 0.25 = 20
+Algebra questions: 80 * 0.15 = 12
+Chemistry and history questions: 80 * 0.60 = 48 (since 100% - 25% - 15% = 60%)
+Chemistry questions: 48 / 2 = 24
+History questions: 48 / 2 = 24
+
+Emma is sure to get:
+- 10% of 20 physics questions: 0.10 * 20 = 2
+- 25% of 12 algebra questions: 0.25 * 12 = 3
+- 1/3 of 24 chemistry questions: 24 * (1/3) = 8
+- 1/3 of 24 history questions: 24 * (1/3) = 8
+
+Total points: 2 + 3 + 8 + 8 = 21",gsm,21,gsm
+GSM_018,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the total number of questions as x.
+
+Physics makes up 25% of the quiz, so the number of physics questions is 0.25x.
+Algebra makes up 15% of the quiz, so the number of algebra questions is 0.15x.
+The remaining questions are equally divided between chemistry and history, so the number of chemistry and history questions is (x - 0.25x - 0.15x)/2 = 0.1x.
+
+Emma gets 10% of physics questions correct, so she gets 0.1 * 0.25x = 0.025x physics questions correct.
+Emma gets 25% of algebra questions correct, so she gets 0.25 * 0.15x = 0.0375x algebra questions correct.
+Emma gets 1/3 of chemistry questions correct, so she gets (1/3) * 0.1x = 0.0333x chemistry questions correct.
+Emma gets 1/3 of history questions correct, so she gets (1/3) * 0.1x = 0.0333x history questions correct.
+
+The total number of questions Emma gets correct is 0.025x +",gsm,80,gsm
+GSM_019,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to calculate the total time Tariq watched TV and subtract the time he watched on other days to find out how much time he spent on Sunday.
+
+Friday and Saturday: 2 nights * 3 hours/night = 6 hours
+Monday: 4 hours + 0.25 hours = 4.25 hours
+Tuesday: 4 * 2 hours = 8 hours
+Wednesday: 3 * 0.5 hours = 1.5 hours
+
+Total time watched on other days: 6 + 4.25 + 8 + 1.5 = 19.75 hours
+
+Total time watched: 22 hours
+Time watched on Sunday: 22 - 19.75 = 2.25 hours
+
+Since each episode is 45 minutes, we need to convert 2.25 hours to minutes: 2.25 * 60 = 135 minutes
+Now, we need to find out how many 45-minute episodes fit into 135 minutes: 135 / 45 = 3",gsm,3,gsm
+GSM_019,W5,meta-llama/Llama-3.1-8B-Instruct,False,"45 * 3 = 135 minutes
+135 + (3 * 180) = 135 + 540 = 675 minutes
+675 + (4 * 240) = 675 + 960 = 1635 minutes
+1635 + (3 * 30) = 1635 + 90 = 1725 minutes
+1725 + 15 = 1740 minutes
+1740 / 60 = 29 hours",gsm,22,gsm
+GSM_020,canonical,meta-llama/Llama-3.1-8B-Instruct,False,Ava finds 3 eggs. Quinn finds 6 * 3 = 18 eggs. Sophia finds 18 - 3 = 15 eggs. Esteban finds 15 / 5 = 3 eggs. Quinn and Ava combined find 3 + 18 = 21 eggs. Fatima finds 21 + 12 = 33 eggs. Total eggs found is 3 + 18 + 15 + 3 + 33 = 72. Total eggs hidden is 12 * 10 = 120. Eggs still hidden is 120 - 72 = 48.,gsm,24,gsm
+GSM_020,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to break it down step by step.
+
+1. Ava found 3 eggs.
+2. Quinn found 6 times as many as Ava, so Quinn found 6 * 3 = 18 eggs.
+3. Sophia found 3 less than Quinn, so Sophia found 18 - 3 = 15 eggs.
+4. Esteban found 1/5 as many as Sophia, so Esteban found 15 / 5 = 3 eggs.
+5. Fatima found three dozen eggs more than Quinn and Ava combined. Quinn and Ava found 3 + 18 = 21 eggs. Three dozen is 36, so Fatima found 21 + 36 = 57 eggs.
+6. The total number of eggs found is 3 + 18 + 15 + 3 + 57 = 96 eggs.
+7. Since 24 eggs are still hidden, the total number of eggs originally hidden is 96 + 24 = 120.
+8. Since there are 12 eggs in a dozen, the number of dozen eggs originally hidden is 120 / 12 = 10.",gsm,10,gsm
+GSM_041,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"19 + 7 = 26. 
+Since the number that like to hike is twice the number that prefer playing football, the number that like to hike is 7 * 2 = 14. 
+The total number of students that like to either bake or hike is 190 - 26 = 164. 
+The number that like to bake is 164 - 14 = 150.",gsm,150,gsm
+GSM_041,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of students, we need to add the number of students who like to paint, play football, bake, and hike. 
+
+Let's denote the number of students who like to hike as x. Since it's twice the number that prefer playing football, x = 2 * 7 = 14.
+
+The number of students who like to paint is 19, the number who like to play football is 7, the number who like to bake is 150, and the number who like to hike is 14.
+
+Total number of students = 19 + 7 + 150 + 14 = 190.",gsm,190,gsm
+GSM_042,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"30 * 94 = 2820 
+2820 / 12 = 235",gsm,2820,gsm
+GSM_042,W5,meta-llama/Llama-3.1-8B-Instruct,False,2820 / 30 = 94,gsm,94,gsm
+GSM_043,canonical,meta-llama/Llama-3.1-8B-Instruct,False,640 * (1/8) * (1/10) = 8,gsm,8,gsm
+GSM_043,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of balls, we first need to find the total number of tennis balls. 
+
+Let's say the total number of tennis balls is x. Since 1/10 of the tennis balls are white, and 8 of the tennis balls are white, we can set up the equation:
+
+1/10 * x = 8
+
+To solve for x, we multiply both sides by 10:
+
+x = 8 * 10
+x = 80
+
+Now that we know there are 80 tennis balls, and an eighth of the balls are tennis balls, we can set up another equation:
+
+1/8 * total_balls = 80
+
+To solve for total_balls, we multiply both sides by 8:
+
+total_balls = 80 * 8
+total_balls = 640",gsm,640,gsm
+GSM_044,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"71 + 45 + 29 = 105. 
+204 - 105 = 99.",gsm,59,gsm
+GSM_044,W5,meta-llama/Llama-3.1-8B-Instruct,False,204 - 71 - 29 - 59 = 45,gsm,45,gsm
+GSM_045,canonical,meta-llama/Llama-3.1-8B-Instruct,False,205 + 97 + 4 * 205 = 205 + 97 + 820 = 1122,gsm,1122,gsm
+GSM_045,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1122 - 97 - 388 = 637 
+637 / 4 = 159.25",gsm,205,gsm
+GSM_046,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total calories you can consume, subtract the calories you've already consumed from your daily target: 
+2395 - 1350 = 1045 calories
+
+Since each serving has 475 calories, divide the remaining calories by the calories per serving:
+1045 / 475 = 2.2 servings
+
+Since the bag has 5 servings, multiply the number of servings you can eat by the total ounces in the bag:
+2.2 * 275 = 605 ounces",gsm,121,gsm
+GSM_046,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total ounces in the bag, we first need to find the total calories you can consume. 
+
+Your daily calorie target is 2395, and you have already consumed 1350 calories. 
+
+2395 - 1350 = 1045 calories left to consume.
+
+You can eat 121 ounces from the bag per serving, and each serving has 475 calories. 
+
+To find the number of servings you can eat, divide the calories left by the calories per serving:
+1045 / 475 = 2.2 servings
+
+Since you can eat 121 ounces per serving, multiply the number of servings by the ounces per serving:
+2.2 * 121 = 264.2 ounces
+
+However, the bag contains 5 servings. To find the total ounces in the bag, multiply the ounces per serving by the total number of servings:
+121 * 5 = 605 ounces",gsm,275,gsm
+GSM_047,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1800 * (1 - 1/4) = 1350 rooms initially unoccupied
+1350 * 7 = 9450 rooms unoccupied per week
+9450 * 3 = 28350 rooms unoccupied in 3 weeks
+28350 + 40 * 21 = 28350 + 840 = 29190",gsm,510,gsm
+GSM_047,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to find the total number of rooms in the clinic. 
+
+Let's denote the total capacity of the clinic as C. 
+
+Since 1/4 of the rooms are occupied, 3/4 of the rooms are unoccupied. 
+
+After 3 weeks, 40 patients are admitted each day, so 40 * 21 = 840 patients are admitted in total. 
+
+Since 3/4 of the rooms are unoccupied, the number of unoccupied rooms is 3C/4. 
+
+We know that 3C/4 - 840 = 510 (since 510 rooms are unoccupied after 840 patients are admitted).
+
+Now, let's solve for C:
+
+3C/4 - 840 = 510
+3C/4 = 1350
+C = 1350 * 4 / 3
+C = 1800
+
+The final answer is: 1800",gsm,1800,gsm
+GSM_048,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total cost, we need to calculate the cost of the tea and the cost of the bagel.
+
+The normal brand of tea costs ₺20 per kilogram. Since Hiroshi uses 1 kilogram of tea per day, a week's worth of tea would be 7 kilograms. The cost of the normal brand of tea would be 7 * 20 = ₺140.
+
+The more expensive brand of tea costs 45% more than the normal brand. 45% of 20 is 0.45 * 20 = ₺9. So the more expensive brand costs 20 + 9 = ₺29 per kilogram.
+
+A week's worth of the more expensive brand would be 7 * 29 = ₺203.
+
+The total cost of the tea is 140 + 203 = ₺343.
+
+The cost of the bagel is ₺3.
+
+The total cost is 343 + 3 = ₺346.",gsm,206,gsm
+GSM_048,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the cost of the normal brand of tea as x. 
+
+The cost of the more expensive brand is 1.45x (45% more than the normal brand).
+
+Hiroshi buys a week's worth of tea, which is 7 kilograms. 
+
+The total cost of the tea is 7x + 7(1.45x) = 7x + 10.15x = 17.15x.
+
+He also buys a bagel for ₺3.
+
+The total cost is ₺206, so we can set up the equation: 17.15x + 3 = 206.
+
+Subtract 3 from both sides: 17.15x = 203.
+
+Divide both sides by 17.15: x = 11.83.",gsm,20,gsm
+GSM_049,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"First, let's find the total number of apartments in the first 2 complexes: 450 * 2 = 900 apartments.
+The last complex is 20% bigger than the other 2 combined, so it has 900 * 1.2 = 1080 apartments.
+The total number of apartments is 900 + 1080 = 1980 apartments.
+Umar collects garbage 2 times a week from each place, so he collects from 1980 * 2 = 3960 apartments per week.
+He gets paid ₣0.45 per collection for each apartment, so he makes 3960 * 0.45 = ₣1788 per week.",gsm,1782,gsm
+GSM_049,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of apartments in the first 2 complexes as x. 
+
+The total number of apartments in the first 2 complexes is 2x. 
+The number of apartments in the last complex is 1.2 * 2x = 2.4x (20% bigger than 2x).
+
+The total number of apartments is 2x + 2.4x = 4.4x.
+
+Umar collects garbage 2 times a week from each place, so the total number of collections per week is 2 * (2x + 2.4x + 2.4x) = 2 * 6.8x = 13.6x.
+
+Umar gets paid ₣0.45 per collection, so the total amount of money he makes per week is 13.6x * 0.45 = 6.12x.
+
+We know that Umar makes ₣1782 in a week, so we can set up the equation 6.12x = 1782.
+
+To solve for x, we divide both sides by 6.12: x = 1782 / 6.12 = 291.
+
+The number of apartments in each of the first 2",gsm,450,gsm
+GSM_050,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the combined length of the remaining remoras, we first need to find the number of remoras that remain. 
+
+There are 16 remoras, and a quarter of them go away. A quarter of 16 is 16 / 4 = 4. So, 4 remoras go away, and 16 - 4 = 12 remoras remain.
+
+Each remora is 12 inches long, so the combined length of the remaining remoras is 12 * 12 = 144 inches.
+
+To find the percentage of the dolphin's body length that the combined length of the remaining remoras is, we need to divide the combined length of the remaining remoras by the length of the dolphin and multiply by 100.
+
+The length of the dolphin is 60 feet, which is 60 * 12 = 720 inches.
+
+The percentage is (144 / 720) * 100 = 20.",gsm,20,gsm
+GSM_050,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of remoras as R. 
+
+The combined length of the remoras is 12R inches. Since a quarter of the remoras go away, the remaining remoras are (3/4)R. 
+
+The combined length of the remaining remoras is 20% of the dolphin's body length, which is 0.2 * 60 = 12 feet = 144 inches. 
+
+So, the combined length of the remaining remoras is 144 inches. 
+
+We can set up the equation: 12 * (3/4)R = 144. 
+
+Solving for R, we get: 
+12 * (3/4)R = 144 
+9R = 144 
+R = 144 / 9 
+R = 16 
+
+The answer is 16.",gsm,16,gsm
+GSM_051,canonical,meta-llama/Llama-3.1-8B-Instruct,False,40,gsm,256,gsm
+GSM_051,W5,meta-llama/Llama-3.1-8B-Instruct,False,256 / 32 = 8,gsm,80,gsm
+GSM_052,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the probability of rolling a number greater than 6, we have 6 favorable outcomes (7, 8, 9, 10, 11, 12) out of 12 possible outcomes. So the probability is 6/12 = 0.5 or 50%.
+
+To find the probability of rolling four odd numbers in a row, we have 3 favorable outcomes (1, 3, 5) for each roll, so the probability of rolling four odd numbers in a row is (3/12)^4 = 81/20736 = 0.0039 or 0.39%.
+
+The difference in probability is 50% - 0.39% = 49.61%.",gsm,43.75,gsm
+GSM_052,W5,meta-llama/Llama-3.1-8B-Instruct,True,There are 6 odd numbers on a d12 die.,gsm,6,gsm
+GSM_053,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To solve this problem, we need to first find the total number of cups of water and tablespoons of milk used. 
+
+Let's start by finding the number of cups of water used. Since the ratio of sugar to water is 63:21, the total number of parts is 63 + 21 = 84. The fraction of water in the mixture is 21/84. 
+
+Since Kimia used 630 teaspoons of sugar, we can set up the following proportion: 
+63/84 = 630/x, where x is the total number of parts of the mixture. 
+
+Solving for x, we get x = 630 * 84 / 63 = 980. 
+
+Since the fraction of water in the mixture is 21/84, the number of cups of water used is 21/84 * 980 = 245. 
+
+Now, we know that for every 7 cups of water, 7 tablespoons of milk are used. So, the number of tablespoons of milk used is 7 * 245 / 7 = 245. 
+
+The total number of parts of the mixture is 980. The number of teaspoons of sugar used is 63/84 * 980 = 735.",gsm,378,gsm
+GSM_053,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of cups of water, we first need to find the ratio of sugar to water. The ratio of sugar to water is 63:21, which can be simplified to 21:7. 
+
+Since Kimia used 378 teaspoons of sugar, we can set up a proportion to find the number of cups of water: 
+21/7 = 378/x, where x is the number of cups of water. 
+
+Cross-multiplying, we get 21x = 378 * 7. 
+21x = 2646 
+x = 2646 / 21 
+x = 126 
+
+Now that we know the number of cups of water, we can find the number of tablespoons of milk. Since Kimia uses 7 tablespoons of milk for every 7 cups of water, she used 126 / 7 = 18 tablespoons of milk.
+
+Now we can find the total number of teaspoons of sugar, cups of water, and tablespoons of milk she used: 
+Teaspoons of sugar: 378 
+Cups of water: 126 
+Tablespoons of milk: 18",gsm,630,gsm
+GSM_054,canonical,meta-llama/Llama-3.1-8B-Instruct,False,0.6 * 10 + 0.4 * 20 + 0.1 * 40 = 6 + 8 + 4 = 18,gsm,16,gsm
+GSM_054,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of minutes from the start of the call when the price drops to $0.1 per two minutes as x.
+
+The cost of the first 10 minutes is 10 * 0.6 = 6 dollars.
+The cost of the next (x - 10) minutes is (x - 10) * 0.4 = 0.4x - 4 dollars.
+The cost of the remaining (70 - x) minutes is (70 - x) / 2 * 0.1 = 3.5 - 0.05x dollars.
+
+The total cost of the call is 16 dollars, so we can set up the equation:
+6 + 0.4x - 4 + 3.5 - 0.05x = 16
+
+Combine like terms:
+0.35x + 5.5 = 16
+
+Subtract 5.5 from both sides:
+0.35x = 10.5
+
+Divide both sides by 0.35:
+x = 30",gsm,30,gsm
+GSM_055,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total almonds that can be placed on the tables and bowls, we first need to find the capacity of the tables and bowls.
+
+Each table can hold 24 almonds, and there are 11 tables, so the total capacity of the tables is 24 * 11 = 264 almonds.
+
+Each bowl can hold 2 times the capacity of a table, so each bowl can hold 24 * 2 = 48 almonds. There are 3 bowls, so the total capacity of the bowls is 48 * 3 = 144 almonds.
+
+The total capacity of the tables and bowls is 264 + 144 = 408 almonds.
+
+Theo has 621 almonds initially. He eats a third of them, so he eats 621 / 3 = 207 almonds.
+
+After eating, he has 621 - 207 = 414 almonds left.
+
+The number of almonds that won't fit on the tables and bowls is 414 - 408 = 6.",gsm,6,gsm
+GSM_055,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the original number of almonds as x.
+
+Since each table can hold 24 almonds and there are 11 tables, the total capacity of the tables is 11 * 24 = 264 almonds.
+
+Each bowl can hold 2 times the capacity of a table, so each bowl can hold 2 * 24 = 48 almonds. There are 3 bowls, so the total capacity of the bowls is 3 * 48 = 144 almonds.
+
+The total capacity of the tables and bowls is 264 + 144 = 408 almonds.
+
+After eating a third of the almonds, Theo has 6 almonds left. This means that before eating, he had 6 + (1/3)x almonds.
+
+Since the total capacity of the tables and bowls is 408, we can set up the equation:
+
+6 + (1/3)x = 408
+
+To solve for x, we can multiply both sides by 3:
+
+18 + x = 1224
+
+Subtracting 18 from both sides:
+
+x = 1206",gsm,621,gsm
+GSM_056,canonical,meta-llama/Llama-3.1-8B-Instruct,False,263 - 35 - 26 - 27 - 2*(26 + 27) = 263 - 35 - 26 - 27 - 2*53 = 263 - 88 - 53 - 106 = 16,gsm,69,gsm
+GSM_056,W5,meta-llama/Llama-3.1-8B-Instruct,False,"69 - 35 = 34 
+34 + 26 = 60 
+60 + 27 = 87 
+87 * 2 = 174 
+87 + 174 = 261 
+261 + 69 = 330",gsm,104,gsm
+GSM_057,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of puppies, we need to add the puppies from Umar, Xena, and Sophia.
+
+Umar has 113 puppies.
+Xena has 47 puppies.
+Sophia has 64 * 10 = 640 puppies.
+
+Total puppies = 113 + 47 + 640 = 800
+
+The total number of puppies with spots is 17 + 15 + 640 = 672.
+
+To find the percentage of puppies with spots, we need to divide the number of puppies with spots by the total number of puppies and multiply by 100.
+
+Percentage of puppies with spots = (672 / 800) * 100 = 84.",gsm,84,gsm
+GSM_057,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of Sophia's dogs as S. 
+
+The total number of puppies is 113 + 47 + 10S. 
+The total number of puppies with spots is 17 + 15 + 0.84(10S) = 32 + 8.4S.
+
+Since 84% of all the puppies have spots, we can set up the equation:
+(32 + 8.4S) / (113 + 47 + 10S) = 0.84
+
+Simplifying the equation:
+(32 + 8.4S) = 0.84(160 + 10S)
+32 + 8.4S = 134.4 + 8.4S
+32 - 134.4 = 8.4S - 8.4S
+-102.4 = 0
+This equation is incorrect, so we need to re-evaluate the problem.
+
+Let's re-evaluate the problem. The total number of puppies is 113 + 47 + 10S. 
+The total number of puppies with spots is 17 + 15 + 0.84(10S) = 32 + 8.4S.
+
+Since 84% of",gsm,64,gsm
+GSM_058,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"16 * 2.75 = 44
+44 + (10 * 17.0) = 44 + 170 = 214
+214 + 20 = 234
+234 + (6 * 11) = 234 + 66 = 300
+300 * 0.05 = 15
+300 - 15 = 285",gsm,285,gsm
+GSM_058,W5,meta-llama/Llama-3.1-8B-Instruct,False,"To find the cost of the rim of bond paper, we need to first find the total cost of the items Bodhi bought excluding the bond paper. 
+
+The cost of 16 colored pencils is 16 * ¥2.75 = ¥44.
+The cost of 10 crayons is 10 * ¥17.0 = ¥170.
+The cost of 6 folders is 6 * ¥11 = ¥66.
+
+The total cost of these items is ¥44 + ¥170 + ¥66 = ¥280.
+
+Bodhi spent ¥285 after a 5% discount, so the original price before the discount is ¥285 / (1 - 0.05) = ¥300.
+
+The cost of the bond paper is ¥300 - ¥280 = ¥20.",gsm,20,gsm
+GSM_059,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the number of forks in the package that Zahra bought as x. 
+
+Zahra initially bought x forks. Her husband gave her 9 more forks, so she had x + 9 forks. She used 11 forks, so she had x + 9 - 11 = x - 2 forks left. The guests brought 2 packs of forks, each having 14 forks, so they brought 2 * 14 = 28 forks. In total, Zahra had x - 2 + 28 = x + 26 forks. We know that she had 55 forks in total, so we can set up the equation x + 26 = 55. 
+
+Solving for x, we get x = 55 - 26 = 29.",gsm,29,gsm
+GSM_059,W5,meta-llama/Llama-3.1-8B-Instruct,False,29 + 9 - 11 + 2 * 14 = 29 + 9 - 11 + 28 = 55,gsm,55,gsm
+GSM_060,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of students leaving early, we need to find the total number of students in the three groups and add 3 cheerleaders to each group.
+
+First, find the number of soccer players: 40% of 125 = 0.4 * 125 = 50 soccer players.
+
+Since half of the soccer players are absent, the number of soccer players leaving early is 50 / 2 = 25.
+
+Next, find the number of students who are not soccer players: 125 - 50 = 75 students.
+
+17% of the remaining students are choir members or dancers: 0.17 * 75 = 12.75. Since we can't have a fraction of a student, we'll round down to 12 students.
+
+The total number of students leaving early is 25 (soccer) + 12 (choir or dancers) + 3 (cheerleaders) + 3 (cheerleaders) + 3 (cheerleaders) = 46.",gsm,46,gsm
+GSM_060,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the total number of students in the class as 'x'. 
+
+Since 40% of the total class are soccer players, the number of soccer players is 0.4x. 
+
+Since half of the soccer players are absent, the number of absent soccer players is 0.2x. 
+
+The number of present soccer players is 0.4x - 0.2x = 0.2x.
+
+The number of choir members and dancers together is 17. 
+
+Since there are 3 cheerleaders accompanying each group, the number of students in the groups (soccer players, choir members, and dancers) is 17 + 3*3 = 26.
+
+The total number of students who are not soccer players is 0.6x (since 60% of the class are not soccer players). 
+
+The number of students who are not soccer players and are not in the groups is 0.6x - 26.
+
+Since the total number of students who are not soccer players is the sum of the students in the groups and the students not in the groups, we can set up the equation:
+
+0.6x - 26 = 26
+
+Solving for x, we get:
+0.6x",gsm,100,gsm
+GSM_061,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total number of pizzas the family eats in a month, we need to first find the total number of pizzas they eat per day. 
+
+The father eats 4 pizzas per day, and the wife eats 6 pizzas per day. So, the total number of pizzas they eat per day is 4 + 6 = 10 pizzas.
+
+The daughter eats one less than three-sixths of the number of pizzas they eat combined per day. Three-sixths of 10 pizzas is 10 * (3/6) = 5 pizzas. One less than that is 5 - 1 = 4 pizzas.
+
+So, the total number of pizzas the family eats per day is 10 + 4 = 14 pizzas.
+
+There are 30 days in a month, so the total number of pizzas the family eats in a month is 14 * 30 = 420 pizzas.",gsm,420,gsm
+GSM_061,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's break down the information given:
+
+- The family eats 420 pizzas in a month, which is 30 days. 
+- The father eats 4 pizzas per day.
+
+Total pizzas eaten by the family in a day = 420 / 30 = 14 pizzas per day.
+
+Since the father eats 4 pizzas per day, the total pizzas eaten by the father and wife in a day = 14 - 4 = 10 pizzas.
+
+The daughter eats one less than three-sixths of the number of pizzas the father and wife eat combined per day. 
+Three-sixths of 10 pizzas = (3/6) * 10 = 5 pizzas.
+One less than that is 5 - 1 = 4 pizzas.
+
+So, the daughter eats 4 pizzas per day. 
+
+Now, let's find out how many pizzas the wife eats per day. 
+Total pizzas eaten by the father and daughter in a day = 4 + 4 = 8 pizzas.
+Total pizzas eaten by the father and daughter and wife in a day = 14 pizzas.
+So, the wife eats 14 - 8 = 6 pizzas per day.",gsm,6,gsm
+GSM_062,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the total cost, we need to calculate the selling price after the discount, brokerage fee, and transfer fee.
+
+Selling price after discount = 600000 - (20% of 600000)
+= 600000 - 0.2 * 600000
+= 600000 - 120000
+= 480000
+
+Brokerage fee = 3% of 600000
+= 0.03 * 600000
+= 18000
+
+Transfer fee = 12% of 600000
+= 0.12 * 600000
+= 72000
+
+Total cost = Selling price after discount + Brokerage fee + Transfer fee
+= 480000 + 18000 + 72000
+= 600000
+
+The difference between the total cost and Mrs. Lee's budget is:
+= 600000 - 440000
+= 160000",gsm,112000,gsm
+GSM_062,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the selling price as S, brokerage fee as B, transfer fee as T, discount as D, and Mrs. Lee's budget as B.
+
+The selling price is $600000, so S = 600000.
+
+The brokerage fee is 3% of the selling price, so B = 0.03 * S = 0.03 * 600000 = 18000.
+
+The transfer fee is 12% of the selling price, so T = 0.12 * S = 0.12 * 600000 = 72000.
+
+The discount is 20% of the selling price, so D = 0.2 * S = 0.2 * 600000 = 120000.
+
+The total cost is the sum of the selling price, brokerage fee, and transfer fee minus the discount, so total cost = S + B + T - D = 600000 + 18000 + 72000 - 120000 = 468000.
+
+The total cost is $112000 more than Mrs. Lee's budget, so B = total cost - 112000 = 468000 - 112000 = 356000.
+
+The final answer is: 356000.",gsm,458000,gsm
+GSM_063,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the net proceeds, we need to subtract the registration fees, agent fee, loan amount, and closing costs from the selling price.
+
+Registration fees = 2% of $220000 = 0.02 * 220000 = $4400
+Agent fee = 2% of $220000 = 0.02 * 220000 = $4400
+Loan amount = $180000
+Closing costs = $15000
+
+Total deductions = $4400 + $4400 + $180000 + $15000 = $221800
+
+Net proceeds = Selling price - Total deductions
+= $220000 - $221800
+= -$1800",gsm,16200,gsm
+GSM_063,W5,meta-llama/Llama-3.1-8B-Instruct,False,"Let's denote the selling price of the villa as x.
+
+The registration fees are 2% of the selling price, so the registration fees = 0.02x.
+The agent fee is also 2% of the selling price, so the agent fee = 0.02x.
+The net proceeds = selling price - registration fees - agent fee - loan amount - closing costs
+16200 = x - 0.02x - 0.02x - 180000 - 15000
+16200 = x - 0.04x - 195000
+16200 = 0.96x - 195000
+16200 + 195000 = 0.96x
+225900 = 0.96x
+x = 225900 / 0.96
+x = 235937.5",gsm,220000,gsm
+GSM_064,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"To find the number of boys, we need to multiply the number of girls by 3/1 (or 3). 
+Number of boys = 39 * 3 = 117
+
+Total number of kids = 39 + 117 = 156
+
+Percentage of girls = (39 / 156) * 100 = 25.0",gsm,75,gsm
+GSM_064,W5,meta-llama/Llama-3.1-8B-Instruct,False,100,gsm,13,gsm
+MBW_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack j
+2. succumb j
+3. attack f
+4. succumb f
+5. attack i
+6. succumb i
+7. attack g
+8. succumb g
+9. attack d
+10. succumb d
+11. attack b
+12. succumb b
+13. attack h
+14. succumb h
+15. attack l
+16. succumb l
+17. feast j f
+18. feast f i
+19. feast i g
+20. feast g d
+21. feast d b
+22. feast b h
+23. feast h l",bw,"attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",mystery_blocksworld
+MBW_001,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack j
+2. succumb j
+3. attack f
+4. succumb f
+5. attack i
+6. succumb i
+7. attack g
+8. succumb g
+9. attack d
+10. succumb d
+11. attack b
+12. succumb b
+13. attack h
+14. succumb h
+15. attack l
+16. succumb l
+17. overcome j f
+18. overcome f i
+19. overcome i g
+20. overcome g d
+21. overcome d b
+22. overcome b h
+23. overcome h l
+24. feast j f
+25. feast f i
+26. feast i g
+27. feast g d
+28. feast d b
+29. feast b h
+30. feast h l",bw,"feast j f
+succumb j
+feast f i
+succumb f
+feast i g
+succumb i
+feast g d
+succumb g
+feast d b
+succumb d
+feast b h
+succumb b
+feast h l
+succumb h",mystery_blocksworld
+MBW_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack j
+2. succumb j
+3. attack g
+4. succumb g
+5. attack a
+6. succumb a
+7. attack b
+8. succumb b
+9. attack k
+10. succumb k
+11. attack h
+12. succumb h
+13. attack i
+14. succumb i
+15. overcome j g
+16. overcome g a
+17. overcome a b
+18. overcome b k
+19. overcome k h
+20. overcome h i
+21. feast j g
+22. feast g a
+23. feast a b
+24. feast b k
+25. feast k h
+26. feast h i",bw,"attack h
+ overcome h i
+ attack k
+ overcome k h
+ attack b
+ overcome b k
+ attack a
+ overcome a b
+ attack g
+ overcome g a
+ attack j
+ overcome j g",mystery_blocksworld
+MBW_002,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack j
+2. succumb j
+3. attack g
+4. succumb g
+5. attack a
+6. succumb a
+7. attack b
+8. succumb b
+9. attack k
+10. succumb k
+11. attack h
+12. succumb h
+13. attack i
+14. succumb i",bw,"feast j g
+succumb j
+feast g a
+succumb g
+feast a b
+succumb a
+feast b k
+succumb b
+feast k h
+succumb k
+feast h i
+succumb h",mystery_blocksworld
+MBW_010,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack d
+2. attack e
+3. attack a
+4. attack b
+5. attack f
+6. succumb b
+7. overcome b f
+8. feast b f
+9. succumb a
+10. overcome a b
+11. feast a b
+12. succumb e
+13. overcome e a
+14. feast e a
+15. succumb d
+16. overcome d e
+17. feast d e",bw,"attack d
+ overcome e d
+ attack e
+ overcome a e
+ attack a
+ overcome b a
+ attack b
+ overcome",mystery_blocksworld
+MBW_010,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack e
+2. succumb e
+3. attack a
+4. succumb a
+5. attack b
+6. succumb b
+7. attack f
+8. succumb f
+9. feast d e
+10. feast e a
+11. feast a b
+12. feast b f",bw,"feast d e
+succumb d
+feast e a
+succumb e
+feast a b
+succumb a
+feast b f
+succumb b",mystery_blocksworld
+MBW_014,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack e
+2. attack g
+3. succumb e
+4. succumb g
+5. overcome e l
+6. overcome e g
+7. feast l e
+8. feast e g",bw,"attack e
+ overcome e g
+ attack l
+ overcome l e",mystery_blocksworld
+MBW_014,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack l
+2. succumb l
+3. attack e
+4. succumb e
+5. attack g
+6. succumb g
+7. feast l e
+8. feast e g",bw,"feast l e
+succumb l
+feast e g
+succumb e",mystery_blocksworld
+MBW_037,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack c
+2. attack d
+3. attack h
+4. attack i
+5. succumb d
+6. succumb h
+7. succumb i
+8. overcome d h
+9. overcome h i
+10. feast c d
+11. feast d h
+12. feast h i",bw,"attack h
+ overcome h i
+ attack d
+ overcome d h
+ attack c
+ overcome c d",mystery_blocksworld
+MBW_037,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack c
+2. succumb c
+3. attack d
+4. succumb d
+5. attack h
+6. succumb h
+7. attack i
+8. succumb i
+9. feast h i
+10. succumb i",bw,"feast c d
+succumb c
+feast d h
+succumb d
+feast h i
+succumb h",mystery_blocksworld
+MBW_10,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack d
+2. attack e
+3. attack a
+4. attack b
+5. attack f
+6. succumb b
+7. overcome b f
+8. feast b f
+9. succumb a
+10. overcome a b
+11. feast a b
+12. succumb e
+13. overcome e a
+14. feast e a
+15. succumb d
+16. overcome d e
+17. feast d e",bw,"attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",mystery_blocksworld
+MBW_10,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack e
+2. succumb e
+3. overcome e d
+4. attack a
+5. succumb a
+6. overcome a e
+7. attack b
+8. succumb b
+9. overcome b a
+10. attack f
+11. succumb f
+12. overcome f b
+13. feast d e
+14. feast e a
+15. feast a b
+16. feast b f",bw,"feast d e
+succumb d
+feast e a
+succumb e
+feast a b
+succumb a
+feast b f
+succumb b",mystery_blocksworld
+MBW_100,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack b
+2. succumb b
+3. attack j
+4. succumb j
+5. attack l
+6. succumb l
+7. attack i
+8. succumb i
+9. feast l i
+10. feast j l
+11. feast b j",bw,"attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",mystery_blocksworld
+MBW_100,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack b
+2. succumb b
+3. attack j
+4. succumb j
+5. attack l
+6. succumb l
+7. attack i
+8. succumb i
+9. overcome b j
+10. overcome j l
+11. overcome l i
+12. feast b j
+13. feast j l
+14. feast l i",bw,"feast b j
+succumb b
+feast j l
+succumb j
+feast l i
+succumb l",mystery_blocksworld
+MBW_127,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack k
+2. succumb k
+3. attack g
+4. succumb g
+5. attack j
+6. succumb j
+7. attack e
+8. succumb e
+9. attack b
+10. succumb b",bw,"attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",mystery_blocksworld
+MBW_127,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack k
+2. succumb k
+3. overcome k g
+4. attack g
+5. succumb g
+6. overcome g j
+7. attack j
+8. succumb j
+9. overcome j e
+10. attack e
+11. succumb e
+12. overcome e b
+13. attack b
+14. succumb b",bw,"feast k g
+succumb k
+feast g j
+succumb g
+feast j e
+succumb j
+feast e b
+succumb e",mystery_blocksworld
+MBW_185,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack j
+2. attack d
+3. attack g
+4. attack i
+5. attack c
+6. attack h
+7. attack a
+8. attack b
+9. attack e
+10. attack l
+11. succumb l
+12. overcome l e
+13. overcome e b
+14. overcome b a
+15. overcome a h
+16. overcome h c
+17. overcome c i
+18. overcome i g
+19. overcome g d
+20. overcome d j",bw,"attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",mystery_blocksworld
+MBW_185,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack j
+2. attack d
+3. attack g
+4. attack i
+5. attack c
+6. attack h
+7. attack a
+8. attack b
+9. attack e
+10. attack l
+11. succumb j
+12. succumb d
+13. succumb g
+14. succumb i
+15. succumb c
+16. succumb h
+17. succumb a
+18. succumb b
+19. succumb e
+20. succumb l
+21. overcome j d
+22. overcome d g
+23. overcome g i
+24. overcome i c
+25. overcome c h
+26. overcome h a
+27. overcome a b
+28. overcome b e
+29. overcome e l
+30. feast j d
+31. feast d g
+32. feast g i
+33. feast i c
+34. feast c h
+35. feast h a
+36. feast a b
+37. feast b e
+38. feast e l",bw,"feast j d
+succumb j
+feast d g
+succumb d
+feast g i
+succumb g
+feast i c
+succumb i
+feast c h
+succumb c
+feast h a
+succumb h
+feast a b
+succumb a
+feast b e
+succumb b
+feast e l
+succumb e",mystery_blocksworld
+MBW_495,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack c
+2. attack l
+3. attack i
+4. attack e
+5. attack h
+6. succumb e
+7. overcome e h
+8. succumb h
+9. overcome h i
+10. succumb i
+11. overcome i l
+12. succumb l
+13. overcome l c
+14. succumb c
+15. overcome c e
+16. succumb e
+17. overcome e h
+18. succumb h
+19. overcome h i
+20. succumb i
+21. overcome i l
+22. succumb l
+23. overcome l c
+24. succumb c
+25. overcome c e
+26. succumb e
+27. overcome e h
+28. succumb h
+29. overcome h i
+30. succumb i
+31. overcome i l
+32. succumb l
+33. overcome l c
+34. succumb c
+35. overcome c e
+36. succumb e
+37. overcome e h
+38. succumb h
+39. overcome h i
+40. succumb i
+41. overcome i l
+42. succumb l
+43. overcome l c
+44. succ",bw,"attack e
+ overcome e h
+ attack i
+ overcome i e
+ attack l
+ overcome l i
+ attack c
+ overcome c l",mystery_blocksworld
+MBW_495,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack c
+2. succumb c
+3. attack l
+4. succumb l
+5. attack i
+6. succumb i
+7. attack e
+8. succumb e
+9. attack h
+10. succumb h",bw,"feast c l
+succumb c
+feast l i
+succumb l
+feast i e
+succumb i
+feast e h
+succumb e",mystery_blocksworld
+MBW_496,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack f
+2. succumb f
+3. overcome f h
+4. attack h
+5. succumb h
+6. overcome h g
+7. attack g
+8. succumb g
+9. overcome g d
+10. attack d
+11. succumb d
+12. overcome d e
+13. attack e
+14. succumb e
+15. overcome e a
+16. attack a
+17. succumb a
+18. overcome a c
+19. attack c
+20. succumb c
+21. overcome c j
+22. attack j
+23. succumb j
+24. overcome j l
+25. attack l
+26. succumb l
+27. feast i f
+28. feast h g
+29. feast g d
+30. feast d e
+31. feast e a
+32. feast a c
+33. feast c j",bw,"attack j
+overcome j l
+attack c
+overcome c j
+attack a
+overcome a c
+attack e
+overcome e a
+attack d
+overcome d e
+attack g
+overcome g d
+attack h
+overcome h g
+attack f
+overcome f h
+attack i
+overcome i f",mystery_blocksworld
+MBW_496,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack f
+2. succumb f
+3. overcome f h
+4. attack h
+5. succumb h
+6. overcome h g
+7. attack g
+8. succumb g
+9. overcome g d
+10. attack d
+11. succumb d
+12. overcome d e
+13. attack e
+14. succumb e
+15. overcome e a
+16. attack a
+17. succumb a
+18. overcome a c
+19. attack c
+20. succumb c
+21. overcome c j
+22. attack j
+23. succumb j
+24. overcome j l
+25. attack l
+26. succumb l
+27. feast i f
+28. feast h g
+29. feast g d
+30. feast d e
+31. feast e a
+32. feast a c
+33. feast c j",bw,"feast i f
+succumb i
+feast f h
+succumb f
+feast h g
+succumb h
+feast g d
+succumb g
+feast d e
+succumb d
+feast e a
+succumb e
+feast a c
+succumb a
+feast c j
+succumb c
+feast j l
+succumb j",mystery_blocksworld
+MBW_497,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack a
+2. attack c
+3. attack d
+4. attack f
+5. attack l
+6. attack i
+7. attack h
+8. attack e
+9. attack j
+10. succumb a
+11. succumb c
+12. succumb d
+13. succumb f
+14. succumb l
+15. succumb i
+16. succumb h
+17. succumb e
+18. succumb j
+19. overcome a f
+20. overcome f c
+21. overcome c d
+22. overcome d l
+23. overcome l i
+24. overcome i h
+25. overcome h e
+26. overcome e j
+27. feast k a
+28. feast a f
+29. feast f c
+30. feast c d
+31. feast d l
+32. feast l i
+33. feast i h
+34. feast h e
+35. feast e j",bw,"attack e
+overcome e j
+attack h
+overcome h e
+attack i
+overcome i h
+attack l
+overcome l i
+attack d
+overcome d l
+attack c
+overcome c d
+attack f
+overcome f c
+attack a
+overcome a f
+attack k
+overcome k a",mystery_blocksworld
+MBW_497,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack a
+2. attack c
+3. attack d
+4. attack f
+5. attack l
+6. attack i
+7. attack h
+8. attack e
+9. attack j
+10. succumb a
+11. succumb c
+12. succumb d
+13. succumb f
+14. succumb l
+15. succumb i
+16. succumb h
+17. succumb e
+18. succumb j
+19. overcome a f
+20. overcome f c
+21. overcome c d
+22. overcome d l
+23. overcome l i
+24. overcome i h
+25. overcome h e
+26. overcome e j
+27. feast k a
+28. feast a f
+29. feast f c
+30. feast c d
+31. feast d l
+32. feast l i
+33. feast i h
+34. feast h e
+35. feast e j",bw,"feast k a
+succumb k
+feast a f
+succumb a
+feast f c
+succumb f
+feast c d
+succumb c
+feast d l
+succumb d
+feast l i
+succumb l
+feast i h
+succumb i
+feast h e
+succumb h
+feast e j
+succumb e",mystery_blocksworld
+MBW_498,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack l
+2. succumb l
+3. overcome l e
+4. attack e
+5. succumb e
+6. overcome e d
+7. attack d
+8. succumb d
+9. overcome d g
+10. attack g
+11. succumb g
+12. overcome g a
+13. attack a
+14. succumb a
+15. overcome a h
+16. attack h
+17. succumb h
+18. overcome h c
+19. attack c
+20. succumb c
+21. overcome c k
+22. attack k
+23. succumb k
+24. overcome k b
+25. attack b
+26. succumb b
+27. overcome b i
+28. attack i
+29. succumb i
+30. overcome i j
+31. attack j
+32. succumb j
+33. overcome j f
+34. attack f
+35. succumb f",bw,"attack j
+overcome j f
+attack i
+overcome i j
+attack b
+overcome b i
+attack k
+overcome k b
+attack c
+overcome c k
+attack h
+overcome h c
+attack a
+overcome a h
+attack g
+overcome g a
+attack d
+overcome d g
+attack e
+overcome e d
+attack l
+overcome l e",mystery_blocksworld
+MBW_498,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack l
+2. succumb l
+3. overcome l e
+4. attack e
+5. succumb e
+6. overcome e d
+7. attack d
+8. succumb d
+9. overcome d g
+10. attack g
+11. succumb g
+12. overcome g a
+13. attack a
+14. succumb a
+15. overcome a h
+16. attack h
+17. succumb h
+18. overcome h c
+19. attack c
+20. succumb c
+21. overcome c k
+22. attack k
+23. succumb k
+24. overcome k b
+25. attack b
+26. succumb b
+27. overcome b i
+28. attack i
+29. succumb i
+30. overcome i j
+31. attack j
+32. succumb j
+33. overcome j f
+34. attack f
+35. succumb f",bw,"feast l e
+succumb l
+feast e d
+succumb e
+feast d g
+succumb d
+feast g a
+succumb g
+feast a h
+succumb a
+feast h c
+succumb h
+feast c k
+succumb c
+feast k b
+succumb k
+feast b i
+succumb b
+feast i j
+succumb i
+feast j f
+succumb j",mystery_blocksworld
+MBW_499,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack l
+2. succumb l
+3. overcome l c
+4. attack c
+5. succumb c
+6. overcome c b
+7. attack b
+8. succumb b
+9. overcome b f
+10. attack f
+11. succumb f
+12. overcome f j
+13. attack j
+14. succumb j
+15. overcome j d
+16. attack d
+17. succumb d
+18. overcome d a
+19. attack a
+20. succumb a
+21. overcome a h",bw,"attack a
+overcome a h
+attack d
+overcome d a
+attack j
+overcome j d
+attack f
+overcome f j
+attack b
+overcome b f
+attack c
+overcome c b
+attack l
+overcome l c",mystery_blocksworld
+MBW_499,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack l
+2. succumb l
+3. overcome l c
+4. attack c
+5. succumb c
+6. overcome c b
+7. attack b
+8. succumb b
+9. overcome b f
+10. attack f
+11. succumb f
+12. overcome f j
+13. attack j
+14. succumb j
+15. overcome j d
+16. attack d
+17. succumb d
+18. overcome d a
+19. attack a
+20. succumb a
+21. overcome a h",bw,"feast l c
+succumb l
+feast c b
+succumb c
+feast b f
+succumb b
+feast f j
+succumb f
+feast j d
+succumb j
+feast d a
+succumb d
+feast a h
+succumb a",mystery_blocksworld
+MBW_500,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack e
+2. succumb e
+3. overcome e b
+4. attack b
+5. succumb b
+6. overcome b k
+7. attack k
+8. succumb k
+9. overcome k h
+10. attack h
+11. succumb h
+12. overcome h c
+13. attack c
+14. succumb c
+15. overcome c f
+16. attack f
+17. succumb f
+18. overcome f i
+19. attack i
+20. succumb i
+21. overcome i d
+22. attack d
+23. succumb d
+24. overcome d g
+25. attack g
+26. succumb g
+27. feast a e
+28. feast e b
+29. feast b k
+30. feast k h
+31. feast h c
+32. feast c f
+33. feast f i
+34. feast i d",bw,"attack d
+overcome d g
+attack i
+overcome i d
+attack f
+overcome f i
+attack c
+overcome c f
+attack h
+overcome h c
+attack k
+overcome k h
+attack b
+overcome b k
+attack e
+overcome e b
+attack a
+overcome a e",mystery_blocksworld
+MBW_500,W5,meta-llama/Llama-3.1-8B-Instruct,False,"1. attack e
+2. succumb e
+3. overcome e b
+4. attack b
+5. succumb b
+6. overcome b k
+7. attack k
+8. succumb k
+9. overcome k h
+10. attack h
+11. succumb h
+12. overcome h c
+13. attack c
+14. succumb c
+15. overcome c f
+16. attack f
+17. succumb f
+18. overcome f i
+19. attack i
+20. succumb i
+21. overcome i d
+22. attack d
+23. succumb d
+24. overcome d g
+25. attack g
+26. succumb g
+27. feast a e
+28. feast e b
+29. feast b k
+30. feast k h
+31. feast h c
+32. feast c f
+33. feast f i
+34. feast i d",bw,"feast a e
+succumb a
+feast e b
+succumb e
+feast b k
+succumb b
+feast k h
+succumb k
+feast h c
+succumb h
+feast c f
+succumb c
+feast f i
+succumb f
+feast i d
+succumb i
+feast d g
+succumb d",mystery_blocksworld

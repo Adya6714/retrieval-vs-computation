@@ -1,0 +1,22 @@
+\begin{table}[t]
+  \centering
+  \small
+  \caption{GSM Probe~2 ($n{=}44$/model; 43/44 parseable for \omini).
+  $\mathrm{Acc}_{\mathrm{P2A}}$ is Phase-2A fresh-session accuracy (distinct
+  from $\mathrm{Acc}_{\mathrm{can}}$ in Table~\ref{tab:gsm_p1}). CCI: deterministic step-value
+  agreement ($\eps{=}0.01$). \omini{} is the strongest executor (.955) yet
+  ranks mid-pack on CCI---strong execution without strong plan-following.
+  Wilcoxon Claude vs.\ GPT-4o: $W{=}396$, $p{=}0.0068$.}
+  \label{tab:gsm_p2}
+  \begin{tabular}{lcccc}
+    \toprule
+    Model & $\mathrm{Acc}_{\mathrm{P2A}}$ & CCI mean & CCI med. & TEP \\
+    \midrule
+    Claude     & .864 & .231 & .216 & .539 \\
+    GPT-4o     & .705 & .108 & .000 & .599 \\
+    Llama-8B   & .455 & .167 & .000 & .773 \\
+    Gemini-2.5 & .886 & .270 & .250 & .652 \\
+    \omini     & .955 & .220 & .143 & .628 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

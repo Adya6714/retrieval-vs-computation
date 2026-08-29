@@ -1,0 +1,21 @@
+\begin{table}[t]
+  \centering
+  \small
+  \caption{GSM Probe~1 ($n{=}44$ for Claude/Gemini/\omini; $n{=}20$ partial
+  for GPT-4o/Llama; 95\% Wilson CIs). The headline inversion is powered on
+  ALGO SP-adv ($n{=}34$; Section~\ref{sec:inversion}); GSM rows calibrate
+  near-matched canonical accuracy (0.800--0.850) with wide CIs for the
+  $n{=}20$ cells.}
+  \label{tab:gsm_p1}
+  \begin{tabular}{lcccc}
+    \toprule
+    Model & $\mathrm{Acc}_{\mathrm{can}}$ & $\mathrm{Acc}_{W_3}$ & $\Delta$ & $\Rwiii$ \\
+    \midrule
+    Claude     & .841 [.71,.92] & .750 [.61,.85] & .091 & .892 \\
+    GPT-4o     & .850 [.64,.95] & .300 [.15,.52] & .550 & .353 \\
+    Llama-8B   & .800 [.58,.92] & .150 [.05,.36] & .650 & .188 \\
+    Gemini-2.5 & .909 [.79,.96] & .523 [.38,.66] & .386 & .575 \\
+    \omini     & .841 [.71,.92] & .841 [.71,.92] & .000 & 1.000 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

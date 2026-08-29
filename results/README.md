@@ -30,7 +30,7 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 | `bank_run_aux` | Sidecar from a bank run (e.g. review queue) |
 | `bank_run_meta` | Resume/progress state for sweeps (`sweep_progress.json`) |
 | `derived_from_raw` | Aggregated or merged from `raw/` (metrics, triangulation, regressions) → `derived/` |
-| `presentation` | Tables or plots for the paper → `paper/`, `figures/`, `results/figures/`, `analysis/figures/output/` |
+| `presentation` | Tables or plots for the paper → `paper/`, `results/figures/`, `paper/figures/scripts/probe/` |
 | `presentation_aux` | Audit notes, not primary results |
 
 ### Registry columns
@@ -48,7 +48,7 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 | `raw/` | Per-run model outputs | No — produced by sweep scripts |
 | `derived/` | Aggregated metrics (long format) | No — run `*_SCR_compute_metrics.py` |
 | `paper/` | Wide tables for the manuscript | **Yes** — edit `make_table1.py` or CSV columns |
-| `figures/` | PNG/PDF plots | **Yes** — edit `*_FIG_generate.py` or `analysis/figures/` |
+| `results/figures/` | PNG/PDF probe diagnostic plots | **Yes** — edit `*_FIG_generate.py` or `paper/figures/scripts/` |
 ---
 
 ## Pipeline: what creates what
@@ -103,7 +103,7 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 | `GSM_P1_FIG_generate.py`, `GSM_P2_FIG_generate.py`, `GSM_P3_FIG_generate.py` | `derived/` or `raw/` | `figures/GSM_*` |
 | `ALGO_P2_FIG_generate.py`, `ALGO_P3_FIG_generate.py` | `derived/` / `paper/` | `figures/ALGO_*` |
 | `BW_P2_SCR_generate_figures.py`, `BW_P3_FIG_probe1_triage_plot.py` | `raw/BW_P2_*`, contamination | `figures/BW_*` |
-| `analysis/figures/*.py` | various `raw/` + `derived/` | `figures/` or `analysis/figures/output/` |
+| `paper/figures/scripts/*.py` | various `raw/` + `derived/` | `paper/figures/` or `results/figures/` |
 
 ---
 
@@ -185,7 +185,7 @@ Per-problem merge of P1 behavioral + P2 + contamination labels (for analysis/reg
 | Table columns / formatting | `scripts/consolidate/make_table1.py` → rerun `make_table1.py` |
 | Regression summary table | `scripts/consolidate/run_css_regressions.py` |
 | Plot style / which metric | `scripts/{ALGO,GSM,BW}_P*_FIG_generate.py` |
-| Shared plot helpers | `analysis/figures/_common.py`, `analysis/figures/fig*.py` |
+| Shared plot helpers | `paper/figures/scripts/probe/_common.py`, `paper/figures/scripts/gen_*.py` |
 | Metric definitions (numbers) | `scripts/*_SCR_compute_metrics.py` → rerun → rerun fig/table scripts |
 
 ---

@@ -1,0 +1,24 @@
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Algorithm-invocation cases (10 of 13; 3 Gemini cases omitted for
+  space). All yielded incorrect final answers; in every case Phase-2A
+  execution reverted to a greedy heuristic after naming the algorithm.}
+  \label{tab:invocation}
+  \begin{tabular}{llll}
+    \toprule
+    Case & Problem & Slice & Model \\
+    \midrule
+    A1 & SP\_002  & SP-std   & Llama  \\
+    A2 & SP\_004  & SP-chall & Claude \\
+    A3 & SP\_037  & SP-chall & Claude \\
+    A4 & SP\_040  & SP-chall & Claude \\
+    A5 & SP\_044  & SP-chall & Llama  \\
+    A6 & SP\_062  & SP-chall & Claude \\
+    A7 & SP\_065  & SP-chall & Claude \\
+    A8 & WIS\_003 & WIS-chall& Llama  \\
+    A9 & WIS\_007 & WIS-std  & Llama  \\
+    A10& WIS\_020 & WIS-chall& Claude \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,7 @@
+family,variant,n_paired,median_final_rank_canonical,median_final_rank_variant,wilcoxon_W_two_sided,wilcoxon_p_two_sided,wilcoxon_W_greater_can_gt_var,wilcoxon_p_greater_can_gt_var
+gsm,W3,44,95.0,91.0,461.5,0.6958159014857535,461.5,0.6520920492571233
+gsm,W6,24,95.0,141.5,87.5,0.07413077200491405,87.5,0.962934613997543
+gsm,canonical,44,95.0,,,,,
+sp,W3,55,4.0,2.0,521.0,0.07863216628363696,910.0,0.03931608314181848
+sp,W6,50,4.0,2.0,0.0,5.703604147465923e-12,1275.0,2.8518020737329617e-12
+sp,canonical,55,4.0,,,,,

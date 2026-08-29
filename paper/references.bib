@@ -1,6 +1,9 @@
-%% references.bib — rvc_paper
-%% All entries used in paper.
-%% NEW entries marked %% NEW at top of entry.
+%% references.bib — Same Score, Different Strategy (CAISc 2026)
+%% Entries marked %% ADDED were not in the original supplied bib but are
+%% cited in the manuscript (related work and model subjects); details
+%% verified against arXiv/OpenReview before inclusion.
+
+%% ---------------- Surface-sensitivity / perturbation robustness ----------------
 
 @inproceedings{mirzadeh2024gsm,
   title     = {{GSM-Symbolic}: Understanding the Limitations of Mathematical Reasoning in Large Language Models},
@@ -18,83 +21,6 @@
   year      = {2024},
   publisher = {Association for Computational Linguistics},
   url       = {https://arxiv.org/abs/2307.02477}
-}
-
-@inproceedings{razeghi2022impact,
-  title     = {Impact of Pretraining Term Frequencies on Few-Shot Numerical Reasoning},
-  author    = {Razeghi, Yasaman and Logan IV, Robert L and Gardner, Matt and Singh, Sameer},
-  booktitle = {Findings of the Association for Computational Linguistics: {EMNLP} 2022},
-  pages     = {840--854},
-  year      = {2022},
-  publisher = {Association for Computational Linguistics},
-  doi       = {10.18653/v1/2022.findings-emnlp.59}
-}
-
-@inproceedings{golchin2023time,
-  title     = {Time Travel in {LLM}s: Tracing Data Contamination in Large Language Models},
-  author    = {Golchin, Shahriar and Surdeanu, Mihai},
-  booktitle = {International Conference on Learning Representations},
-  year      = {2024},
-  url       = {https://arxiv.org/abs/2308.08493}
-}
-
-@inproceedings{valmeekam2023planning,
-  title     = {On the Planning Abilities of Large Language Models -- A Critical Investigation},
-  author    = {Valmeekam, Karthik and Marquez, Matthew and Sreedharan, Sarath and Kambhampati, Subbarao},
-  booktitle = {Advances in Neural Information Processing Systems},
-  volume    = {36},
-  year      = {2023},
-  url       = {https://arxiv.org/abs/2305.15771}
-}
-
-@inproceedings{valmeekam2023planbench,
-  title     = {{PlanBench}: An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change},
-  author    = {Valmeekam, Karthik and Olmo, Alberto and Sreedharan, Sarath and Kambhampati, Subbarao},
-  booktitle = {Advances in Neural Information Processing Systems},
-  volume    = {36},
-  year      = {2023},
-  url       = {https://arxiv.org/abs/2206.10498}
-}
-
-@inproceedings{cobbe2021training,
-  title     = {Training Verifiers to Solve Math Word Problems},
-  author    = {Cobbe, Karl and Kosaraju, Vineet and Bavarian, Mohammad and Chen, Mark and Jun, Heewoo and Kaiser, Lukasz and Plappert, Matthias and Tworek, Jerry and Hilton, Jacob and Nakano, Reiichiro and Hesse, Christopher and Schulman, John},
-  booktitle = {arXiv preprint arXiv:2110.14168},
-  year      = {2021},
-  url       = {https://arxiv.org/abs/2110.14168}
-}
-
-@article{liu2024infini,
-  title   = {Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens},
-  author  = {Liu, Jiacheng and Min, Sewon and Zettlemoyer, Luke and Choi, Yejin and Hajishirzi, Hannaneh},
-  journal = {arXiv preprint arXiv:2401.17377},
-  year    = {2024},
-  url     = {https://arxiv.org/abs/2401.17377}
-}
-
-@inproceedings{turpin2023language,
-  title     = {Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting},
-  author    = {Turpin, Miles and Michael, Julian and Perez, Ethan and Bowman, Samuel R.},
-  booktitle = {Advances in Neural Information Processing Systems},
-  volume    = {36},
-  year      = {2023},
-  url       = {https://arxiv.org/abs/2305.04388}
-}
-
-@article{lanham2023measuring,
-  title   = {Measuring Faithfulness in Chain-of-Thought Reasoning},
-  author  = {Lanham, Tamera and Chen, Anna and Radhakrishnan, Ansh and Steiner, Benoit and Denison, Carson and Hernandez, Danny and Durmus, Esin and Guerin, Jackson and Hatfield-Dodds, Zac and others},
-  journal = {arXiv preprint arXiv:2307.13702},
-  year    = {2023},
-  url     = {https://arxiv.org/abs/2307.13702}
-}
-
-@inproceedings{saparov2023language,
-  title     = {Language Models Are Greedy Reasoners: A Systematic Formal Analysis of Chain-of-Thought},
-  author    = {Saparov, Abulhair and He, He},
-  booktitle = {International Conference on Learning Representations},
-  year      = {2023},
-  url       = {https://arxiv.org/abs/2210.01240}
 }
 
 @article{wang2024rupbench,
@@ -124,28 +50,64 @@
   url       = {https://arxiv.org/abs/2502.06453}
 }
 
-@inproceedings{sharma2024sycophancy,
-  title     = {Towards Understanding Sycophancy in Language Models},
-  author    = {Sharma, Mrinank and Tong, Meg and Korbak, Tomasz and Duvenaud, David and Guo, Ananya and Rivera, Clip and Waskom, Michael and Lindner, David and Campbell, Newton and others},
-  booktitle = {International Conference on Learning Representations},
-  year      = {2024},
-  url       = {https://arxiv.org/abs/2310.13548}
-}
-
-@inproceedings{shi2024detecting,
-  title     = {Detecting Pretraining Data from Large Language Models},
-  author    = {Shi, Weijia and Ajith, Anirudh and Xia, Mengzhou and Huang, Yangsibo and Liu, Daogao and Blevins, Terra and Chen, Danqi and Zettlemoyer, Luke},
-  booktitle = {International Conference on Learning Representations},
-  year      = {2024},
-  url       = {https://arxiv.org/abs/2310.16789}
-}
-
-@article{guo2025deepseek,
-  title   = {{DeepSeek-R1}: Incentivizing Reasoning Capability in {LLM}s via Reinforcement Learning},
-  author  = {Guo, Daya and others},
-  journal = {arXiv preprint arXiv:2501.12948},
+%% ADDED — MATCHA: most-related concurrent work (answer-conditioned, within-trace,
+%% LLM-judged). Differentiated in Related Work from our deterministic W3 rename and
+%% cross-session CCI.
+@article{jiang2025matcha,
+  title   = {Robust Answers, Fragile Logic: Probing the Decoupling Hypothesis in {LLM} Reasoning},
+  author  = {Jiang, Enyi and Xu, Changming and Singh, Nischay and Qiu, Tian and Singh, Gagandeep},
+  journal = {arXiv preprint arXiv:2505.17406},
   year    = {2025},
-  url     = {https://arxiv.org/abs/2501.12948}
+  note    = {Introduces the MATCHA Answer-Conditioned Probing framework},
+  url     = {https://arxiv.org/abs/2505.17406}
+}
+
+%% ADDED — Robust Reasoning Benchmark (RRB): 13 deterministic structural
+%% perturbations on AIME 2024/2025, group-scale, no execution/contamination probes.
+@article{rrb2026,
+  title   = {Robust Reasoning Benchmark},
+  author  = {Golikov, Pavel and Opryshko, Evgenii and Pekhimenko, Gennady and Jeffrey, Mark C.},
+  journal = {arXiv preprint arXiv:2604.08571},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2604.08571}
+}
+
+%% ADDED — PutnamGAP: surface-rename + kernel-rewrite stress test on ~1k Putnam
+%% problems; no per-instance execution or proximity controls.
+@article{hao2025putnamgap,
+  title   = {An Investigation of Robustness of {LLM}s in Mathematical Reasoning: Benchmarking with Mathematically-Equivalent Transformation of Advanced Mathematical Problems},
+  author  = {Hao, Yuren and Wan, Xiang and Zhai, Chengxiang},
+  journal = {arXiv preprint arXiv:2508.08833},
+  year    = {2025},
+  note    = {Introduces the PutnamGAP benchmark},
+  url     = {https://arxiv.org/abs/2508.08833}
+}
+
+%% ---------------- CoT faithfulness ----------------
+
+@inproceedings{turpin2023language,
+  title     = {Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting},
+  author    = {Turpin, Miles and Michael, Julian and Perez, Ethan and Bowman, Samuel R.},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {36},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2305.04388}
+}
+
+@article{lanham2023measuring,
+  title   = {Measuring Faithfulness in Chain-of-Thought Reasoning},
+  author  = {Lanham, Tamera and Chen, Anna and Radhakrishnan, Ansh and Steiner, Benoit and Denison, Carson and Hernandez, Danny and Durmus, Esin and Guerin, Jackson and Hatfield-Dodds, Zac and others},
+  journal = {arXiv preprint arXiv:2307.13702},
+  year    = {2023},
+  url     = {https://arxiv.org/abs/2307.13702}
+}
+
+@inproceedings{saparov2023language,
+  title     = {Language Models Are Greedy Reasoners: A Systematic Formal Analysis of Chain-of-Thought},
+  author    = {Saparov, Abulhair and He, He},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2210.01240}
 }
 
 @inproceedings{lightman2023let,
@@ -156,10 +118,15 @@
   url       = {https://arxiv.org/abs/2305.20050}
 }
 
+@inproceedings{sharma2024sycophancy,
+  title     = {Towards Understanding Sycophancy in Language Models},
+  author    = {Sharma, Mrinank and Tong, Meg and Korbak, Tomasz and Duvenaud, David and Guo, Ananya and Rivera, Clip and Waskom, Michael and Lindner, David and Campbell, Newton and others},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2310.13548}
+}
+
 %% NEW — EMNLP 2025 Outstanding Paper on CoT faithfulness via unlearning.
-%% Cited in Related Work (CoT faithfulness paragraph) to differentiate
-%% our cross-session CCI (behavioural, session-isolated) from parametric
-%% faithfulness measurement (within-model weight intervention).
 @inproceedings{tutek2025measuring,
   title     = {Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps},
   author    = {Tutek, Martin and Hashemi Chaleshtori, Fateme and Marasovic, Ana and Belinkov, Yonatan},
@@ -173,10 +140,6 @@
 }
 
 %% NEW — ICLR 2026 paper on reasoning LLM robustness to CoT interventions.
-%% Most directly competing concurrent work. Differentiation stated in
-%% Related Work §2 (new "Concurrent work" paragraph): they intervene on
-%% the model's own CoT tokens mid-generation; we intervene on externally
-%% provided state in a fresh session with no prior reasoning context.
 @inproceedings{vonrecum2026reasoning,
   title     = {Are Reasoning {LLM}s Robust to Interventions on Their Chain-of-Thought?},
   author    = {von Recum, Alexander and Girrbach, Leander and Akata, Zeynep},
@@ -184,4 +147,99 @@
   year      = {2026},
   note      = {Poster; \url{https://openreview.net/forum?id=aQZIpELFwp}},
   url       = {https://arxiv.org/abs/2602.07470}
+}
+
+%% ---------------- Training-data contamination / proximity ----------------
+
+@inproceedings{razeghi2022impact,
+  title     = {Impact of Pretraining Term Frequencies on Few-Shot Numerical Reasoning},
+  author    = {Razeghi, Yasaman and Logan IV, Robert L and Gardner, Matt and Singh, Sameer},
+  booktitle = {Findings of the Association for Computational Linguistics: {EMNLP} 2022},
+  pages     = {840--854},
+  year      = {2022},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2022.findings-emnlp.59}
+}
+
+@inproceedings{golchin2023time,
+  title     = {Time Travel in {LLM}s: Tracing Data Contamination in Large Language Models},
+  author    = {Golchin, Shahriar and Surdeanu, Mihai},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2308.08493}
+}
+
+@inproceedings{shi2024detecting,
+  title     = {Detecting Pretraining Data from Large Language Models},
+  author    = {Shi, Weijia and Ajith, Anirudh and Xia, Mengzhou and Huang, Yangsibo and Liu, Daogao and Blevins, Terra and Chen, Danqi and Zettlemoyer, Luke},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2310.16789}
+}
+
+@article{liu2024infini,
+  title   = {Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens},
+  author  = {Liu, Jiacheng and Min, Sewon and Zettlemoyer, Luke and Choi, Yejin and Hajishirzi, Hannaneh},
+  journal = {arXiv preprint arXiv:2401.17377},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2401.17377}
+}
+
+%% ---------------- Planning ----------------
+
+@inproceedings{valmeekam2023planning,
+  title     = {On the Planning Abilities of Large Language Models -- A Critical Investigation},
+  author    = {Valmeekam, Karthik and Marquez, Matthew and Sreedharan, Sarath and Kambhampati, Subbarao},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {36},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2305.15771}
+}
+
+@inproceedings{valmeekam2023planbench,
+  title     = {{PlanBench}: An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change},
+  author    = {Valmeekam, Karthik and Olmo, Alberto and Sreedharan, Sarath and Kambhampati, Subbarao},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {36},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2206.10498}
+}
+
+%% ---------------- Benchmarks / datasets ----------------
+
+@article{cobbe2021training,
+  title   = {Training Verifiers to Solve Math Word Problems},
+  author  = {Cobbe, Karl and Kosaraju, Vineet and Bavarian, Mohammad and Chen, Mark and Jun, Heewoo and Kaiser, Lukasz and Plappert, Matthias and Tworek, Jerry and Hilton, Jacob and Nakano, Reiichiro and Hesse, Christopher and Schulman, John},
+  journal = {arXiv preprint arXiv:2110.14168},
+  year    = {2021},
+  url     = {https://arxiv.org/abs/2110.14168}
+}
+
+%% ---------------- Models ----------------
+
+@article{guo2025deepseek,
+  title   = {{DeepSeek-R1}: Incentivizing Reasoning Capability in {LLM}s via Reinforcement Learning},
+  author  = {Guo, Daya and others},
+  journal = {arXiv preprint arXiv:2501.12948},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2501.12948}
+}
+
+%% ADDED — Qwen2.5: open-weight backbone for the Appendix F mechanistic pilot.
+@article{qwen2025technical,
+  title   = {Qwen2.5 Technical Report},
+  author  = {{Qwen Team}},
+  journal = {arXiv preprint arXiv:2412.15115},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2412.15115}
+}
+
+%% ADDED — Llama 3.1 herd: open-weight model in the behavioural suite and the
+%% priority mechanistic follow-up.
+@article{dubey2024llama,
+  title   = {The Llama 3 Herd of Models},
+  author  = {Dubey, Abhimanyu and others},
+  journal = {arXiv preprint arXiv:2407.21783},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2407.21783}
 }

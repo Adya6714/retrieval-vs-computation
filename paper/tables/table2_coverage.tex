@@ -1,0 +1,26 @@
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Probe coverage. Ph1${=}$declaration; Ph2A${=}$execution;
+  Ph2B${=}$injection. $^a$BW Phase~1 plans declared; CCI often non-computable
+  due to illegal-action abort loops. $^b$84\% of BW Phase-2A sessions abort
+  under the strict parser (Section~\ref{sec:bw}); the NL-tolerant rerun
+  yields non-zero solves on standard BW. In total the study comprises
+  approximately 20{,}000 model API calls, spanning Probe-1 variant evaluation,
+  Probe-2 (Phase~1/Phase-2A/Phase-2B), step-level reasoning-type
+  classification, and variant generation/verification; Infini-gram index
+  queries (Probe~3) are computed once per problem and are not counted in this
+  total.}
+  \label{tab:coverage}
+  \begin{tabular}{lccccc}
+    \toprule
+    Family & P1 Vars & P2-Ph1 & P2-Ph2A & P2-Ph2B & P3 \\
+    \midrule
+    GSM (5 mod.)  & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+    ALGO (5 mod.) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+    BW (5 mod.)   & \checkmark & \checkmark$^a$ & $^b$ & --- & \checkmark \\
+    \midrule
+    Mech. & \multicolumn{5}{c}{Qwen-2.5-7B pilot (Appendix~\ref{app:mech})} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

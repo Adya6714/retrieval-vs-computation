@@ -1,8 +1,26 @@
-# Beyond Accuracy — Retrieval vs Computation in LLM Reasoning
+# Retrieval vs Computation — LLM Reasoning Evaluation
 
-> **Anonymous submission.** Author, affiliation, and target venue are intentionally omitted.
+This repository implements a **three-probe evaluation framework** across **Blocksworld (BW)**, **GSM arithmetic**, and **Algorithmic (ALGO)** problem families. The core question: when two models score the same, are they solving problems the same way — by **retrieval** (pattern recall) or **computation** (structure-sensitive reasoning)?
 
-This repository implements a **three-probe evaluation framework** across three problem families — **Blocksworld (BW)**, **GSM arithmetic**, and **Algorithmic (ALGO)** — to test whether LLM success reflects **retrieval** (pattern recall) or **computation** (structure-sensitive reasoning). The core empirical object is **per-instance triangulation**: when behavioral invariance, plan–execution coupling, and contamination signals agree on the same diagnosis for one problem, that convergence is the evidence.
+**Published work:** *Same Score, Different Strategy* (CAISc 2026) — LaTeX package in [`paper/`](paper/).  
+**Future research roadmap:** [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) + linked notes in [`research-vault/RvC_Research_Vault.zip`](research-vault/RvC_Research_Vault.zip).
+
+---
+
+## Where everything lives
+
+| If you want to… | Open this |
+|-----------------|-----------|
+| **Accepted paper** (build PDF, tables, figures) | [`paper/main.tex`](paper/main.tex) · [`paper/README.md`](paper/README.md) |
+| **Future research program** (phases, claims, evaluation catalog) | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
+| **Full research vault** (110+ linked planning notes) | Extract [`research-vault/RvC_Research_Vault.zip`](research-vault/RvC_Research_Vault.zip) |
+| Consolidated analysis (every number from every probe) | [`ANALYSIS.md`](ANALYSIS.md) |
+| Script → artifact map | [`results/README.md`](results/README.md) |
+| Probe×family runbooks | [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](docs/evaluation/MASTER_EVALUATION_PIPELINES.md) |
+| GPU / API ops notes | [`docs/workbench/`](docs/workbench/) |
+| Model roster and API IDs | [`configs/models.yaml`](configs/models.yaml) |
+
+**Data flow:** `data/problems/` → `scripts/*_SCR_*.py` → `results/raw/` → `results/derived/` → `results/paper/` (CSV tables) + `paper/figures/` (manuscript PDFs).
 
 ---
 
@@ -37,11 +55,10 @@ If you only want to reproduce numbers from already-committed CSVs, skip the boot
 | Tagged index of all result files | [`results/ARTIFACT_REGISTRY.csv`](results/ARTIFACT_REGISTRY.csv) |
 | Canonical path constants in code | [`probes/common/results_paths.py`](probes/common/results_paths.py) |
 | Model roster and API IDs | [`configs/models.yaml`](configs/models.yaml) |
-| The paper draft | [`paper/main.tex`](paper/main.tex) |
+| Accepted CAISc paper | [`paper/main.tex`](paper/main.tex) |
+| Future research roadmap | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
 
-**Canonical outputs (current layout):** all model runs live under `results/raw/`; aggregated metrics under `results/derived/`; manuscript tables under `results/paper/`; plots under `figures/` (GSM legacy) and `results/figures/` (ALGO/BW). Do **not** use old flat paths like `results/BW_P1_RES_*` — those were removed during consolidation.
-
----
+**Canonical outputs:** model runs in `results/raw/`; metrics in `results/derived/`; manuscript CSV tables in `results/paper/`; paper PDF figures in `paper/figures/`; probe diagnostic plots in `results/figures/`.
 
 ## Architecture
 
@@ -76,7 +93,7 @@ flowchart TB
     RAW[results/raw/ append-only]
     DER[results/derived/ recomputed]
     PAP[results/paper/ wide tables]
-    FIG[figures/ + results/figures/]
+    FIG[paper/figures/ + results/figures/]
   end
 
   subgraph lib [Shared library probes/]
@@ -123,36 +140,26 @@ flowchart TB
 
 ```
 rvc/
-├── CHARTER.md                 # Research design (authoritative theory)
-├── configs/models.yaml        # OpenRouter model IDs for sweeps
-├── data/
-│   ├── problems/              # Source-of-truth question banks (per family) — submission inputs
-│   ├── staging/               # Variant generation intermediates (optional; rebuild needs sources below)
-│   └── infinigram_cache.json  # Cached InfiniGram API responses (Probe 3)
-│   # (removed from repo) sources/planbench, sources/gsm_symbolic — see “Removed build-time dependencies”
-├── probes/                    # Reusable evaluation library
-│   ├── behavioral/            # Sweeps, CSS/RCS, model clients, verifiers
-│   ├── contamination/         # InfiniGram scoring, verify.py, verify_algo.py
-│   ├── triangulation/         # Per-instance merge logic
-│   ├── mechanistic/           # Optional activation / logit lens sweeps
-│   └── common/                # IO schema, results_paths, shared utils
-├── scripts/                   # Runnable entry points (naming: {FAM}_P{n}_SCR_*.py)
-│   ├── consolidate/           # Table 1, cross-family regressions, bank fixes
-│   └── generation/            # Stage 1–2 variant pipeline
+├── research-vault/              # Future research program (master doc + vault zip)
+├── paper/                       # CAISc 2026 accepted paper (LaTeX, tables, figures)
+│   └── figures/scripts/         # Figure generators (main + probe + legacy)
+├── configs/models.yaml          # OpenRouter model IDs
+├── data/problems/               # Question banks (BW, GSM, ALGO)
+├── probes/                        # Reusable evaluation library
+├── scripts/                       # Runnable sweeps (*_SCR_*.py) and family figures (*_FIG_*.py)
 ├── results/
-│   ├── raw/                   # Model outputs (append-only)
-│   ├── derived/               # Long-format metrics + triangulation
-│   ├── paper/                 # Wide tables for manuscript
-│   ├── figures/               # ALGO/BW figure outputs
-│   ├── ARTIFACT_REGISTRY.csv  # Tagged file index
-│   └── README.md              # Detailed script → artifact map
-├── figures/                   # GSM figure outputs (legacy path)
-├── analysis/figures/          # Cross-family publication figure scripts
-├── docs/evaluation/           # Per-family evaluation handbooks
-└── tests/                     # Unit tests for probes/
+│   ├── raw/                     # Model outputs (append-only)
+│   ├── derived/                 # Recomputed metrics
+│   ├── paper/                   # Manuscript CSV tables + AUDIT/
+│   └── figures/                 # Probe diagnostic plots (non-manuscript)
+├── docs/
+│   ├── evaluation/              # Probe×family replication guides
+│   └── workbench/               # GPU runbook, checklists, pipeline reference
+├── ANALYSIS.md                  # Consolidated empirical analysis
+└── tests/
 ```
 
-**Script naming:** `{FAM}_P{probe}_SCR_{action}.py` runs evaluation; `{FAM}_P{probe}_FIG_generate.py` or `analysis/figures/fig*.py` produces plots; `{FAM}_PX_SCR_*` is cross-probe bank maintenance (W6 generation, audits).
+**Script naming:** `{FAM}_P{probe}_SCR_{action}.py` runs evaluation; `{FAM}_P{probe}_FIG_generate.py` or `paper/figures/scripts/` produces plots.
 
 ---
 
@@ -215,7 +222,7 @@ Triangulation merges P1 behavioral + P2 CCI/TEP (or ALGO phase outputs) + P3 con
 |--------|--------|
 | `consolidate/make_table1.py` | `paper/TABLE1_cross_family.csv` |
 | `consolidate/run_css_regressions.py` | `paper/cross_family_regression.csv` |
-| `*_FIG_generate.py`, `analysis/figures/fig*.py` | `figures/` or `results/figures/` |
+| `*_FIG_generate.py`, `paper/figures/scripts/*.py` | `paper/figures/` or `results/figures/` |
 
 **One-shot local rebuild** (metrics → tables; no API):
 

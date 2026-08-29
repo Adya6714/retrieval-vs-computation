@@ -1,0 +1,312 @@
+problem_id,variant_type,model,behavioral_correct,raw_response,family,correct_answer,verify_family
+CC_01,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 1, 1, 4",algo,"Count: 2
+ Coins: [3, 3]",algo
+CC_01,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 3 Scoops: 1 g, 1 g, 4 g",algo,"Total: 2
+ Scoops: [3, 3]",algo
+CC_02,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"Count: 2
+Coins: 5, 6",algo,"Count: 2
+ Coins: [5, 6]",algo
+CC_02,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 4 Scoops: 1 g, 1 g, 6 g, 4 g",algo,"Total: 2
+ Scoops: [5, 6]",algo
+CC_03,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 6, 6, 1",algo,"Count: 2
+ Coins: [6, 7]",algo
+CC_03,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 4 Scoops: 7 g, 6 g, 6 g, 1 g",algo,"Total: 2
+ Scoops: [6, 7]",algo
+CC_031,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 7
+Coins: 10, 10, 10, 5, 2, 2, 1",algo,"Count: 5
+Coins: [10, 10, 10, 10, 2]",algo
+CC_031,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 5, 1, 1",algo,"Count: 5
+Coins: [10, 10, 10, 10, 2]",algo
+CC_032,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"Count: 4
+Coins: 25, 25, 25, 2",algo,"Count: 4
+Coins: [25, 25, 25, 2]",algo
+CC_032,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 25, 25, 25",algo,"Count: 4
+Coins: [25, 25, 25, 2]",algo
+CC_033,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 9
+Coins: 10, 10, 10, 10, 10, 1, 1, 1, 1",algo,"Count: 13
+Coins: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1]",algo
+CC_033,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 10, 10, 10, 2, 1",algo,"Count: 13
+Coins: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 1]",algo
+CC_034,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 2
+Coins: 100, 2",algo,"Count: 3
+Coins: [100, 1, 1]",algo
+CC_034,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 100, 100, 1",algo,"Count: 3
+Coins: [100, 1, 1]",algo
+CC_035,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 6
+Coins: 10, 10, 10, 10, 10, 1",algo,"Count: 8
+Coins: [10, 10, 10, 10, 10, 10, 10, 1]",algo
+CC_035,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 6
+stamps: 10, 10, 10, 10, 10, 1",algo,"Count: 8
+Coins: [10, 10, 10, 10, 10, 10, 10, 1]",algo
+CC_036,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 4
+Coins: 10, 10, 10, 10",algo,"Count: 12
+Coins: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 1]",algo
+CC_036,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 5, 1, 1",algo,"Count: 12
+Coins: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 1]",algo
+CC_037,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 100, 50, 10, 10, 10, 10, 1, 1, 1, 1, 1",algo,"Count: 11
+Coins: [50, 10, 10, 10, 1, 1, 1, 1, 1, 1, 1]",algo
+CC_037,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 100, 100, 1",algo,"Count: 11
+Coins: [50, 10, 10, 10, 1, 1, 1, 1, 1, 1, 1]",algo
+CC_038,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 2
+Coins: 10, 10, 4",algo,"Count: 6
+Coins: [10, 10, 1, 1, 1, 1]",algo
+CC_038,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 100, 100, 1",algo,"Count: 6
+Coins: [10, 10, 1, 1, 1, 1]",algo
+CC_039,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 31, 41, 36",algo,"Count: 4
+Coins: [53, 53, 1, 1]",algo
+CC_039,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 31, 41, 36",algo,"Count: 4
+Coins: [53, 53, 1, 1]",algo
+CC_04,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 10, 10, 7",algo,"Count: 2
+Coins: [17, 10]",algo
+CC_04,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 3 Scoops: 14 g, 10 g, 3 g",algo,"Total: 2
+Scoops: [17, 10]",algo
+CC_040,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 11, 11, 8",algo,"Count: 2
+Coins: [19, 11]",algo
+CC_040,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 11, 11, 8",algo,"Count: 2
+Coins: [19, 11]",algo
+CC_041,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 43, 43, 55",algo,"Count: 5
+Coins: [43, 43, 43, 11, 1]",algo
+CC_041,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 43, 43, 55",algo,"Count: 5
+Coins: [43, 43, 43, 11, 1]",algo
+CC_042,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 2
+Coins: 13, 21",algo,"Count: 10
+Coins: [13, 13, 1, 1, 1, 1, 1, 1, 1, 1]",algo
+CC_042,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 13, 13, 8",algo,"Count: 10
+Coins: [13, 13, 1, 1, 1, 1, 1, 1, 1, 1]",algo
+CC_043,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 4
+Coins: 47, 47, 7, 3",algo,"Count: 6
+Coins: [47, 47, 7, 1, 1, 1]",algo
+CC_043,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 13, 13, 47",algo,"Count: 6
+Coins: [47, 47, 7, 1, 1, 1]",algo
+CC_044,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 4
+Coins: 29, 29, 19, 6",algo,"Count: 9
+Coins: [29, 29, 19, 1, 1, 1, 1, 1, 1]",algo
+CC_044,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 4
+stamps: 29, 29, 19, 6",algo,"Count: 9
+Coins: [29, 29, 19, 1, 1, 1, 1, 1, 1]",algo
+CC_045,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 13, 13, 29",algo,"Count: 8
+Coins: [29, 29, 1, 1, 1, 1, 1, 1]",algo
+CC_045,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+stamps: 13, 13, 29",algo,"Count: 8
+Coins: [29, 29, 1, 1, 1, 1, 1, 1]",algo
+CC_05,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 6, 4, 4",algo,"Count: 2
+ Coins: [7, 7]",algo
+CC_05,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 3 Scoops: 6 g, 4 g, 4 g",algo,"Total: 2
+ Scoops: [7, 7]",algo
+CC_06,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 8, 8, 10",algo,"Count: 3
+ Coins: [12, 7, 7]",algo
+CC_06,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 4 Scoops: 8 g, 8 g, 7 g, 3 g",algo,"Total: 3
+ Scoops: [12, 7, 7]",algo
+CC_07,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 3
+Coins: 4, 4, 4",algo,"Count: 2
+Coins: [8, 4]",algo
+CC_07,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 3 Scoops: 4 g, 4 g, 4 g",algo,"Total: 2
+Scoops: [8, 4]",algo
+CC_08,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 2
+Coins: 10, 20",algo,"Count: 2
+ Coins: [15, 15]",algo
+CC_08,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 4 Scoops: 10 g, 10 g, 5 g, 5 g",algo,"Total: 2
+ Scoops: [15, 15]",algo
+CC_09,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 6
+Coins: 197, 197, 11, 11, 7, 1",algo,"Count: 5
+ Coins: [197, 197, 11, 11, 7]",algo
+CC_09,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 6 Scoops: 197, 197, 11, 11, 7, 1",algo,"Total: 5
+ Scoops: [197, 197, 11, 11, 7]",algo
+CC_10,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Count: 5
+Coins: 197, 197, 197, 197, 67",algo,"Count: 7
+ Coins: [201, 201, 201, 197, 67, 67, 31]",algo
+CC_10,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Total: 7 
+Scoops: 197, 197, 197, 197, 197, 67, 31, 31, 17, 7",algo,"Total: 7
+ Scoops: [201, 201, 201, 197, 67, 67, 31]",algo
+SP_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 1 -> 3 -> 7 -> 11, Cost: 30",algo,"Path: 0 → 5 → 10 → 11, Cost: 17",algo
+SP_001,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: A -> B -> D -> H -> L, Cost: 25",algo,"Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",algo
+SP_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 31",algo,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",algo
+SP_002,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 63",algo,"Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",algo
+SP_003,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Safe House 11 -> Shortcut 17 -> Flyover 7 -> Interchange 6 -> Overpass 3 -> Drop Point 9, Cost: 33",algo,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",algo
+SP_003,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 2 -> 3 -> 9, Cost: 63",algo,"Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",algo
+SP_004,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 1 -> 5 -> 9, Cost: 9",algo,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",algo
+SP_004,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 1 -> 5 -> 4 -> 9, Cost: 16",algo,"Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",algo
+SP_005,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 15, Cost: 60",algo,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",algo
+SP_005,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 1 -> 5 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 38",algo,"Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",algo
+SP_019,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 6, Cost: 39",algo,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",algo
+SP_019,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Frankfurt -> Munich -> Cologne, Cost: 39",algo,"Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",algo
+SP_020,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 4 -> 5, Cost: 39",algo,"Path: 0 -> 3 -> 4 -> 5, Cost: 12",algo
+SP_020,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Rome -> Florence -> Venice -> Naples, Cost: 39",algo,"Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",algo
+SP_021,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 7 -> 8, Cost: 21",algo,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",algo
+SP_021,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 31",algo,"Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",algo
+SP_023,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 5, Cost: 13",algo,"Path: 0 -> 2 -> 3 -> 5, Cost: 5",algo
+SP_023,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Tokyo -> Osaka -> Kobe, Cost: 6",algo,"Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",algo
+SP_024,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 7, Cost: 11",algo,"Path: 0 -> 2 -> 3 -> 7, Cost: 5",algo
+SP_024,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 13",algo,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",algo
+SP_026,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 8, Cost: 11",algo,"Path: 0 -> 2 -> 3 -> 8, Cost: 5",algo
+SP_026,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Nice -> Monaco, Cost: 11",algo,"Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",algo
+SP_027,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 6, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",algo
+SP_027,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Tokyo -> Osaka -> Fukuoka, Cost: 4",algo,"Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",algo
+SP_028,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 7, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",algo
+SP_028,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Tokyo -> Osaka -> Sendai, Cost: 4",algo,"Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",algo
+SP_029,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 7, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",algo
+SP_029,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 1",algo,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",algo
+SP_030,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 6 -> 7, Cost: 16",algo,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",algo
+SP_030,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Dresden -> Bremen, Cost: 16",algo,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",algo
+SP_031,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 42",algo,"Path: 0 -> 1 -> 3 -> 8, Cost: 22",algo
+SP_031,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Nice -> Strasbourg, Cost: 14",algo,"Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",algo
+SP_032,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 52",algo,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",algo
+SP_032,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 38",algo,"Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",algo
+SP_033,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 5 -> 7, Cost: 38",algo,"Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",algo
+SP_033,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Bordeaux -> Toulouse -> Montpellier, Cost: 58",algo,"Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",algo
+SP_034,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"Path: 0 -> 3 -> 4 -> 7, Cost: 21",algo,"Path: 0 -> 3 -> 4 -> 7, Cost: 21",algo
+SP_034,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Oxford -> Cambridge -> Birmingham, Cost: 61",algo,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",algo
+SP_035,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",algo,"Path: 0 -> 1 -> 4 -> 6, Cost: 19",algo
+SP_035,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Milan, Cost: 57",algo,"Path: London -> Paris -> Lyon -> Milan, Cost: 19",algo
+SP_036,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 27",algo,"Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",algo
+SP_036,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Berlin -> Prague -> Madrid, Cost: 27",algo,"Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12",algo
+SP_037,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 6, Cost: 39",algo,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",algo
+SP_037,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Madrid -> Toledo -> Segovia -> Salamanca -> Leon, Cost: 31",algo,"Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",algo
+SP_038,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 7 -> 8, Cost: 20",algo,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",algo
+SP_038,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Frankfurt -> Budapest, Cost: 20",algo,"Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",algo
+SP_039,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 18",algo,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",algo
+SP_039,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Lyon -> Rome, Cost: 29",algo,"Path: London -> Brussels -> Geneva -> Rome, Cost: 12",algo
+SP_040,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 7, Cost: 29",algo,"Path: 0 -> 3 -> 4 -> 7, Cost: 12",algo
+SP_040,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Amsterdam -> Berlin -> Prague, Cost: 18",algo,"Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",algo
+SP_042,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 8, Cost: 11",algo,"Path: 0 -> 2 -> 3 -> 8, Cost: 5",algo
+SP_042,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Lyon -> Nice -> Monaco, Cost: 12",algo,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",algo
+SP_044,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 11",algo,"Path: 0 -> 2 -> 3 -> 6, Cost: 5",algo
+SP_044,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Oxford -> Birmingham -> Edinburgh, Cost: 12",algo,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",algo
+SP_045,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 6, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",algo
+SP_045,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Prague -> Paris, Cost: 4",algo,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",algo
+SP_046,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 7, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",algo
+SP_046,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Lyon -> Lille, Cost: 4",algo,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",algo
+SP_047,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 6, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",algo
+SP_047,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Lyon -> Lille, Cost: 4",algo,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",algo
+SP_048,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 7, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",algo
+SP_048,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 1",algo,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",algo
+SP_049,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 4 -> 6 -> 8, Cost: 30",algo,"Path: 0 -> 4 -> 6 -> 8, Cost: 10",algo
+SP_049,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 30",algo,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",algo
+SP_050,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 27",algo,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",algo
+SP_050,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 31",algo,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",algo
+SP_051,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 33",algo,"Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",algo
+SP_051,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Rome, Cost: 53",algo,"Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18",algo
+SP_052,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 26",algo,"Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",algo
+SP_052,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Rome, Cost: 46",algo,"Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11",algo
+SP_053,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",algo,"Path: 0 -> 1 -> 2 -> 5, Cost: 25",algo
+SP_053,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Prague -> Vienna -> Warsaw, Cost: 50",algo,"Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",algo
+SP_054,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 27",algo,"Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",algo
+SP_054,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Milan, Cost: 27",algo,"Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12",algo
+SP_055,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 24",algo,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",algo
+SP_055,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 18",algo,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",algo
+SP_056,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",algo,"Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",algo
+SP_056,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Munich -> Zurich -> Rome, Cost: 50",algo,"Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21",algo
+SP_057,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",algo,"Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",algo
+SP_057,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Dover -> Calais -> Berlin, Cost: 61",algo,"Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",algo
+SP_058,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 5 -> 7, Cost: 40",algo,"Path: 0 -> 3 -> 5 -> 7, Cost: 20",algo
+SP_058,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Oxford -> Cambridge -> Sheffield, Cost: 55",algo,"Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",algo
+SP_059,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 54",algo,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",algo
+SP_059,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Norwich -> Cardiff, Cost: 63",algo,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",algo
+SP_060,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 20",algo,"Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",algo
+SP_060,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 18",algo,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",algo
+SP_061,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",algo,"Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",algo
+SP_061,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Warsaw, Cost: 52",algo,"Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",algo
+SP_062,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 6, Cost: 39",algo,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",algo
+SP_062,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Amsterdam -> Berlin -> Prague -> Rome, Cost: 31",algo,"Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",algo
+SP_063,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 6 -> 8, Cost: 17",algo,"Path: 0 -> 3 -> 4 -> 8, Cost: 12",algo
+SP_063,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Cambridge -> Oxford -> Bristol -> Edinburgh, Cost: 30",algo,"Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12",algo
+SP_064,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 6, Cost: 24",algo,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",algo
+SP_064,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Munich -> Vienna -> Budapest -> Zagreb, Cost: 39",algo,"Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",algo
+SP_065,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 3 -> 2 -> 6, Cost: 29",algo,"Path: 0 -> 3 -> 4 -> 6, Cost: 12",algo
+SP_065,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 31",algo,"Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",algo
+SP_066,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 11",algo,"Path: 0 -> 2 -> 3 -> 6, Cost: 5",algo
+SP_066,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Hamburg -> Frankfurt -> Dresden, Cost: 12",algo,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",algo
+SP_068,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 3 -> 8, Cost: 11",algo,"Path: 0 -> 2 -> 3 -> 8, Cost: 5",algo
+SP_068,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 13",algo,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",algo
+SP_069,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 1 -> 7, Cost: 6",algo,"Path: 0 -> 2 -> 3 -> 7, Cost: 5",algo
+SP_069,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 13",algo,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",algo
+SP_070,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 6, Cost: 2",algo,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",algo
+SP_070,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: London -> Berlin -> Paris -> Prague, Cost: 1",algo,"Path: London -> Berlin -> Paris -> Prague, Cost: 3",algo
+SP_071,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 8, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 8, Cost: 3",algo
+SP_071,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Prague -> Warsaw, Cost: 4",algo,"Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3",algo
+SP_072,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 6, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 6, Cost: 3",algo
+SP_072,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Paris -> Lyon -> Strasbourg, Cost: 4",algo,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",algo
+SP_073,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Path: 0 -> 2 -> 1 -> 7, Cost: 1",algo,"Path: 0 -> 2 -> 1 -> 7, Cost: 3",algo
+SP_073,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Path: Berlin -> Prague -> Paris, Cost: 4",algo,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",algo
+WIS_001,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 2, 4, 6, 8, Total: 30",algo,"Selected: {0, 2, 4, 6, 9}, Total: 40",algo
+WIS_001,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 1, 3, 6, 8, Total: 18",algo,"Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",algo
+WIS_002,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: {11, 8, 5, 9, 6, 2, 4, 0, 10, 7, 3, 1}, Total: 96",algo,"Selected: {1, 3, 7, 10, 11}, Total: 52",algo
+WIS_002,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: {0, 2, 5, 7, 8, 10}, Total: 42",algo,"Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52",algo
+WIS_003,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: {0, 2, 4, 5, 7, 8, 12}, Total: 65",algo,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55",algo
+WIS_003,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: {0, 2, 3, 4, 6, 7, 8, 11, 12, 13}, Total: 73",algo,"Selected: {Item B, Item C, Item D, Item E, Item K, Item L, Item N}, Total: 55",algo
+WIS_004,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: {3, 4, 8, 9, 11, 12, 13}, Total: 37",algo,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",algo
+WIS_004,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: {0, 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, 13}, Total: 63",algo,"Selected: {Item A, Item B, Item D, Item G, Item J, Item L, Item M}, Total: 37",algo
+WIS_005,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 2, 8, 10, 13, 16, Total: 63",algo,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67",algo
+WIS_005,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 2, 3, 5, 8, 10, 11, 14, 15, 16, Total: 83",algo,"Selected: {Item C, Item F, Item H, Item I, Item L, Item O}, Total: 67",algo
+WIS_006,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 1, 4, 6, Total: 24",algo,"Selected: {0, 1, 3, 4, 5, 6}, Total: 40",algo
+WIS_006,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Opening Keynote, Awards Ceremony, Total: 16",algo,"Selected: {0, 1, 3, 4, 5, 6}, Total: 40",algo
+WIS_007,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 2, 5, Total: 40",algo,"Selected: {0, 2, 3, 4, 5}, Total: 60",algo
+WIS_007,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Opening Keynote, Closing Remarks, Total: 26",algo,"Selected: {0, 2, 3, 4, 5}, Total: 60",algo
+WIS_009,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 2, 4, 5, 8, Total: 44",algo,"Selected: {0, 1, 2, 3, 4, 5, 6, 8}, Total: 72",algo
+WIS_009,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Opening Keynote, Lunch Networking, Tech Demo, Evening Reception, Total: 41",algo,"Selected: {0, 1, 2, 3, 4, 5, 6, 8}, Total: 72",algo
+WIS_010,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 2, 5, 6, Total: 39",algo,"Selected: {0, 2, 4, 5, 6, 7}, Total: 62",algo
+WIS_010,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Morning Keynote, Industry Awards, Closing Remarks, Total: 33",algo,"Selected: {0, 2, 4, 5, 6, 7}, Total: 62",algo
+WIS_012,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 1, 3, 5, 7, Total: 52",algo,"Selected: {0, 2, 3, 4, 5, 6, 7, 8}, Total: 83",algo
+WIS_012,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Opening Keynote, Evening Keynote, Coffee Break Talk, Total: 37",algo,"Selected: {0, 2, 3, 4, 5, 6, 7, 8}, Total: 83",algo
+WIS_013,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 4, Total: 51",algo,"Selected: {4, 5}, Total: 49",algo
+WIS_013,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Summit, Total: 43",algo,"Selected: {4, 5}, Total: 49",algo
+WIS_014,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 3, 5, Total: 22",algo,"Selected: {4, 5}, Total: 53",algo
+WIS_014,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Bootcamp, Closing Remarks, Total: 16",algo,"Selected: {4, 5}, Total: 53",algo
+WIS_015,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 4, Total: 44",algo,"Selected: {4, 5}, Total: 49",algo
+WIS_015,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Seminar, Total: 44",algo,"Selected: {4, 5}, Total: 49",algo
+WIS_016,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 4, Total: 52",algo,"Selected: {4, 5}, Total: 51",algo
+WIS_016,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Opening Keynote, Full Day Seminar, Networking Break, Closing Remarks, Total: 66",algo,"Selected: {4, 5}, Total: 51",algo
+WIS_017,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: 4, 5, Total: 57",algo,"Selected: {4, 5}, Total: 57",algo
+WIS_017,W3,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: AI Ethics Symposium, Future Tech Showcase, Total: 57",algo,"Selected: {4, 5}, Total: 57",algo
+WIS_018,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 5, Total: 28",algo,"Selected: {4, 5}, Total: 55",algo
+WIS_018,W3,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: Product Launch, Industry Summit, Total: 55",algo,"Selected: {4, 5}, Total: 55",algo
+WIS_019,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: 4, 5, Total: 58",algo,"Selected: {4, 5}, Total: 58",algo
+WIS_019,W3,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: Workshop Session, Tech Demo, Total: 58",algo,"Selected: {4, 5}, Total: 58",algo
+WIS_020,canonical,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: 4, 5, Total: 59",algo,"Selected: {4, 5}, Total: 59",algo
+WIS_020,W3,meta-llama/Llama-3.1-8B-Instruct,True,"Selected: Industry Showcase, Networking Event, Total: 59",algo,"Selected: {4, 5}, Total: 59",algo
+WIS_021,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 3, 5, 8, Total: 44",algo,"Selected: {1, 2, 3, 5, 10}, Total: 73",algo
+WIS_021,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Morning Tutorial, Product Launch, Networking Brunch, Afternoon Panel, Total: 53",algo,"Selected: {1, 2, 3, 5, 10}, Total: 73",algo
+WIS_022,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 2, 4, 6, Total: 47",algo,"Selected: {0, 2, 4, 6}, Total: 69",algo
+WIS_022,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Morning Keynote, Afternoon Workshop, Evening Keynote, Total: 55",algo,"Selected: {0, 2, 4, 6}, Total: 69",algo
+WIS_023,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 3, Total: 39",algo,"Selected: {3, 4}, Total: 47",algo
+WIS_023,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Workshop, Total: 39",algo,"Selected: {3, 4}, Total: 47",algo
+WIS_024,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 4, Total: 40",algo,"Selected: {4, 5}, Total: 47",algo
+WIS_024,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Workshop, Networking Break, Closing Remarks, Total: 64",algo,"Selected: {4, 5}, Total: 47",algo
+WIS_025,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 1, 3, Total: 54",algo,"Selected: {3, 4}, Total: 44",algo
+WIS_025,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Workshop, Total: 37",algo,"Selected: {3, 4}, Total: 44",algo
+WIS_026,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 4, Total: 46",algo,"Selected: {4, 5}, Total: 53",algo
+WIS_026,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Seminar, Total: 46",algo,"Selected: {4, 5}, Total: 53",algo
+WIS_027,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 5, Total: 29",algo,"Selected: {4, 5}, Total: 56",algo
+WIS_027,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Networking Event, Total: 29",algo,"Selected: {4, 5}, Total: 56",algo
+WIS_028,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 3, Total: 37",algo,"Selected: {3, 4}, Total: 43",algo
+WIS_028,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Opening Keynote, Full Day Workshop, Closing Remarks, Total: 52",algo,"Selected: {3, 4}, Total: 43",algo
+WIS_029,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 4, Total: 41",algo,"Selected: {4, 5}, Total: 47",algo
+WIS_029,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Full Day Bootcamp, Total: 41",algo,"Selected: {4, 5}, Total: 47",algo
+WIS_030,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 2, 7, Total: 35",algo,"Selected: {1, 2, 4, 5, 6}, Total: 62",algo
+WIS_030,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Product Launch, Morning Workshop, Registration Desk, Coffee Session, Total: 42",algo,"Selected: {1, 2, 4, 5, 6}, Total: 62",algo
+WIS_031,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 2, 5, 6, Total: 33",algo,"Selected: {0, 2, 3, 6}, Total: 51",algo
+WIS_031,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Marketing Workshop, Closing Remarks, Total: 19",algo,"Selected: {0, 2, 3, 6}, Total: 51",algo
+WIS_032,canonical,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: 0, 2, 5, 8, Total: 50",algo,"Selected: {0, 2, 4, 5, 6, 8}, Total: 80",algo
+WIS_032,W3,meta-llama/Llama-3.1-8B-Instruct,False,"Selected: Morning Keynote, Data Workshop, Security Talk, Closing Address, Total: 52",algo,"Selected: {0, 2, 4, 5, 6, 8}, Total: 80",algo

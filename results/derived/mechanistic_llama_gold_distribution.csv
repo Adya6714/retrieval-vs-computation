@@ -1,0 +1,256 @@
+family,unit,value,count,n_instances,fraction
+gsm,gold_value,75,6,112,0.05357142857142857
+gsm,gold_value,30,4,112,0.03571428571428571
+gsm,gold_value,150,4,112,0.03571428571428571
+gsm,gold_value,86,3,112,0.026785714285714284
+gsm,gold_value,70,3,112,0.026785714285714284
+gsm,gold_value,8,3,112,0.026785714285714284
+gsm,gold_value,20,3,112,0.026785714285714284
+gsm,gold_value,51,2,112,0.017857142857142856
+gsm,gold_value,21600,2,112,0.017857142857142856
+gsm,gold_value,54,2,112,0.017857142857142856
+gsm,gold_value,546,2,112,0.017857142857142856
+gsm,gold_value,1024,2,112,0.017857142857142856
+gsm,gold_value,49,2,112,0.017857142857142856
+gsm,gold_value,885,2,112,0.017857142857142856
+gsm,gold_value,81,2,112,0.017857142857142856
+gsm,gold_value,90,2,112,0.017857142857142856
+gsm,gold_value,354,2,112,0.017857142857142856
+gsm,gold_value,5,2,112,0.017857142857142856
+gsm,gold_value,922,2,112,0.017857142857142856
+gsm,gold_value,21,2,112,0.017857142857142856
+gsm,gold_value,3,2,112,0.017857142857142856
+gsm,gold_value,24,2,112,0.017857142857142856
+gsm,gold_value,2820,2,112,0.017857142857142856
+gsm,gold_value,59,2,112,0.017857142857142856
+gsm,gold_value,1122,2,112,0.017857142857142856
+gsm,gold_value,121,2,112,0.017857142857142856
+gsm,gold_value,510,2,112,0.017857142857142856
+gsm,gold_value,206,2,112,0.017857142857142856
+gsm,gold_value,1782,2,112,0.017857142857142856
+gsm,gold_value,256,2,112,0.017857142857142856
+gsm,gold_value,378,2,112,0.017857142857142856
+gsm,gold_value,16,2,112,0.017857142857142856
+gsm,gold_value,6,2,112,0.017857142857142856
+gsm,gold_value,69,2,112,0.017857142857142856
+gsm,gold_value,84,2,112,0.017857142857142856
+gsm,gold_value,285,2,112,0.017857142857142856
+gsm,gold_value,29,2,112,0.017857142857142856
+gsm,gold_value,46,2,112,0.017857142857142856
+gsm,gold_value,420,2,112,0.017857142857142856
+gsm,gold_value,112000,2,112,0.017857142857142856
+gsm,gold_value,16200,2,112,0.017857142857142856
+gsm,gold_value,13,1,112,0.008928571428571428
+gsm,gold_value,5775,1,112,0.008928571428571428
+gsm,gold_value,41,1,112,0.008928571428571428
+gsm,gold_value,988,1,112,0.008928571428571428
+gsm,gold_value,366,1,112,0.008928571428571428
+gsm,gold_value,624,1,112,0.008928571428571428
+gsm,gold_value,10,1,112,0.008928571428571428
+gsm,gold_value,214,1,112,0.008928571428571428
+gsm,gold_value,330,1,112,0.008928571428571428
+gsm,gold_value,23,1,112,0.008928571428571428
+gsm,gold_value,94,1,112,0.008928571428571428
+gsm,gold_value,123,1,112,0.008928571428571428
+gsm,gold_value,120,1,112,0.008928571428571428
+gsm,gold_value,40,1,112,0.008928571428571428
+gsm,gold_value,62,1,112,0.008928571428571428
+gsm,gold_value,630,1,112,0.008928571428571428
+gsm,gold_value,65600,1,112,0.008928571428571428
+gsm,gold_value,246300,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,75,6,112,0.05357142857142857
+gsm,gold_first_token_decoded,30,4,112,0.03571428571428571
+gsm,gold_first_token_decoded,150,4,112,0.03571428571428571
+gsm,gold_first_token_decoded,112,4,112,0.03571428571428571
+gsm,gold_first_token_decoded,86,3,112,0.026785714285714284
+gsm,gold_first_token_decoded,70,3,112,0.026785714285714284
+gsm,gold_first_token_decoded,8,3,112,0.026785714285714284
+gsm,gold_first_token_decoded,20,3,112,0.026785714285714284
+gsm,gold_first_token_decoded,51,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,216,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,54,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,546,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,102,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,49,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,885,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,81,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,90,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,354,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,5,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,922,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,21,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,3,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,24,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,282,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,59,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,121,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,510,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,206,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,178,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,256,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,378,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,16,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,6,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,69,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,84,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,285,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,29,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,46,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,420,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,162,2,112,0.017857142857142856
+gsm,gold_first_token_decoded,13,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,577,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,41,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,988,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,366,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,624,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,10,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,214,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,330,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,23,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,94,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,123,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,120,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,40,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,62,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,630,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,656,1,112,0.008928571428571428
+gsm,gold_first_token_decoded,246,1,112,0.008928571428571428
+gsm,SUMMARY,n_distinct_gold_value=59; n_distinct_first_token=58; top_first_token_fraction=0.054; digit0_dominated=False,112,112,1.0
+sp,gold_value,0 -> 2 -> 1 -> 7,6,160,0.0375
+sp,gold_value,0 -> 3 -> 4 -> 6,5,160,0.03125
+sp,gold_value,0 -> 2 -> 1 -> 6,5,160,0.03125
+sp,gold_value,0 -> 3 -> 4 -> 8,4,160,0.025
+sp,gold_value,0 -> 2 -> 3 -> 7,3,160,0.01875
+sp,gold_value,0 -> 2 -> 3 -> 8,3,160,0.01875
+sp,gold_value,0 -> 2 -> 3 -> 6,3,160,0.01875
+sp,gold_value,0 -> 3 -> 4 -> 7,2,160,0.0125
+sp,gold_value,0 -> 1 -> 3 -> 4 -> 6 -> 7,2,160,0.0125
+sp,gold_value,London -> Bristol -> Birmingham -> Edinburgh,2,160,0.0125
+sp,gold_value,London -> Berlin -> Paris -> Warsaw,2,160,0.0125
+sp,gold_value,London -> Cambridge -> Birmingham -> Edinburgh,2,160,0.0125
+sp,gold_value,Berlin -> Vienna -> Prague -> Paris,2,160,0.0125
+sp,gold_value,Paris -> Marseille -> Lyon -> Lille,2,160,0.0125
+sp,gold_value,London -> Paris -> Lyon -> Geneva -> Milan -> Rome,2,160,0.0125
+sp,gold_value,0 -> 2 -> 6,2,160,0.0125
+sp,gold_value,0 -> 1 -> 3 -> 2 -> 4 -> 5,2,160,0.0125
+sp,gold_value,0 -> 1 -> 2 -> 6,2,160,0.0125
+sp,gold_value,0 -> 1 -> 8,2,160,0.0125
+sp,gold_value,0 → 5 → 10 → 11,1,160,0.00625
+sp,gold_value,16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11,1,160,0.00625
+sp,gold_value,11 → 17 → 10 → 2 → 3 → 9,1,160,0.00625
+sp,gold_value,0 → 3 → 6 → 4 → 5 → 9,1,160,0.00625
+sp,gold_value,0 → 4 → 9 → 11 → 14 → 15,1,160,0.00625
+sp,gold_value,0 -> 3 -> 4 -> 5,1,160,0.00625
+sp,gold_value,0 -> 2 -> 3 -> 5,1,160,0.00625
+sp,gold_value,0 -> 1 -> 3 -> 8,1,160,0.00625
+sp,gold_value,0 -> 4 -> 5 -> 6 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 2 -> 3 -> 4 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 4 -> 6,1,160,0.00625
+sp,gold_value,0 -> 4 -> 6 -> 8,1,160,0.00625
+sp,gold_value,0 -> 3 -> 4 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 3 -> 4 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 2 -> 5 -> 6 -> 8,1,160,0.00625
+sp,gold_value,0 -> 1 -> 2 -> 5,1,160,0.00625
+sp,gold_value,0 -> 2 -> 3 -> 5 -> 6,1,160,0.00625
+sp,gold_value,0 -> 1 -> 3 -> 6 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 2 -> 3 -> 6,1,160,0.00625
+sp,gold_value,0 -> 3 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 3 -> 4 -> 6 -> 7 -> 8,1,160,0.00625
+sp,gold_value,0 -> 3 -> 4 -> 5 -> 7 -> 8,1,160,0.00625
+sp,gold_value,0 -> 1 -> 2 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 2 -> 1 -> 8,1,160,0.00625
+sp,gold_value,Hub A → Hub F → Hub K → Hub L,1,160,0.00625
+sp,gold_value,Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L,1,160,0.00625
+sp,gold_value,Hub L → Hub R → Hub K → Hub C → Hub D → Hub J,1,160,0.00625
+sp,gold_value,Hub A → Hub D → Hub G → Hub E → Hub F → Hub J,1,160,0.00625
+sp,gold_value,Hub A → Hub E → Hub J → Hub L → Hub O → Hub P,1,160,0.00625
+sp,gold_value,Berlin -> Frankfurt -> Stuttgart -> Cologne,1,160,0.00625
+sp,gold_value,Rome -> Florence -> Bologna -> Naples,1,160,0.00625
+sp,gold_value,Tokyo -> Kyoto -> Nagoya -> Kobe,1,160,0.00625
+sp,gold_value,London -> Reading -> Bristol -> Cardiff,1,160,0.00625
+sp,gold_value,Paris -> Nice -> Marseille -> Monaco,1,160,0.00625
+sp,gold_value,Tokyo -> Kyoto -> Osaka -> Fukuoka,1,160,0.00625
+sp,gold_value,Tokyo -> Kyoto -> Osaka -> Sendai,1,160,0.00625
+sp,gold_value,Berlin -> Munich -> Hamburg -> Bremen,1,160,0.00625
+sp,gold_value,Paris -> Lyon -> Nice -> Strasbourg,1,160,0.00625
+sp,gold_value,London -> Brussels -> Amsterdam -> Hamburg -> Berlin,1,160,0.00625
+sp,gold_value,Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier,1,160,0.00625
+sp,gold_value,London -> Bristol -> Bath -> Birmingham,1,160,0.00625
+sp,gold_value,London -> Paris -> Lyon -> Milan,1,160,0.00625
+sp,gold_value,London -> Paris -> Rome -> Vienna -> Zurich -> Madrid,1,160,0.00625
+sp,gold_value,Madrid -> Avila -> Salamanca -> Leon,1,160,0.00625
+sp,gold_value,Berlin -> Munich -> Vienna -> Budapest,1,160,0.00625
+sp,gold_value,London -> Brussels -> Geneva -> Rome,1,160,0.00625
+sp,gold_value,London -> Amsterdam -> Berlin -> Prague,1,160,0.00625
+sp,gold_value,Paris -> Marseille -> Nice -> Monaco,1,160,0.00625
+sp,gold_value,Paris -> Geneva -> Milan -> Rome,1,160,0.00625
+sp,gold_value,Tokyo -> Nagoya -> Kobe -> Nara -> Sendai,1,160,0.00625
+sp,gold_value,Berlin -> Munich -> Vienna -> Warsaw,1,160,0.00625
+sp,gold_value,London -> Paris -> Lyon -> Geneva -> Zurich -> Milan,1,160,0.00625
+sp,gold_value,London -> Brussels -> Amsterdam -> Prague -> Vienna,1,160,0.00625
+sp,gold_value,Berlin -> Prague -> Vienna -> Budapest -> Rome,1,160,0.00625
+sp,gold_value,London -> Paris -> Brussels -> Amsterdam -> Berlin,1,160,0.00625
+sp,gold_value,London -> Birmingham -> Nottingham -> Sheffield,1,160,0.00625
+sp,gold_value,London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff,1,160,0.00625
+sp,gold_value,London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester,1,160,0.00625
+sp,gold_value,London -> Paris -> Berlin -> Prague -> Warsaw,1,160,0.00625
+sp,gold_value,London -> Amsterdam -> Prague -> Rome,1,160,0.00625
+sp,gold_value,London -> Reading -> Bristol -> Edinburgh,1,160,0.00625
+sp,gold_value,Berlin -> Munich -> Budapest -> Zagreb,1,160,0.00625
+sp,gold_value,Berlin -> Munich -> Frankfurt -> Dresden,1,160,0.00625
+sp,gold_value,London -> Brussels -> Amsterdam -> Munich,1,160,0.00625
+sp,gold_value,London -> Berlin -> Paris -> Prague,1,160,0.00625
+sp,gold_value,Berlin -> Vienna -> Prague -> Warsaw,1,160,0.00625
+sp,gold_value,Paris -> Marseille -> Lyon -> Strasbourg,1,160,0.00625
+sp,gold_value,0 -> 6 -> 5 -> 2 -> 8,1,160,0.00625
+sp,gold_value,0 -> 1 -> 5,1,160,0.00625
+sp,gold_value,0 -> 7,1,160,0.00625
+sp,gold_value,0 -> 5 -> 3 -> 6 -> 8,1,160,0.00625
+sp,gold_value,0 -> 5 -> 6,1,160,0.00625
+sp,gold_value,0 -> 3 -> 5 -> 6 -> 7,1,160,0.00625
+sp,gold_value,0 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 3 -> 2 -> 4 -> 7,1,160,0.00625
+sp,gold_value,0 -> 7 -> 3 -> 8,1,160,0.00625
+sp,gold_value,0 -> 5 -> 4 -> 2 -> 1 -> 7,1,160,0.00625
+sp,gold_value,0 -> 5 -> 6 -> 1 -> 4 -> 7,1,160,0.00625
+sp,gold_value,0 -> 4 -> 7,1,160,0.00625
+sp,gold_value,0 -> 3 -> 7,1,160,0.00625
+sp,gold_value,0 -> 4 -> 1 -> 3 -> 2 -> 6,1,160,0.00625
+sp,gold_value,0 -> 5 -> 3 -> 1 -> 8,1,160,0.00625
+sp,gold_value,0 -> 3 -> 5 -> 7 -> 8,1,160,0.00625
+sp,gold_value,0 -> 4 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 7 -> 8,1,160,0.00625
+sp,gold_value,0 -> 1 -> 3 -> 4 -> 6,1,160,0.00625
+sp,gold_value,0 -> 4 -> 2 -> 6,1,160,0.00625
+sp,gold_value,0 -> 6 -> 2 -> 7,1,160,0.00625
+sp,gold_value,0 -> 6,1,160,0.00625
+sp,gold_value,0 -> 3 -> 6 -> 7,1,160,0.00625
+sp,gold_value,0 -> 4 -> 6 -> 2 -> 7 -> 8,1,160,0.00625
+sp,gold_value,0 -> 6 -> 5 -> 7,1,160,0.00625
+sp,gold_value,0 -> 3 -> 5 -> 2 -> 8,1,160,0.00625
+sp,gold_value,0 -> 6 -> 2 -> 5 -> 3 -> 7,1,160,0.00625
+sp,gold_value,0 -> 4 -> 2 -> 5 -> 6 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 5 -> 4 -> 6,1,160,0.00625
+sp,gold_value,0 -> 5 -> 2 -> 1 -> 7,1,160,0.00625
+sp,gold_value,0 -> 1 -> 4 -> 8,1,160,0.00625
+sp,gold_value,0 -> 2 -> 7 -> 4 -> 5 -> 8,1,160,0.00625
+sp,gold_value,0 -> 3 -> 5 -> 4 -> 6 -> 7,1,160,0.00625
+sp,gold_value,0 -> 2 -> 1 -> 5 -> 6,1,160,0.00625
+sp,gold_value,0 -> 1 -> 6,1,160,0.00625
+sp,gold_value,0 -> 3 -> 1 -> 6,1,160,0.00625
+sp,gold_value,0 -> 3 -> 4 -> 2 -> 8,1,160,0.00625
+sp,gold_value,0 -> 2 -> 7,1,160,0.00625
+sp,gold_value,0 -> 4 -> 1 -> 6,1,160,0.00625
+sp,gold_value,0 -> 5 -> 4 -> 3 -> 6 -> 7,1,160,0.00625
+sp,gold_first_token_decoded,0,103,160,0.64375
+sp,gold_first_token_decoded,London,26,160,0.1625
+sp,gold_first_token_decoded,Berlin,10,160,0.0625
+sp,gold_first_token_decoded,Paris,8,160,0.05
+sp,gold_first_token_decoded,Hub,5,160,0.03125
+sp,gold_first_token_decoded, Tokyo,4,160,0.025
+sp,gold_first_token_decoded,16,1,160,0.00625
+sp,gold_first_token_decoded,11,1,160,0.00625
+sp,gold_first_token_decoded, Rome,1,160,0.00625
+sp,gold_first_token_decoded, Madrid,1,160,0.00625
+sp,SUMMARY,n_distinct_gold_value=126; n_distinct_first_token=10; top_first_token_fraction=0.644; digit0_dominated=True,160,160,1.0

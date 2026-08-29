@@ -113,6 +113,36 @@ def _first_action(answer: str) -> str:
     return re.sub(r"^\d+[\.\)]\s*", "", lines[0])
 
 
+def _gold_content_answer(answer: str, problem_id: str = "") -> str:
+    """First answer content, stripping format scaffolding (Path:/Count:/Selected:).
+
+    SP  — text after ``Path:`` (first joint token = first node id)
+    CC  — digit after ``Count:``
+    WIS — first selected index after ``Selected:``
+    BW / GSM / other — unchanged first-action line
+    """
+    action = _first_action(answer)
+    if not action:
+        return ""
+    pid = str(problem_id).strip()
+    base = pid[:-3] if pid.endswith("_W6") else pid
+    prefix = base.split("_")[0].upper()
+
+    if prefix == "SP" or action.lower().startswith("path:"):
+        m = re.match(r"^Path:\s*(.+)$", action, flags=re.I)
+        return m.group(1).strip() if m else action
+
+    if prefix == "CC" or action.lower().startswith("count:"):
+        m = re.match(r"^Count:\s*(\d+)", action, flags=re.I)
+        return m.group(1) if m else action
+
+    if prefix == "WIS" or action.lower().startswith("selected:"):
+        m = re.search(r"Selected:\s*\{?\s*(\d+)", action, flags=re.I)
+        return m.group(1) if m else action
+
+    return action
+
+
 def _load_existing(output_path: Path) -> tuple[pd.DataFrame, set[tuple[str, str]]]:
     """Return (existing df, done set keyed by (problem_id, variant_type))."""
     if output_path.exists() and output_path.stat().st_size > 0:
@@ -191,6 +221,14 @@ def main() -> None:
              "last position is the completion-prediction slot — this is the standard prompt for "
              "logit-lens on pre-trained (non-RLHF) models.",
     )
+    parser.add_argument(
+        "--gold-token-mode",
+        default="content",
+        choices=["content", "scaffold"],
+        help="'content' (default): rank the first content-bearing gold token "
+             "(SP node after Path:, CC digit after Count:, WIS first Selected value). "
+             "'scaffold': legacy first BPE of the raw gold line (often Path/Count/Selected).",
+    )
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[1]
@@ -216,6 +254,7 @@ def main() -> None:
     df_existing, done = _load_existing(output_path)
     results: list[dict] = df_existing.to_dict("records")
     print(f"[setup] existing rows: {len(df_existing)} | done keys (pid, variant): {len(done)}")
+    print(f"[setup] prompt_mode={args.prompt_mode} | gold_token_mode={args.gold_token_mode} | model={args.model}")
 
     # Load model + tokenizer
     if not args.dry_run:
@@ -269,12 +308,13 @@ def main() -> None:
         n_layers = model.cfg.n_layers
         print(f"[model] loaded | n_layers={n_layers} | d_model={model.cfg.d_model}")
         print(f"[prompt] mode = {args.prompt_mode}")
+        print(f"[gold] token mode = {args.gold_token_mode}")
 
         def _family_instruction(family: str) -> str:
             f = (family or "").strip().lower()
             if f in ("gsm", "arithmetic_reasoning"):
                 return "Solve the problem. Output ONLY the final numerical answer, nothing else."
-            if f in ("bw", "blocksworld", "blocks world"):
+            if f in ("bw", "blocksworld", "blocks world", "planning_suite"):
                 return "Solve the planning problem. Output ONLY the first plan step (action + arguments), no numbering, no explanation."
             return "Solve the problem. Output ONLY the first action of the solution (no numbering, no explanation)."
 
@@ -446,10 +486,13 @@ def main() -> None:
                 continue
             problem_text = str(row["problem_text"])
             family = str(row.get("problem_family", fam))
-            first_action = _first_action(row.get("correct_answer", ""))
+            if args.gold_token_mode == "content":
+                target_answer = _gold_content_answer(row.get("correct_answer", ""), pid)
+            else:
+                target_answer = _first_action(row.get("correct_answer", ""))
 
             try:
-                m = logit_lens_metrics(problem_text, first_action, family)
+                m = logit_lens_metrics(problem_text, target_answer, family)
                 cl, ranks, logprobs = m["cl"], m["ranks"], m["logprobs"]
                 target_id, target_decoded = m["target_id"], m["target_decoded"]
             except Exception as e:
@@ -505,10 +548,13 @@ def main() -> None:
                 continue
             w6_text = str(row["problem_text"])
             family = str(row.get("problem_family", fam))
-            first_action = _first_action(row.get("correct_answer", ""))
+            if args.gold_token_mode == "content":
+                target_answer = _gold_content_answer(row.get("correct_answer", ""), base_pid)
+            else:
+                target_answer = _first_action(row.get("correct_answer", ""))
 
             try:
-                m = logit_lens_metrics(w6_text, first_action, family)
+                m = logit_lens_metrics(w6_text, target_answer, family)
                 cl, ranks, logprobs = m["cl"], m["ranks"], m["logprobs"]
                 target_id, target_decoded = m["target_id"], m["target_decoded"]
             except Exception as e:

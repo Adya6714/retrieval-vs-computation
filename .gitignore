@@ -22,6 +22,11 @@ rvc/
 # ─── Secrets / keys ─────────────────────────────────────────────────
 secrets.json
 api_keys.py
+# Local GPU / SSH hosts and tokens (keep the *.example files committed)
+secrets/gpu.local.env
+secrets/*.local.env
+secrets/*.local.md
+workbench/gpu_connect.local.md
 
 # ─── Caches ─────────────────────────────────────────────────────────
 .pytest_cache/

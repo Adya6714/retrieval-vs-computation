@@ -1,0 +1,112 @@
+sample_idx,problem_id,variant_type,repeat,response_hash,raw_response,identical_across_repeats
+0,GSM_001,canonical,0,9a5902bfa7b4afcf,"20 * 0.9 = 18
+66 * 0.5 = 33
+18 + 33 = 51
+51",True
+0,GSM_001,canonical,1,9a5902bfa7b4afcf,"20 * 0.9 = 18
+66 * 0.5 = 33
+18 + 33 = 51
+51",True
+0,GSM_001,canonical,2,9a5902bfa7b4afcf,"20 * 0.9 = 18
+66 * 0.5 = 33
+18 + 33 = 51
+51",True
+1,GSM_002,canonical,0,777e23e8388f2c62,18 + (2/3 * 18) = 18 + 12 = 30,True
+1,GSM_002,canonical,1,777e23e8388f2c62,18 + (2/3 * 18) = 18 + 12 = 30,True
+1,GSM_002,canonical,2,777e23e8388f2c62,18 + (2/3 * 18) = 18 + 12 = 30,True
+2,GSM_003,canonical,0,131f819c21a1eef7,30 + (50/100 * 30) + (30 + (50/100 * 30)) = 30 + 15 + 45 = 90,True
+2,GSM_003,canonical,1,131f819c21a1eef7,30 + (50/100 * 30) + (30 + (50/100 * 30)) = 30 + 15 + 45 = 90,True
+2,GSM_003,canonical,2,131f819c21a1eef7,30 + (50/100 * 30) + (30 + (50/100 * 30)) = 30 + 15 + 45 = 90,True
+3,GSM_004,canonical,0,694bebb5086cfcf6,52 * 2 * 6 * 150 = 93600,True
+3,GSM_004,canonical,1,694bebb5086cfcf6,52 * 2 * 6 * 150 = 93600,True
+3,GSM_004,canonical,2,694bebb5086cfcf6,52 * 2 * 6 * 150 = 93600,True
+4,CC_01,canonical,0,1d86f29d91deec4d,"Count: 3
+Coins: 1, 1, 4",True
+4,CC_01,canonical,1,1d86f29d91deec4d,"Count: 3
+Coins: 1, 1, 4",True
+4,CC_01,canonical,2,1d86f29d91deec4d,"Count: 3
+Coins: 1, 1, 4",True
+5,CC_02,canonical,0,bb62746ccc1ee86d,"Count: 2
+Coins: 5, 6",True
+5,CC_02,canonical,1,bb62746ccc1ee86d,"Count: 2
+Coins: 5, 6",True
+5,CC_02,canonical,2,bb62746ccc1ee86d,"Count: 2
+Coins: 5, 6",True
+6,CC_03,canonical,0,6e314933d35e7057,"Count: 3
+Coins: 6, 6, 1",True
+6,CC_03,canonical,1,6e314933d35e7057,"Count: 3
+Coins: 6, 6, 1",True
+6,CC_03,canonical,2,6e314933d35e7057,"Count: 3
+Coins: 6, 6, 1",True
+7,CC_031,canonical,0,f4e2830af35377b3,"Count: 7
+Coins: 10, 10, 10, 5, 2, 2, 1",True
+7,CC_031,canonical,1,f4e2830af35377b3,"Count: 7
+Coins: 10, 10, 10, 5, 2, 2, 1",True
+7,CC_031,canonical,2,f4e2830af35377b3,"Count: 7
+Coins: 10, 10, 10, 5, 2, 2, 1",True
+8,BW_001,canonical,0,2b011cc19edc2262,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up",True
+8,BW_001,canonical,1,2b011cc19edc2262,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up",True
+8,BW_001,canonical,2,2b011cc19edc2262,"1. pick-up j
+2. stack j f
+3. pick-up f
+4. stack f i
+5. pick-up i
+6. stack i g
+7. pick-up g
+8. stack g d
+9. pick-up d
+10. stack d b
+11. pick-up",True
+9,BW_002,canonical,0,cd6d116a1e97a81c,"1. pick-up j
+2. stack j g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b k
+9. pick-up k
+10. stack k h
+11. pick-up",True
+9,BW_002,canonical,1,cd6d116a1e97a81c,"1. pick-up j
+2. stack j g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b k
+9. pick-up k
+10. stack k h
+11. pick-up",True
+9,BW_002,canonical,2,cd6d116a1e97a81c,"1. pick-up j
+2. stack j g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b k
+9. pick-up k
+10. stack k h
+11. pick-up",True
