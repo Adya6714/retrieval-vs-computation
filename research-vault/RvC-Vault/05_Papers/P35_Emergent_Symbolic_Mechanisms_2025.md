@@ -1,0 +1,8 @@
+# P35 Emergent Symbolic Mechanisms Support Abstract Reasoning in LLMs (Yang, Campbell, Huang, Wang, Cohen, Webb — ICML 2025, arXiv:2502.20332) — verified-source (abstract + code repo, 2026-07-07)
+framing: what internal mechanisms support abstract rule induction? Studied in Llama3-70B / Llama-3.1-70B.
+finding: a three-stage emergent symbolic architecture — early-layer **symbol abstraction heads** convert tokens to abstract variables based on relations; mid-layer **symbolic induction heads** do sequence induction over those variables; late-layer **retrieval heads** map the predicted variable back to a token.
+method: causal mediation analysis over attention heads; permutation tests; code released (github.com/yukang123/LLMSymbMech).
+granularity: head-level, on identity-rule tasks (A B A style), not math/planning problems.
+uncontrolled (for our purposes): tasks are short synthetic rule-induction, not multi-step reasoning; no per-item strategy heterogeneity; no exposure control; 70B only.
+bears_on: **[[DS-13_Capability_Architecture_Claims]] — the bridge to an architecture claim.** Our W3 rename fragility is plausibly failure/bypass of stage 1 (symbol abstraction). Also [[D02_Causal_Patching]] (head-level targets and CMA methodology to reuse), [[D08_Commitment_Depth]] (their retrieval-stage timing vs our CD), [[DS-04_Exposure_Variance_Laws]] (hypothesis: surface diversity is the training pressure that forces abstraction heads to form).
+new_angle: they show the symbolic pathway EXISTS on clean synthetic tasks; nobody has shown per-item OCCUPANCY of that pathway predicts robustness on real reasoning problems, or that fragile items are the ones that bypass it.

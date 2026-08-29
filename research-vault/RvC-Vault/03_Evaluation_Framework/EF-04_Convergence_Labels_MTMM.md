@@ -1,0 +1,9 @@
+# EF-04 Convergence Labels — and the MTMM Upgrade
+
+**Current logic.** Per (problem, model): retrieval-consistent iff W3 collapse AND CCI≈0 AND high proximity; computation-consistent iff all reverse; else mixed/ambiguous. Verified-raw on ALGO 440: retrieval 8, computation 4, mixed 157, ambiguous 271 (61.6%). GSM Claude: 35 computation-leaning / 9 ambiguous. CAISc framing (labels = calibration points, not primary results) is the right scoping — keep it.
+
+**The honest problem.** Threshold sensitivity: 2.7% strong labels under strict rules vs 57.7% under the liberal v2 sweep. Until thresholds are pinned externally, label counts are a design choice. Two fixes, in order:
+1. **Pre-registration (cheap, now).** Freeze thresholds with written justification before any new sweep; report the sweep as sensitivity analysis. [[HP-04_Threshold_Prereg_and_MTMM]].
+2. **External calibration (the real fix).** D1-lite yields ground-truth seen/unseen labels; choose thresholds to maximize validated sensitivity/specificity, then freeze. Labeling moves from convention to calibration. [[D01_Controlled_Exposure_Validation]].
+
+**Do the Campbell & Fiske analysis properly.** The program invokes convergent/discriminant validity; currently it implements threshold agreement. Better: treat probes as methods and {surface-binding fragility, plan–execution coupling, exposure} as traits; compute the multitrait–multimethod correlation matrix on continuous per-instance signals (per-item R_W3, CCI, proximity, plus Commitment Depth once [[D08_Commitment_Depth]] lands). Convergent validity = same-trait/different-method correlations; discriminant = low cross-trait correlations. The existing per-model cross-probe Spearman matrices are halfway there — formalize and let the MTMM matrix replace raw label counts as the headline validity evidence. Analysis-only; folded into HP-04.

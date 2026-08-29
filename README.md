@@ -3,7 +3,7 @@
 This repository implements a **three-probe evaluation framework** across **Blocksworld (BW)**, **GSM arithmetic**, and **Algorithmic (ALGO)** problem families. The core question: when two models score the same, are they solving problems the same way — by **retrieval** (pattern recall) or **computation** (structure-sensitive reasoning)?
 
 **Published work:** *Same Score, Different Strategy* (CAISc 2026) — LaTeX package in [`paper/`](paper/).  
-**Future research roadmap:** [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) + linked notes in [`research-vault/RvC_Research_Vault.zip`](research-vault/RvC_Research_Vault.zip).
+**Future research roadmap:** [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) + linked notes in [`research-vault/RvC-Vault/`](research-vault/RvC-Vault/).
 
 ---
 
@@ -13,7 +13,7 @@ This repository implements a **three-probe evaluation framework** across **Block
 |-----------------|-----------|
 | **Accepted paper** (build PDF, tables, figures) | [`paper/main.tex`](paper/main.tex) · [`paper/README.md`](paper/README.md) |
 | **Future research program** (phases, claims, evaluation catalog) | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
-| **Full research vault** (110+ linked planning notes) | Extract [`research-vault/RvC_Research_Vault.zip`](research-vault/RvC_Research_Vault.zip) |
+| **Full research vault** (110+ linked planning notes) | [`research-vault/RvC-Vault/`](research-vault/RvC-Vault/) — start at `00_MOC.md` |
 | Consolidated analysis (every number from every probe) | [`ANALYSIS.md`](ANALYSIS.md) |
 | Script → artifact map | [`results/README.md`](results/README.md) |
 | Probe×family runbooks | [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](docs/evaluation/MASTER_EVALUATION_PIPELINES.md) |
