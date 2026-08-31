@@ -1,0 +1,441 @@
+model,problem_id,stated_algorithm,declared_families,any_algorithm_invocation,executed_families,agreement,final_answer_correct
+Claude,CC_01,"This choice significantly impacts the total number of coins needed, and without exploring both paths thoroughly, we could easily choose a combination that uses more coins than necessary.",dp|greedy,False,,False,False
+Claude,CC_02,dynamic programming,dp|greedy,False,,False,False
+Claude,CC_03,"and see which one leads to the minimum total coins when combined with the optimal solution for the remaining amount, rather than making an arbitrary first choice.",dp|greedy,False,,False,False
+Claude,CC_04,dynamic programming,dp|greedy,False,,False,False
+Claude,CC_05,"as the first coin and choose the one that leads to the minimum total coins. Rather than making an arbitrary first choice, the algorithm will consider all possibilities: 14-1=13, 14-4=10, 14-6=8, 14-7=",dp|greedy,False,,False,True
+Claude,CC_06,dynamic programming,dp|greedy,False,,False,False
+Claude,CC_07,dynamic programming,dp|greedy,False,,False,False
+Claude,CC_08,dynamic programming,dp|greedy,False,,False,False
+Claude,CC_09,"versus using more of the smaller ones, because using too many large coins might leave remainders that require inefficient combinations of smaller coins, while using too few large coins might result in",dp|greedy,False,,False,True
+Claude,CC_10,"to use initially. Using too many 201-coins might leave a remainder that cannot be efficiently solved with the remaining denominations, while using too few might result in needing more total coins. The",dp|greedy,False,,False,False
+Claude,SP_001,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_002,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_003,"and add all reachable neighbors to the priority queue with their respective distances: Relay 18 (3 mins), Shortcut 17 (5 mins), Alley 19 (6 mins), Sidestreet 1 (9 mins), Outpost 14 (9 mins), Bypass 10",dijkstra|greedy,False,,False,False
+Claude,SP_004,Dijkstra,dijkstra|greedy,True,dijkstra|greedy,True,True
+Claude,SP_005,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,WIS_001,"versus taking plot 1 (which prevents taking plot 0), but this decision cannot be made in isolation since it affects the entire chain of subsequent decisions.",dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_002,dynamic programming,dp|greedy,False,,False,False
+Claude,WIS_003,dynamic programming,dp|greedy,False,,False,False
+Claude,WIS_004,dynamic programming,dp|greedy,False,,False,False
+Claude,WIS_005,dynamic programming,backtracking|dp|greedy,False,,False,False
+Claude,CC_031,greedy,greedy,False,,False,True
+Claude,CC_032,greedy,greedy,False,,False,True
+Claude,CC_033,greedy,greedy,False,,False,True
+Claude,CC_034,greedy,greedy,False,,False,True
+Claude,CC_035,greedy,greedy,False,,False,True
+Claude,CC_036,greedy,greedy,False,,False,True
+Claude,CC_037,greedy,greedy,False,,False,True
+Claude,CC_038,greedy,greedy,False,,False,True
+Claude,CC_039,will likely be part of the optimal solution since 108 is large enough to accommodate them efficiently.,dp|greedy,False,,False,True
+Claude,CC_040,"early in the solution, because choosing to use or skip these coins affects all subsequent choices and could lead to either an optimal solution with fewer total coins or a suboptimal solution requiring",dp|greedy,False,,False,True
+Claude,CC_041,"for the remainder, so finding the right balance between the largest denomination and the others is crucial.",dp|greedy,False,,False,True
+Claude,CC_042,dynamic programming,dp|greedy,False,,False,True
+Claude,CC_043,". Using too many large coins might leave a remainder that requires many small coins, while using too few large coins might result in needing more total coins overall.",dp|greedy,False,,False,True
+Claude,CC_044,dynamic programming,dp|greedy,False,,False,True
+Claude,CC_045,"for the remaining amount, and the interaction between these denominations is not immediately obvious without systematic computation.",dp|greedy,False,,False,True
+Claude,SP_019,"leads to limited options where reaching node 6 requires going through node 2 and then node 6 (total cost would be high), while taking the longer edge to node 3 (cost",dijkstra|greedy,False,,False,False
+Claude,SP_020,might lead to a longer overall path compared to taking the longer edge from node 0 to node 3 (cost,dijkstra|greedy,False,,False,False
+Claude,SP_021,"gives a path 0->1->2 with cost 2, but this might lead to a longer overall path to node 8 compared to taking the initially longer path 0->3 (cost",dijkstra|greedy,False,,False,False
+Claude,SP_023,", then select the node with minimum distance, which would be either node 1 or node 2 since they both have distance",dijkstra|greedy,False,,False,True
+Claude,SP_024,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_026,", but reaching node 3 efficiently is key - the direct path from 0 to 3 costs 9, while the path 0→2→3 costs only 4 total, making the locally longer step to node 2 first actually better for the global p",dijkstra|greedy,False,,False,False
+Claude,SP_027,"creates a path 0→2→1→6 with total cost 3, which is better than the direct path 0→1→6 with cost",dijkstra|greedy,False,,False,True
+Claude,SP_028,,dijkstra|greedy,False,,False,True
+Claude,SP_029,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,True
+Claude,SP_030,greedy,bellman_ford|dijkstra|greedy,False,,False,True
+Claude,WIS_006,", potentially blocking the selection of interval 3 which has higher individual weight, and it spans a time period where multiple valuable combinations are possible.",dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_007,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_009,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_010,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_012,"since it has the earliest end time after sorting, and I'll evaluate whether including it in the optimal solution provides better total weight than excluding it and considering all intervals that start",dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_013,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_014,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_015,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_016,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_017,", making the choice between different combinations that need systematic evaluation.",dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_018,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_019,while only contributing 29 to the solution.,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_020,dynamic programming,dp|greedy|interval_scheduling,True,,False,False
+Claude,SP_031,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_032,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_033,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_034,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_035,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_036,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_037,"is likely longer than paths that go through intermediate nodes like 1→2 or 3→4, both of which can reach node 6 through node",dijkstra|greedy,True,dijkstra|greedy,True,False
+Claude,SP_038,"might seem attractive, but the subsequent path through nodes 1→2→8 has high costs, whereas the direct edge from node 0 to node 6 (cost 1",dijkstra|greedy,False,,False,False
+Claude,SP_039,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_040,,dijkstra|greedy,True,dijkstra|greedy,True,False
+Claude,SP_042,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_044,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_045,"Instead, I need to consider that going to node 2 first (cost 5) might be beneficial because it opens up the negative weight path from node 2 to node 1 (cost -",dijkstra|greedy,False,,False,True
+Claude,SP_046,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_047,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_048,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_049,"appears locally attractive but leads to a path through nodes 2 and 8 with very high costs (20 + 25 = 45), while the initially more expensive edge from node 0 to node 4 (weight",dijkstra|greedy,False,,False,True
+Claude,SP_050,and the edge to node 3 (cost,dijkstra|greedy,False,,False,False
+Claude,SP_051,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_052,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_053,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_054,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_055,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_056,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_057,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_058,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_059,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_060,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_061,"creates a path 0→3→4→7 with total cost 52, which appears to be much longer than alternative paths that might go through the 0→1→2→5→7 route, making the initially attractive short edge 0→3 potentially ",dijkstra|greedy,False,,False,False
+Claude,SP_062,"might lead to longer overall paths, since from node 1 the path to reach node 6 requires going through node 2 and then either a very expensive direct edge (cost 2",dijkstra|greedy,True,dijkstra|greedy,True,False
+Claude,SP_063,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_064,", but depending on the subsequent paths available, the cheaper initial choice might force a more expensive route to reach node 6.",dijkstra|greedy,False,,False,False
+Claude,SP_065,Dijkstra,dijkstra|greedy,True,dijkstra|greedy,True,False
+Claude,SP_066,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_068,Dijkstra,dijkstra|greedy,False,,False,False
+Claude,SP_069,", demonstrating how the direct path can be globally suboptimal despite being a single hop.",dijkstra|greedy,False,,False,True
+Claude,SP_070,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_071,greedy,dijkstra|greedy,False,,False,True
+Claude,SP_072,Dijkstra,dijkstra|greedy,False,,False,True
+Claude,SP_073,,dijkstra|greedy,False,,False,True
+Claude,WIS_021,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_022,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_023,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_024,"), where p(i) is the latest interval that doesn't conflict with interval i.",dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_025,,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_026,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_027,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_028,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_029,would block multiple other intervals that together might yield a higher total weight than the single heavy interval.,dp|greedy|interval_scheduling,False,,False,True
+Claude,WIS_030,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_031,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Claude,WIS_032,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,CC_01,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,CC_02,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_03,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_04,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_05,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_06,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,CC_07,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,CC_08,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,CC_09,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_10,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,SP_001,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_002,,dijkstra|greedy,False,,False,True
+GPT-4o,SP_003,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_004,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,True
+GPT-4o,SP_005,to other nodes directly connected or via node 3 or node,dijkstra|greedy,False,,False,False
+GPT-4o,WIS_001,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,WIS_002,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,WIS_003,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,WIS_004,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,WIS_005,I will use a maximum weighted independent set algorithm on a graph constructed from the centers and their connections because this problem can be mapped to finding a set of non-adjacent vertices with ,greedy,False,,False,False
+GPT-4o,CC_031,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_032,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_033,greedy,greedy,False,,False,True
+GPT-4o,CC_034,greedy,greedy,False,,False,True
+GPT-4o,CC_035,", and using the largest possible denomination reduces the remaining amount more rapidly, minimizing the total number of coins used.",greedy,False,,False,True
+GPT-4o,CC_036,greedy,greedy,False,,False,True
+GPT-4o,CC_037,greedy,greedy,False,,False,True
+GPT-4o,CC_038,greedy,greedy,False,,False,True
+GPT-4o,CC_039,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,CC_040,"and progressively consider larger ones. However, practically for making change, the initial coin choice would depend on the subproblems already solved, providing a base case using smaller denomination",dp|greedy,False,,False,True
+GPT-4o,CC_041,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_042,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_043,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,CC_044,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,CC_045,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,SP_019,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_020,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_021,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_023,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_024,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_026,leads to a globally longer path due to subsequent higher costs connecting from Node 3 to Node 8.,dijkstra|greedy,False,,False,True
+GPT-4o,SP_027,Bellman-Ford,bellman_ford|greedy,False,,False,True
+GPT-4o,SP_028,,bellman_ford|dijkstra|greedy,False,,False,True
+GPT-4o,SP_029,Bellman-Ford,bellman_ford|greedy,False,,False,False
+GPT-4o,SP_030,,dijkstra|greedy,False,,False,False
+GPT-4o,WIS_006,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,WIS_007,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_009,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,WIS_010,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,WIS_012,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,WIS_013,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,WIS_014,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_015,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_016,dynamic programming,dp|greedy,False,,False,True
+GPT-4o,WIS_017,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_018,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_019,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_020,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,SP_031,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_032,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_033,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_034,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_035,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_036,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_037,but is longer than other possible paths to node 6.,dijkstra|greedy,False,,False,False
+GPT-4o,SP_038,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_039,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_040,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_042,", makes an overall cost of 5 which is less than taking Node 1 (edge cost",dijkstra|greedy,False,,False,True
+GPT-4o,SP_044,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_045,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,False
+GPT-4o,SP_046,Bellman-Ford,bellman_ford|greedy,False,,False,False
+GPT-4o,SP_047,Bellman-Ford,bellman_ford|greedy,False,,False,True
+GPT-4o,SP_048,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,False
+GPT-4o,SP_049,"Even though going directly to Node 1 costs only 1, which is tempting as a local minimum move, the path from Node 1 to Node 2 and onwards involves much larger costs, demonstrating that a locally short ",dijkstra|greedy,False,,False,False
+GPT-4o,SP_050,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_051,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_052,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_053,Dijkstra,backtracking|dijkstra|greedy,False,,False,False
+GPT-4o,SP_054,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_055,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_056,,dijkstra|greedy,False,,False,False
+GPT-4o,SP_057,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_058,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_059,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_060,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_061,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_062,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_063,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_064,"among the direct connections from node 0, allowing for a potentially shorter path to node 6 compared to nodes 3 and 5.",dijkstra|greedy,False,,False,False
+GPT-4o,SP_065,Dijkstra,dijkstra|greedy,False,,False,False
+GPT-4o,SP_066,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_068,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_069,Dijkstra,dijkstra|greedy,False,,False,True
+GPT-4o,SP_070,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,True
+GPT-4o,SP_071,"Taking this edge initially may seem favorable due to its negative weight, but it can result in an increased total path cost when considering the complete path to the destination node 8.",dijkstra|greedy,False,,False,False
+GPT-4o,SP_072,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,False
+GPT-4o,SP_073,-,bellman_ford|dijkstra|greedy,False,,False,False
+GPT-4o,WIS_021,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,WIS_022,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,WIS_023,dynamic programming,dp|greedy,False,,False,False
+GPT-4o,WIS_024,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_025,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_026,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_027,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_028,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_029,", early without proper consideration of its overlap with many other intervals, could most damage the optimal total weight unless it truly fits in the best solution, as it precludes the selection of mu",dp|greedy,False,,False,True
+GPT-4o,WIS_030,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+GPT-4o,WIS_031,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+GPT-4o,WIS_032,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_01,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_02,,dp|greedy,False,,False,False
+Llama,CC_03,dynamic programming,dp|greedy,False,,False,True
+Llama,CC_04,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_05,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_06,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_07,dynamic programming,dp|greedy,False,,False,True
+Llama,CC_08,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_09,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_10,"If I choose 197, I will have to make up the remaining 283, but 200+67+11+2+1 cannot be made from the given denominations, but using two 67s will make it impossible to make a change for 28",dp|greedy,False,,False,False
+Llama,SP_001,"Similarly, from Depot 2, the locally short edge is to Overpass 6 (9 minutes), but this would also lead to a longer path overall.",dijkstra|greedy,False,,False,False
+Llama,SP_002,Dijkstra,dijkstra|greedy,True,dijkstra,True,False
+Llama,SP_003,This will allow me to start exploring the graph from the source node in a way that takes into account the shortest known path to that node.,dijkstra|greedy,False,,False,False
+Llama,SP_004,". Additionally, the cable car route from Waypoint 6 to Waypoint 4, which saves 5 hours if boarded before or at hour 10, is another example. In both cases, the locally short edge (in terms of cost) lea",bellman_ford|greedy,False,,False,False
+Llama,SP_005,Bellman-Ford,bellman_ford|greedy,False,,False,False
+Llama,WIS_001,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_002,backtracking,backtracking|dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_003,Dynamic Programming,dp|greedy,True,,False,False
+Llama,WIS_004,Greedy,dp|greedy,False,,False,False
+Llama,WIS_005,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,CC_031,dynamic programming,dp|greedy,False,,False,True
+Llama,CC_032,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_033,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_034,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_035,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_036,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_037,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_038,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_039,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_040,"I choose this because 11 is the second largest denomination and it is also close to 30. If I use an 11, I'll still have 19 left (30 - 11 = 19) and trying to make change for 19 using the remaining deno",dp|greedy,False,,False,True
+Llama,CC_041,,dp|greedy,False,,False,False
+Llama,CC_042,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_043,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_044,dynamic programming,dp|greedy,False,,False,False
+Llama,CC_045,dynamic programming,dp|greedy,False,,False,False
+Llama,SP_019,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_020,than moving from node 3 to node 4 (,bellman_ford|dijkstra|greedy,False,,False,False
+Llama,SP_021,,dijkstra|greedy,False,,False,False
+Llama,SP_023,,dijkstra|greedy,False,,False,False
+Llama,SP_024,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_026,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_027,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_028,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,False
+Llama,SP_029,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_030,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,WIS_006,dynamic programming,dp|greedy,False,,False,True
+Llama,WIS_007,,dp|greedy|interval_scheduling,True,,False,False
+Llama,WIS_009,"I will use the 0/1 Knapsack algorithm with a twist, specifically the 0/1 Knapsack with a constraint, to solve this problem. This algorithm is suitable for this problem because it considers each interv",dp|greedy,False,,False,True
+Llama,WIS_010,", because it starts at the earliest possible time and takes up the largest duration on the timeline, making it the most likely candidate to be part of an optimal solution. If multiple intervals start ",dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_012,dynamic programming,dp|greedy,False,,False,True
+Llama,WIS_013,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_014,dynamic programming,dp|greedy,False,,False,True
+Llama,WIS_015,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_016,I will use the 0-1 Knapsack problem algorithm with a twist to solve this problem. This algorithm is a natural fit because we can think of each interval as a box with a weight and a size (the length of,dp|greedy,False,,False,False
+Llama,WIS_017,Selecting this interval first does not lock in a particular selection for the subsequent intervals.,dp|greedy,False,,False,False
+Llama,WIS_018,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_019,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_020,", and if we mistakenly select interval 0, we may be forced to select interval 1 later to maximize the total weight, but then we would have to skip interval 5 (5, 9, weight 29) due to the overlap with ",dp|greedy|interval_scheduling,False,,False,False
+Llama,SP_031,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_032,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_033,Bellman-Ford,bellman_ford|greedy,False,,False,False
+Llama,SP_034,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_035,"7, 1->4 is not pursued, the path uses 1->5 costs 23 isn't followed, so path is here 7 + x + 7).",bfs|dfs|dijkstra|greedy,False,,False,False
+Llama,SP_036,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_037,,dijkstra|greedy,False,,False,False
+Llama,SP_038,"leads to a longer total path to node 8, whereas taking the longer edge to node 4 (distance 1",dijkstra|greedy,False,,False,False
+Llama,SP_039,,dijkstra|greedy,False,,False,False
+Llama,SP_040,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_042,,bfs|dijkstra|greedy,False,,False,False
+Llama,SP_044,Dijkstra,dijkstra|greedy,True,dijkstra,True,False
+Llama,SP_045,-,dijkstra|greedy,False,,False,False
+Llama,SP_046,Bellman-Ford,bellman_ford|greedy,False,,False,False
+Llama,SP_047,-,dijkstra|greedy,False,,False,False
+Llama,SP_048,,dijkstra|greedy,False,,False,False
+Llama,SP_049,,dijkstra|greedy,False,,False,False
+Llama,SP_050,"among the node 0's neighbors, making it the most promising next step.",dijkstra|greedy,False,,False,False
+Llama,SP_051,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_052,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_053,Dijkstra,dijkstra|greedy,False,,False,True
+Llama,SP_054,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_055,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_056,Dijkstra,dijkstra|greedy,False,,False,True
+Llama,SP_057,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_058,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_059,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_060,I choose this path because it is the starting point with the least travel time and has no additional cost.,dijkstra|greedy,False,,False,False
+Llama,SP_061,among all edges from node 0.,dijkstra|greedy,False,,False,False
+Llama,SP_062,compared to other possible next nodes (node 3 with a weight of 4 and node 5 with a weight of 1,dijkstra|greedy,False,,False,False
+Llama,SP_063,Dijkstra,dijkstra|greedy,False,,False,True
+Llama,SP_064,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_065,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_066,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,True
+Llama,SP_068,Dijkstra,dijkstra|greedy,False,,False,True
+Llama,SP_069,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_070,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_071,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,SP_072,,dijkstra|greedy,False,,False,False
+Llama,SP_073,Dijkstra,dijkstra|greedy,False,,False,False
+Llama,WIS_021,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_022,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_023,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_024,Dynamic Programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_025,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_026,dynamic programming,dp|greedy,False,,False,True
+Llama,WIS_027,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_028,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_029,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Llama,WIS_030,"start=11, end=16, weight=6 was incorrectly selected early, it would most damage the optimal total weight. This is because Interval 1 conflicts with several other intervals, including Interval 0 and In",greedy|interval_scheduling,False,,False,True
+Llama,WIS_031,Dynamic Programming,dp|greedy|interval_scheduling,False,,False,True
+Llama,WIS_032,"This is because there are no intervals that overlap with Interval 0, so there is no risk of reducing the total weight. Selecting Interval 0 first allows me to potentially build up a combination of int",dp|greedy|interval_scheduling,False,,False,True
+Gemini,CC_01,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_02,greedy,dp|greedy,False,,False,False
+Gemini,CC_03,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_04,greedy,dp|greedy,False,,False,False
+Gemini,CC_05,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_06,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_07,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_08,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_09,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_10,dynamic programming,dp|greedy,False,,False,False
+Gemini,SP_001,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_002,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_003,,dijkstra|greedy,False,,False,False
+Gemini,SP_004,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,True
+Gemini,SP_005,"with a cost of 5 minutes is locally short, but could potentially lead to a globally longer path compared to taking the 7-minute path to Hideout D (",dijkstra|greedy,False,,False,False
+Gemini,WIS_001,,dp|greedy|interval_scheduling,False,,False,False
+Gemini,WIS_002,dynamic programming,dp|greedy,False,,False,False
+Gemini,WIS_003,dynamic programming,backtracking|dp|greedy,False,,False,False
+Gemini,WIS_004,"I will use a maximum weight independent set algorithm, specifically a branch-and-bound approach or a sophisticated enumeration. This problem is a maximum weight independent set problem on a graph, whe",greedy,False,,False,False
+Gemini,WIS_005,branch and bound,greedy,False,,False,False
+Gemini,CC_031,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_032,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_033,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_034,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_035,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_036,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_037,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_038,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_039,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_040,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_041,dynamic programming,dp|greedy,False,,False,True
+Gemini,CC_042,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_043,", then 1 three times (10",dp|greedy,False,,False,True
+Gemini,CC_044,dynamic programming,dp|greedy,False,,False,False
+Gemini,CC_045,dynamic programming,dp|greedy,False,,False,True
+Gemini,SP_019,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_020,"seems good, but the path 0 -> 3 (cost",dijkstra|greedy,False,,False,False
+Gemini,SP_021,can be part of a longer overall path compared to other starting options.,dijkstra|greedy,False,,False,False
+Gemini,SP_023,Dijkstra,dijkstra|greedy,False,,False,True
+Gemini,SP_024,because it has the minimum direct cost from the source node 0.,dijkstra|greedy,False,,False,False
+Gemini,SP_026,Dijkstra,dijkstra|greedy,False,,False,True
+Gemini,SP_027,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_028,Dijkstra,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_029,,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_030,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,WIS_006,dynamic programming,dp|greedy,False,,False,False
+Gemini,WIS_007,dynamic programming,dp|greedy,False,,False,False
+Gemini,WIS_009,dynamic programming,dp|greedy,False,,False,False
+Gemini,WIS_010,dynamic programming,dp|greedy,False,,False,True
+Gemini,WIS_012,dynamic programming,dp|greedy,False,,False,False
+Gemini,WIS_013,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_014,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_015,dynamic programming,dp|greedy,False,,False,True
+Gemini,WIS_016,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_017,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_018,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_019,", as it has the earliest end time among the given intervals.",dp|greedy|interval_scheduling,False,,False,False
+Gemini,WIS_020,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,SP_031,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_032,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_033,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_034,Dijkstra,dijkstra|greedy,False,,False,True
+Gemini,SP_035,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_036,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_037,from node 0.,dijkstra|greedy,False,,False,False
+Gemini,SP_038,", initially seems longer than 0 to 7 with cost 8 then to 8 with cost 12 (total 20), but the path 0 to 3 with cost 4 then to 4 with cost 4 then to 8 with cost 4 (total 1",dijkstra|greedy,False,,False,False
+Gemini,SP_039,"seems locally short, but it might lead to a longer overall path to Node 8 compared to other initial choices if the subsequent paths from Node 1 are significantly more expensive.",dijkstra|greedy,False,,False,False
+Gemini,SP_040,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_042,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_044,,dijkstra|greedy,False,,False,True
+Gemini,SP_045,-,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_046,-,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_047,-,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_048,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_049,from Node 0 compared to Node 4 (,dijkstra|greedy,False,,False,False
+Gemini,SP_050,,dijkstra|greedy,False,,False,False
+Gemini,SP_051,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_052,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_053,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_054,.,dijkstra|greedy,False,,False,False
+Gemini,SP_055,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_056,,dijkstra|greedy,False,,False,False
+Gemini,SP_057,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_058,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_059,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_060,Dijkstra,dijkstra|greedy,False,,False,False
+Gemini,SP_061,"sums to 52 while seemingly efficient at first, might be longer overall than other paths.",dijkstra|greedy,False,,False,False
+Gemini,SP_062,", node 3 (cost",dijkstra|greedy,True,dijkstra,True,False
+Gemini,SP_063,-> 8 (cost 2,dijkstra|greedy,True,dijkstra|greedy,True,False
+Gemini,SP_064,.,dijkstra|greedy,False,,False,False
+Gemini,SP_065,then going directly to Node 4 (cost 12 from,dijkstra|greedy,False,,False,False
+Gemini,SP_066,"gives a total cost of 5, which is shorter than moving from Node 0 to Node 1 (cost",dijkstra|greedy,False,,False,True
+Gemini,SP_068,gives a total of 4 to reach Node,dijkstra|greedy,True,dijkstra,True,False
+Gemini,SP_069,Dijkstra,dijkstra|greedy,False,,False,True
+Gemini,SP_070,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_071,Bellman-Ford,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_072,,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,SP_073,-,bellman_ford|dijkstra|greedy,False,,False,False
+Gemini,WIS_021,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Gemini,WIS_022,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Gemini,WIS_023,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_024,dynamic programming,dp|greedy,False,,False,True
+Gemini,WIS_025,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_026,dynamic programming,dp|greedy,False,,False,True
+Gemini,WIS_027,dynamic programming,dp|greedy|interval_scheduling,False,,False,False
+Gemini,WIS_028,dynamic programming,dp|greedy|interval_scheduling,False,,False,True
+Gemini,WIS_029,"would most damage the optimal total weight because although it has a high weight, its long duration overlaps with many other intervals (0, 1, 2, 3, and 5 is immediately after), potentially preventing ",dp|greedy,False,,False,True
+Gemini,WIS_030,dynamic programming,dp|greedy,False,,False,False
+Gemini,WIS_031,". This is because it has a moderate weight but conflicts with several other intervals, including a high-weight interval 6 (start=8, end=10, weight=1",dp|greedy|interval_scheduling,False,,False,False
+Gemini,WIS_032,"if incorrectly selected early, would most damage the optimal total weight because it has a relatively early finish time but a moderate weight, potentially blocking better combinations of later interva",dp|greedy|interval_scheduling,False,,False,False

@@ -1,0 +1,358 @@
+model,family,problem_id,canonical_gold,W3_gold,match_span,W3_model_answer
+Claude,ALGO,SP_004,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8","Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost:","I need to find the shortest path from Router 0 to Server 9, considering both fixed delays and time-sensitive delays.
+
+Let me map out all the links:
+
+Fixed delay links:
+- 0→3: 4ms
+- 3→6: 3ms
+- 4→5: 3ms
+- 5→9: 3ms
+- 0→2: 5ms
+- 2→5: 4ms
+- 0→7: 9ms
+- 7→5: 4ms
+- 4→9: 7ms
+- 6→9: 8ms
+
+Time-sensitive links:
+- 0→1: 2ms (always)
+- 1→5: 3ms if arrives at node 1 ≤ timestamp 1, otherwise 12ms
+- 6→4: -5ms if arrives at node 6 ≤ timestamp 10, otherwise 4ms
+
+Let me analyze possible paths:
+
+Path 1: 0→1→5→9
+- 0→1: 2ms (arrives at node 1 at timestamp 2)
+- 1→5: 12ms (since arrival at node 1 is at timestamp 2 > 1)
+- 5→9: 3ms
+- Total: 2 + 12 + 3 = 17ms
+
+Path 2: 0→3→6→9
+- 0→3: 4ms (arrives at node 3 at timestamp 4)
+- 3→6: 3ms (arrives at node 6 at timestamp 7)
+- 6→9: 8ms
+- Total: 4 + 3 + 8 = 15ms
+
+Path 3: 0→3→6→4→9
+- 0→3: 4ms (arrives at node 3 at timestamp 4)
+- 3→6: 3ms (arrives at node 6 at timestamp 7)
+- 6→4: -5ms (since arrival at node 6 is at timestamp 7 ≤ 10)
+- 4→9: 7ms
+- Total: 4 + 3 + (-5) + 7 = 9ms
+
+Path 4: 0→3→6→4→5→9
+- 0→3: 4ms (arrives at node 3 at timestamp 4)
+- 3→6: 3ms (arrives at node 6 at timestamp 7)
+- 6→4: -5ms (since arrival at node 6 is at timestamp 7 ≤ 10)
+- 4→5: 3ms
+- 5→9: 3ms
+- Total: 4 + 3 + (-5) + 3 + 3 = 8ms
+
+Path 5: 0→2→5→9
+- 0→2: 5ms
+- 2→5: 4ms
+- 5→9: 3ms
+- Total: 5 + 4 + 3 = 12ms
+
+Path 6: 0→7→5→9
+- 0→7: 9ms
+- 7→5: 4ms
+- 5→9: 3ms
+- Total: 9 + 4 + 3 = 16ms
+
+The optimal path is 0→3→6→4→5→9 with a total delay of 8ms.
+
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8"
+Claude,ALGO,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40","I need to find the maximum value combination where no two adjacent houses are selected.
+
+House values: [8, 3, 6, 2, 9, 4, 7, 1, 5, 10]
+Positions:    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+This is a dynamic programming problem. For each house, I can either:
+1. Rob it (and can't rob the previous house)
+2. Don't rob it (and keep the maximum from previous houses)
+
+Let me work through this:
+
+dp[0] = 8 (rob house 0)
+dp[1] = max(8, 3) = 8 (don't rob house 1)
+dp[2] = max(8, 8+6) = 14 (rob houses 0,2)
+dp[3] = max(14, 8+2) = 14 (don't rob house 3)
+dp[4] = max(14, 14+9) = 23 (rob houses 0,2,4)
+dp[5] = max(23, 14+4) = 23 (don't rob house 5)
+dp[6] = max(23, 23+7) = 30 (rob houses 0,2,4,6)
+dp[7] = max(30, 23+1) = 30 (don't rob house 7)
+dp[8] = max(30, 30+5) = 35 (rob houses 0,2,4,6,8)
+dp[9] = max(35, 30+10) = 40 (rob houses 0,2,4,6,9)
+
+Tracing back the optimal solution:
+- House 9: $10K (rob)
+- House 8: skip (can't rob adjacent to 9)
+- House 7: skip
+- House 6: $7K (rob)
+- House 5: skip
+- House 4: $9K (rob)
+- House 3: skip
+- House 2: $6K (rob)
+- House 1: skip
+- House 0: $8K (rob)
+
+Selected: {0, 2, 4, 6, 9}, Total: 40"
+GPT-4o,ALGO,SP_002,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40","Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost:","Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40"
+GPT-4o,ALGO,SP_004,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8","Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost:","Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8 ms"
+Gemini,ALGO,SP_002,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40","Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost:","Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 41"
+Gemini,ALGO,SP_004,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8","Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost:","To solve this, we can use Dijkstra's algorithm modified to handle time-sensitive link costs. We need to keep track of both the current node and the arrival time at that node.
+
+Let's define `min_delay[node][arrival_time]` as the minimum delay to reach `node` at `arrival_time`. Since the arrival times can grow, we'll use a priority queue to explore paths, prioritizing paths with lower total delay. The state in our priority queue will be `(current_total_delay, current_node, arrival_time_at_current_node)`.
+
+Here's a breakdown of the links and their costs:
+
+**Fixed Delay Links:**
+*   (0→3: 4ms)
+*   (3→6: 3ms)
+*   (4→5: 3ms)
+*   (5→9: 3ms)
+*   (0→2: 5ms)
+*   (2→5: 4ms)
+*   (0→7: 9ms)
+*   (7→5: 4ms)
+*   (4→9: 7ms)
+*   (6→9: 8ms)
+
+**Time-Sensitive Links:**
+*   (0→1: always 2ms)
+*   (1→5: costs 3ms if packet arrives at node 1 at or before timestamp 1, else 12ms)
+*   (6→4: costs -5ms if packet arrives at node 6 at or before timestamp 10, else 4ms)
+
+Let's initialize `dist[node] = infinity` for all nodes, and `dist[0] = 0`. We also need to store the `parent` to reconstruct the path.
+
+We'll use a dictionary `delays` to store the minimum accumulated delay to reach a particular node. The key will be the node, and the value will be a tuple `(total_delay, arrival_time_at_node, previous_node_in_path)`.
+
+Let's simulate Dijkstra's:
+
+**Initialization:**
+Priority Queue (PQ): `[(0, 0, 0, [0])]` (delay, node, arrival_time_at_node, path)
+`min_delays = {}` (to store the minimum delay found for a node regardless of arrival time, helpful for pruning)
+
+**Iteration 1: Pop (0, 0, 0, [0])**
+Current Node: 0, Current Delay: 0, Arrival Time: 0, Path: [0]
+
+*   **To 3:**
+    *   Link Delay: 4ms
+    *   New Delay: 0 + 4 = 4
+    *   New Arrival Time at 3: 0 + 4 = 4
+    *   Push `(4, 3, 4, [0, 3])` to PQ
+*   **To 2:**
+    *   Link Delay: 5ms
+    *   New Delay: 0 + 5 = 5
+    *   New Arrival Time at 2: 0 + 5 = 5
+    *   Push `(5, 2, 5, [0, 2])` to PQ
+*   **To 7:**
+    *   Link Delay: 9ms
+    *   New Delay: 0 + 9 = 9
+    *   New Arrival Time at 7: 0 + 9 = 9
+    *   Push `(9, 7, 9, [0, 7])` to PQ
+*   **To 1:**
+    *   Link Delay: 2ms
+    *   New Delay: 0 + 2 = 2
+    *   New Arrival Time at 1: 0 + 2 = 2
+    *   Push `(2, 1, 2, [0, 1])` to PQ
+
+**PQ (sorted by delay):** `[(2, 1, 2, [0, 1]), (4, 3, 4, [0, 3]), (5, 2, 5, [0, 2]), (9, 7, 9, [0, 7])]`
+
+**Iteration 2: Pop (2, 1, 2, [0, 1])**
+Current Node: 1, Current Delay: 2, Arrival Time: 2, Path: [0, 1]
+
+*   **To 5 (time-sensitive):**
+    *   Packet arrived at node 1 at timestamp 2.
+    *   Since 2 > 1, link cost is 12ms.
+    *   New Delay: 2 + 12 = 14
+    *   New Arrival Time at 5: 2 + 12 = 14
+    *   Push `(14, 5, 14, [0, 1, 5])` to PQ
+
+**PQ:** `[(4, 3, 4, [0, 3]), (5, 2, 5, [0, 2]), (9, 7, 9, [0, 7]), (14, 5, 14, [0, 1, 5])]`
+
+**Iteration 3: Pop (4, 3, 4, [0, 3])**
+Current Node: 3, Current Delay: 4, Arrival Time: 4, Path: [0, 3]
+
+*   **To 6:**
+    *   Link Delay: 3ms
+    *   New Delay: 4 + 3 = 7
+    *   New Arrival Time at 6: 4 + 3 = 7
+    *   Push `(7, 6, 7, [0, 3, 6])` to PQ
+
+**PQ:** `[(5, 2, 5, [0, 2]), (7, 6, 7, [0, 3, 6]), (9, 7, 9, [0, 7]), (14, 5, 14, [0, 1, 5])]`
+
+**Iteration 4: Pop (5, 2, 5, [0, 2])**
+Current Node: 2, Current Delay: 5, Arrival Time: 5, Path: [0, 2]
+
+*   **To 5:**
+    *   Link Delay: 4ms
+    *   New Delay: 5 + 4 = 9
+    *   New Arrival Time at 5: 5 + 4 = 9
+    *   Push `(9, 5, 9, [0, 2, 5])` to PQ
+
+**PQ:** `[(7, 6, 7, [0, 3, 6]), (9, 5, 9, [0, 2, 5]), (9, 7, 9, [0, 7]), (14, 5, 14, [0, 1, 5])]`
+
+**Iteration 5: Pop (7, 6, 7, [0, 3, 6])**
+Current Node: 6, Current Delay: 7, Arrival Time: 7, Path: [0, 3, 6]
+
+*   **To 4 (time-sensitive):**
+    *   Packet arrived at node 6 at timestamp 7.
+    *   Since 7 <= 10, link cost is -5ms.
+    *   New Delay: 7 + (-5) = 2
+    *   New Arrival Time at 4: 7 + (-5) = 2
+    *   Push `(2, 4, 2, [0, 3, 6, 4])` to PQ
+*   **To 9:**
+    *   Link Delay: 8ms
+    *   New Delay: 7 + 8 = 15
+    *   New Arrival Time at 9: 7 + 8 = 15
+    *   Push `(15, 9, 15, [0, 3, 6, 9])` to PQ. This is a potential end path.
+
+**PQ:** `[(2, 4, 2, [0, 3, 6, 4]), (9, 5, 9, [0, 2, 5]), (9, 7, 9, [0, 7]), (14, 5, 14, [0, 1, 5]), (15, 9, 15, [0, 3, 6, 9])]`
+
+**Iteration 6: Pop (2, 4, 2, [0, 3, 6, 4])**
+Current Node: 4, Current Delay: 2, Arrival Time: 2, Path: [0, 3, 6, 4]
+
+*   **To 5:**
+    *   Link Delay: 3ms
+    *   New Delay: 2 + 3 = 5
+    *   New Arrival Time at 5: 2 + 3 = 5
+    *   Push `(5, 5, 5, [0, 3, 6, 4, 5])` to PQ
+*   **To 9:**
+    *   Link Delay: 7ms
+    *   New Delay: 2 + 7 = 9
+    *   New Arrival Time at 9: 2 + 7 = 9
+    *   Push `(9, 9, 9, [0, 3, 6, 4, 9])` to PQ. This is a potential end path.
+
+**PQ:** `[(5, 5, 5, [0, 3, 6, 4, 5]), (9, 5, 9, [0, 2, 5]), (9, 7, 9, [0, 7]), (9, 9, 9, [0, 3, 6, 4, 9]), (14, 5, 14, [0, 1, 5]), (15, 9, 15, [0, 3, 6, 9])]`
+
+**Iteration 7: Pop (5, 5, 5, [0, 3, 6, 4, 5])**
+Current Node: 5, Current Delay: 5, Arrival Time: 5, Path: [0, 3, 6, 4, 5]
+
+*   **To 9:**
+    *   Link Delay: 3ms
+    *   New Delay: 5 + 3 = 8
+    *   New Arrival Time at 9: 5 + 3 = 8
+    *   Push `(8, 9, 8, [0, 3, 6, 4, 5, 9])` to PQ. This is a potential end path.
+
+**PQ:** `[(8, 9, 8, [0, 3, 6, 4, 5, 9]), (9, 5, 9, [0, 2, 5]), (9, 7, 9, [0, 7]), (9, 9, 9, [0, 3, 6, 4, 9]), (14, 5, 14, [0, 1, 5]), (15, 9, 15, [0, 3, 6, 9])]`
+
+**Iteration 8: Pop (8, 9, 8, [0, 3, 6, 4, 5, 9])**
+Current Node: 9, Current Delay: 8, Arrival Time: 8, Path: [0, 3, 6, 4, 5, 9]
+
+We have reached Server 9. The current delay is 8. Since this is the first time we reached 9, and the PQ sorts by delay, this is the minimum delay found so far. We can stop as Dijkstra's guarantees the first time we extract the target node, we have the shortest path.
+
+The minimum delay is 8, and the path is 0 -> 3 -> 6 -> 4 -> 5 -> 9.
+
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8"
+Gemini,ALGO,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40K"
+Gemini,ALGO,WIS_002,"Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52","Selected: {1, 3, 7, 10, 11}, Total: 52","This is a classic problem that can be solved using dynamic programming on trees (specifically, a maximum weight independent set on a tree, which can be adapted for a specific hierarchical structure).
+
+Given the connections, we can represent the network as a tree structure with Server 0 as the root.
+
+**Tree Representation (implied by connections):**
+
+```
+      0 (6)
+     / | \ \
+    1(14) 2(3) 3(11) 4(2)
+   / \   |   / \   / \
+  5(3) 6(4) 7(9) 8(4) 9(5) 10(8) 11(10)
+```
+
+**Algorithm (Dynamic Programming):**
+
+For each node `u`, we calculate two values:
+*   `dp[u][0]`: Maximum capacity if server `u` is NOT activated.
+*   `dp[u][1]`: Maximum capacity if server `u` IS activated.
+
+**Base Case (Leaf Nodes):**
+
+For a leaf node `u`:
+*   `dp[u][0] = 0` (If we don't activate it, we get 0 from it).
+*   `dp[u][1] = weight[u]` (If we activate it, we get its weight).
+
+**Recursive Step (Non-Leaf Nodes, processing from leaves up):**
+
+For a node `u` and its children `v1, v2, ... vn`:
+
+*   `dp[u][0] = sum(max(dp[vi][0], dp[vi][1]) for all children vi of u)`
+    *   If `u` is not activated, its children `vi` can either be activated or not. We take the maximum capacity from each child's subtree.
+
+*   `dp[u][1] = weight[u] + sum(dp[vi][0] for all children vi of u)`
+    *   If `u` is activated, its children `vi` CANNOT be activated. We only consider the case where its children are not activated.
+
+**Weights:**
+*   W[0] = 6, W[1] = 14, W[2] = 3, W[3] = 11, W[4] = 2
+*   W[5] = 3, W[6] = 4, W[7] = 9, W[8] = 4, W[9] = 5
+*   W[10] = 8, W[11] = 10
+
+**Let's process from leaves up:**
+
+**Leaves:**
+*   S5: dp[5][0]=0, dp[5][1]=3
+*   S6: dp[6][0]=0, dp[6][1]=4
+*   S7: dp[7][0]=0, dp[7][1]=9
+*   S8: dp[8][0]=0, dp[8][1]=4
+*   S9: dp[9][0]=0, dp[9][1]=5
+*   S10: dp[10][0]=0, dp[10][1]=8
+*   S11: dp[11][0]=0, dp[11][1]=10
+
+**Nodes at Level 1 (parents of leaves):**
+
+*   **Server 1 (Children: 5, 6)**
+    *   dp[1][0] = max(dp[5][0], dp[5][1]) + max(dp[6][0], dp[6][1]) = max(0,3) + max(0,4) = 3 + 4 = 7
+    *   dp[1][1] = W[1] + dp[5][0] + dp[6][0] = 14 + 0 + 0 = 14
+
+*   **Server 2 (Child: 7)**
+    *   dp[2][0] = max(dp[7][0], dp[7][1]) = max(0,9) = 9
+    *   dp[2][1] = W[2] + dp[7][0] = 3 + 0 = 3
+
+*   **Server 3 (Children: 8, 9)**
+    *   dp[3][0] = max(dp[8][0], dp[8][1]) + max(dp[9][0], dp[9][1]) = max(0,4) + max(0,5) = 4 + 5 = 9
+    *   dp[3][1] = W[3] + dp[8][0] + dp[9][0] = 11 + 0 + 0 = 11
+
+*   **Server 4 (Children: 10, 11)**
+    *   dp[4][0] = max(dp[10][0], dp[10][1]) + max(dp[11][0], dp[11][1]) = max(0,8) + max(0,10) = 8 + 10 = 18
+    *   dp[4][1] = W[4] + dp[10][0] + dp[11][0] = 2 + 0 + 0 = 2
+
+**Root Node (Server 0):**
+
+*   **Server 0 (Children: 1, 2, 3, 4)**
+    *   dp[0][0] = max(dp[1][0], dp[1][1]) + max(dp[2][0], dp[2][1]) + max(dp[3][0], dp[3][1]) + max(dp[4][0], dp[4][1])
+        *   max(7,14) + max(9,3) + max(9,11) + max(18,2)
+        *   14 + 9 + 11 + 18 = 52
+    *   dp[0][1] = W[0] + dp[1][0] + dp[2][0] + dp[3][0] + dp[4][0]
+        *   6 + 7 + 9 + 9 + 18 = 49
+
+**Maximum Capacity:**
+The maximum capacity is `max(dp[0][0], dp[0][1]) = max(52, 49) = 52`.
+
+**Reconstructing the Set of Servers:**
+
+To find the actual servers, we backtrack from the root.
+
+*   Since `dp[0][0]` (52) is greater than `dp[0][1]` (49), Server 0 is NOT activated.
+*   If Server 0 is not activated, its children can be activated or not, whichever gives max capacity for their subtrees.
+    *   Server 1: `max(dp[1][0], dp[1][1]) = max(7, 14) = 14`. This means Server 1 IS activated.
+        *   If Server 1 is activated, its children (5, 6) are NOT activated.
+    *   Server 2: `max(dp[2][0], dp[2][1]) = max(9, 3) = 9`. This means Server 2 is NOT activated.
+        *   If Server 2 is not activated, its child (7) IS activated (`max(dp[7][0], dp[7][1]) = 9`). So Server 7 IS activated.
+    *   Server 3: `max(dp[3][0], dp[3][1]) = max(9, 11) = 11`. This means Server 3 IS activated.
+        *   If Server 3 is activated, its children (8, 9) are NOT activated.
+    *   Server 4: `max(dp[4][0], dp[4][1]) = max(18, 2) = 18`. This means Server 4 is NOT activated.
+        *   If Server 4 is not activated, its children (10, 11) IS activated. (`max(dp[10][0], dp[10][1]) = 8`, `max(dp[11][0], dp[11][1]) = 10`). So Server 10 and Server 11 ARE activated.
+
+**Activated Servers and Total Capacity:**
+
+*   **Selected Servers:** {1, 7, 3, 10, 11}
+*   **Total Capacity:** W[1] + W[7] + W[3] + W[10] + W[11] = 14 + 9 + 11 + 8 + 10 = 52
+
+Selected: {1, 3, 7, 10, 11}, Total: 52"
+o4-mini,ALGO,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40K"
+o4-mini,ALGO,WIS_002,"Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52","Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {1, 3, 7, 10, 11}, Total: 52"
+o4-mini,ALGO,WIS_003,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55","Selected: {Item B, Item C, Item D, Item E, Item K, Item L, Item N}, Total: 55","Selected: {1,2,3,4,10,11,13}, Total: 55","Selected: {1,2,3,4,10,11,13}, Total: 55"
+o4-mini,ALGO,WIS_004,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37","Selected: {Item A, Item B, Item D, Item G, Item J, Item L, Item M}, Total: 37","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"
+o4-mini,ALGO,WIS_005,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67","Selected: {Item C, Item F, Item H, Item I, Item L, Item O}, Total: 67","Selected: {2, 5, 7, 8, 11, 14}, Total: 67","Selected: {2, 5, 7, 8, 11, 14}, Total: 67"

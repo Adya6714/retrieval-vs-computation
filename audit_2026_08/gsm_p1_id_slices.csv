@@ -1,0 +1,5 @@
+file,slice,row_count,n_ids,parse_status_counts,verified_counts,behavioral_correct_counts,n_error_prefix,kind
+GSM_P1_behavioral_gpt4o.csv,GSM_021-040,140,20,"{""<column absent>"": 140}","{""<column absent>"": 140}","{""True"": 90, ""False"": 50}",0,mixed/unknown
+GSM_P1_behavioral_gpt4o.csv,GSM_041-064,168,24,"{""<column absent>"": 168}","{""<column absent>"": 168}","{""False"": 168}",168,API error placeholders (OpenRouter 402 Payment Required)
+GSM_P1_behavioral_llama.csv,GSM_021-040,140,20,"{""<column absent>"": 140}","{""<column absent>"": 140}","{""False"": 75, ""True"": 65}",0,real model outputs
+GSM_P1_behavioral_llama.csv,GSM_041-064,168,24,"{""<column absent>"": 168}","{""<column absent>"": 168}","{""False"": 168}",168,API error placeholders (OpenRouter 402 Payment Required)

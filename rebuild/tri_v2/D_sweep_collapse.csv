@@ -1,0 +1,11 @@
+metric,value
+n_nominal_grid,270
+n_W3_cutoffs_listed,5
+n_W3_regimes_on_binary_VAR_W3,3
+n_CCI_thresholds,18
+n_contam_percentiles,3
+n_distinct_configs_after_W3_collapse,162
+n_mid_cutoff_mismatches_0.25_vs_0.5_vs_0.75,0
+n_empirically_unique_label_vectors_in_270,8
+n_empirically_unique_count_tuples_in_270,8
+n_empirically_unique_label_vectors_in_collapsed_162,8

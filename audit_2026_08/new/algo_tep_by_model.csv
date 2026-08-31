@@ -1,0 +1,6 @@
+model,n,mean,median,tep_score_column_in_injected,uninjected_join_used
+Claude,61,0.18469945355191256,0.0,False,True
+GPT-4o,61,0.22076502732240438,0.0,False,True
+Llama,61,0.6005464480874317,0.8,False,True
+Gemini,61,0.20628415300546446,0.0,False,True
+o4-mini,61,0.3442622950819672,0.0,False,True

@@ -1,0 +1,141 @@
+model,family,problem_id,canonical_answer,W3_model_answer,intrusion,match_span
+Claude,ALGO,SP_004,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","I need to find the shortest path from Router 0 to Server 9, considering both fixed delays and time-sensitive delays.
+
+Let me map out all the links:
+
+Fixed delay links:
+- 0→3: 4ms
+- 3→6: 3ms
+- 4→5: 3ms
+- 5→9: 3ms
+- 0→2: 5ms
+- 2→5: 4ms
+- 0→7: 9ms
+- 7→5: 4ms
+- 4→9: 7ms
+- 6→9: 8ms
+
+Time-sensitive links:
+- 0→1: 2ms (always)
+- 1→5: 3ms if arrives at node 1 ≤ timestamp 1, otherwise 12ms
+- 6→4: -5ms if arrives at node 6 ≤ timestamp 10, otherwise 4ms
+
+Let me analyze possible paths:
+
+Path 1: 0→1→5→9
+- 0→1",True,"Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost:"
+Claude,ALGO,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40","I need to find the maximum value combination where no two adjacent houses are selected.
+
+House values: [8, 3, 6, 2, 9, 4, 7, 1, 5, 10]
+Positions:    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+This is a dynamic programming problem. For each house, I can either:
+1. Rob it (and can't rob the previous house)
+2. Don't rob it (and keep the maximum from previous houses)
+
+Let me work through this:
+
+dp[0] = 8 (rob house 0)
+dp[1] = max(8, 3) = 8 (don't rob house 1)
+dp[2] = max(8, 8+6) = 14 (rob houses 0,2)
+dp[3] = m",True,"Selected: {0, 2, 4, 6, 9}, Total: 40"
+Claude,ALGO,CC_04,"Count: 2
+Coins: [17, 10]","I need to find the minimum number of scoops to make exactly 27 grams using denominations: 1g, 7g, 10g, 14g, 17g, 23g.
+
+Let me work through this systematically, trying combinations that use the largest denominations first to minimize the total number of scoops.
+
+Starting with 23g:
+- 23g + 4g needed
+- 4g can be made with: 4×1g = 4 scoops
+- Total: 1 + 4 = 5 scoops
+
+Starting with 17g:
+- 17g + 10g = 27g
+- Total: 2 scoops
+
+Starting with 14g:
+- 14g + 13g needed
+- 13g can be made with: 7g + 6×1g = 7 sco",False,"Total: 2 scoops
+
+Let me verify: 17g + 10g = 27g ✓
+
+Total: 2 Scoops: [17, 10]"
+Claude,ALGO,CC_06,"Count: 3
+ Coins: [12, 7, 7]","I need to find the minimum number of scoops to make exactly 26 grams using denominations 1g, 7g, 8g, 12g, 15g.
+
+Let me work through this systematically, trying to use larger denominations first to minimize the total number of scoops.
+
+Starting with 15g:
+- 1 × 15g = 15g, need 11g more
+- For 11g: 1 × 8g = 8g, need 3g more
+- For 3g: 3 × 1g = 3g
+- Total: 1 + 1 + 3 = 5 scoops
+
+Let me try with 12g:
+- 2 × 12g = 24g, need 2g more
+- For 2g: 2 × 1g = 2g
+- Total: 2 + 2 = 4 scoops
+
+Let me try other combinat",False,"Total: 1 + 2 = 3 scoops
+
+Total: 3 Scoops: [12, 7, 7]"
+Claude,ALGO,CC_08,"Count: 2
+ Coins: [15, 15]","Total: 2 Scoops: [25, 5]
+
+Wait, let me recalculate since 5g is not available.
+
+Total: 3 Scoops: [15, 15]
+
+Let me check again - that's only 2 scoops totaling 30g.
+
+Total: 2 Scoops: [15, 15]",False,"Total: 2 Scoops: [25, 5]
+
+Wait, let me recalculate since 5g is not available.
+
+Total: 3 Scoops: [15, 15]"
+GPT-4o,ALGO,SP_002,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40","Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40",True,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost:"
+GPT-4o,ALGO,SP_004,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8 ms",True,"Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost:"
+GPT-4o,ALGO,CC_01,"Count: 2
+ Coins: [3, 3]","Total: 2 Scoops: [3 g, 3 g]",False,"Total: 2 Scoops: [3 g, 3 g]"
+GPT-4o,ALGO,CC_02,"Count: 2
+ Coins: [5, 6]","Total: 2 Scoops: [6 g, 5 g]",False,"Total: 2 Scoops: [6 g, 5 g]"
+GPT-4o,ALGO,CC_03,"Count: 2
+ Coins: [6, 7]","Total: 2 Scoops: [6, 7]",False,"Total: 2 Scoops: [6, 7]"
+Llama,ALGO,CC_01,"Count: 2
+ Coins: [3, 3]","Total: 4 Scoops: 1 g, 1 g, 1 g, 7 g",False,
+Llama,ALGO,CC_02,"Count: 2
+ Coins: [5, 6]","Total: 4 Scoops: 1, 5, 5, 0",False,
+Llama,ALGO,CC_03,"Count: 2
+ Coins: [6, 7]","Total: 4 Scoops: 1g, 6g, 6g, 1g",False,
+Llama,ALGO,CC_04,"Count: 2
+Coins: [17, 10]","Total: 3 
+Scoops: 17, 10, 0",False,
+Llama,ALGO,CC_05,"Count: 2
+ Coins: [7, 7]","Total: 6 Scoops: 6, 6, 1, 1",False,
+Gemini,ALGO,SP_002,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40","Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 41",True,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost:"
+Gemini,ALGO,SP_004,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","To solve this, we can use Dijkstra's algorithm modified to handle time-sensitive link costs. We need to keep track of both the current node and the arrival time at that node.
+
+Let's define `min_delay[node][arrival_time]` as the minimum delay to reach `node` at `arrival_time`. Since the arrival times can grow, we'll use a priority queue to explore paths, prioritizing paths with lower total delay. The state in our priority queue will be `(current_total_delay, current_node, arrival_time_at_current_",True,"Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost:"
+Gemini,ALGO,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40K",True,"Selected: {0, 2, 4, 6, 9}, Total: 40"
+Gemini,ALGO,WIS_002,"Selected: {1, 3, 7, 10, 11}, Total: 52","This is a classic problem that can be solved using dynamic programming on trees (specifically, a maximum weight independent set on a tree, which can be adapted for a specific hierarchical structure).
+
+Given the connections, we can represent the network as a tree structure with Server 0 as the root.
+
+**Tree Representation (implied by connections):**
+
+```
+      0 (6)
+     / | \ \
+    1(14) 2(3) 3(11) 4(2)
+   / \   |   / \   / \
+  5(3) 6(4) 7(9) 8(4) 9(5) 10(8) 11(10)
+```
+
+**Algorithm (Dynamic Prog",True,"Selected: {1, 3, 7, 10, 11}, Total: 52"
+Gemini,ALGO,CC_06,"Count: 3
+ Coins: [12, 7, 7]","Total: 3 Scoops: [1, 12, 12]",False,"Total: 3 Scoops: [1, 12, 12]"
+o4-mini,ALGO,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40K",True,"Selected: {0, 2, 4, 6, 9}, Total: 40"
+o4-mini,ALGO,WIS_002,"Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {1, 3, 7, 10, 11}, Total: 52",True,"Selected: {1, 3, 7, 10, 11}, Total: 52"
+o4-mini,ALGO,WIS_003,"Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55","Selected: {1,2,3,4,10,11,13}, Total: 55",True,"Selected: {1,2,3,4,10,11,13}, Total: 55"
+o4-mini,ALGO,WIS_004,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37",True,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37"
+o4-mini,ALGO,WIS_005,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67","Selected: {2, 5, 7, 8, 11, 14}, Total: 67",True,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67"

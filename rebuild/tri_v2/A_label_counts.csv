@@ -1,0 +1,6 @@
+panel,rule,retrieval,computation,mixed,ambiguous,n
+full_440,executed,8,4,157,271,440
+full_440,appendix_symmetric,8,0,299,133,440
+complete_case_169,executed,8,4,157,0,169
+complete_case_169,appendix_symmetric,38,0,27,104,169
+complete_case_169,appendix_symmetric_p75_frozen_from_440,5,0,137,27,169

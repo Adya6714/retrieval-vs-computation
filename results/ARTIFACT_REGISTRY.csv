@@ -108,3 +108,7 @@ results/figures/BW_P2_FIG_first_illegal_step.pdf,figures,BW,P2,figure,question_b
 results/figures/BW_P3_FIG_probe1_triage.png,figures,BW,P3,figure,question_bank_bw.csv,scripts/BW_P3_FIG_probe1_triage_plot.py,presentation,True,png,,94644,2026-05-22T15:44:47Z
 analysis/figures/output/BW_FIG_P1_pdas_bars.png,analysis_figures,BW,P1,figure,question_bank_bw.csv,analysis/figures/fig2_pdas_bars.py,presentation,True,png,,150642,2026-04-24T22:37:33Z
 analysis/figures/output/BW_FIG_P1_pdas_bars.pdf,analysis_figures,BW,P1,figure,question_bank_bw.csv,analysis/figures/fig2_pdas_bars.py,presentation,True,pdf,,21098,2026-04-24T22:37:34Z
+results/raw/llama_greedy_p1.csv,raw,cross,P1,behavioral_greedy_colab,question_bank_{gsm,algo,bw}.csv,colab/llama_greedy_behavioural.ipynb,bank_run,True,csv,438,91070,2026-08-29T09:51:25Z
+results/raw/mechanistic_frequency_controlled.csv,raw,GSM,P3,mechanistic,question_bank_gsm.csv,colab/mechanistic_frequency_controlled.ipynb,bank_run,True,csv,5280,517118,2026-08-29T09:51:25Z
+results/raw/mechanistic_frequency_controlled_manifest.json,raw,GSM,P3,mechanistic_meta,question_bank_gsm.csv,colab/mechanistic_frequency_controlled.ipynb,bank_run_meta,True,json,,979,2026-08-29T09:51:25Z
+results/derived/mechanistic_frequency_controlled_summary.csv,derived,GSM,P3,mechanistic_summary,question_bank_gsm.csv,colab/mechanistic_frequency_controlled.ipynb,derived_from_raw,True,csv,8,763,2026-08-29T09:51:25Z

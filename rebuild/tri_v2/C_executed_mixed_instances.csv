@@ -1,0 +1,158 @@
+problem_id,model,VAR_canonical,VAR_W3,ACI,instance_contamination_score,instance_rank_pct,greedy_succeeds,label_executed,label_appendix,ret_ok_canonical,ret_ok_w3,ret_ok_contam,ret_ok_greedy,comp_ok_w3,comp_ok_cci,comp_ok_contam,exec_vote_tuple,failure_signature,exec_three_unanimous_retrieval,exec_three_unanimous_computation,w3_in_asymmetric_gap
+CC_01,Claude,1.0,1.0,0.0,0.0,0.345,False,mixed,mixed,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_02,Claude,1.0,1.0,0.3333333333333333,0.0,0.345,False,mixed,ambiguous,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_03,Claude,1.0,1.0,0.3333333333333333,0.0,0.345,False,mixed,ambiguous,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_04,Claude,1.0,0.0,0.0,0.0,0.345,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+CC_06,Claude,0.0,0.0,0.0,0.0,0.345,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+CC_07,Claude,1.0,1.0,0.3333333333333333,0.0,0.345,True,mixed,ambiguous,True,False,False,True,True,False,True,"(1,-1,1)",R:w3 | R:contam | C:cci,False,False,False
+CC_08,Claude,1.0,0.0,0.0,0.0,0.345,False,mixed,mixed,True,True,False,False,False,False,True,"(-1,-1,1)",R:contam | R:greedy | C:w3 | C:cci,False,False,False
+CC_09,Claude,0.0,0.0,0.6666666666666666,0.0,0.345,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+CC_10,Claude,0.0,1.0,0.3333333333333333,0.0,0.345,True,mixed,ambiguous,False,False,False,True,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | C:cci,False,False,False
+SP_003,Claude,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_004,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_005,Claude,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_021,Claude,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_023,Claude,0.0,0.0,0.3333333333333333,0.5,0.7386363636363636,True,mixed,ambiguous,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_024,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_026,Claude,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_027,Claude,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_028,Claude,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_029,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_030,Claude,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_038,Claude,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_039,Claude,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_040,Claude,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_042,Claude,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_044,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_045,Claude,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_046,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_047,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_048,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_063,Claude,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_066,Claude,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_068,Claude,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_069,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_070,Claude,1.0,0.0,1.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_071,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_072,Claude,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+SP_073,Claude,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_003,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_004,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_013,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_014,Claude,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+WIS_015,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_019,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_020,Claude,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_024,Claude,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+WIS_025,Claude,1.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+WIS_026,Claude,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+WIS_027,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_029,Claude,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_019,GPT-4o,0.0,0.0,0.6666666666666666,0.5,0.7386363636363636,True,mixed,ambiguous,False,True,True,True,False,True,False,"(-1,1,-1)",R:canonical | C:w3 | C:contam,False,False,False
+SP_021,GPT-4o,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_027,GPT-4o,0.0,1.0,0.3333333333333333,0.0,0.3113636363636363,False,mixed,ambiguous,False,False,False,False,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | R:greedy | C:cci,False,False,False
+SP_029,GPT-4o,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_040,GPT-4o,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_042,GPT-4o,1.0,1.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,ambiguous,True,False,False,True,True,False,True,"(1,-1,1)",R:w3 | R:contam | C:cci,False,False,False
+SP_045,GPT-4o,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_046,GPT-4o,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_047,GPT-4o,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_071,GPT-4o,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_073,GPT-4o,0.0,1.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,False,False,True,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | C:cci,False,False,False
+WIS_013,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_014,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_015,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_023,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_024,GPT-4o,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_025,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_026,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_027,GPT-4o,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+WIS_028,GPT-4o,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,True,True,False,False,False,False,True,"(-1,-1,1)",R:contam | R:greedy | C:w3 | C:cci,False,False,False
+WIS_029,GPT-4o,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+SP_019,Llama,0.0,0.0,0.3333333333333333,0.5,0.7386363636363636,True,mixed,ambiguous,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_020,Llama,0.0,0.0,0.3333333333333333,0.5,0.7386363636363636,True,mixed,ambiguous,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_021,Llama,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_023,Llama,0.0,0.0,0.0,0.5,0.7386363636363636,False,mixed,retrieval,False,True,True,False,False,False,False,"(-1,-1,-1)",R:canonical | R:greedy | C:w3 | C:cci | C:contam,True,False,False
+SP_024,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_026,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_028,Llama,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_029,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+SP_030,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_037,Llama,0.0,0.0,0.0,0.5,0.7386363636363636,True,mixed,retrieval,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_038,Llama,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_039,Llama,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_040,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_042,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_044,Llama,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,False,mixed,mixed,False,True,False,False,False,True,True,"(-1,1,1)",R:canonical | R:contam | R:greedy | C:w3,False,False,False
+SP_045,Llama,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_046,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_047,Llama,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_048,Llama,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_062,Llama,0.0,0.0,0.0,0.5,0.7386363636363636,True,mixed,retrieval,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_063,Llama,0.0,0.0,1.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_064,Llama,0.0,0.0,0.3333333333333333,0.5,0.7386363636363636,True,mixed,ambiguous,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_065,Llama,0.0,0.0,0.3333333333333333,0.5,0.7386363636363636,True,mixed,ambiguous,False,True,True,True,False,False,False,"(-1,-1,-1)",R:canonical | C:w3 | C:cci | C:contam,True,False,False
+SP_066,Llama,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_068,Llama,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_069,Llama,0.0,0.0,0.6666666666666666,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+SP_070,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_071,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_072,Llama,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_073,Llama,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_013,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_014,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_015,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_016,Llama,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_017,Llama,0.0,1.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,ambiguous,False,False,False,True,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | C:cci,False,False,False
+WIS_018,Llama,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+WIS_019,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_020,Llama,0.0,0.0,0.0,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_023,Llama,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_024,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_025,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_026,Llama,0.0,0.0,1.0,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_027,Llama,0.0,0.0,0.0,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_028,Llama,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_029,Llama,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+CC_01,Gemini,1.0,1.0,0.0,0.0,0.345,False,mixed,mixed,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_02,Gemini,1.0,1.0,0.3333333333333333,0.0,0.345,False,mixed,ambiguous,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_03,Gemini,1.0,1.0,0.0,0.0,0.345,False,mixed,mixed,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_04,Gemini,0.0,1.0,0.3333333333333333,0.0,0.345,False,mixed,ambiguous,False,False,False,False,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_05,Gemini,1.0,1.0,0.0,0.0,0.345,False,mixed,mixed,True,False,False,False,True,False,True,"(1,-1,1)",R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_06,Gemini,0.0,0.0,0.3333333333333333,0.0,0.345,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+CC_07,Gemini,1.0,1.0,0.3333333333333333,0.0,0.345,True,mixed,ambiguous,True,False,False,True,True,False,True,"(1,-1,1)",R:w3 | R:contam | C:cci,False,False,False
+CC_08,Gemini,0.0,1.0,0.0,0.0,0.345,False,mixed,mixed,False,False,False,False,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | R:greedy | C:cci,False,False,False
+CC_09,Gemini,0.0,0.0,0.0,0.0,0.345,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+CC_10,Gemini,0.0,0.0,0.3333333333333333,0.0,0.345,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_003,Gemini,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_004,Gemini,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_005,Gemini,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_021,Gemini,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_023,Gemini,1.0,1.0,0.6666666666666666,0.5,0.7386363636363636,True,mixed,mixed,True,False,True,True,True,True,False,"(1,1,-1)",R:w3 | C:contam,False,False,False
+SP_027,Gemini,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_029,Gemini,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_030,Gemini,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_038,Gemini,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_039,Gemini,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_040,Gemini,1.0,0.0,0.3333333333333333,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_042,Gemini,0.0,1.0,0.3333333333333333,0.0,0.3113636363636363,False,mixed,ambiguous,False,False,False,False,True,False,True,"(1,-1,1)",R:canonical | R:w3 | R:contam | R:greedy | C:cci,False,False,False
+SP_045,Gemini,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_048,Gemini,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+SP_063,Gemini,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_064,Gemini,1.0,1.0,0.3333333333333333,0.5,0.7386363636363636,False,mixed,mixed,True,False,True,False,True,False,False,"(1,-1,-1)",R:w3 | R:greedy | C:cci | C:contam,False,False,False
+SP_069,Gemini,1.0,0.0,0.6666666666666666,0.0,0.3113636363636363,False,mixed,mixed,True,True,False,False,False,True,True,"(-1,1,1)",R:contam | R:greedy | C:w3,False,False,False
+SP_070,Gemini,1.0,1.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,False,False,True,True,False,True,"(1,-1,1)",R:w3 | R:contam | C:cci,False,False,False
+SP_071,Gemini,0.0,0.0,0.3333333333333333,0.0,0.3113636363636363,False,mixed,mixed,False,True,False,False,False,False,True,"(-1,-1,1)",R:canonical | R:contam | R:greedy | C:w3 | C:cci,False,False,False
+SP_072,Gemini,1.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+SP_073,Gemini,0.0,0.0,0.0,0.0,0.3113636363636363,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_003,Gemini,0.0,0.0,0.0,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_004,Gemini,0.0,0.0,0.0,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_016,Gemini,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False
+WIS_017,Gemini,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_020,Gemini,1.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+WIS_023,Gemini,1.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+WIS_024,Gemini,1.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,True,True,"(-1,1,1)",R:contam | C:w3,False,False,False
+WIS_026,Gemini,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_027,Gemini,1.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,True,True,False,True,False,False,True,"(-1,-1,1)",R:contam | C:w3 | C:cci,False,False,False
+WIS_028,Gemini,0.0,0.0,0.3333333333333333,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,False,True,"(-1,-1,1)",R:canonical | R:contam | C:w3 | C:cci,False,False,False
+WIS_029,Gemini,0.0,0.0,0.6666666666666666,0.0,0.4708333333333333,True,mixed,mixed,False,True,False,True,False,True,True,"(-1,1,1)",R:canonical | R:contam | C:w3,False,False,False

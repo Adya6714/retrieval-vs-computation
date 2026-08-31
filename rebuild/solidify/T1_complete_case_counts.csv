@@ -1,0 +1,5 @@
+panel,n,n_retrieval,n_computation,n_mixed,n_ambiguous,confident_label_rate,n_parse_failure,n_missing_phase2,n_missing_core,note
+full_440,440,8,4,157,271,0.02727272727272727,127,196,0,executed 5-field AND; missing-data flags force ambiguous
+three_signals,244,8,4,157,75,0.04918032786885246,75,0,0,W3 + CCI + proximity present; parse_failure still forces ambiguous
+complete_case,169,8,4,157,0,0.07100591715976332,0,0,0,"W3 + CCI + proximity present, parse succeeded; ranks inherited from 440"
+complete_case_reranked,169,19,3,147,0,0.1301775147928994,0,0,0,sensitivity: contamination rank recomputed on complete-case subset

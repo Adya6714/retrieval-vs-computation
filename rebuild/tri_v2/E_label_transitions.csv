@@ -1,0 +1,11 @@
+label_executed,label_appendix,n_440,n_169
+ambiguous,ambiguous,106,0
+ambiguous,mixed,162,0
+ambiguous,retrieval,3,0
+computation,ambiguous,4,0
+computation,mixed,0,4
+mixed,ambiguous,17,98
+mixed,mixed,137,23
+mixed,retrieval,3,36
+retrieval,ambiguous,6,6
+retrieval,retrieval,2,2

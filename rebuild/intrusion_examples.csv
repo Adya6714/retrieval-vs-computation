@@ -1,0 +1,224 @@
+family,model,problem_id,W3_model_answer,canonical_gold,W3_gold,intrusion
+ALGO,Claude,SP_004,"I need to find the shortest path from Router 0 to Server 9, considering both fixed delays and time-sensitive delays.
+
+Let me map out all the links:
+
+Fixed delay links:
+- 0→3: 4ms
+- 3→6: 3ms
+- 4→5: 3ms
+- 5→9: 3ms
+- 0→2: 5ms
+- 2→5: 4ms
+- 0→7: 9ms
+- 7→5: 4ms
+- 4→9: 7ms
+- 6→9: 8ms
+
+Time-sensitive links:
+- 0→1: 2ms (always)
+- 1→5: 3ms if arrives at node 1 ≤ timestamp 1, otherwise 12ms
+- 6→4: -5ms if arrives at node 6 ≤ timestamp 10, otherwise 4ms
+
+Let me analyze possible paths:
+
+Path 1: 0→1→5→9
+- 0→1","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",True
+ALGO,Claude,WIS_001,"I need to find the maximum value combination where no two adjacent houses are selected.
+
+House values: [8, 3, 6, 2, 9, 4, 7, 1, 5, 10]
+Positions:    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+This is a dynamic programming problem. For each house, I can either:
+1. Rob it (and can't rob the previous house)
+2. Don't rob it (and keep the maximum from previous houses)
+
+Let me work through this:
+
+dp[0] = 8 (rob house 0)
+dp[1] = max(8, 3) = 8 (don't rob house 1)
+dp[2] = max(8, 8+6) = 14 (rob houses 0,2)
+dp[3] = m","Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",True
+ALGO,Claude,CC_04,"I need to find the minimum number of scoops to make exactly 27 grams using denominations: 1g, 7g, 10g, 14g, 17g, 23g.
+
+Let me work through this systematically, trying combinations that use the largest denominations first to minimize the total number of scoops.
+
+Starting with 23g:
+- 23g + 4g needed
+- 4g can be made with: 4×1g = 4 scoops
+- Total: 1 + 4 = 5 scoops
+
+Starting with 17g:
+- 17g + 10g = 27g
+- Total: 2 scoops
+
+Starting with 14g:
+- 14g + 13g needed
+- 13g can be made with: 7g + 6×1g = 7 sco",,,False
+ALGO,Claude,CC_06,"I need to find the minimum number of scoops to make exactly 26 grams using denominations 1g, 7g, 8g, 12g, 15g.
+
+Let me work through this systematically, trying to use larger denominations first to minimize the total number of scoops.
+
+Starting with 15g:
+- 1 × 15g = 15g, need 11g more
+- For 11g: 1 × 8g = 8g, need 3g more
+- For 3g: 3 × 1g = 3g
+- Total: 1 + 1 + 3 = 5 scoops
+
+Let me try with 12g:
+- 2 × 12g = 24g, need 2g more
+- For 2g: 2 × 1g = 2g
+- Total: 2 + 2 = 4 scoops
+
+Let me try other combinat",,,False
+ALGO,Claude,CC_08,"Total: 2 Scoops: [25, 5]
+
+Wait, let me recalculate since 5g is not available.
+
+Total: 3 Scoops: [15, 15]
+
+Let me check again - that's only 2 scoops totaling 30g.
+
+Total: 2 Scoops: [15, 15]",,,False
+ALGO,GPT-4o,SP_002,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",True
+ALGO,GPT-4o,SP_004,"Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8 ms","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",True
+ALGO,GPT-4o,CC_01,"Total: 2 Scoops: [3 g, 3 g]",,,False
+ALGO,GPT-4o,CC_02,"Total: 2 Scoops: [6 g, 5 g]",,,False
+ALGO,GPT-4o,CC_03,"Total: 2 Scoops: [6, 7]",,,False
+ALGO,Llama,CC_01,"Total: 4 Scoops: 1 g, 1 g, 1 g, 7 g",,,False
+ALGO,Llama,CC_02,"Total: 4 Scoops: 1, 5, 5, 0",,,False
+ALGO,Llama,CC_03,"Total: 4 Scoops: 1g, 6g, 6g, 1g",,,False
+ALGO,Llama,CC_04,"Total: 3 
+Scoops: 17, 10, 0",,,False
+ALGO,Llama,CC_05,"Total: 6 Scoops: 6, 6, 1, 1",,,False
+ALGO,Gemini,SP_002,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 41","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",True
+ALGO,Gemini,SP_004,"To solve this, we can use Dijkstra's algorithm modified to handle time-sensitive link costs. We need to keep track of both the current node and the arrival time at that node.
+
+Let's define `min_delay[node][arrival_time]` as the minimum delay to reach `node` at `arrival_time`. Since the arrival times can grow, we'll use a priority queue to explore paths, prioritizing paths with lower total delay. The state in our priority queue will be `(current_total_delay, current_node, arrival_time_at_current_","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",True
+ALGO,Gemini,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40K","Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",True
+ALGO,Gemini,WIS_002,"This is a classic problem that can be solved using dynamic programming on trees (specifically, a maximum weight independent set on a tree, which can be adapted for a specific hierarchical structure).
+
+Given the connections, we can represent the network as a tree structure with Server 0 as the root.
+
+**Tree Representation (implied by connections):**
+
+```
+      0 (6)
+     / | \ \
+    1(14) 2(3) 3(11) 4(2)
+   / \   |   / \   / \
+  5(3) 6(4) 7(9) 8(4) 9(5) 10(8) 11(10)
+```
+
+**Algorithm (Dynamic Prog","Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52",True
+ALGO,Gemini,CC_06,"Total: 3 Scoops: [1, 12, 12]",,,False
+ALGO,o4-mini,WIS_001,"Selected: {0, 2, 4, 6, 9}, Total: 40K","Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",True
+ALGO,o4-mini,WIS_002,"Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {1, 3, 7, 10, 11}, Total: 52","Selected: {Item B, Item D, Item H, Item K, Item L}, Total: 52",True
+ALGO,o4-mini,WIS_003,"Selected: {1,2,3,4,10,11,13}, Total: 55","Selected: {1, 2, 3, 4, 10, 11, 13}, Total: 55","Selected: {Item B, Item C, Item D, Item E, Item K, Item L, Item N}, Total: 55",True
+ALGO,o4-mini,WIS_004,"Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37","Selected: {0, 1, 3, 6, 9, 11, 12}, Total: 37","Selected: {Item A, Item B, Item D, Item G, Item J, Item L, Item M}, Total: 37",True
+ALGO,o4-mini,WIS_005,"Selected: {2, 5, 7, 8, 11, 14}, Total: 67","Selected: {2, 5, 7, 8, 11, 14}, Total: 67","Selected: {Item C, Item F, Item H, Item I, Item L, Item O}, Total: 67",True
+GSM,Claude,GSM_003,120,,,False
+GSM,Claude,GSM_005,70,,,False
+GSM,Claude,GSM_012,341,,,False
+GSM,Claude,GSM_047,"I need to find the number of unoccupied server units after 3 weeks of admitting new data streams.
+
+Given information:
+- Total capacity: 1800 server units
+- Initial occupancy: 1/4 of total capacity
+- Daily admissions: 40 data streams (assuming 1 data stream = 1 server unit)
+- Time period: 3 weeks
+
+Step 1: Calculate initially occupied server units.
+Initially occupied = 1/4 × 1800 = 450 server units
+
+Step 2: Calculate initially unoccupied server units.
+Initially unoccupied = 1800 - 450 = 1350 serve",,,False
+GSM,Claude,GSM_049,"I need to find Robot-7's weekly earnings by calculating the total workstations and his payment structure.
+
+Let me break this down step by step:
+
+**Step 1: Calculate workstations at each facility**
+- Facility 1: 450 workstations
+- Facility 2: 450 workstations
+- Facility 3: 20% bigger than the other 2 combined
+  - Other 2 combined: 450 + 450 = 900 workstations
+  - Facility 3: 900 + (20% × 900) = 900 + 180 = 1,080 workstations
+
+**Step 2: Calculate total workstations**
+Total workstations = 450 + 450",,,False
+GSM,GPT-4o,GSM_001,55.8,,,False
+GSM,GPT-4o,GSM_002,45,,,False
+GSM,GPT-4o,GSM_003,135,,,False
+GSM,GPT-4o,GSM_005,63,,,False
+GSM,GPT-4o,GSM_008,112,,,False
+GSM,Llama,GSM_002,36,,,False
+GSM,Llama,GSM_004,117300,,,False
+GSM,Llama,GSM_005,704,,,False
+GSM,Llama,GSM_006,1456,,,False
+GSM,Llama,GSM_007,34,,,False
+GSM,Gemini,GSM_001,58,,,False
+GSM,Gemini,GSM_002,48,,,False
+GSM,Gemini,GSM_004,108000,,,False
+GSM,Gemini,GSM_006,4914,,,False
+GSM,Gemini,GSM_007,70,,,False
+GSM,o4-mini,GSM_049,"First facility: 450 workstations  
+Second facility: 450 workstations  
+Combined these two = 900 workstations  
+Third facility: 20% bigger ⇒ 900 × 1.2 = 1 080 workstations  
+
+Total workstations = 450 + 450 + 1 080 = 1 980  
+Assemblies/week = 2 per workstation ⇒ 1 980 × 2 = 3 960  
+Pay = ₣0.45 per assembly ⇒ 3 960 × 0.45 = ₣1 782  
+
+So Robot-7 makes ₣1 782 in a week.",,,False
+GSM,o4-mini,GSM_052,"Let X be one roll of the 12‐slot randomizer (uniform on {1,…,12}).
+
+1.  P(code > 6)  
+   There are 6 numbers above 6 (7–12) out of 12, so  
+   P(code>6) = 6/12 = 0.5 = 50%.
+
+2.  P(four odd numbers in a row)  
+   On one roll, P(odd) = 6/12 = 0.5.  Four independent rolls gives  
+   P(odd, odd, odd, odd) = (0.5)^4 = 1/16 = 0.0625 = 6.25%.
+
+3.  Difference in likelihood  
+   50.00% − 6.25% = 43.75%.
+
+Answer: It’s 43.75 percentage points more likely to roll a code > 6 than to get four odds in a row.",,,False
+GSM,o4-mini,GSM_053,"Let c (in g), i (in L) and z (in kg) be the amounts of copper, iron and zinc used.  From the data we have  
+
+1.  Copper : iron = 63 : 21 = 3 : 1  
+   ⇒ c = 3k, i = k  
+
+2.  Zinc : iron = 7 kg : 7 L = 1 kg : 1 L  
+   ⇒ z = i = k  
+
+3.  Total “units” consumed = c + i + z = 630  
+   ⇒ 3k + k + k = 5k = 630  ⇒  k = 126  
+
+Hence  
+  c = 3k = 378 g  
+  i = 126 L  
+  z = 126 kg  
+
+We want the number of teaspoonfuls of copper.  A teaspoon holds about 5 mL, and solid copper has density ρ ≃ 8.96 g/cm³, so",,,False
+GSM,o4-mini,GSM_060,"First, compute the size of each group:
+
+1. Total workers = 125  
+2. Welders = 40% of 125 = 0.40×125 = 50  
+3. Remaining workers = 125 – 50 = 75  
+4. Electricians + mechanics = 17% of those 75 = 0.17×75 = 12.75 ≈ 13 workers  
+
+(We round 12.75 to 13 since you can’t have a fraction of a person.)
+
+Next, who actually goes to the conference:
+
+– Welders: half of the 50 are injured and absent, so 50÷2 = 25 go.  
+– Electricians + mechanics: 13 go.  
+– Supervisors: 3 accompany each of the three groups ⇒ 3",,,False
+GSM,o4-mini,GSM_061,"First, note that the primary and secondary machines together do  
+4 + 6 = 10 sheets per shift.  
+The auxiliary does “one less than three-sixths of” that 10, i.e.  
+(3/6)×10 – 1 = 5 – 1 = 4 sheets per shift.  
+So in one full cycle (one shift) the three machines process  
+4 + 6 + 4 = 14 metal sheets.",,,False

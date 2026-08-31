@@ -1,0 +1,5 @@
+comparison,o4mini_intrusions,o4mini_W3_errors,other_intrusions,other_W3_errors,table_o4_int,table_o4_non,table_other_int,table_other_non,odds_ratio,fisher_p_two_sided
+o4-mini vs Claude,5,43,2,100,5,38,2,98,6.447368421052632,0.025868973972758467
+o4-mini vs GPT-4o,5,43,2,91,5,38,2,89,5.855263157894737,0.034504269600352806
+o4-mini vs Llama,5,43,0,108,5,38,0,108,inf,0.0015732316545686027
+o4-mini vs Gemini,5,43,4,82,5,38,4,78,2.5657894736842106,0.2726342172201987

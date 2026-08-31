@@ -1,0 +1,6 @@
+model,n,retrieval_consistent,computation_consistent,mixed,ambiguous,n_cci_available,contam_p75,contam_floor,rule
+Claude,110,5,0,72,33,61,0.5,0.0,"appendix three-signal: W3 in {0,1}; CCI<=0.10 or >=0.67; contamination at floor or >=p75. Conjunction for strong labels. Mixed = conflicting directions. Ambiguous = else (incl. missing CCI)."
+GPT-4o,110,3,1,73,33,61,0.5,0.0,"appendix three-signal: W3 in {0,1}; CCI<=0.10 or >=0.67; contamination at floor or >=p75. Conjunction for strong labels. Mixed = conflicting directions. Ambiguous = else (incl. missing CCI)."
+Llama,110,4,0,78,28,61,0.5,0.0,"appendix three-signal: W3 in {0,1}; CCI<=0.10 or >=0.67; contamination at floor or >=p75. Conjunction for strong labels. Mixed = conflicting directions. Ambiguous = else (incl. missing CCI)."
+Gemini,110,3,0,77,30,61,0.5,0.0,"appendix three-signal: W3 in {0,1}; CCI<=0.10 or >=0.67; contamination at floor or >=p75. Conjunction for strong labels. Mixed = conflicting directions. Ambiguous = else (incl. missing CCI)."
+o4-mini,110,0,0,57,53,0,0.5,0.0,"appendix three-signal: W3 in {0,1}; CCI<=0.10 or >=0.67; contamination at floor or >=p75. Conjunction for strong labels. Mixed = conflicting directions. Ambiguous = else (incl. missing CCI)."

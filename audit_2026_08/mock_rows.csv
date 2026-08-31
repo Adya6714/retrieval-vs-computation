@@ -1,0 +1,6 @@
+file,problem_id,variant_type,n_rows_same_key,keep_last_model,dropped_by_explicit_mock_filter,survives_rederive_drop_duplicates_keep_last
+ALGO_P1_behavioral_claude.csv,CC_01,canonical,2,anthropic/claude-sonnet-4,True,False
+ALGO_P1_behavioral_claude.csv,CC_01,W1,2,anthropic/claude-sonnet-4,True,False
+ALGO_P1_behavioral_claude.csv,CC_01,W2,2,anthropic/claude-sonnet-4,True,False
+ALGO_P1_behavioral_llama.csv,CC_01,canonical,2,mock,True,True
+ALGO_P1_behavioral_llama.csv,CC_01,W1,2,mock,True,True

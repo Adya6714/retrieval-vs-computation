@@ -1,0 +1,9 @@
+slice,n_pairs,median_rank_canonical,median_rank_W3,median_can_minus_W3,W,p_two_sided,note
+Qwen/Qwen2.5-7B-Instruct | all,44,13.0,19.0,-5.0,178.0,0.0010604445479421402,ok
+Qwen/Qwen2.5-7B-Instruct | tercile=low,15,14.0,20.0,-5.0,16.5,0.01337488515096423,ok
+Qwen/Qwen2.5-7B-Instruct | tercile=mid,20,14.0,19.0,-3.5,54.5,0.10282807967769164,ok
+Qwen/Qwen2.5-7B-Instruct | tercile=high,9,10.0,16.0,-5.0,3.5,0.09375,ok
+meta-llama/Llama-3.1-8B-Instruct | all,44,130.5,137.5,6.0,472.5,0.7928731083071827,ok
+meta-llama/Llama-3.1-8B-Instruct | tercile=low,15,196.0,155.0,3.0,55.0,0.803955078125,ok
+meta-llama/Llama-3.1-8B-Instruct | tercile=mid,14,406.0,445.0,-0.5,46.0,0.71484375,ok
+meta-llama/Llama-3.1-8B-Instruct | tercile=high,15,48.0,42.0,9.0,45.0,0.42120361328125,ok

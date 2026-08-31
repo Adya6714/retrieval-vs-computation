@@ -1,0 +1,8 @@
+condition,n_mixed_failing,frac_of_mixed
+retrieval: canonical ≤ 0.5,102,0.6496815286624203
+retrieval: W3 not < 0.2,20,0.12738853503184713
+retrieval: contamination rank not > 0.5,146,0.9299363057324841
+retrieval: greedy_succeeds is not True,26,0.16560509554140126
+computation: W3 not > 0.5,137,0.8726114649681529
+computation: ACI not > 0.5,115,0.732484076433121
+computation: contamination rank not ≤ 0.5,11,0.07006369426751592

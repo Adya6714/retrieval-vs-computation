@@ -1,0 +1,26 @@
+{
+  "notebook": "mechanistic_frequency_controlled.ipynb",
+  "model_string": [
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "Qwen/Qwen2.5-7B-Instruct"
+  ],
+  "dtype": "float16",
+  "quantization": "nf4 4-bit bitsandbytes (double quant)",
+  "decoding_config": {
+    "readout": "forward pass only (no generation); last prompt position",
+    "chat_template": true,
+    "prompt": "Appendix N Probe-1 GSM format instruction",
+    "gold": "answer-content numeric token; format keywords asserted-against"
+  },
+  "n_items": 88,
+  "n_ids": 44,
+  "n_models": 2,
+  "id_source": "results/raw/GSM_P1_behavioral_claude.csv (44 unique problem_id)",
+  "frequency_proxy": "GSM-bank unigram counts under each model's tokenizer; token_id as secondary rank proxy",
+  "git_commit_hash": "45bf4432633498ba34f9a5c33436317436e2aa1b",
+  "output_csv": "/content/colab_out/mech_freq_controlled.csv",
+  "n_layers_by_model": {
+    "meta-llama/Llama-3.1-8B-Instruct": 32,
+    "Qwen/Qwen2.5-7B-Instruct": 28
+  }
+}

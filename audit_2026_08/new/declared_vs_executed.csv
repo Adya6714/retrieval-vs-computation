@@ -1,0 +1,6 @@
+model,n,agreement_rate,n_any_invocation,n_match,agree_correct,agree_incorrect,disagree_correct,disagree_incorrect,fisher_p,note
+Claude,110,0.045454545454545456,6,5,1,4,54,51,0.36337134527994525,agreement = ≥1 Phase-2A algorithm_invocation whose named algorithm family intersects Phase-1 stated_algorithm
+GPT-4o,110,0.0,0,0,0,0,55,55,1.0,agreement = ≥1 Phase-2A algorithm_invocation whose named algorithm family intersects Phase-1 stated_algorithm
+Llama,110,0.01818181818181818,4,2,0,2,24,84,1.0,agreement = ≥1 Phase-2A algorithm_invocation whose named algorithm family intersects Phase-1 stated_algorithm
+Gemini,110,0.02727272727272727,3,3,0,3,34,73,0.551014734500973,agreement = ≥1 Phase-2A algorithm_invocation whose named algorithm family intersects Phase-1 stated_algorithm
+o4-mini,0,,0,0,0,0,0,0,,No ALGO Phase-1 declaration file for this model

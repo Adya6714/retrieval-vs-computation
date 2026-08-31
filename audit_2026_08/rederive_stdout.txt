@@ -1,0 +1,104 @@
+[0/6] coverage audit (§0.1)
+[audit] master coverage table
+[audit] GSM P2 imputed vs complete-case sensitivity
+[audit] table denominator flags
+[audit] cells needing runs
+
+Coverage summary: 40 slices, 5 incomplete
+family        probe  model  observed_canonical_n  bank_canonical_n coverage_label
+   GSM           P1 GPT-4o                    20                44        partial
+   GSM           P1  Llama                    20                44        partial
+  ALGO P2A_elicited Claude                    61               110        partial
+  ALGO P2A_elicited Gemini                    61               110        partial
+  ALGO P2A_elicited  Llama                    61               110        partial
+
+GSM P2 Claude vs GPT-4o sensitivity:
+              analysis      comparison  n_pairs  claude_mean_cci  gpt4o_mean_cci  wilcoxon_W  wilcoxon_p_one_sided  paired_t_p denominator_label
+full_bank_zero_imputed Claude_vs_GPT4o       44         0.231059        0.108334       396.0              0.006769    0.003583      zero_imputed
+    complete_case_only Claude_vs_GPT4o       44         0.231059        0.108334       396.0              0.006769    0.003583     complete_case
+
+[1/6] coverage_matrix
+model                 Claude  GPT-4o  Gemini  Llama  o4-mini
+probe                                                       
+ALGO_P1                    0       0       0      0        0
+ALGO_P2A_elicited        181     450     181    181      450
+ALGO_P2A_normal          450     450     450    450      450
+ALGO_P2B_implausible     181     181     181    181      181
+ALGO_P2B_plausible       181     181     181    181      181
+BW_P1                    455     455     455    455      455
+GSM_P1                     0       0       0      0        0
+GSM_P2                    44      44      44     44       44
+
+[2/6] probe1 per-model variant accuracies
+variant           W1     W2     W3     W4     W5     W6  canonical
+probe model                                                       
+ALGO  Claude   0.409  0.455  0.091  0.618  0.000  0.100      0.364
+      GPT-4o   0.436  0.109  0.173  0.445  0.000  0.200      0.427
+      Gemini   0.391  0.300  0.255  0.436  0.020  0.144      0.464
+      Llama    0.082  0.055  0.018  0.073  0.000  0.056      0.064
+      o4-mini  0.964  0.255  0.609  0.736  0.040  0.422      1.000
+BW    Claude   0.062  0.231  0.138  0.015  0.523  0.508      0.154
+      GPT-4o   0.092  0.092  0.169  0.077  0.246  0.215      0.062
+      Gemini   0.138  0.108  0.108  0.031  0.569  0.338      0.385
+      Llama    0.031  0.015  0.108  0.000  0.000  0.031      0.015
+      o4-mini  0.754  0.738  0.185  0.415  0.769  0.769      0.769
+GSM   Claude   0.841  0.773  0.750  0.636  0.818  0.750      0.841
+      GPT-4o   0.750  0.300  0.300  0.200  0.300    NaN      0.850
+      Gemini   0.818  0.636  0.523  0.477  0.614  0.958      0.909
+      Llama    0.850  0.250  0.150  0.300  0.050    NaN      0.800
+      o4-mini  0.864  0.818  0.841  0.682  0.886  0.833      0.841
+
+[3/6] probe1 W3-retention
+probe   model  canonical    W3  W3_retention
+ ALGO  Claude      0.364 0.091         0.250
+ ALGO  GPT-4o      0.427 0.173         0.404
+ ALGO  Gemini      0.464 0.255         0.549
+ ALGO   Llama      0.064 0.018         0.286
+ ALGO o4-mini      1.000 0.609         0.609
+   BW  Claude      0.154 0.138         0.900
+   BW  GPT-4o      0.062 0.169         2.750
+   BW  Gemini      0.385 0.108         0.280
+   BW   Llama      0.015 0.108         7.000
+   BW o4-mini      0.769 0.185         0.240
+  GSM  Claude      0.841 0.750         0.892
+  GSM  GPT-4o      0.850 0.300         0.353
+  GSM  Gemini      0.909 0.523         0.575
+  GSM   Llama      0.800 0.150         0.187
+  GSM o4-mini      0.841 0.841         1.000
+
+[4/6] probe2 GSM CCI/TEP
+  model  n  n_parseable  mean_cci  mean_tep  session_b_correct_rate
+ Claude 44            0     0.231     0.539                   0.864
+ Gemini 44            0     0.270     0.652                   0.886
+ GPT-4o 44            0     0.108     0.598                   0.705
+  Llama 44            0     0.167     0.773                   0.455
+o4-mini 44            0     0.215     0.637                   0.955
+
+[5/6] probe2 ALGO P2A/P2B
+      condition   model  sessions  final_correct  algorithm_invocation  diverged_rate
+         normal  Claude       110          0.500                   0.0            NaN
+         normal  Gemini       110          0.300                   0.0            NaN
+         normal  GPT-4o       110          0.500                   0.0            NaN
+         normal   Llama       110          0.218                   0.0            NaN
+         normal o4-mini       110          0.436                   0.0            NaN
+       elicited  Claude        61          0.459                   0.0            NaN
+       elicited  Gemini        61          0.311                   0.0            NaN
+       elicited  GPT-4o       110          0.518                   0.0            NaN
+       elicited   Llama        61          0.148                   0.0            NaN
+       elicited o4-mini       110          0.418                   0.0            NaN
+  plausible_inj  Claude        61          0.525                   0.0          0.956
+  plausible_inj  Gemini        61          0.311                   0.0          0.956
+  plausible_inj  GPT-4o        61          0.508                   0.0          0.956
+  plausible_inj   Llama        61          0.230                   0.0          0.956
+  plausible_inj o4-mini        61          0.377                   0.0          0.956
+implausible_inj  Claude        61          0.525                   0.0          0.956
+implausible_inj  Gemini        61          0.279                   0.0          0.956
+implausible_inj  GPT-4o        61          0.557                   0.0          0.956
+implausible_inj   Llama        61          0.262                   0.0          0.956
+implausible_inj o4-mini        61          0.426                   0.0          0.956
+
+[6/6] accuracy vs W3 retention (Spearman across models, per family)
+probe  n_models  spearman_rho  p_value                        models_used
+ ALGO         5        0.9000   0.0374 Claude,Gemini,GPT-4o,Llama,o4-mini
+   BW         5       -1.0000   0.0000 Gemini,o4-mini,Claude,GPT-4o,Llama
+  GSM         5        0.1539   0.8048 Claude,Gemini,GPT-4o,Llama,o4-mini

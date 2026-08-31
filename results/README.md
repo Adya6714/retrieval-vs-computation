@@ -60,6 +60,7 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 | `ALGO_P1_SCR_run_behavioral_sweep.py` | `question_bank_algo.csv` | `ALGO_P1_behavioral_{claude,gpt4o,llama}.csv`, `ALGO_P1_review_queue.csv` |
 | `BW_P1_SCR_run_behavioral_sweep.py` | `question_bank_bw.csv` | `BW_P1_behavioral.csv` (all models) |
 | `BW_P1_SCR_run_behavioral_sweep.py --family arithmetic_reasoning` | `question_bank_gsm.csv` | same pattern → use GSM bank path flag / GSM sweeps* |
+| `colab/llama_greedy_behavioural.ipynb` | banks (canonical + W3) | `raw/llama_greedy_p1.csv` (local Llama-3.1-8B-Instruct, NF4, not OpenRouter) |
 
 \*GSM P1 files: `GSM_P1_behavioral_{claude,gpt4o,llama}.csv` (same sweep script family filter).
 
@@ -89,6 +90,7 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 | `BW_P3_SCR_run_contamination_triage.py` | `raw/BW_P3_contamination.csv` |
 | `GSM` / `ALGO` triage (family flag on BW script or dedicated) | `raw/GSM_P3_contamination.csv`, `raw/ALGO_P3_contamination.csv` |
 | `run_mechanistic_sweep.py` | `raw/*_P3_mechanistic.csv` |
+| `colab/mechanistic_frequency_controlled.ipynb` | `raw/mechanistic_frequency_controlled.csv` (+ `_manifest.json`); `derived/mechanistic_frequency_controlled_summary.csv` |
 | `ALGO_P3_SCR_triangulation.py` | `derived/ALGO_P3_triangulation.csv` |
 | `BW_P3_SCR_run_triangulation.py` | `derived/BW_P3_triangulation_{claude,gpt4o,llama}.csv` |
 

@@ -1,0 +1,18 @@
+failure_signature,n
+R:canonical | R:contam | C:w3 | C:cci,53
+R:contam | C:w3 | C:cci,24
+R:canonical | R:contam | C:w3,23
+R:contam | C:w3,15
+R:canonical | R:contam | R:greedy | C:w3 | C:cci,9
+R:canonical | C:w3 | C:cci | C:contam,7
+R:w3 | R:contam | R:greedy | C:cci,7
+R:w3 | R:contam | C:cci,4
+R:canonical | R:w3 | R:contam | R:greedy | C:cci,4
+R:canonical | R:w3 | R:contam | C:cci,3
+R:contam | R:greedy | C:w3 | C:cci,2
+R:canonical | C:w3 | C:contam,1
+R:contam | R:greedy | C:w3,1
+R:w3 | C:contam,1
+R:canonical | R:greedy | C:w3 | C:cci | C:contam,1
+R:canonical | R:contam | R:greedy | C:w3,1
+R:w3 | R:greedy | C:cci | C:contam,1
