@@ -5,6 +5,7 @@ Notebooks only live here. Downloads from a Colab run go into `results/`, not thi
 | Notebook | Put the download here |
 |----------|------------------------|
 | `llama_greedy_behavioural.ipynb` → `colab_out/llama_greedy_p1.csv` | `results/raw/llama_greedy_p1.csv` |
+| H6 cell in the same notebook → `colab_out/llama_greedy_p1_gsm_canonical_768.csv` | `results/raw/llama_greedy_p1_gsm_canonical_768.csv` (**new file; never overwrite `llama_greedy_p1.csv`**) |
 | `mechanistic_frequency_controlled.ipynb` → `colab_out/mech_freq_controlled.csv` | `results/raw/mechanistic_frequency_controlled.csv` (**GSM only — do not overwrite**) |
 | same → `colab_out/mech_freq_controlled_algo_bw.csv` | `results/raw/mechanistic_frequency_controlled_algo_bw.csv` (ALGO 61 + BW 65; `family` column) |
 | same → `mech_freq_controlled_algo_bw_summary.csv` | `results/derived/mechanistic_frequency_controlled_algo_bw_summary.csv` |

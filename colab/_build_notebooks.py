@@ -475,7 +475,13 @@ def generate(user_text: str, family: str, *, do_sample: bool, temperature: float
     new = out[0, inputs["input_ids"].shape[1] :]
     return tokenizer.decode(new, skip_special_tokens=True).strip()
 '''),
-    md("""## Greedy sweep → `colab_out/llama_greedy_p1.csv`"""),
+    md("""## Greedy sweep → `colab_out/llama_greedy_p1.csv`
+
+`RESUME=True` skips completed `(problem_id, family, variant)` rows in this file.
+That **does not** re-run truncated GSM canonical answers (25/37 wrong answers
+are exactly 128 tokens). The 768-token GSM canonical rerun is a **later cell**
+and writes a **new** CSV. Never overwrite `llama_greedy_p1.csv` with
+the 768 run."""),
     code(r'''
 GREEDY_CSV = OUT_DIR / "llama_greedy_p1.csv"
 GREEDY_COLS = ["problem_id", "family", "variant", "model_answer", "correct"]
@@ -566,6 +572,104 @@ try:
             print(f"[download] {p.name}")
 except Exception as exc:
     print("[download] skipped (not Colab or download blocked):", exc)
+'''),
+    md("""## H6 — GSM canonical greedy rerun at 768 tokens (new file)
+
+The original `llama_greedy_p1.csv` GSM canonical cell is 7/44 = 0.159 because
+generation was capped at 128 tokens. This cell reruns **GSM canonical only**
+at `max_new_tokens=768` and writes `llama_greedy_p1_gsm_canonical_768.csv`.
+It does **not** read or write `llama_greedy_p1.csv`, so `RESUME=True` on the
+truncated file cannot skip these rows.
+
+Requires GPU. Copy the new CSV into `results/raw/llama_greedy_p1_gsm_canonical_768.csv`
+after the run. Until it exists, there is no local-vs-OpenRouter GSM greedy comparison."""),
+    code(r'''
+from pathlib import Path
+import csv
+
+GSM_768_CSV = OUT_DIR / "llama_greedy_p1_gsm_canonical_768.csv"
+if GSM_768_CSV.resolve() == (OUT_DIR / "llama_greedy_p1.csv").resolve():
+    raise SystemExit("Refusing to overwrite llama_greedy_p1.csv")
+
+gsm_can_items = [
+    it for it in ITEMS
+    if it["family"] == "GSM" and str(it["variant"]).lower() == "canonical"
+]
+print(f"[H6] GSM canonical queue n={len(gsm_can_items)}  out={GSM_768_CSV}")
+
+def _done_768(path: Path) -> set[str]:
+    if not (path.exists() and path.stat().st_size > 0):
+        return set()
+    prev = pd.read_csv(path, dtype=str)
+    return set(prev["problem_id"].astype(str))
+
+done768 = _done_768(GSM_768_CSV)
+write_header768 = not GSM_768_CSV.exists() or GSM_768_CSV.stat().st_size == 0
+n_ok768 = n_done768 = 0
+if GSM_768_CSV.exists() and GSM_768_CSV.stat().st_size > 0:
+    prev = pd.read_csv(GSM_768_CSV, dtype=str)
+    n_done768 = len(prev)
+    n_ok768 = int(prev["correct"].astype(str).str.lower().isin(["true", "1"]).sum())
+
+COLS768 = ["problem_id", "family", "variant", "model_answer", "correct", "max_new_tokens"]
+with GSM_768_CSV.open("a", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=COLS768)
+    if write_header768:
+        w.writeheader()
+    for item in tqdm(gsm_can_items, desc="gsm_canonical_768"):
+        pid = str(item["problem_id"])
+        if pid in done768:
+            continue
+        user = build_prompt(item["problem_text"], "GSM")
+        ans = generate(user, "GSM", do_sample=False)
+        correct = bool(score_item(item, ans))
+        w.writerow(
+            {
+                "problem_id": pid,
+                "family": "GSM",
+                "variant": "canonical",
+                "model_answer": ans,
+                "correct": correct,
+                "max_new_tokens": 768,
+            }
+        )
+        f.flush()
+        n_done768 += 1
+        n_ok768 += int(correct)
+        done768.add(pid)
+
+print(f"wrote {GSM_768_CSV}  running_acc={n_ok768}/{n_done768}")
+if GSM_768_CSV.exists() and GSM_768_CSV.stat().st_size > 0:
+    g768 = pd.read_csv(GSM_768_CSV, dtype=str)
+    g768["correct_bool"] = g768["correct"].astype(str).str.lower().isin(["true", "1"])
+    print(g768["correct_bool"].agg(["mean", "sum", "count"]))
+'''),
+    md("""## Google Drive backup of the 768 GSM CSV (copy only)"""),
+    code(r'''
+from pathlib import Path
+import shutil
+
+src768 = OUT_DIR / "llama_greedy_p1_gsm_canonical_768.csv"
+drive_dir = Path("/content/drive/MyDrive/llama_outputs")
+if Path("/content").exists() and not Path("/content/drive/MyDrive").exists():
+    try:
+        from google.colab import drive  # type: ignore
+        drive.mount("/content/drive")
+    except Exception as exc:
+        print("[drive] mount skipped:", exc)
+drive_dir.mkdir(parents=True, exist_ok=True)
+if src768.exists():
+    dst768 = drive_dir / "llama_greedy_p1_gsm_canonical_768.csv"
+    shutil.copy2(src768, dst768)
+    print(f"[backup] copied {src768} -> {dst768}  ({dst768.stat().st_size} bytes)")
+    try:
+        from google.colab import files as _colab_files  # type: ignore
+        _colab_files.download(str(src768))
+        print(f"[download] {src768.name}")
+    except Exception as exc:
+        print("[download] skipped:", exc)
+else:
+    print(f"[backup] 768 GSM CSV not found: {src768} (run the H6 cell on a GPU runtime)")
 '''),
     md("""## Summary vs Table 7 (Llama OpenRouter)
 
