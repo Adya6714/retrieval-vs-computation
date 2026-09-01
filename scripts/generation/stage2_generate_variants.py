@@ -1100,10 +1100,22 @@ def generate_w5_sp(row: dict[str, str], dry_run: bool, logger: logging.Logger) -
 
     w5_answer = format_sp_answer(path, cost)
     text = row["problem_text"]
-    for e in params.get("graph", []):
-        old = f"node {e['u']} to node {e['v']}: {e['w']}"
-        new = f"node {e['v']} to node {e['u']}: {e['w']}"
-        text = text.replace(old, new)
+    # Flip printed edge lines case-insensitively; do not touch the query sentence.
+    edge_line = re.compile(
+        r"(?P<prefix>^\s*[-*]?\s*)[Nn]ode\s+(?P<u>\d+)\s+to\s+[Nn]ode\s+(?P<v>\d+)\s*:\s*(?P<w>-?\d+)\s*$"
+    )
+    rewritten: list[str] = []
+    for line in text.splitlines(keepends=True):
+        core, nl = (line[:-1], line[-1]) if line.endswith("\n") else (line, "")
+        m = edge_line.match(core)
+        if m:
+            node_word = "Node" if "Node" in core else "node"
+            rewritten.append(
+                f"{m.group('prefix')}{node_word} {m.group('v')} to {node_word} {m.group('u')}: {m.group('w')}{nl}"
+            )
+        else:
+            rewritten.append(line)
+    text = "".join(rewritten)
     text = re.sub(
         rf"from node\s*{src}\s+to node\s*{tgt}",
         f"from node {tgt} to node {src}",

@@ -2310,17 +2310,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 6, Cost: 12",algorithmic,short
 SP_019,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 10
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 6: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 6: 4
-- Node 5 to Node 6: 12
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 10
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 6 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 6 to Node 4: 4
+- Node 6 to Node 5: 12
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -2396,15 +2396,15 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 5, Cost: 12",algorithmic,short
 SP_020,W5,"A route planner has 6 locations labeled 0 to 5. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 5: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 5: 4
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 5 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 5 to Node 4: 4
 
 What is the shortest path from node 5 to node 0 and its total cost?
 
@@ -2496,21 +2496,21 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 8, Cost: 12",algorithmic,short
 SP_021,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 11
-- Node 0 to Node 6: 11
-- Node 0 to Node 7: 9
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 8: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 8: 4
-- Node 5 to Node 8: 12
-- Node 6 to Node 8: 8
-- Node 7 to Node 8: 12
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 11
+- Node 6 to Node 0: 11
+- Node 7 to Node 0: 9
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 8 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 8 to Node 4: 4
+- Node 8 to Node 5: 12
+- Node 8 to Node 6: 8
+- Node 8 to Node 7: 12
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -2593,16 +2593,16 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 5, Cost: 5",algorithmic,shorte
 SP_023,W5,"A route planner has 6 locations labeled 0 to 5. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 11
-- Node 1 to Node 3: 6
-- Node 1 to Node 5: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 5: 8
-- Node 3 to Node 5: 1
-- Node 4 to Node 5: 11
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 11
+- Node 3 to Node 1: 6
+- Node 5 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 5 to Node 2: 8
+- Node 5 to Node 3: 1
+- Node 5 to Node 4: 11
 
 What is the shortest path from node 5 to node 0 and its total cost?
 
@@ -2692,20 +2692,20 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 7, Cost: 5",algorithmic,shorte
 SP_024,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 7
-- Node 0 to Node 5: 10
-- Node 0 to Node 6: 10
-- Node 1 to Node 3: 6
-- Node 1 to Node 7: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 1
-- Node 4 to Node 7: 11
-- Node 5 to Node 7: 11
-- Node 6 to Node 7: 10
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 7
+- Node 5 to Node 0: 10
+- Node 6 to Node 0: 10
+- Node 3 to Node 1: 6
+- Node 7 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 1
+- Node 7 to Node 4: 11
+- Node 7 to Node 5: 11
+- Node 7 to Node 6: 10
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -2805,22 +2805,22 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 8, Cost: 5",algorithmic,shorte
 SP_026,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 8
-- Node 0 to Node 5: 10
-- Node 0 to Node 6: 11
-- Node 0 to Node 7: 7
-- Node 1 to Node 3: 6
-- Node 1 to Node 8: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 8: 8
-- Node 3 to Node 8: 1
-- Node 4 to Node 8: 7
-- Node 5 to Node 8: 9
-- Node 6 to Node 8: 11
-- Node 7 to Node 8: 10
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 8
+- Node 5 to Node 0: 10
+- Node 6 to Node 0: 11
+- Node 7 to Node 0: 7
+- Node 3 to Node 1: 6
+- Node 8 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 8 to Node 2: 8
+- Node 8 to Node 3: 1
+- Node 8 to Node 4: 7
+- Node 8 to Node 5: 9
+- Node 8 to Node 6: 11
+- Node 8 to Node 7: 10
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -2907,17 +2907,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 6, Cost: 3",algorithmic,shorte
 SP_027,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 9
-- Node 0 to Node 5: 6
-- Node 1 to Node 6: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 9
-- Node 4 to Node 6: 9
-- Node 5 to Node 6: 9
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 9
+- Node 5 to Node 0: 6
+- Node 6 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 9
+- Node 6 to Node 4: 9
+- Node 6 to Node 5: 9
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -3005,19 +3005,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 7, Cost: 3",algorithmic,shorte
 SP_028,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 10
-- Node 0 to Node 4: 8
-- Node 0 to Node 5: 8
-- Node 0 to Node 6: 9
-- Node 1 to Node 7: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 7
-- Node 4 to Node 7: 7
-- Node 5 to Node 7: 10
-- Node 6 to Node 7: 9
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 10
+- Node 4 to Node 0: 8
+- Node 5 to Node 0: 8
+- Node 6 to Node 0: 9
+- Node 7 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 7
+- Node 7 to Node 4: 7
+- Node 7 to Node 5: 10
+- Node 7 to Node 6: 9
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3107,19 +3107,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 7, Cost: 3",algorithmic,shorte
 SP_029,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 6
-- Node 0 to Node 4: 10
-- Node 0 to Node 5: 10
-- Node 0 to Node 6: 9
-- Node 1 to Node 7: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 8
-- Node 4 to Node 7: 6
-- Node 5 to Node 7: 6
-- Node 6 to Node 7: 8
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 6
+- Node 4 to Node 0: 10
+- Node 5 to Node 0: 10
+- Node 6 to Node 0: 9
+- Node 7 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 8
+- Node 7 to Node 4: 6
+- Node 7 to Node 5: 6
+- Node 7 to Node 6: 8
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3189,19 +3189,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 7, Cost: 3",algorithmic,shorte
 SP_030,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 8
-- Node 0 to Node 4: 10
-- Node 0 to Node 5: 10
-- Node 0 to Node 6: 7
-- Node 1 to Node 7: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 9
-- Node 4 to Node 7: 8
-- Node 5 to Node 7: 6
-- Node 6 to Node 7: 9
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 8
+- Node 4 to Node 0: 10
+- Node 5 to Node 0: 10
+- Node 6 to Node 0: 7
+- Node 7 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 9
+- Node 7 to Node 4: 8
+- Node 7 to Node 5: 6
+- Node 7 to Node 6: 9
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3279,15 +3279,15 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 3 -> 8, Cost: 22",algorithmic,short
 SP_031,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 9
-- Node 0 to Node 2: 5
-- Node 1 to Node 3: 6
-- Node 2 to Node 4: 20
-- Node 3 to Node 5: 25
-- Node 3 to Node 6: 29
-- Node 3 to Node 7: 25
-- Node 3 to Node 8: 7
-- Node 4 to Node 8: 37
+- Node 1 to Node 0: 9
+- Node 2 to Node 0: 5
+- Node 3 to Node 1: 6
+- Node 4 to Node 2: 20
+- Node 5 to Node 3: 25
+- Node 6 to Node 3: 29
+- Node 7 to Node 3: 25
+- Node 8 to Node 3: 7
+- Node 8 to Node 4: 37
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -3358,14 +3358,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",algorithmic,
 SP_032,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 2
-- Node 0 to Node 4: 5
-- Node 1 to Node 2: 20
-- Node 2 to Node 7: 35
-- Node 4 to Node 3: 25
-- Node 4 to Node 5: 4
-- Node 5 to Node 6: 3
-- Node 6 to Node 7: 8
+- Node 1 to Node 0: 2
+- Node 4 to Node 0: 5
+- Node 2 to Node 1: 20
+- Node 7 to Node 2: 35
+- Node 3 to Node 4: 25
+- Node 5 to Node 4: 4
+- Node 6 to Node 5: 3
+- Node 7 to Node 6: 8
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3435,14 +3435,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",algorit
 SP_033,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 5: 0
-- Node 1 to Node 2: 5
-- Node 2 to Node 3: 9
-- Node 3 to Node 4: 4
-- Node 4 to Node 7: 4
-- Node 5 to Node 6: 20
-- Node 6 to Node 7: 38
+- Node 1 to Node 0: 1
+- Node 5 to Node 0: 0
+- Node 2 to Node 1: 5
+- Node 3 to Node 2: 9
+- Node 4 to Node 3: 4
+- Node 7 to Node 4: 4
+- Node 6 to Node 5: 20
+- Node 7 to Node 6: 38
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3512,14 +3512,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 7, Cost: 21",algorithmic,short
 SP_034,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 5
-- Node 0 to Node 3: 6
-- Node 1 to Node 2: 20
-- Node 2 to Node 7: 36
-- Node 3 to Node 4: 8
-- Node 3 to Node 6: 24
-- Node 4 to Node 5: 26
-- Node 4 to Node 7: 7
+- Node 1 to Node 0: 5
+- Node 3 to Node 0: 6
+- Node 2 to Node 1: 20
+- Node 7 to Node 2: 36
+- Node 4 to Node 3: 8
+- Node 6 to Node 3: 24
+- Node 5 to Node 4: 26
+- Node 7 to Node 4: 7
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3586,13 +3586,13 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 4 -> 6, Cost: 19",algorithmic,short
 SP_035,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 7
-- Node 0 to Node 2: 3
-- Node 1 to Node 4: 8
-- Node 1 to Node 5: 23
-- Node 2 to Node 3: 20
-- Node 3 to Node 6: 34
-- Node 4 to Node 6: 4
+- Node 1 to Node 0: 7
+- Node 2 to Node 0: 3
+- Node 4 to Node 1: 8
+- Node 5 to Node 1: 23
+- Node 3 to Node 2: 20
+- Node 6 to Node 3: 34
+- Node 6 to Node 4: 4
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -3661,14 +3661,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",algorit
 SP_036,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 5
-- Node 0 to Node 2: 0
-- Node 1 to Node 3: 1
-- Node 2 to Node 5: 20
-- Node 3 to Node 4: 1
-- Node 4 to Node 6: 1
-- Node 5 to Node 7: 27
-- Node 6 to Node 7: 4
+- Node 1 to Node 0: 5
+- Node 2 to Node 0: 0
+- Node 3 to Node 1: 1
+- Node 5 to Node 2: 20
+- Node 4 to Node 3: 1
+- Node 6 to Node 4: 1
+- Node 7 to Node 5: 27
+- Node 7 to Node 6: 4
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -3747,17 +3747,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 6, Cost: 12",algorithmic,short
 SP_037,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 12
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 6: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 6: 4
-- Node 5 to Node 6: 9
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 12
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 6 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 6 to Node 4: 4
+- Node 6 to Node 5: 9
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -3851,21 +3851,21 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 8, Cost: 12",algorithmic,short
 SP_038,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 10
-- Node 0 to Node 6: 12
-- Node 0 to Node 7: 8
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 8: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 8: 4
-- Node 5 to Node 8: 11
-- Node 6 to Node 8: 8
-- Node 7 to Node 8: 12
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 10
+- Node 6 to Node 0: 12
+- Node 7 to Node 0: 8
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 8 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 8 to Node 4: 4
+- Node 8 to Node 5: 11
+- Node 8 to Node 6: 8
+- Node 8 to Node 7: 12
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -3963,21 +3963,21 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 8, Cost: 12",algorithmic,short
 SP_039,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 8
-- Node 0 to Node 6: 11
-- Node 0 to Node 7: 9
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 8: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 8: 4
-- Node 5 to Node 8: 11
-- Node 6 to Node 8: 8
-- Node 7 to Node 8: 12
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 8
+- Node 6 to Node 0: 11
+- Node 7 to Node 0: 9
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 8 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 8 to Node 4: 4
+- Node 8 to Node 5: 11
+- Node 8 to Node 6: 8
+- Node 8 to Node 7: 12
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -4069,19 +4069,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 7, Cost: 12",algorithmic,short
 SP_040,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 9
-- Node 0 to Node 6: 10
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 7: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 7: 4
-- Node 5 to Node 7: 8
-- Node 6 to Node 7: 9
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 9
+- Node 6 to Node 0: 10
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 7 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 7 to Node 4: 4
+- Node 7 to Node 5: 8
+- Node 7 to Node 6: 9
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -4180,22 +4180,22 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 8, Cost: 5",algorithmic,shorte
 SP_042,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 7
-- Node 0 to Node 5: 7
-- Node 0 to Node 6: 8
-- Node 0 to Node 7: 9
-- Node 1 to Node 3: 6
-- Node 1 to Node 8: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 8: 8
-- Node 3 to Node 8: 1
-- Node 4 to Node 8: 9
-- Node 5 to Node 8: 10
-- Node 6 to Node 8: 8
-- Node 7 to Node 8: 11
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 7
+- Node 5 to Node 0: 7
+- Node 6 to Node 0: 8
+- Node 7 to Node 0: 9
+- Node 3 to Node 1: 6
+- Node 8 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 8 to Node 2: 8
+- Node 8 to Node 3: 1
+- Node 8 to Node 4: 9
+- Node 8 to Node 5: 10
+- Node 8 to Node 6: 8
+- Node 8 to Node 7: 11
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -4285,18 +4285,18 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 6, Cost: 5",algorithmic,shorte
 SP_044,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 7
-- Node 0 to Node 5: 9
-- Node 1 to Node 3: 6
-- Node 1 to Node 6: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 1
-- Node 4 to Node 6: 10
-- Node 5 to Node 6: 11
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 7
+- Node 5 to Node 0: 9
+- Node 3 to Node 1: 6
+- Node 6 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 1
+- Node 6 to Node 4: 10
+- Node 6 to Node 5: 11
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -4379,17 +4379,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 6, Cost: 3",algorithmic,shorte
 SP_045,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 8
-- Node 0 to Node 4: 9
-- Node 0 to Node 5: 10
-- Node 1 to Node 6: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 8
-- Node 4 to Node 6: 8
-- Node 5 to Node 6: 8
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 8
+- Node 4 to Node 0: 9
+- Node 5 to Node 0: 10
+- Node 6 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 8
+- Node 6 to Node 4: 8
+- Node 6 to Node 5: 8
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -4477,19 +4477,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 7, Cost: 3",algorithmic,shorte
 SP_046,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 6
-- Node 0 to Node 4: 7
-- Node 0 to Node 5: 9
-- Node 0 to Node 6: 7
-- Node 1 to Node 7: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 10
-- Node 4 to Node 7: 9
-- Node 5 to Node 7: 6
-- Node 6 to Node 7: 6
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 6
+- Node 4 to Node 0: 7
+- Node 5 to Node 0: 9
+- Node 6 to Node 0: 7
+- Node 7 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 10
+- Node 7 to Node 4: 9
+- Node 7 to Node 5: 6
+- Node 7 to Node 6: 6
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -4573,17 +4573,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 6, Cost: 3",algorithmic,shorte
 SP_047,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 7
-- Node 0 to Node 5: 9
-- Node 1 to Node 6: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 6
-- Node 4 to Node 6: 7
-- Node 5 to Node 6: 9
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 7
+- Node 5 to Node 0: 9
+- Node 6 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 6
+- Node 6 to Node 4: 7
+- Node 6 to Node 5: 9
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -4671,19 +4671,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 7, Cost: 3",algorithmic,shorte
 SP_048,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 8
-- Node 0 to Node 5: 8
-- Node 0 to Node 6: 7
-- Node 1 to Node 7: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 9
-- Node 4 to Node 7: 8
-- Node 5 to Node 7: 10
-- Node 6 to Node 7: 7
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 8
+- Node 5 to Node 0: 8
+- Node 6 to Node 0: 7
+- Node 7 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 9
+- Node 7 to Node 4: 8
+- Node 7 to Node 5: 10
+- Node 7 to Node 6: 7
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -4761,15 +4761,15 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 4 -> 6 -> 8, Cost: 10",algorithmic,short
 SP_049,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 4: 3
-- Node 1 to Node 2: 20
-- Node 2 to Node 8: 25
-- Node 4 to Node 3: 12
-- Node 4 to Node 6: 2
-- Node 6 to Node 5: 15
-- Node 6 to Node 7: 16
-- Node 6 to Node 8: 5
+- Node 1 to Node 0: 1
+- Node 4 to Node 0: 3
+- Node 2 to Node 1: 20
+- Node 8 to Node 2: 25
+- Node 3 to Node 4: 12
+- Node 6 to Node 4: 2
+- Node 5 to Node 6: 15
+- Node 7 to Node 6: 16
+- Node 8 to Node 6: 5
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -4840,14 +4840,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",algorithmic,
 SP_050,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 1 to Node 2: 20
-- Node 2 to Node 7: 26
-- Node 3 to Node 4: 2
-- Node 4 to Node 5: 3
-- Node 4 to Node 6: 17
-- Node 5 to Node 7: 2
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 2 to Node 1: 20
+- Node 7 to Node 2: 26
+- Node 4 to Node 3: 2
+- Node 5 to Node 4: 3
+- Node 6 to Node 4: 17
+- Node 7 to Node 5: 2
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -4917,14 +4917,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",algorit
 SP_051,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 4
-- Node 0 to Node 2: 0
-- Node 1 to Node 3: 6
-- Node 2 to Node 6: 20
-- Node 3 to Node 4: 3
-- Node 4 to Node 5: 1
-- Node 5 to Node 7: 4
-- Node 6 to Node 7: 33
+- Node 1 to Node 0: 4
+- Node 2 to Node 0: 0
+- Node 3 to Node 1: 6
+- Node 6 to Node 2: 20
+- Node 4 to Node 3: 3
+- Node 5 to Node 4: 1
+- Node 7 to Node 5: 4
+- Node 7 to Node 6: 33
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -4997,15 +4997,15 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",algorit
 SP_052,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 3: 0
-- Node 1 to Node 2: 1
-- Node 2 to Node 5: 4
-- Node 2 to Node 7: 17
-- Node 3 to Node 4: 20
-- Node 4 to Node 8: 26
-- Node 5 to Node 6: 1
-- Node 6 to Node 8: 2
+- Node 1 to Node 0: 3
+- Node 3 to Node 0: 0
+- Node 2 to Node 1: 1
+- Node 5 to Node 2: 4
+- Node 7 to Node 2: 17
+- Node 4 to Node 3: 20
+- Node 8 to Node 4: 26
+- Node 6 to Node 5: 1
+- Node 8 to Node 6: 2
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -5070,12 +5070,12 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 2 -> 5, Cost: 25",algorithmic,short
 SP_053,W5,"A route planner has 6 locations labeled 0 to 5. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 14
-- Node 0 to Node 3: 3
-- Node 1 to Node 2: 4
-- Node 2 to Node 5: 7
-- Node 3 to Node 4: 20
-- Node 4 to Node 5: 40
+- Node 1 to Node 0: 14
+- Node 3 to Node 0: 3
+- Node 2 to Node 1: 4
+- Node 5 to Node 2: 7
+- Node 4 to Node 3: 20
+- Node 5 to Node 4: 40
 
 What is the shortest path from node 5 to node 0 and its total cost?
 
@@ -5143,14 +5143,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",algorit
 SP_054,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 2
-- Node 0 to Node 2: 0
-- Node 1 to Node 3: 1
-- Node 2 to Node 5: 20
-- Node 3 to Node 4: 5
-- Node 4 to Node 6: 2
-- Node 5 to Node 7: 27
-- Node 6 to Node 7: 2
+- Node 1 to Node 0: 2
+- Node 2 to Node 0: 0
+- Node 3 to Node 1: 1
+- Node 5 to Node 2: 20
+- Node 4 to Node 3: 5
+- Node 6 to Node 4: 2
+- Node 7 to Node 5: 27
+- Node 7 to Node 6: 2
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -5217,13 +5217,13 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",algorithmic,
 SP_055,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 2
-- Node 0 to Node 2: 3
-- Node 1 to Node 4: 20
-- Node 2 to Node 3: 7
-- Node 3 to Node 5: 3
-- Node 4 to Node 6: 32
-- Node 5 to Node 6: 4
+- Node 1 to Node 0: 2
+- Node 2 to Node 0: 3
+- Node 4 to Node 1: 20
+- Node 3 to Node 2: 7
+- Node 5 to Node 3: 3
+- Node 6 to Node 4: 32
+- Node 6 to Node 5: 4
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -5292,14 +5292,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",algorithmic,
 SP_056,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 2
-- Node 1 to Node 3: 3
-- Node 1 to Node 5: 24
-- Node 2 to Node 4: 20
-- Node 3 to Node 6: 7
-- Node 4 to Node 7: 36
-- Node 6 to Node 7: 8
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 2
+- Node 3 to Node 1: 3
+- Node 5 to Node 1: 24
+- Node 4 to Node 2: 20
+- Node 6 to Node 3: 7
+- Node 7 to Node 4: 36
+- Node 7 to Node 6: 8
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -5366,13 +5366,13 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",algorithmic,
 SP_057,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 8
-- Node 0 to Node 4: 2
-- Node 1 to Node 2: 3
-- Node 2 to Node 3: 5
-- Node 3 to Node 6: 8
-- Node 4 to Node 5: 20
-- Node 5 to Node 6: 39
+- Node 1 to Node 0: 8
+- Node 4 to Node 0: 2
+- Node 2 to Node 1: 3
+- Node 3 to Node 2: 5
+- Node 6 to Node 3: 8
+- Node 5 to Node 4: 20
+- Node 6 to Node 5: 39
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -5441,14 +5441,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 5 -> 7, Cost: 20",algorithmic,short
 SP_058,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 2
-- Node 0 to Node 3: 7
-- Node 1 to Node 2: 20
-- Node 2 to Node 7: 35
-- Node 3 to Node 4: 27
-- Node 3 to Node 5: 10
-- Node 5 to Node 6: 28
-- Node 5 to Node 7: 3
+- Node 1 to Node 0: 2
+- Node 3 to Node 0: 7
+- Node 2 to Node 1: 20
+- Node 7 to Node 2: 35
+- Node 4 to Node 3: 27
+- Node 5 to Node 3: 10
+- Node 6 to Node 5: 28
+- Node 7 to Node 5: 3
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -5521,15 +5521,15 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",algorit
 SP_059,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 3: 5
-- Node 1 to Node 2: 20
-- Node 2 to Node 8: 40
-- Node 3 to Node 4: 4
-- Node 3 to Node 5: 28
-- Node 4 to Node 6: 5
-- Node 6 to Node 7: 6
-- Node 7 to Node 8: 5
+- Node 1 to Node 0: 3
+- Node 3 to Node 0: 5
+- Node 2 to Node 1: 20
+- Node 8 to Node 2: 40
+- Node 4 to Node 3: 4
+- Node 5 to Node 3: 28
+- Node 6 to Node 4: 5
+- Node 7 to Node 6: 6
+- Node 8 to Node 7: 5
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -5603,15 +5603,15 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",algorit
 SP_060,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 0
-- Node 0 to Node 3: 2
-- Node 1 to Node 2: 20
-- Node 2 to Node 8: 25
-- Node 3 to Node 4: 1
-- Node 4 to Node 5: 2
-- Node 5 to Node 7: 2
-- Node 7 to Node 6: 14
-- Node 7 to Node 8: 3
+- Node 1 to Node 0: 0
+- Node 3 to Node 0: 2
+- Node 2 to Node 1: 20
+- Node 8 to Node 2: 25
+- Node 4 to Node 3: 1
+- Node 5 to Node 4: 2
+- Node 7 to Node 5: 2
+- Node 6 to Node 7: 14
+- Node 8 to Node 7: 3
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -5682,14 +5682,14 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",algorithmic,
 SP_061,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 2
-- Node 0 to Node 3: 1
-- Node 1 to Node 2: 4
-- Node 2 to Node 5: 4
-- Node 2 to Node 6: 22
-- Node 3 to Node 4: 20
-- Node 4 to Node 7: 31
-- Node 5 to Node 7: 6
+- Node 1 to Node 0: 2
+- Node 3 to Node 0: 1
+- Node 2 to Node 1: 4
+- Node 5 to Node 2: 4
+- Node 6 to Node 2: 22
+- Node 4 to Node 3: 20
+- Node 7 to Node 4: 31
+- Node 7 to Node 5: 6
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -5768,17 +5768,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 6, Cost: 12",algorithmic,short
 SP_062,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 12
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 6: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 6: 4
-- Node 5 to Node 6: 8
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 12
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 6 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 6 to Node 4: 4
+- Node 6 to Node 5: 8
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -5872,21 +5872,21 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 8, Cost: 12",algorithmic,short
 SP_063,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 10
-- Node 0 to Node 6: 8
-- Node 0 to Node 7: 9
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 8: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 8: 4
-- Node 5 to Node 8: 12
-- Node 6 to Node 8: 9
-- Node 7 to Node 8: 10
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 10
+- Node 6 to Node 0: 8
+- Node 7 to Node 0: 9
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 8 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 8 to Node 4: 4
+- Node 8 to Node 5: 12
+- Node 8 to Node 6: 9
+- Node 8 to Node 7: 10
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -5972,17 +5972,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 6, Cost: 12",algorithmic,short
 SP_064,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 11
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 6: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 6: 4
-- Node 5 to Node 6: 10
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 11
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 6 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 6 to Node 4: 4
+- Node 6 to Node 5: 10
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -6064,17 +6064,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 3 -> 4 -> 6, Cost: 12",algorithmic,short
 SP_065,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 1
-- Node 0 to Node 3: 4
-- Node 0 to Node 5: 8
-- Node 1 to Node 2: 1
-- Node 1 to Node 4: 14
-- Node 2 to Node 4: 12
-- Node 2 to Node 6: 24
-- Node 3 to Node 2: 11
-- Node 3 to Node 4: 4
-- Node 4 to Node 6: 4
-- Node 5 to Node 6: 12
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 8
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 6 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 6 to Node 4: 4
+- Node 6 to Node 5: 12
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -6159,18 +6159,18 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 6, Cost: 5",algorithmic,shorte
 SP_066,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 8
-- Node 0 to Node 5: 8
-- Node 1 to Node 3: 6
-- Node 1 to Node 6: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 1
-- Node 4 to Node 6: 7
-- Node 5 to Node 6: 11
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 8
+- Node 5 to Node 0: 8
+- Node 3 to Node 1: 6
+- Node 6 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 1
+- Node 6 to Node 4: 7
+- Node 6 to Node 5: 11
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -6268,22 +6268,22 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 8, Cost: 5",algorithmic,shorte
 SP_068,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 8
-- Node 0 to Node 5: 9
-- Node 0 to Node 6: 10
-- Node 0 to Node 7: 8
-- Node 1 to Node 3: 6
-- Node 1 to Node 8: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 8: 8
-- Node 3 to Node 8: 1
-- Node 4 to Node 8: 11
-- Node 5 to Node 8: 7
-- Node 6 to Node 8: 9
-- Node 7 to Node 8: 10
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 8
+- Node 5 to Node 0: 9
+- Node 6 to Node 0: 10
+- Node 7 to Node 0: 8
+- Node 3 to Node 1: 6
+- Node 8 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 8 to Node 2: 8
+- Node 8 to Node 3: 1
+- Node 8 to Node 4: 11
+- Node 8 to Node 5: 7
+- Node 8 to Node 6: 9
+- Node 8 to Node 7: 10
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -6379,20 +6379,20 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 3 -> 7, Cost: 5",algorithmic,shorte
 SP_069,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 3
-- Node 0 to Node 3: 9
-- Node 0 to Node 4: 7
-- Node 0 to Node 5: 7
-- Node 0 to Node 6: 7
-- Node 1 to Node 3: 6
-- Node 1 to Node 7: 3
-- Node 2 to Node 3: 1
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 1
-- Node 4 to Node 7: 11
-- Node 5 to Node 7: 9
-- Node 6 to Node 7: 9
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 3
+- Node 3 to Node 0: 9
+- Node 4 to Node 0: 7
+- Node 5 to Node 0: 7
+- Node 6 to Node 0: 7
+- Node 3 to Node 1: 6
+- Node 7 to Node 1: 3
+- Node 3 to Node 2: 1
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 1
+- Node 7 to Node 4: 11
+- Node 7 to Node 5: 9
+- Node 7 to Node 6: 9
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
@@ -6477,17 +6477,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 6, Cost: 3",algorithmic,shorte
 SP_070,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 8
-- Node 0 to Node 4: 6
-- Node 0 to Node 5: 10
-- Node 1 to Node 6: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 10
-- Node 4 to Node 6: 10
-- Node 5 to Node 6: 8
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 8
+- Node 4 to Node 0: 6
+- Node 5 to Node 0: 10
+- Node 6 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 10
+- Node 6 to Node 4: 10
+- Node 6 to Node 5: 8
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -6581,21 +6581,21 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 8, Cost: 3",algorithmic,shorte
 SP_071,W5,"A route planner has 9 locations labeled 0 to 8. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 8
-- Node 0 to Node 4: 10
-- Node 0 to Node 5: 8
-- Node 0 to Node 6: 9
-- Node 0 to Node 7: 10
-- Node 1 to Node 8: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 8: 8
-- Node 3 to Node 8: 8
-- Node 4 to Node 8: 9
-- Node 5 to Node 8: 9
-- Node 6 to Node 8: 10
-- Node 7 to Node 8: 6
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 8
+- Node 4 to Node 0: 10
+- Node 5 to Node 0: 8
+- Node 6 to Node 0: 9
+- Node 7 to Node 0: 10
+- Node 8 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 8 to Node 2: 8
+- Node 8 to Node 3: 8
+- Node 8 to Node 4: 9
+- Node 8 to Node 5: 9
+- Node 8 to Node 6: 10
+- Node 8 to Node 7: 6
 
 What is the shortest path from node 8 to node 0 and its total cost?
 
@@ -6681,17 +6681,17 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 6, Cost: 3",algorithmic,shorte
 SP_072,W5,"A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 10
-- Node 0 to Node 4: 8
-- Node 0 to Node 5: 6
-- Node 1 to Node 6: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 6: 8
-- Node 3 to Node 6: 7
-- Node 4 to Node 6: 6
-- Node 5 to Node 6: 7
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 10
+- Node 4 to Node 0: 8
+- Node 5 to Node 0: 6
+- Node 6 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 6 to Node 2: 8
+- Node 6 to Node 3: 7
+- Node 6 to Node 4: 6
+- Node 6 to Node 5: 7
 
 What is the shortest path from node 6 to node 0 and its total cost?
 
@@ -6779,19 +6779,19 @@ Path: X -> X -> X, Cost: X","Path: 0 -> 2 -> 1 -> 7, Cost: 3",algorithmic,shorte
 SP_073,W5,"A route planner has 8 locations labeled 0 to 7. Roads are one-way and weighted by travel time.
 
 The road network is:
-- Node 0 to Node 1: 3
-- Node 0 to Node 2: 5
-- Node 0 to Node 3: 7
-- Node 0 to Node 4: 6
-- Node 0 to Node 5: 9
-- Node 0 to Node 6: 7
-- Node 1 to Node 7: 1
-- Node 2 to Node 1: -3
-- Node 2 to Node 7: 8
-- Node 3 to Node 7: 8
-- Node 4 to Node 7: 6
-- Node 5 to Node 7: 7
-- Node 6 to Node 7: 8
+- Node 1 to Node 0: 3
+- Node 2 to Node 0: 5
+- Node 3 to Node 0: 7
+- Node 4 to Node 0: 6
+- Node 5 to Node 0: 9
+- Node 6 to Node 0: 7
+- Node 7 to Node 1: 1
+- Node 1 to Node 2: -3
+- Node 7 to Node 2: 8
+- Node 7 to Node 3: 8
+- Node 7 to Node 4: 6
+- Node 7 to Node 5: 7
+- Node 7 to Node 6: 8
 
 What is the shortest path from node 7 to node 0 and its total cost?
 
