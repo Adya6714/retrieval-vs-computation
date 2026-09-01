@@ -23,7 +23,11 @@ from pathlib import Path
 import pytest
 
 from probes.common.variants import normalize_variant
-from probes.contamination.verify import parse_action_mapping_from_notes, verify_answer
+from probes.contamination.verify import (
+    mystery_action_mapping,
+    parse_action_mapping_from_notes,
+    verify_answer,
+)
 from probes.contamination.verify_algo import verify_algo
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -99,6 +103,10 @@ def verify_gold_row(family: str, row: dict[str, str]) -> tuple[bool, str | None]
             problem_subtype=subtype,
         )
         action_mapping = parse_action_mapping_from_notes(row.get("notes"))
+        if vf == "mystery_blocksworld":
+            action_mapping = mystery_action_mapping(
+                row.get("notes"), text, explicit=action_mapping
+            )
         ok = verify_answer(
             pid,
             gold,
@@ -112,8 +120,20 @@ def verify_gold_row(family: str, row: dict[str, str]) -> tuple[bool, str | None]
         return False, type(exc).__name__
 
 
-def collect_gold_roundtrip_counts() -> list[tuple[str, str, str, int, int, int]]:
-    """Return rows of (family, subtype, variant, n_pass, n_error, n_total)."""
+def _invalid_gold_keys() -> set[tuple[str, str]]:
+    path = REPO_ROOT / "data/problems/mystery_invalid_gold.csv"
+    if not path.exists():
+        return set()
+    with path.open(newline="", encoding="utf-8") as f:
+        return {
+            (str(r.get("problem_id", "")).strip(), normalize_variant(r.get("variant_type")))
+            for r in csv.DictReader(f)
+        }
+
+
+def collect_gold_roundtrip_counts() -> list[tuple[str, str, str, int, int, int, int]]:
+    """Return (family, subtype, variant, n_pass, n_error, n_excluded, n_total)."""
+    excluded_keys = _invalid_gold_keys()
     groups: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     for family, path in BANKS.items():
         for row in _load_bank(path):
@@ -124,41 +144,47 @@ def collect_gold_roundtrip_counts() -> list[tuple[str, str, str, int, int, int]]
             )
             groups[key].append(row)
 
-    table: list[tuple[str, str, str, int, int, int]] = []
+    table: list[tuple[str, str, str, int, int, int, int]] = []
     for key in sorted(groups):
         family, subtype, variant = key
-        n_pass = n_error = 0
+        n_pass = n_error = n_excluded = 0
         rows = groups[key]
         for row in rows:
+            pid = str(row.get("problem_id", "")).strip()
+            vt = normalize_variant(row.get("variant_type", ""))
+            if (pid, vt) in excluded_keys:
+                n_excluded += 1
+                continue
             ok, err = verify_gold_row(family, row)
             if err:
                 n_error += 1
             elif ok:
                 n_pass += 1
-        table.append((family, subtype, variant, n_pass, n_error, len(rows)))
+        table.append((family, subtype, variant, n_pass, n_error, n_excluded, len(rows)))
     return table
 
 
 def format_gold_roundtrip_table(
-    table: list[tuple[str, str, str, int, int, int]],
+    table: list[tuple[str, str, str, int, int, int, int]],
 ) -> str:
     header = (
         f"{'family':<6} {'subtype':<24} {'variant':<12} "
-        f"{'pass/total':>12} {'error':>8}"
+        f"{'pass/incl':>12} {'excl':>6} {'error':>8}"
     )
     lines = [header, "-" * len(header)]
-    for family, subtype, variant, n_pass, n_error, n_total in table:
+    for family, subtype, variant, n_pass, n_error, n_excl, n_total in table:
+        n_incl = n_total - n_excl
         lines.append(
             f"{family:<6} {subtype:<24} {variant:<12} "
-            f"{n_pass:>4}/{n_total:<4} {n_error:>8}"
+            f"{n_pass:>4}/{n_incl:<4} {n_excl:>6} {n_error:>8}"
         )
     return "\n".join(lines)
 
 
-_TABLE_CACHE: list[tuple[str, str, str, int, int, int]] | None = None
+_TABLE_CACHE: list[tuple[str, str, str, int, int, int, int]] | None = None
 
 
-def _table() -> list[tuple[str, str, str, int, int, int]]:
+def _table() -> list[tuple[str, str, str, int, int, int, int]]:
     global _TABLE_CACHE
     if _TABLE_CACHE is None:
         _TABLE_CACHE = collect_gold_roundtrip_counts()
@@ -176,7 +202,7 @@ def test_gold_roundtrip_prints_pass_table(capsys: pytest.CaptureFixture[str]) ->
     "family, problem_subtype, variant_type",
     [
         (family, subtype, variant)
-        for family, subtype, variant, _p, _e, _n in _table()
+        for family, subtype, variant, _p, _e, _x, _n in _table()
     ],
 )
 def test_gold_in_gold_out(family: str, problem_subtype: str, variant_type: str) -> None:
@@ -186,18 +212,14 @@ def test_gold_in_gold_out(family: str, problem_subtype: str, variant_type: str) 
         if row[0] == family and row[1] == problem_subtype and row[2] == variant_type
     ]
     assert match, f"missing group {(family, problem_subtype, variant_type)}"
-    _fam, _sub, _var, n_pass, n_error, n_total = match[0]
-    if (
-        family == "BW"
-        and problem_subtype == "mystery_blocksworld"
-        and n_pass != n_total
-    ):
-        pytest.xfail(
-            f"mystery gold still fails the semantic simulator: {n_pass}/{n_total}"
-        )
-    assert n_pass == n_total, (
-        f"{family} {problem_subtype} {variant_type}: {n_pass}/{n_total} "
-        f"({n_error} raised)"
+    _fam, _sub, _var, n_pass, n_error, n_excl, n_total = match[0]
+    n_incl = n_total - n_excl
+    assert n_error == 0, (
+        f"{family} {problem_subtype} {variant_type}: {n_error} raised"
+    )
+    assert n_pass == n_incl, (
+        f"{family} {problem_subtype} {variant_type}: {n_pass}/{n_incl} included "
+        f"({n_excl} excluded invalid_gold, n_total={n_total})"
     )
 
 

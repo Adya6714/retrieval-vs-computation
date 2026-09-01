@@ -27,6 +27,7 @@ if str(REPO_ROOT) not in sys.path:
 from probes.common.variants import normalize_variant  # noqa: E402
 from probes.contamination.verify import (  # noqa: E402
     LAST_VERIFY_META,
+    mystery_action_mapping,
     parse_action_mapping_from_notes,
     verify_answer,
 )
@@ -177,12 +178,16 @@ def _rescore_included(
             if parse_status == "parse_failed":
                 return None, method, reason, REASON_PARSE_FAILED
             return bool(ok), method, reason, REASON_IN_BANK_OK
+        mapping = parse_action_mapping_from_notes(bank_row.get("notes"))
         vf = _resolve_verifier_family(
             pid=pid,
             problem_family=str(bank_row.get("problem_family", "")),
             problem_subtype=subtype,
         )
-        mapping = parse_action_mapping_from_notes(bank_row.get("notes"))
+        if vf == "mystery_blocksworld":
+            mapping = mystery_action_mapping(
+                bank_row.get("notes"), bank_row.get("problem_text"), explicit=mapping
+            )
         ok = verify_answer(
             pid,
             answer,
@@ -201,6 +206,17 @@ def _rescore_included(
         return False, method, "incorrect", REASON_IN_BANK_OK
     except Exception as exc:
         return None, "", f"{type(exc).__name__}: {exc}", REASON_PARSE_FAILED
+
+
+def _load_invalid_gold() -> set[tuple[str, str]]:
+    path = REPO_ROOT / "data/problems/mystery_invalid_gold.csv"
+    if not path.exists():
+        return set()
+    with path.open(newline="", encoding="utf-8") as f:
+        return {
+            (str(r.get("problem_id", "")).strip(), normalize_variant(r.get("variant_type")))
+            for r in csv.DictReader(f)
+        }
 
 
 def _p1_files(raw_dir: Path) -> list[Path]:
@@ -226,6 +242,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     banks = {name: _load_bank_index(path) for name, path in BANKS.items()}
+    invalid_gold = _load_invalid_gold()
     summary: dict[tuple[str, str, str, str], dict[str, int]] = defaultdict(
         lambda: {"n": 0, "old_correct": 0, "new_correct": 0, "changed": 0}
     )
@@ -288,6 +305,12 @@ def main() -> None:
                     new = None
                     method = ""
                     detail = "missing_bank_row"
+                elif (pid, variant) in invalid_gold:
+                    included = False
+                    reason = REASON_INVALID_GOLD
+                    new = None
+                    method = ""
+                    detail = "invalid_gold"
                 elif _is_api_error(answer):
                     included = False
                     reason = REASON_API_ERROR

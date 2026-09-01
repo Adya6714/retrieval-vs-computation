@@ -20,7 +20,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.variants import normalize_variant
-from probes.contamination.verify import LAST_VERIFY_META, parse_action_mapping_from_notes, verify_answer
+from probes.contamination.verify import LAST_VERIFY_META, mystery_action_mapping, parse_action_mapping_from_notes, verify_answer
 from probes.behavioral.sampling import DEFAULT_TEMPERATURE
 
 load_dotenv()
@@ -311,6 +311,10 @@ def main() -> None:
                 # 7b. Verify answer
                 try:
                     action_mapping = parse_action_mapping_from_notes(row.get("notes"))
+                    if verifier_family == "mystery_blocksworld":
+                        action_mapping = mystery_action_mapping(
+                            row.get("notes"), problem_text, explicit=action_mapping
+                        )
                     is_correct = verify_answer(
                         pid,
                         raw_response,

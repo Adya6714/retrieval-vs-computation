@@ -33,6 +33,65 @@ def parse_action_mapping_from_notes(notes: str | None) -> dict[str, str] | None:
     return None
 
 
+_BW_MAPPING_KEYS = {"pick-up", "put-down", "stack", "unstack"}
+
+_MYSTERY_ACTION_SIG = re.compile(
+    r"([A-Za-z][A-Za-z0-9_-]*)\s+X(?:\s+Y)?\s*\(([^)]*)\)"
+)
+
+
+def recover_mystery_action_mapping(problem_text: str | None) -> dict[str, str] | None:
+    """Recover canonical→renamed mystery verbs from the Available-actions preamble.
+
+    Maps by arity + precondition keywords onto attack/succumb/overcome/feast.
+    """
+    text = str(problem_text or "")
+    section = text
+    m = re.search(
+        r"Available actions:\s*(.+?)(?:Current |Present |INITIAL |Goal |Objective )",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if m:
+        section = m.group(1)
+    mapping: dict[str, str] = {}
+    for verb, pre in _MYSTERY_ACTION_SIG.findall(section):
+        name = verb.strip().lower()
+        pre_l = pre.lower()
+        arity2 = bool(re.search(rf"{re.escape(verb)}\s+X\s+Y\s*\(", section, flags=re.IGNORECASE))
+        if "craves" in pre_l or "alliance" in pre_l:
+            mapping["feast"] = name
+        elif arity2 and (
+            "pain" in pre_l or "tension" in pre_l or "province" in pre_l or "sovereignty" in pre_l
+        ):
+            mapping["overcome"] = name
+        elif (not arity2) and ("pain" in pre_l or "tension" in pre_l):
+            mapping["succumb"] = name
+        elif (not arity2) and (
+            "harmony" in pre_l or "goodwill" in pre_l or "planet" in pre_l or "influence" in pre_l
+        ):
+            mapping["attack"] = name
+    return mapping or None
+
+
+def mystery_action_mapping(
+    notes: str | None, problem_text: str | None, explicit: dict[str, str] | None = None
+) -> dict[str, str] | None:
+    """Prefer an explicit mapping unless it is a Blocksworld pick-up/stack dict."""
+    if explicit:
+        keys = {str(k).strip().lower() for k in explicit}
+        if keys & _BW_MAPPING_KEYS:
+            recovered = recover_mystery_action_mapping(problem_text)
+            return recovered or explicit
+        return explicit
+    from_notes = parse_action_mapping_from_notes(notes)
+    if from_notes:
+        keys = {str(k).strip().lower() for k in from_notes}
+        if not (keys & _BW_MAPPING_KEYS):
+            return from_notes
+    return recover_mystery_action_mapping(problem_text)
+
+
 def _canonical_verb_aliases(action_mapping: dict[str, str] | None) -> dict[str, str]:
     """Invert pick-up→renamed mapping to renamed→canonical, with _/- aliases."""
     if not action_mapping:
@@ -781,6 +840,7 @@ def verify_answer(
         return _verify_numeric(model_answer, ground_truth)
 
     elif family == "mystery_blocksworld":
+        action_mapping = mystery_action_mapping(None, problem_text, explicit=action_mapping)
         mystery_parsed = _parse_mystery_state(problem_text)
         if _mystery_state_usable(mystery_parsed):
             sim_ok = _verify_mystery_state_machine(
