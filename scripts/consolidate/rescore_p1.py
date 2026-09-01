@@ -5,6 +5,9 @@ Reads results/raw/*P1_behavioral*.csv, never writes back to results/raw/,
 and writes sibling files under results/derived/ with a ``_rescored`` suffix.
 
 Does not call any model API.
+
+Inclusion rule: a row is excluded only for a documented instrument reason.
+Accuracy denominators use included=True rows only.
 """
 
 from __future__ import annotations
@@ -21,11 +24,13 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from probes.common.variants import normalize_variant  # noqa: E402
 from probes.contamination.verify import (  # noqa: E402
     LAST_VERIFY_META,
     parse_action_mapping_from_notes,
     verify_answer,
 )
+from probes.contamination.verify_algo import LAST_VERIFY_META as ALGO_META  # noqa: E402
 from probes.contamination.verify_algo import verify_algo  # noqa: E402
 
 RAW_DIR = REPO_ROOT / "results/raw"
@@ -56,6 +61,17 @@ P1_PATTERNS = (
     "ALGO_P1_behavioral_*.csv",
 )
 
+# Fixed exclusion vocabulary. in_bank_ok marks included rows.
+REASON_IN_BANK_OK = "in_bank_ok"
+REASON_MISSING_BANK = "missing_bank_row"
+REASON_API_ERROR = "api_error"
+REASON_PARSE_FAILED = "parse_failed"
+REASON_UNANSWERABLE = "unanswerable_prompt"
+REASON_MOCK = "mock_row"
+REASON_INVALID_GOLD = "invalid_gold"
+
+MOCK_MODELS = {"mock", "the answer is 42."}
+
 
 def _resolve_verifier_family(*, pid: str, problem_family: str, problem_subtype: str) -> str:
     fam = str(problem_family or "").strip().lower()
@@ -81,7 +97,10 @@ def _load_bank_index(path: Path) -> dict[tuple[str, str], dict[str, str]]:
         rows = list(csv.DictReader(f))
     index: dict[tuple[str, str], dict[str, str]] = {}
     for row in rows:
-        key = (str(row.get("problem_id", "")).strip(), str(row.get("variant_type", "")).strip())
+        key = (
+            str(row.get("problem_id", "")).strip(),
+            normalize_variant(row.get("variant_type", "")),
+        )
         index[key] = row
     return index
 
@@ -117,20 +136,35 @@ def _old_correct(row: dict[str, str]) -> bool | None:
     return None
 
 
-def _rescore_row(
+def _is_mock_model(model: str) -> bool:
+    return str(model or "").strip().lower() in MOCK_MODELS
+
+
+def _is_api_error(answer: str) -> bool:
+    return str(answer or "").strip().startswith("ERROR:")
+
+
+def _family_verify_method(row_family: str, vf: str, last: str) -> str:
+    if row_family == "GSM" or vf in {"gsm", "arithmetic_reasoning"}:
+        return "numeric"
+    if row_family == "ALGO" or vf in _ALGO_SUBTYPES or vf == "weighted_interval_scheduling":
+        return last or "algo_strict"
+    return last or ""
+
+
+def _rescore_included(
     family: str,
     raw: dict[str, str],
-    bank_row: dict[str, str] | None,
-) -> tuple[bool | None, str, str]:
+    bank_row: dict[str, str],
+) -> tuple[bool | None, str, str, str]:
+    """Return (correct, verify_method, rescore_reason, exclusion_or_ok)."""
     answer = _model_answer(raw)
-    pid = str(raw.get("problem_id") or (bank_row or {}).get("problem_id") or "").strip()
-    variant = str(raw.get("variant_type") or (bank_row or {}).get("variant_type") or "").strip()
-    if bank_row is None:
-        return None, "", "missing_bank_row"
+    pid = str(raw.get("problem_id") or bank_row.get("problem_id") or "").strip()
+    variant = normalize_variant(raw.get("variant_type") or bank_row.get("variant_type"))
     subtype = str(bank_row.get("problem_subtype", "")).strip()
     try:
         if family == "ALGO" or subtype.lower() in _ALGO_SUBTYPES:
-            ok, reason, _meta = verify_algo(
+            ok, reason, meta = verify_algo(
                 pid,
                 answer,
                 bank_row.get("correct_answer", ""),
@@ -138,8 +172,11 @@ def _rescore_row(
                 variant,
                 bank_row.get("difficulty_params", ""),
             )
-            method = "algo_strict"
-            return bool(ok), method, reason
+            method = _family_verify_method(family, subtype.lower(), "algo_strict")
+            parse_status = str((meta or {}).get("parse_status") or ALGO_META.get("parse_status") or "")
+            if parse_status == "parse_failed":
+                return None, method, reason, REASON_PARSE_FAILED
+            return bool(ok), method, reason, REASON_IN_BANK_OK
         vf = _resolve_verifier_family(
             pid=pid,
             problem_family=str(bank_row.get("problem_family", "")),
@@ -154,24 +191,24 @@ def _rescore_row(
             problem_text=bank_row.get("problem_text", ""),
             action_mapping=mapping,
         )
-        method = str(LAST_VERIFY_META.get("verify_method") or "")
+        method = _family_verify_method(
+            family, vf, str(LAST_VERIFY_META.get("verify_method") or "")
+        )
+        if ok is None:
+            return None, method, "unparsed_state", REASON_PARSE_FAILED
         if ok is True:
-            return True, method, "correct"
-        if ok is False:
-            return False, method, "incorrect"
-        return None, method, "unparsed_state"
+            return True, method, "correct", REASON_IN_BANK_OK
+        return False, method, "incorrect", REASON_IN_BANK_OK
     except Exception as exc:
-        return False, "", f"{type(exc).__name__}: {exc}"
+        return None, "", f"{type(exc).__name__}: {exc}", REASON_PARSE_FAILED
 
 
-def _p1_files() -> list[Path]:
+def _p1_files(raw_dir: Path) -> list[Path]:
     files: list[Path] = []
     seen: set[Path] = set()
     for pattern in P1_PATTERNS:
-        for path in sorted(RAW_DIR.glob(pattern)):
-            if path in seen:
-                continue
-            if "review" in path.name.lower():
+        for path in sorted(raw_dir.glob(pattern)):
+            if path in seen or "review" in path.name.lower():
                 continue
             seen.add(path)
             files.append(path)
@@ -190,13 +227,12 @@ def main() -> None:
 
     banks = {name: _load_bank_index(path) for name, path in BANKS.items()}
     summary: dict[tuple[str, str, str, str], dict[str, int]] = defaultdict(
-        lambda: {"n": 0, "old_correct": 0, "new_correct": 0, "changed": 0, "old_known": 0}
+        lambda: {"n": 0, "old_correct": 0, "new_correct": 0, "changed": 0}
     )
+    coverage: dict[str, int] = defaultdict(int)
     written: list[Path] = []
 
-    for path in _p1_files() if raw_dir == RAW_DIR else sorted(raw_dir.glob("*P1_behavioral*.csv")):
-        if "review" in path.name.lower():
-            continue
+    for path in _p1_files(raw_dir):
         family = _family_from_filename(path.name)
         with path.open(newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
@@ -206,6 +242,9 @@ def main() -> None:
         extra = [
             col
             for col in (
+                "variant_type_normalized",
+                "included",
+                "exclusion_reason",
                 "old_verified",
                 "rescored_correct",
                 "verify_method",
@@ -221,45 +260,85 @@ def main() -> None:
             writer = csv.DictWriter(f, fieldnames=out_fields, extrasaction="ignore")
             writer.writeheader()
             for raw in rows:
-                key = (
-                    str(raw.get("problem_id", "")).strip(),
-                    str(raw.get("variant_type", "")).strip(),
-                )
+                pid = str(raw.get("problem_id", "")).strip()
+                variant_raw = str(raw.get("variant_type", "")).strip()
+                variant = normalize_variant(variant_raw)
+                model = str(raw.get("model") or "").strip() or path.stem
+                answer = _model_answer(raw)
+                old = _old_correct(raw)
+
                 bank_row = None
                 row_family = family
+                key = (pid, variant)
                 for name, index in banks.items():
                     if key in index:
                         bank_row = index[key]
                         row_family = name
                         break
-                old = _old_correct(raw)
-                new, method, reason = _rescore_row(row_family, raw, bank_row)
-                new_bool = new is True
-                changed = old is not None and old != new_bool
-                subtype = str((bank_row or {}).get("problem_subtype") or raw.get("problem_family") or family)
-                model = str(raw.get("model") or "").strip() or path.stem
-                variant = key[1] or "unknown"
-                stats = summary[(path.name, model, subtype, variant)]
-                stats["n"] += 1
-                if old is not None:
-                    stats["old_known"] += 1
-                    if old:
+
+                if _is_mock_model(model) or variant == "MOCK":
+                    included = False
+                    reason = REASON_MOCK
+                    new = None
+                    method = ""
+                    detail = "mock_row"
+                elif bank_row is None:
+                    included = False
+                    reason = REASON_MISSING_BANK
+                    new = None
+                    method = ""
+                    detail = "missing_bank_row"
+                elif _is_api_error(answer):
+                    included = False
+                    reason = REASON_API_ERROR
+                    new = None
+                    method = ""
+                    detail = "api_error"
+                else:
+                    new, method, detail, reason = _rescore_included(
+                        row_family, raw, bank_row
+                    )
+                    included = reason == REASON_IN_BANK_OK
+
+                coverage[reason] += 1
+                new_bool = new is True if included else None
+                changed = (
+                    included
+                    and old is not None
+                    and new is not None
+                    and old != new
+                )
+                subtype = str(
+                    (bank_row or {}).get("problem_subtype")
+                    or raw.get("problem_family")
+                    or family
+                )
+                if included:
+                    stats = summary[(path.name, model, subtype, variant)]
+                    stats["n"] += 1
+                    if old is True:
                         stats["old_correct"] += 1
-                if new_bool:
-                    stats["new_correct"] += 1
-                if changed:
-                    stats["changed"] += 1
+                    if new is True:
+                        stats["new_correct"] += 1
+                    if changed:
+                        stats["changed"] += 1
 
                 out_row = dict(raw)
-                if "behavioral_correct" in out_row:
-                    out_row["behavioral_correct"] = new_bool
-                if "verified" in out_row:
-                    out_row["verified"] = new_bool
+                out_row["variant_type_normalized"] = variant
+                out_row["included"] = included
+                out_row["exclusion_reason"] = reason
+                if included:
+                    if "behavioral_correct" in out_row:
+                        out_row["behavioral_correct"] = bool(new)
+                    if "verified" in out_row:
+                        out_row["verified"] = bool(new)
+                    out_row["rescored_correct"] = bool(new)
+                else:
+                    out_row["rescored_correct"] = ""
                 out_row["old_verified"] = "" if old is None else old
-                out_row["rescored_correct"] = new_bool
                 out_row["verify_method"] = method
-                out_row["rescore_reason"] = reason
-                out_row["verdict_changed"] = changed
+                out_row["rescore_reason"] = detail
+                out_row["verdict_changed"] = changed if included else ""
                 writer.writerow(out_row)
 
         written.append(out_path)
@@ -290,8 +369,7 @@ def main() -> None:
         writer.writeheader()
         for (source, model, fam, variant), stats in sorted(summary.items()):
             n = stats["n"]
-            n_old = stats["old_known"] or n
-            old_acc = stats["old_correct"] / n_old if n_old else 0.0
+            old_acc = stats["old_correct"] / n if n else 0.0
             new_acc = stats["new_correct"] / n if n else 0.0
             print(
                 f"{source:<42} {model:<36} {fam:<24} {variant:<12} "
@@ -310,6 +388,25 @@ def main() -> None:
                 }
             )
     print(f"\nSummary: {summary_path}")
+
+    coverage_path = out_dir / "P1_rescore_coverage.csv"
+    with coverage_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f, fieldnames=["exclusion_reason", "n", "included"]
+        )
+        writer.writeheader()
+        print("\nCoverage:")
+        for reason, n in sorted(coverage.items()):
+            included = reason == REASON_IN_BANK_OK
+            print(f"  {reason}: {n} (included={included})")
+            writer.writerow(
+                {
+                    "exclusion_reason": reason,
+                    "n": n,
+                    "included": included,
+                }
+            )
+    print(f"Coverage: {coverage_path}")
     print(f"Rescored files: {len(written)}")
 
 

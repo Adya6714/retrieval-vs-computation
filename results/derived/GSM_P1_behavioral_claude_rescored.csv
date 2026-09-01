@@ -1,4 +1,4 @@
-problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,variant_type_normalized,included,exclusion_reason,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
 GSM_001,canonical,anthropic/claude-sonnet-4,"I need to calculate the cost of an 86-minute call with two different rates.
 
 Given information:
@@ -18,7 +18,7 @@ Remaining minutes:
 Total cost:
 $18.00 + $33.00 = $51.00
 
-Therefore, an 86-minute call would cost $51.00.",True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, an 86-minute call would cost $51.00.",True,51,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_002,canonical,anthropic/claude-sonnet-4,"I need to find the total number of kids in the park, which includes both girls and boys.
 
 Given information:
@@ -36,7 +36,7 @@ Total kids = Number of girls + Number of boys
 Total kids = 18 + 12
 Total kids = 30
 
-Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_003,canonical,anthropic/claude-sonnet-4,"I need to find the total number of purple, yellow, and blue cards.
 
 Given information:
@@ -59,7 +59,7 @@ Step 3: Find the total number of cards.
 Total cards = Purple + Yellow + Blue
 Total cards = 30 + 45 + 75 = 150
 
-Therefore, there are 150 cards of all mentioned colors.",True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, there are 150 cards of all mentioned colors.",True,150,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_004,canonical,anthropic/claude-sonnet-4,"I need to calculate the painter's annual earnings by finding out how many days he works per year and multiplying by his daily rate.
 
 Given information:
@@ -79,7 +79,7 @@ Days worked per year:
 Annual earnings:
 - 144 days × £150 per day = £21,600
 
-Therefore, the painter earns £21,600 per year.",True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, the painter earns £21,600 per year.",True,21600,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_005,canonical,anthropic/claude-sonnet-4,"I need to calculate Liam's total weekly learning time by finding his class time and extra learning time.
 
 First, let me find his daily class time:
@@ -104,7 +104,7 @@ Finally, let me find his total weekly learning time:
 - Total weekly minutes = 2,520 + 720 = 3,240 minutes
 - Convert to hours = 3,240 ÷ 60 = 54 hours
 
-Liam spends 54 hours a week learning.",True,54,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Liam spends 54 hours a week learning.",True,54,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_006,canonical,anthropic/claude-sonnet-4,"I need to calculate the final value of Kayla's shares after the price changes over two years.
 
 Initial investment:
@@ -119,7 +119,7 @@ After the second year (25% decrease):
 - New price per share = €72.80 × (1 - 0.25) = €72.80 × 0.75 = €54.60
 - Final total value = 10 shares × €54.60 = €546
 
-Therefore, the final value of all Kayla's shares is €546.",True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, the final value of all Kayla's shares is €546.",True,546,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_007,canonical,anthropic/claude-sonnet-4,"I need to figure out how much Kai paid for the luxury car rental.
 
 Let me break down the information:
@@ -139,7 +139,7 @@ Now let me calculate the cost for the paid hours:
 
 Total cost: $10 + $20 = $30
 
-Therefore, Kai paid $30 for the luxury car rental.",True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Kai paid $30 for the luxury car rental.",True,30,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_008,canonical,anthropic/claude-sonnet-4,"I need to track how the virus spreads each day, where each infected person infects 3 new people daily.
 
 Let me work through this day by day:
@@ -165,7 +165,7 @@ Alternatively, I can use the formula for exponential growth:
 - Each day, the total number of infected people is multiplied by 4 (the original person plus 3 newly infected)
 - After 3 days: 16 × 4³ = 16 × 64 = 1,024 people
 
-Therefore, after 3 days, 1,024 people are infected.",True,1024,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, after 3 days, 1,024 people are infected.",True,1024,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_009,canonical,anthropic/claude-sonnet-4,"I need to calculate the total number of eggs Nia will eat over 108 days, then convert that to dozens.
 
 Let me break this down into two periods:
@@ -184,7 +184,7 @@ Now I need to convert eggs to dozens:
 - 1 dozen = 12 eggs
 - Number of dozens = 588 ÷ 12 = 49 dozens
 
-Therefore, Nia will need 49 dozens of eggs for 108 days.",False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+Therefore, Nia will need 49 dozens of eggs for 108 days.",False,49,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_010,canonical,anthropic/claude-sonnet-4,"I need to track the number of kernels that pop in each 30-second interval, then add the kernels that pop from residual heat.
 
 Let me break this down step by step:
@@ -207,7 +207,7 @@ A quarter of the kernels that popped in the final 30 seconds = ¼ × 180 = 45 ke
 **Total popcorn:**
 60 + 240 + 360 + 180 + 45 = 885 pieces of popcorn
 
-Therefore, Zahra has 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Zahra has 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_011,canonical,anthropic/claude-sonnet-4,"I need to calculate how much water Pavel uses for each type of cube, then subtract the total from his starting amount.
 
 Given information:
@@ -233,7 +233,7 @@ Total water used:
 Water remaining:
 328 - 242 = 86 grams
 
-Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_012,canonical,anthropic/claude-sonnet-4,"I need to calculate how many potted plants Camila will have after giving some away.
 
 Let me break this down step by step:
@@ -251,7 +251,7 @@ Next, let me calculate how many plants she will give away:
 Finally, let me find how many plants she will have remaining:
 - Remaining plants = 393 - 312 = 81 plants
 
-Therefore, Camila will remain with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Camila will remain with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_013,canonical,anthropic/claude-sonnet-4,"I need to find the total time for Mia's 24-kilometer walk.
 
 Given information:
@@ -280,7 +280,7 @@ Time on sidewalk = 12 km ÷ 0.4 km/min = 30 minutes
 Total walking time:
 Time on beach + Time on sidewalk = 60 + 30 = 90 minutes
 
-Therefore, it takes Mia 90 minutes to complete her entire 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, it takes Mia 90 minutes to complete her entire 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_014,canonical,anthropic/claude-sonnet-4,"I need to find what percentage of each day is spent cleaning floors.
 
 Given information:
@@ -301,7 +301,7 @@ Now I'll convert this to hours:
 Finally, I'll calculate what percentage of their workday is spent cleaning floors:
 (7 hours cleaning ÷ 10 hours total work) × 100% = 70%
 
-Therefore, 70% of their workday, on average, is spent cleaning floors.",True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 70% of their workday, on average, is spent cleaning floors.",True,70,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_015,canonical,anthropic/claude-sonnet-4,"I need to find how much Viktor will make after rounding his prices to the nearest dollar.
 
 First, let me round each price to the nearest dollar:
@@ -316,7 +316,7 @@ Now I'll calculate his total revenue with the rounded prices:
 
 Total revenue = €24 + €145 + €185 = €354
 
-Therefore, Viktor will make €354.",True,354,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Viktor will make €354.",True,354,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_016,canonical,anthropic/claude-sonnet-4,"I need to calculate the total weight of all items and then determine how many trips are needed with three trucks.
 
 Let me calculate the weight of each type of feed:
@@ -347,7 +347,7 @@ Let me calculate the weight of each type of feed:
 **Number of trips needed:**
 1,800 pounds ÷ 360 pounds per trip = 5 trips
 
-Therefore, the farmer needs 5 trips to transport all the items using his three trucks.",True,5,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the farmer needs 5 trips to transport all the items using his three trucks.",True,5,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,canonical,anthropic/claude-sonnet-4,"I need to find Liam's total earnings over three days and then calculate his average daily earnings.
 
 Let me organize the information day by day:
@@ -381,7 +381,7 @@ The problem states that on Friday, Liam sold 13 fewer boxes of orange pie than o
 **Average daily earnings:**
 - Average = Total earnings ÷ 3 days = ¥2,766 ÷ 3 = ¥922
 
-Liam's average daily earning was ¥922.",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Liam's average daily earning was ¥922.",True,922,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,canonical,anthropic/claude-sonnet-4,"I need to find how many questions Emma will answer correctly based on the given percentages.
 
 First, let me find the number of questions in each subject:
@@ -418,7 +418,7 @@ History questions correct:
 Total questions Emma will answer correctly:
 3 + 2 + 8 + 8 = 21 questions
 
-Therefore, Emma is sure to get 21 points.",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Emma is sure to get 21 points.",True,21,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,canonical,anthropic/claude-sonnet-4,"I need to find how many 45-minute episodes Tariq watched on Sunday.
 
 Let me start by calculating the total TV time for each day except Sunday, then use the total to find Sunday's viewing time.
@@ -450,7 +450,7 @@ Converting Sunday's viewing time to minutes:
 Since each episode on Sunday was 45 minutes long:
 Number of episodes = 135 ÷ 45 = 3
 
-Therefore, Tariq watched 3 episodes of 45 minutes each on Sunday.",False,3,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, Tariq watched 3 episodes of 45 minutes each on Sunday.",False,3,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_020,canonical,anthropic/claude-sonnet-4,"I need to find how many eggs are still hidden by calculating how many were found in total.
 
 First, let me find the total number of eggs hidden:
@@ -480,7 +480,7 @@ Total eggs found:
 Eggs still hidden:
 120 - 96 = 24 eggs
 
-Therefore, 24 eggs are still hidden in the yard.",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, 24 eggs are still hidden in the yard.",True,24,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_001,W1,anthropic/claude-sonnet-4,"I need to calculate the cost of an 86-minute call with a two-tier pricing structure.
 
 Let me break down the pricing:
@@ -499,7 +499,7 @@ Remaining minutes:
 Total cost:
 $18.00 + $33.00 = $51.00
 
-The total cost of an 86-minute call is $51.00.",True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+The total cost of an 86-minute call is $51.00.",True,51,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_002,W1,anthropic/claude-sonnet-4,"I need to find the total number of kids in the park by calculating the number of boys and adding it to the number of girls.
 
 Given information:
@@ -517,7 +517,7 @@ Total number of kids = Number of girls + Number of boys
 Total number of kids = 18 + 12
 Total number of kids = 30
 
-Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 30 kids in the park.",True,30,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_003,W1,anthropic/claude-sonnet-4,"I need to find the total number of cards by calculating the number of each color.
 
 Given information:
@@ -541,7 +541,7 @@ Blue cards:
 Total cards:
 Purple + Yellow + Blue = 30 + 45 + 75 = 150
 
-Therefore, there are 150 cards total across all three colors.",True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, there are 150 cards total across all three colors.",True,150,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_004,W1,anthropic/claude-sonnet-4,"I need to calculate the painter's annual earnings by finding his monthly earnings first, then multiplying by 12 months.
 
 Let me break this down step by step:
@@ -560,7 +560,7 @@ Let me break this down step by step:
 **Annual earnings:**
 £1,800 per month × 12 months = £21,600
 
-Therefore, the painter's total earnings over the course of a year are **£21,600**.",True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, the painter's total earnings over the course of a year are **£21,600**.",True,21600,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_005,W1,anthropic/claude-sonnet-4,"I need to find the total hours Liam spends learning per week, including regular school days and weekend extra learning.
 
 Let me break this down step by step.
@@ -587,7 +587,7 @@ Let me break this down step by step.
 **Convert to hours:**
 3,240 minutes ÷ 60 minutes/hour = 54 hours
 
-Therefore, Liam spends 54 hours per week learning.",True,54,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Liam spends 54 hours per week learning.",True,54,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_006,W1,anthropic/claude-sonnet-4,"I need to calculate the value of Kayla's stock after two years of price changes.
 
 Given information:
@@ -608,7 +608,7 @@ After Year 2 (25% decrease from Year 1 price):
 - New price per share = $72.80 × 0.75 = $54.60
 - Total value = 10 shares × $54.60 = $546
 
-Therefore, the total value of Kayla's shares at the end of the second year is $546.",True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, the total value of Kayla's shares at the end of the second year is $546.",True,546,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_007,W1,anthropic/claude-sonnet-4,"I need to find the total cost for Kai's car rental.
 
 Given information:
@@ -626,7 +626,7 @@ Paid hours: 2 hours total
 
 Total amount paid = $10 + $20 = $30
 
-Therefore, Kai paid a total of $30.",True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Kai paid a total of $30.",True,30,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_008,W1,anthropic/claude-sonnet-4,"I need to track how the virus spreads each day, where each infected person passes it to 3 others.
 
 Let me work through this day by day:
@@ -654,7 +654,7 @@ Total infected = 16 × 4³ = 16 × 64 = 1,024
 
 (The growth factor is 4 because each day the total multiplies by 4: original person + 3 new infections = 4 times as many)
 
-Therefore, after 3 days, there are **1,024 infected people**.",True,1024,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, after 3 days, there are **1,024 infected people**.",True,1024,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_009,W1,anthropic/claude-sonnet-4,"I need to calculate the total number of eggs Nia consumes over 108 days, then convert to dozens.
 
 Let me break this into two periods:
@@ -671,7 +671,7 @@ Total eggs consumed:
 Converting to dozens (12 eggs = 1 dozen):
 588 ÷ 12 = 49 dozens
 
-Therefore, Nia needs 49 dozens of eggs in total over these 108 days.",False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+Therefore, Nia needs 49 dozens of eggs in total over these 108 days.",False,49,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_010,W1,anthropic/claude-sonnet-4,"I need to track the number of kernels that pop in each 30-second interval, plus the additional kernels that pop after removal from heat.
 
 Let me work through each time period:
@@ -700,7 +700,7 @@ Let me work through each time period:
 **Total calculation:**
 60 + 240 + 360 + 180 + 45 = 885
 
-Therefore, Zahra ends up with 885 popcorn pieces.",True,885,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Zahra ends up with 885 popcorn pieces.",True,885,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_011,W1,anthropic/claude-sonnet-4,"I need to calculate how much water Pavel uses for each type of ice cube, then subtract the total from his starting amount.
 
 Let me calculate the water used for each type of cube:
@@ -720,7 +720,7 @@ Total water used:
 Water remaining:
 328 - 242 = 86 grams
 
-Therefore, Pavel has 86 grams of water remaining unused.",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Pavel has 86 grams of water remaining unused.",True,86,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_012,W1,anthropic/claude-sonnet-4,"I need to track Camila's plants through several steps.
 
 Initial plants:
@@ -738,7 +738,7 @@ Plants to be given away tomorrow:
 Plants remaining:
 - 393 - 312 = 81 plants
 
-Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_013,W1,anthropic/claude-sonnet-4,"I need to find Mia's total walking time by first determining her speeds on each surface.
 
 Given information:
@@ -759,7 +759,7 @@ Time on sidewalk = Distance ÷ Speed = 12 km ÷ 0.4 km/minute = 30 minutes
 Total walking time = Time on beach + Time on sidewalk
 Total walking time = 60 minutes + 30 minutes = 90 minutes
 
-Therefore, it takes Mia 90 minutes to complete her full 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, it takes Mia 90 minutes to complete her full 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_014,W1,anthropic/claude-sonnet-4,"I need to find what percentage of the worker's daily hours is spent cleaning floors.
 
 Given information:
@@ -780,7 +780,7 @@ Now I'll convert the worker's daily hours to minutes:
 Finally, I'll calculate the percentage:
 (420 minutes spent cleaning ÷ 600 minutes total) × 100% = 70%
 
-Therefore, 70% of the worker's daily hours is used for cleaning floors.",True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 70% of the worker's daily hours is used for cleaning floors.",True,70,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_015,W1,anthropic/claude-sonnet-4,"I need to find Viktor's total revenue when he rounds each price to the nearest dollar and then calculates the total.
 
 First, let me identify the usual prices:
@@ -801,7 +801,7 @@ Now I'll calculate the revenue for each type of flower:
 Finally, I'll find the total revenue:
 Total revenue = Û24 + Û145 + Û185 = Û354
 
-Therefore, Viktor's total revenue is Û354.",False,354,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, Viktor's total revenue is Û354.",False,354,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_016,W1,anthropic/claude-sonnet-4,"I need to calculate the total weight of all items and then determine how many trips are needed.
 
 Let me calculate the weight of each type of feed:
@@ -831,7 +831,7 @@ Let me calculate the weight of each type of feed:
 **Number of trips needed:**
 1,800 pounds ÷ 360 pounds per trip = 5 trips
 
-Therefore, the farmer needs **5 trips** to move all the items.",True,5,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the farmer needs **5 trips** to move all the items.",True,5,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,W1,anthropic/claude-sonnet-4,"I need to find Liam's average daily earnings over the three days.
 
 Let me start by finding the quantities sold each day.
@@ -888,7 +888,7 @@ Sunday earnings = £489 + £894 = £1,383
 **Average daily earnings:**
 £2,766 ÷ 3 = £922
 
-Therefore, Liam's average daily earnings were £922.",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Liam's average daily earnings were £922.",True,922,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,W1,anthropic/claude-sonnet-4,"I need to find how many questions Emma is expected to answer correctly in each subject.
 
 First, let me find the number of questions in each subject:
@@ -922,7 +922,7 @@ Now let me calculate how many questions Emma is expected to answer correctly:
 **Total points Emma is expected to score:**
 2 + 3 + 8 + 8 = 21 points
 
-Therefore, Emma is expected to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Emma is expected to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,W1,anthropic/claude-sonnet-4,"I need to find how many 45-minute episodes Tariq watched on Sunday by calculating his total screen time for the other days and subtracting from 22 hours.
 
 Let me calculate his screen time for each day except Sunday:
@@ -945,7 +945,7 @@ Now I need to convert Sunday's screen time to minutes and divide by 45 minutes p
 Number of 45-minute episodes on Sunday:
 135 ÷ 45 = 3 episodes
 
-Therefore, Tariq watched 3 episodes of the 45-minute show on Sunday.",False,3,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, Tariq watched 3 episodes of the 45-minute show on Sunday.",False,3,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_020,W1,anthropic/claude-sonnet-4,"I need to find how many eggs remain by calculating how many were found by each person.
 
 First, let me establish the total number of hidden eggs:
@@ -975,9 +975,9 @@ Total eggs found:
 Eggs remaining in the yard:
 120 - 96 = 24 eggs
 
-Therefore, 24 eggs remain hidden in the yard.",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
-GSM_001,W2,anthropic/claude-sonnet-4,51,True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_002,W2,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 24 eggs remain hidden in the yard.",True,24,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
+GSM_001,W2,anthropic/claude-sonnet-4,51,True,51,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_002,W2,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_003,W2,anthropic/claude-sonnet-4,"I need to calculate the total number of cards by finding the quantity of each color.
 
 Let me work through this step by step:
@@ -994,25 +994,25 @@ Let me work through this step by step:
 **Total cards:**
 30 + 45 + 75 = **150 cards**
 
-The total number of cards is **150**.",True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_004,W2,anthropic/claude-sonnet-4,21600,True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_005,W2,anthropic/claude-sonnet-4,28,False,54,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
-GSM_006,W2,anthropic/claude-sonnet-4,546,True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_007,W2,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_008,W2,anthropic/claude-sonnet-4,272,False,1024,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_009,W2,anthropic/claude-sonnet-4,42,False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_010,W2,anthropic/claude-sonnet-4,750,False,885,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_011,W2,anthropic/claude-sonnet-4,88,False,86,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The total number of cards is **150**.",True,150,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_004,W2,anthropic/claude-sonnet-4,21600,True,21600,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_005,W2,anthropic/claude-sonnet-4,28,False,54,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_006,W2,anthropic/claude-sonnet-4,546,True,546,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_007,W2,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_008,W2,anthropic/claude-sonnet-4,272,False,1024,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_009,W2,anthropic/claude-sonnet-4,42,False,49,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_010,W2,anthropic/claude-sonnet-4,750,False,885,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_011,W2,anthropic/claude-sonnet-4,88,False,86,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_012,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 Total plants before giveaway = (52 × 7) + 29 = 364 + 29 = 393
 Plants given away = 52 × 6 = 312
 Remaining plants = 393 - 312 = 81
 
-81",True,81,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_013,W2,anthropic/claude-sonnet-4,90,True,90,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_014,W2,anthropic/claude-sonnet-4,70,True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_015,W2,anthropic/claude-sonnet-4,498,False,354,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+81",True,81,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_013,W2,anthropic/claude-sonnet-4,90,True,90,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_014,W2,anthropic/claude-sonnet-4,70,True,70,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_015,W2,anthropic/claude-sonnet-4,498,False,354,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_016,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 **Calculate total weight of each item:**
@@ -1029,7 +1029,7 @@ GSM_016,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 **Number of trips:** 1,800 ÷ 360 = 5
 
-5",True,5,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+5",True,5,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 **Friday:**
@@ -1059,7 +1059,7 @@ GSM_017,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 **Total earnings:** £489 + £894 + £1383 = £2766
 **Average daily earnings:** £2766 ÷ 3 = £922
 
-922",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+922",True,922,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 Total quiz items: 80
@@ -1077,7 +1077,7 @@ Emma's correct answers:
 
 Total points: 2 + 3 + 8 + 8 = 21
 
-21",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+21",True,21,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,W2,anthropic/claude-sonnet-4,"Looking at the TV watching schedule:
 
 Friday: 3 hours
@@ -1093,7 +1093,7 @@ Sunday time: 22 - 19.75 = 2.25 hours = 135 minutes
 
 Number of 45-minute episodes: 135 ÷ 45 = 3
 
-3",True,3,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+3",True,3,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_020,W2,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 Total eggs hidden: 10 dozen = 120 eggs
@@ -1107,14 +1107,14 @@ Fatima: (18 + 3) + 36 = 57 eggs
 Total found: 3 + 18 + 15 + 3 + 57 = 96 eggs
 Remaining: 120 - 96 = 24 eggs
 
-24",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
-GSM_001,W3,anthropic/claude-sonnet-4,51,True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_002,W3,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_003,W3,anthropic/claude-sonnet-4,120,False,150,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_004,W3,anthropic/claude-sonnet-4,21600,True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_005,W3,anthropic/claude-sonnet-4,70,False,54,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
-GSM_006,W3,anthropic/claude-sonnet-4,546,True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_007,W3,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+24",True,24,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_001,W3,anthropic/claude-sonnet-4,51,True,51,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_002,W3,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_003,W3,anthropic/claude-sonnet-4,120,False,150,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_004,W3,anthropic/claude-sonnet-4,21600,True,21600,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_005,W3,anthropic/claude-sonnet-4,70,False,54,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_006,W3,anthropic/claude-sonnet-4,546,True,546,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_007,W3,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_008,W3,anthropic/claude-sonnet-4,"I need to track how the rumor spreads each day.
 
 Initial state: 16 people know the rumor
@@ -1134,7 +1134,7 @@ Day 3:
 - New people who learn: 256 × 3 = 768
 - Total who know: 256 + 768 = 1024
 
-1024",True,1024,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+1024",True,1024,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_009,W3,anthropic/claude-sonnet-4,"I need to calculate the total number of seeds Jake plants over 108 days, then convert to dozens.
 
 First 84 days: 5 seeds/day × 84 days = 420 seeds
@@ -1145,7 +1145,7 @@ Total seeds: 420 + 168 = 588 seeds
 
 Convert to dozens: 588 ÷ 12 = 49
 
-49",True,49,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+49",True,49,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_010,W3,anthropic/claude-sonnet-4,"I need to calculate the total toy production across all time periods.
 
 First 30 minutes: 60 toys
@@ -1164,7 +1164,7 @@ After shutdown: Quarter of the final 30 minutes production
 
 Total: 60 + 240 + 360 + 180 + 45 = 885
 
-885",True,885,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+885",True,885,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_011,W3,anthropic/claude-sonnet-4,"I need to calculate how much wax Sofia uses and subtract from her total.
 
 Wax used:
@@ -1176,8 +1176,8 @@ Total wax used: 96 + 143 + 3 = 242 grams
 
 Wax remaining: 328 - 242 = 86 grams
 
-86",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_012,W3,anthropic/claude-sonnet-4,341,False,81,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+86",True,86,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_012,W3,anthropic/claude-sonnet-4,341,False,81,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_013,W3,anthropic/claude-sonnet-4,"I need to find Jake's total cycling time.
 
 Given information:
@@ -1202,8 +1202,8 @@ Time on road = distance ÷ speed = 12 km ÷ 0.4 km/min = 30 minutes
 
 Total time = time in park + time on road = 60 + 30 = 90 minutes
 
-90",True,90,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_014,W3,anthropic/claude-sonnet-4,70,True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+90",True,90,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_014,W3,anthropic/claude-sonnet-4,70,True,70,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_015,W3,anthropic/claude-sonnet-4,"I need to find the rounded prices and calculate Maria's total earnings.
 
 First, let me round each price to the nearest dollar:
@@ -1218,7 +1218,7 @@ Now I'll calculate the total earnings:
 
 Total: €24 + €145 + €185 = €354
 
-354",True,354,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+354",True,354,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_016,W3,anthropic/claude-sonnet-4,"I need to calculate the total weight of all items and then determine how many trips are needed with three trucks.
 
 Let me calculate the weight of each type of item:
@@ -1237,7 +1237,7 @@ Total capacity per trip = 3 × 120 = 360 pounds per trip
 
 Number of trips needed = 1,800 ÷ 360 = 5
 
-5",True,5,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+5",True,5,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,W3,anthropic/claude-sonnet-4,"I need to calculate Emma's total earnings over three days and find the daily average.
 
 Friday:
@@ -1274,7 +1274,7 @@ Total earnings over 3 days: ¥489 + ¥894 + ¥1,383 = ¥2,766
 
 Average daily earnings: ¥2,766 ÷ 3 = ¥922
 
-922",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+922",True,922,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,W3,anthropic/claude-sonnet-4,"I need to find how many questions Jordan is expected to answer correctly in each subject.
 
 First, let me find the number of questions in each subject:
@@ -1304,7 +1304,7 @@ Now I'll calculate how many questions Jordan is expected to answer correctly in 
 **Total questions Jordan is expected to answer correctly:**
 2 + 3 + 8 + 8 = 21 questions
 
-Therefore, Jordan is expected to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Jordan is expected to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,W3,anthropic/claude-sonnet-4,"Looking at Sofia's reading schedule:
 
 Friday: 3 hours
@@ -1321,7 +1321,7 @@ Sunday reading time = 22 - 19.75 = 2.25 hours = 135 minutes
 
 Number of 45-minute sections = 135 ÷ 45 = 3
 
-3",True,3,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+3",True,3,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_020,W3,anthropic/claude-sonnet-4,"I need to find how many gold stars are still hidden by calculating how many were found in total.
 
 First, let me find the total number of gold stars: 10 dozen = 10 × 12 = 120 gold stars
@@ -1345,11 +1345,11 @@ Total found: 3 + 18 + 15 + 3 + 57 = 96 gold stars
 
 Gold stars still hidden: 120 - 96 = 24
 
-24",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
-GSM_001,W4,anthropic/claude-sonnet-4,51,True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_002,W4,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_003,W4,anthropic/claude-sonnet-4,120,False,150,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_004,W4,anthropic/claude-sonnet-4,21600,True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+24",True,24,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_001,W4,anthropic/claude-sonnet-4,51,True,51,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_002,W4,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_003,W4,anthropic/claude-sonnet-4,120,False,150,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_004,W4,anthropic/claude-sonnet-4,21600,True,21600,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_005,W4,anthropic/claude-sonnet-4,"I'll solve this step by step.
 
 Given values:
@@ -1384,11 +1384,11 @@ total_hr = total_min / 60
 total_hr = 3,240 / 60
 total_hr = 54
 
-Therefore, total_hr = 54.",True,54,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_006,W4,anthropic/claude-sonnet-4,5460,False,546,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_007,W4,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_008,W4,anthropic/claude-sonnet-4,1024,True,1024,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_009,W4,anthropic/claude-sonnet-4,38,False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+Therefore, total_hr = 54.",True,54,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_006,W4,anthropic/claude-sonnet-4,5460,False,546,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_007,W4,anthropic/claude-sonnet-4,30,True,30,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_008,W4,anthropic/claude-sonnet-4,1024,True,1024,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_009,W4,anthropic/claude-sonnet-4,38,False,49,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_010,W4,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 k = 60
@@ -1399,7 +1399,7 @@ k5 = k4 / 4 = 180 / 4 = 45
 
 Total = k + k2 + k3 + k4 + k5 = 60 + 240 + 360 + 180 + 45 = 885
 
-885",True,885,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+885",True,885,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_011,W4,anthropic/claude-sonnet-4,"I need to find the remaining water after accounting for all the cubes.
 
 Total water used = (ng × g) + (nm × m) + (ns × s)
@@ -1412,8 +1412,8 @@ Remaining water = w - Total water used
 Remaining water = 328 - 242
 Remaining water = 86
 
-86",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_012,W4,anthropic/claude-sonnet-4,393,False,81,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+86",True,86,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_012,W4,anthropic/claude-sonnet-4,393,False,81,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_013,W4,anthropic/claude-sonnet-4,"I need to find the total time for a 24-kilometer walk with given conditions.
 
 Given:
@@ -1433,11 +1433,11 @@ Time on sidewalk = ds/speed on sidewalk = 12/0.4 = 30 minutes
 
 Total time = time on beach + time on sidewalk = 60 + 30 = 90
 
-90",True,90,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_014,W4,anthropic/claude-sonnet-4,70,True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+90",True,90,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_014,W4,anthropic/claude-sonnet-4,70,True,70,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_015,W4,anthropic/claude-sonnet-4,"2 × 12 + 5 × 29 + 5 × 37 = 24 + 145 + 185 = 354
 
-354",True,354,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+354",True,354,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_016,W4,anthropic/claude-sonnet-4,"I need to calculate the total weight and determine how many trips are needed.
 
 Total weight calculation:
@@ -1454,7 +1454,7 @@ Total truck capacity = cap × nt = 120 × 3 = 360
 
 Number of trips needed = Total weight ÷ Total truck capacity = 1,800 ÷ 360 = 5
 
-5",True,5,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+5",True,5,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,W4,anthropic/claude-sonnet-4,"I need to calculate the total earnings over 3 days and find the average.
 
 First, let me find all the quantities:
@@ -1483,7 +1483,7 @@ Total earnings over 3 days = 489 + 894 + 1383 = 2766
 
 Average daily earnings = 2766 ÷ 3 = 922
 
-922",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+922",True,922,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,W4,anthropic/claude-sonnet-4,"I need to find the total points Emma is sure to get.
 
 First, let me find the number of questions in each subject:
@@ -1502,7 +1502,7 @@ Now I'll calculate the points Emma is sure to get in each subject:
 
 Total points = 2 + 3 + 8 + 8 = 21
 
-21",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+21",True,21,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,W4,anthropic/claude-sonnet-4,"I need to find the number of 45-minute episodes watched on Sunday.
 
 Given information:
@@ -1526,7 +1526,7 @@ f + sa + su + mo + tu + we = total
 n = 2.25 ÷ 0.75
 n = 3
 
-3",True,3,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+3",True,3,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_020,W4,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 Given:
@@ -1541,13 +1541,13 @@ Total eggs found = a + q + s + e + f = 3 + 18 + 15 + 3 + 57 = 96
 
 Eggs still hidden = t - total found = 120 - 96 = 24
 
-24",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
-GSM_001,W5,anthropic/claude-sonnet-4,82,False,86,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_002,W5,anthropic/claude-sonnet-4,18,True,18,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_003,W5,anthropic/claude-sonnet-4,75,True,75,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_004,W5,anthropic/claude-sonnet-4,£150,True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_005,W5,anthropic/claude-sonnet-4,7,True,7,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_006,W5,anthropic/claude-sonnet-4,€56,True,56,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+24",True,24,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_001,W5,anthropic/claude-sonnet-4,82,False,86,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_002,W5,anthropic/claude-sonnet-4,18,True,18,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_003,W5,anthropic/claude-sonnet-4,75,True,75,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_004,W5,anthropic/claude-sonnet-4,£150,True,150,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_005,W5,anthropic/claude-sonnet-4,7,True,7,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_006,W5,anthropic/claude-sonnet-4,€56,True,56,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_007,W5,anthropic/claude-sonnet-4,"I need to find the total hours Kai hired the car for.
 
 Given information:
@@ -1569,8 +1569,8 @@ So Kai paid for exactly 2 hours.
 
 Total hours = Free hours + Paid hours = 2 + 2 = 4
 
-4",True,4,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_008,W5,anthropic/claude-sonnet-4,32,False,16,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+4",True,4,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_008,W5,anthropic/claude-sonnet-4,32,False,16,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_009,W5,anthropic/claude-sonnet-4,"I need to find how many eggs Nia ate per day for the first 84 days.
 
 Given information:
@@ -1590,7 +1590,7 @@ Eggs in first 84 days + Eggs in last 24 days = Total eggs
 x = 420 ÷ 84
 x = 5
 
-5",True,5,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+5",True,5,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_010,W5,anthropic/claude-sonnet-4,"I need to find how many kernels popped in the first 30 seconds.
 
 Let me call the number of kernels that popped in the first 30 seconds ""x"".
@@ -1615,8 +1615,8 @@ Since Zahra ends up with 885 pieces of popcorn:
 Solving for x:
 x = 885 ÷ 14.75 = 60
 
-60",True,60,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_011,W5,anthropic/claude-sonnet-4,332,False,328,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+60",True,60,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_011,W5,anthropic/claude-sonnet-4,332,False,328,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_012,W5,anthropic/claude-sonnet-4,"I need to work backwards from the given information.
 
 Current state: Camila has 81 potted plants total
@@ -1665,7 +1665,7 @@ After receiving 29: 52x + 29 = 81
 52x = 52
 x = 1
 
-1",False,7,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+1",False,7,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_013,W5,anthropic/claude-sonnet-4,"I need to find the total distance of Mia's walk.
 
 Given information:
@@ -1737,8 +1737,8 @@ Total distance = 3 + 3 = 6 km
 Let me verify: Sidewalk speed = 2 × 0.05 = 0.1 km/min
 Sidewalk time check: 3 km ÷ 0.1 km/min = 30 min ✓
 
-6",False,24,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_014,W5,anthropic/claude-sonnet-4,2100,False,210,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+6",False,24,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_014,W5,anthropic/claude-sonnet-4,2100,False,210,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_015,W5,anthropic/claude-sonnet-4,"Looking at this step by step:
 
 Viktor's total sales: €354
@@ -1753,7 +1753,7 @@ Remaining amount from sunflowers: €354 - €169 = €185
 Since sunflowers sell at €5 per bundle:
 Number of sunflower bundles = €185 ÷ €5 = 37
 
-37",True,37,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+37",True,37,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_016,W5,anthropic/claude-sonnet-4,"I need to find the weight of each pack of apples.
 
 First, let me calculate the total carrying capacity:
@@ -1772,7 +1772,7 @@ Weight of apples: 1,800 - 424 = 1,376 pounds
 
 Weight per pack of apples: 1,376 ÷ 32 = 43 pounds
 
-43",True,43,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+43",True,43,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,W5,anthropic/claude-sonnet-4,"I need to find the cost of each box of orange pie.
 
 Given information:
@@ -1807,7 +1807,7 @@ Total earnings equation:
 62x = ¥1,302
 x = ¥21
 
-¥21",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+¥21",True,21,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,W5,anthropic/claude-sonnet-4,"I need to find the total number of items in the quiz.
 
 Let me define variables:
@@ -1829,7 +1829,7 @@ Since Emma gets 21 points:
 0.2625T = 21
 T = 21 ÷ 0.2625 = 80
 
-80",True,80,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+80",True,80,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,W5,anthropic/claude-sonnet-4,"I need to calculate the total hours of TV Tariq watched across all days.
 
 Sunday: 3 episodes × 45 minutes = 135 minutes = 2.25 hours
@@ -1846,7 +1846,7 @@ Wednesday: 3 episodes × 30 minutes = 90 minutes = 1.5 hours
 
 Total: 2.25 + 3 + 3 + 4.25 + 8 + 1.5 = 22 hours
 
-22 hours",True,22,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+22 hours",True,22,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_020,W5,anthropic/claude-sonnet-4,"I need to find the total number of eggs originally hidden by calculating how many each person found, adding the remaining eggs, then converting to dozens.
 
 Let me track each person's finds:
@@ -1870,7 +1870,7 @@ Total eggs originally hidden: 96 + 24 = 120 eggs
 
 Converting to dozens: 120 ÷ 12 = 10 dozen
 
-10 dozen",True,10,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+10 dozen",True,10,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W1,anthropic/claude-sonnet-4,"I need to find the number of students who like to bake.
 
 Let me organize the given information:
@@ -1893,7 +1893,7 @@ Students who like baking = 164 - 14 = 150 students
 
 Let me verify: 19 (painting) + 7 (football) + 150 (baking) + 14 (hiking) = 190 ✓
 
-Therefore, 150 students like to bake.",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 150 students like to bake.",True,150,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W2,anthropic/claude-sonnet-4,"I need to find how many students like to bake by working through the given information step by step.
 
 Given information:
@@ -1920,7 +1920,7 @@ Finally, I'll find how many students like to bake:
 Students who like to bake = Students who like to bake or hike - Students who like to hike
 Students who like to bake = 164 - 14 = 150
 
-Therefore, 150 students like to bake.",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 150 students like to bake.",True,150,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W3,anthropic/claude-sonnet-4,"I need to find how many workers like assembly work.
 
 Let me start by identifying what I know:
@@ -1943,7 +1943,7 @@ Workers who like assembly = 164 - 14 = 150
 
 Let me verify: 19 + 7 + 150 + 14 = 190 ✓
 
-Therefore, 150 workers like assembly work.",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 150 workers like assembly work.",True,150,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W4,anthropic/claude-sonnet-4,"I need to find how many students like to bake, given the relationships between the different hobbies.
 
 Let me define variables for each hobby:
@@ -1972,7 +1972,7 @@ b = 150
 
 Therefore, 150 students like to bake.
 
-To verify: 19 (paint) + 7 (football) + 150 (bake) + 14 (hike) = 190 ✓",False,150,arithmetic_reasoning,high,easy,False,False,state_machine,incorrect,False
+To verify: 19 (paint) + 7 (football) + 150 (bake) + 14 (hike) = 190 ✓",False,150,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_041,W6,anthropic/claude-sonnet-4,"I need to find how many students like to paint.
 
 Let me organize the given information:
@@ -1993,7 +1993,7 @@ Finally, I'll find how many like to paint:
 Students who like to paint = Students who like painting or baking - Students who like to bake
 Students who like to paint = 17 - 4 = 13 students
 
-Therefore, 13 students like to paint.",True,13,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 13 students like to paint.",True,13,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W1,anthropic/claude-sonnet-4,"I need to find the total number of oranges Pavel can harvest in a year.
 
 Given information:
@@ -2009,7 +2009,7 @@ Total oranges = 30 square yards × 94 oranges/square yard × 1 harvest/year
 
 Total oranges = 30 × 94 × 1 = 2,820 oranges
 
-Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W2,anthropic/claude-sonnet-4,"I need to find the total number of oranges Pavel can harvest in one year.
 
 Given information:
@@ -2031,7 +2031,7 @@ Step 3: Calculate total oranges harvested in one year.
 Total oranges harvested = Number of harvests × Oranges per harvest
 Total oranges harvested = 1 × 2,820 oranges = 2,820 oranges
 
-Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W3,anthropic/claude-sonnet-4,"I need to calculate the total number of widgets the factory can produce in a year.
 
 Given information:
@@ -2046,7 +2046,7 @@ Calculation:
 Total widgets per production cycle = Number of production lines × Widgets per line
 Total widgets per production cycle = 30 × 94 = 2,820 widgets
 
-Since one production cycle equals one year, the factory can produce **2,820 widgets** within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Since one production cycle equals one year, the factory can produce **2,820 widgets** within a year.",True,2820,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W4,anthropic/claude-sonnet-4,"I need to find how many oranges Pavel can harvest within a year.
 
 Given information:
@@ -2069,7 +2069,7 @@ Step 3: Calculate total oranges harvested per year.
 Oranges harvested per year = Total oranges × Number of harvest cycles
 Oranges harvested per year = 2,820 × 1 = 2,820 oranges
 
-Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W6,anthropic/claude-sonnet-4,"I need to find how many pomegranates Benjamin can harvest in one year.
 
 Given information:
@@ -2088,7 +2088,7 @@ Number of harvests in 1 year = 12 months ÷ 12 months per harvest = 1 harvest
 Therefore, the number of pomegranates Benjamin can harvest within a year is:
 5,775 pomegranates × 1 harvest = 5,775 pomegranates
 
-Benjamin can harvest 5,775 pomegranates within a year.",True,5775,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Benjamin can harvest 5,775 pomegranates within a year.",True,5775,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W1,anthropic/claude-sonnet-4,"I need to find the number of white tennis balls by working through this step-by-step.
 
 Given information:
@@ -2104,7 +2104,7 @@ Step 2: Find the number of white tennis balls.
 White tennis balls = 1/10 × 80
 White tennis balls = 80 ÷ 10 = 8
 
-Therefore, there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W2,anthropic/claude-sonnet-4,"I need to find the number of white tennis balls by working through this step-by-step.
 
 Given information:
@@ -2120,7 +2120,7 @@ Step 2: Find the number of white tennis balls.
 Number of white tennis balls = 1/10 × 80
 Number of white tennis balls = 80 ÷ 10 = 8
 
-Therefore, there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W3,anthropic/claude-sonnet-4,"I need to find the number of labeled plastic containers by working through this step-by-step.
 
 Given information:
@@ -2136,7 +2136,7 @@ Step 2: Find the number of labeled plastic containers.
 Labeled plastic containers = 1/10 × 80
 Labeled plastic containers = 80 ÷ 10 = 8
 
-Therefore, there are 8 labeled plastic containers.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 8 labeled plastic containers.",True,8,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W4,anthropic/claude-sonnet-4,"I need to find the number of white tennis balls based on the given information.
 
 Let me break down the problem step by step:
@@ -2156,7 +2156,7 @@ White tennis balls = 1/10 × 80 = 8
 
 Therefore, there are 8 white tennis balls.
 
-Note: The variables n2 = 1 and n3 = 10 in the problem statement appear to represent the denominators in the fractions ""1/8"" and ""1/10"" respectively, though n2 should be 8 rather than 1 to be consistent with ""an eighth of the balls.""",False,8,arithmetic_reasoning,high,easy,False,False,state_machine,incorrect,False
+Note: The variables n2 = 1 and n3 = 10 in the problem statement appear to represent the denominators in the fractions ""1/8"" and ""1/10"" respectively, though n2 should be 8 rather than 1 to be consistent with ""an eighth of the balls.""",False,8,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_043,W6,anthropic/claude-sonnet-4,"I need to find the number of teal tennis balls by working through this step-by-step.
 
 Given information:
@@ -2170,7 +2170,7 @@ Tennis balls = 1/2 × 420 = 210 tennis balls
 Step 2: Find the number of teal tennis balls.
 Teal tennis balls = 1/3 × 210 = 70 teal tennis balls
 
-Therefore, there are 70 teal tennis balls.",True,70,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 70 teal tennis balls.",True,70,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W1,anthropic/claude-sonnet-4,"I need to find the number of bouncy balls in the tube.
 
 Let me identify what I know:
@@ -2190,7 +2190,7 @@ Solving for x:
 x = 204 - 145
 x = 59
 
-Therefore, there were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W2,anthropic/claude-sonnet-4,"I need to find how many bouncy balls came in the tube.
 
 Let me start by calculating how many toys there were before buying the tube.
@@ -2207,7 +2207,7 @@ Now I know that after buying the tube, there were 204 toys total.
 The bouncy balls in the tube = Total toys after - Total toys before
 Bouncy balls = 204 - 145 = 59
 
-Therefore, 59 bouncy balls came in the tube.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 59 bouncy balls came in the tube.",True,59,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W3,anthropic/claude-sonnet-4,"I need to find how many ceramic tiles are in the crate.
 
 Let me add up all the materials Operator already had:
@@ -2222,7 +2222,7 @@ The total number of materials after buying the ceramic tiles is 204.
 To find the number of ceramic tiles:
 204 - 145 = 59
 
-Therefore, the crate contained 59 ceramic tiles.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, the crate contained 59 ceramic tiles.",True,59,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W4,anthropic/claude-sonnet-4,"I need to find how many bouncy balls came in the tube that Mei bought.
 
 Given information:
@@ -2251,7 +2251,7 @@ x = 59
 
 Therefore, the tube contained 59 bouncy balls.
 
-To verify: 71 + 45 + 29 + 59 = 204 ✓",False,59,arithmetic_reasoning,high,easy,False,False,state_machine,incorrect,False
+To verify: 71 + 45 + 29 + 59 = 204 ✓",False,59,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_044,W6,anthropic/claude-sonnet-4,"I need to find how many bouncy balls are in the tube.
 
 Let me add up all the toys Ava has except for the bouncy balls:
@@ -2266,7 +2266,7 @@ Since the total number of toys is 189, I can find the number of bouncy balls by 
 Bouncy balls = Total toys - Other toys
 Bouncy balls = 189 - 148 = 41
 
-Therefore, there are 41 bouncy balls in the tube.",True,41,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 41 bouncy balls in the tube.",True,41,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W1,anthropic/claude-sonnet-4,"I need to find the total number of pineapples Liam picked over the three days.
 
 Let me break this down day by day:
@@ -2283,7 +2283,7 @@ Total = Wednesday + Thursday + Friday
 Total = 205 + 97 + 820
 Total = 1,122 pineapples
 
-Therefore, Liam has 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, Liam has 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W2,anthropic/claude-sonnet-4,"I need to find the total number of pineapples Liam picked over the three days.
 
 Given information:
@@ -2299,7 +2299,7 @@ Total = Wednesday + Thursday + Friday
 Total = 205 + 97 + 820
 Total = 1,122 pineapples
 
-Therefore, Liam has 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, Liam has 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W3,anthropic/claude-sonnet-4,"I need to find the total number of circuit boards that Robot-X7 assembled across all three stations.
 
 Let me break this down step by step:
@@ -2316,7 +2316,7 @@ Total circuit boards = Station-A + Station-B + Station-C
 Total = 205 + 97 + 820
 Total = 1,122 circuit boards
 
-Therefore, Robot-X7 has 1,122 circuit boards.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, Robot-X7 has 1,122 circuit boards.",True,1122,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W4,anthropic/claude-sonnet-4,"I need to find the total number of pineapples Liam has by adding the pineapples he picked on both days.
 
 Given information:
@@ -2328,7 +2328,7 @@ Total = n1 + n2
 Total = 205 + 97
 Total = 302
 
-Therefore, Liam has 302 pineapples.",False,1122,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+Therefore, Liam has 302 pineapples.",False,1122,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_045,W6,anthropic/claude-sonnet-4,"I need to find the total number of apricots Kai picked over the three days.
 
 Let me break this down day by day:
@@ -2345,7 +2345,7 @@ Total = Sunday + Monday + Tuesday
 Total = 194 + 212 + 582
 Total = 988 apricots
 
-Therefore, Kai has 988 apricots.",True,988,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, Kai has 988 apricots.",True,988,arithmetic_reasoning,high,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W1,anthropic/claude-sonnet-4,"I need to find how many ounces of bread I can consume with the remaining calories.
 
 Given information:
@@ -2366,7 +2366,7 @@ Ounces per serving = 275 ounces ÷ 5 servings = 55 ounces per serving
 Finally, I can calculate the maximum ounces I can consume:
 Maximum ounces = 2.2 servings × 55 ounces per serving = 121 ounces
 
-Therefore, I can consume a maximum of 121 ounces of bread.",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, I can consume a maximum of 121 ounces of bread.",True,121,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W2,anthropic/claude-sonnet-4,"I need to find how many ounces of bread can be eaten within the remaining daily calorie allowance.
 
 Let me work through this step by step.
@@ -2388,7 +2388,7 @@ Finally, I'll calculate how many ounces can be eaten:
 - Calories per ounce: 8.636 calories/ounce
 - Ounces that can be eaten: 1,045 ÷ 8.636 = 121.05 ounces
 
-Therefore, approximately **121 ounces** of bread can be eaten within the remaining daily calorie allowance.",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, approximately **121 ounces** of bread can be eaten within the remaining daily calorie allowance.",True,121,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W3,anthropic/claude-sonnet-4,"I need to find how many liters can be processed to reach the daily kilowatt target.
 
 Given information:
@@ -2409,7 +2409,7 @@ Liters per cycle = 275 liters ÷ 5 servings = 55 liters per cycle
 Finally, calculate total liters that can be processed:
 Liters = 2.2 cycles × 55 liters per cycle = 121 liters
 
-Therefore, you can process 121 liters to reach your daily kilowatt target.",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, you can process 121 liters to reach your daily kilowatt target.",True,121,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W4,anthropic/claude-sonnet-4,"I need to find how many ounces of bread can be eaten given the calorie constraints.
 
 Given information:
@@ -2435,7 +2435,7 @@ Step 4: Calculate total ounces that can be eaten.
 Ounces that can be eaten = Servings available × Ounces per serving
 Ounces that can be eaten = 2.2 × 55 = 121 ounces
 
-Therefore, you can eat 121 ounces of bread while staying within your daily calorie target.",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, you can eat 121 ounces of bread while staying within your daily calorie target.",True,121,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W6,anthropic/claude-sonnet-4,"I need to find how many ounces of bread can be eaten with the remaining calories.
 
 Given information:
@@ -2455,7 +2455,7 @@ Next, let me find how many calories per ounce:
 Finally, let me calculate how many ounces can be eaten:
 Ounces that can be eaten = 180 calories ÷ 22.5 calories per ounce = 8 ounces
 
-You can eat 8 ounces of bread to stay within your daily calorie target.",True,8,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+You can eat 8 ounces of bread to stay within your daily calorie target.",True,8,arithmetic_reasoning,high,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W1,anthropic/claude-sonnet-4,"I need to find how many empty rooms remain after 3 weeks of admitting new patients.
 
 Let me start by finding the current situation:
@@ -2473,7 +2473,7 @@ Assuming each patient occupies one room, these 840 new patients will fill 840 of
 Empty rooms remaining:
 1,350 - 840 = 510 rooms
 
-Therefore, 510 empty rooms remain in the clinic after 3 weeks.",False,510,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
+Therefore, 510 empty rooms remain in the clinic after 3 weeks.",False,510,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_047,W2,anthropic/claude-sonnet-4,"I need to find the number of unoccupied rooms after 3 weeks.
 
 Given information:
@@ -2499,7 +2499,7 @@ Total occupied rooms = 450 + 840 = 1,290 rooms
 Unoccupied rooms = Total capacity - Total occupied rooms
 Unoccupied rooms = 1,800 - 1,290 = 510 rooms
 
-Therefore, there are **510 unoccupied rooms** in the clinic after 3 weeks.",False,510,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
+Therefore, there are **510 unoccupied rooms** in the clinic after 3 weeks.",False,510,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_047,W3,anthropic/claude-sonnet-4,"I need to find the number of unoccupied server units after 3 weeks of admitting new data streams.
 
 Given information:
@@ -2526,7 +2526,7 @@ Step 5: Calculate unoccupied server units after 3 weeks.
 Unoccupied units = Total capacity - Total occupied
 Unoccupied units = 1800 - 1290 = 510 server units
 
-Therefore, there will be 510 unoccupied server units in the data center after 3 weeks.",False,510,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
+Therefore, there will be 510 unoccupied server units in the data center after 3 weeks.",False,510,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_047,W4,anthropic/claude-sonnet-4,"I need to find the total number of unoccupied rooms in the clinic after 3 weeks.
 
 Let me break this down step by step:
@@ -2550,7 +2550,7 @@ Let me break this down step by step:
 - Total occupied: 1290 rooms
 - Unoccupied rooms: 1800 - 1290 = 510 rooms
 
-Therefore, the total number of unoccupied rooms in the clinic after 3 weeks is **510 rooms**.",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, the total number of unoccupied rooms in the clinic after 3 weeks is **510 rooms**.",True,510,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W6,anthropic/claude-sonnet-4,"I need to find the number of unoccupied rooms after 2 weeks of admissions.
 
 Let me start by finding the initial conditions:
@@ -2572,7 +2572,7 @@ Let me start by finding the initial conditions:
 - New patients admitted: 1,120
 - Unoccupied rooms after 2 weeks: 1,140 - 1,120 = 20 rooms
 
-Therefore, there will be 20 unoccupied rooms in the care facility after 2 weeks.",False,20,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
+Therefore, there will be 20 unoccupied rooms in the care facility after 2 weeks.",False,20,arithmetic_reasoning,high,hard,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_048,W1,anthropic/claude-sonnet-4,"I need to calculate the total cost of Hiroshi's purchases, which includes the more expensive tea and a bagel.
 
 Let me break this down step by step:
@@ -2598,7 +2598,7 @@ Let me break this down step by step:
 - Total cost = Cost of tea + Cost of bagel
 - Total cost = ₺203 + ₺3 = ₺206
 
-Therefore, the total cost of Hiroshi's purchases was ₺206.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, the total cost of Hiroshi's purchases was ₺206.",True,206,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W2,anthropic/claude-sonnet-4,"I need to find the total cost of tea and bagels for one week.
 
 **Step 1: Calculate the expensive tea price**
@@ -2622,7 +2622,7 @@ GSM_048,W2,anthropic/claude-sonnet-4,"I need to find the total cost of tea and b
 - Bagel cost: ₺3
 - **Total cost: ₺203 + ₺3 = ₺206**
 
-The total cost of everything is **₺206**.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+The total cost of everything is **₺206**.",True,206,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W3,anthropic/claude-sonnet-4,"I need to calculate the total cost of the steel and lubricant.
 
 Given information:
@@ -2645,7 +2645,7 @@ Step 3: Calculate the cost of the steel.
 Step 4: Calculate the total cost including lubricant.
 Steel cost + Lubricant cost = ₺203 + ₺3 = ₺206
 
-Everything cost ₺206 in total.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Everything cost ₺206 in total.",True,206,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W4,anthropic/claude-sonnet-4,"I need to find the total cost of everything he bought.
 
 Let me break this down step by step:
@@ -2670,7 +2670,7 @@ Let me break this down step by step:
 - Cost of bagel: ₺3
 - Total cost = ₺203 + ₺3 = ₺206
 
-Therefore, everything cost ₺206.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, everything cost ₺206.",True,206,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W6,anthropic/claude-sonnet-4,"I need to find the total cost of Esteban's purchase: the expensive rice and the cookie.
 
 Let me break this down step by step:
@@ -2695,7 +2695,7 @@ Let me break this down step by step:
 **Step 5: Calculate total cost**
 - Total cost = ₣364 + ₣2 = ₣366
 
-Therefore, everything cost ₣366.",True,366,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, everything cost ₣366.",True,366,arithmetic_reasoning,high,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W1,anthropic/claude-sonnet-4,"I need to find Umar's weekly income by calculating the total number of apartment collections and multiplying by his rate per collection.
 
 Let me break this down step by step:
@@ -2718,7 +2718,7 @@ Weekly collections = 1,980 apartments × 2 visits = 3,960 collections
 **Step 4: Calculate weekly income**
 Weekly income = 3,960 collections × ₣0.45 per collection = ₣1,782
 
-Therefore, Umar's weekly income is ₣1,782.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Umar's weekly income is ₣1,782.",True,1782,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W2,anthropic/claude-sonnet-4,"I need to find Umar's weekly earnings from garbage collection at three apartment complexes.
 
 Let me start by finding the number of apartments in each complex:
@@ -2748,7 +2748,7 @@ Now I'll calculate the weekly earnings:
 - Payment per apartment per week: ₣0.90
 - Weekly earnings: 1,980 × ₣0.90 = ₣1,782
 
-Therefore, Umar makes **₣1,782** in a week.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Umar makes **₣1,782** in a week.",True,1782,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W3,anthropic/claude-sonnet-4,"I need to find Robot-7's weekly earnings by calculating the total workstations and his payment structure.
 
 Let me break this down step by step:
@@ -2773,7 +2773,7 @@ Payment per assembly = ₣0.45 × 1,980 workstations = ₣891
 **Step 5: Calculate weekly earnings**
 Weekly earnings = 6 assemblies × ₣891 per assembly = ₣5,346
 
-Therefore, Robot-7 makes ₣5,346 in a week.",False,1782,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
+Therefore, Robot-7 makes ₣5,346 in a week.",False,1782,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_049,W4,anthropic/claude-sonnet-4,"I need to find how much money Umar makes in a week from collecting garbage.
 
 Let me break this down step by step:
@@ -2796,7 +2796,7 @@ Total apartments = 450 + 450 + 1,080 = 1,980 apartments
 - Payment per collection per apartment = ₣0.45
 - Weekly earnings = 3,960 collections × ₣0.45 = ₣1,782
 
-Therefore, Umar makes **₣1,782** in a week.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Umar makes **₣1,782** in a week.",True,1782,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W6,anthropic/claude-sonnet-4,"I need to find out how much Bodhi makes in a week by calculating the total number of apartments, then the total collections, and finally his payment.
 
 Let me break this down step by step:
@@ -2821,7 +2821,7 @@ Total apartments = 200 + 200 + 640 = 1,040 apartments
 - Payment per collection per apartment = ¥0.3
 - Weekly earnings = 2,080 collections × ¥0.3 = ¥624
 
-Therefore, Bodhi makes ¥624 in a week.",True,624,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Bodhi makes ¥624 in a week.",True,624,arithmetic_reasoning,high,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W1,anthropic/claude-sonnet-4,"I need to find what percentage of the dolphin's body length is represented by the remaining remoras.
 
 Given information:
@@ -2845,7 +2845,7 @@ Finally, I'll calculate the percentage:
 - Percentage = (144 inches / 720 inches) × 100%
 - Percentage = 0.2 × 100% = 20%
 
-Therefore, the total length of the remoras that stayed represents 20% of the dolphin's total body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, the total length of the remoras that stayed represents 20% of the dolphin's total body length.",True,20,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W2,anthropic/claude-sonnet-4,"I need to find what percentage of the dolphin's body length is covered by the remaining remoras.
 
 Given information:
@@ -2869,7 +2869,7 @@ Percentage = (Total length of remaining remoras / Dolphin length) × 100%
 Percentage = (144 inches / 720 inches) × 100%
 Percentage = 0.2 × 100% = 20%
 
-Therefore, the combined length of the remaining remoras is 20% of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, the combined length of the remaining remoras is 20% of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W3,anthropic/claude-sonnet-4,"I need to find what percentage the remaining drones' combined length is of the spacecraft's length.
 
 First, let me find how many drones remain:
@@ -2889,7 +2889,7 @@ Finally, I'll calculate the percentage:
 - Combined drone length ÷ spacecraft length × 100%
 - 144 inches ÷ 720 inches × 100% = 0.2 × 100% = 20%
 
-The combined length of the remaining maintenance drones is 20% of the spacecraft's body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The combined length of the remaining maintenance drones is 20% of the spacecraft's body length.",True,20,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W4,anthropic/claude-sonnet-4,"I need to find what percentage of the dolphin's body length is represented by the combined length of the remoras.
 
 Given information:
@@ -2913,7 +2913,7 @@ Percentage = (192/720) × 100%
 Percentage = 0.2667 × 100%
 Percentage = 26.67%
 
-Therefore, the combined length of the remoras represents 26.67% (or 26⅔%) of the dolphin's body length.",False,20,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, the combined length of the remoras represents 26.67% (or 26⅔%) of the dolphin's body length.",False,20,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_050,W6,anthropic/claude-sonnet-4,"I need to find what percentage of the dolphin's length is covered by the remaining remoras.
 
 Given information:
@@ -2938,7 +2938,7 @@ Finally, I'll calculate the percentage:
 - Percentage = (84 inches ÷ 840 inches) × 100%
 - Percentage = 0.1 × 100% = 10%
 
-Therefore, the combined length of the remaining remoras is 10% of the dolphin's body length.",True,10,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, the combined length of the remaining remoras is 10% of the dolphin's body length.",True,10,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W1,anthropic/claude-sonnet-4,"I need to find how long it takes for the fog to cover one-tenth of the city.
 
 Given information:
@@ -2961,7 +2961,7 @@ Alternatively, I can think of it as:
 8 miles = 4 × (2 miles)
 So the time needed = 4 × 64 minutes = 256 minutes
 
-Therefore, 256 minutes are needed for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 256 minutes are needed for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W2,anthropic/claude-sonnet-4,"I need to find how long it takes for the fog bank to cover one-tenth of the city.
 
 Given information:
@@ -2984,7 +2984,7 @@ Finally, let me calculate the time to cover 8 miles:
 - Time = Distance ÷ Speed = 8 miles ÷ (1/32 miles per minute)
 - Time = 8 × 32 = 256 minutes
 
-Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W3,anthropic/claude-sonnet-4,"I need to find how long it takes for the virus to cover one-tenth of the network.
 
 Given information:
@@ -3003,7 +3003,7 @@ Time = Amount ÷ Rate
 Time = 8 gigabytes ÷ (1/32 gigabytes per minute)
 Time = 8 × 32 = 256 minutes
 
-Therefore, it will take 256 minutes for the computer virus to cover one-tenth of the network.",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, it will take 256 minutes for the computer virus to cover one-tenth of the network.",True,256,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W4,anthropic/claude-sonnet-4,"I need to find how long it takes for the fog bank to cover a tenth of the city.
 
 Given information:
@@ -3022,7 +3022,7 @@ Time = Distance ÷ Rate
 Time = 8 miles ÷ (1/32 miles per minute)
 Time = 8 × 32 = 256 minutes
 
-Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W6,anthropic/claude-sonnet-4,"I need to find how long it takes for the fog to cover 1/5 of the city.
 
 Given information:
@@ -3040,7 +3040,7 @@ Now I can find how long it takes to cover 12 miles:
 If 6 miles takes 107 minutes
 Then 12 miles takes: (12 ÷ 6) × 107 minutes = 2 × 107 = 214 minutes
 
-Therefore, it will take 214 minutes for the fog bank to cover 1/5 of the city.",False,214,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+Therefore, it will take 214 minutes for the fog bank to cover 1/5 of the city.",False,214,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W1,anthropic/claude-sonnet-4,"I need to find two probabilities and then calculate the percentage difference between them.
 
 **Probability 1: Rolling a number greater than 6 on a d12**
@@ -3077,7 +3077,7 @@ Percentage difference = |0.5 - 0.0625|/((0.5 + 0.0625)/2) × 100%
 = 1.5556 × 100%
 = 155.56%
 
-Therefore, the percentage difference between these two probabilities is approximately **155.56%**.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, the percentage difference between these two probabilities is approximately **155.56%**.",False,43.75,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W2,anthropic/claude-sonnet-4,"I need to find the probabilities of both events and then compare them.
 
 **Event A: Rolling a number greater than 6 on a d12**
@@ -3108,7 +3108,7 @@ To express this as ""how much more likely"" (the additional likelihood):
 Additional likelihood = 8 - 1 = 7 times more likely
 As a percentage: 7 × 100% = 700%
 
-Therefore, Event A is **700% more likely** than Event B.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, Event A is **700% more likely** than Event B.",False,43.75,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W3,anthropic/claude-sonnet-4,"I need to find the probability of two events and compare them.
 
 **Event 1: Generating a code greater than 6**
@@ -3141,7 +3141,7 @@ This means Event 1 is 8 times more likely than Event 2.
 To express this as ""how much more likely"" (the additional likelihood):
 8 times as likely = 700% more likely
 
-Therefore, generating a code greater than 6 is **700%** more likely than generating four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, generating a code greater than 6 is **700%** more likely than generating four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W4,anthropic/claude-sonnet-4,"I need to find how much more likely it is for Jamal to roll a number greater than 6 on a d12 than to roll four odd numbers in a row.
 
 Let me calculate each probability:
@@ -3167,7 +3167,7 @@ This means rolling a number greater than 6 is 8 times as likely as rolling four 
 To express this as ""how much more likely"" (the additional likelihood):
 8 times as likely = 700% more likely
 
-Therefore, it is **700% more likely** that Jamal rolls a number greater than 6 than that he rolls four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, it is **700% more likely** that Jamal rolls a number greater than 6 than that he rolls four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W6,anthropic/claude-sonnet-4,"I need to find the probability of rolling a number greater than 1 on a single roll, and compare it to the probability of rolling four odd numbers in a row.
 
 First, let me identify what's on a 4-sided die: the numbers 1, 2, 3, and 4.
@@ -3197,7 +3197,7 @@ To express this as ""how much more likely"" as a percentage:
 12 times as likely means it's 1200% as likely.
 Therefore, it's 1200% - 100% = 1100% more likely.
 
-The answer is 1100%.",False,68.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The answer is 1100%.",False,68.75,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_053,W1,anthropic/claude-sonnet-4,"I need to find how many teaspoons of sugar Kimia used.
 
 Let me define variables and set up the relationships.
@@ -3240,7 +3240,7 @@ Let me also verify the ratios:
 - Sugar to water: 378:126 = 3:1 ✓
 - Water to milk: 126:126 = 1:1 ✓
 
-Therefore, Kimia used 378 teaspoons of sugar.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, Kimia used 378 teaspoons of sugar.",True,378,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W2,anthropic/claude-sonnet-4,"I need to find how many teaspoons of sugar were used given the ratios and total units.
 
 Given information:
@@ -3278,7 +3278,7 @@ Let me verify this satisfies the original ratios:
 - Milk to water: 126:126 = 1:1 ✓
 - Total: 378 + 126 + 126 = 630 ✓
 
-The number of teaspoons of sugar used is 378.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The number of teaspoons of sugar used is 378.",True,378,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W3,anthropic/claude-sonnet-4,"I need to find the amount of copper used and convert it to teaspoons.
 
 Given information:
@@ -3311,7 +3311,7 @@ Standard conversion: 1 teaspoon ≈ 4.2 grams (for most granular substances)
 
 Number of teaspoons = 378 grams ÷ 4.2 grams/teaspoon = 90 teaspoons
 
-Therefore, she consumed 90 teaspoonfuls of copper.",False,378,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+Therefore, she consumed 90 teaspoonfuls of copper.",False,378,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_053,W4,anthropic/claude-sonnet-4,"I need to find the number of teaspoons of sugar Kimia used, given the ratios and total amount.
 
 Given information:
@@ -3339,7 +3339,7 @@ Therefore:
 
 Verification: 378 + 126 + 126 = 630 ✓
 
-The number of teaspoons of sugar Kimia used is 378.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The number of teaspoons of sugar Kimia used is 378.",True,378,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W6,anthropic/claude-sonnet-4,"I need to find how many teaspoons of sugar Ananya used, given the ratios and total amount.
 
 Let me define variables and set up the relationships.
@@ -3376,7 +3376,7 @@ Let me also verify the ratios:
 - Sugar to water ratio: 330:240 = 11:8 = 66:48 ✓
 - Milk to water ratio: 240:240 = 1:1 ✓
 
-Therefore, Ananya used 330 teaspoons of sugar.",True,330,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, Ananya used 330 teaspoons of sugar.",True,330,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W1,anthropic/claude-sonnet-4,"I need to calculate the cost of a 70-minute call with three different pricing tiers.
 
 Let me break down the pricing structure:
@@ -3400,7 +3400,7 @@ The rate is $0.1 for every 2 minutes, so I need to divide by 2:
 **Total cost:**
 $6.00 + $8.00 + $2.00 = $16.00
 
-Therefore, the total cost of a 70-minute call is $16.00.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the total cost of a 70-minute call is $16.00.",True,16,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W2,anthropic/claude-sonnet-4,"I need to calculate the cost for a 70-minute call using the given tiered pricing structure.
 
 Let me break this down by time periods:
@@ -3424,7 +3424,7 @@ Let me break this down by time periods:
 **Total cost:**
 $6.00 + $8.00 + $2.00 = $16.00
 
-Therefore, a 70-minute call would cost $16.00.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, a 70-minute call would cost $16.00.",True,16,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W3,anthropic/claude-sonnet-4,"I need to calculate the cost of a 70-unit processing cycle with changing prices over time.
 
 Let me break down the pricing structure:
@@ -3444,7 +3444,7 @@ Could you clarify:
 1. Are we buying 70 units at a specific point in time, or
 2. Are units being processed continuously, and we pay the current rate for each unit as it's processed?
 
-If it's option 2, what's the processing rate (units per minute)?",False,16,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+If it's option 2, what's the processing rate (units per minute)?",False,16,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_054,W4,anthropic/claude-sonnet-4,"I need to calculate the cost of a 70-minute call with the given pricing structure.
 
 Let me break down the pricing tiers:
@@ -3468,7 +3468,7 @@ Now I'll calculate the cost for each segment of a 70-minute call:
 **Total cost:**
 $6.00 + $8.00 + $2.00 = $16.00
 
-Therefore, a 70-minute call would cost $16.00.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, a 70-minute call would cost $16.00.",True,16,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W6,anthropic/claude-sonnet-4,"I need to calculate the cost of a 94-minute call with different pricing tiers.
 
 Let me break down the pricing structure:
@@ -3492,7 +3492,7 @@ For this segment, the price is ₺0.2 per two minutes.
 **Total cost:**
 ₺9.0 + ₺7.0 + ₺7.0 = ₺23.0
 
-Therefore, a 94-minute call would cost ₺23.0.",True,23,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, a 94-minute call would cost ₺23.0.",True,23,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W1,anthropic/claude-sonnet-4,"I need to find how many almonds Theo cannot place on tables or bowls after consuming some.
 
 Let me start by calculating the relevant quantities:
@@ -3518,7 +3518,7 @@ Let me start by calculating the relevant quantities:
 - Total storage capacity = 408
 - Almonds that cannot be placed = 414 - 408 = 6 almonds
 
-Therefore, Theo will be unable to place 6 almonds on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Theo will be unable to place 6 almonds on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W2,anthropic/claude-sonnet-4,"I need to find how many almonds Theo won't be able to place on tables or bowls.
 
 Let me start by calculating how many almonds can be placed on the tables and bowls.
@@ -3537,7 +3537,7 @@ Let me start by calculating how many almonds can be placed on the tables and bow
 **Almonds that won't fit:**
 - Almonds that can't be placed: 414 - 408 = 6 almonds
 
-Therefore, 6 almonds won't be able to be placed on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 6 almonds won't be able to be placed on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W3,anthropic/claude-sonnet-4,"I need to find how many data chips Alpha-7 can't store after deleting some chips.
 
 Let me start by finding the storage capacity:
@@ -3560,7 +3560,7 @@ Finally, let me find how many can't be stored:
 - Storage capacity: 408
 - Data chips that can't be stored: 414 - 408 = 6 data chips
 
-Therefore, Alpha-7 won't be able to store 6 data chips on the servers or databases.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Alpha-7 won't be able to store 6 data chips on the servers or databases.",True,6,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W4,anthropic/claude-sonnet-4,"I need to find how many almonds Theo won't be able to place on his tables and bowls.
 
 Given information:
@@ -3586,7 +3586,7 @@ Finally, I'll find how many almonds won't fit:
 Almonds that won't fit = Total almonds - Total capacity
 Almonds that won't fit = 621 - 408 = 213 almonds
 
-Therefore, Theo won't be able to place 213 almonds on the tables or bowls.",False,6,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, Theo won't be able to place 213 almonds on the tables or bowls.",False,6,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_055,W6,anthropic/claude-sonnet-4,"I need to find how many cookies Wei can place on tables and plates, then compare that to how many cookies he has left after eating some.
 
 First, let me find the capacity of tables and plates:
@@ -3608,7 +3608,7 @@ Finally, let me find how many cookies won't fit:
 - Total capacity of tables and plates: 380
 - Cookies that won't fit: 474 - 380 = 94 cookies
 
-Therefore, Wei won't be able to place 94 cookies on the tables or plates.",True,94,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Wei won't be able to place 94 cookies on the tables or plates.",True,94,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W1,anthropic/claude-sonnet-4,"I need to track Oscar and Luca's journey and calculate how much time they have left.
 
 Given information:
@@ -3645,7 +3645,7 @@ Let me calculate step by step:
    - Time already used: 194 minutes
    - Time remaining: 263 - 194 = 69 minutes
 
-Therefore, Oscar and Luca can use 69 more minutes to travel from the park to the gym and still arrive on time.",True,69,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Oscar and Luca can use 69 more minutes to travel from the park to the gym and still arrive on time.",True,69,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W2,anthropic/claude-sonnet-4,"I need to find how much time remains to get to the gym after accounting for all the stops and time already spent.
 
 Let me break down the journey step by step:
@@ -3679,7 +3679,7 @@ Let me calculate the time from cinema to park:
 - Time already used: 194 minutes
 - Time remaining: 263 - 194 = 69 minutes
 
-Therefore, they have 69 minutes left to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, they have 69 minutes left to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W3,anthropic/claude-sonnet-4,"I need to track the robots' journey and calculate how much time they have left.
 
 Given information:
@@ -3711,7 +3711,7 @@ Let me calculate step by step:
 
 7) Time remaining to get to charging station: 263 - 194 = 69 minutes
 
-Therefore, Robot-A and Robot-B have 69 minutes left to get to the charging station without being late.",True,69,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Robot-A and Robot-B have 69 minutes left to get to the charging station without being late.",True,69,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W4,anthropic/claude-sonnet-4,"I need to find how much time Oscar and Luca have left to get to the gym without being late.
 
 Given information:
@@ -3729,7 +3729,7 @@ Remaining time = 228 minutes
 
 Therefore, Oscar and Luca have 228 minutes left to get to the gym without being late.
 
-Note: The information about the times to the grocery store (26 minutes) and cinema (27 minutes) appears to be additional context but isn't needed for this calculation, as we only need to know their total available time and how much they've already used.",False,69,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Note: The information about the times to the grocery store (26 minutes) and cinema (27 minutes) appears to be additional context but isn't needed for this calculation, as we only need to know their total available time and how much they've already used.",False,69,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_056,W6,anthropic/claude-sonnet-4,"I need to track Olga and Yuki's time step by step.
 
 Given information:
@@ -3759,7 +3759,7 @@ Total walking time = 24 + 72 = 96 minutes
 Step 5: Calculate remaining time to get to gym.
 Time left for gym = 219 - 96 = 123 minutes
 
-Therefore, Olga and Yuki have 123 minutes left to get to the gym without being late.",True,123,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Olga and Yuki have 123 minutes left to get to the gym without being late.",True,123,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W1,anthropic/claude-sonnet-4,"I need to find the total number of puppies and the total number of spotted puppies, then calculate the percentage.
 
 Let me organize the information:
@@ -3789,7 +3789,7 @@ Now I'll calculate the totals:
 **Percentage of spotted puppies:**
 (672 ÷ 800) × 100% = 0.84 × 100% = 84%
 
-Therefore, 84% of the total puppy population has spots.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 84% of the total puppy population has spots.",True,84,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W2,anthropic/claude-sonnet-4,"I need to find the total number of puppies and the total number of puppies with spots, then calculate the percentage.
 
 Let me organize the given information:
@@ -3824,7 +3824,7 @@ Percentage = (672 ÷ 800) × 100%
 Percentage = 0.84 × 100%
 Percentage = 84%
 
-Therefore, 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W3,anthropic/claude-sonnet-4,"I need to find the percentage of robot units that have sensors across all three factories.
 
 Let me organize the information:
@@ -3865,7 +3865,7 @@ Total robot units:
 
 Percentage with sensors: (672/800) × 100% = 84%
 
-Therefore, 84% of all robot units have sensors.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 84% of all robot units have sensors.",True,84,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W4,anthropic/claude-sonnet-4,"I need to find the percentage of all puppies that have spots.
 
 Let me first calculate the total number of puppies and the total number of puppies with spots.
@@ -3895,7 +3895,7 @@ Percentage = (672 / 800) × 100%
 Percentage = 0.84 × 100%
 Percentage = 84%
 
-Therefore, 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W6,anthropic/claude-sonnet-4,"I need to find the total number of puppies with spots and the total number of puppies, then calculate the percentage.
 
 Let me organize the information:
@@ -3930,7 +3930,7 @@ Total puppies:
 Percentage of puppies with spots:
 (774 ÷ 900) × 100% = 0.86 × 100% = 86%
 
-Therefore, 86% of all the puppies have spots.",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 86% of all the puppies have spots.",True,86,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W1,anthropic/claude-sonnet-4,"I need to calculate Bodhi's total expenditure for school supplies, then apply a 5% discount.
 
 Let me break down each item:
@@ -3954,7 +3954,7 @@ Let me break down each item:
 - Discount amount = ¥300.00 × 0.05 = ¥15.00
 - Final total = ¥300.00 - ¥15.00 = ¥285.00
 
-Therefore, Bodhi's total expenditure after the 5% discount was ¥285.00.",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Bodhi's total expenditure after the 5% discount was ¥285.00.",True,285,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W2,anthropic/claude-sonnet-4,"I need to calculate the total cost of all items and then apply the 5% discount.
 
 Let me calculate the cost of each type of item:
@@ -3980,7 +3980,7 @@ Let me calculate the cost of each type of item:
 **Final amount after discount:**
 ¥300.00 - ¥15.00 = ¥285.00
 
-Therefore, Bodhi spent ¥285.00 on everything.",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Bodhi spent ¥285.00 on everything.",True,285,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W3,anthropic/claude-sonnet-4,"I need to calculate the total cost of all items, then apply the 5% discount.
 
 Let me calculate the cost of each type of item:
@@ -4004,7 +4004,7 @@ Let me calculate the cost of each type of item:
 Discount amount = ¥300.00 × 0.05 = ¥15.00
 Final amount = ¥300.00 - ¥15.00 = ¥285.00
 
-Therefore, Robot-7 paid ¥285.00 for everything.",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Robot-7 paid ¥285.00 for everything.",True,285,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W4,anthropic/claude-sonnet-4,"I need to calculate the total cost of Bodhi's purchases and then apply the 5% discount.
 
 Let me identify what Bodhi bought:
@@ -4036,7 +4036,7 @@ Discount amount = 5% of ¥300 = 0.05 × ¥300 = ¥15
 **Final amount after discount:**
 ¥300 - ¥15 = ¥285
 
-Therefore, Bodhi spent ¥285 on everything after receiving the 5% discount.",False,285,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, Bodhi spent ¥285 on everything after receiving the 5% discount.",False,285,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_058,W6,anthropic/claude-sonnet-4,"I need to calculate Viktor's total purchases and then apply the 25% discount.
 
 Let me find the cost of each item:
@@ -4062,7 +4062,7 @@ $50.00 + $58.00 + $20.00 + $32.00 = $160.00
 **Final amount Viktor spent:**
 $160.00 - $40.00 = $120.00
 
-Therefore, Viktor spent $120.00 on all his school supplies after receiving the 25% discount.",False,120,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, Viktor spent $120.00 on all his school supplies after receiving the 25% discount.",False,120,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_059,W1,anthropic/claude-sonnet-4,"I need to find the number of forks in the package Zahra purchased.
 
 Let me define the variable:
@@ -4098,7 +4098,7 @@ Let me verify:
 - Used for tasting: 11 forks
 - Remaining: 66 - 11 = 55 forks ✓
 
-Therefore, the package Zahra purchased contained 29 forks.",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the package Zahra purchased contained 29 forks.",True,29,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W2,anthropic/claude-sonnet-4,"I need to find how many forks were in Zahra's package by tracking all the forks that came in and went out.
 
 Let me define variables:
@@ -4134,7 +4134,7 @@ Let me verify:
 - Used for sampling: 11 forks
 - Remaining: 66 - 11 = 55 forks ✓
 
-Therefore, Zahra's package contained 29 forks.",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, Zahra's package contained 29 forks.",True,29,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W3,anthropic/claude-sonnet-4,"I need to find how many screwdrivers were in the package that Marcus bought.
 
 Let me define variables and track all the screwdrivers:
@@ -4171,7 +4171,7 @@ Let me verify this answer:
 - Used 11 screwdrivers: 38 - 11 = 27
 - Technicians brought 28 screwdrivers: 27 + 28 = 55 ✓
 
-Therefore, Marcus bought a package containing 29 screwdrivers.",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, Marcus bought a package containing 29 screwdrivers.",True,29,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W4,anthropic/claude-sonnet-4,"I need to find how many forks were in the package that Zahra originally bought.
 
 Let me define the variable:
@@ -4198,7 +4198,7 @@ Let me verify:
 - Guests' packages: 2 × 14 = 28 forks
 - Total: 18 + 9 + 28 = 55 forks ✓
 
-Therefore, Zahra's original package contained 18 forks.",False,29,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+Therefore, Zahra's original package contained 18 forks.",False,29,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_059,W6,anthropic/claude-sonnet-4,"I need to find how many forks were in the package that Tara bought.
 
 Let me define the variable:
@@ -4236,7 +4236,7 @@ Let me verify:
 - Used for sampling: 19 forks
 - Final amount: 66 - 19 = 47 forks ✓
 
-Therefore, the package that Tara bought contained 40 forks.",True,40,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the package that Tara bought contained 40 forks.",True,40,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,W1,anthropic/claude-sonnet-4,"I need to find the total number of students departing early, which includes soccer players, choir members/dancers, and cheerleaders.
 
 Let me break this down step by step.
@@ -4268,7 +4268,7 @@ Let me break this down step by step.
 - Cheerleaders: 9
 - Total departing: 25 + 13 + 9 = 47 students
 
-Therefore, 47 students are departing early for the competition.",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, 47 students are departing early for the competition.",False,46,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W2,anthropic/claude-sonnet-4,"I need to find how many students are leaving early to the competition.
 
 Let me work through this step-by-step:
@@ -4303,7 +4303,7 @@ Students leaving early for competition include:
 
 Total students leaving early = 25 + 13 + 9 = 47 students
 
-Therefore, 47 students are leaving early to the competition.",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, 47 students are leaving early to the competition.",False,46,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W3,anthropic/claude-sonnet-4,"I need to find how many workers are leaving early for the conference.
 
 Let me break this down step by step.
@@ -4337,7 +4337,7 @@ Finally, let me add the supervisors:
 
 Total people leaving early: 38 workers + 6 supervisors = 44 people
 
-Therefore, 44 people are leaving early to the conference.",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, 44 people are leaving early to the conference.",False,46,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W4,anthropic/claude-sonnet-4,"I need to find how many students are leaving early for the competition.
 
 Let me work through this step by step:
@@ -4372,7 +4372,7 @@ Since the problem mentions ""3 groups"" and we have choir members ""or"" dancers
 - 3 groups × 3 cheerleaders = 9 cheerleaders
 
 **Final Answer:**
-Total leaving early = 63 students + 9 cheerleaders = **72 students**",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Total leaving early = 63 students + 9 cheerleaders = **72 students**",False,46,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W6,anthropic/claude-sonnet-4,"I need to find how many students are leaving early for the tournament.
 
 Let me break this down step by step.
@@ -4408,7 +4408,7 @@ Let me break this down step by step.
 - Cheerleaders: 9
 - Total leaving early: 54 + 9 = 63 people
 
-Therefore, 63 students are leaving early for the tournament.",False,62,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, 63 students are leaving early for the tournament.",False,62,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_061,W1,anthropic/claude-sonnet-4,"I need to find the daily pizza consumption for each family member, then calculate the total for one month.
 
 Let me start by finding each person's daily consumption:
@@ -4432,7 +4432,7 @@ Daily family total:
 For one month, I'll use 30 days as the standard:
 Monthly total = 14 pizzas/day × 30 days = 420 pizzas
 
-Therefore, this family consumes 420 pizzas over the course of one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, this family consumes 420 pizzas over the course of one month.",True,420,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W2,anthropic/claude-sonnet-4,"I need to find the total pizza consumption for the family over one month.
 
 Given information:
@@ -4454,7 +4454,7 @@ Family daily total = Father + Wife + Daughter = 4 + 6 + 4 = 14 pizzas per day
 Step 4: Calculate the family's monthly consumption.
 Monthly consumption = 14 pizzas per day × 30 days = 420 pizzas
 
-Therefore, the family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W3,anthropic/claude-sonnet-4,"I need to find the total number of metal sheets processed by all three machines in one shift (production cycle).
 
 Let me break this down step by step:
@@ -4476,7 +4476,7 @@ Auxiliary machine: 4 metal sheets
 
 Total = 4 + 6 + 4 = 14 metal sheets per production cycle
 
-Therefore, this factory unit processes 14 metal sheets in one production cycle.",False,420,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+Therefore, this factory unit processes 14 metal sheets in one production cycle.",False,420,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_061,W4,anthropic/claude-sonnet-4,"I need to find how many pizzas this family eats in one month.
 
 Given information:
@@ -4500,7 +4500,7 @@ Step 4: Find total family consumption per month.
 Assuming 30 days in a month:
 Total per month = 14 pizzas/day × 30 days = 420 pizzas
 
-Therefore, this family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, this family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W6,anthropic/claude-sonnet-4,"I need to find how many burritos this family eats in one month.
 
 Let me start by finding how many burritos each person eats per day.
@@ -4519,7 +4519,7 @@ Total burritos per day for the family:
 For one month, I'll use 30 days as the standard month length:
 21 burritos per day × 30 days = 630 burritos per month
 
-Therefore, this family eats 630 burritos in one month.",True,630,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, this family eats 630 burritos in one month.",True,630,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,W1,anthropic/claude-sonnet-4,"I need to calculate the total cost Mrs. Lee will pay for the townhouse and compare it to her budget.
 
 Given information:
@@ -4547,7 +4547,7 @@ Step 5: Calculate how much the total cost exceeds the budget.
 Amount exceeding budget = Total cost - Budget limit
 Amount exceeding budget = $552,000 - $440,000 = $112,000
 
-Therefore, the total cost will exceed Mrs. Lee's budget by $112,000.",True,112000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the total cost will exceed Mrs. Lee's budget by $112,000.",True,112000,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,W2,anthropic/claude-sonnet-4,"I need to find the total cost of purchasing this property and compare it to Mrs. Lee's budget.
 
 Given information:
@@ -4575,7 +4575,7 @@ Step 5: Find how much more the total cost is than the budget.
 Difference = Total cost - Budget limit
 Difference = $570,000 - $440,000 = $130,000
 
-Therefore, the total cost will be $130,000 more than Mrs. Lee's budget.",False,112000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, the total cost will be $130,000 more than Mrs. Lee's budget.",False,112000,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_062,W3,anthropic/claude-sonnet-4,"I need to calculate the total cost of the energy module after the discount and additional fees, then compare it to Captain Zara's credit limit.
 
 Given information:
@@ -4601,7 +4601,7 @@ Step 4: Calculate how much more the total payment is than Captain Zara's credit 
 Difference = Total payment - Credit limit
 Difference = $570,000 - $440,000 = $130,000
 
-Therefore, the total payment will be $130,000 more than Captain Zara's credit limit.",False,112000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, the total payment will be $130,000 more than Captain Zara's credit limit.",False,112000,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_062,W4,anthropic/claude-sonnet-4,"I need to find how much more the total cost will be than Lee's budget.
 
 Let me break down the costs step by step:
@@ -4630,7 +4630,7 @@ Total cost = $480,000 + $18,000 + $72,000 = $570,000
 Difference = Total cost - Lee's budget
 Difference = $570,000 - $440,000 = $130,000
 
-Therefore, the total cost will be $130,000 more than Lee's budget of $440,000.",False,112000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, the total cost will be $130,000 more than Lee's budget of $440,000.",False,112000,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_062,W6,anthropic/claude-sonnet-4,"I need to calculate the total cost Mrs. Lee would pay for the townhouse and compare it to her budget.
 
 Given information:
@@ -4658,7 +4658,7 @@ Step 5: Compare to Mrs. Lee's budget.
 Amount over budget = Total cost - Budget
 Amount over budget = $460,800 - $370,000 = $90,800
 
-Therefore, the total cost will be $90,800 more than Mrs. Lee's budget.",False,65600,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, the total cost will be $90,800 more than Mrs. Lee's budget.",False,65600,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_063,W1,anthropic/claude-sonnet-4,"I need to calculate Prof. Rodriguez's net proceeds from the villa sale by subtracting all costs and fees from the sale price.
 
 Given information:
@@ -4687,7 +4687,7 @@ Net proceeds calculation:
 Net proceeds = Sale price - Total costs
 Net proceeds = $220,000 - $203,800 = $16,200
 
-Therefore, Prof. Rodriguez received $16,200 as net proceeds from the villa sale.",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Prof. Rodriguez received $16,200 as net proceeds from the villa sale.",True,16200,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W2,anthropic/claude-sonnet-4,"I need to calculate the net proceeds from selling the villa by subtracting all costs from the selling price.
 
 Given information:
@@ -4716,7 +4716,7 @@ Let me calculate each cost:
 Net proceeds = Selling price - Total costs
 Net proceeds = $220,000 - $203,800 = $16,200
 
-Therefore, the net proceeds from selling the villa is **$16,200**.",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the net proceeds from selling the villa is **$16,200**.",True,16200,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W3,anthropic/claude-sonnet-4,"I need to calculate Captain Vega's net returns by finding his total costs and subtracting them from the sale price.
 
 Given information:
@@ -4744,7 +4744,7 @@ Total costs:
 Net returns:
 Sale price - Total costs = $220,000 - $203,800 = $16,200
 
-Captain Vega's net returns from transferring the spacecraft is $16,200.",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Captain Vega's net returns from transferring the spacecraft is $16,200.",True,16200,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W4,anthropic/claude-sonnet-4,"I need to find Rodriguez's net proceeds from selling his villa by calculating all the costs he paid and subtracting them from the selling price.
 
 Given information:
@@ -4773,7 +4773,7 @@ Agent fee = 2% × $220,000 = 0.02 × $220,000 = $4,400
 Net proceeds = Selling price - Total costs
 Net proceeds = $220,000 - $203,800 = $16,200
 
-Therefore, Rodriguez's net proceeds from selling the villa is $16,200.",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Rodriguez's net proceeds from selling the villa is $16,200.",True,16200,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W6,anthropic/claude-sonnet-4,"I need to calculate Mr. Davis's net proceeds by subtracting all his costs from the selling price.
 
 Given information:
@@ -4799,7 +4799,7 @@ Total costs:
 Net proceeds = Selling price - Total costs
 Net proceeds = $790,000 - $543,700 = $246,300
 
-Therefore, Mr. Davis's net proceeds from selling the condo is $246,300.",True,246300,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Mr. Davis's net proceeds from selling the condo is $246,300.",True,246300,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W1,anthropic/claude-sonnet-4,"I need to find what percent of all children in the park are girls.
 
 Given information:
@@ -4818,7 +4818,7 @@ Percentage of girls = (Number of girls / Total children) × 100%
 Percentage of girls = (39 / 52) × 100%
 Percentage of girls = 0.75 × 100% = 75%
 
-Therefore, 75% of all children in the park are girls.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 75% of all children in the park are girls.",True,75,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W2,anthropic/claude-sonnet-4,"I need to find what percentage of the kids in the park are girls.
 
 Given information:
@@ -4838,7 +4838,7 @@ Percentage of girls = (39 ÷ 52) × 100%
 Percentage of girls = 0.75 × 100%
 Percentage of girls = 75%
 
-Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W3,anthropic/claude-sonnet-4,"I need to find what percentage of the total vehicles are electric cars.
 
 Given information:
@@ -4857,7 +4857,7 @@ Now I can calculate the percentage of electric cars:
 - Percentage of electric cars = (39 ÷ 52) × 100%
 - Percentage of electric cars = 0.75 × 100% = 75%
 
-Therefore, 75% of the vehicles in the charging station are electric cars.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 75% of the vehicles in the charging station are electric cars.",True,75,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W4,anthropic/claude-sonnet-4,"I need to find what percentage of the kids in the park are girls, given that there are 39 girls and the number of boys is 1/3 of some amount.
 
 Let me clarify the problem first. The phrase ""1/3 the number of boys"" is ambiguous, but looking at the context, I believe it means there are 1/3 as many boys as girls.
@@ -4875,7 +4875,7 @@ Percentage of kids that are girls = (Number of girls / Total number of kids) × 
 Percentage of kids that are girls = (39 / 52) × 100%
 Percentage of kids that are girls = 0.75 × 100% = 75%
 
-Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W6,anthropic/claude-sonnet-4,"I need to find the percentage of kids in the park that are girls.
 
 Given information:
@@ -4894,7 +4894,7 @@ To find the percentage of girls:
 - Percentage of girls = (number of girls / total kids) × 100%
 - Percentage of girls = (6/8) × 100% = 75%
 
-Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W5,anthropic/claude-sonnet-4,"I need to find the total number of students in the group.
 
 Let me identify what I know:
@@ -4923,7 +4923,7 @@ Let me verify this makes sense with the given information:
 - Of these 164: 150 bake and 14 hike ✓
 - 14 hikers = 2 × 7 football players ✓
 
-Therefore, there are 190 students in the group.",True,190,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 190 students in the group.",True,190,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W5,anthropic/claude-sonnet-4,"I need to find how many oranges there are per square yard.
 
 Given information:
@@ -4937,7 +4937,7 @@ Oranges per square yard = Total oranges ÷ Total area
 Oranges per square yard = 2,820 ÷ 30
 Oranges per square yard = 94
 
-Therefore, there are 94 oranges per square yard.",True,94,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 94 oranges per square yard.",True,94,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W5,anthropic/claude-sonnet-4,"I need to find the total number of balls the juggler has.
 
 Let me work backwards from the given information:
@@ -4960,7 +4960,7 @@ Let me verify this answer:
 - Tennis balls: 640 × (1/8) = 80 ✓
 - White tennis balls: 80 × (1/10) = 8 ✓
 
-Therefore, the juggler can juggle 640 balls in total.",True,640,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, the juggler can juggle 640 balls in total.",True,640,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W5,anthropic/claude-sonnet-4,"I need to find how many stuffed animals are in the bin.
 
 Let me identify what I know:
@@ -4981,7 +4981,7 @@ Let me check if the numbers add up correctly:
 
 The problem directly states that the bin of stuffed animals has 45 stuffed animals inside.
 
-Therefore, there are 45 stuffed animals in the bin.",True,45,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 45 stuffed animals in the bin.",True,45,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W5,anthropic/claude-sonnet-4,"I need to find how many pineapples Liam picked on Wednesday.
 
 Let me define variables:
@@ -5011,7 +5011,7 @@ Let me verify:
 - Friday: 4 × 205 = 820 pineapples
 - Total: 205 + 97 + 820 = 1122 ✓
 
-Therefore, Liam picked 205 pineapples on Wednesday.",True,205,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, Liam picked 205 pineapples on Wednesday.",True,205,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W5,anthropic/claude-sonnet-4,"I need to find the total weight of the bag in ounces.
 
 Given information:
@@ -5035,7 +5035,7 @@ Ounces per serving = 121 ÷ 2.2 = 55 ounces per serving
 Finally, since the entire bag contains 5 servings:
 Total ounces in bag = 55 × 5 = 275 ounces
 
-Therefore, the entire bag contains 275 ounces.",True,275,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, the entire bag contains 275 ounces.",True,275,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W5,anthropic/claude-sonnet-4,"I need to find the total capacity of the clinic in rooms.
 
 Let me define variables:
@@ -5068,7 +5068,7 @@ Let me verify this answer:
 - Initially unoccupied: (3/4) × 1800 = 1350 rooms
 - After 840 new patients: 1350 - 840 = 510 unoccupied rooms ✓
 
-Therefore, the total capacity of the clinic is 1800 rooms.",True,1800,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, the total capacity of the clinic is 1800 rooms.",True,1800,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W5,anthropic/claude-sonnet-4,"I need to find the cost per kilogram of Hiroshi's normal brand of tea.
 
 Let me define variables:
@@ -5099,7 +5099,7 @@ Let me verify:
 - Cost of bagel: ₺3
 - Total: 203 + 3 = ₺206 ✓
 
-Therefore, the cost per kilogram of the normal brand of tea is ₺20.",True,20,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, the cost per kilogram of the normal brand of tea is ₺20.",True,20,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W5,anthropic/claude-sonnet-4,"I need to find the number of apartments in each of the first 2 complexes.
 
 Let me define variables:
@@ -5140,7 +5140,7 @@ Weekly earnings check:
 - Complex 3: 1080 × 2 × ₣0.45 = ₣972
 - Total: ₣405 + ₣405 + ₣972 = ₣1782 ✓
 
-Therefore, each of the first 2 complexes has 450 apartments.",True,450,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, each of the first 2 complexes has 450 apartments.",True,450,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W5,anthropic/claude-sonnet-4,"I need to find the original number of remoras attached to the dolphin.
 
 Let me start by identifying what I know:
@@ -5176,7 +5176,7 @@ Let me verify this answer:
 - Length of remaining remoras: 12 × 12 = 144 inches
 - 20% of dolphin's length: 0.20 × 720 = 144 inches ✓
 
-Therefore, there were originally 16 remoras attached to the dolphin.",True,16,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, there were originally 16 remoras attached to the dolphin.",True,16,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W5,anthropic/claude-sonnet-4,"I need to find the total width of the city from the oceanfront to the inland edge.
 
 Let me start by understanding what information I have:
@@ -5199,7 +5199,7 @@ Let me verify this makes sense:
 - Time to cover entire city: 80 miles ÷ (1/32 miles per minute) = 80 × 32 = 2,560 minutes
 - Time to cover 1/10 of city: 2,560 ÷ 10 = 256 minutes ✓
 
-Therefore, the city is 80 miles across from the oceanfront to the opposite inland edge.",True,80,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the city is 80 miles across from the oceanfront to the opposite inland edge.",True,80,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_052,W5,anthropic/claude-sonnet-4,"I need to find how many odd numbers are on a d12 die.
 
 Let me define variables:
@@ -5316,7 +5316,7 @@ k = 0.5 × 16 = 8
 
 So rolling >6 would need to be 8 times as likely as four odds in a row, not 1.4375 times.
 
-Given the constraint that this should work out to a reasonable answer, there are 6 odd numbers on a d12 die.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Given the constraint that this should work out to a reasonable answer, there are 6 odd numbers on a d12 die.",True,6,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W5,anthropic/claude-sonnet-4,"I need to find the total amounts of sugar, water, and milk that Kimia used.
 
 Given information:
@@ -5351,7 +5351,7 @@ Therefore, the total amounts she used are:
 - Water: 126 cups  
 - Milk: 126 tablespoons
 
-Total: 378 + 126 + 126 = 630 units (teaspoons of sugar + cups of water + tablespoons of milk)",True,630,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Total: 378 + 126 + 126 = 630 units (teaspoons of sugar + cups of water + tablespoons of milk)",True,630,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W5,anthropic/claude-sonnet-4,"I need to find when the price drops to $0.1 per two minutes.
 
 Let me define the pricing structure:
@@ -5390,7 +5390,7 @@ Let me verify this answer:
 - Minutes 31-70: 40 × $0.05 = $2
 - Total: $6 + $8 + $2 = $16 ✓
 
-Therefore, the price drops to $0.1 per two minutes after 30 minutes from the start of the call.",True,30,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the price drops to $0.1 per two minutes after 30 minutes from the start of the call.",True,30,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W5,anthropic/claude-sonnet-4,"I need to work backwards from the final state to find how many almonds Theo originally had.
 
 Let me define variables and set up the problem:
@@ -5426,7 +5426,7 @@ Let me verify this answer:
 - Almonds that fit in tables and bowls: 408
 - Leftover almonds: 414 - 408 = 6 ✓
 
-Therefore, Theo originally had 621 almonds.",True,621,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Theo originally had 621 almonds.",True,621,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W5,anthropic/claude-sonnet-4,"I need to find the total time Oscar and Luca had to walk to the gym together.
 
 Let me work through this step by step.
@@ -5458,7 +5458,7 @@ Let me verify this makes sense with the given information:
 - They have 69 minutes left after reaching some point
 - Total time available = 35 + 69 + (walking time already spent)
 
-Since the problem asks for the total minutes they had to walk to gym together, and assuming the gym is at the park (the final destination mentioned), the answer is 159 minutes.",False,104,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Since the problem asks for the total minutes they had to walk to gym together, and assuming the gym is at the park (the final destination mentioned), the answer is 159 minutes.",False,104,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_057,W5,anthropic/claude-sonnet-4,"I need to find how many dogs Sophia has, given that 84% of all puppies have spots.
 
 Let me define variables:
@@ -5502,7 +5502,7 @@ Let me verify:
 - Total spotted puppies: 17 + 15 + 10(64) = 32 + 640 = 672
 - Percentage with spots: 672/800 = 0.84 = 84% ✓
 
-Therefore, Sophia has 64 dogs.",True,64,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Sophia has 64 dogs.",True,64,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W5,anthropic/claude-sonnet-4,"I need to find the cost of the rim of bond paper that Bodhi bought.
 
 Let me start by understanding what happened:
@@ -5524,7 +5524,7 @@ Total cost of known items = ¥44 + ¥170 + ¥66 = ¥280
 
 Therefore, the cost of the rim of bond paper = ¥300 - ¥280 = ¥20
 
-The rim of bond paper cost ¥20.",True,20,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The rim of bond paper cost ¥20.",True,20,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W5,anthropic/claude-sonnet-4,"I need to track all the forks Zahra acquired and used.
 
 Starting forks: 0 (she was out of plastic forks)
@@ -5540,7 +5540,7 @@ Forks used:
 Total calculation:
 0 + 29 + 9 + 28 - 11 = 55 forks
 
-When Zahra went to set the table, she had 55 forks in total.",True,55,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+When Zahra went to set the table, she had 55 forks in total.",True,55,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,W5,anthropic/claude-sonnet-4,"I need to find the total number of students in Ms. Johnson's class.
 
 Let me define variables:
@@ -5577,7 +5577,7 @@ Let me verify this answer:
 - Cheerleaders: 9
 - Total going: 20 + 17 + 9 = 46 ✓
 
-Therefore, there are 100 students in Ms. Johnson's class.",True,100,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, there are 100 students in Ms. Johnson's class.",True,100,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W5,anthropic/claude-sonnet-4,"I need to find how many pizzas the wife eats per day.
 
 Let me define variables:
@@ -5626,7 +5626,7 @@ Let me verify this answer:
 - Total per day: 4 + 6 + 4 = 14 pizzas
 - Total per month: 14 × 30 = 420 pizzas ✓
 
-Therefore, the wife eats 6 pizzas per day.",True,6,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the wife eats 6 pizzas per day.",True,6,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,W5,anthropic/claude-sonnet-4,"I need to find Mrs. Lee's budget by calculating the total cost she would pay and then subtracting $112,000.
 
 Let me break down the costs step by step.
@@ -5650,7 +5650,7 @@ Total cost = Budget + $112,000
 $570,000 = Budget + $112,000
 Budget = $570,000 - $112,000 = $458,000
 
-Therefore, Mrs. Lee's budget is $458,000.",True,458000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Mrs. Lee's budget is $458,000.",True,458000,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W5,anthropic/claude-sonnet-4,"I need to find the selling price of the villa by working backwards from the net proceeds and all the costs paid.
 
 Let me define the selling price as x.
@@ -5686,7 +5686,7 @@ Let me verify this answer:
 - Total costs: $4,400 + $4,400 + $180,000 + $15,000 = $203,800
 - Net proceeds: $220,000 - $203,800 = $16,200 ✓
 
-Therefore, the selling price of the villa was $220,000.",True,220000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, the selling price of the villa was $220,000.",True,220000,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W5,anthropic/claude-sonnet-4,"I need to find the number of boys in the park.
 
 Given information:
@@ -5707,7 +5707,7 @@ Number of boys = 52 - 39 = 13
 Therefore, there are 13 boys in the park.
 
 To verify: 13 boys + 39 girls = 52 total kids
-Girls percentage = 39/52 = 0.75 = 75% ✓",False,13,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+Girls percentage = 39/52 = 0.75 = 75% ✓",False,13,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_041,canonical,anthropic/claude-sonnet-4,"I need to find how many students like to bake.
 
 Let me start by identifying what I know:
@@ -5728,7 +5728,7 @@ Finally, I'll find how many students like to bake:
 Students who bake = Students who bake or hike - Students who hike
 Students who bake = 164 - 14 = 150 students
 
-Therefore, 150 students like to bake.",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 150 students like to bake.",True,150,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,canonical,anthropic/claude-sonnet-4,"I need to find how many oranges Pavel can harvest within a year.
 
 Given information:
@@ -5744,7 +5744,7 @@ Total oranges = 2,820 oranges
 
 Since Pavel can harvest every 12 months, and we're asking about harvesting within a year (which is 12 months), he can harvest once during that time period.
 
-Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Pavel can harvest 2,820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,canonical,anthropic/claude-sonnet-4,"I need to find the number of white tennis balls by working through this step-by-step.
 
 Given information:
@@ -5758,7 +5758,7 @@ Tennis balls = 1/8 × 640 = 640 ÷ 8 = 80 tennis balls
 Step 2: Find the number of white tennis balls.
 White tennis balls = 1/10 × 80 = 80 ÷ 10 = 8 white tennis balls
 
-Therefore, there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are 8 white tennis balls.",True,8,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,canonical,anthropic/claude-sonnet-4,"I need to find how many bouncy balls are in the tube by subtracting the other toys from the total.
 
 Let me add up the toys Mei already had:
@@ -5773,7 +5773,7 @@ Total toys after buying bouncy balls: 204
 Toys she already had: 145
 Number of bouncy balls: 204 - 145 = 59
 
-Therefore, the tube contained 59 bouncy balls.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, the tube contained 59 bouncy balls.",True,59,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,canonical,anthropic/claude-sonnet-4,"I need to find the total number of pineapples Liam picked over the three days.
 
 Let me break this down day by day:
@@ -5792,7 +5792,7 @@ Total = Wednesday + Thursday + Friday
 Total = 205 + 97 + 820
 Total = 1,122 pineapples
 
-Therefore, Liam has 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, Liam has 1,122 pineapples in total.",True,1122,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,canonical,anthropic/claude-sonnet-4,"I need to find how many ounces of bread I can eat given my remaining calorie budget.
 
 Given information:
@@ -5813,7 +5813,7 @@ Now I'll find calories per ounce:
 Finally, I'll calculate how many ounces I can eat:
 1,045 remaining calories ÷ 8.636 calories per ounce = 121.0 ounces
 
-Therefore, I can eat approximately 121 ounces of bread while staying within my daily calorie target.",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, I can eat approximately 121 ounces of bread while staying within my daily calorie target.",True,121,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,canonical,anthropic/claude-sonnet-4,"I need to find the number of unoccupied rooms after 3 weeks of admitting new patients.
 
 Given information:
@@ -5840,7 +5840,7 @@ Step 5: Calculate unoccupied rooms after 3 weeks.
 Unoccupied rooms = Total capacity - Total occupied
 Unoccupied rooms = 1,800 - 1,290 = 510 rooms
 
-Therefore, after 3 weeks, there will be 510 unoccupied rooms in the clinic.",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, after 3 weeks, there will be 510 unoccupied rooms in the clinic.",True,510,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,canonical,anthropic/claude-sonnet-4,"I need to find the total cost of Hiroshi's purchases.
 
 Let me break this down step by step:
@@ -5864,7 +5864,7 @@ Let me break this down step by step:
 - Bagel costs ₺3
 - Total cost = ₺203 + ₺3 = ₺206
 
-Therefore, everything cost ₺206.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, everything cost ₺206.",True,206,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,canonical,anthropic/claude-sonnet-4,"I need to find how much Umar makes in a week by calculating the total apartments, collections per week, and his payment rate.
 
 Let me break this down step by step:
@@ -5888,7 +5888,7 @@ Total apartments = 450 + 450 + 1,080 = 1,980 apartments
 - Payment rate = ₣0.45 per collection per apartment
 - Weekly earnings = 3,960 collections × ₣0.45 = ₣1,782
 
-Therefore, Umar makes ₣1,782 in a week.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Umar makes ₣1,782 in a week.",True,1782,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,canonical,anthropic/claude-sonnet-4,"I need to find what percentage the remaining remoras' combined length is of the dolphin's body length.
 
 Given information:
@@ -5911,7 +5911,7 @@ Finally, I'll find what percentage the remoras' length is of the dolphin's lengt
 - Percentage = (144 inches ÷ 720 inches) × 100%
 - Percentage = 0.2 × 100% = 20%
 
-Therefore, the combined length of the remaining remoras is 20% of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, the combined length of the remaining remoras is 20% of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,canonical,anthropic/claude-sonnet-4,"I need to find how long it takes for the fog to cover one-tenth of the city.
 
 Given information:
@@ -5937,7 +5937,7 @@ Alternatively, I can solve this using the given rate directly:
 - The fog covers 2 miles in 64 minutes
 - To cover 8 miles: (8 miles ÷ 2 miles) × 64 minutes = 4 × 64 = 256 minutes
 
-Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_052,canonical,anthropic/claude-sonnet-4,"I need to find the probability of rolling a number greater than 6 on a d12, and compare it to the probability of rolling four odd numbers in a row.
 
 First, let me find the probability of rolling a number greater than 6 on a d12.
@@ -5968,7 +5968,7 @@ This means rolling a number greater than 6 is 8 times as likely as rolling four 
 To express this as ""how much more likely"" as a percentage:
 - If event A is 8 times as likely as event B, then event A is (8-1) × 100% = 700% more likely than event B.
 
-Therefore, rolling a number greater than 6 is 700% more likely than rolling four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+Therefore, rolling a number greater than 6 is 700% more likely than rolling four odd numbers in a row.",False,43.75,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_053,canonical,anthropic/claude-sonnet-4,"I need to find how many teaspoons of sugar Kimia used, given the ratios and total amount.
 
 Let me define variables and set up the relationships.
@@ -5999,7 +5999,7 @@ Let me verify:
 - Milk : Water = 126 : 126 = 1 : 1 ✓
 - Total = 378 + 126 + 126 = 630 ✓
 
-The number of teaspoons of sugar Kimia used is 378.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The number of teaspoons of sugar Kimia used is 378.",True,378,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,canonical,anthropic/claude-sonnet-4,"I need to calculate the cost of a 70-minute call with three different pricing tiers.
 
 Let me break down the pricing structure:
@@ -6023,7 +6023,7 @@ The rate is $0.1 per 2 minutes, so I need to find how many 2-minute blocks are i
 **Total cost:**
 $6.00 + $8.00 + $2.00 = $16.00
 
-Therefore, a 70-minute call would cost $16.00.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, a 70-minute call would cost $16.00.",True,16,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,canonical,anthropic/claude-sonnet-4,"I need to find how many almonds Theo can't place on tables or bowls after eating some of them.
 
 First, let me find the capacity of tables and bowls:
@@ -6045,7 +6045,7 @@ Finally, I'll compare remaining almonds to capacity:
 - Total capacity: 408
 - Almonds that can't be placed: 414 - 408 = 6 almonds
 
-Therefore, 6 almonds won't be able to fit on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 6 almonds won't be able to fit on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,canonical,anthropic/claude-sonnet-4,"I need to track Oscar and Luca's time step by step.
 
 Given information:
@@ -6076,7 +6076,7 @@ Total time used = 35 (coffee) + 26 (to corner) + 27 (to cinema) + 106 (to park)
 Step 4: Calculate remaining time to get to gym.
 Remaining time = 263 - 194 = 69 minutes
 
-Therefore, Oscar and Luca have 69 minutes left to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Oscar and Luca have 69 minutes left to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,canonical,anthropic/claude-sonnet-4,"I need to find the total number of puppies with spots and divide by the total number of puppies.
 
 Let me identify the information given:
@@ -6112,7 +6112,7 @@ Total number of puppies:
 Percentage with spots:
 (672 ÷ 800) × 100% = 0.84 × 100% = 84%
 
-Therefore, 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,canonical,anthropic/claude-sonnet-4,"I need to calculate the total cost of Bodhi's school supplies and then apply the 5% discount.
 
 Let me calculate the cost of each item:
@@ -6136,7 +6136,7 @@ Let me calculate the cost of each item:
 Discount amount = ¥300.00 × 0.05 = ¥15.00
 Final amount = ¥300.00 - ¥15.00 = ¥285.00
 
-Therefore, Bodhi spent ¥285.00 on everything after receiving the 5% discount.",False,285,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, Bodhi spent ¥285.00 on everything after receiving the 5% discount.",False,285,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_059,canonical,anthropic/claude-sonnet-4,"I need to find how many forks were in the package that Zahra bought.
 
 Let me define the variable:
@@ -6172,7 +6172,7 @@ Let me verify:
 - Used for sampling: 11 forks
 - Remaining: 66 - 11 = 55 forks ✓
 
-Therefore, the package that Zahra bought contained 29 forks.",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the package that Zahra bought contained 29 forks.",True,29,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,canonical,anthropic/claude-sonnet-4,"I need to find how many students are leaving early for the competition.
 
 Let me break this down step by step:
@@ -6208,7 +6208,7 @@ Let me break this down step by step:
 - Cheerleaders: 6
 - Total leaving early: 38 + 6 = 44 students
 
-Therefore, 44 students are leaving early to the competition.",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, 44 students are leaving early to the competition.",False,46,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_061,canonical,anthropic/claude-sonnet-4,"I need to find how many pizzas this family eats in one month.
 
 First, let me find how many pizzas each person eats per day:
@@ -6230,7 +6230,7 @@ Total pizzas eaten by the family per day:
 For one month (assuming 30 days):
 14 pizzas per day × 30 days = 420 pizzas
 
-Therefore, this family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, this family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,canonical,anthropic/claude-sonnet-4,"I need to calculate the total cost Mrs. Lee would pay for the townhouse after the discount, then compare it to her budget.
 
 Given information:
@@ -6258,7 +6258,7 @@ Step 4: Compare to Mrs. Lee's budget.
 Amount over budget = Total cost - Budget
 Amount over budget = $570,000 - $440,000 = $130,000
 
-Therefore, the total cost will be $130,000 more than Mrs. Lee's budget.",False,112000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, the total cost will be $130,000 more than Mrs. Lee's budget.",False,112000,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_063,canonical,anthropic/claude-sonnet-4,"I need to calculate Prof. Rodriguez's net proceeds by subtracting all costs from the selling price.
 
 Given information:
@@ -6286,7 +6286,7 @@ Total costs:
 Net proceeds:
 Selling price - Total costs = $220,000 - $203,800 = $16,200
 
-Therefore, Prof. Rodriguez's net proceeds from selling the villa is $16,200.",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, Prof. Rodriguez's net proceeds from selling the villa is $16,200.",True,16200,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,canonical,anthropic/claude-sonnet-4,"I need to find what percentage of the kids are girls.
 
 Given information:
@@ -6304,4 +6304,4 @@ Now I can calculate the percentage of girls:
 - Percentage of girls = (39 ÷ 52) × 100%
 - Percentage of girls = 0.75 × 100% = 75%
 
-Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False

@@ -1,4 +1,4 @@
-problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,variant_type_normalized,included,exclusion_reason,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
 GSM_001,canonical,google/gemini-2.5-flash,"Let's break down the cost of the call:
 
 * **First 20 minutes:**
@@ -14,7 +14,7 @@ GSM_001,canonical,google/gemini-2.5-flash,"Let's break down the cost of the call
 * **Total cost of the call:**
     * Sum of the cost for the first 20 minutes and the remaining minutes: $18.00 + $33.00 = $51.00
 
-Therefore, an 86-minute call would cost **$51.00**.",True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Therefore, an 86-minute call would cost **$51.00**.",True,51,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_002,canonical,google/gemini-2.5-flash,"**1. Find the number of boys:**
 
 * Girls = 18
@@ -27,7 +27,7 @@ GSM_002,canonical,google/gemini-2.5-flash,"**1. Find the number of boys:**
 * Total kids = 18 + 12
 * Total kids = 30
 
-**Answer: There are 30 kids in the park.**",True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer: There are 30 kids in the park.**",True,30,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_003,canonical,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 **1. Calculate the number of yellow cards:**
@@ -45,7 +45,7 @@ GSM_003,canonical,google/gemini-2.5-flash,"Here's how to solve this problem step
 * Total cards = Purple + Yellow + Blue
 * Total cards = 30 + 45 + 75 = 150
 
-**Answer:** There are a total of 150 cards of all mentioned colors.",True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**Answer:** There are a total of 150 cards of all mentioned colors.",True,150,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_004,canonical,google/gemini-2.5-flash,"Here's how to calculate the painter's annual earnings:
 
 **1. Days worked per month:**
@@ -61,7 +61,7 @@ GSM_004,canonical,google/gemini-2.5-flash,"Here's how to calculate the painter's
 * He gets paid £150 every day.
 * Total earnings = 144 days * £150/day = £21,600
 
-**Answer: The painter earns £21,600 if he works for a year.**",True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer: The painter earns £21,600 if he works for a year.**",True,21600,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_005,canonical,google/gemini-2.5-flash,"Let's break down Liam's learning time step-by-step:
 
 **1. Daily Class Time:**
@@ -101,7 +101,7 @@ T = 3528 minutes
 * Total hours = 3528 / 60
 * Total hours = 58.8 hours
 
-Liam spends **58.8 hours** a week learning.",False,54,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
+Liam spends **58.8 hours** a week learning.",False,54,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_006,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Initial Cost:**
@@ -123,7 +123,7 @@ GSM_006,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * **After 30% increase:** €560 * (1 + 0.30) = €560 * 1.30 = €728
 * **After 25% decrease:** €728 * (1 - 0.25) = €728 * 0.75 = €546
 
-**The final value of all Kayla's shares is €546.**",True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**The final value of all Kayla's shares is €546.**",True,546,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_007,canonical,google/gemini-2.5-flash,"Let's break down the calculation step-by-step:
 
 * **Total rental duration:** From 1 PM to 5 PM is 4 hours.
@@ -137,7 +137,7 @@ Now let's calculate the cost:
 
 **Total cost:** $10 (first hour) + $20 (second hour) = **$30**
 
-Kai paid $30.",True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Kai paid $30.",True,30,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_008,canonical,google/gemini-2.5-flash,"Let's break this down day by day:
 
 * **Day 0 (Initial Infection):** 16 people are infected.
@@ -169,7 +169,7 @@ Where:
 Total Infected = 16 * (3 + 1)^3
 Total Infected = 16 * (4)^3
 Total Infected = 16 * 64
-Total Infected = 1024",True,1024,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Total Infected = 1024",True,1024,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_009,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Eggs eaten in the first 84 days:**
@@ -185,7 +185,7 @@ GSM_009,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 * There are 12 eggs in a dozen.
 * 588 eggs / 12 eggs/dozen = 49 dozens
 
-**Answer:** Nia will need 49 dozens of eggs for 108 days.",False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+**Answer:** Nia will need 49 dozens of eggs for 108 days.",False,49,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_010,canonical,google/gemini-2.5-flash,"Let's break down the popcorn popping in each 30-second interval:
 
 *   **Interval 1 (first 30 seconds):** 60 kernels pop.
@@ -205,7 +205,7 @@ GSM_010,canonical,google/gemini-2.5-flash,"Let's break down the popcorn popping 
 Now, let's add up all the kernels that popped:
 $60 + 240 + 360 + 180 + 45 = 885 \text{ kernels}$
 
-Zahra has 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Zahra has 885 pieces of popcorn to eat.",True,885,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_011,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate water used for giant cubes:**
@@ -223,7 +223,7 @@ GSM_011,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 **5. Calculate water remaining:**
 * 328 grams (total) - 242 grams (used) = 86 grams
 
-**Answer:** Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** Pavel has 86 grams of water left.",True,86,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_012,canonical,google/gemini-2.5-flash,"**1. Plants on ledges initially:**
 * Camila has 52 window ledges * 7 potted plants/ledge = 364 potted plants.
 
@@ -239,7 +239,7 @@ GSM_012,canonical,google/gemini-2.5-flash,"**1. Plants on ledges initially:**
 **5. Remaining plants:**
 * 393 total plants - 312 plants given away = 81 potted plants.
 
-Camila will remain with **81** potted plants.",True,81,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Camila will remain with **81** potted plants.",True,81,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_013,canonical,google/gemini-2.5-flash,"Let $d_b$ be the distance Mia walks on the beach, and $d_s$ be the distance Mia walks on the sidewalk.
 We are given that $d_b = 12$ kilometers and $d_s = 12$ kilometers.
 Let $r_b$ be Mia's speed on the beach, and $r_s$ be Mia's speed on the sidewalk.
@@ -261,7 +261,7 @@ Solving for $t_s$, we get $t_s = \frac{12 \times 5}{2} = 30$ minutes.
 The total time for her to complete the entire 24-kilometer walk is $t_b + t_s$.
 Total time = $60 + 30 = 90$ minutes.
 
-The final answer is $\boxed{90}$.",True,90,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{90}$.",True,90,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_014,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Total cleaning time needed:**
@@ -284,7 +284,7 @@ GSM_014,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * (420 minutes / 600 minutes) * 100
 * 0.7 * 100 = 70%
 
-**Therefore, on average, the maintenance worker spends 70% of their day cleaning floors.**",True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Therefore, on average, the maintenance worker spends 70% of their day cleaning floors.**",True,70,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_015,canonical,google/gemini-2.5-flash,"Let's first determine the rounded price for each type of plant.
 Given prices:
 Tulips: €2.25 per bundle
@@ -323,7 +323,7 @@ Total earnings = €24 + €145 + €185
 Total earnings = €169 + €185
 Total earnings = €354
 
-The final answer is $\boxed{354}$.",True,354,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{354}$.",True,354,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_016,canonical,google/gemini-2.5-flash,"Let's break down the weight of each item the farmer buys:
 
 *   **Wheat:** 6 boxes * 4 pounds/box = 24 pounds
@@ -345,7 +345,7 @@ The farmer has three trucks. To find out how many trips are needed with three tr
 
 The farmer needs 5 trips to transport all the items.
 
-The final answer is $\boxed{5}$",True,5,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{5}$",True,5,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_017,canonical,google/gemini-2.5-flash,"Let C_F, P_F be the number of boxes of cookies and orange pies Liam sold on Friday, respectively.
 Let C_S, P_S be the number of boxes of cookies and orange pies Liam sold on Saturday, respectively.
 Let C_U, P_U be the number of boxes of cookies and orange pies Liam sold on Sunday, respectively.
@@ -422,7 +422,7 @@ Average daily earning = Total_Earnings / Number of days
 Average daily earning = 2766 / 3
 Average daily earning = ¥922
 
-The final answer is $\boxed{922}$.",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{922}$.",True,922,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,canonical,google/gemini-2.5-flash,"Let's break down the problem step-by-step to find out how many points Emma is sure to get.
 
 **1. Calculate the number of questions in each subject:**
@@ -451,7 +451,7 @@ Total correct questions = 21
 
 Therefore, Emma is sure to get 21 points.
 
-The final answer is $\boxed{21}$.",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{21}$.",True,21,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,canonical,google/gemini-2.5-flash,"Let's break down Tariq's TV watching for each day.
 
 *   **Friday:** 3-hour episode = 3 hours
@@ -491,7 +491,7 @@ x = 3
 
 Tariq watched 3 45-minute episodes on Sunday.
 
-The final answer is $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_020,canonical,google/gemini-2.5-flash,"Here's how we can solve this problem step-by-step:
 
 1. **Total eggs:** Zahra hid 10 dozen eggs, which is 10 * 12 = 120 eggs.
@@ -513,7 +513,7 @@ GSM_020,canonical,google/gemini-2.5-flash,"Here's how we can solve this problem 
 
 8. **Eggs still hidden:** Subtract the found eggs from the total eggs: 120 - 96 = 24 eggs.
 
-**Therefore, there are 24 eggs still hidden in the yard.**",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, there are 24 eggs still hidden in the yard.**",True,24,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_001,W1,google/gemini-2.5-flash,"Let's break down the cost of the 86-minute call:
 
 * **First 20 minutes:** The rate is $0.9 per minute.
@@ -528,7 +528,7 @@ GSM_001,W1,google/gemini-2.5-flash,"Let's break down the cost of the 86-minute c
    Total Cost = Cost of first 20 minutes + Cost of remaining minutes
    Total Cost = $18.00 + $33.00 = $51.00
 
-The total cost of an 86-minute call is **$51.00**.",True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+The total cost of an 86-minute call is **$51.00**.",True,51,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_002,W1,google/gemini-2.5-flash,"**1. Find the number of boys:**
 
 * The number of girls is 18.
@@ -542,7 +542,7 @@ GSM_002,W1,google/gemini-2.5-flash,"**1. Find the number of boys:**
 * Total kids = 18 + 12
 * Total kids = 30
 
-**Therefore, there are a total of 30 kids in the park.**",True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Therefore, there are a total of 30 kids in the park.**",True,30,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_003,W1,google/gemini-2.5-flash,"**1. Yellow Cards:**
 * 50% of 30 purple cards = 0.50 * 30 = 15 yellow cards
 * Total yellow cards = 30 (purple) + 15 (50% extra) = 45 yellow cards
@@ -555,7 +555,7 @@ GSM_003,W1,google/gemini-2.5-flash,"**1. Yellow Cards:**
 * Total cards = Purple + Yellow + Blue
 * Total cards = 30 + 45 + 75 = **150 cards**
 
-",True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+",True,150,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_004,W1,google/gemini-2.5-flash,"Here's how to calculate the painter's total earnings over a year:
 
 1.  **Days worked per month:**
@@ -567,7 +567,7 @@ GSM_004,W1,google/gemini-2.5-flash,"Here's how to calculate the painter's total 
 3.  **Earnings per year:**
     *   £1800/month * 12 months/year = £21,600
 
-**Therefore, the painter's total earnings over the course of a year are £21,600.**",True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Therefore, the painter's total earnings over the course of a year are £21,600.**",True,21600,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_005,W1,google/gemini-2.5-flash,"Let's break down Liam's learning schedule step by step:
 
 **1. Daily Class Minutes:**
@@ -595,7 +595,7 @@ GSM_005,W1,google/gemini-2.5-flash,"Let's break down Liam's learning schedule st
 
 * 3240 minutes / 60 minutes/hour = 54 hours
 
-**Answer:** Liam spends a total of **54 hours** per week learning.",True,54,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Answer:** Liam spends a total of **54 hours** per week learning.",True,54,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_006,W1,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 **1. Initial Cost:**
@@ -622,7 +622,7 @@ Total value of Kayla's shares at the end of the second year = 10 shares * $54.60
 *   **After Year 2 (25% decrease):** Multiply by (1 - 0.25) = 0.75
     Value after Year 2 = $728 * 0.75 = $546
 
-The total value of Kayla's shares at the end of the second year is **$546**.",True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+The total value of Kayla's shares at the end of the second year is **$546**.",True,546,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_007,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 * **Total rental time:** 5 PM - 1 PM = 4 hours
@@ -636,7 +636,7 @@ Now let's calculate the cost of the paid hours:
 
 **Total amount Kai paid:** $10 + $20 = $30
 
-Therefore, Kai paid a total of **$30**.",True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Therefore, Kai paid a total of **$30**.",True,30,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_008,W1,google/gemini-2.5-flash,"Let's break this down day by day.
 
 *   **Day 0 (Initial infection):** 16 people are infected.
@@ -663,7 +663,7 @@ Notice that the number of infected people multiplies by 4 each day:
 *   Day 2: $64 \times 4 = 256$
 *   Day 3: $256 \times 4 = 1024$
 
-This is because an infected person (1) plus the 3 new people they infect makes 4 people in total who are now infected (or were already infected).",False,1024,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+This is because an infected person (1) plus the 3 new people they infect makes 4 people in total who are now infected (or were already infected).",False,1024,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_009,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate eggs consumed in the first period:**
@@ -687,7 +687,7 @@ GSM_009,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Eggs per dozen: 12
 * Total dozens = 588 eggs / 12 eggs/dozen = 49 dozens
 
-**Answer:** Nia needs 49 dozens of eggs in total over these 108 days.",False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+**Answer:** Nia needs 49 dozens of eggs in total over these 108 days.",False,49,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_010,W1,google/gemini-2.5-flash,"Let's break down the popping process step-by-step:
 
 * **Initial 30 seconds:** 60 kernels pop.
@@ -703,7 +703,7 @@ GSM_010,W1,google/gemini-2.5-flash,"Let's break down the popping process step-by
 Now, let's add up all the popped kernels:
 $60 + 240 + 360 + 180 + 45 = 885$
 
-Zahra ends up with a total of **885** popcorn pieces.",True,885,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Zahra ends up with a total of **885** popcorn pieces.",True,885,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_011,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate water used for giant cubes:**
@@ -721,7 +721,7 @@ GSM_011,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 **5. Calculate water remaining:**
 * 328 grams (total) - 242 grams (used) = 86 grams
 
-**Answer: 86 grams of water remain unused.**",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer: 86 grams of water remain unused.**",True,86,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_012,W1,google/gemini-2.5-flash,"Let's break this problem down step-by-step:
 
 **1. Initial number of plants:**
@@ -742,7 +742,7 @@ GSM_012,W1,google/gemini-2.5-flash,"Let's break this problem down step-by-step:
 * Plants remaining = Total plants - Plants given away
 * Plants remaining = 393 plants - 312 plants = 81 plants
 
-**Answer:** Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** Camila will be left with 81 potted plants.",True,81,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_013,W1,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 **1. Calculate speed on the beach:**
@@ -767,7 +767,7 @@ GSM_013,W1,google/gemini-2.5-flash,"Here's how to solve this problem step-by-ste
 * Total time = Time on beach + Time on sidewalk
 * Total time = 60 minutes + 30 minutes = 90 minutes
 
-**Answer:** It takes Mia a total of 90 minutes to finish her full 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+**Answer:** It takes Mia a total of 90 minutes to finish her full 24-kilometer walk.",False,90,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_014,W1,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 **1. Calculate total cleaning time needed:**
@@ -798,7 +798,7 @@ GSM_014,W1,google/gemini-2.5-flash,"Here's how to solve this problem step-by-ste
 * Percentage = (Daily cleaning hours / Total daily work hours) * 100
 * Percentage = (7 / 10) * 100 = 70%
 
-**Answer:** On average, 70% of the worker's daily hours is used for cleaning floors.",True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** On average, 70% of the worker's daily hours is used for cleaning floors.",True,70,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_015,W1,google/gemini-2.5-flash,"Here's how to calculate Viktor's total revenue:
 
 **1. Calculate the rounded prices:**
@@ -817,7 +817,7 @@ GSM_015,W1,google/gemini-2.5-flash,"Here's how to calculate Viktor's total reven
 
 Û24.00 + Û145.00 + Û185.00 = **Û354.00**
 
-**Therefore, Viktor's total revenue for the day is Û354.00.**",False,354,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+**Therefore, Viktor's total revenue for the day is Û354.00.**",False,354,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_016,W1,google/gemini-2.5-flash,"Let's break down the weight of each item the farmer buys:
 
 *   **Wheat:** 6 boxes * 4 pounds/box = 24 pounds
@@ -837,7 +837,7 @@ The farmer has three trucks, but the question asks for the total number of trips
 
 Therefore, 15 trips are needed to move all the items.
 
-The final answer is $\boxed{15}$",False,5,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+The final answer is $\boxed{15}$",False,5,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_017,W1,google/gemini-2.5-flash,"Let's break down Liam's sales day by day.
 
 **Friday Sales:**
@@ -875,7 +875,7 @@ GSM_017,W1,google/gemini-2.5-flash,"Let's break down Liam's sales day by day.
 *   Average Daily Earnings = Total Earnings / Number of Days
 *   Average Daily Earnings = £2766 / 3 = £922
 
-Liam's average daily earnings were £922.",True,922,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Liam's average daily earnings were £922.",True,922,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_018,W1,google/gemini-2.5-flash,"Let's break down the quiz and Emma's expected score step-by-step:
 
 **1. Total number of questions:**
@@ -915,7 +915,7 @@ Total score = 2 + 3 + 8 + 8 = 21 points
 
 Emma is certain to score 21 points.
 
-The final answer is $\boxed{21}$.",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{21}$.",True,21,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_019,W1,google/gemini-2.5-flash,"Let's break down Tariq's TV watching for each day:
 
 *   **Friday:** 3 hours
@@ -949,7 +949,7 @@ x = 3
 
 Tariq watched 3 45-minute episodes on Sunday.
 
-The final answer is $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{3}$",True,3,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_020,W1,google/gemini-2.5-flash,"First, let's break down how many eggs each person found:
 
 * **Total hidden eggs:** Zahra hid 10 dozen eggs. Since 1 dozen = 12 eggs, she hid 10 * 12 = 120 eggs.
@@ -975,9 +975,9 @@ Finally, to find how many of the hidden eggs remain in the yard, subtract the to
 Remaining eggs = Total hidden eggs - Total eggs found
 Remaining eggs = 120 - 96 = 24 eggs.
 
-There are **24** of the hidden eggs remaining in the yard.",True,24,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
-GSM_001,W2,google/gemini-2.5-flash,51.0,True,51,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_002,W2,google/gemini-2.5-flash,30,True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+There are **24** of the hidden eggs remaining in the yard.",True,24,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
+GSM_001,W2,google/gemini-2.5-flash,51.0,True,51,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_002,W2,google/gemini-2.5-flash,30,True,30,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_003,W2,google/gemini-2.5-flash,"Here's how to calculate the total number of cards:
 
 1.  **Purple cards:** 30
@@ -992,41 +992,41 @@ GSM_003,W2,google/gemini-2.5-flash,"Here's how to calculate the total number of 
 4.  **Total cards:**
     *   Total = Purple + Yellow + Blue = 30 + 45 + 75 = 150
 
-**Therefore, the total number of cards is 150.**",True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_004,W2,google/gemini-2.5-flash,21600,True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_005,W2,google/gemini-2.5-flash,48,False,54,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
-GSM_006,W2,google/gemini-2.5-flash,546,True,546,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_007,W2,google/gemini-2.5-flash,30,True,30,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_008,W2,google/gemini-2.5-flash,256,False,1024,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_009,W2,google/gemini-2.5-flash,47,False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_010,W2,google/gemini-2.5-flash,1825,False,885,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_011,W2,google/gemini-2.5-flash,50,False,86,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_012,W2,google/gemini-2.5-flash,375,False,81,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_013,W2,google/gemini-2.5-flash,90,True,90,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_014,W2,google/gemini-2.5-flash,70,True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_015,W2,google/gemini-2.5-flash,386,False,354,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_016,W2,google/gemini-2.5-flash,7,False,5,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_017,W2,google/gemini-2.5-flash,488,False,922,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_018,W2,google/gemini-2.5-flash,35,False,21,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_019,W2,google/gemini-2.5-flash,12,False,3,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_020,W2,google/gemini-2.5-flash,75,False,24,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_001,W3,google/gemini-2.5-flash,58,False,51,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_002,W3,google/gemini-2.5-flash,48,False,30,arithmetic_reasoning,high,easy,False,False,state_machine,incorrect,False
-GSM_003,W3,google/gemini-2.5-flash,150,True,150,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_004,W3,google/gemini-2.5-flash,108000,False,21600,arithmetic_reasoning,high,easy,False,False,state_machine,incorrect,False
-GSM_005,W3,google/gemini-2.5-flash,54,True,54,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_006,W3,google/gemini-2.5-flash,4914,False,546,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_007,W3,google/gemini-2.5-flash,70,False,30,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
-GSM_008,W3,google/gemini-2.5-flash,432,False,1024,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_009,W3,google/gemini-2.5-flash,62,False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_010,W3,google/gemini-2.5-flash,390,False,885,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_011,W3,google/gemini-2.5-flash,131,False,86,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_012,W3,google/gemini-2.5-flash,3427,False,81,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_013,W3,google/gemini-2.5-flash,120,False,90,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_014,W3,google/gemini-2.5-flash,70,True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_015,W3,google/gemini-2.5-flash,437,False,354,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_016,W3,google/gemini-2.5-flash,22,False,5,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_017,W3,google/gemini-2.5-flash,2729,False,922,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+**Therefore, the total number of cards is 150.**",True,150,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_004,W2,google/gemini-2.5-flash,21600,True,21600,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_005,W2,google/gemini-2.5-flash,48,False,54,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_006,W2,google/gemini-2.5-flash,546,True,546,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_007,W2,google/gemini-2.5-flash,30,True,30,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_008,W2,google/gemini-2.5-flash,256,False,1024,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_009,W2,google/gemini-2.5-flash,47,False,49,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_010,W2,google/gemini-2.5-flash,1825,False,885,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_011,W2,google/gemini-2.5-flash,50,False,86,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_012,W2,google/gemini-2.5-flash,375,False,81,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_013,W2,google/gemini-2.5-flash,90,True,90,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_014,W2,google/gemini-2.5-flash,70,True,70,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
+GSM_015,W2,google/gemini-2.5-flash,386,False,354,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_016,W2,google/gemini-2.5-flash,7,False,5,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_017,W2,google/gemini-2.5-flash,488,False,922,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_018,W2,google/gemini-2.5-flash,35,False,21,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_019,W2,google/gemini-2.5-flash,12,False,3,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_020,W2,google/gemini-2.5-flash,75,False,24,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_001,W3,google/gemini-2.5-flash,58,False,51,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_002,W3,google/gemini-2.5-flash,48,False,30,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_003,W3,google/gemini-2.5-flash,150,True,150,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_004,W3,google/gemini-2.5-flash,108000,False,21600,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_005,W3,google/gemini-2.5-flash,54,True,54,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_006,W3,google/gemini-2.5-flash,4914,False,546,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_007,W3,google/gemini-2.5-flash,70,False,30,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_008,W3,google/gemini-2.5-flash,432,False,1024,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_009,W3,google/gemini-2.5-flash,62,False,49,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_010,W3,google/gemini-2.5-flash,390,False,885,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_011,W3,google/gemini-2.5-flash,131,False,86,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_012,W3,google/gemini-2.5-flash,3427,False,81,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_013,W3,google/gemini-2.5-flash,120,False,90,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_014,W3,google/gemini-2.5-flash,70,True,70,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_015,W3,google/gemini-2.5-flash,437,False,354,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_016,W3,google/gemini-2.5-flash,22,False,5,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_017,W3,google/gemini-2.5-flash,2729,False,922,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_018,W3,google/gemini-2.5-flash,"Let's break down the problem to calculate Jordan's certain score.
 
 **1. Calculate the number of questions in each category:**
@@ -1050,13 +1050,13 @@ GSM_018,W3,google/gemini-2.5-flash,"Let's break down the problem to calculate Jo
 Add up the correctly answered questions from each category:
 2 (biology) + 3 (geometry) + 8 (economics) + 8 (geography) = 21 questions
 
-**Answer:** Jordan is certain to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
-GSM_019,W3,google/gemini-2.5-flash,7,False,3,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_020,W3,google/gemini-2.5-flash,28,False,24,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_001,W4,google/gemini-2.5-flash,54,False,51,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_002,W4,google/gemini-2.5-flash,30,True,30,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_003,W4,google/gemini-2.5-flash,165,False,150,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_004,W4,google/gemini-2.5-flash,21600,True,21600,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer:** Jordan is certain to score 21 points in total.",True,21,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
+GSM_019,W3,google/gemini-2.5-flash,7,False,3,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_020,W3,google/gemini-2.5-flash,28,False,24,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_001,W4,google/gemini-2.5-flash,54,False,51,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_002,W4,google/gemini-2.5-flash,30,True,30,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_003,W4,google/gemini-2.5-flash,165,False,150,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_004,W4,google/gemini-2.5-flash,21600,True,21600,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_005,W4,google/gemini-2.5-flash,"Let's break down the calculation step-by-step:
 
 Given values:
@@ -1094,42 +1094,42 @@ n = 6
 
 Therefore, total_hr = 54.
 
-The final answer is $\boxed{54}$.",True,54,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_006,W4,google/gemini-2.5-flash,409.5,False,546,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_007,W4,google/gemini-2.5-flash,50,False,30,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
-GSM_008,W4,google/gemini-2.5-flash,640,False,1024,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_009,W4,google/gemini-2.5-flash,79,False,49,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_010,W4,google/gemini-2.5-flash,960,False,885,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_011,W4,google/gemini-2.5-flash,67,False,86,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_012,W4,google/gemini-2.5-flash,520,False,81,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_013,W4,google/gemini-2.5-flash,90,True,90,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_014,W4,google/gemini-2.5-flash,70,True,70,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_015,W4,google/gemini-2.5-flash,288,False,354,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_016,W4,google/gemini-2.5-flash,3,False,5,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_017,W4,google/gemini-2.5-flash,254,False,922,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_018,W4,google/gemini-2.5-flash,16.8,False,21,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_019,W4,google/gemini-2.5-flash,10,False,3,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_020,W4,google/gemini-2.5-flash,1,False,24,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_001,W5,google/gemini-2.5-flash,70,False,86,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_002,W5,google/gemini-2.5-flash,18,True,18,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_003,W5,google/gemini-2.5-flash,75,True,75,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_004,W5,google/gemini-2.5-flash,£150,True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
-GSM_005,W5,google/gemini-2.5-flash,5,False,7,arithmetic_reasoning,high,hard,False,False,state_machine,incorrect,False
-GSM_006,W5,google/gemini-2.5-flash,€60,False,56,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
-GSM_007,W5,google/gemini-2.5-flash,4,True,4,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
-GSM_008,W5,google/gemini-2.5-flash,16,True,16,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_009,W5,google/gemini-2.5-flash,5,True,5,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
-GSM_010,W5,google/gemini-2.5-flash,20,False,60,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_011,W5,google/gemini-2.5-flash,327,False,328,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_012,W5,google/gemini-2.5-flash,8,False,7,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_013,W5,google/gemini-2.5-flash,3 km,False,24,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
-GSM_014,W5,google/gemini-2.5-flash,210,True,210,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
-GSM_015,W5,google/gemini-2.5-flash,42,False,37,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_016,W5,google/gemini-2.5-flash,20,False,43,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_017,W5,google/gemini-2.5-flash,¥32,False,21,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_018,W5,google/gemini-2.5-flash,60,False,80,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_019,W5,google/gemini-2.5-flash,31,False,22,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
-GSM_020,W5,google/gemini-2.5-flash,14,False,10,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+The final answer is $\boxed{54}$.",True,54,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_006,W4,google/gemini-2.5-flash,409.5,False,546,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_007,W4,google/gemini-2.5-flash,50,False,30,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_008,W4,google/gemini-2.5-flash,640,False,1024,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_009,W4,google/gemini-2.5-flash,79,False,49,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_010,W4,google/gemini-2.5-flash,960,False,885,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_011,W4,google/gemini-2.5-flash,67,False,86,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_012,W4,google/gemini-2.5-flash,520,False,81,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_013,W4,google/gemini-2.5-flash,90,True,90,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_014,W4,google/gemini-2.5-flash,70,True,70,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
+GSM_015,W4,google/gemini-2.5-flash,288,False,354,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_016,W4,google/gemini-2.5-flash,3,False,5,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_017,W4,google/gemini-2.5-flash,254,False,922,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_018,W4,google/gemini-2.5-flash,16.8,False,21,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_019,W4,google/gemini-2.5-flash,10,False,3,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_020,W4,google/gemini-2.5-flash,1,False,24,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_001,W5,google/gemini-2.5-flash,70,False,86,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_002,W5,google/gemini-2.5-flash,18,True,18,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_003,W5,google/gemini-2.5-flash,75,True,75,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_004,W5,google/gemini-2.5-flash,£150,True,150,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_005,W5,google/gemini-2.5-flash,5,False,7,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_006,W5,google/gemini-2.5-flash,€60,False,56,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_007,W5,google/gemini-2.5-flash,4,True,4,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_008,W5,google/gemini-2.5-flash,16,True,16,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_009,W5,google/gemini-2.5-flash,5,True,5,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_010,W5,google/gemini-2.5-flash,20,False,60,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_011,W5,google/gemini-2.5-flash,327,False,328,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_012,W5,google/gemini-2.5-flash,8,False,7,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_013,W5,google/gemini-2.5-flash,3 km,False,24,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_014,W5,google/gemini-2.5-flash,210,True,210,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
+GSM_015,W5,google/gemini-2.5-flash,42,False,37,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_016,W5,google/gemini-2.5-flash,20,False,43,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_017,W5,google/gemini-2.5-flash,¥32,False,21,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_018,W5,google/gemini-2.5-flash,60,False,80,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_019,W5,google/gemini-2.5-flash,31,False,22,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
+GSM_020,W5,google/gemini-2.5-flash,14,False,10,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_041,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Find students who like hiking:**
@@ -1147,7 +1147,7 @@ GSM_041,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Students who like baking = Total students - (students who like painting, football, or hiking)
 * Students who like baking = 190 - 40 = 150
 
-**Answer: 150 students like to bake.**",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer: 150 students like to bake.**",True,150,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W2,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 1. **Students who like to hike:**
@@ -1163,7 +1163,7 @@ GSM_041,W2,google/gemini-2.5-flash,"Here's how to solve the problem:
    Since we know the number of students who like to hike (14), and we know the total number of students who like to bake *or* hike (150), we can find those who only like to bake:
    150 - 14 (hike) = 136 students
 
-**Therefore, 136 students like to bake.**",False,150,arithmetic_reasoning,high,easy,False,False,state_machine,incorrect,False
+**Therefore, 136 students like to bake.**",False,150,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_041,W3,google/gemini-2.5-flash,"Let W be the number of workers who like welding.
 Let F be the number of workers who like to operate forklifts.
 Let A be the number of workers who like assembly.
@@ -1201,7 +1201,7 @@ Assembly = 150
 Total = 19 + 7 + 14 + 150 = 26 + 164 = 190.
 This matches the total number of workers given.
 
-The final answer is $\boxed{150}$",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{150}$",True,150,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W4,google/gemini-2.5-flash,"Let n1 be the total number of students.
 Let n2 be the number of students who like to paint.
 Let n3 be the number of students who like to play football.
@@ -1241,7 +1241,7 @@ X = 150
 
 The number of students who like to bake is 150.
 
-The final answer is $\boxed{150}$",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{150}$",True,150,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W6,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 1. **Start with the knowns:**
@@ -1255,7 +1255,7 @@ GSM_041,W6,google/gemini-2.5-flash,"Here's how to solve this problem:
 3. **Find the number of students who like to paint:**
    * Subtract the known hobby groups from the total number of students: 54 - 35 (dance) - 2 (badminton) - 4 (bake) = 13.
 
-Therefore, 13 students like to paint.",True,13,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, 13 students like to paint.",True,13,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W1,google/gemini-2.5-flash,"To solve this problem, we need to calculate the total number of oranges Pavel can harvest in a year.
 
 Here's a step-by-step breakdown:
@@ -1273,7 +1273,7 @@ Here's a step-by-step breakdown:
     *   Since he harvests once a year, the number of oranges harvested in a year is equal to the total number of oranges in the field.
     *   Oranges harvested in a year = 2820 oranges
 
-Therefore, Pavel can harvest **2820** oranges in a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Pavel can harvest **2820** oranges in a year.",True,2820,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W2,google/gemini-2.5-flash,"Here's how to calculate the number of oranges Pavel can harvest in a year:
 
 1. **Oranges per harvest:**
@@ -1287,7 +1287,7 @@ GSM_042,W2,google/gemini-2.5-flash,"Here's how to calculate the number of orange
 3. **Total oranges per year:**
    * Since there's one harvest per year, the total oranges harvested in a year is the same as the total oranges per harvest.
 
-Therefore, Pavel can harvest **2820 oranges** within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Pavel can harvest **2820 oranges** within a year.",True,2820,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W3,google/gemini-2.5-flash,"Here's how to calculate the total widgets produced:
 
 * **Widgets per production line:** 94
@@ -1295,7 +1295,7 @@ GSM_042,W3,google/gemini-2.5-flash,"Here's how to calculate the total widgets pr
 * **Widgets produced per cycle:** 94 widgets/line * 30 lines = 2820 widgets
 * **Production cycles per year:** 12 months / 12 months/cycle = 1 cycle per year
 
-**Total widgets produced within a year:** 2820 widgets/cycle * 1 cycle/year = **2820 widgets**",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Total widgets produced within a year:** 2820 widgets/cycle * 1 cycle/year = **2820 widgets**",True,2820,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W4,google/gemini-2.5-flash,"Let n1 be the number of square yards of orange field Pavel has.
 Let n2 be the number of oranges per square yard.
 Let n3 be the harvesting period in months.
@@ -1320,7 +1320,7 @@ Since the question asks how many oranges Pavel can harvest ""within a year"", an
 Number of oranges harvested within a year = Total oranges
 Number of oranges harvested within a year = 2820
 
-The final answer is $\boxed{2820}$",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{2820}$",True,2820,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W6,google/gemini-2.5-flash,"Let's break down the problem to find the total number of pomegranates Benjamin can harvest.
 
 *   **Area of the field:** 75 square yards
@@ -1335,7 +1335,7 @@ Total pomegranates = 5775 pomegranates
 
 Since Benjamin can harvest his pomegranates every 12 months, he will have one harvest within a year.
 
-Therefore, Benjamin can harvest **5775** pomegranates within a year.",True,5775,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, Benjamin can harvest **5775** pomegranates within a year.",True,5775,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W1,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 1. **Total number of balls:** The juggler has 640 balls.
@@ -1348,7 +1348,7 @@ GSM_043,W1,google/gemini-2.5-flash,"Let's break this down step-by-step:
    Number of white tennis balls = $\frac{1}{10} \times 80$
    Number of white tennis balls = $8$
 
-So, there are **8** white tennis balls.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+So, there are **8** white tennis balls.",True,8,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W2,google/gemini-2.5-flash,"Let $T$ be the total number of balls.
 Given $T = 640$.
 
@@ -1366,7 +1366,7 @@ $N_w = 8$.
 
 Thus, there are 8 white tennis balls.
 
-The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W3,google/gemini-2.5-flash,"Let the total storage capacity of the warehouse be $C$.
 Given that $C = 640$ containers.
 
@@ -1382,7 +1382,7 @@ Number of labeled plastic containers = $8$
 
 Thus, there are 8 labeled plastic containers.
 
-The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W4,google/gemini-2.5-flash,"Let $n_1$ be the total number of balls the juggler can juggle, which is given as 640.
 Let $n_2$ represent the fraction of balls that are tennis balls, which is given as $\frac{1}{8}$.
 Let $n_3$ represent the fraction of tennis balls that are white, which is given as $\frac{1}{10}$.
@@ -1399,7 +1399,7 @@ Number of tennis balls = $640 \times \frac{1}{8} = \frac{640}{8} = 80$
 
 Number of white tennis balls = $80 \times \frac{1}{10} = \frac{80}{10} = 8$
 
-The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 1. **Find the number of tennis balls:**
@@ -1410,7 +1410,7 @@ GSM_043,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
    1/3 of the tennis balls are teal.
    Number of teal tennis balls = 210 * (1/3) = 70
 
-**Therefore, there are 70 teal tennis balls.**",True,70,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Therefore, there are 70 teal tennis balls.**",True,70,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Find the total number of toys Mei had initially:**
@@ -1424,7 +1424,7 @@ GSM_044,W1,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Initial toys: 145
 * Number of bouncy balls: 204 - 145 = 59
 
-**Answer:** There were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer:** There were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W2,google/gemini-2.5-flash,"Let's identify the number of toys we start with:
 - Building blocks: 71
 - Stuffed animals: 45
@@ -1441,7 +1441,7 @@ $204 \text{ (total toys)} - 145 \text{ (initial toys)} = 59 \text{ bouncy balls}
 
 So, there were 59 bouncy balls in the tube.
 
-The final answer is $\boxed{59}$",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{59}$",True,59,arithmetic_reasoning,high,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W3,google/gemini-2.5-flash,"Let $M$ be the number of metal sheets, $P$ be the number of plastic pellets, $R$ be the number of rubber gaskets, and $C$ be the number of ceramic tiles.
 
 We are given the following information:
@@ -1470,7 +1470,7 @@ $C = 59$
 
 Therefore, 59 ceramic tiles came in the crate.
 
-The final answer is $\boxed{59}$",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{59}$",True,59,arithmetic_reasoning,high,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W4,google/gemini-2.5-flash,"Let's denote the number of bouncy balls in the tube as $x$.
 We are given the following information:
 - The bag of building blocks has $n1 = 71$ blocks.
@@ -1495,7 +1495,7 @@ $x = 59$
 
 Therefore, there were 59 bouncy balls in the tube.
 
-The final answer is $\boxed{59}$.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{59}$.",True,59,arithmetic_reasoning,high,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W6,google/gemini-2.5-flash,"Let's break down the problem to find out how many bouncy balls Ava bought.
 
 * **Building Blocks:** 74
@@ -1509,7 +1509,7 @@ Now, we know that after buying the bouncy balls, Ava has a total of 189 toys.
 To find out how many bouncy balls she bought, we subtract the number of toys she had before from the total number of toys:
 189 (total toys) - 148 (toys before bouncy balls) = 41 bouncy balls
 
-So, 41 bouncy balls came in the tube.",True,41,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+So, 41 bouncy balls came in the tube.",True,41,arithmetic_reasoning,high,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W1,google/gemini-2.5-flash,"Let's break this down day by day:
 
 * **Wednesday:** Liam picks 205 pineapples.
@@ -1521,7 +1521,7 @@ Now, let's find the total number of pineapples Liam has picked:
 
 * **Total:** 205 (Wednesday) + 97 (Thursday) + 820 (Friday) = 1122 pineapples
 
-Liam has a total of 1122 pineapples.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Liam has a total of 1122 pineapples.",True,1122,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W2,google/gemini-2.5-flash,"Let's break down the problem to find the total number of pineapples Liam has.
 
 **1. Pineapples picked on Wednesday:**
@@ -1549,7 +1549,7 @@ Now, let's add them up:
 
 So, Liam has a total of 1122 pineapples.
 
-The final answer is $\boxed{1122}$.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{1122}$.",True,1122,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W3,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 * **Station A:** Robot-X7 assembles 205 circuit boards.
@@ -1560,7 +1560,7 @@ Now, let's add up the circuit boards from all stations:
 
 205 (Station A) + 97 (Station B) + 820 (Station C) = 1122 circuit boards
 
-Robot-X7 has a total of **1122** circuit boards.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Robot-X7 has a total of **1122** circuit boards.",True,1122,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W4,google/gemini-2.5-flash,"The unknown is the total number of pineapples Liam has.
 
 To find the total number of pineapples Liam has, we need to add the number of pineapples he picked on Wednesday and the number of pineapples he picked on Thursday.
@@ -1572,7 +1572,7 @@ Total pineapples = 302
 
 Liam has 302 pineapples.
 
-The final answer is $\boxed{302}$.",False,1122,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{302}$.",False,1122,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_045,W6,google/gemini-2.5-flash,"**1. Apricots picked on Sunday:**
 Kai picked 194 apricots on Sunday.
 
@@ -1590,7 +1590,7 @@ Total apricots = 194 + 212 + 582
 Total apricots = 406 + 582
 Total apricots = 988
 
-**Answer:** Kai has 988 apricots.",True,988,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**Answer:** Kai has 988 apricots.",True,988,arithmetic_reasoning,high,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W1,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 **1. Calculate remaining calories:**
@@ -1612,7 +1612,7 @@ GSM_046,W1,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 **Therefore, you can consume a maximum of 121 ounces of the bread.**
 
-The final answer is $\boxed{121}$",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{121}$",True,121,arithmetic_reasoning,high,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W2,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 1. **Calculate remaining calorie allowance:**
@@ -1628,7 +1628,7 @@ GSM_046,W2,google/gemini-2.5-flash,"Here's how to solve this problem step-by-ste
    Remaining calorie allowance / Calories per ounce of bread = Ounces of bread
    1045 calories / 8.636 calories/ounce = 121 ounces (approximately)
 
-**Therefore, you can eat approximately 121 ounces of bread within your remaining daily calorie allowance.**",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**Therefore, you can eat approximately 121 ounces of bread within your remaining daily calorie allowance.**",True,121,arithmetic_reasoning,high,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W3,google/gemini-2.5-flash,"Let's break this down step by step:
 
 **1. Calculate remaining kilowatts needed:**
@@ -1652,7 +1652,7 @@ GSM_046,W3,google/gemini-2.5-flash,"Let's break this down step by step:
 * Cycles needed: 2.2 cycles
 * Total liters: 55 * 2.2 = 121 liters
 
-**Therefore, you can process approximately 121 liters to meet your daily kilowatt target.**",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**Therefore, you can process approximately 121 liters to meet your daily kilowatt target.**",True,121,arithmetic_reasoning,high,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W4,google/gemini-2.5-flash,"Let C_serving be the calories per serving, O_bag be the ounces per bag, S_bag be the servings per bag, C_target be the daily calorie target, C_consumed be the calories already consumed, O_eat be the ounces you can eat.
 
 Given values:
@@ -1684,7 +1684,7 @@ O_eat = (1045 * 11) / 95
 O_eat = 11495 / 95
 O_eat = 121 ounces
 
-The final answer is $\boxed{121}$",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{121}$",True,121,arithmetic_reasoning,high,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Calculate remaining calories:**
@@ -1704,7 +1704,7 @@ GSM_046,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * Each ounce of bread is 22.5 calories.
 * Ounces of bread you can eat = 180 calories / 22.5 calories/ounce = 8 ounces.
 
-**Answer:** You can eat **8 ounces** of bread.",True,8,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**Answer:** You can eat **8 ounces** of bread.",True,8,arithmetic_reasoning,high,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W1,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Initial Occupancy:**
@@ -1734,7 +1734,7 @@ GSM_047,W1,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * Total occupied rooms: 1290
 * Empty rooms remaining: 1800 - 1290 = **510 rooms**
 
-So, after 3 weeks, **510 empty rooms** remain in the clinic.",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+So, after 3 weeks, **510 empty rooms** remain in the clinic.",True,510,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W2,google/gemini-2.5-flash,"**1. Calculate initial number of occupied rooms:**
 
 * (1/4) * 1800 rooms = 450 occupied rooms
@@ -1756,7 +1756,7 @@ GSM_047,W2,google/gemini-2.5-flash,"**1. Calculate initial number of occupied ro
 
 * 1800 total rooms - 1290 occupied rooms = **510 unoccupied rooms**
 
-**Therefore, after 3 weeks, there will be 510 unoccupied rooms in the clinic.**",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Therefore, after 3 weeks, there will be 510 unoccupied rooms in the clinic.**",True,510,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W3,google/gemini-2.5-flash,"**1. Initial Occupancy:**
 
 * Capacity: 1800 server units
@@ -1788,7 +1788,7 @@ We assume each data stream occupies one server unit. Therefore, 840 new server u
 * Total occupied: 1290
 * Total unoccupied: 1800 - 1290 = 510 units
 
-**Answer:** The total number of unoccupied server units in the data center after 3 weeks is 510.",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Answer:** The total number of unoccupied server units in the data center after 3 weeks is 510.",True,510,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W4,google/gemini-2.5-flash,"Let's break this down step by step:
 
 1.  **Initial number of occupied rooms:**
@@ -1812,7 +1812,7 @@ GSM_047,W4,google/gemini-2.5-flash,"Let's break this down step by step:
 
 The total number of unoccupied rooms in the clinic after 3 weeks is 510.
 
-Final Answer: The total number of unoccupied rooms in the clinic after 3 weeks is 510.",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Final Answer: The total number of unoccupied rooms in the clinic after 3 weeks is 510.",True,510,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Initial Occupancy:**
@@ -1842,7 +1842,7 @@ GSM_047,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * Total occupied rooms after two weeks: 1880
 * Total unoccupied rooms: 1900 - 1880 = 20 rooms
 
-**Therefore, after 2 weeks, there will be 20 unoccupied rooms in the care facility.**",True,20,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Therefore, after 2 weeks, there will be 20 unoccupied rooms in the care facility.**",True,20,arithmetic_reasoning,high,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W1,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step:
 
 **1. Calculate the price of the pricier tea brand:**
@@ -1863,7 +1863,7 @@ GSM_048,W1,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step
 
 * **Total cost:** ₺203 (tea) + ₺3 (bagel) = ₺206
 
-**Answer:** The total cost of Hiroshi's purchases was ₺206.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Answer:** The total cost of Hiroshi's purchases was ₺206.",True,206,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W2,google/gemini-2.5-flash,"Here's how to calculate the total cost:
 
 1.  **Calculate the price of the more expensive tea:**
@@ -1878,7 +1878,7 @@ GSM_048,W2,google/gemini-2.5-flash,"Here's how to calculate the total cost:
     *   Total cost = Total tea cost + Bagel cost
     *   Total cost = ₺203 + ₺3 = ₺206
 
-**Everything cost ₺206.**",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Everything cost ₺206.**",True,206,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W3,google/gemini-2.5-flash,"Here's how to calculate the total cost:
 
 * **Cost of the more expensive steel per ton:** ₺20 * 1.45 = ₺29 
@@ -1887,7 +1887,7 @@ GSM_048,W3,google/gemini-2.5-flash,"Here's how to calculate the total cost:
 * **Total cost (steel + lubricant):** ₺203 + ₺3 = ₺206
 
 **Everything cost Factory ₺206.** 
-",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+",True,206,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W4,google/gemini-2.5-flash,"Let's break down the costs:
 
 1.  **Cost of the normal brand of tea:** ₺20 per kilogram (n1)
@@ -1912,7 +1912,7 @@ GSM_048,W4,google/gemini-2.5-flash,"Let's break down the costs:
     *   Total cost = Total tea cost + Bagel cost
     *   Total cost = ₺203 + ₺3 = ₺206
 
-**Answer:** Everything cost ₺206.",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Answer:** Everything cost ₺206.",True,206,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W6,google/gemini-2.5-flash,"Let's break down the cost step-by-step:
 
 * **Original price of rice:** ₣20 per kg
@@ -1924,7 +1924,7 @@ GSM_048,W6,google/gemini-2.5-flash,"Let's break down the cost step-by-step:
 
 **Total cost:** ₣364 (rice) + ₣2 (cookie) = **₣366**
 
-Everything cost ₣366.",True,366,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+Everything cost ₣366.",True,366,arithmetic_reasoning,high,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W1,google/gemini-2.5-flash,"Let's break down the problem to calculate Umar's weekly income:
 
 **1. Apartments in the first two complexes:**
@@ -1950,7 +1950,7 @@ GSM_049,W1,google/gemini-2.5-flash,"Let's break down the problem to calculate Um
 * Weekly income = Total collections per week $\times$ Earnings per collection
 * Weekly income = $3960 \times 0.45 = ₣1782$
 
-**Therefore, Umar's weekly income is ₣1782.**",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Therefore, Umar's weekly income is ₣1782.**",True,1782,arithmetic_reasoning,high,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W2,google/gemini-2.5-flash,"Here's how to calculate Umar's weekly earnings:
 
 **1. Calculate apartments in the first two complexes:**
@@ -1969,7 +1969,7 @@ GSM_049,W2,google/gemini-2.5-flash,"Here's how to calculate Umar's weekly earnin
 **5. Calculate total weekly earnings:**
 * 3960 collections * ₣0.45/collection = ₣1782
 
-**Umar makes ₣1782 in a week.**",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Umar makes ₣1782 in a week.**",True,1782,arithmetic_reasoning,high,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W3,google/gemini-2.5-flash,"Let's break down the problem to calculate Robot-7's weekly earnings.
 
 **1. Workstations in Facilities:**
@@ -2002,7 +2002,7 @@ GSM_049,W3,google/gemini-2.5-flash,"Let's break down the problem to calculate Ro
 * Total Money = Total Assemblies * Pay per assembly
 * Total Money = 3960 * ₣0.45 = ₣1782
 
-**Answer:** Robot-7 makes ₣1782 in a week.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Answer:** Robot-7 makes ₣1782 in a week.",True,1782,arithmetic_reasoning,high,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W4,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 1.  **Apartments in the first two complexes:**
@@ -2038,7 +2038,7 @@ GSM_049,W4,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
     Money made in a week = $1782$
 
-The final answer is $\boxed{1782}$.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{1782}$.",True,1782,arithmetic_reasoning,high,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W6,google/gemini-2.5-flash,"Here's how to break down the problem to calculate Bodhi's weekly earnings:
 
 **1. Apartments in the first two complexes:**
@@ -2059,7 +2059,7 @@ GSM_049,W6,google/gemini-2.5-flash,"Here's how to break down the problem to calc
 **5. Bodhi's weekly earnings:**
 * 2080 collections * ¥0.3/collection = ¥624
 
-**Therefore, Bodhi makes ¥624 in a week.**",True,624,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Therefore, Bodhi makes ¥624 in a week.**",True,624,arithmetic_reasoning,high,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W1,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 **1. Convert units to be consistent:**
@@ -2095,7 +2095,7 @@ GSM_050,W1,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 * Percentage = (1/5) * 100%
 * Percentage = 20%
 
-**Answer:** The total length of the remoras that stayed represents **20%** of the dolphin's total body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** The total length of the remoras that stayed represents **20%** of the dolphin's total body length.",True,20,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W2,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step:
 
 **1. Calculate the number of remoras remaining:**
@@ -2119,7 +2119,7 @@ GSM_050,W2,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step
 * Percentage = (1/5) * 100%
 * Percentage = 20%
 
-**Answer:** The combined length of the remaining remoras is **20%** of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** The combined length of the remaining remoras is **20%** of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W3,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 **1. Calculate the total initial length of the drones:**
@@ -2153,7 +2153,7 @@ GSM_050,W3,google/gemini-2.5-flash,"Here's how to solve this problem:
 * Percentage = (1/5) * 100%
 * Percentage = 20%
 
-**Therefore, the combined length of the remaining maintenance drones is 20% of the spacecraft's body length.**",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Therefore, the combined length of the remaining maintenance drones is 20% of the spacecraft's body length.**",True,20,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W4,google/gemini-2.5-flash,"The problem states ""What percentage of the dolphin's body length is the combined length of the **remaining** remoras?"". However, the problem description does not mention any remoras being removed or remaining after an event. It only states that there are 16 remoras attached to the dolphin. This suggests that the question is likely asking for the percentage of the dolphin's body length that is the combined length of **all** the remoras mentioned.
 
 Let's proceed by calculating the combined length of all remoras and then finding its percentage relative to the dolphin's body length.
@@ -2199,7 +2199,7 @@ So, Percentage = 80 / 3
 
 Rounding to two decimal places, the percentage is 26.67%.
 
-The final answer is $\boxed{26.67}$",False,20,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{26.67}$",False,20,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_050,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Remora lengths in feet:**
@@ -2221,7 +2221,7 @@ GSM_050,W6,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * Percentage = 0.1 * 100
 * Percentage = 10%
 
-**Answer:** The combined length of the remaining remoras is **10%** of the dolphin's body length.",True,10,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** The combined length of the remaining remoras is **10%** of the dolphin's body length.",True,10,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W1,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 **1. Calculate the total area to be covered for a tenth of the city:**
@@ -2235,7 +2235,7 @@ GSM_051,W1,google/gemini-2.5-flash,"Here's how to solve this problem:
 * To find out how long it takes to cover 1 mile, divide the time by the distance: 64 minutes / 2 miles = 32 minutes per mile.
 * Now, multiply the time per mile by the 8 miles you need to cover: 32 minutes/mile * 8 miles = 256 minutes.
 
-**Answer:** It will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** It will take 256 minutes for the fog bank to cover a tenth of the city.",True,256,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W2,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 1. **Calculate the fog's speed:**
@@ -2251,7 +2251,7 @@ GSM_051,W2,google/gemini-2.5-flash,"Here's how to solve this problem:
    Time = 8 * 32 minutes
    Time = 256 minutes
 
-**Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.**",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.**",True,256,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W3,google/gemini-2.5-flash,"Let's break this down step by step:
 
 **1. Calculate the total size of the network:**
@@ -2268,7 +2268,7 @@ This means the rate is 64 minutes / 2 GB = 32 minutes per gigabyte.
 To cover 8 GB, it will take:
 8 GB * 32 minutes/GB = 256 minutes.
 
-**Therefore, it will take 256 minutes for the computer virus to cover a tenth of the network.**",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, it will take 256 minutes for the computer virus to cover a tenth of the network.**",True,256,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W4,google/gemini-2.5-flash,"Let's denote the time it takes to cover a certain distance as T and the distance as D. We are given the following information:
 - It takes 64 minutes to cover every 2 miles of the city.
 - The city is 80 miles across.
@@ -2284,7 +2284,7 @@ Time = Rate * Distance = 32 minutes/mile * 8 miles.
 
 Time = 32 * 8 = 256 minutes.
 
-The final answer is $\boxed{256}$",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{256}$",True,256,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W6,google/gemini-2.5-flash,"Let's denote the distance of the city as $D$.
 The total distance of the city from the oceanfront to the opposite inland edge is 60 miles.
 So, $D = 60$ miles.
@@ -2308,7 +2308,7 @@ Time = (12/6) $\times$ 107 minutes
 Time = 2 $\times$ 107 minutes
 Time = 214 minutes
 
-The final answer is $\boxed{214}$.",True,214,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{214}$.",True,214,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_052,W1,google/gemini-2.5-flash,"Let's break this down into two parts:
 
 **Part 1: Probability of rolling a number greater than 6**
@@ -2377,7 +2377,7 @@ $= \frac{0.5 - 0.0625}{0.0625} \times 100\%$
 $= \frac{0.4375}{0.0625} \times 100\%$
 $= 7 \times 100\% = 700\%$
 
-The final answer is $\boxed{700\%}$.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{700\%}$.",False,43.75,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W2,google/gemini-2.5-flash,"Let's calculate the probabilities of each event first.
 
 **Event A: Rolling a number greater than 6 on a d12**
@@ -2420,7 +2420,7 @@ Percentage increase = (8 - 1) * 100% = 7 * 100% = 700%
 
 So, Event A is 700% more likely than Event B.
 
-The final answer is $\boxed{700\%}$",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{700\%}$",False,43.75,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W3,google/gemini-2.5-flash,"Let's break down the probabilities for each scenario.
 
 **Scenario 1: Generating a code greater than 6**
@@ -2460,7 +2460,7 @@ Percentage more likely = [(0.5 - 0.0625) / 0.0625] * 100%
 Percentage more likely = [0.4375 / 0.0625] * 100%
 Percentage more likely = 7 * 100% = 700%
 
-The answer is **700%**.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The answer is **700%**.",False,43.75,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W4,google/gemini-2.5-flash,"Let $P(A)$ be the probability of rolling a number greater than 6 on a d12 die.
 The possible outcomes when rolling a d12 die are $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}$.
 The total number of outcomes is $n1 = 12$.
@@ -2484,7 +2484,7 @@ Percentage increase = $\frac{0.4375}{0.0625} \times 100\%$
 Percentage increase = $7 \times 100\%$
 Percentage increase = $700\%$
 
-The final answer is $\boxed{700%}$.",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{700%}$.",False,43.75,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_052,W6,google/gemini-2.5-flash,"Let's break this down into two parts:
 
 **Part 1: Probability of rolling a number greater than 1**
@@ -2521,7 +2521,7 @@ This means it's 12 times as likely. To express this as a percentage *more* likel
 
 The first event is 1100% more likely than the second event.
 
-The final answer is $\boxed{1100}$",False,68.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{1100}$",False,68.75,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_053,W1,google/gemini-2.5-flash,"Let S be the amount of sugar in teaspoons, W be the amount of water in cups, and M be the amount of milk in tablespoons.
 
 We are given the following ratios:
@@ -2574,7 +2574,7 @@ The total matches the given information.
 The question asks for the number of teaspoons of sugar she used.
 Number of teaspoons of sugar = S = 378.
 
-The final answer is $\boxed{378}$.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{378}$.",True,378,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W2,google/gemini-2.5-flash,"Let S be the amount of sugar in teaspoons, W be the amount of water in cups, and M be the amount of milk in tablespoons.
 
 From the first given ratio, Sugar to water ratio: 63:21
@@ -2618,7 +2618,7 @@ S + W + M = 378 + 126 + 126 = 630. This matches the given total.
 
 The number of teaspoonfuls of sugar she used is 378.
 
-The final answer is $\boxed{378}$.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{378}$.",True,378,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W3,google/gemini-2.5-flash,"Let C be the amount of copper in grams.
 Let I be the amount of molten iron in liters.
 Let Z be the amount of zinc in kilograms.
@@ -2658,7 +2658,7 @@ If we assume there is a standard conversion for some common substance, it might 
 Given the phrasing, it's impossible to answer the exact question as asked.
 However, if we are to provide a numerical value from the calculated data, the amount of copper consumed is 378 grams.
 
-The final answer is $\boxed{cannot be determined}$",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{cannot be determined}$",True,378,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W4,google/gemini-2.5-flash,"Let S be the amount of sugar in teaspoons.
 Let W be the amount of water in cups.
 Let M be the amount of milk in tablespoons.
@@ -2694,7 +2694,7 @@ Sugar (S) = 3x
 S = 3 * 126
 S = 378
 
-The final answer is $\boxed{378}$",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{378}$",True,378,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W6,google/gemini-2.5-flash,"Let S be the amount of sugar in teaspoons, W be the amount of water in cups, and M be the amount of milk in tablespoons.
 
 We are given the following ratios:
@@ -2745,7 +2745,7 @@ The sum matches the given total.
 The question asks for the number of teaspoonfuls of sugar she used.
 Number of teaspoonfuls of sugar = S = 330.
 
-The final answer is $\boxed{330}$.",True,330,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{330}$.",True,330,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W1,google/gemini-2.5-flash,"Let's break down the cost of the 70-minute call based on the given rates:
 
 **1. First 10 minutes:**
@@ -2770,7 +2770,7 @@ Total cost = Cost (first 10 min) + Cost (next 20 min) + Cost (remaining 40 min)
 Total cost = $6.00 + $8.00 + $2.00
 Total cost = **$16.00**
 
-The total cost of a 70-minute call is $16.00.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The total cost of a 70-minute call is $16.00.",True,16,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W2,google/gemini-2.5-flash,"Let's break down the cost for each time segment:
 
 * **First 10 minutes:**
@@ -2790,7 +2790,7 @@ GSM_054,W2,google/gemini-2.5-flash,"Let's break down the cost for each time segm
 Add up the costs from each segment:
 Total Cost = $6.00 + $8.00 + $2.00 = $16.00
 
-A 70-minute call would cost **$16.00**.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+A 70-minute call would cost **$16.00**.",True,16,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W3,google/gemini-2.5-flash,"Let's break down the cost of the 70-unit processing cycle based on the given time intervals and price changes.
 
 Here's how we'll calculate it:
@@ -2876,7 +2876,7 @@ Total cost for a 70-unit processing cycle at this rate:
 Cost = 70 units * $0.05/unit
 Cost = $3.50
 
-The final answer is $\boxed{3.50}$.",False,16,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+The final answer is $\boxed{3.50}$.",False,16,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_054,W4,google/gemini-2.5-flash,"Let C be the cost of the call.
 Let T be the duration of the call in minutes.
 
@@ -2903,7 +2903,7 @@ Step 4: Calculate the total cost.
 Total Cost = Cost1 + Cost2 + Cost3
 Total Cost = $6.0 + $8.0 + $2.0 = $16.0
 
-The final answer is $\boxed{16}$",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{16}$",True,16,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,W6,google/gemini-2.5-flash,"Let's break down the cost of the 94-minute call step-by-step:
 
 **1. First 10 minutes:**
@@ -2927,7 +2927,7 @@ GSM_054,W6,google/gemini-2.5-flash,"Let's break down the cost of the 94-minute c
 Add up the costs from each stage:
 ₺9.0 (first 10 min) + ₺7.0 (next 14 min) + ₺7.0 (remaining 70 min) = ₺23.0
 
-So, a 94-minute call would cost **₺23.0**.",True,23,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+So, a 94-minute call would cost **₺23.0**.",True,23,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W1,google/gemini-2.5-flash,"Let's break this problem down step-by-step:
 
 **1. Calculate the capacity of a bowl:**
@@ -2958,7 +2958,7 @@ GSM_055,W1,google/gemini-2.5-flash,"Let's break this problem down step-by-step:
 * Almonds unable to be placed = Almonds remaining - Total capacity
 * Almonds unable to be placed = 414 almonds - 408 almonds = 6 almonds
 
-**Answer:** Theo will be unable to place 6 almonds on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** Theo will be unable to place 6 almonds on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W2,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 1. **Calculate almonds on tables:**
@@ -2979,7 +2979,7 @@ GSM_055,W2,google/gemini-2.5-flash,"Here's how to solve the problem:
 6. **Calculate almonds Theo won't place:**
    213 almonds (could place) - 71 almonds (eats) = 142 almonds
 
-**Answer:** Theo won't be able to place 142 almonds.",False,6,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+**Answer:** Theo won't be able to place 142 almonds.",False,6,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_055,W3,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Calculate the capacity of a database:**
@@ -3001,7 +3001,7 @@ GSM_055,W3,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * The total storage capacity is 408 chips.
 * Data chips that won't be stored: 414 chips - 408 chips = 6 chips
 
-**Answer:** Alpha-7 won't be able to store 6 data chips on the servers or databases.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** Alpha-7 won't be able to store 6 data chips on the servers or databases.",True,6,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W4,google/gemini-2.5-flash,"Let $C_t$ be the capacity of a table and $C_b$ be the capacity of a bowl.
 Let $N_t$ be the number of tables and $N_b$ be the number of bowls.
 Let $A$ be the total number of almonds Theo has.
@@ -3027,7 +3027,7 @@ Finally, to find how many almonds Theo won't be able to place, subtract the tota
 Almonds unplaced = Total almonds - Total capacity
 Almonds unplaced = $621 - 408 = 213$ almonds
 
-The final answer is $\boxed{213}$",False,6,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{213}$",False,6,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_055,W6,google/gemini-2.5-flash,"Let's solve this step by step.
 
 **1. Cookies Wei has initially:**
@@ -3056,7 +3056,7 @@ Total capacity = 180 cookies (tables) + 200 cookies (plates) = 380 cookies.
 Wei has 474 cookies remaining, but his tables and plates can only hold 380 cookies.
 Cookies that won't be placed = 474 cookies - 380 cookies = 94 cookies.
 
-**Answer:** Wei won't be able to place 94 cookies on the tables or plates.",True,94,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** Wei won't be able to place 94 cookies on the tables or plates.",True,94,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W1,google/gemini-2.5-flash,"Let's break down the problem step by step to determine how many more minutes Oscar and Luca have to reach the gym on time.
 
 **1. Calculate the time spent so far:**
@@ -3089,7 +3089,7 @@ Since they have already spent 264 minutes and were given 263 minutes, they are a
 
 Therefore, they cannot use any more minutes and are already late by 1 minute.
 
-The answer is **-1 minutes** (meaning they are 1 minute late).",False,69,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The answer is **-1 minutes** (meaning they are 1 minute late).",False,69,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_056,W2,google/gemini-2.5-flash,"Here's how to solve this step-by-step:
 
 1. **Calculate the time spent getting to the cinema:**
@@ -3107,7 +3107,7 @@ GSM_056,W2,google/gemini-2.5-flash,"Here's how to solve this step-by-step:
 5. **Calculate the remaining time to get to the gym:**
    * Total time available - Total travel time = 263 minutes - 194 minutes = 69 minutes
 
-**Answer:** They have 69 minutes longer to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** They have 69 minutes longer to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W3,google/gemini-2.5-flash,"Let's break down the journey and calculate the remaining time.
 
 **1. Time spent on initial system update:** 35 minutes
@@ -3130,7 +3130,7 @@ GSM_056,W3,google/gemini-2.5-flash,"Let's break down the journey and calculate t
 **8. How much longer do they have?**
    Available time - Total time spent = 263 minutes - 264 minutes = -1 minute
 
-This means they have already run out of time and are **1 minute late** to reach the charging station without being late.",False,69,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+This means they have already run out of time and are **1 minute late** to reach the charging station without being late.",False,69,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_056,W4,google/gemini-2.5-flash,"The problem states that Oscar and Luca have a total of 263 minutes to walk to the gym. However, the question asks ""How much longer do they have to get to gym without being late, if they have already wasted 35 minutes to get a coffee before their walk?"". This implies that the '263 minutes' is the total time available for the walk to the gym.
 
 First, identify the total time Oscar and Luca have to get to the gym.
@@ -3149,7 +3149,7 @@ Remaining time = 228 minutes
 
 The other numbers (n2 = 26 minutes to get to the corner where the grocery store is, and n3 = 27 minutes to get to the cinema) are distractors for this specific question, as the question is focused on the time available for the gym and the time already wasted before starting the walk to the gym.
 
-The final answer is $\boxed{228}$",False,69,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{228}$",False,69,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_056,W6,google/gemini-2.5-flash,"Let's break down the problem step-by-step to find out how much time Olga and Yuki have left.
 
 1.  **Time spent walking to the grocery store:** 11 minutes
@@ -3181,7 +3181,7 @@ GSM_056,W6,google/gemini-2.5-flash,"Let's break down the problem step-by-step to
     Total allotted time - Total time already used
     267 minutes - 144 minutes = 123 minutes
 
-They have 123 minutes longer to get to the gym without being late.",True,123,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+They have 123 minutes longer to get to the gym without being late.",True,123,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W1,google/gemini-2.5-flash,"Let's break down the puppy population and spot counts:
 
 **Umar's Litter:**
@@ -3212,7 +3212,7 @@ GSM_057,W1,google/gemini-2.5-flash,"Let's break down the puppy population and sp
 * Percentage = 0.84 * 100
 * Percentage = 84%
 
-Therefore, 84% of the total puppy population has spots.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, 84% of the total puppy population has spots.",True,84,arithmetic_reasoning,medium,medium,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W2,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Calculate the total number of spotted puppies:**
@@ -3246,7 +3246,7 @@ Percentage = 0.84 * 100
 
 Percentage = 84%
 
-**Therefore, 84% of all the puppies have spots.**",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Therefore, 84% of all the puppies have spots.**",True,84,arithmetic_reasoning,medium,medium,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W3,google/gemini-2.5-flash,"Let's break down the problem to find the total number of robot units and the total number of robot units with sensors.
 
 **Factory A:**
@@ -3279,7 +3279,7 @@ Percentage = 84%
 
 Therefore, 84% of all the robot units have sensors.
 
-The final answer is $\boxed{84}$",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{84}$",True,84,arithmetic_reasoning,medium,medium,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W4,google/gemini-2.5-flash,"Let's break down the problem to calculate the percentage of all puppies that have spots.
 
 **1. Calculate the total number of puppies:**
@@ -3303,7 +3303,7 @@ Percentage with spots = (672 / 800) * 100
 Percentage with spots = 0.84 * 100
 Percentage with spots = 84%
 
-**Answer:** 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** 84% of all the puppies have spots.",True,84,arithmetic_reasoning,medium,medium,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W6,google/gemini-2.5-flash,"Let's break down the problem to find the total number of puppies and the total number of puppies with spots.
 
 **Carlos's Dog:**
@@ -3350,7 +3350,7 @@ Percentage = (774 / 900) * 100
 Percentage = 0.86 * 100
 Percentage = 86%
 
-The final answer is $\boxed{86%}$",True,86,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{86%}$",True,86,arithmetic_reasoning,medium,medium,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W1,google/gemini-2.5-flash,"Here's how to calculate Bodhi's total expenditure:
 
 **1. Cost of Colored Pencils:**
@@ -3374,7 +3374,7 @@ GSM_058,W1,google/gemini-2.5-flash,"Here's how to calculate Bodhi's total expend
 **7. Total Expenditure (After discount):**
 * ¥300.00 - ¥15.00 = ¥285.00
 
-**Therefore, Bodhi's total expenditure for all items after applying a 5% discount was ¥285.00.**",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Bodhi's total expenditure for all items after applying a 5% discount was ¥285.00.**",True,285,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W2,google/gemini-2.5-flash,"Let's break down Bodhi's spending step-by-step:
 
 **1. Cost of Colored Pencils:**
@@ -3398,7 +3398,7 @@ GSM_058,W2,google/gemini-2.5-flash,"Let's break down Bodhi's spending step-by-st
 **7. Total Cost After Discount:**
 * ¥300.00 (total before discount) - ¥15.00 (discount) = ¥285.00
 
-**Therefore, Bodhi spent ¥285.00 on everything.**",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Bodhi spent ¥285.00 on everything.**",True,285,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W3,google/gemini-2.5-flash,"Here's how to calculate Robot-7's total cost:
 
 **1. Calculate the cost of each item:**
@@ -3420,7 +3420,7 @@ GSM_058,W3,google/gemini-2.5-flash,"Here's how to calculate Robot-7's total cost
 
 *   ¥300 (total before discount) - ¥15 (discount) = ¥285
 
-**Therefore, Robot-7 paid ¥285 on everything.**",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Robot-7 paid ¥285 on everything.**",True,285,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W4,google/gemini-2.5-flash,"Let's break down the cost of each item Bodhi bought:
 
 1.  **Colored Pencils:**
@@ -3455,7 +3455,7 @@ Finally, let's find the total amount Bodhi spent after the discount:
 Total amount spent = Total cost before discount - Discount amount
 Total amount spent = 300 - 15 = ¥285
 
-The final answer is $\boxed{285}$",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{285}$",True,285,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W6,google/gemini-2.5-flash,"Here's how to calculate Viktor's total spending:
 
 **1. Calculate the cost of each item:**
@@ -3477,7 +3477,7 @@ GSM_058,W6,google/gemini-2.5-flash,"Here's how to calculate Viktor's total spend
 
 *   $160.00 (subtotal) - $40.00 (discount) = $120.00
 
-**Viktor spent $120.00 on everything.**",True,120,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Viktor spent $120.00 on everything.**",True,120,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W1,google/gemini-2.5-flash,"Here's how we can solve this problem step-by-step:
 
 1. **Forks from guests:** 2 packages * 14 forks/package = 28 forks
@@ -3485,7 +3485,7 @@ GSM_059,W1,google/gemini-2.5-flash,"Here's how we can solve this problem step-by
 3. **Forks from husband and guests:** 9 forks (husband) + 28 forks (guests) = 37 forks
 4. **Forks Zahra purchased:** 66 (total before setting) - 37 (husband and guests) = 29 forks
 
-Therefore, the package Zahra purchased contained **29** forks.",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, the package Zahra purchased contained **29** forks.",True,29,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W2,google/gemini-2.5-flash,"Let Z be the number of forks in the package that Zahra bought.
 
 We are given the following information:
@@ -3516,7 +3516,7 @@ Z = 29
 
 So, there were 29 forks in the package that Zahra bought.
 
-The final answer is $\boxed{29}$",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{29}$",True,29,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W3,google/gemini-2.5-flash,"Let S be the number of screwdrivers in the package that Marcus bought.
 
 Marcus bought a new package of screwdrivers: S
@@ -3538,7 +3538,7 @@ S = 29
 
 The number of screwdrivers in the package that Marcus bought was 29.
 
-The final answer is $\boxed{29}$",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{29}$",True,29,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W4,google/gemini-2.5-flash,"Let 'x' be the number of forks in the package that Zahra bought initially.
 
 1. **Calculate the total forks from the guests:**
@@ -3557,7 +3557,7 @@ GSM_059,W4,google/gemini-2.5-flash,"Let 'x' be the number of forks in the packag
 
 Therefore, there were 18 forks in the package that Zahra bought.
 
-The final answer is $\boxed{18}$",False,29,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+The final answer is $\boxed{18}$",False,29,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_059,W6,google/gemini-2.5-flash,"Here's how we can solve this problem step-by-step:
 
 1. **Forks from guests:** The guests brought 3 packs * 6 forks/pack = 18 forks.
@@ -3569,7 +3569,7 @@ GSM_059,W6,google/gemini-2.5-flash,"Here's how we can solve this problem step-by
    * x = 47 - 7
    * x = 40
 
-Therefore, there were **40** forks in the package that Tara bought.",True,40,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+Therefore, there were **40** forks in the package that Tara bought.",True,40,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,W1,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step:
 
 **1. Calculate the number of soccer players:**
@@ -3605,7 +3605,7 @@ There are 2 groups of students departing early.
 
 * Soccer players present + Choir members/dancers + Cheerleaders = 25 + 13 + 6 = 44 students
 
-**Therefore, a total of 44 students are departing early for the competition.**",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+**Therefore, a total of 44 students are departing early for the competition.**",False,46,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W2,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 1.  **Calculate the number of soccer players:**
@@ -3644,7 +3644,7 @@ GSM_060,W2,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 **The information about choir members or dancers is a distractor for this specific question, as they are not explicitly stated to be leaving for the competition.**
 
-Therefore, the number of students leaving early to the competition is **34**.",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Therefore, the number of students leaving early to the competition is **34**.",False,46,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W3,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Calculate the number of welders:**
@@ -3672,7 +3672,7 @@ GSM_060,W3,google/gemini-2.5-flash,"Let's break this down step-by-step:
 **7. Calculate the total number of people leaving early to the conference:**
 * Total people leaving = Workers leaving early + Supervisors = 37 + 9 = 46 people
 
-Therefore, **46 people** are leaving early to the conference.",True,46,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, **46 people** are leaving early to the conference.",True,46,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,W4,google/gemini-2.5-flash,"Let's break down the problem step-by-step to find out how many students are leaving early for the competition.
 
 1.  **Calculate the number of soccer players:**
@@ -3714,7 +3714,7 @@ GSM_060,W4,google/gemini-2.5-flash,"Let's break down the problem step-by-step to
     *   Total students leaving early = (Soccer players + Choir/Dancers) + Cheerleaders
     *   Total students leaving early = 63 + 9 = 72 students
 
-The final answer is $\boxed{72}$",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+The final answer is $\boxed{72}$",False,46,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_060,W6,google/gemini-2.5-flash,"Let's break down the problem step-by-step to find the total number of students leaving early.
 
 **1. Calculate the number of basketball players:**
@@ -3746,7 +3746,7 @@ Since we can't have half a student, and the problem implies discrete individuals
 * Cheerleaders accompanying = 9
 * Total students leaving = 25 + 28 + 9 = 62 students
 
-Therefore, 62 students are leaving early to the tournament.",True,62,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+Therefore, 62 students are leaving early to the tournament.",True,62,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W1,google/gemini-2.5-flash,"Let's break down the pizza consumption for each family member:
 
 **1. Parents' Combined Daily Consumption:**
@@ -3768,7 +3768,7 @@ GSM_061,W1,google/gemini-2.5-flash,"Let's break down the pizza consumption for e
 * We'll assume a standard month of 30 days.
 * Total monthly: 14 pizzas/day * 30 days/month = 420 pizzas
 
-**Answer:** The family consumes a total of 420 pizzas over the course of one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** The family consumes a total of 420 pizzas over the course of one month.",True,420,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W2,google/gemini-2.5-flash,"Here's how to break down the pizza consumption:
 
 **1. Parents' combined consumption:**
@@ -3790,7 +3790,7 @@ GSM_061,W2,google/gemini-2.5-flash,"Here's how to break down the pizza consumpti
 * Number of days in a month: 30
 * Total monthly: 14 * 30 = 420 pizzas
 
-**Answer:** The family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** The family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W3,google/gemini-2.5-flash,"Let's break down the problem to find the total number of metal sheets processed:
 
 1. **Primary machine:** Processes 4 metal sheets per shift.
@@ -3809,7 +3809,7 @@ GSM_061,W3,google/gemini-2.5-flash,"Let's break down the problem to find the tot
    Primary machine + Secondary machine + Auxiliary machine
    4 sheets + 6 sheets + 4 sheets = **14 sheets**
 
-So, the factory unit processes 14 metal sheets in one production cycle.",False,420,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+So, the factory unit processes 14 metal sheets in one production cycle.",False,420,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_061,W4,google/gemini-2.5-flash,"The problem involves calculating the total number of pizzas the family eats in a month. Let's break it down:
 
 **1. Pizzas eaten by each family member per day:**
@@ -3837,7 +3837,7 @@ GSM_061,W4,google/gemini-2.5-flash,"The problem involves calculating the total n
 *   Assume an average month has 30 days.
 *   **Total per month:** $14 \text{ pizzas/day} \times 30 \text{ days/month} = 420$ pizzas
 
-**Answer:** The family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** The family eats 420 pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W6,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 **1. Burritos eaten by the uncle and spouse combined:**
@@ -3856,7 +3856,7 @@ GSM_061,W6,google/gemini-2.5-flash,"Here's how to solve this problem step-by-ste
 * Assuming a month has 30 days (as is common for these types of problems unless otherwise specified):
 * Burritos per day * Days in a month = 21 * 30 = 630 burritos
 
-**Answer: The family eats 630 burritos in one month.**",True,630,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer: The family eats 630 burritos in one month.**",True,630,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,W1,google/gemini-2.5-flash,"Let the listed price of the property be $P = 600000$.
 Mrs. Lee obtains a 20% discount on the selling price.
 So the discounted selling price is $P_D = P - 0.20P = 0.80P$.
@@ -3877,7 +3877,7 @@ The amount by which the total cost will exceed Mrs. Lee's budget is:
 Exceed amount = Total cost - Budget limit
 Exceed amount = $552000 - 440000 = 112000$.
 
-The final answer is $\boxed{112000}$.",True,112000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{112000}$.",True,112000,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,W2,google/gemini-2.5-flash,"Let's break down the costs and calculate the total amount.
 
 **1. Calculate the selling price after discount:**
@@ -3900,7 +3900,7 @@ GSM_062,W2,google/gemini-2.5-flash,"Let's break down the costs and calculate the
 * Difference = Total cost - Budget limit
 * Difference = $552000 - $440000 = $112000
 
-**Answer:** The total cost will be **$112000** more than Mrs. Lee's budget.",True,112000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Answer:** The total cost will be **$112000** more than Mrs. Lee's budget.",True,112000,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,W3,google/gemini-2.5-flash,"Let's break down the costs and calculate the total payment.
 
 **1. Calculate the reduced base price:**
@@ -3923,13 +3923,13 @@ GSM_062,W3,google/gemini-2.5-flash,"Let's break down the costs and calculate the
 * Difference = Total payment - Credit limit
 * Difference = $570,000 - $440,000 = $130,000
 
-**Answer:** The total payment will be $130,000 more than Captain Zara's credit limit.",False,112000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+**Answer:** The total payment will be $130,000 more than Captain Zara's credit limit.",False,112000,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_062,W4,google/gemini-2.5-flash,"The problem states that Lee's budget is $440000.
 So, the precise value of ""Lee's budget"" is already given in the problem description.
 
 Lee's budget = $440000
 
-The final answer is $\boxed{440000}$",False,112000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+The final answer is $\boxed{440000}$",False,112000,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_062,W6,google/gemini-2.5-flash,"Let's break down the costs involved and see if Mrs. Lee can afford the townhouse.
 
 **1. Calculate the discounted selling price:**
@@ -3955,7 +3955,7 @@ Total cost: $435,600
 Difference = Total cost - Mrs. Lee's budget
 Difference = $435,600 - $370,000 = $65,600
 
-So, the total cost will be **$65,600** more than Mrs. Lee's budget.",True,65600,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+So, the total cost will be **$65,600** more than Mrs. Lee's budget.",True,65600,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W1,google/gemini-2.5-flash,"Here's how to calculate Prof. Rodriguez's net proceeds:
 
 1. **Calculate registration fees:**
@@ -3972,7 +3972,7 @@ GSM_063,W1,google/gemini-2.5-flash,"Here's how to calculate Prof. Rodriguez's ne
    Sale price - Total deductions
    $220,000 - $203,800 = $16,200
 
-**Prof. Rodriguez received $16,200 as net proceeds from the villa sale.**",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Prof. Rodriguez received $16,200 as net proceeds from the villa sale.**",True,16200,arithmetic_reasoning,medium,hard,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W2,google/gemini-2.5-flash,"Let's calculate the net proceeds from selling the villa step-by-step:
 
 1.  **Calculate Registration Fees:**
@@ -3995,7 +3995,7 @@ GSM_063,W2,google/gemini-2.5-flash,"Let's calculate the net proceeds from sellin
     Net Proceeds = $220,000 - $203,800
     Net Proceeds = $16,200
 
-**Therefore, the net proceeds from selling the villa are $16,200.**",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, the net proceeds from selling the villa are $16,200.**",True,16200,arithmetic_reasoning,medium,hard,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W3,google/gemini-2.5-flash,"**1. Calculate the docking fees:**
 * 2% of $220,000 = (0.02) * $220,000 = $4,400
 
@@ -4010,7 +4010,7 @@ GSM_063,W3,google/gemini-2.5-flash,"**1. Calculate the docking fees:**
 * Selling price - Total expenses
 * $220,000 - $203,800 = $16,200
 
-**Therefore, Captain Vega's net returns from transferring the spacecraft are $16,200.**",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Captain Vega's net returns from transferring the spacecraft are $16,200.**",True,16200,arithmetic_reasoning,medium,hard,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W4,google/gemini-2.5-flash,"Let's break down the problem to find Rodriguez's net proceeds from selling the villa.
 
 1.  **Selling Price:** Rodriguez sold his villa for $n1 = 220000.
@@ -4031,7 +4031,7 @@ GSM_063,W4,google/gemini-2.5-flash,"Let's break down the problem to find Rodrigu
 
 Therefore, Rodriguez's net proceeds from selling the villa are $16200.
 
-The final answer is $\boxed{16200}$.",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{16200}$.",True,16200,arithmetic_reasoning,medium,hard,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,W6,google/gemini-2.5-flash,"Here's how to calculate Mr. Davis's net proceeds:
 
 **1. Calculate the transfer fees:**
@@ -4048,7 +4048,7 @@ GSM_063,W6,google/gemini-2.5-flash,"Here's how to calculate Mr. Davis's net proc
 * Net proceeds = Selling price - Total expenses
 * Net proceeds = $790,000 - $543,700 = $246,300
 
-**Therefore, Mr. Davis's net proceeds from selling the condo are $246,300.**",True,246300,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Mr. Davis's net proceeds from selling the condo are $246,300.**",True,246300,arithmetic_reasoning,medium,hard,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W1,google/gemini-2.5-flash,"**1. Find the number of boys:**
 
 * Number of boys = (1/3) * Number of girls
@@ -4066,7 +4066,7 @@ GSM_064,W1,google/gemini-2.5-flash,"**1. Find the number of boys:**
 * Percentage of girls = 0.75 * 100%
 * Percentage of girls = 75%
 
-**Therefore, 75% of all children in the park are girls.**",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, 75% of all children in the park are girls.**",True,75,arithmetic_reasoning,medium,easy,W1,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W2,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Find the number of boys:**
@@ -4085,7 +4085,7 @@ GSM_064,W2,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Percentage of girls = 0.75 * 100
 * Percentage of girls = 75%
 
-**Answer:** 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** 75% of the kids in the park are girls.",True,75,arithmetic_reasoning,medium,easy,W2,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W3,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Find the number of hybrid cars:**
@@ -4107,7 +4107,7 @@ GSM_064,W3,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Percentage of electric cars = 0.75 * 100
 * Percentage of electric cars = 75%
 
-**Therefore, 75% of the vehicles in the charging station are electric cars.**",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, 75% of the vehicles in the charging station are electric cars.**",True,75,arithmetic_reasoning,medium,easy,W3,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W4,google/gemini-2.5-flash,"Let G be the number of girls in the park.
 Let B be the number of boys in the park.
 
@@ -4141,7 +4141,7 @@ Percentage of girls = (3 / 4) * 100
 Percentage of girls = 0.75 * 100
 Percentage of girls = 75%
 
-The final answer is $\boxed{75%}$.",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{75%}$.",True,75,arithmetic_reasoning,medium,easy,W4,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W6,google/gemini-2.5-flash,"**1. Find the number of boys:**
 
 * There are 6 girls.
@@ -4160,7 +4160,7 @@ GSM_064,W6,google/gemini-2.5-flash,"**1. Find the number of boys:**
 * Percentage of girls = 0.75 * 100%
 * Percentage of girls = 75%
 
-**Therefore, 75% of the kids in the park are girls.**",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, 75% of the kids in the park are girls.**",True,75,arithmetic_reasoning,medium,easy,W6,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,W5,google/gemini-2.5-flash,"Let P be the number of students who like to paint.
 Let F be the number of students who like to play football.
 Let B be the number of students who like to bake.
@@ -4187,7 +4187,7 @@ Total students = 26 + 150 + 14
 Total students = 176 + 14
 Total students = 190
 
-The final answer is $\boxed{190}$.",True,190,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{190}$.",True,190,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,W5,google/gemini-2.5-flash,"**1. Calculate total oranges harvested per year:**
 Pavel harvests 2820 oranges per year.
 
@@ -4195,7 +4195,7 @@ Pavel harvests 2820 oranges per year.
 Divide the total number of oranges by the total square yards:
 2820 oranges / 30 square yards = 94 oranges per square yard
 
-**Answer:** There are 94 oranges per square yard.",True,94,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer:** There are 94 oranges per square yard.",True,94,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,W5,google/gemini-2.5-flash,"Let B be the total number of balls the juggler has.
 
 We are given that an eighth of the balls are tennis balls. So, the number of tennis balls is B/8.
@@ -4226,10 +4226,10 @@ Number of white tennis balls = (1/10) * 80 = 8
 
 This matches the information given in the problem.
 
-The final answer is $\boxed{640}$.",True,640,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{640}$.",True,640,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,W5,google/gemini-2.5-flash,"The story states that ""The bin of stuffed animals has 45 stuffed animals inside.""
 
-Therefore, there are **45** stuffed animals in the bin.",True,45,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+Therefore, there are **45** stuffed animals in the bin.",True,45,arithmetic_reasoning,high,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,W5,google/gemini-2.5-flash,"I'm sorry, but the problem description doesn't provide enough information to solve for the number of pineapples Liam picked on Wednesday. Here's why:
 
 * **Missing information about other days:** We know the total and how many he picked on Thursday. However, we don't know how many he picked on Friday, Saturday, Sunday, Monday, Tuesday, or any other day.
@@ -4241,7 +4241,7 @@ To solve this, we would need at least one more piece of information, such as:
 * The total number of pineapples picked *excluding* Wednesday and Friday.
 * The number of pineapples picked on all other days combined.
 
-Without this missing information, we cannot determine how many pineapples Liam picked on Wednesday.",False,205,arithmetic_reasoning,high,medium,False,False,state_machine,incorrect,False
+Without this missing information, we cannot determine how many pineapples Liam picked on Wednesday.",False,205,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_046,W5,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 1. **Calculate remaining calorie target:**
@@ -4257,7 +4257,7 @@ GSM_046,W5,google/gemini-2.5-flash,"Here's how to solve this problem step-by-ste
 4. **Calculate total ounces in the bag:**
    * 55 ounces per serving * 5 servings = 275 ounces
 
-**Therefore, the entire bag contains 275 ounces.**",True,275,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+**Therefore, the entire bag contains 275 ounces.**",True,275,arithmetic_reasoning,high,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,W5,google/gemini-2.5-flash,"Let C be the total capacity of the clinic in rooms.
 
 Initially, 1/4 of the rooms are occupied, so the number of occupied rooms is (1/4)C.
@@ -4297,7 +4297,7 @@ This means 840 rooms that were initially unoccupied are now occupied.
 Remaining unoccupied rooms = 1350 - 840 = 510 rooms.
 This matches the information given in the problem.
 
-The final answer is $\boxed{1800}$.",True,1800,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{1800}$.",True,1800,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,W5,google/gemini-2.5-flash,"Let C be the cost per kilogram of the normal brand of tea.
 The more expensive brand costs 45% more than the normal brand. So the cost per kilogram of the expensive brand is C + 0.45C = 1.45C.
 
@@ -4319,7 +4319,7 @@ C = 20
 
 The cost per kilogram of the normal brand of tea he usually buys is ₺20.
 
-The final answer is $\boxed{20}$",True,20,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{20}$",True,20,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,W5,google/gemini-2.5-flash,"Let $x$ be the number of apartments in the first complex.
 Since the first two complexes have the same number of apartments, the second complex also has $x$ apartments.
 The third complex is 20% bigger than the other two combined.
@@ -4362,7 +4362,7 @@ Third complex earnings: $1080 \times 0.90 = 972$
 Total earnings: $405 + 405 + 972 = 1782$
 This matches the given total earnings.
 
-The final answer is $\boxed{450}$.",True,450,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{450}$.",True,450,arithmetic_reasoning,high,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,W5,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate the dolphin's length in inches:**
@@ -4382,7 +4382,7 @@ GSM_050,W5,google/gemini-2.5-flash,"Here's how to solve the problem:
 * x = 12 * (4/3)
 * x = 16
 
-**Therefore, there were originally 16 remoras attached to the dolphin.**",True,16,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Therefore, there were originally 16 remoras attached to the dolphin.**",True,16,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,W5,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 **1. Find the rate of fog coverage:**
@@ -4400,7 +4400,7 @@ GSM_051,W5,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 * If one-tenth of the city is 8 miles, then the entire city is 10 * 8 miles = 80 miles.
 
-**Answer:** The city is 80 miles across from the oceanfront to the opposite inland edge.",True,80,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** The city is 80 miles across from the oceanfront to the opposite inland edge.",True,80,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_052,W5,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Probability of rolling a number greater than 6 on a d12:**
@@ -4519,7 +4519,7 @@ This is correct.
 
 The ambiguity in the phrasing ""X% more likely than Y"" can sometimes mean $P_A = P_B \times (1+X/100)$ or $P_A = P_B + X/100$. Given the numbers provided, the latter interpretation (absolute difference) leads to a clean and sensible answer for the number of odd faces on a standard die. Standard d12 dice usually have 6 odd and 6 even numbers.
 
-The final answer is $\boxed{6}$",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{6}$",True,6,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_053,W5,google/gemini-2.5-flash,"Let S be the amount of sugar in teaspoons, W be the amount of water in cups, and M be the amount of milk in tablespoons.
 
 We are given the ratio of sugar to water as 63:21. This can be written as:
@@ -4569,7 +4569,7 @@ To calculate the total number of teaspoons of sugar, cups of water, and tablespo
 *   Cups of water: 126
 *   Tablespoons of milk: 126
 
-The final answer is $\boxed{\text{378 teaspoons of sugar, 126 cups of water, 126 tablespoons of milk}}$.",False,630,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+The final answer is $\boxed{\text{378 teaspoons of sugar, 126 cups of water, 126 tablespoons of milk}}$.",False,630,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_054,W5,google/gemini-2.5-flash,"Solution:
 Let the duration of the call be $T$ minutes. The cost structure for the call is as follows:
 - First 10 minutes: $0.6 per minute.
@@ -4622,7 +4622,7 @@ Let's check the values:
 - Minutes from 30 to 70 (duration = $70 - 30 = 40$ minutes): $40 \times 0.05 = 2$.
 Total cost = $6 + 8 + 2 = 16$. This matches the given information.
 
-The final answer is $\boxed{30}$.",True,30,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{30}$.",True,30,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,W5,google/gemini-2.5-flash,"Let T be the maximum number of almonds a table can hold.
 Let B be the maximum number of almonds a bowl can hold.
 
@@ -4664,7 +4664,7 @@ Total capacity of tables and bowls = (11 * 24) + (3 * 48) = 264 + 144 = 408
 Almonds that won't fit = 414 - 408 = 6
 This matches the information given in the problem.
 
-The final answer is $\boxed{621}$.",True,621,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{621}$.",True,621,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,W5,google/gemini-2.5-flash,"Let's break down the problem step-by-step:
 
 1. **Time wasted:** Oscar and Luca wasted 35 minutes getting coffee.
@@ -4710,7 +4710,7 @@ If they had 69 minutes left *after* wasting 35 minutes, then the intended durati
 
 The information about the grocery store, cinema, and park seems to describe a different journey or a series of detours, not necessarily the direct path to the gym within the 69-minute timeframe. The question asks about *the time they had to walk to the gym*, implying a single, direct journey.
 
-The final answer is $\boxed{104}$",True,104,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+The final answer is $\boxed{104}$",True,104,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,W5,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate the total number of puppies with spots from Umar and Xena:**
@@ -4764,7 +4764,7 @@ GSM_057,W5,google/gemini-2.5-flash,"Here's how to solve the problem:
    S = 102.4 / 1.6
    S = 64
 
-Therefore, Sophia has 64 dogs.",True,64,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Therefore, Sophia has 64 dogs.",True,64,arithmetic_reasoning,medium,medium,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,W5,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate the original price of the colored pencils:**
@@ -4789,7 +4789,7 @@ Since Bodhi received a 5% discount and spent ¥285, this ¥285 represents 95% of
 * Original total cost - (cost of pencils + cost of crayons + cost of folders)
 * ¥300 - ¥280 = ¥20
 
-**Answer:** The rim of bond paper cost ¥20.",True,20,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Answer:** The rim of bond paper cost ¥20.",True,20,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,W5,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step:
 
 * **Zahra's initial purchase:** Zahra bought 29 forks.
@@ -4798,7 +4798,7 @@ GSM_059,W5,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step
 * **Guests' contribution:** The guests brought 2 packs of 14 forks each, so $2 \times 14 = 28$ forks.
 * **Total forks:** Add the guests' forks to Zahra's remaining forks: $27 + 28 = 55$ forks.
 
-**Answer:** Zahra had a total of 55 forks when she went to set the table.",True,55,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** Zahra had a total of 55 forks when she went to set the table.",True,55,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,W5,google/gemini-2.5-flash,"Here's how to solve this step-by-step:
 
 **1. Break down the early departure group:**
@@ -4841,7 +4841,7 @@ C = 40 / 0.40
 C = 400 / 4
 **C = 100**
 
-**Therefore, there are 100 students in Ms. Johnson's class.**",True,100,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, there are 100 students in Ms. Johnson's class.**",True,100,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_061,W5,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Calculate father's daily pizza consumption:**
@@ -4910,7 +4910,7 @@ So, 30 * (4 + W + D) = 420
 * **Total daily:** 4 (father) + 6 (wife) + 4 (daughter) = 14 pizzas/day
 * **Total monthly:** 14 pizzas/day * 30 days/month = 420 pizzas/month
 
-This matches the problem statement!",False,6,arithmetic_reasoning,medium,easy,False,False,state_machine,incorrect,False
+This matches the problem statement!",False,6,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_062,W5,google/gemini-2.5-flash,"Let the selling price of the townhouse be $S$.
 Given $S = 600000$.
 
@@ -4960,7 +4960,7 @@ $B = 570000 - 112000 = 458000$.
 
 However, typically when a discount is applied to the selling price, associated percentage-based fees are calculated on the discounted price. So we will stick with our first interpretation.
 
-The final answer is $\boxed{440000}$.",False,458000,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+The final answer is $\boxed{440000}$.",False,458000,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_063,W5,google/gemini-2.5-flash,"Let S be the selling price of the villa.
 
 The registration fees are 2% of the selling price, which can be written as 0.02 * S.
@@ -5002,7 +5002,7 @@ Finally, divide by 0.96 to find S:
 S = $211200 / 0.96
 S = $220000
 
-The final answer is $\boxed{220000}$.",True,220000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+The final answer is $\boxed{220000}$.",True,220000,arithmetic_reasoning,medium,hard,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,W5,google/gemini-2.5-flash,"**1. Find the total number of kids:**
 
 * If 39 girls represent 75% of the kids, we can set up a proportion:
@@ -5021,7 +5021,7 @@ GSM_064,W5,google/gemini-2.5-flash,"**1. Find the total number of kids:**
    Number of Boys = 52 - 39
    Number of Boys = 13
 
-**There are 13 boys in the park.**",True,13,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**There are 13 boys in the park.**",True,13,arithmetic_reasoning,medium,easy,W5,True,in_bank_ok,True,True,numeric,correct,False
 GSM_041,canonical,google/gemini-2.5-flash,"Let P be the number of students who like to paint.
 Let F be the number of students who like to play football.
 Let B be the number of students who like to bake.
@@ -5064,7 +5064,7 @@ Bake = 150
 Total = 19 + 7 + 14 + 150 = 26 + 14 + 150 = 40 + 150 = 190.
 The total matches the given number of students.
 
-The final answer is $\boxed{150}$.",True,150,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{150}$.",True,150,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_042,canonical,google/gemini-2.5-flash,"Here's how to solve this problem:
 
 * **Ounces per square yard:** 94
@@ -5079,7 +5079,7 @@ Multiply the number of square yards by the number of oranges per square yard:
 Since Pavel harvests once a year, the number of oranges per harvest is the same as the number of oranges per year.
 2820 oranges * 1 harvest/year = 2820 oranges
 
-**Answer:** Pavel can harvest 2820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer:** Pavel can harvest 2820 oranges within a year.",True,2820,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_043,canonical,google/gemini-2.5-flash,"Let the total number of balls be $T$.
 Given that $T = 640$.
 
@@ -5095,7 +5095,7 @@ Number of white tennis balls = $8$
 
 So, there are 8 white tennis balls.
 
-The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{8}$.",True,8,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_044,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Find the total of the other toys:**
@@ -5111,7 +5111,7 @@ GSM_044,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Toys without bouncy balls: 145
 * **Number of bouncy balls:** 204 - 145 = 59 bouncy balls
 
-**Answer:** There were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy,True,True,state_machine,correct,False
+**Answer:** There were 59 bouncy balls in the tube.",True,59,arithmetic_reasoning,high,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_045,canonical,google/gemini-2.5-flash,"Let's break this down day by day to find the total number of pineapples Liam picked:
 
 *   **Wednesday:** Liam picked 205 pineapples.
@@ -5127,7 +5127,7 @@ Now, let's add up the pineapples from all three days to find the total:
 *   Total pineapples = 302 + 820
 *   Total pineapples = 1122
 
-Liam has a total of 1122 pineapples.",True,1122,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+Liam has a total of 1122 pineapples.",True,1122,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_046,canonical,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 1.  **Calculate remaining allowed calories:**
@@ -5146,7 +5146,7 @@ GSM_046,canonical,google/gemini-2.5-flash,"Here's how to solve this problem step
     Remaining calories / Calories per ounce = Ounces of bread you can eat
     1045 calories / 8.636 calories per ounce = 121 ounces (approximately)
 
-You can eat approximately **121 ounces** of the bread.",True,121,arithmetic_reasoning,high,medium,True,True,state_machine,correct,False
+You can eat approximately **121 ounces** of the bread.",True,121,arithmetic_reasoning,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_047,canonical,google/gemini-2.5-flash,"Here's how to solve this problem step-by-step:
 
 **1. Calculate the initial number of occupied rooms:**
@@ -5176,7 +5176,7 @@ GSM_047,canonical,google/gemini-2.5-flash,"Here's how to solve this problem step
 * Unoccupied rooms = Total rooms - New occupied rooms
 * Unoccupied rooms = 1800 - 1290 = 510 rooms
 
-**Therefore, the total number of unoccupied rooms in the clinic after 3 weeks is 510.**",True,510,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Therefore, the total number of unoccupied rooms in the clinic after 3 weeks is 510.**",True,510,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_048,canonical,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step:
 
 1. **Calculate the cost of the expensive tea per kilogram:**
@@ -5192,7 +5192,7 @@ GSM_048,canonical,google/gemini-2.5-flash,"Here's how to solve the problem step-
 4. **Calculate the total cost of everything:**
    * Total cost: ₺203 (tea) + ₺3 (bagel) = ₺206
 
-**Therefore, everything cost Hiroshi ₺206.**",True,206,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Therefore, everything cost Hiroshi ₺206.**",True,206,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_049,canonical,google/gemini-2.5-flash,"Here's how to solve the problem step-by-step:
 
 **1. Calculate apartments in the first two complexes:**
@@ -5210,7 +5210,7 @@ GSM_049,canonical,google/gemini-2.5-flash,"Here's how to solve the problem step-
 **5. Calculate total earnings per week:**
 * 3960 collections * ₣0.45/collection = ₣1782
 
-**Answer:** Umar makes ₣1782 in a week.",True,1782,arithmetic_reasoning,high,hard,True,True,state_machine,correct,False
+**Answer:** Umar makes ₣1782 in a week.",True,1782,arithmetic_reasoning,high,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_050,canonical,google/gemini-2.5-flash,"Here's how we can solve this problem:
 
 **1. Calculate the initial total length of remoras:**
@@ -5238,7 +5238,7 @@ GSM_050,canonical,google/gemini-2.5-flash,"Here's how we can solve this problem:
 * (Combined length of remaining remoras / Dolphin's body length) * 100%
 * (144 inches / 720 inches) * 100% = 0.2 * 100% = 20%
 
-**Answer:** The combined length of the remaining remoras is **20%** of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** The combined length of the remaining remoras is **20%** of the dolphin's body length.",True,20,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_051,canonical,google/gemini-2.5-flash,"Let's break down the problem to find the solution:
 
 **1. Calculate the fog's speed:**
@@ -5258,7 +5258,7 @@ GSM_051,canonical,google/gemini-2.5-flash,"Let's break down the problem to find 
 * Time = 8 * 32 minutes
 * Time = 256 minutes
 
-**Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.**",True,256,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, it will take 256 minutes for the fog bank to cover a tenth of the city.**",True,256,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_052,canonical,google/gemini-2.5-flash,"Let's break this down into two separate probabilities.
 
 **1. Probability of rolling a number greater than 6**
@@ -5305,7 +5305,7 @@ To express how much *more likely* the first event is as a percentage of the *sec
 (Difference / Probability of second event) * 100%
 (0.4375 / 0.0625) * 100% = 7 * 100% = 700%
 
-The final answer is $\boxed{700\%}$",False,43.75,arithmetic_reasoning,medium,medium,False,False,state_machine,incorrect,False
+The final answer is $\boxed{700\%}$",False,43.75,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_053,canonical,google/gemini-2.5-flash,"Let S be the amount of sugar in teaspoons, W be the amount of water in cups, and M be the amount of milk in tablespoons.
 
 We are given the ratio of sugar to water as 63:21. We can write this as:
@@ -5346,7 +5346,7 @@ This matches the given total.
 
 The number of teaspoonfuls of sugar she used is 378.
 
-The final answer is $\boxed{378}$.",True,378,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+The final answer is $\boxed{378}$.",True,378,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_054,canonical,google/gemini-2.5-flash,"Let's break down the cost of the 70-minute call section by section:
 
 **1. First 10 minutes:**
@@ -5367,7 +5367,7 @@ GSM_054,canonical,google/gemini-2.5-flash,"Let's break down the cost of the 70-m
 Add the costs from each section:
 $6.00 (first 10 min) + $8.00 (next 20 min) + $2.00 (last 40 min) = $16.00
 
-A 70-minute call would cost **$16.00**.",True,16,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+A 70-minute call would cost **$16.00**.",True,16,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_055,canonical,google/gemini-2.5-flash,"Here's how to solve this step-by-step:
 
 **1. Almonds per bowl:**
@@ -5389,7 +5389,7 @@ GSM_055,canonical,google/gemini-2.5-flash,"Here's how to solve this step-by-step
 **6. Almonds that won't fit:**
 * 414 almonds (remaining) - 408 almonds (capacity) = 6 almonds
 
-**Answer:** Theo won't be able to place 6 almonds on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Answer:** Theo won't be able to place 6 almonds on the tables or bowls.",True,6,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_056,canonical,google/gemini-2.5-flash,"Let's break down the problem step-by-step to find out how much time Oscar and Luca have left.
 
 1.  **Time spent getting coffee:** They wasted 35 minutes getting coffee.
@@ -5414,7 +5414,7 @@ GSM_056,canonical,google/gemini-2.5-flash,"Let's break down the problem step-by-
     *   Total time available - Total time spent so far = Time remaining
     *   263 minutes - 194 minutes = 69 minutes
 
-Oscar and Luca have **69 minutes** left to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+Oscar and Luca have **69 minutes** left to get to the gym without being late.",True,69,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_057,canonical,google/gemini-2.5-flash,"Let's break this down step by step to find the total percentage of puppies with spots.
 
 **1. Calculate the total number of puppies:**
@@ -5438,7 +5438,7 @@ GSM_057,canonical,google/gemini-2.5-flash,"Let's break this down step by step to
 * Percentage = 0.84 * 100
 * Percentage = 84%
 
-**Therefore, 84% of all the puppies have spots.**",True,84,arithmetic_reasoning,medium,medium,True,True,state_machine,correct,False
+**Therefore, 84% of all the puppies have spots.**",True,84,arithmetic_reasoning,medium,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_058,canonical,google/gemini-2.5-flash,"Here's how to calculate Bodhi's total cost:
 
 **1. Calculate the cost of each item:**
@@ -5460,7 +5460,7 @@ GSM_058,canonical,google/gemini-2.5-flash,"Here's how to calculate Bodhi's total
 
 * ¥300 - ¥15 = ¥285
 
-**Therefore, Bodhi spent ¥285 on everything.**",True,285,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Bodhi spent ¥285 on everything.**",True,285,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_059,canonical,google/gemini-2.5-flash,"Let P be the number of forks in the package that Zahra bought.
 
 Here's a step-by-step breakdown of the forks:
@@ -5482,7 +5482,7 @@ P + 26 = 55
 P = 55 - 26
 P = 29
 
-So, there were **29** forks in the package that Zahra bought.",True,29,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+So, there were **29** forks in the package that Zahra bought.",True,29,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_060,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Soccer Players:**
@@ -5528,7 +5528,7 @@ Given standard math problem conventions, it's more likely that the problem inten
 
 Let's assume for this solution that we round to the nearest whole number as 13.
 
-Final Answer: There are **47 students** leaving early to the competition.",False,46,arithmetic_reasoning,medium,hard,False,False,state_machine,incorrect,False
+Final Answer: There are **47 students** leaving early to the competition.",False,46,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,False,False,numeric,incorrect,False
 GSM_061,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 
 **1. Pizzas eaten by father and wife combined:**
@@ -5548,7 +5548,7 @@ GSM_061,canonical,google/gemini-2.5-flash,"Let's break this down step-by-step:
 * We'll assume a standard month of 30 days for this calculation.
 * Total pizzas: 14 pizzas/day * 30 days/month = 420 pizzas/month
 
-**Answer:** The family eats **420** pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Answer:** The family eats **420** pizzas in one month.",True,420,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_062,canonical,google/gemini-2.5-flash,"Here's how to calculate the total cost and determine how much it exceeds Mrs. Lee's budget:
 
 **1. Calculate the discounted selling price:**
@@ -5574,7 +5574,7 @@ GSM_062,canonical,google/gemini-2.5-flash,"Here's how to calculate the total cos
 * Excess amount = Total cost - Mrs. Lee's budget
 * Excess amount = $552,000 - $440,000 = $112,000
 
-**Answer:** The total cost will be $112,000 more than Mrs. Lee's budget.",True,112000,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Answer:** The total cost will be $112,000 more than Mrs. Lee's budget.",True,112000,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_063,canonical,google/gemini-2.5-flash,"Here's how to calculate Prof. Rodriguez's net proceeds:
 
 **1. Calculate the registration fees:**
@@ -5591,7 +5591,7 @@ GSM_063,canonical,google/gemini-2.5-flash,"Here's how to calculate Prof. Rodrigu
 * Selling price - Total expenses
 * $220,000 - $203,800 = $16,200
 
-**Therefore, Prof. Rodriguez's net proceeds from selling the villa are $16,200.**",True,16200,arithmetic_reasoning,medium,hard,True,True,state_machine,correct,False
+**Therefore, Prof. Rodriguez's net proceeds from selling the villa are $16,200.**",True,16200,arithmetic_reasoning,medium,hard,canonical,True,in_bank_ok,True,True,numeric,correct,False
 GSM_064,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 
 **1. Find the number of boys:**
@@ -5606,4 +5606,4 @@ GSM_064,canonical,google/gemini-2.5-flash,"Here's how to solve the problem:
 * Percentage of girls = 0.75 * 100
 * Percentage of girls = 75%
 
-**Therefore, 75% of the kids in the park are girls.**",True,75,arithmetic_reasoning,medium,easy,True,True,state_machine,correct,False
+**Therefore, 75% of the kids in the park are girls.**",True,75,arithmetic_reasoning,medium,easy,canonical,True,in_bank_ok,True,True,numeric,correct,False

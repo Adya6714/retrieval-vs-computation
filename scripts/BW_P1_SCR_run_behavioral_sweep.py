@@ -19,6 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from probes.common.variants import normalize_variant
 from probes.contamination.verify import LAST_VERIFY_META, parse_action_mapping_from_notes, verify_answer
 from probes.behavioral.sampling import DEFAULT_TEMPERATURE
 
@@ -128,7 +129,7 @@ def _existing_pairs(output_path: Path) -> set[tuple[str, str, str]]:
             if str(row["_raw"]).strip().startswith("ERROR:"):
                 continue
             done.add(
-                (str(pid).strip(), str(vtype).strip(), str(model).strip())
+                (str(pid).strip(), normalize_variant(vtype), str(model).strip())
             )
         return done
     except pd.errors.EmptyDataError:
@@ -288,7 +289,7 @@ def main() -> None:
 
         for row in all_rows:
             pid = row["problem_id"]
-            vtype = row["variant_type"]
+            vtype = normalize_variant(row["variant_type"])
             family = row["problem_family"]
             subtype = row.get("problem_subtype", "")
             verifier_family = _resolve_verifier_family(

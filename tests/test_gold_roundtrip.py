@@ -22,6 +22,7 @@ from pathlib import Path
 
 import pytest
 
+from probes.common.variants import normalize_variant
 from probes.contamination.verify import parse_action_mapping_from_notes, verify_answer
 from probes.contamination.verify_algo import verify_algo
 
@@ -119,7 +120,7 @@ def collect_gold_roundtrip_counts() -> list[tuple[str, str, str, int, int, int]]
             key = (
                 family,
                 str(row.get("problem_subtype", "")).strip(),
-                str(row.get("variant_type", "")).strip(),
+                normalize_variant(row.get("variant_type", "")),
             )
             groups[key].append(row)
 

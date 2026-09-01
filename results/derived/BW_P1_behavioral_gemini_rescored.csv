@@ -1,4 +1,4 @@
-problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,variant_type_normalized,included,exclusion_reason,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
 BW_001,W1,google/gemini-2.5-flash,"1. pick-up h
 2. stack h l
 3. pick-up b
@@ -25,7 +25,7 @@ stack i g
 pick-up f
 stack f i
 pick-up j
-stack j f",planning_suite,high,medium,True,True,state_machine,correct,False
+stack j f",planning_suite,high,medium,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_001,W2,google/gemini-2.5-flash,"1. pick-up l
 2. stack l h
 3. pick-up h
@@ -52,7 +52,7 @@ stack i g
 pick-up f
 stack f i
 pick-up j
-stack j f",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack j f",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_001,W3,google/gemini-2.5-flash,"1. select Fiona
 2. place Fiona under Ian
 3. select James
@@ -79,7 +79,7 @@ place Ian under Grace
 select Fiona
 place Fiona under Ian
 select James
-place James under Fiona",planning_suite,high,medium,False,False,state_machine,incorrect,False
+place James under Fiona",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_001,W4,google/gemini-2.5-flash,"1. pick-up j
 2. stack j f
 3. pick-up f
@@ -106,7 +106,7 @@ stack i g
 pick-up f
 stack f i
 pick-up j
-stack j f",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack j f",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_001,W5,google/gemini-2.5-flash,"1. unstack j f
 2. put-down j
 3. unstack f i
@@ -135,7 +135,7 @@ put-down d
 unstack b h
 put-down b
 unstack h l
-put-down h",planning_suite,high,medium,False,True,state_machine,correct,True
+put-down h",planning_suite,high,medium,W5,True,in_bank_ok,False,True,state_machine,correct,True
 BW_001,W6,google/gemini-2.5-flash,"1. pick-up d
 2. put-down d
 3. pick-up h
@@ -168,7 +168,7 @@ stack f c
 pick-up b
 stack b f
 pick-up g
-stack g b",planning_suite,high,medium,True,True,state_machine,correct,False
+stack g b",planning_suite,high,medium,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_001,canonical,google/gemini-2.5-flash,"1. pick-up j
 2. stack j f
 3. pick-up f
@@ -195,7 +195,7 @@ stack i g
 pick-up f
 stack f i
 pick-up j
-stack j f",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack j f",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_002,W1,google/gemini-2.5-flash,"1. pick-up j
 2. stack j g
 3. pick-up g
@@ -218,7 +218,7 @@ BW_002,W1,google/gemini-2.5-flash,"1. pick-up j
  pick-up g
  stack g a
  pick-up j
- stack j g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack j g",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_002,W2,google/gemini-2.5-flash,"1. pick-up j
 2. stack j g
 3. pick-up g
@@ -241,7 +241,7 @@ BW_002,W2,google/gemini-2.5-flash,"1. pick-up j
  pick-up g
  stack g a
  pick-up j
- stack j g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack j g",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_002,W3,google/gemini-2.5-flash,"1. select Jake
 2. place Jake under Grace
 3. select Grace
@@ -264,7 +264,7 @@ place Bob under Kevin
 select Kevin
 place Kevin under Henry
 select Henry
-place Henry under Ivan",planning_suite,high,hard,True,False,state_machine,incorrect,True
+place Henry under Ivan",planning_suite,high,hard,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 BW_002,W4,google/gemini-2.5-flash,"1. pick-up j
 2. stack j g
 3. pick-up g
@@ -287,7 +287,7 @@ BW_002,W4,google/gemini-2.5-flash,"1. pick-up j
  pick-up g
  stack g a
  pick-up j
- stack j g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack j g",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_002,W5,google/gemini-2.5-flash,"1. unstack j g
 2. put-down j
 3. unstack g a
@@ -310,7 +310,7 @@ put-down b
 unstack k h
 put-down k
 unstack h i
-put-down h",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down h",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_002,W6,google/gemini-2.5-flash,"1. pick-up n
 2. stack n f
 3. pick-up f
@@ -333,7 +333,7 @@ BW_002,W6,google/gemini-2.5-flash,"1. pick-up n
  pick-up f
  stack f c
  pick-up n
- stack n f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack n f",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_002,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h i
 3. pick-up k
@@ -356,7 +356,7 @@ BW_002,canonical,google/gemini-2.5-flash,"1. pick-up h
  pick-up g
  stack g a
  pick-up j
- stack j g",planning_suite,high,hard,True,True,state_machine,correct,False
+ stack j g",planning_suite,high,hard,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_010,W1,google/gemini-2.5-flash,"1. pick-up d
 2. stack d e
 3. pick-up e
@@ -371,7 +371,7 @@ stack a b
 pick-up e
 stack e a
 pick-up d
-stack d e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack d e",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_010,W2,google/gemini-2.5-flash,"1. pick-up b
 2. stack b f
 3. pick-up a
@@ -386,7 +386,7 @@ stack a b
 pick-up e
 stack e a
 pick-up d
-stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+stack d e",planning_suite,high,easy,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_010,W3,google/gemini-2.5-flash,"1. select Diana
 2. place Diana under Ethan
 3. select Ethan
@@ -401,7 +401,7 @@ place Alice under Brian
 select Ethan
 place Ethan under Alice
 select Diana
-place Diana under Ethan",planning_suite,high,easy,False,False,state_machine,incorrect,False
+place Diana under Ethan",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_010,W4,google/gemini-2.5-flash,"1. pick-up d
 2. stack d e
 3. pick-up e
@@ -416,7 +416,7 @@ stack a b
 pick-up e
 stack e a
 pick-up d
-stack d e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack d e",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_010,W5,google/gemini-2.5-flash,"1. unstack d e
 2. put-down d
 3. unstack e a
@@ -431,7 +431,7 @@ put-down e
 unstack a b
 put-down a
 unstack b f
-put-down b",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down b",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_010,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a d
 3. pick-up b
@@ -450,7 +450,7 @@ stack e b
 pick-up f
 stack f e
 pick-up c
-stack c f",planning_suite,high,easy,True,True,state_machine,correct,False
+stack c f",planning_suite,high,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_010,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. stack b f
 3. pick-up a
@@ -465,7 +465,7 @@ stack a b
 pick-up e
 stack e a
 pick-up d
-stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+stack d e",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_011,W1,google/gemini-2.5-flash,"1. pick-up b
 2. stack i b
 3. pick-up h
@@ -492,7 +492,7 @@ stack g a
 pick-up k
 stack k g
 pick-up c
-stack c k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c k",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_011,W2,google/gemini-2.5-flash,"1. pick-up b
 2. put-down b
 3. pick-up i
@@ -529,7 +529,7 @@ stack g a
 pick-up k
 stack k g
 pick-up c
-stack c k",planning_suite,high,hard,False,True,state_machine,correct,True
+stack c k",planning_suite,high,hard,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_011,W3,google/gemini-2.5-flash,"1. select Ben
 2. select Ivan
 3. place Ivan under Ben
@@ -565,7 +565,7 @@ place George under Amy
 select Kevin
 place Kevin under George
 select Carol
-place Carol under Kevin",planning_suite,high,hard,False,False,state_machine,incorrect,False
+place Carol under Kevin",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_011,W4,google/gemini-2.5-flash,"1. pick-up c
 2. stack c k
 3. pick-up k
@@ -600,7 +600,7 @@ stack g a
 pick-up k
 stack k g
 pick-up c
-stack c k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c k",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_011,W5,google/gemini-2.5-flash,"1. unstack c k
 2. put-down c
 3. unstack k g
@@ -635,7 +635,7 @@ put-down e
 unstack h i
 put-down h
 unstack i b
-put-down i",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down i",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_011,W6,google/gemini-2.5-flash,"1. pick-up d
 2. put-down d
 3. pick-up j
@@ -676,7 +676,7 @@ stack i a
 pick-up h
 stack h i
 pick-up g
-stack g h",planning_suite,high,hard,True,True,state_machine,correct,False
+stack g h",planning_suite,high,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_011,canonical,google/gemini-2.5-flash,"1. pick-up c
 2. stack c k
 3. pick-up k
@@ -711,21 +711,21 @@ stack g a
 pick-up k
 stack k g
 pick-up c
-stack c k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c k",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_014,W1,google/gemini-2.5-flash,"1. pick-up l
 2. stack l e
 3. pick-up e
 4. stack e g",False,"pick-up e
  stack e g
  pick-up l
- stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack l e",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_014,W2,google/gemini-2.5-flash,"1. pick-up l
 2. stack l e
 3. pick-up e
 4. stack e g",False,"pick-up e
  stack e g
  pick-up l
- stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack l e",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_014,W3,google/gemini-2.5-flash,"1. select Grace
 2. select Eve
 3. place Eve under Grace
@@ -733,14 +733,14 @@ BW_014,W3,google/gemini-2.5-flash,"1. select Grace
 5. place Lisa under Eve",False,"select Lisa
 place Lisa under Eve
 select Eve
-place Eve under Grace",planning_suite,high,easy,False,False,state_machine,incorrect,False
+place Eve under Grace",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_014,W4,google/gemini-2.5-flash,"1. pick-up l
 2. stack l e
 3. pick-up e
 4. stack e g",False,"pick-up e
  stack e g
  pick-up l
- stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack l e",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_014,W5,google/gemini-2.5-flash,"1. unstack l e
 2. put-down l
 3. unstack e g
@@ -749,7 +749,7 @@ BW_014,W5,google/gemini-2.5-flash,"1. unstack l e
 6. put-down g",True,"unstack l e
 put-down l
 unstack e g
-put-down e",planning_suite,high,easy,False,True,state_machine,correct,True
+put-down e",planning_suite,high,easy,W5,True,in_bank_ok,False,True,state_machine,correct,True
 BW_014,W6,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up d
@@ -758,14 +758,14 @@ BW_014,W6,google/gemini-2.5-flash,"1. pick-up f
 6. stack h d",True,"pick-up d
  stack d f
  pick-up h
- stack h d",planning_suite,high,easy,True,True,state_machine,correct,False
+ stack h d",planning_suite,high,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_014,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack l e
 3. pick-up e
 4. stack e g",False,"pick-up e
  stack e g
  pick-up l
- stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack l e",planning_suite,high,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_022,W1,google/gemini-2.5-flash,"1. pick-up g
 2. stack g c
 3. pick-up c
@@ -780,7 +780,7 @@ BW_022,W1,google/gemini-2.5-flash,"1. pick-up g
  pick-up c
  stack c b
  pick-up g
- stack g c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g c",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_022,W2,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up k
@@ -797,7 +797,7 @@ BW_022,W2,google/gemini-2.5-flash,"1. pick-up f
  pick-up c
  stack c b
  pick-up g
- stack g c",planning_suite,high,medium,False,True,state_machine,correct,True
+ stack g c",planning_suite,high,medium,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_022,W3,google/gemini-2.5-flash,"1. select Frank
 2. place Kevin under Frank
 3. select Bob
@@ -812,7 +812,7 @@ place Carol under Bob
 select Bob
 place Bob under Kevin
 select Kevin
-place Kevin under Frank",planning_suite,high,medium,False,False,state_machine,incorrect,False
+place Kevin under Frank",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_022,W4,google/gemini-2.5-flash,"1. pick-up g
 2. stack g c
 3. pick-up c
@@ -827,7 +827,7 @@ BW_022,W4,google/gemini-2.5-flash,"1. pick-up g
  pick-up c
  stack c b
  pick-up g
- stack g c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g c",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_022,W5,google/gemini-2.5-flash,"1. unstack g c
 2. put-down g
 3. unstack c b
@@ -840,7 +840,7 @@ put-down c
 unstack b k
 put-down b
 unstack k f
-put-down k",planning_suite,high,medium,False,False,state_machine,incorrect,False
+put-down k",planning_suite,high,medium,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_022,W6,google/gemini-2.5-flash,"1. pick-up j
 2. put-down j
 3. pick-up m
@@ -857,7 +857,7 @@ BW_022,W6,google/gemini-2.5-flash,"1. pick-up j
  pick-up i
  stack i h
  pick-up l
- stack l i",planning_suite,high,medium,True,True,state_machine,correct,False
+ stack l i",planning_suite,high,medium,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_022,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up k
@@ -874,7 +874,7 @@ BW_022,canonical,google/gemini-2.5-flash,"1. pick-up f
  pick-up c
  stack c b
  pick-up g
- stack g c",planning_suite,high,medium,True,True,state_machine,correct,False
+ stack g c",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_080,W1,google/gemini-2.5-flash,"1. pick-up l
 2. stack l c
 3. pick-up c
@@ -893,7 +893,7 @@ stack i e
 pick-up c
 stack c i
 pick-up l
-stack l c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack l c",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_080,W2,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up j
@@ -914,7 +914,7 @@ stack i e
 pick-up c
 stack c i
 pick-up l
-stack l c",planning_suite,high,medium,False,True,state_machine,correct,True
+stack l c",planning_suite,high,medium,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_080,W3,google/gemini-2.5-flash,"1. select Laura
 2. place Laura under Clara
 3. select Clara
@@ -933,7 +933,7 @@ place Ivan under Ethan
 select Clara
 place Clara under Ivan
 select Laura
-place Laura under Clara",planning_suite,high,medium,False,False,state_machine,incorrect,False
+place Laura under Clara",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_080,W4,google/gemini-2.5-flash,"1. pick-up l
 2. stack l c
 3. pick-up c
@@ -952,7 +952,7 @@ stack i e
 pick-up c
 stack c i
 pick-up l
-stack l c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack l c",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_080,W5,google/gemini-2.5-flash,"1. unstack l c
 2. put-down l
 3. unstack c i
@@ -971,7 +971,7 @@ put-down i
 unstack e j
 put-down e
 unstack j f
-put-down j",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down j",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_080,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a g
 3. pick-up g
@@ -1004,7 +1004,7 @@ stack g a
 pick-up e
 stack e g
 pick-up b
-stack b e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack b e",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_080,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack l c
 3. pick-up c
@@ -1023,7 +1023,7 @@ stack i e
 pick-up c
 stack c i
 pick-up l
-stack l c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack l c",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_120,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c j
 3. pick-up j
@@ -1034,7 +1034,7 @@ stack g f
 pick-up j
 stack j g
 pick-up c
-stack c j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_120,W2,google/gemini-2.5-flash,"1. pick-up f
 2. stack f X (f can't be stacked because it's not holding f)
 3. pick-up g
@@ -1047,7 +1047,7 @@ stack g f
 pick-up j
 stack j g
 pick-up c
-stack c j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_120,W3,google/gemini-2.5-flash,"1. select Clara
 2. place Clara under Jake
 3. select Jake
@@ -1058,7 +1058,7 @@ place Grace under Felix
 select Jake
 place Jake under Grace
 select Clara
-place Clara under Jake",planning_suite,high,easy,False,False,state_machine,incorrect,False
+place Clara under Jake",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_120,W4,google/gemini-2.5-flash,"1. pick-up c
 2. stack c j
 3. pick-up j
@@ -1069,7 +1069,7 @@ stack g f
 pick-up j
 stack j g
 pick-up c
-stack c j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_120,W5,google/gemini-2.5-flash,"1. unstack c j
 2. put-down c
 3. unstack j g
@@ -1080,7 +1080,7 @@ put-down c
 unstack j g
 put-down j
 unstack g f
-put-down g",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down g",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_120,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a d
 3. pick-up b
@@ -1104,7 +1104,7 @@ stack b d
 pick-up c
 stack c b
 pick-up a
-stack a c",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack a c",planning_suite,high,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_120,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up g
@@ -1117,7 +1117,7 @@ stack g f
 pick-up j
 stack j g
 pick-up c
-stack c j",planning_suite,high,easy,True,True,state_machine,correct,False
+stack c j",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_137,W1,google/gemini-2.5-flash,"1. pick-up d
 2. stack d a
 3. pick-up a
@@ -1156,7 +1156,7 @@ stack b j
 pick-up a
 stack a b
 pick-up d
-stack d a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack d a",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_137,W2,google/gemini-2.5-flash,"1. pick-up i
 2. stack i g
 3. pick-up g
@@ -1195,7 +1195,7 @@ stack b j
 pick-up a
 stack a b
 pick-up d
-stack d a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack d a",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_137,W3,google/gemini-2.5-flash,"1. select Dana
 2. place Dana under Aaron
 3. select Aaron
@@ -1234,7 +1234,7 @@ place Brian under Julia
 select Aaron
 place Aaron under Brian
 select Dana
-place Dana under Aaron",planning_suite,high,hard,False,False,state_machine,incorrect,False
+place Dana under Aaron",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_137,W4,google/gemini-2.5-flash,"1. pick-up d
 2. stack d a
 3. pick-up a
@@ -1273,7 +1273,7 @@ stack b j
 pick-up a
 stack a b
 pick-up d
-stack d a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack d a",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_137,W5,google/gemini-2.5-flash,"1. unstack d a
 2. put-down d
 3. unstack a b
@@ -1312,7 +1312,7 @@ put-down c
 unstack f g
 put-down f
 unstack g i
-put-down g",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down g",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_137,W6,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up l
@@ -1357,7 +1357,7 @@ stack a j
 pick-up b
 stack b a
 pick-up g
-stack g b",planning_suite,high,hard,True,True,state_machine,correct,False
+stack g b",planning_suite,high,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_137,canonical,google/gemini-2.5-flash,"1. pick-up i
 2. put-down i
 3. pick-up g
@@ -1398,7 +1398,7 @@ stack b j
 pick-up a
 stack a b
 pick-up d
-stack d a",planning_suite,high,hard,True,True,state_machine,correct,False
+stack d a",planning_suite,high,hard,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_155,W1,google/gemini-2.5-flash,"1. pick-up i
 2. stack i f
 3. pick-up f
@@ -1413,7 +1413,7 @@ stack e j
 pick-up f
 stack f e
 pick-up i
-stack i f",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack i f",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_155,W2,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up j
@@ -1430,7 +1430,7 @@ stack e j
 pick-up f
 stack f e
 pick-up i
-stack i f",planning_suite,high,easy,False,True,state_machine,correct,True
+stack i f",planning_suite,high,easy,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_155,W3,google/gemini-2.5-flash,"1. select Ivan
 2. place Ivan under Frank
 3. select Frank
@@ -1445,7 +1445,7 @@ place Eve under Jake
 select Frank
 place Frank under Eve
 select Ivan
-place Ivan under Frank",planning_suite,high,easy,False,False,state_machine,incorrect,False
+place Ivan under Frank",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_155,W4,google/gemini-2.5-flash,"1. pick-up i
 2. stack i f
 3. pick-up f
@@ -1460,7 +1460,7 @@ stack e j
 pick-up f
 stack f e
 pick-up i
-stack i f",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack i f",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_155,W5,google/gemini-2.5-flash,"1. unstack i f
 2. put-down i
 3. unstack f e
@@ -1475,7 +1475,7 @@ put-down f
 unstack e j
 put-down e
 unstack j h
-put-down j",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down j",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_155,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up b
@@ -1494,7 +1494,7 @@ stack e d
 pick-up b
 stack b e
 pick-up a
-stack a b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack a b",planning_suite,high,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_155,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h j
 3. pick-up e
@@ -1509,7 +1509,7 @@ stack e j
 pick-up f
 stack f e
 pick-up i
-stack i f",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack i f",planning_suite,high,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_172,W1,google/gemini-2.5-flash,"1. pick-up f
 2. stack f k
 3. pick-up h
@@ -1548,7 +1548,7 @@ stack g e
 pick-up l
 stack l g
 pick-up i
-stack i l",planning_suite,high,hard,True,True,state_machine,correct,False
+stack i l",planning_suite,high,hard,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_172,W2,google/gemini-2.5-flash,"1. pick-up k
 2. put-down k
 3. pick-up f
@@ -1589,7 +1589,7 @@ stack g e
 pick-up l
 stack l g
 pick-up i
-stack i l",planning_suite,high,hard,False,True,state_machine,correct,True
+stack i l",planning_suite,high,hard,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_172,W3,google/gemini-2.5-flash,"1. select Ivan
 2. place Ivan under Laura
 3. select Laura
@@ -1628,7 +1628,7 @@ place Gary under Ethan
 select Laura
 place Laura under Gary
 select Ivan
-place Ivan under Laura",planning_suite,high,hard,False,False,state_machine,incorrect,False
+place Ivan under Laura",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_172,W4,google/gemini-2.5-flash,"1. pick-up k
 2. put-down k
 3. pick-up f
@@ -1669,7 +1669,7 @@ stack g e
 pick-up l
 stack l g
 pick-up i
-stack i l",planning_suite,high,hard,False,True,state_machine,correct,True
+stack i l",planning_suite,high,hard,W4,True,in_bank_ok,False,True,state_machine,correct,True
 BW_172,W5,google/gemini-2.5-flash,"1. unstack i l
 2. put-down i
 3. unstack l g
@@ -1708,7 +1708,7 @@ put-down j
 unstack h f
 put-down h
 unstack f k
-put-down f",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down f",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_172,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a k
 3. pick-up k
@@ -1764,7 +1764,7 @@ stack d c
 pick-up f
 stack f d
 pick-up e
-stack e f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack e f",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_172,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. stack f k
 3. pick-up h
@@ -1803,7 +1803,7 @@ stack g e
 pick-up l
 stack l g
 pick-up i
-stack i l",planning_suite,high,hard,True,True,state_machine,correct,False
+stack i l",planning_suite,high,hard,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_203,W1,google/gemini-2.5-flash,"1. pick-up k
 2. stack k f
 3. pick-up f
@@ -1814,7 +1814,7 @@ BW_203,W1,google/gemini-2.5-flash,"1. pick-up k
  pick-up f
  stack f j
  pick-up k
- stack k f",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack k f",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_203,W2,google/gemini-2.5-flash,"1. pick-up j
 2. stack j h
 3. pick-up f
@@ -1825,7 +1825,7 @@ BW_203,W2,google/gemini-2.5-flash,"1. pick-up j
  pick-up f
  stack f j
  pick-up k
- stack k f",planning_suite,high,easy,True,True,state_machine,correct,False
+ stack k f",planning_suite,high,easy,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_203,W3,google/gemini-2.5-flash,"1. select Kevin
 2. place Kevin under Frank
 3. select Frank
@@ -1836,7 +1836,7 @@ place Kevin under Frank
 select Frank
 place Frank under Jake
 select Jake
-place Jake under Henry",planning_suite,high,easy,True,False,state_machine,incorrect,True
+place Jake under Henry",planning_suite,high,easy,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 BW_203,W4,google/gemini-2.5-flash,"1. pick-up k
 2. stack k f
 3. pick-up f
@@ -1847,7 +1847,7 @@ BW_203,W4,google/gemini-2.5-flash,"1. pick-up k
  pick-up f
  stack f j
  pick-up k
- stack k f",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack k f",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_203,W5,google/gemini-2.5-flash,"1. unstack k f
 2. put-down k
 3. unstack f j
@@ -1858,7 +1858,7 @@ put-down k
 unstack f j
 put-down f
 unstack j h
-put-down j",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down j",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_203,W6,google/gemini-2.5-flash,"1. pick-up i
 2. stack i d
 3. pick-up d
@@ -1869,7 +1869,7 @@ BW_203,W6,google/gemini-2.5-flash,"1. pick-up i
  pick-up d
  stack d g
  pick-up i
- stack i d",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack i d",planning_suite,high,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_203,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up j
@@ -1882,7 +1882,7 @@ BW_203,canonical,google/gemini-2.5-flash,"1. pick-up h
  pick-up f
  stack f j
  pick-up k
- stack k f",planning_suite,high,easy,True,True,state_machine,correct,False
+ stack k f",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_227,W1,google/gemini-2.5-flash,"1. pick-up a
 2. put-down a
 3. pick-up k
@@ -1915,7 +1915,7 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,high,hard,False,True,state_machine,correct,True
+stack f l",planning_suite,high,hard,W1,True,in_bank_ok,False,True,state_machine,correct,True
 BW_227,W2,google/gemini-2.5-flash,"1. pick-up a
 2. put-down a
 3. pick-up k
@@ -1948,7 +1948,7 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,high,hard,False,True,state_machine,correct,True
+stack f l",planning_suite,high,hard,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_227,W3,google/gemini-2.5-flash,"1. select Felix
 2. place Felix under Laura
 3. select Laura
@@ -1979,7 +1979,7 @@ place George under Derek
 select Laura
 place Laura under George
 select Felix
-place Felix under Laura",planning_suite,high,hard,False,False,state_machine,incorrect,False
+place Felix under Laura",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_227,W4,google/gemini-2.5-flash,"1. pick-up f
 2. stack f l
 3. pick-up l
@@ -2010,7 +2010,7 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack f l",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_227,W5,google/gemini-2.5-flash,"1. unstack f l
 2. put-down f
 3. unstack l g
@@ -2041,7 +2041,7 @@ put-down j
 unstack c k
 put-down c
 unstack k a
-put-down k",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down k",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_227,W6,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up j
@@ -2078,7 +2078,7 @@ stack c h
 pick-up g
 stack g c
 pick-up e
-stack e g",planning_suite,high,hard,True,True,state_machine,correct,False
+stack e g",planning_suite,high,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_227,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. stack f l
 3. pick-up l
@@ -2109,7 +2109,7 @@ stack g d
 pick-up l
 stack l g
 pick-up f
-stack f l",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack f l",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_282,W1,google/gemini-2.5-flash,"1. pick-up g
 2. stack g h
 3. pick-up h
@@ -2124,7 +2124,7 @@ BW_282,W1,google/gemini-2.5-flash,"1. pick-up g
  pick-up h
  stack h c
  pick-up g
- stack g h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g h",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_282,W2,google/gemini-2.5-flash,"1. pick-up g
 2. stack g h
 3. pick-up h
@@ -2139,7 +2139,7 @@ BW_282,W2,google/gemini-2.5-flash,"1. pick-up g
  pick-up h
  stack h c
  pick-up g
- stack g h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g h",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_282,W3,google/gemini-2.5-flash,"1. select Grace
 2. place Grace under Henry
 3. select Henry
@@ -2154,7 +2154,7 @@ place Henry under Carol
 select Carol
 place Carol under Ivan
 select Ivan
-place Ivan under Bob",planning_suite,high,medium,True,False,state_machine,incorrect,True
+place Ivan under Bob",planning_suite,high,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 BW_282,W4,google/gemini-2.5-flash,"1. pick-up g
 2. stack g h
 3. pick-up h
@@ -2169,7 +2169,7 @@ BW_282,W4,google/gemini-2.5-flash,"1. pick-up g
  pick-up h
  stack h c
  pick-up g
- stack g h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g h",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_282,W5,google/gemini-2.5-flash,"1. unstack g h
 2. put-down g
 3. unstack h c
@@ -2184,7 +2184,7 @@ put-down h
 unstack c i
 put-down c
 unstack i b
-put-down i",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down i",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_282,W6,google/gemini-2.5-flash,"1. pick-up k
 2. stack k l
 3. pick-up l
@@ -2199,7 +2199,7 @@ BW_282,W6,google/gemini-2.5-flash,"1. pick-up k
  pick-up l
  stack l j
  pick-up k
- stack k l",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack k l",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_282,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h c
 3. pick-up i
@@ -2212,7 +2212,7 @@ BW_282,canonical,google/gemini-2.5-flash,"1. pick-up h
  pick-up h
  stack h c
  pick-up g
- stack g h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g h",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_310,W1,google/gemini-2.5-flash,"1. pick-up g
 2. stack g j
 3. pick-up j
@@ -2231,7 +2231,7 @@ BW_310,W1,google/gemini-2.5-flash,"1. pick-up g
  pick-up j
  stack j a
  pick-up g
- stack g j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g j",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_310,W2,google/gemini-2.5-flash,"1. pick-up b
 2. stack b d
 3. pick-up f
@@ -2250,7 +2250,7 @@ BW_310,W2,google/gemini-2.5-flash,"1. pick-up b
  pick-up j
  stack j a
  pick-up g
- stack g j",planning_suite,high,medium,True,True,state_machine,correct,False
+ stack g j",planning_suite,high,medium,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_310,W3,google/gemini-2.5-flash,"1. select Grace
 2. place Grace under Jake
 3. select Jake
@@ -2269,7 +2269,7 @@ place Alice under Frank
 select Frank
 place Frank under Bob
 select Bob
-place Bob under Diana",planning_suite,high,medium,True,False,state_machine,incorrect,True
+place Bob under Diana",planning_suite,high,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 BW_310,W4,google/gemini-2.5-flash,"1. pick-up g
 2. stack g j
 3. pick-up j
@@ -2288,7 +2288,7 @@ BW_310,W4,google/gemini-2.5-flash,"1. pick-up g
  pick-up j
  stack j a
  pick-up g
- stack g j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack g j",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_310,W5,google/gemini-2.5-flash,"1. unstack g j
 2. put-down g
 3. unstack j a
@@ -2307,7 +2307,7 @@ put-down a
 unstack f b
 put-down f
 unstack b d
-put-down b",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down b",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_310,W6,google/gemini-2.5-flash,"1. pick-up l
 2. stack l m
 3. pick-up m
@@ -2326,7 +2326,7 @@ BW_310,W6,google/gemini-2.5-flash,"1. pick-up l
  pick-up m
  stack m c
  pick-up l
- stack l m",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack l m",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_310,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. stack b d
 3. pick-up f
@@ -2345,21 +2345,21 @@ BW_310,canonical,google/gemini-2.5-flash,"1. pick-up b
  pick-up j
  stack j a
  pick-up g
- stack g j",planning_suite,high,medium,True,True,state_machine,correct,False
+ stack g j",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_331,W1,google/gemini-2.5-flash,"1.pick-up h
 2.stack h j
 3.pick-up j
 4.stack j l",False,"pick-up j
  stack j l
  pick-up h
- stack h j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack h j",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_331,W2,google/gemini-2.5-flash,"1. pick-up h
 2. stack h j
 3. pick-up j
 4. stack j l",False,"pick-up j
  stack j l
  pick-up h
- stack h j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack h j",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_331,W3,google/gemini-2.5-flash,"1. select Lisa
 2. place Jake under Lisa
 3. remove Jake from Lisa
@@ -2370,35 +2370,35 @@ BW_331,W3,google/gemini-2.5-flash,"1. select Lisa
 8. place Jake under Lisa",False,"select Henry
 place Henry under Jake
 select Jake
-place Jake under Lisa",planning_suite,high,easy,False,False,state_machine,incorrect,False
+place Jake under Lisa",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_331,W4,google/gemini-2.5-flash,"1. pick-up h
 2. stack h j
 3. pick-up j
 4. stack j l",False,"pick-up j
  stack j l
  pick-up h
- stack h j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack h j",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_331,W5,google/gemini-2.5-flash,"1. unstack h j
 2. put-down h
 3. unstack j l
 4. put-down j",True,"unstack h j
 put-down h
 unstack j l
-put-down j",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down j",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_331,W6,google/gemini-2.5-flash,"1. pick-up d
 2. stack d e
 3. pick-up e
 4. stack e f",False,"pick-up e
  stack e f
  pick-up d
- stack d e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack d e",planning_suite,high,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_331,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h j
 3. pick-up j
 4. stack j l",False,"pick-up j
  stack j l
  pick-up h
- stack h j",planning_suite,high,easy,False,False,state_machine,incorrect,False
+ stack h j",planning_suite,high,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_350,W1,google/gemini-2.5-flash,"1. pick-up f
 2. stack f e
 3. pick-up e
@@ -2481,7 +2481,7 @@ BW_350,W1,google/gemini-2.5-flash,"1. pick-up f
  pick-up e
  stack e i
  pick-up f
- stack f e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack f e",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_350,W2,google/gemini-2.5-flash,"1. pick-up f
 2. stack f e
 3. pick-up e
@@ -2516,7 +2516,7 @@ BW_350,W2,google/gemini-2.5-flash,"1. pick-up f
  pick-up e
  stack e i
  pick-up f
- stack f e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack f e",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_350,W3,google/gemini-2.5-flash,"1. select Alice
 2. select Kevin
 3. release Alice
@@ -2581,7 +2581,7 @@ place Grace under Bob
 select Bob
 place Bob under Lisa
 select Lisa
-place Lisa under Diana",planning_suite,high,hard,False,False,state_machine,incorrect,False
+place Lisa under Diana",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_350,W4,google/gemini-2.5-flash,"1. pick-up f
 2. pick-up e
 3. stack e f
@@ -2671,7 +2671,7 @@ BW_350,W4,google/gemini-2.5-flash,"1. pick-up f
  pick-up e
  stack e i
  pick-up f
- stack f e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack f e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_350,W5,google/gemini-2.5-flash,"1. unstack f e
 2. put-down f
 3. unstack e i
@@ -2706,7 +2706,7 @@ put-down g
 unstack b l
 put-down b
 unstack l d
-put-down l",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down l",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_350,W6,google/gemini-2.5-flash,"1. pick-up p
 2. stack p o
 3. pick-up o
@@ -2741,7 +2741,7 @@ BW_350,W6,google/gemini-2.5-flash,"1. pick-up p
  pick-up o
  stack o r
  pick-up p
- stack p o",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack p o",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_350,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack l d
 3. pick-up b
@@ -2776,7 +2776,7 @@ BW_350,canonical,google/gemini-2.5-flash,"1. pick-up l
  pick-up e
  stack e i
  pick-up f
- stack f e",planning_suite,high,hard,True,True,state_machine,correct,False
+ stack f e",planning_suite,high,hard,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_408,W1,google/gemini-2.5-flash,"1. pick-up a
 2. stack a l
 3. pick-up l
@@ -2803,7 +2803,7 @@ BW_408,W1,google/gemini-2.5-flash,"1. pick-up a
  pick-up l
  stack l h
  pick-up a
- stack a l",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack a l",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_408,W2,google/gemini-2.5-flash,"1. pick-up b
 2. stack b j
 3. pick-up j
@@ -2830,7 +2830,7 @@ BW_408,W2,google/gemini-2.5-flash,"1. pick-up b
  pick-up l
  stack l h
  pick-up a
- stack a l",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack a l",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_408,W3,google/gemini-2.5-flash,"1. select Alice
 2. select Lisa
 3. place Alice under Lisa
@@ -2866,7 +2866,7 @@ place Carol under Grace
 select Grace
 place Grace under Jake
 select Jake
-place Jake under Bob",planning_suite,high,hard,False,False,state_machine,incorrect,False
+place Jake under Bob",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_408,W4,google/gemini-2.5-flash,"1. pick-up a
 2. stack a l
 3. pick-up l
@@ -2893,7 +2893,7 @@ BW_408,W4,google/gemini-2.5-flash,"1. pick-up a
  pick-up l
  stack l h
  pick-up a
- stack a l",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack a l",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_408,W5,google/gemini-2.5-flash,"1. unstack a l
 2. put-down a
 3. unstack l h
@@ -2920,7 +2920,7 @@ put-down c
 unstack g j
 put-down g
 unstack j b
-put-down j",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down j",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_408,W6,google/gemini-2.5-flash,"1. pick-up e
 2. stack e q
 3. pick-up q
@@ -2947,7 +2947,7 @@ BW_408,W6,google/gemini-2.5-flash,"1. pick-up e
  pick-up q
  stack q o
  pick-up e
- stack e q",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack e q",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_408,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. stack b j
 3. pick-up j
@@ -2974,7 +2974,7 @@ BW_408,canonical,google/gemini-2.5-flash,"1. pick-up b
  pick-up l
  stack l h
  pick-up a
- stack a l",planning_suite,high,hard,False,False,state_machine,incorrect,False
+ stack a l",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_467,W1,google/gemini-2.5-flash,"1. pick-up h
 2. stack h f
 3. pick-up f
@@ -2997,7 +2997,7 @@ stack l j
 pick-up i
 stack i l
 pick-up g
-stack g i",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack g i",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_467,W2,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up f
@@ -3022,7 +3022,7 @@ stack l j
 pick-up i
 stack i l
 pick-up g
-stack g i",planning_suite,high,medium,False,True,state_machine,correct,True
+stack g i",planning_suite,high,medium,W2,True,in_bank_ok,False,True,state_machine,correct,True
 BW_467,W3,google/gemini-2.5-flash,"1. select Lisa
 2. place Lisa under Jake
 3. select Ian
@@ -3045,7 +3045,7 @@ place Lisa under Jake
 select Ian
 place Ian under Lisa
 select Gloria
-place Gloria under Ian",planning_suite,high,medium,False,False,state_machine,incorrect,False
+place Gloria under Ian",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_467,W4,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up f
@@ -3070,7 +3070,7 @@ stack l j
 pick-up i
 stack i l
 pick-up g
-stack g i",planning_suite,high,medium,False,True,state_machine,correct,True
+stack g i",planning_suite,high,medium,W4,True,in_bank_ok,False,True,state_machine,correct,True
 BW_467,W5,google/gemini-2.5-flash,"1. unstack g i
 2. put-down g
 3. unstack i l
@@ -3093,7 +3093,7 @@ put-down j
 unstack a f
 put-down a
 unstack f h
-put-down f",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down f",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_467,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a f
 3. pick-up c
@@ -3120,7 +3120,7 @@ stack b h
 pick-up g
 stack g b
 pick-up d
-stack d g",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack d g",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_467,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack f h
 3. pick-up a
@@ -3161,7 +3161,7 @@ stack l j
 pick-up i
 stack i l
 pick-up g
-stack g i",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack g i",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_495,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c l
 3. pick-up l
@@ -3176,7 +3176,7 @@ BW_495,W1,google/gemini-2.5-flash,"1. pick-up c
  pick-up l
  stack l i
  pick-up c
- stack c l",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack c l",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_495,W2,google/gemini-2.5-flash,"1. pick-up c
 2. stack c l
 3. pick-up l
@@ -3200,7 +3200,7 @@ BW_495,W2,google/gemini-2.5-flash,"1. pick-up c
  pick-up l
  stack l i
  pick-up c
- stack c l",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack c l",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_495,W3,google/gemini-2.5-flash,"1. select Carol
 2. place Carol under Lisa
 3. select Lisa
@@ -3215,7 +3215,7 @@ place Lisa under Ivan
 select Ivan
 place Ivan under Eve
 select Eve
-place Eve under Henry",planning_suite,high,medium,True,False,state_machine,incorrect,True
+place Eve under Henry",planning_suite,high,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 BW_495,W4,google/gemini-2.5-flash,"1. pick-up c
 2. stack c l
 3. pick-up l
@@ -3230,7 +3230,7 @@ BW_495,W4,google/gemini-2.5-flash,"1. pick-up c
  pick-up l
  stack l i
  pick-up c
- stack c l",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack c l",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_495,W5,google/gemini-2.5-flash,"1. unstack c l
 2. put-down c
 3. unstack l i
@@ -3245,7 +3245,7 @@ put-down l
 unstack i e
 put-down i
 unstack e h
-put-down e",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down e",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_495,W6,google/gemini-2.5-flash,"1. pick-up f
 2. stack f m
 3. pick-up m
@@ -3260,7 +3260,7 @@ BW_495,W6,google/gemini-2.5-flash,"1. pick-up f
  pick-up m
  stack m k
  pick-up f
- stack f m",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack f m",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_495,canonical,google/gemini-2.5-flash,"1. pick-up c
 2. stack c l
 3. pick-up l
@@ -3275,21 +3275,21 @@ BW_495,canonical,google/gemini-2.5-flash,"1. pick-up c
  pick-up l
  stack l i
  pick-up c
- stack c l",planning_suite,high,medium,False,False,state_machine,incorrect,False
+ stack c l",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E002,W1,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
 4. stack b a",True,"pick-up a
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack b a",planning_suite,low,easy,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E002,W2,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
 4. stack b a",True,"pick-up a
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack b a",planning_suite,low,easy,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E002,W3,google/gemini-2.5-flash,"1. select Clara
 2. select Aaron
 3. place Aaron under Clara
@@ -3297,21 +3297,21 @@ BW_E002,W3,google/gemini-2.5-flash,"1. select Clara
 5. place Brian under Aaron",False,"select Aaron
 place Aaron under Clara
 select Brian
-place Brian under Aaron",planning_suite,low,easy,False,False,state_machine,incorrect,False
+place Brian under Aaron",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E002,W4,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
 4. stack b a",True,"pick-up a 
 stack a c 
 pick-up b 
-stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack b a",planning_suite,low,easy,W4,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E002,W5,google/gemini-2.5-flash,"1. unstack b a
 2. put-down b
 3. unstack a c
 4. put-down a",True,"unstack b a
 put-down b
 unstack a c
-put-down a",planning_suite,low,easy,True,True,state_machine,correct,False
+put-down a",planning_suite,low,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E002,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a d
 3. pick-up c
@@ -3330,7 +3330,7 @@ stack c d
 pick-up b
 stack b c
 pick-up a
-stack a b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack a b",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E002,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. stack b a
 3. pick-up b
@@ -3341,66 +3341,66 @@ BW_E002,canonical,google/gemini-2.5-flash,"1. pick-up b
 8. stack b a",False,"pick-up a 
 stack a c 
 pick-up b 
-stack b a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b a",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E015,W1,google/gemini-2.5-flash,"1. pick-up c
 2. put-down c
 3. pick-up a
 4. stack a b",False,"unstack c b
 put-down c
 pick-up a
-stack a b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack a b",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E015,W2,google/gemini-2.5-flash,"1. unstack c b
 2. put-down c
 3. pick-up a
 4. stack a b",True,"unstack c b
 put-down c
 pick-up a
-stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+stack a b",planning_suite,low,easy,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E015,W3,google/gemini-2.5-flash,"1. select Aaron
 2. release Clara
 3. place Aaron under Brian",False,"select Aaron
 place Aaron under Brian
 select Clara
-place Clara under Aaron",planning_suite,low,easy,False,False,state_machine,incorrect,False
+place Clara under Aaron",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E015,W4,google/gemini-2.5-flash,"1. unstack c b
 2. stack a b",False,"unstack c b
 put-down c
 pick-up a
-stack a b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack a b",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E015,W5,google/gemini-2.5-flash,"1. unstack a b
 2. pick-up c
 3. stack c b",False,"unstack a b
 put-down a
 pick-up c
-stack c b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack c b",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E015,W6,google/gemini-2.5-flash,"1. unstack c b
 2. put-down c
 3. pick-up a
 4. stack a b",True,"unstack c b
 put-down c
 pick-up a
-stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+stack a b",planning_suite,low,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E015,canonical,google/gemini-2.5-flash,"1. pick-up c
 2. put-down c
 3. pick-up a
 4. stack a b",False,"unstack c b
 put-down c
 pick-up a
-stack a b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack a b",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E017,W1,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a",True,"pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack c a",planning_suite,low,easy,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E017,W2,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a",True,"pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack c a",planning_suite,low,easy,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E017,W3,google/gemini-2.5-flash,"1. select Aaron
 2. Place Aaron under Brian
 3. release Aaron
@@ -3408,48 +3408,48 @@ BW_E017,W3,google/gemini-2.5-flash,"1. select Aaron
 5. place Clara under Aaron
 6. release Clara",False,"remove Aaron from Brian
 select Clara
-place Clara under Aaron",planning_suite,low,easy,False,False,state_machine,incorrect,False
+place Clara under Aaron",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E017,W4,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a",True,"pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack c a",planning_suite,low,easy,W4,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E017,W5,google/gemini-2.5-flash,"1. unstack c a
 2. put-down c
 3. unstack a b
 4. put-down a",True,"unstack c a
 put-down c
 unstack a b
-put-down a",planning_suite,low,easy,True,True,state_machine,correct,False
+put-down a",planning_suite,low,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E017,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a",True,"pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack c a",planning_suite,low,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E017,canonical,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a",True,"pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack c a",planning_suite,low,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E019,W1,google/gemini-2.5-flash,"1. unstack a b
 2. stack a c
 3. pick-up b
 4. stack b a",True,"unstack a b
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack b a",planning_suite,low,easy,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E019,W2,google/gemini-2.5-flash,"1. unstack a b
 2. stack a c
 3. stack b a",False,"unstack a b
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b a",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E019,W3,google/gemini-2.5-flash,"1. select Brian
 2. remove Aaron from Brian
 3. release Brian
@@ -3461,7 +3461,7 @@ BW_E019,W3,google/gemini-2.5-flash,"1. select Brian
 select Aaron
 place Aaron under Clara
 select Brian
-place Brian under Aaron",planning_suite,low,easy,False,False,state_machine,incorrect,False
+place Brian under Aaron",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E019,W4,google/gemini-2.5-flash,"1. unstack a b
 2. put-down a
 3. pick-up b
@@ -3470,54 +3470,54 @@ BW_E019,W4,google/gemini-2.5-flash,"1. unstack a b
 6. stack a c",False,"unstack a b
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b a",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E019,W5,google/gemini-2.5-flash,"1. unstack b a
 2. put-down b
 3. unstack a c
 4. stack a b",True,"unstack b a
 put-down b
 unstack a c
-stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+stack a b",planning_suite,low,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E019,W6,google/gemini-2.5-flash,"1. unstack a b
 2. stack a c
 3. pick-up b
 4. stack b a",True,"unstack a b
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack b a",planning_suite,low,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E019,canonical,google/gemini-2.5-flash,"1. unstack a b
 2. stack a c
 3. pick-up b
 4. stack b a",True,"unstack a b
 stack a c
 pick-up b
-stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+stack b a",planning_suite,low,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E100,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c a
 3. pick-up b
 4. stack b c",False,"pick-up b
-stack b c",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b c",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E100,W2,google/gemini-2.5-flash,"1. unstack c a
 2. put-down c
 3. pick-up b
 4. stack b c",False,"pick-up b
-stack b c",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b c",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E100,W3,google/gemini-2.5-flash,"1. remove Clara from Aaron
 2. select Clara
 3. place Clara under Aaron
 4. select Brian
 5. place Brian under Clara",False,"select Brian
-place Brian under Clara",planning_suite,low,easy,False,False,state_machine,incorrect,False
+place Brian under Clara",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E100,W4,google/gemini-2.5-flash,"1. unstack c a
 2. put-down c
 3. pick-up b
 4. stack b c",False,"pick-up b
-stack b c",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b c",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E100,W5,google/gemini-2.5-flash,"1. unstack b c
 2. put-down b
 3. unstack c a
 4. stack c a",True,"unstack b c
-put-down b",planning_suite,low,easy,False,True,state_machine,correct,True
+put-down b",planning_suite,low,easy,W5,True,in_bank_ok,False,True,state_machine,correct,True
 BW_E100,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
@@ -3528,14 +3528,14 @@ stack c b
 pick-up a
 stack a c
 pick-up d
-stack d a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack d a",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E100,canonical,google/gemini-2.5-flash,"1. unstack c a
 2. put-down c
 3. pick-up b
 4. stack b c
 5. pick-up c
 6. stack c a",False,"pick-up b
-stack b c",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack b c",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,W1,google/gemini-2.5-flash,"1. feast j f
 2. feast f i
 3. feast i g
@@ -3555,7 +3555,7 @@ overcome i g
 attack f
 overcome f i
 attack j
-overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j f",planning_suite,low,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,W2,google/gemini-2.5-flash,"1. attack j
 2. overcome j f
 3. succumb j
@@ -3589,7 +3589,7 @@ overcome i g
 attack f
 overcome f i
 attack j
-overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j f",planning_suite,low,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,W3,google/gemini-2.5-flash,"1. broker Jordan Finland
 2. broker Finland Iceland
 3. broker Iceland Greece
@@ -3609,7 +3609,7 @@ broker Iceland Greece
 provoke Finland
 broker Finland Iceland
 provoke Jordan
-broker Jordan Finland",planning_suite,low,hard,False,False,state_machine,incorrect,False
+broker Jordan Finland",planning_suite,low,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,W4,google/gemini-2.5-flash,"1. attack j
 2. overcome j f
 3. feast j f
@@ -3636,7 +3636,7 @@ overcome i g
 attack f
 overcome f i
 attack j
-overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j f",planning_suite,low,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,W5,google/gemini-2.5-flash,"1. feast j f
 2. feast f i
 3. feast i g
@@ -3656,7 +3656,7 @@ succumb d
 feast b h
 succumb b
 feast h l
-succumb h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+succumb h",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,W6,google/gemini-2.5-flash,"1. feast j f
 2. feast f i
 3. feast i g
@@ -3676,7 +3676,7 @@ overcome i g
 attack f
 overcome f i
 attack j
-overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j f",planning_suite,low,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_001,canonical,google/gemini-2.5-flash,"1. feast j f
 2. feast f i
 3. feast i g
@@ -3696,7 +3696,7 @@ overcome i g
 attack f
 overcome f i
 attack j
-overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j f",planning_suite,low,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,W1,google/gemini-2.5-flash,"feast j g
 feast g a
 feast a b
@@ -3713,7 +3713,7 @@ feast h i",False,"attack h
  attack g
  overcome g a
  attack j
- overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+ overcome j g",planning_suite,low,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,W2,google/gemini-2.5-flash,"1. attack j
 2. overcome j g
 3. attack g
@@ -3736,7 +3736,7 @@ MBW_002,W2,google/gemini-2.5-flash,"1. attack j
  attack g
  overcome g a
  attack j
- overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+ overcome j g",planning_suite,low,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,W3,google/gemini-2.5-flash,"1. negotiate Japan Greece
 2. negotiate Greece Argentina
 3. negotiate Argentina Belgium
@@ -3753,7 +3753,7 @@ broker Belgium Kenya
 provoke Kenya
 broker Kenya Hungary
 provoke Hungary
-broker Hungary Ireland",planning_suite,low,hard,False,False,state_machine,incorrect,False
+broker Hungary Ireland",planning_suite,low,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,W4,google/gemini-2.5-flash,"1. attack j
 2. overcome j g
 3. feast j g
@@ -3781,7 +3781,7 @@ MBW_002,W4,google/gemini-2.5-flash,"1. attack j
  attack g
  overcome g a
  attack j
- overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+ overcome j g",planning_suite,low,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,W5,google/gemini-2.5-flash,"1. feast j g
 2. feast g a
 3. feast a b
@@ -3798,7 +3798,7 @@ succumb b
 feast k h
 succumb k
 feast h i
-succumb h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+succumb h",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,W6,google/gemini-2.5-flash,"1. feast j m
 2. feast g e
 3. feast a c
@@ -3816,7 +3816,7 @@ MBW_002,W6,google/gemini-2.5-flash,"1. feast j m
  attack e
  overcome e c
  attack m
- overcome m e",planning_suite,low,hard,False,False,state_machine,incorrect,False
+ overcome m e",planning_suite,low,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_002,canonical,google/gemini-2.5-flash,"1. feast j g
 2. feast g a
 3. feast a b
@@ -3833,7 +3833,7 @@ MBW_002,canonical,google/gemini-2.5-flash,"1. feast j g
  attack g
  overcome g a
  attack j
- overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+ overcome j g",planning_suite,low,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,W1,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -3844,7 +3844,7 @@ MBW_010,W1,google/gemini-2.5-flash,"1. feast d e
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,W2,google/gemini-2.5-flash,"1. attack d
 2. overcome d e
 3. succumb d
@@ -3863,7 +3863,7 @@ MBW_010,W2,google/gemini-2.5-flash,"1. attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,W3,google/gemini-2.5-flash,"1. provoke Denmark
 2. provoke Estonia
 3. provoke Argentina
@@ -3879,7 +3879,7 @@ broker Estonia Argentina
 provoke Argentina
 broker Argentina Belgium
 provoke Belgium
-broker Belgium France",planning_suite,low,medium,False,False,state_machine,incorrect,False
+broker Belgium France",planning_suite,low,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,W4,google/gemini-2.5-flash,"1. attack d
 2. overcome d e
 3. attack e
@@ -3894,7 +3894,7 @@ MBW_010,W4,google/gemini-2.5-flash,"1. attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,W5,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -3905,7 +3905,7 @@ succumb e
 feast a b
 succumb a
 feast b f
-succumb b",planning_suite,low,medium,False,False,state_machine,incorrect,False
+succumb b",planning_suite,low,medium,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,W6,google/gemini-2.5-flash,"1. feast d h
 2. feast e i
 3. feast a c
@@ -3916,7 +3916,7 @@ MBW_010,W6,google/gemini-2.5-flash,"1. feast d h
  attack c
  overcome g c
  attack g
- overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_010,canonical,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -3927,14 +3927,14 @@ MBW_010,canonical,google/gemini-2.5-flash,"1. feast d e
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_014,W1,google/gemini-2.5-flash,"1. attack l
 2. feast l e
 3. attack e
 4. feast e g",False,"attack e
  overcome e g
  attack l
- overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome l e",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_014,W2,google/gemini-2.5-flash,"1. attack l
 2. overcome l e
 3. succumb l
@@ -3943,7 +3943,7 @@ MBW_014,W2,google/gemini-2.5-flash,"1. attack l
 6. succumb e",False,"attack e
  overcome e g
  attack l
- overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome l e",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_014,W3,google/gemini-2.5-flash,"1. provoke Lithuania
 2. provoke Estonia
 3. broker Lithuania Estonia
@@ -3953,29 +3953,29 @@ MBW_014,W3,google/gemini-2.5-flash,"1. provoke Lithuania
 7. negotiate Estonia Greece",False,"provoke Lithuania
 broker Lithuania Estonia
 provoke Estonia
-broker Estonia Greece",planning_suite,low,easy,True,False,state_machine,incorrect,True
+broker Estonia Greece",planning_suite,low,easy,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 MBW_014,W4,google/gemini-2.5-flash,"1. attack l
 2. overcome l e
 3. attack e
 4. overcome e g",False,"attack e
  overcome e g
  attack l
- overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome l e",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_014,W5,google/gemini-2.5-flash,"1. feast l e
 2. feast e g",False,"feast l e
 succumb l
 feast e g
-succumb e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_014,W6,google/gemini-2.5-flash,"1. feast c a
 2. feast a b",False,"attack a
  overcome a b
  attack c
- overcome c a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome c a",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_014,canonical,google/gemini-2.5-flash,"1. feast l e
 2. feast e g",False,"attack e
  overcome e g
  attack l
- overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome l e",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,W1,google/gemini-2.5-flash,"1. feast c d
 2. feast d h
 3. feast h i",False,"attack h
@@ -3983,7 +3983,7 @@ MBW_037,W1,google/gemini-2.5-flash,"1. feast c d
  attack d
  overcome d h
  attack c
- overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome c d",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,W2,google/gemini-2.5-flash,"1. attack c
 2. overcome c d
 3. succumb c
@@ -3997,7 +3997,7 @@ MBW_037,W2,google/gemini-2.5-flash,"1. attack c
  attack d
  overcome d h
  attack c
- overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome c d",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,W3,google/gemini-2.5-flash,"1. provoke Canada
 2. provoke Denmark
 3. provoke Hungary
@@ -4009,7 +4009,7 @@ broker Canada Denmark
 provoke Denmark
 broker Denmark Hungary
 provoke Hungary
-broker Hungary Ireland",planning_suite,low,easy,False,False,state_machine,incorrect,False
+broker Hungary Ireland",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,W4,google/gemini-2.5-flash,"1. attack c
 2. succumb c
 3. attack d
@@ -4028,7 +4028,7 @@ MBW_037,W4,google/gemini-2.5-flash,"1. attack c
  attack d
  overcome d h
  attack c
- overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome c d",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,W5,google/gemini-2.5-flash,"1. feast c d
 2. feast d h
 3. feast h i",False,"feast c d
@@ -4036,7 +4036,7 @@ succumb c
 feast d h
 succumb d
 feast h i
-succumb h",planning_suite,low,easy,False,False,state_machine,incorrect,False
+succumb h",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,W6,google/gemini-2.5-flash,"1. feast c a
 2. feast d b
 3. feast h e
@@ -4045,7 +4045,7 @@ MBW_037,W6,google/gemini-2.5-flash,"1. feast c a
  attack b
  overcome b e
  attack a
- overcome a b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome a b",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_037,canonical,google/gemini-2.5-flash,"1. feast c d
 2. feast d h
 3. feast h i",False,"attack h
@@ -4053,7 +4053,7 @@ MBW_037,canonical,google/gemini-2.5-flash,"1. feast c d
  attack d
  overcome d h
  attack c
- overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+ overcome c d",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,W1,google/gemini-2.5-flash,"1. feast j d
 2. feast d g
 3. feast g i
@@ -4069,7 +4069,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,W2,google/gemini-2.5-flash,"1. attack d
 2. attack e
 3. attack a
@@ -4088,7 +4088,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,W3,google/gemini-2.5-flash,"1. broker Denmark Ethiopia
 2. broker Ethiopia Argentina
 3. broker Argentina Brazil
@@ -4100,7 +4100,7 @@ provoke Ethiopia
 broker Ethiopia Argentina
 provoke Denmark
 broker Denmark Ethiopia
-",planning_suite,low,easy,False,False,state_machine,incorrect,False
+",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,W4,google/gemini-2.5-flash,"1. attack d
 2. overcome d e
 3. attack e
@@ -4115,7 +4115,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,W5,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -4126,7 +4126,7 @@ succumb e
 feast a b
 succumb a
 feast b f
-succumb b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+succumb b",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,W6,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -4137,7 +4137,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_10,canonical,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -4148,7 +4148,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,W1,google/gemini-2.5-flash,"1. feast b j
 2. feast j l
 3. feast l i",False,"attack l
@@ -4156,7 +4156,7 @@ overcome l i
 attack j
 overcome j l
 attack b
-overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome b j",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,W2,google/gemini-2.5-flash,"1. attack b
 2. overcome b j
 3. attack j
@@ -4167,7 +4167,7 @@ overcome l i
 attack j
 overcome j l
 attack b
-overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome b j",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,W3,google/gemini-2.5-flash,"1. broker Morocco Thailand
 2. broker Thailand Uruguay
 3. broker Uruguay Estonia",False,"provoke Uruguay
@@ -4175,7 +4175,7 @@ broker Uruguay Estonia
 provoke Thailand
 broker Thailand Uruguay
 provoke Morocco
-broker Morocco Thailand",planning_suite,low,easy,False,False,state_machine,incorrect,False
+broker Morocco Thailand",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,W4,google/gemini-2.5-flash,"1. attack b
 2. succumb b
 3. attack j
@@ -4191,7 +4191,7 @@ overcome l i
 attack j
 overcome j l
 attack b
-overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome b j",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,W5,google/gemini-2.5-flash,"1. feast b j
 2. feast j l
 3. feast l i",False,"feast b j
@@ -4199,7 +4199,7 @@ succumb b
 feast j l
 succumb j
 feast l i
-succumb l",planning_suite,low,easy,False,False,state_machine,incorrect,False
+succumb l",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,W6,google/gemini-2.5-flash,"1. feast b j
 2. feast j l
 3. feast l i",False,"attack l
@@ -4207,7 +4207,7 @@ overcome l i
 attack j
 overcome j l
 attack b
-overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome b j",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_100,canonical,google/gemini-2.5-flash,"1. feast b j
 2. feast j l
 3. feast l i",False,"attack l
@@ -4215,7 +4215,7 @@ overcome l i
 attack j
 overcome j l
 attack b
-overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome b j",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,W1,google/gemini-2.5-flash,"1. feast k g
 2. feast g j
 3. feast j e
@@ -4226,7 +4226,7 @@ overcome j e
 attack g
 overcome g j
 attack k
-overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome k g",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,W2,google/gemini-2.5-flash,"1. attack k
 2. succumb k
 3. attack g
@@ -4254,7 +4254,7 @@ overcome j e
 attack g
 overcome g j
 attack k
-overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome k g",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,W3,google/gemini-2.5-flash,"1. broker Kenya Germany
 2. broker Germany Japan
 3. broker Japan Egypt
@@ -4265,7 +4265,7 @@ broker Japan Egypt
 provoke Germany
 broker Germany Japan
 provoke Kenya
-broker Kenya Germany",planning_suite,low,easy,False,False,state_machine,incorrect,False
+broker Kenya Germany",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,W4,google/gemini-2.5-flash,"1. attack k
 2. overcome k g
 3. attack g
@@ -4280,7 +4280,7 @@ overcome j e
 attack g
 overcome g j
 attack k
-overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome k g",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,W5,google/gemini-2.5-flash,"1. feast k g
 2. feast g j
 3. feast j e
@@ -4291,7 +4291,7 @@ succumb g
 feast j e
 succumb j
 feast e b
-succumb e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,W6,google/gemini-2.5-flash,"1. feast k g
 2. feast g j
 3. feast j e
@@ -4302,7 +4302,7 @@ overcome j e
 attack g
 overcome g j
 attack k
-overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome k g",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_127,canonical,google/gemini-2.5-flash,"1. feast k g
 2. feast g j
 3. feast j e
@@ -4313,7 +4313,7 @@ overcome j e
 attack g
 overcome g j
 attack k
-overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+overcome k g",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,W1,google/gemini-2.5-flash,"1. feast j d
 2. feast d g
 3. feast g i
@@ -4339,7 +4339,7 @@ overcome g i
 attack d
 overcome d g
 attack j
-overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j d",planning_suite,low,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,W2,google/gemini-2.5-flash,"1. attack j
 2. overcome j d
 3. succumb j
@@ -4383,7 +4383,7 @@ overcome g i
 attack d
 overcome d g
 attack j
-overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j d",planning_suite,low,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,W3,google/gemini-2.5-flash,"1. broker Jordan Denmark
 2. broker Denmark Ghana
 3. broker Ghana India
@@ -4409,7 +4409,7 @@ broker Ghana India
 provoke Denmark
 broker Denmark Ghana
 provoke Jordan
-broker Jordan Denmark",planning_suite,low,hard,False,False,state_machine,incorrect,False
+broker Jordan Denmark",planning_suite,low,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,W4,google/gemini-2.5-flash,"1. attack j
 2. overcome j d
 3. feast j d
@@ -4452,7 +4452,7 @@ overcome g i
 attack d
 overcome d g
 attack j
-overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j d",planning_suite,low,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,W5,google/gemini-2.5-flash,"1. feast j d
 2. feast d g
 3. feast g i
@@ -4478,7 +4478,7 @@ succumb a
 feast b e
 succumb b
 feast e l
-succumb e",planning_suite,low,hard,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,W6,google/gemini-2.5-flash,"1. feast j d
 2. feast d g
 3. feast g i
@@ -4504,7 +4504,7 @@ overcome g i
 attack d
 overcome d g
 attack j
-overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j d",planning_suite,low,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_185,canonical,google/gemini-2.5-flash,"1. feast j d
 2. feast d g
 3. feast g i
@@ -4530,7 +4530,7 @@ overcome g i
 attack d
 overcome d g
 attack j
-overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+overcome j d",planning_suite,low,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_495,W1,google/gemini-2.5-flash,"1. feast c l
 2. feast l i
 3. feast i e
@@ -4541,7 +4541,7 @@ MBW_495,W1,google/gemini-2.5-flash,"1. feast c l
  attack l
  overcome l i
  attack c
- overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome c l",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_495,W2,google/gemini-2.5-flash,"1. attack c
 2. attack l
 3. succumb c
@@ -4561,7 +4561,7 @@ MBW_495,W2,google/gemini-2.5-flash,"1. attack c
  attack l
  overcome l i
  attack c
- overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome c l",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_495,W3,google/gemini-2.5-flash,"1. provoke Canada
 2. broker Canada Lithuania
 3. provoke Lithuania
@@ -4576,7 +4576,7 @@ broker Lithuania Ireland
 provoke Ireland
 broker Ireland Estonia
 provoke Estonia
-broker Estonia Hungary",planning_suite,low,medium,True,False,state_machine,incorrect,True
+broker Estonia Hungary",planning_suite,low,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
 MBW_495,W4,google/gemini-2.5-flash,"1. attack c
 2. overcome c l
 3. attack l
@@ -4591,7 +4591,7 @@ MBW_495,W4,google/gemini-2.5-flash,"1. attack c
  attack l
  overcome l i
  attack c
- overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome c l",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_495,W5,google/gemini-2.5-flash,"1. feast c l
 2. feast l i
 3. feast i e
@@ -4602,7 +4602,7 @@ succumb l
 feast i e
 succumb i
 feast e h
-succumb e",planning_suite,low,medium,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,medium,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_495,W6,google/gemini-2.5-flash,"1. feast c a
 2. feast l g
 3. feast i f
@@ -4613,7 +4613,7 @@ MBW_495,W6,google/gemini-2.5-flash,"1. feast c a
  attack g
  overcome g f
  attack a
- overcome a g",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome a g",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_495,canonical,google/gemini-2.5-flash,"1. feast c l
 2. feast l i
 3. feast i e
@@ -4624,7 +4624,7 @@ MBW_495,canonical,google/gemini-2.5-flash,"1. feast c l
  attack l
  overcome l i
  attack c
- overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+ overcome c l",planning_suite,low,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_496,W1,google/gemini-2.5-flash,"1. pick-up i
 2. pick-up f
 3. stack f i
@@ -4664,7 +4664,7 @@ stack l a
 pick-up h
 stack h l
 pick-up j
-stack j h",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_496,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions for the robot arm to achieve the goal:
 
 1.  **pick-up k**
@@ -4790,7 +4790,7 @@ stack l a
 pick-up h
 stack h l
 pick-up j
-stack j h",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_496,W3,google/gemini-2.5-flash,"1. recruit Isabel
 2. promote_over Frank Isabel
 3. recruit Carol
@@ -4954,7 +4954,7 @@ promote_over Laura Alice
 recruit Henry
 promote_over Henry Laura
 recruit James
-promote_over James Henry",planning_suite,high,hard,False,False,state_machine,incorrect,False
+promote_over James Henry",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_496,W4,google/gemini-2.5-flash,"1. pick-up(l)
 2. stack(l,a)
 3. pick-up(a)
@@ -4995,7 +4995,7 @@ stack l a
 pick-up h
 stack h l
 pick-up j
-stack j h",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_496,W5,google/gemini-2.5-flash,"1. unstack j h
 2. put-down j
 3. unstack h l
@@ -5034,7 +5034,7 @@ put-down d
 unstack c f
 put-down c
 unstack f i
-put-down f",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down f",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_496,W6,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up g
@@ -5075,14 +5075,14 @@ stack k j
 pick-up i
 stack i k
 pick-up e
-stack e i",planning_suite,high,hard,True,True,state_machine,correct,False
+stack e i",planning_suite,high,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_497,W1,google/gemini-2.5-flash,"1. pick-up e
 2. stack e c
 3. pick-up l
 4. stack l e",True,"pick-up e
 stack e c
 pick-up l
-stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+stack l e",planning_suite,high,easy,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_497,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up e**
@@ -5091,7 +5091,7 @@ BW_497,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the g
 4. **stack l e**",False,"pick-up e
 stack e c
 pick-up l
-stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack l e",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_497,W3,google/gemini-2.5-flash,"1. retrieve Cookbook
 2. place_on Cookbook Handbook
 3. retrieve Encyclopedia
@@ -5100,14 +5100,14 @@ BW_497,W3,google/gemini-2.5-flash,"1. retrieve Cookbook
 6. place_on Literature Encyclopedia",False,"retrieve Encyclopedia
 place_on Encyclopedia Cookbook
 retrieve Literature
-place_on Literature Encyclopedia",planning_suite,high,easy,False,False,state_machine,incorrect,False
+place_on Literature Encyclopedia",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_497,W4,google/gemini-2.5-flash,"1. pick-up(e)
 2. stack(e,c)
 3. pick-up(l)
 4. stack(l,e)",False,"pick-up e
 stack e c
 pick-up l
-stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack l e",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_497,W5,google/gemini-2.5-flash,"1. unstack l e
 2. put-down l
 3. unstack e c
@@ -5115,14 +5115,14 @@ BW_497,W5,google/gemini-2.5-flash,"1. unstack l e
 5. put-down c",False,"unstack l e
 put-down l
 unstack e c
-put-down e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+put-down e",planning_suite,high,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_497,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
 4. stack c a",True,"pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,high,easy,True,True,state_machine,correct,False
+stack c a",planning_suite,high,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_498,W1,google/gemini-2.5-flash,"Here's a plan to achieve the goal state, step-by-step:
 
 **Initial State:**
@@ -5195,7 +5195,7 @@ stack e c
 pick-up j
 stack j e
 pick-up k
-stack k j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack k j",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_498,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 Note: This solution prioritizes unstacking from the bottom of a target stack first, and building stacks from the bottom up to avoid unnecessary movements. This is a common strategy for block-stacking problems to minimize intermediate steps.
@@ -5283,7 +5283,7 @@ stack e c
 pick-up j
 stack j e
 pick-up k
-stack k j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack k j",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_498,W3,google/gemini-2.5-flash,"1. hire Alice
 2. promote_above Alice Grace
 3. hire Liam
@@ -5318,7 +5318,7 @@ promote_above Emma Carol
 hire Jack
 promote_above Jack Emma
 hire Kate
-promote_above Kate Jack",planning_suite,high,hard,False,True,state_machine,correct,True
+promote_above Kate Jack",planning_suite,high,hard,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_498,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,g)
 3. pick-up(b)
@@ -5353,7 +5353,7 @@ stack e c
 pick-up j
 stack j e
 pick-up k
-stack k j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack k j",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_498,W5,google/gemini-2.5-flash,"1. unstack k j
 2. put-down k
 3. unstack j e
@@ -5388,7 +5388,7 @@ put-down d
 unstack l a
 put-down l
 unstack a g
-put-down a",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down a",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_498,W6,google/gemini-2.5-flash,"1. pick-up c
 2. put-down c
 3. pick-up a
@@ -5425,7 +5425,7 @@ stack f a
 pick-up b
 stack b f
 pick-up j
-stack j b",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack j b",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_499,W1,google/gemini-2.5-flash,"1. pick-up j
 2. stack j a
 3. pick-up a
@@ -5440,7 +5440,7 @@ stack c e
 pick-up a
 stack a c
 pick-up j
-stack j a",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack j a",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_499,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up a** (To prepare to stack 'a' on 'c')
@@ -5528,7 +5528,7 @@ stack c e
 pick-up a
 stack a c
 pick-up j
-stack j a",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack j a",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_499,W3,google/gemini-2.5-flash,"recruit Laura
 promote Laura Emma
 recruit Carol
@@ -5543,7 +5543,7 @@ promote Carol Emma
 recruit Alice
 promote Alice Carol
 recruit John
-promote John Alice",planning_suite,high,medium,False,False,state_machine,incorrect,False
+promote John Alice",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_499,W4,google/gemini-2.5-flash,"1. pick-up(j)
 2. stack(j,a)
 3. pick-up(a)
@@ -5558,7 +5558,7 @@ stack c e
 pick-up a
 stack a c
 pick-up j
-stack j a",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack j a",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_499,W5,google/gemini-2.5-flash,"1. unstack j a
 2. put-down j
 3. unstack a c
@@ -5573,7 +5573,7 @@ put-down a
 unstack c e
 put-down c
 unstack e l
-put-down e",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down e",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_499,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up b
@@ -5590,7 +5590,7 @@ stack a b
 pick-up d
 stack d a
 pick-up c
-stack c d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c d",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_500,W1,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up b
@@ -5619,7 +5619,7 @@ stack d a
 pick-up k
 stack k d
 pick-up e
-stack e k",planning_suite,high,hard,False,True,state_machine,correct,True
+stack e k",planning_suite,high,hard,W1,True,in_bank_ok,False,True,state_machine,correct,True
 BW_500,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up e**
@@ -5650,7 +5650,7 @@ stack d a
 pick-up k
 stack k d
 pick-up e
-stack e k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack e k",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_500,W3,google/gemini-2.5-flash,"1. recruit Laura
 2. promote Laura Bob
 3. recruit Bob
@@ -5677,7 +5677,7 @@ promote David Alice
 recruit Kevin
 promote Kevin David
 recruit Emily
-promote Emily Kevin",planning_suite,high,hard,False,False,state_machine,incorrect,False
+promote Emily Kevin",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_500,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,g)
 3. pick-up(k)
@@ -5710,7 +5710,7 @@ stack d a
 pick-up k
 stack k d
 pick-up e
-stack e k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack e k",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_500,W5,google/gemini-2.5-flash,"1. unstack e k
 2. put-down e
 3. unstack k d
@@ -5737,7 +5737,7 @@ put-down g
 unstack c b
 put-down c
 unstack b l
-put-down b",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down b",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_500,W6,google/gemini-2.5-flash,"1. pick-up h
 2. stack h d
 3. pick-up g
@@ -5764,7 +5764,7 @@ stack b g
 pick-up f
 stack f b
 pick-up a
-stack a f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack a f",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_501,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c i
 3. pick-up i
@@ -5791,7 +5791,7 @@ stack k a
 pick-up i
 stack i k
 pick-up c
-stack c i",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c i",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_501,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up e**
@@ -5820,7 +5820,7 @@ stack k a
 pick-up i
 stack i k
 pick-up c
-stack c i",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c i",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_501,W3,google/gemini-2.5-flash,"1. recruit David
 2. promote James David
 3. recruit George
@@ -5849,7 +5849,7 @@ promote Kevin Alice
 recruit Isabella
 promote Isabella Kevin
 recruit Carol
-promote Carol Isabella",planning_suite,high,hard,False,False,state_machine,incorrect,False
+promote Carol Isabella",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_501,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,e)
 3. pick-up(e)
@@ -5876,7 +5876,7 @@ stack k a
 pick-up i
 stack i k
 pick-up c
-stack c i",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c i",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_501,W5,google/gemini-2.5-flash,"1. unstack c i
 2. put-down c
 3. unstack i k
@@ -5903,7 +5903,7 @@ put-down e
 unstack g j
 put-down g
 unstack j d
-put-down j",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down j",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_501,W6,google/gemini-2.5-flash,"1. pick-up d
 2. put-down d
 3. pick-up g
@@ -5932,7 +5932,7 @@ stack c f
 pick-up h
 stack h c
 pick-up b
-stack b h",planning_suite,high,hard,True,True,state_machine,correct,False
+stack b h",planning_suite,high,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_502,W1,google/gemini-2.5-flash,"1. pick-up i
 2. stack i e
 3. pick-up h
@@ -5943,7 +5943,7 @@ stack i e
 pick-up h
 stack h i
 pick-up d
-stack d h",planning_suite,high,easy,True,True,state_machine,correct,False
+stack d h",planning_suite,high,easy,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_502,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up i** (Hand is empty, 'i' is on the table)
@@ -6000,7 +6000,7 @@ stack i e
 pick-up h
 stack h i
 pick-up d
-stack d h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack d h",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_502,W3,google/gemini-2.5-flash,"1. recruit D
 2. promote D E
 3. dismiss D
@@ -6015,7 +6015,7 @@ promote Isabella Edward
 recruit Henry
 promote Henry Isabella
 recruit Diana
-promote Diana Henry",planning_suite,high,easy,False,False,state_machine,incorrect,False
+promote Diana Henry",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_502,W4,google/gemini-2.5-flash,"1. pick-up(d)
 2. stack(d,h)
 3. pick-up(h)
@@ -6026,7 +6026,7 @@ stack i e
 pick-up h
 stack h i
 pick-up d
-stack d h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack d h",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_502,W5,google/gemini-2.5-flash,"1. unstack d h
 2. put-down d
 3. unstack h i
@@ -6037,7 +6037,7 @@ put-down d
 unstack h i
 put-down h
 unstack i e
-put-down i",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down i",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_502,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
@@ -6056,7 +6056,7 @@ stack a c
 pick-up d
 stack d a
 pick-up b
-stack b d",planning_suite,high,easy,True,True,state_machine,correct,False
+stack b d",planning_suite,high,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_503,W1,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up i
@@ -6101,7 +6101,7 @@ stack a c
 pick-up g
 stack g a
 pick-up f
-stack f g",planning_suite,high,hard,False,True,state_machine,correct,True
+stack f g",planning_suite,high,hard,W1,True,in_bank_ok,False,True,state_machine,correct,True
 BW_503,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up c**
@@ -6148,7 +6148,7 @@ stack a c
 pick-up g
 stack g a
 pick-up f
-stack f g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack f g",planning_suite,high,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_503,W3,google/gemini-2.5-flash,"1. recruit Carol
 2. promote_over Carol David
 3. recruit Alice
@@ -6193,7 +6193,7 @@ promote_over Alice Carol
 recruit Grace
 promote_over Grace Alice
 recruit Frank
-promote_over Frank Grace",planning_suite,high,hard,False,False,state_machine,incorrect,False
+promote_over Frank Grace",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_503,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,c)
 3. pick-up(b)
@@ -6236,7 +6236,7 @@ stack a c
 pick-up g
 stack g a
 pick-up f
-stack f g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack f g",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_503,W5,google/gemini-2.5-flash,"1. unstack f g
 2. put-down f
 3. unstack g a
@@ -6279,7 +6279,7 @@ put-down b
 unstack e i
 put-down e
 unstack i l
-put-down i",planning_suite,high,hard,True,True,state_machine,correct,False
+put-down i",planning_suite,high,hard,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_503,W6,google/gemini-2.5-flash,"1. pick-up e
 2. put-down e
 3. pick-up k
@@ -6324,7 +6324,7 @@ stack j d
 pick-up i
 stack i j
 pick-up h
-stack h i",planning_suite,high,hard,True,True,state_machine,correct,False
+stack h i",planning_suite,high,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_504,W1,google/gemini-2.5-flash,"1. pick-up b
 2. put-down b
 3. pick-up l
@@ -6349,7 +6349,7 @@ stack f k
 pick-up h
 stack h f
 pick-up a
-stack a h",planning_suite,high,medium,False,True,state_machine,correct,True
+stack a h",planning_suite,high,medium,W1,True,in_bank_ok,False,True,state_machine,correct,True
 BW_504,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up a** (a is clear, on table, hand is empty)
@@ -6557,7 +6557,7 @@ stack f k
 pick-up h
 stack h f
 pick-up a
-stack a h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack a h",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_504,W3,google/gemini-2.5-flash,"1. mobilize Alpha
 2. position Alpha Hotel
 3. mobilize Hotel
@@ -6580,7 +6580,7 @@ position Foxtrot Kilo
 mobilize Hotel
 position Hotel Foxtrot
 mobilize Alpha
-position Alpha Hotel",planning_suite,high,medium,False,False,state_machine,incorrect,False
+position Alpha Hotel",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_504,W4,google/gemini-2.5-flash,"1. pick-up(b)
 2. put-down(b)
 3. pick-up(l)
@@ -6605,7 +6605,7 @@ stack f k
 pick-up h
 stack h f
 pick-up a
-stack a h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack a h",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_504,W5,google/gemini-2.5-flash,"1. unstack a h
 2. put-down a
 3. unstack h f
@@ -6628,7 +6628,7 @@ put-down k
 unstack e l
 put-down e
 unstack l b
-put-down l",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down l",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_504,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a g
 3. pick-up e
@@ -6651,7 +6651,7 @@ stack e a
 pick-up b
 stack b e
 pick-up d
-stack d b",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack d b",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_505,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c d
 3. pick-up d
@@ -6666,7 +6666,7 @@ stack g b
 pick-up d
 stack d g
 pick-up c
-stack c d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c d",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_505,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up c** (Hand is empty, c is on table)
@@ -6689,7 +6689,7 @@ stack g b
 pick-up d
 stack d g
 pick-up c
-stack c d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c d",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_505,W3,google/gemini-2.5-flash,"1. recruit Carol
 2. promote Carol David
 3. recruit David
@@ -6704,7 +6704,7 @@ promote Grace Bob
 recruit David
 promote David Grace
 recruit Carol
-promote Carol David",planning_suite,high,medium,False,False,state_machine,incorrect,False
+promote Carol David",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_505,W4,google/gemini-2.5-flash,"1. pick-up(b)
 2. stack(b,h)
 3. pick-up(c)
@@ -6719,7 +6719,7 @@ stack g b
 pick-up d
 stack d g
 pick-up c
-stack c d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c d",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_505,W5,google/gemini-2.5-flash,"1. unstack c d
 2. put-down c
 3. unstack d g
@@ -6736,7 +6736,7 @@ put-down d
 unstack g b
 put-down g
 unstack b h
-put-down b",planning_suite,high,medium,False,True,state_machine,correct,True
+put-down b",planning_suite,high,medium,W5,True,in_bank_ok,False,True,state_machine,correct,True
 BW_505,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a e
 3. pick-up b
@@ -6753,7 +6753,7 @@ stack b c
 pick-up e
 stack e b
 pick-up a
-stack a e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack a e",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_506,W1,google/gemini-2.5-flash,"1. pick-up g
 2. stack g f
 3. unstack g f
@@ -6763,7 +6763,7 @@ BW_506,W1,google/gemini-2.5-flash,"1. pick-up g
 7. stack g b",False,"pick-up b
 stack b f
 pick-up g
-stack g b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack g b",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_506,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up b** (You need to move 'b' first.)
@@ -6772,40 +6772,40 @@ BW_506,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the g
 4. **stack g b** (Finally, place 'g' on 'b'.)",False,"pick-up b
 stack b f
 pick-up g
-stack g b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack g b",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_506,W3,google/gemini-2.5-flash,"1. recruit Bob
 2. promote Bob Frank
 3. recruit Grace
 4. promote Grace Bob",True,"recruit Bob
 promote Bob Frank
 recruit Grace
-promote Grace Bob",planning_suite,high,easy,False,True,state_machine,correct,True
+promote Grace Bob",planning_suite,high,easy,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_506,W4,google/gemini-2.5-flash,"1. pick-up(b)
 2. stack(b,f)
 3. pick-up(g)
 4. stack(g,b)",False,"pick-up b
 stack b f
 pick-up g
-stack g b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack g b",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_506,W5,google/gemini-2.5-flash,"1. unstack g b
 2. put-down g",False,"unstack g b
 put-down g
 unstack b f
-put-down b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+put-down b",planning_suite,high,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_506,W6,google/gemini-2.5-flash,"1. pick-up c
 2. stack c a
 3. pick-up b
 4. stack b c",True,"pick-up c
 stack c a
 pick-up b
-stack b c",planning_suite,high,easy,True,True,state_machine,correct,False
+stack b c",planning_suite,high,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_507,W1,google/gemini-2.5-flash,"1. pick-up e
 2. stack e h
 3. pick-up j
 4. stack j h",False,"pick-up h
 stack h e
 pick-up j
-stack j h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_507,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve your goal:
 
 1. **pick-up h** 
@@ -6815,28 +6815,28 @@ BW_507,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve your 
 ",False,"pick-up h
 stack h e
 pick-up j
-stack j h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_507,W3,google/gemini-2.5-flash,"1. recruit Jack
 2. promote Jack Henry
 3. recruit Henry
 4. promote Henry Eve",False,"recruit Henry
 promote Henry Eve
 recruit Jack
-promote Jack Henry",planning_suite,high,easy,False,False,state_machine,incorrect,False
+promote Jack Henry",planning_suite,high,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_507,W4,google/gemini-2.5-flash,"1. pick-up(h)
 2. stack(h,e)
 3. pick-up(j)
 4. stack(j,h)",False,"pick-up h
 stack h e
 pick-up j
-stack j h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_507,W5,google/gemini-2.5-flash,"1. unstack j h
 2. put-down j
 3. unstack h e
 4. put-down h",True,"unstack j h
 put-down j
 unstack h e
-put-down h",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down h",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_507,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up b
@@ -6845,7 +6845,7 @@ BW_507,W6,google/gemini-2.5-flash,"1. pick-up a
 6. stack a b",False,"pick-up b
 stack b c
 pick-up a
-stack a b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack a b",planning_suite,high,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_508,W1,google/gemini-2.5-flash,"1. pick-up b
 2. stack b f
 3. pick-up g
@@ -6860,7 +6860,7 @@ stack g b
 pick-up c
 stack c g
 pick-up e
-stack e c",planning_suite,high,medium,True,True,state_machine,correct,False
+stack e c",planning_suite,high,medium,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_508,W2,google/gemini-2.5-flash,"Here's a step-by-step plan to achieve the goal:
 
 1. **pick-up c** 
@@ -6976,7 +6976,7 @@ stack g b
 pick-up c
 stack c g
 pick-up e
-stack e c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack e c",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_508,W3,google/gemini-2.5-flash,"1. recruit Frank
 2. promote Bob Frank
 3. promote Grace Bob
@@ -6988,7 +6988,7 @@ promote Grace Bob
 recruit Carol
 promote Carol Grace
 recruit Emma
-promote Emma Carol",planning_suite,high,medium,False,False,state_machine,incorrect,False
+promote Emma Carol",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_508,W4,google/gemini-2.5-flash,"1. pick-up(b)
 2. stack(b,f)
 3. pick-up(c)
@@ -7003,7 +7003,7 @@ stack g b
 pick-up c
 stack c g
 pick-up e
-stack e c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack e c",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_508,W5,google/gemini-2.5-flash,"1. unstack e c
 2. put-down e
 3. unstack c g
@@ -7018,7 +7018,7 @@ put-down c
 unstack g b
 put-down g
 unstack b f
-put-down b",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down b",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_508,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up d
@@ -7033,7 +7033,7 @@ stack a c
 pick-up d
 stack d a
 pick-up b
-stack b d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack b d",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_509,W1,google/gemini-2.5-flash,"1. pick-up h
 2. stack h d
 3. pick-up d
@@ -7048,7 +7048,7 @@ stack f j
 pick-up d
 stack d f
 pick-up h
-stack h d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack h d",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_509,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up f** 
@@ -7126,7 +7126,7 @@ stack f j
 pick-up d
 stack d f
 pick-up h
-stack h d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack h d",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_509,W3,google/gemini-2.5-flash,"1. recruit Irene
 2. release Irene
 3. recruit James
@@ -7143,7 +7143,7 @@ promote Frank James
 recruit David
 promote David Frank
 recruit Helen
-promote Helen David",planning_suite,high,medium,False,True,state_machine,correct,True
+promote Helen David",planning_suite,high,medium,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_509,W4,google/gemini-2.5-flash,"1. pick-up(d)
 2. stack(d,f)
 3. pick-up(f)
@@ -7158,7 +7158,7 @@ stack f j
 pick-up d
 stack d f
 pick-up h
-stack h d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack h d",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_509,W5,google/gemini-2.5-flash,"1. unstack h d
 2. put-down h
 3. unstack d f
@@ -7173,7 +7173,7 @@ put-down d
 unstack f j
 put-down f
 unstack j i
-put-down j",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down j",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_509,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a e
 3. pick-up c
@@ -7192,7 +7192,7 @@ stack c e
 pick-up d
 stack d c
 pick-up b
-stack b d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack b d",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_510,W1,google/gemini-2.5-flash,"1. pick-up h
 2. stack h i
 3. pick-up l
@@ -7215,7 +7215,7 @@ stack a c
 pick-up j
 stack j a
 pick-up k
-stack k j",planning_suite,high,medium,True,True,state_machine,correct,False
+stack k j",planning_suite,high,medium,W1,True,in_bank_ok,True,True,state_machine,correct,False
 BW_510,W2,google/gemini-2.5-flash,"1. pick-up h
 2. stack h i
 3. pick-up l
@@ -7238,7 +7238,7 @@ stack a c
 pick-up j
 stack j a
 pick-up k
-stack k j",planning_suite,high,medium,True,True,state_machine,correct,False
+stack k j",planning_suite,high,medium,W2,True,in_bank_ok,True,True,state_machine,correct,False
 BW_510,W3,google/gemini-2.5-flash,"1. mobilize India
 2. deploy India
 3. mobilize Hotel
@@ -7263,7 +7263,7 @@ position Alpha Charlie
 mobilize Juliet
 position Juliet Alpha
 mobilize Kilo
-position Kilo Juliet",planning_suite,high,medium,False,True,state_machine,correct,True
+position Kilo Juliet",planning_suite,high,medium,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_510,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,c)
 3. pick-up(c)
@@ -7296,7 +7296,7 @@ stack a c
 pick-up j
 stack j a
 pick-up k
-stack k j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack k j",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_510,W5,google/gemini-2.5-flash,"1. unstack k j
 2. put-down k
 3. unstack j a
@@ -7321,7 +7321,7 @@ put-down c
 unstack l h
 put-down l
 unstack h i
-put-down h",planning_suite,high,medium,False,True,state_machine,correct,True
+put-down h",planning_suite,high,medium,W5,True,in_bank_ok,False,True,state_machine,correct,True
 BW_510,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a d
 3. pick-up c
@@ -7342,7 +7342,7 @@ stack g c
 pick-up e
 stack e g
 pick-up b
-stack b e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack b e",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_511,W1,google/gemini-2.5-flash,"1. pick-up i
 2. stack i k
 3. pick-up k
@@ -7353,7 +7353,7 @@ stack l f
 pick-up k
 stack k l
 pick-up i
-stack i k",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack i k",planning_suite,high,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_511,W2,google/gemini-2.5-flash,"Here's a sequence of actions that achieves the goal:
 
 1. **pick-up l** (Hand is now holding l)
@@ -7375,7 +7375,7 @@ stack l f
 pick-up k
 stack k l
 pick-up i
-stack i k",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack i k",planning_suite,high,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_511,W3,google/gemini-2.5-flash,"1. recruit Frank
 2. dismiss Frank
 3. recruit Laura
@@ -7388,7 +7388,7 @@ promote Laura Frank
 recruit Kevin
 promote Kevin Laura
 recruit Irene
-promote Irene Kevin",planning_suite,high,easy,False,True,state_machine,correct,True
+promote Irene Kevin",planning_suite,high,easy,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_511,W4,google/gemini-2.5-flash,"1. pick-up(l)
 2. stack(l,f)
 3. pick-up(k)
@@ -7399,7 +7399,7 @@ stack l f
 pick-up k
 stack k l
 pick-up i
-stack i k",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack i k",planning_suite,high,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_511,W5,google/gemini-2.5-flash,"1. unstack i k
 2. put-down i
 3. unstack k l
@@ -7410,7 +7410,7 @@ put-down i
 unstack k l
 put-down k
 unstack l f
-put-down l",planning_suite,high,easy,True,True,state_machine,correct,False
+put-down l",planning_suite,high,easy,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_511,W6,google/gemini-2.5-flash,"1. pick-up c
 2. stack c d
 3. pick-up b
@@ -7419,7 +7419,7 @@ stack d a
 pick-up c
 stack c d
 pick-up b
-stack b c",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack b c",planning_suite,high,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_512,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c j
 3. pick-up j
@@ -7438,7 +7438,7 @@ stack e h
 pick-up j
 stack j e
 pick-up c
-stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_512,W2,google/gemini-2.5-flash,"To achieve the goal, we need to carefully sequence the operations to build the desired stacks. Let's break down the goal and plan the steps.
 
 **Goal Analysis:**
@@ -7482,7 +7482,7 @@ stack e h
 pick-up j
 stack j e
 pick-up c
-stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_512,W3,google/gemini-2.5-flash,"1. retrieve Fiction
 2. place_on Fiction Index
 3. retrieve Index
@@ -7502,7 +7502,7 @@ place_on Encyclopedia History
 retrieve Journal
 place_on Journal Encyclopedia
 retrieve Cookbook
-place_on Cookbook Journal",planning_suite,high,medium,False,False,state_machine,incorrect,False
+place_on Cookbook Journal",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_512,W4,google/gemini-2.5-flash,"1. pick-up(c)
 2. stack(c,j)
 3. pick-up(e)
@@ -7521,7 +7521,7 @@ stack e h
 pick-up j
 stack j e
 pick-up c
-stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_512,W5,google/gemini-2.5-flash,"1. unstack c j
 2. put-down c
 3. unstack j e
@@ -7540,7 +7540,7 @@ put-down e
 unstack h i
 put-down h
 unstack i f
-put-down i",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down i",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_512,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a f
 3. pick-up b
@@ -7563,7 +7563,7 @@ stack a f
 pick-up c
 stack c a
 pick-up d
-stack d c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack d c",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_513,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c e
 3. pick-up e
@@ -7586,7 +7586,7 @@ stack f i
 pick-up e
 stack e f
 pick-up c
-stack c e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c e",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_513,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up f** (f is on table)
@@ -7740,7 +7740,7 @@ stack f i
 pick-up e
 stack e f
 pick-up c
-stack c e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c e",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_513,W3,google/gemini-2.5-flash,"1. recruit Carol
 2. promote_over Carol Emma
 3. recruit Emma
@@ -7763,7 +7763,7 @@ promote_over Frank Isaac
 recruit Emma
 promote_over Emma Frank
 recruit Carol
-promote_over Carol Emma",planning_suite,high,medium,False,False,state_machine,incorrect,False
+promote_over Carol Emma",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_513,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,d)
 3. pick-up(c)
@@ -7786,7 +7786,7 @@ stack f i
 pick-up e
 stack e f
 pick-up c
-stack c e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c e",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_513,W5,google/gemini-2.5-flash,"1. unstack c e
 2. put-down c
 3. unstack e f
@@ -7809,7 +7809,7 @@ put-down i
 unstack a d
 put-down a
 unstack d l
-put-down d",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down d",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_513,W6,google/gemini-2.5-flash,"1. pick-up d
 2. put-down d
 3. pick-up g
@@ -7834,7 +7834,7 @@ stack c b
 pick-up f
 stack f c
 pick-up e
-stack e f",planning_suite,high,medium,True,True,state_machine,correct,False
+stack e f",planning_suite,high,medium,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_514,W1,google/gemini-2.5-flash,"1. pick-up b
 2. stack e b
 3. pick-up g
@@ -7849,7 +7849,7 @@ stack a g
 pick-up j
 stack j a
 pick-up c
-stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_514,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up a** 
@@ -7886,7 +7886,7 @@ stack a g
 pick-up j
 stack j a
 pick-up c
-stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_514,W3,google/gemini-2.5-flash,"1. recruit Bob
 2. promote-above Eve Bob
 3. recruit Grace
@@ -7915,7 +7915,7 @@ promote-above Alice Grace
 recruit John
 promote-above John Alice
 recruit Carol
-promote-above Carol John",planning_suite,high,medium,False,False,state_machine,incorrect,False
+promote-above Carol John",planning_suite,high,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_514,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,g)
 3. pick-up(j)
@@ -7936,7 +7936,7 @@ stack a g
 pick-up j
 stack j a
 pick-up c
-stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c j",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_514,W5,google/gemini-2.5-flash,"1. unstack c j
 2. put-down c
 3. unstack j a
@@ -7955,7 +7955,7 @@ put-down a
 unstack g e
 put-down g
 unstack e b
-put-down e",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down e",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_514,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a e
 3. pick-up c
@@ -7974,7 +7974,7 @@ stack a e
 pick-up f
 stack f a
 pick-up d
-stack d f",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack d f",planning_suite,high,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_515,W1,google/gemini-2.5-flash,"1. pick-up i
 2. put-down i
 3. pick-up d
@@ -7995,7 +7995,7 @@ stack k a
 pick-up e
 stack e k
 pick-up g
-stack g e",planning_suite,high,medium,False,True,state_machine,correct,True
+stack g e",planning_suite,high,medium,W1,True,in_bank_ok,False,True,state_machine,correct,True
 BW_515,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up a** (Need to stack 'a' on 'd', but 'd' needs to be on 'i' first. We start with 'a' because it will eventually be on 'd' at a later step.)
@@ -8072,7 +8072,7 @@ stack k a
 pick-up e
 stack e k
 pick-up g
-stack g e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack g e",planning_suite,high,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_515,W3,google/gemini-2.5-flash,"1. recruit David
 2. promote David Isabella
 3. recruit Alice
@@ -8091,7 +8091,7 @@ promote Kevin Alice
 recruit Emily
 promote Emily Kevin
 recruit George
-promote George Emily",planning_suite,high,medium,False,True,state_machine,correct,True
+promote George Emily",planning_suite,high,medium,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_515,W4,google/gemini-2.5-flash,"1. pick-up(k)
 2. stack(k,a)
 3. pick-up(a)
@@ -8110,7 +8110,7 @@ stack k a
 pick-up e
 stack e k
 pick-up g
-stack g e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack g e",planning_suite,high,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_515,W5,google/gemini-2.5-flash,"1. unstack g e
 2. put-down g
 3. unstack e k
@@ -8129,7 +8129,7 @@ put-down k
 unstack a d
 put-down a
 unstack d i
-put-down d",planning_suite,high,medium,True,True,state_machine,correct,False
+put-down d",planning_suite,high,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_515,W6,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up b
@@ -8150,7 +8150,7 @@ stack a e
 pick-up c
 stack c a
 pick-up d
-stack d c",planning_suite,high,medium,True,True,state_machine,correct,False
+stack d c",planning_suite,high,medium,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_001,W1,google/gemini-2.5-flash,"1. pick-up a
 2. stack a i
 3. pick-up i
@@ -8169,7 +8169,7 @@ stack c f
 pick-up i
 stack i c
 pick-up a
-stack a i",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack a i",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_001,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up c** (Hand: c)
@@ -8352,7 +8352,7 @@ stack c f
 pick-up i
 stack i c
 pick-up a
-stack a i",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack a i",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_001,W3,google/gemini-2.5-flash,"1. recruit James
 2. promote James Bob
 3. recruit Frank
@@ -8371,7 +8371,7 @@ promote Carol Frank
 recruit Isabel
 promote Isabel Carol
 recruit Alice
-promote Alice Isabel",planning_suite,low,medium,False,True,state_machine,correct,True
+promote Alice Isabel",planning_suite,low,medium,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_E_001,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,i)
 3. pick-up(i)
@@ -8390,7 +8390,7 @@ stack c f
 pick-up i
 stack i c
 pick-up a
-stack a i",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack a i",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_001,W5,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up c
@@ -8409,7 +8409,7 @@ stack b f
 pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack c a",planning_suite,low,medium,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_001,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
@@ -8426,7 +8426,7 @@ stack e b
 pick-up c
 stack c e
 pick-up a
-stack a c",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack a c",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_002,W1,google/gemini-2.5-flash,"1. pick-up h
 2. stack h i
 3. pick-up g
@@ -8437,7 +8437,7 @@ stack g i
 pick-up b
 stack b g
 pick-up h
-stack h b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack h b",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_002,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up g** (Need to stack b on g later, so g needs to be moved first)
@@ -8461,7 +8461,7 @@ stack g i
 pick-up b
 stack b g
 pick-up h
-stack h b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack h b",planning_suite,low,easy,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_002,W3,google/gemini-2.5-flash,"1. recruit Henry
 2. promote_above Henry Bob
 3. recruit Bob
@@ -8472,7 +8472,7 @@ promote_above Grace Iris
 recruit Bob
 promote_above Bob Grace
 recruit Henry
-promote_above Henry Bob",planning_suite,low,easy,False,False,state_machine,incorrect,False
+promote_above Henry Bob",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_002,W4,google/gemini-2.5-flash,"1. pick-up(b)
 2. stack(b,g)
 3. pick-up(g)
@@ -8483,7 +8483,7 @@ stack g i
 pick-up b
 stack b g
 pick-up h
-stack h b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack h b",planning_suite,low,easy,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_002,W5,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up b
@@ -8494,7 +8494,7 @@ stack b d
 pick-up a
 stack a b
 pick-up c
-stack c a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack c a",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_002,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a d
 3. pick-up b
@@ -8505,7 +8505,7 @@ stack a d
 pick-up b
 stack b a
 pick-up c
-stack c b",planning_suite,low,easy,True,True,state_machine,correct,False
+stack c b",planning_suite,low,easy,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_003,W1,google/gemini-2.5-flash,"1. pick-up g
 2. stack g c
 3. pick-up c
@@ -8520,7 +8520,7 @@ stack i d
 pick-up c
 stack c i
 pick-up g
-stack g c",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack g c",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_003,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up c** (Hand is empty, c is on table)
@@ -8571,7 +8571,7 @@ stack i d
 pick-up c
 stack c i
 pick-up g
-stack g c",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack g c",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_003,W3,google/gemini-2.5-flash,"1. recruit Julia
 2. promote Julia David
 3. recruit David
@@ -8586,7 +8586,7 @@ promote Ivan David
 recruit Carol
 promote Carol Ivan
 recruit Grace
-promote Grace Carol",planning_suite,low,medium,False,False,state_machine,incorrect,False
+promote Grace Carol",planning_suite,low,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_003,W4,google/gemini-2.5-flash,"1. pick-up(c)
 2. stack(c,i)
 3. pick-up(i)
@@ -8601,7 +8601,7 @@ stack i d
 pick-up c
 stack c i
 pick-up g
-stack g c",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack g c",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_003,W5,google/gemini-2.5-flash,"1. pick-up a
 2. put-down a
 3. pick-up e
@@ -8618,7 +8618,7 @@ stack c e
 pick-up b
 stack b c
 pick-up d
-stack d b",planning_suite,low,medium,True,True,state_machine,correct,False
+stack d b",planning_suite,low,medium,W5,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_003,W6,google/gemini-2.5-flash,"1. pick-up a
 2. put-down a
 3. pick-up d
@@ -8635,7 +8635,7 @@ stack e d
 pick-up c
 stack c e
 pick-up b
-stack b c",planning_suite,low,medium,True,True,state_machine,correct,False
+stack b c",planning_suite,low,medium,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_004,W1,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up g
@@ -8664,7 +8664,7 @@ stack k i
 pick-up h
 stack h k
 pick-up a
-stack a h",planning_suite,low,hard,False,True,state_machine,correct,True
+stack a h",planning_suite,low,hard,W1,True,in_bank_ok,False,True,state_machine,correct,True
 BW_E_004,W2,google/gemini-2.5-flash,"Here's a possible sequence of actions to achieve the goal:
 
 1. **pick-up k**
@@ -8693,7 +8693,7 @@ stack k i
 pick-up h
 stack h k
 pick-up a
-stack a h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+stack a h",planning_suite,low,hard,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_004,W3,google/gemini-2.5-flash,"1. hire Laura
 2. assign_to_base Laura
 3. hire George
@@ -8722,7 +8722,7 @@ promote_above Kevin Isabella
 hire Henry
 promote_above Henry Kevin
 hire Alice
-promote_above Alice Henry",planning_suite,low,hard,False,True,state_machine,correct,True
+promote_above Alice Henry",planning_suite,low,hard,W3,True,in_bank_ok,False,True,state_machine,correct,True
 BW_E_004,W4,google/gemini-2.5-flash,"1. pick-up(a)
 2. stack(a,h)
 3. pick-up(d)
@@ -8757,7 +8757,7 @@ stack k i
 pick-up h
 stack h k
 pick-up a
-stack a h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+stack a h",planning_suite,low,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_004,W5,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up g
@@ -8784,7 +8784,7 @@ stack b e
 pick-up c
 stack c b
 pick-up d
-stack d c",planning_suite,low,hard,False,False,state_machine,incorrect,False
+stack d c",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_004,W6,google/gemini-2.5-flash,"1. pick-up h
 2. put-down h
 3. pick-up c
@@ -8813,7 +8813,7 @@ stack f e
 pick-up g
 stack g f
 pick-up b
-stack b g",planning_suite,low,hard,True,True,state_machine,correct,False
+stack b g",planning_suite,low,hard,W6,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_005,W1,google/gemini-2.5-flash,"1. pick-up c
 2. stack c l
 3. pick-up l
@@ -8828,7 +8828,7 @@ stack d e
 pick-up l
 stack l d
 pick-up c
-stack c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack c l",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_005,W2,google/gemini-2.5-flash,"Here's a sequence of actions to achieve the goal:
 
 1. **pick-up d**
@@ -8854,7 +8854,7 @@ stack d e
 pick-up l
 stack l d
 pick-up c
-stack c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack c l",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_005,W3,google/gemini-2.5-flash,"1. recruit Frank
 2. promote Frank Emily
 3. recruit David
@@ -8872,7 +8872,7 @@ promote David Emily
 recruit Laura
 promote Laura David
 recruit Carol
-promote Carol Laura",planning_suite,low,medium,False,False,state_machine,incorrect,False
+promote Carol Laura",planning_suite,low,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_005,W4,google/gemini-2.5-flash,"1. pick-up(c)
 2. stack(c,l)
 3. pick-up(l)
@@ -8887,7 +8887,7 @@ stack d e
 pick-up l
 stack l d
 pick-up c
-stack c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack c l",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_005,W5,google/gemini-2.5-flash,"1. pick-up a
 2. stack a b
 3. pick-up b
@@ -8902,7 +8902,7 @@ stack d e
 pick-up b
 stack b d
 pick-up a
-stack a b",planning_suite,low,medium,False,False,state_machine,incorrect,False
+stack a b",planning_suite,low,medium,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_005,W6,google/gemini-2.5-flash,"1. pick-up e
 2. put-down e
 3. pick-up d
@@ -8919,7 +8919,7 @@ stack a d
 pick-up c
 stack c a
 pick-up b
-stack b c",planning_suite,low,medium,True,True,state_machine,correct,False
+stack b c",planning_suite,low,medium,W6,True,in_bank_ok,True,True,state_machine,correct,False
 MBW_496,W1,google/gemini-2.5-flash,"1. feast j l
 2. feast c j
 3. feast a c
@@ -8945,7 +8945,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_496,W2,google/gemini-2.5-flash,"The problem describes a robot arm capable of performing actions based on certain preconditions related to ""harmony,"" ""pain,"" ""craves,"" ""province,"" and ""planet."" The initial state shows several blocks (`a`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `l`) all having the properties `province` and `planet`. There are no other properties active initially, specifically `harmony`, `pain`, or `craves`.
 
 The goal state specifies a series of `craves` relationships:
@@ -9000,7 +9000,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome i f",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_496,W3,google/gemini-2.5-flash,"1. supply India Foxtrot
 2. supply Foxtrot Hotel
 3. supply Hotel Golf
@@ -9026,7 +9026,7 @@ reinforce Hotel Golf
 deploy Foxtrot
 reinforce Foxtrot Hotel
 deploy India
-reinforce India Foxtrot",planning_suite,high,hard,False,False,state_machine,incorrect,False
+reinforce India Foxtrot",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_496,W4,google/gemini-2.5-flash,"1. attack(j)
 2. succumb(j)
 3. overcome(j,c)
@@ -9081,7 +9081,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_496,W5,google/gemini-2.5-flash,"1. feast i f
 2. feast f h
 3. feast h g
@@ -9107,7 +9107,7 @@ succumb a
 feast c j
 succumb c
 feast j l
-succumb j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+succumb j",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_496,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a j
 3. pick-up j
@@ -9142,7 +9142,7 @@ stack b g
 pick-up h
 stack h b
 pick-up f
-stack f h",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack f h",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_497,W1,google/gemini-2.5-flash,"1. feast k a
 2. feast a f
 3. feast f c
@@ -9168,7 +9168,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome k a",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_497,W2,google/gemini-2.5-flash,"Unfortunately, as a robot arm, I am unable to perform actions that directly change the ""craves"" property of objects. My available actions are:
 
 *   **attack X**: Requires harmony, province X, planet X.
@@ -9195,7 +9195,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome k a",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_497,W3,google/gemini-2.5-flash,"1. assign Kevin Alice
 2. assign Alice Frank
 3. assign Frank Carol
@@ -9221,7 +9221,7 @@ promote Frank Carol
 terminate Alice
 promote Alice Frank
 terminate Kevin
-promote Kevin Alice",planning_suite,high,hard,False,False,state_machine,incorrect,False
+promote Kevin Alice",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_497,W4,google/gemini-2.5-flash,"1. attack(a)
 2. attack(c)
 3. attack(d)
@@ -9276,7 +9276,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome k a",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_497,W5,google/gemini-2.5-flash,"1. feast k a
 2. feast a f
 3. feast f c
@@ -9302,7 +9302,7 @@ succumb i
 feast h e
 succumb h
 feast e j
-succumb e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+succumb e",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_497,W6,google/gemini-2.5-flash,"1. pick-up e
 2. put-down e
 3. pick-up i
@@ -9339,7 +9339,7 @@ stack f g
 pick-up b
 stack b f
 pick-up h
-stack h b",planning_suite,high,hard,False,True,state_machine,correct,True
+stack h b",planning_suite,high,hard,W6,True,in_bank_ok,False,True,state_machine,correct,True
 MBW_498,W1,google/gemini-2.5-flash,"1. feast l e
 2. feast e d
 3. feast d g
@@ -9371,7 +9371,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_498,W2,google/gemini-2.5-flash,"The provided problem describes a robot arm with a set of actions that primarily involve changing the state of ""craves"" predicates or other abstract predicates like ""harmony"" and ""pain."" However, the initial state defines the positions of blocks ('a' through 'l') as being in 'province' and 'planet'. The goal state also defines ""craves"" relationships between these blocks.
 
 Crucially, **none of the available actions allow the robot arm to directly manipulate or create ""craves"" relationships.**
@@ -9406,7 +9406,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome l e",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_498,W3,google/gemini-2.5-flash,"1. establish_supply_line Lima Echo
 2. establish_supply_line Echo Delta
 3. establish_supply_line Delta Golf
@@ -9438,7 +9438,7 @@ reinforce Delta Golf
 deploy Echo
 reinforce Echo Delta
 deploy Lima
-reinforce Lima Echo",planning_suite,high,hard,False,False,state_machine,incorrect,False
+reinforce Lima Echo",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_498,W4,google/gemini-2.5-flash,"1. attack(l)
 2. succumb(l)
 3. attack(e)
@@ -9505,7 +9505,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_498,W5,google/gemini-2.5-flash,"1. feast l e
 2. feast e d
 3. feast d g
@@ -9537,7 +9537,7 @@ succumb b
 feast i j
 succumb i
 feast j f
-succumb j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+succumb j",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_498,W6,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up k
@@ -9582,7 +9582,7 @@ stack f d
 pick-up b
 stack b f
 pick-up a
-stack a b",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack a b",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_499,W1,google/gemini-2.5-flash,"1. feast l c
 2. feast c b
 3. feast b f
@@ -9602,7 +9602,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome l c",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_499,W2,google/gemini-2.5-flash,"It seems there's a misunderstanding of the available actions and the goal state. Let's break it down:
 
 *   **Available Actions:** These actions are about changing the *state* of the blocks/entities, not their *relationships*. For example, `attack X` requires `harmony`, `province X`, and `planet X` to be true. This implies `harmony`, `province`, and `planet` are attributes or states that can be true or false for a block. `succumb X` requires `pain X` to be true, and so on.
@@ -9634,7 +9634,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome l c",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_499,W3,google/gemini-2.5-flash,"1. supply Lima Charlie
 2. supply Charlie Bravo
 3. supply Bravo Foxtrot
@@ -9654,7 +9654,7 @@ liberate Bravo Foxtrot
 secure Charlie
 liberate Charlie Bravo
 secure Lima
-liberate Lima Charlie",planning_suite,high,hard,False,False,state_machine,incorrect,False
+liberate Lima Charlie",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_499,W4,google/gemini-2.5-flash,"1. succumb(a)
 2. succumb(b)
 3. succumb(c)
@@ -9697,7 +9697,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome l c",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_499,W5,google/gemini-2.5-flash,"1. feast l c
 2. feast c b
 3. feast b f
@@ -9717,7 +9717,7 @@ succumb j
 feast d a
 succumb d
 feast a h
-succumb a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+succumb a",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_499,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
@@ -9740,7 +9740,7 @@ stack b a
 pick-up f
 stack f b
 pick-up h
-stack h f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack h f",planning_suite,high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_500,W1,google/gemini-2.5-flash,"1. feast a e
 2. feast e b
 3. feast b k
@@ -9766,7 +9766,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome a e",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_500,W2,google/gemini-2.5-flash,"The provided goal state requires setting several ""craves"" predicates. However, the available actions (`attack`, `succumb`, `overcome`, `feast`) do not directly create or modify ""craves"" predicates.
 
 Let's look at the available actions and their effects:
@@ -9795,7 +9795,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+overcome a e",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
 MBW_500,W3,google/gemini-2.5-flash,"1. deploy_forces Alpha_Base
 2. deploy_forces Bravo_Base
 3. deploy_forces Charlie_Base
@@ -9822,7 +9822,7 @@ capture_territory Bravo_Base Kilo_Base
 deploy_forces Echo_Base
 capture_territory Echo_Base Bravo_Base
 deploy_forces Alpha_Base
-capture_territory Alpha_Base Echo_Base",planning_suite,high,hard,False,False,state_machine,incorrect,False
+capture_territory Alpha_Base Echo_Base",planning_suite,high,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_500,W4,google/gemini-2.5-flash,"1. attack(a)
 2. attack(e)
 3. attack(b)
@@ -9849,7 +9849,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome a e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_500,W5,google/gemini-2.5-flash,"1. feast a e
 2. feast e b
 3. feast b k
@@ -9875,7 +9875,7 @@ succumb f
 feast i d
 succumb i
 feast d g
-succumb d",planning_suite,high,hard,False,False,state_machine,incorrect,False
+succumb d",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_500,W6,google/gemini-2.5-flash,"1. pick-up e
 2. put-down e
 3. pick-up c
@@ -9912,7 +9912,7 @@ stack h f
 pick-up g
 stack g h
 pick-up b
-stack b g",planning_suite,high,hard,False,True,state_machine,correct,True
+stack b g",planning_suite,high,hard,W6,True,in_bank_ok,False,True,state_machine,correct,True
 BW_496,canonical,google/gemini-2.5-flash,"1. pick-up i
 2. stack i f
 3. pick-up c
@@ -9969,7 +9969,7 @@ stack l a
 pick-up h
 stack h l
 pick-up j
-stack j h",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack j h",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_497,canonical,google/gemini-2.5-flash,"1. pick-up c
 2. put-down c
 3. pick-up e
@@ -9978,7 +9978,7 @@ BW_497,canonical,google/gemini-2.5-flash,"1. pick-up c
 6. stack l e",True,"pick-up e
 stack e c
 pick-up l
-stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+stack l e",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_498,canonical,google/gemini-2.5-flash,"1. pick-up g
 2. stack a g
 3. pick-up l
@@ -10013,7 +10013,7 @@ stack e c
 pick-up j
 stack j e
 pick-up k
-stack k j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack k j",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_499,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up e
@@ -10030,7 +10030,7 @@ stack c e
 pick-up a
 stack a c
 pick-up j
-stack j a",planning_suite,high,medium,True,True,state_machine,correct,False
+stack j a",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_500,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack l k
 3. unstack l k
@@ -10065,7 +10065,7 @@ stack d a
 pick-up k
 stack k d
 pick-up e
-stack e k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack e k",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_501,canonical,google/gemini-2.5-flash,"1. pick-up c
 2. stack c i
 3. pick-up i
@@ -10092,7 +10092,7 @@ stack k a
 pick-up i
 stack i k
 pick-up c
-stack c i",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack c i",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_502,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h i
 3. pick-up d
@@ -10103,7 +10103,7 @@ stack i e
 pick-up h
 stack h i
 pick-up d
-stack d h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+stack d h",planning_suite,high,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_503,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack l i
 3. pick-up i
@@ -10146,7 +10146,7 @@ stack a c
 pick-up g
 stack g a
 pick-up f
-stack f g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+stack f g",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_504,canonical,google/gemini-2.5-flash,"1. pick-up a
 2. stack a h
 3. pick-up h
@@ -10169,7 +10169,7 @@ stack f k
 pick-up h
 stack h f
 pick-up a
-stack a h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack a h",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_505,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. pick-up b
 3. stack b h
@@ -10185,21 +10185,21 @@ stack g b
 pick-up d
 stack d g
 pick-up c
-stack c d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c d",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_506,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. stack b f
 3. pick-up g
 4. stack g b",True,"pick-up b
 stack b f
 pick-up g
-stack g b",planning_suite,high,easy,True,True,state_machine,correct,False
+stack g b",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_507,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h e
 3. pick-up j
 4. stack j h",True,"pick-up h
 stack h e
 pick-up j
-stack j h",planning_suite,high,easy,True,True,state_machine,correct,False
+stack j h",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_508,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up b
@@ -10216,7 +10216,7 @@ stack g b
 pick-up c
 stack c g
 pick-up e
-stack e c",planning_suite,high,medium,True,True,state_machine,correct,False
+stack e c",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_509,canonical,google/gemini-2.5-flash,"1. pick-up i
 2. put-down i
 3. pick-up j
@@ -10233,7 +10233,7 @@ stack f j
 pick-up d
 stack d f
 pick-up h
-stack h d",planning_suite,high,medium,True,True,state_machine,correct,False
+stack h d",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_510,canonical,google/gemini-2.5-flash,"1. pick-up i
 2. stack i h
 3. pick-up h
@@ -10256,7 +10256,7 @@ stack a c
 pick-up j
 stack j a
 pick-up k
-stack k j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack k j",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_511,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack l f
 3. pick-up k
@@ -10267,7 +10267,7 @@ stack l f
 pick-up k
 stack k l
 pick-up i
-stack i k",planning_suite,high,easy,True,True,state_machine,correct,False
+stack i k",planning_suite,high,easy,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_512,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up i
@@ -10288,7 +10288,7 @@ stack e h
 pick-up j
 stack j e
 pick-up c
-stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+stack c j",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_513,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. stack d l
 3. pick-up a
@@ -10311,7 +10311,7 @@ stack f i
 pick-up e
 stack e f
 pick-up c
-stack c e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+stack c e",planning_suite,high,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_514,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. put-down b
 3. pick-up e
@@ -10332,7 +10332,7 @@ stack a g
 pick-up j
 stack j a
 pick-up c
-stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+stack c j",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_515,canonical,google/gemini-2.5-flash,"1. pick-up i
 2. put-down i
 3. pick-up d
@@ -10353,7 +10353,7 @@ stack k a
 pick-up e
 stack e k
 pick-up g
-stack g e",planning_suite,high,medium,True,True,state_machine,correct,False
+stack g e",planning_suite,high,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 MBW_496,canonical,google/gemini-2.5-flash,"1. feast i f
 2. feast f h
 3. feast h g
@@ -10379,7 +10379,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_497,canonical,google/gemini-2.5-flash,"1. feast k a
 2. feast a f
 3. feast f c
@@ -10405,7 +10405,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome k a",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_498,canonical,google/gemini-2.5-flash,"1. feast l e
 2. feast e d
 3. feast d g
@@ -10437,7 +10437,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_499,canonical,google/gemini-2.5-flash,"1. feast l c
 2. feast c b
 3. feast b f
@@ -10457,7 +10457,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome l c",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 MBW_500,canonical,google/gemini-2.5-flash,"1. feast a e
 2. feast e b
 3. feast b k
@@ -10483,7 +10483,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+overcome a e",planning_suite,high,hard,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_001,canonical,google/gemini-2.5-flash,"1. pick-up b
 2. put-down b
 3. pick-up j
@@ -10504,7 +10504,7 @@ stack c f
 pick-up i
 stack i c
 pick-up a
-stack a i",planning_suite,low,medium,True,True,state_machine,correct,False
+stack a i",planning_suite,low,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_002,canonical,google/gemini-2.5-flash,"1. pick-up h
 2. stack h b
 3. pick-up b
@@ -10515,7 +10515,7 @@ stack g i
 pick-up b
 stack b g
 pick-up h
-stack h b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+stack h b",planning_suite,low,easy,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
 BW_E_003,canonical,google/gemini-2.5-flash,"1. pick-up j
 2. put-down j
 3. pick-up d
@@ -10532,7 +10532,7 @@ stack i d
 pick-up c
 stack c i
 pick-up g
-stack g c",planning_suite,low,medium,True,True,state_machine,correct,False
+stack g c",planning_suite,low,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_004,canonical,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up g
@@ -10561,7 +10561,7 @@ stack k i
 pick-up h
 stack h k
 pick-up a
-stack a h",planning_suite,low,hard,True,True,state_machine,correct,False
+stack a h",planning_suite,low,hard,canonical,True,in_bank_ok,True,True,state_machine,correct,False
 BW_E_005,canonical,google/gemini-2.5-flash,"1. pick-up f
 2. put-down f
 3. pick-up e
@@ -10578,4 +10578,4 @@ stack d e
 pick-up l
 stack l d
 pick-up c
-stack c l",planning_suite,low,medium,True,True,state_machine,correct,False
+stack c l",planning_suite,low,medium,canonical,True,in_bank_ok,True,True,state_machine,correct,False

@@ -1,0 +1,6 @@
+exclusion_reason,n,included
+api_error,338,False
+in_bank_ok,7900,True
+missing_bank_row,390,False
+mock_row,67,False
+parse_failed,230,False

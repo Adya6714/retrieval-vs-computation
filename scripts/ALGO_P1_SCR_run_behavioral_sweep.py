@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from probes.common.variants import normalize_variant
 from probes.contamination.verify_algo import verify_algo
 from probes.behavioral.sampling import DEFAULT_TEMPERATURE
 
@@ -92,7 +93,7 @@ def existing_done_keys(path: Path) -> set[tuple[str, str, str]]:
         done.add(
             (
                 str(pid).strip(),
-                str(vtype).strip(),
+                normalize_variant(vtype),
                 str(model).strip(),
             )
         )
@@ -196,7 +197,7 @@ def main() -> None:
 
         for _, row in df.iterrows():
             pid = str(row["problem_id"]).strip()
-            variant_type = str(row["variant_type"]).strip()
+            variant_type = normalize_variant(row["variant_type"])
             key = (pid, variant_type, model_name)
             if args.resume and key in done:
                 continue
