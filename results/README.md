@@ -74,7 +74,7 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 
 | Script | Reads | Writes |
 |--------|-------|--------|
-| `ALGO_P2_SCR_run_phase1.py` | bank + `--output` per model | `raw/ALGO_P2_phase1_{claude,gpt4o,llama}.csv` |
+| `ALGO_P2_SCR_run_phase1.py` | bank + `--output` per model | `raw/ALGO_P2_phase1_{claude,gpt4o,llama}_new.csv` (110 rows; authoritative). The unsuffixed `ALGO_P2_phase1_{gpt4o,llama}.csv` files are 20-row pilots and are not inputs to analysis. Gemini: `raw/ALGO_P2_phase1_gemini.csv`. |
 | `ALGO_P2_SCR_run_phase2.py` | bank + phase1 | `raw/ALGO_P2_phase2_normal.csv`, `ALGO_P2_phase2_injected.csv` |
 | `GSM_P2_SCR_run_probe2.py` | `question_bank_gsm.csv` | `raw/GSM_P2_cci.csv` |
 | `BW_P2_SCR_extract_phase1_plans.py` | `BW_P1_behavioral.csv` | `raw/BW_P2_plans.csv` |
@@ -109,11 +109,41 @@ Update manually when adding new outputs, or regenerate with a small inventory sc
 
 ---
 
+## Probe 2 — which Phase 1 file is authoritative
+
+`results/raw/ALGO_P2_phase1_{gpt4o,llama}.csv` are **20-row pilots** (20 problems × 1 model).
+`results/raw/ALGO_P2_phase1_{claude,gpt4o,llama}_new.csv` are the **110-row full elicitations**.
+`results/raw/ALGO_P2_phase1_gemini.csv` is already 110 rows and has no `_new` sibling.
+
+Downstream code must read only the 110-row set via `probes.common.results_paths.algo_p2_phase1_files()`.
+Do not concatenate the pilots with the `_new` files (a keep=last overlay hid the duplication but made the pilots look live).
+
+Paper-ready coverage: `results/derived/P2_coverage.csv`.
+BW CCI/TEP null diagnosis: `results/derived/P2_bw_cci_null_diagnosis.csv`, `P2_bw_tep_null_diagnosis.csv`.
+
+---
+
+## Probe 3 — template vs instance contamination
+
+**ALGO** stores `template_contamination_score` and `instance_contamination_score` in `raw/ALGO_P3_contamination.csv`. Template-vs-instance claims in the paper are **ALGO-only**.
+
+**GSM** has only `contamination_score` on the full problem text (`raw/GSM_P3_contamination.csv`). There is no template/instance split; do not report a GSM template-vs-instance correlation.
+
+**BW** `template_contamination_score` in `raw/BW_P3_contamination.csv` is 0.000 on all 65 rows. The original InfiniGram query was a keyword dump (`pick-up put-down stack unstack ...`); mystery rows used Blocksworld verbs. That is a malformed template, not evidence that BW templates have zero corpus hits. The query strings in `scripts/BW_P3_SCR_run_contamination_triage.py` are now grammatical prompt stems. Re-query writes a derived file; `raw/` is unchanged. Until a re-query lands, drop BW `template_contamination_score` from every correlation (zero variance). Figures/tables that **store** the column: `raw/BW_P3_contamination.csv`, `derived/scientific_file_deductions.csv`, `derived/scientific_filewise_audit.md`. Rebuild `P3.1.*.template_contamination_score_vs_VRI` rows are **ALGO**, not BW. Paper figures `fig4_contamination_scatter.py` / `generate_paper_figures.py` use overall or instance scores, not the BW template column.
+
+Triangulation rule comparison (appendix printed vs executed, plus P1-rescored overlay): `results/derived/P3_triangulation_rule_comparison.csv`.
+
+---
+
 ## `derived/` — metrics (long tables)
 
-Each row: `model`, `metric_name` (or `metric`), `metric_value`, often `ci_lower` / `ci_upper`, sometimes `subtype` / `variant_type`.
+Canonical Probe 1 accuracies after verifier repair: `derived/P1_rescore_summary.csv` and `derived/*_rescored.csv` (denominators are `included=True` only).
 
-### `ALGO_P1_metrics.csv` ← `ALGO_P1_SCR_compute_metrics.py`
+The older `{ALGO,BW,GSM}_P1_metrics.csv` files skipped Gemini and o4-mini by default and reused the name CSS for mean variant accuracy. They live in `results/deprecated/` with a README.
+
+Each row of a family metrics file: `model`, `metric_name` (or `metric`), `metric_value`, often `ci_lower` / `ci_upper`, sometimes `subtype` / `variant_type`.
+
+### `deprecated/ALGO_P1_metrics.csv` ← `ALGO_P1_SCR_compute_metrics.py` (quarantined)
 
 | Metric | Meaning |
 |--------|---------|
@@ -124,7 +154,7 @@ Each row: `model`, `metric_name` (or `metric`), `metric_value`, often `ci_lower`
 | `Formalism_Gap` | W4 vs prose gap |
 | `CFS`, `HDR`, `VWC` | Contamination–stability diagnostics |
 
-### `GSM_P1_metrics.csv` ← `GSM_P1_SCR_compute_metrics.py`
+### `deprecated/GSM_P1_metrics.csv` ← `GSM_P1_SCR_compute_metrics.py` (quarantined)
 
 | Metric | Meaning |
 |--------|---------|
@@ -134,7 +164,7 @@ Each row: `model`, `metric_name` (or `metric`), `metric_value`, often `ci_lower`
 | `VRI_*`, `W6_gap` | Robustness gaps |
 | `CFS` | Contamination fragility |
 
-### `BW_P1_metrics.csv` ← `BW_P1_SCR_compute_metrics.py`
+### `deprecated/BW_P1_metrics.csv` ← `BW_P1_SCR_compute_metrics.py` (quarantined)
 
 | Metric | Meaning |
 |--------|---------|
