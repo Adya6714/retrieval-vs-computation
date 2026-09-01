@@ -2,7 +2,7 @@
 
 import pytest
 
-from probes.contamination.verify import verify_answer
+from probes.contamination.verify import LAST_VERIFY_META, verify_answer
 
 
 @pytest.mark.parametrize(
@@ -85,7 +85,39 @@ def test_blocksworld_numbered_list_sequence_match_without_problem_text():
     gt = "pick-up x\nput-down x"
     model = "1. pick-up x\n2. put-down x"
     assert verify_answer("dummy_id", model, gt, "blocksworld") is True
+    assert LAST_VERIFY_META["verify_method"] == "exact_sequence"
     assert verify_answer("dummy_id", "2. put-down x\n1. pick-up x", gt, "blocksworld") is False
+
+
+def test_blocksworld_w4_and_w1_use_state_machine():
+    w4 = (
+        "INITIAL STATE S₀:\nOnTable(a), OnTable(b), Clear(a), Clear(b), HandEmpty\n"
+        "GOAL STATE S*:\nOn(a,b)\n"
+        "Respond with a numbered list of actions only."
+    )
+    assert (
+        verify_answer("dummy", "pick-up a\nstack a b", "pick-up a\nstack a b", "blocksworld", problem_text=w4)
+        is True
+    )
+    assert LAST_VERIFY_META["verify_method"] == "state_machine"
+    w1 = (
+        "Current configuration: Blocks a and b are unobstructed and resting on the surface. "
+        "The gripper is vacant. Objective: Block a rests atop block b. "
+        "Reply with a numbered sequence of operations only."
+    )
+    assert (
+        verify_answer("dummy", "pick-up a\nstack a b", "pick-up a\nstack a b", "blocksworld", problem_text=w1)
+        is True
+    )
+
+
+def test_unparseable_problem_text_returns_sentinel_not_exact_match():
+    text = "This prompt has no current state or goal section at all."
+    gold = "pick-up a\nstack a b"
+    assert (
+        verify_answer("dummy", gold, gold, "blocksworld", problem_text=text) is None
+    )
+    assert LAST_VERIFY_META["verify_method"] == "state_machine"
 
 
 def test_cross_family_unrecognized():

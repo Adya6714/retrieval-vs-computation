@@ -184,18 +184,18 @@ pick-up f
 stack f i
 pick-up j
 stack j f",planning_suite,blocksworld,medium,high,type=planbench_original | dataset=planbench | filename=instance-1.pddl | path=plan-bench/instances/blocksworld/generated/instance-1.pddl,verify_blocksworld_plan,num_blocks=8 | requires_unstacking=false | max_initial_stack_depth=1,8 blocks starting on table; no unstacking required
-BW_002,W1,"You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks j, g, a, b, k, h, and i are unobstructed and resting on the surface. The gripper is vacant. Objective: Block j rests atop block g, block g rests atop block a, block a rests atop block b, block b rests atop block k, block k rests atop block h, and block h rests atop block i. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up k
- stack k h
- pick-up i
- stack i k
- pick-up b
- stack b i
- pick-up a
- stack a b
- pick-up g
- stack g a
- pick-up j
- stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
+BW_002,W1,"You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks j, g, a, b, k, h, and i are unobstructed and resting on the surface. The gripper is vacant. Objective: Block j rests atop block g, block g rests atop block a, block a rests atop block b, block b rests atop block k, block k rests atop block h, and block h rests atop block i. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up h
+stack h i
+pick-up k
+stack k h
+pick-up b
+stack b k
+pick-up a
+stack a b
+pick-up g
+stack g a
+pick-up j
+stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
 BW_002,W2,"Action Reference:
  | Action | Preconditions | Effect |
  |--------|---------------|--------|
@@ -225,30 +225,30 @@ BW_002,W2,"Action Reference:
  | k | h |
  | h | i |
  
- Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up k
- stack k h
- pick-up i
- stack i k
- pick-up b
- stack b i
- pick-up a
- stack a b
- pick-up g
- stack g a
- pick-up j
- stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
-BW_002,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Jake, Grace, Alice, Bob, Kevin, Henry, and Ivan are all unassigned and available. Your hands are free. Goal: Jake reports to Grace, Grace reports to Alice, Alice reports to Bob, Bob reports to Kevin, Kevin reports to Henry, Henry reports to Ivan. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Jake
-place Jake under Grace
-select Grace
-place Grace under Alice
-select Alice
-place Alice under Bob
-select Bob
-place Bob under Kevin
+ Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up h
+stack h i
+pick-up k
+stack k h
+pick-up b
+stack b k
+pick-up a
+stack a b
+pick-up g
+stack g a
+pick-up j
+stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
+BW_002,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Jake, Grace, Alice, Bob, Kevin, Henry, and Ivan are all unassigned and available. Your hands are free. Goal: Jake reports to Grace, Grace reports to Alice, Alice reports to Bob, Bob reports to Kevin, Kevin reports to Henry, Henry reports to Ivan. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Henry
+place Henry under Ivan
 select Kevin
 place Kevin under Henry
-select Henry
-place Henry under Ivan",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
+select Bob
+place Bob under Kevin
+select Alice
+place Alice under Bob
+select Grace
+place Grace under Alice
+select Jake
+place Jake under Grace",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
 BW_002,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -301,18 +301,18 @@ BW_002,W4,"FORMAL DEFINITION:
   put-down X
   stack X Y
   unstack X Y
- No explanation. No extra text.","pick-up k
- stack k h
- pick-up i
- stack i k
- pick-up b
- stack b i
- pick-up a
- stack a b
- pick-up g
- stack g a
- pick-up j
- stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
+ No explanation. No extra text.","pick-up h
+stack h i
+pick-up k
+stack k h
+pick-up b
+stack b k
+pick-up a
+stack a b
+pick-up g
+stack g a
+pick-up j
+stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
 BW_002,W5,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block j is on block g, block g is on block a, block a is on block b, block b is on block k, block k is on block h, block h is on block i. Block i is on the table. The hand is empty. Goal: Blocks j, g, a, b, k, h, and i are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","unstack j g
 put-down j
 unstack g a
@@ -325,30 +325,30 @@ unstack k h
 put-down k
 unstack h i
 put-down h",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
-BW_002,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block d c time. Current state: Blocks n, f, c, e, o, l, and m are clear and on the table. The hand is empty. Goal: Block n is on block f, block f is on block c, block c is on block e, block e is on block o, block o is on block l, and block l is on block m. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up o
- stack o l
- pick-up m
- stack m o
- pick-up e
- stack e m
- pick-up c
- stack c e
- pick-up f
- stack f c
- pick-up n
- stack n f",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl | variant=w6_rename,verify_blocksworld_plan,,
-BW_002,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks j, g, a, b, k, h, and i are clear and on the table. The hand is empty. Goal: Block j is on block g, block g is on block a, block a is on block b, block b is on block k, block k is on block h, and block h is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up k
- stack k h
- pick-up i
- stack i k
- pick-up b
- stack b i
- pick-up a
- stack a b
- pick-up g
- stack g a
- pick-up j
- stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
+BW_002,W6,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block d c time. Current state: Blocks n, f, c, e, o, l, and m are clear and on the table. The hand is empty. Goal: Block n is on block f, block f is on block c, block c is on block e, block e is on block o, block o is on block l, and block l is on block m. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up l
+stack l m
+pick-up o
+stack o l
+pick-up e
+stack e o
+pick-up c
+stack c e
+pick-up f
+stack f c
+pick-up n
+stack n f",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl | variant=w6_rename,verify_blocksworld_plan,,
+BW_002,canonical,"You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks j, g, a, b, k, h, and i are clear and on the table. The hand is empty. Goal: Block j is on block g, block g is on block a, block a is on block b, block b is on block k, block k is on block h, and block h is on block i. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.","pick-up h
+stack h i
+pick-up k
+stack k h
+pick-up b
+stack b k
+pick-up a
+stack a b
+pick-up g
+stack g a
+pick-up j
+stack j g",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-2.pddl,verify_blocksworld_plan,,
 BW_010,W1,"""You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks d, e, a, b, and f are unobstructed and resting on the surface. The gripper is vacant. Objective: Block d rests atop block e, block e rests atop block a, block a rests atop block b, and block b rests atop block f. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.""","pick-up b
 stack b f
 pick-up a
@@ -731,10 +731,10 @@ BW_014,W2,"Action Reference:
  stack e g
  pick-up l
  stack l e",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-14.pddl,verify_blocksworld_plan,,
-BW_014,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Lisa, Eve, and Grace are all unassigned and available. Your hands are free. Goal: Lisa reports to Eve, Eve reports to Grace. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Lisa
-place Lisa under Eve
-select Eve
-place Eve under Grace",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-14.pddl,verify_blocksworld_plan,,
+BW_014,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Lisa, Eve, and Grace are all unassigned and available. Your hands are free. Goal: Lisa reports to Eve, Eve reports to Grace. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Eve
+place Eve under Grace
+select Lisa
+place Lisa under Eve",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-14.pddl,verify_blocksworld_plan,,
 BW_014,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -844,14 +844,14 @@ BW_022,W2,"Action Reference:
  stack c b
  pick-up g
  stack g c",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-22.pddl,verify_blocksworld_plan,,
-BW_022,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Grace, Carol, Bob, Kevin, and Frank are all unassigned and available. Your hands are free. Goal: Grace reports to Carol, Carol reports to Bob, Bob reports to Kevin, Kevin reports to Frank. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Grace
-place Grace under Carol
-select Carol
-place Carol under Bob
+BW_022,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Grace, Carol, Bob, Kevin, and Frank are all unassigned and available. Your hands are free. Goal: Grace reports to Carol, Carol reports to Bob, Bob reports to Kevin, Kevin reports to Frank. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Kevin
+place Kevin under Frank
 select Bob
 place Bob under Kevin
-select Kevin
-place Kevin under Frank",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-22.pddl,verify_blocksworld_plan,,
+select Carol
+place Carol under Bob
+select Grace
+place Grace under Carol",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-22.pddl,verify_blocksworld_plan,,
 BW_022,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -1846,12 +1846,12 @@ BW_203,W2,"Action Reference:
  stack f j
  pick-up k
  stack k f",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-203.pddl,verify_blocksworld_plan,,
-BW_203,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Kevin, Frank, Jake, and Henry are all unassigned and available. Your hands are free. Goal: Kevin reports to Frank, Frank reports to Jake, Jake reports to Henry. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Kevin
-place Kevin under Frank
+BW_203,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Kevin, Frank, Jake, and Henry are all unassigned and available. Your hands are free. Goal: Kevin reports to Frank, Frank reports to Jake, Jake reports to Henry. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Jake
+place Jake under Henry
 select Frank
 place Frank under Jake
-select Jake
-place Jake under Henry",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-203.pddl,verify_blocksworld_plan,,
+select Kevin
+place Kevin under Frank",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-203.pddl,verify_blocksworld_plan,,
 BW_203,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -2171,14 +2171,14 @@ BW_282,W2,"Action Reference:
  stack h c
  pick-up g
  stack g h",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-282.pddl,verify_blocksworld_plan,,
-BW_282,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Grace, Henry, Carol, Ivan, and Bob are all unassigned and available. Your hands are free. Goal: Grace reports to Henry, Henry reports to Carol, Carol reports to Ivan, Ivan reports to Bob. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Grace
-place Grace under Henry
-select Henry
-place Henry under Carol
+BW_282,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Grace, Henry, Carol, Ivan, and Bob are all unassigned and available. Your hands are free. Goal: Grace reports to Henry, Henry reports to Carol, Carol reports to Ivan, Ivan reports to Bob. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Ivan
+place Ivan under Bob
 select Carol
 place Carol under Ivan
-select Ivan
-place Ivan under Bob",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-282.pddl,verify_blocksworld_plan,,
+select Henry
+place Henry under Carol
+select Grace
+place Grace under Henry",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-282.pddl,verify_blocksworld_plan,,
 BW_282,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -2310,16 +2310,16 @@ BW_310,W2,"Action Reference:
  stack j a
  pick-up g
  stack g j",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-310.pddl,verify_blocksworld_plan,,
-BW_310,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Grace, Jake, Alice, Frank, Bob, and Diana are all unassigned and available. Your hands are free. Goal: Grace reports to Jake, Jake reports to Alice, Alice reports to Frank, Frank reports to Bob, Bob reports to Diana. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Grace
-place Grace under Jake
-select Jake
-place Jake under Alice
-select Alice
-place Alice under Frank
+BW_310,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Grace, Jake, Alice, Frank, Bob, and Diana are all unassigned and available. Your hands are free. Goal: Grace reports to Jake, Jake reports to Alice, Alice reports to Frank, Frank reports to Bob, Bob reports to Diana. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Bob
+place Bob under Diana
 select Frank
 place Frank under Bob
-select Bob
-place Bob under Diana",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-310.pddl,verify_blocksworld_plan,,
+select Alice
+place Alice under Frank
+select Jake
+place Jake under Alice
+select Grace
+place Grace under Jake",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-310.pddl,verify_blocksworld_plan,,
 BW_310,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -2441,10 +2441,10 @@ BW_331,W2,"Action Reference:
  stack j l
  pick-up h
  stack h j",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-331.pddl,verify_blocksworld_plan,,
-BW_331,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Henry, Jake, and Lisa are all unassigned and available. Your hands are free. Goal: Henry reports to Jake, Jake reports to Lisa. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Henry
-place Henry under Jake
-select Jake
-place Jake under Lisa",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-331.pddl,verify_blocksworld_plan,,
+BW_331,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Henry, Jake, and Lisa are all unassigned and available. Your hands are free. Goal: Henry reports to Jake, Jake reports to Lisa. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Jake
+place Jake under Lisa
+select Henry
+place Henry under Jake",planning_suite,blocksworld,easy,high,plan-bench/instances/blocksworld/generated/instance-331.pddl,verify_blocksworld_plan,,
 BW_331,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -2584,24 +2584,24 @@ BW_350,W2,"Action Reference:
  stack e i
  pick-up f
  stack f e",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-350.pddl,verify_blocksworld_plan,,
-BW_350,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Frank, Eve, Ivan, Jake, Kevin, Alice, Grace, Bob, Lisa, and Diana are all unassigned and available. Your hands are free. Goal: Frank reports to Eve, Eve reports to Ivan, Ivan reports to Jake, Jake reports to Kevin, Kevin reports to Alice, Alice reports to Grace, Grace reports to Bob, Bob reports to Lisa, Lisa reports to Diana. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Frank
-place Frank under Eve
-select Eve
-place Eve under Ivan
-select Ivan
-place Ivan under Jake
-select Jake
-place Jake under Kevin
-select Kevin
-place Kevin under Alice
-select Alice
-place Alice under Grace
-select Grace
-place Grace under Bob
+BW_350,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Frank, Eve, Ivan, Jake, Kevin, Alice, Grace, Bob, Lisa, and Diana are all unassigned and available. Your hands are free. Goal: Frank reports to Eve, Eve reports to Ivan, Ivan reports to Jake, Jake reports to Kevin, Kevin reports to Alice, Alice reports to Grace, Grace reports to Bob, Bob reports to Lisa, Lisa reports to Diana. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Lisa
+place Lisa under Diana
 select Bob
 place Bob under Lisa
-select Lisa
-place Lisa under Diana",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-350.pddl,verify_blocksworld_plan,,
+select Grace
+place Grace under Bob
+select Alice
+place Alice under Grace
+select Kevin
+place Kevin under Alice
+select Jake
+place Jake under Kevin
+select Ivan
+place Ivan under Jake
+select Eve
+place Eve under Ivan
+select Frank
+place Frank under Eve",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-350.pddl,verify_blocksworld_plan,,
 BW_350,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -2785,20 +2785,20 @@ BW_408,W2,"Action Reference:
  stack l h
  pick-up a
  stack a l",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-408.pddl,verify_blocksworld_plan,,
-BW_408,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Alice, Lisa, Henry, Diana, Carol, Grace, Jake, and Bob are all unassigned and available. Your hands are free. Goal: Alice reports to Lisa, Lisa reports to Henry, Henry reports to Diana, Diana reports to Carol, Carol reports to Grace, Grace reports to Jake, Jake reports to Bob. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Alice
-place Alice under Lisa
-select Lisa
-place Lisa under Henry
-select Henry
-place Henry under Diana
-select Diana
-place Diana under Carol
-select Carol
-place Carol under Grace
+BW_408,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Alice, Lisa, Henry, Diana, Carol, Grace, Jake, and Bob are all unassigned and available. Your hands are free. Goal: Alice reports to Lisa, Lisa reports to Henry, Henry reports to Diana, Diana reports to Carol, Carol reports to Grace, Grace reports to Jake, Jake reports to Bob. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Jake
+place Jake under Bob
 select Grace
 place Grace under Jake
-select Jake
-place Jake under Bob",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-408.pddl,verify_blocksworld_plan,,
+select Carol
+place Carol under Grace
+select Diana
+place Diana under Carol
+select Henry
+place Henry under Diana
+select Lisa
+place Lisa under Henry
+select Alice
+place Alice under Lisa",planning_suite,blocksworld,hard,high,plan-bench/instances/blocksworld/generated/instance-408.pddl,verify_blocksworld_plan,,
 BW_408,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -3117,14 +3117,14 @@ BW_495,W2,"Action Reference:
  stack l i
  pick-up c
  stack c l",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-495.pddl,verify_blocksworld_plan,,
-BW_495,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Carol, Lisa, Ivan, Eve, and Henry are all unassigned and available. Your hands are free. Goal: Carol reports to Lisa, Lisa reports to Ivan, Ivan reports to Eve, Eve reports to Henry. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Carol
-place Carol under Lisa
-select Lisa
-place Lisa under Ivan
+BW_495,W3,"You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Carol, Lisa, Ivan, Eve, and Henry are all unassigned and available. Your hands are free. Goal: Carol reports to Lisa, Lisa reports to Ivan, Ivan reports to Eve, Eve reports to Henry. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.","select Eve
+place Eve under Henry
 select Ivan
 place Ivan under Eve
-select Eve
-place Eve under Henry",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-495.pddl,verify_blocksworld_plan,,
+select Lisa
+place Lisa under Ivan
+select Carol
+place Carol under Lisa",planning_suite,blocksworld,medium,high,plan-bench/instances/blocksworld/generated/instance-495.pddl,verify_blocksworld_plan,,
 BW_495,W4,"FORMAL DEFINITION:
  π = ⟨B, S₀, S*, A⟩
  
@@ -3342,10 +3342,10 @@ Respond with a numbered list of actions only. Each action must be exactly one of
 put-down c
 pick-up a
 stack a b",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
-BW_E015,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron is unassigned and available. Brian is unassigned and available. Clara is reporting to Brian. Brian has someone above him. Clara has no one above her. Your hands are free. Goal: Aaron reports to Brian. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","select Aaron
-place Aaron under Brian
-select Clara
-place Clara under Aaron",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
+BW_E015,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron is unassigned and available. Brian is unassigned and available. Clara is reporting to Brian. Brian has someone above him. Clara has no one above her. Your hands are free. Goal: Aaron reports to Brian. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","remove Clara from Brian
+release Clara
+select Aaron
+place Aaron under Brian",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_15,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
 BW_E015,W4,"FORMAL DEFINITION:
 π = ⟨P, S₀, S*, A⟩
 
@@ -3442,7 +3442,8 @@ Respond with a numbered list of actions only. Each action must be exactly one of
 stack a b
 pick-up c
 stack c a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
-BW_E017,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron, Brian, and Clara are all unassigned and available. Your hands are free. Goal: Aaron reports to Brian, and Clara reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","remove Aaron from Brian
+BW_E017,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron, Brian, and Clara are all unassigned and available. Your hands are free. Goal: Aaron reports to Brian, and Clara reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","select Aaron
+place Aaron under Brian
 select Clara
 place Clara under Aaron",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_17,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=false| max_initial_stack_depth=1,"3 blocks, 4 moves"
 BW_E017,W4,"FORMAL DEFINITION:
@@ -3543,6 +3544,7 @@ stack a c
 pick-up b
 stack b a",planning_suite,blocksworld,easy,low,planbench_generated_basic_3_19,verify_blocksworld_plan,num_blocks=3 | requires_unstacking=true| max_initial_stack_depth=2,"3 blocks, 4 moves"
 BW_E019,W3,"""You are an HR manager building a reporting chain. Available actions: select X (X must have no direct reports and be unassigned, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must have no one above them, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Aaron is reporting to Brian. Brian is unassigned and available. Clara is unassigned and available. Your hands are free. Goal: Aaron reports to Clara, and Brian reports to Aaron. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.""","remove Aaron from Brian
+release Aaron
 select Aaron
 place Aaron under Clara
 select Brian

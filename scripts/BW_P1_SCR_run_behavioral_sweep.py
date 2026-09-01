@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from probes.contamination.verify import parse_action_mapping_from_notes, verify_answer
+from probes.contamination.verify import LAST_VERIFY_META, parse_action_mapping_from_notes, verify_answer
 
 load_dotenv()
 
@@ -33,6 +33,7 @@ OUTPUT_COLUMNS = [
     "problem_family",
     "contamination_pole",
     "difficulty",
+    "verify_method",
 ]
 
 
@@ -332,6 +333,7 @@ def main() -> None:
                     "correct_answer": correct_answer,
                     "contamination_pole": row.get("contamination_pole", ""),
                     "difficulty": row.get("difficulty", ""),
+                    "verify_method": LAST_VERIFY_META.get("verify_method", ""),
                 }
                 writer.writerow(_row_for_csv(row_data, write_columns))
                 outfile.flush()  # 7d

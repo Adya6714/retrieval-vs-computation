@@ -180,6 +180,18 @@ def verify_gsm_answer(model_response: str, correct_answer) -> bool:
     return abs(pred_val - gt_val) < 0.01
 
 
+LAST_VERIFY_META: dict[str, str] = {}
+
+VERIFY_STATE_MACHINE = "state_machine"
+VERIFY_EXACT_SEQUENCE = "exact_sequence"
+VERIFY_STRING_EQUALITY = "string_equality"
+
+
+def _set_verify_meta(*, verify_method: str) -> None:
+    LAST_VERIFY_META.clear()
+    LAST_VERIFY_META["verify_method"] = verify_method
+
+
 def _verify_shortest_path(model_answer, ground_truth) -> bool:
     parts = re.split(r"[,\- \>]+", str(model_answer).strip().upper())
     model_path = "".join([p for p in parts if len(p) == 1 and p.isalpha()])
@@ -187,40 +199,287 @@ def _verify_shortest_path(model_answer, ground_truth) -> bool:
     return model_path == gt_path
 
 
-def _parse_blocksworld_state(problem_text: str) -> tuple[set[tuple], set[tuple]] | None:
-    text = str(problem_text)
-    current_match = re.search(r"current state:\s*(.*?)\s*goal:", text, re.IGNORECASE | re.DOTALL)
-    goal_match = re.search(r"goal:\s*(.*?)(?:respond with|$)", text, re.IGNORECASE | re.DOTALL)
-    if not current_match or not goal_match:
+_BW_NAME = (
+    r"(?:(?!(?:and|the|block|blocks|which|with|your|currently|atop|over|above|"
+    r"labeled|all|must|be|on|top|of|table|surface|nations?)\b)[a-z][a-z0-9_-]*)"
+)
+_BW_STOP = {
+    "block", "blocks", "the", "and", "table", "surface", "which", "with", "your",
+    "currently", "atop", "over", "above", "labeled", "all", "must", "be", "on",
+    "top", "of",
+}
+_NAME_LIST = (
+    rf"((?:{_BW_NAME})(?:\s*,\s*(?:{_BW_NAME}))*(?:,?\s+and\s+(?:{_BW_NAME}))?)"
+)
+_CURRENT_START = re.compile(
+    r"(?:current\s+(?:state|configuration|situation)|present\s+(?:situation|state)|"
+    r"initial\s+state(?:\s+s[0₀])?|INITIAL\s+STATE\s+S[0₀])\s*:?",
+    re.IGNORECASE,
+)
+_GOAL_START = re.compile(
+    r"(?:goal\s+state(?:\s+s[*＊])?|GOAL\s+STATE\s+S[*＊]|target\s+configuration|"
+    r"objective|goal|target)\s*:?",
+    re.IGNORECASE,
+)
+_SECTION_END = re.compile(
+    r"(?:respond with|reply with|reply using|provide only|what sequence|"
+    r"actions\s*\(|task:|output format:|include no explanation|"
+    r"each action must|every action (?:must|should))",
+    re.IGNORECASE,
+)
+
+
+def _extract_current_and_goal(problem_text: str) -> tuple[str, str] | None:
+    text = str(problem_text or "")
+    if not text.strip():
         return None
+    cur_m = _CURRENT_START.search(text)
+    if not cur_m:
+        return None
+    after_cur = text[cur_m.end() :]
+    goal_m = _GOAL_START.search(after_cur)
+    if not goal_m:
+        return None
+    current = after_cur[: goal_m.start()]
+    rest = after_cur[goal_m.end() :]
+    end_m = _SECTION_END.search(rest)
+    goal = rest[: end_m.start()] if end_m else rest
+    return current, goal
 
-    current = current_match.group(1).lower()
-    goal = goal_match.group(1).lower()
-    state: set[tuple] = set()
-    goal_facts: set[tuple] = set()
 
-    m = re.search(r"blocks?\s+(.+?)\s+are clear and on the table", current)
-    if m:
-        blocks = [b.strip() for b in re.split(r",| and ", m.group(1)) if b.strip()]
-        for b in blocks:
+def _split_name_list(blob: str) -> list[str]:
+    names: list[str] = []
+    for part in re.split(r",|\band\b", blob, flags=re.IGNORECASE):
+        part = re.sub(
+            r"^(?:blocks?|the\s+blocks?|nations?|the\s+nations?|labeled)\s+",
+            "",
+            part.strip(),
+            flags=re.IGNORECASE,
+        )
+        m = re.match(rf"^({_BW_NAME})\b", part.strip(), flags=re.IGNORECASE)
+        if m and m.group(1).lower() not in _BW_STOP:
+            names.append(m.group(1).lower())
+    return names
+
+
+def _parse_markdown_tables(text: str) -> list[dict[str, object]]:
+    tables: list[dict[str, object]] = []
+    current: dict[str, object] | None = None
+    for raw in str(text).splitlines():
+        line = raw.strip()
+        if not line.startswith("|"):
+            if current is not None:
+                tables.append(current)
+                current = None
+            continue
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if cells and all(re.fullmatch(r":?-+:?", c.replace(" ", "") or "-") for c in cells):
+            continue
+        if current is None:
+            current = {"headers": [c.lower() for c in cells], "rows": []}
+        else:
+            current["rows"].append(cells)  # type: ignore[index]
+    if current is not None:
+        tables.append(current)
+    return tables
+
+
+def _facts_from_bw_tables(section: str) -> set[tuple]:
+    facts: set[tuple] = set()
+    for table in _parse_markdown_tables(section):
+        headers = [str(h) for h in table["headers"]]  # type: ignore[index]
+        rows = table["rows"]  # type: ignore[index]
+        joined = " ".join(headers)
+        for row in rows:  # type: ignore[union-attr]
+            if not row:
+                continue
+            block = str(row[0]).strip().lower()
+            if not re.fullmatch(_BW_NAME, block):
+                continue
+            loc = str(row[1]).strip().lower() if len(row) > 1 else ""
+            extra = str(row[2]).strip().lower() if len(row) > 2 else ""
+            if "location" in joined or "position" in joined or "must be on" in joined or "target" in joined:
+                loc_norm = re.sub(r"^on\s+", "", loc).strip()
+                if loc_norm in {"", "—", "-", "n/a"}:
+                    continue
+                if loc_norm in {"table", "on table"} or loc_norm.endswith("table"):
+                    facts.add(("ontable", block))
+                    facts.add(("clear", block))
+                elif re.fullmatch(_BW_NAME, loc_norm):
+                    facts.add(("on", block, loc_norm))
+            if "clear" in joined:
+                if extra in {"yes", "y", "true"} or loc in {"yes", "y", "true"}:
+                    facts.add(("clear", block))
+                elif extra in {"no", "n", "false"}:
+                    facts.discard(("clear", block))
+    return facts
+
+
+def _parse_bw_predicates(section: str) -> set[tuple]:
+    text = str(section)
+    facts: set[tuple] = set()
+    for b in re.findall(rf"ontable\s*\(\s*({_BW_NAME})\s*\)", text, flags=re.IGNORECASE):
+        facts.add(("ontable", b.lower()))
+    for b in re.findall(rf"clear\s*\(\s*({_BW_NAME})\s*\)", text, flags=re.IGNORECASE):
+        facts.add(("clear", b.lower()))
+    for x, y in re.findall(
+        rf"on\s*\(\s*({_BW_NAME})\s*,\s*({_BW_NAME})\s*\)", text, flags=re.IGNORECASE
+    ):
+        facts.add(("on", x.lower(), y.lower()))
+    if re.search(r"\bhandempty\b", text, flags=re.IGNORECASE):
+        facts.add(("handempty",))
+    return facts
+
+
+def _parse_bw_prose_facts(section: str) -> set[tuple]:
+    text = " ".join(str(section).lower().split())
+    facts: set[tuple] = set()
+
+    if re.search(
+        r"hand(?:s)? (?:is |are |currently )?(?:empty|free|vacant|unoccupied)"
+        r"|gripper (?:is |currently )?(?:vacant|free|unoccupied|empty)"
+        r"|your hands are free|hand being unoccupied",
+        text,
+    ):
+        facts.add(("handempty",))
+
+    list_pats_clear_table = (
+        rf"(?:(?:the )?blocks?(?:\s+labeled)?|all blocks labeled)\s+{_NAME_LIST}\s+"
+        rf"are (?:all )?(?:clear|unobstructed|accessible) and "
+        rf"(?:on|resting on|sitting on|positioned on) (?:the )?(?:table|surface)",
+        rf"(?:(?:the )?blocks?(?:\s+labeled)?|all blocks labeled)\s+{_NAME_LIST}\s+"
+        rf"are (?:all )?unassigned and available",
+        rf"(?:the )?blocks?\s+{_NAME_LIST}\s+(?:are|sit|sits) (?:all )?(?:unobstructed|clear|accessible)"
+        rf" (?:and )?(?:resting |sitting |positioned )?on (?:the )?(?:table|surface)",
+        rf"^({_NAME_LIST})\s+are all unassigned and available",
+        rf"(?:the )?blocks?\s+{_NAME_LIST}\s+sit unobstructed on (?:the )?(?:table|surface)",
+        rf"on the table sit blocks?\s+{_NAME_LIST}",
+    )
+    for pat in list_pats_clear_table:
+        for m in re.finditer(pat, text):
+            names = _split_name_list(m.group(1))
+            for b in names:
+                facts.add(("clear", b))
+                facts.add(("ontable", b))
+
+    for m in re.finditer(
+        rf"(?:the )?blocks?\s+{_NAME_LIST}\s+are (?:all )?(?:on the table|on the surface|on the table surface)\b",
+        text,
+    ):
+        for b in _split_name_list(m.group(1)):
+            facts.add(("ontable", b))
+
+    for x, y in re.findall(
+        rf"block\s+({_BW_NAME})\s+(?:is on|rests atop|sits atop|should be placed on|"
+        rf"is placed on|is stacked on|is positioned on|sits on|rests on)\s+(?:block\s+)?({_BW_NAME})",
+        text,
+    ):
+        if (
+            x in _BW_STOP
+            or y in _BW_STOP
+            or x in {"block", "blocks"}
+            or y in {"block", "blocks", "the", "table", "surface"}
+        ):
+            continue
+        facts.add(("on", x, y))
+    for x, y in re.findall(rf"({_BW_NAME})\s+reports to\s+({_BW_NAME})", text):
+        facts.add(("on", x, y))
+    for x, y in re.findall(rf"({_BW_NAME})\s+is reporting to\s+({_BW_NAME})", text):
+        facts.add(("on", x, y))
+    for x, y in re.findall(
+        rf"(?:position|place|set)\s+block\s+({_BW_NAME})\s+(?:atop|over|above)\s+block\s+({_BW_NAME})",
+        text,
+    ):
+        if x not in _BW_STOP and y not in _BW_STOP:
+            facts.add(("on", x, y))
+    for x, y in re.findall(
+        rf"block\s+({_BW_NAME})\s+should be (?:on top of|placed on|on)\s+block\s+({_BW_NAME})",
+        text,
+    ):
+        if x not in _BW_STOP and y not in _BW_STOP:
+            facts.add(("on", x, y))
+
+    if "which" in text:
+        for sentence in re.split(r"(?<=[.!?])\s+", text):
+            if "which" not in sentence:
+                continue
+            names = re.findall(rf"block\s+({_BW_NAME})", sentence)
+            if len(names) >= 2:
+                for a, b in zip(names, names[1:]):
+                    facts.add(("on", a, b))
+
+    for b in re.findall(rf"block\s+({_BW_NAME})\s+is on the (?:table|surface)", text):
+        facts.add(("ontable", b))
+    for b in re.findall(rf"block\s+({_BW_NAME})\s+is (?:on the (?:table|surface) and )?(?:clear|unobstructed)", text):
+        facts.add(("clear", b))
+    for b in re.findall(
+        rf"block\s+({_BW_NAME})\s+is on the (?:table|surface) and (?:clear|unobstructed)", text
+    ):
+        facts.add(("ontable", b))
+        facts.add(("clear", b))
+    for m in re.finditer(
+        rf"(?:the )?blocks?\s+{_NAME_LIST}\s+are (?:all )?(?:clear|unobstructed)\b",
+        text,
+    ):
+        for b in _split_name_list(m.group(1)):
+            facts.add(("clear", b))
+    for b in re.findall(rf"({_BW_NAME})\s+is unassigned(?: and available)?", text):
+        facts.add(("clear", b))
+        facts.add(("ontable", b))
+        facts.add(("clear", b))
+        facts.add(("ontable", b))
+
+    return facts
+
+
+def _infer_bw_current_derived(state: set[tuple]) -> None:
+    """Fill clear/ontable from on-relations so stacked W5 initials are simulable."""
+    on_of: dict[str, str] = {}
+    blocks: set[str] = set()
+    for fact in list(state):
+        if fact[0] == "on" and len(fact) == 3:
+            on_of[fact[1]] = fact[2]
+            blocks.add(fact[1])
+            blocks.add(fact[2])
+        elif fact[0] in {"clear", "ontable"} and len(fact) == 2:
+            blocks.add(fact[1])
+    if not on_of:
+        return
+    occupied = set(on_of.values())
+    for b in blocks:
+        if b not in occupied:
             state.add(("clear", b))
+        if b not in on_of:
             state.add(("ontable", b))
 
-    for b in re.findall(r"block\s+([a-z0-9]+)\s+is clear and on the table", current):
-        state.add(("clear", b))
-        state.add(("ontable", b))
-    for x, y in re.findall(r"block\s+([a-z0-9]+)\s+is on block\s+([a-z0-9]+)", current):
-        state.add(("on", x, y))
 
-    if "hand is empty" in current:
+def _bw_state_usable(parsed: tuple[set[tuple], set[tuple]] | None) -> bool:
+    if not parsed:
+        return False
+    state, goal = parsed
+    content = {f[0] for f in state} | {f[0] for f in goal}
+    return bool(content & {"on", "ontable", "clear"})
+
+
+def _parse_blocksworld_state(problem_text: str) -> tuple[set[tuple], set[tuple]] | None:
+    sections = _extract_current_and_goal(problem_text)
+    if sections is None:
+        return None
+    current, goal = sections
+    state: set[tuple] = set()
+    goal_facts: set[tuple] = set()
+    state.update(_parse_bw_predicates(current))
+    state.update(_parse_bw_prose_facts(current))
+    state.update(_facts_from_bw_tables(current))
+    goal_facts.update(_parse_bw_predicates(goal))
+    goal_facts.update(_parse_bw_prose_facts(goal))
+    goal_facts.update(_facts_from_bw_tables(goal))
+    goal_facts = {f for f in goal_facts if f[0] in {"on", "ontable", "clear"}}
+    _infer_bw_current_derived(state)
+    if ("handempty",) not in state and not any(f[0] == "holding" for f in state):
         state.add(("handempty",))
-
-    for x, y in re.findall(r"block\s+([a-z0-9]+)\s+is on block\s+([a-z0-9]+)", goal):
-        goal_facts.add(("on", x, y))
-    for b in re.findall(r"block\s+([a-z0-9]+)\s+is on the table", goal):
-        goal_facts.add(("ontable", b))
-    for b in re.findall(r"block\s+([a-z0-9]+)\s+is clear", goal):
-        goal_facts.add(("clear", b))
+    if not state and not goal_facts:
+        return None
     return state, goal_facts
 
 
@@ -287,29 +546,127 @@ def _verify_blocksworld_state_machine(
     return goal.issubset(state)
 
 
+def _parse_mystery_predicates(section: str) -> set[tuple]:
+    text = str(section)
+    facts: set[tuple] = set()
+    if re.search(r"\bharmony\b", text, flags=re.IGNORECASE) and re.search(
+        r"harmony is true|\bharmony\b", text, flags=re.IGNORECASE
+    ):
+        if re.search(r"harmony is true|\bharmony,", text, flags=re.IGNORECASE) or re.search(
+            r"^harmony\s*$", text.strip(), flags=re.IGNORECASE | re.MULTILINE
+        ):
+            facts.add(("harmony",))
+    for kind, pred in (("planet", "planet"), ("province", "province")):
+        for b in re.findall(rf"{kind}\s*\(\s*({_BW_NAME})\s*\)", text, flags=re.IGNORECASE):
+            facts.add((pred, b.lower()))
+    for x, y in re.findall(
+        rf"craves\s*\(\s*({_BW_NAME})\s*,\s*({_BW_NAME})\s*\)", text, flags=re.IGNORECASE
+    ):
+        facts.add(("craves", x.lower(), y.lower()))
+    return facts
+
+
+def _parse_mystery_prose_facts(section: str) -> set[tuple]:
+    text = " ".join(str(section).lower().split())
+    facts: set[tuple] = set()
+    if re.search(r"harmony is true|goodwill is true", text):
+        facts.add(("harmony",))
+    for m in re.finditer(
+        r"(?:planet and province|influence and sovereignty) are true for "
+        r"(?:blocks?|nations?)?\s*(.+?)(?:\.|$)",
+        text,
+    ):
+        for b in _split_name_list(m.group(1)):
+            facts.add(("planet", b))
+            facts.add(("province", b))
+    for x, y in re.findall(rf"craves\s+({_BW_NAME})\s+({_BW_NAME})", text):
+        facts.add(("craves", x, y))
+    for x, y in re.findall(rf"({_BW_NAME})\s+allies with\s+({_BW_NAME})", text):
+        facts.add(("craves", x, y))
+    return facts
+
+
+def _facts_from_mystery_tables(section: str) -> set[tuple]:
+    facts: set[tuple] = set()
+    for table in _parse_markdown_tables(section):
+        headers = [str(h) for h in table["headers"]]  # type: ignore[index]
+        rows = table["rows"]  # type: ignore[index]
+        joined = " ".join(headers)
+        for row in rows:  # type: ignore[union-attr]
+            if not row:
+                continue
+            block = str(row[0]).strip().lower()
+            if not re.fullmatch(_BW_NAME, block):
+                continue
+            if "planet" in joined or "province" in joined:
+                cells = [str(c).strip().lower() for c in row[1:]]
+                # Position column may pack "province, planet"
+                packed = " ".join(cells)
+                if "planet" in packed or (len(row) > 1 and str(row[1]).lower() in {"yes", "y", "true"}):
+                    if "planet" in joined or "planet" in packed:
+                        facts.add(("planet", block))
+                if "province" in packed or (
+                    "province" in joined and len(row) > 2 and str(row[2]).lower() in {"yes", "y", "true"}
+                ):
+                    facts.add(("province", block))
+                if str(row[1]).lower() in {"yes", "y", "true"} and "planet" in joined:
+                    facts.add(("planet", block))
+                if len(row) > 2 and str(row[2]).lower() in {"yes", "y", "true"} and "province" in joined:
+                    facts.add(("province", block))
+            if "crave" in joined or "target" in joined or "position" in joined:
+                loc = str(row[1]).strip().lower() if len(row) > 1 else ""
+                loc = re.sub(r"^on\s+", "", loc).strip()
+                if loc and re.fullmatch(_BW_NAME, loc):
+                    facts.add(("craves", block, loc))
+    return facts
+
+
+def _infer_mystery_current_derived(state: set[tuple]) -> None:
+    craves_of: dict[str, str] = {}
+    blocks: set[str] = set()
+    for fact in list(state):
+        if fact[0] == "craves" and len(fact) == 3:
+            craves_of[fact[1]] = fact[2]
+            blocks.add(fact[1])
+            blocks.add(fact[2])
+        elif fact[0] in {"planet", "province"} and len(fact) == 2:
+            blocks.add(fact[1])
+    for b in blocks:
+        state.add(("planet", b))
+        state.add(("province", b))
+    if craves_of:
+        occupied = set(craves_of.values())
+        for b in blocks:
+            if b in occupied:
+                state.discard(("province", b))
+        if ("harmony",) not in state:
+            state.add(("harmony",))
+
+
+def _mystery_state_usable(parsed: tuple[set[tuple], set[tuple]] | None) -> bool:
+    if not parsed:
+        return False
+    state, goals = parsed
+    content = {f[0] for f in state} | {f[0] for f in goals}
+    return bool(content & {"planet", "province", "craves", "harmony"})
+
+
 def _parse_mystery_state(problem_text: str) -> tuple[set[tuple], set[tuple]] | None:
-    text = str(problem_text).lower()
-    current_match = re.search(r"current state:\s*(.*?)\s*goal:", text, re.IGNORECASE | re.DOTALL)
-    goal_match = re.search(r"goal:\s*(.*?)(?:respond with|$)", text, re.IGNORECASE | re.DOTALL)
-    if not current_match or not goal_match:
+    sections = _extract_current_and_goal(problem_text)
+    if sections is None:
         return None
-    current = current_match.group(1)
-    goal = goal_match.group(1)
+    current, goal = sections
     state: set[tuple] = set()
     goals: set[tuple] = set()
-
-    if "harmony is true" in current:
-        state.add(("harmony",))
-
-    m = re.search(r"planet and province are true for blocks?\s+(.+?)(?:\.|$)", current)
-    if m:
-        blocks = [b.strip() for b in re.split(r",| and ", m.group(1)) if b.strip()]
-        for b in blocks:
-            state.add(("planet", b))
-            state.add(("province", b))
-
-    for x, y in re.findall(r"craves\s+([a-z0-9]+)\s+([a-z0-9]+)", goal):
-        goals.add(("craves", x, y))
+    state.update(_parse_mystery_predicates(current))
+    state.update(_parse_mystery_prose_facts(current))
+    state.update(_facts_from_mystery_tables(current))
+    goals.update(_parse_mystery_predicates(goal))
+    goals.update(_parse_mystery_prose_facts(goal))
+    goals.update(_facts_from_mystery_tables(goal))
+    _infer_mystery_current_derived(state)
+    if not state and not goals:
+        return None
     return state, goals
 
 
@@ -376,6 +733,26 @@ def _verify_mystery_state_machine(
     return goals.issubset(state)
 
 
+def _explicit_sequence_or_string(
+    model_answer,
+    ground_truth,
+    extract_fn,
+    fallback_pattern: re.Pattern[str],
+) -> bool:
+    model_matches = extract_fn(model_answer)
+    gt_matches = extract_fn(ground_truth)
+    if model_matches and gt_matches:
+        _set_verify_meta(verify_method=VERIFY_EXACT_SEQUENCE)
+        return model_matches == gt_matches
+    model_matches = _extract_actions(model_answer, fallback_pattern)
+    gt_matches = _extract_actions(ground_truth, fallback_pattern)
+    if model_matches and gt_matches:
+        _set_verify_meta(verify_method=VERIFY_EXACT_SEQUENCE)
+        return model_matches == gt_matches
+    _set_verify_meta(verify_method=VERIFY_STRING_EQUALITY)
+    return str(model_answer).strip().lower() == str(ground_truth).strip().lower()
+
+
 def verify_answer(
     problem_id,
     model_answer,
@@ -392,6 +769,7 @@ def verify_answer(
         "knapsack"
     }
     plan_families = {"blocksworld", "logistics", "mystery_blocksworld"}
+    has_problem_text = bool(str(problem_text or "").strip()) and str(problem_text).strip() != "None"
 
     if family == "shortest_path":
         return _verify_shortest_path(model_answer, ground_truth)
@@ -403,57 +781,58 @@ def verify_answer(
         return _verify_numeric(model_answer, ground_truth)
 
     elif family == "mystery_blocksworld":
-        sim_ok = _verify_mystery_state_machine(
-            model_answer, problem_text, action_mapping=action_mapping
-        )
-        if sim_ok is True:
-            return True
-        model_matches = _extract_mystery_actions_line_based(
-            model_answer, action_mapping=action_mapping
-        )
-        gt_matches = _extract_mystery_actions_line_based(
-            ground_truth, action_mapping=action_mapping
-        )
-        if model_matches and gt_matches:
-            return model_matches == gt_matches
-        if sim_ok is False:
-            return False
+        mystery_parsed = _parse_mystery_state(problem_text)
+        if _mystery_state_usable(mystery_parsed):
+            sim_ok = _verify_mystery_state_machine(
+                model_answer, problem_text, action_mapping=action_mapping
+            )
+            _set_verify_meta(verify_method=VERIFY_STATE_MACHINE)
+            return bool(sim_ok is True)
+        if has_problem_text and _bw_state_usable(_parse_blocksworld_state(problem_text)):
+            sim_ok = _verify_blocksworld_state_machine(
+                model_answer, problem_text, action_mapping=action_mapping
+            )
+            _set_verify_meta(verify_method=VERIFY_STATE_MACHINE)
+            if sim_ok is True:
+                return True
+            if sim_ok is False:
+                return False
+            return None
+        if has_problem_text:
+            _set_verify_meta(verify_method=VERIFY_STATE_MACHINE)
+            return None
         mystery_pattern = re.compile(
             r"(attack|succumb|overcome|broker|feast)\s+[a-z0-9_-]+(\s+[a-z0-9_-]+)?",
             re.IGNORECASE,
         )
-        model_matches = _extract_actions(model_answer, mystery_pattern)
-        gt_matches = _extract_actions(ground_truth, mystery_pattern)
-        if not model_matches or not gt_matches:
-            return str(model_answer).strip().lower() == str(ground_truth).strip().lower()
-        return model_matches == gt_matches
+        return _explicit_sequence_or_string(
+            model_answer,
+            ground_truth,
+            lambda t: _extract_mystery_actions_line_based(t, action_mapping=action_mapping),
+            mystery_pattern,
+        )
 
     elif family in plan_families:
-        sim_ok = _verify_blocksworld_state_machine(
-            model_answer, problem_text, action_mapping=action_mapping
-        )
-        if sim_ok is True:
-            return True
-        model_matches = _extract_blocksworld_actions_line_based(
-            model_answer, action_mapping=action_mapping
-        )
-        gt_matches = _extract_blocksworld_actions_line_based(
-            ground_truth, action_mapping=action_mapping
-        )
-        if model_matches and gt_matches:
-            if model_matches == gt_matches:
-                return True
-        if sim_ok is False:
-            return False
+        parsed = _parse_blocksworld_state(problem_text)
+        if _bw_state_usable(parsed):
+            sim_ok = _verify_blocksworld_state_machine(
+                model_answer, problem_text, action_mapping=action_mapping
+            )
+            _set_verify_meta(verify_method=VERIFY_STATE_MACHINE)
+            return bool(sim_ok is True)
+        if has_problem_text:
+            _set_verify_meta(verify_method=VERIFY_STATE_MACHINE)
+            return None
         action_pattern = re.compile(
             r"(pick-up|put-down|stack|unstack)\s+[a-z0-9_-]+(\s+[a-z0-9_-]+)?",
             re.IGNORECASE,
         )
-        model_matches = _extract_actions(model_answer, action_pattern)
-        gt_matches = _extract_actions(ground_truth, action_pattern)
-        if not model_matches or not gt_matches:
-            return str(model_answer).strip().lower() == str(ground_truth).strip().lower()
-        return model_matches == gt_matches
+        return _explicit_sequence_or_string(
+            model_answer,
+            ground_truth,
+            lambda t: _extract_blocksworld_actions_line_based(t, action_mapping=action_mapping),
+            action_pattern,
+        )
 
     else:
         valid_families = numeric_families | plan_families | {"shortest_path"}
