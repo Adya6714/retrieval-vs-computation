@@ -465,6 +465,38 @@ def _parse_wis_ground_truth_total(ground_truth: str) -> int:
     return int(m.group(1))
 
 
+def _wis_label_to_idx(params: dict[str, Any]) -> dict[str, int]:
+    """Invert item_mapping (index → name) to a case-insensitive name → index map."""
+    mapping = params.get("item_mapping") or {}
+    out: dict[str, int] = {}
+    if not isinstance(mapping, dict):
+        return out
+    for key, name in mapping.items():
+        try:
+            idx = int(key)
+        except (TypeError, ValueError):
+            continue
+        label = str(name).strip().lower()
+        if label:
+            out[label] = idx
+    return out
+
+
+def _wis_token_to_index(token: str, label_to_idx: dict[str, int]) -> int:
+    """Map a selected-set token to an interval index via digits or renamed labels."""
+    tok = str(token).strip()
+    if re.fullmatch(r"-?\d+", tok):
+        return int(tok)
+    key = tok.lower()
+    if key in label_to_idx:
+        return label_to_idx[key]
+    raise ValueError(f"unmapped WIS token: {token!r}")
+
+
+def _wis_tokens_to_indices(tokens: list[str], label_to_idx: dict[str, int]) -> list[int]:
+    return [_wis_token_to_index(t, label_to_idx) for t in tokens]
+
+
 def _parse_wis_model_answer(text: str) -> tuple[list[str] | None, int | None, str]:
     status = "parsed_clean"
     total_match = re.search(r"total(?:\s+weight)?\s*[:=]\s*(\d+)", text, flags=re.IGNORECASE)
@@ -515,15 +547,15 @@ def verify_wis(
         _set_meta(parse_status=parse_status)
         return False, f"wrong_total: predicted={claimed_total}, expected={gt_total}"
 
-    label_to_idx = {str(v): int(k) for k, v in params.get("item_mapping", {}).items()}
+    label_to_idx = _wis_label_to_idx(params)
     selected: list[int] = []
     if selected_tokens is not None:
         try:
-            if label_to_idx:
-                selected = [label_to_idx[t] for t in selected_tokens]
+            selected = _wis_tokens_to_indices(selected_tokens, label_to_idx)
+            if label_to_idx and any(
+                not re.fullmatch(r"-?\d+", t.strip()) for t in selected_tokens
+            ):
                 parse_status = "parsed_with_normalization"
-            else:
-                selected = [int(t) for t in selected_tokens]
         except Exception:
             _set_meta(parse_status="parse_failed")
             return False, "parse_failed: selected set parsing failed"
@@ -550,8 +582,13 @@ def verify_wis(
     alt = False
     m_gt = re.search(r"\{([^}]*)\}", str(ground_truth))
     if selected_tokens is not None and m_gt:
-        gt_set = {int(x.strip()) for x in m_gt.group(1).split(",") if x.strip()}
-        alt = set(selected) != gt_set
+        try:
+            gt_tokens = [x.strip() for x in m_gt.group(1).split(",") if x.strip()]
+            gt_set = set(_wis_tokens_to_indices(gt_tokens, label_to_idx))
+            alt = set(selected) != gt_set
+        except Exception:
+            _set_meta(parse_status="parse_failed")
+            return False, "parse_failed: ground-truth selected set parsing failed"
 
     _set_meta(
         parse_status=parse_status,
@@ -589,13 +626,13 @@ def verify_wis_independent_set(
         _set_meta(parse_status="parse_failed")
         return False, "parse_failed: total not found"
 
-    label_to_idx = {str(v): int(k) for k, v in params.get("item_mapping", {}).items()}
+    label_to_idx = _wis_label_to_idx(params)
     try:
-        if label_to_idx:
-            selected = sorted({label_to_idx[t] for t in selected_tokens})
+        selected = sorted(set(_wis_tokens_to_indices(selected_tokens, label_to_idx)))
+        if label_to_idx and any(
+            not re.fullmatch(r"-?\d+", t.strip()) for t in selected_tokens
+        ):
             parse_status = "parsed_with_normalization"
-        else:
-            selected = sorted({int(t) for t in selected_tokens})
     except Exception:
         _set_meta(parse_status="parse_failed")
         return False, "parse_failed: selected set parsing failed"
@@ -622,8 +659,13 @@ def verify_wis_independent_set(
     alt = False
     m_gt = re.search(r"\{([^}]*)\}", str(ground_truth))
     if m_gt:
-        gt_set = sorted(int(x.strip()) for x in m_gt.group(1).split(",") if x.strip())
-        alt = selected != gt_set
+        try:
+            gt_tokens = [x.strip() for x in m_gt.group(1).split(",") if x.strip()]
+            gt_set = sorted(set(_wis_tokens_to_indices(gt_tokens, label_to_idx)))
+            alt = selected != gt_set
+        except Exception:
+            _set_meta(parse_status="parse_failed")
+            return False, "parse_failed: ground-truth selected set parsing failed"
 
     _set_meta(
         parse_status=parse_status,

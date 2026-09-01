@@ -376,3 +376,18 @@ def test_wis_w3_renamed_labels_correct():
         params,
     )
     assert ok
+
+
+def test_wis_w3_renamed_gold_does_not_raise():
+    params = dict(_wis_params())
+    params["item_mapping"] = {"0": "Item A", "1": "Item B", "2": "Item C", "3": "Item D"}
+    gold = "Selected: {Item A, Item B, Item D}, Total: 24"
+    ok, reason, _meta = verify_algo(
+        "WIS_X",
+        gold,
+        gold,
+        "wis",
+        "W3",
+        params,
+    )
+    assert ok, reason
