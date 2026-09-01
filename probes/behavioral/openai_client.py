@@ -15,6 +15,8 @@ from typing import Any
 import requests
 from tenacity import retry, stop_after_attempt, wait_exponential
 
+from probes.behavioral.sampling import DEFAULT_TEMPERATURE
+
 
 # Optional shared budget logger. If RVC_RUN_NAME is set, every API call is
 # appended to a JSONL log under logs/api_runs/.
@@ -31,12 +33,21 @@ if os.environ.get("RVC_RUN_NAME"):
 
 
 class OpenRouterClient:
-    def __init__(self, model: str = "openai/gpt-4o", *, max_tokens: int | None = None) -> None:
+    def __init__(
+        self,
+        model: str = "openai/gpt-4o",
+        *,
+        max_tokens: int | None = None,
+        temperature: float = DEFAULT_TEMPERATURE,
+        seed: int | None = None,
+    ) -> None:
         self.api_key = os.environ.get("OPENROUTER_API_KEY")
         if not self.api_key:
             raise ValueError("OPENROUTER_API_KEY not set. Add it to .env before running the sweep.")
         
         self.model = model
+        self.temperature = float(temperature)
+        self.seed = seed
         self.base_url = "https://openrouter.ai/api/v1/chat/completions"
         # Reasoning models default to very high max_tokens on OpenRouter; cap to avoid 402.
         if max_tokens is not None:
@@ -60,7 +71,10 @@ class OpenRouterClient:
             "model": self.model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": self.max_tokens,
+            "temperature": self.temperature,
         }
+        if self.seed is not None:
+            payload["seed"] = self.seed
         response = requests.post(
             self.base_url,
             headers=headers,
@@ -108,7 +122,9 @@ class OpenRouterClient:
                 "model": self.model,
                 "problem_id": problem_id,
                 "prompt_tokens": prompt_tokens,
-                "completion_tokens": completion_tokens
+                "completion_tokens": completion_tokens,
+                "temperature": self.temperature,
+                "seed": self.seed,
             }
         except Exception as e:
             if _BUDGET is not None:
@@ -122,7 +138,9 @@ class OpenRouterClient:
                 "model": self.model,
                 "problem_id": problem_id,
                 "prompt_tokens": 0,
-                "completion_tokens": 0
+                "completion_tokens": 0,
+                "temperature": self.temperature,
+                "seed": self.seed,
             }
 
     def complete_batch(self, problems: list[dict], **kwargs: Any) -> list[dict]:

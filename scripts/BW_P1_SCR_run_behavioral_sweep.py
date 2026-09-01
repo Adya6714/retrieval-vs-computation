@@ -20,6 +20,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.contamination.verify import LAST_VERIFY_META, parse_action_mapping_from_notes, verify_answer
+from probes.behavioral.sampling import DEFAULT_TEMPERATURE
 
 load_dotenv()
 
@@ -34,6 +35,8 @@ OUTPUT_COLUMNS = [
     "contamination_pole",
     "difficulty",
     "verify_method",
+    "temperature",
+    "seed",
 ]
 
 
@@ -262,7 +265,7 @@ def main() -> None:
                 "Add it to .env and re-run, or use --dry-run to test locally."
             )
         from probes.behavioral.openai_client import OpenRouterClient
-        client = OpenRouterClient(model=args.model)
+        client = OpenRouterClient(model=args.model, temperature=DEFAULT_TEMPERATURE)
         model_name = args.model
 
     # 5. Load existing results for resume
@@ -334,6 +337,8 @@ def main() -> None:
                     "contamination_pole": row.get("contamination_pole", ""),
                     "difficulty": row.get("difficulty", ""),
                     "verify_method": LAST_VERIFY_META.get("verify_method", ""),
+                    "temperature": getattr(client, "temperature", DEFAULT_TEMPERATURE),
+                    "seed": "" if getattr(client, "seed", None) is None else getattr(client, "seed"),
                 }
                 writer.writerow(_row_for_csv(row_data, write_columns))
                 outfile.flush()  # 7d

@@ -1,6 +1,8 @@
 import os
 import requests
 
+from probes.behavioral.sampling import DEFAULT_TEMPERATURE
+
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 PDDL_ROOT = os.environ.get("PDDL_ROOT", "data/sources/planbench")
 
@@ -12,9 +14,15 @@ class ModelClient:
     No conversation history ever accumulates.
     """
 
-    def __init__(self, model_string: str, temperature: float = 0.0):
+    def __init__(
+        self,
+        model_string: str,
+        temperature: float = DEFAULT_TEMPERATURE,
+        seed: int | None = None,
+    ):
         self.model = model_string
-        self.temperature = temperature
+        self.temperature = float(temperature)
+        self.seed = seed
         self.api_key = os.environ.get("OPENROUTER_API_KEY", "")
         if not self.api_key:
             raise RuntimeError(
@@ -35,6 +43,8 @@ class ModelClient:
             "messages": [{"role": "user", "content": prompt}],
             "temperature": self.temperature,
         }
+        if self.seed is not None:
+            payload["seed"] = self.seed
         resp = requests.post(
             OPENROUTER_URL, headers=headers, json=payload, timeout=90
         )

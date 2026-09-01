@@ -18,6 +18,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.contamination.verify_algo import verify_algo
+from probes.behavioral.sampling import DEFAULT_TEMPERATURE
 
 
 load_dotenv()
@@ -36,6 +37,8 @@ OUTPUT_COLUMNS = [
     "greedy_answer",
     "gave_greedy_answer",
     "difficulty_params_instance_type",
+    "temperature",
+    "seed",
 ]
 
 HUMAN_REVIEW_COLUMNS = [
@@ -148,11 +151,16 @@ def main() -> None:
             raise EnvironmentError("OPENROUTER_API_KEY is not set.")
         from probes.behavioral.openai_client import OpenRouterClient
 
-        client = OpenRouterClient(model=args.model)
+        client = OpenRouterClient(model=args.model, temperature=DEFAULT_TEMPERATURE)
         model_name = args.model
 
     done = existing_done_keys(output_path) if args.resume else set()
     write_header = not output_path.exists() or output_path.stat().st_size == 0
+    write_columns = (
+        pd.read_csv(output_path, nrows=0).columns.tolist()
+        if not write_header
+        else list(OUTPUT_COLUMNS)
+    )
     write_review_header = not review_path.exists() or review_path.stat().st_size == 0
 
     n_total = 0
@@ -161,7 +169,7 @@ def main() -> None:
     with output_path.open("a", newline="", encoding="utf-8") as out_f, review_path.open(
         "a", newline="", encoding="utf-8"
     ) as review_f:
-        out_writer = csv.DictWriter(out_f, fieldnames=OUTPUT_COLUMNS)
+        out_writer = csv.DictWriter(out_f, fieldnames=write_columns, extrasaction="ignore")
         review_writer = csv.DictWriter(review_f, fieldnames=HUMAN_REVIEW_COLUMNS)
         if write_header:
             out_writer.writeheader()
@@ -256,6 +264,12 @@ def main() -> None:
                     "greedy_answer": str(greedy_answer),
                     "gave_greedy_answer": gave_greedy_answer,
                     "difficulty_params_instance_type": instance_type,
+                    "temperature": getattr(client, "temperature", DEFAULT_TEMPERATURE) if client is not None else DEFAULT_TEMPERATURE,
+                    "seed": (
+                        ""
+                        if client is None or getattr(client, "seed", None) is None
+                        else client.seed
+                    ),
                 }
             )
             out_f.flush()
