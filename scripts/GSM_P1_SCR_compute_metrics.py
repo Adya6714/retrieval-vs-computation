@@ -149,7 +149,7 @@ def main() -> None:
         ],
     )
     parser.add_argument("--bank", required=False, default="data/problems/question_bank_gsm.csv")
-    parser.add_argument("--output", required=False, default="results/derived/GSM_P1_metrics.csv")
+    parser.add_argument("--output", required=False, default="results/deprecated/GSM_P1_metrics.csv")
     parser.add_argument("--bootstrap-n", type=int, default=10000)
     args = parser.parse_args()
 

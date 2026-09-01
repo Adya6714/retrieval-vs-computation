@@ -90,9 +90,24 @@ def _load_bank_meta() -> pd.DataFrame:
 
 
 def _load_metrics() -> pd.DataFrame:
-    path = Path("results/derived/ALGO_P1_metrics.csv")
+    summary = Path("results/derived/P1_rescore_summary.csv")
+    if summary.exists():
+        s = pd.read_csv(summary, dtype=str).fillna("")
+        s = s[s["source_file"].astype(str).str.startswith("ALGO_")].copy()
+        s = s[s["model"].astype(str).str.lower() != "mock"].copy()
+        s["subtype"] = s["family"]
+        s["variant_type"] = s["variant"]
+        s["metric_name"] = "VAR"
+        s["metric_value"] = s["new_accuracy"]
+        s["ci_lower"] = ""
+        s["ci_upper"] = ""
+        s["metric_value_num"] = pd.to_numeric(s["metric_value"], errors="coerce")
+        s["ci_lower_num"] = pd.to_numeric(s["ci_lower"], errors="coerce")
+        s["ci_upper_num"] = pd.to_numeric(s["ci_upper"], errors="coerce")
+        return s
+    path = Path("results/deprecated/ALGO_P1_metrics.csv")
     if not path.exists():
-        raise FileNotFoundError(path)
+        raise FileNotFoundError("Need P1_rescore_summary.csv or deprecated ALGO_P1_metrics.csv")
     m = pd.read_csv(path, dtype=str).fillna("")
     if "model" in m.columns:
         m = m[m["model"].astype(str).str.lower() != "mock"].copy()

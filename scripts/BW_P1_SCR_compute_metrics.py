@@ -53,7 +53,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--output",
-        default="results/derived/BW_P1_metrics.csv",
+        default="results/deprecated/BW_P1_metrics.csv",
         help="Output CSV path",
     )
     args = parser.parse_args()

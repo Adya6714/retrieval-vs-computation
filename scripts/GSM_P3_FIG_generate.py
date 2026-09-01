@@ -54,7 +54,7 @@ def _load_gsm_per_problem_css(model_name: str) -> pd.DataFrame:
     ``results/derived/GSM_P1_metrics.csv`` is aggregate VAR/W6_Gap only (no problem_id).
     Prefer triangulation ``css``; else ``results/paper/GSM_P1_RES_css.csv`` or P1 behavioral sweeps.
     """
-    metrics_path = Path("results/derived/GSM_P1_metrics.csv")
+    metrics_path = Path("results/deprecated/GSM_P1_metrics.csv")
     if metrics_path.exists():
         m = pd.read_csv(metrics_path, dtype=str).fillna("")
         if {"problem_id", "css", "model"}.issubset(m.columns):
