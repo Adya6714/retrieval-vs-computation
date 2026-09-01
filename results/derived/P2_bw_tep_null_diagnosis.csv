@@ -1,0 +1,537 @@
+problem_id,model,tep,session_status,adapted,resistant,illegal_both,n_nl_remappable,n_canonical_shape,null_cause
+BW_155,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,openai/gpt-4o,,blank,0,0,46,46,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,openai/gpt-4o,,blank,0,0,45,45,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,openai/gpt-4o,0.0,blank,0,0,43,43,1,has_score
+BW_010,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,openai/gpt-4o,,blank,0,0,46,46,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,openai/gpt-4o,,blank,0,0,45,45,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,openai/gpt-4o,,blank,0,0,44,44,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,openai/gpt-4o,,blank,0,0,45,45,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,openai/gpt-4o,,blank,0,0,42,42,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,openai/gpt-4o,,blank,0,0,40,40,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,openai/gpt-4o,,blank,0,0,43,43,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,openai/gpt-4o,,blank,0,0,40,40,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,openai/gpt-4o,,blank,0,0,37,37,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,openai/gpt-4o,,blank,0,0,46,46,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,openai/gpt-4o,,blank,0,0,45,45,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,openai/gpt-4o,,blank,0,0,44,44,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,openai/gpt-4o,,blank,0,0,41,41,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,openai/gpt-4o,,blank,0,0,39,39,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,openai/gpt-4o,,blank,0,0,43,43,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,openai/gpt-4o,,blank,0,0,39,39,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,openai/gpt-4o,,blank,0,0,36,36,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,openai/gpt-4o,,blank,0,0,9,9,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,openai/gpt-4o,,blank,0,0,43,43,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,openai/gpt-4o,,blank,0,0,39,39,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,openai/gpt-4o,,blank,0,0,36,36,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,openai/gpt-4o,,blank,0,0,45,45,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,openai/gpt-4o,,blank,0,0,43,43,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,openai/gpt-4o,,blank,0,0,41,41,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,openai/gpt-4o,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,openai/gpt-4o,,blank,0,0,46,46,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,openai/gpt-4o,,blank,0,0,4,4,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,openai/gpt-4o,,blank,0,0,43,43,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,meta-llama/llama-3.1-8b-instruct,,blank,0,0,47,47,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,meta-llama/llama-3.1-8b-instruct,,blank,0,0,13,13,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_120,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_172,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_001,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,27,0,25,abort_forces_null
+BW_001,anthropic/claude-sonnet-4,,complete,0,0,36,0,40,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_010,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,18,0,13,abort_forces_null
+BW_010,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_010,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_010,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,18,0,12,abort_forces_null
+BW_011,anthropic/claude-sonnet-4,,complete,0,0,16,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,anthropic/claude-sonnet-4,1.0,complete,1,0,2,0,7,has_score
+BW_011,anthropic/claude-sonnet-4,,complete,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_011,anthropic/claude-sonnet-4,,complete,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_080,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,7,abort_forces_null
+BW_080,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_080,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_080,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_120,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,13,0,7,abort_forces_null
+BW_120,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_120,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,14,0,8,abort_forces_null
+BW_137,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_137,anthropic/claude-sonnet-4,,complete,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,anthropic/claude-sonnet-4,,complete,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_137,anthropic/claude-sonnet-4,,complete,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_155,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,13,0,7,abort_forces_null
+BW_155,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_155,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,15,0,9,abort_forces_null
+BW_155,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_172,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,18,8,5,abort_forces_null
+BW_172,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,15,6,3,abort_forces_null
+BW_172,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,23,11,6,abort_forces_null
+BW_172,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,22,10,6,abort_forces_null
+BW_203,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_227,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,7,abort_forces_null
+BW_227,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_227,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_227,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_282,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_331,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_331,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_331,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,anthropic/claude-sonnet-4,,complete,0,0,0,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,anthropic/claude-sonnet-4,,complete,0,0,0,0,43,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,anthropic/claude-sonnet-4,,complete,0,0,0,0,40,tep_denom_zero_all_illegal_or_ambiguous
+BW_467,anthropic/claude-sonnet-4,,complete,0,0,0,0,37,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E015,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E017,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E019,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E100,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_496,anthropic/claude-sonnet-4,,complete,0,0,0,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_496,anthropic/claude-sonnet-4,,complete,0,0,0,0,43,tep_denom_zero_all_illegal_or_ambiguous
+BW_496,anthropic/claude-sonnet-4,,complete,0,0,0,0,39,tep_denom_zero_all_illegal_or_ambiguous
+BW_496,anthropic/claude-sonnet-4,,complete,0,0,0,0,36,tep_denom_zero_all_illegal_or_ambiguous
+BW_497,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,14,0,8,abort_forces_null
+BW_498,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_498,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_498,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_498,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_499,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_499,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_499,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,1,0,12,0,7,abort_forces_null
+BW_499,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_500,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,7,abort_forces_null
+BW_500,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_500,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_500,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_501,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,15,0,11,abort_forces_null
+BW_501,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,1,0,14,0,9,abort_forces_null
+BW_501,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_501,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_502,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_502,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_502,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_502,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_503,anthropic/claude-sonnet-4,,complete,0,0,0,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_503,anthropic/claude-sonnet-4,,complete,0,0,0,0,42,tep_denom_zero_all_illegal_or_ambiguous
+BW_503,anthropic/claude-sonnet-4,,complete,0,0,0,0,38,tep_denom_zero_all_illegal_or_ambiguous
+BW_503,anthropic/claude-sonnet-4,,complete,0,0,0,0,35,tep_denom_zero_all_illegal_or_ambiguous
+BW_504,anthropic/claude-sonnet-4,,complete,0,0,0,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_504,anthropic/claude-sonnet-4,,complete,0,0,0,0,41,tep_denom_zero_all_illegal_or_ambiguous
+BW_504,anthropic/claude-sonnet-4,,complete,0,0,0,0,37,tep_denom_zero_all_illegal_or_ambiguous
+BW_504,anthropic/claude-sonnet-4,,complete,0,0,0,0,33,tep_denom_zero_all_illegal_or_ambiguous
+BW_505,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_505,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_505,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_505,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_506,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_506,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_506,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_507,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_508,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,13,0,8,abort_forces_null
+BW_508,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_508,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_508,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,13,0,8,abort_forces_null
+BW_509,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_509,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_509,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_509,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_510,anthropic/claude-sonnet-4,,complete,0,0,0,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_510,anthropic/claude-sonnet-4,,complete,0,0,0,0,45,tep_denom_zero_all_illegal_or_ambiguous
+BW_510,anthropic/claude-sonnet-4,,complete,0,0,0,0,43,tep_denom_zero_all_illegal_or_ambiguous
+BW_510,anthropic/claude-sonnet-4,,complete,0,0,0,0,41,tep_denom_zero_all_illegal_or_ambiguous
+BW_511,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_511,anthropic/claude-sonnet-4,,complete,0,0,45,0,45,tep_denom_zero_all_illegal_or_ambiguous
+BW_511,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_511,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_512,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,7,abort_forces_null
+BW_512,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,15,0,17,abort_forces_null
+BW_512,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_512,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_513,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,9,abort_forces_null
+BW_513,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,13,abort_forces_null
+BW_513,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_513,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,14,abort_forces_null
+BW_514,anthropic/claude-sonnet-4,,complete,0,0,0,0,47,tep_denom_zero_all_illegal_or_ambiguous
+BW_514,anthropic/claude-sonnet-4,,complete,0,0,0,0,45,tep_denom_zero_all_illegal_or_ambiguous
+BW_514,anthropic/claude-sonnet-4,,complete,0,0,0,0,42,tep_denom_zero_all_illegal_or_ambiguous
+BW_514,anthropic/claude-sonnet-4,,complete,0,0,0,0,40,tep_denom_zero_all_illegal_or_ambiguous
+BW_515,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,7,abort_forces_null
+BW_515,anthropic/claude-sonnet-4,,complete,0,0,10,0,38,tep_denom_zero_all_illegal_or_ambiguous
+BW_515,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,20,abort_forces_null
+BW_515,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,0,0,12,0,13,abort_forces_null
+BW_E_001,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_331,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_496,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,1,abort_forces_null
+BW_496,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_496,openai/gpt-4o,,aborted: excessive illegal steps,0,0,16,10,0,abort_forces_null
+BW_496,openai/gpt-4o,,aborted: excessive illegal steps,0,0,17,11,0,abort_forces_null
+BW_497,openai/gpt-4o,,aborted: excessive illegal steps,0,0,13,4,5,abort_forces_null
+BW_498,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,1,abort_forces_null
+BW_498,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_498,openai/gpt-4o,,aborted: excessive illegal steps,0,0,19,13,0,abort_forces_null
+BW_498,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_500,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_500,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_500,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_500,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_502,openai/gpt-4o,,aborted: excessive illegal steps,0,0,13,5,3,abort_forces_null
+BW_502,openai/gpt-4o,,aborted: excessive illegal steps,0,0,18,11,2,abort_forces_null
+BW_502,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_503,openai/gpt-4o,,aborted: excessive illegal steps,0,0,13,7,1,abort_forces_null
+BW_503,openai/gpt-4o,,aborted: excessive illegal steps,0,0,15,9,1,abort_forces_null
+BW_503,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_503,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_504,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_504,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_504,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_504,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_506,openai/gpt-4o,,aborted: excessive illegal steps,0,0,19,13,0,abort_forces_null
+BW_507,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_508,openai/gpt-4o,,aborted: excessive illegal steps,0,0,13,7,0,abort_forces_null
+BW_508,openai/gpt-4o,,aborted: excessive illegal steps,0,0,15,9,0,abort_forces_null
+BW_508,openai/gpt-4o,,aborted: excessive illegal steps,0,0,14,8,1,abort_forces_null
+BW_508,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,openai/gpt-4o,,aborted: excessive illegal steps,0,0,18,12,1,abort_forces_null
+BW_510,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_510,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_510,openai/gpt-4o,,aborted: excessive illegal steps,0,0,15,9,0,abort_forces_null
+BW_510,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_511,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_511,openai/gpt-4o,,aborted: excessive illegal steps,0,0,18,12,0,abort_forces_null
+BW_511,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,1,abort_forces_null
+BW_512,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_512,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_512,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_512,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_513,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_513,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_513,openai/gpt-4o,,aborted: excessive illegal steps,0,0,18,11,2,abort_forces_null
+BW_513,openai/gpt-4o,,aborted: excessive illegal steps,0,0,18,12,0,abort_forces_null
+BW_514,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_515,openai/gpt-4o,,aborted: excessive illegal steps,0,0,13,6,2,abort_forces_null
+BW_515,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_515,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_515,openai/gpt-4o,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_E_001,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,openai/gpt-4o,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_495,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_408,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_350,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_331,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_310,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_282,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_203,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_022,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_014,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_496,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_496,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_496,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_496,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_497,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,16,10,0,abort_forces_null
+BW_498,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_498,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_498,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_498,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,14,8,0,abort_forces_null
+BW_499,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_499,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_500,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,0,abort_forces_null
+BW_500,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,0,abort_forces_null
+BW_500,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,0,abort_forces_null
+BW_500,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,0,abort_forces_null
+BW_501,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_501,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_502,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,13,7,0,abort_forces_null
+BW_502,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_503,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,14,8,1,abort_forces_null
+BW_503,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_503,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_503,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_504,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_504,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,27,21,0,abort_forces_null
+BW_504,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_504,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,1,abort_forces_null
+BW_505,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_505,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,18,12,0,abort_forces_null
+BW_506,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,14,8,0,abort_forces_null
+BW_507,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,16,10,0,abort_forces_null
+BW_508,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,0,abort_forces_null
+BW_508,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,2,0,23,0,19,abort_forces_null
+BW_508,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_508,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,13,7,0,abort_forces_null
+BW_509,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_509,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_510,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,1,0,13,7,1,abort_forces_null
+BW_510,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_510,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,17,0,0,abort_forces_null
+BW_510,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_511,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_511,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,1,0,12,6,1,abort_forces_null
+BW_511,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_512,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,14,8,0,abort_forces_null
+BW_512,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_512,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_512,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,16,10,1,abort_forces_null
+BW_513,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_513,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_513,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_513,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_514,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_515,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,2,0,12,0,8,abort_forces_null
+BW_515,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,0,6,abort_forces_null
+BW_515,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,0,0,12,6,0,abort_forces_null
+BW_515,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,1,0,13,7,1,abort_forces_null
+BW_E_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_003,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_004,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous
+BW_E_005,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,tep_denom_zero_all_illegal_or_ambiguous

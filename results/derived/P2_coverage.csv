@@ -1,0 +1,25 @@
+family,model,rows_attempted,rows_with_usable_score,null_rows,null_reason_1,null_reason_1_n,null_reason_2,null_reason_2_n,null_reason_3,null_reason_3_n
+BW_cci_strict,anthropic/claude-sonnet-4,50,8,42,aborted: excessive illegal steps,22,blank_session_status,20,,0
+BW_cci_strict,meta-llama/llama-3.1-8b-instruct,50,11,39,blank_session_status,20,aborted: excessive illegal steps,19,,0
+BW_cci_strict,openai/gpt-4o,50,10,40,blank_session_status,20,aborted: excessive illegal steps,20,,0
+BW_cci_nl,anthropic/claude-sonnet-4,50,20,30,aborted: excessive illegal steps,19,aborted: planning_loop,11,,0
+BW_cci_nl,meta-llama/llama-3.1-8b-instruct,50,8,42,aborted: excessive illegal steps,42,,0,,0
+BW_cci_nl,openai/gpt-4o,50,11,39,aborted: excessive illegal steps,39,,0,,0
+BW_tep,anthropic/claude-sonnet-4,177,1,176,aborted: excessive illegal steps,76,blank_session_status,67,score_null,33
+BW_tep,meta-llama/llama-3.1-8b-instruct,179,0,179,blank_session_status,111,aborted: excessive illegal steps,68,,0
+BW_tep,openai/gpt-4o,180,1,179,blank_session_status,110,aborted: excessive illegal steps,69,,0
+MBW_cci_nl,anthropic/claude-sonnet-4,15,0,15,cci_column_never_emitted,15,,0,,0
+MBW_cci_nl,meta-llama/llama-3.1-8b-instruct,15,0,15,cci_column_never_emitted,15,,0,,0
+MBW_cci_nl,openai/gpt-4o,15,0,15,cci_column_never_emitted,15,,0,,0
+GSM_cci,anthropic/claude-sonnet-4,44,44,0,,0,,0,,0
+GSM_cci,google/gemini-2.5-flash,44,44,0,,0,,0,,0
+GSM_cci,meta-llama/llama-3.1-8b-instruct,44,44,0,,0,,0,,0
+GSM_cci,openai/gpt-4o,44,44,0,,0,,0,,0
+GSM_tep,anthropic/claude-sonnet-4,44,44,0,,0,,0,,0
+GSM_tep,google/gemini-2.5-flash,44,44,0,,0,,0,,0
+GSM_tep,meta-llama/llama-3.1-8b-instruct,44,44,0,,0,,0,,0
+GSM_tep,openai/gpt-4o,44,44,0,,0,,0,,0
+ALGO_phase1:ALGO_P2_phase1_claude_new.csv,anthropic/claude-sonnet-4,110,84,26,phase1_unparseable,26,,0,,0
+ALGO_phase1:ALGO_P2_phase1_gpt4o_new.csv,openai/gpt-4o,110,94,16,phase1_unparseable,16,,0,,0
+ALGO_phase1:ALGO_P2_phase1_llama_new.csv,meta-llama/llama-3.1-8b-instruct,110,76,34,phase1_unparseable,34,,0,,0
+ALGO_phase1:ALGO_P2_phase1_gemini.csv,google/gemini-2.5-flash,110,72,38,phase1_unparseable,38,,0,,0

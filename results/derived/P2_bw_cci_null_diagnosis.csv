@@ -1,0 +1,151 @@
+problem_id,model,cci,session_status,skip_count,violation_format_error,violation_precondition,n_executed_actions,n_canonical_shape,n_nl_remappable,null_cause
+BW_155,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_010,openai/gpt-4o,0.0,blank,0,48,0,50,2,46,has_score
+BW_001,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_011,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_120,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_227,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_137,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_172,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_467,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_080,openai/gpt-4o,0.0,blank,0,49,0,50,1,48,has_score
+BW_E100,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E015,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E017,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E019,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E002,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_155,meta-llama/llama-3.1-8b-instruct,0.0833,blank,0,49,0,50,1,49,has_score
+BW_010,meta-llama/llama-3.1-8b-instruct,0.5,blank,0,0,48,50,50,0,has_score
+BW_001,meta-llama/llama-3.1-8b-instruct,0.0,blank,0,49,0,50,1,49,has_score
+BW_011,meta-llama/llama-3.1-8b-instruct,0.0,blank,0,49,0,50,1,49,has_score
+BW_120,meta-llama/llama-3.1-8b-instruct,0.1111,blank,0,21,26,50,29,21,has_score
+BW_227,meta-llama/llama-3.1-8b-instruct,0.125,blank,0,46,1,50,4,46,has_score
+BW_137,meta-llama/llama-3.1-8b-instruct,0.0,blank,0,47,1,50,3,47,has_score
+BW_172,meta-llama/llama-3.1-8b-instruct,0.1,blank,0,15,32,50,35,1,has_score
+BW_467,meta-llama/llama-3.1-8b-instruct,0.0833,blank,0,49,0,50,1,49,has_score
+BW_080,meta-llama/llama-3.1-8b-instruct,0.2,blank,0,0,48,50,50,0,has_score
+BW_E100,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E015,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E017,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E019,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_001,anthropic/claude-sonnet-4,0.0,complete,0,22,21,50,49,0,has_score
+BW_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_010,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_011,anthropic/claude-sonnet-4,0.1,complete,0,2,16,50,49,0,has_score
+BW_014,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_022,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_080,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,10,9,0,abort_excessive_illegal
+BW_120,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_137,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_155,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,2,10,9,0,abort_excessive_illegal
+BW_172,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,20,9,26,12,13,parser_then_abort
+BW_203,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_227,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_282,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_310,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_331,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_350,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_408,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_467,anthropic/claude-sonnet-4,0.0,complete,0,1,0,50,49,0,has_score
+BW_495,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E015,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E017,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E019,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E100,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_496,anthropic/claude-sonnet-4,0.0,complete,0,1,0,50,49,0,has_score
+BW_497,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_498,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_499,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_500,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_501,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,8,13,29,28,0,precondition_then_abort
+BW_502,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,14,0,9,8,0,abort_excessive_illegal
+BW_503,anthropic/claude-sonnet-4,0.0,complete,4,12,3,46,45,0,has_score
+BW_504,anthropic/claude-sonnet-4,0.0,complete,0,1,0,50,49,0,has_score
+BW_505,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_506,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_507,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_508,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,14,0,11,10,0,abort_excessive_illegal
+BW_509,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,8,7,0,abort_excessive_illegal
+BW_510,anthropic/claude-sonnet-4,0.0,complete,0,1,0,50,49,0,has_score
+BW_511,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,9,5,10,9,0,abort_excessive_illegal
+BW_512,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,10,9,0,abort_excessive_illegal
+BW_513,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,4,28,27,0,abort_excessive_illegal
+BW_514,anthropic/claude-sonnet-4,0.0,complete,0,1,0,50,49,0,has_score
+BW_515,anthropic/claude-sonnet-4,,aborted: excessive illegal steps,6,13,0,26,25,0,abort_excessive_illegal
+BW_E_001,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_002,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_003,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_004,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_005,anthropic/claude-sonnet-4,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_495,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_408,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_350,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_331,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_310,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_282,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_203,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_022,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_014,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_002,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_496,openai/gpt-4o,,aborted: excessive illegal steps,6,15,0,10,1,8,parser_then_abort
+BW_497,openai/gpt-4o,,aborted: excessive illegal steps,6,15,0,10,1,8,parser_then_abort
+BW_498,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_499,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_500,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_501,openai/gpt-4o,,aborted: excessive illegal steps,6,20,0,15,1,13,parser_then_abort
+BW_502,openai/gpt-4o,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_503,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_504,openai/gpt-4o,,aborted: excessive illegal steps,6,15,0,10,1,8,parser_then_abort
+BW_505,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_506,openai/gpt-4o,,aborted: excessive illegal steps,6,14,0,9,1,7,parser_then_abort
+BW_507,openai/gpt-4o,,aborted: excessive illegal steps,6,16,0,11,1,9,parser_then_abort
+BW_508,openai/gpt-4o,,aborted: excessive illegal steps,6,14,0,9,1,7,parser_then_abort
+BW_509,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_510,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_511,openai/gpt-4o,,aborted: excessive illegal steps,6,15,0,12,3,8,parser_then_abort
+BW_512,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_513,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_514,openai/gpt-4o,,aborted: excessive illegal steps,6,14,0,9,1,7,parser_then_abort
+BW_515,openai/gpt-4o,,aborted: excessive illegal steps,6,13,0,8,1,6,parser_then_abort
+BW_E_001,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_002,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_003,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_004,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_005,openai/gpt-4o,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_495,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_408,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_350,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_331,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_310,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_282,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_203,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_022,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_014,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_496,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_497,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,6,6,8,8,0,abort_excessive_illegal
+BW_498,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_499,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_500,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_501,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_502,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,47,0,44,3,41,parser_then_abort
+BW_503,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,14,0,10,2,8,parser_then_abort
+BW_504,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_505,meta-llama/llama-3.1-8b-instruct,0.0,complete,1,46,1,49,4,45,has_score
+BW_506,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,6,6,8,8,0,abort_excessive_illegal
+BW_507,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,11,5,13,8,5,abort_excessive_illegal
+BW_508,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,2,12,6,0,abort_excessive_illegal
+BW_509,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_510,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_511,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,8,7,12,10,2,abort_excessive_illegal
+BW_512,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,14,0,9,1,8,parser_then_abort
+BW_513,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_514,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,12,0,7,1,6,parser_then_abort
+BW_515,meta-llama/llama-3.1-8b-instruct,,aborted: excessive illegal steps,6,24,2,23,5,18,parser_then_abort
+BW_E_001,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_002,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_003,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_004,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
+BW_E_005,meta-llama/llama-3.1-8b-instruct,,blank,0,0,0,0,0,0,blank_status_null_cci
