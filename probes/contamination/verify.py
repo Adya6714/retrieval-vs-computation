@@ -199,6 +199,7 @@ def _extract_actions(text: str, pattern: re.Pattern[str]) -> list[str]:
 
 
 def _verify_numeric(model_answer, ground_truth) -> bool:
+    _set_verify_meta(verify_method=VERIFY_NUMERIC)
     match = re.search(r"[-+]?\d*\.?\d+", str(model_answer))
     if not match:
         return False
@@ -212,6 +213,7 @@ def _verify_numeric(model_answer, ground_truth) -> bool:
 
 def verify_gsm_answer(model_response: str, correct_answer) -> bool:
     """Verify GSM-style numeric answers with tolerant extraction."""
+    _set_verify_meta(verify_method=VERIFY_NUMERIC)
     try:
         gt_val = float(str(correct_answer).replace(",", "").strip())
     except (TypeError, ValueError):
@@ -244,6 +246,8 @@ LAST_VERIFY_META: dict[str, str] = {}
 VERIFY_STATE_MACHINE = "state_machine"
 VERIFY_EXACT_SEQUENCE = "exact_sequence"
 VERIFY_STRING_EQUALITY = "string_equality"
+VERIFY_NUMERIC = "numeric"
+VERIFY_SHORTEST_PATH = "shortest_path"
 
 
 def _set_verify_meta(*, verify_method: str) -> None:
@@ -252,6 +256,7 @@ def _set_verify_meta(*, verify_method: str) -> None:
 
 
 def _verify_shortest_path(model_answer, ground_truth) -> bool:
+    _set_verify_meta(verify_method=VERIFY_SHORTEST_PATH)
     parts = re.split(r"[,\- \>]+", str(model_answer).strip().upper())
     model_path = "".join([p for p in parts if len(p) == 1 and p.isalpha()])
     gt_path = "".join([p for p in str(ground_truth).strip().upper() if p.isalpha()])

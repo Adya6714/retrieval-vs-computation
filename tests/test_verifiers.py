@@ -18,6 +18,17 @@ from probes.contamination.verify import LAST_VERIFY_META, verify_answer
 def test_numeric_families(model_answer, correct_answer, family, expected):
     """Test correct parsing and verification of numeric answers."""
     assert verify_answer("dummy_id", model_answer, correct_answer, family) is expected
+    if family in {"gsm", "coin_change"}:
+        assert LAST_VERIFY_META.get("verify_method") == "numeric"
+
+
+def test_gsm_verify_method_does_not_leak_from_blocksworld():
+    verify_answer("bw", "pick-up a", "pick-up a", "blocksworld")
+    assert LAST_VERIFY_META.get("verify_method") in {"string_equality", "exact_sequence", "state_machine"}
+    verify_answer("gsm", "The answer is $42.", "42", "gsm")
+    assert LAST_VERIFY_META.get("verify_method") == "numeric"
+    verify_answer("gsm", "The answer is $42.", "42", "arithmetic_reasoning")
+    assert LAST_VERIFY_META.get("verify_method") == "numeric"
 
 
 @pytest.mark.parametrize(
