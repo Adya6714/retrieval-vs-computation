@@ -1,0 +1,2 @@
+raw_rows,raw_usable_tep,raw_null_tep,e2_remap_usable_still_abort_null,e3_on_original_traces_usable,e3_on_remapped_traces_usable,of_534_nulls_scoreable_e3_original,of_534_nulls_scoreable_e2_remap_abort_still_nulls,of_534_nulls_scoreable_e2_remap_plus_e3,aborted_sessions,out
+536,2,534,9,8,36,7,8,35,213,results/derived/BW_P2_tep_abort_separated.csv

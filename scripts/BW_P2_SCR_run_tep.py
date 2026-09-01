@@ -17,7 +17,7 @@ import pandas as pd
 TEP_FIELDNAMES = [
     "problem_id", "model", "difficulty", "contamination_pole",
     "plan_length", "inject_at_step", "injection_desc",
-    "session_status", "skip_count",
+    "session_status", "skip_count", "aborted_at_step",
     "tep", "adapted_count", "resistant_count",
     "ambiguous_count", "illegal_both_count",
     "first_response_class", "steps_after_injection",
@@ -256,6 +256,7 @@ def run_tep_session(problem_id, pddl_path, inject_at_step,
     error_count = 0
     last_error = None
     session_status = "complete"
+    aborted_at_step = None
 
     last_action = ""
     for step in range(max_steps):
@@ -300,6 +301,7 @@ def run_tep_session(problem_id, pddl_path, inject_at_step,
                 last_error = None
                 if skip_count > 5:
                     session_status = "aborted: excessive illegal steps"
+                    aborted_at_step = step
                     break
             continue
 
@@ -324,6 +326,7 @@ def run_tep_session(problem_id, pddl_path, inject_at_step,
                     last_error = None
                     if skip_count > 5:
                         session_status = "aborted: excessive illegal steps"
+                        aborted_at_step = step
                         break
                     continue
             else:
@@ -360,7 +363,7 @@ def run_tep_session(problem_id, pddl_path, inject_at_step,
     illegal_both = sum(1 for s in cascade_sequence
                        if s["classification"] == "illegal_both")
 
-    tep = None if session_status.startswith("aborted:") else compute_tep(cascade_sequence)
+    tep = compute_tep(cascade_sequence)
     first_class = (cascade_sequence[0]["classification"]
                    if cascade_sequence else None)
 
@@ -369,6 +372,7 @@ def run_tep_session(problem_id, pddl_path, inject_at_step,
         "injection_desc":        injection_desc,
         "session_status":        session_status,
         "skip_count":            skip_count,
+        "aborted_at_step":       aborted_at_step,
         "tep":                   tep,
         "adapted_count":         adapted,
         "resistant_count":       resistant,
