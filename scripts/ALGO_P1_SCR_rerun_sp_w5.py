@@ -15,6 +15,9 @@ import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
+import requests
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
@@ -130,14 +133,55 @@ def load_w5() -> list[dict[str, str]]:
     ]
 
 
+def dry_run_check_key() -> None:
+    """One cheap OpenRouter call so a 401 fails in seconds, not after 250 timeouts."""
+    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not key:
+        raise EnvironmentError("OPENROUTER_API_KEY is not set.")
+    response = requests.post(
+        "https://openrouter.ai/api/v1/chat/completions",
+        headers={
+            "Authorization": f"Bearer {key}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "model": "openai/gpt-4o-mini",
+            "messages": [{"role": "user", "content": "ping"}],
+            "max_tokens": 1,
+        },
+        timeout=15,
+    )
+    body = ""
+    try:
+        body = response.text[:300]
+    except Exception:
+        body = ""
+    if response.status_code == 401:
+        raise SystemExit(f"OpenRouter 401 (key rejected in dry-run-check): {body}")
+    if not response.ok:
+        raise SystemExit(
+            f"OpenRouter key check failed: {response.status_code} {body}"
+        )
+    print("OpenRouter key check ok")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--dry-run-check",
+        action="store_true",
+        help="Validate OPENROUTER_API_KEY with one cheap call, then exit.",
+    )
     parser.add_argument("--supersede-only", action="store_true")
     parser.add_argument("--resume", action="store_true", default=True)
     parser.add_argument("--model", action="append", dest="models")
     args = parser.parse_args()
     load_dotenv(REPO_ROOT / ".env")
+
+    if args.dry_run_check:
+        dry_run_check_key()
+        return
 
     n_super = write_superseded()
     print(f"Wrote {SUPERSEDED} ({n_super} superseded old W5 rows)")
@@ -149,8 +193,7 @@ def main() -> None:
     print(f"W5 problems: {len(problems)}; models: {len(models)}; calls: {len(problems)*len(models)}")
     if args.dry_run:
         return
-    if not os.environ.get("OPENROUTER_API_KEY"):
-        raise EnvironmentError("OPENROUTER_API_KEY is not set.")
+    dry_run_check_key()
 
     ensure_dirs()
     done = existing_done(OUT_RAW) if args.resume else set()
