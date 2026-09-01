@@ -1,0 +1,5 @@
+universe,n_items,n_canonical,n_distinct_gold,modal_gold,modal_n,modal_share,canonical_modal_gold,canonical_modal_n,canonical_modal_share,degen_frac_rule,degenerate,passes_degeneracy_rule,top5,token_source
+all_bank_all_variants,690,110,67,3,86,0.1246,3,14,0.1273,0.5,False,True,"[[""3"", 86], [""12"", 85], [""5"", 69], [""2"", 41], [""8"", 26]]",llama3.1_first_bpe of algo_gold_content
+all_bank_canonical,110,110,45,3,14,0.1273,3,14,0.1273,0.5,False,True,"[[""3"", 14], [""12"", 14], [""5"", 11], [""2"", 8], [""40"", 3]]",llama3.1_first_bpe of algo_gold_content
+frozen61_canonical_w3,122,61,20,3,26,0.2131,3,13,0.2131,0.5,False,True,"[[""3"", 26], [""12"", 22], [""5"", 18], [""2"", 14], [""47"", 6]]",llama3.1_first_bpe of algo_gold_content
+frozen61_canonical,61,61,20,3,13,0.2131,3,13,0.2131,0.5,False,True,"[[""3"", 13], [""12"", 11], [""5"", 9], [""2"", 7], [""47"", 3]]",llama3.1_first_bpe of algo_gold_content
