@@ -196,10 +196,11 @@ def run_triage(
         "shortest_path": "find the shortest path in a weighted graph",
         "wis": "weighted interval scheduling maximum weight independent set",
         "blocksworld": (
-            "pick-up put-down stack unstack blocksworld robot arm blocks clear hand empty table"
+            "You are a robot arm. Available actions: pick-up X, put-down X, "
+            "stack X Y, unstack X Y. You can hold one block at a time."
         ),
         "mystery_blocksworld": (
-            "pick-up put-down stack unstack mystery blocksworld robot arm blocks clear hand empty"
+            "Available actions: attack X, succumb X, overcome X Y, feast X Y."
         ),
     }
 
