@@ -348,12 +348,37 @@ def load_gsm_p2_merged() -> pd.DataFrame:
     df2 = _safe_read(RAW / "GSM_P2_phase1_o1mini.csv")
     if df is not None and df2 is not None:
         common = sorted(set(df.columns) & set(df2.columns))
-        return pd.concat([df[common], df2[common]], ignore_index=True)
-    if df is not None:
-        return df
-    if df2 is not None:
-        return df2
-    return pd.DataFrame()
+        out = pd.concat([df[common], df2[common]], ignore_index=True)
+    elif df is not None:
+        out = df
+    elif df2 is not None:
+        out = df2
+    else:
+        return pd.DataFrame()
+    if "session_b_correct" in out.columns and "either_session_correct" not in out.columns:
+        out = out.rename(columns={"session_b_correct": "either_session_correct"})
+    overlay_path = DER / "GSM_P2_session_correct.csv"
+    if overlay_path.exists():
+        ov = pd.read_csv(overlay_path, dtype=str).fillna("")
+        keep = [
+            c
+            for c in (
+                "problem_id",
+                "model",
+                "either_session_correct",
+                "phase1_correct",
+                "phase2a_correct",
+                "phase2b_correct",
+            )
+            if c in ov.columns
+        ]
+        ov = ov[keep].drop_duplicates(["problem_id", "model"])
+        out = out.drop(
+            columns=[c for c in ("either_session_correct", "phase1_correct", "phase2a_correct", "phase2b_correct") if c in out.columns],
+            errors="ignore",
+        )
+        out = out.merge(ov, on=["problem_id", "model"], how="left")
+    return out
 
 
 def _load_gsm_p2() -> pd.DataFrame:

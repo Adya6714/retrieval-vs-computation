@@ -40,6 +40,7 @@ from probes.behavioral.retention import (  # noqa: E402
     MIN_CANONICAL_FOR_RETENTION,
     retention_ratio,
 )
+from probes.common.exclusions import filter_excluded  # noqa: E402
 from triangulation_rule import (  # noqa: E402
     APPENDIX_CCI_COMPUTATION_MIN,
     APPENDIX_CCI_RETRIEVAL_MAX,
@@ -71,6 +72,7 @@ LONG = {v: k for k, v in SHORT.items()}
 MODELS = ["Claude", "GPT-4o", "Llama", "Gemini", "o4-mini"]
 REAL_MODELS = set(SHORT.keys())
 VARIANTS = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
+ALGO_BW_VARIANTS = ["canonical", "W1", "W2", "W3", "W4", "W5"]
 GEMINI_LONG = "google/gemini-2.5-flash"
 
 # Frozen adversarial pool (paper Table 5/7 challenging cells).
@@ -449,7 +451,7 @@ def load_algo_p1(tag: str) -> pd.DataFrame:
     df["model_short"] = df["model"].map(_short) if "model" in df.columns else tag
     df["subtype"] = df["problem_id"].map(_algo_subtype)
     df["slice"] = df["problem_id"].map(_algo_slice)
-    return df
+    return filter_excluded(df, family="ALGO")
 
 
 def load_gsm_p1(tag: str) -> pd.DataFrame:
@@ -484,7 +486,7 @@ def load_bw_p1(bw_ids: set[str]) -> pd.DataFrame:
     df["ok"] = _correct(df)
     df["model_short"] = df["model"].map(_short)
     df["subtype"] = np.where(df["problem_id"].str.startswith("MBW_"), "mystery", "standard")
-    return df
+    return filter_excluded(df, family="BW")
 
 
 def _acc_row(sub: pd.DataFrame) -> tuple[int, int, float, float, float]:
@@ -528,7 +530,7 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
         src = f"ALGO_P1_behavioral_{TAG[m]}.csv"
         filt = "drop mock; drop ERROR:; keep=last; subtype/slice from frozen 61-ID adversarial pool"
         for slice_name in ["CC-chall", "CC-std", "SP-chall", "SP-std", "WIS-chall", "WIS-std"]:
-            for vt in VARIANTS:
+            for vt in ALGO_BW_VARIANTS:
                 sub = df[(df["slice"] == slice_name) & (df["variant_type"] == vt)]
                 k, n, acc, lo, hi = _acc_row(sub)
                 val = acc if n else "NOT_COMPUTABLE"
@@ -554,7 +556,7 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
         df = bw[bw["model_short"] == m] if not bw.empty else pd.DataFrame()
         for subtype, sl in [("--", None), ("standard", "standard"), ("mystery", "mystery")]:
             base = df if sl is None else df[df["subtype"] == sl]
-            for vt in VARIANTS:
+            for vt in ALGO_BW_VARIANTS:
                 sub = base[base["variant_type"] == vt] if not base.empty else pd.DataFrame()
                 k, n, acc, lo, hi = _acc_row(sub)
                 metric = "accuracy"
@@ -794,15 +796,38 @@ def load_gsm_p2() -> pd.DataFrame:
     p2 = _drop_mock(_read(RAW / "GSM_P2_cci.csv"))
     o4 = _drop_mock(_read(RAW / "GSM_P2_phase1_o1mini.csv"))
     if o4.empty:
-        return p2
-    # o4-mini lives in the phase1 file; merge on common columns
-    keep = [c for c in p2.columns if c in o4.columns] if not p2.empty else list(o4.columns)
-    o4 = o4.copy()
-    if "model" not in o4.columns or o4["model"].eq("").all():
-        o4["model"] = LONG["o4-mini"]
-    if p2.empty:
-        return o4
-    return pd.concat([p2, o4[keep]], ignore_index=True)
+        out = p2
+    else:
+        keep = [c for c in p2.columns if c in o4.columns] if not p2.empty else list(o4.columns)
+        o4 = o4.copy()
+        if "model" not in o4.columns or o4["model"].eq("").all():
+            o4["model"] = LONG["o4-mini"]
+        out = o4 if p2.empty else pd.concat([p2, o4[keep]], ignore_index=True)
+    if out.empty:
+        return out
+    if "session_b_correct" in out.columns and "either_session_correct" not in out.columns:
+        out = out.rename(columns={"session_b_correct": "either_session_correct"})
+    ov = _read(ROOT / "results/derived/GSM_P2_session_correct.csv")
+    if not ov.empty:
+        keep = [
+            c
+            for c in (
+                "problem_id",
+                "model",
+                "either_session_correct",
+                "phase1_correct",
+                "phase2a_correct",
+                "phase2b_correct",
+            )
+            if c in ov.columns
+        ]
+        ov = ov[keep].drop_duplicates(["problem_id", "model"])
+        out = out.drop(
+            columns=[c for c in ("either_session_correct", "phase1_correct", "phase2a_correct", "phase2b_correct") if c in out.columns],
+            errors="ignore",
+        )
+        out = out.merge(ov, on=["problem_id", "model"], how="left")
+    return out
 
 
 def _last_step(df: pd.DataFrame, correct_col: str) -> pd.DataFrame:
@@ -973,9 +998,10 @@ def run_p2(banks: dict, algo_p1: dict[str, pd.DataFrame]) -> dict:
                 source_file=src2, filter_applied="cci_score==0 and cci_total>0")
             empty = sub[tot == 0]
             div = sub[(sc == 0) & (tot > 0)]
-            if "session_b_correct" in sub.columns:
-                ea = float(_is_true(empty["session_b_correct"]).mean()) if len(empty) else float("nan")
-                da = float(_is_true(div["session_b_correct"]).mean()) if len(div) else float("nan")
+            sess = sub["either_session_correct"] if "either_session_correct" in sub.columns else sub.get("session_b_correct")
+            if sess is not None:
+                ea = float(_is_true(empty["either_session_correct"] if "either_session_correct" in empty.columns else empty["session_b_correct"]).mean()) if len(empty) else float("nan")
+                da = float(_is_true(div["either_session_correct"] if "either_session_correct" in div.columns else div["session_b_correct"]).mean()) if len(div) else float("nan")
                 add(id=f"P2.1.GSM.{m}.empty_acc", probe="P2", phase="P1", family="GSM", model=m,
                     metric="empty_declaration_accuracy", value=ea if ea == ea else "NOT_COMPUTABLE",
                     n=int(len(empty)), source_file=src2, filter_applied="cci_total==0")
@@ -1018,23 +1044,29 @@ def run_p2(banks: dict, algo_p1: dict[str, pd.DataFrame]) -> dict:
         if m == "o4-mini":
             p1o = gsm_phase1_files[m]
             src = "GSM_P2_phase1_o1mini.csv"
-            if not p1o.empty and "session_b_correct" in p1o.columns:
+            if not p1o.empty:
                 sub = p1o
             if not p1o.empty and "phase1_parseable" in p1o.columns:
                 use_cci = p1o[_is_true(p1o["phase1_parseable"])]
-                note = "parseable subset for CCI/TEP; Acc_P2A on all sessions"
+                note = "parseable subset for CCI/TEP; Acc_P2A is phase2a_correct (unrecoverable from stored files)"
             else:
                 use_cci = sub
         else:
             use_cci = sub
-        if "session_b_correct" in sub.columns:
-            k = int(_is_true(sub["session_b_correct"]).sum())
+        p2a = sub["phase2a_correct"] if "phase2a_correct" in sub.columns else pd.Series([""] * len(sub), index=sub.index)
+        if p2a.astype(str).str.strip().ne("").any():
+            k = int(_is_true(p2a).sum())
             n = int(len(sub))
             acc = k / n
             lo, hi = wilson(k, n)
             add(id=f"P2.2.GSM.{m}.acc_p2a", probe="P2", phase="P2A", family="GSM", model=m,
                 metric="fresh_session_accuracy", value=acc, n=n, ci_low=lo, ci_high=hi,
-                source_file=src, filter_applied="drop mock", note="all sessions including unparseable")
+                source_file="GSM_P2_session_correct.csv", filter_applied="drop mock",
+                note="phase2a_correct")
+        else:
+            add_nc(f"P2.2.GSM.{m}.acc_p2a", probe="P2", phase="P2A", family="GSM", model=m,
+                   metric="fresh_session_accuracy", source_file="GSM_P2_session_correct.csv",
+                   note="phase2a_values were never persisted; Acc_P2A cannot be recovered without a re-run")
         cci = pd.to_numeric(use_cci.get("cci_score", pd.Series(dtype=float)), errors="coerce").dropna()
         tep = pd.to_numeric(use_cci.get("tep_score", pd.Series(dtype=float)), errors="coerce").dropna()
         add(id=f"P2.2.GSM.{m}.cci_mean", probe="P2", phase="P2A", family="GSM", model=m,

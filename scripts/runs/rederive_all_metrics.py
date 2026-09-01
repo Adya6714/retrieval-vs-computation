@@ -281,15 +281,20 @@ def gsm_p2_metrics() -> pd.DataFrame:
                           .astype(str).str.lower() == "true").sum())
         cci = pd.to_numeric(sub.get("cci_score", pd.Series([np.nan]*len(sub))), errors="coerce")
         tep = pd.to_numeric(sub.get("tep_score", pd.Series([np.nan]*len(sub))), errors="coerce")
-        sess_b = ((sub.get("session_b_correct", pd.Series([""]*len(sub)))
-                     .astype(str).str.lower() == "true").sum())
+        either = sub.get("either_session_correct", sub.get("session_b_correct", pd.Series([""] * len(sub))))
+        sess_b = (either.astype(str).str.lower() == "true").sum()
+        p2a = sub.get("phase2a_correct", pd.Series([""] * len(sub)))
+        p2a_scored = p2a.astype(str).str.strip().ne("").any()
         rows.append({
             "model": SHORT[m],
             "n":     len(sub),
             "n_parseable": int(n_parseable),
             "mean_cci": float(cci.mean()) if cci.notna().any() else float("nan"),
             "mean_tep": float(tep.mean()) if tep.notna().any() else float("nan"),
-            "session_b_correct_rate": sess_b / len(sub) if len(sub) > 0 else float("nan"),
+            "either_session_correct_rate": sess_b / len(sub) if len(sub) > 0 else float("nan"),
+            "phase2a_correct_rate": (
+                float((p2a.astype(str).str.lower() == "true").mean()) if p2a_scored else float("nan")
+            ),
         })
     return pd.DataFrame(rows)
 

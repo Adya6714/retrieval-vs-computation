@@ -1,0 +1,6 @@
+model,model_full,n,acc_p2a_before_disjunction,acc_p2a_after_phase2a,phase2a_recoverable,phase1_correct_rate,n_phase1_scored,note
+Claude,anthropic/claude-sonnet-4,44,0.863636,,false,0.863636,41,phase2a_values and phase2b_values were never written to CSV; Acc_P2A cannot be recovered without a re-run
+Gemini,google/gemini-2.5-flash,44,0.886364,,false,0.818182,37,phase2a_values and phase2b_values were never written to CSV; Acc_P2A cannot be recovered without a re-run
+Llama,meta-llama/llama-3.1-8b-instruct,44,0.454545,,false,0.454545,32,phase2a_values and phase2b_values were never written to CSV; Acc_P2A cannot be recovered without a re-run
+GPT-4o,openai/gpt-4o,44,0.704545,,false,0.681818,33,phase2a_values and phase2b_values were never written to CSV; Acc_P2A cannot be recovered without a re-run
+o4-mini,openai/o4-mini,44,0.954545,,false,0.931818,43,phase2a_values and phase2b_values were never written to CSV; Acc_P2A cannot be recovered without a re-run

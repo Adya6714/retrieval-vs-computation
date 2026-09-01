@@ -58,7 +58,12 @@ OUTPUT_COLUMNS = [
     "tep_score",
     "tep_diverged_steps",
     "tep_total_steps",
-    "session_b_correct",
+    "either_session_correct",
+    "phase1_correct",
+    "phase2a_correct",
+    "phase2b_correct",
+    "phase2a_values_json",
+    "phase2b_values_json",
     "correct_answer",
 ]
 
@@ -394,18 +399,25 @@ def main() -> None:
                 phase2a_values, phase2b_values, inject_at
             )
 
-            final_text = ""
-            if phase2a_values:
-                final_text = f"Final answer: {phase2a_values[-1]}"
             from probes.contamination.verify import verify_gsm_answer
 
-            session_b_correct = bool(
-                verify_gsm_answer(final_text, correct_answer)
-                or (
-                    phase1_final is not None
-                    and verify_gsm_answer(str(phase1_final), correct_answer)
-                )
+            phase1_correct = bool(
+                phase1_final is not None
+                and verify_gsm_answer(str(phase1_final), correct_answer)
             )
+            phase2a_final = ""
+            if phase2a_values and phase2a_values[-1] is not None:
+                phase2a_final = f"Final answer: {phase2a_values[-1]}"
+            phase2a_correct = bool(
+                phase2a_final and verify_gsm_answer(phase2a_final, correct_answer)
+            )
+            phase2b_final = ""
+            if phase2b_values and phase2b_values[-1] is not None:
+                phase2b_final = f"Final answer: {phase2b_values[-1]}"
+            phase2b_correct = bool(
+                phase2b_final and verify_gsm_answer(phase2b_final, correct_answer)
+            )
+            either_session_correct = bool(phase2a_correct or phase1_correct)
 
             writer.writerow(
                 {
@@ -431,7 +443,12 @@ def main() -> None:
                     "tep_score": f"{tep_score:.4f}",
                     "tep_diverged_steps": str(tep_div),
                     "tep_total_steps": str(tep_total),
-                    "session_b_correct": str(bool(session_b_correct)),
+                    "either_session_correct": str(bool(either_session_correct)),
+                    "phase1_correct": str(bool(phase1_correct)),
+                    "phase2a_correct": str(bool(phase2a_correct)),
+                    "phase2b_correct": str(bool(phase2b_correct)),
+                    "phase2a_values_json": json.dumps(phase2a_values),
+                    "phase2b_values_json": json.dumps(phase2b_values),
                     "correct_answer": correct_answer,
                 }
             )

@@ -1,0 +1,6 @@
+model,n,spearman_p2acc_disjunction_vs_contam_before,spearman_p2acc_phase2a_vs_contam_after,delta,note
+Claude,44,-0.0991613860087802,,,after is blank: phase2a_correct not stored; correlation cannot move
+Gemini,44,0.02539519892286326,,,after is blank: phase2a_correct not stored; correlation cannot move
+Llama,44,0.10071492266830573,,,after is blank: phase2a_correct not stored; correlation cannot move
+GPT-4o,44,0.06084649778150851,,,after is blank: phase2a_correct not stored; correlation cannot move
+o4-mini,44,-0.0945822090400472,,,after is blank: phase2a_correct not stored; correlation cannot move

@@ -6,8 +6,9 @@ For each model, builds a per-problem feature vector across all probes:
   P3: contamination score, max_ngram_length
 
 Then computes Spearman correlation matrices and plots them as a small
-multiples heatmap. Useful for finding non-obvious dependencies between
-sub-probes within a model.
+multiples heatmap. P2.acc is phase2a_correct only (not the old
+either_session_correct disjunction). If phase2a was never persisted, P2.acc
+is absent and cannot correlate with contamination.
 """
 
 from __future__ import annotations
@@ -94,13 +95,20 @@ def gsm_per_problem(model_short: str, model_full: str) -> pd.DataFrame:
     # P2 CCI
     p2 = pd.read_csv(RAW / "GSM_P2_cci.csv", dtype=str).fillna("")
     p2 = p2[p2["model"] == model_full]
+    ov_path = DER / "GSM_P2_session_correct.csv"
+    if ov_path.exists() and not p2.empty:
+        ov = pd.read_csv(ov_path, dtype=str).fillna("")
+        ov = ov[ov["model"] == model_full]
+        keep = [c for c in ("problem_id", "phase2a_correct", "either_session_correct") if c in ov.columns]
+        p2 = p2.merge(ov[keep].drop_duplicates("problem_id"), on="problem_id", how="left", suffixes=("", "_ov"))
+        if "either_session_correct_ov" in p2.columns:
+            p2["either_session_correct"] = p2["either_session_correct_ov"]
     if not p2.empty and "cci_score" in p2.columns:
-        p2_sub = p2[["problem_id", "cci_score", "tep_score", "session_b_correct"]].copy()
+        p2_sub = p2[["problem_id", "cci_score", "tep_score"]].copy()
         for c in ["cci_score", "tep_score"]:
             p2_sub[c] = pd.to_numeric(p2_sub[c], errors="coerce")
-        p2_sub["session_b_correct"] = (
-            p2_sub["session_b_correct"].astype(str).str.lower().eq("true").astype(int)
-        )
+        if "phase2a_correct" in p2.columns and p2["phase2a_correct"].astype(str).str.strip().ne("").any():
+            p2_sub["P2.acc"] = p2["phase2a_correct"].astype(str).str.lower().eq("true").astype(int)
         merged = p1.merge(p2_sub, on="problem_id", how="left")
     else:
         merged = p1
@@ -130,11 +138,11 @@ def fig_cross_probe_corr() -> None:
               ("Llama", "meta-llama/llama-3.1-8b-instruct"),
               ("o4-mini", "openai/o4-mini")]
     cols = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6",
-             "cci_score", "tep_score", "session_b_correct",
+             "cci_score", "tep_score", "P2.acc",
              "contamination_score", "max_ngram_length"]
     short_labels = {"canonical": "can", "W1": "W1", "W2": "W2", "W3": "W3", "W4": "W4",
                     "W5": "W5", "W6": "W6", "cci_score": "CCI", "tep_score": "TEP",
-                    "session_b_correct": "P2.acc", "contamination_score": "contam",
+                    "P2.acc": "P2.acc", "contamination_score": "contam",
                     "max_ngram_length": "n-gram"}
 
     im = None
