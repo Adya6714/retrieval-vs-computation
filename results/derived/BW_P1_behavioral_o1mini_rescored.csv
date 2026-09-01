@@ -3445,7 +3445,7 @@ succumb d
 feast b h
 succumb b
 feast h l
-succumb h",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb h",planning_suite,low,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_001,W6,openai/o4-mini,"1. attack j  
 2. overcome j f  
 3. attack f  
@@ -3563,7 +3563,7 @@ MBW_002,W3,openai/o4-mini,"1. provoke Japan
 15. negotiate Kenya Hungary  
 16. provoke Hungary  
 17. broker Hungary Ireland  
-18. negotiate Hungary Ireland",False,"provoke Japan
+18. negotiate Hungary Ireland",True,"provoke Japan
 broker Japan Greece
 provoke Greece
 broker Greece Argentina
@@ -3574,7 +3574,7 @@ broker Belgium Kenya
 provoke Kenya
 broker Kenya Hungary
 provoke Hungary
-broker Hungary Ireland",planning_suite,low,hard,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Hungary Ireland",planning_suite,low,hard,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_002,W4,openai/o4-mini,,False,"attack h
  overcome h i
  attack k
@@ -3626,7 +3626,7 @@ MBW_002,W6,openai/o4-mini,"1 attack e
  attack e
  overcome e c
  attack m
- overcome m e",planning_suite,low,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome m e",planning_suite,low,hard,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_002,canonical,openai/o4-mini,"1. attack g  
 2. overcome g j  
 3. attack a  
@@ -3664,7 +3664,7 @@ MBW_010,W1,openai/o4-mini,"1. attack e
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W2,openai/o4-mini,"1. attack d  
 2. overcome d e  
 3. attack e  
@@ -3679,7 +3679,7 @@ MBW_010,W2,openai/o4-mini,"1. attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W3,openai/o4-mini,"1. provoke Denmark  
 2. broker Denmark Estonia  
 3. negotiate Denmark Estonia  
@@ -3691,14 +3691,14 @@ MBW_010,W3,openai/o4-mini,"1. provoke Denmark
 9. negotiate Argentina Belgium  
 10. provoke Belgium  
 11. broker Belgium France  
-12. negotiate Belgium France",False,"provoke Denmark
+12. negotiate Belgium France",True,"provoke Denmark
 broker Denmark Estonia
 provoke Estonia
 broker Estonia Argentina
 provoke Argentina
 broker Argentina Belgium
 provoke Belgium
-broker Belgium France",planning_suite,low,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Belgium France",planning_suite,low,medium,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_010,W4,openai/o4-mini,,False,"attack d
  overcome e d
  attack e
@@ -3706,7 +3706,7 @@ MBW_010,W4,openai/o4-mini,,False,"attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W5,openai/o4-mini,"1. overcome d e  
 2. succumb d  
 3. overcome e a  
@@ -3729,7 +3729,7 @@ MBW_010,W6,openai/o4-mini,,False,"attack h
  attack c
  overcome g c
  attack g
- overcome",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_010,canonical,openai/o4-mini,"1. attack d  
 2. overcome d e  
 3. attack e  
@@ -3744,7 +3744,7 @@ MBW_010,canonical,openai/o4-mini,"1. attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,canonical,False,invalid_gold,False,,,invalid_gold,
 MBW_014,W1,openai/o4-mini,"1. attack l  
 2. overcome l e  
 3. attack e  
@@ -3762,10 +3762,10 @@ MBW_014,W2,openai/o4-mini,"1. attack l
 MBW_014,W3,openai/o4-mini,"1. provoke Lithuania  
 2. broker Lithuania Estonia  
 3. provoke Estonia  
-4. broker Estonia Greece",False,"provoke Lithuania
+4. broker Estonia Greece",True,"provoke Lithuania
 broker Lithuania Estonia
 provoke Estonia
-broker Estonia Greece",planning_suite,low,easy,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Estonia Greece",planning_suite,low,easy,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_014,W4,openai/o4-mini,"1. attack e  
 2. overcome e g  
 3. attack l  
@@ -3784,7 +3784,7 @@ MBW_014,W6,openai/o4-mini,"1. attack e
 4. overcome l g",False,"attack a
  overcome a b
  attack c
- overcome c a",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome c a",planning_suite,low,easy,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_014,canonical,openai/o4-mini,"1. attack l  
 2. attack e  
 3. overcome l e  
@@ -3819,12 +3819,12 @@ MBW_037,W3,openai/o4-mini,"1. provoke Canada
 3. provoke Denmark  
 4. broker Denmark Hungary  
 5. provoke Hungary  
-6. broker Hungary Ireland",False,"provoke Canada
+6. broker Hungary Ireland",True,"provoke Canada
 broker Canada Denmark
 provoke Denmark
 broker Denmark Hungary
 provoke Hungary
-broker Hungary Ireland",planning_suite,low,easy,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Hungary Ireland",planning_suite,low,easy,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_037,W4,openai/o4-mini,,False,"attack h
  overcome h i
  attack d
@@ -3844,7 +3844,7 @@ MBW_037,W6,openai/o4-mini,(No actions possible),False,"attack e
  attack b
  overcome b e
  attack a
- overcome a b",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome a b",planning_suite,low,easy,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_037,canonical,openai/o4-mini,"1. attack d  
 2. overcome d c  
 3. attack h  
@@ -3880,7 +3880,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_10,W2,openai/o4-mini,"1. attack e  
 2. overcome e d  
 3. attack a  
@@ -3930,7 +3930,7 @@ succumb e
 feast a b
 succumb a
 feast b f
-succumb b",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb b",planning_suite,low,easy,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_10,W6,openai/o4-mini,"1. attack e  
 2. overcome e d  
 3. attack a  
@@ -4015,7 +4015,7 @@ succumb b
 feast j l
 succumb j
 feast l i
-succumb l",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb l",planning_suite,low,easy,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_100,W6,openai/o4-mini,"1. attack b  
 2. overcome b j  
 3. attack j  
@@ -4101,7 +4101,7 @@ succumb g
 feast j e
 succumb j
 feast e b
-succumb e",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,easy,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_127,W6,openai/o4-mini,"1. attack k  
 2. overcome k g  
 3. attack g  
@@ -4297,7 +4297,7 @@ succumb a
 feast b e
 succumb b
 feast e l
-succumb e",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_185,W6,openai/o4-mini,"1. attack j  
 2. overcome j d  
 3. attack d  
@@ -4405,14 +4405,14 @@ MBW_495,W3,openai/o4-mini,"1. provoke Canada
 5. provoke Ireland  
 6. broker Ireland Estonia  
 7. provoke Estonia  
-8. broker Estonia Hungary",False,"provoke Canada
+8. broker Estonia Hungary",True,"provoke Canada
 broker Canada Lithuania
 provoke Lithuania
 broker Lithuania Ireland
 provoke Ireland
 broker Ireland Estonia
 provoke Estonia
-broker Estonia Hungary",planning_suite,low,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Estonia Hungary",planning_suite,low,medium,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_495,W4,openai/o4-mini,,False,"attack e
  overcome e h
  attack i
@@ -4439,7 +4439,7 @@ MBW_495,W6,openai/o4-mini,,False,"attack b
  attack g
  overcome g f
  attack a
- overcome a g",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome a g",planning_suite,low,medium,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_495,canonical,openai/o4-mini,"1. attack c  
 2. overcome c l  
 3. attack l  
@@ -7469,7 +7469,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W2,openai/o4-mini,"Assuming harmony is true initially and that:
 
 • attack X produces pain X  
@@ -7525,7 +7525,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome i f",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W3,openai/o4-mini,"1. deploy India  
 2. reinforce India Foxtrot  
 3. deploy Foxtrot  
@@ -7595,7 +7595,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W5,openai/o4-mini,"1. attack i  
 2. overcome i f  
 3. attack f  
@@ -7630,7 +7630,7 @@ succumb a
 feast c j
 succumb c
 feast j l
-succumb j",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb j",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W6,openai/o4-mini,"1. pick-up j  
 2. stack j a  
 3. pick-up i  
@@ -7700,7 +7700,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
+overcome k a",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W2,openai/o4-mini,"One possible (and in fact minimal) way to generate exactly the nine craves-facts you need is simply, for each pair X→Y in your goal chain, to
 
   1. attack X    (given harmony, province X and planet X)  
@@ -7760,7 +7760,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome k a",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W3,openai/o4-mini,"1. terminate Kevin  
 2. promote Kevin Alice  
 3. terminate Alice  
@@ -7830,7 +7830,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome k a",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W5,openai/o4-mini,"1. attack k  
 2. overcome k a  
 3. attack a  
@@ -7865,7 +7865,7 @@ succumb i
 feast h e
 succumb h
 feast e j
-succumb e",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb e",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W6,openai/o4-mini,"1. pick-up i  
 2. stack i e  
 3. pick-up c  
@@ -7943,7 +7943,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W2,openai/o4-mini,"One way to see that every desired “Y craves X” link can be produced by the little three–step routine
 
   1. attack X  (pre: harmony ∧ province X ∧ planet X ⇒ produces pain X, breaks harmony)  
@@ -8037,7 +8037,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome l e",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W3,openai/o4-mini,"1. establish_supply_line Lima Echo  
 2. establish_supply_line Echo Delta  
 3. establish_supply_line Delta Golf  
@@ -8112,7 +8112,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W5,openai/o4-mini,"1. attack l  
 2. overcome l e  
 3. attack e  
@@ -8155,7 +8155,7 @@ succumb b
 feast i j
 succumb i
 feast j f
-succumb j",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb j",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W6,openai/o4-mini,"1 pick-up c  
 2 stack c l  
 3 pick-up e  
@@ -8225,7 +8225,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
+overcome l c",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W2,openai/o4-mini,"One possible (and in fact minimal) way to generate exactly the seven craves‐facts you need is:
 
  1. attack l  
@@ -8266,7 +8266,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome l c",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W3,openai/o4-mini,"1. secure Lima  
 2. liberate Lima Charlie  
 3. secure Charlie  
@@ -8320,7 +8320,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome l c",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W5,openai/o4-mini,"1 attack l  
 2 overcome l c  
 3 attack c  
@@ -8347,7 +8347,7 @@ succumb j
 feast d a
 succumb d
 feast a h
-succumb a",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb a",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W6,openai/o4-mini,"1. pick-up e  
 2. stack e d  
 3. pick-up g  
@@ -8409,7 +8409,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
+overcome a e",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W2,openai/o4-mini,"Here’s a uniform “three‐step” recipe you can repeat for each link Y craves X in your goal‐chain (i.e. to establish craves(Y,X) do):
 
   1. attack X      (needs harmony, province X, planet X; produces pain X, destroys harmony)  
@@ -8473,7 +8473,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome a e",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W3,openai/o4-mini,"1. establish_supply_line Alpha_Base Echo_Base  
 2. establish_supply_line Echo_Base Bravo_Base  
 3. establish_supply_line Bravo_Base Kilo_Base  
@@ -8534,7 +8534,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome a e",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W5,openai/o4-mini,"1. attack a  
 2. overcome a e  
 3. attack e  
@@ -8569,7 +8569,7 @@ succumb f
 feast i d
 succumb i
 feast d g
-succumb d",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb d",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W6,openai/o4-mini,"1. pick-up c  
 2. stack c e  
 3. pick-up j  

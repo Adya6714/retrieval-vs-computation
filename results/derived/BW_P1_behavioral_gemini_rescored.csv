@@ -3656,7 +3656,7 @@ succumb d
 feast b h
 succumb b
 feast h l
-succumb h",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb h",planning_suite,low,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_001,W6,google/gemini-2.5-flash,"1. feast j f
 2. feast f i
 3. feast i g
@@ -3753,7 +3753,7 @@ broker Belgium Kenya
 provoke Kenya
 broker Kenya Hungary
 provoke Hungary
-broker Hungary Ireland",planning_suite,low,hard,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
+broker Hungary Ireland",planning_suite,low,hard,W3,False,invalid_gold,False,,,invalid_gold,
 MBW_002,W4,google/gemini-2.5-flash,"1. attack j
 2. overcome j g
 3. feast j g
@@ -3816,7 +3816,7 @@ MBW_002,W6,google/gemini-2.5-flash,"1. feast j m
  attack e
  overcome e c
  attack m
- overcome m e",planning_suite,low,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome m e",planning_suite,low,hard,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_002,canonical,google/gemini-2.5-flash,"1. feast j g
 2. feast g a
 3. feast a b
@@ -3844,7 +3844,7 @@ MBW_010,W1,google/gemini-2.5-flash,"1. feast d e
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W2,google/gemini-2.5-flash,"1. attack d
 2. overcome d e
 3. succumb d
@@ -3863,7 +3863,7 @@ MBW_010,W2,google/gemini-2.5-flash,"1. attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,W2,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W3,google/gemini-2.5-flash,"1. provoke Denmark
 2. provoke Estonia
 3. provoke Argentina
@@ -3879,7 +3879,7 @@ broker Estonia Argentina
 provoke Argentina
 broker Argentina Belgium
 provoke Belgium
-broker Belgium France",planning_suite,low,medium,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
+broker Belgium France",planning_suite,low,medium,W3,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W4,google/gemini-2.5-flash,"1. attack d
 2. overcome d e
 3. attack e
@@ -3894,7 +3894,7 @@ MBW_010,W4,google/gemini-2.5-flash,"1. attack d
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_010,W5,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -3916,7 +3916,7 @@ MBW_010,W6,google/gemini-2.5-flash,"1. feast d h
  attack c
  overcome g c
  attack g
- overcome",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_010,canonical,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -3927,7 +3927,7 @@ MBW_010,canonical,google/gemini-2.5-flash,"1. feast d e
  attack a
  overcome b a
  attack b
- overcome",planning_suite,low,medium,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome",planning_suite,low,medium,canonical,False,invalid_gold,False,,,invalid_gold,
 MBW_014,W1,google/gemini-2.5-flash,"1. attack l
 2. feast l e
 3. attack e
@@ -3950,10 +3950,10 @@ MBW_014,W3,google/gemini-2.5-flash,"1. provoke Lithuania
 4. negotiate Lithuania Estonia
 5. provoke Greece
 6. broker Estonia Greece
-7. negotiate Estonia Greece",False,"provoke Lithuania
+7. negotiate Estonia Greece",True,"provoke Lithuania
 broker Lithuania Estonia
 provoke Estonia
-broker Estonia Greece",planning_suite,low,easy,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Estonia Greece",planning_suite,low,easy,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_014,W4,google/gemini-2.5-flash,"1. attack l
 2. overcome l e
 3. attack e
@@ -3970,7 +3970,7 @@ MBW_014,W6,google/gemini-2.5-flash,"1. feast c a
 2. feast a b",False,"attack a
  overcome a b
  attack c
- overcome c a",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome c a",planning_suite,low,easy,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_014,canonical,google/gemini-2.5-flash,"1. feast l e
 2. feast e g",False,"attack e
  overcome e g
@@ -4009,7 +4009,7 @@ broker Canada Denmark
 provoke Denmark
 broker Denmark Hungary
 provoke Hungary
-broker Hungary Ireland",planning_suite,low,easy,W3,True,in_bank_ok,False,False,state_machine,incorrect,False
+broker Hungary Ireland",planning_suite,low,easy,W3,False,invalid_gold,False,,,invalid_gold,
 MBW_037,W4,google/gemini-2.5-flash,"1. attack c
 2. succumb c
 3. attack d
@@ -4045,7 +4045,7 @@ MBW_037,W6,google/gemini-2.5-flash,"1. feast c a
  attack b
  overcome b e
  attack a
- overcome a b",planning_suite,low,easy,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome a b",planning_suite,low,easy,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_037,canonical,google/gemini-2.5-flash,"1. feast c d
 2. feast d h
 3. feast h i",False,"attack h
@@ -4069,7 +4069,7 @@ overcome a b
 attack e
 overcome e a
 attack d
-overcome d e",planning_suite,low,easy,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome d e",planning_suite,low,easy,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_10,W2,google/gemini-2.5-flash,"1. attack d
 2. attack e
 3. attack a
@@ -4126,7 +4126,7 @@ succumb e
 feast a b
 succumb a
 feast b f
-succumb b",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb b",planning_suite,low,easy,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_10,W6,google/gemini-2.5-flash,"1. feast d e
 2. feast e a
 3. feast a b
@@ -4199,7 +4199,7 @@ succumb b
 feast j l
 succumb j
 feast l i
-succumb l",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb l",planning_suite,low,easy,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_100,W6,google/gemini-2.5-flash,"1. feast b j
 2. feast j l
 3. feast l i",False,"attack l
@@ -4291,7 +4291,7 @@ succumb g
 feast j e
 succumb j
 feast e b
-succumb e",planning_suite,low,easy,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,easy,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_127,W6,google/gemini-2.5-flash,"1. feast k g
 2. feast g j
 3. feast j e
@@ -4478,7 +4478,7 @@ succumb a
 feast b e
 succumb b
 feast e l
-succumb e",planning_suite,low,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb e",planning_suite,low,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_185,W6,google/gemini-2.5-flash,"1. feast j d
 2. feast d g
 3. feast g i
@@ -4569,14 +4569,14 @@ MBW_495,W3,google/gemini-2.5-flash,"1. provoke Canada
 5. provoke Ireland
 6. broker Ireland Estonia
 7. provoke Estonia
-8. broker Estonia Hungary",False,"provoke Canada
+8. broker Estonia Hungary",True,"provoke Canada
 broker Canada Lithuania
 provoke Lithuania
 broker Lithuania Ireland
 provoke Ireland
 broker Ireland Estonia
 provoke Estonia
-broker Estonia Hungary",planning_suite,low,medium,W3,True,in_bank_ok,True,False,state_machine,incorrect,True
+broker Estonia Hungary",planning_suite,low,medium,W3,False,invalid_gold,True,,,invalid_gold,
 MBW_495,W4,google/gemini-2.5-flash,"1. attack c
 2. overcome c l
 3. attack l
@@ -4613,7 +4613,7 @@ MBW_495,W6,google/gemini-2.5-flash,"1. feast c a
  attack g
  overcome g f
  attack a
- overcome a g",planning_suite,low,medium,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
+ overcome a g",planning_suite,low,medium,W6,False,invalid_gold,False,,,invalid_gold,
 MBW_495,canonical,google/gemini-2.5-flash,"1. feast c l
 2. feast l i
 3. feast i e
@@ -8945,7 +8945,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W2,google/gemini-2.5-flash,"The problem describes a robot arm capable of performing actions based on certain preconditions related to ""harmony,"" ""pain,"" ""craves,"" ""province,"" and ""planet."" The initial state shows several blocks (`a`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `l`) all having the properties `province` and `planet`. There are no other properties active initially, specifically `harmony`, `pain`, or `craves`.
 
 The goal state specifies a series of `craves` relationships:
@@ -9000,7 +9000,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome i f",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W3,google/gemini-2.5-flash,"1. supply India Foxtrot
 2. supply Foxtrot Hotel
 3. supply Hotel Golf
@@ -9081,7 +9081,7 @@ overcome h g
 attack f
 overcome f h
 attack i
-overcome i f",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome i f",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W5,google/gemini-2.5-flash,"1. feast i f
 2. feast f h
 3. feast h g
@@ -9107,7 +9107,7 @@ succumb a
 feast c j
 succumb c
 feast j l
-succumb j",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb j",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_496,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a j
 3. pick-up j
@@ -9168,7 +9168,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
+overcome k a",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W2,google/gemini-2.5-flash,"Unfortunately, as a robot arm, I am unable to perform actions that directly change the ""craves"" property of objects. My available actions are:
 
 *   **attack X**: Requires harmony, province X, planet X.
@@ -9195,7 +9195,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome k a",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W3,google/gemini-2.5-flash,"1. assign Kevin Alice
 2. assign Alice Frank
 3. assign Frank Carol
@@ -9276,7 +9276,7 @@ overcome f c
 attack a
 overcome a f
 attack k
-overcome k a",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome k a",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W5,google/gemini-2.5-flash,"1. feast k a
 2. feast a f
 3. feast f c
@@ -9302,7 +9302,7 @@ succumb i
 feast h e
 succumb h
 feast e j
-succumb e",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb e",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_497,W6,google/gemini-2.5-flash,"1. pick-up e
 2. put-down e
 3. pick-up i
@@ -9371,7 +9371,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,W1,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W2,google/gemini-2.5-flash,"The provided problem describes a robot arm with a set of actions that primarily involve changing the state of ""craves"" predicates or other abstract predicates like ""harmony"" and ""pain."" However, the initial state defines the positions of blocks ('a' through 'l') as being in 'province' and 'planet'. The goal state also defines ""craves"" relationships between these blocks.
 
 Crucially, **none of the available actions allow the robot arm to directly manipulate or create ""craves"" relationships.**
@@ -9406,7 +9406,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome l e",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W3,google/gemini-2.5-flash,"1. establish_supply_line Lima Echo
 2. establish_supply_line Echo Delta
 3. establish_supply_line Delta Golf
@@ -9505,7 +9505,7 @@ overcome d g
 attack e
 overcome e d
 attack l
-overcome l e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome l e",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W5,google/gemini-2.5-flash,"1. feast l e
 2. feast e d
 3. feast d g
@@ -9537,7 +9537,7 @@ succumb b
 feast i j
 succumb i
 feast j f
-succumb j",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb j",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_498,W6,google/gemini-2.5-flash,"1. pick-up l
 2. put-down l
 3. pick-up k
@@ -9602,7 +9602,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
+overcome l c",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W2,google/gemini-2.5-flash,"It seems there's a misunderstanding of the available actions and the goal state. Let's break it down:
 
 *   **Available Actions:** These actions are about changing the *state* of the blocks/entities, not their *relationships*. For example, `attack X` requires `harmony`, `province X`, and `planet X` to be true. This implies `harmony`, `province`, and `planet` are attributes or states that can be true or false for a block. `succumb X` requires `pain X` to be true, and so on.
@@ -9634,7 +9634,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome l c",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W3,google/gemini-2.5-flash,"1. supply Lima Charlie
 2. supply Charlie Bravo
 3. supply Bravo Foxtrot
@@ -9697,7 +9697,7 @@ overcome b f
 attack c
 overcome c b
 attack l
-overcome l c",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome l c",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W5,google/gemini-2.5-flash,"1. feast l c
 2. feast c b
 3. feast b f
@@ -9717,7 +9717,7 @@ succumb j
 feast d a
 succumb d
 feast a h
-succumb a",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb a",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_499,W6,google/gemini-2.5-flash,"1. pick-up a
 2. stack a c
 3. pick-up b
@@ -9766,7 +9766,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,W1,False,parse_failed,False,,state_machine,unparsed_state,
+overcome a e",planning_suite,high,hard,W1,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W2,google/gemini-2.5-flash,"The provided goal state requires setting several ""craves"" predicates. However, the available actions (`attack`, `succumb`, `overcome`, `feast`) do not directly create or modify ""craves"" predicates.
 
 Let's look at the available actions and their effects:
@@ -9795,7 +9795,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,W2,False,parse_failed,False,,state_machine,unparsed_state,
+overcome a e",planning_suite,high,hard,W2,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W3,google/gemini-2.5-flash,"1. deploy_forces Alpha_Base
 2. deploy_forces Bravo_Base
 3. deploy_forces Charlie_Base
@@ -9849,7 +9849,7 @@ overcome b k
 attack e
 overcome e b
 attack a
-overcome a e",planning_suite,high,hard,W4,True,in_bank_ok,False,False,state_machine,incorrect,False
+overcome a e",planning_suite,high,hard,W4,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W5,google/gemini-2.5-flash,"1. feast a e
 2. feast e b
 3. feast b k
@@ -9875,7 +9875,7 @@ succumb f
 feast i d
 succumb i
 feast d g
-succumb d",planning_suite,high,hard,W5,True,in_bank_ok,False,False,state_machine,incorrect,False
+succumb d",planning_suite,high,hard,W5,False,invalid_gold,False,,,invalid_gold,
 MBW_500,W6,google/gemini-2.5-flash,"1. pick-up e
 2. put-down e
 3. pick-up c

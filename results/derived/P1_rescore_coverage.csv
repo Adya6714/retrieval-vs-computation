@@ -1,6 +1,7 @@
 exclusion_reason,n,included
 api_error,338,False
-in_bank_ok,7900,True
+in_bank_ok,7708,True
+invalid_gold,240,False
 missing_bank_row,390,False
 mock_row,67,False
-parse_failed,230,False
+parse_failed,182,False
