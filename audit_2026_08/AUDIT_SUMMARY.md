@@ -7,33 +7,33 @@ No files outside `audit_2026_08/` were left modified (rederive outputs were snap
 
 ## MISMATCH
 
-### Table 7 ALGO SP-chall. GPT-4o W6
+### Table 7 BW Claude W5
 - section: Table 7
-- paper: `.258`  recomputed: `0.265`
-- raw: `ALGO_P1_4model_frozen_labels.csv (caption: frozen verified labels); IDs = claude difficulty_params 34/10/17`
-- filter: drop mock; frozen challenging/standard split NOT question_bank instance_type
-- note: frozen is 9/34=0.265. Paper `.258` equals Claude SP-chall W6 (8/31). Likely copied Claude's W6 n=31 cell onto GPT-4o.
+- paper: `.523`  recomputed: `0.566667`
+- raw: `BW_P1_behavioral.csv / BW_P1_behavioral_claude.csv`
+- filter: filter_p1_to_bank(BW) n=65 PlanBench IDs; drop mock; exclude variant_not_transformed
+- note: 34/60
 
-### Table 7 ALGO SP-chall. Llama W6
+### Table 7 BW GPT-4o W5
 - section: Table 7
-- paper: `.065`  recomputed: `0.059`
-- raw: `ALGO_P1_4model_frozen_labels.csv (caption: frozen verified labels); IDs = claude difficulty_params 34/10/17`
-- filter: drop mock; frozen challenging/standard split NOT question_bank instance_type
-- note: 2/34
+- paper: `.246`  recomputed: `0.266667`
+- raw: `BW_P1_behavioral.csv / BW_P1_behavioral_gpt4o.csv`
+- filter: filter_p1_to_bank(BW) n=65 PlanBench IDs; drop mock; exclude variant_not_transformed
+- note: 16/60
 
-### Table 7 ALGO SP-std. GPT-4o W6
+### Table 7 BW Gemini W5
 - section: Table 7
-- paper: `.368`  recomputed: `0.381`
-- raw: `ALGO_P1_4model_frozen_labels.csv (caption: frozen verified labels); IDs = claude difficulty_params 34/10/17`
-- filter: drop mock; frozen challenging/standard split NOT question_bank instance_type
-- note: 8/21
+- paper: `.569`  recomputed: `0.616667`
+- raw: `BW_P1_behavioral.csv / BW_P1_behavioral_gemini.csv`
+- filter: filter_p1_to_bank(BW) n=65 PlanBench IDs; drop mock; exclude variant_not_transformed
+- note: 37/60
 
-### Table 7 ALGO SP-std. Llama W6
+### Table 7 BW o4-mini W5
 - section: Table 7
-- paper: `.105`  recomputed: `0.095`
-- raw: `ALGO_P1_4model_frozen_labels.csv (caption: frozen verified labels); IDs = claude difficulty_params 34/10/17`
-- filter: drop mock; frozen challenging/standard split NOT question_bank instance_type
-- note: 2/21
+- paper: `.769`  recomputed: `0.833333`
+- raw: `BW_P1_behavioral.csv / BW_P1_behavioral_o1mini.csv`
+- filter: filter_p1_to_bank(BW) n=65 PlanBench IDs; drop mock; exclude variant_not_transformed
+- note: 50/60
 
 ### §4.2 GPT-4o empty-declaration Acc
 - section: §4.2
@@ -114,6 +114,31 @@ No files outside `audit_2026_08/` were left modified (rederive outputs were snap
 
 ## NOT_RECOMPUTABLE
 
+### Table 4 Claude Acc_P2A
+- section: Table 4
+- paper: `.864`  recomputed: ``
+- note: either=0.864
+
+### Table 4 GPT-4o Acc_P2A
+- section: Table 4
+- paper: `.705`  recomputed: ``
+- note: either=0.705
+
+### Table 4 Llama Acc_P2A
+- section: Table 4
+- paper: `.455`  recomputed: ``
+- note: either=0.455
+
+### Table 4 Gemini Acc_P2A
+- section: Table 4
+- paper: `.886`  recomputed: ``
+- note: either=0.886
+
+### Table 4 o4-mini Acc_P2A
+- section: Table 4
+- paper: `.955`  recomputed: ``
+- note: either=0.955
+
 ### Table 5 CC mean template proximity
 - section: Table 5
 - paper: `0.468`  recomputed: `0.468`
@@ -154,6 +179,11 @@ No files outside `audit_2026_08/` were left modified (rederive outputs were snap
 - paper: `26/110`  recomputed: `not uniquely recoverable`
 - note: All-4-models W3=False yields 68 (26 SP, 28 WIS, 14 CC). Frozen-adv subset yields 38 (20 SP, 16 WIS, 2 CC). scripts/runs/cross_probe_patterns.py requires >=4 models canon-correct AND W3-collapse (4 problems across families, not 26 ALGO). No released definition reproduces 12/11/3.
 
+### §4.2 GPT-4o Acc_P2A 70.5%
+- section: §4.2 / Conclusion
+- paper: `70.5%`  recomputed: ``
+- note: 
+
 ### §4.3 Claude partial r +0.41 p=0.0007
 - section: §4.3
 - paper: `+0.41`  recomputed: ``
@@ -193,10 +223,10 @@ No files outside `audit_2026_08/` were left modified (rederive outputs were snap
 
 | status | n |
 |--------|--:|
-| MATCH | 404 |
+| MATCH | 373 |
 | MISMATCH | 15 |
-| NOT_RECOMPUTABLE | 15 |
-| **total ledger rows** | **434** |
+| NOT_RECOMPUTABLE | 21 |
+| **total ledger rows** | **409** |
 
 ## Filters (where they live; which rows they drop)
 

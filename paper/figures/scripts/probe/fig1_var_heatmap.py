@@ -11,12 +11,14 @@ from analysis.figures._common import (
     MODEL_LABELS,
     MODEL_ORDER,
     P1_PRIMARY_BLUE,
-    VARIANT_ORDER,
     add_problem_family_from_qb,
     compute_var,
     load_behavioral,
     output_dir,
 )
+
+# H2: BW W6 is variant_not_transformed — do not plot it.
+VARIANT_ORDER = ["canonical", "W1", "W2", "W3", "W4", "W5"]
 
 
 def build_matrix(df, family: str):

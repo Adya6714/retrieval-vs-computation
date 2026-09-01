@@ -12,7 +12,7 @@ columns: ['problem_id', 'variant_type', 'model', 'raw_response', 'behavioral_cor
 - verified value counts: `{'<column absent>': 140}`
 - behavioral_correct value counts: `{'True': 90, 'False': 50}`
 - raw_response ERROR: prefix: 0/140
-- verdict: **real model outputs** (CoT traces; not placeholders)
+- verdict: **mixed/unknown**
 - 3 example model_answer/raw_response strings (canonical):
   - `GSM_021`: 'If the city is 77 miles across from the oceanfront to the opposite inland edge, and the fog bank rolls in at a rate of 77 miles every 50 minutes, then it will take the fog bank 50 minutes to cover the entire city.'
   - `GSM_022`: "To solve this problem, we are given a ratio and the total number of teaspoons of sugar and cups of water used together, and we need to find the amount of sugar used. The ratio of teaspoons of sugar to cups of water is 97:37. This means that for every 97 parts of sugar, there are 37 parts of water.\n\nFirst, let's define variables for teaspoonfuls of sugar and cups of water:\n- Let \\( x \\) be the numb"

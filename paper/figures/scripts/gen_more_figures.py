@@ -1,14 +1,10 @@
 """Additional EMNLP-style figures (third batch).
 
 New figures:
-  fig_bw_inversion.pdf    — BW canonical vs W5/W6 per-model paired bars with
-                             Wilcoxon-p annotations. Surfaces the contamination
-                             signal: renaming blocks *improves* Claude/Gemini
-                             and *destroys* Llama.
-  fig_subtype_grid.pdf    — ALGO 3 subtypes × 7 variants × 5 models heatmap.
-                             Surfaces (a) the WIS Achilles heel, (b) the
-                             universal ALGO-W5 collapse, (c) subtype-specific
-                             o4-mini brittleness.
+  fig_bw_inversion.pdf    — BW canonical vs W5 per-model paired bars with
+                             Wilcoxon-p annotations. W6 omitted (not transformed).
+  fig_subtype_grid.pdf    — ALGO 3 subtypes × 6 variants × 5 models heatmap
+                             (W6 omitted: ALGO W6 is variant_not_transformed).
   fig_probe2_summary.pdf  — Two-panel summary: (left) GSM Phase-1 CCI per
                              model with mean-TEP overlay; (right) ALGO P2A
                              normal vs elicited final-correct.
@@ -19,6 +15,7 @@ New figures:
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -29,6 +26,9 @@ import pandas as pd
 from scipy import stats
 
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from probes.common.exclusions import filter_excluded  # noqa: E402
 RAW  = ROOT / "results" / "raw"
 DER  = ROOT / "results" / "derived"
 OUT  = Path(__file__).resolve().parents[1]
@@ -74,7 +74,8 @@ def _bw_model_df(label: str) -> pd.DataFrame:
     df["variant_type"] = df["variant_type"].astype(str).str.strip().apply(
         lambda v: v.upper() if v and v[0].lower() == "w" else v
     )
-    return df.drop_duplicates(["problem_id", "variant_type"], keep="last")
+    df = df.drop_duplicates(["problem_id", "variant_type"], keep="last")
+    return filter_excluded(df, family="BW")
 
 
 def fig_bw_inversion() -> None:
@@ -151,7 +152,7 @@ def fig_subtype_grid() -> None:
         "o4-mini":  "ALGO_P1_behavioral_o1mini.csv",
     }
 
-    variants = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
+    variants = ["canonical", "W1", "W2", "W3", "W4", "W5"]
     subtypes = ["coin_change", "shortest_path", "wis"]
     subtype_labels = {"coin_change": "Coin change (greedy)",
                       "shortest_path": "Shortest path",
@@ -162,6 +163,7 @@ def fig_subtype_grid() -> None:
         df = pd.read_csv(RAW / f, dtype=str).fillna("")
         df = df.drop_duplicates(["problem_id", "variant_type"], keep="last")
         df = df.merge(bank, on=["problem_id", "variant_type"], how="left")
+        df = filter_excluded(df, family="ALGO")
         for s in subtypes:
             for v in variants:
                 sub = df[(df.variant_type == v) & (df.problem_subtype == s)]
@@ -193,7 +195,7 @@ def fig_subtype_grid() -> None:
         ax.spines[["top","right","left","bottom"]].set_visible(False)
         ax.tick_params(axis="both", which="both", length=0)
 
-    fig.suptitle("ALGO accuracy by subtype × variant × model — WIS is universally fatal",
+    fig.suptitle("ALGO accuracy by subtype × variant × model — WIS is universally fatal (W6 omitted; effective n=51)",
                  fontsize=10.5)
     # colorbar on right
     cb_ax = fig.add_axes([0.97, 0.10, 0.014, 0.78])

@@ -17,6 +17,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.stats import bootstrap_ci
+from probes.common.exclusions import filter_excluded
 
 np.random.seed(42)
 
@@ -42,7 +43,7 @@ MODEL_LABEL = {
 }
 SUBTYPE_ORDER = ["coin_change", "shortest_path", "wis"]
 SUBTYPE_LABEL = {"coin_change": "CC", "shortest_path": "SP", "wis": "WIS"}
-VARIANTS = ["canonical", "W1", "W2", "W3", "W4", "W6"]
+VARIANTS = ["canonical", "W1", "W2", "W3", "W4"]
 
 
 def _save(fig: plt.Figure, stem: str) -> None:
@@ -68,7 +69,7 @@ def _load_behavioral() -> pd.DataFrame:
     if missing:
         raise ValueError(f"behavioral files missing columns: {sorted(missing)}")
     df["verified_bool"] = df["verified"].astype(str).str.strip().str.lower().map({"true": 1.0, "false": 0.0})
-    return df
+    return filter_excluded(df, family="ALGO")
 
 
 def _load_bank_meta() -> pd.DataFrame:
@@ -293,7 +294,7 @@ def plot_contamination_scatter(beh: pd.DataFrame, bank: pd.DataFrame, contam: pd
             hi = np.percentile(arr, 97.5, axis=0)
             ax.fill_between(xs, lo, hi, color=P1_PRIMARY, alpha=0.15)
         ax.plot(xs, ys, color=P1_PRIMARY, linewidth=2, label="OLS trend")
-    ax.set_xlabel("instance_contamination_score")
+    ax.set_xlabel("instance_contamination_score (H3: this column is the gold-answer Infini-gram score, not instance text)")
     ax.set_ylabel("VAR(canonical)")
     ax.set_title("Figure 4 — Contamination vs canonical VAR")
     ax.legend()

@@ -23,6 +23,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+import sys
 
 import matplotlib
 
@@ -38,6 +39,9 @@ from scipy import stats
 # Paths and global style
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from probes.common.exclusions import filter_excluded  # noqa: E402
 RAW = ROOT / "results" / "raw"
 DER = ROOT / "results" / "derived"
 OUT = Path(__file__).resolve().parents[1]  # LLM Overleaf/figures
@@ -94,7 +98,8 @@ def _read_algo_p1(slug: str) -> pd.DataFrame:
     df = pd.read_csv(RAW / f"ALGO_P1_behavioral_{slug}.csv")
     if slug == "o1mini":
         df = df[df.model.astype(str).str.contains("o4-mini", case=False, na=False)]
-    return df.drop_duplicates(subset=["problem_id", "variant_type"])
+    df = df.drop_duplicates(subset=["problem_id", "variant_type"])
+    return filter_excluded(df, family="ALGO")
 
 
 BANK_GSM_PATH = ROOT / "data" / "problems" / "question_bank_gsm.csv"
@@ -219,13 +224,14 @@ def p1_acc(family: str, slug: str, model_label: str) -> dict[str, float]:
             out[v] = float(s.correct.mean()) if len(s) else float("nan")
         out["n_can"] = int((sub.variant_type == "canonical").sum())
         return out
-    # ALGO
+    # ALGO (W6 excluded: variant_not_transformed)
     df = _read_algo_p1(slug)
     df = df.assign(_ok=_correct_col(df).astype(int).values)
     out = {}
-    for v in ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]:
+    for v in ["canonical", "W1", "W2", "W3", "W4", "W5"]:
         sub = df[df.variant_type == v]
         out[v] = float(sub._ok.mean()) if len(sub) else float("nan")
+    out["W6"] = float("nan")
     out["n_can"] = int((df.variant_type == "canonical").sum())
     return out
 
@@ -236,9 +242,10 @@ def p1_acc_subtype(slug: str, problem_ids: list[str]) -> dict[str, float]:
     df = df[df.problem_id.isin(problem_ids)]
     df = df.assign(_ok=_correct_col(df).astype(int).values)
     out = {}
-    for v in ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]:
+    for v in ["canonical", "W1", "W2", "W3", "W4", "W5"]:
         sub = df[df.variant_type == v]
         out[v] = float(sub._ok.mean()) if len(sub) else float("nan")
+    out["W6"] = float("nan")
     out["n"] = int((df.variant_type == "canonical").sum())
     return out
 
@@ -253,9 +260,24 @@ def algo_adv_ids() -> dict[str, list[str]]:
             for sub in adv.problem_subtype.unique()}
 
 
+def _gsm_p2_with_overlay() -> pd.DataFrame:
+    p2 = pd.read_csv(RAW / "GSM_P2_cci.csv", dtype=str).fillna("")
+    if "session_b_correct" in p2.columns and "either_session_correct" not in p2.columns:
+        p2 = p2.rename(columns={"session_b_correct": "either_session_correct"})
+    ov_path = DER / "GSM_P2_session_correct.csv"
+    if ov_path.exists():
+        ov = pd.read_csv(ov_path, dtype=str).fillna("")
+        keep = [c for c in ("problem_id", "model", "either_session_correct", "phase1_correct", "phase2a_correct", "phase2b_correct") if c in ov.columns]
+        p2 = p2.drop(columns=[c for c in keep if c not in ("problem_id", "model") and c in p2.columns], errors="ignore")
+        p2 = p2.merge(ov[keep].drop_duplicates(["problem_id", "model"]), on=["problem_id", "model"], how="left")
+    p2["cci_score"] = pd.to_numeric(p2.get("cci_score"), errors="coerce")
+    p2["tep_score"] = pd.to_numeric(p2.get("tep_score"), errors="coerce")
+    return p2
+
+
 def gsm_p2_metrics() -> dict[str, dict[str, float]]:
     """Return per-model CCI/TEP/accuracy on GSM Probe 2 (n=44)."""
-    p2 = pd.read_csv(RAW / "GSM_P2_cci.csv")
+    p2 = _gsm_p2_with_overlay()
     out = {}
     for label, mid in MODEL_LONG.items():
         if label == "o4-mini":  # not run on Probe 2
@@ -263,14 +285,20 @@ def gsm_p2_metrics() -> dict[str, dict[str, float]]:
         s = p2[p2.model == mid]
         if len(s) == 0:
             continue
+        p2a = s["phase2a_correct"] if "phase2a_correct" in s.columns else pd.Series([""] * len(s))
+        acc = (
+            float(p2a.astype(str).str.lower().eq("true").mean())
+            if p2a.astype(str).str.strip().ne("").any()
+            else float("nan")
+        )
+        either = s["either_session_correct"] if "either_session_correct" in s.columns else s.get("session_b_correct", pd.Series([""] * len(s)))
         out[label] = {
             "n": len(s),
             "cci_mean": float(s.cci_score.mean()),
             "cci_med": float(s.cci_score.median()),
             "tep_mean": float(s.tep_score.mean()),
-            "acc": float(
-                s.session_b_correct.astype(str).str.lower().eq("true").mean()
-            ),
+            "acc": acc,
+            "either_session_correct": float(either.astype(str).str.lower().eq("true").mean()),
         }
     return out
 
@@ -303,7 +331,11 @@ def algo_p2b_response() -> dict[str, dict[str, float]]:
 
 
 def contam_vri_pearson() -> dict[str, tuple[float, float, int]]:
-    """ALGO adversarial: Pearson r of instance_contamination_score vs VRI."""
+    """ALGO adversarial: Pearson r of instance_contamination_score vs VRI.
+
+    H3: `instance_contamination_score` is the gold-answer Infini-gram score,
+    not an instance-text score. Do not read this as template-vs-instance.
+    """
     contam = pd.read_csv(RAW / "ALGO_P3_contamination.csv")[
         ["problem_id", "instance_contamination_score"]
     ]
@@ -551,11 +583,11 @@ def fig_decay() -> None:
     fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.0))
     fig.subplots_adjust(top=0.90, bottom=0.16, left=0.07, right=0.98, wspace=0.22)
 
-    variants = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
-    xlbl = ["Can", "W1", "W2", "W3", "W4", "W5", "W6"]
-    xx = np.arange(len(variants))
+    variants_gsm = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
+    xlbl_gsm = ["Can", "W1", "W2", "W3", "W4", "W5", "W6"]
+    xx_gsm = np.arange(len(variants_gsm))
 
-    # ---- (a) GSM ----
+    # ---- (a) GSM (W6 retained: 23/24 transformed) ----
     ax = axes[0]
     ax.set_title("(a) GSM: per-variant accuracy (n=44; GPT-4o/Llama n=20)", fontsize=10.5)
     # W3 shaded band
@@ -566,15 +598,15 @@ def fig_decay() -> None:
                          ("Llama-8B", "llama"), ("Gemini-2.5", "gemini"),
                          ("o4-mini", "o1mini")]:
         a = p1_acc("GSM", slug, label)
-        ys = [a[v] for v in variants]
+        ys = [a[v] for v in variants_gsm]
         ls = "--" if label == "o4-mini" else "-"
         mark = "*" if label == "o4-mini" else "o"
         ms = 8.5 if label == "o4-mini" else 5.5
-        ax.plot(xx, ys, ls=ls, marker=mark, lw=1.5, ms=ms,
+        ax.plot(xx_gsm, ys, ls=ls, marker=mark, lw=1.5, ms=ms,
                 color=COLOR[label], label=label + ("*" if label == "o4-mini" else ""),
                 markeredgecolor="white", markeredgewidth=0.5)
-    ax.set_xticks(xx)
-    ax.set_xticklabels(xlbl)
+    ax.set_xticks(xx_gsm)
+    ax.set_xticklabels(xlbl_gsm)
     ax.set_ylabel("Accuracy")
     ax.set_ylim(0, 1.05)
     ax.legend(fontsize=7.7, loc="lower left", ncol=2, framealpha=0.85,
@@ -583,9 +615,13 @@ def fig_decay() -> None:
             transform=ax.transAxes, ha="right", va="bottom", fontsize=7.5, color="gray")
     ax.spines[["top", "right"]].set_visible(False)
 
-    # ---- (b) ALGO challenging Claude vs GPT-4o, CC-chall + SP-chall ----
+    variants_algo = ["canonical", "W1", "W2", "W3", "W4", "W5"]
+    xlbl_algo = ["Can", "W1", "W2", "W3", "W4", "W5"]
+    xx_algo = np.arange(len(variants_algo))
+
+    # ---- (b) ALGO challenging Claude vs GPT-4o (W6 dropped: not transformed) ----
     ax2 = axes[1]
-    ax2.set_title("(b) Challenging ALGO subtypes (Claude vs. GPT-4o)",
+    ax2.set_title("(b) Challenging ALGO subtypes (Claude vs. GPT-4o)\nALGO effective n=51 after collapsing clones (reported on 110 IDs)",
                   fontsize=10.5)
     ax2.axvspan(2.6, 3.4, color="#d3d3d3", alpha=0.45, zorder=0)
     ax2.text(3.0, 1.04, "$W_3$", ha="center", fontsize=8.5, color="#555")
@@ -599,16 +635,16 @@ def fig_decay() -> None:
     ]
     for label, slug, ids, c, ls, mk in series:
         a = p1_acc_subtype(slug, ids)
-        ys = [a[v] for v in variants]
-        ax2.plot(xx, ys, ls=ls, marker=mk, lw=1.5, ms=5.5, color=c, label=label,
+        ys = [a[v] for v in variants_algo]
+        ax2.plot(xx_algo, ys, ls=ls, marker=mk, lw=1.5, ms=5.5, color=c, label=label,
                  markeredgecolor="white", markeredgewidth=0.5)
     # Claude SP collapse annotation
     ax2.annotate("Claude SP $\\to$ 0% at $W_3$",
                  xy=(3, 0.0), xytext=(4.0, 0.18),
                  fontsize=7.8, color="#444",
                  arrowprops=dict(arrowstyle="->", color="#888", lw=0.7))
-    ax2.set_xticks(xx)
-    ax2.set_xticklabels(xlbl)
+    ax2.set_xticks(xx_algo)
+    ax2.set_xticklabels(xlbl_algo)
     ax2.set_ylabel("Accuracy")
     ax2.set_ylim(-0.02, 1.05)
     ax2.legend(fontsize=7.7, loc="upper right", framealpha=0.85,
@@ -743,7 +779,14 @@ def fig_cci() -> None:
     o4_cci_mean = pd.to_numeric(o4_par["cci_score"], errors="coerce").mean()
     o4_cci_med  = pd.to_numeric(o4_par["cci_score"], errors="coerce").median()
     o4_tep_mean = pd.to_numeric(o4_par["tep_score"], errors="coerce").mean()
-    o4_acc = (o4_df["session_b_correct"].str.lower() == "true").mean()
+    o4_acc = float("nan")
+    ov_path = DER / "GSM_P2_session_correct.csv"
+    if ov_path.exists():
+        ov = pd.read_csv(ov_path, dtype=str).fillna("")
+        o4_ov = ov[ov.model.astype(str).str.contains("o4-mini", case=False)]
+        p2a = o4_ov["phase2a_correct"] if "phase2a_correct" in o4_ov.columns else pd.Series(dtype=str)
+        if len(p2a) and p2a.astype(str).str.strip().ne("").any():
+            o4_acc = float(p2a.astype(str).str.lower().eq("true").mean())
 
     cci_mean = [p2[m]["cci_mean"] for m in p2_models] + [o4_cci_mean]
     cci_med  = [p2[m]["cci_med"]  for m in p2_models] + [o4_cci_med]
@@ -781,7 +824,7 @@ def fig_cci() -> None:
 
     # (b) TEP
     ax2 = axes[1]
-    ax2.set_title("(b) Trajectory error propagation\nGSM, n=44", fontsize=10.5)
+    ax2.set_title("(b) Trajectory error propagation\nGSM, n=44; Acc_P2A not stored", fontsize=10.5)
     ax2.bar(x, np.nan_to_num(tep_mean, nan=0.0), color=colors, alpha=0.88, width=0.55,
             edgecolor="white", lw=0.6)
     ax2.set_xticks(x)

@@ -7,7 +7,9 @@ Removed metrics (paper refactor — not named paper outputs):
   greedy_assessment_correct remain in phase1 CSVs), VWC (moved to
   scripts/exploratory/compute_vwc_exploratory.py).
 
-Primary CSV outputs: VAR, W6_Gap (ALGO family).
+Primary CSV outputs: VAR (W6 omitted: ALGO W6 is excluded as variant_not_transformed).
+ALGO accuracies use 110 canonical IDs; clone audit effective n is 51
+(results/derived/bank_clone_audit.csv) — treat n=110 as non-independent.
 Intermediate (not written to CSV): _std_adv_gap_internal per model/subtype.
 """
 
@@ -26,7 +28,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.stats import bootstrap_ci
-from probes.contamination.verify_algo import verify_algo
+from probes.common.exclusions import filter_excluded  # noqa: E402
 
 
 def _to_bool(val: object) -> bool:
@@ -186,10 +188,13 @@ def main() -> None:
     merged["verified_bool"] = reverified
     merged["subtype"] = merged["problem_subtype"]
     merged["instance_type"] = merged["difficulty_params_instance_type"]
+    merged = filter_excluded(merged, family="ALGO")
 
     metric_rows: list[dict] = []
 
     for (model, subtype, variant), g in merged.groupby(["model", "subtype", "variant_type"]):
+        if str(variant).upper() == "W6":
+            continue
         vals = g["verified_bool"].astype(float).tolist()
         mean = float(np.mean(vals))
         lo, hi = bootstrap_ci(vals, n_resamples=args.bootstrap_n)
@@ -214,24 +219,6 @@ def main() -> None:
         if not std_canon.empty and not adv_canon.empty:
             # kept for prose reporting, not a named paper metric
             _std_adv_gap_internal = float(std_canon.mean() - adv_canon.mean())  # noqa: F841
-
-    for (model, subtype), g in merged.groupby(["model", "subtype"]):
-        c = g[g["variant_type"] == "canonical"]["verified_bool"].astype(float).to_numpy()
-        w6 = g[g["variant_type"] == "W6"]["verified_bool"].astype(float).to_numpy()
-        if len(c) == 0 or len(w6) == 0:
-            continue
-        w6_gap = float(np.mean(c) - np.mean(w6))
-        lo, hi = _bootstrap_diff(c, w6, args.bootstrap_n)
-        _add_metric(
-            metric_rows,
-            model=model,
-            subtype=subtype,
-            variant_type="W6",
-            metric_name="W6_Gap",
-            metric_value=w6_gap,
-            ci_lower=lo,
-            ci_upper=hi,
-        )
 
     out_df = pd.DataFrame(
         metric_rows, columns=["model", "subtype", "variant_type", "metric_name", "metric_value", "ci_lower", "ci_upper"]

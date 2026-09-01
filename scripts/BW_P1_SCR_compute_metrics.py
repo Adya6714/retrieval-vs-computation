@@ -24,6 +24,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.stats import bootstrap_ci
+from probes.common.exclusions import filter_excluded
 
 
 def _bw_standard_blocksworld_mask(problem_id: pd.Series) -> pd.Series:
@@ -70,11 +71,14 @@ def main() -> None:
     df["correct"] = _to_bool(df["behavioral_correct"])
     df["variant_type"] = df["variant_type"].astype(str).str.strip().str.lower()
     df["instance_set"] = df["problem_id"].map(_instance_set)
+    df = filter_excluded(df, family="BW")
 
     rows: list[dict] = []
     for (model, variant, instance_set), g in df.groupby(
         ["model", "variant_type", "instance_set"], dropna=False
     ):
+        if str(variant).lower() == "w6":
+            continue
         vals = g["correct"].dropna().astype(float).to_numpy()
         if len(vals) == 0:
             continue

@@ -43,6 +43,22 @@ VARIANTS = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
 
 sys.path.insert(0, str(ROOT))
 from scripts.runs.coverage_audit import filter_p1_to_bank, load_gsm_p2_merged, _norm_variant  # noqa: E402
+from probes.common.exclusions import filter_excluded  # noqa: E402
+
+
+def _either_session_col(df: pd.DataFrame) -> pd.Series:
+    """Old session_b_correct was phase2a OR phase1. Prefer the renamed column."""
+    if "either_session_correct" in df.columns:
+        return df["either_session_correct"]
+    if "session_b_correct" in df.columns:
+        return df["session_b_correct"]
+    return pd.Series([""] * len(df), index=df.index)
+
+
+def _phase2a_col(df: pd.DataFrame) -> pd.Series:
+    if "phase2a_correct" in df.columns:
+        return df["phase2a_correct"]
+    return pd.Series([""] * len(df), index=df.index)
 
 
 def _read(path: Path) -> pd.DataFrame:
@@ -291,7 +307,7 @@ def load_bw_p1_paper(model: str) -> pd.DataFrame:
     df["variant_type"] = _norm_var_series(df["variant_type"])
     df = df[_valid_mask(df)].drop_duplicates(["problem_id", "variant_type"], keep="last")
     df = filter_p1_to_bank(df, "BW")
-    return df
+    return filter_excluded(df, family="BW")
 
 
 def load_algo_p1_paper(model: str, drop_mock_rows: bool = True) -> pd.DataFrame:
@@ -300,7 +316,7 @@ def load_algo_p1_paper(model: str, drop_mock_rows: bool = True) -> pd.DataFrame:
         df = drop_mock(df)
     df = df[_valid_mask(df)].drop_duplicates(["problem_id", "variant_type"], keep="last")
     df = filter_p1_to_bank(df, "ALGO")
-    return df
+    return filter_excluded(df, family="ALGO")
 
 
 def acc_k_n(df: pd.DataFrame, variant: str, id_set: set[str] | None = None):
@@ -329,9 +345,12 @@ def family_var(family: str) -> pd.DataFrame:
         k, n, a = acc_k_n(df, "canonical")
         rec["n_problems"] = n
         rec["canonical"] = a
-        for v in ["W1", "W2", "W3", "W4", "W5", "W6"]:
+        variants = ["W1", "W2", "W3", "W4", "W5"] if family in {"ALGO", "BW"} else ["W1", "W2", "W3", "W4", "W5", "W6"]
+        for v in variants:
             _, _, av = acc_k_n(df, v)
             rec[v] = av
+        if family in {"ALGO", "BW"}:
+            rec["W6"] = float("nan")
         if family == "GSM" and model in {"GPT-4o", "Llama"}:
             rawdf = _read(RAW / f"GSM_P1_behavioral_{TAG[model]}.csv")
             rawdf["variant_type"] = _norm_var_series(rawdf["variant_type"])
@@ -394,6 +413,11 @@ for slice_name, (subtype, inst) in SLICE.items():
     for model in ["Claude", "GPT-4o", "Gemini", "Llama"]:
         rec = {"family": "ALGO", "slice": slice_name, "model": model}
         for v in VARIANTS:
+            if v == "W6":
+                rec[f"{v}_k"] = None
+                rec[f"{v}_n"] = None
+                rec[v] = None
+                continue
             k, n, a = frozen_cell(FMAP[model], subtype, inst, v)
             rec[f"{v}_k"] = k
             rec[f"{v}_n"] = n
@@ -403,6 +427,11 @@ for slice_name, (subtype, inst) in SLICE.items():
     df = load_algo_p1_paper("o4-mini")
     rec = {"family": "ALGO", "slice": slice_name, "model": "o4-mini"}
     for v in VARIANTS:
+        if v == "W6":
+            rec[f"{v}_k"] = None
+            rec[f"{v}_n"] = None
+            rec[v] = None
+            continue
         k, n, a = acc_k_n(df, v, ids)
         rec[f"{v}_k"] = k
         rec[f"{v}_n"] = n
@@ -551,7 +580,15 @@ t4 = {
 for model, (pa, pcci, pmed, ptep) in t4.items():
     sub = p2[p2["model"] == LONG[model]] if not p2.empty else pd.DataFrame()
     n = len(sub)
-    acc = _is_true(sub["session_b_correct"]).mean() if n else float("nan")
+    acc = _is_true(_either_session_col(sub)).mean() if n else float("nan")
+    acc_p2a = _phase2a_col(sub)
+    acc_p2a_rate = (
+        _is_true(acc_p2a).mean()
+        if n and acc_p2a.astype(str).str.strip().ne("").any()
+        else float("nan")
+    )
+    # Acc_P2A is phase2a_correct. The published cell used the disjunction
+    # (either_session_correct). Report Acc_P2A from phase2a when present.
     cci = pd.to_numeric(sub.get("cci_score", pd.Series(dtype=float)), errors="coerce")
     tep = pd.to_numeric(sub.get("tep_score", pd.Series(dtype=float)), errors="coerce")
     if model == "o4-mini":
@@ -565,7 +602,7 @@ for model, (pa, pcci, pmed, ptep) in t4.items():
         npar = len(par)
         note = f"parseable {npar}/{len(o4raw)}; merged GSM_P2 drops phase1_parseable so rederive prints unfiltered mean"
         n = len(o4raw)
-        acc = _is_true(o4raw["session_b_correct"]).mean() if n else float("nan")
+        acc = _is_true(_either_session_col(o4raw)).mean() if n else float("nan")
     elif model == "o4-mini" and "phase1_parseable" in sub.columns:
         par = sub[_is_true(sub["phase1_parseable"])]
         cci_use = pd.to_numeric(par["cci_score"], errors="coerce")
@@ -576,7 +613,16 @@ for model, (pa, pcci, pmed, ptep) in t4.items():
         cci_use, tep_use, npar = cci, tep, n
         note = f"n={n}"
     raw = "GSM_P2_cci.csv + GSM_P2_phase1_o1mini.csv"
-    addn(f"Table 4 {model} Acc_P2A", "Table 4", pa, acc, raw, "all GSM P2 sessions", f"{int(_is_true(sub['session_b_correct']).sum())}/{n}", nd=3)
+    addn(
+        f"Table 4 {model} Acc_P2A",
+        "Table 4",
+        pa,
+        acc_p2a_rate,
+        raw,
+        "phase2a_correct; unrecoverable if blank (old cell was either_session_correct)",
+        f"either={acc:.3f}" if n else "",
+        nd=3,
+    )
     filt_t4 = "o4-mini: parseable subset" if model == "o4-mini" else "full n=44"
     addn(f"Table 4 {model} CCI mean", "Table 4", pcci, float(cci_use.mean()), raw, filt_t4, note, nd=3)
     addn(f"Table 4 {model} CCI median", "Table 4", pmed, float(cci_use.median()), raw, filt_t4, note, nd=3)
@@ -661,34 +707,34 @@ t7_algo = {
         "Llama": [".200", ".100", ".400", ".000", ".200", None, None],
     },
     "CC-std.": {
-        "Claude": [".267", ".467", ".067", ".200", ".667", None, ".067"],
-        "GPT-4o": [".267", ".400", ".000", ".067", ".867", None, ".200"],
-        "Gemini": [".267", ".133", ".000", ".000", ".267", None, ".267"],
-        "Llama": [".000", ".067", ".067", ".000", ".000", None, ".067"],
+        "Claude": [".267", ".467", ".067", ".200", ".667", None, None],
+        "GPT-4o": [".267", ".400", ".000", ".067", ".867", None, None],
+        "Gemini": [".267", ".133", ".000", ".000", ".267", None, None],
+        "Llama": [".000", ".067", ".067", ".000", ".000", None, None],
     },
     "SP-chall.": {
-        "Claude": [".647", ".618", ".676", ".000", ".824", ".000", ".258"],
-        "GPT-4o": [".412", ".529", ".147", ".265", ".588", ".000", ".258"],
-        "Gemini": [".676", ".441", ".235", ".324", ".559", ".032", ".129"],
-        "Llama": [".059", ".147", ".029", ".000", ".088", ".000", ".065"],
+        "Claude": [".647", ".618", ".676", ".000", ".824", ".000", None],
+        "GPT-4o": [".412", ".529", ".147", ".265", ".588", ".000", None],
+        "Gemini": [".676", ".441", ".235", ".324", ".559", ".032", None],
+        "Llama": [".059", ".147", ".029", ".000", ".088", ".000", None],
     },
     "SP-std.": {
-        "Claude": [".000", ".190", ".667", ".048", ".952", ".000", ".000"],
-        "GPT-4o": [".714", ".667", ".048", ".429", ".524", ".000", ".368"],
-        "Gemini": [".619", ".762", ".762", ".476", ".857", ".000", ".263"],
-        "Llama": [".048", ".095", ".000", ".000", ".143", ".000", ".105"],
+        "Claude": [".000", ".190", ".667", ".048", ".952", ".000", None],
+        "GPT-4o": [".714", ".667", ".048", ".429", ".524", ".000", None],
+        "Gemini": [".619", ".762", ".762", ".476", ".857", ".000", None],
+        "Llama": [".048", ".095", ".000", ".000", ".143", ".000", None],
     },
     "WIS-chall.": {
-        "Claude": [".353", ".176", ".118", ".000", ".059", None, ".000"],
-        "GPT-4o": [".353", ".176", ".000", ".000", ".000", None, ".000"],
-        "Gemini": [".353", ".176", ".000", ".000", ".000", None, ".000"],
-        "Llama": [".059", ".000", ".000", ".059", ".000", None, ".000"],
+        "Claude": [".353", ".176", ".118", ".000", ".059", None, None],
+        "GPT-4o": [".353", ".176", ".000", ".000", ".000", None, None],
+        "Gemini": [".353", ".176", ".000", ".000", ".000", None, None],
+        "Llama": [".059", ".000", ".000", ".059", ".000", None, None],
     },
     "WIS-std.": {
-        "Claude": [".077", ".231", ".231", ".000", ".077", None, ".000"],
-        "GPT-4o": [".154", ".231", ".000", ".000", ".000", None, ".000"],
-        "Gemini": [".000", ".000", ".231", ".000", ".000", None, ".000"],
-        "Llama": [".000", ".000", ".000", ".077", ".000", None, ".000"],
+        "Claude": [".077", ".231", ".231", ".000", ".077", None, None],
+        "GPT-4o": [".154", ".231", ".000", ".000", ".000", None, None],
+        "Gemini": [".000", ".000", ".231", ".000", ".000", None, None],
+        "Llama": [".000", ".000", ".000", ".077", ".000", None, None],
     },
 }
 for slice_name, models in t7_algo.items():
@@ -704,19 +750,21 @@ for slice_name, models in t7_algo.items():
                  f"{k}/{n}" if k is not None else "missing frozen cell", nd=3)
 
 t7_bw = {
-    "Claude": [".154", ".062", ".231", ".138", ".015", ".523", ".508"],
-    "GPT-4o": [".062", ".092", ".092", ".169", ".077", ".246", ".215"],
-    "Gemini": [".385", ".138", ".108", ".108", ".031", ".569", ".338"],
-    "Llama": [".015", ".031", ".015", ".108", ".000", ".000", ".031"],
-    "o4-mini": [".769", ".754", ".738", ".185", ".415", ".769", ".769"],
+    "Claude": [".154", ".062", ".231", ".138", ".015", ".567", None],
+    "GPT-4o": [".062", ".092", ".092", ".169", ".077", ".267", None],
+    "Gemini": [".385", ".138", ".108", ".108", ".031", ".617", None],
+    "Llama": [".015", ".031", ".015", ".108", ".000", ".000", None],
+    "o4-mini": [".769", ".754", ".738", ".185", ".415", ".833", None],
 }
 for model, vals in t7_bw.items():
     df = load_bw_p1_paper(model)
     for v, pv in zip(VARIANTS, vals):
+        if pv is None:
+            continue
         k, n, a = acc_k_n(df, v)
         addn(f"Table 7 BW {model} {v}", "Table 7", pv, a,
              f"BW_P1_behavioral.csv / BW_P1_behavioral_{TAG[model]}.csv",
-             "filter_p1_to_bank(BW) n=65 PlanBench IDs; drop mock", f"{k}/{n}", nd=3)
+             "filter_p1_to_bank(BW) n=65 PlanBench IDs; drop mock; exclude variant_not_transformed", f"{k}/{n}", nd=3)
 
 # ---- Table 9 ----
 tri3 = _read(DER / "ALGO_P3_triangulation_v3.csv")
@@ -901,21 +949,22 @@ addn("Setup o4-mini BW W3", "§3 / Setup", "0.185", aw, "BW_P1_behavioral_o1mini
 # bank sizes
 addn("GSM bank n", "§3 / Conclusion", "44", len(GSM_BANK_CANON), "data/problems/question_bank_gsm.csv", "canonical IDs", nd=0)
 addn("BW bank n", "§3 / Conclusion", "65", len(BW_BANK_CANON), "data/problems/question_bank_bw.csv", "canonical IDs", nd=0)
-addn("ALGO bank n", "§3 / Conclusion", "110", int(algo_can["problem_id"].nunique()), "data/problems/question_bank_algo.csv", "canonical IDs", nd=0)
+addn("ALGO bank n", "§3 / Conclusion", "110", int(algo_can["problem_id"].nunique()), "data/problems/question_bank_algo.csv", "canonical IDs; clone-audit effective n=51", nd=0)
 addn("Full bank 219", "Abstract / Conclusion", "219", 44 + 65 + 110, "three question banks", "44+65+110", nd=0)
 
 # ---- §4.2 CCI ----
 addn("§4.2 Claude mean CCI ~23%", "§4.2", "23%", float(cl_cci.mean()), "GSM_P2_cci.csv", "n=44", nd=0)
 addn("§4.2 GPT-4o mean CCI ~11%", "§4.2", "11%", float(gp_cci.mean()), "GSM_P2_cci.csv", "n=44", nd=0)
 addn("§4.2 GPT-4o Acc_P2A 70.5%", "§4.2 / Conclusion", "70.5%",
-     float(_is_true(gp["session_b_correct"]).mean()), "GSM_P2_cci.csv", "n=44", nd=1)
+     float(_is_true(_phase2a_col(gp)).mean()) if _phase2a_col(gp).astype(str).str.strip().ne("").any() else float("nan"),
+     "GSM_P2_session_correct.csv", "phase2a_correct (unrecoverable from stored files)", nd=1)
 addn("Conclusion GPT-4o ~70%", "Conclusion", "70%",
-     float(_is_true(gp["session_b_correct"]).mean()), "GSM_P2_cci.csv", "n=44", nd=0)
+     float(_is_true(_either_session_col(gp)).mean()), "GSM_P2_cci.csv", "either_session_correct (was labelled Acc_P2A)", nd=0)
 addn("Conclusion Claude GSM CCI", "Conclusion", "0.231", float(cl_cci.mean()), "GSM_P2_cci.csv", "n=44", nd=3)
 
 # rho declaration vs correctness Claude
 cl_num = pd.to_numeric(cl["cci_score"], errors="coerce")
-cl_ok = _is_true(cl["session_b_correct"]).astype(int)
+cl_ok = _is_true(_either_session_col(cl)).astype(int)
 rho_cc, p_cc = stats.spearmanr(cl_num.fillna(0), cl_ok)
 addn("§4.2 Claude CCI vs correctness rho", "§4.2", "0.14", float(rho_cc), "GSM_P2_cci.csv", "n=44", nd=2)
 addn("§4.2 Claude CCI vs correctness p", "§4.2", "0.38", float(p_cc), "GSM_P2_cci.csv", "n=44", nd=2)
@@ -935,9 +984,9 @@ if "cci_total" in gp.columns:
          "GSM_P2_cci.csv", "cci_score==0 and cci_total==0", f"n_zero={len(zero)}", nd=0)
     addn("§4.2 GPT-4o zero-CCI declared-then-diverged", "§4.2", "12", len(zero) - n_empty,
          "GSM_P2_cci.csv", "cci_score==0 and cci_total>0", nd=0)
-    empty_acc = _is_true(zero[pd.to_numeric(zero["cci_total"], errors="coerce").fillna(0) == 0]["session_b_correct"]).mean() if n_empty else float("nan")
+    empty_acc = _is_true(_either_session_col(zero[pd.to_numeric(zero["cci_total"], errors="coerce").fillna(0) == 0])).mean() if n_empty else float("nan")
     div = zero[pd.to_numeric(zero["cci_total"], errors="coerce").fillna(0) > 0]
-    div_acc = _is_true(div["session_b_correct"]).mean() if len(div) else float("nan")
+    div_acc = _is_true(_either_session_col(div)).mean() if len(div) else float("nan")
     addn("§4.2 GPT-4o empty-declaration Acc", "§4.2", "0.69", empty_acc, "GSM_P2_cci.csv", "17/29", nd=2)
     addn("§4.2 GPT-4o diverged Acc", "§4.2", "0.73", div_acc, "GSM_P2_cci.csv", "12/29", nd=2)
 
@@ -1361,6 +1410,8 @@ diff_paper_lines.append("### BW (regenerated BW_VAR_5model.csv vs Table 7)")
 for _, r in bw_var.iterrows():
     m = mmap[r["model_name"]]
     for v, key in zip(VARIANTS, ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]):
+        if v == "W6":
+            continue
         paper = t7_bw[m][VARIANTS.index(v)]
         reco = r[key]
         st = match_num(paper, reco, nd=3)

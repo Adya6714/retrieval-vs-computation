@@ -16,7 +16,6 @@ if str(_FIG) not in sys.path:
 from _common import (
     MODEL_LABELS,
     MODEL_ORDER,
-    P1_ACCENT_BLUE,
     P1_LIGHT_BLUE,
     P1_PRIMARY_BLUE,
     bootstrap_ci_bool,
@@ -45,10 +44,10 @@ def main():
     df = df[df["model"].astype(str).str.lower() != "mock"].copy()
     df = df[bw_standard_blocksworld_mask(df["problem_id"])].copy()
     x = np.arange(len(MODEL_ORDER))
-    width = 0.24
-    variants = ["canonical", "W5", "W6"]
-    colors = [P1_LIGHT_BLUE, P1_PRIMARY_BLUE, P1_ACCENT_BLUE]
-    labels = ["Forward / canonical", "W5 Reversal / teardown", "W6 Procedural regeneration"]
+    width = 0.32
+    variants = ["canonical", "W5"]
+    colors = [P1_LIGHT_BLUE, P1_PRIMARY_BLUE]
+    labels = ["Forward / canonical", "W5 Reversal / teardown"]
 
     fig, ax = plt.subplots(figsize=(10, 5))
     by_model = {}
@@ -63,7 +62,7 @@ def main():
             yerr_high.append(0 if np.isnan(mean) or np.isnan(hi) else max(hi - mean, 0))
             by_model.setdefault(m, {})[v] = mean
         ax.bar(
-            x + (i - 1) * width,
+            x + (i - 0.5) * width,
             means,
             width,
             label=lbl,
@@ -83,7 +82,7 @@ def main():
     ax.set_xticklabels([MODEL_LABELS[m] for m in MODEL_ORDER], fontsize=11)
     ax.set_ylim(0, 1.08)
     ax.set_ylabel("VAR (0–1)")
-    ax.set_title("Figure 2 — Planning Direction Asymmetry (PDAS)")
+    ax.set_title("Figure 2 — Planning Direction Asymmetry (PDAS)\nW6 omitted (BW W6 is variant_not_transformed)")
     ax.legend(fontsize=9)
     ax.spines[["top", "right"]].set_visible(False)
     fig.suptitle(
