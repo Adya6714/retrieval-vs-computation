@@ -1,0 +1,9 @@
+rule,description,panel,retrieval,computation,mixed,ambiguous,n
+appendix_printed,"three-signal conjunction: W3 in {0,1}, CCI bands 0.10/0.67, contamination floor vs p75; mixed=conflict; ambiguous=remainder. No greedy_succeeds. Symmetric W3.",ALGO_P3_triangulation_v3.csv,15,1,300,124,440
+executed,5-field AND: canonical>0.5 AND W3<0.2 AND high contam AND greedy_succeeds (retrieval); W3>0.5 AND ACI>0.5 AND low contam (computation); missing_core|parse|missing_phase2 → ambiguous. Asymmetric W3 cuts 0.2/0.5.,ALGO_P3_triangulation_v3.csv,8,4,157,271,440
+file_convergence_label,labels already stored on the panel CSV,ALGO_P3_triangulation_v3.csv,8,4,157,271,440
+executed_on_rescored_p1,executed rule after overlaying included=True rescored VAR_canonical / VAR_W3,ALGO_P3_triangulation_v3.csv+rescored_p1,8,4,157,271,440
+appendix_on_rescored_p1,appendix-printed rule after the same P1 overlay,ALGO_P3_triangulation_v3.csv+rescored_p1,15,1,270,154,440
+reference_current_paper_working_set,"user-stated current labels to beat {ambiguous 205, mixed 115, retrieval 6, computation 4}",working_set,6,4,115,205,330
+executed_on_rescored_p1_3model,executed rule on Claude/GPT-4o/Llama after P1 overlay (n=330),ALGO_P3_triangulation_v3.csv+rescored_p1_3model,6,4,115,205,330
+file_convergence_label_3model,stored labels on Claude/GPT-4o/Llama subset of the same panel,ALGO_P3_triangulation_v3.csv_3model,6,4,115,205,330
