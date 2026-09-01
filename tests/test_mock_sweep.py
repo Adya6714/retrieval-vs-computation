@@ -6,7 +6,7 @@ import pytest
 from probes.behavioral.mock_client import MockClient
 from probes.behavioral.css import compute_css
 from probes.behavioral.cci import compute_cci
-from scripts.run_contamination_triage import run_triage
+from scripts.BW_P3_SCR_run_contamination_triage import run_triage
 
 
 def test_mock_client_complete_returns_expected_keys():
@@ -53,10 +53,10 @@ def test_css_on_mock_responses():
     assert res["variants_evaluated"] == 3
 
 
-def test_css_raises_on_w6():
-    """Test compute_css intentionally crashes if mistakenly passed W6 Reversal variant flags."""
+def test_css_raises_on_w5():
+    """compute_css is undefined for W5 reversal variants and must refuse them."""
     variant_responses = [
-        {"variant_type": "W6", "model_answer": "42", "correct_answer": "42"}
+        {"variant_type": "W5", "model_answer": "42", "correct_answer": "42"}
     ]
     with pytest.raises(ValueError):
         compute_css("P1", "42", variant_responses, "gsm")
@@ -103,14 +103,14 @@ def test_triage_writes_csv(tmp_path, monkeypatch):
             "verifier_function": "verify_gsm", "difficulty_params": "", "notes": ""
         })
         
-    def mock_score_problem(text):
+    def mock_score_problem(*args, **kwargs):
         return {
             "max_ngram_length": 5, 
             "max_ngram_count": 10, 
             "contamination_score": 0.5
         }
         
-    monkeypatch.setattr("scripts.run_contamination_triage.score_problem", mock_score_problem)
+    monkeypatch.setattr("scripts.BW_P3_SCR_run_contamination_triage.score_problem", mock_score_problem)
     
     run_triage(input_path=input_file, output_path=output_file, limit=2)
     
