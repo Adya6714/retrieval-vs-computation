@@ -76,8 +76,9 @@ def load_data(args: argparse.Namespace) -> dict[str, pd.DataFrame]:
         bw_metrics = pd.read_csv(bw_path, dtype=str).fillna("")
 
     phase1 = pd.DataFrame()
-    if getattr(args, "phase1_results", None):
-        phase1 = _load_phase1(args.phase1_results)
+    phase1_paths = [p for p in (getattr(args, "phase1_results", None) or []) if Path(p).exists()]
+    if phase1_paths:
+        phase1 = _load_phase1(phase1_paths)
 
     per_instance_cci = pd.DataFrame()
     if getattr(args, "per_instance_cci", None):
@@ -459,8 +460,13 @@ def main() -> None:
     parser.add_argument(
         "--phase1-results",
         nargs="+",
-        default=None,
-        help="ALGO Phase1 CSVs with greedy_assessment_correct and critical_point_identified.",
+        default=[
+            "results/raw/ALGO_P2_phase1_claude_new.csv",
+            "results/raw/ALGO_P2_phase1_gpt4o_new.csv",
+            "results/raw/ALGO_P2_phase1_llama_new.csv",
+            "results/raw/ALGO_P2_phase1_gemini.csv",
+        ],
+        help="Authoritative 110-row Phase1 CSVs (not the 20-row gpt4o/llama pilots).",
     )
     parser.add_argument(
         "--per-instance-cci",

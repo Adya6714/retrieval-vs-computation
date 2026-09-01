@@ -203,8 +203,10 @@ def p1_transition_metrics(p1: pd.DataFrame) -> pd.DataFrame:
 
 
 def _iter_phase1_files() -> Iterable[Path]:
-    for p in sorted(RAW.glob("ALGO_P2_phase1_*.csv")):
-        if p.stat().st_size > 0:
+    from probes.common.results_paths import algo_p2_phase1_files
+
+    for p in algo_p2_phase1_files():
+        if p.exists() and p.stat().st_size > 0:
             yield p
 
 

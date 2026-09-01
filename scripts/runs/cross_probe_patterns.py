@@ -229,7 +229,7 @@ def implausibility_detection() -> pd.DataFrame:
 
 def stated_algorithm_rate() -> pd.DataFrame:
     parts = []
-    for tag in ["claude_new","gemini","gpt4o","gpt4o_new","llama","llama_new"]:
+    for tag in ["claude_new", "gemini", "gpt4o_new", "llama_new"]:
         p = RAW / f"ALGO_P2_phase1_{tag}.csv"
         if not p.exists(): continue
         df = pd.read_csv(p, dtype=str).fillna("")

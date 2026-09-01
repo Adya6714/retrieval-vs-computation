@@ -748,9 +748,10 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
 
 def load_phase1_algo() -> pd.DataFrame:
     order = [
-        "ALGO_P2_phase1_gpt4o.csv", "ALGO_P2_phase1_llama.csv",
-        "ALGO_P2_phase1_claude_new.csv", "ALGO_P2_phase1_gpt4o_new.csv",
-        "ALGO_P2_phase1_llama_new.csv", "ALGO_P2_phase1_gemini.csv",
+        "ALGO_P2_phase1_claude_new.csv",
+        "ALGO_P2_phase1_gpt4o_new.csv",
+        "ALGO_P2_phase1_llama_new.csv",
+        "ALGO_P2_phase1_gemini.csv",
     ]
     parts = [_drop_mock(_read(RAW / n)) for n in order]
     parts = [p for p in parts if not p.empty]

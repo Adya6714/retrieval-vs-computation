@@ -241,8 +241,6 @@ def load_phase2_injected() -> pd.DataFrame:
 def load_phase1_declarations() -> pd.DataFrame:
     """Prefer *_new files by concatenating old then new (keep=last)."""
     order = [
-        "ALGO_P2_phase1_gpt4o.csv",
-        "ALGO_P2_phase1_llama.csv",
         "ALGO_P2_phase1_claude_new.csv",
         "ALGO_P2_phase1_gpt4o_new.csv",
         "ALGO_P2_phase1_llama_new.csv",
