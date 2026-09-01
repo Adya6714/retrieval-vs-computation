@@ -154,7 +154,7 @@ Filter any P1 behavioral CSV: `variant_type == 'W3'` (etc.).
 | Metric | Formula / module | Primary derived file |
 |--------|------------------|---------------------|
 | **VAR(v)** | mean(`behavioral_correct`) for variant v, model m | `probe1_per_model_variant.csv` |
-| **W3 retention** | VAR(W3) / VAR(canonical) | `probe1_w3_retention.csv` |
+| **W3 retention** | Acc_W3 / Acc_canonical; null when Acc_canonical < `MIN_CANONICAL_FOR_RETENTION` (0.30) | `P1_retention_floor_report.csv`, `probe1_w3_retention.csv` |
 | **CSS** | per-problem: fraction of {W1,W2,W3,W4,W6} matching canonical | `GSM_P1_RES_css.csv`, ALGO metrics |
 | **VRI** | mean(VAR(W1), VAR(W2), VAR(W4)) − VAR(W3) | `vri_analysis.csv`, `contamination_vri_algo_adversarial.csv` |
 | **RCS** | W5 accuracy alone | `GSM_P1_RES_rcs.csv` |

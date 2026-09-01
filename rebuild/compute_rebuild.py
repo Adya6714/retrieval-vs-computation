@@ -36,7 +36,10 @@ from scripts.ALGO_P2_SCR_compute_metrics import (  # noqa: E402
     _optimal_for_step,
     _phase1_intent,
 )
-from scripts.runs.coverage_audit import _norm_variant, filter_p1_to_bank  # noqa: E402
+from probes.behavioral.retention import (  # noqa: E402
+    MIN_CANONICAL_FOR_RETENTION,
+    retention_ratio,
+)
 from triangulation_rule import (  # noqa: E402
     CCI_COMPUTATION_MIN,
     CCI_THRESHOLDS,
@@ -316,6 +319,21 @@ def add(**kwargs) -> None:
     ROWS.append(row)
 
 
+def _retention_value(a_w3, a_can, n_can, n_w3):
+    if not n_can or not n_w3:
+        return "NOT_COMPUTABLE", "missing canonical or W3"
+    ret, reason = retention_ratio(a_w3, a_can)
+    if ret is None:
+        note = reason
+        if reason == "canonical_below_floor":
+            note = (
+                f"canonical_below_floor "
+                f"(MIN_CANONICAL_FOR_RETENTION={MIN_CANONICAL_FOR_RETENTION})"
+            )
+        return "undefined", note
+    return ret, ""
+
+
 def add_nc(id_: str, *, probe, phase="", family="", subtype="", model="", variant="",
            metric="", source_file="", filter_applied="", note="") -> None:
     add(id=id_, probe=probe, phase=phase, family=family, subtype=subtype, model=model,
@@ -500,12 +518,7 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
         w3 = df[df["variant_type"] == "W3"]
         _, n_can, a_can, _, _ = _acc_row(can)
         _, n_w3, a_w3, _, _ = _acc_row(w3)
-        if n_can and a_can == 0:
-            ret, note = "undefined", "canonical accuracy is 0"
-        elif n_can and n_w3:
-            ret, note = a_w3 / a_can, ""
-        else:
-            ret, note = "NOT_COMPUTABLE", "missing canonical or W3"
+        ret, note = _retention_value(a_w3, a_can, n_can, n_w3)
         add(id=f"P1.2.GSM.{m}.W3_retention", probe="P1", phase="P1", family="GSM", subtype="--",
             model=m, variant="W3", metric="W3_retention", value=ret, n=min(n_can, n_w3),
             source_file=src, filter_applied=filt, note=note)
@@ -530,12 +543,7 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
             w3 = df[(df["variant_type"] == "W3") & df["problem_id"].isin(ids)]
             _, n_can, a_can, _, _ = _acc_row(can)
             _, n_w3, a_w3, _, _ = _acc_row(w3)
-            if n_can and a_can == 0:
-                ret, note = "undefined", "canonical accuracy is 0"
-            elif n_can and n_w3:
-                ret, note = a_w3 / a_can, ""
-            else:
-                ret, note = "NOT_COMPUTABLE", "missing canonical or W3"
+            ret, note = _retention_value(a_w3, a_can, n_can, n_w3)
             add(id=f"P1.2.ALGO.{sub_name}.{m}.W3_retention", probe="P1", phase="P1", family="ALGO",
                 subtype=sub_name, model=m, variant="W3", metric="W3_retention",
                 value=ret, n=min(n_can, n_w3), source_file=src, filter_applied=filt, note=note)
@@ -564,12 +572,7 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
             w3 = base[base["variant_type"] == "W3"] if not base.empty else pd.DataFrame()
             _, n_can, a_can, _, _ = _acc_row(can)
             _, n_w3, a_w3, _, _ = _acc_row(w3)
-            if n_can and a_can == 0:
-                ret, note = "undefined", "canonical accuracy is 0"
-            elif n_can and n_w3:
-                ret, note = a_w3 / a_can, ""
-            else:
-                ret, note = "NOT_COMPUTABLE", "missing canonical or W3"
+            ret, note = _retention_value(a_w3, a_can, n_can, n_w3)
             add(id=f"P1.2.BW.{subtype}.{m}.W3_retention", probe="P1", phase="P1", family="BW",
                 subtype=subtype, model=m, variant="W3", metric="W3_retention",
                 value=ret, n=min(n_can, n_w3), source_file=bw_src, filter_applied=bw_filt, note=note)

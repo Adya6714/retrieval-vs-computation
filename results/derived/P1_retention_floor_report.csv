@@ -1,0 +1,16 @@
+source_file,probe_family,family,model,n_canonical,n_w3,acc_canonical,acc_w3,would_be_R_W3,R_W3,exclusion_reason,floor
+ALGO_P1_behavioral_claude.csv,ALGO,wis,anthropic/claude-sonnet-4,30,25,0.2333,0.04,0.17145306472353194,,canonical_below_floor,0.3
+ALGO_P1_behavioral_gemini.csv,ALGO,wis,google/gemini-2.5-flash,30,25,0.2,0.08,0.39999999999999997,,canonical_below_floor,0.3
+ALGO_P1_behavioral_gpt4o.csv,ALGO,wis,openai/gpt-4o,30,23,0.2667,0.0,0.0,,canonical_below_floor,0.3
+ALGO_P1_behavioral_llama.csv,ALGO,coin_change,meta-llama/llama-3.1-8b-instruct,25,25,0.08,0.0,0.0,,canonical_below_floor,0.3
+ALGO_P1_behavioral_llama.csv,ALGO,shortest_path,meta-llama/llama-3.1-8b-instruct,55,54,0.0364,0.0,0.0,,canonical_below_floor,0.3
+ALGO_P1_behavioral_llama.csv,ALGO,wis,meta-llama/llama-3.1-8b-instruct,30,30,0.0333,0.0667,2.003003003003003,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,blocksworld,anthropic/claude-sonnet-4,50,50,0.22,0.12,0.5454545454545454,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,mystery_blocksworld,anthropic/claude-sonnet-4,14,10,0.0,0.0,,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,mystery_blocksworld,deepseek/deepseek-r1-distill-llama-70b,9,10,0.0,0.0,,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,blocksworld,meta-llama/llama-3.1-8b-instruct,50,50,0.02,0.06,3.0,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,mystery_blocksworld,meta-llama/llama-3.1-8b-instruct,14,10,0.0,0.0,,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,blocksworld,openai/gpt-4o,50,50,0.08,0.12,1.5,,canonical_below_floor,0.3
+BW_P1_behavioral.csv,BW,mystery_blocksworld,openai/gpt-4o,14,10,0.0,0.0,,,canonical_below_floor,0.3
+BW_P1_behavioral_gemini.csv,BW,mystery_blocksworld,google/gemini-2.5-flash,14,10,0.0,0.0,,,canonical_below_floor,0.3
+BW_P1_behavioral_o1mini.csv,BW,mystery_blocksworld,openai/o4-mini,14,10,0.0,0.0,,,canonical_below_floor,0.3

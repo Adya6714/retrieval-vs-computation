@@ -37,6 +37,7 @@ import sys as _sys
 if str(ROOT) not in _sys.path:
     _sys.path.insert(0, str(ROOT))
 
+from probes.behavioral.retention import retention_ratio  # noqa: E402
 from scripts.runs.coverage_audit import filter_p1_to_bank, load_gsm_p2_merged  # noqa: E402
 
 
@@ -253,8 +254,15 @@ def probe1_w3_retention(per_model: pd.DataFrame) -> pd.DataFrame:
     for (probe, model), g in per_model.groupby(["probe", "model"]):
         ac = g.loc[g["variant"] == "canonical", "accuracy"].squeeze() if (g["variant"]=="canonical").any() else float("nan")
         w3 = g.loc[g["variant"] == "W3",        "accuracy"].squeeze() if (g["variant"]=="W3").any() else float("nan")
-        ret = (w3 / ac) if (ac and not np.isnan(ac) and ac > 0) else float("nan")
-        rows.append({"probe": probe, "model": model, "canonical": ac, "W3": w3, "W3_retention": ret})
+        ret, reason = retention_ratio(w3, ac)
+        rows.append({
+            "probe": probe,
+            "model": model,
+            "canonical": ac,
+            "W3": w3,
+            "W3_retention": ret,
+            "exclusion_reason": "" if reason == "in_range" else reason,
+        })
     return pd.DataFrame(rows)
 
 
