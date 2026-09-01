@@ -119,7 +119,8 @@ def compute_dts(df: pd.DataFrame, variant_type: str, model: str) -> float | None
 
 
 def compute_vri(df: pd.DataFrame, model: str) -> dict[str, float | None]:
-    structural_vars = ["W2", "W4"]
+    """VRI = mean(W1, W2, W4) − W3. Canonical paper / rebuild definition."""
+    structural_vars = ["W1", "W2", "W4"]
     struct_vals = [compute_var(df, v, model) for v in structural_vars]
     struct_vals = [v for v in struct_vals if v is not None]
     vri_structural = round(sum(struct_vals) / len(struct_vals), 4) if struct_vals else None
