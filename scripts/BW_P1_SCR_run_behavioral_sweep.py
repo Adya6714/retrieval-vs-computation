@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from probes.contamination.verify import verify_answer
+from probes.contamination.verify import parse_action_mapping_from_notes, verify_answer
 
 load_dotenv()
 
@@ -305,12 +305,14 @@ def main() -> None:
 
                 # 7b. Verify answer
                 try:
+                    action_mapping = parse_action_mapping_from_notes(row.get("notes"))
                     is_correct = verify_answer(
                         pid,
                         raw_response,
                         correct_answer,
                         verifier_family,
                         problem_text=problem_text,
+                        action_mapping=action_mapping,
                     )
                 except ValueError:
                     # Unrecognized family — log and treat as unscored

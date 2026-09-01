@@ -2,9 +2,62 @@
 
 from __future__ import annotations
 
+import json
 import re
 
 _PLAN_LINE_PREFIX = re.compile(r"^\s*\d+[\).\s]+")
+
+
+def parse_action_mapping_from_notes(notes: str | None) -> dict[str, str] | None:
+    """Extract W3 ``action_mapping`` from a question-bank ``notes`` field.
+
+    ``generate_w3`` persists the mapping as a JSON object in ``notes``
+    (sometimes after a `` | `` prefix). Returns None when no mapping is stored.
+    """
+    text = str(notes or "").strip()
+    if not text or "action_mapping" not in text:
+        return None
+    decoder = json.JSONDecoder()
+    for i, ch in enumerate(text):
+        if ch != "{":
+            continue
+        try:
+            blob, _end = decoder.raw_decode(text[i:])
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(blob, dict):
+            continue
+        raw = blob.get("action_mapping")
+        if isinstance(raw, dict) and raw:
+            return {str(k): str(v) for k, v in raw.items()}
+    return None
+
+
+def _canonical_verb_aliases(action_mapping: dict[str, str] | None) -> dict[str, str]:
+    """Invert pick-up→renamed mapping to renamed→canonical, with _/- aliases."""
+    if not action_mapping:
+        return {}
+    out: dict[str, str] = {}
+    for canonical, renamed in action_mapping.items():
+        canon = str(canonical).strip().lower()
+        raw = str(renamed).strip().lower()
+        for key in {raw, raw.replace("_", "-"), raw.replace("-", "_")}:
+            if key:
+                out[key] = canon
+    return out
+
+
+def _rewrite_leading_verb(norm: str, verb_aliases: dict[str, str]) -> str:
+    if not verb_aliases or not norm:
+        return norm
+    parts = norm.split()
+    if not parts:
+        return norm
+    canon = verb_aliases.get(parts[0])
+    if canon is None:
+        return norm
+    parts[0] = canon
+    return " ".join(parts)
 
 
 def _strip_numbered_plan_lines(text: str) -> list[str]:
@@ -21,17 +74,26 @@ def _strip_numbered_plan_lines(text: str) -> list[str]:
 
 
 _BLOCKSWORLD_LINE = re.compile(
-    r"^(pick-up|put-down|stack|unstack)\s+([a-z0-9]+)(?:\s+([a-z0-9]+))?\s*$",
+    r"^(pick-up|put-down|stack|unstack)\s+([a-z0-9_-]+)(?:\s+([a-z0-9_-]+))?\s*$",
     re.IGNORECASE,
 )
 
 
-def _extract_blocksworld_actions_line_based(text: str) -> list[str]:
-    """Parse blocksworld plans line-by-line so numbered lists do not break regex."""
+def _extract_blocksworld_actions_line_based(
+    text: str, action_mapping: dict[str, str] | None = None
+) -> list[str]:
+    """Parse blocksworld plans line-by-line so numbered lists do not break regex.
+
+    When ``action_mapping`` is the W3 rename dict (canonical → renamed), invert
+    it and rewrite the leading verb before matching the four primitives.
+    """
+    aliases = _canonical_verb_aliases(action_mapping)
     actions: list[str] = []
     for line in _strip_numbered_plan_lines(text):
         norm = line.strip().lower()
         norm = re.sub(r"\bblock\s+", "", norm)
+        if aliases:
+            norm = _rewrite_leading_verb(norm, aliases)
         norm = re.sub(r"^select\s+([a-z0-9]+)$", r"pick-up \1", norm)
         norm = re.sub(r"^release\s+([a-z0-9]+)$", r"put-down \1", norm)
         norm = re.sub(r"^place\s+([a-z0-9]+)\s+under\s+([a-z0-9]+)$", r"stack \1 \2", norm)
@@ -49,15 +111,21 @@ def _extract_blocksworld_actions_line_based(text: str) -> list[str]:
 
 
 _MYSTERY_LINE = re.compile(
-    r"^(attack|succumb|overcome|broker|feast)\s+([a-z0-9]+)(?:\s+([a-z0-9]+))?\s*$",
+    r"^(attack|succumb|overcome|broker|feast)\s+([a-z0-9_-]+)(?:\s+([a-z0-9_-]+))?\s*$",
     re.IGNORECASE,
 )
 
 
-def _extract_mystery_actions_line_based(text: str) -> list[str]:
+def _extract_mystery_actions_line_based(
+    text: str, action_mapping: dict[str, str] | None = None
+) -> list[str]:
+    aliases = _canonical_verb_aliases(action_mapping)
     actions: list[str] = []
     for line in _strip_numbered_plan_lines(text):
-        m = _MYSTERY_LINE.match(line.strip())
+        norm = line.strip().lower()
+        if aliases:
+            norm = _rewrite_leading_verb(norm, aliases)
+        m = _MYSTERY_LINE.match(norm)
         if not m:
             continue
         parts = [m.group(1).lower(), m.group(2).lower()]
@@ -201,12 +269,16 @@ def _apply_blocksworld_action(state: set[tuple], action: str) -> bool:
     return False
 
 
-def _verify_blocksworld_state_machine(model_answer, problem_text) -> bool | None:
+def _verify_blocksworld_state_machine(
+    model_answer, problem_text, action_mapping: dict[str, str] | None = None
+) -> bool | None:
     parsed = _parse_blocksworld_state(problem_text)
     if parsed is None:
         return None
     state, goal = parsed
-    actions = _extract_blocksworld_actions_line_based(model_answer)
+    actions = _extract_blocksworld_actions_line_based(
+        model_answer, action_mapping=action_mapping
+    )
     if not actions:
         return False
     for action in actions:
@@ -286,12 +358,16 @@ def _apply_mystery_action(state: set[tuple], action: str) -> bool:
     return False
 
 
-def _verify_mystery_state_machine(model_answer, problem_text) -> bool | None:
+def _verify_mystery_state_machine(
+    model_answer, problem_text, action_mapping: dict[str, str] | None = None
+) -> bool | None:
     parsed = _parse_mystery_state(problem_text)
     if parsed is None:
         return None
     state, goals = parsed
-    actions = _extract_mystery_actions_line_based(model_answer)
+    actions = _extract_mystery_actions_line_based(
+        model_answer, action_mapping=action_mapping
+    )
     if not actions:
         return False
     for action in actions:
@@ -300,7 +376,14 @@ def _verify_mystery_state_machine(model_answer, problem_text) -> bool | None:
     return goals.issubset(state)
 
 
-def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=None):
+def verify_answer(
+    problem_id,
+    model_answer,
+    ground_truth,
+    family,
+    problem_text=None,
+    action_mapping=None,
+):
     numeric_families = {
         "gsm", 
         "shortest_path", 
@@ -320,17 +403,23 @@ def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=N
         return _verify_numeric(model_answer, ground_truth)
 
     elif family == "mystery_blocksworld":
-        sim_ok = _verify_mystery_state_machine(model_answer, problem_text)
+        sim_ok = _verify_mystery_state_machine(
+            model_answer, problem_text, action_mapping=action_mapping
+        )
         if sim_ok is True:
             return True
-        model_matches = _extract_mystery_actions_line_based(model_answer)
-        gt_matches = _extract_mystery_actions_line_based(ground_truth)
+        model_matches = _extract_mystery_actions_line_based(
+            model_answer, action_mapping=action_mapping
+        )
+        gt_matches = _extract_mystery_actions_line_based(
+            ground_truth, action_mapping=action_mapping
+        )
         if model_matches and gt_matches:
             return model_matches == gt_matches
         if sim_ok is False:
             return False
         mystery_pattern = re.compile(
-            r"(attack|succumb|overcome|broker|feast)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
+            r"(attack|succumb|overcome|broker|feast)\s+[a-z0-9_-]+(\s+[a-z0-9_-]+)?",
             re.IGNORECASE,
         )
         model_matches = _extract_actions(model_answer, mystery_pattern)
@@ -340,18 +429,24 @@ def verify_answer(problem_id, model_answer, ground_truth, family, problem_text=N
         return model_matches == gt_matches
 
     elif family in plan_families:
-        sim_ok = _verify_blocksworld_state_machine(model_answer, problem_text)
+        sim_ok = _verify_blocksworld_state_machine(
+            model_answer, problem_text, action_mapping=action_mapping
+        )
         if sim_ok is True:
             return True
-        model_matches = _extract_blocksworld_actions_line_based(model_answer)
-        gt_matches = _extract_blocksworld_actions_line_based(ground_truth)
+        model_matches = _extract_blocksworld_actions_line_based(
+            model_answer, action_mapping=action_mapping
+        )
+        gt_matches = _extract_blocksworld_actions_line_based(
+            ground_truth, action_mapping=action_mapping
+        )
         if model_matches and gt_matches:
             if model_matches == gt_matches:
                 return True
         if sim_ok is False:
             return False
         action_pattern = re.compile(
-            r"(pick-up|put-down|stack|unstack)\s+[a-z0-9]+(\s+[a-z0-9]+)?",
+            r"(pick-up|put-down|stack|unstack)\s+[a-z0-9_-]+(\s+[a-z0-9_-]+)?",
             re.IGNORECASE,
         )
         model_matches = _extract_actions(model_answer, action_pattern)

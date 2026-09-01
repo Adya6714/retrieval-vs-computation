@@ -22,7 +22,7 @@ from pathlib import Path
 
 import pytest
 
-from probes.contamination.verify import verify_answer
+from probes.contamination.verify import parse_action_mapping_from_notes, verify_answer
 from probes.contamination.verify_algo import verify_algo
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -97,7 +97,15 @@ def verify_gold_row(family: str, row: dict[str, str]) -> tuple[bool, str | None]
             problem_family=str(row.get("problem_family", "")),
             problem_subtype=subtype,
         )
-        ok = verify_answer(pid, gold, gold, vf, problem_text=text)
+        action_mapping = parse_action_mapping_from_notes(row.get("notes"))
+        ok = verify_answer(
+            pid,
+            gold,
+            gold,
+            vf,
+            problem_text=text,
+            action_mapping=action_mapping,
+        )
         return bool(ok), None
     except Exception as exc:
         return False, type(exc).__name__

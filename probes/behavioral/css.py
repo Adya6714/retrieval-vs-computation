@@ -48,6 +48,7 @@ def compute_css(
             variant["correct_answer"],
             family,
             problem_text=variant.get("problem_text"),
+            action_mapping=variant.get("action_mapping"),
         ))
         
         per_variant[variant_type] = is_correct

@@ -34,7 +34,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from probes.contamination.verify import verify_answer  # noqa: E402
+from probes.contamination.verify import parse_action_mapping_from_notes, verify_answer  # noqa: E402
 from probes.contamination.verify_algo import verify_algo  # noqa: E402
 
 DEFAULT_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
@@ -116,6 +116,7 @@ def _load_banks() -> dict[tuple[str, str], dict]:
                 "problem_subtype": subtype or str(r.get("problem_subtype", "")),
                 "difficulty_params": str(r.get("difficulty_params", "{}")),
                 "verifier_family": verifier_family,
+                "notes": str(r.get("notes", "")),
             }
     return lookup
 
@@ -220,6 +221,7 @@ def _verify(item: dict, answer: str) -> bool:
             item["correct_answer"],
             vf,
             problem_text=item["problem_text"],
+            action_mapping=parse_action_mapping_from_notes(item.get("notes")),
         )
     )
 

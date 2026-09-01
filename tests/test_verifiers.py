@@ -34,6 +34,52 @@ def test_plan_families(model_answer, correct_answer, expected):
     assert verify_answer("dummy_id", model_answer, correct_answer, "blocksworld") is expected
 
 
+def test_blocksworld_w3_action_mapping_normalizes_renamed_verbs():
+    """W3 renamed verbs invert via action_mapping, not a hardcoded synonym list."""
+    mapping = {
+        "pick-up": "recruit",
+        "put-down": "dismiss",
+        "stack": "promote_over",
+        "unstack": "reassign_from",
+    }
+    gt = "recruit alice\npromote_over alice bob"
+    model = "1. recruit alice\n2. promote_over alice bob"
+    assert (
+        verify_answer(
+            "dummy_id",
+            model,
+            gt,
+            "blocksworld",
+            action_mapping=mapping,
+        )
+        is True
+    )
+    # Without the mapping the renamed verbs are dropped and gold fails.
+    assert verify_answer("dummy_id", model, gt, "blocksworld") is False
+
+
+def test_mystery_w3_action_mapping_normalizes_renamed_verbs():
+    mapping = {
+        "attack": "deploy",
+        "succumb": "surrender",
+        "overcome": "reinforce",
+        "feast": "supply",
+    }
+    gt = "deploy alpha\nreinforce alpha bravo"
+    model = "1. deploy alpha\n2. reinforce alpha bravo"
+    assert (
+        verify_answer(
+            "dummy_id",
+            model,
+            gt,
+            "mystery_blocksworld",
+            action_mapping=mapping,
+        )
+        is True
+    )
+    assert verify_answer("dummy_id", model, gt, "mystery_blocksworld") is False
+
+
 def test_blocksworld_numbered_list_sequence_match_without_problem_text():
     """Numbered model output must match ground-truth action list (no problem_text)."""
     gt = "pick-up x\nput-down x"
