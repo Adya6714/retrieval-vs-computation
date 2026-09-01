@@ -419,7 +419,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 MODEL_ID = "meta-llama/Llama-3.1-8B-Instruct"
 COMPUTE_DTYPE = torch.float16  # T4 has no native bfloat16
 
-MAX_NEW = {"GSM": 128, "ALGO": 192, "BW": 512}
+# GSM was 128; 23/37 wrong canonical answers in llama_greedy_p1.csv end mid-token
+# (correct median 74 chars, incorrect median 444, max 552). G4 reruns at 768.
+MAX_NEW = {"GSM": 768, "ALGO": 192, "BW": 512}
 
 tokenizer = None
 model = None

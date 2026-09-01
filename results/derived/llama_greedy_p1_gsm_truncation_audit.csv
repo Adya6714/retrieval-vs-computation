@@ -1,0 +1,45 @@
+problem_id,correct,n_chars,n_tokens,last_token,hit_token_cap,ends_mid_token,has_hash_tag,answer_tail
+GSM_001,True,214,65,51,False,True,False,tes:\n66 minutes * $0.5/minute = $33\n\nAdd the costs together:\n$18 + $33 = $51\n\n51
+GSM_002,True,30,19,30,False,True,False,18 + (2/3 * 18) = 18 + 12 = 30
+GSM_003,True,256,84,150,False,True,False,"ds, so it is 30 + 45 = 75. The total number of cards is 30 + 45 + 75 = 150.\n\n150"
+GSM_004,False,500,128, total,True,True,False, the total number of days he works in a year by his daily wage to find the total
+GSM_005,False,481,127, *,True,True,False,s\n\n2. Extra time spent on Saturday and Sunday:\n   - Total minutes in a week: 7 *
+GSM_006,False,416,128,72,True,True,False,"8 = 728\n\nAfter the second year, the stock price decreases by 25%:\nNew price = 72"
+GSM_007,False,416,128, =,True,True,False,"$20.\n\nSo, the total cost is:\n2 hours * $10 = $20\n1 hour * $20 = $20\nTotal cost ="
+GSM_008,False,5,3,256,False,True,False,# 256
+GSM_009,False,443,127, *,True,True,False," day. So, the total number of eggs she eats in the next 24 days is:\n7 eggs/day *"
+GSM_010,False,37,16,804,False,True,False,60 \n120 \n360 \n180 \n60 \n24 \nTotal: 804
+GSM_011,False,446,128, -,True,True,False,1 = 143 grams.\n\nTotal water used = 96 + 3 + 143 = 242 grams.\n\nWater left = 328 -
+GSM_012,False,476,128, plants,True,True,False,ill give away is 6 * 52 = 312.\n\n## Step 3: Calculate the number of potted plants
+GSM_013,False,482,128,0,True,True,False,"ate of speed on the sidewalk as on the beach, her speed on the sidewalk is 2 * 0"
+GSM_014,False,311,107,%,False,False,False,s\n1260 minutes / 600 minutes per day = 2.1\n2.1 / 10 = 0.21\n0.21 * 100 = 21%\n\n21%
+GSM_015,False,398,128,5,True,True,False, = $24\n- 29 bundles of roses: 29 × $5 = $145\n- 37 bundles of sunflowers: 37 × $5
+GSM_016,False,445,128,15,True,True,False, pounds\n- Apples: 32 packs * 43 pounds/pack = 1376 pounds\n- Corns: 18 sacks * 15
+GSM_017,False,477,128, boxes,True,True,False,ld over the three days is (C - 11) + C + 2C = 4C - 11.\nThe total number of boxes
+GSM_018,False,463,127, =,True,True,False,estions\n48 questions are divided equally between chemistry and history: 48 / 2 =
+GSM_019,False,376,128,x,True,True,False,utes\n\nTotal time watched: 6 + 45x + 4.25 + 8 + 1.5 = 22\n\nCombine like terms: 45x
+GSM_020,False,426,128, eggs,True,True,False,ggs.\nQuinn and Ava combined find 3 + 18 = 21 eggs.\nFatima finds three dozen eggs
+GSM_041,True,205,62,150,False,True,False," to hike is 2 * 7 = 14. So, the number that like to bake is 164 - 14 = 150.\n\n150"
+GSM_042,True,15,9,.,False,False,False,30 * 94 = 2820.
+GSM_043,True,67,28,8,False,True,False,640 * (1/8) = 80 tennis balls\n80 * (1/10) = 8 white tennis balls\n\n8
+GSM_044,False,3,1,117,False,True,False,117
+GSM_045,True,42,23,2,False,True,False,205 + 97 + 4 * 205 = 205 + 97 + 820 = 1122
+GSM_046,False,527,127, /,True,True,False,"75 * 5 = 2375 calories\n\nNow, let's find the number of calories per ounce:\n2375 /"
+GSM_047,False,446,127, after,True,True,False,"itted in 3 weeks = 40 * 21 = 840.\n\nNow, the total number of occupied rooms after"
+GSM_048,False,425,128,9,True,True,False,we need to calculate 45% of ₺20 and add it to ₺20.\n\n45% of ₺20 = 0.45 * ₺20 = ₺9
+GSM_049,False,481,128,The,True,True,False," from each place, so the total number of collections per week is 3 * 2 = 6.\n\nThe"
+GSM_050,False,446,128,12,True,True,False,"is 12 * 12 = 144 inches.\n\nThe length of the dolphin is 60 feet, which is 60 * 12"
+GSM_051,False,144,47,.,False,False,False,"o cover 1 mile. To cover a tenth of the city, it will take 32 * 4 = 128 minutes."
+GSM_052,False,433,128, probability,True,True,False," odd numbers (1, 3, 5, 7, 9, 11) out of 12 possible outcomes, so the probability"
+GSM_053,False,485,128, is,True,True,False,"\nM/W = 7/7\n\nWe are given that the total amount of sugar, water, and milk used is"
+GSM_054,False,378,128, $,True,True,False, the cost is 40 / 2 * $0.1 = 20 * $0.1 = $2.\n\nThe total cost is $6 + $8 + $2 = $
+GSM_055,False,492,128, almonds,True,True,False,08 almonds.\n\nTheo has 621 almonds initially. After eating a third of the almonds
+GSM_056,False,84,42,315,False,True,False,- 35 = 228 \n228 - 26 - 27 = 175 \n175 * 2 = 350 \n228 + 350 = 578 \n578 - 263 = 315
+GSM_057,False,467,128, spots,True,True,False,s = 113 + 47 + 64 * 10 = 113 + 47 + 640 = 800\nTotal number of puppies with spots
+GSM_058,False,376,128,190,True,True,False,iscount on ¥200: 0.05 * ¥200 = ¥10\n\nTotal cost after discount: ¥200 - ¥10 = ¥190
+GSM_059,False,415,128,",",True,True,False," Zahra had x - 2 + 28 = x + 26 forks.\n\nWhen she set the table, she had 55 forks,"
+GSM_060,False,535,128, choir,True,True,False,hoir members or dancers:\n17% of the remaining students (125 - 50 = 75) are choir
+GSM_061,False,524,128, -,True,True,False,f their combined consumption is (3/6) * 10 = 5 pizzas. One less than that is 5 -
+GSM_062,False,379,128, difference,True,True,False,0000 = $480000\n\nTotal cost = $600000 + $18000 + $72000 = $708000\n\nThe difference
+GSM_063,False,445,128,180,True,True,False,= $220000 - $8800 = $211200\n\nRemaining amount after paying loan = $211200 - $180
+GSM_064,False,2,1,39,False,True,False,39

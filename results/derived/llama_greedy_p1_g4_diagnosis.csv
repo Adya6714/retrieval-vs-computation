@@ -1,0 +1,16 @@
+item,value
+gsm_canonical_n,44
+gsm_canonical_correct,7
+gsm_canonical_accuracy_original,0.1591
+gsm_canonical_wrong,37
+gsm_wrong_ends_mid_token_char_heuristic,35
+gsm_wrong_hit_token_cap_ge_127,30
+gsm_wrong_exactly_128_tokens,25
+gsm_correct_median_chars,67.0
+gsm_wrong_median_chars,443.0
+gsm_wrong_max_chars,535
+gsm_canonical_accuracy_768_rerun,not_executed
+rerun_status,"not_executed: no CUDA, Llama-3.1-8B-Instruct weights not cached, machine RAM 8.6GB, ollama has no llama3.1 model"
+max_new_tokens_original,128
+max_new_tokens_required,768
+expected_recovery_if_truncation,~0.78 canonical (not measured here)
