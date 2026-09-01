@@ -1,0 +1,220 @@
+family,problem_id,clone_family_id,clone_family_size,clone_members,gold_key,identical_gold_key_within_family,near_dup_jaccard_floor,near_dup_ratio_floor
+ALGO,CC_01,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_02,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_03,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_04,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_05,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_06,,1,,3,False,0.85,0.9
+ALGO,CC_07,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_08,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_09,ALGO_CLONE_004,3,"CC_031,CC_041,CC_09",5,True,0.85,0.9
+ALGO,CC_10,,1,,7,False,0.85,0.9
+ALGO,SP_001,,1,,17,False,0.85,0.9
+ALGO,SP_002,,1,,40,False,0.85,0.9
+ALGO,SP_003,,1,,22,False,0.85,0.9
+ALGO,SP_004,,1,,8,False,0.85,0.9
+ALGO,SP_005,,1,,32,False,0.85,0.9
+ALGO,WIS_001,,1,,"selected:{0,2,4,6,9}",False,0.85,0.9
+ALGO,WIS_002,,1,,"selected:{1,10,11,3,7}",False,0.85,0.9
+ALGO,WIS_003,,1,,"selected:{1,10,11,13,2,3,4}",False,0.85,0.9
+ALGO,WIS_004,,1,,"selected:{0,1,11,12,3,6,9}",False,0.85,0.9
+ALGO,WIS_005,,1,,"selected:{11,14,2,5,7,8}",False,0.85,0.9
+ALGO,CC_031,ALGO_CLONE_004,3,"CC_031,CC_041,CC_09",5,True,0.85,0.9
+ALGO,CC_032,,1,,4,False,0.85,0.9
+ALGO,CC_033,,1,,13,False,0.85,0.9
+ALGO,CC_034,,1,,3,False,0.85,0.9
+ALGO,CC_035,ALGO_CLONE_002,2,"CC_035,CC_045",8,True,0.85,0.9
+ALGO,CC_036,,1,,12,False,0.85,0.9
+ALGO,CC_037,,1,,11,False,0.85,0.9
+ALGO,CC_038,ALGO_CLONE_003,2,"CC_038,CC_043",6,True,0.85,0.9
+ALGO,CC_039,,1,,4,False,0.85,0.9
+ALGO,CC_040,ALGO_CLONE_001,8,"CC_01,CC_02,CC_03,CC_04,CC_040,CC_05,CC_07,CC_08",2,True,0.85,0.9
+ALGO,CC_041,ALGO_CLONE_004,3,"CC_031,CC_041,CC_09",5,True,0.85,0.9
+ALGO,CC_042,,1,,10,False,0.85,0.9
+ALGO,CC_043,ALGO_CLONE_003,2,"CC_038,CC_043",6,True,0.85,0.9
+ALGO,CC_044,,1,,9,False,0.85,0.9
+ALGO,CC_045,ALGO_CLONE_002,2,"CC_035,CC_045",8,True,0.85,0.9
+ALGO,SP_019,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_020,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_021,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_023,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_024,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_026,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_027,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_028,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_029,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_030,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,WIS_006,,1,,"selected:{0,1,3,4,5,6}",False,0.85,0.9
+ALGO,WIS_007,,1,,"selected:{0,2,3,4,5}",False,0.85,0.9
+ALGO,WIS_009,,1,,"selected:{0,1,2,3,4,5,6,8}",False,0.85,0.9
+ALGO,WIS_010,,1,,"selected:{0,2,4,5,6,7}",False,0.85,0.9
+ALGO,WIS_012,,1,,"selected:{0,2,3,4,5,6,7,8}",False,0.85,0.9
+ALGO,WIS_013,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_014,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_015,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_016,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_017,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_018,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_019,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_020,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,SP_031,,1,,22,False,0.85,0.9
+ALGO,SP_032,ALGO_CLONE_008,2,"SP_032,SP_058",20,True,0.85,0.9
+ALGO,SP_033,,1,,23,False,0.85,0.9
+ALGO,SP_034,ALGO_CLONE_009,2,"SP_034,SP_056",21,True,0.85,0.9
+ALGO,SP_035,,1,,19,False,0.85,0.9
+ALGO,SP_036,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_037,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_038,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_039,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_040,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_042,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_044,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_045,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_046,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_047,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_048,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_049,ALGO_CLONE_010,2,"SP_049,SP_060",10,True,0.85,0.9
+ALGO,SP_050,ALGO_CLONE_011,2,"SP_050,SP_052",11,True,0.85,0.9
+ALGO,SP_051,,1,,18,False,0.85,0.9
+ALGO,SP_052,ALGO_CLONE_011,2,"SP_050,SP_052",11,True,0.85,0.9
+ALGO,SP_053,ALGO_CLONE_012,2,"SP_053,SP_059",25,True,0.85,0.9
+ALGO,SP_054,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_055,,1,,17,False,0.85,0.9
+ALGO,SP_056,ALGO_CLONE_009,2,"SP_034,SP_056",21,True,0.85,0.9
+ALGO,SP_057,,1,,24,False,0.85,0.9
+ALGO,SP_058,ALGO_CLONE_008,2,"SP_032,SP_058",20,True,0.85,0.9
+ALGO,SP_059,ALGO_CLONE_012,2,"SP_053,SP_059",25,True,0.85,0.9
+ALGO,SP_060,ALGO_CLONE_010,2,"SP_049,SP_060",10,True,0.85,0.9
+ALGO,SP_061,,1,,16,False,0.85,0.9
+ALGO,SP_062,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_063,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_064,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_065,ALGO_CLONE_005,13,"SP_019,SP_020,SP_021,SP_036,SP_037,SP_038,SP_039,SP_040,SP_054,SP_062,SP_063,SP_064,SP_065",12,True,0.85,0.9
+ALGO,SP_066,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_068,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_069,ALGO_CLONE_006,8,"SP_023,SP_024,SP_026,SP_042,SP_044,SP_066,SP_068,SP_069",5,True,0.85,0.9
+ALGO,SP_070,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_071,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_072,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,SP_073,ALGO_CLONE_007,12,"SP_027,SP_028,SP_029,SP_030,SP_045,SP_046,SP_047,SP_048,SP_070,SP_071,SP_072,SP_073",3,True,0.85,0.9
+ALGO,WIS_021,,1,,"selected:{1,10,2,3,5}",False,0.85,0.9
+ALGO,WIS_022,,1,,"selected:{0,2,4,6}",False,0.85,0.9
+ALGO,WIS_023,ALGO_CLONE_014,3,"WIS_023,WIS_025,WIS_028","selected:{3,4}",True,0.85,0.9
+ALGO,WIS_024,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_025,ALGO_CLONE_014,3,"WIS_023,WIS_025,WIS_028","selected:{3,4}",True,0.85,0.9
+ALGO,WIS_026,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_027,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_028,ALGO_CLONE_014,3,"WIS_023,WIS_025,WIS_028","selected:{3,4}",True,0.85,0.9
+ALGO,WIS_029,ALGO_CLONE_013,12,"WIS_013,WIS_014,WIS_015,WIS_016,WIS_017,WIS_018,WIS_019,WIS_020,WIS_024,WIS_026,WIS_027,WIS_029","selected:{4,5}",True,0.85,0.9
+ALGO,WIS_030,,1,,"selected:{1,2,4,5,6}",False,0.85,0.9
+ALGO,WIS_031,,1,,"selected:{0,2,3,6}",False,0.85,0.9
+ALGO,WIS_032,,1,,"selected:{0,2,4,5,6,8}",False,0.85,0.9
+BW,BW_001,,1,,pick-up h stack h l pick-up b stack b h pick-up d stack d b pick-up g stack g d pick-up i stack i g pick-up f stack f i pick-up j stack j f,False,0.85,0.9
+BW,BW_002,,1,,pick-up h stack h i pick-up k stack k h pick-up b stack b k pick-up a stack a b pick-up g stack g a pick-up j stack j g,False,0.85,0.9
+BW,BW_010,,1,,pick-up b stack b f pick-up a stack a b pick-up e stack e a pick-up d stack d e,False,0.85,0.9
+BW,BW_011,,1,,pick-up i stack i b pick-up h stack h i pick-up e stack e h pick-up j stack j e pick-up l stack l j pick-up a stack a l pick-up g stack g a pick-up k stack k g pick-up c stack c k,False,0.85,0.9
+BW,BW_014,,1,,pick-up e stack e g pick-up l stack l e,False,0.85,0.9
+BW,BW_022,,1,,pick-up k stack k f pick-up b stack b k pick-up c stack c b pick-up g stack g c,False,0.85,0.9
+BW,BW_080,,1,,pick-up j stack j f pick-up e stack e j pick-up i stack i e pick-up c stack c i pick-up l stack l c,False,0.85,0.9
+BW,BW_120,,1,,pick-up g stack g f pick-up j stack j g pick-up c stack c j,False,0.85,0.9
+BW,BW_137,,1,,pick-up g stack g i pick-up f stack f g pick-up c stack c f pick-up h stack h c pick-up l stack l h pick-up e stack e l pick-up j stack j e pick-up b stack b j pick-up a stack a b pick-up d stack d a,False,0.85,0.9
+BW,BW_155,,1,,pick-up j stack j h pick-up e stack e j pick-up f stack f e pick-up i stack i f,False,0.85,0.9
+BW,BW_172,,1,,pick-up f stack f k pick-up h stack h f pick-up j stack j h pick-up a stack a j pick-up b stack b a pick-up d stack d b pick-up e stack e d pick-up g stack g e pick-up l stack l g pick-up i stack i l,False,0.85,0.9
+BW,BW_203,,1,,pick-up j stack j h pick-up f stack f j pick-up k stack k f,False,0.85,0.9
+BW,BW_227,,1,,pick-up k stack k a pick-up c stack c k pick-up j stack j c pick-up i stack i j pick-up d stack d i pick-up g stack g d pick-up l stack l g pick-up f stack f l,False,0.85,0.9
+BW,BW_282,,1,,pick-up i stack i b pick-up c stack c i pick-up h stack h c pick-up g stack g h,False,0.85,0.9
+BW,BW_310,,1,,pick-up b stack b d pick-up f stack f b pick-up a stack a f pick-up j stack j a pick-up g stack g j,False,0.85,0.9
+BW,BW_331,,1,,pick-up j stack j l pick-up h stack h j,False,0.85,0.9
+BW,BW_350,,1,,pick-up l stack l d pick-up b stack b l pick-up g stack g b pick-up a stack a g pick-up k stack k a pick-up j stack j k pick-up i stack i j pick-up e stack e i pick-up f stack f e,False,0.85,0.9
+BW,BW_408,,1,,pick-up j stack j b pick-up g stack g j pick-up c stack c g pick-up d stack d c pick-up h stack h d pick-up l stack l h pick-up a stack a l,False,0.85,0.9
+BW,BW_467,,1,,pick-up f stack f h pick-up a stack a f pick-up j stack j a pick-up l stack l j pick-up i stack i l pick-up g stack g i,False,0.85,0.9
+BW,BW_495,,1,,pick-up e stack e h pick-up i stack i e pick-up l stack l i pick-up c stack c l,False,0.85,0.9
+BW,BW_E002,,1,,pick-up a stack a c pick-up b stack b a,False,0.85,0.9
+BW,BW_E015,,1,,unstack c b put-down c pick-up a stack a b,False,0.85,0.9
+BW,BW_E017,,1,,pick-up a stack a b pick-up c stack c a,False,0.85,0.9
+BW,BW_E019,,1,,unstack a b stack a c pick-up b stack b a,False,0.85,0.9
+BW,BW_E100,,1,,pick-up b stack b c,False,0.85,0.9
+BW,MBW_001,,1,,attack h overcome h l attack b overcome b h attack d overcome d b attack g overcome g d attack i overcome i g attack f overcome f i attack j overcome j f,False,0.85,0.9
+BW,MBW_002,,1,,attack h overcome h i attack k overcome k h attack b overcome b k attack a overcome a b attack g overcome g a attack j overcome j g,False,0.85,0.9
+BW,MBW_010,,1,,attack d overcome e d attack e overcome a e attack a overcome b a attack b overcome,False,0.85,0.9
+BW,MBW_014,,1,,attack e overcome e g attack l overcome l e,False,0.85,0.9
+BW,MBW_037,,1,,attack h overcome h i attack d overcome d h attack c overcome c d,False,0.85,0.9
+BW,MBW_10,,1,,attack b overcome b f attack a overcome a b attack e overcome e a attack d overcome d e,False,0.85,0.9
+BW,MBW_100,,1,,attack l overcome l i attack j overcome j l attack b overcome b j,False,0.85,0.9
+BW,MBW_127,,1,,attack e overcome e b attack j overcome j e attack g overcome g j attack k overcome k g,False,0.85,0.9
+BW,MBW_185,,1,,attack e overcome e l attack b overcome b e attack a overcome a b attack h overcome h a attack c overcome c h attack i overcome i c attack g overcome g i attack d overcome d g attack j overcome j d,False,0.85,0.9
+BW,MBW_495,,1,,attack e overcome e h attack i overcome i e attack l overcome l i attack c overcome c l,False,0.85,0.9
+BW,BW_496,,1,,pick-up f stack f i pick-up c stack c f pick-up d stack d c pick-up k stack k d pick-up g stack g k pick-up e stack e g pick-up a stack a e pick-up l stack l a pick-up h stack h l pick-up j stack j h,False,0.85,0.9
+BW,BW_497,,1,,pick-up e stack e c pick-up l stack l e,False,0.85,0.9
+BW,BW_498,,1,,pick-up a stack a g pick-up l stack l a pick-up d stack d l pick-up f stack f d pick-up b stack b f pick-up c stack c b pick-up e stack e c pick-up j stack j e pick-up k stack k j,False,0.85,0.9
+BW,BW_499,,1,,pick-up e stack e l pick-up c stack c e pick-up a stack a c pick-up j stack j a,False,0.85,0.9
+BW,BW_500,,1,,pick-up b stack b l pick-up c stack c b pick-up g stack g c pick-up a stack a g pick-up d stack d a pick-up k stack k d pick-up e stack e k,False,0.85,0.9
+BW,BW_501,,1,,pick-up j stack j d pick-up g stack g j pick-up e stack e g pick-up a stack a e pick-up k stack k a pick-up i stack i k pick-up c stack c i,False,0.85,0.9
+BW,BW_502,,1,,pick-up i stack i e pick-up h stack h i pick-up d stack d h,False,0.85,0.9
+BW,BW_503,,1,,pick-up i stack i l pick-up e stack e i pick-up b stack b e pick-up j stack j b pick-up k stack k j pick-up h stack h k pick-up d stack d h pick-up c stack c d pick-up a stack a c pick-up g stack g a pick-up f stack f g,False,0.85,0.9
+BW,BW_504,,1,,pick-up l stack l b pick-up e stack e l pick-up k stack k e pick-up f stack f k pick-up h stack h f pick-up a stack a h,False,0.85,0.9
+BW,BW_505,,1,,pick-up b stack b h pick-up g stack g b pick-up d stack d g pick-up c stack c d,False,0.85,0.9
+BW,BW_506,,1,,pick-up b stack b f pick-up g stack g b,False,0.85,0.9
+BW,BW_507,,1,,pick-up h stack h e pick-up j stack j h,False,0.85,0.9
+BW,BW_508,,1,,pick-up b stack b f pick-up g stack g b pick-up c stack c g pick-up e stack e c,False,0.85,0.9
+BW,BW_509,,1,,pick-up j stack j i pick-up f stack f j pick-up d stack d f pick-up h stack h d,False,0.85,0.9
+BW,BW_510,,1,,pick-up h stack h i pick-up l stack l h pick-up c stack c l pick-up a stack a c pick-up j stack j a pick-up k stack k j,False,0.85,0.9
+BW,BW_511,,1,,pick-up l stack l f pick-up k stack k l pick-up i stack i k,False,0.85,0.9
+BW,BW_512,,1,,pick-up i stack i f pick-up h stack h i pick-up e stack e h pick-up j stack j e pick-up c stack c j,False,0.85,0.9
+BW,BW_513,,1,,pick-up d stack d l pick-up a stack a d pick-up i stack i a pick-up f stack f i pick-up e stack e f pick-up c stack c e,False,0.85,0.9
+BW,BW_514,,1,,pick-up e stack e b pick-up g stack g e pick-up a stack a g pick-up j stack j a pick-up c stack c j,False,0.85,0.9
+BW,BW_515,,1,,pick-up d stack d i pick-up a stack a d pick-up k stack k a pick-up e stack e k pick-up g stack g e,False,0.85,0.9
+BW,MBW_496,,1,,attack j overcome j l attack c overcome c j attack a overcome a c attack e overcome e a attack d overcome d e attack g overcome g d attack h overcome h g attack f overcome f h attack i overcome i f,False,0.85,0.9
+BW,MBW_497,,1,,attack e overcome e j attack h overcome h e attack i overcome i h attack l overcome l i attack d overcome d l attack c overcome c d attack f overcome f c attack a overcome a f attack k overcome k a,False,0.85,0.9
+BW,MBW_498,,1,,attack j overcome j f attack i overcome i j attack b overcome b i attack k overcome k b attack c overcome c k attack h overcome h c attack a overcome a h attack g overcome g a attack d overcome d g attack e overcome e d attack l overcome l e,False,0.85,0.9
+BW,MBW_499,,1,,attack a overcome a h attack d overcome d a attack j overcome j d attack f overcome f j attack b overcome b f attack c overcome c b attack l overcome l c,False,0.85,0.9
+BW,MBW_500,,1,,attack d overcome d g attack i overcome i d attack f overcome f i attack c overcome c f attack h overcome h c attack k overcome k h attack b overcome b k attack e overcome e b attack a overcome a e,False,0.85,0.9
+BW,BW_E_001,,1,,pick-up j stack j b pick-up f stack f j pick-up c stack c f pick-up i stack i c pick-up a stack a i,False,0.85,0.9
+BW,BW_E_002,,1,,pick-up g stack g i pick-up b stack b g pick-up h stack h b,False,0.85,0.9
+BW,BW_E_003,,1,,pick-up d stack d j pick-up i stack i d pick-up c stack c i pick-up g stack g c,False,0.85,0.9
+BW,BW_E_004,,1,,pick-up g stack g l pick-up d stack d g pick-up e stack e d pick-up i stack i e pick-up k stack k i pick-up h stack h k pick-up a stack a h,False,0.85,0.9
+BW,BW_E_005,,1,,pick-up e stack e f pick-up d stack d e pick-up l stack l d pick-up c stack c l,False,0.85,0.9
+GSM,GSM_001,,1,,51,False,0.85,0.9
+GSM,GSM_002,,1,,30,False,0.85,0.9
+GSM,GSM_003,,1,,150,False,0.85,0.9
+GSM,GSM_004,,1,,21600,False,0.85,0.9
+GSM,GSM_005,,1,,54,False,0.85,0.9
+GSM,GSM_006,,1,,546,False,0.85,0.9
+GSM,GSM_007,,1,,30,False,0.85,0.9
+GSM,GSM_008,,1,,1024,False,0.85,0.9
+GSM,GSM_009,,1,,49,False,0.85,0.9
+GSM,GSM_010,,1,,885,False,0.85,0.9
+GSM,GSM_011,,1,,86,False,0.85,0.9
+GSM,GSM_012,,1,,81,False,0.85,0.9
+GSM,GSM_013,,1,,90,False,0.85,0.9
+GSM,GSM_014,,1,,70,False,0.85,0.9
+GSM,GSM_015,,1,,354,False,0.85,0.9
+GSM,GSM_016,,1,,5,False,0.85,0.9
+GSM,GSM_017,,1,,922,False,0.85,0.9
+GSM,GSM_018,,1,,21,False,0.85,0.9
+GSM,GSM_019,,1,,3,False,0.85,0.9
+GSM,GSM_020,,1,,24,False,0.85,0.9
+GSM,GSM_041,,1,,150,False,0.85,0.9
+GSM,GSM_042,,1,,2820,False,0.85,0.9
+GSM,GSM_043,,1,,8,False,0.85,0.9
+GSM,GSM_044,,1,,59,False,0.85,0.9
+GSM,GSM_045,,1,,1122,False,0.85,0.9
+GSM,GSM_046,,1,,121,False,0.85,0.9
+GSM,GSM_047,,1,,510,False,0.85,0.9
+GSM,GSM_048,,1,,206,False,0.85,0.9
+GSM,GSM_049,,1,,1782,False,0.85,0.9
+GSM,GSM_050,,1,,20,False,0.85,0.9
+GSM,GSM_051,,1,,256,False,0.85,0.9
+GSM,GSM_052,,1,,43.75,False,0.85,0.9
+GSM,GSM_053,,1,,378,False,0.85,0.9
+GSM,GSM_054,,1,,16,False,0.85,0.9
+GSM,GSM_055,,1,,6,False,0.85,0.9
+GSM,GSM_056,,1,,69,False,0.85,0.9
+GSM,GSM_057,,1,,84,False,0.85,0.9
+GSM,GSM_058,,1,,285,False,0.85,0.9
+GSM,GSM_059,,1,,29,False,0.85,0.9
+GSM,GSM_060,,1,,46,False,0.85,0.9
+GSM,GSM_061,,1,,420,False,0.85,0.9
+GSM,GSM_062,,1,,112000,False,0.85,0.9
+GSM,GSM_063,,1,,16200,False,0.85,0.9
+GSM,GSM_064,,1,,75,False,0.85,0.9

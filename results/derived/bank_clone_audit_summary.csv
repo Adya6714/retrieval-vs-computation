@@ -1,0 +1,4 @@
+family,n_canonical,n_clone_families,n_problems_in_clones,effective_n_collapsing_clones,n_pairwise_edges,materially_below_110
+ALGO,110,14,73,51,226,True
+BW,65,0,0,65,0,False
+GSM,44,0,0,44,0,False
