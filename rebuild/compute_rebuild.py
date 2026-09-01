@@ -41,17 +41,17 @@ from probes.behavioral.retention import (  # noqa: E402
     retention_ratio,
 )
 from triangulation_rule import (  # noqa: E402
-    CCI_COMPUTATION_MIN,
+    APPENDIX_CCI_COMPUTATION_MIN,
+    APPENDIX_CCI_RETRIEVAL_MAX,
+    APPENDIX_CONTAM_PERCENTILE,
     CCI_THRESHOLDS,
     CONTAM_PERCENTILES,
-    CONTAM_SPLIT,
     PAPER_COUNTS,
-    W3_COMPUTATION_MIN,
     W3_CUTOFFS,
-    W3_RETRIEVAL_MAX,
     count_labels,
     label_appendix_three_signal,
     label_default,
+    label_legacy_five_field,
     label_sweep_cell,
     matches_paper_counts,
 )
@@ -1629,7 +1629,7 @@ def run_tri(algo: dict[str, pd.DataFrame], p2: dict) -> None:
     add(id="T.2.4model.retrieval", probe="T", phase="triangulation", family="ALGO",
         metric="n_retrieval", value=c4["retrieval"], n=c4["n"],
         source_file="ALGO_P1_behavioral_{claude,gpt4o,llama,gemini}.csv + ALGO_P3_contamination.csv + recomputed CCI",
-        filter_applied=f"executed 5-field AND; W3_RETRIEVAL_MAX={W3_RETRIEVAL_MAX}; W3_COMPUTATION_MIN={W3_COMPUTATION_MIN}; CCI={CCI_COMPUTATION_MIN}; CONTAM_SPLIT={CONTAM_SPLIT}; 4 models × bank 110")
+        filter_applied=f"appendix three-signal; CCI bands {APPENDIX_CCI_RETRIEVAL_MAX}/{APPENDIX_CCI_COMPUTATION_MIN}; contam p{APPENDIX_CONTAM_PERCENTILE}; symmetric W3; 4 models × bank 110")
     add(id="T.2.4model.computation", probe="T", phase="triangulation", family="ALGO",
         metric="n_computation", value=c4["computation"], n=c4["n"],
         source_file="same as T.2.4model.retrieval", filter_applied="executed rule")
@@ -1649,18 +1649,20 @@ def run_tri(algo: dict[str, pd.DataFrame], p2: dict) -> None:
         metric="n_missing_core", value=n_core, n=c4["n"],
         source_file="P1+contamination", filter_applied="VAR_can/W3/contam/greedy_succeeds NA")
     hit = matches_paper_counts(c4)
-    add(id="T.4.reproduces_8_4_157_271", probe="T", phase="triangulation", family="ALGO",
+    add(id="T.4.reproduces_15_1_300_124", probe="T", phase="triangulation", family="ALGO",
         metric="matches_paper_counts", value=int(hit), n=c4["n"],
         source_file="rebuild/triangulation_rule.py",
-        filter_applied="executed 5-field AND on 4-model panel rebuilt from raw",
-        note=("YES — reproduces 8/4/157/271 from raw."
+        filter_applied="appendix three-signal on 4-model panel",
+        note=("YES — reproduces appendix 15/1/300/124."
               if hit else
               f"NO — from-raw counts are {c4['retrieval']}/{c4['computation']}/{c4['mixed']}/{c4['ambiguous']} "
-              f"(n={c4['n']}; parse_fail={n_parse}, missing_phase2={n_p2miss}, missing_core={n_core}). "
-              "Paper 8/4/157/271 is label_default() applied to results/derived/ALGO_P3_triangulation_v3.csv "
-              "(not a raw file). That is how the paper got those counts. It is defensible only as "
-              "reproducing the executed pipeline snapshot, not as a from-raw rebuild. "
-              "The appendix three-signal print is a different function and does not produce 8/4/157/271."))
+              f"(n={c4['n']}). Canonical rule is label_appendix_three_signal / label_default."))
+    c_legacy = count_labels(label_legacy_five_field(four))
+    add(id="T.4.legacy_5field_8_4_157_271", probe="T", phase="triangulation", family="ALGO",
+        metric="n_retrieval_legacy", value=c_legacy["retrieval"], n=c_legacy["n"],
+        source_file="triangulation_rule.py label_legacy_five_field",
+        filter_applied="named sensitivity variant; not the published rule",
+        note=f"legacy AND {c_legacy['retrieval']}/{c_legacy['computation']}/{c_legacy['mixed']}/{c_legacy['ambiguous']}")
 
     lab5 = label_default(five)
     c5 = count_labels(lab5)
@@ -2250,8 +2252,8 @@ def write_report(banks: dict) -> None:
         f"mixed={_g('T.2.4model.mixed')} ambiguous={_g('T.2.4model.ambiguous')}.",
         f"- Flags on that panel: parse_failure={_g('T.2.4model.n_parse_failure')} "
         f"missing_phase2={_g('T.2.4model.n_missing_phase2')} missing_core={_g('T.2.4model.n_missing_core')}.",
-        f"- Reproduces 8/4/157/271? **{'yes' if str(by_id.get('T.4.reproduces_8_4_157_271', {}).get('value')) in {'1', '1.0'} else 'no'}**",
-        f"  {by_id.get('T.4.reproduces_8_4_157_271', {}).get('note','')}",
+        f"- Reproduces appendix 15/1/300/124? **{'yes' if str(by_id.get('T.4.reproduces_15_1_300_124', {}).get('value')) in {'1', '1.0'} else 'no'}**",
+        f"  {by_id.get('T.4.reproduces_15_1_300_124', {}).get('note','')}",
         f"- 5-model under the same rule: retrieval={_g('T.2.5model.retrieval')} computation={_g('T.2.5model.computation')} "
         f"mixed={_g('T.2.5model.mixed')} ambiguous={_g('T.2.5model.ambiguous')}.",
         f"- Appendix three-signal on 5 models: retrieval={_g('T.4.appendix_rule.5model.retrieval')} "

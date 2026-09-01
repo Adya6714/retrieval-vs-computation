@@ -1,28 +1,20 @@
-"""Explicit triangulation label rule.
+"""Canonical triangulation label rule: appendix-printed three-signal conjunction.
 
-Every threshold is a named constant. This is the rule that
-``scripts/ALGO_P3_SCR_triangulation.py:compute_convergence_labels`` executed
-on the 440 (problem × model) ALGO panel (4 models × 110 problems).
+Executed path = appendix print. There is one published rule.
 
-The appendix prints a *different* three-signal conjunction (raw W3, CCI
-bands, contamination floor/p75). That printed rule does **not** produce
-the paper's 8 / 4 / 157 / 271. This file is the executed rule.
+  retrieval   : W3 vote −1 AND CCI ≤ 0.10 AND contamination ≥ p75
+  computation : W3 vote +1 AND CCI ≥ 0.67 AND contamination at floor
+  mixed       : conflicting signs across the three signals
+  ambiguous   : remainder (including missing CCI)
 
-Paper default (asymmetric W3 cuts):
-  retrieval   : VAR_canonical > CANONICAL_RETRIEVAL_MIN
-                AND VAR_W3     < W3_RETRIEVAL_MAX
-                AND instance contamination rank > CONTAM_SPLIT
-                AND greedy_succeeds is True
-  computation : VAR_W3         > W3_COMPUTATION_MIN
-                AND ACI        > CCI_COMPUTATION_MIN
-                AND instance contamination rank <= CONTAM_SPLIT
-  ambiguous   : missing_core OR parse_failure_or_missing OR missing_phase2
-  mixed       : otherwise
+W3 is symmetric (0 vs 1). greedy_succeeds is not a conjunct.
 
-The 270-configuration sweep parameterizes a *single* W3 cutoff used on
-both sides (VAR_W3 < w3_cut for retrieval, VAR_W3 > w3_cut for
-computation), plus CCI and contamination-percentile. Because W3 is 0/1,
-w3_cut in {0.25, 0.5, 0.75} is identical to the paper default.
+The former 5-field AND (asymmetric W3 0.2/0.5, greedy_succeeds, CCI 0.5,
+median split) is kept as ``label_legacy_five_field`` — a named sensitivity
+variant, not the published numbers.
+
+The 270-configuration sweep applies the appendix *structure* (signed votes,
+mixed = conflict, no greedy) across CCI / W3-cut / contamination-percentile.
 """
 from __future__ import annotations
 
@@ -32,14 +24,20 @@ import numpy as np
 import pandas as pd
 
 # ---------------------------------------------------------------------------
-# Named constants — paper-executed default
+# Named constants — canonical (appendix) default
 # ---------------------------------------------------------------------------
+APPENDIX_CCI_RETRIEVAL_MAX = 0.10
+APPENDIX_CCI_COMPUTATION_MIN = 0.67
+APPENDIX_CONTAM_PERCENTILE = 75
+APPENDIX_W3_CUTOFF = 0.5  # symmetric: VAR_W3 < cut → retrieval vote; > cut → computation
+
+# Legacy 5-field AND constants (sensitivity variant only)
 CANONICAL_RETRIEVAL_MIN = 0.5
 W3_RETRIEVAL_MAX = 0.2
 W3_COMPUTATION_MIN = 0.5
 CCI_COMPUTATION_MIN = 0.5
-CONTAM_SPLIT = 0.5  # rank_pct > this is "top half" (high contamination)
-MIN_VOTES_FOR_AMBIGUOUS_OVERRIDE = 0  # unused; missing-data flags win
+CONTAM_SPLIT = 0.5
+MIN_VOTES_FOR_AMBIGUOUS_OVERRIDE = 0
 
 # 270-config sweep grid (18 × 5 × 3 = 270)
 CCI_THRESHOLDS: tuple[float, ...] = tuple(round(x, 2) for x in np.arange(0.05, 0.90 + 1e-9, 0.05))
@@ -47,24 +45,25 @@ W3_CUTOFFS: tuple[float, ...] = (0.0, 0.25, 0.5, 0.75, 1.0)
 CONTAM_PERCENTILES: tuple[int, ...] = (50, 75, 90)
 
 REQUIRED_CORE_FIELDS: tuple[str, ...] = (
-    "VAR_canonical",
     "VAR_W3",
     "instance_contamination_score",
-    "greedy_succeeds",
 )
 
 PAPER_COUNTS = {
+    "retrieval": 15,
+    "computation": 1,
+    "mixed": 300,
+    "ambiguous": 124,
+    "n": 440,
+}
+
+LEGACY_COUNTS = {
     "retrieval": 8,
     "computation": 4,
     "mixed": 157,
     "ambiguous": 271,
     "n": 440,
 }
-
-# Appendix-printed three-signal conjunction (NOT the executed rule).
-APPENDIX_CCI_RETRIEVAL_MAX = 0.10
-APPENDIX_CCI_COMPUTATION_MIN = 0.67
-APPENDIX_CONTAM_PERCENTILE = 75
 
 
 def _as_bool_mask(s: pd.Series) -> np.ndarray:
@@ -74,7 +73,12 @@ def _as_bool_mask(s: pd.Series) -> np.ndarray:
 
 
 def label_default(df: pd.DataFrame) -> pd.Series:
-    """Paper-executed default: asymmetric W3 cuts 0.2 / 0.5, CCI 0.5, median split."""
+    """Canonical published rule: appendix three-signal conjunction."""
+    return label_appendix_three_signal(df)
+
+
+def label_legacy_five_field(df: pd.DataFrame) -> pd.Series:
+    """Named sensitivity variant: asymmetric W3 0.2/0.5, greedy_succeeds, CCI 0.5, median split."""
     return label_with_thresholds(
         df,
         cci_thr=CCI_COMPUTATION_MIN,
@@ -94,7 +98,7 @@ def label_with_thresholds(
     contam_split: float,
     canonical_retrieval_min: float = CANONICAL_RETRIEVAL_MIN,
 ) -> pd.Series:
-    """Apply the 5-field AND rule with explicit numeric thresholds.
+    """Legacy 5-field AND with explicit numeric thresholds (sensitivity variant).
 
     Expected columns on ``df``:
       VAR_canonical, VAR_W3, ACI, instance_rank_pct, greedy_succeeds,
@@ -145,7 +149,31 @@ def label_sweep_cell(
     w3_cutoff: float,
     contam_pct: int,
 ) -> pd.Series:
-    """270-config parameterization: one W3 cutoff on both sides."""
+    """270-config appendix structure: one CCI retrieval-max, symmetric W3, contam percentile.
+
+    CCI computation-min is paired as ``1 - cci_thr`` so the 18-point CCI axis
+    sweeps a dead zone. The exact appendix bands (0.10 / 0.67) are not a grid
+    point; they are ``label_appendix_three_signal``.
+    """
+    retrieval_max = min(cci_thr, 1.0 - cci_thr)
+    computation_min = max(cci_thr, 1.0 - cci_thr)
+    return label_appendix_with_thresholds(
+        df,
+        cci_retrieval_max=retrieval_max,
+        cci_computation_min=computation_min,
+        w3_cutoff=w3_cutoff,
+        contam_pct=contam_pct,
+    )
+
+
+def label_legacy_sweep_cell(
+    df: pd.DataFrame,
+    *,
+    cci_thr: float,
+    w3_cutoff: float,
+    contam_pct: int,
+) -> pd.Series:
+    """270-config parameterization of the legacy 5-field AND."""
     return label_with_thresholds(
         df,
         cci_thr=cci_thr,
@@ -155,17 +183,19 @@ def label_sweep_cell(
     )
 
 
-def label_appendix_three_signal(df: pd.DataFrame) -> pd.Series:
-    """Appendix-printed three-signal conjunction.
-
-    Strong retrieval / computation require W3, CCI, and contamination all
-    aligned. Mixed = conflicting directions. Ambiguous = remainder
-    (including missing CCI). This is **not** the executed paper rule.
-    """
+def label_appendix_with_thresholds(
+    df: pd.DataFrame,
+    *,
+    cci_retrieval_max: float,
+    cci_computation_min: float,
+    w3_cutoff: float,
+    contam_pct: int,
+) -> pd.Series:
+    """Appendix structure (signed votes, mixed=conflict) with explicit thresholds."""
     w3 = pd.to_numeric(df["VAR_W3"], errors="coerce")
     cci = pd.to_numeric(df["ACI"], errors="coerce")
     contam = pd.to_numeric(df["instance_contamination_score"], errors="coerce")
-    p75 = float(contam.quantile(APPENDIX_CONTAM_PERCENTILE / 100.0))
+    p_high = float(contam.quantile(contam_pct / 100.0)) if contam.notna().any() else 0.0
     floor = float(contam.min()) if contam.notna().any() else 0.0
 
     labels = []
@@ -173,18 +203,25 @@ def label_appendix_three_signal(df: pd.DataFrame) -> pd.Series:
         w3v = w3.loc[i]
         cciv = cci.loc[i]
         cv = contam.loc[i]
-        sig_w3 = 1 if w3v == 1 else (-1 if w3v == 0 else 0)
+        if pd.isna(w3v):
+            sig_w3 = 0
+        elif w3v > w3_cutoff:
+            sig_w3 = 1
+        elif w3v < w3_cutoff:
+            sig_w3 = -1
+        else:
+            sig_w3 = 0
         if pd.notna(cciv):
-            if cciv <= APPENDIX_CCI_RETRIEVAL_MAX:
+            if cciv <= cci_retrieval_max:
                 sig_cci = -1
-            elif cciv >= APPENDIX_CCI_COMPUTATION_MIN:
+            elif cciv >= cci_computation_min:
                 sig_cci = 1
             else:
                 sig_cci = 0
         else:
             sig_cci = 0
         if pd.notna(cv):
-            if cv >= p75:
+            if cv >= p_high:
                 sig_c = -1
             elif abs(cv - floor) <= 1e-12:
                 sig_c = 1
@@ -203,6 +240,22 @@ def label_appendix_three_signal(df: pd.DataFrame) -> pd.Series:
         else:
             labels.append("ambiguous")
     return pd.Series(labels, index=df.index, dtype=object)
+
+
+def label_appendix_three_signal(df: pd.DataFrame) -> pd.Series:
+    """Appendix-printed three-signal conjunction (canonical published rule).
+
+    Strong retrieval / computation require W3, CCI, and contamination all
+    aligned. Mixed = conflicting directions. Ambiguous = remainder
+    (including missing CCI). No greedy_succeeds conjunct.
+    """
+    return label_appendix_with_thresholds(
+        df,
+        cci_retrieval_max=APPENDIX_CCI_RETRIEVAL_MAX,
+        cci_computation_min=APPENDIX_CCI_COMPUTATION_MIN,
+        w3_cutoff=APPENDIX_W3_CUTOFF,
+        contam_pct=APPENDIX_CONTAM_PERCENTILE,
+    )
 
 
 def count_labels(labels: Iterable[str] | pd.Series) -> dict[str, int]:

@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 """ALGO triangulation threshold sensitivity (legacy 5-field labeling rule).
 
-Sweeps CCI, W3-retention, and contamination-percentile cutoffs over the
-440 (problem × model) rows in ALGO_P3_triangulation_v3.csv — the derived
-per-instance panel built from Probe-1 verifier logs
-(`results/raw/ALGO_P1_behavioral_*.csv`).
+Canonical published sweep is:
+    python scripts/consolidate/run_appendix_triangulation_sweep.py
 
-Label rule (parameterized from scripts/ALGO_P3_SCR_triangulation.py):
-  retrieval   : VAR_can>0.5 & VAR_W3<w3_cut & contam_rank>pct & greedy_succeeds
-  computation : VAR_W3>w3_cut & ACI>cci & contam_rank<=pct
-  ambiguous   : missing core/P2/parse (unchanged)
-  mixed       : otherwise
+This script retains the AND-rule grid as a named sensitivity variant.
+"""
 
 Contamination percentile is a single moving split (generalizes the paper's
 median half-split): high = rank_pct > p/100, low = rank_pct <= p/100.

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -302,25 +303,28 @@ def compute_convergence_labels(df: pd.DataFrame) -> pd.DataFrame:
         out["missing_phase2"] = True
     out["parse_failure_or_missing"] = out["any_parse_failed"].fillna(False).astype(bool)
 
-    out["convergence_label"] = "mixed"
-    out.loc[out["missing_core"] | out["parse_failure_or_missing"] | out["missing_phase2"], "convergence_label"] = "ambiguous"
+    repo = Path(__file__).resolve().parents[1]
+    if str(repo) not in sys.path:
+        sys.path.insert(0, str(repo))
+    if str(repo / "rebuild") not in sys.path:
+        sys.path.insert(0, str(repo / "rebuild"))
+    from triangulation_rule import label_appendix_three_signal, count_labels
 
-    retrieval_mask = (
-        (out["VAR_canonical"] > 0.5)
-        & (out["VAR_W3"] < 0.2)
-        & (out["instance_contamination_half"] == "top")
-        & (out["greedy_succeeds"] == True)  # noqa: E712
-        & (out["convergence_label"] != "ambiguous")
+    mapped = label_appendix_three_signal(out).map(
+        {
+            "retrieval": "retrieval_signal",
+            "computation": "computation_signal",
+            "mixed": "mixed",
+            "ambiguous": "ambiguous",
+        }
     )
-    computation_mask = (
-        (out["VAR_W3"] > 0.5)
-        & (out["ACI"] > 0.5)
-        & (out["instance_contamination_half"] == "bottom")
-        & (out["convergence_label"] != "ambiguous")
+    out["convergence_label"] = mapped
+    counts = count_labels(label_appendix_three_signal(out))
+    print(
+        f"% ambiguous classifications: {100.0 * (out['convergence_label'] == 'ambiguous').mean():.1f}% "
+        f"(appendix rule retrieval={counts['retrieval']} computation={counts['computation']} "
+        f"mixed={counts['mixed']} ambiguous={counts['ambiguous']})"
     )
-    out.loc[retrieval_mask, "convergence_label"] = "retrieval_signal"
-    out.loc[~retrieval_mask & computation_mask, "convergence_label"] = "computation_signal"
-    print(f"% ambiguous classifications: {100.0 * (out['convergence_label'] == 'ambiguous').mean():.1f}%")
     return out
 
 

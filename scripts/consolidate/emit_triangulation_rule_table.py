@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Compare appendix-printed vs executed triangulation rules; re-label after P1 rescore.
+"""Compare canonical appendix triangulation vs the legacy 5-field sensitivity variant.
 
-Does not call any model API.
+Writes results/derived/P3_triangulation_rule_comparison_detail.csv.
+The two-row published-vs-variant table is emitted by
+scripts/consolidate/run_appendix_triangulation_sweep.py.
 """
 
 from __future__ import annotations
@@ -19,6 +21,7 @@ from rebuild.triangulation_rule import (  # noqa: E402
     count_labels,
     label_appendix_three_signal,
     label_default,
+    label_legacy_five_field,
 )
 
 DERIVED = REPO_ROOT / "results/derived"
@@ -111,22 +114,23 @@ def main() -> None:
 
     executed = label_default(panel)
     appendix = label_appendix_three_signal(panel)
+    legacy = label_legacy_five_field(panel)
     rows = [
         _counts_row(
-            "appendix_printed",
-            "three-signal conjunction: W3 in {0,1}, CCI bands 0.10/0.67, contamination floor vs p75; mixed=conflict; ambiguous=remainder. No greedy_succeeds. Symmetric W3.",
+            "appendix_canonical",
+            "published rule: symmetric W3, CCI bands 0.10/0.67, contamination floor vs p75; mixed=conflict; ambiguous=remainder. No greedy_succeeds.",
             count_labels(appendix),
             src.name,
         ),
         _counts_row(
-            "executed",
-            "5-field AND: canonical>0.5 AND W3<0.2 AND high contam AND greedy_succeeds (retrieval); W3>0.5 AND ACI>0.5 AND low contam (computation); missing_core|parse|missing_phase2 → ambiguous. Asymmetric W3 cuts 0.2/0.5.",
-            count_labels(executed),
+            "legacy_five_field_sensitivity",
+            "named sensitivity variant only: canonical>0.5 AND W3<0.2 AND high contam AND greedy_succeeds; W3>0.5 AND ACI>0.5 AND low contam. Asymmetric W3 0.2/0.5. Not published.",
+            count_labels(legacy),
             src.name,
         ),
         _counts_row(
             "file_convergence_label",
-            "labels already stored on the panel CSV",
+            "labels already stored on the panel CSV (legacy snapshot; v3 is not overwritten)",
             count_labels(existing),
             src.name,
         ),
@@ -156,19 +160,20 @@ def main() -> None:
 
     exec_c = label_default(corrected)
     app_c = label_appendix_three_signal(corrected)
+    legacy_c = label_legacy_five_field(corrected)
     rows.append(
         _counts_row(
-            "executed_on_rescored_p1",
-            "executed rule after overlaying included=True rescored VAR_canonical / VAR_W3",
-            count_labels(exec_c),
+            "appendix_canonical_on_rescored_p1",
+            "canonical appendix rule after overlaying included=True rescored VAR_canonical / VAR_W3",
+            count_labels(app_c),
             src.name + "+rescored_p1",
         )
     )
     rows.append(
         _counts_row(
-            "appendix_on_rescored_p1",
-            "appendix-printed rule after the same P1 overlay",
-            count_labels(app_c),
+            "legacy_five_field_on_rescored_p1",
+            "sensitivity variant after the same P1 overlay",
+            count_labels(legacy_c),
             src.name + "+rescored_p1",
         )
     )
@@ -212,7 +217,7 @@ def main() -> None:
         )
 
     out = pd.DataFrame(rows)
-    path = DERIVED / "P3_triangulation_rule_comparison.csv"
+    path = DERIVED / "P3_triangulation_rule_comparison_detail.csv"
     out.to_csv(path, index=False)
     print(out.to_string(index=False))
     print(f"VAR_canonical cells changed vs panel: {n_can_changed}; VAR_W3 changed: {n_w3_changed}")
