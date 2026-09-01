@@ -4,6 +4,8 @@
 
 Only **`raw/`** is append-only (`--resume`). Recompute everything else after `raw/` changes.
 
+Instrument exclusions (`derived/variant_exclusions.csv`, reason `variant_not_transformed`): all ALGO and BW W6 rows (not a fresh-instance control as generated); BW W5 `MBW_496`–`MBW_500` (identical to canonical). GSM W6 stays (23/24 transformed). Filter via `probes.common.exclusions.filter_excluded`. Do not regenerate W6.
+
 Paths: `probes/common/results_paths.py`
 
 ---
@@ -121,17 +123,37 @@ Do not concatenate the pilots with the `_new` files (a keep=last overlay hid the
 Paper-ready coverage: `results/derived/P2_coverage.csv`.
 BW CCI/TEP null diagnosis: `results/derived/P2_bw_cci_null_diagnosis.csv`, `P2_bw_tep_null_diagnosis.csv`.
 
+**GSM `session_b_correct` is a disjunction**, not Phase 2A accuracy: `verify(phase2a_values[-1]) OR verify(phase1_final)`. It never reads `phase2b_values`. Overlay: `derived/GSM_P2_session_correct.csv` (`either_session_correct`, `phase1_correct`; `phase2a_correct` / `phase2b_correct` blank — those value lists were never persisted). Table 4 Acc_P2A cannot be recovered without a re-run. Do not rewrite `raw/` GSM P2 files.
+
 ---
 
-## Probe 3 — template vs instance contamination
+## Probe 3 — no template-vs-instance split; n-gram windows are not comparable across families
 
-**ALGO** stores `template_contamination_score` and `instance_contamination_score` in `raw/ALGO_P3_contamination.csv`. Template-vs-instance claims in the paper are **ALGO-only**.
+The published template-vs-instance claim is **withdrawn**. It is not a measurement of templates versus instances.
 
-**GSM** has only `contamination_score` on the full problem text (`raw/GSM_P3_contamination.csv`). There is no template/instance split; do not report a GSM template-vs-instance correlation.
+**ALGO** `template_contamination_score` in `raw/ALGO_P3_contamination.csv` rescores the **same full `problem_text`** with `family="gsm"` (max n=8 instead of n=13). `instance_contamination_score` is the **gold answer string**, not instance parameters or graph text. These columns are miswired. Do not plot them against each other as template vs instance. Flagged figures: `scripts/ALGO_P1_FIG_generate.py` (`plot_contamination_scatter`), `paper/figures/scripts/gen_figures.py` (`contam_vri_pearson`), rebuild `P3.1.*.template_contamination_score_vs_VRI` vs `P3.1.*.instance_contamination_score_vs_VRI`, `audit_2026_08/new/run_new_analyses.py` instance-vs-template Pearson, `paper/figures/scripts/legacy/fig2_contam_gradient.py`. See `results/derived/H3_template_instance_flags.csv`.
 
-**BW** `template_contamination_score` in `raw/BW_P3_contamination.csv` is 0.000 on all 65 rows. The original InfiniGram query was a keyword dump (`pick-up put-down stack unstack ...`); mystery rows used Blocksworld verbs. That is a malformed template, not evidence that BW templates have zero corpus hits. The query strings in `scripts/BW_P3_SCR_run_contamination_triage.py` are now grammatical prompt stems. Re-query writes a derived file; `raw/` is unchanged. Until a re-query lands, drop BW `template_contamination_score` from every correlation (zero variance). Figures/tables that **store** the column: `raw/BW_P3_contamination.csv`, `derived/scientific_file_deductions.csv`, `derived/scientific_filewise_audit.md`. Rebuild `P3.1.*.template_contamination_score_vs_VRI` rows are **ALGO**, not BW. Paper figures `fig4_contamination_scatter.py` / `generate_paper_figures.py` use overall or instance scores, not the BW template column.
+**GSM** has only `contamination_score` on the full problem text (`raw/GSM_P3_contamination.csv`). There is no template/instance split.
+
+**BW** `template_contamination_score` in `raw/BW_P3_contamination.csv` is 0.000 on all 65 rows (original InfiniGram query was a keyword dump). Grammatical stems now live in `scripts/BW_P3_SCR_run_contamination_triage.py`; `raw/` is unchanged. Until a re-query lands, drop BW `template_contamination_score` from every correlation (zero variance). Instance fallback `blocksworld num_blocks N` is still a keyword dump.
+
+**Cross-family contamination comparisons are invalid as computed.** GSM uses max n=8 (`family=arithmetic_reasoning`); ALGO/BW `contamination_score` uses max n=13. `max_ngram_count` is the **raw** Infini-gram count at the longest n with count>0, not a normalized rate. Within-family comparisons stay valid. Construction audit: `results/derived/P3_infinigram_query_audit.csv`.
 
 Triangulation rule comparison (appendix printed vs executed, plus P1-rescored overlay): `results/derived/P3_triangulation_rule_comparison.csv`.
+
+---
+
+## Clone audit (canonical banks)
+
+`derived/bank_clone_audit.csv`: near-duplicate families from token Jaccard ≥ 0.85 or SequenceMatcher ≥ 0.90 **and** identical gold, within each bank.
+
+| Family | canonical n | clone families | problems in clones | effective n |
+|--------|-------------|----------------|--------------------|-------------|
+| ALGO | 110 | 14 | 73 | **51** |
+| BW | 65 | 0 | 0 | 65 |
+| GSM | 44 | 0 | 0 | 44 |
+
+ALGO effective n is materially below 110. Every ALGO accuracy (Table 7 slices, Probe 1 figures, rebuild P1.1.ALGO.*) is still computed on 110 IDs but is **not 110 independent items**. WIS_017–020 sit in `ALGO_CLONE_013` (n=12) with other chain-overlap clones sharing `Selected: {4, 5}`.
 
 ---
 

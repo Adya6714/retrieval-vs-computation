@@ -1,0 +1,7 @@
+figure_or_table,path,what_it_plots,why_flagged
+ALGO_P1_FIG_05_contamination_scatter,scripts/ALGO_P1_FIG_generate.py plot_contamination_scatter,instance_contamination_score vs verified,instance_contamination_score is the gold-answer Infini-gram score not instance text; not a template-vs-instance plot but uses the miswired instance column
+contam_vri_pearson,paper/figures/scripts/gen_figures.py contam_vri_pearson,instance_contamination_score vs VRI,same miswired instance column; paper previously labelled this template
+P3.1.*.template_vs_instance_VRI,rebuild/compute_rebuild.py P3.1.*.template_contamination_score_vs_VRI vs P3.1.*.instance_contamination_score_vs_VRI,template score vs VRI beside instance score vs VRI,ALGO template column is full problem_text rescored with family=gsm (n=8); instance column is gold; not a real split
+C_instance_vs_template_pearson,audit_2026_08/new/run_new_analyses.py,instance_contamination_score and template_contamination_score vs VRI,same miswired ALGO columns
+fig2_contam_gradient,paper/figures/scripts/legacy/fig2_contam_gradient.py,W3 retention vs template contamination,legacy figure treats template_contamination_score as a real template query
+cross_family_contamination,any GSM vs ALGO/BW max_ngram_count or contamination_score comparison,cross-family n-gram scores,GSM max n=8 ALGO/BW max n=13; max_ngram_count is raw; within-family stays valid
