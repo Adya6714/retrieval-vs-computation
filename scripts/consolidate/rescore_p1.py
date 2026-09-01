@@ -1,0 +1,317 @@
+#!/usr/bin/env python3
+"""Re-score existing Probe 1 raw responses with the current verifiers.
+
+Reads results/raw/*P1_behavioral*.csv, never writes back to results/raw/,
+and writes sibling files under results/derived/ with a ``_rescored`` suffix.
+
+Does not call any model API.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+csv.field_size_limit(sys.maxsize)
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from probes.contamination.verify import (  # noqa: E402
+    LAST_VERIFY_META,
+    parse_action_mapping_from_notes,
+    verify_answer,
+)
+from probes.contamination.verify_algo import verify_algo  # noqa: E402
+
+RAW_DIR = REPO_ROOT / "results/raw"
+DERIVED_DIR = REPO_ROOT / "results/derived"
+
+BANKS = {
+    "BW": REPO_ROOT / "data/problems/question_bank_bw.csv",
+    "ALGO": REPO_ROOT / "data/problems/question_bank_algo.csv",
+    "GSM": REPO_ROOT / "data/problems/question_bank_gsm.csv",
+}
+
+_ALGO_SUBTYPES = {"coin_change", "shortest_path", "wis", "wis_independent_set"}
+_VERIFIER_FAMILIES = {
+    "blocksworld",
+    "mystery_blocksworld",
+    "logistics",
+    "arithmetic_reasoning",
+    "shortest_path",
+    "weighted_interval_scheduling",
+    "coin_change",
+    "knapsack",
+    "gsm",
+}
+
+P1_PATTERNS = (
+    "BW_P1_behavioral*.csv",
+    "GSM_P1_behavioral_*.csv",
+    "ALGO_P1_behavioral_*.csv",
+)
+
+
+def _resolve_verifier_family(*, pid: str, problem_family: str, problem_subtype: str) -> str:
+    fam = str(problem_family or "").strip().lower()
+    sub = str(problem_subtype or "").strip().lower()
+    if sub in _VERIFIER_FAMILIES:
+        return sub
+    if fam in _VERIFIER_FAMILIES:
+        return fam
+    if fam == "planning_suite":
+        pid_up = str(pid or "").strip().upper()
+        if pid_up.startswith("MBW_"):
+            return "mystery_blocksworld"
+        if pid_up.startswith("BW_"):
+            return "blocksworld"
+        if pid_up.startswith("LOG_"):
+            return "logistics"
+        return "blocksworld"
+    return fam
+
+
+def _load_bank_index(path: Path) -> dict[tuple[str, str], dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    index: dict[tuple[str, str], dict[str, str]] = {}
+    for row in rows:
+        key = (str(row.get("problem_id", "")).strip(), str(row.get("variant_type", "")).strip())
+        index[key] = row
+    return index
+
+
+def _family_from_filename(name: str) -> str:
+    if name.startswith("ALGO_"):
+        return "ALGO"
+    if name.startswith("GSM_"):
+        return "GSM"
+    return "BW"
+
+
+def _parse_bool(value: object) -> bool | None:
+    text = str(value or "").strip().lower()
+    if text in {"true", "1", "yes"}:
+        return True
+    if text in {"false", "0", "no"}:
+        return False
+    return None
+
+
+def _model_answer(row: dict[str, str]) -> str:
+    if "raw_response" in row:
+        return str(row.get("raw_response") or "")
+    return str(row.get("model_answer") or "")
+
+
+def _old_correct(row: dict[str, str]) -> bool | None:
+    if "behavioral_correct" in row:
+        return _parse_bool(row.get("behavioral_correct"))
+    if "verified" in row:
+        return _parse_bool(row.get("verified"))
+    return None
+
+
+def _rescore_row(
+    family: str,
+    raw: dict[str, str],
+    bank_row: dict[str, str] | None,
+) -> tuple[bool | None, str, str]:
+    answer = _model_answer(raw)
+    pid = str(raw.get("problem_id") or (bank_row or {}).get("problem_id") or "").strip()
+    variant = str(raw.get("variant_type") or (bank_row or {}).get("variant_type") or "").strip()
+    if bank_row is None:
+        return None, "", "missing_bank_row"
+    subtype = str(bank_row.get("problem_subtype", "")).strip()
+    try:
+        if family == "ALGO" or subtype.lower() in _ALGO_SUBTYPES:
+            ok, reason, _meta = verify_algo(
+                pid,
+                answer,
+                bank_row.get("correct_answer", ""),
+                subtype,
+                variant,
+                bank_row.get("difficulty_params", ""),
+            )
+            method = "algo_strict"
+            return bool(ok), method, reason
+        vf = _resolve_verifier_family(
+            pid=pid,
+            problem_family=str(bank_row.get("problem_family", "")),
+            problem_subtype=subtype,
+        )
+        mapping = parse_action_mapping_from_notes(bank_row.get("notes"))
+        ok = verify_answer(
+            pid,
+            answer,
+            bank_row.get("correct_answer", ""),
+            vf,
+            problem_text=bank_row.get("problem_text", ""),
+            action_mapping=mapping,
+        )
+        method = str(LAST_VERIFY_META.get("verify_method") or "")
+        if ok is True:
+            return True, method, "correct"
+        if ok is False:
+            return False, method, "incorrect"
+        return None, method, "unparsed_state"
+    except Exception as exc:
+        return False, "", f"{type(exc).__name__}: {exc}"
+
+
+def _p1_files() -> list[Path]:
+    files: list[Path] = []
+    seen: set[Path] = set()
+    for pattern in P1_PATTERNS:
+        for path in sorted(RAW_DIR.glob(pattern)):
+            if path in seen:
+                continue
+            if "review" in path.name.lower():
+                continue
+            seen.add(path)
+            files.append(path)
+    return files
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--raw-dir", type=Path, default=RAW_DIR)
+    parser.add_argument("--out-dir", type=Path, default=DERIVED_DIR)
+    args = parser.parse_args()
+
+    raw_dir = args.raw_dir
+    out_dir = args.out_dir
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    banks = {name: _load_bank_index(path) for name, path in BANKS.items()}
+    summary: dict[tuple[str, str, str, str], dict[str, int]] = defaultdict(
+        lambda: {"n": 0, "old_correct": 0, "new_correct": 0, "changed": 0, "old_known": 0}
+    )
+    written: list[Path] = []
+
+    for path in _p1_files() if raw_dir == RAW_DIR else sorted(raw_dir.glob("*P1_behavioral*.csv")):
+        if "review" in path.name.lower():
+            continue
+        family = _family_from_filename(path.name)
+        with path.open(newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            src_fields = list(reader.fieldnames or [])
+            rows = list(reader)
+
+        extra = [
+            col
+            for col in (
+                "old_verified",
+                "rescored_correct",
+                "verify_method",
+                "rescore_reason",
+                "verdict_changed",
+            )
+            if col not in src_fields
+        ]
+        out_fields = src_fields + extra
+        out_path = out_dir / f"{path.stem}_rescored.csv"
+
+        with out_path.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=out_fields, extrasaction="ignore")
+            writer.writeheader()
+            for raw in rows:
+                key = (
+                    str(raw.get("problem_id", "")).strip(),
+                    str(raw.get("variant_type", "")).strip(),
+                )
+                bank_row = None
+                row_family = family
+                for name, index in banks.items():
+                    if key in index:
+                        bank_row = index[key]
+                        row_family = name
+                        break
+                old = _old_correct(raw)
+                new, method, reason = _rescore_row(row_family, raw, bank_row)
+                new_bool = new is True
+                changed = old is not None and old != new_bool
+                subtype = str((bank_row or {}).get("problem_subtype") or raw.get("problem_family") or family)
+                model = str(raw.get("model") or "").strip() or path.stem
+                variant = key[1] or "unknown"
+                stats = summary[(path.name, model, subtype, variant)]
+                stats["n"] += 1
+                if old is not None:
+                    stats["old_known"] += 1
+                    if old:
+                        stats["old_correct"] += 1
+                if new_bool:
+                    stats["new_correct"] += 1
+                if changed:
+                    stats["changed"] += 1
+
+                out_row = dict(raw)
+                if "behavioral_correct" in out_row:
+                    out_row["behavioral_correct"] = new_bool
+                if "verified" in out_row:
+                    out_row["verified"] = new_bool
+                out_row["old_verified"] = "" if old is None else old
+                out_row["rescored_correct"] = new_bool
+                out_row["verify_method"] = method
+                out_row["rescore_reason"] = reason
+                out_row["verdict_changed"] = changed
+                writer.writerow(out_row)
+
+        written.append(out_path)
+        print(f"Wrote {out_path} ({len(rows)} rows)")
+
+    print()
+    header = (
+        f"{'source':<42} {'model':<36} {'family/subtype':<24} {'variant':<12} "
+        f"{'old_acc':>8} {'new_acc':>8} {'n':>5} {'changed':>8}"
+    )
+    print(header)
+    print("-" * len(header))
+    summary_path = out_dir / "P1_rescore_summary.csv"
+    with summary_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "source_file",
+                "model",
+                "family",
+                "variant",
+                "old_accuracy",
+                "new_accuracy",
+                "n",
+                "n_changed",
+            ],
+        )
+        writer.writeheader()
+        for (source, model, fam, variant), stats in sorted(summary.items()):
+            n = stats["n"]
+            n_old = stats["old_known"] or n
+            old_acc = stats["old_correct"] / n_old if n_old else 0.0
+            new_acc = stats["new_correct"] / n if n else 0.0
+            print(
+                f"{source:<42} {model:<36} {fam:<24} {variant:<12} "
+                f"{old_acc:8.3f} {new_acc:8.3f} {n:5d} {stats['changed']:8d}"
+            )
+            writer.writerow(
+                {
+                    "source_file": source,
+                    "model": model,
+                    "family": fam,
+                    "variant": variant,
+                    "old_accuracy": f"{old_acc:.4f}",
+                    "new_accuracy": f"{new_acc:.4f}",
+                    "n": n,
+                    "n_changed": stats["changed"],
+                }
+            )
+    print(f"\nSummary: {summary_path}")
+    print(f"Rescored files: {len(written)}")
+
+
+if __name__ == "__main__":
+    main()

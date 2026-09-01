@@ -1,0 +1,9269 @@
+problem_id,variant_type,model,raw_response,behavioral_correct,correct_answer,problem_family,contamination_pole,difficulty,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
+BW_001,W1,openai/o4-mini,"1. pick-up h  
+2. stack h l  
+3. pick-up b  
+4. stack b h  
+5. pick-up d  
+6. stack d b  
+7. pick-up g  
+8. stack g d  
+9. pick-up i  
+10. stack i g  
+11. pick-up f  
+12. stack f i  
+13. pick-up j  
+14. stack j f",True,"pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_001,W2,openai/o4-mini,"1 pick-up h  
+2 stack h l  
+3 pick-up b  
+4 stack b h  
+5 pick-up d  
+6 stack d b  
+7 pick-up g  
+8 stack g d  
+9 pick-up i  
+10 stack i g  
+11 pick-up f  
+12 stack f i  
+13 pick-up j  
+14 stack j f",True,"pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_001,W3,openai/o4-mini,"1. select James  
+2. place James under Fiona  
+3. select Fiona  
+4. place Fiona under Ian  
+5. select Ian  
+6. place Ian under Grace  
+7. select Grace  
+8. place Grace under Derek  
+9. select Derek  
+10. place Derek under Ben  
+11. select Ben  
+12. place Ben under Hannah  
+13. select Hannah  
+14. place Hannah under Leo",False,"select Hannah
+place Hannah under Leo
+select Ben
+place Ben under Hannah
+select Derek
+place Derek under Ben
+select Grace
+place Grace under Derek
+select Ian
+place Ian under Grace
+select Fiona
+place Fiona under Ian
+select James
+place James under Fiona",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_001,W4,openai/o4-mini,"1. pick-up h  
+2. stack h l  
+3. pick-up b  
+4. stack b h  
+5. pick-up d  
+6. stack d b  
+7. pick-up g  
+8. stack g d  
+9. pick-up i  
+10. stack i g  
+11. pick-up f  
+12. stack f i  
+13. pick-up j  
+14. stack j f",True,"pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_001,W5,openai/o4-mini,"1. unstack j f  
+2. put-down j  
+3. unstack f i  
+4. put-down f  
+5. unstack i g  
+6. put-down i  
+7. unstack g d  
+8. put-down g  
+9. unstack d b  
+10. put-down d  
+11. unstack b h  
+12. put-down b  
+13. unstack h l  
+14. put-down h",True,"unstack j f
+put-down j
+unstack f i
+put-down f
+unstack i g
+put-down i
+unstack g d
+put-down g
+unstack d b
+put-down d
+unstack b h
+put-down b
+unstack h l
+put-down h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_001,W6,openai/o4-mini,"1. pick-up h  
+2. stack h d  
+3. pick-up e  
+4. stack e h  
+5. pick-up i  
+6. stack i e  
+7. pick-up a  
+8. stack a i  
+9. pick-up c  
+10. stack c a  
+11. pick-up f  
+12. stack f c  
+13. pick-up b  
+14. stack b f  
+15. pick-up g  
+16. stack g b",True,"pick-up h
+stack h d
+pick-up e
+stack e h
+pick-up i
+stack i e
+pick-up a
+stack a i
+pick-up c
+stack c a
+pick-up f
+stack f c
+pick-up b
+stack b f
+pick-up g
+stack g b",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_001,canonical,openai/o4-mini,"1. pick-up h  
+2. stack h l  
+3. pick-up b  
+4. stack b h  
+5. pick-up d  
+6. stack d b  
+7. pick-up g  
+8. stack g d  
+9. pick-up i  
+10. stack i g  
+11. pick-up f  
+12. stack f i  
+13. pick-up j  
+14. stack j f",True,"pick-up h
+stack h l
+pick-up b
+stack b h
+pick-up d
+stack d b
+pick-up g
+stack g d
+pick-up i
+stack i g
+pick-up f
+stack f i
+pick-up j
+stack j f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_002,W1,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up k  
+4. stack k h  
+5. pick-up b  
+6. stack b k  
+7. pick-up a  
+8. stack a b  
+9. pick-up g  
+10. stack g a  
+11. pick-up j  
+12. stack j g",True,"pick-up k
+ stack k h
+ pick-up i
+ stack i k
+ pick-up b
+ stack b i
+ pick-up a
+ stack a b
+ pick-up g
+ stack g a
+ pick-up j
+ stack j g",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_002,W2,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up k  
+4. stack k h  
+5. pick-up b  
+6. stack b k  
+7. pick-up a  
+8. stack a b  
+9. pick-up g  
+10. stack g a  
+11. pick-up j  
+12. stack j g",True,"pick-up k
+ stack k h
+ pick-up i
+ stack i k
+ pick-up b
+ stack b i
+ pick-up a
+ stack a b
+ pick-up g
+ stack g a
+ pick-up j
+ stack j g",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_002,W3,openai/o4-mini,"1. select Jake  
+2. place Jake under Grace  
+3. select Grace  
+4. place Grace under Alice  
+5. select Alice  
+6. place Alice under Bob  
+7. select Bob  
+8. place Bob under Kevin  
+9. select Kevin  
+10. place Kevin under Henry  
+11. select Henry  
+12. place Henry under Ivan",False,"select Jake
+place Jake under Grace
+select Grace
+place Grace under Alice
+select Alice
+place Alice under Bob
+select Bob
+place Bob under Kevin
+select Kevin
+place Kevin under Henry
+select Henry
+place Henry under Ivan",planning_suite,high,hard,True,False,state_machine,incorrect,True
+BW_002,W4,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up k  
+4. stack k h  
+5. pick-up b  
+6. stack b k  
+7. pick-up a  
+8. stack a b  
+9. pick-up g  
+10. stack g a  
+11. pick-up j  
+12. stack j g",True,"pick-up k
+ stack k h
+ pick-up i
+ stack i k
+ pick-up b
+ stack b i
+ pick-up a
+ stack a b
+ pick-up g
+ stack g a
+ pick-up j
+ stack j g",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_002,W5,openai/o4-mini,"1. unstack j g  
+2. put-down j  
+3. unstack g a  
+4. put-down g  
+5. unstack a b  
+6. put-down a  
+7. unstack b k  
+8. put-down b  
+9. unstack k h  
+10. put-down k  
+11. unstack h i  
+12. put-down h",True,"unstack j g
+put-down j
+unstack g a
+put-down g
+unstack a b
+put-down a
+unstack b k
+put-down b
+unstack k h
+put-down k
+unstack h i
+put-down h",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_002,W6,openai/o4-mini,"1. pick-up l  
+2. stack l m  
+3. pick-up o  
+4. stack o l  
+5. pick-up e  
+6. stack e o  
+7. pick-up c  
+8. stack c e  
+9. pick-up f  
+10. stack f c  
+11. pick-up n  
+12. stack n f",True,"pick-up o
+ stack o l
+ pick-up m
+ stack m o
+ pick-up e
+ stack e m
+ pick-up c
+ stack c e
+ pick-up f
+ stack f c
+ pick-up n
+ stack n f",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_002,canonical,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up k  
+4. stack k h  
+5. pick-up b  
+6. stack b k  
+7. pick-up a  
+8. stack a b  
+9. pick-up g  
+10. stack g a  
+11. pick-up j  
+12. stack j g",True,"pick-up k
+ stack k h
+ pick-up i
+ stack i k
+ pick-up b
+ stack b i
+ pick-up a
+ stack a b
+ pick-up g
+ stack g a
+ pick-up j
+ stack j g",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_010,W1,openai/o4-mini,"1. pick-up b
+2. stack b f
+3. pick-up a
+4. stack a b
+5. pick-up e
+6. stack e a
+7. pick-up d
+8. stack d e",True,"pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_010,W2,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up a  
+4. stack a b  
+5. pick-up e  
+6. stack e a  
+7. pick-up d  
+8. stack d e",True,"pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_010,W3,openai/o4-mini,,False,"select Brian
+place Brian under Felix
+select Alice
+place Alice under Brian
+select Ethan
+place Ethan under Alice
+select Diana
+place Diana under Ethan",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_010,W4,openai/o4-mini,"1. pick-up b
+2. stack b f
+3. pick-up a
+4. stack a b
+5. pick-up e
+6. stack e a
+7. pick-up d
+8. stack d e",True,"pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_010,W5,openai/o4-mini,"1. unstack d e  
+2. put-down d  
+3. unstack e a  
+4. put-down e  
+5. unstack a b  
+6. put-down a  
+7. unstack b f  
+8. put-down b",True,"unstack d e
+put-down d
+unstack e a
+put-down e
+unstack a b
+put-down a
+unstack b f
+put-down b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_010,W6,openai/o4-mini,"1. pick-up a  
+2. stack a d  
+3. pick-up b  
+4. stack b a  
+5. pick-up e  
+6. stack e b  
+7. pick-up f  
+8. stack f e  
+9. pick-up c  
+10. stack c f",True,"pick-up a
+stack a d
+pick-up b
+stack b a
+pick-up e
+stack e b
+pick-up f
+stack f e
+pick-up c
+stack c f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_010,canonical,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up a  
+4. stack a b  
+5. pick-up e  
+6. stack e a  
+7. pick-up d  
+8. stack d e",True,"pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up e
+stack e a
+pick-up d
+stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_011,W1,openai/o4-mini,"1 pick-up i  
+2 stack i b  
+3 pick-up h  
+4 stack h i  
+5 pick-up e  
+6 stack e h  
+7 pick-up j  
+8 stack j e  
+9 pick-up l  
+10 stack l j  
+11 pick-up a  
+12 stack a l  
+13 pick-up g  
+14 stack g a  
+15 pick-up k  
+16 stack k g  
+17 pick-up c  
+18 stack c k",True,"pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_011,W2,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up h  
+4. stack h i  
+5. pick-up e  
+6. stack e h  
+7. pick-up j  
+8. stack j e  
+9. pick-up l  
+10. stack l j  
+11. pick-up a  
+12. stack a l  
+13. pick-up g  
+14. stack g a  
+15. pick-up k  
+16. stack k g  
+17. pick-up c  
+18. stack c k",True,"pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_011,W3,openai/o4-mini,"1. select Carol  
+2. place Carol under Kevin  
+3. select Kevin  
+4. place Kevin under George  
+5. select George  
+6. place George under Amy  
+7. select Amy  
+8. place Amy under Laura  
+9. select Laura  
+10. place Laura under Jack  
+11. select Jack  
+12. place Jack under Edward  
+13. select Edward  
+14. place Edward under Helen  
+15. select Helen  
+16. place Helen under Ivan  
+17. select Ivan  
+18. place Ivan under Ben",False,"select Ivan
+place Ivan under Ben
+select Helen
+place Helen under Ivan
+select Edward
+place Edward under Helen
+select Jack
+place Jack under Edward
+select Laura
+place Laura under Jack
+select Amy
+place Amy under Laura
+select George
+place George under Amy
+select Kevin
+place Kevin under George
+select Carol
+place Carol under Kevin",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_011,W4,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up h  
+4. stack h i  
+5. pick-up e  
+6. stack e h  
+7. pick-up j  
+8. stack j e  
+9. pick-up l  
+10. stack l j  
+11. pick-up a  
+12. stack a l  
+13. pick-up g  
+14. stack g a  
+15. pick-up k  
+16. stack k g  
+17. pick-up c  
+18. stack c k",True,"pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_011,W5,openai/o4-mini,"1. unstack c k  
+2. put-down c  
+3. unstack k g  
+4. put-down k  
+5. unstack g a  
+6. put-down g  
+7. unstack a l  
+8. put-down a  
+9. unstack l j  
+10. put-down l  
+11. unstack j e  
+12. put-down j  
+13. unstack e h  
+14. put-down e  
+15. unstack h i  
+16. put-down h  
+17. unstack i b  
+18. put-down i",True,"unstack c k
+put-down c
+unstack k g
+put-down k
+unstack g a
+put-down g
+unstack a l
+put-down a
+unstack l j
+put-down l
+unstack j e
+put-down j
+unstack e h
+put-down e
+unstack h i
+put-down h
+unstack i b
+put-down i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_011,W6,openai/o4-mini,"1. pick-up j  
+2. stack j d  
+3. pick-up c  
+4. stack c j  
+5. pick-up k  
+6. stack k c  
+7. pick-up b  
+8. stack b k  
+9. pick-up f  
+10. stack f b  
+11. pick-up e  
+12. stack e f  
+13. pick-up a  
+14. stack a e  
+15. pick-up i  
+16. stack i a  
+17. pick-up h  
+18. stack h i  
+19. pick-up g  
+20. stack g h",True,"pick-up j
+stack j d
+pick-up c
+stack c j
+pick-up k
+stack k c
+pick-up b
+stack b k
+pick-up f
+stack f b
+pick-up e
+stack e f
+pick-up a
+stack a e
+pick-up i
+stack i a
+pick-up h
+stack h i
+pick-up g
+stack g h",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_011,canonical,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up h  
+4. stack h i  
+5. pick-up e  
+6. stack e h  
+7. pick-up j  
+8. stack j e  
+9. pick-up l  
+10. stack l j  
+11. pick-up a  
+12. stack a l  
+13. pick-up g  
+14. stack g a  
+15. pick-up k  
+16. stack k g  
+17. pick-up c  
+18. stack c k",True,"pick-up i
+stack i b
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up l
+stack l j
+pick-up a
+stack a l
+pick-up g
+stack g a
+pick-up k
+stack k g
+pick-up c
+stack c k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_014,W1,openai/o4-mini,"1. pick-up e  
+2. stack e g  
+3. pick-up l  
+4. stack l e",True,"pick-up e
+ stack e g
+ pick-up l
+ stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_014,W2,openai/o4-mini,"1. pick-up e  
+2. stack e g  
+3. pick-up l  
+4. stack l e",True,"pick-up e
+ stack e g
+ pick-up l
+ stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_014,W3,openai/o4-mini,"1. select Lisa  
+2. place Lisa under Eve  
+3. select Eve  
+4. place Eve under Grace",False,"select Lisa
+place Lisa under Eve
+select Eve
+place Eve under Grace",planning_suite,high,easy,True,False,state_machine,incorrect,True
+BW_014,W4,openai/o4-mini,"1. pick-up e  
+2. stack e g  
+3. pick-up l  
+4. stack l e",True,"pick-up e
+ stack e g
+ pick-up l
+ stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_014,W5,openai/o4-mini,"1. unstack l e
+2. put-down l
+3. unstack e g
+4. put-down e",True,"unstack l e
+put-down l
+unstack e g
+put-down e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_014,W6,openai/o4-mini,"1. pick-up d  
+2. stack d f  
+3. pick-up h  
+4. stack h d",True,"pick-up d
+ stack d f
+ pick-up h
+ stack h d",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_014,canonical,openai/o4-mini,"1. pick-up e
+2. stack e g
+3. pick-up l
+4. stack l e",True,"pick-up e
+ stack e g
+ pick-up l
+ stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_022,W1,openai/o4-mini,"1. pick-up k
+2. stack k f
+3. pick-up b
+4. stack b k
+5. pick-up c
+6. stack c b
+7. pick-up g
+8. stack g c",True,"pick-up k
+ stack k f
+ pick-up b
+ stack b k
+ pick-up c
+ stack c b
+ pick-up g
+ stack g c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_022,W2,openai/o4-mini,"1. pick-up k  
+2. stack k f  
+3. pick-up b  
+4. stack b k  
+5. pick-up c  
+6. stack c b  
+7. pick-up g  
+8. stack g c",True,"pick-up k
+ stack k f
+ pick-up b
+ stack b k
+ pick-up c
+ stack c b
+ pick-up g
+ stack g c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_022,W3,openai/o4-mini,"1. select Grace  
+2. place Grace under Carol  
+3. select Carol  
+4. place Carol under Bob  
+5. select Bob  
+6. place Bob under Kevin  
+7. select Kevin  
+8. place Kevin under Frank",False,"select Grace
+place Grace under Carol
+select Carol
+place Carol under Bob
+select Bob
+place Bob under Kevin
+select Kevin
+place Kevin under Frank",planning_suite,high,medium,True,False,state_machine,incorrect,True
+BW_022,W4,openai/o4-mini,"1. pick-up k  
+2. stack k f  
+3. pick-up b  
+4. stack b k  
+5. pick-up c  
+6. stack c b  
+7. pick-up g  
+8. stack g c",True,"pick-up k
+ stack k f
+ pick-up b
+ stack b k
+ pick-up c
+ stack c b
+ pick-up g
+ stack g c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_022,W5,openai/o4-mini,"1. unstack g c  
+2. put-down g  
+3. unstack c b  
+4. put-down c  
+5. unstack b k  
+6. put-down b  
+7. unstack k f  
+8. put-down k",True,"unstack g c
+put-down g
+unstack c b
+put-down c
+unstack b k
+put-down b
+unstack k f
+put-down k",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_022,W6,openai/o4-mini,"1. pick-up m  
+2. stack m j  
+3. pick-up h  
+4. stack h m  
+5. pick-up i  
+6. stack i h  
+7. pick-up l  
+8. stack l i",True,"pick-up m
+ stack m j
+ pick-up h
+ stack h m
+ pick-up i
+ stack i h
+ pick-up l
+ stack l i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_022,canonical,openai/o4-mini,"1. pick-up k  
+2. stack k f  
+3. pick-up b  
+4. stack b k  
+5. pick-up c  
+6. stack c b  
+7. pick-up g  
+8. stack g c",True,"pick-up k
+ stack k f
+ pick-up b
+ stack b k
+ pick-up c
+ stack c b
+ pick-up g
+ stack g c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_080,W1,openai/o4-mini,"1. pick-up j  
+2. stack j f  
+3. pick-up e  
+4. stack e j  
+5. pick-up i  
+6. stack i e  
+7. pick-up c  
+8. stack c i  
+9. pick-up l  
+10. stack l c",True,"pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_080,W2,openai/o4-mini,"1. pick-up j  
+2. stack j f  
+3. pick-up e  
+4. stack e j  
+5. pick-up i  
+6. stack i e  
+7. pick-up c  
+8. stack c i  
+9. pick-up l  
+10. stack l c",True,"pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_080,W3,openai/o4-mini,"1. select Laura  
+2. place Laura under Clara  
+3. select Clara  
+4. place Clara under Ivan  
+5. select Ivan  
+6. place Ivan under Ethan  
+7. select Ethan  
+8. place Ethan under Jake  
+9. select Jake  
+10. place Jake under Felix",False,"select Jake
+place Jake under Felix
+select Ethan
+place Ethan under Jake
+select Ivan
+place Ivan under Ethan
+select Clara
+place Clara under Ivan
+select Laura
+place Laura under Clara",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_080,W4,openai/o4-mini,"1. pick-up j  
+2. stack j f  
+3. pick-up e  
+4. stack e j  
+5. pick-up i  
+6. stack i e  
+7. pick-up c  
+8. stack c i  
+9. pick-up l  
+10. stack l c",True,"pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_080,W5,openai/o4-mini,"1. unstack l c
+2. put-down l
+3. unstack c i
+4. put-down c
+5. unstack i e
+6. put-down i
+7. unstack e j
+8. put-down e
+9. unstack j f
+10. put-down j",True,"unstack l c
+put-down l
+unstack c i
+put-down c
+unstack i e
+put-down i
+unstack e j
+put-down e
+unstack j f
+put-down j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_080,W6,openai/o4-mini,"1. pick-up d
+2. stack d f
+3. pick-up c
+4. stack c d
+5. pick-up a
+6. stack a c
+7. pick-up g
+8. stack g a
+9. pick-up e
+10. stack e g
+11. pick-up b
+12. stack b e",True,"pick-up d
+stack d f
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up e
+stack e g
+pick-up b
+stack b e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_080,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j f  
+3. pick-up e  
+4. stack e j  
+5. pick-up i  
+6. stack i e  
+7. pick-up c  
+8. stack c i  
+9. pick-up l  
+10. stack l c",True,"pick-up j
+stack j f
+pick-up e
+stack e j
+pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up l
+stack l c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_120,W1,openai/o4-mini,"1. pick-up g  
+2. stack g f  
+3. pick-up j  
+4. stack j g  
+5. pick-up c  
+6. stack c j",True,"pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_120,W2,openai/o4-mini,"1. pick-up g  
+2. stack g f  
+3. pick-up j  
+4. stack j g  
+5. pick-up c  
+6. stack c j",True,"pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_120,W3,openai/o4-mini,"1. select Clara  
+2. place Clara under Jake  
+3. select Jake  
+4. place Jake under Grace  
+5. select Grace  
+6. place Grace under Felix",False,"select Grace
+place Grace under Felix
+select Jake
+place Jake under Grace
+select Clara
+place Clara under Jake",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_120,W4,openai/o4-mini,"1. pick-up g  
+2. stack g f  
+3. pick-up j  
+4. stack j g  
+5. pick-up c  
+6. stack c j",True,"pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_120,W5,openai/o4-mini,"1. unstack c j  
+2. put-down c  
+3. unstack j g  
+4. put-down j  
+5. unstack g f  
+6. put-down g",True,"unstack c j
+put-down c
+unstack j g
+put-down j
+unstack g f
+put-down g",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_120,W6,openai/o4-mini,"1. pick-up d  
+2. stack d e  
+3. pick-up b  
+4. stack b d  
+5. pick-up c  
+6. stack c b  
+7. pick-up a  
+8. stack a c",True,"pick-up d
+stack d e
+pick-up b
+stack b d
+pick-up c
+stack c b
+pick-up a
+stack a c",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_120,canonical,openai/o4-mini,"1. pick-up g  
+2. stack g f  
+3. pick-up j  
+4. stack j g  
+5. pick-up c  
+6. stack c j",True,"pick-up g
+stack g f
+pick-up j
+stack j g
+pick-up c
+stack c j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_137,W1,openai/o4-mini,"1. pick-up g
+2. stack g i
+3. pick-up f
+4. stack f g
+5. pick-up c
+6. stack c f
+7. pick-up h
+8. stack h c
+9. pick-up l
+10. stack l h
+11. pick-up e
+12. stack e l
+13. pick-up j
+14. stack j e
+15. pick-up b
+16. stack b j
+17. pick-up a
+18. stack a b
+19. pick-up d
+20. stack d a",True,"pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_137,W2,openai/o4-mini,"1. pick-up g  
+2. stack g i  
+3. pick-up f  
+4. stack f g  
+5. pick-up c  
+6. stack c f  
+7. pick-up h  
+8. stack h c  
+9. pick-up l  
+10. stack l h  
+11. pick-up e  
+12. stack e l  
+13. pick-up j  
+14. stack j e  
+15. pick-up b  
+16. stack b j  
+17. pick-up a  
+18. stack a b  
+19. pick-up d  
+20. stack d a",True,"pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_137,W3,openai/o4-mini,"1. select Dana  
+2. place Dana under Aaron  
+3. select Aaron  
+4. place Aaron under Brian  
+5. select Brian  
+6. place Brian under Julia  
+7. select Julia  
+8. place Julia under Ethan  
+9. select Ethan  
+10. place Ethan under Lisa  
+11. select Lisa  
+12. place Lisa under Harry  
+13. select Harry  
+14. place Harry under Clara  
+15. select Clara  
+16. place Clara under Frank  
+17. select Frank  
+18. place Frank under Gloria  
+19. select Gloria  
+20. place Gloria under Ivan",False,"select Gloria
+place Gloria under Ivan
+select Frank
+place Frank under Gloria
+select Clara
+place Clara under Frank
+select Harry
+place Harry under Clara
+select Lisa
+place Lisa under Harry
+select Ethan
+place Ethan under Lisa
+select Julia
+place Julia under Ethan
+select Brian
+place Brian under Julia
+select Aaron
+place Aaron under Brian
+select Dana
+place Dana under Aaron",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_137,W4,openai/o4-mini,"1. pick-up g  
+2. stack g i  
+3. pick-up f  
+4. stack f g  
+5. pick-up c  
+6. stack c f  
+7. pick-up h  
+8. stack h c  
+9. pick-up l  
+10. stack l h  
+11. pick-up e  
+12. stack e l  
+13. pick-up j  
+14. stack j e  
+15. pick-up b  
+16. stack b j  
+17. pick-up a  
+18. stack a b  
+19. pick-up d  
+20. stack d a",True,"pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_137,W5,openai/o4-mini,"1. unstack d a  
+2. put-down d  
+3. unstack a b  
+4. put-down a  
+5. unstack b j  
+6. put-down b  
+7. unstack j e  
+8. put-down j  
+9. unstack e l  
+10. put-down e  
+11. unstack l h  
+12. put-down l  
+13. unstack h c  
+14. put-down h  
+15. unstack c f  
+16. put-down c  
+17. unstack f g  
+18. put-down f  
+19. unstack g i  
+20. put-down g",True,"unstack d a
+put-down d
+unstack a b
+put-down a
+unstack b j
+put-down b
+unstack j e
+put-down j
+unstack e l
+put-down e
+unstack l h
+put-down l
+unstack h c
+put-down h
+unstack c f
+put-down c
+unstack f g
+put-down f
+unstack g i
+put-down g",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_137,W6,openai/o4-mini,"1. pick-up l  
+2. stack l f  
+3. pick-up h  
+4. stack h l  
+5. pick-up e  
+6. stack e h  
+7. pick-up d  
+8. stack d e  
+9. pick-up k  
+10. stack k d  
+11. pick-up i  
+12. stack i k  
+13. pick-up c  
+14. stack c i  
+15. pick-up j  
+16. stack j c  
+17. pick-up a  
+18. stack a j  
+19. pick-up b  
+20. stack b a  
+21. pick-up g  
+22. stack g b",True,"pick-up l
+stack l f
+pick-up h
+stack h l
+pick-up e
+stack e h
+pick-up d
+stack d e
+pick-up k
+stack k d
+pick-up i
+stack i k
+pick-up c
+stack c i
+pick-up j
+stack j c
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up g
+stack g b",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_137,canonical,openai/o4-mini,"1 pick-up g  
+2 stack g i  
+3 pick-up f  
+4 stack f g  
+5 pick-up c  
+6 stack c f  
+7 pick-up h  
+8 stack h c  
+9 pick-up l  
+10 stack l h  
+11 pick-up e  
+12 stack e l  
+13 pick-up j  
+14 stack j e  
+15 pick-up b  
+16 stack b j  
+17 pick-up a  
+18 stack a b  
+19 pick-up d  
+20 stack d a",True,"pick-up g
+stack g i
+pick-up f
+stack f g
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up l
+stack l h
+pick-up e
+stack e l
+pick-up j
+stack j e
+pick-up b
+stack b j
+pick-up a
+stack a b
+pick-up d
+stack d a",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_155,W1,openai/o4-mini,"1. pick-up j  
+2. stack j h  
+3. pick-up e  
+4. stack e j  
+5. pick-up f  
+6. stack f e  
+7. pick-up i  
+8. stack i f",True,"pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_155,W2,openai/o4-mini,"1. pick-up j
+2. stack j h
+3. pick-up e
+4. stack e j
+5. pick-up f
+6. stack f e
+7. pick-up i
+8. stack i f",True,"pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_155,W3,openai/o4-mini,"1. select Ivan  
+2. place Ivan under Frank  
+3. select Frank  
+4. place Frank under Eve  
+5. select Eve  
+6. place Eve under Jake  
+7. select Jake  
+8. place Jake under Henry",False,"select Jake
+place Jake under Henry
+select Eve
+place Eve under Jake
+select Frank
+place Frank under Eve
+select Ivan
+place Ivan under Frank",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_155,W4,openai/o4-mini,"1. pick-up j  
+2. stack j h  
+3. pick-up e  
+4. stack e j  
+5. pick-up f  
+6. stack f e  
+7. pick-up i  
+8. stack i f",True,"pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_155,W5,openai/o4-mini,"1. unstack i f  
+2. put-down i  
+3. unstack f e  
+4. put-down f  
+5. unstack e j  
+6. put-down e  
+7. unstack j h  
+8. put-down j",True,"unstack i f
+put-down i
+unstack f e
+put-down f
+unstack e j
+put-down e
+unstack j h
+put-down j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_155,W6,openai/o4-mini,"1. pick-up f  
+2. stack f c  
+3. pick-up d  
+4. stack d f  
+5. pick-up e  
+6. stack e d  
+7. pick-up b  
+8. stack b e  
+9. pick-up a  
+10. stack a b",True,"pick-up f
+stack f c
+pick-up d
+stack d f
+pick-up e
+stack e d
+pick-up b
+stack b e
+pick-up a
+stack a b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_155,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j h  
+3. pick-up e  
+4. stack e j  
+5. pick-up f  
+6. stack f e  
+7. pick-up i  
+8. stack i f",True,"pick-up j
+stack j h
+pick-up e
+stack e j
+pick-up f
+stack f e
+pick-up i
+stack i f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_172,W1,openai/o4-mini,"1. pick-up f  
+2. stack f k  
+3. pick-up h  
+4. stack h f  
+5. pick-up j  
+6. stack j h  
+7. pick-up a  
+8. stack a j  
+9. pick-up b  
+10. stack b a  
+11. pick-up d  
+12. stack d b  
+13. pick-up e  
+14. stack e d  
+15. pick-up g  
+16. stack g e  
+17. pick-up l  
+18. stack l g  
+19. pick-up i  
+20. stack i l",True,"pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_172,W2,openai/o4-mini,"1. pick-up f  
+2. stack f k  
+3. pick-up h  
+4. stack h f  
+5. pick-up j  
+6. stack j h  
+7. pick-up a  
+8. stack a j  
+9. pick-up b  
+10. stack b a  
+11. pick-up d  
+12. stack d b  
+13. pick-up e  
+14. stack e d  
+15. pick-up g  
+16. stack g e  
+17. pick-up l  
+18. stack l g  
+19. pick-up i  
+20. stack i l",True,"pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_172,W3,openai/o4-mini,"1. select Ivan  
+2. place Ivan under Laura  
+3. select Laura  
+4. place Laura under Gary  
+5. select Gary  
+6. place Gary under Ethan  
+7. select Ethan  
+8. place Ethan under Dana  
+9. select Dana  
+10. place Dana under Ben  
+11. select Ben  
+12. place Ben under Amy  
+13. select Amy  
+14. place Amy under Jake  
+15. select Jake  
+16. place Jake under Helen  
+17. select Helen  
+18. place Helen under Felix  
+19. select Felix  
+20. place Felix under Karen",False,"select Felix
+place Felix under Karen
+select Helen
+place Helen under Felix
+select Jake
+place Jake under Helen
+select Amy
+place Amy under Jake
+select Ben
+place Ben under Amy
+select Dana
+place Dana under Ben
+select Ethan
+place Ethan under Dana
+select Gary
+place Gary under Ethan
+select Laura
+place Laura under Gary
+select Ivan
+place Ivan under Laura",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_172,W4,openai/o4-mini,"1. pick-up f  
+2. stack f k  
+3. pick-up h  
+4. stack h f  
+5. pick-up j  
+6. stack j h  
+7. pick-up a  
+8. stack a j  
+9. pick-up b  
+10. stack b a  
+11. pick-up d  
+12. stack d b  
+13. pick-up e  
+14. stack e d  
+15. pick-up g  
+16. stack g e  
+17. pick-up l  
+18. stack l g  
+19. pick-up i  
+20. stack i l",True,"pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_172,W5,openai/o4-mini,"1. unstack i l  
+2. put-down i  
+3. unstack l g  
+4. put-down l  
+5. unstack g e  
+6. put-down g  
+7. unstack e d  
+8. put-down e  
+9. unstack d b  
+10. put-down d  
+11. unstack b a  
+12. put-down b  
+13. unstack a j  
+14. put-down a  
+15. unstack j h  
+16. put-down j  
+17. unstack h f  
+18. put-down h  
+19. unstack f k  
+20. put-down f",True,"unstack i l
+put-down i
+unstack l g
+put-down l
+unstack g e
+put-down g
+unstack e d
+put-down e
+unstack d b
+put-down d
+unstack b a
+put-down b
+unstack a j
+put-down a
+unstack j h
+put-down j
+unstack h f
+put-down h
+unstack f k
+put-down f",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_172,W6,openai/o4-mini,"1 pick-up a  
+2 stack a k  
+3 pick-up l  
+4 stack l a  
+5 pick-up b  
+6 stack b l  
+7 pick-up g  
+8 stack g b  
+9 pick-up j  
+10 stack j g  
+11 pick-up h  
+12 stack h j  
+13 pick-up i  
+14 stack i h  
+15 pick-up c  
+16 stack c i  
+17 pick-up d  
+18 stack d c  
+19 pick-up f  
+20 stack f d  
+21 pick-up e  
+22 stack e f",True,"pick-up a
+stack a k
+pick-up l
+stack l a
+pick-up b
+stack b l
+pick-up g
+stack g b
+pick-up j
+stack j g
+pick-up h
+stack h j
+pick-up i
+stack i h
+pick-up c
+stack c i
+pick-up d
+stack d c
+pick-up f
+stack f d
+pick-up e
+stack e f",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_172,canonical,openai/o4-mini,"1. pick-up f  
+2. stack f k  
+3. pick-up h  
+4. stack h f  
+5. pick-up j  
+6. stack j h  
+7. pick-up a  
+8. stack a j  
+9. pick-up b  
+10. stack b a  
+11. pick-up d  
+12. stack d b  
+13. pick-up e  
+14. stack e d  
+15. pick-up g  
+16. stack g e  
+17. pick-up l  
+18. stack l g  
+19. pick-up i  
+20. stack i l",True,"pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up j
+stack j h
+pick-up a
+stack a j
+pick-up b
+stack b a
+pick-up d
+stack d b
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up l
+stack l g
+pick-up i
+stack i l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_203,W1,openai/o4-mini,"1. pick-up j
+2. stack j h
+3. pick-up f
+4. stack f j
+5. pick-up k
+6. stack k f",True,"pick-up j
+ stack j h
+ pick-up f
+ stack f j
+ pick-up k
+ stack k f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_203,W2,openai/o4-mini,"1. pick-up j
+2. stack j h
+3. pick-up f
+4. stack f j
+5. pick-up k
+6. stack k f",True,"pick-up j
+ stack j h
+ pick-up f
+ stack f j
+ pick-up k
+ stack k f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_203,W3,openai/o4-mini,"1. select Jake
+2. place Jake under Henry
+3. select Frank
+4. place Frank under Jake
+5. select Kevin
+6. place Kevin under Frank",True,"select Kevin
+place Kevin under Frank
+select Frank
+place Frank under Jake
+select Jake
+place Jake under Henry",planning_suite,high,easy,False,True,state_machine,correct,True
+BW_203,W4,openai/o4-mini,"1. pick-up j  
+2. stack j h  
+3. pick-up f  
+4. stack f j  
+5. pick-up k  
+6. stack k f",True,"pick-up j
+ stack j h
+ pick-up f
+ stack f j
+ pick-up k
+ stack k f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_203,W5,openai/o4-mini,"1. unstack k f  
+2. put-down k  
+3. unstack f j  
+4. put-down f  
+5. unstack j h  
+6. put-down j",True,"unstack k f
+put-down k
+unstack f j
+put-down f
+unstack j h
+put-down j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_203,W6,openai/o4-mini,"1. pick-up g  
+2. stack g e  
+3. pick-up d  
+4. stack d g  
+5. pick-up i  
+6. stack i d",True,"pick-up g
+ stack g e
+ pick-up d
+ stack d g
+ pick-up i
+ stack i d",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_203,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j h  
+3. pick-up f  
+4. stack f j  
+5. pick-up k  
+6. stack k f",True,"pick-up j
+ stack j h
+ pick-up f
+ stack f j
+ pick-up k
+ stack k f",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_227,W1,openai/o4-mini,"1 pick-up k  
+2 stack k a  
+3 pick-up c  
+4 stack c k  
+5 pick-up j  
+6 stack j c  
+7 pick-up i  
+8 stack i j  
+9 pick-up d  
+10 stack d i  
+11 pick-up g  
+12 stack g d  
+13 pick-up l  
+14 stack l g  
+15 pick-up f  
+16 stack f l",True,"pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_227,W2,openai/o4-mini,"1. pick-up k  
+2. stack k a  
+3. pick-up c  
+4. stack c k  
+5. pick-up j  
+6. stack j c  
+7. pick-up i  
+8. stack i j  
+9. pick-up d  
+10. stack d i  
+11. pick-up g  
+12. stack g d  
+13. pick-up l  
+14. stack l g  
+15. pick-up f  
+16. stack f l",True,"pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_227,W3,openai/o4-mini,,False,"select Kevin
+place Kevin under Amy
+select Clara
+place Clara under Kevin
+select Jack
+place Jack under Clara
+select Ian
+place Ian under Jack
+select Derek
+place Derek under Ian
+select George
+place George under Derek
+select Laura
+place Laura under George
+select Felix
+place Felix under Laura",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_227,W4,openai/o4-mini,"1. pick-up k  
+2. stack k a  
+3. pick-up c  
+4. stack c k  
+5. pick-up j  
+6. stack j c  
+7. pick-up i  
+8. stack i j  
+9. pick-up d  
+10. stack d i  
+11. pick-up g  
+12. stack g d  
+13. pick-up l  
+14. stack l g  
+15. pick-up f  
+16. stack f l",True,"pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_227,W5,openai/o4-mini,"1. unstack f l  
+2. put-down f  
+3. unstack l g  
+4. put-down l  
+5. unstack g d  
+6. put-down g  
+7. unstack d i  
+8. put-down d  
+9. unstack i j  
+10. put-down i  
+11. unstack j c  
+12. put-down j  
+13. unstack c k  
+14. put-down c  
+15. unstack k a  
+16. put-down k",True,"unstack f l
+put-down f
+unstack l g
+put-down l
+unstack g d
+put-down g
+unstack d i
+put-down d
+unstack i j
+put-down i
+unstack j c
+put-down j
+unstack c k
+put-down c
+unstack k a
+put-down k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_227,W6,openai/o4-mini,"1 pick-up j  
+2 stack j f  
+3 pick-up a  
+4 stack a j  
+5 pick-up d  
+6 stack d a  
+7 pick-up i  
+8 stack i d  
+9 pick-up b  
+10 stack b i  
+11 pick-up h  
+12 stack h b  
+13 pick-up c  
+14 stack c h  
+15 pick-up g  
+16 stack g c  
+17 pick-up e  
+18 stack e g",True,"pick-up j
+stack j f
+pick-up a
+stack a j
+pick-up d
+stack d a
+pick-up i
+stack i d
+pick-up b
+stack b i
+pick-up h
+stack h b
+pick-up c
+stack c h
+pick-up g
+stack g c
+pick-up e
+stack e g",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_227,canonical,openai/o4-mini,"1. pick-up k  
+2. stack k a  
+3. pick-up c  
+4. stack c k  
+5. pick-up j  
+6. stack j c  
+7. pick-up i  
+8. stack i j  
+9. pick-up d  
+10. stack d i  
+11. pick-up g  
+12. stack g d  
+13. pick-up l  
+14. stack l g  
+15. pick-up f  
+16. stack f l",True,"pick-up k
+stack k a
+pick-up c
+stack c k
+pick-up j
+stack j c
+pick-up i
+stack i j
+pick-up d
+stack d i
+pick-up g
+stack g d
+pick-up l
+stack l g
+pick-up f
+stack f l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_282,W1,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up c  
+4. stack c i  
+5. pick-up h  
+6. stack h c  
+7. pick-up g  
+8. stack g h",True,"pick-up i
+ stack i b
+ pick-up c
+ stack c i
+ pick-up h
+ stack h c
+ pick-up g
+ stack g h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_282,W2,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up c  
+4. stack c i  
+5. pick-up h  
+6. stack h c  
+7. pick-up g  
+8. stack g h",True,"pick-up i
+ stack i b
+ pick-up c
+ stack c i
+ pick-up h
+ stack h c
+ pick-up g
+ stack g h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_282,W3,openai/o4-mini,"1. select Grace  
+2. place Grace under Henry  
+3. select Henry  
+4. place Henry under Carol  
+5. select Carol  
+6. place Carol under Ivan  
+7. select Ivan  
+8. place Ivan under Bob",False,"select Grace
+place Grace under Henry
+select Henry
+place Henry under Carol
+select Carol
+place Carol under Ivan
+select Ivan
+place Ivan under Bob",planning_suite,high,medium,True,False,state_machine,incorrect,True
+BW_282,W4,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up c  
+4. stack c i  
+5. pick-up h  
+6. stack h c  
+7. pick-up g  
+8. stack g h",True,"pick-up i
+ stack i b
+ pick-up c
+ stack c i
+ pick-up h
+ stack h c
+ pick-up g
+ stack g h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_282,W5,openai/o4-mini,"1. unstack g h  
+2. put-down g  
+3. unstack h c  
+4. put-down h  
+5. unstack c i  
+6. put-down c  
+7. unstack i b  
+8. put-down i",True,"unstack g h
+put-down g
+unstack h c
+put-down h
+unstack c i
+put-down c
+unstack i b
+put-down i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_282,W6,openai/o4-mini,"1. pick-up m  
+2. stack m f  
+3. pick-up j  
+4. stack j m  
+5. pick-up l  
+6. stack l j  
+7. pick-up k  
+8. stack k l",True,"pick-up m
+ stack m f
+ pick-up j
+ stack j m
+ pick-up l
+ stack l j
+ pick-up k
+ stack k l",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_282,canonical,openai/o4-mini,"1. pick-up i  
+2. stack i b  
+3. pick-up c  
+4. stack c i  
+5. pick-up h  
+6. stack h c  
+7. pick-up g  
+8. stack g h",True,"pick-up i
+ stack i b
+ pick-up c
+ stack c i
+ pick-up h
+ stack h c
+ pick-up g
+ stack g h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_310,W1,openai/o4-mini,"1 pick-up b
+2 stack b d
+3 pick-up f
+4 stack f b
+5 pick-up a
+6 stack a f
+7 pick-up j
+8 stack j a
+9 pick-up g
+10 stack g j",True,"pick-up b
+ stack b d
+ pick-up f
+ stack f b
+ pick-up a
+ stack a f
+ pick-up j
+ stack j a
+ pick-up g
+ stack g j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_310,W2,openai/o4-mini,"1. pick-up b  
+2. stack b d  
+3. pick-up f  
+4. stack f b  
+5. pick-up a  
+6. stack a f  
+7. pick-up j  
+8. stack j a  
+9. pick-up g  
+10. stack g j",True,"pick-up b
+ stack b d
+ pick-up f
+ stack f b
+ pick-up a
+ stack a f
+ pick-up j
+ stack j a
+ pick-up g
+ stack g j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_310,W3,openai/o4-mini,"1. select Bob  
+2. place Bob under Diana  
+3. release Bob  
+4. select Frank  
+5. place Frank under Bob  
+6. release Frank  
+7. select Alice  
+8. place Alice under Frank  
+9. release Alice  
+10. select Jake  
+11. place Jake under Alice  
+12. release Jake  
+13. select Grace  
+14. place Grace under Jake  
+15. release Grace",False,"select Grace
+place Grace under Jake
+select Jake
+place Jake under Alice
+select Alice
+place Alice under Frank
+select Frank
+place Frank under Bob
+select Bob
+place Bob under Diana",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_310,W4,openai/o4-mini,"1. pick-up b  
+2. stack b d  
+3. pick-up f  
+4. stack f b  
+5. pick-up a  
+6. stack a f  
+7. pick-up j  
+8. stack j a  
+9. pick-up g  
+10. stack g j",True,"pick-up b
+ stack b d
+ pick-up f
+ stack f b
+ pick-up a
+ stack a f
+ pick-up j
+ stack j a
+ pick-up g
+ stack g j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_310,W5,openai/o4-mini,"1. unstack g j  
+2. put-down g  
+3. unstack j a  
+4. put-down j  
+5. unstack a f  
+6. put-down a  
+7. unstack f b  
+8. put-down f  
+9. unstack b d  
+10. put-down b",True,"unstack g j
+put-down g
+unstack j a
+put-down j
+unstack a f
+put-down a
+unstack f b
+put-down f
+unstack b d
+put-down b",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_310,W6,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up k  
+4. stack k h  
+5. pick-up c  
+6. stack c k  
+7. pick-up m  
+8. stack m c  
+9. pick-up l  
+10. stack l m",True,"pick-up h
+ stack h i
+ pick-up k
+ stack k h
+ pick-up c
+ stack c k
+ pick-up m
+ stack m c
+ pick-up l
+ stack l m",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_310,canonical,openai/o4-mini,"1. pick-up b
+2. stack b d
+3. pick-up f
+4. stack f b
+5. pick-up a
+6. stack a f
+7. pick-up j
+8. stack j a
+9. pick-up g
+10. stack g j",True,"pick-up b
+ stack b d
+ pick-up f
+ stack f b
+ pick-up a
+ stack a f
+ pick-up j
+ stack j a
+ pick-up g
+ stack g j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_331,W1,openai/o4-mini,"1. pick-up j  
+2. stack j l  
+3. pick-up h  
+4. stack h j",True,"pick-up j
+ stack j l
+ pick-up h
+ stack h j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_331,W2,openai/o4-mini,"1. pick-up j  
+2. stack j l  
+3. pick-up h  
+4. stack h j",True,"pick-up j
+ stack j l
+ pick-up h
+ stack h j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_331,W3,openai/o4-mini,"1. select Henry  
+2. place Henry under Jake  
+3. release Henry  
+4. select Jake  
+5. place Jake under Lisa  
+6. release Jake",False,"select Henry
+place Henry under Jake
+select Jake
+place Jake under Lisa",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_331,W4,openai/o4-mini,"1. pick-up j  
+2. stack j l  
+3. pick-up h  
+4. stack h j",True,"pick-up j
+ stack j l
+ pick-up h
+ stack h j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_331,W5,openai/o4-mini,"1. unstack h j  
+2. put-down h  
+3. unstack j l  
+4. put-down j",True,"unstack h j
+put-down h
+unstack j l
+put-down j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_331,W6,openai/o4-mini,"1. pick-up e  
+2. stack e f  
+3. pick-up d  
+4. stack d e",True,"pick-up e
+ stack e f
+ pick-up d
+ stack d e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_331,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j l  
+3. pick-up h  
+4. stack h j",True,"pick-up j
+ stack j l
+ pick-up h
+ stack h j",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_350,W1,openai/o4-mini,"1. pick-up l  
+2. stack l d  
+3. pick-up b  
+4. stack b l  
+5. pick-up g  
+6. stack g b  
+7. pick-up a  
+8. stack a g  
+9. pick-up k  
+10. stack k a  
+11. pick-up j  
+12. stack j k  
+13. pick-up i  
+14. stack i j  
+15. pick-up e  
+16. stack e i  
+17. pick-up f  
+18. stack f e",True,"pick-up l
+ stack l d
+ pick-up b
+ stack b l
+ pick-up g
+ stack g b
+ pick-up a
+ stack a g
+ pick-up k
+ stack k a
+ pick-up j
+ stack j k
+ pick-up i
+ stack i j
+ pick-up e
+ stack e i
+ pick-up f
+ stack f e",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_350,W2,openai/o4-mini,"1. pick-up l  
+2. stack l d  
+3. pick-up b  
+4. stack b l  
+5. pick-up g  
+6. stack g b  
+7. pick-up a  
+8. stack a g  
+9. pick-up k  
+10. stack k a  
+11. pick-up j  
+12. stack j k  
+13. pick-up i  
+14. stack i j  
+15. pick-up e  
+16. stack e i  
+17. pick-up f  
+18. stack f e",True,"pick-up l
+ stack l d
+ pick-up b
+ stack b l
+ pick-up g
+ stack g b
+ pick-up a
+ stack a g
+ pick-up k
+ stack k a
+ pick-up j
+ stack j k
+ pick-up i
+ stack i j
+ pick-up e
+ stack e i
+ pick-up f
+ stack f e",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_350,W3,openai/o4-mini,"1. select Frank  
+2. place Frank under Eve  
+3. select Eve  
+4. place Eve under Ivan  
+5. select Ivan  
+6. place Ivan under Jake  
+7. select Jake  
+8. place Jake under Kevin  
+9. select Kevin  
+10. place Kevin under Alice  
+11. select Alice  
+12. place Alice under Grace  
+13. select Grace  
+14. place Grace under Bob  
+15. select Bob  
+16. place Bob under Lisa  
+17. select Lisa  
+18. place Lisa under Diana",False,"select Frank
+place Frank under Eve
+select Eve
+place Eve under Ivan
+select Ivan
+place Ivan under Jake
+select Jake
+place Jake under Kevin
+select Kevin
+place Kevin under Alice
+select Alice
+place Alice under Grace
+select Grace
+place Grace under Bob
+select Bob
+place Bob under Lisa
+select Lisa
+place Lisa under Diana",planning_suite,high,hard,True,False,state_machine,incorrect,True
+BW_350,W4,openai/o4-mini,"1. pick-up l  
+2. stack l d  
+3. pick-up b  
+4. stack b l  
+5. pick-up g  
+6. stack g b  
+7. pick-up a  
+8. stack a g  
+9. pick-up k  
+10. stack k a  
+11. pick-up j  
+12. stack j k  
+13. pick-up i  
+14. stack i j  
+15. pick-up e  
+16. stack e i  
+17. pick-up f  
+18. stack f e",True,"pick-up l
+ stack l d
+ pick-up b
+ stack b l
+ pick-up g
+ stack g b
+ pick-up a
+ stack a g
+ pick-up k
+ stack k a
+ pick-up j
+ stack j k
+ pick-up i
+ stack i j
+ pick-up e
+ stack e i
+ pick-up f
+ stack f e",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_350,W5,openai/o4-mini,"1. unstack f e  
+2. put-down f  
+3. unstack e i  
+4. put-down e  
+5. unstack i j  
+6. put-down i  
+7. unstack j k  
+8. put-down j  
+9. unstack k a  
+10. put-down k  
+11. unstack a g  
+12. put-down a  
+13. unstack g b  
+14. put-down g  
+15. unstack b l  
+16. put-down b  
+17. unstack l d  
+18. put-down l",True,"unstack f e
+put-down f
+unstack e i
+put-down e
+unstack i j
+put-down i
+unstack j k
+put-down j
+unstack k a
+put-down k
+unstack a g
+put-down a
+unstack g b
+put-down g
+unstack b l
+put-down b
+unstack l d
+put-down l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_350,W6,openai/o4-mini,"1. pick-up u  
+2. stack u n  
+3. pick-up m  
+4. stack m u  
+5. pick-up q  
+6. stack q m  
+7. pick-up c  
+8. stack c q  
+9. pick-up t  
+10. stack t c  
+11. pick-up s  
+12. stack s t  
+13. pick-up r  
+14. stack r s  
+15. pick-up o  
+16. stack o r  
+17. pick-up p  
+18. stack p o",True,"pick-up u
+ stack u n
+ pick-up m
+ stack m u
+ pick-up q
+ stack q m
+ pick-up c
+ stack c q
+ pick-up t
+ stack t c
+ pick-up s
+ stack s t
+ pick-up r
+ stack r s
+ pick-up o
+ stack o r
+ pick-up p
+ stack p o",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_350,canonical,openai/o4-mini,"1. pick-up l  
+2. stack l d  
+3. pick-up b  
+4. stack b l  
+5. pick-up g  
+6. stack g b  
+7. pick-up a  
+8. stack a g  
+9. pick-up k  
+10. stack k a  
+11. pick-up j  
+12. stack j k  
+13. pick-up i  
+14. stack i j  
+15. pick-up e  
+16. stack e i  
+17. pick-up f  
+18. stack f e",True,"pick-up l
+ stack l d
+ pick-up b
+ stack b l
+ pick-up g
+ stack g b
+ pick-up a
+ stack a g
+ pick-up k
+ stack k a
+ pick-up j
+ stack j k
+ pick-up i
+ stack i j
+ pick-up e
+ stack e i
+ pick-up f
+ stack f e",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_408,W1,openai/o4-mini,"1 pick-up j  
+2 stack j b  
+3 pick-up g  
+4 stack g j  
+5 pick-up c  
+6 stack c g  
+7 pick-up d  
+8 stack d c  
+9 pick-up h  
+10 stack h d  
+11 pick-up l  
+12 stack l h  
+13 pick-up a  
+14 stack a l",True,"pick-up j
+ stack j b
+ pick-up g
+ stack g j
+ pick-up c
+ stack c g
+ pick-up d
+ stack d c
+ pick-up h
+ stack h d
+ pick-up l
+ stack l h
+ pick-up a
+ stack a l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_408,W2,openai/o4-mini,"1. pick-up j  
+2. stack j b  
+3. pick-up g  
+4. stack g j  
+5. pick-up c  
+6. stack c g  
+7. pick-up d  
+8. stack d c  
+9. pick-up h  
+10. stack h d  
+11. pick-up l  
+12. stack l h  
+13. pick-up a  
+14. stack a l",True,"pick-up j
+ stack j b
+ pick-up g
+ stack g j
+ pick-up c
+ stack c g
+ pick-up d
+ stack d c
+ pick-up h
+ stack h d
+ pick-up l
+ stack l h
+ pick-up a
+ stack a l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_408,W3,openai/o4-mini,"1. select Alice  
+2. place Alice under Lisa  
+3. select Lisa  
+4. place Lisa under Henry  
+5. select Henry  
+6. place Henry under Diana  
+7. select Diana  
+8. place Diana under Carol  
+9. select Carol  
+10. place Carol under Grace  
+11. select Grace  
+12. place Grace under Jake  
+13. select Jake  
+14. place Jake under Bob",False,"select Alice
+place Alice under Lisa
+select Lisa
+place Lisa under Henry
+select Henry
+place Henry under Diana
+select Diana
+place Diana under Carol
+select Carol
+place Carol under Grace
+select Grace
+place Grace under Jake
+select Jake
+place Jake under Bob",planning_suite,high,hard,True,False,state_machine,incorrect,True
+BW_408,W4,openai/o4-mini,"1. pick-up j  
+2. stack j b  
+3. pick-up g  
+4. stack g j  
+5. pick-up c  
+6. stack c g  
+7. pick-up d  
+8. stack d c  
+9. pick-up h  
+10. stack h d  
+11. pick-up l  
+12. stack l h  
+13. pick-up a  
+14. stack a l",True,"pick-up j
+ stack j b
+ pick-up g
+ stack g j
+ pick-up c
+ stack c g
+ pick-up d
+ stack d c
+ pick-up h
+ stack h d
+ pick-up l
+ stack l h
+ pick-up a
+ stack a l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_408,W5,openai/o4-mini,"1. unstack a l  
+2. put-down a  
+3. unstack l h  
+4. put-down l  
+5. unstack h d  
+6. put-down h  
+7. unstack d c  
+8. put-down d  
+9. unstack c g  
+10. put-down c  
+11. unstack g j  
+12. put-down g  
+13. unstack j b  
+14. put-down j",True,"unstack a l
+put-down a
+unstack l h
+put-down l
+unstack h d
+put-down h
+unstack d c
+put-down d
+unstack c g
+put-down c
+unstack g j
+put-down g
+unstack j b
+put-down j",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_408,W6,openai/o4-mini,"1. pick-up p  
+2. stack p i  
+3. pick-up n  
+4. stack n p  
+5. pick-up k  
+6. stack k n  
+7. pick-up m  
+8. stack m k  
+9. pick-up o  
+10. stack o m  
+11. pick-up q  
+12. stack q o  
+13. pick-up e  
+14. stack e q",True,"pick-up p
+ stack p i
+ pick-up n
+ stack n p
+ pick-up k
+ stack k n
+ pick-up m
+ stack m k
+ pick-up o
+ stack o m
+ pick-up q
+ stack q o
+ pick-up e
+ stack e q",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_408,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j b  
+3. pick-up g  
+4. stack g j  
+5. pick-up c  
+6. stack c g  
+7. pick-up d  
+8. stack d c  
+9. pick-up h  
+10. stack h d  
+11. pick-up l  
+12. stack l h  
+13. pick-up a  
+14. stack a l",True,"pick-up j
+ stack j b
+ pick-up g
+ stack g j
+ pick-up c
+ stack c g
+ pick-up d
+ stack d c
+ pick-up h
+ stack h d
+ pick-up l
+ stack l h
+ pick-up a
+ stack a l",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_467,W1,openai/o4-mini,"1. pick-up f  
+2. stack f h  
+3. pick-up a  
+4. stack a f  
+5. pick-up j  
+6. stack j a  
+7. pick-up l  
+8. stack l j  
+9. pick-up i  
+10. stack i l  
+11. pick-up g  
+12. stack g i",True,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_467,W2,openai/o4-mini,"1. pick-up f  
+2. stack f h  
+3. pick-up a  
+4. stack a f  
+5. pick-up j  
+6. stack j a  
+7. pick-up l  
+8. stack l j  
+9. pick-up i  
+10. stack i l  
+11. pick-up g  
+12. stack g i",True,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_467,W3,openai/o4-mini,"1. select Gloria  
+2. place Gloria under Ian  
+3. remove Gloria from Ian  
+4. select Ian  
+5. place Ian under Lisa  
+6. select Gloria  
+7. place Gloria under Ian  
+8. remove Gloria from Ian  
+9. remove Ian from Lisa  
+10. select Lisa  
+11. place Lisa under Jake  
+12. select Ian  
+13. place Ian under Lisa  
+14. select Gloria  
+15. place Gloria under Ian  
+16. remove Gloria from Ian  
+17. remove Ian from Lisa  
+18. remove Lisa from Jake  
+19. select Jake  
+20. place Jake under Amy  
+21. select Lisa  
+22. place Lisa under Jake  
+23. select Ian  
+24. place Ian under Lisa  
+25. select Gloria  
+26. place Gloria under Ian  
+27. remove Gloria from Ian  
+28. remove Ian from Lisa  
+29. remove Lisa from Jake  
+30. remove Jake from Amy  
+31. select Amy  
+32. place Amy under Felix  
+33. select Jake  
+34. place Jake under Amy  
+35. select Lisa  
+36. place Lisa under Jake  
+37. select Ian  
+38. place Ian under Lisa  
+39. select Gloria  
+40. place Gloria under Ian  
+41. remove Gloria from Ian  
+42. remove Ian from Lisa  
+43. remove Lisa from Jake  
+44. remove Jake from Amy  
+45. remove Amy from Felix  
+46. select Felix  
+47. place Felix under Hannah  
+48. select Amy  
+49. place Amy under Felix  
+50. select Jake  
+51. place Jake under Amy  
+52. select Lisa  
+53. place Lisa under Jake  
+54. select Ian  
+55. place Ian under Lisa  
+56. select Gloria  
+57. place Gloria under Ian",False,"select Felix
+place Felix under Hannah
+select Amy
+place Amy under Felix
+select Jake
+place Jake under Amy
+select Lisa
+place Lisa under Jake
+select Ian
+place Ian under Lisa
+select Gloria
+place Gloria under Ian",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_467,W4,openai/o4-mini,"1. pick-up f  
+2. stack f h  
+3. pick-up a  
+4. stack a f  
+5. pick-up j  
+6. stack j a  
+7. pick-up l  
+8. stack l j  
+9. pick-up i  
+10. stack i l  
+11. pick-up g  
+12. stack g i",True,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_467,W5,openai/o4-mini,"1. unstack g i
+2. put-down g
+3. unstack i l
+4. put-down i
+5. unstack l j
+6. put-down l
+7. unstack j a
+8. put-down j
+9. unstack a f
+10. put-down a
+11. unstack f h
+12. put-down f",True,"unstack g i
+put-down g
+unstack i l
+put-down i
+unstack l j
+put-down l
+unstack j a
+put-down j
+unstack a f
+put-down a
+unstack f h
+put-down f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_467,W6,openai/o4-mini,"1. pick-up f  
+2. stack f e  
+3. pick-up a  
+4. stack a f  
+5. pick-up c  
+6. stack c a  
+7. pick-up h  
+8. stack h c  
+9. pick-up b  
+10. stack b h  
+11. pick-up g  
+12. stack g b  
+13. pick-up d  
+14. stack d g",True,"pick-up f
+stack f e
+pick-up a
+stack a f
+pick-up c
+stack c a
+pick-up h
+stack h c
+pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_467,canonical,openai/o4-mini,"1. pick-up f  
+2. stack f h  
+3. pick-up a  
+4. stack a f  
+5. pick-up j  
+6. stack j a  
+7. pick-up l  
+8. stack l j  
+9. pick-up i  
+10. stack i l  
+11. pick-up g  
+12. stack g i",True,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up j
+stack j a
+pick-up l
+stack l j
+pick-up i
+stack i l
+pick-up g
+stack g i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_495,W1,openai/o4-mini,"1. pick-up e  
+2. stack e h  
+3. pick-up i  
+4. stack i e  
+5. pick-up l  
+6. stack l i  
+7. pick-up c  
+8. stack c l",True,"pick-up e
+ stack e h
+ pick-up i
+ stack i e
+ pick-up l
+ stack l i
+ pick-up c
+ stack c l",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_495,W2,openai/o4-mini,"1. pick-up e  
+2. stack e h  
+3. pick-up i  
+4. stack i e  
+5. pick-up l  
+6. stack l i  
+7. pick-up c  
+8. stack c l",True,"pick-up e
+ stack e h
+ pick-up i
+ stack i e
+ pick-up l
+ stack l i
+ pick-up c
+ stack c l",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_495,W3,openai/o4-mini,"1. select Carol  
+2. place Carol under Lisa  
+3. release Carol  
+4. select Lisa  
+5. place Lisa under Ivan  
+6. release Lisa  
+7. select Ivan  
+8. place Ivan under Eve  
+9. release Ivan  
+10. select Eve  
+11. place Eve under Henry  
+12. release Eve",False,"select Carol
+place Carol under Lisa
+select Lisa
+place Lisa under Ivan
+select Ivan
+place Ivan under Eve
+select Eve
+place Eve under Henry",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_495,W4,openai/o4-mini,"1. pick-up e  
+2. stack e h  
+3. pick-up i  
+4. stack i e  
+5. pick-up l  
+6. stack l i  
+7. pick-up c  
+8. stack c l",True,"pick-up e
+ stack e h
+ pick-up i
+ stack i e
+ pick-up l
+ stack l i
+ pick-up c
+ stack c l",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_495,W5,openai/o4-mini,"1. unstack c l  
+2. put-down c  
+3. unstack l i  
+4. put-down l  
+5. unstack i e  
+6. put-down i  
+7. unstack e h  
+8. put-down e",True,"unstack c l
+put-down c
+unstack l i
+put-down l
+unstack i e
+put-down i
+unstack e h
+put-down e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_495,W6,openai/o4-mini,"1. pick-up g  
+2. stack g j  
+3. pick-up k  
+4. stack k g  
+5. pick-up m  
+6. stack m k  
+7. pick-up f  
+8. stack f m",True,"pick-up g
+ stack g j
+ pick-up k
+ stack k g
+ pick-up m
+ stack m k
+ pick-up f
+ stack f m",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_495,canonical,openai/o4-mini,"1. pick-up e  
+2. stack e h  
+3. pick-up i  
+4. stack i e  
+5. pick-up l  
+6. stack l i  
+7. pick-up c  
+8. stack c l",True,"pick-up e
+ stack e h
+ pick-up i
+ stack i e
+ pick-up l
+ stack l i
+ pick-up c
+ stack c l",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_E002,W1,openai/o4-mini,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b a",True,"pick-up a
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E002,W2,openai/o4-mini,"1. pick-up a  
+2. stack a c  
+3. pick-up b  
+4. stack b a  ",True,"pick-up a
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E002,W3,openai/o4-mini,"1. select Aaron  
+2. place Aaron under Clara  
+3. select Brian  
+4. place Brian under Aaron",True,"select Aaron
+place Aaron under Clara
+select Brian
+place Brian under Aaron",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E002,W4,openai/o4-mini,"1. pick-up a  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,"pick-up a 
+stack a c 
+pick-up b 
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E002,W5,openai/o4-mini,"1. unstack b a  
+2. put-down b  
+3. unstack a c  
+4. put-down a",True,"unstack b a
+put-down b
+unstack a c
+put-down a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E002,W6,openai/o4-mini,"1. pick-up c  
+2. stack c d  
+3. pick-up b  
+4. stack b c  
+5. pick-up a  
+6. stack a b",True,"pick-up c
+stack c d
+pick-up b
+stack b c
+pick-up a
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E002,canonical,openai/o4-mini,"1. pick-up a  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,"pick-up a 
+stack a c 
+pick-up b 
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E015,W1,openai/o4-mini,"1. unstack c b  
+2. put-down c  
+3. pick-up a  
+4. stack a b",True,"unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E015,W2,openai/o4-mini,"1. unstack c b  
+2. put-down c  
+3. pick-up a  
+4. stack a b",True,"unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E015,W3,openai/o4-mini,"1. select Aaron  
+2. place Aaron under Brian",True,"select Aaron
+place Aaron under Brian
+select Clara
+place Clara under Aaron",planning_suite,low,easy,False,True,state_machine,correct,True
+BW_E015,W4,openai/o4-mini,"1. unstack c b
+2. put-down c
+3. pick-up a
+4. stack a b",True,"unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E015,W5,openai/o4-mini,"1. unstack a b  
+2. put-down a  
+3. pick-up c  
+4. stack c b",True,"unstack a b
+put-down a
+pick-up c
+stack c b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E015,W6,openai/o4-mini,"1. unstack c b
+2. put-down c
+3. pick-up a
+4. stack a b",True,"unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E015,canonical,openai/o4-mini,"1. unstack c b  
+2. put-down c  
+3. pick-up a  
+4. stack a b",True,"unstack c b
+put-down c
+pick-up a
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E017,W1,openai/o4-mini,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a",True,"pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E017,W2,openai/o4-mini,"1. pick-up a  
+2. stack a b  
+3. pick-up c  
+4. stack c a",True,"pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E017,W3,openai/o4-mini,"1. select Aaron
+2. place Aaron under Brian
+3. select Clara
+4. place Clara under Aaron",True,"remove Aaron from Brian
+select Clara
+place Clara under Aaron",planning_suite,low,easy,False,True,state_machine,correct,True
+BW_E017,W4,openai/o4-mini,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a",True,"pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E017,W5,openai/o4-mini,"1. unstack c a  
+2. put-down c  
+3. unstack a b  
+4. put-down a",True,"unstack c a
+put-down c
+unstack a b
+put-down a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E017,W6,openai/o4-mini,"1. pick-up a  
+2. stack a b  
+3. pick-up c  
+4. stack c a",True,"pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E017,canonical,openai/o4-mini,"1. pick-up a  
+2. stack a b  
+3. pick-up c  
+4. stack c a",True,"pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E019,W1,openai/o4-mini,"1. unstack a b  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,"unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E019,W2,openai/o4-mini,"1. unstack a b  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,"unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E019,W3,openai/o4-mini,"1. remove Aaron from Brian  
+2. place Aaron under Clara  
+3",False,"remove Aaron from Brian
+select Aaron
+place Aaron under Clara
+select Brian
+place Brian under Aaron",planning_suite,low,easy,False,False,state_machine,incorrect,False
+BW_E019,W4,openai/o4-mini,"1. unstack a b  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,"unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E019,W5,openai/o4-mini,"1. unstack b a  
+2. put-down b  
+3. unstack a c  
+4. stack a b",True,"unstack b a
+put-down b
+unstack a c
+stack a b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E019,W6,openai/o4-mini,"1. unstack a b  
+2. stack a c  
+3. pick-up b  
+4. stack b a",True,"unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E019,canonical,openai/o4-mini,"1. unstack a b
+2. stack a c
+3. pick-up b
+4. stack b a",True,"unstack a b
+stack a c
+pick-up b
+stack b a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E100,W1,openai/o4-mini,"1. pick-up b
+2. stack b c",True,"pick-up b
+stack b c",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E100,W2,openai/o4-mini,"1. pick-up b
+2. stack b c",True,"pick-up b
+stack b c",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E100,W3,openai/o4-mini,"1. remove Clara from Aaron  
+2. release Clara  
+3. select Brian  
+4. place Brian under Clara  
+5. select Clara  
+6. place Clara under Aaron",False,"select Brian
+place Brian under Clara",planning_suite,low,easy,False,False,state_machine,incorrect,False
+BW_E100,W4,openai/o4-mini,"1. pick-up b  
+2. stack b c",True,"pick-up b
+stack b c",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E100,W5,openai/o4-mini,"1. unstack b c
+2. put-down b",True,"unstack b c
+put-down b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E100,W6,openai/o4-mini,"1 pick-up c
+2 stack c b
+3 pick-up a
+4 stack a c
+5 pick-up d
+6 stack d a",True,"pick-up c
+stack c b
+pick-up a
+stack a c
+pick-up d
+stack d a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E100,canonical,openai/o4-mini,"1. pick-up b
+2. stack b c",True,"pick-up b
+stack b c",planning_suite,low,easy,True,True,state_machine,correct,False
+MBW_001,W1,openai/o4-mini,"1. attack f  
+2. overcome f j  
+3. attack i  
+4. overcome i f  
+5. attack g  
+6. overcome g i  
+7. attack d  
+8. overcome d g  
+9. attack b  
+10. overcome b d  
+11. attack h  
+12. overcome h b  
+13. attack l  
+14. overcome l h",False,"attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_001,W2,openai/o4-mini,"1. attack j
+2. overcome j f
+3. attack f
+4. overcome f i
+5. attack i
+6. overcome i g
+7. attack g
+8. overcome g d
+9. attack d
+10. overcome d b
+11. attack b
+12. overcome b h
+13. attack h
+14. overcome h l",False,"attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_001,W3,openai/o4-mini,"1. provoke Jordan  
+2. broker Jordan Finland  
+3. negotiate Jordan Finland  
+4. provoke Finland  
+5. broker Finland Iceland  
+6. negotiate Finland Iceland  
+7. provoke Iceland  
+8. broker Iceland Greece  
+9. negotiate Iceland Greece  
+10. provoke Greece  
+11. broker Greece Denmark  
+12. negotiate Greece Denmark  
+13. provoke Denmark  
+14. broker Denmark Belgium  
+15. negotiate Denmark Belgium  
+16. provoke Belgium  
+17. broker Belgium Hungary  
+18. negotiate Belgium Hungary  
+19. provoke Hungary  
+20. broker Hungary Latvia  
+21. negotiate Hungary Latvia",False,"provoke Hungary
+broker Hungary Latvia
+provoke Belgium
+broker Belgium Hungary
+provoke Denmark
+broker Denmark Belgium
+provoke Greece
+broker Greece Denmark
+provoke Iceland
+broker Iceland Greece
+provoke Finland
+broker Finland Iceland
+provoke Jordan
+broker Jordan Finland",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_001,W4,openai/o4-mini,"1. attack j
+2. overcome j f
+3. feast j f
+4. succumb j
+5. attack f
+6. overcome f i
+7. feast f i
+8. succumb f
+9. attack i
+10. overcome i g
+11. feast i g
+12. succumb i
+13. attack g
+14. overcome g d
+15. feast g d
+16. succumb g
+17. attack d
+18. overcome d b
+19. feast d b
+20. succumb d
+21. attack b
+22. overcome b h
+23. feast b h
+24. succumb b
+25. attack h
+26. overcome h l",False,"attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_001,W5,openai/o4-mini,"1. feast j f  
+2. feast f i  
+3. feast i g  
+4. feast g d  
+5. feast d b  
+6. feast b h  
+7. feast h l",False,"feast j f
+succumb j
+feast f i
+succumb f
+feast i g
+succumb i
+feast g d
+succumb g
+feast d b
+succumb d
+feast b h
+succumb b
+feast h l
+succumb h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_001,W6,openai/o4-mini,"1. attack j  
+2. overcome j f  
+3. attack f  
+4. overcome f i  
+5. attack i  
+6. overcome i g  
+7. attack g  
+8. overcome g d  
+9. attack d  
+10. overcome d b  
+11. attack b  
+12. overcome b h  
+13. attack h  
+14. overcome h l",False,"attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_001,canonical,openai/o4-mini,"1. attack j  
+2. overcome j f  
+3. attack f  
+4. overcome f i  
+5. attack i  
+6. overcome i g  
+7. attack g  
+8. overcome g d  
+9. attack d  
+10. overcome d b  
+11. attack b  
+12. overcome b h  
+13. attack h  
+14. overcome h l",False,"attack h
+overcome h l
+attack b
+overcome b h
+attack d
+overcome d b
+attack g
+overcome g d
+attack i
+overcome i g
+attack f
+overcome f i
+attack j
+overcome j f",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_002,W1,openai/o4-mini,"1. attack j  
+2. overcome j g  
+3. attack g  
+4. overcome g a  
+5. attack a  
+6. overcome a b  
+7. attack b  
+8. overcome b k  
+9. attack k  
+10. overcome k h  
+11. attack h  
+12. overcome h i",False,"attack h
+ overcome h i
+ attack k
+ overcome k h
+ attack b
+ overcome b k
+ attack a
+ overcome a b
+ attack g
+ overcome g a
+ attack j
+ overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_002,W2,openai/o4-mini,"1. attack j  
+2. overcome j g  
+3. attack g  
+4. overcome g a  
+5. attack a  
+6. overcome a b  
+7. attack b  
+8. overcome b k  
+9. attack k  
+10. overcome k h  
+11. attack h  
+12. overcome h i",False,"attack h
+ overcome h i
+ attack k
+ overcome k h
+ attack b
+ overcome b k
+ attack a
+ overcome a b
+ attack g
+ overcome g a
+ attack j
+ overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_002,W3,openai/o4-mini,"1. provoke Japan  
+2. broker Japan Greece  
+3. negotiate Japan Greece  
+4. provoke Greece  
+5. broker Greece Argentina  
+6. negotiate Greece Argentina  
+7. provoke Argentina  
+8. broker Argentina Belgium  
+9. negotiate Argentina Belgium  
+10. provoke Belgium  
+11. broker Belgium Kenya  
+12. negotiate Belgium Kenya  
+13. provoke Kenya  
+14. broker Kenya Hungary  
+15. negotiate Kenya Hungary  
+16. provoke Hungary  
+17. broker Hungary Ireland  
+18. negotiate Hungary Ireland",False,"provoke Japan
+broker Japan Greece
+provoke Greece
+broker Greece Argentina
+provoke Argentina
+broker Argentina Belgium
+provoke Belgium
+broker Belgium Kenya
+provoke Kenya
+broker Kenya Hungary
+provoke Hungary
+broker Hungary Ireland",planning_suite,low,hard,True,False,state_machine,incorrect,True
+MBW_002,W4,openai/o4-mini,,False,"attack h
+ overcome h i
+ attack k
+ overcome k h
+ attack b
+ overcome b k
+ attack a
+ overcome a b
+ attack g
+ overcome g a
+ attack j
+ overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_002,W5,openai/o4-mini,"1 succumb j  
+2 succumb g  
+3 succumb a  
+4 succumb b  
+5 succumb k  
+6 succumb h",False,"feast j g
+succumb j
+feast g a
+succumb g
+feast a b
+succumb a
+feast b k
+succumb b
+feast k h
+succumb k
+feast h i
+succumb h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_002,W6,openai/o4-mini,"1 attack e  
+2 overcome e m  
+3 attack c  
+4 overcome c e  
+5 attack d  
+6 overcome d c  
+7 attack n  
+8 overcome n d  
+9 attack f  
+10 overcome f n  
+11 attack l  
+12 overcome l f",False,"attack f
+ overcome f l
+ attack n
+ overcome n f
+ attack d
+ overcome d n
+ attack c
+ overcome c d
+ attack e
+ overcome e c
+ attack m
+ overcome m e",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_002,canonical,openai/o4-mini,"1. attack g  
+2. overcome g j  
+3. attack a  
+4. overcome a g  
+5. attack b  
+6. overcome b a  
+7. attack k  
+8. overcome k b  
+9. attack h  
+10. overcome h k  
+11. attack i  
+12. overcome i h",False,"attack h
+ overcome h i
+ attack k
+ overcome k h
+ attack b
+ overcome b k
+ attack a
+ overcome a b
+ attack g
+ overcome g a
+ attack j
+ overcome j g",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_010,W1,openai/o4-mini,"1. attack e  
+2. overcome e d  
+3. attack a  
+4. overcome a e  
+5. attack b  
+6. overcome b a  
+7. attack f  
+8. overcome f b",False,"attack d
+ overcome e d
+ attack e
+ overcome a e
+ attack a
+ overcome b a
+ attack b
+ overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_010,W2,openai/o4-mini,"1. attack d  
+2. overcome d e  
+3. attack e  
+4. overcome e a  
+5. attack a  
+6. overcome a b  
+7. attack b  
+8. overcome b f",False,"attack d
+ overcome e d
+ attack e
+ overcome a e
+ attack a
+ overcome b a
+ attack b
+ overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_010,W3,openai/o4-mini,"1. provoke Denmark  
+2. broker Denmark Estonia  
+3. negotiate Denmark Estonia  
+4. provoke Estonia  
+5. broker Estonia Argentina  
+6. negotiate Estonia Argentina  
+7. provoke Argentina  
+8. broker Argentina Belgium  
+9. negotiate Argentina Belgium  
+10. provoke Belgium  
+11. broker Belgium France  
+12. negotiate Belgium France",False,"provoke Denmark
+broker Denmark Estonia
+provoke Estonia
+broker Estonia Argentina
+provoke Argentina
+broker Argentina Belgium
+provoke Belgium
+broker Belgium France",planning_suite,low,medium,True,False,state_machine,incorrect,True
+MBW_010,W4,openai/o4-mini,,False,"attack d
+ overcome e d
+ attack e
+ overcome a e
+ attack a
+ overcome b a
+ attack b
+ overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_010,W5,openai/o4-mini,"1. overcome d e  
+2. succumb d  
+3. overcome e a  
+4. succumb e  
+5. overcome a b  
+6. succumb a  
+7. overcome b f  
+8. succumb b",False,"feast d e
+succumb d
+feast e a
+succumb e
+feast a b
+succumb a
+feast b f
+succumb b",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_010,W6,openai/o4-mini,,False,"attack h
+ overcome i h
+ attack i
+ overcome c i
+ attack c
+ overcome g c
+ attack g
+ overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_010,canonical,openai/o4-mini,"1. attack d  
+2. overcome d e  
+3. attack e  
+4. overcome e a  
+5. attack a  
+6. overcome a b  
+7. attack b  
+8. overcome b f",False,"attack d
+ overcome e d
+ attack e
+ overcome a e
+ attack a
+ overcome b a
+ attack b
+ overcome",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_014,W1,openai/o4-mini,"1. attack l  
+2. overcome l e  
+3. attack e  
+4. overcome e g",False,"attack e
+ overcome e g
+ attack l
+ overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_014,W2,openai/o4-mini,"1. attack l  
+2. overcome l e  
+3. attack e  
+4. overcome e g",False,"attack e
+ overcome e g
+ attack l
+ overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_014,W3,openai/o4-mini,"1. provoke Lithuania  
+2. broker Lithuania Estonia  
+3. provoke Estonia  
+4. broker Estonia Greece",False,"provoke Lithuania
+broker Lithuania Estonia
+provoke Estonia
+broker Estonia Greece",planning_suite,low,easy,True,False,state_machine,incorrect,True
+MBW_014,W4,openai/o4-mini,"1. attack e  
+2. overcome e g  
+3. attack l  
+4. overcome l e",True,"attack e
+ overcome e g
+ attack l
+ overcome l e",planning_suite,low,easy,True,True,state_machine,correct,False
+MBW_014,W5,openai/o4-mini,"1. attack l  
+2. succumb l",False,"feast l e
+succumb l
+feast e g
+succumb e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_014,W6,openai/o4-mini,"1. attack e  
+2. attack l  
+3. overcome e l  
+4. overcome l g",False,"attack a
+ overcome a b
+ attack c
+ overcome c a",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_014,canonical,openai/o4-mini,"1. attack l  
+2. attack e  
+3. overcome l e  
+4. overcome e g",False,"attack e
+ overcome e g
+ attack l
+ overcome l e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_037,W1,openai/o4-mini,"1 attack c
+2 overcome c d
+3 attack d
+4 overcome d h
+5 attack h
+6 overcome h i",False,"attack h
+ overcome h i
+ attack d
+ overcome d h
+ attack c
+ overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_037,W2,openai/o4-mini,"1. attack c  
+2. overcome c d  
+3. attack d  
+4. overcome d h  
+5. attack h  
+6. overcome h i",False,"attack h
+ overcome h i
+ attack d
+ overcome d h
+ attack c
+ overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_037,W3,openai/o4-mini,"1. provoke Canada  
+2. broker Canada Denmark  
+3. provoke Denmark  
+4. broker Denmark Hungary  
+5. provoke Hungary  
+6. broker Hungary Ireland",False,"provoke Canada
+broker Canada Denmark
+provoke Denmark
+broker Denmark Hungary
+provoke Hungary
+broker Hungary Ireland",planning_suite,low,easy,True,False,state_machine,incorrect,True
+MBW_037,W4,openai/o4-mini,,False,"attack h
+ overcome h i
+ attack d
+ overcome d h
+ attack c
+ overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_037,W5,openai/o4-mini,"1. feast c d  
+2. feast d h  
+3. feast h i",False,"feast c d
+succumb c
+feast d h
+succumb d
+feast h i
+succumb h",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_037,W6,openai/o4-mini,(No actions possible),False,"attack e
+ overcome e f
+ attack b
+ overcome b e
+ attack a
+ overcome a b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_037,canonical,openai/o4-mini,"1. attack d  
+2. overcome d c  
+3. attack h  
+4. overcome h d  
+5. attack i  
+6. overcome i h",False,"attack h
+ overcome h i
+ attack d
+ overcome d h
+ attack c
+ overcome c d",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,W1,openai/o4-mini,"1. attack j  
+2. overcome j d  
+3. attack d  
+4. overcome d g  
+5. attack g  
+6. overcome g i  
+7. attack i  
+8. overcome i c  
+9. attack c  
+10. overcome c h  
+11. attack h  
+12. overcome h a  
+13. attack a  
+14. overcome a b  
+15. attack b  
+16. overcome b e  
+17. attack e  
+18. overcome e l",False,"attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,W2,openai/o4-mini,"1. attack e  
+2. overcome e d  
+3. attack a  
+4. overcome a e  
+5. attack b  
+6. overcome b a  
+7. attack f  
+8. overcome f b",False,"attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,W3,openai/o4-mini,"1. provoke Denmark  
+2. broker Denmark Ethiopia  
+3. provoke Ethiopia  
+4. broker Ethiopia Argentina  
+5. provoke Argentina  
+6. broker Argentina Brazil  
+7. provoke Brazil  
+8. broker Brazil France",False,"provoke Brazil
+broker Brazil France
+provoke Argentina
+broker Argentina Brazil
+provoke Ethiopia
+broker Ethiopia Argentina
+provoke Denmark
+broker Denmark Ethiopia
+",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,W4,openai/o4-mini,,False,"attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,W5,openai/o4-mini,"1. feast d e  
+2. feast e a  
+3. feast a b  
+4. feast b f",False,"feast d e
+succumb d
+feast e a
+succumb e
+feast a b
+succumb a
+feast b f
+succumb b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,W6,openai/o4-mini,"1. attack e  
+2. overcome e d  
+3. attack a  
+4. overcome a e  
+5. attack b  
+6. overcome b a  
+7. attack f  
+8. overcome f b",False,"attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_10,canonical,openai/o4-mini,"1. attack d  
+2. overcome d e  
+3. attack e  
+4. overcome e a  
+5. attack a  
+6. overcome a b  
+7. attack b  
+8. overcome b f",False,"attack b
+overcome b f
+attack a
+overcome a b
+attack e
+overcome e a
+attack d
+overcome d e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_100,W1,openai/o4-mini,"1. attack b  
+2. overcome b j  
+3. attack j  
+4. overcome j l  
+5. attack l  
+6. overcome l i",False,"attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_100,W2,openai/o4-mini,"1 attack b
+2 attack j
+3 attack l
+4 overcome b j
+5 overcome j l
+6 overcome l i",False,"attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_100,W3,openai/o4-mini,"1. provoke Morocco  
+2. broker Morocco Thailand  
+3. negotiate Morocco Thailand  
+4. provoke Thailand  
+5. broker Thailand Uruguay  
+6. negotiate Thailand Uruguay  
+7. provoke Uruguay  
+8. broker Uruguay Estonia  
+9. negotiate Uruguay Estonia",False,"provoke Uruguay
+broker Uruguay Estonia
+provoke Thailand
+broker Thailand Uruguay
+provoke Morocco
+broker Morocco Thailand",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_100,W4,openai/o4-mini,"1. attack l  
+2. overcome l i  
+3. attack j  
+4. overcome j l  
+5. attack b  
+6. overcome b j",True,"attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",planning_suite,low,easy,True,True,state_machine,correct,False
+MBW_100,W5,openai/o4-mini,"1. feast b j  
+2. feast j l  
+3. feast l i",False,"feast b j
+succumb b
+feast j l
+succumb j
+feast l i
+succumb l",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_100,W6,openai/o4-mini,"1. attack b  
+2. overcome b j  
+3. attack j  
+4. overcome j l  
+5. attack l  
+6. overcome l i",False,"attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_100,canonical,openai/o4-mini,"1. attack b  
+2. overcome b j  
+3. attack j  
+4. overcome j l  
+5. attack l  
+6. overcome l i",False,"attack l
+overcome l i
+attack j
+overcome j l
+attack b
+overcome b j",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,W1,openai/o4-mini,"1. attack k  
+2. overcome k g  
+3. attack g  
+4. overcome g j  
+5. attack j  
+6. overcome j e  
+7. attack e  
+8. overcome e b",False,"attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,W2,openai/o4-mini,"1. attack k  
+2. overcome k g  
+3. attack g  
+4. overcome g j  
+5. attack j  
+6. overcome j e  
+7. attack e  
+8. overcome e b",False,"attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,W3,openai/o4-mini,"1. provoke Kenya  
+2. broker Kenya Germany  
+3. provoke Germany  
+4. broker Germany Japan  
+5. provoke Japan  
+6. broker Japan Egypt  
+7. provoke Egypt  
+8. broker Egypt Brazil",False,"provoke Egypt
+broker Egypt Brazil
+provoke Japan
+broker Japan Egypt
+provoke Germany
+broker Germany Japan
+provoke Kenya
+broker Kenya Germany",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,W4,openai/o4-mini,,False,"attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,W5,openai/o4-mini,"1. feast k g  
+2. feast g j  
+3. feast j e  
+4. feast e b",False,"feast k g
+succumb k
+feast g j
+succumb g
+feast j e
+succumb j
+feast e b
+succumb e",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,W6,openai/o4-mini,"1. attack k  
+2. overcome k g  
+3. attack g  
+4. overcome g j  
+5. attack j  
+6. overcome j e  
+7. attack e  
+8. overcome e b",False,"attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_127,canonical,openai/o4-mini,"1. attack k  
+2. overcome k g  
+3. attack g  
+4. overcome g j  
+5. attack j  
+6. overcome j e  
+7. attack e  
+8. overcome e b",False,"attack e
+overcome e b
+attack j
+overcome j e
+attack g
+overcome g j
+attack k
+overcome k g",planning_suite,low,easy,False,False,state_machine,incorrect,False
+MBW_185,W1,openai/o4-mini,"1. attack j
+2. overcome j d
+3. attack d
+4. overcome d g
+5. attack g
+6. overcome g i
+7. attack i
+8. overcome i c
+9. attack c
+10. overcome c h
+11. attack h
+12. overcome h a
+13. attack a
+14. overcome a b
+15. attack b
+16. overcome b e
+17. attack e
+18. overcome e l",False,"attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_185,W2,openai/o4-mini,"1. attack j  
+2. overcome j d  
+3. attack d  
+4. overcome d g  
+5. attack g  
+6. overcome g i  
+7. attack i  
+8. overcome i c  
+9. attack c  
+10. overcome c h  
+11. attack h  
+12. overcome h a  
+13. attack a  
+14. overcome a b  
+15. attack b  
+16. overcome b e  
+17. attack e  
+18. overcome e l",False,"attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_185,W3,openai/o4-mini,"1. provoke Jordan  
+2. broker Jordan Denmark  
+3. provoke Denmark  
+4. broker Denmark Ghana  
+5. provoke Ghana  
+6. broker Ghana India  
+7. provoke India  
+8. broker India Chile  
+9. provoke Chile  
+10. broker Chile Hungary  
+11. provoke Hungary  
+12. broker Hungary Austria  
+13. provoke Austria  
+14. broker Austria Bolivia  
+15. provoke Bolivia  
+16. broker Bolivia Ecuador  
+17. provoke Ecuador  
+18. broker Ecuador Latvia",False,"provoke Ecuador
+broker Ecuador Latvia
+provoke Bolivia
+broker Bolivia Ecuador
+provoke Austria
+broker Austria Bolivia
+provoke Hungary
+broker Hungary Austria
+provoke Chile
+broker Chile Hungary
+provoke India
+broker India Chile
+provoke Ghana
+broker Ghana India
+provoke Denmark
+broker Denmark Ghana
+provoke Jordan
+broker Jordan Denmark",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_185,W4,openai/o4-mini,"1. attack e  
+2. overcome e l  
+3. attack b  
+4. overcome b e  
+5. attack a  
+6. overcome a b  
+7. attack h  
+8. overcome h a  
+9. attack c  
+10. overcome c h  
+11. attack i  
+12. overcome i c  
+13. attack g  
+14. overcome g i  
+15. attack d  
+16. overcome d g  
+17. attack j  
+18. overcome j d",True,"attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",planning_suite,low,hard,True,True,state_machine,correct,False
+MBW_185,W5,openai/o4-mini,"1. feast j d  
+2. feast d g  
+3. feast g i  
+4. feast i c  
+5. feast c h  
+6. feast h a  
+7. feast a b  
+8. feast b e  
+9. feast e l",False,"feast j d
+succumb j
+feast d g
+succumb d
+feast g i
+succumb g
+feast i c
+succumb i
+feast c h
+succumb c
+feast h a
+succumb h
+feast a b
+succumb a
+feast b e
+succumb b
+feast e l
+succumb e",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_185,W6,openai/o4-mini,"1. attack j  
+2. overcome j d  
+3. attack d  
+4. overcome d g  
+5. attack g  
+6. overcome g i  
+7. attack i  
+8. overcome i c  
+9. attack c  
+10. overcome c h  
+11. attack h  
+12. overcome h a  
+13. attack a  
+14. overcome a b  
+15. attack b  
+16. overcome b e  
+17. attack e  
+18. overcome e l",False,"attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_185,canonical,openai/o4-mini,"1. attack d  
+2. overcome d j  
+3. attack g  
+4. overcome g d  
+5. attack i  
+6. overcome i g  
+7. attack c  
+8. overcome c i  
+9. attack h  
+10. overcome h c  
+11. attack a  
+12. overcome a h  
+13. attack b  
+14. overcome b a  
+15. attack e  
+16. overcome e b  
+17. attack l  
+18. overcome l e",False,"attack e
+overcome e l
+attack b
+overcome b e
+attack a
+overcome a b
+attack h
+overcome h a
+attack c
+overcome c h
+attack i
+overcome i c
+attack g
+overcome g i
+attack d
+overcome d g
+attack j
+overcome j d",planning_suite,low,hard,False,False,state_machine,incorrect,False
+MBW_495,W1,openai/o4-mini,"1. attack l  
+2. overcome l c  
+3. attack i  
+4. overcome i l  
+5. attack e  
+6. overcome e i  
+7. attack h  
+8. overcome h e",False,"attack e
+ overcome e h
+ attack i
+ overcome i e
+ attack l
+ overcome l i
+ attack c
+ overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_495,W2,openai/o4-mini,"1. attack c  
+2. overcome c l  
+3. attack l  
+4. overcome l i  
+5. attack i  
+6. overcome i e  
+7. attack e  
+8. overcome e h",False,"attack e
+ overcome e h
+ attack i
+ overcome i e
+ attack l
+ overcome l i
+ attack c
+ overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_495,W3,openai/o4-mini,"1. provoke Canada  
+2. broker Canada Lithuania  
+3. provoke Lithuania  
+4. broker Lithuania Ireland  
+5. provoke Ireland  
+6. broker Ireland Estonia  
+7. provoke Estonia  
+8. broker Estonia Hungary",False,"provoke Canada
+broker Canada Lithuania
+provoke Lithuania
+broker Lithuania Ireland
+provoke Ireland
+broker Ireland Estonia
+provoke Estonia
+broker Estonia Hungary",planning_suite,low,medium,True,False,state_machine,incorrect,True
+MBW_495,W4,openai/o4-mini,,False,"attack e
+ overcome e h
+ attack i
+ overcome i e
+ attack l
+ overcome l i
+ attack c
+ overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_495,W5,openai/o4-mini,"1. feast c l  
+2. feast l i  
+3. feast i e  
+4. feast e h",False,"feast c l
+succumb c
+feast l i
+succumb l
+feast i e
+succumb i
+feast e h
+succumb e",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_495,W6,openai/o4-mini,,False,"attack b
+ overcome b d
+ attack f
+ overcome f b
+ attack g
+ overcome g f
+ attack a
+ overcome a g",planning_suite,low,medium,False,False,state_machine,incorrect,False
+MBW_495,canonical,openai/o4-mini,"1. attack c  
+2. overcome c l  
+3. attack l  
+4. overcome l i  
+5. attack i  
+6. overcome i e  
+7. attack e  
+8. overcome e h",False,"attack e
+ overcome e h
+ attack i
+ overcome i e
+ attack l
+ overcome l i
+ attack c
+ overcome c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+BW_496,W1,openai/o4-mini,"1. pick-up f  
+2. stack f i  
+3. pick-up c  
+4. stack c f  
+5. pick-up d  
+6. stack d c  
+7. pick-up k  
+8. stack k d  
+9. pick-up g  
+10. stack g k  
+11. pick-up e  
+12. stack e g  
+13. pick-up a  
+14. stack a e  
+15. pick-up l  
+16. stack l a  
+17. pick-up h  
+18. stack h l  
+19. pick-up j  
+20. stack j h",True,"pick-up f
+stack f i
+pick-up c
+stack c f
+pick-up d
+stack d c
+pick-up k
+stack k d
+pick-up g
+stack g k
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up l
+stack l a
+pick-up h
+stack h l
+pick-up j
+stack j h",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_496,W2,openai/o4-mini,"pick-up f  
+stack f i  
+pick-up c  
+stack c f  
+pick-up d  
+stack d c  
+pick-up k  
+stack k d  
+pick-up g  
+stack g k  
+pick-up e  
+stack e g  
+pick-up a  
+stack a e  
+pick-up l  
+stack l a  
+pick-up h  
+stack h l  
+pick-up j  
+stack j h",True,"pick-up f
+stack f i
+pick-up c
+stack c f
+pick-up d
+stack d c
+pick-up k
+stack k d
+pick-up g
+stack g k
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up l
+stack l a
+pick-up h
+stack h l
+pick-up j
+stack j h",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_496,W3,openai/o4-mini,"1 recruit Frank  
+2 promote_over Frank Isabel  
+3 recruit Carol  
+4 promote_over Carol Frank  
+5 recruit David  
+6 promote_over David Carol  
+7 recruit Kevin  
+8 promote_over Kevin David  
+9 recruit Grace  
+10 promote_over Grace Kevin  
+11 recruit Emma  
+12 promote_over Emma Grace  
+13 recruit Alice  
+14 promote_over Alice Emma  
+15 recruit Laura  
+16 promote_over Laura Alice  
+17 recruit Henry  
+18 promote_over Henry Laura  
+19 recruit James  
+20 promote_over James Henry",True,"recruit Frank
+promote_over Frank Isabel
+recruit Carol
+promote_over Carol Frank
+recruit David
+promote_over David Carol
+recruit Kevin
+promote_over Kevin David
+recruit Grace
+promote_over Grace Kevin
+recruit Emma
+promote_over Emma Grace
+recruit Alice
+promote_over Alice Emma
+recruit Laura
+promote_over Laura Alice
+recruit Henry
+promote_over Henry Laura
+recruit James
+promote_over James Henry",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_496,W4,openai/o4-mini,"1. pick-up(f)
+2. stack(f,i)
+3. pick-up(c)
+4. stack(c,f)
+5. pick-up(d)
+6. stack(d,c)
+7. pick-up(k)
+8. stack(k,d)
+9. pick-up(g)
+10. stack(g,k)
+11. pick-up(e)
+12. stack(e,g)
+13. pick-up(a)
+14. stack(a,e)
+15. pick-up(l)
+16. stack(l,a)
+17. pick-up(h)
+18. stack(h,l)
+19. pick-up(j)
+20. stack(j,h)",False,"pick-up f
+stack f i
+pick-up c
+stack c f
+pick-up d
+stack d c
+pick-up k
+stack k d
+pick-up g
+stack g k
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up l
+stack l a
+pick-up h
+stack h l
+pick-up j
+stack j h",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_496,W5,openai/o4-mini,"1. unstack j h  
+2. put-down j  
+3. unstack h l  
+4. put-down h  
+5. unstack l a  
+6. put-down l  
+7. unstack a e  
+8. put-down a  
+9. unstack e g  
+10. put-down e  
+11. unstack g k  
+12. put-down g  
+13. unstack k d  
+14. put-down k  
+15. unstack d c  
+16. put-down d  
+17. unstack c f  
+18. put-down c  
+19. unstack f i  
+20. put-down f",True,"unstack j h
+put-down j
+unstack h l
+put-down h
+unstack l a
+put-down l
+unstack a e
+put-down a
+unstack e g
+put-down e
+unstack g k
+put-down g
+unstack k d
+put-down k
+unstack d c
+put-down d
+unstack c f
+put-down c
+unstack f i
+put-down f",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_496,W6,openai/o4-mini,"1. pick-up g  
+2. stack g h  
+3. pick-up d  
+4. stack d g  
+5. pick-up b  
+6. stack b d  
+7. pick-up a  
+8. stack a b  
+9. pick-up f  
+10. stack f a  
+11. pick-up c  
+12. stack c f  
+13. pick-up j  
+14. stack j c  
+15. pick-up k  
+16. stack k j  
+17. pick-up i  
+18. stack i k  
+19. pick-up e  
+20. stack e i",True,"pick-up g
+stack g h
+pick-up d
+stack d g
+pick-up b
+stack b d
+pick-up a
+stack a b
+pick-up f
+stack f a
+pick-up c
+stack c f
+pick-up j
+stack j c
+pick-up k
+stack k j
+pick-up i
+stack i k
+pick-up e
+stack e i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_497,W1,openai/o4-mini,"1. pick-up e
+2. stack e c
+3. pick-up l
+4. stack l e",True,"pick-up e
+stack e c
+pick-up l
+stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_497,W2,openai/o4-mini,"1. pick-up e  
+2. stack e c  
+3. pick-up l  
+4. stack l e",True,"pick-up e
+stack e c
+pick-up l
+stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_497,W3,openai/o4-mini,"1. retrieve Encyclopedia  
+2. place_on Encyclopedia Cookbook  
+3. retrieve Literature  
+4. place_on Literature Encyclopedia",True,"retrieve Encyclopedia
+place_on Encyclopedia Cookbook
+retrieve Literature
+place_on Literature Encyclopedia",planning_suite,high,easy,False,True,state_machine,correct,True
+BW_497,W4,openai/o4-mini,"1. pick-up(e)
+2. stack(e,c)
+3. pick-up(l)
+4. stack(l,e)",False,"pick-up e
+stack e c
+pick-up l
+stack l e",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_497,W5,openai/o4-mini,"1. unstack l e
+2. put-down l
+3. unstack e c
+4. put-down e",True,"unstack l e
+put-down l
+unstack e c
+put-down e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_497,W6,openai/o4-mini,"1. pick-up a  
+2. stack a b  
+3. pick-up c  
+4. stack c a",True,"pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_498,W1,openai/o4-mini,"Here’s a shortest‐possible build plan (bottom‐up), starting with all blocks clear on the table and hand empty:
+
+1. pick-up a  
+2. stack a g  
+3. pick-up l  
+4. stack l a  
+5. pick-up d  
+6. stack d l  
+7. pick-up f  
+8. stack f d  
+9. pick-up b  
+10. stack b f  
+11. pick-up c  
+12. stack c b  
+13. pick-up e  
+14. stack e c  
+15. pick-up j  
+16. stack j e  
+17. pick-up k  
+18. stack k j  
+
+After step 18 you have the tower g–a–l–d–f–b–c–e–j–k as required, and your hand is empty.",True,"pick-up a
+stack a g
+pick-up l
+stack l a
+pick-up d
+stack d l
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up k
+stack k j",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_498,W2,openai/o4-mini,"1. pick-up a  
+2. stack a g  
+3. pick-up l  
+4. stack l a  
+5. pick-up d  
+6. stack d l  
+7. pick-up f  
+8. stack f d  
+9. pick-up b  
+10. stack b f  
+11. pick-up c  
+12. stack c b  
+13. pick-up e  
+14. stack e c  
+15. pick-up j  
+16. stack j e  
+17. pick-up k  
+18. stack k j",True,"pick-up a
+stack a g
+pick-up l
+stack l a
+pick-up d
+stack d l
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up k
+stack k j",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_498,W3,openai/o4-mini,"1. hire Alice  
+2. promote_above Alice Grace  
+3. hire Liam  
+4. promote_above Liam Alice  
+5. hire David  
+6. promote_above David Liam  
+7. hire Frank  
+8. promote_above Frank David  
+9. hire Bob  
+10. promote_above Bob Frank  
+11. hire Carol  
+12. promote_above Carol Bob  
+13. hire Emma  
+14. promote_above Emma Carol  
+15. hire Jack  
+16. promote_above Jack Emma  
+17. hire Kate  
+18. promote_above Kate Jack",True,"hire Alice
+promote_above Alice Grace
+hire Liam
+promote_above Liam Alice
+hire David
+promote_above David Liam
+hire Frank
+promote_above Frank David
+hire Bob
+promote_above Bob Frank
+hire Carol
+promote_above Carol Bob
+hire Emma
+promote_above Emma Carol
+hire Jack
+promote_above Jack Emma
+hire Kate
+promote_above Kate Jack",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_498,W4,openai/o4-mini,"1. pick-up(a)  
+2. stack(a,g)  
+3. pick-up(l)  
+4. stack(l,a)  
+5. pick-up(d)  
+6. stack(d,l)  
+7. pick-up(f)  
+8. stack(f,d)  
+9. pick-up(b)  
+10. stack(b,f)  
+11. pick-up(c)  
+12. stack(c,b)  
+13. pick-up(e)  
+14. stack(e,c)  
+15. pick-up(j)  
+16. stack(j,e)  
+17. pick-up(k)  
+18. stack(k,j)",False,"pick-up a
+stack a g
+pick-up l
+stack l a
+pick-up d
+stack d l
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up k
+stack k j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_498,W5,openai/o4-mini,"1. unstack k j  
+2. put-down k  
+3. unstack j e  
+4. put-down j  
+5. unstack e c  
+6. put-down e  
+7. unstack c b  
+8. put-down c  
+9. unstack b f  
+10. put-down b  
+11. unstack f d  
+12. put-down f  
+13. unstack d l  
+14. put-down d  
+15. unstack l a  
+16. put-down l  
+17. unstack a g  
+18. put-down a",True,"unstack k j
+put-down k
+unstack j e
+put-down j
+unstack e c
+put-down e
+unstack c b
+put-down c
+unstack b f
+put-down b
+unstack f d
+put-down f
+unstack d l
+put-down d
+unstack l a
+put-down l
+unstack a g
+put-down a",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_498,W6,openai/o4-mini,"1. pick-up g  
+2. stack g c  
+3. pick-up i  
+4. stack i g  
+5. pick-up d  
+6. stack d i  
+7. pick-up e  
+8. stack e d  
+9. pick-up h  
+10. stack h e  
+11. pick-up a  
+12. stack a h  
+13. pick-up f  
+14. stack f a  
+15. pick-up b  
+16. stack b f  
+17. pick-up j  
+18. stack j b",True,"pick-up g
+stack g c
+pick-up i
+stack i g
+pick-up d
+stack d i
+pick-up e
+stack e d
+pick-up h
+stack h e
+pick-up a
+stack a h
+pick-up f
+stack f a
+pick-up b
+stack b f
+pick-up j
+stack j b",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_499,W1,openai/o4-mini,"1. pick-up e  
+2. stack e l  
+3. pick-up c  
+4. stack c e  
+5. pick-up a  
+6. stack a c  
+7. pick-up j  
+8. stack j a",True,"pick-up e
+stack e l
+pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up j
+stack j a",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_499,W2,openai/o4-mini,"Here’s a shortest 8-step plan (building the tower l–e–c–a–j from the bottom up):
+
+1. pick-up e  
+2. stack e l  
+3. pick-up c  
+4. stack c e  
+5. pick-up a  
+6. stack a c  
+7. pick-up j  
+8. stack j a",True,"pick-up e
+stack e l
+pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up j
+stack j a",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_499,W3,openai/o4-mini,"1 recruit Emma
+2 promote Emma Laura
+3 recruit Carol
+4 promote Carol Emma
+5 recruit Alice
+6 promote Alice Carol
+7 recruit John
+8 promote John Alice",True,"recruit Emma
+promote Emma Laura
+recruit Carol
+promote Carol Emma
+recruit Alice
+promote Alice Carol
+recruit John
+promote John Alice",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_499,W4,openai/o4-mini,"1. pick-up(e)  
+2. stack(e,l)  
+3. pick-up(c)  
+4. stack(c,e)  
+5. pick-up(a)  
+6. stack(a,c)  
+7. pick-up(j)  
+8. stack(j,a)",False,"pick-up e
+stack e l
+pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up j
+stack j a",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_499,W5,openai/o4-mini,"1. unstack j a  
+2. put-down j  
+3. unstack a c  
+4. put-down a  
+5. unstack c e  
+6. put-down c  
+7. unstack e l  
+8. put-down e",True,"unstack j a
+put-down j
+unstack a c
+put-down a
+unstack c e
+put-down c
+unstack e l
+put-down e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_499,W6,openai/o4-mini,"1. pick-up b  
+2. stack b e  
+3. pick-up a  
+4. stack a b  
+5. pick-up d  
+6. stack d a  
+7. pick-up c  
+8. stack c d",True,"pick-up b
+stack b e
+pick-up a
+stack a b
+pick-up d
+stack d a
+pick-up c
+stack c d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_500,W1,openai/o4-mini,"1. pick-up b  
+2. stack b l  
+3. pick-up c  
+4. stack c b  
+5. pick-up g  
+6. stack g c  
+7. pick-up a  
+8. stack a g  
+9. pick-up d  
+10. stack d a  
+11. pick-up k  
+12. stack k d  
+13. pick-up e  
+14. stack e k",True,"pick-up b
+stack b l
+pick-up c
+stack c b
+pick-up g
+stack g c
+pick-up a
+stack a g
+pick-up d
+stack d a
+pick-up k
+stack k d
+pick-up e
+stack e k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_500,W2,openai/o4-mini,"Here’s a valid minimal sequence (hand always ends empty) that builds the single tower  
+table→l→b→c→g→a→d→k→e:
+
+1. pick-up b  
+2. stack b l  
+3. pick-up c  
+4. stack c b  
+5. pick-up g  
+6. stack g c  
+7. pick-up a  
+8. stack a g  
+9. pick-up d  
+10. stack d a  
+11. pick-up k  
+12. stack k d  
+13. pick-up e  
+14. stack e k",True,"pick-up b
+stack b l
+pick-up c
+stack c b
+pick-up g
+stack g c
+pick-up a
+stack a g
+pick-up d
+stack d a
+pick-up k
+stack k d
+pick-up e
+stack e k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_500,W3,openai/o4-mini,"1 recruit Bob  
+2 promote Bob Laura  
+3 recruit Carol  
+4 promote Carol Bob  
+5 recruit George  
+6 promote George Carol  
+7 recruit Alice  
+8 promote Alice George  
+9 recruit David  
+10 promote David Alice  
+11 recruit Kevin  
+12 promote Kevin David  
+13 recruit Emily  
+14 promote Emily Kevin",True,"recruit Bob
+promote Bob Laura
+recruit Carol
+promote Carol Bob
+recruit George
+promote George Carol
+recruit Alice
+promote Alice George
+recruit David
+promote David Alice
+recruit Kevin
+promote Kevin David
+recruit Emily
+promote Emily Kevin",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_500,W4,openai/o4-mini,"1. pick-up(b)
+2. stack(b,l)
+3. pick-up(c)
+4. stack(c,b)
+5. pick-up(g)
+6. stack(g,c)
+7. pick-up(a)
+8. stack(a,g)
+9. pick-up(d)
+10. stack(d,a)
+11. pick-up(k)
+12. stack(k,d)
+13. pick-up(e)
+14. stack(e,k)",False,"pick-up b
+stack b l
+pick-up c
+stack c b
+pick-up g
+stack g c
+pick-up a
+stack a g
+pick-up d
+stack d a
+pick-up k
+stack k d
+pick-up e
+stack e k",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_500,W5,openai/o4-mini,"1. unstack e k  
+2. put-down e  
+3. unstack k d  
+4. put-down k  
+5. unstack d a  
+6. put-down d  
+7. unstack a g  
+8. put-down a  
+9. unstack g c  
+10. put-down g  
+11. unstack c b  
+12. put-down c  
+13. unstack b l  
+14. put-down b",True,"unstack e k
+put-down e
+unstack k d
+put-down k
+unstack d a
+put-down d
+unstack a g
+put-down a
+unstack g c
+put-down g
+unstack c b
+put-down c
+unstack b l
+put-down b",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_500,W6,openai/o4-mini,"1. pick-up h  
+2. stack h d  
+3. pick-up c  
+4. stack c h  
+5. pick-up e  
+6. stack e c  
+7. pick-up g  
+8. stack g e  
+9. pick-up b  
+10. stack b g  
+11. pick-up f  
+12. stack f b  
+13. pick-up a  
+14. stack a f",True,"pick-up h
+stack h d
+pick-up c
+stack c h
+pick-up e
+stack e c
+pick-up g
+stack g e
+pick-up b
+stack b g
+pick-up f
+stack f b
+pick-up a
+stack a f",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_501,W1,openai/o4-mini,"1. pick-up j  
+2. stack j d  
+3. pick-up g  
+4. stack g j  
+5. pick-up e  
+6. stack e g  
+7. pick-up a  
+8. stack a e  
+9. pick-up k  
+10. stack k a  
+11. pick-up i  
+12. stack i k  
+13. pick-up c  
+14. stack c i",True,"pick-up j
+stack j d
+pick-up g
+stack g j
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up k
+stack k a
+pick-up i
+stack i k
+pick-up c
+stack c i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_501,W2,openai/o4-mini,"pick-up j  
+stack j d  
+pick-up g  
+stack g j  
+pick-up e  
+stack e g  
+pick-up a  
+stack a e  
+pick-up k  
+stack k a  
+pick-up i  
+stack i k  
+pick-up c  
+stack c i",True,"pick-up j
+stack j d
+pick-up g
+stack g j
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up k
+stack k a
+pick-up i
+stack i k
+pick-up c
+stack c i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_501,W3,openai/o4-mini,"1. recruit James  
+2. promote James David  
+3. recruit George  
+4. promote George James  
+5. recruit Emma  
+6. promote Emma George  
+7. recruit Alice  
+8. promote Alice Emma  
+9. recruit Kevin  
+10. promote Kevin Alice  
+11. recruit Isabella  
+12. promote Isabella Kevin  
+13. recruit Carol  
+14. promote Carol Isabella",True,"recruit James
+promote James David
+recruit George
+promote George James
+recruit Emma
+promote Emma George
+recruit Alice
+promote Alice Emma
+recruit Kevin
+promote Kevin Alice
+recruit Isabella
+promote Isabella Kevin
+recruit Carol
+promote Carol Isabella",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_501,W4,openai/o4-mini,"1. pick-up(j)
+2. stack(j,d)
+3. pick-up(g)
+4. stack(g,j)
+5. pick-up(e)
+6. stack(e,g)
+7. pick-up(a)
+8. stack(a,e)
+9. pick-up(k)
+10. stack(k,a)
+11. pick-up(i)
+12. stack(i,k)
+13. pick-up(c)
+14. stack(c,i)",False,"pick-up j
+stack j d
+pick-up g
+stack g j
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up k
+stack k a
+pick-up i
+stack i k
+pick-up c
+stack c i",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_501,W5,openai/o4-mini,"1. unstack c i  
+2. put-down c  
+3. unstack i k  
+4. put-down i  
+5. unstack k a  
+6. put-down k  
+7. unstack a e  
+8. put-down a  
+9. unstack e g  
+10. put-down e  
+11. unstack g j  
+12. put-down g  
+13. unstack j d  
+14. put-down j",True,"unstack c i
+put-down c
+unstack i k
+put-down i
+unstack k a
+put-down k
+unstack a e
+put-down a
+unstack e g
+put-down e
+unstack g j
+put-down g
+unstack j d
+put-down j",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_501,W6,openai/o4-mini,"1. pick-up g  
+2. stack g d  
+3. pick-up a  
+4. stack a g  
+5. pick-up e  
+6. stack e a  
+7. pick-up f  
+8. stack f e  
+9. pick-up c  
+10. stack c f  
+11. pick-up h  
+12. stack h c  
+13. pick-up b  
+14. stack b h",True,"pick-up g
+stack g d
+pick-up a
+stack a g
+pick-up e
+stack e a
+pick-up f
+stack f e
+pick-up c
+stack c f
+pick-up h
+stack h c
+pick-up b
+stack b h",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_502,W1,openai/o4-mini,"1. pick-up i  
+2. stack i e  
+3. pick-up h  
+4. stack h i  
+5. pick-up d  
+6. stack d h",True,"pick-up i
+stack i e
+pick-up h
+stack h i
+pick-up d
+stack d h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_502,W2,openai/o4-mini,"1. pick-up i  
+2. stack i e  
+3. pick-up h  
+4. stack h i  
+5. pick-up d  
+6. stack d h",True,"pick-up i
+stack i e
+pick-up h
+stack h i
+pick-up d
+stack d h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_502,W3,openai/o4-mini,"1. recruit Isabella  
+2. promote Isabella Edward  
+3. recruit Henry  
+4. promote Henry Isabella  
+5. recruit Diana  
+6. promote Diana Henry",True,"recruit Isabella
+promote Isabella Edward
+recruit Henry
+promote Henry Isabella
+recruit Diana
+promote Diana Henry",planning_suite,high,easy,False,True,state_machine,correct,True
+BW_502,W4,openai/o4-mini,"1. pick-up(i)
+2. stack(i,e)
+3. pick-up(h)
+4. stack(h,i)
+5. pick-up(d)
+6. stack(d,h)",False,"pick-up i
+stack i e
+pick-up h
+stack h i
+pick-up d
+stack d h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_502,W5,openai/o4-mini,"1. unstack d h  
+2. put-down d  
+3. unstack h i  
+4. put-down h  
+5. unstack i e  
+6. put-down i",True,"unstack d h
+put-down d
+unstack h i
+put-down h
+unstack i e
+put-down i",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_502,W6,openai/o4-mini,"1. pick-up a  
+2. stack a c  
+3. pick-up d  
+4. stack d a  
+5. pick-up b  
+6. stack b d",True,"pick-up a
+stack a c
+pick-up d
+stack d a
+pick-up b
+stack b d",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_503,W1,openai/o4-mini,"1. pick-up i  
+2. stack i l  
+3. pick-up e  
+4. stack e i  
+5. pick-up b  
+6. stack b e  
+7. pick-up j  
+8. stack j b  
+9. pick-up k  
+10. stack k j  
+11. pick-up h  
+12. stack h k  
+13. pick-up d  
+14. stack d h  
+15. pick-up c  
+16. stack c d  
+17. pick-up a  
+18. stack a c  
+19. pick-up g  
+20. stack g a  
+21. pick-up f  
+22. stack f g",True,"pick-up i
+stack i l
+pick-up e
+stack e i
+pick-up b
+stack b e
+pick-up j
+stack j b
+pick-up k
+stack k j
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up f
+stack f g",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_503,W2,openai/o4-mini,"Here’s one valid way (bottom‐up) to build the single tower l–i–e–b–j–k–h–d–c–a–g–f.  At each step the block you pick up is clear and on the table, and you always stack onto a clear block:
+
+1. pick-up i  
+2. stack i l  
+3. pick-up e  
+4. stack e i  
+5. pick-up b  
+6. stack b e  
+7. pick-up j  
+8. stack j b  
+9. pick-up k  
+10. stack k j  
+11. pick-up h  
+12. stack h k  
+13. pick-up d  
+14. stack d h  
+15. pick-up c  
+16. stack c d  
+17. pick-up a  
+18. stack a c  
+19. pick-up g  
+20. stack g a  
+21. pick-up f  
+22. stack f g  
+
+After step 22 you have exactly:  
+l on table, i on l, e on i, b on e, j on b, k on j, h on k, d on h, c on d, a on c, g on a, f on g.",True,"pick-up i
+stack i l
+pick-up e
+stack e i
+pick-up b
+stack b e
+pick-up j
+stack j b
+pick-up k
+stack k j
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up f
+stack f g",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_503,W3,openai/o4-mini,"1. recruit Irene  
+2. promote_over Irene Larry  
+3. recruit Emma  
+4. promote_over Emma Irene  
+5. recruit Bob  
+6. promote_over Bob Emma  
+7. recruit James  
+8. promote_over James Bob  
+9. recruit Karen  
+10. promote_over Karen James  
+11. recruit Henry  
+12. promote_over Henry Karen  
+13. recruit David  
+14. promote_over David Henry  
+15. recruit Carol  
+16. promote_over Carol David  
+17. recruit Alice  
+18. promote_over Alice Carol  
+19. recruit Grace  
+20. promote_over Grace Alice  
+21. recruit Frank  
+22. promote_over Frank Grace",True,"recruit Irene
+promote_over Irene Larry
+recruit Emma
+promote_over Emma Irene
+recruit Bob
+promote_over Bob Emma
+recruit James
+promote_over James Bob
+recruit Karen
+promote_over Karen James
+recruit Henry
+promote_over Henry Karen
+recruit David
+promote_over David Henry
+recruit Carol
+promote_over Carol David
+recruit Alice
+promote_over Alice Carol
+recruit Grace
+promote_over Grace Alice
+recruit Frank
+promote_over Frank Grace",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_503,W4,openai/o4-mini,"1. pick-up(i)
+2. stack(i,l)
+3. pick-up(e)
+4. stack(e,i)
+5. pick-up(b)
+6. stack(b,e)
+7. pick-up(j)
+8. stack(j,b)
+9. pick-up(k)
+10. stack(k,j)
+11. pick-up(h)
+12. stack(h,k)
+13. pick-up(d)
+14. stack(d,h)
+15. pick-up(c)
+16. stack(c,d)
+17. pick-up(a)
+18. stack(a,c)
+19. pick-up(g)
+20. stack(g,a)
+21. pick-up(f)
+22. stack(f,g)",False,"pick-up i
+stack i l
+pick-up e
+stack e i
+pick-up b
+stack b e
+pick-up j
+stack j b
+pick-up k
+stack k j
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up f
+stack f g",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_503,W5,openai/o4-mini,"1. unstack f g  
+2. put-down f  
+3. unstack g a  
+4. put-down g  
+5. unstack a c  
+6. put-down a  
+7. unstack c d  
+8. put-down c  
+9. unstack d h  
+10. put-down d  
+11. unstack h k  
+12. put-down h  
+13. unstack k j  
+14. put-down k  
+15. unstack j b  
+16. put-down j  
+17. unstack b e  
+18. put-down b  
+19. unstack e i  
+20. put-down e  
+21. unstack i l  
+22. put-down i",True,"unstack f g
+put-down f
+unstack g a
+put-down g
+unstack a c
+put-down a
+unstack c d
+put-down c
+unstack d h
+put-down d
+unstack h k
+put-down h
+unstack k j
+put-down k
+unstack j b
+put-down j
+unstack b e
+put-down b
+unstack e i
+put-down e
+unstack i l
+put-down i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_503,W6,openai/o4-mini,"1. pick-up k  
+2. stack k e  
+3. pick-up c  
+4. stack c k  
+5. pick-up f  
+6. stack f c  
+7. pick-up a  
+8. stack a f  
+9. pick-up l  
+10. stack l a  
+11. pick-up b  
+12. stack b l  
+13. pick-up g  
+14. stack g b  
+15. pick-up d  
+16. stack d g  
+17. pick-up j  
+18. stack j d  
+19. pick-up i  
+20. stack i j  
+21. pick-up h  
+22. stack h i",True,"pick-up k
+stack k e
+pick-up c
+stack c k
+pick-up f
+stack f c
+pick-up a
+stack a f
+pick-up l
+stack l a
+pick-up b
+stack b l
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up j
+stack j d
+pick-up i
+stack i j
+pick-up h
+stack h i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_504,W1,openai/o4-mini,"1. pick-up l  
+2. stack l b  
+3. pick-up e  
+4. stack e l  
+5. pick-up k  
+6. stack k e  
+7. pick-up f  
+8. stack f k  
+9. pick-up h  
+10. stack h f  
+11. pick-up a  
+12. stack a h",True,"pick-up l
+stack l b
+pick-up e
+stack e l
+pick-up k
+stack k e
+pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up a
+stack a h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_504,W2,openai/o4-mini,"pick-up l  
+stack l b  
+pick-up e  
+stack e l  
+pick-up k  
+stack k e  
+pick-up f  
+stack f k  
+pick-up h  
+stack h f  
+pick-up a  
+stack a h",True,"pick-up l
+stack l b
+pick-up e
+stack e l
+pick-up k
+stack k e
+pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up a
+stack a h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_504,W3,openai/o4-mini,"1. mobilize Lima
+2. position Lima Bravo
+3. mobilize Echo
+4. position Echo Lima
+5. mobilize Kilo
+6. position Kilo Echo
+7. mobilize Foxtrot
+8. position Foxtrot Kilo
+9. mobilize Hotel
+10. position Hotel Foxtrot
+11. mobilize Alpha
+12. position Alpha Hotel",True,"mobilize Lima
+position Lima Bravo
+mobilize Echo
+position Echo Lima
+mobilize Kilo
+position Kilo Echo
+mobilize Foxtrot
+position Foxtrot Kilo
+mobilize Hotel
+position Hotel Foxtrot
+mobilize Alpha
+position Alpha Hotel",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_504,W4,openai/o4-mini,"1. pick-up(l)  
+2. stack(l,b)  
+3. pick-up(e)  
+4. stack(e,l)  
+5. pick-up(k)  
+6. stack(k,e)  
+7. pick-up(f)  
+8. stack(f,k)  
+9. pick-up(h)  
+10. stack(h,f)  
+11. pick-up(a)  
+12. stack(a,h)",False,"pick-up l
+stack l b
+pick-up e
+stack e l
+pick-up k
+stack k e
+pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up a
+stack a h",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_504,W5,openai/o4-mini,"1. unstack a h  
+2. put-down a  
+3. unstack h f  
+4. put-down h  
+5. unstack f k  
+6. put-down f  
+7. unstack k e  
+8. put-down k  
+9. unstack e l  
+10. put-down e  
+11. unstack l b  
+12. put-down l",True,"unstack a h
+put-down a
+unstack h f
+put-down h
+unstack f k
+put-down f
+unstack k e
+put-down k
+unstack e l
+put-down e
+unstack l b
+put-down l",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_504,W6,openai/o4-mini,"1. pick-up f  
+2. stack f c  
+3. pick-up g  
+4. stack g f  
+5. pick-up a  
+6. stack a g  
+7. pick-up e  
+8. stack e a  
+9. pick-up b  
+10. stack b e  
+11. pick-up d  
+12. stack d b",True,"pick-up f
+stack f c
+pick-up g
+stack g f
+pick-up a
+stack a g
+pick-up e
+stack e a
+pick-up b
+stack b e
+pick-up d
+stack d b",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_505,W1,openai/o4-mini,"1. pick-up b  
+2. stack b h  
+3. pick-up g  
+4. stack g b  
+5. pick-up d  
+6. stack d g  
+7. pick-up c  
+8. stack c d",True,"pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up c
+stack c d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_505,W2,openai/o4-mini,"Here’s a shortest‐sequence solution (your hand starts empty):
+
+1. pick-up b  
+2. stack b h  
+3. pick-up g  
+4. stack g b  
+5. pick-up d  
+6. stack d g  
+7. pick-up c  
+8. stack c d  
+
+After these 8 moves you have  
+  b on h,  
+  g on b,  
+  d on g,  
+  c on d  
+as required.",True,"pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up c
+stack c d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_505,W3,openai/o4-mini,"1. recruit Bob  
+2. promote Bob Henry  
+3. recruit Grace  
+4. promote Grace Bob  
+5. recruit David  
+6. promote David Grace  
+7. recruit Carol  
+8. promote Carol David",True,"recruit Bob
+promote Bob Henry
+recruit Grace
+promote Grace Bob
+recruit David
+promote David Grace
+recruit Carol
+promote Carol David",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_505,W4,openai/o4-mini,"1. pick-up(b)  
+2. stack(b,h)  
+3. pick-up(g)  
+4. stack(g,b)  
+5. pick-up(d)  
+6. stack(d,g)  
+7. pick-up(c)  
+8. stack(c,d)",False,"pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up c
+stack c d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_505,W5,openai/o4-mini,"1. unstack c d  
+2. put-down c  
+3. unstack d g  
+4. put-down d  
+5. unstack g b  
+6. put-down g  
+7. unstack b h  
+8. put-down b",True,"unstack c d
+put-down c
+unstack d g
+put-down d
+unstack g b
+put-down g
+unstack b h
+put-down b",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_505,W6,openai/o4-mini,"1. pick-up c
+2. stack c d
+3. pick-up b
+4. stack b c
+5. pick-up e
+6. stack e b
+7. pick-up a
+8. stack a e",True,"pick-up c
+stack c d
+pick-up b
+stack b c
+pick-up e
+stack e b
+pick-up a
+stack a e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_506,W1,openai/o4-mini,"1 pick-up b
+2 stack b f
+3 pick-up g
+4 stack g b",True,"pick-up b
+stack b f
+pick-up g
+stack g b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_506,W2,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up g  
+4. stack g b",True,"pick-up b
+stack b f
+pick-up g
+stack g b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_506,W3,openai/o4-mini,"1. recruit Bob
+2. promote Bob Frank
+3. recruit Grace
+4. promote Grace Bob",True,"recruit Bob
+promote Bob Frank
+recruit Grace
+promote Grace Bob",planning_suite,high,easy,False,True,state_machine,correct,True
+BW_506,W4,openai/o4-mini,"1. pick-up(b)
+2. stack(b,f)
+3. pick-up(g)
+4. stack(g,b)",False,"pick-up b
+stack b f
+pick-up g
+stack g b",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_506,W5,openai/o4-mini,"1. unstack g b  
+2. put-down g  
+3. unstack b f  
+4. put-down b",True,"unstack g b
+put-down g
+unstack b f
+put-down b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_506,W6,openai/o4-mini,"1. pick-up c  
+2. stack c a  
+3. pick-up b  
+4. stack b c",True,"pick-up c
+stack c a
+pick-up b
+stack b c",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_507,W1,openai/o4-mini,"1. pick-up h  
+2. stack h e  
+3. pick-up j  
+4. stack j h",True,"pick-up h
+stack h e
+pick-up j
+stack j h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_507,W2,openai/o4-mini,"1. pick-up h  
+2. stack h e  
+3. pick-up j  
+4. stack j h",True,"pick-up h
+stack h e
+pick-up j
+stack j h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_507,W3,openai/o4-mini,"1. recruit Henry
+2. promote Henry Eve
+3. recruit Jack
+4. promote Jack Henry",True,"recruit Henry
+promote Henry Eve
+recruit Jack
+promote Jack Henry",planning_suite,high,easy,False,True,state_machine,correct,True
+BW_507,W4,openai/o4-mini,"1. pick-up(h)
+2. stack(h,e)
+3. pick-up(j)
+4. stack(j,h)",False,"pick-up h
+stack h e
+pick-up j
+stack j h",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_507,W5,openai/o4-mini,"1. unstack j h
+2. put-down j
+3. unstack h e
+4. put-down h",True,"unstack j h
+put-down j
+unstack h e
+put-down h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_507,W6,openai/o4-mini,"1. pick-up b  
+2. stack b c  
+3. pick-up a  
+4. stack a b",True,"pick-up b
+stack b c
+pick-up a
+stack a b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_508,W1,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up g  
+4. stack g b  
+5. pick-up c  
+6. stack c g  
+7. pick-up e  
+8. stack e c",True,"pick-up b
+stack b f
+pick-up g
+stack g b
+pick-up c
+stack c g
+pick-up e
+stack e c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_508,W2,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up g  
+4. stack g b  
+5. pick-up c  
+6. stack c g  
+7. pick-up e  
+8. stack e c",True,"pick-up b
+stack b f
+pick-up g
+stack g b
+pick-up c
+stack c g
+pick-up e
+stack e c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_508,W3,openai/o4-mini,"1. recruit Bob  
+2. promote Bob Frank  
+3. recruit Grace  
+4. promote Grace Bob  
+5. recruit Carol  
+6. promote Carol Grace  
+7. recruit Emma  
+8. promote Emma Carol",True,"recruit Bob
+promote Bob Frank
+recruit Grace
+promote Grace Bob
+recruit Carol
+promote Carol Grace
+recruit Emma
+promote Emma Carol",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_508,W4,openai/o4-mini,"1. pick-up(b)
+2. stack(b,f)
+3. pick-up(g)
+4. stack(g,b)
+5. pick-up(c)
+6. stack(c,g)
+7. pick-up(e)
+8. stack(e,c)",False,"pick-up b
+stack b f
+pick-up g
+stack g b
+pick-up c
+stack c g
+pick-up e
+stack e c",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_508,W5,openai/o4-mini,"1. unstack e c  
+2. put-down e  
+3. unstack c g  
+4. put-down c  
+5. unstack g b  
+6. put-down g  
+7. unstack b f  
+8. put-down b",True,"unstack e c
+put-down e
+unstack c g
+put-down c
+unstack g b
+put-down g
+unstack b f
+put-down b",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_508,W6,openai/o4-mini,"1. pick-up c  
+2. stack c e  
+3. pick-up a  
+4. stack a c  
+5. pick-up d  
+6. stack d a  
+7. pick-up b  
+8. stack b d",True,"pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up d
+stack d a
+pick-up b
+stack b d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_509,W1,openai/o4-mini,"1. pick-up j
+2. stack j i
+3. pick-up f
+4. stack f j
+5. pick-up d
+6. stack d f
+7. pick-up h
+8. stack h d",True,"pick-up j
+stack j i
+pick-up f
+stack f j
+pick-up d
+stack d f
+pick-up h
+stack h d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_509,W2,openai/o4-mini,"Here’s a shortest valid plan (hand starts empty, all blocks clear on the table):
+
+1. pick-up j  
+2. stack j i  
+3. pick-up f  
+4. stack f j  
+5. pick-up d  
+6. stack d f  
+7. pick-up h  
+8. stack h d  
+
+After these 8 actions you will have  
+j on i, f on j, d on f, and h on d as required.",True,"pick-up j
+stack j i
+pick-up f
+stack f j
+pick-up d
+stack d f
+pick-up h
+stack h d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_509,W3,openai/o4-mini,"1. recruit James
+2. promote James Irene
+3. recruit Frank
+4. promote Frank James
+5. recruit David
+6. promote David Frank
+7. recruit Helen
+8. promote Helen David",True,"recruit James
+promote James Irene
+recruit Frank
+promote Frank James
+recruit David
+promote David Frank
+recruit Helen
+promote Helen David",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_509,W4,openai/o4-mini,"1. pick-up(j)
+2. stack(j,i)
+3. pick-up(f)
+4. stack(f,j)
+5. pick-up(d)
+6. stack(d,f)
+7. pick-up(h)
+8. stack(h,d)",False,"pick-up j
+stack j i
+pick-up f
+stack f j
+pick-up d
+stack d f
+pick-up h
+stack h d",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_509,W5,openai/o4-mini,"1. unstack h d  
+2. put-down h  
+3. unstack d f  
+4. put-down d  
+5. unstack f j  
+6. put-down f  
+7. unstack j i  
+8. put-down j",True,"unstack h d
+put-down h
+unstack d f
+put-down d
+unstack f j
+put-down f
+unstack j i
+put-down j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_509,W6,openai/o4-mini,"1. pick-up e  
+2. stack e a  
+3. pick-up c  
+4. stack c e  
+5. pick-up d  
+6. stack d c  
+7. pick-up b  
+8. stack b d",True,"pick-up e
+stack e a
+pick-up c
+stack c e
+pick-up d
+stack d c
+pick-up b
+stack b d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_510,W1,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up l  
+4. stack l h  
+5. pick-up c  
+6. stack c l  
+7. pick-up a  
+8. stack a c  
+9. pick-up j  
+10. stack j a  
+11. pick-up k  
+12. stack k j",True,"pick-up h
+stack h i
+pick-up l
+stack l h
+pick-up c
+stack c l
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up k
+stack k j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_510,W2,openai/o4-mini,"Here is a valid minimal sequence (12 actions) that builds the tower k–j–a–c–l–h–i from the table up:
+
+1. pick-up h  
+2. stack h i  
+3. pick-up l  
+4. stack l h  
+5. pick-up c  
+6. stack c l  
+7. pick-up a  
+8. stack a c  
+9. pick-up j  
+10. stack j a  
+11. pick-up k  
+12. stack k j  
+
+After these steps, i is on the table; h is on i; l on h; c on l; a on c; j on a; and k on j, exactly matching the goal.",True,"pick-up h
+stack h i
+pick-up l
+stack l h
+pick-up c
+stack c l
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up k
+stack k j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_510,W3,openai/o4-mini,"1. mobilize Hotel  
+2. position Hotel India  
+3. mobilize Lima  
+4. position Lima Hotel  
+5. mobilize Charlie  
+6. position Charlie Lima  
+7. mobilize Alpha  
+8. position Alpha Charlie  
+9. mobilize Juliet  
+10. position Juliet Alpha  
+11. mobilize Kilo  
+12. position Kilo Juliet",True,"mobilize Hotel
+position Hotel India
+mobilize Lima
+position Lima Hotel
+mobilize Charlie
+position Charlie Lima
+mobilize Alpha
+position Alpha Charlie
+mobilize Juliet
+position Juliet Alpha
+mobilize Kilo
+position Kilo Juliet",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_510,W4,openai/o4-mini,"1. pick-up(h)  
+2. stack(h,i)  
+3. pick-up(l)  
+4. stack(l,h)  
+5. pick-up(c)  
+6. stack(c,l)  
+7. pick-up(a)  
+8. stack(a,c)  
+9. pick-up(j)  
+10. stack(j,a)  
+11. pick-up(k)  
+12. stack(k,j)",False,"pick-up h
+stack h i
+pick-up l
+stack l h
+pick-up c
+stack c l
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up k
+stack k j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_510,W5,openai/o4-mini,"1. unstack k j  
+2. put-down k  
+3. unstack j a  
+4. put-down j  
+5. unstack a c  
+6. put-down a  
+7. unstack c l  
+8. put-down c  
+9. unstack l h  
+10. put-down l  
+11. unstack h i  
+12. put-down h",True,"unstack k j
+put-down k
+unstack j a
+put-down j
+unstack a c
+put-down a
+unstack c l
+put-down c
+unstack l h
+put-down l
+unstack h i
+put-down h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_510,W6,openai/o4-mini,"1. pick-up a  
+2. stack a d  
+3. pick-up f  
+4. stack f a  
+5. pick-up c  
+6. stack c f  
+7. pick-up g  
+8. stack g c  
+9. pick-up e  
+10. stack e g  
+11. pick-up b  
+12. stack b e",True,"pick-up a
+stack a d
+pick-up f
+stack f a
+pick-up c
+stack c f
+pick-up g
+stack g c
+pick-up e
+stack e g
+pick-up b
+stack b e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_511,W1,openai/o4-mini,"1. pick-up l  
+2. stack l f  
+3. pick-up k  
+4. stack k l  
+5. pick-up i  
+6. stack i k",True,"pick-up l
+stack l f
+pick-up k
+stack k l
+pick-up i
+stack i k",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_511,W2,openai/o4-mini,"1. pick-up l  
+2. stack l f  
+3. pick-up k  
+4. stack k l  
+5. pick-up i  
+6. stack i k",True,"pick-up l
+stack l f
+pick-up k
+stack k l
+pick-up i
+stack i k",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_511,W3,openai/o4-mini,"1. recruit Laura  
+2. promote Laura Frank  
+3. recruit Kevin  
+4. promote Kevin Laura  
+5. recruit Irene  
+6. promote Irene Kevin",True,"recruit Laura
+promote Laura Frank
+recruit Kevin
+promote Kevin Laura
+recruit Irene
+promote Irene Kevin",planning_suite,high,easy,False,True,state_machine,correct,True
+BW_511,W4,openai/o4-mini,"1. pick-up(l)
+2. stack(l,f)
+3. pick-up(k)
+4. stack(k,l)
+5. pick-up(i)
+6. stack(i,k)",False,"pick-up l
+stack l f
+pick-up k
+stack k l
+pick-up i
+stack i k",planning_suite,high,easy,False,False,state_machine,incorrect,False
+BW_511,W5,openai/o4-mini,"1. unstack i k  
+2. put-down i  
+3. unstack k l  
+4. put-down k  
+5. unstack l f  
+6. put-down l",True,"unstack i k
+put-down i
+unstack k l
+put-down k
+unstack l f
+put-down l",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_511,W6,openai/o4-mini,"1. pick-up d  
+2. stack d a  
+3. pick-up c  
+4. stack c d  
+5. pick-up b  
+6. stack b c",True,"pick-up d
+stack d a
+pick-up c
+stack c d
+pick-up b
+stack b c",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_512,W1,openai/o4-mini,"1. pick-up i  
+2. stack i f  
+3. pick-up h  
+4. stack h i  
+5. pick-up e  
+6. stack e h  
+7. pick-up j  
+8. stack j e  
+9. pick-up c  
+10. stack c j",True,"pick-up i
+stack i f
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up c
+stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_512,W2,openai/o4-mini,"1. pick-up i  
+2. stack i f  
+3. pick-up h  
+4. stack h i  
+5. pick-up e  
+6. stack e h  
+7. pick-up j  
+8. stack j e  
+9. pick-up c  
+10. stack c j",True,"pick-up i
+stack i f
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up c
+stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_512,W3,openai/o4-mini,"1. retrieve Index  
+2. place_on Index Fiction  
+3. retrieve History  
+4. place_on History Index  
+5. retrieve Encyclopedia  
+6. place_on Encyclopedia History  
+7. retrieve Journal  
+8. place_on Journal Encyclopedia  
+9. retrieve Cookbook  
+10. place_on Cookbook Journal",True,"retrieve Index
+place_on Index Fiction
+retrieve History
+place_on History Index
+retrieve Encyclopedia
+place_on Encyclopedia History
+retrieve Journal
+place_on Journal Encyclopedia
+retrieve Cookbook
+place_on Cookbook Journal",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_512,W4,openai/o4-mini,"1. pick-up(i)
+2. stack(i,f)
+3. pick-up(h)
+4. stack(h,i)
+5. pick-up(e)
+6. stack(e,h)
+7. pick-up(j)
+8. stack(j,e)
+9. pick-up(c)
+10. stack(c,j)",False,"pick-up i
+stack i f
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up c
+stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_512,W5,openai/o4-mini,"1. unstack c j  
+2. put-down c  
+3. unstack j e  
+4. put-down j  
+5. unstack e h  
+6. put-down e  
+7. unstack h i  
+8. put-down h  
+9. unstack i f  
+10. put-down i",True,"unstack c j
+put-down c
+unstack j e
+put-down j
+unstack e h
+put-down e
+unstack h i
+put-down h
+unstack i f
+put-down i",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_512,W6,openai/o4-mini,"1. pick-up b  
+2. stack b e  
+3. pick-up f  
+4. stack f b  
+5. pick-up a  
+6. stack a f  
+7. pick-up c  
+8. stack c a  
+9. pick-up d  
+10. stack d c",True,"pick-up b
+stack b e
+pick-up f
+stack f b
+pick-up a
+stack a f
+pick-up c
+stack c a
+pick-up d
+stack d c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_513,W1,openai/o4-mini,"1. pick-up d  
+2. stack d l  
+3. pick-up a  
+4. stack a d  
+5. pick-up i  
+6. stack i a  
+7. pick-up f  
+8. stack f i  
+9. pick-up e  
+10. stack e f  
+11. pick-up c  
+12. stack c e",True,"pick-up d
+stack d l
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up e
+stack e f
+pick-up c
+stack c e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_513,W2,openai/o4-mini,"Here is a valid minimal sequence (always starting with your hand empty and all blocks clear on the table):
+
+1. pick-up d  
+2. stack d l  
+3. pick-up a  
+4. stack a d  
+5. pick-up i  
+6. stack i a  
+7. pick-up f  
+8. stack f i  
+9. pick-up e  
+10. stack e f  
+11. pick-up c  
+12. stack c e  
+
+After step 12 you have the single tower  
+    l (table)  
+    └─ d  
+       └─ a  
+          └─ i  
+             └─ f  
+                └─ e  
+                   └─ c  
+which exactly satisfies the goal.",True,"pick-up d
+stack d l
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up e
+stack e f
+pick-up c
+stack c e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_513,W3,openai/o4-mini,"1 recruit David  
+2 promote_over David Laura  
+3 recruit Alice  
+4 promote_over Alice David  
+5 recruit Isaac  
+6 promote_over Isaac Alice  
+7 recruit Frank  
+8 promote_over Frank Isaac  
+9 recruit Emma  
+10 promote_over Emma Frank  
+11 recruit Carol  
+12 promote_over Carol Emma",True,"recruit David
+promote_over David Laura
+recruit Alice
+promote_over Alice David
+recruit Isaac
+promote_over Isaac Alice
+recruit Frank
+promote_over Frank Isaac
+recruit Emma
+promote_over Emma Frank
+recruit Carol
+promote_over Carol Emma",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_513,W4,openai/o4-mini,"1. pick-up(d)
+2. stack(d,l)
+3. pick-up(a)
+4. stack(a,d)
+5. pick-up(i)
+6. stack(i,a)
+7. pick-up(f)
+8. stack(f,i)
+9. pick-up(e)
+10. stack(e,f)
+11. pick-up(c)
+12. stack(c,e)",False,"pick-up d
+stack d l
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up e
+stack e f
+pick-up c
+stack c e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_513,W5,openai/o4-mini,"1. unstack c e  
+2. put-down c  
+3. unstack e f  
+4. put-down e  
+5. unstack f i  
+6. put-down f  
+7. unstack i a  
+8. put-down i  
+9. unstack a d  
+10. put-down a  
+11. unstack d l  
+12. put-down d",True,"unstack c e
+put-down c
+unstack e f
+put-down e
+unstack f i
+put-down f
+unstack i a
+put-down i
+unstack a d
+put-down a
+unstack d l
+put-down d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_513,W6,openai/o4-mini,"1. pick-up g  
+2. stack g d  
+3. pick-up a  
+4. stack a g  
+5. pick-up b  
+6. stack b a  
+7. pick-up c  
+8. stack c b  
+9. pick-up f  
+10. stack f c  
+11. pick-up e  
+12. stack e f",True,"pick-up g
+stack g d
+pick-up a
+stack a g
+pick-up b
+stack b a
+pick-up c
+stack c b
+pick-up f
+stack f c
+pick-up e
+stack e f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_514,W1,openai/o4-mini,"1. pick-up e  
+2. stack e b  
+3. pick-up g  
+4. stack g e  
+5. pick-up a  
+6. stack a g  
+7. pick-up j  
+8. stack j a  
+9. pick-up c  
+10. stack c j",True,"pick-up e
+stack e b
+pick-up g
+stack g e
+pick-up a
+stack a g
+pick-up j
+stack j a
+pick-up c
+stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_514,W2,openai/o4-mini,"1. pick-up e  
+2. stack e b  
+3. pick-up g  
+4. stack g e  
+5. pick-up a  
+6. stack a g  
+7. pick-up j  
+8. stack j a  
+9. pick-up c  
+10. stack c j",True,"pick-up e
+stack e b
+pick-up g
+stack g e
+pick-up a
+stack a g
+pick-up j
+stack j a
+pick-up c
+stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_514,W3,openai/o4-mini,"1. recruit Eve  
+2. promote-above Eve Bob  
+3. recruit Grace  
+4. promote-above Grace Eve  
+5. recruit Alice  
+6. promote-above Alice Grace  
+7. recruit John  
+8. promote-above John Alice  
+9. recruit Carol  
+10. promote-above Carol John",True,"recruit Eve
+promote-above Eve Bob
+recruit Grace
+promote-above Grace Eve
+recruit Alice
+promote-above Alice Grace
+recruit John
+promote-above John Alice
+recruit Carol
+promote-above Carol John",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_514,W4,openai/o4-mini,"1. pick-up(e)  
+2. stack(e,b)  
+3. pick-up(g)  
+4. stack(g,e)  
+5. pick-up(a)  
+6. stack(a,g)  
+7. pick-up(j)  
+8. stack(j,a)  
+9. pick-up(c)  
+10. stack(c,j)",False,"pick-up e
+stack e b
+pick-up g
+stack g e
+pick-up a
+stack a g
+pick-up j
+stack j a
+pick-up c
+stack c j",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_514,W5,openai/o4-mini,"1. unstack c j  
+2. put-down c  
+3. unstack j a  
+4. put-down j  
+5. unstack a g  
+6. put-down a  
+7. unstack g e  
+8. put-down g  
+9. unstack e b  
+10. put-down e",True,"unstack c j
+put-down c
+unstack j a
+put-down j
+unstack a g
+put-down a
+unstack g e
+put-down g
+unstack e b
+put-down e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_514,W6,openai/o4-mini,"1. pick-up c  
+2. stack c b  
+3. pick-up e  
+4. stack e c  
+5. pick-up a  
+6. stack a e  
+7. pick-up f  
+8. stack f a  
+9. pick-up d  
+10. stack d f",True,"pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up a
+stack a e
+pick-up f
+stack f a
+pick-up d
+stack d f",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_515,W1,openai/o4-mini,"1. pick-up d  
+2. stack d i  
+3. pick-up a  
+4. stack a d  
+5. pick-up k  
+6. stack k a  
+7. pick-up e  
+8. stack e k  
+9. pick-up g  
+10. stack g e",True,"pick-up d
+stack d i
+pick-up a
+stack a d
+pick-up k
+stack k a
+pick-up e
+stack e k
+pick-up g
+stack g e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_515,W2,openai/o4-mini,"1. pick-up d  
+2. stack d i  
+3. pick-up a  
+4. stack a d  
+5. pick-up k  
+6. stack k a  
+7. pick-up e  
+8. stack e k  
+9. pick-up g  
+10. stack g e",True,"pick-up d
+stack d i
+pick-up a
+stack a d
+pick-up k
+stack k a
+pick-up e
+stack e k
+pick-up g
+stack g e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_515,W3,openai/o4-mini,"1 recruit David  
+2 promote David Isabella  
+3 recruit Alice  
+4 promote Alice David  
+5 recruit Kevin  
+6 promote Kevin Alice  
+7 recruit Emily  
+8 promote Emily Kevin  
+9 recruit George  
+10 promote George Emily",True,"recruit David
+promote David Isabella
+recruit Alice
+promote Alice David
+recruit Kevin
+promote Kevin Alice
+recruit Emily
+promote Emily Kevin
+recruit George
+promote George Emily",planning_suite,high,medium,False,True,state_machine,correct,True
+BW_515,W4,openai/o4-mini,"1. pick-up(d)  
+2. stack(d,i)  
+3. pick-up(a)  
+4. stack(a,d)  
+5. pick-up(k)  
+6. stack(k,a)  
+7. pick-up(e)  
+8. stack(e,k)  
+9. pick-up(g)  
+10. stack(g,e)",False,"pick-up d
+stack d i
+pick-up a
+stack a d
+pick-up k
+stack k a
+pick-up e
+stack e k
+pick-up g
+stack g e",planning_suite,high,medium,False,False,state_machine,incorrect,False
+BW_515,W5,openai/o4-mini,"1. unstack g e  
+2. put-down g  
+3. unstack e k  
+4. put-down e  
+5. unstack k a  
+6. put-down k  
+7. unstack a d  
+8. put-down a  
+9. unstack d i  
+10. put-down d",True,"unstack g e
+put-down g
+unstack e k
+put-down e
+unstack k a
+put-down k
+unstack a d
+put-down a
+unstack d i
+put-down d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_515,W6,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up e  
+4. stack e b  
+5. pick-up a  
+6. stack a e  
+7. pick-up c  
+8. stack c a  
+9. pick-up d  
+10. stack d c",True,"pick-up b
+stack b f
+pick-up e
+stack e b
+pick-up a
+stack a e
+pick-up c
+stack c a
+pick-up d
+stack d c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_E_001,W1,openai/o4-mini,"1. pick-up j  
+2. stack j b  
+3. pick-up f  
+4. stack f j  
+5. pick-up c  
+6. stack c f  
+7. pick-up i  
+8. stack i c  
+9. pick-up a  
+10. stack a i",True,"pick-up j
+stack j b
+pick-up f
+stack f j
+pick-up c
+stack c f
+pick-up i
+stack i c
+pick-up a
+stack a i",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_001,W2,openai/o4-mini,"Here’s a shortest‐plan that builds the single tower b–j–f–c–i–a from the bottom up:
+
+1. pick-up j  
+2. stack j b  
+3. pick-up f  
+4. stack f j  
+5. pick-up c  
+6. stack c f  
+7. pick-up i  
+8. stack i c  
+9. pick-up a  
+10. stack a i  
+
+At the end you have  
+a on i,  
+i on c,  
+c on f,  
+f on j,  
+j on b,  
+and your hand is empty.",True,"pick-up j
+stack j b
+pick-up f
+stack f j
+pick-up c
+stack c f
+pick-up i
+stack i c
+pick-up a
+stack a i",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_001,W3,openai/o4-mini,"1. recruit James  
+2. promote James Bob  
+3. recruit Frank  
+4. promote Frank James  
+5. recruit Carol  
+6. promote Carol Frank  
+7. recruit Isabel  
+8. promote Isabel Carol  
+9. recruit Alice  
+10. promote Alice Isabel",True,"recruit James
+promote James Bob
+recruit Frank
+promote Frank James
+recruit Carol
+promote Carol Frank
+recruit Isabel
+promote Isabel Carol
+recruit Alice
+promote Alice Isabel",planning_suite,low,medium,False,True,state_machine,correct,True
+BW_E_001,W4,openai/o4-mini,"1. pick-up(j)
+2. stack(j,b)
+3. pick-up(f)
+4. stack(f,j)
+5. pick-up(c)
+6. stack(c,f)
+7. pick-up(i)
+8. stack(i,c)
+9. pick-up(a)
+10. stack(a,i)",False,"pick-up j
+stack j b
+pick-up f
+stack f j
+pick-up c
+stack c f
+pick-up i
+stack i c
+pick-up a
+stack a i",planning_suite,low,medium,False,False,state_machine,incorrect,False
+BW_E_001,W5,openai/o4-mini,"1. pick-up e  
+2. stack e d  
+3. pick-up f  
+4. stack f e  
+5. pick-up b  
+6. stack b f  
+7. pick-up a  
+8. stack a b  
+9. pick-up c  
+10. stack c a",True,"pick-up e
+stack e d
+pick-up f
+stack f e
+pick-up b
+stack b f
+pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_001,W6,openai/o4-mini,"1. pick-up f  
+2. stack f d  
+3. pick-up b  
+4. stack b f  
+5. pick-up e  
+6. stack e b  
+7. pick-up c  
+8. stack c e  
+9. pick-up a  
+10. stack a c",True,"pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up e
+stack e b
+pick-up c
+stack c e
+pick-up a
+stack a c",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_002,W1,openai/o4-mini,"1. pick-up g  
+2. stack g i  
+3. pick-up b  
+4. stack b g  
+5. pick-up h  
+6. stack h b",True,"pick-up g
+stack g i
+pick-up b
+stack b g
+pick-up h
+stack h b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E_002,W2,openai/o4-mini,"1. pick-up g  
+2. stack g i  
+3. pick-up b  
+4. stack b g  
+5. pick-up h  
+6. stack h b",True,"pick-up g
+stack g i
+pick-up b
+stack b g
+pick-up h
+stack h b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E_002,W3,openai/o4-mini,"1. recruit Grace  
+2. promote_above Grace Iris  
+3. recruit Bob  
+4. promote_above Bob Grace  
+5. recruit Henry  
+6. promote_above Henry Bob",True,"recruit Grace
+promote_above Grace Iris
+recruit Bob
+promote_above Bob Grace
+recruit Henry
+promote_above Henry Bob",planning_suite,low,easy,False,True,state_machine,correct,True
+BW_E_002,W4,openai/o4-mini,"1. pick-up(g)  
+2. stack(g,i)  
+3. pick-up(b)  
+4. stack(b,g)  
+5. pick-up(h)  
+6. stack(h,b)",False,"pick-up g
+stack g i
+pick-up b
+stack b g
+pick-up h
+stack h b",planning_suite,low,easy,False,False,state_machine,incorrect,False
+BW_E_002,W5,openai/o4-mini,"1. pick-up b
+2. stack b d
+3. pick-up a
+4. stack a b
+5. pick-up c
+6. stack c a",True,"pick-up b
+stack b d
+pick-up a
+stack a b
+pick-up c
+stack c a",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E_002,W6,openai/o4-mini,"1. pick-up a  
+2. stack a d  
+3. pick-up b  
+4. stack b a  
+5. pick-up c  
+6. stack c b",True,"pick-up a
+stack a d
+pick-up b
+stack b a
+pick-up c
+stack c b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E_003,W1,openai/o4-mini,"1. pick-up d  
+2. stack d j  
+3. pick-up i  
+4. stack i d  
+5. pick-up c  
+6. stack c i  
+7. pick-up g  
+8. stack g c",True,"pick-up d
+stack d j
+pick-up i
+stack i d
+pick-up c
+stack c i
+pick-up g
+stack g c",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_003,W2,openai/o4-mini,"1. pick-up d  
+2. stack d j  
+3. pick-up i  
+4. stack i d  
+5. pick-up c  
+6. stack c i  
+7. pick-up g  
+8. stack g c",True,"pick-up d
+stack d j
+pick-up i
+stack i d
+pick-up c
+stack c i
+pick-up g
+stack g c",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_003,W3,openai/o4-mini,"1. recruit David  
+2. promote David Julia  
+3. recruit Ivan  
+4. promote Ivan David  
+5. recruit Carol  
+6. promote Carol Ivan  
+7. recruit Grace  
+8. promote Grace Carol",True,"recruit David
+promote David Julia
+recruit Ivan
+promote Ivan David
+recruit Carol
+promote Carol Ivan
+recruit Grace
+promote Grace Carol",planning_suite,low,medium,False,True,state_machine,correct,True
+BW_E_003,W4,openai/o4-mini,"1. pick-up(d)  
+2. stack(d,j)  
+3. pick-up(i)  
+4. stack(i,d)  
+5. pick-up(c)  
+6. stack(c,i)  
+7. pick-up(g)  
+8. stack(g,c)",False,"pick-up d
+stack d j
+pick-up i
+stack i d
+pick-up c
+stack c i
+pick-up g
+stack g c",planning_suite,low,medium,False,False,state_machine,incorrect,False
+BW_E_003,W5,openai/o4-mini,"1. pick-up e  
+2. stack e a  
+3. pick-up c  
+4. stack c e  
+5. pick-up b  
+6. stack b c  
+7. pick-up d  
+8. stack d b",True,"pick-up e
+stack e a
+pick-up c
+stack c e
+pick-up b
+stack b c
+pick-up d
+stack d b",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_003,W6,openai/o4-mini,"1. pick-up d  
+2. stack d a  
+3. pick-up e  
+4. stack e d  
+5. pick-up c  
+6. stack c e  
+7. pick-up b  
+8. stack b c",True,"pick-up d
+stack d a
+pick-up e
+stack e d
+pick-up c
+stack c e
+pick-up b
+stack b c",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_004,W1,openai/o4-mini,"1. pick-up g  
+2. stack g l  
+3. pick-up d  
+4. stack d g  
+5. pick-up e  
+6. stack e d  
+7. pick-up i  
+8. stack i e  
+9. pick-up k  
+10. stack k i  
+11. pick-up h  
+12. stack h k  
+13. pick-up a  
+14. stack a h",True,"pick-up g
+stack g l
+pick-up d
+stack d g
+pick-up e
+stack e d
+pick-up i
+stack i e
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up a
+stack a h",planning_suite,low,hard,True,True,state_machine,correct,False
+BW_E_004,W2,openai/o4-mini,"Here is one straightforward way, building the final tower from the bottom up:
+
+1. pick-up g  
+2. stack g l      (now g on l)  
+3. pick-up d  
+4. stack d g      (now d on g)  
+5. pick-up e  
+6. stack e d      (now e on d)  
+7. pick-up i  
+8. stack i e      (now i on e)  
+9. pick-up k  
+10. stack k i     (now k on i)  
+11. pick-up h  
+12. stack h k     (now h on k)  
+13. pick-up a  
+14. stack a h     (now a on h)  
+
+Final configuration (top‐to‐bottom): a–h–k–i–e–d–g–l (with l on the table), exactly matching the goal.",False,"pick-up g
+stack g l
+pick-up d
+stack d g
+pick-up e
+stack e d
+pick-up i
+stack i e
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up a
+stack a h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+BW_E_004,W3,openai/o4-mini,"1. hire George  
+2. promote_above George Laura  
+3. hire David  
+4. promote_above David George  
+5. hire Emma  
+6. promote_above Emma David  
+7. hire Isabella  
+8. promote_above Isabella Emma  
+9. hire Kevin  
+10. promote_above Kevin Isabella  
+11. hire Henry  
+12. promote_above Henry Kevin  
+13. hire Alice  
+14. promote_above Alice Henry",True,"hire George
+promote_above George Laura
+hire David
+promote_above David George
+hire Emma
+promote_above Emma David
+hire Isabella
+promote_above Isabella Emma
+hire Kevin
+promote_above Kevin Isabella
+hire Henry
+promote_above Henry Kevin
+hire Alice
+promote_above Alice Henry",planning_suite,low,hard,False,True,state_machine,correct,True
+BW_E_004,W4,openai/o4-mini,"1. pick-up(g)  
+2. stack(g, l)  
+3. pick-up(d)  
+4. stack(d, g)  
+5. pick-up(e)  
+6. stack(e, d)  
+7. pick-up(i)  
+8. stack(i, e)  
+9. pick-up(k)  
+10. stack(k, i)  
+11. pick-up(h)  
+12. stack(h, k)  
+13. pick-up(a)  
+14. stack(a, h)",False,"pick-up g
+stack g l
+pick-up d
+stack d g
+pick-up e
+stack e d
+pick-up i
+stack i e
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up a
+stack a h",planning_suite,low,hard,False,False,state_machine,incorrect,False
+BW_E_004,W5,openai/o4-mini,"1. pick-up f  
+2. stack f h  
+3. pick-up a  
+4. stack a f  
+5. pick-up g  
+6. stack g a  
+7. pick-up e  
+8. stack e g  
+9. pick-up b  
+10. stack b e  
+11. pick-up c  
+12. stack c b  
+13. pick-up d  
+14. stack d c",True,"pick-up f
+stack f h
+pick-up a
+stack a f
+pick-up g
+stack g a
+pick-up e
+stack e g
+pick-up b
+stack b e
+pick-up c
+stack c b
+pick-up d
+stack d c",planning_suite,low,hard,True,True,state_machine,correct,False
+BW_E_004,W6,openai/o4-mini,"1. pick-up c  
+2. stack c h  
+3. pick-up a  
+4. stack a c  
+5. pick-up d  
+6. stack d a  
+7. pick-up e  
+8. stack e d  
+9. pick-up f  
+10. stack f e  
+11. pick-up g  
+12. stack g f  
+13. pick-up b  
+14. stack b g",True,"pick-up c
+stack c h
+pick-up a
+stack a c
+pick-up d
+stack d a
+pick-up e
+stack e d
+pick-up f
+stack f e
+pick-up g
+stack g f
+pick-up b
+stack b g",planning_suite,low,hard,True,True,state_machine,correct,False
+BW_E_005,W1,openai/o4-mini,"1. pick-up e  
+2. stack e f  
+3. pick-up d  
+4. stack d e  
+5. pick-up l  
+6. stack l d  
+7. pick-up c  
+8. stack c l",True,"pick-up e
+stack e f
+pick-up d
+stack d e
+pick-up l
+stack l d
+pick-up c
+stack c l",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_005,W2,openai/o4-mini,"1. pick-up e  
+2. stack e f  
+3. pick-up d  
+4. stack d e  
+5. pick-up l  
+6. stack l d  
+7. pick-up c  
+8. stack c l",True,"pick-up e
+stack e f
+pick-up d
+stack d e
+pick-up l
+stack l d
+pick-up c
+stack c l",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_005,W3,openai/o4-mini,"1. recruit Emily  
+2. promote Emily Frank  
+3. recruit David  
+4. promote David Emily  
+5. recruit Laura  
+6. promote Laura David  
+7. recruit Carol  
+8. promote Carol Laura",True,"recruit Emily
+promote Emily Frank
+recruit David
+promote David Emily
+recruit Laura
+promote Laura David
+recruit Carol
+promote Carol Laura",planning_suite,low,medium,False,True,state_machine,correct,True
+BW_E_005,W4,openai/o4-mini,"1. pick-up(e)  
+2. stack(e,f)  
+3. pick-up(d)  
+4. stack(d,e)  
+5. pick-up(l)  
+6. stack(l,d)  
+7. pick-up(c)  
+8. stack(c,l)",False,"pick-up e
+stack e f
+pick-up d
+stack d e
+pick-up l
+stack l d
+pick-up c
+stack c l",planning_suite,low,medium,False,False,state_machine,incorrect,False
+BW_E_005,W5,openai/o4-mini,"1. pick-up e  
+2. stack e c  
+3. pick-up d  
+4. stack d e  
+5. pick-up b  
+6. stack b d  
+7. pick-up a  
+8. stack a b",True,"pick-up e
+stack e c
+pick-up d
+stack d e
+pick-up b
+stack b d
+pick-up a
+stack a b",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_005,W6,openai/o4-mini,"1. pick-up d  
+2. stack d e  
+3. pick-up a  
+4. stack a d  
+5. pick-up c  
+6. stack c a  
+7. pick-up b  
+8. stack b c",True,"pick-up d
+stack d e
+pick-up a
+stack a d
+pick-up c
+stack c a
+pick-up b
+stack b c",planning_suite,low,medium,True,True,state_machine,correct,False
+MBW_496,W1,openai/o4-mini,"1. attack f  
+2. overcome f i  
+3. attack h  
+4. overcome h f  
+5. attack g  
+6. overcome g h  
+7. attack d  
+8. overcome d g  
+9. attack e  
+10. overcome e d  
+11. attack a  
+12. overcome a e  
+13. attack c  
+14. overcome c a  
+15. attack j  
+16. overcome j c  
+17. attack l  
+18. overcome l j",False,"attack j
+overcome j l
+attack c
+overcome c j
+attack a
+overcome a c
+attack e
+overcome e a
+attack d
+overcome d e
+attack g
+overcome g d
+attack h
+overcome h g
+attack f
+overcome f h
+attack i
+overcome i f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_496,W2,openai/o4-mini,"Assuming harmony is true initially and that:
+
+• attack X produces pain X  
+• overcome X Y (with pain X and province Y) produces craves X Y  
+
+we can build the required craving‐chain in nine attack/overcome pairs, one for each link in the goal:
+
+1. attack i  
+2. overcome i f      ⇒ craves i f  
+3. attack f  
+4. overcome f h      ⇒ craves f h  
+5. attack h  
+6. overcome h g      ⇒ craves h g  
+7. attack g  
+8. overcome g d      ⇒ craves g d  
+9. attack d  
+10. overcome d e     ⇒ craves d e  
+11. attack e  
+12. overcome e a     ⇒ craves e a  
+13. attack a  
+14. overcome a c     ⇒ craves a c  
+15. attack c  
+16. overcome c j     ⇒ craves c j  
+17. attack j  
+18. overcome j l     ⇒ craves j l  
+
+After these 18 actions, you will have exactly:
+
+i craves f  
+f craves h  
+h craves g  
+g craves d  
+d craves e  
+e craves a  
+a craves c  
+c craves j  
+j craves l  
+
+which is the goal state.",False,"attack j
+overcome j l
+attack c
+overcome c j
+attack a
+overcome a c
+attack e
+overcome e a
+attack d
+overcome d e
+attack g
+overcome g d
+attack h
+overcome h g
+attack f
+overcome f h
+attack i
+overcome i f",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_496,W3,openai/o4-mini,"1. deploy India  
+2. reinforce India Foxtrot  
+3. deploy Foxtrot  
+4. reinforce Foxtrot Hotel  
+5. deploy Hotel  
+6. reinforce Hotel Golf  
+7. deploy Golf  
+8. reinforce Golf Delta  
+9. deploy Delta  
+10. reinforce Delta Echo  
+11. deploy Echo  
+12. reinforce Echo Alpha  
+13. deploy Alpha  
+14. reinforce Alpha Charlie  
+15. deploy Charlie  
+16. reinforce Charlie Juliet  
+17. deploy Juliet  
+18. reinforce Juliet Lima",False,"deploy Juliet
+reinforce Juliet Lima
+deploy Charlie
+reinforce Charlie Juliet
+deploy Alpha
+reinforce Alpha Charlie
+deploy Echo
+reinforce Echo Alpha
+deploy Delta
+reinforce Delta Echo
+deploy Golf
+reinforce Golf Delta
+deploy Hotel
+reinforce Hotel Golf
+deploy Foxtrot
+reinforce Foxtrot Hotel
+deploy India
+reinforce India Foxtrot",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_496,W4,openai/o4-mini,"1. attack(i)  
+2. overcome(i,f)  
+3. attack(f)  
+4. overcome(f,h)  
+5. attack(h)  
+6. overcome(h,g)  
+7. attack(g)  
+8. overcome(g,d)  
+9. attack(d)  
+10. overcome(d,e)  
+11. attack(e)  
+12. overcome(e,a)  
+13. attack(a)  
+14. overcome(a,c)  
+15. attack(c)  
+16. overcome(c,j)  
+17. attack(j)  
+18. overcome(j,l)",False,"attack j
+overcome j l
+attack c
+overcome c j
+attack a
+overcome a c
+attack e
+overcome e a
+attack d
+overcome d e
+attack g
+overcome g d
+attack h
+overcome h g
+attack f
+overcome f h
+attack i
+overcome i f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_496,W5,openai/o4-mini,"1. attack i  
+2. overcome i f  
+3. attack f  
+4. overcome f h  
+5. attack h  
+6. overcome h g  
+7. attack g  
+8. overcome g d  
+9. attack d  
+10. overcome d e  
+11. attack e  
+12. overcome e a  
+13. attack a  
+14. overcome a c  
+15. attack c  
+16. overcome c j  
+17. attack j  
+18. overcome j l",False,"feast i f
+succumb i
+feast f h
+succumb f
+feast h g
+succumb h
+feast g d
+succumb g
+feast d e
+succumb d
+feast e a
+succumb e
+feast a c
+succumb a
+feast c j
+succumb c
+feast j l
+succumb j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_496,W6,openai/o4-mini,"1. pick-up j  
+2. stack j a  
+3. pick-up i  
+4. stack i j  
+5. pick-up c  
+6. stack c i  
+7. pick-up d  
+8. stack d c  
+9. pick-up e  
+10. stack e d  
+11. pick-up g  
+12. stack g e  
+13. pick-up b  
+14. stack b g  
+15. pick-up h  
+16. stack h b  
+17. pick-up f  
+18. stack f h",True,"pick-up j
+stack j a
+pick-up i
+stack i j
+pick-up c
+stack c i
+pick-up d
+stack d c
+pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up b
+stack b g
+pick-up h
+stack h b
+pick-up f
+stack f h",planning_suite,high,hard,False,True,state_machine,correct,True
+MBW_497,W1,openai/o4-mini,"1. attack k  
+2. overcome k a  
+3. attack a  
+4. overcome a f  
+5. attack f  
+6. overcome f c  
+7. attack c  
+8. overcome c d  
+9. attack d  
+10. overcome d l  
+11. attack l  
+12. overcome l i  
+13. attack i  
+14. overcome i h  
+15. attack h  
+16. overcome h e  
+17. attack e  
+18. overcome e j",False,"attack e
+overcome e j
+attack h
+overcome h e
+attack i
+overcome i h
+attack l
+overcome l i
+attack d
+overcome d l
+attack c
+overcome c d
+attack f
+overcome f c
+attack a
+overcome a f
+attack k
+overcome k a",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_497,W2,openai/o4-mini,"One possible (and in fact minimal) way to generate exactly the nine craves-facts you need is simply, for each pair X→Y in your goal chain, to
+
+  1. attack X    (given harmony, province X and planet X)  
+  2. overcome X Y    (given province Y and the pain on X just generated)  
+
+Since every block initially has province and planet, and we assume harmony is “always on,” each attack X produces pain X and each overcome X Y consumes that pain to produce craves X Y.  The nine pairs in your goal are
+
+  k→a,  a→f,  f→c,  c→d,  d→l,  l→i,  i→h,  h→e,  e→j
+
+so you just repeat “attack/overcome” for each.  Concretely:
+
+  1. attack k  
+  2. overcome k a  
+  3. attack a  
+  4. overcome a f  
+  5. attack f  
+  6. overcome f c  
+  7. attack c  
+  8. overcome c d  
+  9. attack d  
+ 10. overcome d l  
+ 11. attack l  
+ 12. overcome l i  
+ 13. attack i  
+ 14. overcome i h  
+ 15. attack h  
+ 16. overcome h e  
+ 17. attack e  
+ 18. overcome e j  
+
+After step 18 you will have exactly
+
+  craves k a  
+  craves a f  
+  craves f c  
+  craves c d  
+  craves d l  
+  craves l i  
+  craves i h  
+  craves h e  
+  craves e j
+
+as required.",False,"attack e
+overcome e j
+attack h
+overcome h e
+attack i
+overcome i h
+attack l
+overcome l i
+attack d
+overcome d l
+attack c
+overcome c d
+attack f
+overcome f c
+attack a
+overcome a f
+attack k
+overcome k a",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_497,W3,openai/o4-mini,"1. terminate Kevin  
+2. promote Kevin Alice  
+3. terminate Alice  
+4. promote Alice Frank  
+5. terminate Frank  
+6. promote Frank Carol  
+7. terminate Carol  
+8. promote Carol David  
+9. terminate David  
+10. promote David Laura  
+11. terminate Laura  
+12. promote Laura Isabel  
+13. terminate Isabel  
+14. promote Isabel Henry  
+15. terminate Henry  
+16. promote Henry Emma  
+17. terminate Emma  
+18. promote Emma James",False,"terminate Emma
+promote Emma James
+terminate Henry
+promote Henry Emma
+terminate Isabel
+promote Isabel Henry
+terminate Laura
+promote Laura Isabel
+terminate David
+promote David Laura
+terminate Carol
+promote Carol David
+terminate Frank
+promote Frank Carol
+terminate Alice
+promote Alice Frank
+terminate Kevin
+promote Kevin Alice",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_497,W4,openai/o4-mini,"1. attack(a)  
+2. overcome(a,k)  
+3. attack(f)  
+4. overcome(f,a)  
+5. attack(c)  
+6. overcome(c,f)  
+7. attack(d)  
+8. overcome(d,c)  
+9. attack(l)  
+10. overcome(l,d)  
+11. attack(i)  
+12. overcome(i,l)  
+13. attack(h)  
+14. overcome(h,i)  
+15. attack(e)  
+16. overcome(e,h)  
+17. attack(j)  
+18. overcome(j,e)",False,"attack e
+overcome e j
+attack h
+overcome h e
+attack i
+overcome i h
+attack l
+overcome l i
+attack d
+overcome d l
+attack c
+overcome c d
+attack f
+overcome f c
+attack a
+overcome a f
+attack k
+overcome k a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_497,W5,openai/o4-mini,"1. attack k  
+2. overcome k a  
+3. attack a  
+4. overcome a f  
+5. attack f  
+6. overcome f c  
+7. attack c  
+8. overcome c d  
+9. attack d  
+10. overcome d l  
+11. attack l  
+12. overcome l i  
+13. attack i  
+14. overcome i h  
+15. attack h  
+16. overcome h e  
+17. attack e  
+18. overcome e j",False,"feast k a
+succumb k
+feast a f
+succumb a
+feast f c
+succumb f
+feast c d
+succumb c
+feast d l
+succumb d
+feast l i
+succumb l
+feast i h
+succumb i
+feast h e
+succumb h
+feast e j
+succumb e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_497,W6,openai/o4-mini,"1. pick-up i  
+2. stack i e  
+3. pick-up c  
+4. stack c i  
+5. pick-up a  
+6. stack a c  
+7. pick-up j  
+8. stack j a  
+9. pick-up d  
+10. stack d j  
+11. pick-up g  
+12. stack g d  
+13. pick-up f  
+14. stack f g  
+15. pick-up b  
+16. stack b f  
+17. pick-up h  
+18. stack h b",True,"pick-up i
+stack i e
+pick-up c
+stack c i
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up d
+stack d j
+pick-up g
+stack g d
+pick-up f
+stack f g
+pick-up b
+stack b f
+pick-up h
+stack h b",planning_suite,high,hard,False,True,state_machine,correct,True
+MBW_498,W1,openai/o4-mini,"1. attack e  
+2. overcome e l  
+3. attack d  
+4. overcome d e  
+5. attack g  
+6. overcome g d  
+7. attack a  
+8. overcome a g  
+9. attack h  
+10. overcome h a  
+11. attack c  
+12. overcome c h  
+13. attack k  
+14. overcome k c  
+15. attack b  
+16. overcome b k  
+17. attack i  
+18. overcome i b  
+19. attack j  
+20. overcome j i  
+21. attack f  
+22. overcome f j",False,"attack j
+overcome j f
+attack i
+overcome i j
+attack b
+overcome b i
+attack k
+overcome k b
+attack c
+overcome c k
+attack h
+overcome h c
+attack a
+overcome a h
+attack g
+overcome g a
+attack d
+overcome d g
+attack e
+overcome e d
+attack l
+overcome l e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_498,W2,openai/o4-mini,"One way to see that every desired “Y craves X” link can be produced by the little three–step routine
+
+  1. attack X  (pre: harmony ∧ province X ∧ planet X ⇒ produces pain X, breaks harmony)  
+  2. overcome X Y (pre: pain X ∧ province Y ⇒ adds craves Y X)  
+  3. succumb X  (pre: pain X ⇒ clears pain X, restores harmony)
+
+is to run it once for each of the eleven target pairs (Y,X) in the order
+
+   (l,e), (e,d), (d,g), (g,a), (a,h), (h,c), (c,k), (k,b), (b,i), (i,j), (j,f)
+
+Since province * and planet * never get destroyed and we always re‐establish harmony by the succumb, every precondition is met.
+
+Concretely, the full 33‐step plan is:
+
+  1.  attack e  
+  2.  overcome e l  
+  3.  succumb e  
+
+  4.  attack d  
+  5.  overcome d e  
+  6.  succumb d  
+
+  7.  attack g  
+  8.  overcome g d  
+  9.  succumb g  
+
+ 10.  attack a  
+ 11.  overcome a g  
+ 12.  succumb a  
+
+ 13.  attack h  
+ 14.  overcome h a  
+ 15.  succumb h  
+
+ 16.  attack c  
+ 17.  overcome c h  
+ 18.  succumb c  
+
+ 19.  attack k  
+ 20.  overcome k c  
+ 21.  succumb k  
+
+ 22.  attack b  
+ 23.  overcome b k  
+ 24.  succumb b  
+
+ 25.  attack i  
+ 26.  overcome i b  
+ 27.  succumb i  
+
+ 28.  attack j  
+ 29.  overcome j i  
+ 30.  succumb j  
+
+ 31.  attack f  
+ 32.  overcome f j  
+ 33.  succumb f  
+
+After step 2 you get craves l e; after step 5 craves e d; after step 8 craves d g; …; and after step 32 craves j f.  That exactly achieves
+
+  l craves e  
+  e craves d  
+  d craves g  
+  g craves a  
+  a craves h  
+  h craves c  
+  c craves k  
+  k craves b  
+  b craves i  
+  i craves j  
+  j craves f  
+
+with all preconditions satisfied.",False,"attack j
+overcome j f
+attack i
+overcome i j
+attack b
+overcome b i
+attack k
+overcome k b
+attack c
+overcome c k
+attack h
+overcome h c
+attack a
+overcome a h
+attack g
+overcome g a
+attack d
+overcome d g
+attack e
+overcome e d
+attack l
+overcome l e",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_498,W3,openai/o4-mini,"1. establish_supply_line Lima Echo  
+2. establish_supply_line Echo Delta  
+3. establish_supply_line Delta Golf  
+4. establish_supply_line Golf Alpha  
+5. establish_supply_line Alpha Hotel  
+6. establish_supply_line Hotel Charlie  
+7. establish_supply_line Charlie Kilo  
+8. establish_supply_line Kilo Bravo  
+9. establish_supply_line Bravo India  
+10. establish_supply_line India Juliet  
+11. establish_supply_line Juliet Foxtrot",False,"deploy Juliet
+reinforce Juliet Foxtrot
+deploy India
+reinforce India Juliet
+deploy Bravo
+reinforce Bravo India
+deploy Kilo
+reinforce Kilo Bravo
+deploy Charlie
+reinforce Charlie Kilo
+deploy Hotel
+reinforce Hotel Charlie
+deploy Alpha
+reinforce Alpha Hotel
+deploy Golf
+reinforce Golf Alpha
+deploy Delta
+reinforce Delta Golf
+deploy Echo
+reinforce Echo Delta
+deploy Lima
+reinforce Lima Echo",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_498,W4,openai/o4-mini,"1. attack(l)  
+2. overcome(l,e)  
+3. attack(e)  
+4. overcome(e,d)  
+5. attack(d)  
+6. overcome(d,g)  
+7. attack(g)  
+8. overcome(g,a)  
+9. attack(a)  
+10. overcome(a,h)  
+11. attack(h)  
+12. overcome(h,c)  
+13. attack(c)  
+14. overcome(c,k)  
+15. attack(k)  
+16. overcome(k,b)  
+17. attack(b)  
+18. overcome(b,i)  
+19. attack(i)  
+20. overcome(i,j)  
+21. attack(j)  
+22. overcome(j,f)",False,"attack j
+overcome j f
+attack i
+overcome i j
+attack b
+overcome b i
+attack k
+overcome k b
+attack c
+overcome c k
+attack h
+overcome h c
+attack a
+overcome a h
+attack g
+overcome g a
+attack d
+overcome d g
+attack e
+overcome e d
+attack l
+overcome l e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_498,W5,openai/o4-mini,"1. attack l  
+2. overcome l e  
+3. attack e  
+4. overcome e d  
+5. attack d  
+6. overcome d g  
+7. attack g  
+8. overcome g a  
+9. attack a  
+10. overcome a h  
+11. attack h  
+12. overcome h c  
+13. attack c  
+14. overcome c k  
+15. attack k  
+16. overcome k b  
+17. attack b  
+18. overcome b i  
+19. attack i  
+20. overcome i j  
+21. attack j  
+22. overcome j f",False,"feast l e
+succumb l
+feast e d
+succumb e
+feast d g
+succumb d
+feast g a
+succumb g
+feast a h
+succumb a
+feast h c
+succumb h
+feast c k
+succumb c
+feast k b
+succumb k
+feast b i
+succumb b
+feast i j
+succumb i
+feast j f
+succumb j",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_498,W6,openai/o4-mini,"1 pick-up c  
+2 stack c l  
+3 pick-up e  
+4 stack e c  
+5 pick-up j  
+6 stack j e  
+7 pick-up g  
+8 stack g j  
+9 pick-up i  
+10 stack i g  
+11 pick-up k  
+12 stack k i  
+13 pick-up h  
+14 stack h k  
+15 pick-up d  
+16 stack d h  
+17 pick-up f  
+18 stack f d  
+19 pick-up b  
+20 stack b f  
+21 pick-up a  
+22 stack a b",True,"pick-up c
+stack c l
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up g
+stack g j
+pick-up i
+stack i g
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up a
+stack a b",planning_suite,high,hard,False,True,state_machine,correct,True
+MBW_499,W1,openai/o4-mini,"1. attack l  
+2. overcome l c  
+3. attack c  
+4. overcome c b  
+5. attack b  
+6. overcome b f  
+7. attack f  
+8. overcome f j  
+9. attack j  
+10. overcome j d  
+11. attack d  
+12. overcome d a  
+13. attack a  
+14. overcome a h",False,"attack a
+overcome a h
+attack d
+overcome d a
+attack j
+overcome j d
+attack f
+overcome f j
+attack b
+overcome b f
+attack c
+overcome c b
+attack l
+overcome l c",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_499,W2,openai/o4-mini,"One possible (and in fact minimal) way to generate exactly the seven craves‐facts you need is:
+
+ 1. attack l  
+ 2. overcome l c      ⟶ produces craves(l,c)  
+ 3. attack c  
+ 4. overcome c b      ⟶ produces craves(c,b)  
+ 5. attack b  
+ 6. overcome b f      ⟶ produces craves(b,f)  
+ 7. attack f  
+ 8. overcome f j      ⟶ produces craves(f,j)  
+ 9. attack j  
+10. overcome j d      ⟶ produces craves(j,d)  
+11. attack d  
+12. overcome d a      ⟶ produces craves(d,a)  
+13. attack a  
+14. overcome a h      ⟶ produces craves(a,h)  
+
+After step 14 you will have exactly
+
+  l craves c  
+  c craves b  
+  b craves f  
+  f craves j  
+  j craves d  
+  d craves a  
+  a craves h  
+
+which is your goal.",False,"attack a
+overcome a h
+attack d
+overcome d a
+attack j
+overcome j d
+attack f
+overcome f j
+attack b
+overcome b f
+attack c
+overcome c b
+attack l
+overcome l c",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_499,W3,openai/o4-mini,"1. secure Lima  
+2. liberate Lima Charlie  
+3. secure Charlie  
+4. liberate Charlie Bravo  
+5. secure Bravo  
+6. liberate Bravo Foxtrot  
+7. secure Foxtrot  
+8. liberate Foxtrot Juliet  
+9. secure Juliet  
+10. liberate Juliet Delta  
+11. secure Delta  
+12. liberate Delta Alpha  
+13. secure Alpha  
+14. liberate Alpha Hotel",False,"secure Alpha
+liberate Alpha Hotel
+secure Delta
+liberate Delta Alpha
+secure Juliet
+liberate Juliet Delta
+secure Foxtrot
+liberate Foxtrot Juliet
+secure Bravo
+liberate Bravo Foxtrot
+secure Charlie
+liberate Charlie Bravo
+secure Lima
+liberate Lima Charlie",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_499,W4,openai/o4-mini,"1. attack(l)  
+2. overcome(l,c)  
+3. attack(c)  
+4. overcome(c,b)  
+5. attack(b)  
+6. overcome(b,f)  
+7. attack(f)  
+8. overcome(f,j)  
+9. attack(j)  
+10. overcome(j,d)  
+11. attack(d)  
+12. overcome(d,a)  
+13. attack(a)  
+14. overcome(a,h)",False,"attack a
+overcome a h
+attack d
+overcome d a
+attack j
+overcome j d
+attack f
+overcome f j
+attack b
+overcome b f
+attack c
+overcome c b
+attack l
+overcome l c",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_499,W5,openai/o4-mini,"1 attack l  
+2 overcome l c  
+3 attack c  
+4 overcome c b  
+5 attack b  
+6 overcome b f  
+7 attack f  
+8 overcome f j  
+9 attack j  
+10 overcome j d  
+11 attack d  
+12 overcome d a  
+13 attack a  
+14 overcome a h",False,"feast l c
+succumb l
+feast c b
+succumb c
+feast b f
+succumb b
+feast f j
+succumb f
+feast j d
+succumb j
+feast d a
+succumb d
+feast a h
+succumb a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_499,W6,openai/o4-mini,"1. pick-up e  
+2. stack e d  
+3. pick-up g  
+4. stack g e  
+5. pick-up c  
+6. stack c g  
+7. pick-up a  
+8. stack a c  
+9. pick-up b  
+10. stack b a  
+11. pick-up f  
+12. stack f b  
+13. pick-up h  
+14. stack h f",True,"pick-up e
+stack e d
+pick-up g
+stack g e
+pick-up c
+stack c g
+pick-up a
+stack a c
+pick-up b
+stack b a
+pick-up f
+stack f b
+pick-up h
+stack h f",planning_suite,high,hard,False,True,state_machine,correct,True
+MBW_500,W1,openai/o4-mini,"1. attack a  
+2. overcome a e  
+3. attack e  
+4. overcome e b  
+5. attack b  
+6. overcome b k  
+7. attack k  
+8. overcome k h  
+9. attack h  
+10. overcome h c  
+11. attack c  
+12. overcome c f  
+13. attack f  
+14. overcome f i  
+15. attack i  
+16. overcome i d  
+17. attack d  
+18. overcome d g",False,"attack d
+overcome d g
+attack i
+overcome i d
+attack f
+overcome f i
+attack c
+overcome c f
+attack h
+overcome h c
+attack k
+overcome k h
+attack b
+overcome b k
+attack e
+overcome e b
+attack a
+overcome a e",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_500,W2,openai/o4-mini,"Here’s a uniform “three‐step” recipe you can repeat for each link Y craves X in your goal‐chain (i.e. to establish craves(Y,X) do):
+
+  1. attack X      (needs harmony, province X, planet X; produces pain X, destroys harmony)  
+  2. overcome X Y  (needs pain X and province Y; produces craves Y X)  
+  3. succumb X     (needs pain X; restores harmony, clears pain X)  
+
+Starting from the head of your chain (a craves e) and walking it through to the tail (d craves g), you get:
+
+  1. attack e  
+  2. overcome e a   → establishes craves(a,e)  
+  3. succumb e  
+
+  4. attack b  
+  5. overcome b e   → establishes craves(e,b)  
+  6. succumb b  
+
+  7. attack k  
+  8. overcome k b   → establishes craves(b,k)  
+  9. succumb k  
+
+ 10. attack h  
+ 11. overcome h k   → establishes craves(k,h)  
+ 12. succumb h  
+
+ 13. attack c  
+ 14. overcome c h   → establishes craves(h,c)  
+ 15. succumb c  
+
+ 16. attack f  
+ 17. overcome f c   → establishes craves(c,f)  
+ 18. succumb f  
+
+ 19. attack i  
+ 20. overcome i f   → establishes craves(f,i)  
+ 21. succumb i  
+
+ 22. attack d  
+ 23. overcome d i   → establishes craves(i,d)  
+ 24. succumb d  
+
+ 25. attack g  
+ 26. overcome g d   → establishes craves(d,g)  
+ 27. succumb g  
+
+After step 27 you will have exactly the desired chain:
+
+  a craves e → e craves b → b craves k → k craves h → h craves c → c craves f → f craves i → i craves d → d craves g",False,"attack d
+overcome d g
+attack i
+overcome i d
+attack f
+overcome f i
+attack c
+overcome c f
+attack h
+overcome h c
+attack k
+overcome k h
+attack b
+overcome b k
+attack e
+overcome e b
+attack a
+overcome a e",planning_suite,high,hard,False,False,state_machine,unparsed_state,False
+MBW_500,W3,openai/o4-mini,"1. establish_supply_line Alpha_Base Echo_Base  
+2. establish_supply_line Echo_Base Bravo_Base  
+3. establish_supply_line Bravo_Base Kilo_Base  
+4. establish_supply_line Kilo_Base Hotel_Base  
+5. establish_supply_line Hotel_Base Charlie_Base  
+6. establish_supply_line Charlie_Base Foxtrot_Base  
+7. establish_supply_line Foxtrot_Base India_Base  
+8. establish_supply_line India_Base Delta_Base  
+9. establish_supply_line Delta_Base Golf_Base",False,"deploy_forces Delta_Base
+capture_territory Delta_Base Golf_Base
+deploy_forces India_Base
+capture_territory India_Base Delta_Base
+deploy_forces Foxtrot_Base
+capture_territory Foxtrot_Base India_Base
+deploy_forces Charlie_Base
+capture_territory Charlie_Base Foxtrot_Base
+deploy_forces Hotel_Base
+capture_territory Hotel_Base Charlie_Base
+deploy_forces Kilo_Base
+capture_territory Kilo_Base Hotel_Base
+deploy_forces Bravo_Base
+capture_territory Bravo_Base Kilo_Base
+deploy_forces Echo_Base
+capture_territory Echo_Base Bravo_Base
+deploy_forces Alpha_Base
+capture_territory Alpha_Base Echo_Base",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_500,W4,openai/o4-mini,"1. attack(a)  
+2. overcome(a,e)  
+3. attack(e)  
+4. overcome(e,b)  
+5. attack(b)  
+6. overcome(b,k)  
+7. attack(k)  
+8. overcome(k,h)  
+9. attack(h)  
+10. overcome(h,c)  
+11. attack(c)  
+12. overcome(c,f)  
+13. attack(f)  
+14. overcome(f,i)  
+15. attack(i)  
+16. overcome(i,d)  
+17. attack(d)  
+18. overcome(d,g)",False,"attack d
+overcome d g
+attack i
+overcome i d
+attack f
+overcome f i
+attack c
+overcome c f
+attack h
+overcome h c
+attack k
+overcome k h
+attack b
+overcome b k
+attack e
+overcome e b
+attack a
+overcome a e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_500,W5,openai/o4-mini,"1. attack a  
+2. overcome a e  
+3. attack e  
+4. overcome e b  
+5. attack b  
+6. overcome b k  
+7. attack k  
+8. overcome k h  
+9. attack h  
+10. overcome h c  
+11. attack c  
+12. overcome c f  
+13. attack f  
+14. overcome f i  
+15. attack i  
+16. overcome i d  
+17. attack d  
+18. overcome d g",False,"feast a e
+succumb a
+feast e b
+succumb e
+feast b k
+succumb b
+feast k h
+succumb k
+feast h c
+succumb h
+feast c f
+succumb c
+feast f i
+succumb f
+feast i d
+succumb i
+feast d g
+succumb d",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_500,W6,openai/o4-mini,"1. pick-up c  
+2. stack c e  
+3. pick-up j  
+4. stack j c  
+5. pick-up d  
+6. stack d j  
+7. pick-up a  
+8. stack a d  
+9. pick-up i  
+10. stack i a  
+11. pick-up f  
+12. stack f i  
+13. pick-up h  
+14. stack h f  
+15. pick-up g  
+16. stack g h  
+17. pick-up b  
+18. stack b g",True,"pick-up c
+stack c e
+pick-up j
+stack j c
+pick-up d
+stack d j
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up h
+stack h f
+pick-up g
+stack g h
+pick-up b
+stack b g",planning_suite,high,hard,False,True,state_machine,correct,True
+BW_496,canonical,openai/o4-mini,"1. pick-up f  
+2. stack f i  
+3. pick-up c  
+4. stack c f  
+5. pick-up d  
+6. stack d c  
+7. pick-up k  
+8. stack k d  
+9. pick-up g  
+10. stack g k  
+11. pick-up e  
+12. stack e g  
+13. pick-up a  
+14. stack a e  
+15. pick-up l  
+16. stack l a  
+17. pick-up h  
+18. stack h l  
+19. pick-up j  
+20. stack j h",True,"pick-up f
+stack f i
+pick-up c
+stack c f
+pick-up d
+stack d c
+pick-up k
+stack k d
+pick-up g
+stack g k
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up l
+stack l a
+pick-up h
+stack h l
+pick-up j
+stack j h",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_497,canonical,openai/o4-mini,"1. pick-up e
+2. stack e c
+3. pick-up l
+4. stack l e",True,"pick-up e
+stack e c
+pick-up l
+stack l e",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_498,canonical,openai/o4-mini,"1 pick-up a  
+2 stack a g  
+3 pick-up l  
+4 stack l a  
+5 pick-up d  
+6 stack d l  
+7 pick-up f  
+8 stack f d  
+9 pick-up b  
+10 stack b f  
+11 pick-up c  
+12 stack c b  
+13 pick-up e  
+14 stack e c  
+15 pick-up j  
+16 stack j e  
+17 pick-up k  
+18 stack k j",True,"pick-up a
+stack a g
+pick-up l
+stack l a
+pick-up d
+stack d l
+pick-up f
+stack f d
+pick-up b
+stack b f
+pick-up c
+stack c b
+pick-up e
+stack e c
+pick-up j
+stack j e
+pick-up k
+stack k j",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_499,canonical,openai/o4-mini,"1. pick-up e  
+2. stack e l  
+3. pick-up c  
+4. stack c e  
+5. pick-up a  
+6. stack a c  
+7. pick-up j  
+8. stack j a",True,"pick-up e
+stack e l
+pick-up c
+stack c e
+pick-up a
+stack a c
+pick-up j
+stack j a",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_500,canonical,openai/o4-mini,"1. pick-up b  
+2. stack b l  
+3. pick-up c  
+4. stack c b  
+5. pick-up g  
+6. stack g c  
+7. pick-up a  
+8. stack a g  
+9. pick-up d  
+10. stack d a  
+11. pick-up k  
+12. stack k d  
+13. pick-up e  
+14. stack e k",True,"pick-up b
+stack b l
+pick-up c
+stack c b
+pick-up g
+stack g c
+pick-up a
+stack a g
+pick-up d
+stack d a
+pick-up k
+stack k d
+pick-up e
+stack e k",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_501,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j d  
+3. pick-up g  
+4. stack g j  
+5. pick-up e  
+6. stack e g  
+7. pick-up a  
+8. stack a e  
+9. pick-up k  
+10. stack k a  
+11. pick-up i  
+12. stack i k  
+13. pick-up c  
+14. stack c i",True,"pick-up j
+stack j d
+pick-up g
+stack g j
+pick-up e
+stack e g
+pick-up a
+stack a e
+pick-up k
+stack k a
+pick-up i
+stack i k
+pick-up c
+stack c i",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_502,canonical,openai/o4-mini,"1. pick-up i  
+2. stack i e  
+3. pick-up h  
+4. stack h i  
+5. pick-up d  
+6. stack d h",True,"pick-up i
+stack i e
+pick-up h
+stack h i
+pick-up d
+stack d h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_503,canonical,openai/o4-mini,"1. pick-up i  
+2. stack i l  
+3. pick-up e  
+4. stack e i  
+5. pick-up b  
+6. stack b e  
+7. pick-up j  
+8. stack j b  
+9. pick-up k  
+10. stack k j  
+11. pick-up h  
+12. stack h k  
+13. pick-up d  
+14. stack d h  
+15. pick-up c  
+16. stack c d  
+17. pick-up a  
+18. stack a c  
+19. pick-up g  
+20. stack g a  
+21. pick-up f  
+22. stack f g",True,"pick-up i
+stack i l
+pick-up e
+stack e i
+pick-up b
+stack b e
+pick-up j
+stack j b
+pick-up k
+stack k j
+pick-up h
+stack h k
+pick-up d
+stack d h
+pick-up c
+stack c d
+pick-up a
+stack a c
+pick-up g
+stack g a
+pick-up f
+stack f g",planning_suite,high,hard,True,True,state_machine,correct,False
+BW_504,canonical,openai/o4-mini,"1. pick-up l  
+2. stack l b  
+3. pick-up e  
+4. stack e l  
+5. pick-up k  
+6. stack k e  
+7. pick-up f  
+8. stack f k  
+9. pick-up h  
+10. stack h f  
+11. pick-up a  
+12. stack a h",True,"pick-up l
+stack l b
+pick-up e
+stack e l
+pick-up k
+stack k e
+pick-up f
+stack f k
+pick-up h
+stack h f
+pick-up a
+stack a h",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_505,canonical,openai/o4-mini,"1. pick-up b  
+2. stack b h  
+3. pick-up g  
+4. stack g b  
+5. pick-up d  
+6. stack d g  
+7. pick-up c  
+8. stack c d",True,"pick-up b
+stack b h
+pick-up g
+stack g b
+pick-up d
+stack d g
+pick-up c
+stack c d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_506,canonical,openai/o4-mini,"1. pick-up b
+2. stack b f
+3. pick-up g
+4. stack g b",True,"pick-up b
+stack b f
+pick-up g
+stack g b",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_507,canonical,openai/o4-mini,"1. pick-up h  
+2. stack h e  
+3. pick-up j  
+4. stack j h",True,"pick-up h
+stack h e
+pick-up j
+stack j h",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_508,canonical,openai/o4-mini,"1. pick-up b  
+2. stack b f  
+3. pick-up g  
+4. stack g b  
+5. pick-up c  
+6. stack c g  
+7. pick-up e  
+8. stack e c",True,"pick-up b
+stack b f
+pick-up g
+stack g b
+pick-up c
+stack c g
+pick-up e
+stack e c",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_509,canonical,openai/o4-mini,"1. pick-up j
+2. stack j i
+3. pick-up f
+4. stack f j
+5. pick-up d
+6. stack d f
+7. pick-up h
+8. stack h d",True,"pick-up j
+stack j i
+pick-up f
+stack f j
+pick-up d
+stack d f
+pick-up h
+stack h d",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_510,canonical,openai/o4-mini,"1. pick-up h  
+2. stack h i  
+3. pick-up l  
+4. stack l h  
+5. pick-up c  
+6. stack c l  
+7. pick-up a  
+8. stack a c  
+9. pick-up j  
+10. stack j a  
+11. pick-up k  
+12. stack k j",True,"pick-up h
+stack h i
+pick-up l
+stack l h
+pick-up c
+stack c l
+pick-up a
+stack a c
+pick-up j
+stack j a
+pick-up k
+stack k j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_511,canonical,openai/o4-mini,"1. pick-up l  
+2. stack l f  
+3. pick-up k  
+4. stack k l  
+5. pick-up i  
+6. stack i k",True,"pick-up l
+stack l f
+pick-up k
+stack k l
+pick-up i
+stack i k",planning_suite,high,easy,True,True,state_machine,correct,False
+BW_512,canonical,openai/o4-mini,"1. pick-up i  
+2. stack i f  
+3. pick-up h  
+4. stack h i  
+5. pick-up e  
+6. stack e h  
+7. pick-up j  
+8. stack j e  
+9. pick-up c  
+10. stack c j",True,"pick-up i
+stack i f
+pick-up h
+stack h i
+pick-up e
+stack e h
+pick-up j
+stack j e
+pick-up c
+stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_513,canonical,openai/o4-mini,"1. pick-up d  
+2. stack d l  
+3. pick-up a  
+4. stack a d  
+5. pick-up i  
+6. stack i a  
+7. pick-up f  
+8. stack f i  
+9. pick-up e  
+10. stack e f  
+11. pick-up c  
+12. stack c e",True,"pick-up d
+stack d l
+pick-up a
+stack a d
+pick-up i
+stack i a
+pick-up f
+stack f i
+pick-up e
+stack e f
+pick-up c
+stack c e",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_514,canonical,openai/o4-mini,"1. pick-up e  
+2. stack e b  
+3. pick-up g  
+4. stack g e  
+5. pick-up a  
+6. stack a g  
+7. pick-up j  
+8. stack j a  
+9. pick-up c  
+10. stack c j",True,"pick-up e
+stack e b
+pick-up g
+stack g e
+pick-up a
+stack a g
+pick-up j
+stack j a
+pick-up c
+stack c j",planning_suite,high,medium,True,True,state_machine,correct,False
+BW_515,canonical,openai/o4-mini,"1. pick-up d  
+2. stack d i  
+3. pick-up a  
+4. stack a d  
+5. pick-up k  
+6. stack k a  
+7. pick-up e  
+8. stack e k  
+9. pick-up g  
+10. stack g e",True,"pick-up d
+stack d i
+pick-up a
+stack a d
+pick-up k
+stack k a
+pick-up e
+stack e k
+pick-up g
+stack g e",planning_suite,high,medium,True,True,state_machine,correct,False
+MBW_496,canonical,openai/o4-mini,"1. attack f  
+2. overcome f i  
+3. attack h  
+4. overcome h f  
+5. attack g  
+6. overcome g h  
+7. attack d  
+8. overcome d g  
+9. attack e  
+10. overcome e d  
+11. attack a  
+12. overcome a e  
+13. attack c  
+14. overcome c a  
+15. attack j  
+16. overcome j c  
+17. attack l  
+18. overcome l j",False,"attack j
+overcome j l
+attack c
+overcome c j
+attack a
+overcome a c
+attack e
+overcome e a
+attack d
+overcome d e
+attack g
+overcome g d
+attack h
+overcome h g
+attack f
+overcome f h
+attack i
+overcome i f",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_497,canonical,openai/o4-mini,"1. attack k  
+2. overcome k a  
+3. attack a  
+4. overcome a f  
+5. attack f  
+6. overcome f c  
+7. attack c  
+8. overcome c d  
+9. attack d  
+10. overcome d l  
+11. attack l  
+12. overcome l i  
+13. attack i  
+14. overcome i h  
+15. attack h  
+16. overcome h e  
+17. attack e  
+18. overcome e j",False,"attack e
+overcome e j
+attack h
+overcome h e
+attack i
+overcome i h
+attack l
+overcome l i
+attack d
+overcome d l
+attack c
+overcome c d
+attack f
+overcome f c
+attack a
+overcome a f
+attack k
+overcome k a",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_498,canonical,openai/o4-mini,"1. attack e  
+2. overcome e l  
+3. attack d  
+4. overcome d e  
+5. attack g  
+6. overcome g d  
+7. attack a  
+8. overcome a g  
+9. attack h  
+10. overcome h a  
+11. attack c  
+12. overcome c h  
+13. attack k  
+14. overcome k c  
+15. attack b  
+16. overcome b k  
+17. attack i  
+18. overcome i b  
+19. attack j  
+20. overcome j i  
+21. attack f  
+22. overcome f j",False,"attack j
+overcome j f
+attack i
+overcome i j
+attack b
+overcome b i
+attack k
+overcome k b
+attack c
+overcome c k
+attack h
+overcome h c
+attack a
+overcome a h
+attack g
+overcome g a
+attack d
+overcome d g
+attack e
+overcome e d
+attack l
+overcome l e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_499,canonical,openai/o4-mini,"1. attack c  
+2. overcome c l  
+3. attack b  
+4. overcome b c  
+5. attack f  
+6. overcome f b  
+7. attack j  
+8. overcome j f  
+9. attack d  
+10. overcome d j  
+11. attack a  
+12. overcome a d  
+13. attack h  
+14. overcome h a",False,"attack a
+overcome a h
+attack d
+overcome d a
+attack j
+overcome j d
+attack f
+overcome f j
+attack b
+overcome b f
+attack c
+overcome c b
+attack l
+overcome l c",planning_suite,high,hard,False,False,state_machine,incorrect,False
+MBW_500,canonical,openai/o4-mini,"1 attack e  
+2 overcome e a  
+3 attack b  
+4 overcome b e  
+5 attack k  
+6 overcome k b  
+7 attack h  
+8 overcome h k  
+9 attack c  
+10 overcome c h  
+11 attack f  
+12 overcome f c  
+13 attack i  
+14 overcome i f  
+15 attack d  
+16 overcome d i  
+17 attack g  
+18 overcome g d",False,"attack d
+overcome d g
+attack i
+overcome i d
+attack f
+overcome f i
+attack c
+overcome c f
+attack h
+overcome h c
+attack k
+overcome k h
+attack b
+overcome b k
+attack e
+overcome e b
+attack a
+overcome a e",planning_suite,high,hard,False,False,state_machine,incorrect,False
+BW_E_001,canonical,openai/o4-mini,"1. pick-up j  
+2. stack j b  
+3. pick-up f  
+4. stack f j  
+5. pick-up c  
+6. stack c f  
+7. pick-up i  
+8. stack i c  
+9. pick-up a  
+10. stack a i",True,"pick-up j
+stack j b
+pick-up f
+stack f j
+pick-up c
+stack c f
+pick-up i
+stack i c
+pick-up a
+stack a i",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_002,canonical,openai/o4-mini,"1. pick-up g  
+2. stack g i  
+3. pick-up b  
+4. stack b g  
+5. pick-up h  
+6. stack h b",True,"pick-up g
+stack g i
+pick-up b
+stack b g
+pick-up h
+stack h b",planning_suite,low,easy,True,True,state_machine,correct,False
+BW_E_003,canonical,openai/o4-mini,"1. pick-up d  
+2. stack d j  
+3. pick-up i  
+4. stack i d  
+5. pick-up c  
+6. stack c i  
+7. pick-up g  
+8. stack g c",True,"pick-up d
+stack d j
+pick-up i
+stack i d
+pick-up c
+stack c i
+pick-up g
+stack g c",planning_suite,low,medium,True,True,state_machine,correct,False
+BW_E_004,canonical,openai/o4-mini,"1. pick-up g  
+2. stack g l  
+3. pick-up d  
+4. stack d g  
+5. pick-up e  
+6. stack e d  
+7. pick-up i  
+8. stack i e  
+9. pick-up k  
+10. stack k i  
+11. pick-up h  
+12. stack h k  
+13. pick-up a  
+14. stack a h",True,"pick-up g
+stack g l
+pick-up d
+stack d g
+pick-up e
+stack e d
+pick-up i
+stack i e
+pick-up k
+stack k i
+pick-up h
+stack h k
+pick-up a
+stack a h",planning_suite,low,hard,True,True,state_machine,correct,False
+BW_E_005,canonical,openai/o4-mini,"1. pick-up e  
+2. stack e f  
+3. pick-up d  
+4. stack d e  
+5. pick-up l  
+6. stack l d  
+7. pick-up c  
+8. stack c l  ",True,"pick-up e
+stack e f
+pick-up d
+stack d e
+pick-up l
+stack l d
+pick-up c
+stack c l",planning_suite,low,medium,True,True,state_machine,correct,False
