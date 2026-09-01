@@ -13,6 +13,10 @@ requests>=2.31           # Infini-gram API + general HTTP
 openai>=1.30             # GPT-4o / o3 (if using OpenAI pair)
 anthropic>=0.28          # Claude Sonnet pair (if using Anthropic pair)
 
+# ── Graph / config ───────────────────────────────────────────────────
+networkx>=3.2            # Shortest-path gold checks and ALGO generators
+pyyaml>=6.0              # BW sweep config
+
 # ── Utilities ────────────────────────────────────────────────────────
 tqdm>=4.66               # Progress bars for API sweep loops
 python-dotenv>=1.0       # Load API keys from .env file
