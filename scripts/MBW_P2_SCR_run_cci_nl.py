@@ -35,6 +35,8 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from probes.behavioral.cci import compute_cci
+from probes.contamination.verify import _extract_mystery_actions_line_based
 from probes.behavioral.mbw_action_parser_nl import (
     is_preamble_mbw,
     remap_to_canonical_mbw,
@@ -115,6 +117,7 @@ def run_session_mbw(
     client,
     max_steps: int = 50,
     verbose: bool = False,
+    gold_plan: list[str] | None = None,
 ) -> dict:
     try:
         objects, state, goal = parse_state_from_text_mbw(problem_text)
@@ -135,6 +138,10 @@ def run_session_mbw(
             "remapped_lines": 0,
             "canonical_lines": 0,
             "unparseable_lines": 0,
+            "cci": None,
+            "matched_steps": 0,
+            "total_steps_compared": 0,
+            "generated_plan_length": len(gold_plan or []),
         }
 
     executed_steps: list[str] = []
@@ -228,6 +235,16 @@ def run_session_mbw(
     except Exception:
         pass
 
+    filtered = [s for s in executed_steps if s != "STEP_SKIP"]
+    if session_status.startswith("aborted:") or not gold_plan or not filtered:
+        cci_result = {
+            "cci": None,
+            "matched_steps": 0,
+            "total_steps_compared": 0,
+        }
+    else:
+        cci_result = compute_cci(problem_id, gold_plan, filtered)
+
     return {
         "problem_id": problem_id,
         "session_status": session_status,
@@ -244,6 +261,10 @@ def run_session_mbw(
         "remapped_lines": classifications.get("remapped", 0),
         "canonical_lines": classifications.get("canonical", 0),
         "unparseable_lines": classifications.get("unparseable", 0),
+        "cci": cci_result["cci"],
+        "matched_steps": cci_result["matched_steps"],
+        "total_steps_compared": cci_result["total_steps_compared"],
+        "generated_plan_length": len(gold_plan or []),
     }
 
 
@@ -254,6 +275,7 @@ FIELDNAMES = [
     "partial_goal_achievement", "goals_met",
     "executed_steps_json", "parser_classifications_json",
     "preamble_lines", "remapped_lines", "canonical_lines", "unparseable_lines",
+    "cci", "matched_steps", "total_steps_compared", "generated_plan_length",
 ]
 
 
@@ -326,10 +348,12 @@ def main() -> None:
             print(f"  {pid} | running...", end=" ", flush=True)
             if args.dry_run:
                 client = DryRunClientMBW(model_str)
+            gold_plan = _extract_mystery_actions_line_based(str(row.get("correct_answer", "")))
             result = run_session_mbw(
                 pid, problem_text, client,
                 max_steps=args.max_steps,
                 verbose=args.smoke or args.dry_run,
+                gold_plan=gold_plan,
             )
             out_row = {
                 "problem_id": pid,

@@ -5,10 +5,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+from probes.behavioral.bw_action_parser_nl import is_preamble, normalize_action
 from probes.behavioral.bw_cci_pipeline import (
     parse_pddl, execute_action,
     make_turn1_prompt, make_followup_prompt,
     goal_reached, state_to_narrative,
+    categorize_execute_error,
 )
 from probes.behavioral.cci import compute_cci
 from probes.behavioral.model_client import ModelClient
@@ -29,34 +31,6 @@ def build_goal_narrative(goal):
     return "; ".join(parts) if parts else "(empty goal)"
 
 
-def normalize_action(s):
-    import re
-    s = s.strip().lower().rstrip('.')
-    s = s.replace('(', ' ').replace(')', '').replace(',', ' ')
-    s = re.sub(r'\s+', ' ', s).strip()
-    # Remove "block " prefix before block names
-    s = re.sub(r'\bblock\s+', '', s)
-    # pick up / pickup -> pick-up
-    s = re.sub(r'^pick\s*[-_]?\s*up\s+', 'pick-up ', s)
-    s = re.sub(r'^pickup\s+', 'pick-up ', s)
-    # put down / putdown -> put-down
-    s = re.sub(r'^put\s*[-_]?\s*down\s+', 'put-down ', s)
-    s = re.sub(r'^putdown\s+', 'put-down ', s)
-    # place X on Y -> stack X Y
-    m = re.match(r'^place\s+(\w+)\s+on\s+(\w+)$', s)
-    if m:
-        return f'stack {m.group(1)} {m.group(2)}'
-    # place X under Y -> stack X Y (W3 HR variant)
-    m = re.match(r'^place\s+(\w+)\s+under\s+(\w+)$', s)
-    if m:
-        return f'stack {m.group(1)} {m.group(2)}'
-    # select X -> pick-up X (W3 HR variant)
-    m = re.match(r'^select\s+(\w+)$', s)
-    if m:
-        return f'pick-up {m.group(1)}'
-    return s.strip()
-
-
 PREAMBLE_PREFIXES = (
     "i'll", "i will", "here is", "here's", "the next",
     "let me", "to solve", "first,", "now,", "okay",
@@ -72,7 +46,7 @@ def parse_single_action(response_text):
         if not line:
             continue
         lower = line.lower()
-        if any(lower.startswith(p) for p in PREAMBLE_PREFIXES):
+        if is_preamble(line) or any(lower.startswith(p) for p in PREAMBLE_PREFIXES):
             continue
         line = re.sub(r'^\d+[\.\)\:]\s*', '', line)
         line = re.sub(r'^step\s+\d+[\.\:\)]?\s*', '', line,
@@ -139,7 +113,7 @@ def profile_precondition_violations(executed_steps, pddl_path):
             elif "unknown" in err or "malformed" in err:
                 cat = "format_error"
             else:
-                cat = "other_illegal"
+                cat = categorize_execute_error(e)
             profile.append({"step": i, "action": action, "category": cat})
 
     return profile

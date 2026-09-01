@@ -47,6 +47,7 @@ from probes.behavioral.bw_cci_pipeline import (
     goal_reached,
     make_followup_prompt,
     make_turn1_prompt,
+    parse_state_from_text,
     state_to_narrative,
 )
 from probes.behavioral.cci import compute_cci
@@ -57,9 +58,6 @@ BANK_CSV = ROOT / "data/problems/question_bank_bw.csv"
 # Existing Phase-1 plans (used for CCI scoring against declared plan)
 PLANS_CSV = ROOT / "results/raw/BW_P2_plans.csv"
 OUT_DEFAULT = ROOT / "results/raw/BW_P2_cci_nl.csv"
-
-# Re-import the problem-text parser already built in the audit script
-from scripts.audit.bw_phase2_reparse import parse_state_from_text  # noqa: E402
 
 MAX_CONSECUTIVE_ERRORS = 2
 MAX_SKIPS = 5

@@ -90,6 +90,109 @@ def parse_pddl(filepath: str | Path) -> Tuple[List[str], Dict[str, Any], Dict[st
     return objects, init_state, goal
 
 
+def facts_to_executor_state(
+    state_facts: set[tuple],
+    goal_facts: set[tuple],
+) -> Tuple[List[str], Dict[str, Any], Dict[str, Optional[str]]]:
+    """Convert verifier predicate tuples into execute_action state/goal dicts."""
+    on: Dict[str, str] = {}
+    on_table: Set[str] = set()
+    clear: Set[str] = set()
+    holding: Optional[str] = None
+    objects: Set[str] = set()
+    for fact in state_facts:
+        if not fact:
+            continue
+        pred = str(fact[0]).lower().replace("-", "")
+        args = [str(a).lower() for a in fact[1:]]
+        if pred == "on" and len(args) >= 2:
+            on[args[0]] = args[1]
+            objects.update(args[:2])
+        elif pred == "ontable" and args:
+            on_table.add(args[0])
+            objects.add(args[0])
+        elif pred == "clear" and args:
+            clear.add(args[0])
+            objects.add(args[0])
+        elif pred == "holding" and args:
+            holding = args[0]
+            objects.add(args[0])
+        elif pred not in {"handempty"}:
+            objects.update(args)
+    goal: Dict[str, Optional[str]] = {}
+    for fact in goal_facts:
+        if not fact:
+            continue
+        pred = str(fact[0]).lower().replace("-", "")
+        args = [str(a).lower() for a in fact[1:]]
+        if pred == "on" and len(args) >= 2:
+            goal[args[0]] = args[1]
+            objects.update(args[:2])
+        elif pred == "ontable" and args:
+            goal[args[0]] = None
+            objects.add(args[0])
+    return sorted(objects), {
+        "on": on,
+        "clear": clear,
+        "on_table": on_table,
+        "holding": holding,
+    }, goal
+
+
+def parse_state_from_text(problem_text: str) -> Tuple[List[str], Dict[str, Any], Dict[str, Optional[str]]]:
+    """Parse a question-bank Blocksworld `problem_text` into executor state.
+
+    PlanBench PDDL files are not shipped in this repo; Probe 2 runners that
+    previously called ``parse_pddl`` should use this on the bank row instead.
+    """
+    from probes.contamination.verify import _parse_blocksworld_state
+
+    parsed = _parse_blocksworld_state(problem_text)
+    if parsed is None:
+        raise ValueError("Could not parse Blocksworld state from problem_text")
+    state_facts, goal_facts = parsed
+    objects, state, goal = facts_to_executor_state(state_facts, goal_facts)
+    if not objects and not state["on"] and not state["on_table"]:
+        raise ValueError("Parsed Blocksworld state is empty")
+    return objects, state, goal
+
+
+def categorize_execute_error(exc: BaseException) -> str:
+    """Map execute_action ValueError text onto the CCI violation vocabulary."""
+    err = str(exc).lower()
+    if "hand not empty" in err:
+        return "hand_not_empty"
+    if "not on table" in err or "not in on_table" in err:
+        return "block_not_on_table"
+    if "not clear" in err and "target" in err:
+        return "target_not_clear"
+    if "not clear" in err:
+        return "block_not_clear"
+    if "is on" in err and "unstack" in err:
+        return "wrong_stack_source"
+    if "unknown" in err or "malformed" in err or "empty action" in err:
+        return "format_error"
+    return "other_illegal"
+
+
+def profile_actions(executed_steps: List[str], initial_state: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Replay actions from `initial_state` and label each as valid / format / precondition."""
+    state = copy.deepcopy(initial_state)
+    profile: List[Dict[str, Any]] = []
+    for i, action in enumerate(executed_steps):
+        if not str(action).strip() or str(action).strip() == "STEP_SKIP":
+            profile.append({"step": i, "action": action, "category": "format_error"})
+            continue
+        try:
+            state = execute_action(state, action)
+            profile.append({"step": i, "action": action, "category": "valid"})
+        except ValueError as exc:
+            profile.append(
+                {"step": i, "action": action, "category": categorize_execute_error(exc)}
+            )
+    return profile
+
+
 # -----------------------------------------------------------------------------
 # STATE TO NATURAL LANGUAGE
 # -----------------------------------------------------------------------------

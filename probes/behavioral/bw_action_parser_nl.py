@@ -101,6 +101,18 @@ def _strip_connectives(text: str) -> str:
     return s
 
 
+def normalize_action(s: str) -> str:
+    """NL remap first; fall back to stripped lowercase if unmappable.
+
+    Strict runners call this before ``execute_action``. Precondition checking
+    stays strict; only the string that reaches the executor is rewritten.
+    """
+    remapped = remap_to_canonical(s)
+    if remapped:
+        return remapped
+    return (s or "").strip().lower().rstrip(".")
+
+
 def remap_to_canonical(action: str) -> str | None:
     """Try to rewrite `action` to one of the 4 canonical PDDL forms.
 
