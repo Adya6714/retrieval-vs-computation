@@ -60,6 +60,11 @@ def normalize_for_compare(text: str) -> str:
 
 
 def existing_done_keys(path: Path) -> set[tuple[str, str, str]]:
+    """Return (problem_id, variant_type, model) keys already successfully scored.
+
+    The last row per key wins. Keys whose latest model_answer starts with
+    'ERROR:' are omitted so the next run retries, matching BW Probe 1.
+    """
     if not path.exists() or path.stat().st_size == 0:
         return set()
     try:
@@ -69,13 +74,26 @@ def existing_done_keys(path: Path) -> set[tuple[str, str, str]]:
     required = {"problem_id", "variant_type", "model"}
     if not required.issubset(df.columns):
         return set()
+    raw_col = (
+        df["model_answer"].fillna("").astype(str)
+        if "model_answer" in df.columns
+        else (
+            df["raw_response"].fillna("").astype(str)
+            if "raw_response" in df.columns
+            else pd.Series([""] * len(df), index=df.index)
+        )
+    )
+    df = df.assign(_raw=raw_col)
+    last = df.groupby(["problem_id", "variant_type", "model"], sort=False).last()
     done: set[tuple[str, str, str]] = set()
-    for _, row in df.iterrows():
+    for (pid, vtype, model), row in last.iterrows():
+        if str(row["_raw"]).strip().startswith("ERROR:"):
+            continue
         done.add(
             (
-                str(row["problem_id"]).strip(),
-                str(row["variant_type"]).strip(),
-                str(row["model"]).strip(),
+                str(pid).strip(),
+                str(vtype).strip(),
+                str(model).strip(),
             )
         )
     return done
