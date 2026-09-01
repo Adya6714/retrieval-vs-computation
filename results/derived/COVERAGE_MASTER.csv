@@ -1,0 +1,156 @@
+probe,family,model,variant,cells_attempted,cells_included,cells_excluded,exclusion_reason_breakdown,exclusion_reason_1,exclusion_reason_1_n,exclusion_reason_2,exclusion_reason_2_n,exclusion_reason_3,exclusion_reason_3_n,sampling_settings,source_file
+P1,ALGO,anthropic/claude-sonnet-4,W1,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,anthropic/claude-sonnet-4,W2,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,anthropic/claude-sonnet-4,W3,110,100,10,"{""parse_failed"": 10}",parse_failed,10,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,anthropic/claude-sonnet-4,W4,110,108,2,"{""parse_failed"": 2}",parse_failed,2,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,anthropic/claude-sonnet-4,W5,50,50,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,anthropic/claude-sonnet-4,W6,90,90,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,anthropic/claude-sonnet-4,canonical,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,W1,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,W2,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,W3,110,105,5,"{""parse_failed"": 5}",parse_failed,5,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,W4,110,105,5,"{""parse_failed"": 5}",parse_failed,5,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,W5,50,32,18,"{""parse_failed"": 18}",parse_failed,18,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,W6,90,86,4,"{""parse_failed"": 4}",parse_failed,4,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,google/gemini-2.5-flash,canonical,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gemini_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,W1,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,W2,110,104,6,"{""parse_failed"": 6}",parse_failed,6,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,W3,110,109,1,"{""parse_failed"": 1}",parse_failed,1,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,W4,110,106,4,"{""parse_failed"": 4}",parse_failed,4,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,W5,50,50,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,W6,110,90,20,"{""missing_bank_row"": 20}",missing_bank_row,20,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,meta-llama/llama-3.1-8b-instruct,canonical,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,mock,W1,1,0,1,"{""mock_row"": 1}",mock_row,1,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,mock,W1,1,0,1,"{""mock_row"": 1}",mock_row,1,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,mock,W2,1,0,1,"{""mock_row"": 1}",mock_row,1,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,mock,canonical,1,0,1,"{""mock_row"": 1}",mock_row,1,,0,,0,unknown,ALGO_P1_behavioral_claude_rescored.csv
+P1,ALGO,mock,canonical,1,0,1,"{""mock_row"": 1}",mock_row,1,,0,,0,unknown,ALGO_P1_behavioral_llama_rescored.csv
+P1,ALGO,openai/gpt-4o,W1,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/gpt-4o,W2,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/gpt-4o,W3,110,102,8,"{""parse_failed"": 8}",parse_failed,8,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/gpt-4o,W4,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/gpt-4o,W5,50,22,28,"{""parse_failed"": 28}",parse_failed,28,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/gpt-4o,W6,110,90,20,"{""missing_bank_row"": 20}",missing_bank_row,20,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/gpt-4o,canonical,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_gpt4o_rescored.csv
+P1,ALGO,openai/o4-mini,W1,110,109,1,"{""parse_failed"": 1}",parse_failed,1,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,ALGO,openai/o4-mini,W2,110,105,5,"{""parse_failed"": 5}",parse_failed,5,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,ALGO,openai/o4-mini,W3,110,81,29,"{""parse_failed"": 29}",parse_failed,29,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,ALGO,openai/o4-mini,W4,110,97,13,"{""parse_failed"": 13}",parse_failed,13,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,ALGO,openai/o4-mini,W5,50,8,42,"{""parse_failed"": 42}",parse_failed,42,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,ALGO,openai/o4-mini,W6,90,89,1,"{""parse_failed"": 1}",parse_failed,1,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,ALGO,openai/o4-mini,canonical,110,110,0,{},,0,,0,,0,unknown,ALGO_P1_behavioral_o1mini_rescored.csv
+P1,BW,The answer is 42.,MOCK,4,0,4,"{""mock_row"": 4}",mock_row,4,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,W1,109,102,7,"{""invalid_gold"": 7}",invalid_gold,7,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,W2,109,103,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,W3,109,104,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,W4,109,103,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,W5,109,99,10,"{""invalid_gold"": 10}",invalid_gold,10,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,W6,89,84,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,anthropic/claude-sonnet-4,canonical,109,108,1,"{""invalid_gold"": 1}",invalid_gold,1,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,W1,65,58,7,"{""invalid_gold"": 7}",invalid_gold,7,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,W2,65,59,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,W3,65,60,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,W4,65,59,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,W5,65,55,10,"{""invalid_gold"": 10}",invalid_gold,10,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,W6,65,60,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,deepseek/deepseek-r1-distill-llama-70b,canonical,49,48,1,"{""invalid_gold"": 1}",invalid_gold,1,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,google/gemini-2.5-flash,W1,65,58,7,"{""invalid_gold"": 7}",invalid_gold,7,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,google/gemini-2.5-flash,W2,65,59,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,google/gemini-2.5-flash,W3,65,60,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,google/gemini-2.5-flash,W4,65,59,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,google/gemini-2.5-flash,W5,65,55,10,"{""invalid_gold"": 10}",invalid_gold,10,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,google/gemini-2.5-flash,W6,65,60,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,google/gemini-2.5-flash,canonical,65,64,1,"{""invalid_gold"": 1}",invalid_gold,1,,0,,0,unknown,BW_P1_behavioral_gemini_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,W1,109,102,7,"{""invalid_gold"": 7}",invalid_gold,7,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,W2,109,103,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,W3,109,103,6,"{""invalid_gold"": 5, ""api_error"": 1}",invalid_gold,5,api_error,1,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,W4,109,102,7,"{""invalid_gold"": 6, ""api_error"": 1}",invalid_gold,6,api_error,1,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,W5,109,99,10,"{""invalid_gold"": 10}",invalid_gold,10,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,W6,104,84,20,"{""missing_bank_row"": 15, ""invalid_gold"": 5}",missing_bank_row,15,invalid_gold,5,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,meta-llama/llama-3.1-8b-instruct,canonical,109,108,1,"{""invalid_gold"": 1}",invalid_gold,1,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,mock,W1,1,0,1,"{""mock_row"": 1}",mock_row,1,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,mock,W2,11,0,11,"{""mock_row"": 11}",mock_row,11,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,mock,W3,10,0,10,"{""mock_row"": 10}",mock_row,10,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,mock,W4,10,0,10,"{""mock_row"": 10}",mock_row,10,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,mock,W5,9,0,9,"{""mock_row"": 9}",mock_row,9,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,mock,canonical,17,0,17,"{""mock_row"": 17}",mock_row,17,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,W1,109,102,7,"{""invalid_gold"": 7}",invalid_gold,7,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,W2,109,103,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,W3,109,104,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,W4,109,103,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,W5,109,99,10,"{""invalid_gold"": 10}",invalid_gold,10,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,W6,104,84,20,"{""missing_bank_row"": 15, ""invalid_gold"": 5}",missing_bank_row,15,invalid_gold,5,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/gpt-4o,canonical,109,108,1,"{""invalid_gold"": 1}",invalid_gold,1,,0,,0,unknown,BW_P1_behavioral_rescored.csv
+P1,BW,openai/o4-mini,W1,65,58,7,"{""invalid_gold"": 7}",invalid_gold,7,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,BW,openai/o4-mini,W2,65,59,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,BW,openai/o4-mini,W3,65,60,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,BW,openai/o4-mini,W4,65,59,6,"{""invalid_gold"": 6}",invalid_gold,6,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,BW,openai/o4-mini,W5,65,55,10,"{""invalid_gold"": 10}",invalid_gold,10,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,BW,openai/o4-mini,W6,65,60,5,"{""invalid_gold"": 5}",invalid_gold,5,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,BW,openai/o4-mini,canonical,65,64,1,"{""invalid_gold"": 1}",invalid_gold,1,,0,,0,unknown,BW_P1_behavioral_o1mini_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,W1,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,W2,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,W3,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,W4,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,W5,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,W6,24,24,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,anthropic/claude-sonnet-4,canonical,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_claude_rescored.csv
+P1,GSM,google/gemini-2.5-flash,W1,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,google/gemini-2.5-flash,W2,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,google/gemini-2.5-flash,W3,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,google/gemini-2.5-flash,W4,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,google/gemini-2.5-flash,W5,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,google/gemini-2.5-flash,W6,24,24,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,google/gemini-2.5-flash,canonical,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_gemini_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,W1,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,W2,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,W3,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,W4,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,W5,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,W6,64,0,64,"{""missing_bank_row"": 40, ""api_error"": 24}",missing_bank_row,40,api_error,24,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,meta-llama/llama-3.1-8b-instruct,canonical,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_llama_rescored.csv
+P1,GSM,openai/gpt-4o,W1,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/gpt-4o,W2,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/gpt-4o,W3,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/gpt-4o,W4,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/gpt-4o,W5,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/gpt-4o,W6,64,0,64,"{""missing_bank_row"": 40, ""api_error"": 24}",missing_bank_row,40,api_error,24,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/gpt-4o,canonical,64,20,44,"{""api_error"": 24, ""missing_bank_row"": 20}",api_error,24,missing_bank_row,20,,0,unknown,GSM_P1_behavioral_gpt4o_rescored.csv
+P1,GSM,openai/o4-mini,W1,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P1,GSM,openai/o4-mini,W2,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P1,GSM,openai/o4-mini,W3,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P1,GSM,openai/o4-mini,W4,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P1,GSM,openai/o4-mini,W5,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P1,GSM,openai/o4-mini,W6,24,24,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P1,GSM,openai/o4-mini,canonical,44,44,0,{},,0,,0,,0,unknown,GSM_P1_behavioral_o1mini_rescored.csv
+P2,ALGO,anthropic/claude-sonnet-4,phase1,110,84,26,"{""phase1_unparseable"": 26}",phase1_unparseable,26,,0,,0,unknown,ALGO_P2_phase1_claude_new.csv
+P2,ALGO,google/gemini-2.5-flash,phase1,110,72,38,"{""phase1_unparseable"": 38}",phase1_unparseable,38,,0,,0,unknown,ALGO_P2_phase1_gemini.csv
+P2,ALGO,meta-llama/llama-3.1-8b-instruct,phase1,110,76,34,"{""phase1_unparseable"": 34}",phase1_unparseable,34,,0,,0,unknown,ALGO_P2_phase1_llama_new.csv
+P2,ALGO,openai/gpt-4o,phase1,110,94,16,"{""phase1_unparseable"": 16}",phase1_unparseable,16,,0,,0,unknown,ALGO_P2_phase1_gpt4o_new.csv
+P2,BW,anthropic/claude-sonnet-4,cci_nl,50,20,30,"{""aborted: excessive illegal steps"": 19, ""aborted: planning_loop"": 11}",aborted: excessive illegal steps,19,aborted: planning_loop,11,,0,unknown,P2_coverage.csv
+P2,BW,anthropic/claude-sonnet-4,cci_strict,50,8,42,"{""aborted: excessive illegal steps"": 22, ""blank_session_status"": 20}",aborted: excessive illegal steps,22,blank_session_status,20,,0,unknown,P2_coverage.csv
+P2,BW,anthropic/claude-sonnet-4,tep,177,1,176,"{""aborted: excessive illegal steps"": 76, ""blank_session_status"": 67, ""score_null"": 33}",aborted: excessive illegal steps,76,blank_session_status,67,score_null,33,unknown,P2_coverage.csv
+P2,BW,meta-llama/llama-3.1-8b-instruct,cci_nl,50,8,42,"{""aborted: excessive illegal steps"": 42}",aborted: excessive illegal steps,42,,0,,0,unknown,P2_coverage.csv
+P2,BW,meta-llama/llama-3.1-8b-instruct,cci_strict,50,11,39,"{""blank_session_status"": 20, ""aborted: excessive illegal steps"": 19}",blank_session_status,20,aborted: excessive illegal steps,19,,0,unknown,P2_coverage.csv
+P2,BW,meta-llama/llama-3.1-8b-instruct,tep,179,0,179,"{""blank_session_status"": 111, ""aborted: excessive illegal steps"": 68}",blank_session_status,111,aborted: excessive illegal steps,68,,0,unknown,P2_coverage.csv
+P2,BW,openai/gpt-4o,cci_nl,50,11,39,"{""aborted: excessive illegal steps"": 39}",aborted: excessive illegal steps,39,,0,,0,unknown,P2_coverage.csv
+P2,BW,openai/gpt-4o,cci_strict,50,10,40,"{""blank_session_status"": 20, ""aborted: excessive illegal steps"": 20}",blank_session_status,20,aborted: excessive illegal steps,20,,0,unknown,P2_coverage.csv
+P2,BW,openai/gpt-4o,tep,180,1,179,"{""blank_session_status"": 110, ""aborted: excessive illegal steps"": 69}",blank_session_status,110,aborted: excessive illegal steps,69,,0,unknown,P2_coverage.csv
+P2,GSM,anthropic/claude-sonnet-4,cci,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,anthropic/claude-sonnet-4,tep,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,google/gemini-2.5-flash,cci,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,google/gemini-2.5-flash,tep,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,meta-llama/llama-3.1-8b-instruct,cci,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,meta-llama/llama-3.1-8b-instruct,tep,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,openai/gpt-4o,cci,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,GSM,openai/gpt-4o,tep,44,44,0,{},,0,,0,,0,unknown,P2_coverage.csv
+P2,MBW,anthropic/claude-sonnet-4,cci_nl,15,0,15,"{""cci_column_never_emitted"": 15}",cci_column_never_emitted,15,,0,,0,unknown,P2_coverage.csv
+P2,MBW,meta-llama/llama-3.1-8b-instruct,cci_nl,15,0,15,"{""cci_column_never_emitted"": 15}",cci_column_never_emitted,15,,0,,0,unknown,P2_coverage.csv
+P2,MBW,openai/gpt-4o,cci_nl,15,0,15,"{""cci_column_never_emitted"": 15}",cci_column_never_emitted,15,,0,,0,unknown,P2_coverage.csv
+P3,ALGO,--,contamination,116,116,0,{},,0,,0,,0,unknown,ALGO_P3_contamination.csv
+P3,ALGO,Qwen/Qwen2.5-0.5B-Instruct,canonical,20,20,0,{},,0,,0,,0,unknown,ALGO_P3_mechanistic.csv
+P3,BW,--,contamination,65,65,0,{},,0,,0,,0,unknown,BW_P3_contamination.csv
+P3,BW,Qwen/Qwen2.5-0.5B-Instruct,W6,15,15,0,{},,0,,0,,0,unknown,BW_P3_mechanistic.csv
+P3,BW,Qwen/Qwen2.5-0.5B-Instruct,canonical,20,20,0,{},,0,,0,,0,unknown,BW_P3_mechanistic.csv
+P3,GSM,--,contamination,44,44,0,{},,0,,0,,0,unknown,GSM_P3_contamination.csv
+P3,GSM,Qwen/Qwen2.5-0.5B-Instruct,canonical,20,20,0,{},,0,,0,,0,unknown,GSM_P3_mechanistic.csv
