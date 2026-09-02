@@ -1,0 +1,9 @@
+analysis,family,model,kendall_W,p_value,n_rankers,n_variants,variants,n_perm,seed
+within_family_across_models,ALGO,--,0.4194,1.0,5,6,W1|W2|W3|W4|W5|W6,5000,42
+within_family_across_models,BW,--,0.6786,1.0,6,6,W1|W2|W3|W4|W5|W6,5000,42
+within_family_across_models,GSM,--,0.6603,1.0,3,6,W1|W2|W3|W4|W5|W6,5000,42
+within_model_across_families,--,anthropic/claude-sonnet-4,0.1651,1.0,3,6,W1|W2|W3|W4|W5|W6,5000,42
+within_model_across_families,--,google/gemini-2.5-flash,0.2381,1.0,3,6,W1|W2|W3|W4|W5|W6,5000,42
+within_model_across_families,--,meta-llama/llama-3.1-8b-instruct,0.7929,1.0,2,6,W1|W2|W3|W4|W5|W6,5000,42
+within_model_across_families,--,openai/gpt-4o,0.5429,1.0,2,6,W1|W2|W3|W4|W5|W6,5000,42
+within_model_across_families,--,openai/o4-mini,0.6698,1.0,3,6,W1|W2|W3|W4|W5|W6,5000,42
