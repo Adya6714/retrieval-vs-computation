@@ -1,0 +1,30 @@
+{
+  "cause": "expired_or_invalid_key",
+  "note": "auth/key HTTP 401; completions 401 here is the key, not the wallet",
+  "auth": {
+    "status": 401,
+    "body_preview": "{\"error\":{\"message\":\"User not found.\",\"code\":401}}",
+    "error_message": "User not found.",
+    "error_code": 401,
+    "error_type": ""
+  },
+  "credits": {
+    "status": 401,
+    "body_preview": "{\"error\":{\"message\":\"User not found.\",\"code\":401}}",
+    "error_message": "User not found.",
+    "error_code": 401,
+    "error_type": "",
+    "account_wallet": null,
+    "total_credits": null,
+    "total_usage": null
+  },
+  "chat": {
+    "status": 401,
+    "body_preview": "{\"error\":{\"message\":\"User not found.\",\"code\":401}}",
+    "error_message": "User not found.",
+    "error_code": 401,
+    "error_type": ""
+  },
+  "key_present": true,
+  "key_len": 73
+}

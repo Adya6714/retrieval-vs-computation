@@ -123,7 +123,17 @@ Do not concatenate the pilots with the `_new` files (a keep=last overlay hid the
 Paper-ready coverage: `results/derived/P2_coverage.csv`.
 BW CCI/TEP null diagnosis: `results/derived/P2_bw_cci_null_diagnosis.csv`, `P2_bw_tep_null_diagnosis.csv`.
 
-**GSM `session_b_correct` is a disjunction**, not Phase 2A accuracy: `verify(phase2a_values[-1]) OR verify(phase1_final)`. It never reads `phase2b_values`. Overlay: `derived/GSM_P2_session_correct.csv` (`either_session_correct`, `phase1_correct`; `phase2a_correct` / `phase2b_correct` blank — those value lists were never persisted). Table 4 Acc_P2A cannot be recovered without a re-run. Do not rewrite `raw/` GSM P2 files.
+**Table 4 Acc_P2A is withdrawn.** `phase2a_values` / `phase2b_values` were never persisted, so true Phase-2A accuracy is unrecoverable without re-running 220 GSM P2 sessions. The published Acc_P2A cells are the phase2a-or-phase1 disjunction (`session_b_correct` = `verify(phase2a_values[-1]) OR verify(phase1_final)`; it never reads `phase2b_values`). Keep overlay `derived/GSM_P2_session_correct.csv` column `either_session_correct` for provenance. Do **not** delete the published numbers; they are marked withdrawn in `derived/I3_table4_acc_p2a_status.csv` and in `paper/tables/table4_gsm_p2.tex`:
+
+| Model | published Acc_P2A (disjunction) | status |
+|-------|---------------------------------|--------|
+| Claude | .864 | withdrawn pending re-run |
+| GPT-4o | .705 | withdrawn pending re-run |
+| Llama-8B | .455 | withdrawn pending re-run |
+| Gemini-2.5 | .886 | withdrawn pending re-run |
+| o4-mini | .955 | withdrawn pending re-run |
+
+Do not rewrite `raw/` GSM P2 files. Overlay also has `phase1_correct`; `phase2a_correct` / `phase2b_correct` stay blank.
 
 ---
 
@@ -154,6 +164,10 @@ Triangulation rule comparison (appendix printed vs executed, plus P1-rescored ov
 | GSM | 44 | 0 | 0 | 44 |
 
 ALGO effective n is materially below 110. Every ALGO accuracy (Table 7 slices, Probe 1 figures, rebuild P1.1.ALGO.*) is still computed on 110 IDs but is **not 110 independent items**. WIS_017–020 sit in `ALGO_CLONE_013` (n=12) with other chain-overlap clones sharing `Selected: {4, 5}`.
+
+ALGO CIs on n=110 and on the frozen 61-ID pool are too narrow if problems are treated as iid. `derived/I2_algo_cluster_bootstrap.csv` recomputes every ALGO cell with a 10k **clone-family** cluster bootstrap vs the executed 10k iid problem bootstrap; `derived/I2_frozen61_cluster_effective_n.csv` reports the frozen pool's family-level n. Frozen 61 effective n is **14** clone families (53 of 61 IDs sit in multi-member families). The paper/appendix name Wilson 95% CIs; Probe-1 metric code (`probes/common/stats.py` `bootstrap_ci`) is a 10k percentile bootstrap. Rebuild `NUMBERS.csv` uses Wilson. Cluster bootstrap is the interval that matches the clone structure.
+
+Claude shortest_path W3 (canonical 0.400 vs stored W3 0.018) is a verifier parse failure, not a 1/55 model collapse: gold roundtrip 55/55; 51/55 full-CoT failures still verify on the trailing `Path:` line. See `derived/I1_claude_sp_w3_summary.csv`.
 
 ---
 

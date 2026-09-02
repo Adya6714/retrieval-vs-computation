@@ -1,0 +1,17 @@
+metric,value,n,note
+sp_w3_gold_roundtrip_pass,55.0,55,"verify_algo(gold, gold)"
+sp_w3_gold_roundtrip_fail,0.0,55,
+claude_sp_w3_n,55.0,55,anthropic/claude-sonnet-4
+claude_sp_w3_stored_acc,0.018182,55,verified column
+claude_sp_w3_recomputed_acc,0.018182,55,verify_algo on raw model_answer
+claude_sp_w3_correct,1.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+claude_sp_w3_wrong_path,3.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+claude_sp_w3_renamed_form_rejected,51.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+claude_sp_w3_unparseable,0.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+claude_sp_w3_refusal,0.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+claude_sp_w3_empty,0.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+claude_sp_w3_api_error,0.0,55,taxonomy on full CoT; renamed_form_rejected = last Path: line verifies
+sp_w3_empty_node_mapping,50.0,55,bank difficulty_params.node_mapping missing
+claude_sp_w3_last_path_block_ok,52.0,55,verify_algo on trailing Path:/Cost: only
+claude_sp_w3_last_path_cost_only,49.0,55,city names unmapped; cost matches Dijkstra
+claude_sp_w3_remap_rescues,0.0,55,string-replace mapping labels with IDs in full CoT

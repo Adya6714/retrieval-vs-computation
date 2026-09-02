@@ -1,0 +1,6 @@
+table,model,published_acc_p2a,status,computed_as,keep_column,phase2a_recoverable,note
+Table 4,Claude,0.864,withdrawn_pending_rerun,either_session_correct (phase2a OR phase1),either_session_correct,false,phase2a_values and phase2b_values were never persisted; Acc_P2A unrecoverable without 220-session re-run
+Table 4,GPT-4o,0.705,withdrawn_pending_rerun,either_session_correct (phase2a OR phase1),either_session_correct,false,phase2a_values and phase2b_values were never persisted; Acc_P2A unrecoverable without 220-session re-run
+Table 4,Llama-8B,0.455,withdrawn_pending_rerun,either_session_correct (phase2a OR phase1),either_session_correct,false,phase2a_values and phase2b_values were never persisted; Acc_P2A unrecoverable without 220-session re-run
+Table 4,Gemini-2.5,0.886,withdrawn_pending_rerun,either_session_correct (phase2a OR phase1),either_session_correct,false,phase2a_values and phase2b_values were never persisted; Acc_P2A unrecoverable without 220-session re-run
+Table 4,o4-mini,0.955,withdrawn_pending_rerun,either_session_correct (phase2a OR phase1),either_session_correct,false,phase2a_values and phase2b_values were never persisted; Acc_P2A unrecoverable without 220-session re-run

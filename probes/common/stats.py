@@ -1,12 +1,15 @@
-"""
-This module provides statistical testing and confidence interval utilities.
-All confidence intervals use 10000 resamples by default per the statistical 
-requirements in the research design.
+"""Statistical testing and confidence interval utilities.
+
+All Probe-1 metric CIs from bootstrap_ci use 10000 resamples by default.
+Paper/appendix text often names Wilson 95% CIs; rebuild NUMBERS.csv uses
+wilson_ci. cluster_bootstrap_ci resamples clone families, not problems.
 """
 
 from __future__ import annotations
 
 import math
+from collections import defaultdict
+
 import numpy as np
 from scipy import stats
 
@@ -30,6 +33,57 @@ def bootstrap_ci(values: list[float], n_resamples: int = 10000, ci: float = 0.95
     upper = float(np.percentile(means, upper_perc))
     
     return (lower, upper)
+
+
+def wilson_ci(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    """Wilson score interval for a binomial proportion."""
+    if n <= 0:
+        return (float("nan"), float("nan"))
+    p = k / n
+    z2 = z * z
+    denom = 1.0 + z2 / n
+    centre = (p + z2 / (2.0 * n)) / denom
+    half = (z / denom) * math.sqrt(p * (1.0 - p) / n + z2 / (4.0 * n * n))
+    lo = max(0.0, centre - half)
+    hi = min(1.0, centre + half)
+    if k == 0:
+        lo = 0.0
+    if k == n:
+        hi = 1.0
+    return (float(lo), float(hi))
+
+
+def cluster_bootstrap_ci(
+    values: list[float],
+    cluster_ids: list[str],
+    n_resamples: int = 10000,
+    ci: float = 0.95,
+    seed: int = 42,
+) -> tuple[float, float]:
+    """Percentile CI for the problem-level mean, resampling clone families.
+
+    Each unique cluster is drawn with replacement. All observations in a
+    drawn cluster are included (clusters of size s keep weight s).
+    """
+    if not values or len(values) != len(cluster_ids):
+        return (float("nan"), float("nan"))
+    grouped: dict[str, list[float]] = defaultdict(list)
+    for v, c in zip(values, cluster_ids):
+        grouped[str(c)].append(float(v))
+    fams = list(grouped.keys())
+    rng = np.random.default_rng(seed)
+    alpha = 1.0 - ci
+    means = np.empty(n_resamples, dtype=float)
+    n_f = len(fams)
+    for i in range(n_resamples):
+        draw = rng.integers(0, n_f, size=n_f)
+        concat: list[float] = []
+        for j in draw:
+            concat.extend(grouped[fams[j]])
+        means[i] = float(np.mean(concat))
+    lo = float(np.percentile(means, (alpha / 2.0) * 100))
+    hi = float(np.percentile(means, (1.0 - alpha / 2.0) * 100))
+    return (lo, hi)
     
 
 def wilcoxon_test(a: list[float], b: list[float]) -> dict:

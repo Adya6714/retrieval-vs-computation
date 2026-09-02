@@ -1,0 +1,5 @@
+pool,n_ids,effective_n_clone_families,n_ids_in_multi_member_families,largest_family_in_pool,note
+frozen_61_adversarial,61,14,53,12,34 SP + 10 CC + 17 WIS; family IDs from bank_clone_audit.csv restricted to the 61
+frozen_61_SP,34,6,31,12,
+frozen_61_CC,10,4,7,7,
+frozen_61_WIS,17,4,15,12,
