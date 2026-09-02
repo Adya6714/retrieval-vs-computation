@@ -185,8 +185,8 @@ def main() -> None:
     cd = pd.DataFrame(construct)
     corr_rows = []
     if len(cd) >= 3:
+        # phi vs retention omitted: same canonical/W3 contingency — algebraic, not convergent
         for x, y, label in [
-            ("phi", "retention_w3", "phi_vs_retention"),
             ("phi", "acc_canonical", "phi_vs_accuracy"),
             ("retention_w3", "acc_canonical", "retention_vs_accuracy"),
         ]:

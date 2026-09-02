@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""L2: MTMM-style construct validity table (Spearman + cluster-bootstrap CIs)."""
+"""L2: discriminant construct validity for P1 phi (not convergent MTMM).
+
+Retention and phi are computed from the same canonical/W3 contingency table;
+their correlation is algebraic, not empirical evidence of convergent validity.
+This script reports discriminant validity only: phi vs canonical accuracy.
+"""
 
 from __future__ import annotations
 
@@ -20,12 +25,6 @@ DER = REPO_ROOT / "results" / "derived"
 PHI_IN = DER / "P1_phi_canonical_w3.csv"
 OUT = DER / "P1_construct_validity.csv"
 
-CONSTRUCTS = ["retention_w3", "phi", "acc_canonical"]
-LABELS = {
-    "retention_w3": "retention",
-    "phi": "phi",
-    "acc_canonical": "canonical_accuracy",
-}
 N_BOOT = 5000
 SEED = 42
 
@@ -61,40 +60,43 @@ def main() -> None:
     df = df[df["acc_canonical"] >= MIN_CANONICAL_FOR_RETENTION].copy()
 
     rows: list[dict] = []
-    for row_name in CONSTRUCTS:
-        for col_name in CONSTRUCTS:
-            if row_name == col_name:
-                rho, lo, hi = 1.0, 1.0, 1.0
-                n = int(df[row_name].notna().sum())
-                p = 0.0
-            else:
-                sub = df[[row_name, col_name, "family"]].dropna()
-                n = len(sub)
-                if n < 3:
-                    rho, lo, hi, p = float("nan"), float("nan"), float("nan"), float("nan")
-                else:
-                    rho, lo, hi = _cluster_bootstrap_spearman(df, row_name, col_name)
-                    _, p = stats.spearmanr(sub[row_name], sub[col_name])
-            rows.append(
-                {
-                    "row_construct": LABELS[row_name],
-                    "col_construct": LABELS[col_name],
-                    "spearman_rho": round(rho, 3) if rho == rho else "",
-                    "ci_low": round(lo, 3) if lo == lo else "",
-                    "ci_high": round(hi, 3) if hi == hi else "",
-                    "p_value": round(float(p), 3) if p == p else "",
-                    "n_cells": n,
-                    "can_acc_floor": MIN_CANONICAL_FOR_RETENTION,
-                    "bootstrap": "cluster_by_family",
-                    "n_boot": N_BOOT,
-                    "seed": SEED,
-                }
-            )
+    for row_name, col_name, label in [
+        ("phi", "acc_canonical", "discriminant_phi_vs_canonical_accuracy"),
+        ("retention_w3", "acc_canonical", "discriminant_retention_vs_canonical_accuracy"),
+    ]:
+        sub = df[[row_name, col_name, "family"]].dropna()
+        n = len(sub)
+        if n < 3:
+            rho, lo, hi, p = float("nan"), float("nan"), float("nan"), float("nan")
+        else:
+            rho, lo, hi = _cluster_bootstrap_spearman(df, row_name, col_name)
+            _, p = stats.spearmanr(sub[row_name], sub[col_name])
+        rows.append(
+            {
+                "analysis": label,
+                "row_construct": row_name.replace("_w3", ""),
+                "col_construct": "canonical_accuracy",
+                "spearman_rho": round(rho, 3) if rho == rho else "",
+                "ci_low": round(lo, 3) if lo == lo else "",
+                "ci_high": round(hi, 3) if hi == hi else "",
+                "p_value": round(float(p), 3) if p == p else "",
+                "n_cells": n,
+                "can_acc_floor": MIN_CANONICAL_FOR_RETENTION,
+                "bootstrap": "cluster_by_family",
+                "n_boot": N_BOOT,
+                "seed": SEED,
+                "note": (
+                    "retention-vs-phi omitted — same contingency table, not independent evidence"
+                    if row_name == "phi"
+                    else ""
+                ),
+            }
+        )
 
     out = pd.DataFrame(rows)
     out.to_csv(OUT, index=False)
-    print(f"Wrote {OUT} ({len(out)} cells)")
-    print(out.pivot(index="row_construct", columns="col_construct", values="spearman_rho").to_string())
+    print(f"Wrote {OUT} ({len(out)} rows)")
+    print(out.to_string(index=False))
 
 
 if __name__ == "__main__":
