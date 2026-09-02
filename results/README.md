@@ -10,6 +10,8 @@ Paths: `probes/common/results_paths.py`
 
 Probe 1 failure counts (included=True rescored rows, five paper models): `python scripts/consolidate/p1_failure_patterns.py` → `derived/P1_failure_patterns.csv`. Shared-hard, model-specific, canonical-vs-W3 2×2+phi, length/difficulty/subtype fail rates, BW W3-only successes by `chosen_domain`. Counts only.
 
+After verifier/CI/bank fixes, re-emit Probe 1 tables with `python scripts/consolidate/emit_paper_p1_tables.py` (`paper/tables/table3_gsm_p1.tex`, `paper/tables/table7_pervariant.tex`). Display-rounded cells that moved vs the previous draft: `derived/PAPER_NUMBER_DELTAS.csv`.
+
 ---
 
 ## Artifact registry (tagged index)

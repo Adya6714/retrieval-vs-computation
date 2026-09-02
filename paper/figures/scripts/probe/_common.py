@@ -17,12 +17,12 @@ GREEN = "#10B981"
 GRAY = "#9CA3AF"
 
 MODEL_ORDER = [
-    "anthropic/claude-3.7-sonnet",
+    "anthropic/claude-sonnet-4",
     "openai/gpt-4o",
     "meta-llama/llama-3.1-8b-instruct",
 ]
 MODEL_LABELS = {
-    "anthropic/claude-3.7-sonnet": "Claude",
+    "anthropic/claude-sonnet-4": "Claude",
     "openai/gpt-4o": "GPT-4o",
     "meta-llama/llama-3.1-8b-instruct": "Llama",
 }
@@ -47,7 +47,7 @@ def load_csv_candidate(paths: Iterable[str]) -> pd.DataFrame:
 def load_behavioral() -> pd.DataFrame:
     df = load_csv_candidate(
         [
-            "results/raw/BW_P1_behavioral.csv",
+            "results/derived/BW_P1_behavioral_rescored.csv",
             "results/raw/BW_P1_behavioral.csv",
             "results/behavioral_sweep.csv",
             "data/BW_RES_P1_behavioral_sweep.csv",
@@ -56,9 +56,14 @@ def load_behavioral() -> pd.DataFrame:
     )
     if "problem_id" in df.columns:
         df = df[~df["problem_id"].astype(str).str.contains("_W5_TEMP", na=False)].copy()
+        df = df[df["problem_id"].astype(str).str.match(r"^(BW_|MBW_)")].copy()
     if "model" in df.columns:
         df = df[df["model"].astype(str) != "meta-llama/llama-3-8b-instruct"].copy()
         df = df[df["model"].astype(str).str.lower() != "mock"].copy()
+    if "included" in df.columns:
+        df = df[df["included"].astype(str).str.strip().str.lower().eq("true")].copy()
+    if "rescored_correct" in df.columns:
+        df["behavioral_correct"] = df["rescored_correct"]
     return df
 
 

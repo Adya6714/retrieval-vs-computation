@@ -43,6 +43,7 @@ from probes.behavioral.retention import (  # noqa: E402
 from probes.common.exclusions import filter_excluded  # noqa: E402
 from probes.common.clones import cluster_ids_for  # noqa: E402
 from probes.common.stats import cluster_bootstrap_ci  # noqa: E402
+from probes.common.variants import normalize_variant as _norm_variant  # noqa: E402
 from triangulation_rule import (  # noqa: E402
     APPENDIX_CCI_COMPUTATION_MIN,
     APPENDIX_CCI_RETRIEVAL_MAX,
@@ -440,16 +441,40 @@ def load_banks() -> dict:
 # P1 loaders
 # ---------------------------------------------------------------------------
 
+def filter_p1_to_bank(df: pd.DataFrame, family: str) -> pd.DataFrame:
+    """Keep only problem_id×variant_type pairs present in the question bank."""
+    names = {
+        "GSM": "question_bank_gsm.csv",
+        "ALGO": "question_bank_algo.csv",
+        "BW": "question_bank_bw.csv",
+    }
+    bank = _read(DATA / names[family])
+    if df.empty or bank.empty:
+        return df
+    bank["variant_type"] = bank["variant_type"].map(_norm_variant)
+    keys = bank[["problem_id", "variant_type"]].drop_duplicates()
+    out = df.copy()
+    out["variant_type"] = out["variant_type"].map(_norm_variant)
+    return out.merge(keys, on=["problem_id", "variant_type"], how="inner")
+
+
 def load_algo_p1(tag: str) -> pd.DataFrame:
-    df = _read(RAW / f"ALGO_P1_behavioral_{tag}.csv")
+    derived = ROOT / "results" / "derived" / f"ALGO_P1_behavioral_{tag}_rescored.csv"
+    df = _read(derived if derived.exists() else RAW / f"ALGO_P1_behavioral_{tag}.csv")
     if df.empty:
         return df
     df = _drop_mock(df)
     df = df[df["model"].isin(REAL_MODELS)] if "model" in df.columns else df
     df["variant_type"] = df["variant_type"].map(_norm_variant)
-    df = df[_valid_mask(df)]
+    if "included" in df.columns:
+        df = df[_is_true(df["included"])]
+    else:
+        df = df[_valid_mask(df)]
     df = df.drop_duplicates(["problem_id", "variant_type"], keep="last")
-    df["ok"] = _correct(df)
+    if "rescored_correct" in df.columns:
+        df["ok"] = _is_true(df["rescored_correct"])
+    else:
+        df["ok"] = _correct(df)
     df["model_short"] = df["model"].map(_short) if "model" in df.columns else tag
     df["subtype"] = df["problem_id"].map(_algo_subtype)
     df["slice"] = df["problem_id"].map(_algo_slice)
@@ -463,6 +488,7 @@ def load_gsm_p1(tag: str) -> pd.DataFrame:
     df = _drop_mock(df)
     df["variant_type"] = df["variant_type"].map(_norm_variant)
     df = filter_p1_to_bank(df, "GSM")
+    df = filter_excluded(df, family="GSM")
     df = df[_valid_mask(df)]
     df = df.drop_duplicates(["problem_id", "variant_type"], keep="last")
     df["ok"] = _correct(df)
@@ -472,10 +498,19 @@ def load_gsm_p1(tag: str) -> pd.DataFrame:
 
 def load_bw_p1(bw_ids: set[str]) -> pd.DataFrame:
     parts = []
-    for name in ["BW_P1_behavioral.csv", "BW_P1_behavioral_gemini.csv", "BW_P1_behavioral_o1mini.csv"]:
-        df = _read(RAW / name)
+    for name in [
+        "BW_P1_behavioral_rescored.csv",
+        "BW_P1_behavioral_gemini_rescored.csv",
+        "BW_P1_behavioral_o1mini_rescored.csv",
+    ]:
+        df = _read(ROOT / "results" / "derived" / name)
         if not df.empty:
             parts.append(df)
+    if not parts:
+        for name in ["BW_P1_behavioral.csv", "BW_P1_behavioral_gemini.csv", "BW_P1_behavioral_o1mini.csv"]:
+            df = _read(RAW / name)
+            if not df.empty:
+                parts.append(df)
     if not parts:
         return pd.DataFrame()
     df = pd.concat(parts, ignore_index=True)
@@ -483,9 +518,15 @@ def load_bw_p1(bw_ids: set[str]) -> pd.DataFrame:
     df = df[df["model"].isin(REAL_MODELS)]
     df["variant_type"] = df["variant_type"].map(_norm_variant)
     df = df[df["problem_id"].astype(str).isin(bw_ids)]
-    df = df[_valid_mask(df)]
+    if "included" in df.columns:
+        df = df[_is_true(df["included"])]
+    else:
+        df = df[_valid_mask(df)]
     df = df.drop_duplicates(["problem_id", "model", "variant_type"], keep="last")
-    df["ok"] = _correct(df)
+    if "rescored_correct" in df.columns:
+        df["ok"] = _is_true(df["rescored_correct"])
+    else:
+        df["ok"] = _correct(df)
     df["model_short"] = df["model"].map(_short)
     df["subtype"] = np.where(df["problem_id"].str.startswith("MBW_"), "mystery", "standard")
     return filter_excluded(df, family="BW")

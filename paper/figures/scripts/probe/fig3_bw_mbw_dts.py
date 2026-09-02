@@ -6,7 +6,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from analysis.figures._common import (
+from pathlib import Path
+import sys
+
+_FIG = Path(__file__).resolve().parent
+if str(_FIG) not in sys.path:
+    sys.path.insert(0, str(_FIG))
+
+from _common import (
     MODEL_LABELS,
     MODEL_ORDER,
     P1_PRIMARY_BLUE,

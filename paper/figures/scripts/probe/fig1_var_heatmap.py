@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 import matplotlib
 
 matplotlib.use("Agg")
@@ -7,7 +10,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
 
-from analysis.figures._common import (
+_FIG = Path(__file__).resolve().parent
+if str(_FIG) not in sys.path:
+    sys.path.insert(0, str(_FIG))
+
+from _common import (
     MODEL_LABELS,
     MODEL_ORDER,
     P1_PRIMARY_BLUE,

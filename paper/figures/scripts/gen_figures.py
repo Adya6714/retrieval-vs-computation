@@ -80,24 +80,27 @@ plt.rcParams.update(
 # ---------------------------------------------------------------------------
 # Data loaders
 # ---------------------------------------------------------------------------
-def _correct_col(df: pd.DataFrame) -> pd.Series:
-    """Return binary 'is-correct' series for either family schema."""
-    if "verified" in df.columns:
-        return df["verified"].fillna(False).astype(bool)
-    if "behavioral_correct" in df.columns:
-        return df["behavioral_correct"].fillna(False).astype(bool)
+def _is_ok_series(df: pd.DataFrame) -> pd.Series:
+    for c in ("rescored_correct", "verified", "behavioral_correct"):
+        if c in df.columns:
+            return df[c].astype(str).str.strip().str.lower().eq("true")
     raise KeyError("no correctness column in P1 file")
 
 
-def _read_algo_p1(slug: str) -> pd.DataFrame:
-    """ALGO P1 raw, deduped on (problem_id, variant_type).
+def _correct_col(df: pd.DataFrame) -> pd.Series:
+    """Return binary 'is-correct' series for either family schema."""
+    return _is_ok_series(df)
 
-    The o4-mini raw file is shared with legacy o1-mini rows; we filter
-    explicitly to the modern model name when ``slug == "o1mini"``.
-    """
-    df = pd.read_csv(RAW / f"ALGO_P1_behavioral_{slug}.csv")
+
+def _read_algo_p1(slug: str) -> pd.DataFrame:
+    """ALGO P1, preferring offline rescored labels when present."""
+    der = DER / f"ALGO_P1_behavioral_{slug}_rescored.csv"
+    path = der if der.exists() else RAW / f"ALGO_P1_behavioral_{slug}.csv"
+    df = pd.read_csv(path, dtype=str).fillna("")
     if slug == "o1mini":
         df = df[df.model.astype(str).str.contains("o4-mini", case=False, na=False)]
+    if "included" in df.columns:
+        df = df[df["included"].astype(str).str.strip().str.lower().eq("true")]
     df = df.drop_duplicates(subset=["problem_id", "variant_type"])
     return filter_excluded(df, family="ALGO")
 
@@ -172,6 +175,7 @@ def _gsm_p1_unified() -> pd.DataFrame:
         ("o1mini", "openai/o4-mini"),
     ]:
         df = pd.read_csv(RAW / f"GSM_P1_behavioral_{slug}.csv", dtype=str).fillna("")
+        df = filter_excluded(df, family="GSM")
         df = df[df["problem_id"].astype(str).isin(BANK_GSM)]
         resp = _gsm_response_series(df)
         df = df[~resp.str.startswith("ERROR")]

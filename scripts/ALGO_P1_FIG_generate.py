@@ -55,20 +55,23 @@ def _save(fig: plt.Figure, stem: str) -> None:
 
 def _load_behavioral() -> pd.DataFrame:
     paths = [
-        Path("results/raw/ALGO_P1_behavioral_claude.csv"),
-        Path("results/raw/ALGO_P1_behavioral_gpt4o.csv"),
-        Path("results/raw/ALGO_P1_behavioral_llama.csv"),
+        Path("results/derived/ALGO_P1_behavioral_claude_rescored.csv"),
+        Path("results/derived/ALGO_P1_behavioral_gpt4o_rescored.csv"),
+        Path("results/derived/ALGO_P1_behavioral_llama_rescored.csv"),
     ]
     for p in paths:
         if not p.exists():
             raise FileNotFoundError(p)
     df = pd.concat([pd.read_csv(p, dtype=str).fillna("") for p in paths], ignore_index=True)
     df = df[df["model"].astype(str).str.lower() != "mock"].copy()
-    required = {"problem_id", "variant_type", "model", "verified", "correct_canonical", "gave_greedy_answer"}
+    if "included" in df.columns:
+        df = df[df["included"].str.strip().str.lower().eq("true")].copy()
+    required = {"problem_id", "variant_type", "model", "correct_canonical", "gave_greedy_answer"}
     missing = required - set(df.columns)
     if missing:
         raise ValueError(f"behavioral files missing columns: {sorted(missing)}")
-    df["verified_bool"] = df["verified"].astype(str).str.strip().str.lower().map({"true": 1.0, "false": 0.0})
+    ok = df["rescored_correct"] if "rescored_correct" in df.columns else df["verified"]
+    df["verified_bool"] = ok.astype(str).str.strip().str.lower().map({"true": 1.0, "false": 0.0})
     return filter_excluded(df, family="ALGO")
 
 
