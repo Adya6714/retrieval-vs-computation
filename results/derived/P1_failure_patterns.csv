@@ -1,0 +1,73 @@
+section,family,key,count,n_problems,n_models,ids,stat,note
+shared_hard_canonical,ALGO,fail_all_five_paper_models,0,110,5,,,canonical included=True; all 5 paper models have a row and all fail
+shared_hard_canonical,ALGO,fail_all_models_with_a_row,0,110,5,,,canonical included=True; every paper model that has a row fails (min 2 models)
+model_specific_canonical,ALGO,fail_exactly_one_model,28,110,5,"CC_01,CC_03,CC_034,CC_05,CC_07,SP_004,SP_023,SP_024,SP_026,SP_031,SP_035,SP_044,SP_045,SP_047,SP_049,SP_050,SP_055,SP_056,SP_057,SP_058,SP_059,SP_060,SP_066,SP_068,SP_069,SP_070,SP_072,WIS_018",,canonical included=True; exactly one of the models with a row fails
+model_specific_canonical,ALGO,fail_only_Claude,1,110,5,WIS_018,,
+model_specific_canonical,ALGO,fail_only_Gemini,1,110,5,SP_066,,
+model_specific_canonical,ALGO,fail_only_GPT-4o,1,110,5,CC_07,,
+model_specific_canonical,ALGO,fail_only_Llama,25,110,5,"CC_01,CC_03,CC_034,CC_05,SP_004,SP_023,SP_024,SP_026,SP_031,SP_035,SP_044,SP_045,SP_047,SP_049,SP_050,SP_055,SP_056,SP_057,SP_058,SP_059,SP_060,SP_068,SP_069,SP_070,SP_072",,
+model_specific_canonical,ALGO,fail_only_o4-mini,0,110,5,,,
+shared_hard_canonical,BW,fail_all_five_paper_models,14,64,5,"MBW_001,MBW_002,MBW_014,MBW_037,MBW_10,MBW_100,MBW_127,MBW_185,MBW_495,MBW_496,MBW_497,MBW_498,MBW_499,MBW_500",,canonical included=True; all 5 paper models have a row and all fail
+shared_hard_canonical,BW,fail_all_models_with_a_row,14,64,5,"MBW_001,MBW_002,MBW_014,MBW_037,MBW_10,MBW_100,MBW_127,MBW_185,MBW_495,MBW_496,MBW_497,MBW_498,MBW_499,MBW_500",,canonical included=True; every paper model that has a row fails (min 2 models)
+model_specific_canonical,BW,fail_exactly_one_model,1,64,5,BW_511,,canonical included=True; exactly one of the models with a row fails
+model_specific_canonical,BW,fail_only_Claude,0,64,5,,,
+model_specific_canonical,BW,fail_only_Gemini,0,64,5,,,
+model_specific_canonical,BW,fail_only_GPT-4o,0,64,5,,,
+model_specific_canonical,BW,fail_only_Llama,1,64,5,BW_511,,
+model_specific_canonical,BW,fail_only_o4-mini,0,64,5,,,
+shared_hard_canonical,GSM,fail_all_five_paper_models,0,20,5,,,canonical included=True; all 5 paper models have a row and all fail
+shared_hard_canonical,GSM,fail_all_models_with_a_row,2,44,5,"GSM_052,GSM_060",,canonical included=True; every paper model that has a row fails (min 2 models)
+model_specific_canonical,GSM,fail_exactly_one_model,8,44,5,"GSM_006,GSM_008,GSM_013,GSM_016,GSM_042,GSM_049,GSM_058,GSM_063",,canonical included=True; exactly one of the models with a row fails
+model_specific_canonical,GSM,fail_only_Claude,2,44,5,"GSM_013,GSM_058",,
+model_specific_canonical,GSM,fail_only_Gemini,0,44,5,,,
+model_specific_canonical,GSM,fail_only_GPT-4o,1,44,5,GSM_016,,
+model_specific_canonical,GSM,fail_only_Llama,2,44,5,"GSM_006,GSM_008",,
+model_specific_canonical,GSM,fail_only_o4-mini,3,44,5,"GSM_042,GSM_049,GSM_063",,
+can_vs_w3,ALGO,Claude,100,100,1,ok_ok=57;ok_fail=11;fail_ok=4;fail_fail=28,0.682127,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,BW,Claude,60,60,1,ok_ok=2;ok_fail=9;fail_ok=4;fail_fail=45,0.129219,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,GSM,Claude,44,44,1,ok_ok=29;ok_fail=8;fail_ok=4;fail_fail=3,0.179374,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,ALGO,GPT-4o,102,102,1,ok_ok=23;ok_fail=20;fail_ok=4;fail_fail=55,0.522812,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,BW,GPT-4o,60,60,1,ok_ok=2;ok_fail=2;fail_ok=4;fail_fail=52,0.356348,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,GSM,GPT-4o,20,20,1,ok_ok=5;ok_fail=12;fail_ok=1;fail_fail=2,-0.030557,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,ALGO,Gemini,105,105,1,ok_ok=23;ok_fail=28;fail_ok=8;fail_fail=46,0.331808,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,BW,Gemini,60,60,1,ok_ok=6;ok_fail=19;fail_ok=2;fail_fail=33,0.265197,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,GSM,Gemini,44,44,1,ok_ok=21;ok_fail=19;fail_ok=2;fail_fail=2,0.014389,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,ALGO,Llama,109,109,1,ok_ok=0;ok_fail=5;fail_ok=2;fail_fail=102,-0.029977,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,BW,Llama,60,60,1,ok_ok=0;ok_fail=1;fail_ok=3;fail_fail=56,-0.029867,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,GSM,Llama,20,20,1,ok_ok=3;ok_fail=13;fail_ok=0;fail_fail=4,0.210042,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,ALGO,o4-mini,81,81,1,ok_ok=78;ok_fail=3;fail_ok=0;fail_fail=0,,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,BW,o4-mini,60,60,1,ok_ok=29;ok_fail=21;fail_ok=0;fail_fail=10,0.432547,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+can_vs_w3,GSM,o4-mini,44,44,1,ok_ok=35;ok_fail=2;fail_ok=2;fail_fail=5,0.660232,"2x2 can_fail x w3_fail; stat=phi; cells=ok_ok,ok_fail,fail_ok,fail_fail"
+correlate_length,ALGO,pointbiserial_fail_vs_text_len,265,550,5,,r=0.0896;p=0.03558,canonical included rows pooled over models
+fail_by_difficulty,ALGO,Easy,8,25,5,,0.3200,fail rate in stat
+fail_by_difficulty,ALGO,Hard,10,25,5,,0.4000,fail rate in stat
+fail_by_difficulty,ALGO,Medium,14,25,5,,0.5600,fail rate in stat
+fail_by_difficulty,ALGO,hard,171,380,5,,0.4500,fail rate in stat
+fail_by_difficulty,ALGO,medium,62,95,5,,0.6526,fail rate in stat
+fail_by_subtype,ALGO,coin_change,68,125,5,,0.5440,fail rate in stat
+fail_by_subtype,ALGO,shortest_path,99,275,5,,0.3600,fail rate in stat
+fail_by_subtype,ALGO,wis,98,150,5,,0.6533,fail rate in stat
+correlate_length,BW,pointbiserial_fail_vs_text_len,229,320,5,,r=-0.0735;p=0.1899,canonical included rows pooled over models
+fail_by_difficulty,BW,easy,73,110,5,,0.6636,fail rate in stat
+fail_by_difficulty,BW,hard,86,105,5,,0.8190,fail rate in stat
+fail_by_difficulty,BW,medium,70,105,5,,0.6667,fail rate in stat
+fail_by_subtype,BW,blocksworld,159,250,5,,0.6360,fail rate in stat
+fail_by_subtype,BW,mystery_blocksworld,70,70,5,,1.0000,fail rate in stat
+correlate_length,GSM,pointbiserial_fail_vs_text_len,25,172,5,,r=0.1021;p=0.1825,canonical included rows pooled over models
+fail_by_difficulty,GSM,easy,1,37,5,,0.0270,fail rate in stat
+fail_by_difficulty,GSM,hard,15,64,5,,0.2344,fail rate in stat
+fail_by_difficulty,GSM,medium,9,71,5,,0.1268,fail rate in stat
+fail_by_subtype,GSM,gsm_p1p2,5,25,5,,0.2000,fail rate in stat
+fail_by_subtype,GSM,gsm_symbolic,20,147,5,,0.1361,fail rate in stat
+bw_w3_only_success,BW,n_problem_ids,10,10,4,"BW_497,BW_498,BW_503,BW_507,BW_510,BW_512,BW_E002,BW_E017,BW_E100,BW_E_003",,classic=10;mystery=0; all included BW/MBW pids
+bw_w3_only_success,BW,n_model_problem_pairs,13,10,4,,,all included BW/MBW pids
+bw_w3_only_success_domain,BW,hr_org,4,10,4,pairs=6,6,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_domain,BW,library,2,10,4,pairs=3,3,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_domain,BW,military,1,10,4,pairs=1,1,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_domain,BW,unknown,3,10,4,pairs=3,3,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_planbench65,BW,n_problem_ids,10,10,4,"BW_497,BW_498,BW_503,BW_507,BW_510,BW_512,BW_E002,BW_E017,BW_E100,BW_E_003",,classic=10;mystery=0; restricted to 65 PlanBench canonical bank IDs
+bw_w3_only_success_planbench65,BW,n_model_problem_pairs,13,10,4,,,restricted to 65 PlanBench canonical bank IDs
+bw_w3_only_success_domain_planbench65,BW,hr_org,4,10,4,pairs=6,6,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_domain_planbench65,BW,library,2,10,4,pairs=3,3,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_domain_planbench65,BW,military,1,10,4,pairs=1,1,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
+bw_w3_only_success_domain_planbench65,BW,unknown,3,10,4,pairs=3,3,count=unique problem_ids; stat=model-problem pairs; chosen_domain from W3 notes
