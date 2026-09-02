@@ -1,0 +1,13 @@
+section,model,metric,n_pairs,canonical_mean,w6_mean,delta_w6_minus_canonical,w6_easier_if,direction
+structural_matched,--,num_blocks,47,6.191,6.447,0.255,w6_lower,w6_harder
+structural_matched,--,n_goal_clauses,47,5.191,6.234,1.043,w6_lower,w6_harder
+structural_matched,--,goal_tower_depth,47,6.191,6.447,0.255,w6_lower,w6_harder
+structural_matched,--,init_tower_depth,47,1.021,1.0,-0.021,w6_lower,w6_easier
+structural_matched,--,fd_optimal_plan_length,47,10.34,10.894,0.553,w6_lower,w6_harder
+structural_matched,--,gold_plan_length,47,10.34,10.894,0.553,w6_lower,w6_harder
+accuracy_matched,Claude,accuracy,47,0.17,0.638,0.468,w6_higher,w6_easier
+accuracy_matched,GPT-4o,accuracy,47,0.085,0.255,0.17,w6_higher,w6_easier
+accuracy_matched,Gemini,accuracy,47,0.489,0.404,-0.085,w6_higher,w6_harder
+accuracy_matched,Llama,accuracy,47,0.021,0.021,0.0,w6_higher,matched
+accuracy_matched,o4-mini,accuracy,47,1.0,1.0,0.0,w6_higher,matched
+accuracy_matched,DeepSeek,accuracy,47,0.702,0.936,0.234,w6_higher,w6_easier
