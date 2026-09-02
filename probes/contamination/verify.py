@@ -33,6 +33,32 @@ def parse_action_mapping_from_notes(notes: str | None) -> dict[str, str] | None:
     return None
 
 
+def parse_entity_mapping_from_notes(notes: str | None) -> dict[str, str] | None:
+    """Extract W3 ``entity_mapping`` (node id → label) from a question-bank ``notes`` field.
+
+    ``generate_w3`` persists the mapping as JSON in ``notes`` (often after a
+    `` | `` prefix), the same way BW ``action_mapping`` is stored. Returns None
+    when no mapping is stored.
+    """
+    text = str(notes or "").strip()
+    if not text or "entity_mapping" not in text:
+        return None
+    decoder = json.JSONDecoder()
+    for i, ch in enumerate(text):
+        if ch != "{":
+            continue
+        try:
+            blob, _end = decoder.raw_decode(text[i:])
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(blob, dict):
+            continue
+        raw = blob.get("entity_mapping")
+        if isinstance(raw, dict) and raw:
+            return {str(k): str(v) for k, v in raw.items()}
+    return None
+
+
 _BW_MAPPING_KEYS = {"pick-up", "put-down", "stack", "unstack"}
 
 _MYSTERY_ACTION_SIG = re.compile(

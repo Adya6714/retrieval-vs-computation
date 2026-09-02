@@ -24,7 +24,7 @@ def _set_meta(**kwargs: Any) -> None:
 
 def _parse_params(difficulty_params: str | dict[str, Any]) -> dict[str, Any]:
     if isinstance(difficulty_params, dict):
-        return difficulty_params
+        return dict(difficulty_params)
     if not isinstance(difficulty_params, str):
         raise ValueError("difficulty_params must be JSON string or dict.")
     try:
@@ -34,6 +34,84 @@ def _parse_params(difficulty_params: str | dict[str, Any]) -> dict[str, Any]:
     if not isinstance(parsed, dict):
         raise ValueError("difficulty_params JSON must decode to an object.")
     return parsed
+
+
+_SP_NODE_TO_EDGE = re.compile(
+    r"Node\s+(.+?)\s+to\s+Node\s+(.+?)\s*:\s*(-?\d+)",
+    flags=re.IGNORECASE,
+)
+_SP_HUB_EDGE = re.compile(
+    r"((?:Hub|Destination)\s+[A-Z])\s*(?:→|->)\s*((?:Hub|Destination)\s+[A-Z])\s*:\s*(-?\d+)",
+    flags=re.IGNORECASE,
+)
+_SP_FINAL_PATH_COST = re.compile(
+    r"Path\s*:\s*([^\n]+?)\s*,\s*Cost\s*[:=]\s*(-?\d+)",
+    flags=re.IGNORECASE,
+)
+
+
+def recover_sp_node_mapping(
+    problem_text: str | None,
+    difficulty_params: str | dict[str, Any],
+) -> dict[str, str] | None:
+    """Recover id→label mapping from W3 problem_text aligned to the numeric graph.
+
+    Parses renamed edges from the prompt and matches them to ``graph`` by
+    position and weight sequence. Used when notes did not persist entity_mapping
+    and difficulty_params.node_mapping is empty or still the canonical labels.
+    """
+    params = _parse_params(difficulty_params)
+    graph = params.get("graph") or []
+    text = str(problem_text or "")
+    if not graph or not text:
+        return None
+    text_edges: list[tuple[str, str, int]] = [
+        (a.strip(), b.strip(), int(w)) for a, b, w in _SP_NODE_TO_EDGE.findall(text)
+    ]
+    if not text_edges:
+        text_edges = [
+            (a.strip(), b.strip(), int(w)) for a, b, w in _SP_HUB_EDGE.findall(text)
+        ]
+    if len(text_edges) != len(graph):
+        return None
+    graph_weights = [int(e["w"]) for e in graph]
+    if [w for _a, _b, w in text_edges] != graph_weights:
+        return None
+    mapping: dict[str, str] = {}
+    for (lu, lv, _w), edge in zip(text_edges, graph):
+        mapping[str(int(edge["u"]))] = lu
+        mapping[str(int(edge["v"]))] = lv
+    return mapping or None
+
+
+def resolve_sp_node_mapping(
+    difficulty_params: str | dict[str, Any],
+    *,
+    notes: str | None = None,
+    problem_text: str | None = None,
+) -> dict[str, str]:
+    """Prefer stored W3 entity_mapping; fall back to params, then text recovery."""
+    from probes.contamination.verify import parse_entity_mapping_from_notes
+
+    params = _parse_params(difficulty_params)
+    existing = params.get("node_mapping") or {}
+    existing_map = (
+        {str(k): str(v) for k, v in existing.items()}
+        if isinstance(existing, dict)
+        else {}
+    )
+    text_l = str(problem_text or "").lower()
+    if existing_map and text_l:
+        hits = sum(1 for v in existing_map.values() if str(v).strip() and str(v).lower() in text_l)
+        if hits >= 2:
+            return existing_map
+    from_notes = parse_entity_mapping_from_notes(notes)
+    if from_notes:
+        return from_notes
+    recovered = recover_sp_node_mapping(problem_text, params)
+    if recovered:
+        return recovered
+    return existing_map
 
 
 def _parse_cc_ground_truth_count(ground_truth: str) -> int:
@@ -277,18 +355,22 @@ def verify_sp(
     text = re.sub(r"\s+", " ", text).strip()
 
     parse_status = "parsed_clean"
+    final_path_hits = list(_SP_FINAL_PATH_COST.finditer(text_raw.replace("→", "->")))
+    final_path_line = final_path_hits[-1].group(1).strip() if final_path_hits else None
+    final_path_cost = int(final_path_hits[-1].group(2)) if final_path_hits else None
 
-    # STEP 2: robust cost extraction.
-    claimed_cost: int | None = None
-    for pat in (r"cost\s*[:=]\s*(-?\d+)", r"total\s+cost\s*[:=]?\s*(-?\d+)"):
-        m = re.search(pat, text, flags=re.IGNORECASE)
-        if m:
-            claimed_cost = int(m.group(1))
-            break
-    all_ints = [int(x) for x in re.findall(r"-?\d+", text)]
-    if claimed_cost is None and all_ints:
-        claimed_cost = all_ints[-1]
-        parse_status = "parsed_with_normalization"
+    # Prefer the trailing Path: ... Cost: line over CoT arrow scans.
+    claimed_cost: int | None = final_path_cost
+    if claimed_cost is None:
+        for pat in (r"cost\s*[:=]\s*(-?\d+)", r"total\s+cost\s*[:=]?\s*(-?\d+)"):
+            m = re.search(pat, text, flags=re.IGNORECASE)
+            if m:
+                claimed_cost = int(m.group(1))
+                break
+        all_ints = [int(x) for x in re.findall(r"-?\d+", text)]
+        if claimed_cost is None and all_ints:
+            claimed_cost = all_ints[-1]
+            parse_status = "parsed_with_normalization"
     if claimed_cost is None:
         _set_meta(parse_status="parse_failed")
         return False, "parse_failed: cost not found"
@@ -316,10 +398,13 @@ def verify_sp(
         _set_meta(parse_status="parse_failed")
         return False, f"parse_failed: {exc}"
 
-    # STEP 3/4: extract ALL arrow sequences and pick best candidate by claimed cost.
+    # Prefer arrows on the final Path: line; otherwise scan the full answer.
+    arrow_source = (
+        final_path_line.lower().replace("→", "->") if final_path_line is not None else text
+    )
     arrow_chunks = re.findall(
         r"([a-z0-9][a-z0-9 ]*(?:\s*->\s*[a-z0-9][a-z0-9 ]*)+)",
-        text,
+        arrow_source,
         flags=re.IGNORECASE,
     )
 
@@ -394,7 +479,8 @@ def verify_sp(
                 parse_state[0] = "parsed_with_normalization"
 
     # STEP 6 fallback: no usable arrow sequence, try numeric extraction.
-    if chosen_nodes is None:
+    # Do not harvest digits from CoT when a Path: line was present but unmapped.
+    if chosen_nodes is None and final_path_line is None:
         nums = [int(x) for x in re.findall(r"\d+", text)]
         if claimed_cost in nums:
             removed = False
@@ -682,6 +768,8 @@ def verify_algo(
     problem_subtype: str,
     variant_type: str,
     difficulty_params: str | dict[str, Any],
+    notes: str | None = None,
+    problem_text: str | None = None,
 ) -> tuple[bool, str, dict[str, Any]]:
     subtype = str(problem_subtype).strip().lower()
     variant = str(variant_type).strip()
@@ -696,7 +784,13 @@ def verify_algo(
                 model_answer, ground_truth, difficulty_params
             )
     elif subtype == "shortest_path":
-        verified, reason = verify_sp(model_answer, ground_truth, difficulty_params)
+        params = _parse_params(difficulty_params)
+        mapping = resolve_sp_node_mapping(
+            params, notes=notes, problem_text=problem_text
+        )
+        if mapping:
+            params["node_mapping"] = mapping
+        verified, reason = verify_sp(model_answer, ground_truth, params)
     elif subtype == "wis":
         verified, reason = verify_wis(model_answer, ground_truth, difficulty_params)
     elif subtype == "wis_independent_set":

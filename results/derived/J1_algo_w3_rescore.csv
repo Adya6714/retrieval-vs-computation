@@ -1,0 +1,16 @@
+model,subtype,variant,n,old_acc,new_acc,verdicts_changed,false_to_true,true_to_false
+Claude,shortest_path,W3,55,0.018182,0.927273,50,50,0
+Claude,coin_change,W3,20,0.45,0.45,0,0,0
+Claude,wis,W3,25,0.04,0.04,0,0,0
+GPT-4o,shortest_path,W3,55,0.363636,0.363636,0,0,0
+GPT-4o,coin_change,W3,24,0.291667,0.291667,0,0,0
+GPT-4o,wis,W3,23,0.0,0.0,0,0,0
+Llama,shortest_path,W3,54,0.0,0.0,0,0,0
+Llama,coin_change,W3,25,0.0,0.0,0,0,0
+Llama,wis,W3,30,0.066667,0.066667,0,0,0
+Gemini,shortest_path,W3,55,0.381818,0.4,1,1,0
+Gemini,coin_change,W3,25,0.28,0.28,0,0,0
+Gemini,wis,W3,25,0.08,0.08,0,0,0
+o4-mini,shortest_path,W3,55,0.872727,0.981818,6,6,0
+o4-mini,coin_change,W3,20,0.95,0.95,0,0,0
+o4-mini,wis,W3,6,0.833333,0.833333,0,0,0

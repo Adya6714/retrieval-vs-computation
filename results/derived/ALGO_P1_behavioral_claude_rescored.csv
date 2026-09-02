@@ -788,7 +788,7 @@ Cost: 18 + 6 = 24 mins
 
 The shortest path is 0 → 5 → 10 → 11 with a total cost of 17 minutes.
 
-Path: 0 -> 5 -> 10 -> 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=17, claimed=3",False
+Path: 0 -> 5 -> 10 -> 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_001,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 11 using Dijkstra's algorithm.
 
 Let me map out all the connections and their costs:
@@ -923,7 +923,7 @@ The shortest path is:
 Warehouse 0 → Stopover 5 → Crossing 10 → Customer 11
 Cost: 8 + 6 + 3 = 17 minutes
 
-Path: 0 → 5 → 10 → 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=17, claimed=8",False
+Path: 0 → 5 → 10 → 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W2,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_001,W3,anthropic/claude-sonnet-4,"I need to find the shortest path from Hub A to Destination L using Dijkstra's algorithm.
 
 Let me map out all the connections and their costs:
@@ -996,7 +996,7 @@ From various K paths:
 
 The shortest path is A→F→K→L with total cost 8+6+3 = 17.
 
-Path: A -> F -> K -> L, Cost: 17","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: A -> F -> K -> L, Cost: 17","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_001,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 11 in this weighted directed graph. I'll use Dijkstra's algorithm.
 
 First, let me organize the edges by source node:
@@ -1251,7 +1251,7 @@ After checking various combinations, the most efficient appears to be the main r
 
 Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Waypoint 21 → Summit Lodge 11
 
-Path: Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Waypoint 21 → Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Waypoint 21 → Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W2,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_002,W3,anthropic/claude-sonnet-4,"I need to find the shortest path from station 16 to station 11 using Dijkstra's algorithm.
 
 Let me first organize the connections from the given data:
@@ -1570,7 +1570,7 @@ Cost: 3 + 4 + 3 + 16 + 9 = 35 mins
 The shortest path appears to be:
 11 → 18 → 14 → 0 → 15 → 5 → 12 → 2 → 3 → 9
 
-Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 2 -> 3 -> 9, Cost: 31","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=31, claimed=3",False
+Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 2 -> 3 -> 9, Cost: 31","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=31, expected=22",False
 SP_003,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from Safe House 11 to Drop Point 9 in this directed graph. Let me use Dijkstra's algorithm to find the optimal route.
 
 Let me trace through the possible paths systematically:
@@ -1618,7 +1618,7 @@ Total: 3+4+3+4+3+9+9 = 35 mins
 Safe House 11 → Relay 18 (3) → Outpost 14 (4) → Junction 0 (3) → Crossing 15 (4) → Depot 5 (3) → Warehouse 12 (4) → Checkpoint 2 (3) → Overpass 3 (4) → Drop Point 9 (3)
 Total: 31 mins
 
-Path: Safe House 11 → Relay 18 → Outpost 14 → Junction 0 → Crossing 15 → Depot 5 → Warehouse 12 → Checkpoint 2 → Overpass 3 → Drop Point 9, Cost: 31","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Safe House 11 → Relay 18 → Outpost 14 → Junction 0 → Crossing 15 → Depot 5 → Warehouse 12 → Checkpoint 2 → Overpass 3 → Drop Point 9, Cost: 31","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=31, expected=22",False
 SP_003,W3,anthropic/claude-sonnet-4,"I need to find the shortest path from node 11 to node 9 using Dijkstra's algorithm.
 
 Let me trace through the algorithm:
@@ -1646,7 +1646,7 @@ Let me verify the costs:
 
 Total cost: 3 + 3 + 5 + 6 + 5 + 10 + 3 = 35
 
-Path: 11 -> 18 -> 19 -> 7 -> 8 -> 4 -> 3 -> 9, Cost: 35","Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 11 -> 18 -> 19 -> 7 -> 8 -> 4 -> 3 -> 9, Cost: 35","Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=35, expected=22",False
 SP_003,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from node 11 to node 9 in this weighted directed graph. I'll use Dijkstra's algorithm.
 
 Let me first organize the edges from node 11 and then build the graph structure:
@@ -1870,7 +1870,7 @@ Path 6: 0→7→5→9
 
 The shortest path is 0→3→6→4→5→9 with a total time of 8 hours.
 
-Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_004,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from Base Lodge 0 to Summit Hut 9, considering the time-dependent routes.
 
 Let me analyze all possible routes systematically:
@@ -1989,7 +1989,7 @@ Path 6: 0→7→5→9
 
 The optimal path is 0→3→6→4→5→9 with a total delay of 8ms.
 
-Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_004,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 9 in this time-dependent graph, where the cost is the total travel time.
 
 Let me analyze the edges systematically:
@@ -2059,7 +2059,7 @@ Let me verify Path 5 satisfies all constraints:
 - All edges exist in the graph ✓
 - Time-dependent conditions are correctly applied ✓
 
-**Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8**","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=8, claimed=17",False
+**Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8**","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_005,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 15 using Dijkstra's algorithm.
 
 Let me trace through the network systematically:
@@ -2127,7 +2127,7 @@ From node 14 (total 28):
 
 The shortest path is: 0 → 4 → 9 → 12 → 15 with total cost 33 mins.
 
-Path: 0 -> 4 -> 9 -> 15, Cost: 33","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 9 -> 15, Cost: 33","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=33, expected=32",False
 SP_005,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 15 in this directed graph using Dijkstra's algorithm.
 
 Let me build the graph and trace through the algorithm:
@@ -2198,7 +2198,7 @@ From node 14 (distance 28):
 The shortest path is: 0 → 4 → 9 → 11 → 13 → 14 → 15
 Total cost: 7 + 7 + 6 + 5 + 3 + 4 = 32
 
-Path: 0 -> 4 -> 9 -> 11 -> 13 -> 14 -> 15, Cost: 32","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=32, claimed=7",False
+Path: 0 -> 4 -> 9 -> 11 -> 13 -> 14 -> 15, Cost: 32","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",True,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_005,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from Central Reservoir 0 to Final Treatment Plant 15 using Dijkstra's algorithm.
 
 Let me map out all the connections and their costs:
@@ -2357,7 +2357,7 @@ Calculating the total cost:
 12→14: 6 (total: 33)
 14→15: 4 (total: 37)
 
-Path: 0 -> 4 -> 5 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 37","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=37, claimed=0",False
+Path: 0 -> 4 -> 5 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 37","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=37, expected=32",False
 SP_005,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 15 in this weighted directed graph. I'll use Dijkstra's algorithm to solve this.
 
 First, let me organize the edges by source node:
@@ -2447,7 +2447,7 @@ To reconstruct the path, I trace back:
 Wait, let me double-check this path: 0 → 3 → 9 → 15
 Cost: 8 + 8 + 6 = 22
 
-Path: 0 -> 3 -> 9 -> 15, Cost: 22","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 9 -> 15, Cost: 22","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=22, expected=32",False
 WIS_001,canonical,anthropic/claude-sonnet-4,"I need to find the maximum yield by selecting non-adjacent plots from a linear arrangement.
 
 This is a classic dynamic programming problem. Let me work through it systematically.
@@ -5960,7 +5960,7 @@ Cost: 1 + 1 + 12 + 4 = 18
 
 The shortest path is Berlin → Hamburg → Munich → Stuttgart → Cologne with cost 18.
 
-Path: Berlin -> Hamburg -> Munich -> Stuttgart -> Cologne, Cost: 18","Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Hamburg -> Munich -> Stuttgart -> Cologne, Cost: 18","Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=18, expected=12",False
 SP_019,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted graph using Dijkstra's algorithm.
 
 Let me organize the edges first:
@@ -6079,7 +6079,7 @@ Cost: 10 + 6 + 11 = 27
 
 The shortest path from 0 to 6 is through node 2.
 
-Path: 0 -> 2 -> 6, Cost: 5","Path: 0 -> 2 -> 6, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 6, Cost: 5","Path: 0 -> 2 -> 6, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_020,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 5 using the given directed graph.
 
 Let me trace through the possible paths from node 0 to node 5:
@@ -6128,7 +6128,7 @@ Total: 4 + 4 + 4 = 12
 
 The minimum cost path is 0 → 3 → 4 → 5 with a total cost of 12.
 
-Path: 0 -> 3 -> 4 -> 5, Cost: 12","Path: 0 -> 3 -> 4 -> 5, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 5, Cost: 12","Path: 0 -> 3 -> 4 -> 5, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_020,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 **Initial Setup:**
@@ -6207,7 +6207,7 @@ Comparing paths to Naples:
 
 The shortest path is through Florence and Bologna.
 
-Path: Rome -> Florence -> Bologna -> Naples, Cost: 12","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Rome -> Florence -> Bologna -> Naples, Cost: 12","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_020,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 5 in this weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -6471,7 +6471,7 @@ From Manchester (cost 9):
 
 The shortest path is London → Bristol → Birmingham → Edinburgh with cost 12.
 
-Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_021,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 using Dijkstra's algorithm.
 
 Let me organize the graph first. The edges are:
@@ -6720,7 +6720,7 @@ From Nagoya (cost 4):
 
 The shortest path is Tokyo → Kyoto → Nagoya → Kobe with total cost 5.
 
-Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5","Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (1,2) missing",False
+Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5","Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_023,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 5 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -6859,7 +6859,7 @@ Comparing all paths to node 7:
 
 The minimum cost path is 0→2→3→7 with total cost 5.
 
-Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_024,W2,anthropic/claude-sonnet-4,"I'll find the shortest path from node 0 to node 7 using Dijkstra's algorithm.
 
 Let me trace through the algorithm step by step:
@@ -6933,7 +6933,7 @@ Let me find possible paths from London to Cardiff:
 
 The shortest path is London → Reading → Bristol → Cardiff with a total cost of 5.
 
-Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_024,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in the given weighted graph using Dijkstra's algorithm.
 
 Let me first organize the edges with their weights:
@@ -7062,7 +7062,7 @@ Cost: 7 + 10 = 17
 
 Comparing all paths, the minimum cost is 5 via the path 0 → 2 → 3 → 8.
 
-Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_026,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 Let me start by organizing the graph structure:
@@ -7154,7 +7154,7 @@ Now I'll find all possible paths from Paris to Monaco and calculate their costs:
 
 The shortest path is Paris → Nice → Marseille → Monaco with a total cost of 5.
 
-Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5","Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5","Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_026,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in this weighted graph using Dijkstra's algorithm.
 
 Let me first organize the edges by their starting vertices:
@@ -7367,7 +7367,7 @@ Let me calculate possible paths from Tokyo to Fukuoka:
 
 The shortest path is Tokyo → Kyoto → Osaka → Fukuoka with cost 3.
 
-Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_027,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first organize the edges:
@@ -7417,7 +7417,7 @@ The shortest path from 0 to 6:
 - 1 → 6 (cost 1)
 - Total cost: 5 + (-3) + 1 = 3
 
-Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_027,W5,anthropic/claude-sonnet-4,"I need to find the shortest path from node 6 to node 0.
 
 Let me analyze the given road network. Since all roads are one-way, I need to check if there's any path from node 6 to node 0.
@@ -7566,7 +7566,7 @@ Let me calculate possible paths from Tokyo to Sendai:
 
 The shortest path is Tokyo → Kyoto → Osaka → Sendai with cost 3.
 
-Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_028,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 7 in the given weighted directed graph.
 
 Let me first understand the graph structure:
@@ -7767,7 +7767,7 @@ Let me calculate possible paths from London to Warsaw:
 
 The shortest path is London → Berlin → Paris → Warsaw with a total cost of 3.
 
-Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_029,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first organize the edges from the given set E:
@@ -7973,7 +7973,7 @@ Let me calculate possible paths from Berlin to Bremen:
 
 The shortest path is Berlin → Munich → Hamburg → Bremen with a total cost of 3.
 
-Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_030,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 7 in this weighted directed graph.
 
 Let me first understand the graph structure:
@@ -8170,7 +8170,7 @@ Cost: 5 + 20 + 37 = 62
 
 The first path is shorter.
 
-Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22","Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22","Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_031,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -8313,7 +8313,7 @@ Comparing the two possible paths to node 7:
 - 0 → 1 → 2 → 7 (cost: 57)
 - 0 → 4 → 5 → 6 → 7 (cost: 20)
 
-Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_032,W2,anthropic/claude-sonnet-4,"I'll find the shortest path from node 0 to node 7 using Dijkstra's algorithm.
 
 Let me first visualize the graph structure:
@@ -8396,7 +8396,7 @@ Cost: 5 + 4 + 3 + 8 = 20
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20","Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20","Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_032,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in this weighted graph using Dijkstra's algorithm.
 
 Let me first understand the graph structure:
@@ -8495,7 +8495,7 @@ Let me verify this is optimal by checking if there are other ways to reach node 
 - To reach node 4, I can go through node 5 (cost 2)
 - To reach node 5, I can go through node 0 (cost 3)
 
-Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9","Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9","Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_033,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given connections.
 
 Let me map out the available connections:
@@ -8522,7 +8522,7 @@ Comparing the two paths:
 
 The minimum cost path is Path 1.
 
-Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",False,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",True,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_033,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 in this directed graph.
 
 Let me first visualize the graph structure:
@@ -8577,7 +8577,7 @@ Cost: 1 + 5 + 9 + 4 + 4 = 23
 
 Comparing the two paths, Path 2 has a lower cost.
 
-Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",False,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",True,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_033,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in the given weighted graph.
 
 Let me first understand the graph structure:
@@ -8695,7 +8695,7 @@ From node 2:
 
 Looking for the shortest meaningful path that visits multiple nodes:
 
-Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10","Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10","Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_034,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given directed graph.
 
 Let me map out the connections:
@@ -8722,7 +8722,7 @@ Comparing the paths:
 
 The minimum cost path is 0 → 3 → 4 → 7 with cost 21.
 
-Path: 0 -> 3 -> 4 -> 7, Cost: 21","Path: 0 -> 3 -> 4 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 7, Cost: 21","Path: 0 -> 3 -> 4 -> 7, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_034,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 Let me first visualize the graph structure:
@@ -8790,7 +8790,7 @@ Comparing the costs:
 
 The shortest path is through Bristol and Bath.
 
-Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_034,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -8904,7 +8904,7 @@ Cost: 1 + 7 + 6 = 14
 
 The shortest path from 0 to 7 is through node 4 directly.
 
-Path: 0 -> 4 -> 7, Cost: 2","Path: 0 -> 4 -> 7, Cost: 2",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 7, Cost: 2","Path: 0 -> 4 -> 7, Cost: 2",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_035,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using Dijkstra's algorithm.
 
 Let me trace through the possible paths:
@@ -8938,7 +8938,7 @@ Comparing the paths to node 6:
 
 The minimum cost path is 0 → 1 → 4 → 6 with cost 19.
 
-Path: 0 -> 1 -> 4 -> 6, Cost: 19","Path: 0 -> 1 -> 4 -> 6, Cost: 19",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=19, claimed=7",False
+Path: 0 -> 1 -> 4 -> 6, Cost: 19","Path: 0 -> 1 -> 4 -> 6, Cost: 19",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_035,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 Let me trace through the algorithm step by step:
@@ -9015,7 +9015,7 @@ Comparing paths to Milan:
 
 The shortest path is through Paris and Lyon.
 
-Path: London -> Paris -> Lyon -> Milan, Cost: 19","Path: London -> Paris -> Lyon -> Milan, Cost: 19",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Lyon -> Milan, Cost: 19","Path: London -> Paris -> Lyon -> Milan, Cost: 19",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_035,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 6 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -9144,7 +9144,7 @@ Comparing the two paths:
 
 The minimum cost path is Path 1.
 
-Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=5",False
+Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_036,W2,anthropic/claude-sonnet-4,"I'll find the shortest path from node 0 to node 7 using the given weighted edges.
 
 Let me trace through the possible paths:
@@ -9191,7 +9191,7 @@ Cost: 5 + 1 + 1 + 1 + 4 = 12
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12","Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12","Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_036,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in the given weighted graph.
 
 Let me first understand the graph structure:
@@ -9430,7 +9430,7 @@ Cost: 1 + 1 + 12 + 4 = 18
 
 Comparing all paths, the shortest is Path 4: Madrid → Avila → Salamanca → Leon with cost 12.
 
-Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_037,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted graph using Dijkstra's algorithm.
 
 Let me organize the edges first:
@@ -9673,7 +9673,7 @@ Let me trace possible paths from Berlin to Budapest:
 
 The shortest path is Berlin → Munich → Vienna → Budapest with cost 12.
 
-Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12","Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12","Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_038,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me organize the edges first:
@@ -9827,7 +9827,7 @@ Cost: 9 + 12 = 21
 
 Comparing all paths, the minimum cost is 12.
 
-Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=1",False
+Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_039,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 **Initial Setup:**
@@ -9930,7 +9930,7 @@ Let me explore each path:
 
 The shortest path is London → Brussels → Geneva → Rome with a total cost of 12.
 
-Path: London -> Brussels -> Geneva -> Rome, Cost: 12","Path: London -> Brussels -> Geneva -> Rome, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Brussels -> Geneva -> Rome, Cost: 12","Path: London -> Brussels -> Geneva -> Rome, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_039,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 using Dijkstra's algorithm.
 
 Let me organize the edges first:
@@ -10192,7 +10192,7 @@ Let me calculate possible paths from London to Prague:
 
 The shortest path is London → Amsterdam → Berlin → Prague with cost 12.
 
-Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_040,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 using Dijkstra's algorithm.
 
 Let me organize the graph first. The edges are given as (source, destination, weight):
@@ -10418,7 +10418,7 @@ Checking other direct routes to Monaco:
 
 The shortest path is Paris → Marseille → Nice → Monaco with cost 5.
 
-Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_042,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in this weighted graph using Dijkstra's algorithm.
 
 Let me first understand the graph structure. The edges are given as (u,v,w) where u and v are vertices and w is the weight.
@@ -10553,7 +10553,7 @@ Cost: 9 + 11 = 20
 
 Comparing all paths, the shortest is Path 4: 0 → 2 → 3 → 6 with cost 5.
 
-Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_044,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 Let me set up the graph and find the shortest path from node 0 to node 6.
@@ -10624,7 +10624,7 @@ Let me calculate possible paths from London to Edinburgh:
 
 The shortest path is London -> Cambridge -> Birmingham -> Edinburgh with cost 5.
 
-Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_044,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 using Dijkstra's algorithm.
 
 Let me organize the graph first. The edges are given as (source, destination, weight):
@@ -10822,7 +10822,7 @@ Let me calculate all possible paths from Berlin to Paris:
 
 The shortest path has cost 3: Berlin → Vienna → Prague → Paris
 
-Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_045,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted directed graph using Dijkstra's algorithm or by examining all possible paths.
 
 Let me first understand the graph structure:
@@ -10959,7 +10959,7 @@ Comparing all paths:
 
 The minimum cost path is Path 3: 0 → 2 → 1 → 7 with cost 3.
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_046,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 in this directed graph with weighted edges.
 
 Let me organize the graph structure first:
@@ -11056,7 +11056,7 @@ I'll calculate possible paths from Paris to Lille:
 
 The shortest path is Paris → Marseille → Lyon → Lille with cost 3.
 
-Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_046,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in this weighted directed graph.
 
 Let me first understand the graph structure:
@@ -11299,7 +11299,7 @@ Let me calculate all possible paths from Paris to Lille:
 
 The shortest path is Paris → Marseille → Lyon → Lille with a total cost of 3.
 
-Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_047,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first organize the edges:
@@ -11480,7 +11480,7 @@ Let me calculate possible paths from London to Warsaw:
 
 The shortest path is London → Berlin → Paris → Warsaw with a total cost of 3.
 
-Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_048,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in the given weighted graph.
 
 Let me first understand the graph structure:
@@ -11601,7 +11601,7 @@ Cost: 3 + 2 + 5 = 10
 
 Comparing the paths, Path 2 has the minimum cost.
 
-Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_049,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given weighted edges.
 
 Let me first map out the graph structure:
@@ -11657,7 +11657,7 @@ Cost: 3 + 2 + 5 = 10
 
 Comparing the paths, Path 2 is shorter.
 
-Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_049,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -11710,7 +11710,7 @@ Let me apply Dijkstra's algorithm:
 - 6 → 8: weight 5
 - Total cost: 3 + 2 + 5 = 10
 
-Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_049,W5,anthropic/claude-sonnet-4,"I need to find the shortest path from node 8 to node 0 in this directed graph.
 
 Let me first map out the graph structure and then work backwards or use a pathfinding approach.
@@ -11780,7 +11780,7 @@ Let me find the shortest path from 0 to 8:
 0 -> 4 -> 6 -> 2 -> 7 -> 8
 Cost: 3 + 4 + 4 + 4 + 2 = 17
 
-Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17","Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17","Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_050,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given directed graph.
 
 Let me trace through the possible paths:
@@ -11809,7 +11809,7 @@ Comparing the viable paths:
 - Path 1 (0 → 1 → 2 → 7): Cost 47
 - Path 2 (0 → 3 → 4 → 5 → 7): Cost 11
 
-Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_050,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted edges.
 
 Let me first visualize the graph structure:
@@ -11861,7 +11861,7 @@ Cost: 4 + 2 + 3 + 2 = 11
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11","Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11","Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_050,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 using Dijkstra's algorithm.
 
 Let me first understand the graph:
@@ -11990,7 +11990,7 @@ Cost: 4 + 6 + 3 + 1 + 4 = 18
 
 Comparing the two paths, Path 2 has the minimum cost.
 
-Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_051,W2,anthropic/claude-sonnet-4,"I'll find the shortest path from node 0 to node 7 using Dijkstra's algorithm.
 
 Let me first visualize the graph structure:
@@ -12075,7 +12075,7 @@ Cost: 0 + 20 + 33 = 53
 
 Comparing the costs, Path 1 is shorter with a total cost of 18.
 
-Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_051,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 7 in the given weighted graph.
 
 Let me first understand the graph structure:
@@ -12194,7 +12194,7 @@ From node 5 to node 7:
 
 The shortest meaningful path I can find is from node 0 to node 7:
 
-Path: 0 -> 2 -> 3 -> 7, Cost: 6","Path: 0 -> 2 -> 3 -> 7, Cost: 6",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 3 -> 7, Cost: 6","Path: 0 -> 2 -> 3 -> 7, Cost: 6",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_052,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given connections and their costs.
 
 Let me map out all possible paths from node 0 to node 8:
@@ -12225,7 +12225,7 @@ Comparing the valid paths:
 
 The minimum cost path is Path 1.
 
-Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_052,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 in this weighted directed graph.
 
 Let me first map out the graph structure:
@@ -12284,7 +12284,7 @@ Cost: 3 + 1 + 4 + 1 + 2 = 11
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_052,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in this weighted graph using Dijkstra's algorithm.
 
 Let me first understand the graph structure:
@@ -12444,7 +12444,7 @@ Comparing the two paths:
 
 The minimum cost path is through nodes 1 and 2.
 
-Path: 0 -> 1 -> 2 -> 5, Cost: 25","Path: 0 -> 1 -> 2 -> 5, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 5, Cost: 25","Path: 0 -> 1 -> 2 -> 5, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_053,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 ## Graph Setup
@@ -12520,7 +12520,7 @@ Comparing the costs:
 
 The shortest path is through Munich and Vienna.
 
-Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_053,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 5 in the given weighted graph.
 
 Let me first understand the graph:
@@ -12616,7 +12616,7 @@ Starting from 0:
 This gives us a path: 0 -> 1 -> 3 -> 2 -> 4 -> 5
 Total cost: 2 + 3 + 4 + 2 + 2 = 13
 
-Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13","Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13","Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_054,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given connections.
 
 Let me trace through the possible paths:
@@ -12645,7 +12645,7 @@ Comparing the two paths:
 
 The shortest path is through nodes 0 → 1 → 3 → 4 → 6 → 7.
 
-Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=2",False
+Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_054,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted edges.
 
 Let me first visualize the graph structure:
@@ -12700,7 +12700,7 @@ Cost: 2 + 1 + 5 + 2 + 2 = 12
 
 Comparing the paths, Path 2 is shorter.
 
-Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12","Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12","Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_054,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in this weighted graph using Dijkstra's algorithm.
 
 Let me first understand the graph:
@@ -12811,7 +12811,7 @@ Total: 8
 
 This appears to be the shortest path from 0 to 7.
 
-Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8","Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8","Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_055,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 in this directed graph.
 
 Let me trace the possible paths from node 0 to node 6:
@@ -12833,7 +12833,7 @@ Comparing the two possible paths:
 - Path 1 (0 → 1 → 4 → 6): Cost = 54
 - Path 2 (0 → 2 → 3 → 5 → 6): Cost = 17
 
-Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=17, claimed=2",False
+Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_055,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 ## Graph Structure
@@ -12909,7 +12909,7 @@ Cost: 3 + 7 + 3 + 4 = 17
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17","Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17","Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_055,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph G = (V, E) where:
@@ -13038,7 +13038,7 @@ Comparing the paths:
 
 The minimum cost path is through nodes 1, 3, and 6.
 
-Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_056,W2,anthropic/claude-sonnet-4,"I'll find the shortest path from node 0 to node 7 using Dijkstra's algorithm.
 
 Let me first visualize the graph structure:
@@ -13121,7 +13121,7 @@ Comparing the costs:
 
 The shortest path is through Prague, Vienna, and Budapest.
 
-Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21","Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21","Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_056,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 7 using Dijkstra's algorithm.
 
 Let me first understand the graph:
@@ -13212,7 +13212,7 @@ Wait, the question asks for a path FROM node 7 TO node 0. Looking at the directe
 
 However, if this is asking for the reverse direction (0 to 7), the shortest path would be:
 
-Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21","Path: 7 -> 6 -> 3 -> 1 -> 0, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W5,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21","Path: 7 -> 6 -> 3 -> 1 -> 0, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W5,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_056,W6,anthropic/claude-sonnet-4,"I need to find the shortest path in this weighted directed graph. Let me first understand the graph structure and then determine what path is being asked for.
 
 Looking at the edges:
@@ -13263,7 +13263,7 @@ Comparing the costs:
 
 The minimum cost path is through nodes 1, 2, and 3.
 
-Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",False,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",True,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_057,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 Let me first visualize the graph structure:
@@ -13364,7 +13364,7 @@ Comparing the costs:
 
 The shortest path has a cost of 24.
 
-Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24","Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",False,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24","Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",True,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_057,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -13473,7 +13473,7 @@ From node 3:
 
 The most efficient path that connects multiple nodes appears to be:
 
-Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8","Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8","Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_058,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given directed graph with weights.
 
 Let me trace through the possible paths:
@@ -13506,7 +13506,7 @@ Cost: 7 + 10 + 3 = 20
 
 Comparing the paths, Path 2 has the minimum cost.
 
-Path: 0 -> 3 -> 5 -> 7, Cost: 20","Path: 0 -> 3 -> 5 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=20, claimed=2",False
+Path: 0 -> 3 -> 5 -> 7, Cost: 20","Path: 0 -> 3 -> 5 -> 7, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_058,W2,anthropic/claude-sonnet-4,"I'll solve this shortest path problem using Dijkstra's algorithm.
 
 First, let me visualize the graph:
@@ -13591,7 +13591,7 @@ Cost: 7 + 10 + 3 = 20
 
 Comparing the paths, Path 2 has the lowest cost.
 
-Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20","Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20","Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_058,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 7 in the given weighted graph.
 
 Let me first understand the graph structure:
@@ -13680,7 +13680,7 @@ From node 6:
 
 The most efficient path covering multiple nodes appears to be:
 
-Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11","Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11","Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_059,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given connections and their costs.
 
 Let me trace through the possible paths:
@@ -13707,7 +13707,7 @@ Comparing the two complete paths:
 
 The minimum cost path is through nodes 3, 4, 6, and 7.
 
-Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_059,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 in this weighted directed graph.
 
 Let me first map out the graph structure:
@@ -13764,7 +13764,7 @@ Comparing the valid paths:
 
 The shortest path is through Oxford, Reading, Swindon, and Bath.
 
-Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_059,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph:
@@ -13864,7 +13864,7 @@ From 0, I can go to:
 
 If I assume we want to reach all reachable nodes efficiently, the path 0 -> 1 -> 4 -> 8 gives us access to multiple nodes at minimum cost.
 
-Path: 0 -> 1 -> 4 -> 8, Cost: 9","Path: 0 -> 1 -> 4 -> 8, Cost: 9",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 4 -> 8, Cost: 9","Path: 0 -> 1 -> 4 -> 8, Cost: 9",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_060,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given connections and costs.
 
 Let me map out the connections:
@@ -13892,7 +13892,7 @@ Comparing the costs:
 
 The minimum cost path is Path 2.
 
-Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_060,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given weighted edges.
 
 Let me first map out the graph structure:
@@ -13953,7 +13953,7 @@ Comparing the costs:
 
 The shortest path is through Birmingham, Leicester, Nottingham, and Sheffield.
 
-Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_060,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 8 in the given weighted graph.
 
 Let me first understand the graph structure:
@@ -14052,7 +14052,7 @@ Path option: 0 → 2 → 7 → 4 → 5 → 8
 
 Total cost: 1 + 2 + 4 + 1 + 4 = 12
 
-Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12","Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12","Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_061,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given directed graph.
 
 Let me map out the connections:
@@ -14168,7 +14168,7 @@ Cost: 2 + 4 + 4 + 6 = 16
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16","Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16","Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_061,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in this weighted graph using Dijkstra's algorithm.
 
 Let me first understand the graph structure:
@@ -14460,7 +14460,7 @@ Step 6: From Madrid (cost 12)
 
 The shortest path is London → Paris → Berlin → Prague → Rome with total cost 12.
 
-Path: London -> Paris -> Berlin -> Prague -> Rome, Cost: 12","Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Paris -> Berlin -> Prague -> Rome, Cost: 12","Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=12",False
 SP_062,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted graph using Dijkstra's algorithm.
 
 Let me organize the graph first:
@@ -14750,7 +14750,7 @@ Step 6: Process node 6 (Manchester, dist = 8)
 The shortest path is: London → Reading → Bristol → Edinburgh
 Cost: 4 + 4 + 4 = 12
 
-Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12","Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12","Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_063,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in the given weighted graph using Dijkstra's algorithm.
 
 Let me first organize the edges by their starting vertices:
@@ -14963,7 +14963,7 @@ Let me explore possible paths from Berlin to Zagreb:
 
 The shortest path is Berlin → Munich → Budapest → Zagreb with cost 12.
 
-Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12","Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12","Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_064,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in the given weighted graph using Dijkstra's algorithm.
 
 Given graph G = (V, E) where:
@@ -15224,7 +15224,7 @@ distances = [0, 1, 4, 8, 2, 8, 12]
 The shortest path cost is 12. Tracing back:
 Edinburgh (6) ← Birmingham (5) ← Bristol (2) ← London (0)
 
-Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_065,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 using Dijkstra's algorithm.
 
 Let me organize the graph first:
@@ -15446,7 +15446,7 @@ Let me explore possible paths from Berlin to Dresden:
 
 The shortest path is Berlin → Munich → Frankfurt → Dresden with a total cost of 5.
 
-Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_066,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted graph using Dijkstra's algorithm.
 
 Given graph G = (V, E) where:
@@ -15590,7 +15590,7 @@ Cost: 8 + 10 = 18
 
 Comparing all paths, the shortest is Path 3: 0 → 2 → 3 → 8 with cost 5.
 
-Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_068,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using Dijkstra's algorithm.
 
 Let me organize the graph first:
@@ -15664,7 +15664,7 @@ Let me calculate possible paths from London to Edinburgh:
 
 The shortest path is London → Cambridge → Birmingham → Edinburgh with a total cost of 5.
 
-Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_068,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in this weighted graph using Dijkstra's algorithm.
 
 Let me first organize the edges from the given set E, where each tuple (u,v,w) represents an edge from u to v with weight w:
@@ -15780,7 +15780,7 @@ Cost: 7 + 9 = 16
 
 The minimum cost path is 0 → 2 → 3 → 7 with cost 5.
 
-Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_069,W2,anthropic/claude-sonnet-4,"I'll find the shortest path from node 0 to node 7 using Dijkstra's algorithm.
 
 Let me trace through the algorithm step by step:
@@ -15847,7 +15847,7 @@ Let me calculate possible paths from London to Munich:
 
 The shortest path is London → Brussels → Amsterdam → Munich with a total cost of 5.
 
-Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5","Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5","Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_069,W4,anthropic/claude-sonnet-4,"I need to find the minimum weight path from vertex 0 to vertex 7 using Dijkstra's algorithm.
 
 Let me organize the edges first:
@@ -16021,7 +16021,7 @@ Let me calculate possible paths from London to Prague:
 
 The shortest path is London → Berlin → Paris → Prague with a total cost of 3.
 
-Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_070,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first understand the graph structure:
@@ -16072,7 +16072,7 @@ Step 5: With updated dist[1] = 2:
 The shortest path is: 0 → 2 → 1 → 6
 Cost: 5 + (-3) + 1 = 3
 
-Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
+Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_070,W5,anthropic/claude-sonnet-4,"I need to find the shortest path from node 6 to node 0.
 
 Looking at the road network, I can see that all roads lead TO node 6 or FROM node 0, but there are no roads leading FROM node 6 to any other nodes, and no roads leading TO node 0 from any other nodes.
@@ -16106,7 +16106,7 @@ Cost: 15 + 15 + 2 + 1 = 33
 
 The shortest path from 0 to 6 is through nodes 1 and 2.
 
-Path: 0 -> 1 -> 2 -> 6, Cost: 4","Path: 0 -> 1 -> 2 -> 6, Cost: 4",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=4, claimed=1",False
+Path: 0 -> 1 -> 2 -> 6, Cost: 4","Path: 0 -> 1 -> 2 -> 6, Cost: 4",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_071,W1,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given directed graph with travel times.
 
 Let me analyze the possible paths from node 0 to node 8:
@@ -16237,7 +16237,7 @@ Let me calculate possible paths from Berlin to Warsaw:
 
 The shortest path is Berlin → Vienna → Prague → Warsaw with a total cost of 3.
 
-Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3","Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3","Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_071,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 8 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first understand the graph structure:
@@ -16282,7 +16282,7 @@ Comparing all paths:
 
 The minimum cost path is through vertices 0 → 2 → 1 → 8 with total cost 3.
 
-Path: 0 -> 2 -> 1 -> 8, Cost: 3","Path: 0 -> 2 -> 1 -> 8, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 1 -> 8, Cost: 3","Path: 0 -> 2 -> 1 -> 8, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_071,W5,anthropic/claude-sonnet-4,"I need to find the shortest path from node 8 to node 0.
 
 Looking at the road network, I need to trace backwards from node 8 to find a path to node 0.
@@ -16435,7 +16435,7 @@ Let me calculate possible paths from Paris to Strasbourg:
 
 The shortest path is Paris → Marseille → Lyon → Strasbourg with cost 3.
 
-Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_072,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 6 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first organize the edges:
@@ -16549,7 +16549,7 @@ Comparing all paths:
 
 The minimum cost path is 0 → 2 → 1 → 7 with a total cost of 3.
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=4, expected=3",False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_073,W2,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 in this directed graph with weighted edges.
 
 Let me first visualize the graph structure:
@@ -16622,7 +16622,7 @@ Let me calculate possible paths from Berlin to Paris:
 
 The shortest path is Berlin → Vienna → Prague → Paris with a total cost of 3.
 
-Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_073,W4,anthropic/claude-sonnet-4,"I need to find the shortest path from vertex 0 to vertex 7 in this weighted directed graph using Dijkstra's algorithm.
 
 Let me first organize the edges from the given set E:
@@ -22310,7 +22310,7 @@ Cost: 1 + 14 + 4 = 19
 
 The shortest path is 0 → 3 → 4 → 8 with a total cost of 12.
 
-Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=1",False
+Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_023,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 5 using the given weighted directed graph.
 
 Let me trace through the possible paths from node 0 to node 5:
@@ -22335,7 +22335,7 @@ Comparing all paths:
 
 The shortest path is 0 → 2 → 3 → 5 with cost 5.
 
-Path: 0 -> 2 -> 3 -> 5, Cost: 5","Path: 0 -> 2 -> 3 -> 5, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 5, Cost: 5","Path: 0 -> 2 -> 3 -> 5, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_024,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me trace through the possible paths systematically:
@@ -22432,7 +22432,7 @@ Total cost: 5 + (-3) + 1 = 3
 
 This is better than the direct path 0 → 1 → 7 which costs 4.
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_029,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me analyze the possible paths:
@@ -22480,7 +22480,7 @@ Comparing all paths:
 
 The shortest path is 0 → 2 → 1 → 7 with cost 3.
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=4, expected=3",False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 WIS_006,canonical,anthropic/claude-sonnet-4,"I need to find the maximum weight non-overlapping subset of intervals.
 
 Let me analyze the intervals and their conflicts:
@@ -23022,7 +23022,7 @@ Comparing the costs:
 
 The shortest path is Path 1 with cost 22.
 
-Path: 0 -> 1 -> 3 -> 8, Cost: 22","Path: 0 -> 1 -> 3 -> 8, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=22, claimed=9",False
+Path: 0 -> 1 -> 3 -> 8, Cost: 22","Path: 0 -> 1 -> 3 -> 8, Cost: 22",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_032,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23055,7 +23055,7 @@ Comparing the valid paths:
 
 The shortest path is 0 → 4 → 5 → 6 → 7 with cost 20.
 
-Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_033,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23076,7 +23076,7 @@ Comparing the paths:
 
 The shortest path is through nodes 1, 2, 3, 4.
 
-Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",False,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=23, claimed=1",False
+Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",True,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_034,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given road network.
 
 Let me map out the connections:
@@ -23103,7 +23103,7 @@ Comparing the costs:
 
 The shortest path is 0 → 3 → 4 → 7 with cost 21.
 
-Path: 0 -> 3 -> 4 -> 7, Cost: 21","Path: 0 -> 3 -> 4 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 7, Cost: 21","Path: 0 -> 3 -> 4 -> 7, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_035,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using the given road network.
 
 Let me map out the connections:
@@ -23129,7 +23129,7 @@ Comparing the paths:
 
 The shortest path is 0 → 1 → 4 → 6 with cost 19.
 
-Path: 0 -> 1 -> 4 -> 6, Cost: 19","Path: 0 -> 1 -> 4 -> 6, Cost: 19",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 4 -> 6, Cost: 19","Path: 0 -> 1 -> 4 -> 6, Cost: 19",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_036,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given directed graph.
 
 Let me map out the connections:
@@ -23152,7 +23152,7 @@ Cost: 5 + 1 + 1 + 1 + 4 = 12
 
 Comparing the two paths, Path 2 has the lower cost.
 
-Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_037,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using Dijkstra's algorithm.
 
 Let me trace through the algorithm:
@@ -23234,7 +23234,7 @@ Cost: 1 + 14 + 4 = 19
 
 The shortest path is 0 → 3 → 4 → 8 with a total cost of 12.
 
-Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=1",False
+Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_039,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using Dijkstra's algorithm.
 
 Let me trace through the possible paths:
@@ -23271,7 +23271,7 @@ Cost: 1 + 14 + 4 = 19
 
 The shortest path is 0 → 3 → 4 → 8 with cost 12.
 
-Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=1",False
+Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_040,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using Dijkstra's algorithm.
 
 Let me trace through the possible paths:
@@ -23345,7 +23345,7 @@ Cost: 9 + 11 = 20
 
 Comparing all paths, the shortest is 0 → 2 → 3 → 8 with cost 5.
 
-Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_044,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using the given road network.
 
 Let me analyze the possible paths from node 0 to node 6:
@@ -23490,7 +23490,7 @@ Comparing the paths:
 - Path 1: 0 → 1 → 2 → 8, Cost: 46
 - Path 2: 0 → 4 → 6 → 8, Cost: 10
 
-Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=10, claimed=1",False
+Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_050,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23512,7 +23512,7 @@ Comparing the valid paths:
 - Path 1: Cost 47
 - Path 2: Cost 11
 
-Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=11, claimed=1",False
+Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_051,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23535,7 +23535,7 @@ Comparing the paths:
 
 The shortest path is through node 1.
 
-Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=4",False
+Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_052,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23560,7 +23560,7 @@ Comparing the viable paths:
 
 The shortest path is via nodes 1, 2, 5, 6.
 
-Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_053,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 5 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23587,7 +23587,7 @@ Comparing the costs:
 
 The shortest path has cost 25.
 
-Path: 0 -> 1 -> 2 -> 5, Cost: 25","Path: 0 -> 1 -> 2 -> 5, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 5, Cost: 25","Path: 0 -> 1 -> 2 -> 5, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_054,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23604,7 +23604,7 @@ Cost: 0 + 20 + 27 = 47
 
 Comparing the paths, Path 1 has the lower cost.
 
-Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=2",False
+Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_055,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using the given weighted directed edges.
 
 Let me trace through the possible paths:
@@ -23628,7 +23628,7 @@ Path 2: 0 → 2 → 3 → 5 → 6
 
 Comparing the paths, Path 2 has the lower cost.
 
-Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=17, claimed=2",False
+Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_056,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given road network.
 
 Let me trace through the possible paths:
@@ -23659,7 +23659,7 @@ Comparing the valid paths:
 
 The shortest path is through nodes 1, 3, and 6.
 
-Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=21, claimed=3",False
+Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_057,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23685,7 +23685,7 @@ Comparing the paths:
 - Path 1 (0 → 1 → 2 → 3 → 6): cost 24
 - Path 2 (0 → 4 → 5 → 6): cost 61
 
-Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",False,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",True,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_058,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given road network.
 
 Let me trace through the possible paths:
@@ -23718,7 +23718,7 @@ Comparing the viable paths:
 
 The shortest path is 0 -> 3 -> 5 -> 7 with cost 20.
 
-Path: 0 -> 3 -> 5 -> 7, Cost: 20","Path: 0 -> 3 -> 5 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=20, claimed=2",False
+Path: 0 -> 3 -> 5 -> 7, Cost: 20","Path: 0 -> 3 -> 5 -> 7, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_059,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given weighted directed graph.
 
 Let me trace through the possible paths:
@@ -23748,7 +23748,7 @@ Comparing the viable paths:
 - Path 1: Cost 63
 - Path 2: Cost 25
 
-Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_060,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given road network.
 
 Let me trace through the possible paths:
@@ -23775,7 +23775,7 @@ Comparing the two paths:
 - Path 1: Cost 45
 - Path 2: Cost 10
 
-Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=10, claimed=0",False
+Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_061,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 7 using the given road network.
 
 Let me map out the available paths:
@@ -23805,7 +23805,7 @@ Comparing the viable paths:
 
 The shortest path is 0 → 1 → 2 → 5 → 7 with cost 16.
 
-Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_062,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using Dijkstra's algorithm.
 
 Let me trace through the possible paths:
@@ -23880,7 +23880,7 @@ Cost: 1 + 1 + 24 = 26
 
 The shortest path is 0 → 3 → 4 → 8 with cost 12.
 
-Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=1",False
+Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_064,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 6 using Dijkstra's algorithm.
 
 Let me trace through the algorithm:
@@ -24008,7 +24008,7 @@ Comparing all paths:
 
 The shortest path is 0 → 2 → 3 → 6 with cost 5.
 
-Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_068,canonical,anthropic/claude-sonnet-4,"I need to find the shortest path from node 0 to node 8 using the given weighted directed graph.
 
 Let me analyze the possible paths from node 0 to node 8:
@@ -24179,7 +24179,7 @@ Total cost: 5 + (-3) + 1 = 3
 
 This is better than the direct path 0 → 1 → 7 which costs 4.
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 WIS_021,canonical,anthropic/claude-sonnet-4,"I need to find the maximum weight non-overlapping subset of intervals.
 
 Let me first sort the intervals by end time and analyze which ones conflict:

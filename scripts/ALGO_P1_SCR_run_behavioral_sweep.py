@@ -230,6 +230,8 @@ def main() -> None:
                 subtype,
                 variant_type,
                 difficulty_params,
+                notes=str(row.get("notes") or ""),
+                problem_text=problem_text,
             )
             if not isinstance(metadata, dict):
                 raise ValueError(f"{pid}/{variant_type}: verifier metadata must be dict.")

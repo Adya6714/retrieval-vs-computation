@@ -188,7 +188,7 @@ Path: 0 → 5 → 10 → 11
 Cost: 8 + 6 + 3 = 17 minutes","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_002,canonical,openai/o4-mini,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_clean,False,False,True,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,canonical,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_002,W1,openai/o4-mini,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_clean,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W1,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_002,W2,openai/o4-mini,"Path: Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Waypoint 21 → Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
+SP_002,W2,openai/o4-mini,"Path: Base Camp 16 → Waypoint 12 → Waypoint 9 → Waypoint 19 → Waypoint 18 → Waypoint 6 → Waypoint 5 → Waypoint 10 → Waypoint 15 → Waypoint 21 → Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
 SP_002,W3,openai/o4-mini,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",True,parsed_clean,True,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_002,W4,openai/o4-mini,"A shortest‐path run of Dijkstra’s algorithm from 16 to 11 yields
 
@@ -209,7 +209,7 @@ Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_with_norma
 SP_005,canonical,openai/o4-mini,"Path: 0 -> 4 -> 9 -> 11 -> 14 -> 15, Cost: 32","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",True,parsed_clean,False,False,True,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",True,adversarial,canonical,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_005,W1,openai/o4-mini,"Path: 0 -> 4 -> 9 -> 11 -> 14 -> 15, Cost: 32","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",True,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",True,adversarial,W1,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_005,W2,openai/o4-mini,"Path: 0 → 4 → 9 → 12 → 14 → 15, Cost: 33","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=33, expected=32",False
-SP_005,W3,openai/o4-mini,"Path: 0 -> 3 -> 9 -> 15, Cost: 22","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (9,15) missing",False
+SP_005,W3,openai/o4-mini,"Path: 0 -> 3 -> 9 -> 15, Cost: 22","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=22, expected=32",False
 SP_005,W4,openai/o4-mini,"Path: 0 → 3 → 9 → 15  
 Cost: 8 + 8 + 6 = 22 kPa","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 WIS_001,canonical,openai/o4-mini,"Selected: {0, 2, 4, 6, 9}, Total: 40","Selected: {0, 2, 4, 6, 9}, Total: 40",True,parsed_clean,False,False,True,"Selected: {0, 2, 4, 6, 9}, Total: 40",,standard,canonical,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -595,7 +595,7 @@ SP_019,W2,openai/o4-mini,"The unique shortest‐path from 0 to 6 has total weigh
   0 → 3 → 4 → 6
 
 with weights 4 + 4 + 4 = 12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_019,W3,openai/o4-mini,"Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12","Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_019,W3,openai/o4-mini,"Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12","Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_019,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 6  
 Cost: 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_019,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 6 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -610,7 +610,7 @@ with total cost
   3→4: 4  
   4→5: 4  
 sum = 12.","Path: 0 -> 3 -> 4 -> 5, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_020,W3,openai/o4-mini,"Path: Rome -> Florence -> Bologna -> Naples, Cost: 12","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_020,W3,openai/o4-mini,"Path: Rome -> Florence -> Bologna -> Naples, Cost: 12","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_020,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 5, Cost: 12","Path: 0 -> 3 -> 4 -> 5, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_020,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 5 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_020,W6,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 15","Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 15",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -622,7 +622,7 @@ SP_021,W2,openai/o4-mini,"The unique shortest 0→8 path is
      → 8 (4)
 
 for a total cost of 4 + 4 + 4 = 12.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_021,W3,openai/o4-mini,"Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_021,W3,openai/o4-mini,"Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_021,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 8  
 Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_021,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 8 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -633,7 +633,7 @@ SP_023,W2,openai/o4-mini,"The shortest path from 0 to 5 is
   0 → 2 → 3 → 5
 
 with total weight 3 + 1 + 1 = 5.","Path: 0 -> 2 -> 3 -> 5, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,0) missing",False
-SP_023,W3,openai/o4-mini,"Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5","Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_023,W3,openai/o4-mini,"Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5","Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_023,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 5, Cost: 5","Path: 0 -> 2 -> 3 -> 5, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_023,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 5 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_023,W6,openai/o4-mini,"Path: 0 -> 1 -> 5, Cost: 7","Path: 0 -> 1 -> 5, Cost: 7",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -654,7 +654,7 @@ Hence the minimum‐weight path is
   0 → 2 → 3 → 7
 
 with total weight 3 + 1 + 1 = 5.","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_024,W3,openai/o4-mini,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_024,W3,openai/o4-mini,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_024,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_024,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 7 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_024,W6,openai/o4-mini,"Path: 0 -> 7, Cost: 9","Path: 0 -> 7, Cost: 9",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -676,7 +676,7 @@ So the shortest path is
   0 → 2 → 3 → 8
 
 with total weight 3 + 1 + 1 = 5.","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_026,W3,openai/o4-mini,"Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5","Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_026,W3,openai/o4-mini,"Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5","Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_026,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 8  
 Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_026,W5,openai/o4-mini,"Path: 8 -> 3 -> 2 -> 0, Cost: 5","Path: 8 -> 3 -> 2 -> 0, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W5,True,in_bank_ok,False,True,algo_strict,correct,True
@@ -744,7 +744,7 @@ so the shortest path is
   0 → 2 → 1 → 7  
 
 with total weight 3.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_028,W3,openai/o4-mini,"Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_028,W3,openai/o4-mini,"Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_028,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_028,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_028,W6,openai/o4-mini,"Path: 2 -> 0 -> 3 -> 5 -> 6 -> 7, Cost: 18","Path: 0 -> 3 -> 5 -> 6 -> 7, Cost: 9",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -754,7 +754,7 @@ SP_029,W2,openai/o4-mini,"The minimum‐weight path from 0 to 7 is
 with total cost  
    w(0→2) + w(2→1) + w(1→7)  
  = 5 + (–3) + 1 = 3.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_029,W3,openai/o4-mini,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_029,W3,openai/o4-mini,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_029,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_029,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_029,W6,openai/o4-mini,"Path: 0 -> 5 -> 6, Cost: 14","Path: 0 -> 5 -> 7, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -797,7 +797,7 @@ SP_030,W2,openai/o4-mini,"Using the Bellman–Ford algorithm (since there is one
    ⇒ path = [0, 2, 1, 7], total weight = 3
 
 Answer: the shortest path from 0 to 7 is 0→2→1→7 with length 3.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_030,W3,openai/o4-mini,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_030,W3,openai/o4-mini,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_030,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7  
 Cost: 5 + (–3) + 1 = 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_030,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -834,7 +834,7 @@ SP_031,W2,openai/o4-mini,"The shortest 0→8 path (all weights positive) can be 
    ⇒ 0 → 1 → 3 → 8  
 
 Total weight = 9 + 6 + 7 = 22.","Path: 0 -> 1 -> 3 -> 8, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_031,W3,openai/o4-mini,"Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22","Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_031,W3,openai/o4-mini,"Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22","Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_031,W4,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 8, Cost: 22","Path: 0 -> 1 -> 3 -> 8, Cost: 22",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_031,W5,openai/o4-mini,"Path: none, Cost: infinity","Path: 8 -> 3 -> 1 -> 0, Cost: 22",False,parse_failed,False,True,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_031,W6,openai/o4-mini,"Path: 4 -> 0 -> 7 -> 3, Cost: 23","Path: 0 -> 7 -> 3 -> 8, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -845,7 +845,7 @@ SP_032,W2,openai/o4-mini,"The shortest path from 0 to 7 is
 
 with total weight  
   5 (0→4) + 4 (4→5) + 3 (5→6) + 8 (6→7) = 20.","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_032,W3,openai/o4-mini,"Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20","Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_032,W3,openai/o4-mini,"Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20","Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_032,W4,openai/o4-mini,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_032,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 7 -> 6 -> 5 -> 4 -> 0, Cost: 20",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_032,W6,openai/o4-mini,"Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9","Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -887,7 +887,7 @@ Reconstruct path by back-pointers:
 So the shortest path is  
   0 → 1 → 2 → 3 → 4 → 7  
 with total weight 1+5+9+4+4 = 23.","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",False,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_033,W3,openai/o4-mini,"Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_033,W3,openai/o4-mini,"Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_033,W4,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_033,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 7 -> 4 -> 3 -> 2 -> 1 -> 0, Cost: 23",False,parse_failed,False,True,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_033,W6,openai/o4-mini,"Path: 0 -> 5 -> 6 -> 1 -> 4 -> 3, Cost: 22","Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -897,7 +897,7 @@ SP_034,W2,openai/o4-mini,"The unique shortest path from 0 to 7 is
   0 → 3 → 4 → 7
 
 with total weight = 6 + 8 + 7 = 21.","Path: 0 -> 3 -> 4 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,7) missing",False
-SP_034,W3,openai/o4-mini,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_034,W3,openai/o4-mini,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_034,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 7, Cost: 21","Path: 0 -> 3 -> 4 -> 7, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_034,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 7 -> 4 -> 3 -> 0, Cost: 21",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_034,W6,openai/o4-mini,"Path: 0 -> 4 -> 7, Cost: 2","Path: 0 -> 4 -> 7, Cost: 2",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -920,7 +920,7 @@ SP_035,W2,openai/o4-mini,"The shortest‐path from 0 to 6 can be found by runnin
 Reconstructing back‐pointers gives the path  
    0 → 1 → 4 → 6  
 with total weight 7+8+4 = 19.","Path: 0 -> 1 -> 4 -> 6, Cost: 19",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_035,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Milan, Cost: 19","Path: London -> Paris -> Lyon -> Milan, Cost: 19",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_035,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Milan, Cost: 19","Path: London -> Paris -> Lyon -> Milan, Cost: 19",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_035,W4,openai/o4-mini,"Path: 0 -> 1 -> 4 -> 6, Cost: 19","Path: 0 -> 1 -> 4 -> 6, Cost: 19",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_035,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 4 -> 1 -> 0, Cost: 19",False,parse_failed,False,True,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_035,W6,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 6 -> 5, Cost: 22","Path: 0 -> 1 -> 2 -> 6, Cost: 11",False,parsed_clean,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -938,7 +938,7 @@ Hence the shortest‐path from 0 to 7 is
    0 → 1 → 3 → 4 → 6 → 7
 
 with total cost = 12.","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_036,W3,openai/o4-mini,"Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12","Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_036,W3,openai/o4-mini,"Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12","Path: London -> Paris -> Rome -> Vienna -> Zurich -> Madrid, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_036,W4,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_036,W5,openai/o4-mini,"Path: none, Cost: Infinity","Path: 7 -> 6 -> 4 -> 3 -> 1 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_036,W6,openai/o4-mini,"Path: 0 -> 3 -> 7 -> 6 -> 5, Cost: 19","Path: 0 -> 3 -> 7, Cost: 6",False,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -961,7 +961,7 @@ so
 
   shortest path = 0 → 3 → 4 → 6  
   total weight = 4 + 4 + 4 = 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_037,W3,openai/o4-mini,"Path: 0 -> 2 -> 5 -> 6, Cost: 12","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,2) missing",False
+SP_037,W3,openai/o4-mini,"Path: 0 -> 2 -> 5 -> 6, Cost: 12","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_037,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 6, Cost: 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_037,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_037,W6,openai/o4-mini,"Path: 0 -> 4 -> 1 -> 3 -> 2 -> 6, Cost: 10","Path: 0 -> 4 -> 1 -> 3 -> 2 -> 6, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -972,7 +972,7 @@ SP_038,W2,openai/o4-mini,"The shortest path from 0 to 8 is
 
 with total cost  
   0→3 (4) + 3→4 (4) + 4→8 (4) = 12.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_038,W3,openai/o4-mini,"Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12","Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_038,W3,openai/o4-mini,"Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12","Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_038,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 8  
 Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_038,W5,openai/o4-mini,"Path: none (no path exists), Cost: ∞","Path: 8 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -984,7 +984,7 @@ SP_039,W2,openai/o4-mini,"The unique shortest 0→8 path found by Dijkstra’s a
 
 with total cost  
   0→3 (4) + 3→4 (4) + 4→8 (4) = 12.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_039,W3,openai/o4-mini,"Path: 0 -> 2 -> 7 -> 8, Cost: 12","Path: London -> Brussels -> Geneva -> Rome, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,2) missing",False
+SP_039,W3,openai/o4-mini,"Path: 0 -> 2 -> 7 -> 8, Cost: 12","Path: London -> Brussels -> Geneva -> Rome, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_039,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_039,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 8 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_039,W6,openai/o4-mini,"Path: 4 -> 3 -> 5 -> 7, Cost: 9","Path: 0 -> 3 -> 5 -> 7 -> 8, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1019,9 +1019,9 @@ SP_040,W2,openai/o4-mini,"The unique shortest‐path from 0 to 7 has total weigh
 
 Back–track from 7 via parents:  
 7←4←3←0 ⇒ path = [0, 3, 4, 7], total weight = d(7) = 12.","Path: 0 -> 3 -> 4 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_040,W3,openai/o4-mini,"Path: 0 -> 2 -> 6 -> 7, Cost: 12","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,2) missing",False
+SP_040,W3,openai/o4-mini,"Path: 0 -> 2 -> 6 -> 7, Cost: 12","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_040,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 7, Cost: 12","Path: 0 -> 3 -> 4 -> 7, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_040,W5,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 7, Cost: 12","Path: 7 -> 4 -> 3 -> 0, Cost: 12",False,parsed_clean,True,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W5,True,in_bank_ok,True,False,algo_strict,path_endpoints_invalid,True
+SP_040,W5,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 7, Cost: 12","Path: 7 -> 4 -> 3 -> 0, Cost: 12",True,parsed_clean,True,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W5,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
 SP_040,W6,openai/o4-mini,"Path: 0 -> 4 -> 5 -> 7, Cost: 13","Path: 0 -> 4 -> 5 -> 7, Cost: 13",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_042,W1,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W1,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_042,W2,openai/o4-mini,"The shortest path from 0 to 8 is
@@ -1033,7 +1033,7 @@ with total weight
  2→3 = 1  
  3→8 = 1  
 sum = 5.","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_042,W3,openai/o4-mini,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_042,W3,openai/o4-mini,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_042,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_042,W5,openai/o4-mini,"Path: 8 -> 3 -> 2 -> 0, Cost: 5","Path: 8 -> 3 -> 2 -> 0, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W5,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_042,W6,openai/o4-mini,"Path: 0 -> 7 -> 8 -> 5, Cost: 20","Path: 0 -> 7 -> 8, Cost: 5",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1078,7 +1078,7 @@ Total cost = dist[6] = 5.
 Answer:
   Shortest path: 0 → 2 → 3 → 6  
   Total weight: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_044,W3,openai/o4-mini,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_044,W3,openai/o4-mini,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_044,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_044,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 6 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_044,W6,openai/o4-mini,"Path: 0 -> 1 -> 5, Cost: 9","Path: 0 -> 1 -> 3 -> 4 -> 6, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1102,7 +1102,7 @@ Predecessors:
 Reconstructing gives the shortest path  
    0 → 2 → 1 → 6  
 with total weight 5 + (–3) + 1 = 3.","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_045,W3,openai/o4-mini,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_045,W3,openai/o4-mini,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_045,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_045,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_045,W6,openai/o4-mini,"Path: 0 -> 4 -> 2 -> 6, Cost: 10","Path: 0 -> 4 -> 2 -> 6, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1187,7 +1187,7 @@ with total cost
 
  d(0,2)=5,  d(2,1)=–3  ⇒ d(0,1)=5+(–3)=2,  
  d(1,7)=1  ⇒ d(0,7)=2+1=3.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_048,W3,openai/o4-mini,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_048,W3,openai/o4-mini,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_048,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_048,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_048,W6,openai/o4-mini,"Path: 5 -> 0 -> 3 -> 6 -> 7 -> 1, Cost: 35","Path: 0 -> 3 -> 6 -> 7, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1203,7 +1203,7 @@ with
  6→8 = 5  
 —————  
 total = 3+2+5 = 10.","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_049,W3,openai/o4-mini,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_049,W3,openai/o4-mini,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_049,W4,openai/o4-mini,"Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_049,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 8 -> 6 -> 4 -> 0, Cost: 10",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_049,W6,openai/o4-mini,"Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17","Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1251,7 +1251,7 @@ so the shortest path is
   0 → 3 → 4 → 5 → 7
 
 with total weight 4+2+3+2 = 11.","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_050,W3,openai/o4-mini,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11","Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_050,W3,openai/o4-mini,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11","Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_050,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_050,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 7 -> 5 -> 4 -> 3 -> 0, Cost: 11",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_050,W6,openai/o4-mini,"Path: 4 -> 1 -> 0 -> 6 -> 5 -> 7 -> 2, Cost: 40","Path: 0 -> 6 -> 5 -> 7, Cost: 7",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1264,7 +1264,7 @@ with total weight
   4 + 6 + 3 + 1 + 4 = 18.
 
 By contrast, the only other path (0→2→6→7) has weight 0+20+33=53, so 18 is the minimum.","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=53, claimed=18",False
-SP_051,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_051,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 18",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_051,W4,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_051,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 7 -> 5 -> 4 -> 3 -> 1 -> 0, Cost: 18",False,parse_failed,False,True,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_051,W6,openai/o4-mini,"Path: 5 -> 1 -> 6, Cost: 13","Path: 0 -> 2 -> 3 -> 7, Cost: 6",False,parsed_clean,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1283,7 +1283,7 @@ For reference, the final distances and predecessors when the algorithm finishes 
 
 Reconstructing 8’s predecessor chain:  
   8 ←6←5←2←1←0  ⇒  path 0–1–2–5–6–8, cost 11.","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_052,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_052,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11","Path: London -> Paris -> Lyon -> Geneva -> Milan -> Rome, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_052,W4,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_052,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 8 -> 6 -> 5 -> 2 -> 1 -> 0, Cost: 11",False,parse_failed,False,True,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_052,W6,openai/o4-mini,"Path: 0 -> 3 -> 5 -> 2 -> 8 -> 7, Cost: 19","Path: 0 -> 3 -> 5 -> 2 -> 8, Cost: 9",False,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1334,7 +1334,7 @@ SP_053,W2,openai/o4-mini,"The shortest‐path from 0 to 5 can be found by Dijkst
 
 Answer:  
 Shortest path from 0 to 5 is 0→1→2→5 with total weight 25.","Path: 0 -> 1 -> 2 -> 5, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_053,W3,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 5, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (1,3) missing",False
+SP_053,W3,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 5, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_053,W4,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 5, Cost: 25","Path: 0 -> 1 -> 2 -> 5, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_053,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 5 -> 2 -> 1 -> 0, Cost: 25",False,parse_failed,False,True,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_053,W6,openai/o4-mini,"Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13","Path: 0 -> 1 -> 3 -> 2 -> 4 -> 5, Cost: 13",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1373,7 +1373,7 @@ Reconstructing path 0→…→7 via prev[] gives:
 so the path is 0 → 1 → 3 → 4 → 6 → 7
 
 Total weight = 2+1+5+2+2 = 12.","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_054,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12","Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_054,W3,openai/o4-mini,"Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12","Path: London -> Paris -> Lyon -> Geneva -> Zurich -> Milan, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_054,W4,openai/o4-mini,"Path: 0 → 1 → 3 → 4 → 6 → 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_054,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 7 -> 6 -> 4 -> 3 -> 1 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_054,W6,openai/o4-mini,"Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8","Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1417,7 +1417,7 @@ SP_055,W2,openai/o4-mini,"One way to see this is to note that the graph is a DAG
 
 Answer:  
 Shortest path 0→2→3→5→6 with total weight 17.","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_055,W3,openai/o4-mini,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17","Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_055,W3,openai/o4-mini,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17","Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_055,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_055,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 6 -> 5 -> 3 -> 2 -> 0, Cost: 17",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_055,W6,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 6 -> 5, Cost: 11","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1475,7 +1475,7 @@ Hence the shortest path 0→6 is
   0 → 1 → 2 → 3 → 6  
 
 with total weight 8 + 3 + 5 + 8 = 24.","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",False,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_057,W3,openai/o4-mini,"Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24","Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",True,parsed_clean,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_057,W3,openai/o4-mini,"Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24","Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",True,parsed_clean,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_057,W4,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",True,parsed_clean,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_057,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 6 -> 3 -> 2 -> 1 -> 0, Cost: 24",False,parse_failed,False,True,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_057,W6,openai/o4-mini,"Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8","Path: 0 -> 1 -> 5 -> 4 -> 6, Cost: 8",True,parsed_clean,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1490,7 +1490,7 @@ There is no cheaper way to reach 7, so the shortest path is
     0 → 3 → 5 → 7
 
 with total weight = 20.","Path: 0 -> 3 -> 5 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_058,W3,openai/o4-mini,"Path: 0 -> 2 -> 5 -> 7, Cost: 20","Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,2) missing",False
+SP_058,W3,openai/o4-mini,"Path: 0 -> 2 -> 5 -> 7, Cost: 20","Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_058,W4,openai/o4-mini,"Path: 0 -> 3 -> 5 -> 7, Cost: 20","Path: 0 -> 3 -> 5 -> 7, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_058,W5,openai/o4-mini,"Path: 7 -> 5 -> 3 -> 0, Cost: 20","Path: 7 -> 5 -> 3 -> 0, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W5,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_058,W6,openai/o4-mini,"Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11","Path: 0 -> 5 -> 2 -> 1 -> 7, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1543,7 +1543,7 @@ Visit nodes in order of increasing d:
 Remaining nodes (5, 8) are ≥ their final best (d[8]=25).  
 
 Hence final shortest‐path cost is 25 via 0–3–4–6–7–8.","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_059,W3,openai/o4-mini,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_059,W3,openai/o4-mini,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_059,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_059,W5,openai/o4-mini,"Path: none, Cost: ∞","Path: 8 -> 7 -> 6 -> 4 -> 3 -> 0, Cost: 25",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_059,W6,openai/o4-mini,"Path: 0 -> 1 -> 4 -> 6 -> 2, Cost: 33","Path: 0 -> 1 -> 4 -> 8, Cost: 9",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1559,7 +1559,7 @@ with total weight
   5→7 = 2  
   7→8 = 3  
 Σ = 2+1+2+2+3 = 10.","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_060,W3,openai/o4-mini,"Path: 0 -> 2 -> 5 -> 6 -> 7 -> 4, Cost: 10","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+SP_060,W3,openai/o4-mini,"Path: 0 -> 2 -> 5 -> 6 -> 7 -> 4, Cost: 10","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_060,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_060,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 8 -> 7 -> 5 -> 4 -> 3 -> 0, Cost: 10",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_060,W6,openai/o4-mini,"Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12","Path: 0 -> 2 -> 7 -> 4 -> 5 -> 8, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1583,7 +1583,7 @@ If you run Dijkstra’s algorithm from 0 you get:
 → next node is 5 (dist=10):  
    relax 5→7: dist(7)=10+6=16  
 …and no cheaper way to 7 appears afterward.","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,7) missing",False
-SP_061,W3,openai/o4-mini,"Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16","Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_061,W3,openai/o4-mini,"Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16","Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_061,W4,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_061,W5,openai/o4-mini,"Path: None, Cost: ∞","Path: 7 -> 5 -> 2 -> 1 -> 0, Cost: 16",False,parse_failed,False,True,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_061,W6,openai/o4-mini,"Path: 0 -> 3 -> 5 -> 4 -> 6 -> 7 -> 2, Cost: 31","Path: 0 -> 3 -> 5 -> 4 -> 6 -> 7, Cost: 15",False,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1603,7 +1603,7 @@ Hence the minimum‐weight path from 0 to 6 is
   0 → 3 → 4 → 6
 
 with total weight 4 + 4 + 4 = 12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_062,W3,openai/o4-mini,"Path: London -> Amsterdam -> Prague -> Rome, Cost: 12","Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_062,W3,openai/o4-mini,"Path: London -> Amsterdam -> Prague -> Rome, Cost: 12","Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_062,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 6, Cost: 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_062,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_062,W6,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 5 -> 6, Cost: 9","Path: 0 -> 2 -> 1 -> 5 -> 6, Cost: 9",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1615,7 +1615,7 @@ SP_063,W2,openai/o4-mini,"The unique shortest 0→8 path is
   4 → 8 (weight 4)  
 
 Total weight = 4 + 4 + 4 = 12.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_063,W3,openai/o4-mini,"Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12","Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_063,W3,openai/o4-mini,"Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12","Path: London -> Reading -> Bristol -> Edinburgh, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_063,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_063,W5,openai/o4-mini,"Path: 8 -> 4 -> 3 -> 0, Cost: 12","Path: 8 -> 4 -> 3 -> 0, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W5,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_063,W6,openai/o4-mini,"Path: 0 -> 5 -> 3, Cost: 22","Path: 0 -> 1 -> 8, Cost: 4",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1637,7 +1637,7 @@ Thus the shortest path 0→…→6 is
 with total cost 4+4+4 = 12.  
 
 Answer: shortest path = [0, 3, 4, 6], cost = 12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_064,W3,openai/o4-mini,"Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12","Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_064,W3,openai/o4-mini,"Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12","Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_064,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 6  
 Cost: 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_064,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -1650,7 +1650,7 @@ SP_065,W2,openai/o4-mini,"The minimum‐cost walk from 0 to 6 has total weight 1
   4 → 6 (cost 4)
 
 so 0→3→4→6 with total cost 4+4+4=12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_065,W3,openai/o4-mini,"Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_065,W3,openai/o4-mini,"Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_065,W4,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 6  
 Cost: 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_065,W5,openai/o4-mini,"Path: 6 -> 4 -> 3 -> 0, Cost: 12","Path: 6 -> 4 -> 3 -> 0, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,True,in_bank_ok,False,True,algo_strict,correct,True
@@ -1690,7 +1690,7 @@ Reconstructing prev pointers:
 6 ← 3 ← 2 ← 0
 
 So: 0 → 2 → 3 → 6, total cost = 3 + 1 + 1 = 5.","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
-SP_066,W3,openai/o4-mini,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_066,W3,openai/o4-mini,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_066,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_066,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_066,W6,openai/o4-mini,"Path: 0 -> 3 -> 1 -> 6 -> 5, Cost: 13","Path: 0 -> 3 -> 1 -> 6, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -1699,7 +1699,7 @@ SP_068,W2,openai/o4-mini,"The unique shortest 0→8 path has total weight 5, nam
   0→2 (3) →3 (1) →8 (1)  
 
 So the minimum‐cost path is 0→2→3→8 with cost 3+1+1=5.","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_068,W3,openai/o4-mini,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_068,W3,openai/o4-mini,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_068,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 8, Cost: 5","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_068,W5,openai/o4-mini,"Path: 8 -> 3 -> 2 -> 0, Cost: 5","Path: 8 -> 3 -> 2 -> 0, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W5,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_068,W6,openai/o4-mini,"Path: 0 -> 3 -> 4 -> 2 -> 8, Cost: 8","Path: 0 -> 3 -> 4 -> 2 -> 8, Cost: 8",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1720,7 +1720,7 @@ Tracing back from 7 gives the shortest path
    0 → 2 → 3 → 7
 
 with total weight 3 (0→2) + 1 (2→3) + 1 (3→7) = 5.","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_069,W3,openai/o4-mini,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5","Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_069,W3,openai/o4-mini,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5","Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_069,W4,openai/o4-mini,"Path: 0 -> 2 -> 3 -> 7  
 Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_069,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 7 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -1763,7 +1763,7 @@ Here’s the DAG‐DP sketch:
   • Done: dist[6]=3, predecessor pointers give 6←1←2←0.
 
 Hence the shortest path is 0→2→1→6 (cost 3).","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_070,W3,openai/o4-mini,"Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_070,W3,openai/o4-mini,"Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_070,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_070,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_070,W6,openai/o4-mini,"Path: 0 -> 1 -> 2 -> 6, Cost: 4","Path: 0 -> 1 -> 2 -> 6, Cost: 4",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1824,7 +1824,7 @@ SP_072,W2,openai/o4-mini,"The shortest path from 0 to 6 is found by (for example
 Answer:
 • Shortest‐path length from 0 to 6: 3  
 • One shortest path: 0 → 2 → 1 → 6","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_072,W3,openai/o4-mini,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_072,W3,openai/o4-mini,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_072,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_072,W5,openai/o4-mini,"Path: None, Cost: Infinity","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_072,W6,openai/o4-mini,"Path: 0 -> 4 -> 1 -> 6, Cost: 9","Path: 0 -> 4 -> 1 -> 6, Cost: 9",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -1878,9 +1878,9 @@ So at the end
 Reconstructing the predecessor pointers gives the unique longest path:  
    0 → 5 → 7  
 with total weight 9+7 = 16.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_073,W3,openai/o4-mini,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_073,W3,openai/o4-mini,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_073,W4,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_073,W5,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parsed_clean,True,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,True,in_bank_ok,True,False,algo_strict,path_endpoints_invalid,True
+SP_073,W5,openai/o4-mini,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 7 -> 1 -> 2 -> 0, Cost: 3",True,parsed_clean,True,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
 SP_073,W6,openai/o4-mini,"Path: 0 -> 5 -> 4 -> 3 -> 6 -> 7, Cost: 12","Path: 0 -> 5 -> 4 -> 3 -> 6 -> 7, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 WIS_006,W1,openai/o4-mini,"Selected: {0, 1, 3, 4, 5, 6}, Total: 40","Selected: {0, 1, 3, 4, 5, 6}, Total: 40",True,parsed_clean,False,False,False,"Selected: {0, 1, 3, 4, 5, 6}, Total: 40",,standard,W1,True,in_bank_ok,True,True,algo_strict,correct,False
 WIS_006,W2,openai/o4-mini,"Here is a step‐by‐step weighted‐interval‐scheduling solution.

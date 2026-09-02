@@ -167,7 +167,7 @@ ALGO effective n is materially below 110. Every ALGO accuracy (Table 7 slices, P
 
 ALGO CIs on n=110 and on the frozen 61-ID pool are too narrow if problems are treated as iid. `derived/I2_algo_cluster_bootstrap.csv` recomputes every ALGO cell with a 10k **clone-family** cluster bootstrap vs the executed 10k iid problem bootstrap; `derived/I2_frozen61_cluster_effective_n.csv` reports the frozen pool's family-level n. Frozen 61 effective n is **14** clone families (53 of 61 IDs sit in multi-member families). The paper/appendix name Wilson 95% CIs; Probe-1 metric code (`probes/common/stats.py` `bootstrap_ci`) is a 10k percentile bootstrap. Rebuild `NUMBERS.csv` uses Wilson. Cluster bootstrap is the interval that matches the clone structure.
 
-Claude shortest_path W3 (canonical 0.400 vs stored W3 0.018) is a verifier parse failure, not a 1/55 model collapse: gold roundtrip 55/55; 51/55 full-CoT failures still verify on the trailing `Path:` line. See `derived/I1_claude_sp_w3_summary.csv`.
+Claude shortest_path W3 (canonical 0.400 vs stored W3 0.018) was a verifier parse failure: `generate_w3` persisted `entity_mapping` in the bank `notes` column (50/55 rows; same `|` JSON pattern as BW `action_mapping`) but never wrote it into `difficulty_params.node_mapping`. `verify_algo` now reads notes (and recovers the map from problem_text by edge position when notes are empty) and `verify_sp` prefers the trailing `Path: … Cost:` line over CoT arrows. After offline rescore, Claude SP W3 is 51/55 (0.927), not 1/55. CC/WIS W3 verdicts are unchanged. See `derived/J1_algo_w3_rescore.csv`.
 
 ---
 

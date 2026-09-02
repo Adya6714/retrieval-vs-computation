@@ -172,6 +172,8 @@ def _rescore_included(
                 subtype,
                 variant,
                 bank_row.get("difficulty_params", ""),
+                notes=bank_row.get("notes"),
+                problem_text=bank_row.get("problem_text"),
             )
             method = _family_verify_method(family, subtype.lower(), "algo_strict")
             parse_status = str((meta or {}).get("parse_status") or ALGO_META.get("parse_status") or "")

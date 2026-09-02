@@ -180,7 +180,7 @@ Coins: [197, 197, 197, 197, 177]","Count: 7
  Coins: [201, 201, 201, 197, 67, 67, 31]",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,invalid_coin_list: list does not match denominations/target/count,False
 SP_001,canonical,google/gemini-2.5-flash,"Path: 0 -> 2 -> 4 -> 9 -> 10 -> 11, Cost: 20","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_clean,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=17",False
 SP_001,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 4 -> 9 -> 10 -> 11, Cost: 20","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_clean,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=17",False
-SP_001,W2,google/gemini-2.5-flash,"Path: Warehouse 0 → Junction 3 → Terminal 7 → Customer 11, Cost: 15","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,3) missing",False
+SP_001,W2,google/gemini-2.5-flash,"Path: Warehouse 0 → Junction 3 → Terminal 7 → Customer 11, Cost: 15","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=15, expected=17",False
 SP_001,W3,google/gemini-2.5-flash,"Path: A -> C -> E -> J -> K -> L, Cost: 20","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=17",False
 SP_001,W4,google/gemini-2.5-flash,"We need to find the shortest path from node 0 to node 11 in the given weighted directed graph. We can use Dijkstra's algorithm for this.
 
@@ -300,7 +300,7 @@ Total cost = 8 + 6 + 3 = 17.
 
 This matches `dist[11]`.
 
-Path: 0 -> 5 -> 10 -> 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=17, claimed=8",False
+Path: 0 -> 5 -> 10 -> 11, Cost: 17","Path: 0 → 5 → 10 → 11, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_002,canonical,google/gemini-2.5-flash,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_clean,False,False,True,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,canonical,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_002,W1,google/gemini-2.5-flash,"Path: 16 -> 12 -> 9 -> 19 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 36","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=42, claimed=36",False
 SP_002,W2,google/gemini-2.5-flash,"```python
@@ -364,7 +364,7 @@ def dijkstra(graph, start, end):
 path, cost = dijkstra(graph, 'Base Camp 16', 'Summit Lodge 11')
 print(f""Path: {' -> '.join(path)}, Cost: {cost}"")
 ```
-Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 19 -> Waypoint 18 -> Waypoint 6 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (12,4) missing",False
+Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 19 -> Waypoint 18 -> Waypoint 6 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W2,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_002,W3,google/gemini-2.5-flash,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 41","Path: Hub Q → Hub M → Hub J → Hub T → Hub S → Hub G → Hub F → Hub K → Hub P → Hub V → Hub L, Cost: 40",False,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=40, claimed=41",False
 SP_002,W4,google/gemini-2.5-flash,"To find the path with the minimum travel time from node 16 to node 11, we can use Dijkstra's algorithm.
 
@@ -710,8 +710,8 @@ Let's double check the cost calculation:
 21 -> 11: 4
 Total = 4 + 3 + 5 + 4 + 3 + 5 + 4 + 3 + 5 + 4 = 40
 
-The final answer is $\boxed{\text{Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40}}$","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=40, claimed=0",False
-SP_003,canonical,google/gemini-2.5-flash,"Path: 11 -> 18 -> 3 -> 9, Cost: 10","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (18,3) missing",False
+The final answer is $\boxed{\text{Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 40}}$","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parsed_with_normalization,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
+SP_003,canonical,google/gemini-2.5-flash,"Path: 11 -> 18 -> 3 -> 9, Cost: 10","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=10, expected=22",False
 SP_003,W1,google/gemini-2.5-flash,"Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 2 -> 3 -> 9, Cost: 30","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=31, claimed=30",False
 SP_003,W2,google/gemini-2.5-flash,"```json
 {
@@ -837,7 +837,7 @@ SP_003,W2,google/gemini-2.5-flash,"```json
 }
 ```
 
-Path: Safe House 11 → Relay 18 → Alley 19 → Flyover 7 → Depot 5 → Drop Point 9, Cost: 3 + 3 + 5 + 7 + 16 = 34","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: Safe House 11 → Relay 18 → Alley 19 → Flyover 7 → Depot 5 → Drop Point 9, Cost: 3 + 3 + 5 + 7 + 16 = 34","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=3, expected=22",False
 SP_003,W3,google/gemini-2.5-flash,"Path: 11 -> 17 -> 7 -> 6 -> 3 -> 9, Cost: 32","Path: Hub L → Hub R → Hub K → Hub C → Hub D → Hub J, Cost: 22",False,parsed_clean,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=32, expected=22",False
 SP_003,W4,google/gemini-2.5-flash,"To find the shortest path from node 11 to node 9 in the given weighted directed graph, we can use Dijkstra's algorithm.
 
@@ -1072,7 +1072,7 @@ Path in correct order: 11 -> 17 -> 10 -> 2 -> 3 -> 9
 
 Total cost = 5 + 4 + 6 + 4 + 3 = 22
 
-The final answer is $\boxed{\text{Path: 11 -> 17 -> 10 -> 2 -> 3 -> 9, Cost: 22}}$","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=22, claimed=5",False
+The final answer is $\boxed{\text{Path: 11 -> 17 -> 10 -> 2 -> 3 -> 9, Cost: 22}}$","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",True,parsed_with_normalization,False,False,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_004,canonical,google/gemini-2.5-flash,"The problem describes a shortest path problem on a directed acyclic graph (DAG) where edge weights can be time-dependent. We need to find the path from node 0 (Base Lodge) to node 9 (Summit Hut) that minimizes the total travel time.
 
 Since the edge weights are time-dependent, a standard Dijkstra's algorithm or Bellman-Ford algorithm cannot be directly applied. However, since the graph is a DAG (travel is always forward in time and there are no cycles), we can adapt a shortest path algorithm for DAGs.
@@ -1219,7 +1219,7 @@ The Dijkstra-like approach correctly finds the shortest path even with time-depe
 The initial arrival time at 1 was 2, which made 1->5 cost 12. If there was a path to 1 that got there before or at hour 1, the cost would be 3.
 Is there any path to 1 that arrives at or before hour 1? No, 0 to 1 always costs 2. So the ""fast-track"" from 1 to 5 is never available.
 
-Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_004,W1,google/gemini-2.5-flash,"To solve this problem, we need to find the shortest path in a graph where edge weights can be dynamic. This suggests a variation of Dijkstra's algorithm or a similar shortest path algorithm that can handle time-dependent costs.
 
 Let's represent the graph and its edges (trails). Each node represents a stopover.
@@ -1377,7 +1377,7 @@ Let `dist[node]` store the minimum arrival time at `node`. Initialize `dist[0] =
     This is the first time we pop node 9 with the current overall minimum time.
     So, the quickest path is `[0, 3, 6, 4, 5, 9]` with a total time of 8 hours.
 
-Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W1,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_004,W2,google/gemini-2.5-flash,"Let's analyze this using a modified Dijkstra's algorithm or a similar shortest path algorithm that can handle time-dependent costs. We need to keep track of both the current node and the arrival time at that node to correctly evaluate time-dependent routes.
 
 Let $D[node]$ be the minimum time to reach $node$ from the $Base Lodge 0$.
@@ -1582,7 +1582,7 @@ We have reached Server 9. The current delay is 8. Since this is the first time w
 
 The minimum delay is 8, and the path is 0 -> 3 -> 6 -> 4 -> 5 -> 9.
 
-Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: Hub A → Hub D → Hub G → Hub E → Hub F → Hub J, Cost: 8",True,parsed_with_normalization,False,False,False,"Path: 0 → 3 → 6 → 4 → 5 → 9, Cost: 8",False,adversarial,W3,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_004,W4,google/gemini-2.5-flash,"Let's analyze the graph and travel times to find the optimal path from node 0 to node 9.
 
 **Fixed Edges:**
@@ -1766,7 +1766,7 @@ Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 8","Path: 0 → 3 → 6 → 4 → 5 → 
 SP_005,canonical,google/gemini-2.5-flash,"Path: 0 -> 1 -> 2 -> 6 -> 10 -> 13 -> 14 -> 15, Cost: 34","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_clean,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,canonical,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=34, expected=32",False
 SP_005,W1,google/gemini-2.5-flash,"Path: 0 -> 4 -> 5 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 48","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=37, claimed=48",False
 SP_005,W2,google/gemini-2.5-flash,"Path: Central Reservoir 0 → Primary Node 1 → Access Corridor 2 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15, Cost: 37","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=37, expected=32",False
-SP_005,W3,google/gemini-2.5-flash,"Path: 0 -> 1 -> 2 -> 6 -> 9 -> 13 -> 15, Cost: 36","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (6,9) missing",False
+SP_005,W3,google/gemini-2.5-flash,"Path: 0 -> 1 -> 2 -> 6 -> 9 -> 13 -> 15, Cost: 36","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parsed_with_normalization,False,False,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=36, expected=32",False
 SP_005,W4,google/gemini-2.5-flash,"To find the path with the minimum total pressure loss from node 0 to node 15, we can use Dijkstra's algorithm.
 
 Let's represent the graph using an adjacency list.
@@ -8612,7 +8612,7 @@ Reverse the path: `0 -> 3 -> 4 -> 5`
 **Shortest Distance:** `distances[5] = 12`
 
 The final answer is $\boxed{12}$","Path: 0 -> 3 -> 4 -> 5, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_020,W3,google/gemini-2.5-flash,"Path: Rome -> Florence -> Bologna -> Naples, Cost: 12","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_020,W3,google/gemini-2.5-flash,"Path: Rome -> Florence -> Bologna -> Naples, Cost: 12","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_020,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 5 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 Let's maintain a distance array `dist` initialized to infinity for all nodes except the source node (0), which is 0. We also need a `previous` array to reconstruct the path.
@@ -9003,7 +9003,7 @@ Path: `0 → 2 → 3 → 5`
 
 *   **Path:** `0 → 2 → 3 → 5`
 *   **Total Weight:** `3 (0→2) + 1 (2→3) + 1 (3→5) = 5`","Path: 0 -> 2 -> 3 -> 5, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_023,W3,google/gemini-2.5-flash,"Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5","Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_023,W3,google/gemini-2.5-flash,"Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5","Path: Tokyo -> Kyoto -> Nagoya -> Kobe, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_023,W4,google/gemini-2.5-flash,"Path: 0 -> 2 -> 3 -> 5, Cost: 5","Path: 0 -> 2 -> 3 -> 5, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_023,W5,google/gemini-2.5-flash,"No path from node 5 to node 0, Cost: Infinity","Path: 5 -> 3 -> 2 -> 0, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=0, expected=5",False
 SP_023,W6,google/gemini-2.5-flash,"Path: 0 -> 1 -> 5 -> 0, Cost: 19","Path: 0 -> 1 -> 5, Cost: 7",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 5, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -9079,7 +9079,7 @@ The shortest distance is dist[7] = 5.
 Checking the path: 3 (0→2) + 1 (2→3) + 1 (3→7) = 5.
 
 The shortest path from Source 0 to Target 7 is 0 → 2 → 3 → 7 with a total weight of 5.","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_024,W3,google/gemini-2.5-flash,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_024,W3,google/gemini-2.5-flash,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_024,W4,google/gemini-2.5-flash,"To find the minimum weight path from node 0 to node 7, we can use Dijkstra's algorithm.
 
 Let's maintain a distance array `dist` where `dist[i]` stores the current minimum distance found from the source (0) to node `i`. Initialize `dist[0] = 0` and `dist[i] = infinity` for all other nodes `i`. We'll also maintain a `previous` array to reconstruct the path later.
@@ -9225,7 +9225,7 @@ Path in reverse: 8 ← 3 ← 2 ← 0
 Shortest path: 0 → 2 → 3 → 8
 
 The final answer is $\boxed{5}$","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_026,W3,google/gemini-2.5-flash,"Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5","Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_026,W3,google/gemini-2.5-flash,"Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5","Path: Paris -> Nice -> Marseille -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_026,W4,google/gemini-2.5-flash,"To find the shortest path from vertex 0 to vertex 8 in the given graph G, we can use Dijkstra's algorithm.
 
 Let's initialize the distances and predecessors:
@@ -9293,7 +9293,7 @@ Let's verify the cost:
 3 -> 8: 1
 Total cost = 3 + 1 + 1 = 5.
 
-The final answer is $\boxed{\text{Path: 0 -> 2 -> 3 -> 8, Cost: 5}}$","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=0",False
+The final answer is $\boxed{\text{Path: 0 -> 2 -> 3 -> 8, Cost: 5}}$","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_026,W5,google/gemini-2.5-flash,,"Path: 8 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_026,W6,google/gemini-2.5-flash,"Path: 0 -> 5 -> 3 -> 6 -> 8 -> 7, Cost: 41","Path: 0 -> 5 -> 3 -> 6 -> 8, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_027,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 6, Cost: 1","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=1",False
@@ -9373,7 +9373,7 @@ Reversing the path gives: `0 → 2 → 1 → 6`
 Total cost = 5 + (-3) + 1 = 3
 
 The final answer is $\boxed{3}$","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_027,W3,google/gemini-2.5-flash,"Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 5","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_027,W3,google/gemini-2.5-flash,"Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 5","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_027,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 6, we can use the Bellman-Ford algorithm since there are negative edge weights.
 
 Let $d[v]$ be the current shortest distance from the source (vertex 0) to vertex $v$.
@@ -9567,7 +9567,7 @@ print(f""Shortest path: {shortest_path}"")
 print(f""Distances to all reachable nodes from source: {all_distances}"")
 
 ```","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,0) missing",False
-SP_028,W3,google/gemini-2.5-flash,"Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 5","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_028,W3,google/gemini-2.5-flash,"Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 5","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_028,W4,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_028,W5,google/gemini-2.5-flash,"Path: No path, Cost: No path","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_028,W6,google/gemini-2.5-flash,"Path: 0 -> 3 -> 5 -> 6 -> 7, Cost: 25","Path: 0 -> 3 -> 5 -> 6 -> 7, Cost: 9",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=9, claimed=25",False
@@ -9745,7 +9745,7 @@ Target: `7`
 
 Path: `0 → 2 → 1 → 7`
 Total weight: `5 + (-3) + 1 = 3`","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_029,W3,google/gemini-2.5-flash,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 5","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_029,W3,google/gemini-2.5-flash,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 5","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_029,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 7 in the given graph G = (V, E), we can use a shortest path algorithm. Since the graph contains negative edge weights (e.g., (2,1,-3)), Dijkstra's algorithm cannot be used directly. The Bellman-Ford algorithm is suitable for graphs with negative edge weights as long as there are no negative-weight cycles reachable from the source.
 
 Let's apply the Bellman-Ford algorithm.
@@ -9812,7 +9812,7 @@ The minimum weight path is `0 -> 2 -> 1 -> 7`.
 (1,7) weight: 1
 Total cost = 5 + (-3) + 1 = 3
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_029,W5,google/gemini-2.5-flash,"Given that all roads are one-way, we need to find a path from node 7 to node 0.
 Let's list the available roads:
 - Node 0 to Node 1: 3
@@ -9960,7 +9960,7 @@ graph TD
 
     classDef path fill:#fff,stroke:#333,stroke-width:2px;
 ```","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_030,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 5","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_030,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 5","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_030,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph $G=(V, E)$, we can use the Bellman-Ford algorithm since there are negative edge weights.
 
 The algorithm proceeds by relaxing all edges V-1 times.
@@ -10186,7 +10186,7 @@ Starting from the target node (8) and using the `prev` dictionary:
 
 **Shortest Path from 0 to 8:** 0 -> 1 -> 3 -> 8
 **Total Weight:** 22","Path: 0 -> 1 -> 3 -> 8, Cost: 22",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_031,W3,google/gemini-2.5-flash,"Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22","Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_031,W3,google/gemini-2.5-flash,"Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22","Path: Paris -> Lyon -> Nice -> Strasbourg, Cost: 22",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_031,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 8 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 Here are the steps:
@@ -10248,7 +10248,7 @@ Here are the steps:
 
 4.  **Minimum Cost:** `dist[8] = 22`
 
-The final answer is $\boxed{\text{Path: 0 -> 1 -> 3 -> 8, Cost: 22}}$","Path: 0 -> 1 -> 3 -> 8, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=22, claimed=0",False
+The final answer is $\boxed{\text{Path: 0 -> 1 -> 3 -> 8, Cost: 22}}$","Path: 0 -> 1 -> 3 -> 8, Cost: 22",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_031,W5,google/gemini-2.5-flash,There is no path from node 8 to node 0 as all roads are one-way and lead away from node 8 in this given network.,"Path: 8 -> 3 -> 1 -> 0, Cost: 22",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W5,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_031,W6,google/gemini-2.5-flash,"Path: 4 -> 1 -> 8 -> 2 -> 7 -> 3, Cost: 44","Path: 0 -> 7 -> 3 -> 8, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 8, Cost: 62",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_032,W1,google/gemini-2.5-flash,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W1,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -10337,7 +10337,7 @@ Reverse the path: `0 → 4 → 5 → 6 → 7`
 
 *   **Shortest Path:** `0 → 4 → 5 → 6 → 7`
 *   **Total Weight:** `20`","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_032,W3,google/gemini-2.5-flash,"Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20","Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_032,W3,google/gemini-2.5-flash,"Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20","Path: London -> Brussels -> Amsterdam -> Hamburg -> Berlin, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_032,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 7 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 **Graph representation (Adjacency List):**
@@ -10577,7 +10577,7 @@ To reconstruct the path, we follow the predecessors from the target back to the 
 So the shortest path is `0 → 1 → 2 → 3 → 4 → 7`.
 
 The final answer is $\boxed{23}$","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",True,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_033,W3,google/gemini-2.5-flash,"Path: Paris -> Bordeaux -> Toulouse -> Montpellier, Cost: 60","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",False,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=60, expected=23",False
+SP_033,W3,google/gemini-2.5-flash,"Path: Paris -> Bordeaux -> Toulouse -> Montpellier, Cost: 60","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",False,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=58, claimed=60",False
 SP_033,W4,google/gemini-2.5-flash,"Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_033,W5,google/gemini-2.5-flash,"Path: Impossible, Cost: Infinity","Path: 7 -> 4 -> 3 -> 2 -> 1 -> 0, Cost: 23",False,parse_failed,False,True,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_033,W6,google/gemini-2.5-flash,"Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10","Path: 0 -> 5 -> 6 -> 1 -> 4 -> 7, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -10593,7 +10593,7 @@ graph TD
     E ---|26| F(5)
     E ---|7| H
 ```","Path: 0 -> 3 -> 4 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,5) missing",False
-SP_034,W3,google/gemini-2.5-flash,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_034,W3,google/gemini-2.5-flash,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_034,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 **Graph representation:**
@@ -11111,7 +11111,7 @@ Let's check the total weight:
 Total weight = 4 + 4 + 4 = 12.
 
 The final answer is $\boxed{0 \to 3 \to 4 \to 6}$","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_037,W3,google/gemini-2.5-flash,"Path: Madrid -> Toledo -> Segovia -> Salamanca -> Leon, Cost: 22","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=22, expected=12",False
+SP_037,W3,google/gemini-2.5-flash,"Path: Madrid -> Toledo -> Segovia -> Salamanca -> Leon, Cost: 22","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=22",False
 SP_037,W4,google/gemini-2.5-flash,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",True,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=18, expected=12",False
 SP_037,W5,google/gemini-2.5-flash,"Path: None, Cost: Infinity","Path: 6 -> 4 -> 3 -> 0, Cost: 12",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_037,W6,google/gemini-2.5-flash,"Path: 0 -> 4 -> 1 -> 3 -> 2 -> 6, Cost: 24","Path: 0 -> 4 -> 1 -> 3 -> 2 -> 6, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=10, claimed=24",False
@@ -11567,7 +11567,7 @@ SP_040,W2,google/gemini-2.5-flash,"Let's find the shortest path from node 0 to n
 
 The shortest path from node 0 to node 7 is `0 -> 3 -> 4 -> 7`.
 The total weight of this path is `dist[7] = 12`.","Path: 0 -> 3 -> 4 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_040,W3,google/gemini-2.5-flash,"Path: London -> Amsterdam -> Berlin -> Prague, Cost: 9","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=9, expected=12",False
+SP_040,W3,google/gemini-2.5-flash,"Path: London -> Amsterdam -> Berlin -> Prague, Cost: 9","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=9",False
 SP_040,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 **Graph Representation:**
@@ -11646,7 +11646,7 @@ SP_040,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0
 
 4.  **Cost:** `dist[7] = 12`
 
-Path: 0 -> 3 -> 4 -> 7, Cost: 12","Path: 0 -> 3 -> 4 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+Path: 0 -> 3 -> 4 -> 7, Cost: 12","Path: 0 -> 3 -> 4 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_040,W5,google/gemini-2.5-flash,"It appears there's a misunderstanding in the question. The provided road network describes one-way roads *from* a node *to* another node. You are asking for the shortest path *from* node 7 *to* node 0. Given all roads are one-way in the direction described (e.g., 0 to 1, not 1 to 0), it's impossible to travel from node 7 to node 0.
 
 Therefore, there is no path from node 7 to node 0.","Path: 7 -> 4 -> 3 -> 0, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (7,0) missing",False
@@ -11730,7 +11730,7 @@ else:
     print(f""Shortest path: {' -> '.join(map(str, shortest_path))}"")
 
 ```","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (0,0) missing",False
-SP_042,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_042,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_042,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 8, we can use Dijkstra's algorithm.
 
 Let's keep track of the shortest distance from the source (vertex 0) to all other vertices and the preceding vertex in the shortest path.
@@ -11877,7 +11877,7 @@ Reversed path: `0 → 2 → 3 → 6`
 
 **Shortest Path:** 0 → 2 → 3 → 6
 **Total Weight:** 3 (0→2) + 1 (2→3) + 1 (3→6) = 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_044,W3,google/gemini-2.5-flash,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_044,W3,google/gemini-2.5-flash,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_044,W4,google/gemini-2.5-flash,"Path: 0 -> 2 -> 3 -> 6, Cost: 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_044,W5,google/gemini-2.5-flash,"Path: No path, Cost: Infinity","Path: 6 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_044,W6,google/gemini-2.5-flash,"Path: 0 -> 1 -> 3 -> 4 -> 6 -> 5, Cost: 19","Path: 0 -> 1 -> 3 -> 4 -> 6, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -11983,7 +11983,7 @@ else:
     print(f""Shortest path: {' -> '.join(map(str, shortest_path))}"")
 
 ```","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_045,W3,google/gemini-2.5-flash,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 5","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_045,W3,google/gemini-2.5-flash,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 5","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_045,W4,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_045,W5,google/gemini-2.5-flash,"Path: 6 -> 1 -> 2 -> 0, Cost: 2","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=2",False
 SP_045,W6,google/gemini-2.5-flash,"Path: 0 -> 4 -> 1, Cost: 6","Path: 0 -> 4 -> 2 -> 6, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
@@ -12058,7 +12058,7 @@ Let's verify the path weight:
 Total weight = 5 + (-3) + 1 = 3.
 
 The final answer is $\boxed{3}$","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_046,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_046,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_046,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph G = (V, E) with V = {0, 1, ..., 7} and
 E = {(0,1,3), (0,2,5), (0,3,6), (0,4,7), (0,5,9), (0,6,7), (1,7,1), (2,1,-3), (2,7,8), (3,7,10), (4,7,9), (5,7,6), (6,7,6)}, we can use a shortest path algorithm like Bellman-Ford or Dijkstra's algorithm (if there were no negative cycles). Since there's a negative edge (2,1,-3), Bellman-Ford is a safer bet, or we can carefully apply Dijkstra if we're sure no negative cycles are reachable.
 
@@ -12126,7 +12126,7 @@ Let's verify the cost:
 1 -> 7 (cost 1)
 Total cost = 5 + (-3) + 1 = 3. This matches `dist[7]`.
 
-The final answer is $\boxed{\text{Path: 0 -> 2 -> 1 -> 7, Cost: 3}}$","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=0",False
+The final answer is $\boxed{\text{Path: 0 -> 2 -> 1 -> 7, Cost: 3}}$","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_046,W5,google/gemini-2.5-flash,"Path: No path, Cost: No path","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_046,W6,google/gemini-2.5-flash,"Path: 0 -> 6 -> 2 -> 7, Cost: 6","Path: 0 -> 6 -> 2 -> 7, Cost: 6",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_047,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 6, Cost: 6","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=6",False
@@ -12207,7 +12207,7 @@ Reversed path: `0 → 2 → 1 → 6`
 
 The shortest path from 0 to 6 is **0 → 2 → 1 → 6**
 The total weight of this path is **0 + 5 + (-3) + 1 = 3**","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_047,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 5","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_047,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 5","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_047,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 6 in the given graph G = (V, E), we can use Dijkstra's algorithm or Bellman-Ford algorithm. Since there is a negative edge weight (2,1,-3), Bellman-Ford is more appropriate to ensure correctness. However, let's trace the paths manually to find the shortest one.
 
 We want to find $\delta(0, 6)$.
@@ -12280,7 +12280,7 @@ Let's verify the cost:
 1 -> 6 has weight 1.
 Total cost: 5 + (-3) + 1 = 2 + 1 = 3.
 
-Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=0",False
+Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_047,W5,google/gemini-2.5-flash,"Path: No path, Cost: Infinity","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_047,W6,google/gemini-2.5-flash,"Path: 4 -> 5 -> 2 -> 1 -> 6, Cost: 26","Path: 0 -> 6, Cost: 7",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_048,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 7, Cost: 11","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=11",False
@@ -12300,7 +12300,7 @@ graph TD
     5 -- 10 --> 7
     6 -- 7 --> 7
 ```","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (3,1) missing",False
-SP_048,W3,google/gemini-2.5-flash,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 6","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=6, expected=3",False
+SP_048,W3,google/gemini-2.5-flash,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 6","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=6",False
 SP_048,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph G = (V, E), we can use a shortest path algorithm. Since the graph has negative edge weights (e.g., (2,1,-3)), Dijkstra's algorithm is not suitable. We should use the Bellman-Ford algorithm or SPFA (Shortest Path Faster Algorithm).
 
 Let's use the Bellman-Ford algorithm.
@@ -12371,7 +12371,7 @@ Let's verify the cost:
 (0,2,5) -> (2,1,-3) -> (1,7,1)
 Cost = 5 + (-3) + 1 = 2 + 1 = 3.
 
-Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
+Path: 0 -> 2 -> 1 -> 7, Cost: 3","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_048,W5,google/gemini-2.5-flash,"Path: No path from node 7 to node 0, Cost: Infinity","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=0, expected=3",False
 SP_048,W6,google/gemini-2.5-flash,"Path: 0 -> 3 -> 6 -> 7 -> 1, Cost: 17","Path: 0 -> 3 -> 6 -> 7, Cost: 8",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_049,W1,google/gemini-2.5-flash,"Path: 0 -> 4 -> 6 -> 8, Cost: 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W1,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -12434,7 +12434,7 @@ So the path is `0 ← 4 ← 6 ← 8`.
 
 **Shortest Path:** 0 → 4 → 6 → 8
 **Total Weight:** 3 + 2 + 5 = 10","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_049,W3,google/gemini-2.5-flash,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_049,W3,google/gemini-2.5-flash,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_049,W4,google/gemini-2.5-flash,"Dijkstra's algorithm is used to find the shortest path from a starting node to all other nodes in a graph with non-negative edge weights.
 
 Here's how we apply it to find δ(0, 8):
@@ -13087,7 +13087,7 @@ SP_053,W2,google/gemini-2.5-flash,"To find the shortest path from Source 0 to Ta
 
 **Shortest Path:** 0 → 1 → 2 → 5
 **Total Weight:** 14 + 4 + 7 = 25","Path: 0 -> 1 -> 2 -> 5, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_053,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_053,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_053,W4,google/gemini-2.5-flash,"Here's how to find the minimum weight path from 0 to 5 in the given graph G using Dijkstra's algorithm:
 
 **Graph Representation:**
@@ -13432,7 +13432,7 @@ graph = {
 
 *   **Shortest Path:** `0 → 2 → 3 → 5 → 6`
 *   **Total Weight:** `17`","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_055,W3,google/gemini-2.5-flash,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17","Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_055,W3,google/gemini-2.5-flash,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17","Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_055,W4,google/gemini-2.5-flash,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_055,W5,google/gemini-2.5-flash,There is no path from node 6 to node 0 as all roads are one-way and lead away from node 6.,"Path: 6 -> 5 -> 3 -> 2 -> 0, Cost: 17",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W5,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_055,W6,google/gemini-2.5-flash,There is no specified start and end node.,"Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W6,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
@@ -13577,7 +13577,7 @@ Reversing the path: `0 → 1 → 3 → 6 → 7`
 The total weight of this path is `3 + 3 + 7 + 8 = 21`.
 
 The final answer is $\boxed{21}$","Path: 0 -> 1 -> 3 -> 6 -> 7, Cost: 21",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_056,W3,google/gemini-2.5-flash,"Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21","Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_056,W3,google/gemini-2.5-flash,"Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21","Path: Berlin -> Prague -> Vienna -> Budapest -> Rome, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 4 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_056,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 7 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 **Initialization:**
@@ -13773,7 +13773,7 @@ Path: 0 -> 1 -> 2 -> 3 -> 6
 **Result:**
 *   **Shortest Path:** 0 → 1 → 2 → 3 → 6
 *   **Total Weight:** 24","Path: 0 -> 1 -> 2 -> 3 -> 6, Cost: 24",True,parsed_with_normalization,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_057,W3,google/gemini-2.5-flash,"Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24","Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",True,parsed_clean,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_057,W3,google/gemini-2.5-flash,"Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24","Path: London -> Paris -> Brussels -> Amsterdam -> Berlin, Cost: 24",True,parsed_clean,False,False,False,"Path: 0 -> 4 -> 5 -> 6, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_057,W4,google/gemini-2.5-flash,"Here's how to find the minimum weight path from 0 to 6 in the given graph using Dijkstra's algorithm:
 
 **Initialization:**
@@ -14114,7 +14114,7 @@ The shortest path is `0 → 3 → 4 → 6 → 7 → 8`.
 
 **Shortest Path:** 0 → 3 → 4 → 6 → 7 → 8
 **Shortest Distance:** 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_059,W3,google/gemini-2.5-flash,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_059,W3,google/gemini-2.5-flash,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_059,W4,google/gemini-2.5-flash,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W4,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_059,W5,google/gemini-2.5-flash,"To find the shortest path from node 8 to node 0, we need to consider the road network in reverse, as the roads are one-way. This means we're looking for a path from 0 to 8 in the original network that minimizes the travel time. Since the question asks for the path from 8 to 0, it implies we should reverse the original edges and find the shortest path from 8 in this reversed graph to 0.
 
@@ -14302,7 +14302,7 @@ Start from the target node (8) and move backwards using the predecessors diction
 
 **Shortest Path:** 0 → 3 → 4 → 5 → 7 → 8
 **Total Weight:** 10","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_060,W3,google/gemini-2.5-flash,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 11","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=11, expected=10",False
+SP_060,W3,google/gemini-2.5-flash,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 11","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=10, claimed=11",False
 SP_060,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 8 in the given graph G = (V, E), where V = {0, 1, ..., 8} and E = {(0,1,0), (0,3,2), (1,2,20), (2,8,25), (3,4,1), (4,5,2), (5,7,2), (7,6,14), (7,8,3)}, we can use Dijkstra's algorithm.
 
 Let's maintain a dictionary `dist` to store the shortest distance found so far from the source (0) to each node, and a dictionary `prev` to store the predecessor node in the shortest path.
@@ -14671,7 +14671,7 @@ In forward order: 0 -> 3 -> 4 -> 6
 
 Cost: dist[6] = 12
 
-The final answer is $\boxed{\text{Path: 0 -> 3 -> 4 -> 6, Cost: 12}}$","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=0",False
+The final answer is $\boxed{\text{Path: 0 -> 3 -> 4 -> 6, Cost: 12}}$","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_062,W5,google/gemini-2.5-flash,"Path: 6 -> 4 -> 3 -> 0, Cost: 12","Path: 6 -> 4 -> 3 -> 0, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_062,W6,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 5 -> 6 -> 4, Cost: 28","Path: 0 -> 2 -> 1 -> 5 -> 6, Cost: 9",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_063,W1,google/gemini-2.5-flash,"Path: 0 -> 3 -> 4 -> 8, Cost: 12","Path: 0 -> 3 -> 4 -> 8, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W1,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -15006,7 +15006,7 @@ Reverse the path: `[0, 3, 4, 6]`
 
 * **Shortest Distance from 0 to 6:** 12
 * **Shortest Path from 0 to 6:** 0 → 3 → 4 → 6","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=6",False
-SP_064,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12","Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_064,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12","Path: Berlin -> Munich -> Budapest -> Zagreb, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_064,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 6 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 Let's maintain a distance array `dist` where `dist[v]` stores the current minimum distance found from the source node (0) to node `v`. Initialize `dist[0] = 0` and `dist[v] = infinity` for all other `v`. We also need a `parent` array to reconstruct the path.
@@ -15163,7 +15163,7 @@ If we *must* give a path and cost, and assuming there's a misunderstanding in th
 Path: 0 -> 3 -> 4 -> 6, Cost: 12
 
 But strictly adhering to the question:
-There is no path from node 6 to node 0 given the one-way road network.","Path: 6 -> 4 -> 3 -> 0, Cost: 12",False,parsed_with_normalization,True,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,True,in_bank_ok,True,False,algo_strict,"path_invalid_edge: (6,0) missing",True
+There is no path from node 6 to node 0 given the one-way road network.","Path: 6 -> 4 -> 3 -> 0, Cost: 12",True,parsed_with_normalization,True,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W5,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
 SP_064,W6,google/gemini-2.5-flash,"Path: 0 -> 1 -> 6 -> 3, Cost: 13","Path: 0 -> 1 -> 6, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_065,W1,google/gemini-2.5-flash,"Path: 0 -> 3 -> 4 -> 6, Cost: 12","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W1,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_065,W2,google/gemini-2.5-flash,"To find the shortest path from a source node to a target node in a graph with weighted edges, we can use Dijkstra's algorithm.
@@ -15488,7 +15488,7 @@ Start from the target node (6) and trace back using predecessors:
 
 **Shortest Path:** 0 → 2 → 3 → 6
 **Shortest Distance:** 5","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_066,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_066,W3,google/gemini-2.5-flash,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_066,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 6 in the given graph G = (V, E), we can use Dijkstra's algorithm.
 
 Let's initialize:
@@ -15636,7 +15636,7 @@ The length of this path is dist[8] = 5.
 Let's verify the path cost: (0 → 2, weight=3) + (2 → 3, weight=1) + (3 → 8, weight=1) = 3 + 1 + 1 = 5.
 
 The final answer is $\boxed{5}$","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_068,W3,google/gemini-2.5-flash,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_068,W3,google/gemini-2.5-flash,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_068,W4,google/gemini-2.5-flash,"Using Dijkstra's algorithm to find the minimum weight path from node 0 to node 8:
 
 Initialize:
@@ -15836,7 +15836,7 @@ Let's confirm the cost for `0 -> 2 -> 3 -> 7`:
 (3,7,1) -> cost 1
 Total cost = 3 + 1 + 1 = 5.
 
-Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_069,W5,google/gemini-2.5-flash,This is a trick question! The roads are one-way. There is no path from Node 7 to Node 0.,"Path: 7 -> 3 -> 2 -> 0, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=0, expected=5",False
 SP_069,W6,google/gemini-2.5-flash,"Path: 5 -> 1 -> 0 -> 2 -> 7 -> 4 -> 6, Cost: 71","Path: 0 -> 2 -> 7, Cost: 4",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_070,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 6, Cost: 1","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=1",False
@@ -15922,7 +15922,7 @@ Path: `0 -> 2 -> 1 -> 6`
 Total cost = 5 + (-3) + 1 = 3
 
 The final answer is $\boxed{3}$","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_070,W3,google/gemini-2.5-flash,"Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_070,W3,google/gemini-2.5-flash,"Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_070,W4,google/gemini-2.5-flash,"To find the minimum weight path from vertex 0 to vertex 6 in the given graph G = (V, E), we can use the Bellman-Ford algorithm because the graph contains negative edge weights.
 
 Here's a step-by-step application of the Bellman-Ford algorithm:
@@ -16009,7 +16009,7 @@ Let's verify the cost for the path 0 -> 2 -> 1 -> 6:
 * (1,6): weight 1
 Total cost = 5 + (-3) + 1 = 3.
 
-Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
+Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_070,W5,google/gemini-2.5-flash,"It is not possible to find a path from node 6 to node 0 because all roads are one-way and lead away from node 0, or between other nodes. There are no roads leading to node 0 from any other node, making it impossible to reach node 0 starting from node 6.","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_070,W6,google/gemini-2.5-flash,"Path: 0 -> 1 -> 2 -> 6, Cost: 4","Path: 0 -> 1 -> 2 -> 6, Cost: 4",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_071,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 8, Cost: 11","Path: 0 -> 2 -> 1 -> 8, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=11",False
@@ -16108,7 +16108,7 @@ The shortest path is 0 → 2 → 1 → 8.
 0 + 5 (0→2) + (-3) (2→1) + 1 (1→8) = 3.
 
 The final answer is $\boxed{3}$","Path: 0 -> 2 -> 1 -> 8, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_071,W3,google/gemini-2.5-flash,"Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 5","Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_071,W3,google/gemini-2.5-flash,"Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 5","Path: Berlin -> Vienna -> Prague -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_071,W4,google/gemini-2.5-flash,"```
 Path: 0 -> 1 -> 8, Cost: 4
 ```","Path: 0 -> 2 -> 1 -> 8, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 4",True,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=4, expected=3",False
@@ -16185,7 +16185,7 @@ dist[2] = 5 came from dist[0] + weight(0,2) = 0 + 5 = 5.
 So the path is 0 → 2 → 1 → 6.
 
 The final answer is $\boxed{3}$","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_072,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 5","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_072,W3,google/gemini-2.5-flash,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 5","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_072,W4,google/gemini-2.5-flash,"To find the minimum weight path from 0 to 6, we can use the Bellman-Ford algorithm since there are negative edge weights.
 
 Let $d[u]$ be the shortest distance from the source (node 0) to node $u$.
@@ -16245,7 +16245,7 @@ Let's verify the cost of this path:
 Cost = weight(0,2) + weight(2,1) + weight(1,6)
 Cost = 5 + (-3) + 1 = 3.
 
-Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
+Path: 0 -> 2 -> 1 -> 6, Cost: 3","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_072,W5,google/gemini-2.5-flash,There is no path from node 6 to node 0 because all roads are one-way and lead away from node 0.,"Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (6,0) missing",False
 SP_072,W6,google/gemini-2.5-flash,"Path: 5 -> 2 -> 3 -> 4 -> 1 -> 6, Cost: 47","Path: 0 -> 4 -> 1 -> 6, Cost: 9",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_073,W1,google/gemini-2.5-flash,"Path: 0 -> 2 -> 1 -> 7, Cost: 5","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
@@ -16265,7 +16265,7 @@ graph TD
     5 -- 7 --> 7
     6 -- 8 --> 7
 ```","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (3,1) missing",False
-SP_073,W3,google/gemini-2.5-flash,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 5","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=5, expected=3",False
+SP_073,W3,google/gemini-2.5-flash,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 5","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
 SP_073,W4,google/gemini-2.5-flash,"We are given a graph G = (V, E) where V = {0, 1, ..., 7} and E = {(0,1,3), (0,2,5), (0,3,7), (0,4,6), (0,5,9), (0,6,7), (1,7,1), (2,1,-3), (2,7,8), (3,7,8), (4,7,6), (5,7,7), (6,7,8)}. We need to find the minimum weight path from vertex 0 to vertex 7, denoted as δ(0, 7).
 
 Since there are negative edge weights, we will use the Bellman-Ford algorithm to find the shortest path.
@@ -16335,7 +16335,7 @@ Let's verify the cost:
 1 -> 7 (cost 1)
 Total cost = 5 + (-3) + 1 = 3.
 
-The final answer is $\boxed{Path: 0 -> 2 -> 1 -> 7, Cost: 3}$","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=0",False
+The final answer is $\boxed{Path: 0 -> 2 -> 1 -> 7, Cost: 3}$","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_073,W5,google/gemini-2.5-flash,"Error: No path from 7 to 0, Cost: Infinity","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=0, expected=3",False
 SP_073,W6,google/gemini-2.5-flash,"Path: 2 -> 0 -> 5 -> 4 -> 3 -> 6 -> 7, Cost: 34","Path: 0 -> 5 -> 4 -> 3 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 WIS_006,W1,google/gemini-2.5-flash,"Selected: {0, 3, 4, 5, 6}, Total: 35","Selected: {0, 1, 3, 4, 5, 6}, Total: 40",False,parsed_clean,False,False,False,"Selected: {0, 1, 3, 4, 5, 6}, Total: 40",,standard,W1,True,in_bank_ok,False,False,algo_strict,"wrong_total: predicted=35, expected=40",False

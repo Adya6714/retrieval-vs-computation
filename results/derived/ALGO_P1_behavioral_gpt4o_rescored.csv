@@ -213,7 +213,7 @@ SP_001,W2,openai/gpt-4o,"To determine the fastest route from Warehouse 0 to Cust
    - 18 + 6 = 24 minutes
 
 The fastest route is option 5:
-**Path: Warehouse 0 → Stopover 5 → Bypass 9 → Crossing 10 → Customer 11, Cost: 19**","Path: 0 → 5 → 10 → 11, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+**Path: Warehouse 0 → Stopover 5 → Bypass 9 → Crossing 10 → Customer 11, Cost: 19**","Path: 0 → 5 → 10 → 11, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=19, expected=17",False
 SP_001,W3,openai/gpt-4o,"Path: A -> B -> D -> I -> L, Cost: 14 mins","Path: Hub A → Hub F → Hub K → Hub L, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=20, claimed=14",False
 SP_001,W4,openai/gpt-4o,"To find the shortest path from node 0 to node 11 in the given directed, weighted graph, we need to apply Dijkstra's algorithm, which is efficient for graphs with non-negative weights.
 
@@ -276,8 +276,8 @@ Let's perform these steps:
 From the process, the shortest path was found as 0 → 2 → 4 → 9 → 10 → 11 with a total cost of 19:
 
 **Path**: 0 -> 2 -> 4 -> 9 -> 10 -> 11, **Cost**: 19","Path: 0 → 5 → 10 → 11, Cost: 17",False,parse_failed,False,True,False,"Path: 0 → 5 → 10 → 11, Cost: 17",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=20, claimed=19",False
-SP_002,canonical,openai/gpt-4o,"Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 19 -> Waypoint 18 -> Waypoint 6 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct,True
-SP_002,W1,openai/gpt-4o,"Path: Home Base 16 -> Checkpoint 12 -> Checkpoint 9 -> Checkpoint 19 -> Checkpoint 18 -> Checkpoint 6 -> Checkpoint 5 -> Checkpoint 10 -> Checkpoint 15 -> Peak Refuge 11, Cost: 36 hrs","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=42, claimed=36",False
+SP_002,canonical,openai/gpt-4o,"Path: Base Camp 16 -> Waypoint 12 -> Waypoint 9 -> Waypoint 19 -> Waypoint 18 -> Waypoint 6 -> Waypoint 5 -> Waypoint 10 -> Waypoint 15 -> Waypoint 21 -> Summit Lodge 11, Cost: 40","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",True,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,canonical,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
+SP_002,W1,openai/gpt-4o,"Path: Home Base 16 -> Checkpoint 12 -> Checkpoint 9 -> Checkpoint 19 -> Checkpoint 18 -> Checkpoint 6 -> Checkpoint 5 -> Checkpoint 10 -> Checkpoint 15 -> Peak Refuge 11, Cost: 36 hrs","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parse_failed,False,True,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=36, expected=40",False
 SP_002,W2,openai/gpt-4o,"To find the fastest route from Base Camp 16 to Summit Lodge 11, we need to determine the path with the minimum total time. Using the data provided, we can apply a shortest path algorithm like Dijkstra's Algorithm, accounting for the hours between each point.
 
 Let's determine the fastest route:
@@ -337,8 +337,8 @@ Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 11
 Cost: 38
 
 This path satisfies the condition of being the valid path with the minimum cost from node 16 to node 11.","Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",False,parsed_clean,False,False,False,"Path: 16 → 12 → 9 → 19 → 18 → 6 → 5 → 10 → 15 → 21 → 11, Cost: 40",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (16,11) missing",False
-SP_003,canonical,openai/gpt-4o,"Path: Safe House 11 -> Shortcut 17 -> Flyover 7 -> Sidestreet 1 -> Outpost 14 -> Junction 0 -> Crossing 15 -> Warehouse 12 -> Overpass 3 -> Drop Point 9, Cost: 49","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=53, claimed=49",False
-SP_003,W1,openai/gpt-4o,"Path: Hideout 11 -> Relay Station 18 -> Outstation 14 -> Intersection 0 -> Crossroads 15 -> Storage Unit 5 -> Stockroom 12 -> Flyover 3 -> Collection Point 9, Cost: 28 mins","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=33, claimed=28",False
+SP_003,canonical,openai/gpt-4o,"Path: Safe House 11 -> Shortcut 17 -> Flyover 7 -> Sidestreet 1 -> Outpost 14 -> Junction 0 -> Crossing 15 -> Warehouse 12 -> Overpass 3 -> Drop Point 9, Cost: 49","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard,canonical,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=49, expected=22",False
+SP_003,W1,openai/gpt-4o,"Path: Hideout 11 -> Relay Station 18 -> Outstation 14 -> Intersection 0 -> Crossroads 15 -> Storage Unit 5 -> Stockroom 12 -> Flyover 3 -> Collection Point 9, Cost: 28 mins","Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",False,parse_failed,False,True,False,"Path: 11 → 17 → 10 → 2 → 3 → 9, Cost: 22",,standard,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=28, expected=22",False
 SP_003,W2,openai/gpt-4o,"To find the fastest route from Safe House 11 to Drop Point 9, we will examine various paths and calculate their travel times using the provided data. After evaluating possible routes and their aggregate times, the optimal route can be determined.
 
 Upon analyzing the given routes and their corresponding times, one ideal path is:
@@ -472,7 +472,7 @@ Upon examining these paths, the first and third paths have the same minimum tota
 
 Thus, the path of minimum total pressure loss is:
 
-`Path: Central Reservoir 0 → Primary Node 1 → Access Corridor 2 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15, Cost: 37`","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+`Path: Central Reservoir 0 → Primary Node 1 → Access Corridor 2 → Transit Passage 6 → Storage Vault 8 → Relay Station 10 → Assembly Point 12 → Processing Hub 14 → Final Treatment Plant 15, Cost: 37`","Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=37, expected=32",False
 SP_005,W3,openai/gpt-4o,"Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 38","Path: Hub A → Hub E → Hub J → Hub L → Hub O → Hub P, Cost: 32",False,parse_failed,False,True,False,"Path: 0 → 4 → 9 → 11 → 14 → 15, Cost: 32",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=37, claimed=38",False
 SP_005,W4,openai/gpt-4o,"To solve the problem of finding the shortest path from node 0 to node 15 in the given weighted directed graph, we need to find the path with the minimum total pressure loss. This can be done efficiently using Dijkstra's algorithm, which is appropriate for graphs with non-negative edge weights.
 
@@ -2160,7 +2160,7 @@ The shortest path from node 0 to node 6 has a total weight of 12. The path can b
 - Path: 0 → 3 → 4 → 6
 
 Therefore, the shortest path from node 0 to node 6 is through nodes 3 and 4 with a total weight of 12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_019,W3,openai/gpt-4o,"Path: Berlin -> Hamburg -> Munich -> Stuttgart -> Cologne, Cost: 20","Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=12",False
+SP_019,W3,openai/gpt-4o,"Path: Berlin -> Hamburg -> Munich -> Stuttgart -> Cologne, Cost: 20","Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=20",False
 SP_019,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the graph \( G = (V, E) \), we can use Dijkstra's algorithm because the graph involves non-negative weights. Let's walk through the algorithm step by step:
 
 1. **Initialization:**
@@ -2311,7 +2311,7 @@ SP_020,W2,openai/gpt-4o,"To find the shortest path from the source vertex 0 to t
    - The path can be traced back from node 5: 0 → 3 → 4 → 5.
 
 Thus, the shortest path from the source node 0 to the target node 5 is 0 → 3 → 4 → 5 with a total weight of 12.","Path: 0 -> 3 -> 4 -> 5, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_020,W3,openai/gpt-4o,"Path: Rome -> Milan -> Venice -> Bologna -> Naples, Cost: 20","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=12",False
+SP_020,W3,openai/gpt-4o,"Path: Rome -> Milan -> Venice -> Bologna -> Naples, Cost: 20","Path: Rome -> Florence -> Bologna -> Naples, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 5, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=20",False
 SP_020,W4,openai/gpt-4o,"To solve this problem, we will use Dijkstra's algorithm, which is well-suited for finding the shortest path in a weighted graph with non-negative weights.
 
 We have the graph \( G = (V, E) \) with vertices \( V = \{0, 1, 2, 3, 4, 5\} \) and edges \( E = \{(0,1,1), (0,3,4), (1,2,1), (1,4,14), (2,4,12), (2,5,24), (3,2,11), (3,4,4), (4,5,4)\} \).
@@ -2461,7 +2461,7 @@ Here's how Dijkstra's algorithm would work on this graph:
 3. **Shortest Path**:
 
 The shortest path from node 0 to node 8 is via the path 0 → 3 → 4 → 8 with the total minimum weight of 12.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_021,W3,openai/gpt-4o,"Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 10","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=10, expected=12",False
+SP_021,W3,openai/gpt-4o,"Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 10","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=10",False
 SP_021,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 8 in the given graph \( G = (V, E) \), where \( V = \{ 0, 1, \ldots, 8 \} \) and the edge set \( E \) includes weighted edges, we can use Dijkstra's algorithm to efficiently determine the shortest path starting from vertex 0. Here, edges are represented as triples \((u, v, w)\), where \( u \) and \( v \) are the vertices and \( w \) is the weight of the edge from \( u \) to \( v \).
 
 Let's execute Dijkstra's algorithm for this graph:
@@ -2686,7 +2686,7 @@ The shortest path from node 0 to node 7 is through nodes 2 and 3 with a total we
 \[ 0 \rightarrow 2 \rightarrow 3 \rightarrow 7 \]
 
 This path has a total weight of: 3 (0 → 2) + 1 (2 → 3) + 1 (3 → 7) = 5.","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_024,W3,openai/gpt-4o,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_024,W3,openai/gpt-4o,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 5","Path: London -> Reading -> Bristol -> Cardiff, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_024,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the graph \( G \) with vertices \( V = \{0, 1, \ldots, 7\} \) and edges \( E = \{(0,1,3), (0,2,3), (0,3,9), (0,4,7), (0,5,10), (0,6,10), (1,3,6), (1,7,3), (2,3,1), (2,7,8), (3,7,1), (4,7,11), (5,7,11), (6,7,10)\} \), we can use Dijkstra's algorithm. Here's how it works:
 
 1. **Initialize the graph:**
@@ -2883,7 +2883,7 @@ Let's apply the Bellman-Ford algorithm to find the shortest path from node 0 to 
 - Distance from 0 → 6 is determined as \( \text{distance}[6] = 4 \).
 
 Thus, the shortest path from node 0 to node 6 is of length 4, following the path: 0 → 2 → 1 → 6.","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=6",False
-SP_027,W3,openai/gpt-4o,"Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_027,W3,openai/gpt-4o,"Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_027,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given graph \( G = (V, E) \), where \( V = \{0, 1, \ldots, 6\} \) and \( E \) is the set of directed edges with weights, we can use Dijkstra's algorithm, as all edge weights are non-negative from node 0 to node 6 when considering only valid paths. However, due to the presence of negative weights in general, we would typically use Bellman-Ford algorithm, but we'll ensure not to traverse paths with negative cycles (though there aren't in this graph, as noted).
 
 Step-by-step using Dijkstra’s algorithm:
@@ -3078,7 +3078,7 @@ The shortest path from node 0 to node 7 considering the graph with edge weights 
 - Total path weight: 4
 
 This detailed application of the Bellman-Ford method enables us to account for possible cycles and achieves optimal results with negative weights.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=4, expected=3",False
-SP_029,W3,openai/gpt-4o,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 1","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=1, expected=3",False
+SP_029,W3,openai/gpt-4o,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 1","Path: London -> Berlin -> Paris -> Warsaw, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=1",False
 SP_029,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the directed weighted graph \( G = (V, E) \), we can use Dijkstra's algorithm as all edges have non-negative weights.
 
 ### Step-by-step Solution:
@@ -3236,7 +3236,7 @@ After all these relaxations, the shortest path from node 0 to node 7 is 3. The s
 - 0 → 2 → 1 → 7 with a path cost of 3 (0 to 2 costs 5, 2 to 1 costs -3 resulting in 2, 1 to 7 costs 1 resulting in 3).
 
 Thus, the shortest path from node 0 to node 7 is via nodes (2, 1) with a total weight of 3.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_030,W3,openai/gpt-4o,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 6","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=6, expected=3",False
+SP_030,W3,openai/gpt-4o,"Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 6","Path: Berlin -> Munich -> Hamburg -> Bremen, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=6",False
 SP_030,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm. The graph vertices \( V \) are \(\{0, 1, 2, 3, 4, 5, 6, 7\}\), and the edges \( E \) with weights are given as follows:
 
 - (0,1) with weight 3
@@ -3512,7 +3512,7 @@ SP_032,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex
    - The path 0 → 4 → 5 → 6 → 7 gives the least total cost: 20
 
 ### Minimum Weight Path:
-Path: 0 → 4 → 5 → 6 → 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=20, claimed=12",False
+Path: 0 → 4 → 5 → 6 → 7, Cost: 20","Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 20",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_032,W5,openai/gpt-4o,"Path: None, Cost: Infinity","Path: 7 -> 6 -> 5 -> 4 -> 0, Cost: 20",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_032,W6,openai/gpt-4o,"Path: 6 -> 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 22","Path: 0 -> 5 -> 4 -> 2 -> 1 -> 7, Cost: 9",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_033,W1,openai/gpt-4o,"Path: 0 -> 5 -> 6 -> 7, Cost: 58","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",False,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=58, expected=23",False
@@ -3564,7 +3564,7 @@ Let's go step by step through the graph:
      - Check if \( \text{dist}(7) > 20 + 38 \) (which is 58), but 23 < 58, so no update needed for node 7.
 
 At this point, all reachable nodes have been visited, confirming that the shortest path from node 0 to node 7 is via the path \(0 \rightarrow 1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 7\), with a total weight of 23.","Path: 0 -> 1 -> 2 -> 3 -> 4 -> 7, Cost: 23",False,parsed_with_normalization,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_033,W3,openai/gpt-4o,"Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_033,W3,openai/gpt-4o,"Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23","Path: Paris -> Lyon -> Marseille -> Nice -> Monaco -> Montpellier, Cost: 23",True,parsed_clean,False,False,False,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_033,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the given weighted graph \( G = (V, E) \), we can use Dijkstra's algorithm. Let's go through the process step by step:
 
 1. **Initialize:**
@@ -3676,7 +3676,7 @@ SP_034,W2,openai/gpt-4o,"To find the shortest path from the source node 0 to the
      - From node 3, backtrack to node 0 (through the edge 0 → 3).
 
    Therefore, the shortest path from node 0 to node 7 is 0 → 3 → 4 → 7, with a total weight of 21.","Path: 0 -> 3 -> 4 -> 7, Cost: 21",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_034,W3,openai/gpt-4o,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_034,W3,openai/gpt-4o,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 21","Path: London -> Bristol -> Bath -> Birmingham, Cost: 21",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 61",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_034,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm. Here, \( V = \{0, 1, \ldots, 7\} \) and \( E = \{(0, 1, 5), (0, 3, 6), (1, 2, 20), (2, 7, 36), (3, 4, 8), (3, 6, 24), (4, 5, 26), (4, 7, 7)\} \).
 
 **Step 1:** Initialization
@@ -3814,7 +3814,7 @@ Where:
 - 1 → 4 has a weight of 8
 - 4 → 6 has a weight of 4
 - Total weight = 7 + 8 + 4 = 19","Path: 0 -> 1 -> 4 -> 6, Cost: 19",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_035,W3,openai/gpt-4o,"Path: London -> Paris -> Lyon -> Milan, Cost: 19","Path: London -> Paris -> Lyon -> Milan, Cost: 19",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_035,W3,openai/gpt-4o,"Path: London -> Paris -> Lyon -> Milan, Cost: 19","Path: London -> Paris -> Lyon -> Milan, Cost: 19",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_035,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given graph \( G = (V, E) \), we will use Dijkstra's algorithm since it is well-suited for graphs with non-negative weights. Here is a step-by-step summary of the process and the result:
 
 ### Step-by-Step Execution
@@ -4010,7 +4010,7 @@ Now, applying the algorithm to the graph:
 - Visit node 6 next (Distance = 12, reached with the shortest path)
 
 The shortest path from node 0 to node 6 is through the sequence 0 → 3 → 4 → 6 with a total weight of 12. So the path is 0 → 3 → 4 → 6, and the shortest distance is 12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_037,W3,openai/gpt-4o,"Path: Madrid -> Toledo -> Segovia -> Salamanca -> Leon, Cost: 20","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=12",False
+SP_037,W3,openai/gpt-4o,"Path: Madrid -> Toledo -> Segovia -> Salamanca -> Leon, Cost: 20","Path: Madrid -> Avila -> Salamanca -> Leon, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=20",False
 SP_037,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given weighted graph \( G = (V, E) \), where \( V = \{0, 1, ..., 6\} \) and \( E \) is a set of edges with weights, we can use Dijkstra's algorithm. Dijkstra's algorithm is well-suited for finding the shortest path in graphs with non-negative weights. Let's execute the algorithm:
 
 1. **Initialize:**
@@ -4116,7 +4116,7 @@ Given your graph, let's apply Dijkstra's algorithm:
 The shortest path from node 0 to node 8 is 0 → 3 → 4 → 8 with a total cost of 12.
 
 This path is found by following the path with the smallest accumulated weights throughout the graph traversal.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_038,W3,openai/gpt-4o,"Path: Berlin -> Dresden -> Prague -> Vienna -> Budapest, Cost: 10","Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=10, expected=12",False
+SP_038,W3,openai/gpt-4o,"Path: Berlin -> Dresden -> Prague -> Vienna -> Budapest, Cost: 10","Path: Berlin -> Munich -> Vienna -> Budapest, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=10",False
 SP_038,W4,openai/gpt-4o,"To find the shortest path from vertex 0 to vertex 8 in the given graph, we can use Dijkstra's algorithm. Let's go through the algorithm step by step:
 
 1. **Initialize**: Set the initial distances to all vertices as infinity, except for the starting vertex 0, which has a distance of 0. The initial distances to vertices \( V = \{0, 1, 2, 3, 4, 5, 6, 7, 8\} \) will be:
@@ -4279,7 +4279,7 @@ SP_039,W2,openai/gpt-4o,"To find the shortest path from the source node (0) to t
    - The shortest path from node 0 to node 8 is found to be of distance 12.
 
 The shortest path from node 0 to node 8 goes through nodes 0 → 3 → 4 → 8 with a total weight of 12.","Path: 0 -> 3 -> 4 -> 8, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_039,W3,openai/gpt-4o,"Path: London -> Paris -> Lyon -> Geneva -> Rome, Cost: 20","Path: London -> Brussels -> Geneva -> Rome, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=20, expected=12",False
+SP_039,W3,openai/gpt-4o,"Path: London -> Paris -> Lyon -> Geneva -> Rome, Cost: 20","Path: London -> Brussels -> Geneva -> Rome, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 8, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=20",False
 SP_039,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 8 in the graph \( G = (V, E) \), we can use Dijkstra's algorithm because the edge weights are all positive. Let's go through the steps of Dijkstra's algorithm:
 
 1. **Initialize:**
@@ -4431,7 +4431,7 @@ Let's walk through the process:
    ```
 
 The shortest path from node 0 to node 7 is 0 → 3 → 4 → 7, with a total weight of 12.","Path: 0 -> 3 -> 4 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_040,W3,openai/gpt-4o,"Path: London -> Paris -> Brussels -> Berlin -> Prague, Cost: 10","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=10, expected=12",False
+SP_040,W3,openai/gpt-4o,"Path: London -> Paris -> Brussels -> Berlin -> Prague, Cost: 10","Path: London -> Amsterdam -> Berlin -> Prague, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 7, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=10",False
 SP_040,W4,openai/gpt-4o,"To find the minimum weight path (shortest path) from vertex 0 to vertex 7 in the graph G = (V, E), we can use Dijkstra's algorithm, which is suitable for graphs with non-negative edge weights.
 
 **Step-by-step Dijkstra's Algorithm:**
@@ -4531,7 +4531,7 @@ Let's apply this to the given graph:
   - Node 8 is the target, so we stop.
 
 The shortest path from node 0 to node 8 is through nodes 0 → 2 → 3 → 8 with a total weight of 5.","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_042,W3,openai/gpt-4o,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_042,W3,openai/gpt-4o,"Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5","Path: Paris -> Marseille -> Nice -> Monaco, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_042,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 8 in the given graph \( G = (V, E) \), we'll use Dijkstra's algorithm. The vertices are \( V = \{0, 1, ..., 8\} \) and the edges with weights are given.
 
 ### Step-by-step Dijkstra's Algorithm:
@@ -4649,7 +4649,7 @@ SP_044,W2,openai/gpt-4o,"To find the shortest path from the source node 0 to the
      - Came from node 0.
 
 Thus, the shortest path is 0 → 2 → 3 → 6, with a total weight of 5.","Path: 0 -> 2 -> 3 -> 6, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_044,W3,openai/gpt-4o,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_044,W3,openai/gpt-4o,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_044,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given weighted graph \( G = (V, E) \), we can use Dijkstra's algorithm. Below is the step-by-step application of the algorithm to determine the shortest path and its cost:
 
 **Vertices:** \( V = \{0, 1, 2, 3, 4, 5, 6\} \)
@@ -4842,7 +4842,7 @@ Run the Bellman-Ford algorithm:
 **Output:**
 ```
 Path: 0 -> 2 -> 1 -> 6, Cost: 3
-```","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=5",False
+```","Path: 0 -> 2 -> 1 -> 6, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_045,W5,openai/gpt-4o,"Path: 6, Cost: Infinity","Path: 6 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=6, expected=3",False
 SP_045,W6,openai/gpt-4o,"Path: 1 -> 5 -> 2 -> 6, Cost: 7","Path: 0 -> 4 -> 2 -> 6, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_046,W1,openai/gpt-4o,"Path: 0 -> 2 -> 1 -> 7, Cost: 6","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=6",False
@@ -4893,7 +4893,7 @@ The Bellman-Ford algorithm, on the other hand, is suitable for this situation as
 The shortest path distance from node \(0\) to node \(7\) is thus \(4\), using the path \(0 \rightarrow 1 \rightarrow 7\).
 
 Therefore, the shortest path from node \(0\) to node \(7\) is through node \(1\), with a total weight of 4.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_046,W3,openai/gpt-4o,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 2","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=2, expected=3",False
+SP_046,W3,openai/gpt-4o,"Path: Paris -> Marseille -> Lyon -> Lille, Cost: 2","Path: Paris -> Marseille -> Lyon -> Lille, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=2",False
 SP_046,W4,openai/gpt-4o,"To find the shortest path from vertex 0 to vertex 7 in the given weighted directed graph \( G = (V, E) \), we can use Dijkstra's algorithm since all weights must be non-negative. However, in this case, one of the edges has a negative weight (\( (2,1,-3) \)), which means we should use a different algorithm that can handle negative weights, such as the Bellman-Ford algorithm.
 
 Let's perform the Bellman-Ford algorithm step-by-step to find the shortest path and its cost:
@@ -4940,7 +4940,7 @@ Let's perform the Bellman-Ford algorithm step-by-step to find the shortest path 
 **Output in specified format**:
 ```
 Path: 0 -> 2 -> 1 -> 7, Cost: 3
-```","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=1",False
+```","Path: 0 -> 2 -> 1 -> 7, Cost: 3",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_046,W5,openai/gpt-4o,"Path: 7, Cost: Infinity","Path: 7 -> 1 -> 2 -> 0, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=7, expected=3",False
 SP_046,W6,openai/gpt-4o,"Path: 0 -> 6 -> 2 -> 7, Cost: 6","Path: 0 -> 6 -> 2 -> 7, Cost: 6",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_047,W1,openai/gpt-4o,"Path: 0 -> 2 -> 1 -> 6, Cost: 6","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W1,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=6",False
@@ -5178,7 +5178,7 @@ Let's calculate step-by-step:
 The shortest path from node \(0\) to node \(8\) is: 
 \[ 0 \rightarrow 4 \rightarrow 6 \rightarrow 8 \]
 - Total weight = \(3 + 2 + 5 = 10\)","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_049,W3,openai/gpt-4o,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_049,W3,openai/gpt-4o,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 10","Path: Paris -> Geneva -> Milan -> Rome, Cost: 10",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_049,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 8 in the given weighted graph, we can use Dijkstra's algorithm. Let's go through the steps:
 
 ### Initialization:
@@ -5233,7 +5233,7 @@ SP_049,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex
 ### OUTPUT FORMAT:
 ```
 Path: 0 -> 4 -> 6 -> 8, Cost: 10
-```","Path: 0 -> 4 -> 6 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=10, claimed=0",False
+```","Path: 0 -> 4 -> 6 -> 8, Cost: 10",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_049,W5,openai/gpt-4o,"Path: 8, Cost: Infinity","Path: 8 -> 6 -> 4 -> 0, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=8, expected=10",False
 SP_049,W6,openai/gpt-4o,"Path: 4 -> 6 -> 2 -> 7 -> 8, Cost: 14","Path: 0 -> 4 -> 6 -> 2 -> 7 -> 8, Cost: 17",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 46",,standard,W6,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
 SP_050,W1,openai/gpt-4o,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W1,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -5297,7 +5297,7 @@ Let's proceed step by step:
   - Extract node 7 (distance 11) from the queue. Since 7 is the target, we have found the shortest path.
 
 The shortest path from 0 to 7 is 0 → 3 → 4 → 5 → 7 with a total weight of 11.","Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 11",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_050,W3,openai/gpt-4o,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11","Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_050,W3,openai/gpt-4o,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11","Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 11",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 47",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_050,W4,openai/gpt-4o,"To find the shortest path from vertex 0 to vertex 7 in the given weighted graph \( G = (V, E) \), we'll use Dijkstra's algorithm. This algorithm is suitable for graphs with non-negative edge weights.
 
 ### Steps:
@@ -5483,7 +5483,7 @@ The minimum distance from vertex 0 to 7 is 18. The path is:
 
 Thus, the minimum weight path and cost from 0 to 7 is:
 
-**Path: 0 -> 2 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18**","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W4,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
+**Path: 0 -> 2 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18**","Path: 0 -> 1 -> 3 -> 4 -> 5 -> 7, Cost: 18",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct_cost_only,True
 SP_051,W5,openai/gpt-4o,"Path: 7, Cost: Infinity","Path: 7 -> 5 -> 4 -> 3 -> 1 -> 0, Cost: 18",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=7, expected=18",False
 SP_051,W6,openai/gpt-4o,"Path: 0 -> 2 -> 3 -> 7, Cost: 6","Path: 0 -> 2 -> 3 -> 7, Cost: 6",True,parsed_clean,False,False,False,"Path: 0 -> 2 -> 6 -> 7, Cost: 53",,standard,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_052,W1,openai/gpt-4o,"Path: 0 -> 3 -> 4 -> 8, Cost: 46","Path: 0 -> 1 -> 2 -> 5 -> 6 -> 8, Cost: 11",False,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 8, Cost: 46",,standard,W1,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=46, expected=11",False
@@ -5633,7 +5633,7 @@ To find the actual path:
   - Node 1 ← 0 (source)
 
 Therefore, the shortest path from node 0 to node 5 is: 0 → 1 → 2 → 5, with a total weight of 25.","Path: 0 -> 1 -> 2 -> 5, Cost: 25",True,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_053,W3,openai/gpt-4o,"Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_053,W3,openai/gpt-4o,"Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25","Path: Berlin -> Munich -> Vienna -> Warsaw, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 5, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_053,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 5 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm as the graph appears to have positive weights on the edges. Let's start by applying Dijkstra's algorithm step by step:
 
 1. **Initialization:**
@@ -5791,7 +5791,7 @@ Performing Dijkstra's algorithm:
 
 The minimum weight path from vertex 0 to vertex 7 has a total cost of 12, and the path is:
 
-Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=12, claimed=2",False
+Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12","Path: 0 -> 1 -> 3 -> 4 -> 6 -> 7, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_054,W5,openai/gpt-4o,"Path: 7, Cost: Infinity","Path: 7 -> 6 -> 4 -> 3 -> 1 -> 0, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W5,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=7, expected=12",False
 SP_054,W6,openai/gpt-4o,"Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 14","Path: 0 -> 6 -> 2 -> 5 -> 3 -> 7, Cost: 8",False,parsed_with_normalization,False,False,False,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",,standard,W6,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=8, claimed=14",False
 SP_055,W1,openai/gpt-4o,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17","Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 17",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 4 -> 6, Cost: 54",,standard,W1,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -6309,7 +6309,7 @@ Based on the above steps, the shortest path from node 0 to node 7 is through nod
 - **Total Weight = 20**
 
 Thus, the shortest path from node 0 to node 7 has a total weight of 20.","Path: 0 -> 3 -> 5 -> 7, Cost: 20",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_058,W3,openai/gpt-4o,"Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20","Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_058,W3,openai/gpt-4o,"Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20","Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 7, Cost: 57",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_058,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph \( G = (V, E) \), where \( V = \{0, 1, \ldots, 7\} \) and \( E = \{(0,1,2), (0,3,7), (1,2,20), (2,7,35), (3,4,27), (3,5,10), (5,6,28), (5,7,3)\} \), we can use Dijkstra's algorithm.
 
 1. **Initialize:**
@@ -6431,7 +6431,7 @@ SP_059,W2,openai/gpt-4o,"To find the shortest path from the source node (0) to t
     - Using the recorded paths: 0 → 3 → 4 → 6 → 7 → 8.
    
 By following these steps with Dijkstra's Algorithm, the shortest path from source node 0 to target node 8 is found to have a total cost of 25, following the path through the nodes: 0 → 3 → 4 → 6 → 7 → 8.","Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 25",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=25, claimed=8",False
-SP_059,W3,openai/gpt-4o,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_059,W3,openai/gpt-4o,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25","Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 25",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 63",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_059,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 8 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm since all edge weights are positive. Let's go through the process step-by-step:
 
 **Initialization:**
@@ -6587,7 +6587,7 @@ Following these steps, we proceed:
 - Node 8, current distance = 10, this is the target node.
   
 Therefore, the shortest path from node 0 to node 8 has a total weight of 10. The path can be determined from the relaxation updates, as the shortest path is 0 → 3 → 4 → 5 → 7 → 8.","Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 10",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_060,W3,openai/gpt-4o,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 8","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=8, expected=10",False
+SP_060,W3,openai/gpt-4o,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 8","Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 10",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 8, Cost: 45",,standard,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=10, claimed=8",False
 SP_060,W4,openai/gpt-4o,"To find the shortest path from node 0 to node 8 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm since the graph has non-negative edge weights.
 
 ### Graph Details:
@@ -6738,7 +6738,7 @@ Applying Dijkstra's algorithm to the given graph:
 The shortest path from node 0 to node 7 has a total weight of 16. The path that achieves this is:
 
 - 0 → 1 → 2 → 5 → 7.","Path: 0 -> 1 -> 2 -> 5 -> 7, Cost: 16",False,parsed_with_normalization,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W2,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=16, claimed=7",False
-SP_061,W3,openai/gpt-4o,"Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16","Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_061,W3,openai/gpt-4o,"Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16","Path: London -> Paris -> Berlin -> Prague -> Warsaw, Cost: 16",True,parsed_clean,False,False,False,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",,standard,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_061,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph \( G = (V, E) \), where \( V = \{0, 1, \ldots, 7\} \) and each edge \( (u, v, w) \) in \( E \) represents an edge from vertex \( u \) to vertex \( v \) with weight \( w \), we can use Dijkstra's algorithm. The algorithm finds the shortest paths from a source vertex to all other vertices in a weighted graph with non-negative weights.
 
 Let's apply Dijkstra's algorithm to find the shortest path from vertex 0 to vertex 7:
@@ -6847,7 +6847,7 @@ SP_062,W2,openai/gpt-4o,"To find the shortest path from the source node \(0\) to
      - Node 3: predecessor is node 0
 
 The shortest path from node \(0\) to node \(6\) is \(0 \to 3 \to 4 \to 6\) with a total weight of \(12\).","Path: 0 -> 3 -> 4 -> 6, Cost: 12",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_062,W3,openai/gpt-4o,"Path: London -> Paris -> Berlin -> Prague -> Rome, Cost: 10","Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=10, expected=12",False
+SP_062,W3,openai/gpt-4o,"Path: London -> Paris -> Berlin -> Prague -> Rome, Cost: 10","Path: London -> Amsterdam -> Prague -> Rome, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=10",False
 SP_062,W4,openai/gpt-4o,"To find the minimum weight path from node 0 to node 6 in the given graph, we can use Dijkstra's algorithm. Here are the steps and the calculations:
 
 1. Initialize the distances from the source node (0) to all other nodes as infinity. Set the distance to the source node itself as 0.
@@ -7247,7 +7247,7 @@ The shortest path from node `0` to node `6` is with a total distance of `12`.
 
 Therefore, the shortest path from node `0` to node `6` is:
 0 → 3 → 4 → 6, with a total weight of 12.","Path: 0 -> 3 -> 4 -> 6, Cost: 12",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_065,W3,openai/gpt-4o,"Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 10","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=10, expected=12",False
+SP_065,W3,openai/gpt-4o,"Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 10","Path: London -> Bristol -> Birmingham -> Edinburgh, Cost: 12",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 2 -> 4 -> 6, Cost: 18",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=18, claimed=10",False
 SP_065,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given weighted graph \( G = (V, E) \), we can use Dijkstra's algorithm. The algorithm efficiently finds the shortest path from a starting vertex to all other vertices in a graph with non-negative edge weights.
 
 Here's how the algorithm proceeds for this graph:
@@ -7371,7 +7371,7 @@ The graph has nodes 0 to 6 and the following directed edges with weights:
 
 ### Shortest Path from Node 0 to Node 6
 The shortest path from node 0 to node 6 is: 0 → 2 → 3 → 6 with a total weight of 5.","Path: 0 -> 2 -> 3 -> 6, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W2,True,in_bank_ok,True,True,algo_strict,correct,False
-SP_066,W3,openai/gpt-4o,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_066,W3,openai/gpt-4o,"Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5","Path: Berlin -> Munich -> Frankfurt -> Dresden, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_066,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given graph \( G = (V, E) \), we can apply Dijkstra's algorithm. Here's a step-by-step calculation of the shortest paths from vertex 0.
 
 ### Initialization
@@ -7478,7 +7478,7 @@ Here is the detailed step-by-step resolution for this specific graph:
    - Node 8 is the target node. The algorithm stops here since the shortest path to the target is found.
 
 The shortest path from node 0 to node 8 is 0 → 2 → 3 → 8 with a total weight of 5.","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_068,W3,openai/gpt-4o,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_068,W3,openai/gpt-4o,"Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_068,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 8 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm. The graph is represented as follows:
 
 - Vertices \( V = \{0, 1, 2, 3, 4, 5, 6, 7, 8\} \)
@@ -7531,7 +7531,7 @@ After running Dijkstra's algorithm, the shortest path from vertex 0 to vertex 8 
 **Output:**
 ```
 Path: 0 -> 2 -> 3 -> 8, Cost: 5
-```","Path: 0 -> 2 -> 3 -> 8, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=5, claimed=3",False
+```","Path: 0 -> 2 -> 3 -> 8, Cost: 5",True,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W4,True,in_bank_ok,False,True,algo_strict,correct,True
 SP_068,W5,openai/gpt-4o,"Path: None, Cost: ∞","Path: 8 -> 3 -> 2 -> 0, Cost: 5",False,parse_failed,False,True,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W5,False,parse_failed,False,,algo_strict,parse_failed: cost not found,
 SP_068,W6,openai/gpt-4o,"Path: 0 -> 3 -> 4 -> 2 -> 8, Cost: 8","Path: 0 -> 3 -> 4 -> 2 -> 8, Cost: 8",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 8, Cost: 6",False,adversarial,W6,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_069,W1,openai/gpt-4o,"Path: 0 -> 2 -> 3 -> 7, Cost: 5","Path: 0 -> 2 -> 3 -> 7, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W1,True,in_bank_ok,True,True,algo_strict,correct,False
@@ -7596,7 +7596,7 @@ The shortest path from node 0 to node 7 is achieved with a total weight of 5. To
 - Path: 0 → 2 → 3 → 7
 
 This provides the shortest path with the minimal weight of 5.","Path: 0 -> 2 -> 3 -> 7, Cost: 5",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_069,W3,openai/gpt-4o,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5","Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_069,W3,openai/gpt-4o,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5","Path: London -> Brussels -> Amsterdam -> Munich, Cost: 5",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 6",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_069,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 7 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm. Here's a step-by-step approach to solve this:
 
 ### Step 1: Initialization
@@ -7711,7 +7711,7 @@ Given the graph edges described, the Bellman-Ford algorithm is applied as follow
 
 ### Conclusion:
 According to Bellman-Ford, the shortest path from node 0 to node 6 has a distance of 4, achieved through the path 0 → 1 → 6 with weights 3 + 1.","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,path_endpoints_invalid,False
-SP_070,W3,openai/gpt-4o,"Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_070,W3,openai/gpt-4o,"Path: London -> Berlin -> Paris -> Prague, Cost: 3","Path: London -> Berlin -> Paris -> Prague, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_070,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the given graph \( G = (V, E) \), we can use Dijkstra's algorithm. However, because there are negative weight edges (specifically \( (2,1,-3) \)), Dijkstra's algorithm is not suitable. Instead, we'll use the Bellman-Ford algorithm, which can handle graphs with negative weights as long as there are no negative weight cycles.
 
 Let's go through the steps of the Bellman-Ford algorithm for this graph, starting from vertex 0:
@@ -7879,7 +7879,7 @@ Let's apply this:
   - Stop processing further as the shortest path is found.
 
 The shortest path from node 0 to node 6 is with a cost of 4, and the path is 0 → 1 → 6.","Path: 0 -> 2 -> 1 -> 6, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"path_invalid_edge: (1,1) missing",False
-SP_072,W3,openai/gpt-4o,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 8","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=8, expected=3",False
+SP_072,W3,openai/gpt-4o,"Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 8","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 3",False,parsed_clean,False,False,False,"Path: 0 -> 1 -> 6, Cost: 4",False,adversarial,W3,True,in_bank_ok,False,False,algo_strict,"path_cost_mismatch: path_sum=3, claimed=8",False
 SP_072,W4,openai/gpt-4o,"To find the minimum weight path from vertex 0 to vertex 6 in the graph \( G = (V, E) \) using Dijkstra's algorithm, we need to consider the weighted edges between the vertices. Here’s how the algorithm works step by step:
 
 1. **Initialization:**
@@ -7980,7 +7980,7 @@ Here are the steps for the Bellman-Ford algorithm applied to the graph:
 
 The shortest path from 0 to 7 is along the route:
 0 → 1 → 7. With a total weight = 3 + 1 = 4.","Path: 0 -> 2 -> 1 -> 7, Cost: 3",False,parsed_with_normalization,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W2,True,in_bank_ok,False,False,algo_strict,"wrong_cost: predicted=4, expected=3",False
-SP_073,W3,openai/gpt-4o,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct_cost_only,False
+SP_073,W3,openai/gpt-4o,"Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 3",True,parsed_clean,False,False,False,"Path: 0 -> 1 -> 7, Cost: 4",False,adversarial,W3,True,in_bank_ok,True,True,algo_strict,correct,False
 SP_073,W4,openai/gpt-4o,"To find the minimum weight path from node 0 to node 7 in the given graph \( G = (V, E) \) where \( V = \{0, 1, \ldots, 7\} \) and \( E \) is a set of weighted directed edges, we can utilize Dijkstra's algorithm. This algorithm is suited for graphs with non-negative weights, though the presence of a negative edge weight here means we need to be cautious, or potentially consider an algorithm like the Bellman-Ford if true negative cycle handling is necessary. However, since we don't have cycles stemming from negative weights here, we can proceed to see if Dijkstra's direct application or manual checks can address it.
 
 ### Steps:

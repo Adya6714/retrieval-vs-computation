@@ -10,6 +10,7 @@ print the pass-count table.
 Recorded baseline (commit this file before any verifier fix):
   BW blocksworld  W3: 25/50      BW mystery W3: 10/15   BW mystery W6: 10/15
   ALGO shortest_path W5: 0/50    ALGO wis W3: 25/30 (5 raise ValueError)
+  ALGO shortest_path W3: 55/55 (node_mapping from notes / recovered text)
   GSM: all pass
   Everything not listed above currently passes.
 """
@@ -94,7 +95,14 @@ def verify_gold_row(family: str, row: dict[str, str]) -> tuple[bool, str | None]
     try:
         if family == "ALGO" or subtype.lower() in _ALGO_SUBTYPES:
             ok, _reason, _meta = verify_algo(
-                pid, gold, gold, subtype, variant, params
+                pid,
+                gold,
+                gold,
+                subtype,
+                variant,
+                params,
+                notes=row.get("notes"),
+                problem_text=text,
             )
             return bool(ok), None
         vf = _resolve_verifier_family(
@@ -221,6 +229,29 @@ def test_gold_in_gold_out(family: str, problem_subtype: str, variant_type: str) 
         f"{family} {problem_subtype} {variant_type}: {n_pass}/{n_incl} included "
         f"({n_excl} excluded invalid_gold, n_total={n_total})"
     )
+
+
+def test_algo_shortest_path_w3_gold_roundtrip() -> None:
+    """SP W3 gold must verify as a path once node_mapping is restored from notes."""
+    path = BANKS["ALGO"]
+    n = n_ok = n_path = 0
+    for row in _load_bank(path):
+        if str(row.get("problem_subtype", "")).strip() != "shortest_path":
+            continue
+        if normalize_variant(row.get("variant_type")) != "W3":
+            continue
+        n += 1
+        ok, err = verify_gold_row("ALGO", row)
+        assert err is None, f"{row.get('problem_id')}: raised {err}"
+        assert ok, f"{row.get('problem_id')} gold failed"
+        n_ok += 1
+        from probes.contamination.verify_algo import LAST_VERIFY_META
+
+        if LAST_VERIFY_META.get("path_provided"):
+            n_path += 1
+    assert n == 55
+    assert n_ok == 55
+    assert n_path >= 50, f"SP W3 gold verified cost-only too often: path_provided {n_path}/55"
 
 
 if __name__ == "__main__":

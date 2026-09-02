@@ -151,9 +151,17 @@ def main() -> None:
         raise ValueError(f"Bank missing required columns: {sorted(miss_bank)}")
 
     merged = sweep.merge(
-        bank[["problem_id", "variant_type", "problem_subtype", "difficulty_params", "correct_answer"]].rename(
-            columns={"correct_answer": "bank_ground_truth"}
-        ),
+        bank[
+            [
+                "problem_id",
+                "variant_type",
+                "problem_subtype",
+                "difficulty_params",
+                "correct_answer",
+                "notes",
+                "problem_text",
+            ]
+        ].rename(columns={"correct_answer": "bank_ground_truth"}),
         on=["problem_id", "variant_type"],
         how="left",
         validate="many_to_one",
@@ -181,6 +189,8 @@ def main() -> None:
                 str(r["problem_subtype"]),
                 str(r["variant_type"]),
                 r["difficulty_params_obj"],
+                notes=str(r.get("notes") or ""),
+                problem_text=str(r.get("problem_text") or ""),
             )
             reverified.append(bool(ok))
         except Exception:
