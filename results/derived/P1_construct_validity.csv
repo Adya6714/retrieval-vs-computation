@@ -1,0 +1,10 @@
+row_construct,col_construct,spearman_rho,ci_low,ci_high,p_value,n_cells,can_acc_floor,bootstrap,n_boot,seed
+retention,retention,1.0,1.0,1.0,0.0,14,0.3,cluster_by_family,5000,42
+retention,phi,0.714,0.4,1.0,0.006,13,0.3,cluster_by_family,5000,42
+retention,canonical_accuracy,0.136,-0.1,0.8,0.642,14,0.3,cluster_by_family,5000,42
+phi,retention,0.714,0.4,1.0,0.006,13,0.3,cluster_by_family,5000,42
+phi,phi,1.0,1.0,1.0,0.0,13,0.3,cluster_by_family,5000,42
+phi,canonical_accuracy,-0.426,-0.724,0.5,0.146,13,0.3,cluster_by_family,5000,42
+canonical_accuracy,retention,0.136,-0.1,0.8,0.642,14,0.3,cluster_by_family,5000,42
+canonical_accuracy,phi,-0.426,-0.724,0.5,0.146,13,0.3,cluster_by_family,5000,42
+canonical_accuracy,canonical_accuracy,1.0,1.0,1.0,0.0,14,0.3,cluster_by_family,5000,42
