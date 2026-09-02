@@ -1,0 +1,79 @@
+problem_id,model,w3_ok,verify_reason,model_answer
+CC_01,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=3, expected=2","Total: 3 Scoops: 7 g, 4 g, 1 g"
+CC_02,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=4, expected=2","Total: 4 Scoops: 5 g, 6 g, 9 g, 9 g"
+CC_03,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=4, expected=2","Total: 4 Scoops: 6 g, 7 g, 9 g, 11 g"
+CC_04,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=4, expected=2","Total: 4 Scoops: 7 g, 10 g, 14 g, 23 g"
+CC_05,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=4, expected=2","Total: 4 Scoops: 7 g, 6 g, 4 g, 1 g"
+CC_06,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=4, expected=3","Total: 4 Scoops: 7, 8, 15, 15"
+CC_07,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=3, expected=2","Total: 3 Scoops: 4 g, 5 g, 8 g"
+CC_08,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=4, expected=2","Total: 4 Scoops: 6 g, 10 g, 15 g, 25 g"
+CC_09,Qwen/qwen2.5:1.5b-instruct,False,wrong_items: predicted list does not match ground truth,"Total: 5 Scoops: 7 g, 11 g, 31 g, 67 g, 197 g"
+CC_10,Qwen/qwen2.5:1.5b-instruct,False,"wrong_count: predicted=5, expected=7","Total: 5 Scoops: 7 g, 11 g, 31 g, 67 g, 197 g"
+SP_003,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=37, claimed=48","Path: 11 -> 0 -> 5 -> 2 -> 3 -> 9, Cost: 48"
+SP_004,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=8, claimed=21","Path: 0 -> 3 -> 6 -> 4 -> 5 -> 9, Cost: 21(ms)"
+SP_005,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=37, claimed=35","Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 35"
+WIS_003,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=140, expected=55","Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
+Total: 140"
+WIS_004,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=23, expected=37","Selected: {0, 14, 8}
+Total: 23"
+SP_019,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=31, claimed=35","Path: Berlin -> Frankfurt -> Munich -> Stuttgart -> Cologne, Cost: 35"
+SP_020,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=18, claimed=1","Path: Rome -> Milan -> Venice -> Bologna -> Naples, Cost: 1 + 1 + 12 + 4 = 18"
+SP_021,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=18, claimed=4","Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 4 + 12 + 4 + 8 = 28"
+SP_023,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=6, expected=5","Path: Tokyo -> Osaka -> Kobe, Cost: 6"
+SP_024,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=5, claimed=13","Path: London -> Reading -> Bristol -> Cardiff, Cost: 13"
+SP_026,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=6, expected=5","Path: Paris -> Lyon -> Monaco, Cost: 6"
+SP_027,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=3, claimed=10","Path: Tokyo -> Kyoto -> Osaka -> Fukuoka, Cost: 10"
+SP_028,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=3, claimed=16","Path: Tokyo -> Kyoto -> Osaka -> Sendai, Cost: 16"
+SP_029,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=4, expected=3","Path: London -> Paris -> Warsaw, Cost: 4"
+SP_030,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=13, claimed=11","Path: Berlin -> Munich -> Bremen, Cost: 11"
+SP_037,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=18, claimed=4","Path: Madrid -> Toledo -> Segovia -> Salamanca -> Leon, Cost: 4 + 12 + 12 + 4 = 32"
+SP_038,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=39, claimed=37","Path: Berlin -> Munich -> Prague -> Budapest, Cost: 37"
+SP_039,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=18, claimed=4","Path: London -> Paris -> Lyon -> Geneva -> Rome, Cost: 4 + 1 + 12 + 4 = 21"
+SP_040,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=26, claimed=31","Path: London -> Paris -> Brussels -> Prague, Cost: 31"
+SP_042,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=6, expected=5","Path: Paris -> Lyon -> Monaco, Cost: 6"
+SP_044,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=5, claimed=20","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 20"
+SP_045,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=3, claimed=12","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 12"
+SP_046,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=13, expected=3","Path: Paris -> Marseille -> Lille, Cost: 13"
+SP_047,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=13, claimed=11","Path: Paris -> Marseille -> Lille, Cost: 11"
+SP_048,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=4, expected=3","Path: London -> Paris -> Warsaw, Cost: 4"
+SP_062,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=31, claimed=24","Path: London -> Amsterdam -> Berlin -> Prague -> Rome, Cost: 24"
+SP_063,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=26, claimed=43","Path: London -> Cambridge -> Oxford -> Edinburgh, Cost: 43"
+SP_064,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=18, claimed=4","Path: Berlin -> Prague -> Vienna -> Budapest -> Zagreb, Cost: 4 + 14 + 12 + 4 = 34"
+SP_065,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=18, claimed=4","Path: London -> Oxford -> Cambridge -> Birmingham -> Edinburgh, Cost: 4 + 1 + 12 + 4 = 21"
+SP_066,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=10, claimed=13","Path: Berlin -> Hamburg -> Frankfurt -> Dresden, Cost: 13"
+SP_068,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=5, claimed=22","Path: London -> Cambridge -> Birmingham -> Edinburgh, Cost: 22"
+SP_069,Qwen/qwen2.5:1.5b-instruct,False,path_endpoints_invalid,"Path: London -> Paris -> Amsterdam, Cost: 3 + 6 = 9"
+SP_070,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=4, expected=3","Path: London -> Paris -> Prague, Cost: 4"
+SP_071,Qwen/qwen2.5:1.5b-instruct,False,"wrong_cost: predicted=4, expected=3","Path: Berlin -> Prague -> Warsaw, Cost: 4"
+SP_072,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=3, claimed=16","Path: Paris -> Marseille -> Lyon -> Strasbourg, Cost: 16"
+SP_073,Qwen/qwen2.5:1.5b-instruct,False,"path_cost_mismatch: path_sum=3, claimed=24","Path: Berlin -> Vienna -> Prague -> Paris, Cost: 24"
+WIS_013,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=20, expected=49","Selected: {Opening Keynote, Tech Workshop, Networking Break}
+Total: 20"
+WIS_014,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=21, expected=53","Selected: {Opening Keynote, Networking Break, Full Day Bootcamp}
+Total: 21"
+WIS_015,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=29, expected=49","Selected: {Opening Keynote, Tech Workshop, Networking Break}
+Total: 29"
+WIS_016,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=22, expected=51","Selected: {Opening Keynote, Workshop Session, Networking Break}
+Total: 22"
+WIS_017,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=58, expected=57","Selected: {1, 3, 4}
+Total: 58"
+WIS_018,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=50, expected=55","Selected: {1, 3, 4}
+Total: 50"
+WIS_019,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=70, expected=58","Selected: {1, 3, 4, 6}
+Total: 70"
+WIS_020,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=33, expected=59","Selected: {1, 3, 4}
+Total: 33"
+WIS_023,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=24, expected=47","Selected: {1, 2, 3}
+Total: 24"
+WIS_024,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=20, expected=47","Selected: {Opening Keynote, Tech Panel, Product Demo}
+Total: 20"
+WIS_025,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=21, expected=44","Selected: {1, 2, 3}
+Total: 21"
+WIS_026,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=23, expected=53","Selected: {Opening Keynote, Tech Workshop, Networking Session}
+Total: 23"
+WIS_027,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=50, expected=56","Selected: {1, 3, 4}
+Total: 50"
+WIS_028,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=24, expected=43","Selected: {1, 2, 3}
+Total: 24"
+WIS_029,Qwen/qwen2.5:1.5b-instruct,False,"wrong_total: predicted=20, expected=47","Selected: {2, 4, 8}
+Total: 20"
