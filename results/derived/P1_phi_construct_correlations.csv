@@ -1,0 +1,4 @@
+pair,spearman_rho,p_value,n_cells,can_acc_floor
+phi_vs_retention,0.714,0.006,13,0.3
+phi_vs_accuracy,-0.426,0.146,13,0.3
+retention_vs_accuracy,0.136,0.642,14,0.3
