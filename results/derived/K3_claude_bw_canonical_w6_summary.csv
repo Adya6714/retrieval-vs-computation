@@ -1,0 +1,15 @@
+metric,value
+n_instance_pairs,65.0
+n_excluded_true_duplicate,8.0
+n_valid_w6_pairs,57.0
+claude_acc_canonical,0.14
+claude_acc_w6,0.614
+canonical_plan_length_mean,10.772
+w6_plan_length_mean,11.228
+plan_length_delta_mean,0.456
+canonical_goal_depth_mean,0.0
+w6_goal_depth_mean,0.0
+canonical_text_len_mean,684.2
+w6_text_len_mean,711.7
+canonical_num_blocks_mean,6.818
+w6_num_blocks_mean,6.818
