@@ -135,6 +135,12 @@ BW CCI/TEP null diagnosis: `results/derived/P2_bw_cci_null_diagnosis.csv`, `P2_b
 
 Do not rewrite `raw/` GSM P2 files. Overlay also has `phase1_correct`; `phase2a_correct` / `phase2b_correct` stay blank.
 
+Future GSM P2 runs write `phase2a_values` and `phase2b_values` as JSON lists (`scripts/GSM_P2_SCR_run_probe2.py`). Acc_P2A is then `verify(phase2a_values[-1])`. Existing raw files were not re-run.
+
+**BW and ALGO Probe 2 inject at different points and are not directly comparable.** ALGO Phase 2B uses the bank `critical_step_index` (0 mismatches vs the injected logs). BW TEP ignores that field and uses `injection_schedule(plan_length)` in `scripts/BW_P2_SCR_run_tep.py` (candidates at 2, n/3, n/2, 2n/3; about 3.6 inject sites per session on the released `BW_P2_tep.csv`). Do not pool BW TEP with ALGO TEP.
+
+Future GSM P2 runs write `phase2a_values` and `phase2b_values` JSON lists (`scripts/GSM_P2_SCR_run_probe2.py` OUTPUT_COLUMNS). Acc_P2A is then `verify(phase2a_values[-1])`. Existing raw files were not re-run.
+
 ---
 
 ## Probe 3 — no template-vs-instance split; n-gram windows are not comparable across families
