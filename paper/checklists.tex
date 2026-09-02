@@ -167,8 +167,9 @@
     \item[] Question: Does the paper report error bars suitably and correctly
     defined or other appropriate information about statistical significance?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Wilson 95\% confidence intervals are reported for all
-    proportions; paired Wilcoxon with exact $W$ and $p$ for CCI comparisons;
+    \item[] Justification: Wilson 95\% confidence intervals for GSM and BW
+    proportions; ALGO intervals are 10k percentile cluster bootstrap over
+    clone families (seed 42). Paired Wilcoxon with exact $W$ and $p$ for CCI comparisons;
     Pearson $r$ with bootstrap $p$ for correlations; Fisher's exact for
     matched-subset tests. A Holm--Bonferroni multiple-comparison policy is
     documented in Appendix~\ref{app:metrics}.

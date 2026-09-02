@@ -1,8 +1,8 @@
 """Statistical testing and confidence interval utilities.
 
-All Probe-1 metric CIs from bootstrap_ci use 10000 resamples by default.
-Paper/appendix text often names Wilson 95% CIs; rebuild NUMBERS.csv uses
-wilson_ci. cluster_bootstrap_ci resamples clone families, not problems.
+Probe-1 GSM/BW metric CIs from bootstrap_ci use 10000 iid resamples.
+ALGO intervals use cluster_bootstrap_ci (clone families, seed 42).
+Rebuild NUMBERS.csv uses Wilson for GSM/BW and cluster bootstrap for ALGO.
 """
 
 from __future__ import annotations

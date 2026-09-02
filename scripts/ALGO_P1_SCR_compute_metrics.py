@@ -27,8 +27,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from probes.common.stats import bootstrap_ci
+from probes.common.stats import cluster_bootstrap_ci
 from probes.common.exclusions import filter_excluded  # noqa: E402
+from probes.common.clones import cluster_ids_for  # noqa: E402
 
 
 def _to_bool(val: object) -> bool:
@@ -207,7 +208,12 @@ def main() -> None:
             continue
         vals = g["verified_bool"].astype(float).tolist()
         mean = float(np.mean(vals))
-        lo, hi = bootstrap_ci(vals, n_resamples=args.bootstrap_n)
+        lo, hi = cluster_bootstrap_ci(
+            vals,
+            cluster_ids_for(g["problem_id"].astype(str).tolist()),
+            n_resamples=args.bootstrap_n,
+            seed=42,
+        )
         _add_metric(
             metric_rows,
             model=model,

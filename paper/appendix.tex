@@ -22,7 +22,8 @@ data, and is shown as explicit n/a cells elsewhere.
   \item \textbf{Matched-subset sample sizes are deliberate, not
   under-powered.} We report matched-canonical tests on the subsets where
   matching yields useful $n$ (shortest-path $n{=}34$, coin-change $n{=}10$).
-  The full-subtype Wilson CIs are the primary statistic; the matched tests
+  The full-subtype ALGO CIs are cluster bootstrap over clone families
+  (10k, seed 42); GSM/BW use Wilson. The matched tests
   are supporting evidence. The CC inversion ($n{=}10$) is explicitly labelled
   exploratory in the main text.
   \item \textbf{WIS exposure-difficulty co-variance.} WIS is both lower
@@ -128,7 +129,9 @@ complementary mechanistic final-rank read-out (median gold-token rank in the
 residual stream), reported only for the open-weight Qwen-2.5-7B pilot
 (Appendix~\ref{app:mech}).
 
-\textbf{Statistics.} Wilson 95\% CIs for all reported proportions. Fisher's
+\textbf{Statistics.} Wilson 95\% CIs for GSM and BW proportions.
+ALGO intervals are 10k percentile cluster bootstrap over clone families
+(seed 42), not Wilson and not iid problem bootstrap. Fisher's
 exact on matched-canonical subsets (exploratory only). Paired Wilcoxon
 signed-rank (primary) and paired $t$-test (secondary) for CCI/TEP comparisons
 ($n{=}44$, zero-imputed). For continuous proximity-behavior correlations we

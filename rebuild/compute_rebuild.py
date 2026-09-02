@@ -41,6 +41,8 @@ from probes.behavioral.retention import (  # noqa: E402
     retention_ratio,
 )
 from probes.common.exclusions import filter_excluded  # noqa: E402
+from probes.common.clones import cluster_ids_for  # noqa: E402
+from probes.common.stats import cluster_bootstrap_ci  # noqa: E402
 from triangulation_rule import (  # noqa: E402
     APPENDIX_CCI_COMPUTATION_MIN,
     APPENDIX_CCI_RETRIEVAL_MAX,
@@ -489,11 +491,19 @@ def load_bw_p1(bw_ids: set[str]) -> pd.DataFrame:
     return filter_excluded(df, family="BW")
 
 
-def _acc_row(sub: pd.DataFrame) -> tuple[int, int, float, float, float]:
+def _acc_row(sub: pd.DataFrame, *, cluster: bool = False) -> tuple[int, int, float, float, float]:
     n = int(len(sub))
     k = int(sub["ok"].sum()) if n else 0
     acc = k / n if n else float("nan")
-    lo, hi = wilson(k, n)
+    if n and cluster and "problem_id" in sub.columns:
+        vals = sub["ok"].astype(float).tolist()
+        lo, hi = cluster_bootstrap_ci(
+            vals,
+            cluster_ids_for(sub["problem_id"].astype(str).tolist()),
+            seed=42,
+        )
+    else:
+        lo, hi = wilson(k, n)
     return k, n, acc, lo, hi
 
 
@@ -532,19 +542,19 @@ def run_p1(banks: dict, algo: dict[str, pd.DataFrame], gsm: dict[str, pd.DataFra
         for slice_name in ["CC-chall", "CC-std", "SP-chall", "SP-std", "WIS-chall", "WIS-std"]:
             for vt in ALGO_BW_VARIANTS:
                 sub = df[(df["slice"] == slice_name) & (df["variant_type"] == vt)]
-                k, n, acc, lo, hi = _acc_row(sub)
+                k, n, acc, lo, hi = _acc_row(sub, cluster=True)
                 val = acc if n else "NOT_COMPUTABLE"
                 add(id=f"P1.1.ALGO.{slice_name}.{m}.{vt}", probe="P1", phase="P1", family="ALGO",
                     subtype=slice_name, model=m, variant=vt, metric="accuracy",
                     value=val, n=n, ci_low=lo if n else "", ci_high=hi if n else "",
-                    source_file=src, filter_applied=filt,
+                    source_file=src, filter_applied=filt + "; CI=10k clone-family cluster bootstrap seed=42",
                     note="" if n else "variant not present for this slice (W5/W6 holes are real)")
         for sub_name in ["CC", "SP", "WIS", "ALL"]:
             ids = PAPER_ADV[sub_name] if sub_name != "ALL" else list(PAPER_ADV_ALL)
             can = df[(df["variant_type"] == "canonical") & df["problem_id"].isin(ids)]
             w3 = df[(df["variant_type"] == "W3") & df["problem_id"].isin(ids)]
-            _, n_can, a_can, _, _ = _acc_row(can)
-            _, n_w3, a_w3, _, _ = _acc_row(w3)
+            _, n_can, a_can, _, _ = _acc_row(can, cluster=True)
+            _, n_w3, a_w3, _, _ = _acc_row(w3, cluster=True)
             ret, note = _retention_value(a_w3, a_can, n_can, n_w3)
             add(id=f"P1.2.ALGO.{sub_name}.{m}.W3_retention", probe="P1", phase="P1", family="ALGO",
                 subtype=sub_name, model=m, variant="W3", metric="W3_retention",
@@ -1117,17 +1127,17 @@ def run_p2(banks: dict, algo_p1: dict[str, pd.DataFrame]) -> dict:
         else:
             k = int(ln["ok"].sum())
             n = int(len(ln))
-            lo, hi = wilson(k, n)
+            _k, _n, _acc, lo, hi = _acc_row(ln, cluster=True)
             add(id=f"P2.2.ALGO.{m}.acc_p2a", probe="P2", phase="P2A", family="ALGO", model=m,
                 metric="fresh_session_accuracy", value=k / n, n=n, ci_low=lo, ci_high=hi,
-                source_file=src, filter_applied="last step; drop mock; Gemini dedicated overlay")
+                source_file=src, filter_applied="last step; drop mock; Gemini dedicated overlay; cluster bootstrap")
             for fam in ["CC", "SP", "WIS"]:
                 ids = PAPER_ADV[fam]
                 sl = ln[ln["problem_id"].isin(ids)]
                 if sl.empty:
                     continue
                 kk, nn = int(sl["ok"].sum()), int(len(sl))
-                l2, h2 = wilson(kk, nn)
+                _k, _n, _acc, l2, h2 = _acc_row(sl, cluster=True)
                 add(id=f"P2.2.ALGO.{m}.{fam}.acc_p2a", probe="P2", phase="P2A", family="ALGO",
                     subtype=fam, model=m, metric="fresh_session_accuracy", value=kk / nn, n=nn,
                     ci_low=l2, ci_high=h2, source_file=src, filter_applied="frozen adversarial subtype")
@@ -1230,10 +1240,10 @@ def run_p2(banks: dict, algo_p1: dict[str, pd.DataFrame]) -> dict:
                    metric="post_injection_accuracy_plausible", source_file=src, note="no last-step")
         else:
             k, n = int(li["ok"].sum()), int(len(li))
-            lo, hi = wilson(k, n)
+            _k, _n, _acc, lo, hi = _acc_row(li, cluster=True)
             add(id=f"P2.3.ALGO.{m}.post_inj_acc_plausible", probe="P2", phase="P2B", family="ALGO",
                 model=m, metric="post_injection_accuracy_plausible", value=k / n, n=n,
-                ci_low=lo, ci_high=hi, source_file=src, filter_applied="last-step post_injection_correct")
+                ci_low=lo, ci_high=hi, source_file=src, filter_applied="last-step post_injection_correct; cluster bootstrap")
 
         lp = last_impl[last_impl["model"].map(_short) == m] if not last_impl.empty else pd.DataFrame()
         src_impl = "ALGO_P2_phase2_injected_implausible.csv"
@@ -1243,10 +1253,10 @@ def run_p2(banks: dict, algo_p1: dict[str, pd.DataFrame]) -> dict:
                    note="no implausible last-step")
         else:
             k, n = int(lp["ok"].sum()), int(len(lp))
-            lo, hi = wilson(k, n)
+            _k, _n, _acc, lo, hi = _acc_row(lp, cluster=True)
             add(id=f"P2.3.ALGO.{m}.post_inj_acc_implausible", probe="P2", phase="P2B", family="ALGO",
                 model=m, metric="post_injection_accuracy_implausible", value=k / n, n=n,
-                ci_low=lo, ci_high=hi, source_file=src_impl, filter_applied="last-step post_injection_correct")
+                ci_low=lo, ci_high=hi, source_file=src_impl, filter_applied="last-step post_injection_correct; cluster bootstrap")
 
         if not li.empty and not lp.empty:
             merged = li.merge(lp, on="problem_id", suffixes=("_p", "_i"))
