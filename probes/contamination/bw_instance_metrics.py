@@ -32,6 +32,46 @@ def _ontable_blocks(facts: set[tuple]) -> set[str]:
     return {f[1] for f in facts if f[0] == "ontable" and len(f) == 2}
 
 
+def count_goal_towers(goal: set[tuple]) -> int:
+    """Connected components in goal on-relations plus standalone ontable blocks."""
+    on_goal = _on_pairs(goal)
+    ontable = _ontable_blocks(goal)
+    in_tower: set[str] = set()
+    for child, parent in on_goal:
+        in_tower.add(child)
+        in_tower.add(parent)
+    adj: dict[str, set[str]] = defaultdict(set)
+    for child, parent in on_goal:
+        adj[child].add(parent)
+        adj[parent].add(child)
+    visited: set[str] = set()
+    components = 0
+    for block in adj:
+        if block in visited:
+            continue
+        components += 1
+        stack = [block]
+        while stack:
+            node = stack.pop()
+            if node in visited:
+                continue
+            visited.add(node)
+            stack.extend(adj.get(node, set()) - visited)
+    standalone = ontable - in_tower
+    return components + len(standalone)
+
+
+def naming_is_sequential(blocks: set[str]) -> bool:
+    """True when blocks are exactly a..z for n blocks (single lowercase letters)."""
+    ordered = sorted(blocks)
+    if not ordered:
+        return False
+    if not all(len(b) == 1 and b.islower() for b in ordered):
+        return False
+    expected = [chr(ord("a") + i) for i in range(len(ordered))]
+    return ordered == expected
+
+
 def tower_height(on_pairs: list[tuple[str, str]], ontable: set[str]) -> int:
     """Max stack height (blocks in the tallest tower). Flat init → 1."""
     if not on_pairs:
@@ -142,6 +182,8 @@ def extract_bw_metrics(problem_text: str, problem_id: str) -> dict[str, int | st
     return {
         "num_blocks": len(blocks),
         "n_goal_clauses": n_goal_clauses,
+        "n_goal_towers": count_goal_towers(goal),
+        "naming_is_sequential": naming_is_sequential(blocks),
         "goal_tower_depth": tower_height(on_goal, _ontable_blocks(goal)),
         "init_tower_depth": tower_height(on_init, _ontable_blocks(state)),
         "fd_optimal_plan_length": fd_len,

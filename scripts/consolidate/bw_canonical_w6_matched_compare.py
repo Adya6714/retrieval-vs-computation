@@ -21,6 +21,7 @@ BANK = REPO_ROOT / "data/problems/question_bank_bw.csv"
 INST_OUT = DER / "K3_bw_canonical_w6_instances.csv"
 SUM_OUT = DER / "K3_bw_canonical_w6_summary.csv"
 MATCH_OUT = DER / "K3_bw_canonical_w6_matched_report.csv"
+STRAT_OUT = DER / "N1_bw_w6_stratified_accuracy.csv"
 
 MODELS = {
     "anthropic/claude-sonnet-4": "Claude",
@@ -104,6 +105,10 @@ def main() -> None:
             "canonical_gold_plan_length": _plan_length(c["correct_answer"]),
             "w6_gold_plan_length": _plan_length(w["correct_answer"]),
         }
+        row["canonical_n_goal_towers"] = cm.get("n_goal_towers")
+        row["w6_n_goal_towers"] = wm.get("n_goal_towers")
+        row["canonical_naming_is_sequential"] = cm.get("naming_is_sequential")
+        row["w6_naming_is_sequential"] = wm.get("naming_is_sequential")
         for prefix, metrics in (("canonical", cm), ("w6", wm)):
             for key in [
                 "num_blocks",
@@ -181,8 +186,67 @@ def main() -> None:
     summary = pd.DataFrame(summary_rows + [r for r in report_rows if r["section"] == "structural_matched"])
     summary.to_csv(SUM_OUT, index=False)
     pd.DataFrame(report_rows).to_csv(MATCH_OUT, index=False)
+
+    strat_rows: list[dict] = []
+
+    def _acc_rows(sub: pd.DataFrame, *, subset: str) -> None:
+        for model in MODELS.values():
+            ccol = f"{model}_canonical_correct"
+            wcol = f"{model}_w6_correct"
+            if ccol not in sub.columns:
+                continue
+            s = sub[[ccol, wcol]].copy()
+            n = len(s)
+            if n == 0:
+                continue
+            acc_c = float(s[ccol].mean())
+            acc_w = float(s[wcol].mean())
+            strat_rows.append(
+                {
+                    "subset": subset,
+                    "model": model,
+                    "n_pairs": n,
+                    "canonical_accuracy": round(acc_c, 3),
+                    "w6_accuracy": round(acc_w, 3),
+                    "delta_w6_minus_canonical": round(acc_w - acc_c, 3),
+                }
+            )
+
+    _acc_rows(valid, subset="all_valid_pairs")
+    one_tower = valid[valid["w6_n_goal_towers"] == 1].copy()
+    _acc_rows(one_tower, subset="w6_one_goal_tower")
+    matched_naming = valid[
+        valid["canonical_naming_is_sequential"] == valid["w6_naming_is_sequential"]
+    ].copy()
+    _acc_rows(matched_naming, subset="matched_naming_convention")
+
+    for model in MODELS.values():
+        ccol = f"{model}_canonical_correct"
+        wcol = f"{model}_w6_correct"
+        for naming_label, naming_val in [("sequential", True), ("scattered", False)]:
+            for variant, vcol in [("canonical", ccol), ("W6", wcol)]:
+                sub = valid[valid["w6_naming_is_sequential" if variant == "W6" else "canonical_naming_is_sequential"] == naming_val]
+                if sub.empty:
+                    continue
+                strat_rows.append(
+                    {
+                        "subset": "naming_x_variant_2x2",
+                        "model": model,
+                        "naming": naming_label,
+                        "variant": variant,
+                        "n_pairs": len(sub),
+                        "accuracy": round(float(sub[vcol].mean()), 3),
+                        "canonical_accuracy": "",
+                        "w6_accuracy": "",
+                        "delta_w6_minus_canonical": "",
+                    }
+                )
+
+    strat = pd.DataFrame(strat_rows)
+    strat.to_csv(STRAT_OUT, index=False)
     print(f"Wrote {SUM_OUT}")
     print(f"Wrote {MATCH_OUT}")
+    print(f"Wrote {STRAT_OUT}")
     print(summary.to_string(index=False))
 
 
