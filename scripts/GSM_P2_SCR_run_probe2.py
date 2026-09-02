@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Run GSM Probe 2: structured planning + stepwise execution (CCI / TEP)."""
+"""Run GSM Probe 2: structured planning + stepwise execution (CCI / TEP).
+
+Writes phase2a_values and phase2b_values (JSON lists) so Acc_P2A is
+decomposable on a future run. Do not re-run here.
+"""
 
 from __future__ import annotations
 
@@ -62,8 +66,8 @@ OUTPUT_COLUMNS = [
     "phase1_correct",
     "phase2a_correct",
     "phase2b_correct",
-    "phase2a_values_json",
-    "phase2b_values_json",
+    "phase2a_values",
+    "phase2b_values",
     "correct_answer",
 ]
 
@@ -447,8 +451,8 @@ def main() -> None:
                     "phase1_correct": str(bool(phase1_correct)),
                     "phase2a_correct": str(bool(phase2a_correct)),
                     "phase2b_correct": str(bool(phase2b_correct)),
-                    "phase2a_values_json": json.dumps(phase2a_values),
-                    "phase2b_values_json": json.dumps(phase2b_values),
+                    "phase2a_values": json.dumps(phase2a_values),
+                    "phase2b_values": json.dumps(phase2b_values),
                     "correct_answer": correct_answer,
                 }
             )
