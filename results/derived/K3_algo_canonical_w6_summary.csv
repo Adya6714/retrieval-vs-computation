@@ -1,0 +1,14 @@
+section,model,metric,n_pairs,canonical_mean,w6_mean,delta_w6_minus_canonical,w6_easier_if,direction
+accuracy_matched,Claude,accuracy,90,0.667,0.244,-0.422,w6_higher,w6_harder
+accuracy_matched,GPT-4o,accuracy,90,0.433,0.2,-0.233,w6_higher,w6_harder
+accuracy_matched,Gemini,accuracy,90,0.5,0.144,-0.356,w6_higher,w6_harder
+accuracy_matched,Llama,accuracy,90,0.033,0.078,0.044,w6_higher,w6_easier
+accuracy_matched,o4-mini,accuracy,90,1.0,0.422,-0.578,w6_higher,w6_harder
+structural_matched,--,n_denominations,15,3.867,3.867,0.0,w6_lower,matched
+structural_matched,--,n_edges,50,10.94,10.94,0.0,w6_lower,matched
+structural_matched,--,n_intervals,25,6.92,6.92,0.0,w6_lower,matched
+structural_matched,--,n_nodes,50,7.84,7.46,-0.38,w6_lower,w6_easier
+structural_matched,--,optimal_coin_count,15,7.067,8.2,1.133,w6_lower,w6_harder
+structural_matched,--,optimal_path_length,50,11.14,8.2,-2.94,w6_lower,w6_easier
+structural_matched,--,optimal_weight,25,56.8,75.0,18.2,w6_lower,w6_harder
+structural_matched,--,target,15,79.067,82.067,3.0,w6_lower,w6_harder
