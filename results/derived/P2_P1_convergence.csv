@@ -1,4 +1,9 @@
 analysis,scope,statistic,ci_low,ci_high,p_value,n,note
-pointbiserial_cci_w3_correct,GSM_all_instances_with_p2,0.156,-0.006,0.308,0.08,128,P2 CCI vs W3 correctness; cluster-bootstrap by problem_id
+pointbiserial_cci_w3_correct,GSM_all_instances_with_p2,0.156,-0.006,0.308,0.08,128,P2 CCI vs W3 correctness; cluster-bootstrap
 pointbiserial_cci_w3_correct,GSM_canonical_correct_subset,0.153,-0.03,0.32,0.111,110,Same test restricted to canonical-correct instances
-spearman_mean_cci_retention,GSM_across_models,0.6,-1.0,1.0,0.4,4,o4-mini excluded — no GSM P2 per-instance CCI (n=4 models)
+pointbiserial_cci_w3_correct,ALGO_all_instances_with_p2,0.359,-0.043,0.664,0.0,144,P2 CCI vs W3 correctness; cluster-bootstrap
+pointbiserial_cci_w3_correct,ALGO_canonical_correct_subset,0.3,-0.061,0.676,0.013,68,Same test restricted to canonical-correct instances
+pointbiserial_cci_w3_correct,GSM_ALGO_pooled_all_instances_with_p2,0.243,0.027,0.414,0.0,272,P2 CCI vs W3 correctness; cluster-bootstrap
+pointbiserial_cci_w3_correct,GSM_ALGO_pooled_canonical_correct_subset,0.256,0.043,0.416,0.001,178,Same test restricted to canonical-correct instances
+spearman_mean_cci_retention,GSM_across_models,0.6,-1.0,1.0,0.4,4,GSM models with P2 CCI and phi retention (can_acc>=0.3); o4-mini excluded from GSM P2 CCI
+spearman_mean_cci_retention,ALGO_across_models,1.0,1.0,1.0,,2,ALGO models with P2 CCI and phi retention (can_acc>=0.3); Gemini CCI all NaN; Llama below canonical floor
