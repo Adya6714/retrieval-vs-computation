@@ -1,0 +1,9 @@
+finding,detail
+bank_history,W6 never existed on GSM_001-020 in any recoverable bank commit
+commit_3f21f9c_2026-04-23,first bank add; n=120; W6 count=0
+commit_f1459dc,cleanup; n=288; W6=24 on GSM_041-064 only
+commit_27cdeba_anonymous,same 24 W6 rows on GSM_041-064
+HEAD,same 24 W6 rows on GSM_041-064
+table7_gpt4o_w6,0.800 was raw GSM_001-020 W6; not in bank; excluded missing_bank_row
+table7_llama_w6,0.450 was raw GSM_001-020 W6; not in bank; excluded missing_bank_row
+action,removed both cells from paper/tables/table7_pervariant.tex; 20 exclusion rows

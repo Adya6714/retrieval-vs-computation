@@ -9,7 +9,11 @@
   instances from its raw responses. BW is bank-restricted to the $n{=}65$
   PlanBench IDs used throughout. ALGO and BW $W_6$ cells are omitted
   (\texttt{variant\_not\_transformed}: ALGO $W_6$ is 0/90 transformed; BW
-  $W_6$ is 7/65). GSM $W_6$ is retained (23/24 transformed). BW $W_5$
+  $W_6$ is 7/65). GSM $W_6$ is retained for models with bank rows
+  (Claude/Gemini/\omini{} on GSM\_041--064; 23/24 transformed). GPT-4o and
+  Llama $W_6$ cells are omitted (\texttt{missing\_bank\_row}: Table~7
+  .800/.450 were computed on GSM\_001--020 W6 in raw logs; no bank version
+  ever defined W6 on those IDs). BW $W_5$
   drops MBW\_496--500 (identical to canonical; n=60). ALGO accuracies are
   still reported on 110 canonical IDs, but near-duplicate detection
   (normalized text + identical gold) collapses them to effective
@@ -22,9 +26,9 @@
     Family & Slice & Model & Can. & W1 & W2 & W3 & W4 & W5 & W6 \\
     \midrule
     GSM & -- & Claude     & .841 & .841 & .773 & .750 & .636 & .818 & .750 \\
-    GSM & -- & GPT-4o     & .850 & .750 & .300 & .300 & .200 & .300 & .800 \\
+    GSM & -- & GPT-4o     & .850 & .750 & .300 & .300 & .200 & .300 & --- \\
     GSM & -- & Gemini     & .909 & .818 & .636 & .523 & .477 & .614 & .958 \\
-    GSM & -- & Llama      & .800 & .850 & .250 & .150 & .300 & .050 & .450 \\
+    GSM & -- & Llama      & .800 & .850 & .250 & .150 & .300 & .050 & --- \\
     GSM & -- & \omini     & .841 & .864 & .818 & .841 & .682 & .886 & .833 \\
     \midrule
     ALGO & CC-chall.  & Claude & .700 & .700 & .700 & .600 & .800 & --- & --- \\

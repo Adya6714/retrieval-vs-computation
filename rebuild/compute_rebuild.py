@@ -112,7 +112,7 @@ PAPER_TABLE7 = {
     ("GSM", "--", "GPT-4o", "canonical"): 0.850, ("GSM", "--", "GPT-4o", "W1"): 0.750,
     ("GSM", "--", "GPT-4o", "W2"): 0.300, ("GSM", "--", "GPT-4o", "W3"): 0.300,
     ("GSM", "--", "GPT-4o", "W4"): 0.200, ("GSM", "--", "GPT-4o", "W5"): 0.300,
-    ("GSM", "--", "GPT-4o", "W6"): 0.800,
+    # W6 omitted: raw GSM_001-020 W6 is not in the bank (missing_bank_row)
     ("GSM", "--", "Gemini", "canonical"): 0.909, ("GSM", "--", "Gemini", "W1"): 0.818,
     ("GSM", "--", "Gemini", "W2"): 0.636, ("GSM", "--", "Gemini", "W3"): 0.523,
     ("GSM", "--", "Gemini", "W4"): 0.477, ("GSM", "--", "Gemini", "W5"): 0.614,
@@ -120,7 +120,7 @@ PAPER_TABLE7 = {
     ("GSM", "--", "Llama", "canonical"): 0.800, ("GSM", "--", "Llama", "W1"): 0.850,
     ("GSM", "--", "Llama", "W2"): 0.250, ("GSM", "--", "Llama", "W3"): 0.150,
     ("GSM", "--", "Llama", "W4"): 0.300, ("GSM", "--", "Llama", "W5"): 0.050,
-    ("GSM", "--", "Llama", "W6"): 0.450,
+    # W6 omitted: raw GSM_001-020 W6 is not in the bank (missing_bank_row)
     ("GSM", "--", "o4-mini", "canonical"): 0.841, ("GSM", "--", "o4-mini", "W1"): 0.864,
     ("GSM", "--", "o4-mini", "W2"): 0.818, ("GSM", "--", "o4-mini", "W3"): 0.841,
     ("GSM", "--", "o4-mini", "W4"): 0.682, ("GSM", "--", "o4-mini", "W5"): 0.886,

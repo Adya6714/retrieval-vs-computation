@@ -351,13 +351,7 @@ def family_var(family: str) -> pd.DataFrame:
             rec[v] = av
         if family in {"ALGO", "BW"}:
             rec["W6"] = float("nan")
-        if family == "GSM" and model in {"GPT-4o", "Llama"}:
-            rawdf = _read(RAW / f"GSM_P1_behavioral_{TAG[model]}.csv")
-            rawdf["variant_type"] = _norm_var_series(rawdf["variant_type"])
-            rawdf["_n"] = rawdf["problem_id"].map(lambda s: int(str(s).split("_")[1]))
-            w6 = rawdf[(rawdf["variant_type"] == "W6") & (rawdf["_n"] >= 1) & (rawdf["_n"] <= 20)]
-            w6 = w6[_valid_mask(w6)]
-            rec["W6"] = float(_correct(w6).mean()) if len(w6) else float("nan")
+        # GPT-4o/Llama GSM W6 on GSM_001-020 is missing_bank_row; do not score off-bank raw.
         rows.append(rec)
     return pd.DataFrame(rows)
 
@@ -365,15 +359,7 @@ def family_var(family: str) -> pd.DataFrame:
 gsm_var = family_var("GSM")
 bw_var = family_var("BW")
 algo_var = family_var("ALGO")
-# Paper Table 7 GSM W6 for GPT-4o/Llama uses GSM_001-020 W6 in raw (those pairs are not in the bank).
-for model, slug in [("GPT-4o", "gpt4o"), ("Llama", "llama")]:
-    rawdf = _read(RAW / f"GSM_P1_behavioral_{TAG[model]}.csv")
-    vt = rawdf["variant_type"].astype(str).str.strip().str.lower()
-    pidn = rawdf["problem_id"].map(lambda s: int(str(s).split("_")[1]))
-    w6 = rawdf[(vt == "w6") & (pidn >= 1) & (pidn <= 20)]
-    w6 = w6[~w6.get("raw_response", pd.Series([""] * len(w6))).astype(str).str.startswith("ERROR:")]
-    acc = float((w6["behavioral_correct"].astype(str).str.lower() == "true").mean()) if len(w6) else float("nan")
-    gsm_var.loc[gsm_var["model_name"] == slug, "W6"] = acc
+# GPT-4o/Llama GSM W6 on GSM_001-020 is missing_bank_row; bank W6 is GSM_041-064 only.
 gsm_var.to_csv(OUT / "GSM_VAR_5model.csv", index=False)
 bw_var.to_csv(OUT / "BW_VAR_5model.csv", index=False)
 algo_var.to_csv(OUT / "ALGO_VAR_5model.csv", index=False)
