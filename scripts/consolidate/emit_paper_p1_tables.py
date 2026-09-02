@@ -189,8 +189,6 @@ def _cell(df: pd.DataFrame, model: str, variant: str, slice_name: str | None = N
 
 
 def _omit_algo(slice_name: str, variant: str) -> bool:
-    if variant == "W6":
-        return True
     if variant == "W5" and not slice_name.startswith("SP"):
         return True
     return False
@@ -262,11 +260,10 @@ def write_table7(gsm: pd.DataFrame, algo: pd.DataFrame, bw: pd.DataFrame) -> lis
         r"  rescored offline (SP $W_3$ node mapping restored; trailing Path line",
         r"  preferred) on the frozen 61-ID challenging/standard split; \omini{} is",
         r"  omitted from ALGO rows. BW is bank-restricted to the $n{=}65$",
-        r"  PlanBench IDs used throughout. ALGO and BW $W_6$ cells are omitted",
-        r"  (\texttt{variant\_not\_transformed}: ALGO $W_6$ is 0/90 transformed; BW",
-        r"  $W_6$ is 7/65). GSM $W_6$ is retained for models with bank rows",
-        r"  (Claude/Gemini/\omini{} on GSM\_041--064; 23/24 transformed). GPT-4o and",
-        r"  Llama $W_6$ cells are omitted (\texttt{missing\_bank\_row}: Table~7",
+        r"  PlanBench IDs used throughout. ALGO and BW $W_6$ exclude byte-identical",
+        r"  copies (25 ALGO WIS generator bug; 8 BW true duplicates). GSM $W_6$ is",
+        r"  retained for models with bank rows (Claude/Gemini/\omini{} on GSM\_041--064).",
+        r"  GPT-4o and Llama $W_6$ cells are omitted (\texttt{missing\_bank\_row}: Table~7",
         r"  .800/.450 were computed on GSM\_001--020 W6 in raw logs; no bank version",
         r"  ever defined W6 on those IDs). BW $W_5$",
         r"  drops MBW\_496--500 (identical to canonical; n=60). ALGO accuracies are",
@@ -331,7 +328,7 @@ def write_table7(gsm: pd.DataFrame, algo: pd.DataFrame, bw: pd.DataFrame) -> lis
             emit_row("ALGO", sl, m, pack("ALGO", sl, m, algo, omit=_omit_algo))
     lines.append(r"    \midrule")
     for m in T7_BW_MODELS:
-        emit_row("BW", "--", m, pack("BW", "--", m, bw, omit=lambda _s, vt: vt == "W6"))
+        emit_row("BW", "--", m, pack("BW", "--", m, bw))
     lines += [
         r"    \bottomrule",
         r"  \end{tabular}",

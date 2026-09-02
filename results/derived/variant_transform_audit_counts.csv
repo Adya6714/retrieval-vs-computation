@@ -6,7 +6,7 @@ ALGO,W3,transformed,40
 ALGO,W4,transformed,110
 ALGO,W5,transformed,50
 ALGO,W6,identical_to_canonical,25
-ALGO,W6,near_duplicate,65
+ALGO,W6,transformed,65
 BW,W1,transformed,65
 BW,W2,transformed,65
 BW,W3,answer_mismatch,65
@@ -14,8 +14,7 @@ BW,W4,transformed,65
 BW,W5,identical_to_canonical,5
 BW,W5,transformed,60
 BW,W6,identical_to_canonical,8
-BW,W6,near_duplicate,50
-BW,W6,transformed,7
+BW,W6,transformed,57
 GSM,W1,transformed,44
 GSM,W2,transformed,44
 GSM,W3,transformed,44

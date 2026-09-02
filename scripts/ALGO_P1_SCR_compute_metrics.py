@@ -7,7 +7,7 @@ Removed metrics (paper refactor — not named paper outputs):
   greedy_assessment_correct remain in phase1 CSVs), VWC (moved to
   scripts/exploratory/compute_vwc_exploratory.py).
 
-Primary CSV outputs: VAR (W6 omitted: ALGO W6 is excluded as variant_not_transformed).
+Primary CSV outputs: VAR (includes W6 after K1 audit fix).
 ALGO accuracies use 110 canonical IDs; clone audit effective n is 51
 (results/derived/bank_clone_audit.csv) — treat n=110 as non-independent.
 Intermediate (not written to CSV): _std_adv_gap_internal per model/subtype.
@@ -204,8 +204,6 @@ def main() -> None:
     metric_rows: list[dict] = []
 
     for (model, subtype, variant), g in merged.groupby(["model", "subtype", "variant_type"]):
-        if str(variant).upper() == "W6":
-            continue
         vals = g["verified_bool"].astype(float).tolist()
         mean = float(np.mean(vals))
         lo, hi = cluster_bootstrap_ci(

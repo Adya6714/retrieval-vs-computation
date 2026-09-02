@@ -3,8 +3,7 @@
 New figures:
   fig_bw_inversion.pdf    — BW canonical vs W5 per-model paired bars with
                              Wilcoxon-p annotations. W6 omitted (not transformed).
-  fig_subtype_grid.pdf    — ALGO 3 subtypes × 6 variants × 5 models heatmap
-                             (W6 omitted: ALGO W6 is variant_not_transformed).
+  fig_subtype_grid.pdf    — ALGO 3 subtypes × 7 variants × 5 models heatmap.
   fig_probe2_summary.pdf  — Two-panel summary: (left) GSM Phase-1 CCI per
                              model with mean-TEP overlay; (right) ALGO P2A
                              normal vs elicited final-correct.
@@ -152,7 +151,7 @@ def fig_subtype_grid() -> None:
         "o4-mini":  "ALGO_P1_behavioral_o1mini.csv",
     }
 
-    variants = ["canonical", "W1", "W2", "W3", "W4", "W5"]
+    variants = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
     subtypes = ["coin_change", "shortest_path", "wis"]
     subtype_labels = {"coin_change": "Coin change (greedy)",
                       "shortest_path": "Shortest path",
@@ -195,7 +194,7 @@ def fig_subtype_grid() -> None:
         ax.spines[["top","right","left","bottom"]].set_visible(False)
         ax.tick_params(axis="both", which="both", length=0)
 
-    fig.suptitle("ALGO accuracy by subtype × variant × model — WIS is universally fatal (W6 omitted; effective n=51)",
+    fig.suptitle("ALGO accuracy by subtype × variant × model — WIS is universally fatal (effective n=51)",
                  fontsize=10.5)
     # colorbar on right
     cb_ax = fig.add_axes([0.97, 0.10, 0.014, 0.78])

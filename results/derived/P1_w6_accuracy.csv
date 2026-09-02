@@ -1,0 +1,13 @@
+family,model,variant,accuracy,ci_low,ci_high,n,n_clusters,ci_method
+ALGO,Claude,W6,0.338,0.22,0.459,65,27,cluster_bootstrap
+ALGO,GPT-4o,W6,0.277,0.189,0.395,65,27,cluster_bootstrap
+ALGO,Gemini,W6,0.213,0.114,0.375,61,24,cluster_bootstrap
+ALGO,Llama,W6,0.108,0.033,0.185,65,27,cluster_bootstrap
+ALGO,o4-mini,W6,0.594,0.488,0.755,64,27,cluster_bootstrap
+BW,Claude,W6,0.673,0.538,0.788,52,52,iid_bootstrap
+BW,GPT-4o,W6,0.25,0.135,0.365,52,52,iid_bootstrap
+BW,Gemini,W6,0.404,0.269,0.538,52,52,iid_bootstrap
+BW,Llama,W6,0.019,0.0,0.058,52,52,iid_bootstrap
+BW,deepseek/deepseek-r1-distill-llama-70b,W6,0.942,0.865,1.0,52,52,iid_bootstrap
+BW,o4-mini,W6,1.0,1.0,1.0,52,52,iid_bootstrap
+BW,DeepSeek,W6,0.942,0.865,1.0,52,52,iid_bootstrap

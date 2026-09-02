@@ -24,8 +24,8 @@ from _common import (
     output_dir,
 )
 
-# H2: BW W6 is variant_not_transformed — do not plot it.
-VARIANT_ORDER = ["canonical", "W1", "W2", "W3", "W4", "W5"]
+# W6 restored after K1 audit fix (excludes byte-identical copies only).
+VARIANT_ORDER = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
 
 
 def build_matrix(df, family: str):

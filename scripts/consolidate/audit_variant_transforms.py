@@ -5,11 +5,13 @@ One row per (bank, problem_id, variant). Does not write results/raw/.
 Does not call any model API.
 
 transform_status (first match wins):
-  identical_to_canonical  problem_text equals canonical after whitespace collapse
+  identical_to_canonical  W6: problem_text byte-identical to canonical (invalid).
+                          Other variants: whitespace-collapsed text equals canonical.
   answer_mismatch         W1–W4 gold differs from canonical, or W5/W6 gold is identical
-  near_duplicate          W6 only: token Jaccard >= NEAR_DUP_JACCARD vs canonical
-                          or vs any other W6 in the same bank
-  transformed             otherwise
+  transformed             otherwise (valid W6: answer differs and text not byte-identical)
+
+W6 procedural regeneration is expected to resemble canonical text; near-duplicate
+Jaccard is recorded in columns but does not affect transform_status.
 """
 
 from __future__ import annotations
@@ -105,7 +107,12 @@ def main() -> None:
                     continue
                 v_text = str(row.get("problem_text", ""))
                 v_ans = str(row.get("correct_answer", ""))
-                text_identical = _norm_ws(v_text) == _norm_ws(can_text)
+                byte_identical = v_text == can_text
+                text_identical = (
+                    byte_identical
+                    if vt == "W6"
+                    else _norm_ws(v_text) == _norm_ws(can_text)
+                )
                 ans_identical = _norm_answer(v_ans) == _norm_answer(can_ans)
                 jac = token_jaccard(v_text, can_text)
                 sim = char_similarity(v_text, can_text)
@@ -136,8 +143,6 @@ def main() -> None:
                     status = "identical_to_canonical"
                 elif not ans_ok:
                     status = "answer_mismatch"
-                elif vt == "W6" and (near_vs_can or near_vs_w6_id):
-                    status = "near_duplicate"
                 else:
                     status = "transformed"
 
@@ -154,6 +159,7 @@ def main() -> None:
                         "n_tokens_canonical": len(tok_can),
                         "n_tokens_variant": len(tok_v),
                         "token_jaccard": round(jac, 4),
+                        "byte_identical_to_canonical": str(byte_identical),
                         "text_identical_to_canonical": str(text_identical),
                         "answer_identical_to_canonical": str(ans_identical),
                         "answer_expected": ans_expected,

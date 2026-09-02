@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit variant_exclusions.csv for H2 (ALGO/BW W6) and H5 (MBW W5 clones).
+"""Emit variant_exclusions.csv from transform audit + fixed instrument rules.
 
 Does not write results/raw/. Does not regenerate W6.
 """
@@ -17,45 +17,35 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 DERIVED = REPO_ROOT / "results/derived"
+AUDIT = DERIVED / "variant_transform_audit.csv"
 OUT = DERIVED / "variant_exclusions.csv"
-BANKS = {
-    "ALGO": REPO_ROOT / "data/problems/question_bank_algo.csv",
-    "BW": REPO_ROOT / "data/problems/question_bank_bw.csv",
-}
 MBW_W5 = [f"MBW_{i}" for i in range(496, 501)]
-
-
-def _norm_vt(v: str) -> str:
-    s = str(v).strip()
-    if s.lower() == "canonical":
-        return "canonical"
-    if len(s) == 2 and s[0].lower() == "w" and s[1].isdigit():
-        return f"W{s[1]}"
-    return s.upper() if s else s
+GSM_OFFBANK_W6 = [f"GSM_{i:03d}" for i in range(1, 21)]
 
 
 def main() -> None:
     DERIVED.mkdir(parents=True, exist_ok=True)
+    if not AUDIT.exists():
+        raise FileNotFoundError(f"Run audit_variant_transforms.py first: {AUDIT}")
+
+    audit = pd.read_csv(AUDIT, dtype=str).fillna("")
     rows: list[dict] = []
-    for fam, path in BANKS.items():
-        df = pd.read_csv(path, dtype=str).fillna("")
-        df["variant"] = df["variant_type"].map(_norm_vt)
-        w6 = df[df["variant"] == "W6"]
-        for pid in w6["problem_id"].astype(str).str.strip().unique():
-            rows.append(
-                {
-                    "family": fam,
-                    "problem_id": pid,
-                    "variant": "W6",
-                    "reason": "variant_not_transformed",
-                }
-            )
-    bw = pd.read_csv(BANKS["BW"], dtype=str).fillna("")
-    bw["variant"] = bw["variant_type"].map(_norm_vt)
+
+    w6_bad = audit[
+        (audit["variant"] == "W6")
+        & (audit["transform_status"] == "identical_to_canonical")
+    ]
+    for _, r in w6_bad.iterrows():
+        rows.append(
+            {
+                "family": str(r["bank"]).strip().upper(),
+                "problem_id": str(r["problem_id"]).strip(),
+                "variant": "W6",
+                "reason": "variant_not_transformed",
+            }
+        )
+
     for pid in MBW_W5:
-        hit = bw[(bw["problem_id"] == pid) & (bw["variant"] == "W5")]
-        if hit.empty:
-            continue
         rows.append(
             {
                 "family": "BW",
@@ -64,6 +54,17 @@ def main() -> None:
                 "reason": "variant_not_transformed",
             }
         )
+
+    for pid in GSM_OFFBANK_W6:
+        rows.append(
+            {
+                "family": "GSM",
+                "problem_id": pid,
+                "variant": "W6",
+                "reason": "missing_bank_row",
+            }
+        )
+
     with OUT.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(
             f, fieldnames=["family", "problem_id", "variant", "reason"]

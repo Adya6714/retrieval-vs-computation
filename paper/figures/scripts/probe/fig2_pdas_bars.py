@@ -82,7 +82,7 @@ def main():
     ax.set_xticklabels([MODEL_LABELS[m] for m in MODEL_ORDER], fontsize=11)
     ax.set_ylim(0, 1.08)
     ax.set_ylabel("VAR (0–1)")
-    ax.set_title("Figure 2 — Planning Direction Asymmetry (PDAS)\nW6 omitted (BW W6 is variant_not_transformed)")
+    ax.set_title("Figure 2 — Planning Direction Asymmetry (PDAS)")
     ax.legend(fontsize=9)
     ax.spines[["top", "right"]].set_visible(False)
     fig.suptitle(

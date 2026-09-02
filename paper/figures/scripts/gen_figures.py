@@ -228,14 +228,13 @@ def p1_acc(family: str, slug: str, model_label: str) -> dict[str, float]:
             out[v] = float(s.correct.mean()) if len(s) else float("nan")
         out["n_can"] = int((sub.variant_type == "canonical").sum())
         return out
-    # ALGO (W6 excluded: variant_not_transformed)
+    # ALGO
     df = _read_algo_p1(slug)
     df = df.assign(_ok=_correct_col(df).astype(int).values)
     out = {}
-    for v in ["canonical", "W1", "W2", "W3", "W4", "W5"]:
+    for v in ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]:
         sub = df[df.variant_type == v]
         out[v] = float(sub._ok.mean()) if len(sub) else float("nan")
-    out["W6"] = float("nan")
     out["n_can"] = int((df.variant_type == "canonical").sum())
     return out
 
@@ -246,10 +245,9 @@ def p1_acc_subtype(slug: str, problem_ids: list[str]) -> dict[str, float]:
     df = df[df.problem_id.isin(problem_ids)]
     df = df.assign(_ok=_correct_col(df).astype(int).values)
     out = {}
-    for v in ["canonical", "W1", "W2", "W3", "W4", "W5"]:
+    for v in ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]:
         sub = df[df.variant_type == v]
         out[v] = float(sub._ok.mean()) if len(sub) else float("nan")
-    out["W6"] = float("nan")
     out["n"] = int((df.variant_type == "canonical").sum())
     return out
 
@@ -619,11 +617,11 @@ def fig_decay() -> None:
             transform=ax.transAxes, ha="right", va="bottom", fontsize=7.5, color="gray")
     ax.spines[["top", "right"]].set_visible(False)
 
-    variants_algo = ["canonical", "W1", "W2", "W3", "W4", "W5"]
-    xlbl_algo = ["Can", "W1", "W2", "W3", "W4", "W5"]
+    variants_algo = ["canonical", "W1", "W2", "W3", "W4", "W5", "W6"]
+    xlbl_algo = ["Can", "W1", "W2", "W3", "W4", "W5", "W6"]
     xx_algo = np.arange(len(variants_algo))
 
-    # ---- (b) ALGO challenging Claude vs GPT-4o (W6 dropped: not transformed) ----
+    # ---- (b) ALGO challenging Claude vs GPT-4o ----
     ax2 = axes[1]
     ax2.set_title("(b) Challenging ALGO subtypes (Claude vs. GPT-4o)\nALGO effective n=51 after collapsing clones (reported on 110 IDs)",
                   fontsize=10.5)

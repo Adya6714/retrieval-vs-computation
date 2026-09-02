@@ -4,7 +4,7 @@
 
 Only **`raw/`** is append-only (`--resume`). Recompute everything else after `raw/` changes.
 
-Instrument exclusions (`derived/variant_exclusions.csv`, reason `variant_not_transformed`): all ALGO and BW W6 rows (not a fresh-instance control as generated); BW W5 `MBW_496`–`MBW_500` (identical to canonical). GSM W6 stays (23/24 transformed) for models with bank rows (GSM_041--064). GPT-4o and Llama Table 7 W6 (.800 / .450) were scored on GSM_001--020 in raw logs; **no bank version ever defined W6 on those IDs** (`git show 3f21f9c` has zero W6; later banks only GSM_041--064). Those two cells are excluded `missing_bank_row` and removed from Table 7. See `derived/J3_gsm_w6_offbank.csv`. Filter via `probes.common.exclusions.filter_excluded`. Do not regenerate W6.
+Instrument exclusions (`derived/variant_exclusions.csv`): ALGO/BW W6 rows with byte-identical text to canonical (25 ALGO WIS generator bug; 8 BW true duplicates); BW W5 `MBW_496`–`MBW_500` (identical to canonical). Valid W6 = answer differs from canonical and text is not byte-identical (near-duplicate Jaccard is expected for procedural regen). GSM W6 stays for models with bank rows (GSM_041--064). GPT-4o/Llama GSM W6 on GSM_001--020 excluded `missing_bank_row`. Filter via `probes.common.exclusions.filter_excluded`.
 
 Paths: `probes/common/results_paths.py`
 
