@@ -19,6 +19,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.clones import cluster_ids_for  # noqa: E402
+from probes.common.cluster_inference import cluster_bootstrap_assoc  # noqa: E402
 from probes.common.exclusions import filter_excluded  # noqa: E402
 from probes.common.variants import normalize_variant  # noqa: E402
 
@@ -106,33 +107,6 @@ def _instance_frame(p1: pd.DataFrame, contam: pd.DataFrame) -> pd.DataFrame:
     return merged
 
 
-def _cluster_bootstrap_spearman(sub: pd.DataFrame) -> tuple[float, float, float]:
-    x = sub["contamination_score"].astype(float)
-    y = sub["retained_w3"].astype(float)
-    if len(sub) < 5 or x.nunique() < 2 or y.nunique() < 2:
-        rho, _ = stats.spearmanr(x, y)
-        return float(rho), float("nan"), float("nan")
-    rho, _ = stats.spearmanr(x, y)
-    clusters = sorted(sub["cluster_id"].astype(str).unique())
-    grouped = {c: sub[sub["cluster_id"].astype(str) == c] for c in clusters}
-    rng = np.random.default_rng(SEED)
-    boots = np.empty(N_BOOT, dtype=float)
-    for i in range(N_BOOT):
-        draw = rng.choice(clusters, size=len(clusters), replace=True)
-        chunk = pd.concat([grouped[c] for c in draw], ignore_index=True)
-        if len(chunk) < 5 or chunk["contamination_score"].nunique() < 2 or chunk["retained_w3"].nunique() < 2:
-            boots[i] = float("nan")
-        else:
-            boots[i], _ = stats.spearmanr(
-                chunk["contamination_score"].astype(float),
-                chunk["retained_w3"].astype(float),
-            )
-    boots = boots[np.isfinite(boots)]
-    if len(boots) == 0:
-        return float(rho), float("nan"), float("nan")
-    return float(rho), float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
-
-
 def main() -> None:
     DER.mkdir(parents=True, exist_ok=True)
     p1 = _load_p1()
@@ -145,43 +119,55 @@ def main() -> None:
             sub = frame[(frame["family"] == fam) & (frame["model_short"] == model)].copy()
             if sub.empty or len(sub) < 5:
                 continue
+            clust = "clone_family" if fam == "ALGO" else "problem_id"
             if sub["retained_w3"].nunique() < 2 or sub["contamination_score"].nunique() < 2:
                 rows.append(
                     {
                         "family": fam,
                         "model": model,
                         "n": len(sub),
+                        "n_clusters": sub["cluster_id"].nunique(),
                         "spearman_rho": "",
                         "ci_low": "",
                         "ci_high": "",
                         "p_value": "",
+                        "p_value_method": "cluster_bootstrap_two_sided",
                         "subset": "canonical_correct_only",
                         "y": "w3_retained",
                         "contamination_column": "contamination_score",
-                        "bootstrap": "cluster_by_clone_family" if fam == "ALGO" else "cluster_by_problem_id",
+                        "bootstrap": f"cluster_by_{clust}",
                         "n_boot": N_BOOT,
                         "seed": SEED,
                         "note": "insufficient variation in retention or contamination",
                     }
                 )
                 continue
-            rho, lo, hi = _cluster_bootstrap_spearman(sub)
-            _, p = stats.spearmanr(sub["contamination_score"], sub["retained_w3"])
+            res = cluster_bootstrap_assoc(
+                sub["contamination_score"],
+                sub["retained_w3"],
+                sub["cluster_id"],
+                kind="spearman",
+                n_boot=N_BOOT,
+                seed=SEED,
+            )
             rows.append(
                 {
                     "family": fam,
                     "model": model,
-                    "n": len(sub),
-                    "spearman_rho": round(rho, 4) if rho == rho else "",
-                    "ci_low": round(lo, 4) if lo == lo else "",
-                    "ci_high": round(hi, 4) if hi == hi else "",
-                    "p_value": round(float(p), 4) if p == p else "",
+                    "n": res["n"],
+                    "n_clusters": res["n_clusters"],
+                    "spearman_rho": round(res["estimate"], 4) if res["estimate"] == res["estimate"] else "",
+                    "ci_low": round(res["ci_low"], 4) if res["ci_low"] == res["ci_low"] else "",
+                    "ci_high": round(res["ci_high"], 4) if res["ci_high"] == res["ci_high"] else "",
+                    "p_value": round(res["p_clustered"], 4) if res["p_clustered"] == res["p_clustered"] else "",
+                    "p_value_method": "cluster_bootstrap_two_sided",
                     "subset": "canonical_correct_only",
                     "y": "w3_retained",
                     "contamination_column": "contamination_score",
-                    "bootstrap": "cluster_by_clone_family" if fam == "ALGO" else "cluster_by_problem_id",
+                    "bootstrap": f"cluster_by_{clust}",
                     "n_boot": N_BOOT,
                     "seed": SEED,
+                    "note": "",
                 }
             )
 

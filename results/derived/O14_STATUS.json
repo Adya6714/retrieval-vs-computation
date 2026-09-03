@@ -1,0 +1,36 @@
+{
+  "bank": "results/derived/O14_naming_bank.jsonl",
+  "n_pairs": 120,
+  "n_rows": 360,
+  "arms": [
+    "A_sequential",
+    "B_scattered",
+    "C_indexed"
+  ],
+  "num_blocks_dist": {
+    "3": 24,
+    "4": 12,
+    "5": 26,
+    "6": 14,
+    "7": 12,
+    "8": 12,
+    "9": 3,
+    "10": 7,
+    "11": 7,
+    "12": 3
+  },
+  "byte_id_assertion": "assert_only_block_ids_differ (boilerplate fixed; state/goal/answer remapped)",
+  "eval_blocked": "OPENROUTER_API_KEY returns 401 User not found on /api/v1/auth/key and chat completions",
+  "resume_commands": [
+    "python scripts/consolidate/o14_naming_intervention.py eval --output results/derived/O14_shards/<model>.csv --models <model>",
+    "python scripts/consolidate/o14_naming_intervention.py merge",
+    "python scripts/consolidate/o14_naming_intervention.py analyze"
+  ],
+  "decoding": {
+    "temperature": 0.0,
+    "seed": 14014,
+    "client": "OpenRouterClient",
+    "verifier": "verify_answer(blocksworld)"
+  },
+  "preregistered": "If naming moves accuracy substantially \u2192 primary finding / L1 lexical; else L1 survives controlled confound. Both reported."
+}

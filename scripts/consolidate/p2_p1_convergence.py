@@ -13,9 +13,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
-from scipy import stats
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
@@ -23,6 +21,10 @@ if str(REPO_ROOT) not in sys.path:
 
 from probes.behavioral.retention import MIN_CANONICAL_FOR_RETENTION  # noqa: E402
 from probes.common.clones import cluster_ids_for  # noqa: E402
+from probes.common.cluster_inference import (  # noqa: E402
+    cluster_bootstrap_assoc,
+    iid_bootstrap_assoc,
+)
 from probes.common.exclusions import filter_excluded  # noqa: E402
 from probes.common.variants import normalize_variant  # noqa: E402
 
@@ -80,45 +82,6 @@ def _cluster_ids(frame: pd.DataFrame) -> list[str]:
     return frame["problem_id"].astype(str).tolist()
 
 
-def _bootstrap_pointbiserial(x: pd.Series, y: pd.Series, cluster_ids: list[str]) -> tuple[float, float, float]:
-    r, _ = stats.pointbiserialr(y.astype(float), x.astype(float))
-    clusters = sorted(set(cluster_ids))
-    grouped = {c: [i for i, cid in enumerate(cluster_ids) if cid == c] for c in clusters}
-    rng = np.random.default_rng(SEED)
-    boots = np.empty(N_BOOT, dtype=float)
-    xv = x.astype(float).values
-    yv = y.astype(float).values
-    for i in range(N_BOOT):
-        draw = rng.choice(clusters, size=len(clusters), replace=True)
-        idx = [j for c in draw for j in grouped[c]]
-        if len(idx) < 5 or len(set(yv[idx])) < 2:
-            boots[i] = float("nan")
-        else:
-            boots[i], _ = stats.pointbiserialr(yv[idx], xv[idx])
-    boots = boots[np.isfinite(boots)]
-    if len(boots) == 0:
-        return float(r), float("nan"), float("nan")
-    return float(r), float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
-
-
-def _bootstrap_spearman(x: pd.Series, y: pd.Series) -> tuple[float, float, float]:
-    rho, _ = stats.spearmanr(x, y)
-    n = len(x)
-    rng = np.random.default_rng(SEED)
-    boots = np.empty(N_BOOT, dtype=float)
-    idx = np.arange(n)
-    for i in range(N_BOOT):
-        draw = rng.choice(idx, size=n, replace=True)
-        if len(set(x.iloc[draw])) < 2 or len(set(y.iloc[draw])) < 2:
-            boots[i] = float("nan")
-        else:
-            boots[i], _ = stats.spearmanr(x.iloc[draw], y.iloc[draw])
-    boots = boots[np.isfinite(boots)]
-    if len(boots) == 0:
-        return float(rho), float("nan"), float("nan")
-    return float(rho), float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
-
-
 def _merge_p2_p1(p2: pd.DataFrame, p1: pd.DataFrame, *, family: str) -> pd.DataFrame:
     p2 = p2.copy()
     p2["model_short"] = p2["model"].map(MODEL_MAP).fillna(p2["model"])
@@ -146,41 +109,42 @@ def _append_pointbiserial_rows(
     sub = merged.copy()
     if sub.empty:
         return
-    r, lo, hi = _bootstrap_pointbiserial(
-        sub["cci"], sub["w3_correct"], sub["cluster_id"].astype(str).tolist(),
-    )
-    _, p = stats.pointbiserialr(sub["w3_correct"].astype(float), sub["cci"].astype(float))
-    rows.append(
-        {
-            "analysis": "pointbiserial_cci_w3_correct",
-            "scope": f"{scope_prefix}_all_instances_with_p2",
-            "statistic": round(r, 3),
-            "ci_low": round(lo, 3) if lo == lo else "",
-            "ci_high": round(hi, 3) if hi == hi else "",
-            "p_value": round(float(p), 3),
-            "n": len(sub),
-            "note": "P2 CCI vs W3 correctness; cluster-bootstrap",
-        }
-    )
-    sub_cc = merged[merged["canonical_ok"].astype(bool)].copy()
-    if sub_cc.empty:
-        return
-    r, lo, hi = _bootstrap_pointbiserial(
-        sub_cc["cci"], sub_cc["w3_correct"], sub_cc["cluster_id"].astype(str).tolist(),
-    )
-    _, p = stats.pointbiserialr(sub_cc["w3_correct"].astype(float), sub_cc["cci"].astype(float))
-    rows.append(
-        {
-            "analysis": "pointbiserial_cci_w3_correct",
-            "scope": f"{scope_prefix}_canonical_correct_subset",
-            "statistic": round(r, 3),
-            "ci_low": round(lo, 3) if lo == lo else "",
-            "ci_high": round(hi, 3) if hi == hi else "",
-            "p_value": round(float(p), 3),
-            "n": len(sub_cc),
-            "note": "Same test restricted to canonical-correct instances",
-        }
-    )
+    for scope, frame, note in [
+        (
+            f"{scope_prefix}_all_instances_with_p2",
+            sub,
+            "P2 CCI vs W3; CI+p from same cluster bootstrap",
+        ),
+        (
+            f"{scope_prefix}_canonical_correct_subset",
+            merged[merged["canonical_ok"].astype(bool)].copy(),
+            "Same test restricted to canonical-correct instances",
+        ),
+    ]:
+        if frame.empty:
+            continue
+        res = cluster_bootstrap_assoc(
+            frame["cci"],
+            frame["w3_correct"],
+            frame["cluster_id"].astype(str),
+            kind="pointbiserial",
+            n_boot=N_BOOT,
+            seed=SEED,
+        )
+        rows.append(
+            {
+                "analysis": "pointbiserial_cci_w3_correct",
+                "scope": scope,
+                "statistic": round(res["estimate"], 3),
+                "ci_low": round(res["ci_low"], 3) if res["ci_low"] == res["ci_low"] else "",
+                "ci_high": round(res["ci_high"], 3) if res["ci_high"] == res["ci_high"] else "",
+                "p_value": round(res["p_clustered"], 4) if res["p_clustered"] == res["p_clustered"] else "",
+                "p_value_method": "cluster_bootstrap_two_sided",
+                "n": res["n"],
+                "n_clusters": res["n_clusters"],
+                "note": note,
+            }
+        )
 
 
 def main() -> None:
@@ -228,8 +192,13 @@ def main() -> None:
             model_df = sub_phi.merge(cci_means, on="model", how="inner")
             if len(model_df) < 2:
                 continue
-            rho, lo, hi = _bootstrap_spearman(model_df["mean_cci"], model_df["retention_w3"])
-            _, p = stats.spearmanr(model_df["mean_cci"], model_df["retention_w3"])
+            res = iid_bootstrap_assoc(
+                model_df["mean_cci"],
+                model_df["retention_w3"],
+                kind="spearman",
+                n_boot=N_BOOT,
+                seed=SEED,
+            )
             note = f"{fam} models with P2 CCI and phi retention (can_acc>={MIN_CANONICAL_FOR_RETENTION})"
             if fam == "GSM":
                 note += "; o4-mini excluded from GSM P2 CCI"
@@ -239,11 +208,13 @@ def main() -> None:
                 {
                     "analysis": "spearman_mean_cci_retention",
                     "scope": f"{fam}_across_models",
-                    "statistic": round(rho, 3),
-                    "ci_low": round(lo, 3) if lo == lo else "",
-                    "ci_high": round(hi, 3) if hi == hi else "",
-                    "p_value": round(float(p), 3),
-                    "n": len(model_df),
+                    "statistic": round(res["estimate"], 3),
+                    "ci_low": round(res["ci_low"], 3) if res["ci_low"] == res["ci_low"] else "",
+                    "ci_high": round(res["ci_high"], 3) if res["ci_high"] == res["ci_high"] else "",
+                    "p_value": round(res["p_clustered"], 4) if res["p_clustered"] == res["p_clustered"] else "",
+                    "p_value_method": "iid_bootstrap_two_sided",
+                    "n": res["n"],
+                    "n_clusters": res["n"],
                     "note": note,
                 }
             )

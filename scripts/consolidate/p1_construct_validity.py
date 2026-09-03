@@ -4,6 +4,8 @@
 Retention and phi are computed from the same canonical/W3 contingency table;
 their correlation is algebraic, not empirical evidence of convergent validity.
 This script reports discriminant validity only: phi vs canonical accuracy.
+
+CI and p from the same family-cluster bootstrap (H0: rho=0).
 """
 
 from __future__ import annotations
@@ -11,15 +13,14 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
-from scipy import stats
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.behavioral.retention import MIN_CANONICAL_FOR_RETENTION  # noqa: E402
+from probes.common.cluster_inference import cluster_bootstrap_assoc  # noqa: E402
 
 DER = REPO_ROOT / "results" / "derived"
 PHI_IN = DER / "P1_phi_canonical_w3.csv"
@@ -27,28 +28,6 @@ OUT = DER / "P1_construct_validity.csv"
 
 N_BOOT = 5000
 SEED = 42
-
-
-def _cluster_bootstrap_spearman(df: pd.DataFrame, x: str, y: str) -> tuple[float, float, float]:
-    sub = df[[x, y, "family"]].dropna()
-    if len(sub) < 3:
-        return float("nan"), float("nan"), float("nan")
-    rho, _ = stats.spearmanr(sub[x], sub[y])
-    fams = sorted(sub["family"].unique())
-    grouped = {f: sub[sub["family"] == f] for f in fams}
-    rng = np.random.default_rng(SEED)
-    boots = np.empty(N_BOOT, dtype=float)
-    for i in range(N_BOOT):
-        draw = rng.choice(fams, size=len(fams), replace=True)
-        chunk = pd.concat([grouped[f] for f in draw], ignore_index=True)
-        if chunk[x].nunique() < 2 or chunk[y].nunique() < 2:
-            boots[i] = float("nan")
-        else:
-            boots[i], _ = stats.spearmanr(chunk[x], chunk[y])
-    boots = boots[np.isfinite(boots)]
-    if len(boots) == 0:
-        return float(rho), float("nan"), float("nan")
-    return float(rho), float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
 
 
 def main() -> None:
@@ -67,20 +46,28 @@ def main() -> None:
         sub = df[[row_name, col_name, "family"]].dropna()
         n = len(sub)
         if n < 3:
-            rho, lo, hi, p = float("nan"), float("nan"), float("nan"), float("nan")
+            res = {"estimate": float("nan"), "ci_low": float("nan"), "ci_high": float("nan"),
+                   "p_clustered": float("nan"), "n": n, "n_clusters": 0}
         else:
-            rho, lo, hi = _cluster_bootstrap_spearman(df, row_name, col_name)
-            _, p = stats.spearmanr(sub[row_name], sub[col_name])
+            res = cluster_bootstrap_assoc(
+                sub[row_name],
+                sub[col_name],
+                sub["family"].astype(str),
+                kind="spearman",
+                n_boot=N_BOOT,
+                seed=SEED,
+            )
         rows.append(
             {
                 "analysis": label,
                 "row_construct": row_name.replace("_w3", ""),
                 "col_construct": "canonical_accuracy",
-                "spearman_rho": round(rho, 3) if rho == rho else "",
-                "ci_low": round(lo, 3) if lo == lo else "",
-                "ci_high": round(hi, 3) if hi == hi else "",
-                "p_value": round(float(p), 3) if p == p else "",
-                "n_cells": n,
+                "spearman_rho": round(res["estimate"], 3) if res["estimate"] == res["estimate"] else "",
+                "ci_low": round(res["ci_low"], 3) if res["ci_low"] == res["ci_low"] else "",
+                "ci_high": round(res["ci_high"], 3) if res["ci_high"] == res["ci_high"] else "",
+                "p_value": round(res["p_clustered"], 3) if res["p_clustered"] == res["p_clustered"] else "",
+                "p_value_method": "cluster_bootstrap_two_sided",
+                "n_cells": res["n"],
                 "can_acc_floor": MIN_CANONICAL_FOR_RETENTION,
                 "bootstrap": "cluster_by_family",
                 "n_boot": N_BOOT,

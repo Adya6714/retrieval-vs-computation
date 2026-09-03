@@ -51,6 +51,11 @@ _last_request_mono: float | None = None
 _CACHE: dict[str, dict[str, int]] | None = None
 _INSECURE_WARNED = False
 
+_FAST = os.environ.get("INFINIGRAM_FAST", "").strip().lower() in ("1", "true", "yes")
+_RETRY_ATTEMPTS = 3 if _FAST else 10
+_RETRY_WAIT_MIN = 2 if _FAST else 8
+_RETRY_WAIT_MAX = 30 if _FAST else 180
+
 
 def _retryable_infini(exc: BaseException) -> bool:
     if isinstance(exc, (requests.Timeout, requests.ConnectionError)):
@@ -124,14 +129,15 @@ def _cache_set(cache: dict[str, dict[str, int]], index: str, query: str, count: 
 
 @retry(
     retry=retry_if_exception(_retryable_infini),
-    stop=stop_after_attempt(10),
-    wait=wait_exponential(multiplier=2, min=8, max=180),
+    stop=stop_after_attempt(_RETRY_ATTEMPTS),
+    wait=wait_exponential(multiplier=2, min=_RETRY_WAIT_MIN, max=_RETRY_WAIT_MAX),
     reraise=True,
 )
-def _fetch_count(query: str) -> int:
+def _post_infini(payload: dict[str, Any]) -> dict[str, Any]:
+    """POST to Infini-gram; return JSON dict (raises on HTTP / API error)."""
     global _INSECURE_WARNED
     if _DEBUG:
-        print(f"DEBUG infinigram query: {query!r}", flush=True)
+        print(f"DEBUG infinigram payload: {payload!r}", flush=True)
     _throttle()
     if not SSL_VERIFY and not _INSECURE_WARNED:
         print(
@@ -148,11 +154,7 @@ def _fetch_count(query: str) -> int:
             "Accept": "application/json",
             "User-Agent": "rvc-probes/1.0 (contamination triage)",
         },
-        json={
-            "index": INDEX_NAME,
-            "query_type": QUERY_TYPE,
-            "query": query,
-        },
+        json=payload,
         timeout=REQUEST_TIMEOUT_SECONDS,
         verify=SSL_VERIFY,
     )
@@ -160,28 +162,112 @@ def _fetch_count(query: str) -> int:
         detail = (response.text or "")[:800]
         raise requests.HTTPError(
             f"{response.status_code} {response.reason} for {response.url!r} "
-            f"(index={INDEX_NAME!r}). Body: {detail}",
+            f"(index={payload.get('index')!r}). Body: {detail}",
             response=response,
         )
-    payload = response.json()
-    if "error" in payload:
-        raise ValueError(f"Infini-gram API error: {payload.get('error')!r}")
-    if "count" not in payload:
+    result = response.json()
+    if "error" in result:
+        raise ValueError(f"Infini-gram API error: {result.get('error')!r}")
+    return result
+
+
+def _fetch_count(query: str, index: str | None = None) -> int:
+    idx = index or INDEX_NAME
+    payload = {
+        "index": idx,
+        "query_type": QUERY_TYPE,
+        "query": query,
+    }
+    result = _post_infini(payload)
+    if "count" not in result:
         raise ValueError("Infini-gram response missing 'count'.")
-    return int(payload["count"])
+    return int(result["count"])
 
 
-def get_ngram_count(query: str) -> int:
-    """Return Infini-gram count for a query string, using disk cache."""
+def get_ngram_count(query: str, index: str | None = None) -> int:
+    """Return Infini-gram count for a query string, using disk cache.
+
+    ``index`` defaults to ``INFINIGRAM_INDEX`` / ``v4_rpj_llama_s4``.
+    """
     if not query:
         return 0
+    idx = index or INDEX_NAME
 
     cache = _get_cache()
-    hit = _cache_get(cache, INDEX_NAME, query)
+    hit = _cache_get(cache, idx, query)
     if hit is not None:
         return hit
 
-    count = _fetch_count(query)
-    _cache_set(cache, INDEX_NAME, query, count)
+    count = _fetch_count(query, index=idx)
+    _cache_set(cache, idx, query, count)
     _save_cache(cache)
     return count
+
+
+def find_matching_docs(
+    query: str,
+    *,
+    index: str | None = None,
+    max_docs: int = 3,
+    max_disp_len: int = 120,
+) -> list[dict[str, Any]]:
+    """Return up to ``max_docs`` matching documents via find + get_doc_by_rank."""
+    if not query or max_docs <= 0:
+        return []
+    idx = index or INDEX_NAME
+    found = _post_infini(
+        {"index": idx, "query_type": "find", "query": query}
+    )
+    cnt = int(found.get("cnt") or 0)
+    if cnt <= 0:
+        return []
+    docs: list[dict[str, Any]] = []
+    segments = found.get("segment_by_shard") or []
+    for shard_i, seg in enumerate(segments):
+        if len(docs) >= max_docs:
+            break
+        if not seg or len(seg) < 2:
+            continue
+        start, end = int(seg[0]), int(seg[1])
+        if end <= start:
+            continue
+        # Walk ranks in this shard until we fill max_docs.
+        for rank in range(start, min(end, start + max_docs)):
+            if len(docs) >= max_docs:
+                break
+            doc = _post_infini(
+                {
+                    "index": idx,
+                    "query_type": "get_doc_by_rank",
+                    "query": query,
+                    "s": shard_i,
+                    "rank": rank,
+                    "max_disp_len": max_disp_len,
+                }
+            )
+            meta_raw = doc.get("metadata")
+            meta_id = ""
+            source = ""
+            if isinstance(meta_raw, str) and meta_raw.strip():
+                try:
+                    meta_obj = json.loads(meta_raw)
+                    meta_id = str(
+                        meta_obj.get("id")
+                        or meta_obj.get("metadata", {}).get("id")
+                        or ""
+                    )
+                    source = str(meta_obj.get("source") or meta_obj.get("path") or "")
+                except json.JSONDecodeError:
+                    meta_id = ""
+            docs.append(
+                {
+                    "doc_ix": doc.get("doc_ix"),
+                    "doc_len": doc.get("doc_len"),
+                    "metadata_id": meta_id,
+                    "source": source,
+                    "metadata_raw": meta_raw if isinstance(meta_raw, str) else "",
+                    "shard": shard_i,
+                    "rank": rank,
+                }
+            )
+    return docs

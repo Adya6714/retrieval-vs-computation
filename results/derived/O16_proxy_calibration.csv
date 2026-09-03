@@ -1,0 +1,14 @@
+analysis,family,corpus_gt,proxy,proxy_model,expected_direction,n,n_clusters,n_positive_gt,auc,ci_low,ci_high,p_auc_ne_0.5,verdict,note
+proxy_roc_auc,ALGO,dolma,infinigram_matched_contamination_score,,higher_score_more_member,110,51,0,,,,,insufficient_data,SANITY/partially-circular: matched score is longest_ngram_frac; GT near-exact also thresholds that length
+proxy_roc_auc,BW,dolma,infinigram_matched_contamination_score,,higher_score_more_member,65,65,0,,,,,insufficient_data,SANITY/partially-circular: matched score is longest_ngram_frac; GT near-exact also thresholds that length
+proxy_roc_auc,GSM,dolma,infinigram_matched_contamination_score,,higher_score_more_member,44,44,2,0.934524,0.797619,1.0,0.00023,validates_proxy,SANITY/partially-circular: matched score is longest_ngram_frac; GT near-exact also thresholds that length
+proxy_roc_auc,ALGO,pile,infinigram_matched_contamination_score,,higher_score_more_member,110,51,0,,,,,insufficient_data,SANITY/partially-circular: matched score is longest_ngram_frac; GT near-exact also thresholds that length
+proxy_roc_auc,BW,pile,infinigram_matched_contamination_score,,higher_score_more_member,65,65,0,,,,,insufficient_data,SANITY/partially-circular: matched score is longest_ngram_frac; GT near-exact also thresholds that length
+proxy_roc_auc,GSM,pile,infinigram_matched_contamination_score,,higher_score_more_member,44,44,0,,,,,insufficient_data,SANITY/partially-circular: matched score is longest_ngram_frac; GT near-exact also thresholds that length
+proxy_roc_auc,ALGO,dolma,infinigram_rpj_contamination_score,,higher_score_more_member,110,51,0,,,,,insufficient_data,field Probe-3 proxy (RedPajama index) vs open-corpus GT
+proxy_roc_auc,BW,dolma,infinigram_rpj_contamination_score,,higher_score_more_member,65,65,0,,,,,insufficient_data,field Probe-3 proxy (RedPajama index) vs open-corpus GT
+proxy_roc_auc,GSM,dolma,infinigram_rpj_contamination_score,,higher_score_more_member,44,44,2,0.511905,0.232558,0.785714,0.960164,null_compatible,field Probe-3 proxy (RedPajama index) vs open-corpus GT
+proxy_roc_auc,ALGO,pile,infinigram_rpj_contamination_score,,higher_score_more_member,110,51,0,,,,,insufficient_data,field Probe-3 proxy (RedPajama index) vs open-corpus GT
+proxy_roc_auc,BW,pile,infinigram_rpj_contamination_score,,higher_score_more_member,65,65,0,,,,,insufficient_data,field Probe-3 proxy (RedPajama index) vs open-corpus GT
+proxy_roc_auc,GSM,pile,infinigram_rpj_contamination_score,,higher_score_more_member,44,44,0,,,,,insufficient_data,field Probe-3 proxy (RedPajama index) vs open-corpus GT
+proxy_roc_auc,ALL,,o15/o5_open_models,,,0,,,,,,,scores_missing,Run Colab o16_open_model_calibration.ipynb (Part B)

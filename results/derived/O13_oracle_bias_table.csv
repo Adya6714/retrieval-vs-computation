@@ -1,0 +1,8 @@
+defect,family,variant,rows_affected,perturbed_acc_before,perturbed_acc_after,perturbed_delta,canonical_acc_before,canonical_acc_after,canonical_delta,clean_case,disposition,source,note
+BW_W3_action_mapping,BW,W3,64,0.0425,0.2516,0.2092,0.4214,0.4214,0.0,True,rescored,oracle_bias_summary.csv,action_mapping=None vs notes mapping; canonical unchanged
+ALGO_SP_W3_node_mapping,ALGO,W3,92,0.3212,0.5365,0.2153,0.5273,0.64,0.1127,False,rescored,oracle_bias_summary.csv,node_mapping missing from difficulty_params; notes+trailing Path fix (J1)
+BW_legacy_state_parser,BW,all_variants,192,0.3093,0.3967,0.0874,0.3712,0.4214,0.0502,False,rescored,oracle_bias_summary.csv,legacy regex parser vs released prose/table parser
+BW_W5_byte_identical,BW,W5,5,,,,,,,True,excluded,variant_exclusions.csv,MBW_496–MBW_500 byte-identical to canonical; excluded variant_not_transformed
+ALGO_WIS_W6_generator_bug,ALGO,W6,25,,,,,,,True,excluded,K1_wis_w6_generator_bug.csv|variant_exclusions.csv,render_wis_text_with_weights left problem_text unchanged; 25 WIS W6 excluded
+GSM_W6_off_bank,GSM,W6,20,,,,,,,True,removed,J3_gsm_w6_offbank.csv|variant_exclusions.csv,W6 never defined on GSM_001–020; Table 7 GPT-4o/Llama W6 cells removed (missing_bank_row)
+GSM_Table4_Acc_P2A_disjunction,GSM,P2_phase2A,220,,,,,,,False,withdrawn,I3_table4_acc_p2a_status.csv,phase2a_values never persisted; published Acc_P2A was either_session_correct (phase2a OR phase1); unrecoverable without re-run

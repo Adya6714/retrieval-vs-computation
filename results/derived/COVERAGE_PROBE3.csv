@@ -1,0 +1,19 @@
+family,model,infinigram_max_window,n_scored,mechanistic_run,degeneracy_check_run,degeneracy_check_result,notes
+ALGO,Claude,13 (observed_hit_max=9),116,False,True,passes=True; degenerate=False; modal_share=0.1273,"contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=['Qwen/Qwen2.5-1.5B-Instruct', 'Qwen/Qwen2.5-7B-Instruct', 'meta-llama/Llama-3.1-8B-Instruct']"
+ALGO,GPT-4o,13 (observed_hit_max=9),116,False,True,passes=True; degenerate=False; modal_share=0.1273,"contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=['Qwen/Qwen2.5-1.5B-Instruct', 'Qwen/Qwen2.5-7B-Instruct', 'meta-llama/Llama-3.1-8B-Instruct']"
+ALGO,Gemini,13 (observed_hit_max=9),116,False,True,passes=True; degenerate=False; modal_share=0.1273,"contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=['Qwen/Qwen2.5-1.5B-Instruct', 'Qwen/Qwen2.5-7B-Instruct', 'meta-llama/Llama-3.1-8B-Instruct']"
+ALGO,Llama,13 (observed_hit_max=9),116,True,True,passes=True; degenerate=False; modal_share=0.1273,"contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=['Qwen/Qwen2.5-1.5B-Instruct', 'Qwen/Qwen2.5-7B-Instruct', 'meta-llama/Llama-3.1-8B-Instruct']"
+ALGO,o4-mini,13 (observed_hit_max=9),116,False,True,passes=True; degenerate=False; modal_share=0.1273,"contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=['Qwen/Qwen2.5-1.5B-Instruct', 'Qwen/Qwen2.5-7B-Instruct', 'meta-llama/Llama-3.1-8B-Instruct']"
+ALGO,Qwen2.5-1.5B,13 (observed_hit_max=9),116,True,True,passes=True; degenerate=False; modal_share=0.1273,frequency_controlled_source=Qwen/Qwen2.5-1.5B-Instruct
+ALGO,Qwen/Qwen2.5-7B-Instruct,13 (observed_hit_max=9),116,True,True,passes=True; degenerate=False; modal_share=0.1273,frequency_controlled_source=Qwen/Qwen2.5-7B-Instruct
+BW,Claude,13 (observed_hit_max=12),65,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+BW,GPT-4o,13 (observed_hit_max=12),65,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+BW,Gemini,13 (observed_hit_max=12),65,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+BW,Llama,13 (observed_hit_max=12),65,True,False,not_run_for_family,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+BW,o4-mini,13 (observed_hit_max=12),65,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+BW,DeepSeek,13 (observed_hit_max=12),65,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+GSM,Claude,8 (observed_hit_max=8),44,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+GSM,GPT-4o,8 (observed_hit_max=8),44,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+GSM,Gemini,8 (observed_hit_max=8),44,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+GSM,Llama,8 (observed_hit_max=8),44,True,False,not_run_for_family,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]
+GSM,o4-mini,8 (observed_hit_max=8),44,False,False,n/a_closed_model,contam_is_problem_level_not_model; legacy_qwen05B_pilot=True; freq_controlled_models=[]

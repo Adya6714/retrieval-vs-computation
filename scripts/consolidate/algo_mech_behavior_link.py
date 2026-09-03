@@ -20,6 +20,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from probes.common.clones import cluster_ids_for  # noqa: E402
+from probes.common.cluster_inference import cluster_bootstrap_assoc  # noqa: E402
 from probes.common.exclusions import filter_excluded  # noqa: E402
 from probes.common.variants import normalize_variant  # noqa: E402
 
@@ -89,37 +90,9 @@ def _final_ranks(mech: pd.DataFrame) -> pd.DataFrame:
     return merged
 
 
-def _bootstrap_spearman(sub: pd.DataFrame) -> tuple[float, float, float]:
-    x = sub["rank_shift_canonical_minus_w3"].astype(float)
-    y = sub["w3_ok"].astype(float)
-    if len(sub) < 5 or x.nunique() < 2 or y.nunique() < 2:
-        rho, _ = stats.spearmanr(x, y)
-        return float(rho), float("nan"), float("nan")
-    rho, _ = stats.spearmanr(x, y)
-    clusters = sorted(sub["cluster_id"].astype(str).unique())
-    grouped = {c: sub[sub["cluster_id"].astype(str) == c] for c in clusters}
-    rng = np.random.default_rng(SEED)
-    boots = np.empty(N_BOOT, dtype=float)
-    for i in range(N_BOOT):
-        draw = rng.choice(clusters, size=len(clusters), replace=True)
-        chunk = pd.concat([grouped[c] for c in draw], ignore_index=True)
-        if len(chunk) < 5 or chunk["rank_shift_canonical_minus_w3"].nunique() < 2:
-            boots[i] = float("nan")
-        else:
-            boots[i], _ = stats.spearmanr(
-                chunk["rank_shift_canonical_minus_w3"].astype(float),
-                chunk["w3_ok"].astype(float),
-            )
-    boots = boots[np.isfinite(boots)]
-    if len(boots) == 0:
-        return float(rho), float("nan"), float("nan")
-    return float(rho), float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))
-
-
 def main() -> None:
     if not MECH_IN.exists():
         raise FileNotFoundError(MECH_IN)
-    frozen = set(pd.read_csv(FROZEN_P2, dtype=str)["problem_id"].astype(str))
     adv = set(
         pd.read_csv(FROZEN_P2, dtype=str)
         .loc[lambda d: d["instance_type"].str.lower() == "adversarial", "problem_id"]
@@ -146,17 +119,45 @@ def main() -> None:
         sub = inst[inst["mech_model_key"] == mech_model].copy()
         if sub.empty:
             continue
-        sub["w3_ok"] = sub["w3_ok"].astype(bool)
-        rho, lo, hi = _bootstrap_spearman(sub)
-        _, p = stats.spearmanr(sub["rank_shift_canonical_minus_w3"].astype(float), sub["w3_ok"].astype(float))
+        sub["w3_ok"] = sub["w3_ok"].astype(bool).astype(int)
+        if sub["w3_ok"].nunique() < 2 or sub["rank_shift_canonical_minus_w3"].nunique() < 2:
+            rows.append(
+                {
+                    "model": meta["label"],
+                    "n": len(sub),
+                    "n_clusters": sub["cluster_id"].nunique(),
+                    "spearman_rho": "",
+                    "ci_low": "",
+                    "ci_high": "",
+                    "p_value": "",
+                    "p_value_method": "cluster_bootstrap_two_sided",
+                    "x": "rank_shift_canonical_minus_w3",
+                    "y": "w3_correct",
+                    "bootstrap": "cluster_by_clone_family",
+                    "n_boot": N_BOOT,
+                    "seed": SEED,
+                    "note": "insufficient variation — correlation undefined",
+                }
+            )
+            continue
+        res = cluster_bootstrap_assoc(
+            sub["rank_shift_canonical_minus_w3"],
+            sub["w3_ok"],
+            sub["cluster_id"],
+            kind="spearman",
+            n_boot=N_BOOT,
+            seed=SEED,
+        )
         rows.append(
             {
                 "model": meta["label"],
-                "n": len(sub),
-                "spearman_rho": round(rho, 4) if rho == rho else "",
-                "ci_low": round(lo, 4) if lo == lo else "",
-                "ci_high": round(hi, 4) if hi == hi else "",
-                "p_value": round(float(p), 4) if p == p else "",
+                "n": res["n"],
+                "n_clusters": res["n_clusters"],
+                "spearman_rho": round(res["estimate"], 4) if res["estimate"] == res["estimate"] else "",
+                "ci_low": round(res["ci_low"], 4) if res["ci_low"] == res["ci_low"] else "",
+                "ci_high": round(res["ci_high"], 4) if res["ci_high"] == res["ci_high"] else "",
+                "p_value": round(res["p_clustered"], 4) if res["p_clustered"] == res["p_clustered"] else "",
+                "p_value_method": "cluster_bootstrap_two_sided",
                 "x": "rank_shift_canonical_minus_w3",
                 "y": "w3_correct",
                 "bootstrap": "cluster_by_clone_family",

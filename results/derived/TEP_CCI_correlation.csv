@@ -1,0 +1,7 @@
+family,statistic,estimate,ci_low,ci_high,p_clustered,n,n_clusters,clustering_variable,note
+GSM,spearman_tep_cci,-0.0602,-0.2399,0.1226,0.5168,128,44,problem_id,disagreement with CCI would mean Probe 2 is multi-construct
+GSM,pearson_tep_cci,-0.081,-0.2627,0.1125,0.4048,128,44,problem_id,disagreement with CCI would mean Probe 2 is multi-construct
+ALGO,spearman_tep_cci,-0.1993,-0.4351,0.0338,0.0708,142,14,clone_family,disagreement with CCI would mean Probe 2 is multi-construct
+ALGO,pearson_tep_cci,-0.1931,-0.4345,0.0962,0.1888,142,14,clone_family,disagreement with CCI would mean Probe 2 is multi-construct
+GSM_ALGO_pooled,spearman_tep_cci,-0.1661,-0.3321,0.0404,0.1176,270,58,family:cluster,disagreement with CCI would mean Probe 2 is multi-construct
+GSM_ALGO_pooled,pearson_tep_cci,-0.1943,-0.3677,0.0474,0.1352,270,58,family:cluster,disagreement with CCI would mean Probe 2 is multi-construct

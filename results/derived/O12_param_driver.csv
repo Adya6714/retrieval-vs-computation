@@ -1,0 +1,7 @@
+parameter,eta_squared_n_retrieval,n_levels,n_retrieval_min_at_levels,n_retrieval_max_at_levels
+cci_threshold,0.0682,18,0,170
+w3_cutoff,0.1082,5,0,170
+contam_percentile,0.5438,3,0,170
+cci_threshold_mean_within_slice_range,28.2667,,0,96
+w3_cutoff_mean_within_slice_range,43.4074,,0,170
+contam_percentile_mean_within_slice_range,89.0667,,0,170

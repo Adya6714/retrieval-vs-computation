@@ -1,0 +1,10 @@
+family,probe,phase_or_variant,models_affected,reason,n_rows_lost,recoverable,source
+BW,P2,all_phases_CCI_and_TEP,"Claude,GPT-4o,Llama","execution floor: goal_reached=0 for all models; partial_goal_mean∈[0.0083,0.1355] (cci_mean∈[0.0000,0.1093]); do not analyze TEP / treat CCI as fingerprint",836,False,BW_P2_floor_documentation.csv|COVERAGE_PROBE2.csv
+BW,P3,mechanistic,"Qwen/Qwen2.5-1.5B-Instruct,Qwen/Qwen2.5-7B-Instruct,meta-llama/Llama-3.1-8B-Instruct",gold-token degeneracy: only 3 distinct first gold tokens (pick/attack/un); Mech Frequency reports canonical 'pick'=48/65,65,False,Mech Frequency Controlled Summary.csv|mechanistic_sweep_*_contentgold.csv
+GSM,P1,W6,"GPT-4o,Llama",W6 never defined on GSM_001–020 in any bank commit; missing_bank_row exclusions,20,False,J3_gsm_w6_offbank.csv|variant_exclusions.csv
+GSM,P2,phase2A_accuracy,"Claude,GPT-4o,Llama-8B,Gemini-2.5,o4-mini",phase2a_values never persisted; published Acc_P2A was phase2a∨phase1 disjunction; unrecoverable without re-run,220,False,I3_table4_acc_p2a_status.csv
+ALGO,P1,W6,all_P1_models,WIS W6 generator left problem_text byte-identical; 25 rows excluded,25,False,K1_wis_w6_generator_bug.csv
+ALGO,P3,mechanistic_frequency_controlled,Qwen/Qwen2.5-7B-Instruct,median gold-token rank on ALGO canonical = 80369 of ~152k vocab (Qwen2.5); content signal near chance,61,False,Mech Frequency Controlled Summary.csv
+ALGO,P2,CCI_plan_execution,Gemini,cci_score all NaN (61/61 rows); unparseable execution,61,False,ALGO_P2_cci.csv|COVERAGE_PROBE2.csv
+ALGO,P2,phase1_declare,o4-mini,never_collected (absent from ALGO Probe 2 phase 1),110,True,COVERAGE_PROBE2.csv
+ALGO,P1,W3_retention,Llama,canonical_accuracy_0.045_below_floor_0.3,109,False,COVERAGE_MATRIX.csv

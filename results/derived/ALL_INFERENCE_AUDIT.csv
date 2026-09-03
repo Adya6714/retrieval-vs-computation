@@ -1,0 +1,49 @@
+analysis_id,statistic,estimate,ci_low,ci_high,p_clustered,n,n_clusters,clustering_variable,previously_reported_p,changed_conclusion,null_test,notes
+M1_BW_Claude,spearman_contam_vs_w6_gap,-0.1412,-0.3965,0.1147,0.2876,52,52.0,problem_id,0.318,False,cluster_bootstrap_H0_rho=0,
+M1_BW_GPT-4o,spearman_contam_vs_w6_gap,-0.1059,-0.3731,0.1704,0.4752,52,52.0,problem_id,0.455,False,cluster_bootstrap_H0_rho=0,
+M1_BW_Gemini,spearman_contam_vs_w6_gap,-0.0198,-0.3124,0.2843,0.8868,52,52.0,problem_id,0.889,False,cluster_bootstrap_H0_rho=0,
+M1_BW_Llama,spearman_contam_vs_w6_gap,-0.1768,-0.3377,-0.0234,0.0129,52,52.0,problem_id,0.21,True,cluster_bootstrap_H0_rho=0,
+M1_BW_deepseek/deepseek-r1-distill-llama-70b,spearman_contam_vs_w6_gap,0.2102,-0.164,0.4998,0.256,36,36.0,problem_id,0.2186,False,cluster_bootstrap_H0_rho=0,
+M1_BW_o4-mini,spearman_contam_vs_w6_gap,-0.442,-0.5969,-0.2273,0.0002,52,52.0,problem_id,0.001,False,cluster_bootstrap_H0_rho=0,
+M1_ALGO_Claude,spearman_contam_vs_w6_gap,-0.3707,-0.5288,-0.1416,0.0124,65,27.0,clone_family,0.0024,False,cluster_bootstrap_H0_rho=0,
+M1_ALGO_GPT-4o,spearman_contam_vs_w6_gap,-0.0321,-0.5367,0.268,0.79,65,27.0,clone_family,0.7998,False,cluster_bootstrap_H0_rho=0,
+M1_ALGO_Gemini,spearman_contam_vs_w6_gap,-0.3908,-0.5385,-0.1295,0.0108,61,24.0,clone_family,0.0018,False,cluster_bootstrap_H0_rho=0,
+M1_ALGO_Llama,spearman_contam_vs_w6_gap,0.026,-0.1766,0.2454,0.6826,65,27.0,clone_family,0.8374,False,cluster_bootstrap_H0_rho=0,
+M1_ALGO_o4-mini,spearman_contam_vs_w6_gap,-0.3922,-0.6128,-0.1475,0.0028,64,27.0,clone_family,0.0013,False,cluster_bootstrap_H0_rho=0,
+M2_BW_matched,descriptive_delta_only,,,,,47,,,,False,none_descriptive,no inferential test in original report
+M2_ALGO_matched,descriptive_delta_only,,,,,15,,,,False,none_descriptive,no inferential test in original report
+N1_BW_stratified,descriptive_delta_only,,,,,47,,,,False,none_descriptive,no inferential test in original report
+M3_discriminant_phi_vs_canonical_accuracy,spearman,-0.4264,-0.724,0.5,0.6096,13,3.0,family,0.146,False,cluster_bootstrap_H0_rho=0,
+M3_discriminant_retention_vs_canonical_accuracy,spearman,0.1364,-0.1,0.8,0.2924,14,3.0,family,0.642,False,cluster_bootstrap_H0_rho=0,
+N2_GSM_all_instances_with_p2,pointbiserial_cci_w3,0.1556,-0.0056,0.3078,0.0604,128,44.0,problem_id,0.08,False,cluster_bootstrap_H0_r=0,
+N2_GSM_canonical_correct_subset,pointbiserial_cci_w3,0.1527,-0.0303,0.3201,0.1092,110,42.0,problem_id,0.111,False,cluster_bootstrap_H0_r=0,
+N2_ALGO_all_instances_with_p2,pointbiserial_cci_w3,0.3591,-0.0426,0.6641,0.0848,144,14.0,clone_family,0.0,True,cluster_bootstrap_H0_r=0,
+N2_ALGO_canonical_correct_subset,pointbiserial_cci_w3,0.3002,-0.0609,0.6764,0.1193,68,8.0,clone_family,0.013,True,cluster_bootstrap_H0_r=0,
+N2_GSM_ALGO_pooled_all_instances_with_p2,pointbiserial_cci_w3,0.2434,0.0274,0.4142,0.024,272,58.0,family:cluster,0.0,False,cluster_bootstrap_H0_r=0,
+N2_GSM_ALGO_pooled_canonical_correct_subset,pointbiserial_cci_w3,0.2556,0.0431,0.4156,0.02,178,50.0,family:cluster,0.001,False,cluster_bootstrap_H0_r=0,
+N2_GSM_across_models,spearman_mean_cci_retention,0.6,-1.0,1.0,0.2242,4,4.0,model_iid,0.4,False,iid_bootstrap_H0_rho=0,sampling unit=model; no clone clustering
+N2_ALGO_across_models,spearman_mean_cci_retention,1.0,1.0,1.0,0.0004,2,2.0,model_iid,,False,iid_bootstrap_H0_rho=0,sampling unit=model; no clone clustering
+N3_Llama-3.1-8B,spearman_rank_shift_vs_w3,0.1466,0.0862,0.2427,0.0003,60,14.0,clone_family,0.2637,True,cluster_bootstrap_H0_rho=0,
+N3_Qwen2.5-1.5B,spearman_rank_shift_vs_w3,,,,,61,14.0,clone_family,,False,cluster_bootstrap_H0_rho=0,insufficient variation
+N4_within_family_across_models_ALGO_--,kendall_W,0.4194,,,0.0491,5,5.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_family_across_models_BW_--,kendall_W,0.6786,,,0.0001,6,6.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_family_across_models_GSM_--,kendall_W,0.6603,,,0.0419,3,3.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_model_across_families_--_anthropic/claude-sonnet-4,kendall_W,0.1651,,,0.8239,3,3.0,none_rank_permutation,1.0,False,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_model_across_families_--_google/gemini-2.5-flash,kendall_W,0.2381,,,0.6732,3,3.0,none_rank_permutation,1.0,False,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_model_across_families_--_meta-llama/llama-3.1-8b-instruct,kendall_W,0.7929,,,0.1102,2,2.0,none_rank_permutation,1.0,False,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_model_across_families_--_openai/gpt-4o,kendall_W,0.5429,,,0.4616,2,2.0,none_rank_permutation,1.0,False,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N4_within_model_across_families_--_openai/o4-mini,kendall_W,0.6698,,,0.0425,3,3.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
+N5_GSM_Claude,spearman_contam_vs_retention,-0.0892,-0.3722,0.1984,0.5612,37,37.0,problem_id,0.5995,False,cluster_bootstrap_H0_rho=0,
+N5_GSM_GPT-4o,spearman_contam_vs_retention,0.1581,-0.3155,0.5828,0.5365,17,17.0,problem_id,0.5445,False,cluster_bootstrap_H0_rho=0,
+N5_GSM_Gemini,spearman_contam_vs_retention,-0.0499,-0.3503,0.2791,0.758,40,40.0,problem_id,0.7597,False,cluster_bootstrap_H0_rho=0,
+N5_GSM_Llama,spearman_contam_vs_retention,0.1911,-0.2966,0.611,0.4606,16,16.0,problem_id,0.4785,False,cluster_bootstrap_H0_rho=0,
+N5_GSM_o4-mini,spearman_contam_vs_retention,0.1848,-0.0626,0.4459,0.2628,37,37.0,problem_id,0.2735,False,cluster_bootstrap_H0_rho=0,
+N5_ALGO_Claude,spearman_contam_vs_retention,0.2474,-0.3457,0.668,0.3981,68,23.0,clone_family,0.042,True,cluster_bootstrap_H0_rho=0,
+N5_ALGO_GPT-4o,spearman_contam_vs_retention,-0.0283,-0.4137,0.335,0.86,43,24.0,clone_family,0.857,False,cluster_bootstrap_H0_rho=0,
+N5_ALGO_Gemini,spearman_contam_vs_retention,0.3932,-0.0568,0.5966,0.0756,51,21.0,clone_family,0.0043,True,cluster_bootstrap_H0_rho=0,
+N5_ALGO_Llama,spearman_contam_vs_retention,,,,,5,4.0,clone_family,,False,cluster_bootstrap_H0_rho=0,insufficient variation
+N5_ALGO_o4-mini,spearman_contam_vs_retention,0.129,-0.2055,0.4027,0.3661,81,37.0,clone_family,0.251,False,cluster_bootstrap_H0_rho=0,
+N5_BW_Claude,spearman_contam_vs_retention,-0.4147,-0.8024,0.1206,0.1692,11,11.0,problem_id,0.2048,False,cluster_bootstrap_H0_rho=0,
+N5_BW_Gemini,spearman_contam_vs_retention,0.2546,-0.0997,0.566,0.1638,25,25.0,problem_id,0.2194,False,cluster_bootstrap_H0_rho=0,
+N5_BW_deepseek/deepseek-r1-distill-llama-70b,spearman_contam_vs_retention,0.521,0.2207,0.7437,0.0028,35,35.0,problem_id,0.0013,False,cluster_bootstrap_H0_rho=0,
+N5_BW_o4-mini,spearman_contam_vs_retention,0.4728,0.2344,0.6717,0.0004,50,50.0,problem_id,0.0005,False,cluster_bootstrap_H0_rho=0,

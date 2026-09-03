@@ -1,0 +1,2 @@
+probe,family,metric,status,evidence,action,source_doc
+P2,BW,CCI/TEP,measurement_failure,"goal_reached=0 for all models; partial_goal_mean=Claude=0.0251,GPT-4o=0.0083,Llama=0.1355",do_not_compute_TEP; report floor only,BW_P2_floor_documentation.csv
