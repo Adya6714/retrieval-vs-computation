@@ -1,0 +1,868 @@
+defect,family,problem_id,model,perturbed_variant,role,pert_before,pert_after,delta_perturbed,source,can_before,can_after,delta_canonical,pert_flipped,n_perturbed_variants,excess,can_flipped,either_flipped
+ALGO_SP_W3_node_mapping,ALGO,SP_001,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_002,Claude,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_claude_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_003,Claude,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_claude_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_004,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_005,Claude,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_claude_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_019,Claude,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_020,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_021,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_023,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_024,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_026,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_027,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_028,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_029,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_030,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_031,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_032,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_033,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_034,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_035,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_036,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_037,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_038,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_039,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_040,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_042,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_044,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_045,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_046,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_047,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_048,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_049,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_050,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_051,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_052,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_053,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_054,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_055,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_056,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_057,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_058,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_059,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_060,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_061,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_062,Claude,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_063,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_064,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_065,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_066,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_068,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_069,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_070,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_071,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_072,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_073,Claude,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_claude_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_001,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_002,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_003,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_004,Gemini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_gemini_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_005,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_019,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_020,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_021,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_023,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_024,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_026,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_027,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_028,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_029,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_030,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_031,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_032,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_033,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_034,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_035,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_036,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_037,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_038,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_039,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_040,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_042,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_044,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_045,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_046,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_047,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_048,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_049,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_050,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_051,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_052,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_053,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_054,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_055,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_056,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_057,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_058,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_059,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_060,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_061,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_062,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_063,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_064,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_065,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_066,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_068,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_069,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_070,Gemini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_071,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_072,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_073,Gemini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gemini_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_001,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_002,GPT-4o,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,True,1.0,True,1,0.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_003,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_004,GPT-4o,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_005,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_019,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_020,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_021,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_023,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_024,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_026,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_027,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_028,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_029,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_030,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_031,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_032,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_033,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_034,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_035,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_036,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_037,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_038,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_039,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_040,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_042,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_044,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_045,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_046,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_047,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_048,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_049,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_050,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_051,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_052,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_053,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_054,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_055,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_056,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_057,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_058,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_059,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_060,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_061,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_062,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_063,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_064,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_065,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_066,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_068,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_069,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_070,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_071,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_072,GPT-4o,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_073,GPT-4o,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_gpt4o_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_001,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_002,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_003,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_004,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,True,False,-1.0,False,1,1.0,True,True
+ALGO_SP_W3_node_mapping,ALGO,SP_005,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_019,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_020,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_021,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_023,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_024,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_026,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_028,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_029,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_030,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_031,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_032,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_033,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_034,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_035,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_036,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_037,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_038,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_039,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_040,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_042,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_044,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_045,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_046,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_047,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_048,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_049,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_050,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_051,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_052,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_053,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_054,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_055,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_056,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_057,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_058,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_059,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_060,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_061,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_062,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_063,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_064,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_065,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_066,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_068,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_069,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_070,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_071,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_072,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_073,Llama,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_llama_rescored.csv,False,False,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_001,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_002,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_003,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_004,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_005,o4-mini,W3,perturbed,False,False,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_019,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_020,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_021,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_023,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_024,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_026,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_027,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_028,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_029,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_030,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_031,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_032,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_033,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_034,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_035,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_036,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_037,o4-mini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_038,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_039,o4-mini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_040,o4-mini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_042,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_044,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_045,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_046,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_047,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_048,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_049,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_050,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_051,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_052,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_053,o4-mini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_054,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_055,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_056,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_057,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_058,o4-mini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_059,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_060,o4-mini,W3,perturbed,False,True,1.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,True,1,1.0,False,True
+ALGO_SP_W3_node_mapping,ALGO,SP_061,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_062,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_063,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_064,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_065,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_066,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_068,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_069,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_070,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_071,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_072,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+ALGO_SP_W3_node_mapping,ALGO,SP_073,o4-mini,W3,perturbed,True,True,0.0,ALGO_P1_behavioral_o1mini_rescored.csv,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_010,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_227,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,mock,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_010,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_227,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_010,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_227,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E100,GPT-4o,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E015,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E017,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E019,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E002,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E100,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E015,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E017,Llama,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E019,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E002,Llama,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_495,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_408,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_350,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_331,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_310,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_282,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_203,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_022,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_014,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_002,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_495,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_408,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_350,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_331,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_310,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_282,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_203,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_022,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_014,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_002,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_496,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_497,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_498,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_499,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_500,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_501,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_502,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_503,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_504,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_505,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_506,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_507,Llama,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_508,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_509,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_510,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_511,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_512,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_513,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_514,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_515,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_001,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_002,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_003,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_004,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_005,Llama,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_002,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_010,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_014,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_022,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_203,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_227,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_282,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_310,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_331,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_350,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_408,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_495,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E002,Claude,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E015,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E017,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E019,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E100,Claude,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_496,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_497,Claude,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_498,Claude,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_499,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_500,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_501,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_502,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_503,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_504,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_505,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_506,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_507,Claude,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_508,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_509,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_510,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_511,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_512,Claude,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_513,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_514,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_515,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_001,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_002,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_003,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_004,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_005,Claude,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_496,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_497,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_498,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_499,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_500,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_501,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_502,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_503,GPT-4o,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_504,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_505,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_506,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_507,GPT-4o,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_508,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_509,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_510,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_511,GPT-4o,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_512,GPT-4o,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_513,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_514,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_515,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_001,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_002,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_003,GPT-4o,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_004,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_005,GPT-4o,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_002,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_010,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_014,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_022,deepseek-r1-distill-llama-70b,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,deepseek-r1-distill-llama-70b,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,deepseek-r1-distill-llama-70b,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_203,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_227,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_282,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_310,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_331,deepseek-r1-distill-llama-70b,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_350,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_408,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_495,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E002,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E015,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E019,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E100,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_496,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_497,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_498,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_499,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_501,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_502,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_503,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_504,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_505,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_506,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_507,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_508,deepseek-r1-distill-llama-70b,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_509,deepseek-r1-distill-llama-70b,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_002,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_010,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_014,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_022,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_203,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_227,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_282,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_310,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_331,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_350,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_408,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_495,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E002,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E015,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E017,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E019,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E100,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_496,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_497,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_498,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_499,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_500,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_501,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_502,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_503,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_504,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_505,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_506,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_507,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_508,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_509,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_510,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,False,False,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_511,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_512,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_513,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_514,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_515,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_001,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_002,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,False,False,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_003,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E_004,Gemini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_005,Gemini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_001,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_002,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_011,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_014,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_022,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_080,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_120,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_137,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_155,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_172,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_203,o4-mini,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_282,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_310,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_331,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_350,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_408,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_467,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_495,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E002,o4-mini,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E015,o4-mini,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E017,o4-mini,W3,perturbed,True,True,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E019,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_E100,o4-mini,W3,perturbed,False,False,0.0,BW_P1_behavioral raw rescore,True,True,0.0,False,1,0.0,False,False
+BW_W3_action_mapping,BW,BW_496,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_497,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_498,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_499,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_500,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_501,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_502,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_503,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_504,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_505,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_506,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_507,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_508,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_509,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_510,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_511,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_512,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_513,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_514,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_515,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_001,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_002,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_003,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_004,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_W3_action_mapping,BW,BW_E_005,o4-mini,W3,perturbed,False,True,1.0,BW_P1_behavioral raw rescore,True,True,0.0,True,1,1.0,False,True
+BW_legacy_state_parser,BW,BW_001,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_002,Claude,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_010,Claude,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_011,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_014,Claude,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_022,Claude,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_080,Claude,all_noncanonical_mean,,0.5,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_120,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_137,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_155,Claude,all_noncanonical_mean,,0.5,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_172,Claude,all_noncanonical_mean,,0.5,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_203,Claude,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_227,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_282,Claude,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_310,Claude,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_331,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_350,Claude,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_408,Claude,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_467,Claude,all_noncanonical_mean,,0.0,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_495,Claude,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_496,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_497,Claude,all_noncanonical_mean,,0.6666666666666666,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_498,Claude,all_noncanonical_mean,,0.75,0.6666666666666666,0.25,,False,False,0.0,True,4,0.25,False,True
+BW_legacy_state_parser,BW,BW_499,Claude,all_noncanonical_mean,,0.0,0.5,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_500,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_501,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_502,Claude,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_503,Claude,all_noncanonical_mean,,0.3333333333333333,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_504,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_505,Claude,all_noncanonical_mean,,0.3333333333333333,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_506,Claude,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_507,Claude,all_noncanonical_mean,,0.6666666666666666,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_508,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_509,Claude,all_noncanonical_mean,,0.3333333333333333,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_510,Claude,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_511,Claude,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_512,Claude,all_noncanonical_mean,,0.6666666666666666,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_513,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_514,Claude,all_noncanonical_mean,,0.3333333333333333,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_515,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_E002,Claude,all_noncanonical_mean,,0.0,0.6666666666666666,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E015,Claude,all_noncanonical_mean,,0.0,0.8333333333333334,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E017,Claude,all_noncanonical_mean,,0.0,0.5,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E019,Claude,all_noncanonical_mean,,0.0,0.5,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E100,Claude,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E_001,Claude,all_noncanonical_mean,,0.6666666666666666,0.3333333333333333,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_002,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_003,Claude,all_noncanonical_mean,,0.3333333333333333,0.5,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_004,Claude,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_005,Claude,all_noncanonical_mean,,0.6666666666666666,0.3333333333333333,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_001,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_002,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_010,GPT-4o,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_011,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_014,GPT-4o,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_022,GPT-4o,all_noncanonical_mean,,0.5,0.16666666666666666,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_080,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_120,GPT-4o,all_noncanonical_mean,,0.0,0.3333333333333333,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_137,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_155,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_172,GPT-4o,all_noncanonical_mean,,0.5,0.3333333333333333,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_203,GPT-4o,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_227,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_282,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_310,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_331,GPT-4o,all_noncanonical_mean,,0.5,0.3333333333333333,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_350,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_408,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_467,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_495,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_496,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_497,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_498,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,True,True,0.0,False,4,0.0,False,False
+BW_legacy_state_parser,BW,BW_499,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_500,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_501,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_502,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_503,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_504,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_505,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_506,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_507,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_508,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_509,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_510,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_511,GPT-4o,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_512,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_513,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_514,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_515,GPT-4o,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_E002,GPT-4o,all_noncanonical_mean,,0.0,0.6666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E015,GPT-4o,all_noncanonical_mean,,0.0,0.3333333333333333,1.0,,False,False,0.0,True,2,1.0,False,True
+BW_legacy_state_parser,BW,BW_E017,GPT-4o,all_noncanonical_mean,,0.0,0.8333333333333334,1.0,,False,False,0.0,True,2,1.0,False,True
+BW_legacy_state_parser,BW,BW_E019,GPT-4o,all_noncanonical_mean,,0.0,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E100,GPT-4o,all_noncanonical_mean,,0.0,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E_001,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_002,GPT-4o,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_003,GPT-4o,all_noncanonical_mean,,0.6666666666666666,0.3333333333333333,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_004,GPT-4o,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_005,GPT-4o,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_001,Gemini,all_noncanonical_mean,,0.5,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_002,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_010,Gemini,all_noncanonical_mean,,0.5,0.5,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_011,Gemini,all_noncanonical_mean,,0.5,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_014,Gemini,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_022,Gemini,all_noncanonical_mean,,0.5,0.3333333333333333,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_080,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_120,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_137,Gemini,all_noncanonical_mean,,0.5,0.3333333333333333,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_155,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_172,Gemini,all_noncanonical_mean,,0.0,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_203,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_227,Gemini,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_282,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_310,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_331,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_350,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_408,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_467,Gemini,all_noncanonical_mean,,0.0,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_495,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_496,Gemini,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_497,Gemini,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_498,Gemini,all_noncanonical_mean,,0.25,0.3333333333333333,0.25,,False,False,0.0,True,4,0.25,False,True
+BW_legacy_state_parser,BW,BW_499,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_500,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_501,Gemini,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_502,Gemini,all_noncanonical_mean,,0.3333333333333333,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_503,Gemini,all_noncanonical_mean,,0.3333333333333333,0.5,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_504,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_505,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_506,Gemini,all_noncanonical_mean,,0.6666666666666666,0.3333333333333333,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_507,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_508,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_509,Gemini,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_510,Gemini,all_noncanonical_mean,,0.3333333333333333,0.6666666666666666,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_511,Gemini,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_512,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_513,Gemini,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.3333333333333333,,False,False,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_514,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_515,Gemini,all_noncanonical_mean,,0.6666666666666666,0.6666666666666666,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_E002,Gemini,all_noncanonical_mean,,0.0,0.6666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E015,Gemini,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E017,Gemini,all_noncanonical_mean,,0.0,0.8333333333333334,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E019,Gemini,all_noncanonical_mean,,0.0,0.5,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E100,Gemini,all_noncanonical_mean,,0.0,0.16666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E_001,Gemini,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_002,Gemini,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_003,Gemini,all_noncanonical_mean,,0.6666666666666666,0.3333333333333333,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_004,Gemini,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_005,Gemini,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_001,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_002,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_010,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_011,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_014,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_022,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_080,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_120,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_137,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_155,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_172,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_203,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_227,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_282,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_310,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_331,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_350,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_408,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_467,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_495,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_496,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_497,Llama,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_498,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,4,0.0,False,False
+BW_legacy_state_parser,BW,BW_499,Llama,all_noncanonical_mean,,0.0,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_500,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_501,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_502,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_503,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_504,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_505,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_506,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_507,Llama,all_noncanonical_mean,,0.3333333333333333,0.16666666666666666,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_508,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_509,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_510,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_511,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_512,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_513,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_514,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_515,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E002,Llama,all_noncanonical_mean,,0.0,0.5,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_E015,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_E017,Llama,all_noncanonical_mean,,0.0,0.5,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_E019,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_E100,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_001,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_002,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_003,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_004,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_005,Llama,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_001,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_002,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_010,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_011,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.5,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_014,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_022,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.5,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_080,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.0,0.5,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_120,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_137,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.3333333333333333,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_155,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_172,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.0,,False,False,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_203,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_227,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_282,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.5,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_310,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.0,0.4,0.0,,True,True,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_331,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_350,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_408,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_467,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_495,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_496,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.6666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_497,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.6666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_498,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.5,0.25,,True,True,0.0,True,4,0.25,False,True
+BW_legacy_state_parser,BW,BW_499,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.6666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_500,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.4,0.0,,True,True,0.0,False,2,0.0,False,False
+BW_legacy_state_parser,BW,BW_501,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_502,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.3333333333333333,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_503,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.6666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_504,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_505,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_506,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.5,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_507,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_508,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.6666666666666666,0.6666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_509,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.3333333333333333,0.3333333333333333,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E002,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E015,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.0,0.5,1.0,,False,False,0.0,True,2,1.0,False,True
+BW_legacy_state_parser,BW,BW_E017,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.0,0.8,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E019,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.0,0.3333333333333333,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E100,deepseek-r1-distill-llama-70b,all_noncanonical_mean,,0.5,0.6666666666666666,0.5,,False,False,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_001,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_010,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_011,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_120,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_137,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_155,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_172,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_227,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_467,mock,all_noncanonical_mean,,0.0,0.0,0.0,,False,False,0.0,False,1,0.0,False,False
+BW_legacy_state_parser,BW,BW_001,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_002,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_010,o4-mini,all_noncanonical_mean,,0.5,1.0,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_011,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_014,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_022,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_080,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_120,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_137,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_155,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_172,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_203,o4-mini,all_noncanonical_mean,,0.5,1.0,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_227,o4-mini,all_noncanonical_mean,,0.5,1.0,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_282,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_310,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_331,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_350,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_408,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_467,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_495,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,True,True,0.0,True,2,0.5,False,True
+BW_legacy_state_parser,BW,BW_496,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_497,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_498,o4-mini,all_noncanonical_mean,,0.75,0.8333333333333334,0.25,,True,True,0.0,True,4,0.25,False,True
+BW_legacy_state_parser,BW,BW_499,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_500,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_501,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_502,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_503,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_504,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_505,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_506,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_507,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_508,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_509,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_510,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_511,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_512,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_513,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_514,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_515,o4-mini,all_noncanonical_mean,,0.6666666666666666,0.8333333333333334,0.3333333333333333,,True,True,0.0,True,3,0.3333333333333333,False,True
+BW_legacy_state_parser,BW,BW_E002,o4-mini,all_noncanonical_mean,,0.5,1.0,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E015,o4-mini,all_noncanonical_mean,,0.0,1.0,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E017,o4-mini,all_noncanonical_mean,,0.0,1.0,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E019,o4-mini,all_noncanonical_mean,,0.0,0.8333333333333334,1.0,,False,True,1.0,True,2,0.0,True,True
+BW_legacy_state_parser,BW,BW_E100,o4-mini,all_noncanonical_mean,,0.5,0.8333333333333334,0.5,,False,True,1.0,True,2,-0.5,True,True
+BW_legacy_state_parser,BW,BW_E_001,o4-mini,all_noncanonical_mean,,1.0,0.8333333333333334,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_002,o4-mini,all_noncanonical_mean,,1.0,0.8333333333333334,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_003,o4-mini,all_noncanonical_mean,,1.0,0.8333333333333334,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_004,o4-mini,all_noncanonical_mean,,1.0,0.6666666666666666,0.0,,True,True,0.0,False,3,0.0,False,False
+BW_legacy_state_parser,BW,BW_E_005,o4-mini,all_noncanonical_mean,,1.0,0.8333333333333334,0.0,,True,True,0.0,False,3,0.0,False,False

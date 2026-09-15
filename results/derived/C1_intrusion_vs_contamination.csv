@@ -1,0 +1,14 @@
+family,model,n,n_clusters,spearman_rho,ci_low,ci_high,p_clustered,n_intrusions,verdict
+ALGO,Claude,48,25,-0.3089716991054783,-0.5072000441964382,-0.09656084452507731,0.000418147606104955,3,negative_supported
+ALGO,GPT-4o,78,32,-0.2572457706854729,-0.44859704166964826,-0.15328231140624832,0.00022999080036798528,2,negative_supported
+ALGO,Gemini,71,30,-0.3176126235754982,-0.5008689858479362,-0.14788187976836123,0.0002035002035002035,4,negative_supported
+ALGO,Llama,107,37,,,,,0,undefined
+ALGO,o4-mini,47,24,-0.4793077532183292,-0.746281642579364,-0.2352450320737264,0.0004,13,negative_supported
+BW,Claude,106,60,,,,,0,undefined
+BW,GPT-4o,94,59,,,,,0,undefined
+BW,Gemini,104,59,,,,,0,undefined
+BW,Llama,108,59,,,,,0,undefined
+BW,o4-mini,32,32,,,,,0,undefined
+GSM,Claude,6,6,,,,,0,undefined
+GSM,Gemini,1,1,,,,,0,insufficient_n
+GSM,o4-mini,3,3,,,,,0,undefined

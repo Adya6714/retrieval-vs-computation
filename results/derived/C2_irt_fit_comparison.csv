@@ -1,0 +1,9 @@
+family,model,K,ll,bic,aic,n_params,n_persons,n_items,selected,lrt_vs_prev_p,note,lrt_obs,lrt_n_boot
+GSM,1PL,1,-225.20722720850023,476.0744511310968,462.41445441700046,6,72,7,False,,baseline single-class Rasch/1PL,,
+GSM,2PL,1,-196.86777257756117,449.33220470233107,419.73554515512234,13,72,7,False,,baseline 2PL,,
+GSM,mixture_rasch,2,-266.1100096713708,587.8166788899503,558.2200193427416,13,72,7,False,0.926829268292683,restarts=4; converged_iter~65,0.20661054824086023,40.0
+GSM,mixture_rasch,3,-265.965884693453,617.4650917672271,571.931769386906,20,72,7,False,0.8536585365853658,restarts=4; converged_iter~9,0.28824995583556756,40.0
+GSM,mixture_rasch,4,-263.1545267844325,641.7790387822985,580.309053568865,27,72,7,False,0.24390243902439024,restarts=4; converged_iter~41,5.6227158180410015,40.0
+GSM,mixture_rasch,1,-266.2133149454912,558.0866266050788,544.4266298909824,6,72,7,True,,SELECTED by BIC (K∈1..4); LRT-path K=1; single-class mixture Rasch (LRT null),,
+ALGO,NOT_FIT,,,,,,,,False,,Skipped: O10 item_var=0.0051 prop=0.0182 below gate (var>=0.02 or prop>=0.1).,,
+BW,NOT_FIT,,,,,,,,False,,Skipped: O10 item_var=0.0006 prop=0.0024 below gate (var>=0.02 or prop>=0.1).,,

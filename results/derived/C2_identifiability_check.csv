@@ -1,0 +1,4 @@
+family,o10_design,item_variance,item_proportion,n_items_o10,threshold_variance,threshold_proportion,identified,decision,empirical_problem_p_sd,note
+ALGO,max_cells,0.005131,0.0182,29,0.02,0.1,False,skip_irt_not_identified,0.19535386183501113,O10 primary item variance near zero → difficulty parameters not identified for this bank (DS-01 caveat).
+BW,full_7_variants,0.000602,0.0024,47,0.02,0.1,False,skip_irt_not_identified,0.24559378234969975,O10 primary item variance near zero → difficulty parameters not identified for this bank (DS-01 caveat).
+GSM,full_7_variants,0.032681,0.1858,24,0.02,0.1,True,fit_mixture_irt,0.20200069688861025,Passes O10 item-heterogeneity gate.

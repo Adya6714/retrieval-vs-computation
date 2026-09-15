@@ -1,0 +1,11 @@
+problem_id,variant,parser_n_towers,manual_n_towers,n_on,n_ontable,agree,note
+BW_001,W6,1,1,8,1,True,single connected on-component
+BW_002,W6,1,1,6,0,True,single connected on-component
+BW_010,W6,1,1,5,1,True,single connected on-component
+BW_011,W6,1,1,10,1,True,single connected on-component
+BW_014,W6,1,1,2,0,True,single connected on-component
+BW_022,W6,1,1,4,0,True,single connected on-component
+BW_080,W6,1,1,6,1,True,single connected on-component
+BW_120,W6,1,1,4,1,True,single connected on-component
+BW_137,W6,1,1,11,1,True,single connected on-component
+BW_155,W6,1,1,5,1,True,single connected on-component

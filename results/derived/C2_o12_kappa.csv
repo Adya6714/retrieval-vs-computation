@@ -1,0 +1,3 @@
+comparison,family,n,kappa,note
+mixture_MAP_vs_O12_modal,ALGO,0,,ALGO failed IRT identifiability; O12 kappa not computed (expected gate).
+mixture_MAP_vs_triangulation_v2,GSM,71,0.0,Secondary cross-check on the fitted family.
