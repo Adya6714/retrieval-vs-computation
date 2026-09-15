@@ -213,6 +213,10 @@ def main() -> None:
             )
 
     _acc_rows(valid, subset="all_valid_pairs")
+    # NOTE (C3/O1): current count_goal_towers yields 1 for essentially all
+    # K3-valid W6 goals, so this subset is vacuous (≡ all_valid_pairs). The
+    # cited mean 1.74 is unrecovered — do not interpret as an L1 control.
+    # See O13_measurement_failures.csv (UNRESOLVED) and O1_tower_parser_handcheck_sample.csv.
     one_tower = valid[valid["w6_n_goal_towers"] == 1].copy()
     _acc_rows(one_tower, subset="w6_one_goal_tower")
     matched_naming = valid[

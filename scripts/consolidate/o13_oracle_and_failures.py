@@ -411,6 +411,55 @@ def build_table_b() -> pd.DataFrame:
             }
         )
 
+    # C3: N3 Llama mech–behavior link — degenerate binary outcome
+    n3_link = DER / "N3_algo_mech_behavior_link.csv"
+    n3_inst = DER / "N3_algo_mech_behavior_instances.csv"
+    if n3_inst.exists():
+        inst = pd.read_csv(n3_inst, dtype=str)
+        llama = inst[inst["model"].astype(str).str.contains("Llama", case=False)]
+        n_pos = int(llama["w3_ok"].astype(str).str.lower().isin({"true", "1", "yes"}).sum()) if len(llama) else 0
+        n_llama = len(llama)
+    else:
+        n_pos, n_llama = 1, 60
+    rows.append(
+        {
+            "family": "ALGO",
+            "probe": "P3",
+            "phase_or_variant": "mechanistic_behavioral_link",
+            "models_affected": "Llama-3.1-8B",
+            "reason": (
+                "ALGO mechanistic-behavioral link, Llama-3.1-8B: outcome variable degenerate "
+                f"({n_pos}/{n_llama} positive), correlation not estimable."
+            ),
+            "n_rows_lost": n_llama,
+            "recoverable": False,
+            "source": "N3_algo_mech_behavior_instances.csv|N3_algo_mech_behavior_link.csv|C3_corrections_changelog.md",
+        }
+    )
+
+    # C3/O1: BW W6 goal-tower count 1.74 vs 1.0 — UNRESOLVED; one-tower control vacuous
+    rows.append(
+        {
+            "family": "BW",
+            "probe": "P1",
+            "phase_or_variant": "W6_goal_tower_control",
+            "models_affected": "all_P1_BW_models",
+            "reason": (
+                "UNRESOLVED: cited W6 mean n_goal_towers=1.74 unrecovered; current "
+                "count_goal_towers returns 1.0 on all K3 valid pairs (and 0/1 on full W6 "
+                "bank, mean≈0.85). O1 hand-check (10/10) agrees parser=manual=1. "
+                "One-tower control ≡ full set (n=47) — vacuous. Do not claim L1 survives "
+                "the one-tower control."
+            ),
+            "n_rows_lost": 47,
+            "recoverable": False,
+            "source": (
+                "O1_tower_parser_handcheck_sample.csv|K3_bw_canonical_w6_instances.csv|"
+                "N1_bw_w6_stratified_accuracy.csv|probes/contamination/bw_instance_metrics.py"
+            ),
+        }
+    )
+
     return pd.DataFrame(rows)
 
 

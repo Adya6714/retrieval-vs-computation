@@ -23,8 +23,6 @@ N2_GSM_ALGO_pooled_all_instances_with_p2,pointbiserial_cci_w3,0.2434,0.0274,0.41
 N2_GSM_ALGO_pooled_canonical_correct_subset,pointbiserial_cci_w3,0.2556,0.0431,0.4156,0.02,178,50.0,family:cluster,0.001,False,cluster_bootstrap_H0_r=0,
 N2_GSM_across_models,spearman_mean_cci_retention,0.6,-1.0,1.0,0.2242,4,4.0,model_iid,0.4,False,iid_bootstrap_H0_rho=0,sampling unit=model; no clone clustering
 N2_ALGO_across_models,spearman_mean_cci_retention,1.0,1.0,1.0,0.0004,2,2.0,model_iid,,False,iid_bootstrap_H0_rho=0,sampling unit=model; no clone clustering
-N3_Llama-3.1-8B,spearman_rank_shift_vs_w3,0.1466,0.0862,0.2427,0.0003,60,14.0,clone_family,0.2637,True,cluster_bootstrap_H0_rho=0,
-N3_Qwen2.5-1.5B,spearman_rank_shift_vs_w3,,,,,61,14.0,clone_family,,False,cluster_bootstrap_H0_rho=0,insufficient variation
 N4_within_family_across_models_ALGO_--,kendall_W,0.4194,,,0.0491,5,5.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
 N4_within_family_across_models_BW_--,kendall_W,0.6786,,,0.0001,6,6.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
 N4_within_family_across_models_GSM_--,kendall_W,0.6603,,,0.0419,3,3.0,none_rank_permutation,1.0,True,within_row_rank_permutation,p from fixed within-row permutation (O2); not clone clustering
@@ -47,3 +45,5 @@ N5_BW_Claude,spearman_contam_vs_retention,-0.4147,-0.8024,0.1206,0.1692,11,11.0,
 N5_BW_Gemini,spearman_contam_vs_retention,0.2546,-0.0997,0.566,0.1638,25,25.0,problem_id,0.2194,False,cluster_bootstrap_H0_rho=0,
 N5_BW_deepseek/deepseek-r1-distill-llama-70b,spearman_contam_vs_retention,0.521,0.2207,0.7437,0.0028,35,35.0,problem_id,0.0013,False,cluster_bootstrap_H0_rho=0,
 N5_BW_o4-mini,spearman_contam_vs_retention,0.4728,0.2344,0.6717,0.0004,50,50.0,problem_id,0.0005,False,cluster_bootstrap_H0_rho=0,
+N3_Llama-3.1-8B,spearman_rank_shift_vs_w3,,,,,60,14,clone_family,0.0003,False,cluster_bootstrap_H0_rho=0,outcome variable degenerate (1/60 positive); correlation not estimable — do not report rho/CI/p
+N3_Qwen2.5-1.5B,spearman_rank_shift_vs_w3,,,,,61,14,clone_family,,False,cluster_bootstrap_H0_rho=0,insufficient variation

@@ -1,2 +1,4 @@
 probe,family,metric,status,evidence,action,source_doc
 P2,BW,CCI/TEP,measurement_failure,"goal_reached=0 for all models; partial_goal_mean=Claude=0.0251,GPT-4o=0.0083,Llama=0.1355",do_not_compute_TEP; report floor only,BW_P2_floor_documentation.csv
+P3,ALGO,N3_mech_behavior_Spearman,measurement_failure,"Llama-3.1-8B W3-correct 1/60; correlation not estimable (previously reported rho=0.147 CI[0.086,0.243] p=0.0003 withdrawn)",remove_from_significance_tables; see O13,N3_algo_mech_behavior_link.csv
+P1,BW,W6_n_goal_towers_one_tower_control,UNRESOLVED,1.74 vs 1.0 unreconciled; O1 10/10 parser=manual=1; one-tower subset vacuous (n=47=all valid),do_not_claim_L1_survives_one_tower_control,O1_tower_parser_handcheck_sample.csv|N1_bw_w6_stratified_accuracy.csv

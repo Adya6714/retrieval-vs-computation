@@ -520,10 +520,24 @@ def audit_n3(rows: list[dict]) -> None:
     out_rows = []
     for model in sorted(inst["model"].unique()):
         sub = inst[inst["model"] == model].copy()
-        if sub["w3_ok"].nunique() < 2 or sub["rank_shift_canonical_minus_w3"].nunique() < 2:
+        n_pos = int(sub["w3_ok"].sum())
+        n_neg = int((sub["w3_ok"] == 0).sum())
+        min_cell = min(n_pos, n_neg)
+        degenerate = (
+            sub["w3_ok"].nunique() < 2
+            or sub["rank_shift_canonical_minus_w3"].nunique() < 2
+            or min_cell < 5
+        )
+        if degenerate:
             prev = old[old["model"] == model]
             prev_p = prev["p_value"].iloc[0] if len(prev) else ""
-            print(f"  {model}: insufficient variation (n={len(sub)})")
+            note = "insufficient variation"
+            if min_cell < 5 and sub["w3_ok"].nunique() >= 2:
+                note = (
+                    f"outcome variable degenerate ({n_pos}/{len(sub)} positive); "
+                    "correlation not estimable — do not report rho/CI/p"
+                )
+            print(f"  {model}: {note} (n={len(sub)})")
             rows.append(
                 _row(
                     analysis_id=f"N3_{model}",
@@ -537,7 +551,7 @@ def audit_n3(rows: list[dict]) -> None:
                     clustering_variable="clone_family",
                     previously_reported_p=prev_p,
                     null_test="cluster_bootstrap_H0_rho=0",
-                    notes="insufficient variation",
+                    notes=note,
                 )
             )
             out_rows.append(
@@ -545,6 +559,7 @@ def audit_n3(rows: list[dict]) -> None:
                     "model": model,
                     "n": len(sub),
                     "n_clusters": sub["cluster_id"].nunique(),
+                    "n_w3_correct": n_pos,
                     "spearman_rho": "",
                     "ci_low": "",
                     "ci_high": "",
@@ -555,7 +570,7 @@ def audit_n3(rows: list[dict]) -> None:
                     "bootstrap": "cluster_by_clone_family",
                     "n_boot": N_BOOT,
                     "seed": SEED,
-                    "note": "insufficient variation — correlation undefined",
+                    "note": note,
                 }
             )
             continue
@@ -589,6 +604,7 @@ def audit_n3(rows: list[dict]) -> None:
                 "model": model,
                 "n": res["n"],
                 "n_clusters": res["n_clusters"],
+                "n_w3_correct": n_pos,
                 "spearman_rho": _round(res["estimate"]),
                 "ci_low": _round(res["ci_low"]),
                 "ci_high": _round(res["ci_high"]),

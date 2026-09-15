@@ -29,21 +29,21 @@ ALGO,phase2B_inject,Llama,61,,False,True,injection_traces_exist_tep_metric_not_s
 ALGO,phase1_declare,o4-mini,0,,False,False,never_collected
 ALGO,phase2A_execute,o4-mini,0,,False,False,never_collected
 ALGO,phase2B_inject,o4-mini,0,,False,False,never_collected
-BW,phase1_declare,Claude,50,,True,True,
-BW,phase2A_execute,Claude,50,,True,False,ok
-BW,phase2B_inject,Claude,177,,False,True,ok
-BW,phase1_declare,GPT-4o,50,,True,True,
-BW,phase2A_execute,GPT-4o,50,,True,False,ok
-BW,phase2B_inject,GPT-4o,180,,False,True,ok
-BW,phase1_declare,Llama,50,,True,False,tep_mostly_null_aborts
-BW,phase2A_execute,Llama,50,,True,False,tep_mostly_null_aborts
-BW,phase2B_inject,Llama,179,,False,False,tep_mostly_null_aborts
-BW,phase1_declare,Gemini,0,,False,False,never_collected
-BW,phase2A_execute,Gemini,0,,False,False,never_collected
-BW,phase2B_inject,Gemini,0,,False,False,never_collected
-BW,phase1_declare,o4-mini,0,,False,False,never_collected
-BW,phase2A_execute,o4-mini,0,,False,False,never_collected
-BW,phase2B_inject,o4-mini,0,,False,False,never_collected
-BW,phase1_declare,DeepSeek,0,,False,False,never_collected
-BW,phase2A_execute,DeepSeek,0,,False,False,never_collected
-BW,phase2B_inject,DeepSeek,0,,False,False,never_collected
+BW,phase1_declare,Claude,50,0.0,True,True,"goal_reached=0; partial_goal_mean=0.0251; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2A_execute,Claude,50,0.0,True,False,"ok; goal_reached=0; partial_goal_mean=0.0251; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2B_inject,Claude,177,0.0,False,True,"ok; goal_reached=0; partial_goal_mean=0.0251; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase1_declare,GPT-4o,50,0.0,True,True,"goal_reached=0; partial_goal_mean=0.0083; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2A_execute,GPT-4o,50,0.0,True,False,"ok; goal_reached=0; partial_goal_mean=0.0083; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2B_inject,GPT-4o,180,0.0,False,True,"ok; goal_reached=0; partial_goal_mean=0.0083; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase1_declare,Llama,50,0.0,True,False,"tep_mostly_null_aborts; goal_reached=0; partial_goal_mean=0.1355; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2A_execute,Llama,50,0.0,True,False,"tep_mostly_null_aborts; goal_reached=0; partial_goal_mean=0.1355; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2B_inject,Llama,179,0.0,False,False,"tep_mostly_null_aborts; goal_reached=0; partial_goal_mean=0.1355; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase1_declare,Gemini,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2A_execute,Gemini,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2B_inject,Gemini,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase1_declare,o4-mini,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2A_execute,o4-mini,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2B_inject,o4-mini,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase1_declare,DeepSeek,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2A_execute,DeepSeek,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."
+BW,phase2B_inject,DeepSeek,0,,False,False,"never_collected; BW Probe 2 dead twice over: (1) floor effects on Claude/GPT-4o/Llama (goal_reached=0; partial_goal_mean GPT-4o=0.008 to Llama=0.136); (2) no data at all for Gemini, o4-mini, DeepSeek. Do not use 0.02–0.22 canonical-execution figure (unrecovered)."

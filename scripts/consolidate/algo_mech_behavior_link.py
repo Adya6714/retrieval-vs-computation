@@ -120,12 +120,28 @@ def main() -> None:
         if sub.empty:
             continue
         sub["w3_ok"] = sub["w3_ok"].astype(bool).astype(int)
-        if sub["w3_ok"].nunique() < 2 or sub["rank_shift_canonical_minus_w3"].nunique() < 2:
+        n_pos = int(sub["w3_ok"].sum())
+        n_neg = int((sub["w3_ok"] == 0).sum())
+        # Degenerate binary outcome: a single (or handful of) positives makes
+        # cluster-bootstrap CIs spuriously narrow — not estimable.
+        min_cell = min(n_pos, n_neg)
+        if (
+            sub["w3_ok"].nunique() < 2
+            or sub["rank_shift_canonical_minus_w3"].nunique() < 2
+            or min_cell < 5
+        ):
+            reason = "insufficient variation — correlation undefined"
+            if min_cell < 5 and sub["w3_ok"].nunique() >= 2:
+                reason = (
+                    f"outcome variable degenerate ({n_pos}/{len(sub)} positive); "
+                    "correlation not estimable"
+                )
             rows.append(
                 {
                     "model": meta["label"],
                     "n": len(sub),
                     "n_clusters": sub["cluster_id"].nunique(),
+                    "n_w3_correct": n_pos,
                     "spearman_rho": "",
                     "ci_low": "",
                     "ci_high": "",
@@ -136,7 +152,7 @@ def main() -> None:
                     "bootstrap": "cluster_by_clone_family",
                     "n_boot": N_BOOT,
                     "seed": SEED,
-                    "note": "insufficient variation — correlation undefined",
+                    "note": reason,
                 }
             )
             continue
@@ -153,6 +169,7 @@ def main() -> None:
                 "model": meta["label"],
                 "n": res["n"],
                 "n_clusters": res["n_clusters"],
+                "n_w3_correct": n_pos,
                 "spearman_rho": round(res["estimate"], 4) if res["estimate"] == res["estimate"] else "",
                 "ci_low": round(res["ci_low"], 4) if res["ci_low"] == res["ci_low"] else "",
                 "ci_high": round(res["ci_high"], 4) if res["ci_high"] == res["ci_high"] else "",

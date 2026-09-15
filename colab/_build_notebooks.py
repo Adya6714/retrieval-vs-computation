@@ -4153,3 +4153,27 @@ if __name__ == "__main__":
     _o16 = importlib.util.module_from_spec(_o16_spec)
     _o16_spec.loader.exec_module(_o16)
     _o16.build()
+
+    _o14b_spec = importlib.util.spec_from_file_location(
+        "_rvc_build_o14b", Path(__file__).resolve().parent / "_build_o14b.py"
+    )
+    assert _o14b_spec is not None and _o14b_spec.loader is not None
+    _o14b = importlib.util.module_from_spec(_o14b_spec)
+    _o14b_spec.loader.exec_module(_o14b)
+    _o14b.build()
+
+    _ds16_spec = importlib.util.spec_from_file_location(
+        "_rvc_build_ds16", Path(__file__).resolve().parent / "_build_ds16.py"
+    )
+    assert _ds16_spec is not None and _ds16_spec.loader is not None
+    _ds16 = importlib.util.module_from_spec(_ds16_spec)
+    _ds16_spec.loader.exec_module(_ds16)
+    _ds16.build()
+
+    _suite_spec = importlib.util.spec_from_file_location(
+        "_rvc_build_k_suite", Path(__file__).resolve().parent / "_build_k_suite.py"
+    )
+    assert _suite_spec is not None and _suite_spec.loader is not None
+    _suite = importlib.util.module_from_spec(_suite_spec)
+    _suite_spec.loader.exec_module(_suite)
+    _suite.build()
