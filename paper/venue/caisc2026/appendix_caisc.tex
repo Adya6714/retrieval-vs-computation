@@ -165,7 +165,7 @@ not, and is presented as directional throughout.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{figures/fig_decay.pdf}
+  % RETIRED: \includegraphics[width=\linewidth]{figures/fig_decay.pdf}
   \caption{Per-variant accuracy profiles (Probe~1). (a)~GSM: \wthree{} drops
   sharply for GPT-4o, Llama, and Gemini; for Claude it is mid-ranked. W6 (new
   numbers) stays much closer to canonical than \wthree{} for the
@@ -284,7 +284,7 @@ per-(model, subtype) phenomena, not a universal inverse axis.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{figures/fig_subtype_grid.pdf}
+  % RETIRED: \includegraphics[width=\linewidth]{figures/fig_subtype_grid.pdf}
   \caption{ALGO accuracy decomposed by subtype $\times$ variant $\times$ model
   (3 subtypes $\times$ 7 variants $\times$ 5 models). The WIS row is the
   universal Achilles heel of every model; shortest-path W5 is a hard floor
@@ -374,13 +374,10 @@ are recorded, and sessions abort after 15 consecutive illegal actions.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{figures/fig_bw_inversion.pdf}
-  \caption{Blocksworld canonical vs.\ renamed-blocks (W5) accuracy, per-model
-  paired Wilcoxon. Renaming the canonical a,b,c,\ldots\ block tokens
-  \emph{improves} Claude/Gemini (removes harmful retrieval cues),
-  \emph{destroys} Llama (removes load-bearing cues), and leaves
-  GPT-4o/\omini{} effectively untouched. The opposite signs across
-  architectures are not consistent with a single mechanism.}
+  % RETIRED: \includegraphics[width=\linewidth]{figures/fig_bw_inversion.pdf}
+  \caption{Blocksworld canonical vs.\ direction-reversal (W5: initial and goal
+  states exchanged) accuracy, per-model paired Wilcoxon. Entity rename is W3,
+  not W5.}
   \label{fig:bw_rename}
 \end{figure}
 

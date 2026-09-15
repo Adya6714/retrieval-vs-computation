@@ -214,13 +214,14 @@ def fig_crossover() -> None:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    fig_intrusion()
-    fig_triangulation_complete_case()
-    fig_mixed_failure()
-    fig_rule_crosstab()
-    fig_coverage_holes()
-    fig_crossover()
-    print("Wrote rebuild figures to", OUT)
+    # Triangulation / intrusion rebuild figures retired from NeurIPS build.
+    print(
+        "Skipped retired rebuild figures "
+        "(fig_triangulation_complete_case, fig_rule_crosstab, fig_coverage_holes, "
+        "fig_intrusion, fig_mixed_failure, fig_crossover). "
+        "Functions remain for archival calls."
+    )
+    print("Wrote nothing to", OUT)
 
 
 if __name__ == "__main__":

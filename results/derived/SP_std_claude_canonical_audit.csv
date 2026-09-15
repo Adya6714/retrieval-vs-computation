@@ -1,0 +1,22 @@
+problem_id,included,exclusion_reason,correct_canonical_stored,rescored_correct,rescore_reason,verdict_changed
+SP_001,True,in_bank_ok,False,True,correct,True
+SP_002,True,in_bank_ok,False,False,"wrong_cost: predicted=44, expected=40",False
+SP_031,True,in_bank_ok,False,True,correct,True
+SP_032,True,in_bank_ok,False,True,correct,True
+SP_033,True,in_bank_ok,False,True,correct,True
+SP_034,True,in_bank_ok,False,True,correct,True
+SP_035,True,in_bank_ok,False,True,correct,True
+SP_036,True,in_bank_ok,False,True,correct,True
+SP_049,True,in_bank_ok,False,True,correct,True
+SP_050,True,in_bank_ok,False,True,correct,True
+SP_051,True,in_bank_ok,False,True,correct,True
+SP_052,True,in_bank_ok,False,True,correct,True
+SP_053,True,in_bank_ok,False,True,correct,True
+SP_054,True,in_bank_ok,False,True,correct,True
+SP_055,True,in_bank_ok,False,True,correct,True
+SP_056,True,in_bank_ok,False,True,correct,True
+SP_057,True,in_bank_ok,False,True,correct,True
+SP_058,True,in_bank_ok,False,True,correct,True
+SP_059,True,in_bank_ok,False,True,correct,True
+SP_060,True,in_bank_ok,False,True,correct,True
+SP_061,True,in_bank_ok,False,True,correct,True

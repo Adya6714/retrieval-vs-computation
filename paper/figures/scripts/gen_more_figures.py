@@ -105,9 +105,9 @@ def fig_bw_inversion() -> None:
     x = np.arange(len(df))
     w = 0.36
     ax.bar(x - w/2, df.canon, width=w, color="#88AABB", edgecolor="white",
-           linewidth=0.6, label="canonical blocks (a,b,c,...)")
+           linewidth=0.6, label="canonical")
     ax.bar(x + w/2, df.W5,    width=w, color="#A67BC2", edgecolor="white",
-           linewidth=0.6, label="renamed blocks (W$_5$)")
+           linewidth=0.6, label="direction reversal (W$_5$: init$\\leftrightarrow$goal)")
 
     for i, row in df.iterrows():
         if pd.isna(row.p): continue
@@ -128,14 +128,15 @@ def fig_bw_inversion() -> None:
     ax.set_xticks(x); ax.set_xticklabels(df.model)
     ax.set_ylabel("Behavioural correct rate")
     ax.set_ylim(0, 1.0)
-    ax.set_title("Blocksworld: renaming blocks flips the sign — Claude/Gemini gain, Llama collapses")
+    ax.set_title("Blocksworld: direction reversal (W5), not entity rename")
     ax.legend(loc="upper right", fontsize=8, framealpha=0.9)
     ax.spines[["top", "right"]].set_visible(False)
     ax.grid(axis="y", ls=":", color="#bbb", alpha=0.5)
 
+    # NOTE: retired from NeurIPS build; kept for archival regeneration only.
     plt.savefig(OUT / "fig_bw_inversion.pdf", bbox_inches="tight")
     plt.close(fig)
-    print("  wrote fig_bw_inversion.pdf")
+    print("  wrote fig_bw_inversion.pdf (retired from build; W5=direction reversal)")
 
 
 def fig_subtype_grid() -> None:
@@ -329,11 +330,11 @@ def fig_gsm_w5w6() -> None:
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    fig_bw_inversion()
-    fig_subtype_grid()
+    # Retired from NeurIPS build (claims the paper no longer makes):
+    # fig_bw_inversion, fig_subtype_grid
     fig_probe2_summary()
     fig_gsm_w5w6()
-    print("Done. (4 new figures)")
+    print("Done. (2 figures; fig_bw_inversion/fig_subtype_grid retired)")
 
 
 if __name__ == "__main__":

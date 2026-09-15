@@ -1,50 +1,23 @@
-% =====================================================================
-%  Same Score, Different Strategy: Multi-Probe Diagnosis of Structural
-%  Fragility in LLM Reasoning
-%  NeurIPS 2026 — Evaluations & Datasets Track (double-blind).
-%
-%  Build:  pdflatex main  ->  bibtex main  ->  pdflatex main  ->  pdflatex main
-%
-%  Submission (default anonymized):  \usepackage[eandd]{neurips_2026}
-%  Camera-ready:                     \usepackage[eandd, final]{neurips_2026}
-%  Preprint (e.g. arXiv):            \usepackage[preprint]{neurips_2026}
-%
-%  CAISc 2026 archive: paper/venue/caisc2026/
-%  Frozen numbers: rebuild/NUMBERS.csv (see docs/paper/PAPER_ERRATA.md)
-% =====================================================================
 \documentclass{article}
 
-% Evaluations & Datasets Track (double-blind by default)
-\usepackage[eandd]{neurips_2026}
-
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{xurl}           % allows URLs to break at any character
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
+\usepackage[preprint]{neurips_2026}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
-\usepackage{microtype}      % microtypography
-\usepackage{graphicx}       % figures
-\usepackage{xcolor}         % colors
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xcolor}
 
-\bibliographystyle{plainnat}
+\newcommand{\omini}{\texttt{o4-mini}}
 
-% --- convenience macros (single source of truth for model names/metrics) ---
-\newcommand{\omini}{\texttt{o4-mini}}     % canonical text label for the reasoning model
-\newcommand{\wthree}{\ensuremath{W_3}}
-\newcommand{\Rwiii}{\ensuremath{R_{W_3}}}
-\newcommand{\eps}{\varepsilon}
-\newcommand{\cci}{\textsc{cci}}
-\newcommand{\tep}{\textsc{tep}}
-\newcommand{\vri}{\textsc{vri}}
+\title{Harder Instances, Higher Accuracy:\\Difficulty, Oracles, and Item Dependence in\\LLM Robustness Benchmarks}
 
-\title{Same Score, Different Strategy:\\Multi-Probe Diagnosis of Structural Fragility in LLM Reasoning}
-
-% Anonymous for double-blind review. Camera-ready: replace with full list.
 \author{%
   Anonymous Author(s)\\
   Affiliation\\
@@ -53,568 +26,425 @@
 }
 
 \begin{document}
+
 \maketitle
 
-% =====================================================================
 \begin{abstract}
-When two language models achieve the same score on a benchmark, are they
-solving problems the same way? We show they are not: identical accuracy can
-be reached through genuine computation or surface pattern recognition, and
-the two strategies only become distinguishable \emph{beyond} the accuracy
-number. We apply three independent diagnostic probes---surface rename,
-cross-session plan-vs-execution consistency, and training-data
-proximity---to 219 reasoning problems across arithmetic, planning, and
-algorithmic optimization, running five models (including the
-reasoning-trained \omini) for approximately 20{,}000 API calls. Three-probe
-convergence labels apply most completely to the arithmetic and
-algorithmic-optimization families; on Blocksworld our strict PDDL protocol
-aborts in 84--100\% of sessions (itself a measurement-protocol finding), so
-the Blocksworld execution probe is reported via a parsing-tolerant rerun with
-limited convergence coverage. Three findings
-stand out. First, the same block-rename operation \emph{improves} two
-models, \emph{destroys} one, and \emph{leaves two untouched}---on identical
-problems. Second, weighted interval scheduling collapses every model to zero
-under entity rename despite near-perfect canonical accuracy, isolating
-algorithmic depth as a robustness axis orthogonal to benchmark score. Third,
-models accept injected wrong intermediate states at high rates yet still
-recover the correct final answer roughly half the time, showing that
-compliance and derailment are empirically separable. None of these patterns
-is visible from benchmark accuracy alone.
+Benchmarks that perturb the surface form of reasoning problems report accuracy drops and
+attribute them to memorisation. We audit what those drops measure. Applying six surface
+variants to 219 problems across arithmetic, planning, and algorithmic optimisation, on six
+models, we find that three confounds each independently produce drop-shaped signals. First,
+the answer-checker is itself a program: because obfuscation perturbs exactly the tokens a
+checker parses, oracle failure is correlated with the treatment rather than random, and it
+biases toward the memorisation hypothesis. Correcting one such defect moves a single cell
+from $0.043$ to $0.252$ with zero movement on the unperturbed condition. Second, canonical
+and regenerated instances are not difficulty-matched. On Blocksworld, regenerated instances
+are harder on every structural measure we can compute, including optimal plan length from an
+admissible planner, yet four of six models score \emph{higher} on them; Claude Sonnet~4 moves
+from $0.170$ to $0.638$. $n$-gram proximity to public corpora does not account for this gap.
+Third, benchmark items are not independent: our algorithmic bank of 110 problems collapses to
+51 clone families, so nominal intervals are $1.6$--$2.7\times$ too narrow. Beyond the
+confounds, two structural results survive. Surface fragility has no item-level locus --- no
+problem fails across all models in arithmetic or algorithms --- and plan-execution consistency
+does not predict rename survival ($r{=}0.156$, $p{=}0.060$), so robustness is not a single
+construct. We release per-instance verifier logs and a gold-in-gold-out harness that detects
+oracle failure before it reaches a results table.
 \end{abstract}
 
-% =====================================================================
 \section{Introduction}
-\label{sec:intro}
 
-Imagine two students score 80\% on the same exam. You rename every person in
-every word problem; numbers and structure are unchanged. Student A still
-scores 80\%; Student B drops to 0\%. Who actually understood the material?
-This is, roughly, what we observe in frontier LLMs: two models can reach
-identical benchmark accuracy via fundamentally different strategies, and
-standard accuracy reporting cannot tell them apart.
+A now-standard evaluation protocol takes a reasoning benchmark, perturbs the surface form of
+each item while preserving its solution, and reports the accuracy drop as evidence that models
+rely on memorised surface patterns rather than generalisable procedure
+\citep{mirzadeh2025gsmsymbolic, valmeekam2023planbench, wang2024rupbench, huang2025mathperturb}.
+The inference is attractive because the manipulation is clean: if the problem is logically
+identical and only the words changed, a drop looks like direct evidence about representation.
 
-\paragraph{The surprising finding.}
-On shortest-path planning, Claude Sonnet~4 scores 64.7\% vs.\ GPT-4o's
-41.2\%, then drops to 0.0\% under pure entity renaming while GPT-4o retains
-26.5\% (matched SP subset, $n{=}34$, Fisher $p{=}0.0021$). This is not a
-two-model anecdote: across Claude, GPT-4o, Gemini, and
-Llama~\citep{dubey2024llama}, robustness ordering is family-dependent and
-cannot be inferred from canonical accuracy. (A same-direction coin-change
-reversal at $n{=}10$ is reported as exploratory in Appendix~\ref{app:cov}.)
+This paper asks what else could produce that drop. We are not arguing the phenomenon is
+absent. We are arguing that the standard protocol, as implemented across several widely-used
+benchmarks including our own first implementation, admits at least three alternative
+explanations that are rarely controlled and that each bias in the same direction as the
+hypothesis under test.
 
-\paragraph{Why one test is not enough.}
-A drop under renaming alone admits mundane explanations (tokenization,
-residual difficulty, noise). Our approach is \emph{convergence}: three
-independent tests with non-overlapping assumptions. Prior work
-\citep{mirzadeh2024gsm,wu2024reasoning,wang2024rupbench} reports group-level
-drops; we diagnose individual instances by asking whether all three signals
-agree.
+\paragraph{The oracle is a program.} Automated evaluation depends on an answer-checker, and in
+software testing the reliability of that checker is known as the \emph{test oracle problem}
+\citep{barr2015oracle}. Obfuscation benchmarks have an unusually severe version of it. The
+perturbation renames exactly the entities, actions, and identifiers that a checker must parse
+to score an answer. A checker that silently fails to invert the rename returns
+\texttt{incorrect} on the perturbed condition and \texttt{correct} on the canonical one, for
+every model. This is not measurement noise: the failure is correlated with the treatment, so
+it produces bias, and the bias points toward the memorisation hypothesis. We document three
+such defects in our own pipeline (Section~\ref{sec:oracle}), all of which moved accuracy
+upward on the perturbed condition once repaired.
 
-\paragraph{What is genuinely new.}
-Two design choices (Table~\ref{tab:novelty}): cross-session
-plan-vs-execution under hard isolation (CCI; neither within-context
-\citep{turpin2023language} nor own-CoT perturbation
-\citep{lanham2023measuring}); and a built-in DP exposure control (CC/SP/WIS
-share algorithm, differ in public-corpus prevalence).
+\paragraph{Regenerated instances are not difficulty-matched.} Comparing a benchmark's released
+items against freshly generated ones from the same domain is a natural exposure control. It is
+only valid if the two sets are matched on difficulty. On Blocksworld we compute optimal plan
+length with an admissible planner and find the regenerated set is harder on every structural
+axis --- and that four of six models nonetheless score higher on it (Section~\ref{sec:difficulty}).
+Uncontrolled difficulty can manufacture a drop, and uncontrolled difficulty in the other
+direction can hide one.
 
-\paragraph{The three probes.}
-Three orthogonal diagnostics---surface rename (\wthree), cross-session
-plan-vs-execution (CCI/TEP under hard session isolation), and Infini-gram
-public-corpus proximity~\citep{liu2024infini}---apply to every problem
-(Figure~\ref{fig:framework}; metrics in Section~\ref{sec:metrics}; full
-pipeline in Appendix~\ref{app:pipeline}).\footnote{Anonymous code and logs:
-\url{https://anonymous.4open.science/r/retrieval-vs-computation-EA8F/README.md}.}
+\paragraph{Items are not independent.} Procedurally generated banks produce clone families.
+Our 110-problem algorithmic bank contains 14 families covering 73 problems, giving an effective
+$n$ of 51. Confidence intervals computed under an independence assumption are $1.6$--$2.7\times$
+too narrow (Section~\ref{sec:clones}). We are not aware of a rename-robustness paper that
+reports effective $n$.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/teaser.png}
-  \caption{Multi-probe diagnostic evaluation framework. Three orthogonal
-  probes apply to every problem instance; a per-instance label is issued only
-  when probe signals converge (Section~\ref{sec:metrics}; labels are
-  calibration points, not primary results). Full pipeline:
-  Figure~\ref{fig:pipeline} (Appendix~\ref{app:pipeline}).}
-  \label{fig:framework}
-\end{figure}
+\paragraph{Contributions.}
+\begin{itemize}
+\item A difficulty-controlled comparison of benchmark-released versus procedurally regenerated
+  planning instances, using admissible-planner optimal plan length as ground-truth difficulty,
+  showing an accuracy inversion that $n$-gram proximity does not explain.
+\item A characterisation of oracle failure as a treatment-correlated bias specific to
+  obfuscation designs, with a gold-in-gold-out harness that detects it, and three documented
+  instances with their magnitude and sign.
+\item Evidence that surface fragility has no item-level locus and that plan-execution
+  consistency and surface invariance are separable constructs, against the field's implicit
+  treatment of robustness as unidimensional.
+\item Per-instance verifier logs, exclusion codes with reasons, and clone-family annotations
+  for a 219-problem bank across three domains.
+\end{itemize}
 
-% =====================================================================
 \section{Related Work}
-\label{sec:related}
 
-\paragraph{Surface sensitivity.}
-\citet{mirzadeh2024gsm} (GSM-Symbolic) show arithmetic accuracy drops under
-template-variable perturbation in a single domain at the group-mean level.
-\citet{wu2024reasoning} extend this across 11 counterfactual tasks (again
-group-level). \citet{wang2024rupbench} (RUPBench) apply nine perturbation
-types over 15 reasoning datasets. \citet{li2024gsm} (GSM-Plus) generate
-diverse variants of GSM8K and find consistent accuracy drops;
-\citet{huang2025mathperturb} (MATH-Perturb) construct hard perturbations on
-competition math. We differ by coupling surface, execution, and exposure
-probes \emph{per instance} on shared problems (Table~\ref{tab:novelty}),
-with a built-in DP exposure gradient (CC/SP/WIS) and matched-canonical pairs
-that invert across models.
+\paragraph{Surface-form robustness.} \citet{mirzadeh2025gsmsymbolic} introduce GSM-Symbolic,
+which regenerates GSM8K items with varied names and values and reports group-level accuracy
+decline; their \emph{Vary Name} condition is the direct predecessor of our entity-rename
+variant on arithmetic. \citet{valmeekam2023planbench} introduce PlanBench, whose Obfuscated
+Mystery Blocksworld replaces domain predicates with arbitrary tokens; our planning rename
+variant uses that design and, for the mystery subset, that vocabulary. \citet{wu2024reasoning}
+extend counterfactual evaluation across eleven tasks, \citet{wang2024rupbench} apply nine
+perturbation types across fifteen datasets, \citet{li2024gsmplus} generate GSM8K variants, and
+\citet{huang2025mathperturb} construct hard perturbations on competition mathematics.
+\citet{hao2025putnamgap} stress-test mathematically equivalent transformations and observe
+sensitivity to variable naming and formatting. Our contribution is not a new perturbation. It
+is a controlled audit of what the existing ones measure once oracle reliability, difficulty
+matching, and item independence are handled.
 
-\paragraph{Most related concurrent work.}
-\citet{kumar2025matcha} (MATCHA) test the decoupling hypothesis on GSM8K
-with \emph{within-trace} answer-conditioned perturbations and an LLM
-judge---complementary to our deterministic \wthree{} nonce-token rename and
-cross-session CCI. The Robust Reasoning Benchmark \citep{rrb2026} applies 13
-structural perturbations to competition-math items at group scale but
-includes no execution or contamination probes. PutnamGAP
-\citep{hao2025putnamgap} stress-tests surface renames and kernel rewrites on
-thousands of Putnam problems without per-instance execution or proximity
-controls. We position against all three in Table~\ref{tab:novelty}: our
-contribution is per-instance triangulation on a fixed 219-problem bank with
-session-isolated Probe~2 and Infini-gram proximity on the same instances.
+\paragraph{Oracles and evaluation validity.} The dependence of automated testing on a fallible
+oracle is well developed in software engineering \citep{barr2015oracle}. Parallel concerns
+appear in NLP as benchmark-validity and construct-validity critiques
+\citep{raji2021benchmark, bowman2021what}, which argue that a metric's name frequently
+outruns what it measures. We instantiate that critique quantitatively for obfuscation
+benchmarks and show the induced bias is directional rather than random.
 
-\paragraph{CoT faithfulness.}
-Prior work
-\citep{turpin2023language,lanham2023measuring,saparov2023language,lightman2023let,tutek2025measuring}
-intervenes within a single trace or on model weights. Our CCI compares a
-session-A declaration to session-B execution with no shared context
-($\eps{=}0.01$ numeric match)---behavioural plan-execution consistency under
-hard isolation, not within-trace or parametric faithfulness.
+\paragraph{Contamination and proximity.} \citet{razeghi2022impact} show pretraining term
+frequency predicts arithmetic accuracy; \citet{golchin2024timetravel} and \citet{shi2024detecting}
+develop membership-style detection. For closed-weight models no corpus ground truth exists, so
+we treat Infini-gram overlap \citep{liu2024infinigram} as an explicitly labelled public-corpus
+proximity proxy and use it only for within-family tests.
 
-\paragraph{Training-data contamination.}
-\citet{razeghi2022impact} show pretraining term frequency predicts
-arithmetic accuracy. \citet{golchin2023time} detect contamination via guided
-instruction completion. \citet{shi2024detecting} extend contamination
-analysis to reasoning benchmarks. For closed-weight models we treat
-Infini-gram overlap~\citep{liu2024infini} as a public-corpus proximity
-proxy; we discuss its limitations and partial validation via the
-open-weight Llama model in Section~\ref{sec:proximity}.
+\paragraph{Chain-of-thought faithfulness.} \citet{turpin2023language} and
+\citet{lanham2023measuring} intervene within a single reasoning trace. Our plan-execution
+measure instead compares a declaration made in one session against execution in a second
+session with no shared context, which isolates behavioural consistency from within-context
+self-consistency.
 
-\paragraph{LLM planning and execution.}
-\citet{valmeekam2023planning} demonstrate systematic Blocksworld planning
-failure. We extend PlanBench~\citep{valmeekam2023planbench} with a
-cross-session execution probe and a false-state injection probe, testing
-whether models that accept an injected error maintain correct final-answer
-generation.
-
-\paragraph{Concurrent work on reasoning-model robustness.}
-\citet{vonrecum2026reasoning} perturb models' own CoT tokens within-trace;
-our Probe-2B injects external wrong state into fresh sessions with no prior
-reasoning context---complementary tests of compliance vs.\ final
-correctness.
-
-\input{tables/table1_novelty}
-
-% =====================================================================
 \section{Setup}
 \label{sec:setup}
 
-We test five models---four frontier chat models and the reasoning-trained
-\omini---on three types of reasoning problems, each presented in up to seven
-surface forms. Every problem has a verified correct answer, and every surface
-variant preserves that answer exactly; only the presentation changes. The
-core question: does the model still get it right?
+\paragraph{Problem families.} We use three families chosen so that each controls a confound the
+others admit. \textbf{GSM} (44 items sampled from GSM8K \citep{cobbe2021training} across
+Infini-gram proximity quartiles) provides an arithmetic family with documented contamination
+structure. \textbf{BW} (65 PlanBench instances \citep{valmeekam2023planbench}, 50 standard and
+15 mystery) provides a planning family with a formal domain, which is what makes admissible-planner
+difficulty computation possible. \textbf{ALGO} (110 hand-designed dynamic-programming problems:
+coin change, shortest path, weighted interval scheduling) holds the underlying algorithm class
+fixed while varying public-corpus prevalence across roughly three orders of magnitude.
 
-\paragraph{Problem families.}
-Three reasoning domains, chosen to dissociate three confounds that would
-otherwise undermine the probes individually: (i)~\textbf{GSM} (arithmetic)
-calibrates the probes against a benchmark with documented contamination
-structure but a very different algorithmic style; (ii)~\textbf{BW} (planning)
-exposes the format-vs-policy confound (``did the model actually fail, or did
-the parser?'') and provides the matched standard/mystery contrast that
-directly probes lexical content while holding planning structure fixed;
-(iii)~\textbf{ALGO} (algorithmic optimisation) is the only family where we
-can hold the underlying algorithm fixed (dynamic programming, DP) while
-varying training-text exposure across three orders of magnitude---this is
-what makes the same-algorithm vs.\ different-exposure control in
-Section~\ref{sec:proximity} possible at all.
+\paragraph{Variants.} Each canonical item is expanded to six variants by deterministic scripts:
+W1 paraphrase, W2 reformat, W3 entity rename to a vocabulary-disjoint held-out set, W4 formal
+notation, W5 direction reversal, W6 procedural regeneration with the same algorithm and new
+parameters. Full protocol in Appendix~\ref{app:variants}.
 
-GSM (44 GSM8K problems~\citep{cobbe2021training}): arithmetic calibration
-with documented contamination structure. BW (65
-PlanBench~\citep{valmeekam2023planbench} instances): planning with
-standard/mystery lexical contrasts. ALGO (110 DP problems): three subtypes
-with shared algorithm but divergent public-corpus exposure---
-\begin{itemize}
-  \item \textbf{Coin change (CC):} minimum number of coins summing to a
-  target. Very common in programming tutorials online.
-  \item \textbf{Shortest path (SP):} minimum-cost route through a weighted
-  graph. Moderately common.
-  \item \textbf{Weighted interval scheduling (WIS):} maximum-value set of
-  non-overlapping intervals. Rarely phrased this way in public text.
-\end{itemize}
-Per-instance audit logs are released (Appendix~\ref{app:repro}). GSM
-calibrates all probes; ALGO holds DP fixed while varying exposure; BW
-stress-tests interactive measurement (Section~\ref{sec:bw}). Coverage:
-Table~\ref{tab:coverage}. Throughout, BW Probe-1 \emph{accuracy} is scoped to
-the $n{=}65$ bank problems; within-model per-problem correlations
-(Figure~\ref{fig:within}) instead pool canonical and variant instances per
-model, which is why their BW $n$ is larger (up to 109).
+\paragraph{Validity gating.} Two gates run before any model is queried. \emph{Transform
+validity}: a variant is retained only if it differs from its canonical in the intended way. For
+W6 this means the gold answer must differ and the text must not be byte-identical; 33 rows fail
+this and are excluded with reason \texttt{variant\_not\_transformed}, including 25 arising from
+a renderer that updated parameters without updating the rendered interval weights.
+\emph{Oracle validity}: every gold answer is passed back through its own verifier
+(Section~\ref{sec:oracle}). Variants failing either gate are excluded with a recorded reason
+rather than scored as incorrect.
 
-\paragraph{Variants and models.}
-Each canonical problem has six verified variants (W1--W6;
-Appendix~\ref{app:variants}); W3 renames all entities to nonce tokens. Five
-models at $T{=}0$ zero-shot CoT via OpenRouter: Claude Sonnet~4 (hereafter
-Claude), GPT-4o, Gemini~2.5 Flash (Gemini), Llama-3.1-8B-Instruct (Llama,
-\citealp{dubey2024llama}), and \omini. We use these short names throughout.
-\omini{} was queried in its default API mode (no explicit
-reasoning-token budget set; chain-of-thought is internal and not exposed in
-the response). \omini{} reaches 1.00 ALGO / 0.841 GSM canonical yet is most
-rename-fragile on BW (\wthree{}${=}0.185$)---family-specific weakness
-invisible from accuracy alone.
+\paragraph{Models.} Six models at $T{=}0$, zero-shot chain-of-thought via a single API gateway:
+Claude Sonnet~4, GPT-4o, Gemini 2.5 Flash, Llama-3.1-8B-Instruct \citep{dubey2024llama},
+o4-mini, and DeepSeek-R1-distill-Llama-70B \citep{guo2025deepseek} on the planning family.
 
-\subsection{Metrics and convergence labels}
-\label{sec:metrics}
+\paragraph{Statistics.} ALGO intervals are 10{,}000-draw percentile bootstraps resampling
+\emph{clone families}, not individual items (Section~\ref{sec:clones}); GSM and BW use Wilson
+intervals. Retention $R_{W3}{=}\mathrm{Acc}_{W3}/\mathrm{Acc}_{\mathrm{can}}$ is reported only
+where $\mathrm{Acc}_{\mathrm{can}}\ge 0.30$, a threshold fixed before analysis, since the ratio
+is unstable near zero.
 
-Each probe excludes confounds the others admit; labels require convergence.
-$\Rwiii{=}\mathrm{Acc}_{W_3}/\mathrm{Acc}_{\mathrm{can}}$; \vri{} compares
-W3 to vocabulary-preserving variants. \cci{} (Cross-session Consistency
-Index) is the fraction of declared numeric steps matching execution
-($\eps{=}0.01$); \tep{} (Trajectory Error Propagation) and injection
-compliance measure Probe-2B derailment. Infini-gram overlap on The
-Pile/DCLM is a public-corpus proximity proxy~\citep{liu2024infini}.
-Instances are \emph{retrieval-consistent} only when all three signals align
-(and \emph{computation-consistent} when all reverse); under strict rules
-$\sim$62\% of ALGO instances stay ambiguous (Section~\ref{sec:triangulation}).
-The 12 high-confidence labels are calibration points for the probe
-design---showing the signals can co-align---not primary results;
-Sections~\ref{sec:inversion}--\ref{sec:bw} report the behavioural findings.
+\section{The Oracle Is Part of the Instrument}
+\label{sec:oracle}
 
-\paragraph{CCI interpretability.}
-Phase~1 (full-plan declaration) and Phase~2A (per-step execution) use
-different prompt formats by design; CCI therefore confounds inconsistent
-reasoning with differential format propensity and parser coverage. Among
-GPT-4o's zero-CCI sessions, 17/29 lack extractable declared numeric steps and
-therefore receive CCI${=}0$ \emph{by construction}, not by reasoning failure.
-Duplicate Phase-2A calls at $T{=}0$ on an audit subset yield identical
-outputs for Claude, ruling out API non-determinism as the driver of CCI
-spread. We report CCI as a descriptive fingerprint; a prompt-matched ablation
-is deferred (Limitations).
+\paragraph{Why obfuscation designs are the hard case.} For a checker to score a renamed answer
+it must invert the rename. If the generator stores that mapping and the checker does not consume
+it, the checker cannot recognise a correct answer expressed in the renamed vocabulary. It then
+returns \texttt{incorrect} for every model on the perturbed condition while leaving the canonical
+condition untouched. The resulting error is perfectly correlated with the experimental treatment,
+so it does not average out with more items or more models. It produces a clean, large,
+statistically significant drop that looks exactly like the hypothesis.
 
-\input{tables/table2_coverage}
+\paragraph{Gold-in-gold-out.} The detection procedure is cheap: submit each item's own gold answer
+to its verifier as though it were a model response. A verifier that rejects its own gold cannot
+score that cell. We run this for every (family, variant) pair and treat any failure as blocking.
 
-% =====================================================================
-\section{Results}
-\label{sec:results}
+\paragraph{Three defects.} Table~\ref{tab:oracle} reports the defects this gate caught, the rows
+affected, and accuracy before and after repair on both conditions.
 
-\subsection{Subtype-specific robustness inversion: the higher-accuracy model is not always the more robust one}
-\label{sec:inversion}
+\input{tables/table_oracle}
 
-Figure~\ref{fig:dissociation} and Table~\ref{tab:gsm_p1}: on GSM,
-Claude/Gemini/\omini{} ($n{=}44$) span canonical accuracy 0.841--0.909
-with divergent \wthree{} retention ($\Rwiii{=}$
-.892\,/\,.575\,/\,1.00). GPT-4o and Llama replicate the pattern directionally
-at $n{=}20$ only (Wilson CIs span $\sim$30pp; Appendix~\ref{app:cov})---we
-treat them as partial replication, not powered five-model evidence. The
-adequately powered headline is ALGO SP-adv below.
+All three move the perturbed condition upward. The first moves only the perturbed condition,
+which isolates it as bias rather than noise reduction; the other two also improve the canonical
+condition and are therefore a mixture of the two effects. We report them together because
+selectively reporting the cleanest case would reproduce the reporting bias this section is about.
 
-\paragraph{The pattern is sharper on algorithmic problems.}
-Shortest-path: Claude 64.7\% canonical ([0.48,0.79]) collapses to 0.0\% under
-renaming ([0.00,0.10]); GPT-4o 41.2\% ([0.26,0.58]) retains 26.5\%
-([0.15,0.43]). The \emph{better} model on the canonical is the \emph{worse}
-one under rename. Coin-change reverses the direction: Claude 60\% retention
-([0.31,0.83]), GPT-4o 0\% ([0.00,0.28]). Robustness ordering depends on the
-problem subtype.
+\paragraph{Implication.} A published obfuscation result is only interpretable if the checker has
+been shown to accept its own gold under the perturbed condition. We recommend reporting
+gold-in-gold-out pass rates per (variant, family) cell alongside accuracy. In our pipeline this
+is a single table and adds negligible runtime.
 
-\paragraph{Statistical confidence.}
-SP matched-canonical ($n{=}34$): Claude 0/34 vs.\ GPT-4o 9/34 (Fisher
-$p{=}0.0021$); CC ($n{=}10$): Claude 6/10 vs.\ GPT-4o 0/10 ($p{=}0.0108$;
-exploratory). Within-model phi: ALGO $\phi_{\text{GPT-4o}}{=}{+}0.43$ (Fisher
-$p{<}0.001$); GSM $\phi_{\text{\omini}}{=}{+}0.66$ ($p{<}0.001$;
-Appendix~\ref{app:cross}, Figure~\ref{fig:within}). Population-level Spearman
-is n.s.\ (Appendix~\ref{app:cross}); ALGO model-rank retention trends
-positive ($\rho{=}{+}0.90$, $p{=}0.04$, $n{=}5$; Holm n.s.)---the
-dissociation is per-(model, subtype), not a universal axis.
+\section{Difficulty Is Uncontrolled in Regenerated-Instance Comparisons}
+\label{sec:difficulty}
+
+Comparing benchmark-released items against procedurally regenerated ones is the natural exposure
+control: same generator, same domain, no plausible pretraining exposure to the new items. The
+comparison is valid only under difficulty matching, which is rarely checked because most domains
+have no ground-truth difficulty measure. Planning does. Blocksworld has a formal PDDL encoding,
+so optimal plan length is computable with an admissible planner.
+
+\input{tables/table_bw_structural}
+\input{tables/table_bw_accuracy}
 
 \begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_robustness.pdf}
-  \caption{Accuracy--robustness dissociation across five models. (a)~GSM
-  calibration: Claude/Gemini/\omini{} at $n{=}44$; GPT-4o/Llama at $n{=}20$
-  bank-valid (partial replication; wide CIs). (b)~Adversarial ALGO: SP-adv
-  ($n{=}34$, Fisher $p{=}0.0021$) collapses Claude (\wthree{}${=}0$) while
-  GPT-4o retains 26.5\%; CC-adv reverses the pair; WIS-adv floors every
-  model.}
-  \label{fig:dissociation}
-\end{figure}
-
-\input{tables/table3_gsm_p1}
-\input{tables/table4_gsm_p2}
-
-\paragraph{Variant asymmetry and WIS.}
-W6 (new numbers) stays near canonical while \wthree{} (rename) drops for
-higher-retention models (Figure~\ref{fig:pervariant}); 26/110 ALGO problems
-are universally \wthree-fragile (12 SP, 11 WIS, 3 CC). The $3{\times}7{\times}5$
-grid (Figure~\ref{fig:algo_grid}): every model reaching $\geq 95\%$ WIS
-canonical collapses to 0\% under W3 (including \omini{} $1.00{\to}0.00$); SP~W5
-(source/destination reversal) floors the suite
-($\leq 4\%$). Algorithmic depth is orthogonal to accuracy.
-
-\subsection{Models that declare a plan often do something completely different---and still get the right answer}
-\label{sec:cci}
-
-\cci{} is a behavioral fingerprint, not a performance predictor. Claude
-matches $\sim$23\% of declared numeric steps vs.\ GPT-4o's $\sim$11\%
-(median${=}0$; Wilcoxon $W{=}396$, $p{=}0.0068$, $n{=}44$ zero-imputed
-pairs), yet GPT-4o still answers correctly 70.5\% of the time.
-Declaration-following does not predict Claude's correctness ($\rho{=}0.14$,
-$p{=}0.38$). Cross-model zero-CCI rates: Gemini 10/44 (23\%), Claude 14/44
-(32\%), Llama 24/44 (55\%), GPT-4o 29/44 (66\%); among GPT-4o's 29 zero-CCI
-sessions, 17/29 declared no extractable steps and 12/29 declared then
-diverged---final accuracy is nearly identical in both (0.706 vs.\ 0.667, n.s.),
-confirming step declaration and answer production are largely independent.
-Claude and GPT-4o are different \emph{kinds} of reasoners; \cci{} is a
-fingerprint, not a score. \tep{} (Trajectory Error Propagation,
-Table~\ref{tab:gsm_p2}) is high across all models (mean 0.54--0.77): the
-injected wrong value propagates and alters many subsequent steps, yet the
-final answer still survives at near-baseline rates---which is exactly the
-compliance~$\neq$~correctness finding reported below.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_cci.pdf}
-  \caption{Probe~2 results. (a)~Plan fidelity (CCI, GSM $n{=}44$):
-  Claude has significantly higher numeric step agreement than GPT-4o
-  (Wilcoxon $W{=}396$, $p{=}0.0068$); Gemini has the highest CCI (0.270);
-  GPT-4o and Llama have median CCI${=}0$; \omini{} sits between Llama and
-  Claude (mean CCI 0.22, 43/44 parseable). Strong execution does not require
-  strong plan fidelity. (b)~Trajectory error propagation with Phase-2A
-  accuracy overlay: TEP and accuracy are weakly coupled across the five-model
-  pool. (c)~Injection-step response (ALGO Phase~2B, $n{=}61$ paired problem
-  instances per model): Claude and GPT-4o are largely compliant; Llama
-  partial; Gemini format-ignores every injection (0\% compliant); \omini{}
-  complies on 100\% of injections.}
-  \label{fig:probe2}
-\end{figure}
-
-\paragraph{Injection compliance $\neq$ final correctness.}
-On 61 ALGO injection instances per model, acceptance is high (Claude 88.5\%,
-GPT-4o 93.4\%, Llama 39.3\%, \omini{} 100\%; Gemini 0\% compliant) yet
-post-injection accuracy stays near uninterrupted rates (Claude 52.5\%
-vs.\ 54.1\%; GPT-4o 50.8\% vs.\ 55.7\%; \omini{} 37.7\%
-vs.\ 40.9\%)---compliance and correctness are empirically separable
-(Figure~\ref{fig:probe2}c). The figure shows the full three-way split
-(compliant / partial-refusal / format-ignored): Gemini format-ignores 100\%
-of injections (treats the injected state as malformed input and proceeds
-without it), accounting for its 0\% compliant rate; Llama splits across
-compliant and partial-refusal.
-
-\paragraph{Two five-model nulls.}
-Plausible vs.\ implausible injection ($n{=}61$ paired): no model differs
-significantly (Claude $\Delta{=}0.0$pp, $p{=}1.00$; GPT-4o ${+}4.9$pp,
-$p{=}0.50$; Llama ${+}3.3$pp, $p{=}0.69$; Gemini ${-}3.3$pp, $p{=}0.64$;
-\omini{} ${+}4.9$pp, $p{=}0.48$; Figure~\ref{fig:plausible}). Algorithm
-elicitation raises invocation $10$--$50\times$ but not accuracy in any model
-(mean $\Delta{=}{-}2.0$pp; Fisher $p{=}0.21$--$0.83$): Claude
-$0.500{\to}0.459$, GPT-4o $0.500{\to}0.518$, Gemini $0.300{\to}0.311$, Llama
-$0.218{\to}0.148$, \omini{} $0.436{\to}0.418$.
-
-\subsection{Problems the model has likely seen before are easier---but fragile under name changes}
-\label{sec:proximity}
-
-At zero template proximity (WIS), \wthree{} robustness is zero for every
-model---consistent with both lower exposure and higher baseline difficulty;
-we cannot disentangle these from the current design (Table~\ref{tab:proximity}).
-CC retains partial robustness for Claude despite shared DP structure.
-Proximity--\vri{} correlations use the frozen 61-problem adversarial pool
-(34~SP + 10~CC + 17~WIS challenging IDs; earlier drafts said $n{=}64$).
-We report \emph{instance-level} Pearson $r$ vs.\ \vri{} (template-level $r$
-is signed differently for some models and is reported separately in the
-reproducibility bundle). Proximity predicts per-problem \vri{} for Claude
-($r{=}{+}0.444$, $p{=}0.0003$) and GPT-4o ($r{=}{+}0.364$, $p{=}0.004$) but
-not Llama/Gemini ($r{\approx}0.11$--$0.12$, n.s.). After residualizing on
-per-problem canonical accuracy, partial correlations survive for Claude
-($r{=}{+}0.418$) and GPT-4o ($r{=}{+}0.380$; $n{=}61$), supporting a
-proximity-linked rename-fragility association within difficulty tier rather
-than a pure floor effect. Proximity also predicts Claude's CCI rigidity
-($r{=}{+}0.31$, $p{=}0.044$, $n{=}42$; 2 sessions dropped for missing
-proximity scores) independent of correctness
-($r{=}{-}0.11$, n.s.). \omini{} breaks the link (instance $r{=}{-}0.171$,
-$n{=}61$; one-model observation). Figure~\ref{fig:macro} summarises macro
-metrics and correlations.
-
-\input{tables/table5_proximity}
-
-\subsection{Blocksworld: when the measurement protocol itself breaks down}
-\label{sec:bw}
-
-Under interactive PDDL, 84--100\% of BW Phase-2A sessions abort (Claude 16\%
-/ GPT-4o 0\% / Llama 2\% complete)---a protocol limit, not a model CCI result
-(Figure~\ref{fig:bw_profile}: Claude semantic validity 0.68; GPT-4o format
-failures 25.6/session; Llama validity 0.27). The NL-tolerant rerun lifts
-standard-BW from 0/150 to 14/150 sessions (Fisher
-$p{=}8.9{\times}10^{-5}$);\footnote{Standard-BW comprises 50 problems
-$\times$ 3 models run under the strict protocol $=150$ sessions; Mystery-BW
-comprises 15 problems $\times$ 3 models $=45$ sessions. Counts in this
-section are over \emph{sessions}, not unique problems.} Mystery-BW stays
-0/45, aligning with the Qwen-2.5-7B mechanistic
-pilot~\citep{qwen2025technical} (Appendix~\ref{app:mech}). Paired Wilcoxon on W5-rename under the NL-tolerant protocol
-(Figure~\ref{fig:bw_rename}; note these differ from the strict-protocol
-values in Table~\ref{tab:pervariant}): Claude $0.422{\to}0.661$
-(${+}23.9$pp, $p{=}1.0{\times}10^{-4}$); Gemini $0.385{\to}0.569$
-(${+}18.5$pp, $p{=}0.014$); Llama $0.321{\to}0.101$ (${-}22.0$pp,
-$p{<}10^{-4}$); GPT-4o/\omini{} unchanged ($\Delta{=}0$pp, n.s.).
-
-\subsection{When all three tests agree}
-\label{sec:triangulation}
-
-Triangulation labels are calibration points, not primary results: they
-validate that the three probes \emph{can} co-align on the same instance.
-The published headline uses the \emph{executed} asymmetric five-field AND
-rule (named constants in the released triangulation code), \emph{not} the
-appendix three-signal print. Under that executed rule on 440 ALGO instances
-we obtain 8 retrieval-consistent, 4 computation-consistent, 157 mixed, and
-271 (61.6\%) ambiguous; GSM (Claude, $n{=}44$): 35 computation-leaning, 9
-ambiguous. Restricting to the complete-case subset where W3, CCI, and
-proximity are all present and the declaration parse succeeded ($n{=}169$)
-removes the missing-data pile: ambiguous drops from 271 to 0 while the 8/4/157
-confident cells are unchanged (Figure~\ref{fig:tri_complete};
-confident-label rate $2.7\%{\to}7.1\%$). Of the 157 mixed labels, 128 sit in a
-structural hole (W3${=}0$ with contamination rank ${\leq}0.5$) where neither
-conjunction can fire (Figure~\ref{fig:mixed_fail}). An appendix-style
-symmetric three-signal rule is a sensitivity analysis only: on the same 440
-panel it yields 8/0/299/133 and flips 195/440 labels relative to the executed
-rule (Figure~\ref{fig:rule_x}; Appendix~\ref{app:triangulation}). Label rates
-remain threshold-sensitive under a 270-config sweep that collapses to 162
-distinct configurations once binary W3 cutoffs are identified
-(Table~\ref{tab:thresholds}). The primary findings are the behavioural
-patterns in Sections~\ref{sec:inversion}--\ref{sec:bw}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.92\linewidth]{figures/fig_triangulation_complete_case.pdf}
-  \caption{Executed-rule triangulation on the full 440 panel vs.\ the
-  complete-case 169 subset (W3 + CCI + proximity present, parse OK). Missing
-  Phase-2 / parse flags account for the ambiguous mass on the full panel.}
-  \label{fig:tri_complete}
+\centering
+\includegraphics[width=\linewidth]{figures/fig1_confounds.pdf}
+\caption{Three confounds that each produce drop-shaped signals. (a)~Oracle repair deltas on
+perturbed versus canonical conditions. (b)~Blocksworld structural means (solid) rise under
+regeneration while accuracy (dashed) often rises too. (c)~ALGO confidence-interval widths under
+iid versus clone-family cluster bootstrap.}
+\label{fig:confounds}
 \end{figure}
 
 \begin{figure}[t]
-  \centering
-  \includegraphics[width=0.92\linewidth]{figures/fig_mixed_failure.pdf}
-  \caption{Which executed-rule conjunction conditions fail on the 157 mixed
-  instances. The dominant pattern is the structural hole (low contamination
-  rank with W3 fail), not W3-cutoff asymmetry.}
-  \label{fig:mixed_fail}
+\centering
+\includegraphics[width=0.85\linewidth]{figures/fig2_bw_inversion.pdf}
+\caption{Centrepiece: 47 matched Blocksworld pairs. Each point is one (instance, model) with
+canonical optimal plan length on the $x$-axis and regenerated-minus-canonical correctness on the
+$y$-axis. Four of six models concentrate above zero despite harder structure.}
+\label{fig:bw-inversion}
 \end{figure}
 
-\subsection{Intrusion errors under entity rename}
-\label{sec:intrusion}
+\paragraph{Contamination does not account for the gap.} If released instances were harder because
+models have memorised them in a way that interferes, per-instance proximity should predict the
+canonical-minus-regenerated gap. It does not: Spearman correlations between Infini-gram proximity
+and the per-instance gap have intervals spanning zero for five of six models (Claude $-0.14$
+$[-0.40, 0.11]$; GPT-4o $-0.11$; Gemini $-0.02$; Llama $-0.18$; DeepSeek $+0.21$). Only o4-mini
+shows a significant negative association ($-0.44$ $[-0.60, -0.23]$, $p{=}0.001$).
 
-Beyond accuracy drops, we score \emph{intrusion} errors on W3 failures:
-answers that reuse an entity or numeric fragment from the canonical surface
-form after the rename (DS-02). GSM W3 error intrusion is 0/70 across models.
-On ALGO, rates are low for non-reasoning models (Claude 2.0\%, GPT-4o 2.2\%,
-Llama 0\%, Gemini 4.9\%) but elevated for \omini{} (5/43 ${=}11.6\%$, Wilson
-95\% CI $[0.051,0.245]$; Figure~\ref{fig:intrusion}). Fisher exact tests
-against other models: vs.\ Claude OR${=}6.45$, $p{=}0.026$; vs.\ GPT-4o
-OR${=}5.86$, $p{=}0.035$; vs.\ Llama OR${=}\infty$, $p{=}0.002$; vs.\ Gemini
-OR${=}2.57$, $p{=}0.273$. We treat this as a secondary behavioural signature
-of reasoning-trained models under surface rename, not a primary claim.
+\paragraph{The effect is domain-specific.} Running the same comparison on the algorithmic family
+gives the opposite result: regenerated instances are harder in accuracy for four of five models
+(Claude $.667 \rightarrow .244$; o4-mini $1.000 \rightarrow .422$; Gemini $.500 \rightarrow .144$;
+GPT-4o $.433 \rightarrow .200$; Llama $.033 \rightarrow .078$), and are structurally mixed rather
+than uniformly harder. We therefore do not claim a general property of language models. We claim
+that a widely-used planning benchmark's released instances behave differently from instances its
+own generator produces, and that any exposure comparison using released items inherits this.
+
+\paragraph{Remaining confounds.}
+\textcolor{red}{[PENDING N1 --- do not compile for submission until filled.]}
+Two structural variables are not matched by the procedure above. All 50 canonical goals are
+single towers, whereas regenerated goals average 1.74 towers; a single tower imposes a strict
+construction order that optimal plan length does not capture. Block naming is sequential in 34 of
+50 regenerated instances against 5 of 50 canonical. We report the comparison stratified by both
+variables in Table~\ref{tab:bw-stratified}. \emph{[Insert stratified result. If the gap survives
+both strata, state that. If naming accounts for it, that is the stronger surface-form finding and
+this section should be retitled accordingly.]}
+
+\section{Fragility Has No Item-Level Locus}
+\label{sec:locus}
+
+Perturbation results are usually reported as marginal accuracies, which implicitly treats
+fragility as a property of items: some problems are harder to rename-survive than others. We test
+this directly by asking which items fail for \emph{every} model.
+
+\paragraph{No shared-hard set outside obfuscated planning.} Among items where all five models
+were evaluated, the number failing for all of them is $0/110$ on the algorithmic family and
+$0/20$ on arithmetic. On planning it is $14/64$, and all fourteen are mystery instances. Outside
+the obfuscated planning condition, essentially no item is universally fragile. Fragility is a
+model--item interaction, not an item property (Figure~\ref{fig:locus}).
 
 \begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_intrusion.pdf}
-  \caption{ALGO intrusion rates on W3 errors (Wilson 95\% CIs) and Fisher
-  odds ratios for \omini{} vs.\ each other model.}
-  \label{fig:intrusion}
+\centering
+\includegraphics[width=\linewidth]{figures/fig3_locus.pdf}
+\caption{Item-level locus. (a)~Shared-hard canonical counts (fail for all five paper models).
+(b)~Canonical--$W_3$ contingency coefficient $\phi$ with bootstrap CIs.}
+\label{fig:locus}
 \end{figure}
+
+\paragraph{Items are not independent.}
+\label{sec:clones}
+Near-duplicate detection with identical gold answers collapses the 110-problem algorithmic bank
+into 14 clone families covering 73 problems, for an effective $n$ of 51; the largest family has
+13 members. The frozen 61-item adversarial subset collapses to 14 clusters. Re-estimating
+intervals with a cluster bootstrap over families widens them by a median factor of $1.60$ on the
+full bank and $1.94$ on the adversarial subset, reaching $2.66$ on individual cells. All ALGO
+intervals in this paper use the cluster bootstrap. Because procedural generators produce clone
+structure by construction, we expect this to generalise to other generated banks, and we
+recommend reporting effective $n$ alongside nominal $n$.
+
+\section{Robustness Is Not a Single Construct}
+\label{sec:construct}
+
+If surface invariance and procedural consistency were facets of one underlying robustness
+capacity, measures of each should covary. We test this with a measure that is methodologically
+independent of the rename probe: a cross-session consistency index (CCI) comparing a model's
+declared solution plan, produced in one session, against its step-by-step execution in a second
+session with no shared context.
+
+\paragraph{Plan consistency does not predict rename survival.} At the item level, the
+point-biserial correlation between CCI and rename survival is $0.156$ $[-0.006, 0.308]$,
+$p{=}0.060$, $n{=}128$ (Figure~\ref{fig:construct}); restricted to items the model solves
+canonically it is $0.153$, $p{=}0.109$, $n{=}110$. Across models the rank correlation between
+mean CCI and retention is $0.600$, $p{=}0.400$, $n{=}4$. The association is consistently positive
+and never reaches significance at the sample sizes available. We report this as a null rather
+than a trend.
 
 \begin{figure}[t]
-  \centering
-  \includegraphics[width=0.72\linewidth]{figures/fig_rule_crosstab.pdf}
-  \caption{Crosstab of executed five-field AND vs.\ appendix symmetric
-  three-signal labels on the full 440 panel ($195/440$ cells change).}
-  \label{fig:rule_x}
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig4_construct.pdf}
+\caption{CCI versus rename survival on GSM ($n{=}128$), with OLS fit and residual bootstrap band.
+Annotated $r$ and $p$ are the cluster-bootstrap point-biserial from
+\texttt{P2\_P1\_convergence.csv}.}
+\label{fig:construct}
 \end{figure}
 
+\paragraph{Discriminant validity.} Neither robustness measure tracks accuracy. Rank correlation
+between canonical accuracy and retention is $0.136$ $[-0.100, 0.800]$, $p{=}0.642$; between
+canonical accuracy and the canonical--rename contingency coefficient $\phi$ it is $-0.426$
+$[-0.724, 0.500]$, $p{=}0.146$. Robustness is measurably distinct from the quantity leaderboards
+report. We deliberately do not present retention and $\phi$ as convergent evidence: both are
+statistics of the same $2\times 2$ contingency table, so their agreement is algebraic rather than
+empirical.
 
-% =====================================================================
+\paragraph{Compliance and correctness are separable.} In a mid-solve injection protocol, models
+accept an injected incorrect intermediate state at high rates (Claude 88.5\%, GPT-4o 93.4\%,
+o4-mini 100\%, Llama 39.3\%; Gemini treats every injection as malformed input and proceeds
+without it) yet post-injection final accuracy stays near uninterrupted rates (Claude .525 vs
+.541; GPT-4o .508 vs .557; o4-mini .377 vs .409). Accepting a false premise mid-derivation does
+not reliably derail the final answer, so compliance is not a proxy for procedural integrity.
+
+\section{Scope and Planned Work}
+\label{sec:scope}
+
+This section states what the present design does not establish and which experiments would
+decide each question. Each is specified with the outcome that would confirm or refute it.
+
+\paragraph{Instrument boundaries.} Two measurement limits are themselves findings rather than
+gaps. Under a strict PDDL execution protocol, 84--100\% of planning sessions abort on illegal
+actions; routing through a natural-language tolerant parser shifts the failure mode from format
+errors (1729 to 451) to precondition violations (258 to 1469), which establishes that models
+emit genuinely illegal plans rather than mis-formatted valid ones. Given canonical planning
+accuracy of .02--.22 for three of the models, plan-execution coupling is undefined at that floor.
+Separately, planning gold answers use three distinct first-action tokens across 65 problems, so
+rank-based readouts over the gold token cannot discriminate conditions in that family. Both are
+scope conditions on the method, not failures of it.
+
+\paragraph{Underdetermined convergence rules.} We implemented a per-instance label combining all
+three probes through a five-parameter conjunction. Across a 270-configuration threshold sweep the
+retrieval-consistent count ranges from 0 to 170 of 440 instances. With five free parameters and
+this sample size the labelling is underdetermined, and we therefore report probe-level results
+rather than per-instance labels. Constraining the rule requires ground-truth exposure labels,
+which are available only for open-weight models with published corpora; a calibration study on
+such a model is the next step, with the pre-registered criterion that labels track known exposure
+at AUC $\ge 0.75$.
+
+\paragraph{Queued measurements.} The following are specified and blocked on inference budget
+rather than design. \emph{(i)} Direction-reversal on the graph family: prompts are regenerated
+and gold verified under Bellman--Ford, awaiting a 250-call sweep; the design predicts a floor
+effect distinguishing reversal from rename. \emph{(ii)} Phase-resolved execution accuracy on
+arithmetic: the current implementation pools two sessions, so we report consistency and error
+propagation but not phase-resolved accuracy; a 220-session re-run persisting per-step values
+would resolve it. \emph{(iii)} A difficulty-matched weighted-interval bank, since exposure and
+difficulty covary in the present design and cannot be separated.
+
+\paragraph{Mechanistic follow-up.} We ran a single-backbone logit-lens pilot reading gold-token
+rank through the residual stream. It is a pilot in the strict sense: one open-weight model, and
+quantisation differs across the backbones we compared, so cross-model contrasts are confounded.
+The planning-family degeneracy noted above further bounds what the readout can measure there.
+A multi-backbone unquantised replication is the immediate next experiment; the prediction under
+a representational account is that rename-induced shift in gold-token accessibility should
+predict per-item rename survival within a model.
+
+\paragraph{Programme.} These sit within a staged programme: establishing and validating the
+instrument (this work), locating the behavioural dissociation representationally, characterising
+the training-data conditions under which invariance forms, and tracking its emergence across
+public checkpoint series. Instrument validation is the precondition for all three, which is why
+we report it as a result rather than as an appendix.
+
 \section{Conclusion}
-\label{sec:conclusion}
 
-The five models form qualitatively different reasoners---Claude declares
-plans reliably (GSM CCI${=}0.231$) without correctness coupling; GPT-4o rarely
-follows declarations (median CCI${=}0$) yet recovers; Gemini peaks on
-canonicals (91\%) but format-ignores injections; Llama sits lowest overall;
-\omini{} solves near-perfectly and complies with 100\% of injections.
-Benchmarks are not broken; treating one accuracy number as the complete
-picture is. Across 219 canonical problems (the full bank: 44 GSM, 65 BW, 110
-ALGO), 6 variants, 5 models, and $\sim$20K model API calls (coverage in
-Table~\ref{tab:coverage}), three independent tests reveal patterns accuracy
-hides:
-\begin{itemize}
-  \item Matched-benchmark models differ in \wthree{} robustness (GSM
-  calibration at $n{=}44$ for Claude/Gemini/\omini, partial at $n{=}20$ for
-  GPT-4o/Llama), and the direction reverses across problem types.
-  \item Plan fidelity does not predict correctness: GPT-4o (median CCI${=}0$)
-  is correct $\sim$70\% of the time.
-  \item Accepting a wrong intermediate at 88--93\% does not reliably derail
-  the final answer.
-  \item Same DP, different exposure: WIS collapses under \wthree{}
-  universally---consistent with both lower exposure and higher baseline
-  difficulty (Table~\ref{tab:proximity}); CC partially survives (\omini{}
-  caveat, Section~\ref{sec:proximity}).
-  \item BW rename: Claude ${+}23.9$pp, Gemini ${+}18.5$pp, Llama ${-}22.0$pp;
-  GPT-4o/\omini{} unchanged.
-  Algorithm elicitation $\uparrow$ invocation $10$--$50\times$,
-accuracy unchanged (0/5, $\Delta{=}{-}2.0$pp).
-\end{itemize}
-Report canonical and \wthree-rename accuracy with CIs---the gap is capability.
+Perturbation benchmarks measure a real phenomenon, but the protocol as commonly implemented
+conflates it with at least three others. The answer-checker fails in a manner correlated with the
+treatment and biased toward the hypothesis. Regenerated and released instances differ in
+difficulty, and on a widely-used planning benchmark the released instances are the harder ones to
+solve despite being structurally easier. Generated banks contain clone families that halve the
+effective sample size. Once these are handled, fragility turns out to have no item-level locus
+outside obfuscated planning, and procedural consistency does not predict surface invariance ---
+so robustness is not one thing, and reporting it as one number reproduces the problem that
+motivated perturbation testing in the first place.
 
-% =====================================================================
-\section*{Limitations}
-\label{sec:limitations}
-
-\paragraph{Coverage, credits, and NOT\_COMPUTABLE cells.}
-All results are zero-shot CoT at $T{=}0$, English structured reasoning only.
-GSM GPT-4o/Llama Probe-1 covers $n{=}20$ bank-valid problems
-(GSM\_001--020); Wilson CIs are $\sim$30pp wide---we report these as partial
-replication, not powered five-model evidence (headline inversions use ALGO
-SP-challenging, $n{=}34$). Under frozen filters, GSM $W_6$ for GPT-4o/Llama
-is NOT\_COMPUTABLE (no bank-valid W6 rows after ERROR filtering). Many ALGO
-CC/WIS $W_5$/$W_6$ cells are genuinely absent by design. \omini{} has no ALGO
-Phase-1 declaration file, so ALGO CCI for that model is NOT\_COMPUTABLE.
-Several ALGO compliance Fishers are undefined because refusal $n{=}0$.
-Figure~\ref{fig:holes} summarises these holes. GSM\_041--064 gap fill, remaining
-ALGO Phase-2A elicited sessions (49/110 for Claude/Gemini/Llama), BW Probe-2
-expansion to Gemini/\omini{}, a difficulty-matched WIS bank, and second
-reasoning-trained providers (DeepSeek-R1~\citep{guo2025deepseek}, Qwen3)
-are queued on restored API credits, not on study design.
-Section~\ref{sec:proximity}'s proximity-link observation is
-one-model-strong (\omini{} only). CCI comparisons across models partly
-reflect Phase-1 format propensity; 17/29 GPT-4o zero-CCI sessions are
-parser-empty by construction (Section~\ref{sec:metrics}). Few-shot
-demonstrations are known to partially restore accuracy under template
-perturbation~\citep{mirzadeh2024gsm}; we present \wthree{} numbers as
-zero-shot estimates, not capability upper bounds. WIS subtype collapse is
-observational: exposure and difficulty co-vary (Table~\ref{tab:proximity}).
-Idle analysis cells (W1/W2/W4 bulk accuracy only) exist in the release
-bundle but are not claimed as primary results.
-
-\paragraph{Measurement limits.}
-The strict BW PDDL protocol aborts at 84--100\%, yielding a protocol-level
-finding rather than per-model CCI. The NL-tolerant BW Probe-2 rerun covers
-\emph{three} models (Claude, GPT-4o, Llama), not five---Gemini and \omini{}
-were not extended once the protocol was known-broken; earlier wording that
-said ``all five'' was incorrect. CCI is a behavioural metric only---it does
-not probe internal reasoning faithfulness. Infini-gram overlap is a
-public-corpus proximity proxy for closed-weight models, not a confirmed
-contamination signal; closed models have \emph{no} calibratable corpus
-membership ground truth (permanent O16 caveat), whereas open models
-(Pythia/OLMo) can be checked against The Pile/Dolma. The within-ALGO
-CC$\to$SP$\to$WIS gradient is the cleaner internal control. Mechanistic
-pilots are Llama/Qwen-only and cannot support five-API-model claims. On
-triangulation, 127 parse failures and 196 missing Phase-2 rows force
-ambiguous labels on the full 440 panel; confident labels remain rare even
-after complete-case filtering. The full per-(probe, model) coverage matrix
-and extended scoping decisions appear in Appendix~\ref{app:cov}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.92\linewidth]{figures/fig_coverage_holes.pdf}
-  \caption{Counts of NOT\_COMPUTABLE cells in the frozen number file, grouped
-  by cause (variant absence, bank/API holes, missing Phase-1, undefined tests).}
-  \label{fig:holes}
-\end{figure}
-
-% =====================================================================
+\bibliographystyle{plainnat}
 \bibliography{references}
 
-% =====================================================================
 \appendix
-\input{appendix}
+
+\section{Variant Generation Protocol}
+\label{app:variants}
+
+\textbf{W1 (paraphrase).} Restated in different words; numeric values, entities, and structural
+relations preserved exactly.
+\textbf{W2 (format).} Prose converted to a structured representation appropriate to the family
+(adjacency matrix, interval table, equation set).
+\textbf{W3 (entity rename).} All entity identifiers replaced with a held-out,
+vocabulary-disjoint token set, length-matched and single-token where the original was
+single-token. The generator persists the mapping; the verifier consumes it
+(Section~\ref{sec:oracle}).
+\textbf{W4 (formal notation).} \LaTeX{} for arithmetic, formal predicates for planning,
+mathematical edge-list notation for graph and interval problems.
+\textbf{W5 (direction reversal).} Planning: initial and goal states exchanged. Arithmetic:
+forward problems inverted to backward form. Graph: source and destination exchanged. Not defined
+for coin change or interval scheduling, which have no meaningful reversal.
+\textbf{W6 (procedural regeneration).} Same algorithm and parameter ranges, new numeric values.
+A regenerated item is retained only if its gold answer differs from the canonical and its text is
+not byte-identical.
+
+Every variant passes its family verifier on the gold answer before any model is queried.
+
+\section{Coverage and Exclusions}
+\label{app:coverage}
+
+\input{tables/table_coverage}
+
+Full per-(family, slice, model, variant) Probe~1 accuracies with CIs are in
+Table~\ref{tab:variants} (\texttt{tables/table\_variants.tex}), regenerated from rescored
+\texttt{included=True} rows consistent with \texttt{P1\_rescore\_summary.csv}.
+
+\input{tables/table_variants}
+
+\section{Metric Definitions}
+\label{app:metrics}
+
+$R_{W3} = \mathrm{Acc}_{W3}/\mathrm{Acc}_{\mathrm{can}}$, reported only where
+$\mathrm{Acc}_{\mathrm{can}} \ge 0.30$.
+$\phi$ is the contingency coefficient of canonical and rename correctness over items.
+CCI is the fraction of declared numeric steps matched by second-session execution within
+$\epsilon{=}0.01$.
+Error propagation is the fraction of post-injection steps differing from the uninjected run.
+Proximity is Infini-gram $n$-gram overlap against public corpora, used only within family;
+window sizes differ across families (maximum $n{=}8$ for arithmetic, $13$ for the others) and the
+count is unnormalised, so cross-family comparison is not valid.
 
 \end{document}

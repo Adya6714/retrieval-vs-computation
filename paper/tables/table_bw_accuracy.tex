@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Accuracy on the same 47 matched pairs. Four of six models score higher on the
+structurally harder regenerated set.}
+\label{tab:bw-accuracy}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Model & Canonical & Regenerated & $\Delta$ \\
+\midrule
+Claude Sonnet~4 & .170 & .638 & $+.468$ \\
+DeepSeek-R1-distill & .702 & .936 & $+.234$ \\
+GPT-4o & .085 & .255 & $+.170$ \\
+Llama-3.1-8B & .021 & .021 & $.000$ \\
+o4-mini & 1.000 & 1.000 & $.000$ \\
+Gemini 2.5 Flash & .489 & .404 & $-.085$ \\
+\bottomrule
+\end{tabular}
+\end{table}

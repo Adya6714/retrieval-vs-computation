@@ -1,0 +1,169 @@
+\begin{table}[t]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \caption{Coverage and exclusions from \texttt{COVERAGE\_MASTER.csv}.
+  One row per (probe, family, model, variant).}
+  \label{tab:coverage}
+  \begin{tabular}{llllrrrl}
+    \toprule
+    Probe & Family & Model & Variant & Att. & Incl. & Excl. & Top exclusion \\
+    \midrule
+    P1 & ALGO & Claude & W1 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Claude & W2 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Claude & W3 & 110 & 100 & 10 & parse\_failed \\
+    P1 & ALGO & Claude & W4 & 110 & 108 & 2 & parse\_failed \\
+    P1 & ALGO & Claude & W5 & 50 & 50 & 0 & --- \\
+    P1 & ALGO & Claude & W6 & 90 & 90 & 0 & --- \\
+    P1 & ALGO & Claude & canonical & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Gemini & W1 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Gemini & W2 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Gemini & W3 & 110 & 105 & 5 & parse\_failed \\
+    P1 & ALGO & Gemini & W4 & 110 & 105 & 5 & parse\_failed \\
+    P1 & ALGO & Gemini & W5 & 50 & 32 & 18 & parse\_failed \\
+    P1 & ALGO & Gemini & W6 & 90 & 86 & 4 & parse\_failed \\
+    P1 & ALGO & Gemini & canonical & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Llama & W1 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & Llama & W2 & 110 & 104 & 6 & parse\_failed \\
+    P1 & ALGO & Llama & W3 & 110 & 109 & 1 & parse\_failed \\
+    P1 & ALGO & Llama & W4 & 110 & 106 & 4 & parse\_failed \\
+    P1 & ALGO & Llama & W5 & 50 & 50 & 0 & --- \\
+    P1 & ALGO & Llama & W6 & 110 & 90 & 20 & missing\_bank\_row \\
+    P1 & ALGO & Llama & canonical & 110 & 110 & 0 & --- \\
+    P1 & ALGO & mock & W1 & 1 & 0 & 1 & mock\_row \\
+    P1 & ALGO & mock & W1 & 1 & 0 & 1 & mock\_row \\
+    P1 & ALGO & mock & W2 & 1 & 0 & 1 & mock\_row \\
+    P1 & ALGO & mock & canonical & 1 & 0 & 1 & mock\_row \\
+    P1 & ALGO & mock & canonical & 1 & 0 & 1 & mock\_row \\
+    P1 & ALGO & GPT-4o & W1 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & GPT-4o & W2 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & GPT-4o & W3 & 110 & 102 & 8 & parse\_failed \\
+    P1 & ALGO & GPT-4o & W4 & 110 & 110 & 0 & --- \\
+    P1 & ALGO & GPT-4o & W5 & 50 & 22 & 28 & parse\_failed \\
+    P1 & ALGO & GPT-4o & W6 & 110 & 90 & 20 & missing\_bank\_row \\
+    P1 & ALGO & GPT-4o & canonical & 110 & 110 & 0 & --- \\
+    P1 & ALGO & o4-mini & W1 & 110 & 109 & 1 & parse\_failed \\
+    P1 & ALGO & o4-mini & W2 & 110 & 105 & 5 & parse\_failed \\
+    P1 & ALGO & o4-mini & W3 & 110 & 81 & 29 & parse\_failed \\
+    P1 & ALGO & o4-mini & W4 & 110 & 97 & 13 & parse\_failed \\
+    P1 & ALGO & o4-mini & W5 & 50 & 8 & 42 & parse\_failed \\
+    P1 & ALGO & o4-mini & W6 & 90 & 89 & 1 & parse\_failed \\
+    P1 & ALGO & o4-mini & canonical & 110 & 110 & 0 & --- \\
+    P1 & BW & The answer is 42. & MOCK & 4 & 0 & 4 & mock\_row \\
+    P1 & BW & Claude & W1 & 109 & 102 & 7 & invalid\_gold \\
+    P1 & BW & Claude & W2 & 109 & 103 & 6 & invalid\_gold \\
+    P1 & BW & Claude & W3 & 109 & 104 & 5 & invalid\_gold \\
+    P1 & BW & Claude & W4 & 109 & 103 & 6 & invalid\_gold \\
+    P1 & BW & Claude & W5 & 109 & 99 & 10 & invalid\_gold \\
+    P1 & BW & Claude & W6 & 89 & 84 & 5 & invalid\_gold \\
+    P1 & BW & Claude & canonical & 109 & 108 & 1 & invalid\_gold \\
+    P1 & BW & DeepSeek & W1 & 65 & 58 & 7 & invalid\_gold \\
+    P1 & BW & DeepSeek & W2 & 65 & 59 & 6 & invalid\_gold \\
+    P1 & BW & DeepSeek & W3 & 65 & 60 & 5 & invalid\_gold \\
+    P1 & BW & DeepSeek & W4 & 65 & 59 & 6 & invalid\_gold \\
+    P1 & BW & DeepSeek & W5 & 65 & 55 & 10 & invalid\_gold \\
+    P1 & BW & DeepSeek & W6 & 65 & 60 & 5 & invalid\_gold \\
+    P1 & BW & DeepSeek & canonical & 49 & 48 & 1 & invalid\_gold \\
+    P1 & BW & Gemini & W1 & 65 & 58 & 7 & invalid\_gold \\
+    P1 & BW & Gemini & W2 & 65 & 59 & 6 & invalid\_gold \\
+    P1 & BW & Gemini & W3 & 65 & 60 & 5 & invalid\_gold \\
+    P1 & BW & Gemini & W4 & 65 & 59 & 6 & invalid\_gold \\
+    P1 & BW & Gemini & W5 & 65 & 55 & 10 & invalid\_gold \\
+    P1 & BW & Gemini & W6 & 65 & 60 & 5 & invalid\_gold \\
+    P1 & BW & Gemini & canonical & 65 & 64 & 1 & invalid\_gold \\
+    P1 & BW & Llama & W1 & 109 & 102 & 7 & invalid\_gold \\
+    P1 & BW & Llama & W2 & 109 & 103 & 6 & invalid\_gold \\
+    P1 & BW & Llama & W3 & 109 & 103 & 6 & invalid\_gold \\
+    P1 & BW & Llama & W4 & 109 & 102 & 7 & invalid\_gold \\
+    P1 & BW & Llama & W5 & 109 & 99 & 10 & invalid\_gold \\
+    P1 & BW & Llama & W6 & 104 & 84 & 20 & missing\_bank\_row \\
+    P1 & BW & Llama & canonical & 109 & 108 & 1 & invalid\_gold \\
+    P1 & BW & mock & W1 & 1 & 0 & 1 & mock\_row \\
+    P1 & BW & mock & W2 & 11 & 0 & 11 & mock\_row \\
+    P1 & BW & mock & W3 & 10 & 0 & 10 & mock\_row \\
+    P1 & BW & mock & W4 & 10 & 0 & 10 & mock\_row \\
+    P1 & BW & mock & W5 & 9 & 0 & 9 & mock\_row \\
+    P1 & BW & mock & canonical & 17 & 0 & 17 & mock\_row \\
+    P1 & BW & GPT-4o & W1 & 109 & 102 & 7 & invalid\_gold \\
+    P1 & BW & GPT-4o & W2 & 109 & 103 & 6 & invalid\_gold \\
+    P1 & BW & GPT-4o & W3 & 109 & 104 & 5 & invalid\_gold \\
+    P1 & BW & GPT-4o & W4 & 109 & 103 & 6 & invalid\_gold \\
+    P1 & BW & GPT-4o & W5 & 109 & 99 & 10 & invalid\_gold \\
+    P1 & BW & GPT-4o & W6 & 104 & 84 & 20 & missing\_bank\_row \\
+    P1 & BW & GPT-4o & canonical & 109 & 108 & 1 & invalid\_gold \\
+    P1 & BW & o4-mini & W1 & 65 & 58 & 7 & invalid\_gold \\
+    P1 & BW & o4-mini & W2 & 65 & 59 & 6 & invalid\_gold \\
+    P1 & BW & o4-mini & W3 & 65 & 60 & 5 & invalid\_gold \\
+    P1 & BW & o4-mini & W4 & 65 & 59 & 6 & invalid\_gold \\
+    P1 & BW & o4-mini & W5 & 65 & 55 & 10 & invalid\_gold \\
+    P1 & BW & o4-mini & W6 & 65 & 60 & 5 & invalid\_gold \\
+    P1 & BW & o4-mini & canonical & 65 & 64 & 1 & invalid\_gold \\
+    P1 & GSM & Claude & W1 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Claude & W2 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Claude & W3 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Claude & W4 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Claude & W5 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Claude & W6 & 24 & 24 & 0 & --- \\
+    P1 & GSM & Claude & canonical & 44 & 44 & 0 & --- \\
+    P1 & GSM & Gemini & W1 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Gemini & W2 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Gemini & W3 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Gemini & W4 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Gemini & W5 & 44 & 44 & 0 & --- \\
+    P1 & GSM & Gemini & W6 & 24 & 24 & 0 & --- \\
+    P1 & GSM & Gemini & canonical & 44 & 44 & 0 & --- \\
+    P1 & GSM & Llama & W1 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & Llama & W2 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & Llama & W3 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & Llama & W4 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & Llama & W5 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & Llama & W6 & 64 & 0 & 64 & missing\_bank\_row \\
+    P1 & GSM & Llama & canonical & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & GPT-4o & W1 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & GPT-4o & W2 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & GPT-4o & W3 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & GPT-4o & W4 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & GPT-4o & W5 & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & GPT-4o & W6 & 64 & 0 & 64 & missing\_bank\_row \\
+    P1 & GSM & GPT-4o & canonical & 64 & 20 & 44 & api\_error \\
+    P1 & GSM & o4-mini & W1 & 44 & 44 & 0 & --- \\
+    P1 & GSM & o4-mini & W2 & 44 & 44 & 0 & --- \\
+    P1 & GSM & o4-mini & W3 & 44 & 44 & 0 & --- \\
+    P1 & GSM & o4-mini & W4 & 44 & 44 & 0 & --- \\
+    P1 & GSM & o4-mini & W5 & 44 & 44 & 0 & --- \\
+    P1 & GSM & o4-mini & W6 & 24 & 24 & 0 & --- \\
+    P1 & GSM & o4-mini & canonical & 44 & 44 & 0 & --- \\
+    P2 & ALGO & Claude & phase1 & 110 & 84 & 26 & phase1\_unparseable \\
+    P2 & ALGO & Gemini & phase1 & 110 & 72 & 38 & phase1\_unparseable \\
+    P2 & ALGO & Llama & phase1 & 110 & 76 & 34 & phase1\_unparseable \\
+    P2 & ALGO & GPT-4o & phase1 & 110 & 94 & 16 & phase1\_unparseable \\
+    P2 & BW & Claude & cci\_nl & 50 & 20 & 30 & aborted: excessive illegal steps \\
+    P2 & BW & Claude & cci\_strict & 50 & 8 & 42 & aborted: excessive illegal steps \\
+    P2 & BW & Claude & tep & 177 & 1 & 176 & aborted: excessive illegal steps \\
+    P2 & BW & Llama & cci\_nl & 50 & 8 & 42 & aborted: excessive illegal steps \\
+    P2 & BW & Llama & cci\_strict & 50 & 11 & 39 & blank\_session\_status \\
+    P2 & BW & Llama & tep & 179 & 0 & 179 & blank\_session\_status \\
+    P2 & BW & GPT-4o & cci\_nl & 50 & 11 & 39 & aborted: excessive illegal steps \\
+    P2 & BW & GPT-4o & cci\_strict & 50 & 10 & 40 & blank\_session\_status \\
+    P2 & BW & GPT-4o & tep & 180 & 1 & 179 & blank\_session\_status \\
+    P2 & GSM & Claude & cci & 44 & 44 & 0 & --- \\
+    P2 & GSM & Claude & tep & 44 & 44 & 0 & --- \\
+    P2 & GSM & Gemini & cci & 44 & 44 & 0 & --- \\
+    P2 & GSM & Gemini & tep & 44 & 44 & 0 & --- \\
+    P2 & GSM & Llama & cci & 44 & 44 & 0 & --- \\
+    P2 & GSM & Llama & tep & 44 & 44 & 0 & --- \\
+    P2 & GSM & GPT-4o & cci & 44 & 44 & 0 & --- \\
+    P2 & GSM & GPT-4o & tep & 44 & 44 & 0 & --- \\
+    P2 & MBW & Claude & cci\_nl & 15 & 0 & 15 & cci\_column\_never\_emitted \\
+    P2 & MBW & Llama & cci\_nl & 15 & 0 & 15 & cci\_column\_never\_emitted \\
+    P2 & MBW & GPT-4o & cci\_nl & 15 & 0 & 15 & cci\_column\_never\_emitted \\
+    P3 & ALGO & -- & contamination & 116 & 116 & 0 & --- \\
+    P3 & ALGO & Qwen2.5-0.5B-Instr & canonical & 20 & 20 & 0 & --- \\
+    P3 & BW & -- & contamination & 65 & 65 & 0 & --- \\
+    P3 & BW & Qwen2.5-0.5B-Instr & W6 & 15 & 15 & 0 & --- \\
+    P3 & BW & Qwen2.5-0.5B-Instr & canonical & 20 & 20 & 0 & --- \\
+    P3 & GSM & -- & contamination & 44 & 44 & 0 & --- \\
+    P3 & GSM & Qwen2.5-0.5B-Instr & canonical & 20 & 20 & 0 & --- \\
+    \bottomrule
+  \end{tabular}
+\end{table}

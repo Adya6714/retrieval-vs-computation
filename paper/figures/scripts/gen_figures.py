@@ -1384,13 +1384,13 @@ def main() -> None:
     print(f"Output dir: {OUT}")
     dump_gsm_p1_reconciliation()
     fig_robustness()
-    fig_decay()
+    # fig_decay retired from NeurIPS build
     fig_heatmap()
     fig_cci()
     fig_paradox()
     fig_mechanistic()
     fig_population()
-    print("All 7 figures regenerated from raw data.")
+    print("Figures regenerated (fig_decay retired from build).")
 
 
 if __name__ == "__main__":

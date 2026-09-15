@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Oracle defects detected by gold-in-gold-out, with effect on accuracy. The first row is
+the clean case: the perturbed condition moves by $+20.9$ points while the canonical condition
+does not move at all, which is the signature of treatment-correlated bias. The remaining two
+bundle bias with general parser improvement and are reported as such.}
+\label{tab:oracle}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Defect & Rows & Pert.\ before & Pert.\ after & $\Delta$ pert. & $\Delta$ canonical \\
+\midrule
+Rename mapping not consumed (planning) & 64 & .043 & .252 & $+.209$ & $.000$ \\
+Rename mapping not consumed (graph) & 92 & .321 & .537 & $+.215$ & $+.113$ \\
+Legacy state parser & 192 & .309 & .397 & $+.087$ & $+.050$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -175,16 +175,13 @@ not, and is presented as directional throughout.
   \label{fig:landscape}
 \end{figure}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_decay.pdf}
-  \caption{Per-variant accuracy profiles (Probe~1). (a)~GSM: \wthree{} drops
-  sharply for GPT-4o, Llama, and Gemini; for Claude it is mid-ranked. W6 (new
-  numbers) stays much closer to canonical than \wthree{} for the
-  higher-accuracy models. (b)~Challenging ALGO subtypes (Claude vs.\ GPT-4o):
-  the dissociation at \wthree{} reverses between SP and CC.}
-  \label{fig:pervariant}
-\end{figure}
+% Retired from NeurIPS build (paper no longer makes these claims):
+% fig_decay, fig_subtype_grid, fig_bw_inversion, triangulation suite.
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/fig_decay.pdf}
+%   ...
+% \end{figure}
 
 \begin{figure}[t]
   \centering
@@ -294,20 +291,12 @@ per-(model, subtype) phenomena, not a universal inverse axis.
   \label{fig:population}
 \end{figure}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_subtype_grid.pdf}
-  \caption{ALGO accuracy decomposed by subtype $\times$ variant $\times$ model
-  (3 subtypes $\times$ 7 variants $\times$ 5 models). The WIS row is the
-  universal Achilles heel of every model; shortest-path W5 is a hard floor
-  across the suite; coin change (CC) is the only subtype where renaming
-  retention is non-trivial. (Note: CC is a dynamic-programming problem; the
-  point of the subtype is precisely that a greedy heuristic is \emph{not}
-  optimal for the general coin systems used here.) \omini's perfect canonical
-  row does not carry to W3/W6 on WIS, isolating algorithmic depth as a
-  distinct robustness axis.}
-  \label{fig:algo_grid}
-\end{figure}
+% Retired from NeurIPS build:
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/fig_subtype_grid.pdf}
+%   ...
+% \end{figure}
 
 % =====================================================================
 \section{Probe 2 Protocol Details}
@@ -384,17 +373,12 @@ are recorded, and sessions abort after 15 consecutive illegal actions.
   \label{fig:bw_profile}
 \end{figure}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_bw_inversion.pdf}
-  \caption{Blocksworld canonical vs.\ renamed-blocks (W5) accuracy, per-model
-  paired Wilcoxon. Renaming the canonical a,b,c,\ldots\ block tokens
-  \emph{improves} Claude/Gemini (removes harmful retrieval cues),
-  \emph{destroys} Llama (removes load-bearing cues), and leaves
-  GPT-4o/\omini{} effectively untouched. The opposite signs across
-  architectures are not consistent with a single mechanism.}
-  \label{fig:bw_rename}
-\end{figure}
+% Retired from NeurIPS build (W5 labelling on the archival PDF was corrected above):
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/fig_bw_inversion.pdf}
+%   ...
+% \end{figure}
 
 % =====================================================================
 \section{Mechanistic Rank Dissociation (Qwen pilot)}
