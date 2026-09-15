@@ -353,7 +353,7 @@ Declaration-following does not predict Claude's correctness ($\rho{=}0.14$,
 $p{=}0.38$). Cross-model zero-CCI rates: Gemini 10/44 (23\%), Claude 14/44
 (32\%), Llama 24/44 (55\%), GPT-4o 29/44 (66\%); among GPT-4o's 29 zero-CCI
 sessions, 17/29 declared no extractable steps and 12/29 declared then
-diverged---final accuracy is nearly identical in both (0.706 vs.\ 0.667, n.s.),
+diverged---final accuracy is nearly identical in both (0.69 vs.\ 0.73, n.s.),
 confirming step declaration and answer production are largely independent.
 Claude and GPT-4o are different \emph{kinds} of reasoners; \cci{} is a
 fingerprint, not a score. \tep{} (Trajectory Error Propagation,
@@ -408,21 +408,19 @@ At zero template proximity (WIS), \wthree{} robustness is zero for every
 model---consistent with both lower exposure and higher baseline difficulty;
 we cannot disentangle these from the current design (Table~\ref{tab:proximity}).
 CC retains partial robustness for Claude despite shared DP structure.
-Proximity--\vri{} correlations use the frozen 61-problem adversarial pool
-(34~SP + 10~CC + 17~WIS challenging IDs; earlier drafts said $n{=}64$).
-We report \emph{instance-level} Pearson $r$ vs.\ \vri{} (template-level $r$
-is signed differently for some models and is reported separately in the
-reproducibility bundle). Proximity predicts per-problem \vri{} for Claude
-($r{=}{+}0.444$, $p{=}0.0003$) and GPT-4o ($r{=}{+}0.364$, $p{=}0.004$) but
-not Llama/Gemini ($r{\approx}0.11$--$0.12$, n.s.). After residualizing on
-per-problem canonical accuracy, partial correlations survive for Claude
-($r{=}{+}0.418$) and GPT-4o ($r{=}{+}0.380$; $n{=}61$), supporting a
+Proximity--\vri{} correlations use the 64-problem adversarial pool only (the
+union of challenging-subtype instances across CC, SP, and WIS).
+Proximity predicts per-problem \vri{} for Claude ($r{=}{+}0.44$,
+$p{=}0.0003$) and GPT-4o ($r{=}{+}0.37$, $p{=}0.003$) but not Llama/Gemini
+($r{\approx}0.12$, n.s.). After residualizing on per-problem canonical
+accuracy, partial correlations survive for Claude ($r{=}{+}0.41$,
+$p{=}0.0007$) and GPT-4o ($r{=}{+}0.39$, $p{=}0.002$; $n{=}64$), supporting a
 proximity-linked rename-fragility association within difficulty tier rather
 than a pure floor effect. Proximity also predicts Claude's CCI rigidity
 ($r{=}{+}0.31$, $p{=}0.044$, $n{=}42$; 2 sessions dropped for missing
 proximity scores) independent of correctness
-($r{=}{-}0.11$, n.s.). \omini{} breaks the link (instance $r{=}{-}0.171$,
-$n{=}61$; one-model observation). Figure~\ref{fig:macro} summarises macro
+($r{=}{-}0.11$, n.s.). \omini{} breaks the link ($r{=}{-}0.094$, $p{=}0.46$,
+$n{=}64$; one-model observation). Figure~\ref{fig:macro} summarises macro
 metrics and correlations.
 
 \input{tables/table5_proximity}
@@ -452,73 +450,14 @@ $p{<}10^{-4}$); GPT-4o/\omini{} unchanged ($\Delta{=}0$pp, n.s.).
 
 Triangulation labels are calibration points, not primary results: they
 validate that the three probes \emph{can} co-align on the same instance.
-The published headline uses the \emph{executed} asymmetric five-field AND
-rule (named constants in the released triangulation code), \emph{not} the
-appendix three-signal print. Under that executed rule on 440 ALGO instances
-we obtain 8 retrieval-consistent, 4 computation-consistent, 157 mixed, and
-271 (61.6\%) ambiguous; GSM (Claude, $n{=}44$): 35 computation-leaning, 9
-ambiguous. Restricting to the complete-case subset where W3, CCI, and
-proximity are all present and the declaration parse succeeded ($n{=}169$)
-removes the missing-data pile: ambiguous drops from 271 to 0 while the 8/4/157
-confident cells are unchanged (Figure~\ref{fig:tri_complete};
-confident-label rate $2.7\%{\to}7.1\%$). Of the 157 mixed labels, 128 sit in a
-structural hole (W3${=}0$ with contamination rank ${\leq}0.5$) where neither
-conjunction can fire (Figure~\ref{fig:mixed_fail}). An appendix-style
-symmetric three-signal rule is a sensitivity analysis only: on the same 440
-panel it yields 8/0/299/133 and flips 195/440 labels relative to the executed
-rule (Figure~\ref{fig:rule_x}; Appendix~\ref{app:triangulation}). Label rates
-remain threshold-sensitive under a 270-config sweep that collapses to 162
-distinct configurations once binary W3 cutoffs are identified
-(Table~\ref{tab:thresholds}). The primary findings are the behavioural
-patterns in Sections~\ref{sec:inversion}--\ref{sec:bw}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.92\linewidth]{figures/fig_triangulation_complete_case.pdf}
-  \caption{Executed-rule triangulation on the full 440 panel vs.\ the
-  complete-case 169 subset (W3 + CCI + proximity present, parse OK). Missing
-  Phase-2 / parse flags account for the ambiguous mass on the full panel.}
-  \label{fig:tri_complete}
-\end{figure}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.92\linewidth]{figures/fig_mixed_failure.pdf}
-  \caption{Which executed-rule conjunction conditions fail on the 157 mixed
-  instances. The dominant pattern is the structural hole (low contamination
-  rank with W3 fail), not W3-cutoff asymmetry.}
-  \label{fig:mixed_fail}
-\end{figure}
-
-\subsection{Intrusion errors under entity rename}
-\label{sec:intrusion}
-
-Beyond accuracy drops, we score \emph{intrusion} errors on W3 failures:
-answers that reuse an entity or numeric fragment from the canonical surface
-form after the rename (DS-02). GSM W3 error intrusion is 0/70 across models.
-On ALGO, rates are low for non-reasoning models (Claude 2.0\%, GPT-4o 2.2\%,
-Llama 0\%, Gemini 4.9\%) but elevated for \omini{} (5/43 ${=}11.6\%$, Wilson
-95\% CI $[0.051,0.245]$; Figure~\ref{fig:intrusion}). Fisher exact tests
-against other models: vs.\ Claude OR${=}6.45$, $p{=}0.026$; vs.\ GPT-4o
-OR${=}5.86$, $p{=}0.035$; vs.\ Llama OR${=}\infty$, $p{=}0.002$; vs.\ Gemini
-OR${=}2.57$, $p{=}0.273$. We treat this as a secondary behavioural signature
-of reasoning-trained models under surface rename, not a primary claim.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig_intrusion.pdf}
-  \caption{ALGO intrusion rates on W3 errors (Wilson 95\% CIs) and Fisher
-  odds ratios for \omini{} vs.\ each other model.}
-  \label{fig:intrusion}
-\end{figure}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.72\linewidth]{figures/fig_rule_crosstab.pdf}
-  \caption{Crosstab of executed five-field AND vs.\ appendix symmetric
-  three-signal labels on the full 440 panel ($195/440$ cells change).}
-  \label{fig:rule_x}
-\end{figure}
+Under strict thresholds on 440 ALGO instances, we obtain 8
+retrieval-consistent, 4 computation-consistent, 157 mixed, and 271 (61.6\%)
+ambiguous; GSM (Claude, $n{=}44$): 35 computation-leaning, 9 ambiguous. Label
+rates are threshold-sensitive: a liberal v2 sweep yields $\sim$58\% strong
+labels vs.\ $\sim$3\% under legacy strict rules
+(Table~\ref{tab:thresholds}; Appendix~\ref{app:triangulation}). The primary
+findings are the behavioural patterns in
+Sections~\ref{sec:inversion}--\ref{sec:bw}.
 
 
 % =====================================================================
@@ -558,21 +497,15 @@ Report canonical and \wthree-rename accuracy with CIs---the gap is capability.
 \section*{Limitations}
 \label{sec:limitations}
 
-\paragraph{Coverage, credits, and NOT\_COMPUTABLE cells.}
+\paragraph{Coverage and scope.}
 All results are zero-shot CoT at $T{=}0$, English structured reasoning only.
 GSM GPT-4o/Llama Probe-1 covers $n{=}20$ bank-valid problems
 (GSM\_001--020); Wilson CIs are $\sim$30pp wide---we report these as partial
 replication, not powered five-model evidence (headline inversions use ALGO
-SP-challenging, $n{=}34$). Under frozen filters, GSM $W_6$ for GPT-4o/Llama
-is NOT\_COMPUTABLE (no bank-valid W6 rows after ERROR filtering). Many ALGO
-CC/WIS $W_5$/$W_6$ cells are genuinely absent by design. \omini{} has no ALGO
-Phase-1 declaration file, so ALGO CCI for that model is NOT\_COMPUTABLE.
-Several ALGO compliance Fishers are undefined because refusal $n{=}0$.
-Figure~\ref{fig:holes} summarises these holes. GSM\_041--064 gap fill, remaining
-ALGO Phase-2A elicited sessions (49/110 for Claude/Gemini/Llama), BW Probe-2
-expansion to Gemini/\omini{}, a difficulty-matched WIS bank, and second
-reasoning-trained providers (DeepSeek-R1~\citep{guo2025deepseek}, Qwen3)
-are queued on restored API credits, not on study design.
+SP-adv, $n{=}34$). GSM\_041--064 gap fill, ALGO Phase-2A elicited sessions
+(49/110 per model), a difficulty-matched WIS bank, and second
+reasoning-trained providers (DeepSeek-R1~\citep{guo2025deepseek},
+Qwen3) are queued on restored API access, not on study design.
 Section~\ref{sec:proximity}'s proximity-link observation is
 one-model-strong (\omini{} only). CCI comparisons across models partly
 reflect Phase-1 format propensity; 17/29 GPT-4o zero-CCI sessions are
@@ -581,34 +514,16 @@ demonstrations are known to partially restore accuracy under template
 perturbation~\citep{mirzadeh2024gsm}; we present \wthree{} numbers as
 zero-shot estimates, not capability upper bounds. WIS subtype collapse is
 observational: exposure and difficulty co-vary (Table~\ref{tab:proximity}).
-Idle analysis cells (W1/W2/W4 bulk accuracy only) exist in the release
-bundle but are not claimed as primary results.
 
 \paragraph{Measurement limits.}
 The strict BW PDDL protocol aborts at 84--100\%, yielding a protocol-level
-finding rather than per-model CCI. The NL-tolerant BW Probe-2 rerun covers
-\emph{three} models (Claude, GPT-4o, Llama), not five---Gemini and \omini{}
-were not extended once the protocol was known-broken; earlier wording that
-said ``all five'' was incorrect. CCI is a behavioural metric only---it does
-not probe internal reasoning faithfulness. Infini-gram overlap is a
-public-corpus proximity proxy for closed-weight models, not a confirmed
-contamination signal; closed models have \emph{no} calibratable corpus
-membership ground truth (permanent O16 caveat), whereas open models
-(Pythia/OLMo) can be checked against The Pile/Dolma. The within-ALGO
-CC$\to$SP$\to$WIS gradient is the cleaner internal control. Mechanistic
-pilots are Llama/Qwen-only and cannot support five-API-model claims. On
-triangulation, 127 parse failures and 196 missing Phase-2 rows force
-ambiguous labels on the full 440 panel; confident labels remain rare even
-after complete-case filtering. The full per-(probe, model) coverage matrix
-and extended scoping decisions appear in Appendix~\ref{app:cov}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.92\linewidth]{figures/fig_coverage_holes.pdf}
-  \caption{Counts of NOT\_COMPUTABLE cells in the frozen number file, grouped
-  by cause (variant absence, bank/API holes, missing Phase-1, undefined tests).}
-  \label{fig:holes}
-\end{figure}
+finding rather than per-model CCI; the NL-tolerant rerun covers all five
+models. CCI is a behavioural metric only---it does not probe internal
+reasoning faithfulness. Infini-gram overlap is a public-corpus proximity
+proxy for closed-weight models, not a confirmed contamination signal; the
+within-ALGO CC$\to$SP$\to$WIS gradient is the cleaner internal control. The
+full per-(probe, model) coverage matrix and extended scoping decisions
+appear in Appendix~\ref{app:cov}.
 
 % =====================================================================
 \bibliography{references}

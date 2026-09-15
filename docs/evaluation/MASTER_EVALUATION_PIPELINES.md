@@ -2,6 +2,8 @@
 
 This document is the end-to-end map for every evaluation pipeline in this repository: **question bank → W6 generation → verifier → model call → results → figures → triangulation**. It is written for defense, replication, and paper writing.
 
+**Frozen number authority for the manuscript:** [`rebuild/NUMBERS.csv`](../../rebuild/NUMBERS.csv) under [`rebuild/FROZEN_FILTERS.md`](../../rebuild/FROZEN_FILTERS.md). Paper errata / NeurIPS updates: [`docs/paper/PAPER_ERRATA.md`](../paper/PAPER_ERRATA.md). Triangulation default rule = executed five-field AND (`rebuild/triangulation_rule.py`); appendix three-signal is sensitivity-only. BW NL-tolerant Probe-2 covers **three** models (Claude, GPT-4o, Llama).
+
 Family-specific quick references still live in:
 
 - [BW_EVALUATION_FLOW.md](./BW_EVALUATION_FLOW.md)

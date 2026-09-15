@@ -1,6 +1,9 @@
-# Same Score, Different Strategy — CAISc 2026
+# Same Score, Different Strategy — NeurIPS 2026
 
-Accepted paper package. Source: `main.tex`, `appendix.tex`, `tables/`, `figures/`.
+Evaluations & Datasets Track. Source: `main.tex`, `appendix.tex`, `tables/`, `figures/`.
+
+CAISc 2026 archive (style + prior tex): [`venue/caisc2026/`](venue/caisc2026/).  
+NeurIPS style kit: [`venue/neurips2026/`](venue/neurips2026/).
 
 ## Build
 
@@ -12,25 +15,27 @@ pdflatex main
 pdflatex main
 ```
 
-Submission build (default): line numbers + footer via `\usepackage{caisc_2026}`.  
-Camera-ready: `\usepackage[final]{caisc_2026}` in `main.tex`.
+Submission: `\usepackage[eandd]{neurips_2026}`  
+Camera-ready: `\usepackage[eandd, final]{neurips_2026}`  
+Preprint: `\usepackage[preprint]{neurips_2026}`
 
-## Regenerate figures
+Mandatory checklist: `neurips_checklist.tex` (input at end of appendix).
+
+## Frozen numbers
+
+All Table-7 / proximity / triangulation headline numbers should match
+`../rebuild/NUMBERS.csv`. Errata: [`../docs/paper/PAPER_ERRATA.md`](../docs/paper/PAPER_ERRATA.md).
+
+## Regenerate figures / Table 7
 
 | Script | Output |
 |--------|--------|
-| `figures/scripts/gen_figures.py` | Main paper PDFs (`fig_robustness`, `fig_decay`, `fig_cci`, `fig_paradox`, …) |
-| `figures/scripts/gen_more_figures.py` | Appendix panels (`fig_bw_inversion`, `fig_subtype_grid`, …) |
-| `figures/scripts/gen_new_figures.py` | Supplementary panels |
-| `figures/scripts/gen_corr_figure.py` | `fig_corr_matrix.pdf` |
-| `figures/scripts/probe/` | Probe-level diagnostic plots → `results/figures/probe/` |
-| `figures/scripts/legacy/` | Earlier figure drafts (reference only) |
-
-Run from repo root with `PYTHONPATH=.`:
+| `figures/scripts/gen_figures.py` | Main paper PDFs (`fig_robustness`, `fig_cci`, …) |
+| `figures/scripts/gen_more_figures.py` | Appendix panels |
+| `figures/scripts/gen_rebuild_figures.py` | Intrusion, complete-case triangulation, mixed failure, rule crosstab, coverage holes, crossover |
+| `figures/scripts/regen_table7_from_numbers.py` | `tables/table7_pervariant.tex` from `rebuild/NUMBERS.csv` |
 
 ```bash
-python paper/figures/scripts/gen_figures.py
-python paper/figures/scripts/gen_more_figures.py
+python paper/figures/scripts/gen_rebuild_figures.py
+python paper/figures/scripts/regen_table7_from_numbers.py
 ```
-
-Family-specific figure generators live under `scripts/*_FIG_generate.py` and write to `results/figures/`.

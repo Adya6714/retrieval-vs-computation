@@ -1,0 +1,34 @@
+{
+  "notebook": "llama_greedy_behavioural.ipynb",
+  "model_string": "meta-llama/Llama-3.1-8B-Instruct",
+  "dtype": "torch.float16",
+  "quantization": "int8 bitsandbytes",
+  "decoding_config": {
+    "greedy": {
+      "do_sample": false,
+      "temperature": null
+    },
+    "variance_pass": {
+      "do_sample": true,
+      "temperature": 1.0,
+      "n_samples": 3,
+      "full_variance": false
+    }
+  },
+  "n_items": 438,
+  "n_greedy_rows": 438,
+  "families": [
+    "GSM",
+    "ALGO",
+    "BW"
+  ],
+  "variants": [
+    "canonical",
+    "W3"
+  ],
+  "prompt": "Appendix N Probe-1 + Llama-3.1 Instruct chat template",
+  "verifier": "probes.contamination.verify.verify_gsm_answer / verify_answer(blocksworld) / verify_algo",
+  "extraction_rule": "GSM: #### tag else last number (OpenRouter). family='gsm' first-number path asserted-against.",
+  "git_commit_hash": "10122a006d135ea462423c5d1af74ae0f70f6a21",
+  "output_csv": "/content/colab_out/llama_greedy_p1.csv"
+}

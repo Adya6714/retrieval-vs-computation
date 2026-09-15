@@ -1,6 +1,8 @@
 # Colab notebooks
 
-Notebooks only live here. Downloads from a Colab run go into `results/`, not this folder.
+Notebooks only live here. Downloads from a Colab run go into `results/raw/` or
+`results/derived/`, **never** the repo root. Mis-landed root dumps are archived
+at `results/raw/colab_inbox/` (kept for provenance; re-land under the paths below if you need them as canonical raw).
 
 | Notebook | Put the download here |
 |----------|------------------------|
@@ -26,5 +28,12 @@ Notebooks only live here. Downloads from a Colab run go into `results/`, not thi
 | `o16_open_model_calibration.ipynb` → `colab_out/O16_open_model_scores.csv` | `results/raw/O16_open_model_scores.csv` (Pythia/OLMo O5+O15 on canonicals) |
 | `python scripts/consolidate/o16_corpus_ground_truth.py` (Cursor, no GPU) | `results/derived/O16_corpus_ground_truth.csv` |
 | `python scripts/consolidate/o16_calibrate_proxies.py` | `O16_proxy_calibration.csv` + `O16_groundtruth_retention_test.csv` |
+| `o14b_naming_likelihood.ipynb` → `colab_out/O14b_naming_likelihood.csv` | `results/raw/O14b_naming_likelihood.csv` (Qwen 1.5B/3B teacher-forced O14 bank) |
+| same → `O14b_naming_analysis.csv` | `results/derived/O14b_naming_analysis.csv` |
+| `ds16_recognition_recall.ipynb` → `colab_out/DS16_recognition_recall.csv` | `results/derived/DS16_recognition_recall.csv` |
+| same → `DS16_gap_correlations.csv` | `results/derived/DS16_gap_correlations.csv` |
+| **`k_suite_colab.ipynb`** (K1–K7 combined) | Same filenames as above — each arm has its own Download cell; land files exactly as for the standalone notebooks |
 
-Regenerate the `.ipynb` files with `python colab/_build_notebooks.py` (includes O15/O16 via `_build_o15.py` / `_build_o16.py`).
+**Combined suite:** `colab/k_suite_colab.ipynb` runs K1→K2→K3→K4→K6→K7→K5 in one T4 session. Toggle arms with `RUN_K*` in the master knobs cell. Smoke with `LIMIT=2`, `DRY_RUN=True` first.
+
+Regenerate the `.ipynb` files with `python colab/_build_notebooks.py` (includes O15/O16/O14b/DS16/k_suite via sibling builders).

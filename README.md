@@ -2,7 +2,8 @@
 
 This repository implements a **three-probe evaluation framework** across **Blocksworld (BW)**, **GSM arithmetic**, and **Algorithmic (ALGO)** problem families. The core question: when two models score the same, are they solving problems the same way — by **retrieval** (pattern recall) or **computation** (structure-sensitive reasoning)?
 
-**Published work:** *Same Score, Different Strategy* (CAISc 2026) — LaTeX package in [`paper/`](paper/).  
+**Published work:** *Same Score, Different Strategy* — NeurIPS 2026 Evaluations & Datasets package in [`paper/`](paper/) (CAISc archive under `paper/venue/caisc2026/`).  
+**Frozen numbers:** [`rebuild/NUMBERS.csv`](rebuild/NUMBERS.csv) · errata [`docs/paper/PAPER_ERRATA.md`](docs/paper/PAPER_ERRATA.md).  
 **Future research roadmap:** [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) + linked notes in [`research-vault/RvC-Vault/`](research-vault/RvC-Vault/).
 
 ---
@@ -11,7 +12,8 @@ This repository implements a **three-probe evaluation framework** across **Block
 
 | If you want to… | Open this |
 |-----------------|-----------|
-| **Accepted paper** (build PDF, tables, figures) | [`paper/main.tex`](paper/main.tex) · [`paper/README.md`](paper/README.md) |
+| **NeurIPS paper** (build PDF, tables, figures) | [`paper/main.tex`](paper/main.tex) · [`paper/README.md`](paper/README.md) |
+| **Frozen recomputed numbers** | [`rebuild/`](rebuild/) · [`docs/paper/PAPER_ERRATA.md`](docs/paper/PAPER_ERRATA.md) |
 | **Future research program** (phases, claims, evaluation catalog) | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
 | **Full research vault** (110+ linked planning notes) | [`research-vault/RvC-Vault/`](research-vault/RvC-Vault/) — start at `00_MOC.md` |
 | Consolidated analysis (every number from every probe) | [`ANALYSIS.md`](ANALYSIS.md) |
@@ -55,7 +57,8 @@ If you only want to reproduce numbers from already-committed CSVs, skip the boot
 | Tagged index of all result files | [`results/ARTIFACT_REGISTRY.csv`](results/ARTIFACT_REGISTRY.csv) |
 | Canonical path constants in code | [`probes/common/results_paths.py`](probes/common/results_paths.py) |
 | Model roster and API IDs | [`configs/models.yaml`](configs/models.yaml) |
-| Accepted CAISc paper | [`paper/main.tex`](paper/main.tex) |
+| Accepted NeurIPS paper | [`paper/main.tex`](paper/main.tex) |
+| Frozen number file | [`rebuild/NUMBERS.csv`](rebuild/NUMBERS.csv) |
 | Future research roadmap | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
 
 **Canonical outputs:** model runs in `results/raw/`; metrics in `results/derived/`; manuscript CSV tables in `results/paper/`; paper PDF figures in `paper/figures/`; probe diagnostic plots in `results/figures/`.

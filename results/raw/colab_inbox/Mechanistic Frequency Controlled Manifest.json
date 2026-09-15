@@ -1,0 +1,48 @@
+{
+  "notebook": "mechanistic_frequency_controlled.ipynb",
+  "model_string": [
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-1.5B-Instruct"
+  ],
+  "dtype": {
+    "meta-llama/Llama-3.1-8B-Instruct": "float16",
+    "Qwen/Qwen2.5-7B-Instruct": "float16",
+    "Qwen/Qwen2.5-1.5B-Instruct": "bfloat16"
+  },
+  "quantization": {
+    "meta-llama/Llama-3.1-8B-Instruct": "nf4 4-bit bitsandbytes (double quant)",
+    "Qwen/Qwen2.5-7B-Instruct": "nf4 4-bit bitsandbytes (double quant)",
+    "Qwen/Qwen2.5-1.5B-Instruct": "unquantized bfloat16"
+  },
+  "quantization_confound": "Qwen2.5-1.5B-Instruct is unquantized (bf16 if supported, else fp16 on T4). Llama-3.1-8B-Instruct and Qwen2.5-7B-Instruct are nf4 4-bit. Do not treat rank differences as a pure size effect.",
+  "decoding_config": {
+    "readout": "forward pass only (no generation); last prompt position",
+    "chat_template": true,
+    "prompt": "Appendix N Probe-1 family-specific format instruction",
+    "gold": {
+      "ALGO": "SP Cost / CC Count|Total / WIS Total (not Path/Coins/Selected)",
+      "BW": "first action word of gold plan"
+    }
+  },
+  "n_items": 252,
+  "n_ids": {
+    "ALGO": 61,
+    "BW": 65
+  },
+  "n_models": 3,
+  "id_source": {
+    "ALGO": "frozen adversarial pool 34 SP + 10 CC + 17 WIS = 61",
+    "BW": "data/problems/question_bank_bw.csv canonical IDs (n=65)",
+    "GSM": "NOT QUEUED \u2014 existing mech_freq_controlled.csv left untouched"
+  },
+  "frequency_proxy": "GSM+ALGO+BW bank unigram counts under each model's tokenizer; token_id as secondary rank proxy",
+  "degeneracy_rule": "family flagged if modal gold token is >50% of all items or of canonical items; Wilcoxon not reported",
+  "git_commit_hash": "10122a006d135ea462423c5d1af74ae0f70f6a21",
+  "output_csv": "/content/colab_out/mech_freq_controlled_algo_bw.csv",
+  "n_layers_by_model": {
+    "meta-llama/Llama-3.1-8B-Instruct": 32,
+    "Qwen/Qwen2.5-7B-Instruct": 28,
+    "Qwen/Qwen2.5-1.5B-Instruct": 28
+  }
+}

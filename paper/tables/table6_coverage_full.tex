@@ -2,15 +2,17 @@
   \centering
   \small
   \caption{Explicit per-(probe, model) coverage. All five models are fully
-  run on every probe except the strict-PDDL BW Probe-2 cell, which is n/a for
-  Gemini and \omini{} because the protocol aborts at 84--100\% on the three
-  models we ran it on (Section~\ref{sec:bw}); the canonical BW Probe-2 result
-  is the NL-tolerant rerun, which covers all five models.
+  run on Probe~1 and on GSM/ALGO Probe~2--3 except where footnoted. Strict-PDDL
+  BW Probe-2 is n/a for Gemini and \omini{} (protocol aborts at 84--100\% on
+  the three models we ran); the NL-tolerant BW Probe-2 rerun covers those
+  same three models only (Claude, GPT-4o, Llama).
   $^a$\omini{} GSM Probe~2: 43/44 Phase-1 declarations parse; CCI/TEP computed
   on the parseable subset. $^b$BW interactive PDDL not run on Gemini or
-  \omini{} (protocol aborts at $\geq 84\%$ on the three models we did run).
+  \omini{} (protocol aborts at $\geq 84\%$ on the three models we did run);
+  NL-tolerant BW Probe-2 likewise covers only those three models.
   $^c$GPT-4o/Llama Probe-1 GSM: 20/44 bank-valid (GSM\_001--020 only);
-  GSM\_041--064 pending API gap fill.}
+  GSM\_041--064 pending API credit gap fill. $^d$\omini{} ALGO Phase-1
+  declaration file absent $\Rightarrow$ ALGO CCI NOT\_COMPUTABLE.}
   \label{tab:coverage_full}
   \begin{tabular}{lccccc}
     \toprule
@@ -25,10 +27,11 @@
     P2B plausible     & 61 & 61 & 61 & 61 & 61 \\
     P2B implausible   & 61 & 61 & 61 & 61 & 61 \\
     P2 BW (CCI)       & 50 & 50 & 50 & n/a$^b$ & n/a$^b$ \\
+    P2 BW NL-tolerant & 50 & 50 & 50 & n/a$^b$ & n/a$^b$ \\
     P3 contam.\ (VRI) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
-    P3 contam.\ (CCI) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark$^a$ \\
+    P3 contam.\ (CCI) & \checkmark & \checkmark & \checkmark & \checkmark & n/a$^d$ \\
     \midrule
-    P3 mech. & \multicolumn{5}{c}{Qwen-2.5-7B pilot only (Appendix~\ref{app:mech})} \\
+    P3 mech. & \multicolumn{5}{c}{Qwen/Llama pilots only (Appendix~\ref{app:mech})} \\
     \bottomrule
   \end{tabular}
 \end{table}

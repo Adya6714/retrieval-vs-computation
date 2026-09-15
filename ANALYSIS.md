@@ -1,11 +1,16 @@
 # Retrieval vs Computation — Consolidated Analysis
 
-Single canonical analysis document for this project. Replaces all previous
+> **Superseded for manuscript numbers.** Use `rebuild/NUMBERS.csv` +
+> `rebuild/REBUILD_REPORT.md` + `docs/paper/PAPER_ERRATA.md` as the frozen
+> authority. This document remains a useful historical consolidation of
+> probe analyses (May snapshot).
+
+Single canonical analysis document for this project (historical). Replaces all previous
 analysis MDs (`MASTER_ANALYSIS_COMPENDIUM`, `COMPREHENSIVE_PROBE_ANALYSIS`,
 `CRITICAL_AUDIT`, `DEEP_SCIENTIFIC_ANALYSIS`, `POST_API_ANALYSIS`,
 `REVIEWER_AUDIT_VERIFICATION`, `MECHANISTIC_RUNBOOK`, `INTERNAL_PROBE_METRICS`).
 
-Every aggregate cited in `paper/main.tex` is traceable to a row of one of the
+Every aggregate cited in older paper drafts was intended to be traceable to a row of one of the
 tables here, which in turn points to a specific raw CSV in `results/raw/` or a
 derived CSV in `results/derived/`.
 

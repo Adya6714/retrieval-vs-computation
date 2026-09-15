@@ -1,0 +1,3185 @@
+problem_id,family,variant,model_answer,correct
+GSM_001,GSM,canonical,"First, calculate the cost for the first 20 minutes:
+20 minutes * $0.9/minute = $18
+
+Then, calculate the cost for the remaining 66 minutes:
+66 minutes * $0.5/minute = $33
+
+Add the costs together:
+$18 + $33 = $51
+
+51",True
+GSM_001,GSM,W3,"86 * 0.9 = 77.4 
+77.4 + 86 * 0.5 = 77.4 + 43 = 120.4 
+120.4",False
+GSM_002,GSM,canonical,18 + (2/3 * 18) = 18 + 12 = 30,True
+GSM_002,GSM,W3,27,False
+GSM_003,GSM,canonical,"There are 30 purple cards. The number of yellow cards is 50% more than purple cards, so it is 30 + (0.5 * 30) = 45. The number of blue cards is the sum of purple and yellow cards, so it is 30 + 45 = 75. The total number of cards is 30 + 45 + 75 = 150.
+
+150",True
+GSM_003,GSM,W3,60,False
+GSM_004,GSM,canonical,"To find the total amount the painter earns in a year, we need to calculate the total number of days he works in a year and then multiply it by his daily wage.
+
+Since he works 2 weeks every month, and there are 12 months in a year, the total number of weeks he works in a year is 2 * 12 = 24 weeks.
+
+Since he works 6 days every week, the total number of days he works in a year is 24 * 6 = 144 days.
+
+Now, we can multiply the total number of days he works in a year by his daily wage to find the total",False
+GSM_004,GSM,W3,365 * 2 * 6 * 150 = 219000,False
+GSM_005,GSM,canonical,"To find the total time Liam spends learning, we need to calculate the time he spends in classes and the extra time he spends on Saturday and Sunday.
+
+1. Time spent in classes:
+   - Number of classes per day: 7 (6 regular classes + 1 extra class)
+   - Duration of each class: 60 minutes
+   - Total classes per week: 7 * 6 = 42 classes
+   - Total minutes spent in classes per week: 42 * 60 = 2520 minutes
+
+2. Extra time spent on Saturday and Sunday:
+   - Total minutes in a week: 7 *",False
+GSM_005,GSM,W3,60 * 7 + (60 * 7) * (1/7),False
+GSM_006,GSM,canonical,"To find the final value of Kayla's shares, we need to calculate the value after the first year and then the value after the second year.
+
+Initial value of 10 shares = 10 * 56 = 560
+
+After the first year, the stock price increases by 30%:
+New price = 56 + (56 * 0.30) = 56 + 16.8 = 72.8
+Value of 10 shares after the first year = 10 * 72.8 = 728
+
+After the second year, the stock price decreases by 25%:
+New price = 72",False
+GSM_006,GSM,W3,"## Step 1: Calculate the initial value of the paintings
+Michael buys 10 paintings for €56 each, so the initial value is 10 * 56 = 560.
+
+## Step 2: Calculate the value after the first year
+The painting value increases by 30% in the first year. To calculate the new value, we need to find 30% of the initial value and add it to the initial value. 30% of 560 is 0.3 * 560 = 168. The new value is 560 + 168 = 728.
+
+## Step 3: Calculate the value after",False
+GSM_007,GSM,canonical,"To find the total cost, we need to calculate the number of paid hours and the cost of each hour.
+
+Kai gets 2 hours free, so he used the car from 1 PM to 3 PM. This means he used 2 paid hours (from 1 PM to 3 PM) and 1 free hour (from 3 PM to 5 PM).
+
+The first paid hour costs $10, and each hour after that costs twice the cost, which is $20.
+
+So, the total cost is:
+2 hours * $10 = $20
+1 hour * $20 = $20
+Total cost =",False
+GSM_007,GSM,W3,3,False
+GSM_008,GSM,canonical,# 256,False
+GSM_008,GSM,W3,## 16 * (1 + 3)^3 = 16 * 64 = 1024,True
+GSM_009,GSM,canonical,"To find the total number of eggs Nia needs for 108 days, we need to calculate the total number of eggs she eats in the first 84 days and the next 24 days, and then add them together.
+
+In the first 84 days, Nia eats 5 eggs a day. So, the total number of eggs she eats in the first 84 days is:
+5 eggs/day * 84 days = 420 eggs
+
+In the next 24 days, Nia eats 7 eggs a day. So, the total number of eggs she eats in the next 24 days is:
+7 eggs/day *",False
+GSM_009,GSM,W3,108,False
+GSM_010,GSM,canonical,"60 
+120 
+360 
+180 
+60 
+24 
+Total: 804",False
+GSM_010,GSM,W3,"60 + 240 + 360 + (360/2) + (360/4) = 
+60 + 240 + 360 + 180 + 90 = 
+930",False
+GSM_011,GSM,canonical,"To find the amount of water Pavel has left, we need to calculate the total amount of water used for each type of cube and subtract it from the total amount of water (328 grams).
+
+8 giant cubes that use 12 grams each will use 8 * 12 = 96 grams.
+15 small cubes that use 1/5 grams each will use 15 * 1/5 = 3 grams.
+13 medium cubes that use 11 grams each will use 13 * 11 = 143 grams.
+
+Total water used = 96 + 3 + 143 = 242 grams.
+
+Water left = 328 -",False
+GSM_011,GSM,W3,"328 - (8*12 + 13*11 + 15*(1/5)) 
+328 - (96 + 143 + 3) 
+328 - 242 
+86",True
+GSM_012,GSM,canonical,"## Step 1: Calculate the total number of potted plants Camila already has on her window ledges.
+Camila has 7 potted plants on each of the 52 window ledges, so the total number of potted plants she already has is 7 * 52 = 364.
+
+## Step 2: Calculate the number of potted plants Camila will give away.
+Camila will give away 6 potted plants from each ledge, so the total number of potted plants she will give away is 6 * 52 = 312.
+
+## Step 3: Calculate the number of potted plants",False
+GSM_012,GSM,W3,2021,False
+GSM_013,GSM,canonical,"Let's break down the problem step by step:
+
+1. Mia walks 12 kilometers on the beach and 12 kilometers on the sidewalk.
+2. She walks at two times the rate of speed on the sidewalk as on the beach.
+3. Since she walks 12 kilometers on the beach, her speed on the beach is 12 km / 60 min = 0.2 km/min (assuming 60 minutes is the time taken to walk 12 km on the beach).
+4. Since she walks at two times the rate of speed on the sidewalk as on the beach, her speed on the sidewalk is 2 * 0",False
+GSM_013,GSM,W3,12,False
+GSM_014,GSM,canonical,"210 floors / 10 days = 21 floors per day
+21 floors / 10 hours per day = 2.1 floors per hour
+10 hours * 60 minutes per hour = 600 minutes per day
+2.1 floors per hour * 600 minutes per hour = 1260 minutes per day spent cleaning floors
+1260 minutes / 600 minutes per day = 2.1
+2.1 / 10 = 0.21
+0.21 * 100 = 21%
+
+21%",False
+GSM_014,GSM,W3,"## 210 * 20 / (10 * 60) = 36
+36 / (10 * 60) = 0.36
+0.36 * 100 = 36",False
+GSM_015,GSM,canonical,"To find the total amount Viktor will make, we need to round the prices of each type of plant to the nearest dollar and then multiply by the number of bundles sold.
+
+Rounded prices:
+- Tulips: $2.25 ≈ $2
+- Roses: $5.13 ≈ $5
+- Sunflowers: $5.47 ≈ $5
+
+Now, let's calculate the total amount:
+- 12 bundles of tulips: 12 × $2 = $24
+- 29 bundles of roses: 29 × $5 = $145
+- 37 bundles of sunflowers: 37 × $5",False
+GSM_015,GSM,W3,"## Step 1: Round the prices of each pastry to the nearest dollar.
+The price of a croissant batch is rounded to €2, the price of a muffin batch is rounded to €5, and the price of a danish batch is rounded to €5.
+
+## Step 2: Calculate the total revenue from selling croissants.
+12 batches of croissants at €2 each will be 12 * €2 = €24.
+
+## Step 3: Calculate the total revenue from selling muffins.
+29 batches of muffins at €5 each will be 29 * €5 = €145.
+
+## Step",False
+GSM_016,GSM,canonical,"To find the total number of trips needed, we need to calculate the total weight of all the items and divide it by the capacity of the truck, then round up to the nearest whole number since we can't make a fraction of a trip. 
+
+First, let's calculate the total weight of each item:
+- Wheat: 6 boxes * 4 pounds/box = 24 pounds
+- Cucumbers: 12 bags * 5 pounds/bag = 60 pounds
+- Apples: 32 packs * 43 pounds/pack = 1376 pounds
+- Corns: 18 sacks * 15",False
+GSM_016,GSM,W3,"## Step 1: Calculate the total weight of paper boxes
+The warehouse manager buys six 4-pound boxes of paper, so the total weight of paper boxes is 6 * 4 = 24 pounds.
+
+## Step 2: Calculate the total weight of stapler bags
+He buys twelve 5-pound bags of staplers, so the total weight of stapler bags is 12 * 5 = 60 pounds.
+
+## Step 3: Calculate the total weight of notebook packs
+He buys thirty two 43-pound packs of notebooks, so the total weight of notebook packs is 32 * 43 = 1376",False
+GSM_017,GSM,canonical,"Let's denote the number of boxes of cookies sold on Saturday as C and the number of boxes of orange pie sold on Saturday as P.
+
+On Friday, the number of boxes of cookies sold is C - 11, and the number of boxes of orange pie sold is P - 13.
+
+On Sunday, the total number of boxes of cookies sold is 2C, and the total number of boxes of orange pie sold is 2P.
+
+The total number of boxes of cookies sold over the three days is (C - 11) + C + 2C = 4C - 11.
+The total number of boxes",False
+GSM_017,GSM,W3,"Let's denote the number of boxes of brownies sold on Friday as B, the number of boxes of lemon tarts sold on Friday as L, the number of boxes of brownies sold on Saturday as S, and the number of boxes of lemon tarts sold on Saturday as T.
+
+Given that:
+- On Friday, she sold 25 boxes of brownies and 13 fewer boxes of lemon tarts than on Saturday.
+- On Saturday, she sold 11 more boxes of brownies than on Friday and 22 boxes of lemon tarts.
+- On Sunday, she sold as much as she did in the past two days combined",False
+GSM_018,GSM,canonical,"To find the number of questions in each category, we first need to find the total number of physics, algebra, and the combined number of chemistry and history questions.
+
+25% of 80 questions are physics: 0.25 * 80 = 20 questions
+15% of 80 questions are algebra: 0.15 * 80 = 12 questions
+The rest are equally divided as chemistry and history: (100 - 25 - 15)% = 60% = 0.6 * 80 = 48 questions
+48 questions are divided equally between chemistry and history: 48 / 2 =",False
+GSM_018,GSM,W3,"To find the total number of points Jordan is certain to score, we need to calculate the number of questions in each category and the number of questions Jordan is expected to answer correctly.
+
+There are 80 questions in total. 25% are biology questions, and 15% are geometry questions. The remaining questions are split equally between economics and geography, so 60% are either economics or geography.
+
+Biology questions: 0.25 * 80 = 20 questions
+Geometry questions: 0.15 * 80 = 12 questions
+Economics and geography questions: 0.60 * 80 = 48 questions",False
+GSM_019,GSM,canonical,"Let's break down the information:
+
+- Friday and Saturday: 2 nights * 3 hours/night = 6 hours
+- Sunday: x episodes * 45 minutes/episode = 45x minutes
+- Monday: 4 hours + 15 minutes = 4.25 hours
+- Tuesday: 4 episodes * 2 hours/episode = 8 hours
+- Wednesday: 3 episodes * 30 minutes/episode = 90 minutes
+
+Total time watched: 6 + 45x + 4.25 + 8 + 1.5 = 22
+
+Combine like terms: 45x",False
+GSM_019,GSM,W3,"## Step 1: Calculate the total time Sofia read on Friday and Saturday
+Sofia read 3-hour chapters each night on Friday and Saturday, so she read 2 * 3 = 6 hours on Friday and Saturday.
+
+## Step 2: Calculate the total time Sofia read on Sunday
+Let's denote the number of 45-minute sections Sofia read on Sunday as x. Since each section is 45 minutes, the total time she read on Sunday is 45x minutes.
+
+## Step 3: Calculate the total time Sofia read on Monday
+On Monday, Sofia read a 4-hour chapter and a 15",False
+GSM_020,GSM,canonical,"To find the total number of eggs still hidden in the yard, we need to calculate the number of eggs found by each person and subtract that from the initial number of eggs.
+
+Ava finds 3 eggs.
+Quinn finds six times as many as Ava: 6 * 3 = 18 eggs.
+Sophia finds 3 less than Quinn: 18 - 3 = 15 eggs.
+Esteban finds 1/5 as many as Sophia: 15 * 1/5 = 3 eggs.
+Quinn and Ava combined find 3 + 18 = 21 eggs.
+Fatima finds three dozen eggs",False
+GSM_020,GSM,W3,"## Step 1: Determine the number of gold stars Ben finds.
+Ben finds 3 gold stars.
+
+## Step 2: Calculate the number of gold stars Mia finds.
+Mia finds six times as many as Ben, so Mia finds 6 * 3 = 18 gold stars.
+
+## Step 3: Calculate the number of gold stars Lucas finds.
+Lucas finds 3 less than Mia, so Lucas finds 18 - 3 = 15 gold stars.
+
+## Step 4: Calculate the number of gold stars Zoe finds.
+Zoe finds 1/5 as many as Lucas, so Zoe finds (1/",False
+GSM_041,GSM,canonical,"190 - 19 - 7 = 164. Since the number that like to hike is twice the number that prefer playing football, the number that like to hike is 2 * 7 = 14. So, the number that like to bake is 164 - 14 = 150.
+
+150",True
+GSM_041,GSM,W3,"Let's denote the number of workers who like assembly as A, the number who like quality control as Q, and the number who like forklift operation as F. 
+
+We know that the total number of workers is 190, and the number of workers who like welding is 19. So, the number of workers who like assembly or quality control is 190 - 19 = 171.
+
+We are also given that the number of workers who like quality control is twice the number who like forklift operation, so Q = 2F.
+
+We know that the total number of workers who like assembly or quality control is A",False
+GSM_042,GSM,canonical,30 * 94 = 2820.,True
+GSM_042,GSM,W3,"## Step 1: Calculate the total number of widgets produced by all production lines in a year.
+First, we need to calculate the total number of widgets produced by all production lines in a year. Since there are 30 production lines and each line produces 94 widgets every 12 months, we can multiply the number of production lines by the number of widgets produced per line per year.
+
+## Step 2: Multiply the number of production lines by the number of widgets produced per line per year.
+Total widgets produced per year = 30 production lines * 94 widgets per line per year = 2820 widgets per year.
+
+The final",True
+GSM_043,GSM,canonical,"640 * (1/8) = 80 tennis balls
+80 * (1/10) = 8 white tennis balls
+
+8",True
+GSM_043,GSM,W3,"640 * (1/8) = 80 plastic containers
+80 * (1/10) = 8 labeled plastic containers
+
+8",True
+GSM_044,GSM,canonical,117,False
+GSM_044,GSM,W3,105,False
+GSM_045,GSM,canonical,205 + 97 + 4 * 205 = 205 + 97 + 820 = 1122,True
+GSM_045,GSM,W3,205 + 97 + 4 * 205 = 205 + 97 + 820 = 1122,True
+GSM_046,GSM,canonical,"To find the number of ounces you can eat, we need to first find the total number of calories you can consume for the day, then find the number of calories per ounce, and finally divide the total calories you can consume by the calories per ounce.
+
+First, let's find the total number of calories you can consume for the day:
+2395 - 1350 = 1045 calories
+
+Since the bag has 5 servings and 475 calories per serving, the total calories in the bag is:
+475 * 5 = 2375 calories
+
+Now, let's find the number of calories per ounce:
+2375 /",False
+GSM_046,GSM,W3,"To solve this problem, we need to calculate the total number of cycles required to reach the daily kilowatt target and then determine how many liters can be processed with that number of cycles.
+
+First, let's calculate the total number of cycles required:
+
+Daily kilowatt target = 2395
+Kilowatts generated so far = 1350
+Total kilowatts needed = 2395 - 1350 = 1045
+
+Since each cycle generates 475 kilowatts, the total number of cycles required is:
+1045 / 475 = 2.21 (round up to 3, since you can",False
+GSM_047,GSM,canonical,"To find the total number of unoccupied rooms after 3 weeks, we need to first find the number of occupied rooms and then subtract it from the total capacity.
+
+Initially, 1/4 of the rooms are occupied. 
+1/4 of 1800 = 0.25 * 1800 = 450 rooms occupied.
+
+Each day, 40 patients are admitted. In 3 weeks, there are 21 days (3 * 7 = 21).
+So, the total number of patients admitted in 3 weeks = 40 * 21 = 840.
+
+Now, the total number of occupied rooms after",False
+GSM_047,GSM,W3,"To find the total number of unoccupied server units, we need to first find the number of occupied server units and then subtract it from the total capacity.
+
+The data center has a capacity of 1800 server units with 1/4 occupied. 
+1/4 of 1800 is 1800 * 1/4 = 450.
+
+The number of occupied server units is 450.
+
+40 data streams are admitted into the data center each day. In 3 weeks, the number of data streams admitted is 40 * 21 = 840.
+
+The total number of occupied server units after 3 weeks is 450",False
+GSM_048,GSM,canonical,"To find the total cost, we need to calculate the cost of the tea and the bagel separately.
+
+The normal brand of tea costs ₺20 per kilogram. Since Hiroshi uses 1 kilogram of tea per day, a week's worth of tea would cost 7 * ₺20 = ₺140.
+
+The more expensive brand costs 45% more than the normal brand. To find the cost of the more expensive brand, we need to calculate 45% of ₺20 and add it to ₺20.
+
+45% of ₺20 = 0.45 * ₺20 = ₺9",False
+GSM_048,GSM,W3,"To find the total cost, we need to calculate the cost of the steel and the lubricant separately.
+
+The normal grade of steel costs ₺20 per ton. The more expensive grade costs 45% more, so it costs 20 + (20 * 0.45) = ₺29 per ton.
+
+Since he uses 1 ton of steel per day, he needs 7 tons of steel for a week. The cost of the normal grade would be 20 * 7 = ₺140, and the cost of the more expensive grade is 29 * 7 = ₺203.
+
+Since the more expensive grade",False
+GSM_049,GSM,canonical,"To find the total number of apartments in the last complex, we need to calculate 20% of the total number of apartments in the first two complexes.
+
+The first two complexes have 450 apartments each, so the total number of apartments in the first two complexes is 2 * 450 = 900.
+
+20% of 900 is 0.2 * 900 = 180.
+
+So, the last complex has 900 + 180 = 1080 apartments.
+
+Umar collects garbage 2 times a week from each place, so the total number of collections per week is 3 * 2 = 6.
+
+The",False
+GSM_049,GSM,W3,"To find the total number of workstations in the last facility, we need to calculate 20% of the combined number of workstations in the first two facilities.
+
+Combined workstations in the first two facilities = 450 + 450 = 900
+20% of 900 = 0.2 * 900 = 180
+
+Total workstations in the last facility = 900 + 180 = 1080
+
+Total workstations in all facilities = 450 + 450 + 1080 = 1980
+
+Robot-7 assembles components 2 times a week from each place, so the total number of assemblies",False
+GSM_050,GSM,canonical,"To find the combined length of the remaining remoras, we need to first find the number of remoras that remain. 
+
+There are 16 remoras initially, and a quarter of them go away. So, the number of remoras that go away is 16 * 0.25 = 4. 
+
+The number of remoras that remain is 16 - 4 = 12.
+
+Each remora is 12 inches long. So, the combined length of the remaining remoras is 12 * 12 = 144 inches.
+
+The length of the dolphin is 60 feet, which is 60 * 12",False
+GSM_050,GSM,W3,"12 12-inch drones are 12 * 12 = 144 inches long. 
+A quarter of the 16 drones detach, so 16 - 4 = 12 drones remain. 
+12 drones are 12 * 12 = 144 inches long. 
+The total length of the spacecraft is 60 feet, which is 60 * 12 = 720 inches. 
+The percentage of the spacecraft's body length that the remaining drones occupy is (144 / 720) * 100 = 20%.",True
+GSM_051,GSM,canonical,"64 minutes to cover 2 miles, so it will take 64/2 = 32 minutes to cover 1 mile. To cover a tenth of the city, it will take 32 * 4 = 128 minutes.",False
+GSM_051,GSM,W3,"To find the time it takes for the computer virus to cover a tenth of the network, we need to first find the time it takes to cover the entire network and then divide that by 10.
+
+It takes 64 minutes to cover every 2 gigabytes, so it takes 64/2 = 32 minutes to cover 1 gigabyte.
+
+The network is 80 gigabytes across, so it takes 32 * 80 = 2560 minutes to cover the entire network.
+
+To cover a tenth of the network, it takes 2560 / 10 = 256 minutes.
+
+256",True
+GSM_052,GSM,canonical,"To calculate the probability of rolling a number greater than 6 on a d12 die, we have 6 favorable outcomes (7, 8, 9, 10, 11, 12) out of 12 possible outcomes, so the probability is 6/12 = 0.5 or 50%.
+
+To calculate the probability of rolling four odd numbers in a row, we need to consider the probability of rolling an odd number on each roll. There are 6 odd numbers (1, 3, 5, 7, 9, 11) out of 12 possible outcomes, so the probability",False
+GSM_052,GSM,W3,"To solve this problem, we need to calculate the probability of generating a code greater than 6 and the probability of generating four odd numbers in a row, and then find the difference between these two probabilities.
+
+The probability of generating a code greater than 6 on a 12-slot randomizer is 1 - (probability of generating a code 6 or less). Since there are 6 slots that are 6 or less (1, 2, 3, 4, 5, 6), the probability is 1 - (6/12) = 1 - 0.5 = 0.5.",False
+GSM_053,GSM,canonical,"To solve this problem, we need to set up a system of equations based on the given information.
+
+Let's denote the number of teaspoons of sugar as S, the number of cups of water as W, and the number of tablespoons of milk as M.
+
+We know that the ratio of sugar to water is 63:21, so we can write the equation:
+
+S/W = 63/21
+
+We also know that the ratio of milk to water is 7:7, so we can write the equation:
+
+M/W = 7/7
+
+We are given that the total amount of sugar, water, and milk used is",False
+GSM_053,GSM,W3,"To solve this problem, we need to first find the amount of molten iron and zinc consumed. 
+
+Given that the ratio of copper to molten iron is 63:21, we can set up a proportion to find the amount of molten iron consumed:
+
+63/21 = 630/x
+
+Cross-multiplying, we get:
+63x = 630 * 21
+x = (630 * 21) / 63
+x = 210
+
+So, the amount of molten iron consumed is 210 liters.
+
+Now, we are given that 7 kilograms of zinc is used for every 7 liters of",False
+GSM_054,GSM,canonical,"To calculate the cost of a 70-minute call, we need to break it down into three parts: the first 10 minutes, the next 20 minutes, and the remaining 40 minutes.
+
+For the first 10 minutes, the cost is 10 * $0.6 = $6.
+
+For the next 20 minutes, the cost is 20 * $0.4 = $8.
+
+For the remaining 40 minutes, the cost is 40 / 2 * $0.1 = 20 * $0.1 = $2.
+
+The total cost is $6 + $8 + $2 = $",False
+GSM_054,GSM,W3,"To calculate the cost of a 70-unit processing cycle, we need to break it down into three parts: the first 10 minutes, the next 20 minutes, and the remaining 60 minutes.
+
+For the first 10 minutes, the cost is $0.6 per unit. 
+10 minutes / 1 minute = 10 units (since the rate is $0.6 per unit)
+Cost for the first 10 minutes = 10 units * $0.6/unit = $6
+
+For the next 20 minutes, the cost is $0.4 per unit.
+20 minutes / 1 minute = 20",False
+GSM_055,GSM,canonical,"First, let's calculate the total capacity of the tables and bowls. Each table can hold 24 almonds, and there are 11 tables, so the total capacity of the tables is 24 * 11 = 264 almonds. Each bowl can hold two times the capacity of a table, which is 24 * 2 = 48 almonds. Since there are 3 bowls, the total capacity of the bowls is 48 * 3 = 144 almonds.
+
+The total capacity of the tables and bowls is 264 + 144 = 408 almonds.
+
+Theo has 621 almonds initially. After eating a third of the almonds",False
+GSM_055,GSM,W3,"To find the number of data chips Alpha-7 won't be able to store, we need to first calculate the total number of data chips that can be stored in the servers and databases, and then subtract the number of data chips Alpha-7 has after deleting a third of them.
+
+Each server can contain 24 data chips, and there are 11 servers, so the total number of data chips that can be stored in the servers is 24 * 11 = 264.
+
+Each database can contain two times the number of data chips that a server can contain, so each database can contain 24 * 2 = 48 data",False
+GSM_056,GSM,canonical,"263 - 35 = 228 
+228 - 26 - 27 = 175 
+175 * 2 = 350 
+228 + 350 = 578 
+578 - 263 = 315",False
+GSM_056,GSM,W3,"## Step 1: Calculate the time spent so far
+The robots have already wasted 35 minutes to get a system update.
+
+## Step 2: Calculate the time spent to reach the junction and the data center
+It takes them 26 minutes to get to the junction and another 27 minutes to get to the data center. So, the total time spent to reach the data center is 26 + 27 = 53 minutes.
+
+## Step 3: Calculate the total time spent so far
+The total time spent so far is the sum of the time spent to get the system update and the time spent to reach the data",False
+GSM_057,GSM,canonical,"To find the percentage of puppies with spots, we need to calculate the total number of puppies and the number of puppies with spots.
+
+Umar's dog has 113 puppies, 17 of which have spots.
+Xena's dog has 47 puppies, 15 of which have spots.
+Sophia has 64 dogs, each having 10 puppies with spots, so the total number of puppies with spots from Sophia is 64 * 10 = 640.
+
+Total number of puppies = 113 + 47 + 64 * 10 = 113 + 47 + 640 = 800
+Total number of puppies with spots",False
+GSM_057,GSM,W3,"To find the total number of robot units with sensors, we need to add the number of robot units with sensors from each factory.
+
+Factory A has 17 robot units with sensors.
+Factory B has 15 robot units with sensors.
+Factory C has 64 assembly lines, each having 10 robot units with sensors, so it has 64 * 10 = 640 robot units with sensors.
+
+Total number of robot units with sensors = 17 + 15 + 640 = 672
+
+Total number of robot units = 113 + 47 + (64 * 10) = 113 + 47 + 640 =",False
+GSM_058,GSM,canonical,"To find the total cost, we need to calculate the cost of each item and then apply the 5% discount.
+
+Cost of colored pencils: 16 * ¥2.75 = ¥44
+Cost of crayons: 10 * ¥17.0 = ¥170
+Cost of bond paper: ¥20
+Cost of folders: 6 * ¥11 = ¥66
+
+Total cost before discount: ¥44 + ¥170 + ¥20 + ¥66 = ¥200
+
+5% discount on ¥200: 0.05 * ¥200 = ¥10
+
+Total cost after discount: ¥200 - ¥10 = ¥190",False
+GSM_058,GSM,W3,"First, calculate the total cost of each item:
+- Circuit boards: 16 * ¥2.75 = ¥44
+- Sensors: 10 * ¥17.0 = ¥170
+- Steel sheet: ¥20
+- Actuators: 6 * ¥11 = ¥66
+
+Then, calculate the total cost before discount: ¥44 + ¥170 + ¥20 + ¥66 = ¥200
+
+Apply the 5% discount: ¥200 * 0.05 = ¥10
+Subtract the discount from the total cost: ¥200 - ¥10 = ¥190
+
+190",False
+GSM_059,GSM,canonical,"Let's denote the number of forks in the package that Zahra bought as x.
+
+Initially, Zahra had x forks. Her husband gave her 9 more forks, so she had x + 9 forks.
+
+She used 11 forks, so she had x + 9 - 11 = x - 2 forks left.
+
+The guests brought 2 packs of forks, each having 14 inside them, so they brought 2 * 14 = 28 forks.
+
+In total, Zahra had x - 2 + 28 = x + 26 forks.
+
+When she set the table, she had 55 forks,",False
+GSM_059,GSM,W3,"Let's denote the number of screwdrivers in the package that Marcus bought as x.
+
+Marcus initially bought x screwdrivers. Then, her supervisor gave her 9 more, so she had x + 9 screwdrivers. After using 11 screwdrivers, she had x + 9 - 11 = x - 2 screwdrivers left.
+
+The technicians brought 2 packs of 14 screwdrivers each, so they brought 2 * 14 = 28 screwdrivers.
+
+After that, Marcus had a total of 55 screwdrivers. We can set up the equation:
+
+x - 2 + 28 = 55
+
+Combine",False
+GSM_060,GSM,canonical,"To find the number of students leaving early, we need to calculate the number of soccer players, the number of choir members or dancers, and then add the cheerleaders.
+
+First, let's find the number of soccer players:
+40% of 125 students are soccer players.
+0.4 * 125 = 50 soccer players
+
+Since half of the soccer players are absent for being sick, the number of soccer players leaving early is:
+50 / 2 = 25 soccer players
+
+Next, let's find the number of choir members or dancers:
+17% of the remaining students (125 - 50 = 75) are choir",False
+GSM_060,GSM,W3,"To find the number of workers leaving early, we need to calculate the number of welders, electricians or mechanics, and then add the supervisors.
+
+First, let's find the number of welders:
+40% of 125 workers are welders. 
+0.4 * 125 = 50 welders.
+
+Since half of the welders are absent due to injury, the number of welders leaving is:
+50 / 2 = 25 welders.
+
+Now, let's find the number of electricians or mechanics:
+17% of the remaining workers (125 - 50 = 75) are electricians or mechanics.",False
+GSM_061,GSM,canonical,"To find the total number of pizzas the family eats in a month, we need to first find their daily consumption and then multiply it by the number of days in a month (assuming a 30-day month for simplicity).
+
+The father eats 4 pizzas per day, and the wife eats 6 pizzas per day. Their combined consumption is 4 + 6 = 10 pizzas per day.
+
+The daughter eats one less than three-sixths of the number of pizzas they eat combined per day. Three-sixths of their combined consumption is (3/6) * 10 = 5 pizzas. One less than that is 5 -",False
+GSM_061,GSM,W3,"Let's denote the number of metal sheets processed by the primary machine as P, the secondary machine as S, and the auxiliary machine as A.
+
+Given:
+P = 4
+S = 6
+A = (3/6) * (P + S) - 1
+
+First, calculate the combined number of metal sheets processed by the primary and secondary machines:
+P + S = 4 + 6 = 10
+
+Now, calculate the number of metal sheets processed by the auxiliary machine:
+A = (3/6) * 10 - 1
+A = 5 - 1
+A = 4",False
+GSM_062,GSM,canonical,"To find the total cost, we need to calculate the brokerage fee, transfer fee, and the discounted price of the property.
+
+Brokerage fee = 3% of $600000 = 0.03 * $600000 = $18000
+Transfer fee = 12% of $600000 = 0.12 * $600000 = $72000
+
+Discounted price = $600000 - 20% of $600000 = $600000 - 0.2 * $600000 = $480000
+
+Total cost = $600000 + $18000 + $72000 = $708000
+
+The difference",False
+GSM_062,GSM,W3,"## Step 1: Calculate the base price after the 20% reduction
+The base price is $600000, and Captain Zara can get a 20% reduction on it. So, the reduced price is 600000 - (600000 * 0.20) = 600000 - 120000 = 480000.
+
+## Step 2: Calculate the docking fee
+The docking fee is 3% of the base price. So, the docking fee is 480000 * 0.03 = 14400.
+
+## Step 3: Calculate the transport fee
+The transport fee is 12%",False
+GSM_063,GSM,canonical,"To find the net proceeds, we need to calculate the registration fees, agent fees, and the remaining amount after paying the loan and closing costs.
+
+Registration fees = 2% of $220000 = 0.02 * $220000 = $4400
+Agent fees = 2% of $220000 = 0.02 * $220000 = $4400
+
+Total fees = Registration fees + Agent fees = $4400 + $4400 = $8800
+
+Remaining amount after paying fees = $220000 - $8800 = $211200
+
+Remaining amount after paying loan = $211200 - $180",False
+GSM_063,GSM,W3,"To find Captain Vega's net returns, we need to calculate the total expenses and subtract them from the selling price.
+
+1. Docking fees: 2% of $220000 = 0.02 * $220000 = $4400
+2. Broker fee: 2% of $220000 = 0.02 * $220000 = $4400
+3. Remaining lease balance: $180000
+4. Departure costs: $15000
+
+Total expenses = $4400 + $4400 + $180000 + $15000 = $221900
+
+Net returns = Selling price - Total expenses",False
+GSM_064,GSM,canonical,39,False
+GSM_064,GSM,W3,"Let's assume the number of hybrid cars is x. Since there are 1/3 the number of hybrid cars as electric cars, we can set up the equation:
+
+x = (1/3) * 39
+
+To find the number of hybrid cars, we can multiply 39 by 1/3:
+
+x = 13
+
+Now, we know there are 13 hybrid cars and 39 electric cars. The total number of vehicles is 13 + 39 = 52.
+
+To find the percentage of electric cars, we can divide the number of electric cars by the total number of vehicles and multiply by 100:",False
+CC_01,ALGO,canonical,"Count: 3
+Coins: 1, 1, 4",False
+CC_01,ALGO,W3,"Total: 3 Scoops: 1 g, 3 g, 2 g",False
+CC_02,ALGO,canonical,"Count: 2
+Coins: 6, 5",True
+CC_02,ALGO,W3,"Total: 3 Scoops: 6 g, 4 g, 1 g",False
+CC_03,ALGO,canonical,"Count: 3
+Coins: 7, 6, 0",False
+CC_03,ALGO,W3,"Total: 3 Scoops: 6 g, 6 g, 1 g",False
+CC_031,ALGO,canonical,"Count: 8
+Coins: 10, 10, 10, 10, 1, 1, 1, 1",False
+CC_031,ALGO,W3,"Count: 3
+stamps: 5, 5, 5",False
+CC_032,ALGO,canonical,"Count: 4
+Coins: 25, 25, 25, 10",False
+CC_032,ALGO,W3,"Count: 3
+stamps: 25, 25, 25",False
+CC_033,ALGO,canonical,"Count: 3
+Coins: 10, 1, 1",False
+CC_033,ALGO,W3,"Count: 3
+stamps: 10, 2, 1",False
+CC_034,ALGO,canonical,"Count: 3
+Coins: 100, 1, 1",True
+CC_034,ALGO,W3,"Count: 3
+stamps: 50, 10, 1",False
+CC_035,ALGO,canonical,"Count: 6
+Coins: 10, 10, 10, 10, 1, 1",False
+CC_035,ALGO,W3,"Count: 6
+stamps: 10, 10, 10, 10, 10, 1",False
+CC_036,ALGO,canonical,"Count: 4
+Coins: 10, 10, 10, 76",False
+CC_036,ALGO,W3,"Count: 3
+stamps: 5, 5, 5",False
+CC_037,ALGO,canonical,"Count: 3
+Coins: 100, 50, 10",False
+CC_037,ALGO,W3,"Count: 3
+stamps: 100, 100, 10",False
+CC_038,ALGO,canonical,"Count: 2
+Coins: 10, 10, 1, 1, 1, 1",False
+CC_038,ALGO,W3,"Count: 3
+stamps: 100, 100, 1",False
+CC_039,ALGO,canonical,"Count: 3
+Coins: 31, 41, 36",False
+CC_039,ALGO,W3,"Count: 3
+stamps: 53, 31, 24",False
+CC_04,ALGO,canonical,"Count: 3
+Coins: 10, 10, 7",False
+CC_04,ALGO,W3,"Total: 3 Scoops: 14 g, 10 g, 3 g.",False
+CC_040,ALGO,canonical,"Count: 3
+Coins: 11, 11, 8",False
+CC_040,ALGO,W3,"Count: 3
+stamps: 11, 11, 8",False
+CC_041,ALGO,canonical,"Count: 3
+Coins: 43, 43, 55",False
+CC_041,ALGO,W3,"Count: 4
+stamps: 43, 43, 23, 23, 32",False
+CC_042,ALGO,canonical,"Count: 3
+Coins: 13, 13, 8",False
+CC_042,ALGO,W3,"Count: 3
+stamps: 13, 13, 8",False
+CC_043,ALGO,canonical,"Count: 3
+Coins: 47, 47, 10",False
+CC_043,ALGO,W3,"Count: 3
+stamps: 13, 13, 13",False
+CC_044,ALGO,canonical,"Count: 4
+Coins: 29, 29, 29, 29",False
+CC_044,ALGO,W3,"Count: 4
+stamps: 29, 29, 29, 29",False
+CC_045,ALGO,canonical,"Count: 3
+Coins: 13, 13, 29",False
+CC_045,ALGO,W3,"Count: 3
+stamps: 29, 29, 6",False
+CC_05,ALGO,canonical,"Count: 3
+Coins: 6, 4, 4",False
+CC_05,ALGO,W3,"Total: 6 Scoops: 1 g, 4 g, 1 g, 7 g, 1 g, 1 g",False
+CC_06,ALGO,canonical,"Count: 3
+Coins: 8, 8, 10",False
+CC_06,ALGO,W3,"Total: 3 Scoops: 8 g, 8 g, 10 g.",False
+CC_07,ALGO,canonical,"Count: 3
+Coins: 4, 4, 4",False
+CC_07,ALGO,W3,"Total: 3 Scoops: 4 g, 4 g, 4 g",False
+CC_08,ALGO,canonical,"Count: 3
+Coins: 10, 10, 10",False
+CC_08,ALGO,W3,"Total: 6 Scoops: 1 g, 1 g, 1 g, 10 g, 10 g, 7 g",False
+CC_09,ALGO,canonical,"Count: 6
+Coins: 67, 67, 31, 31, 17, 7",False
+CC_09,ALGO,W3,"Total: 6 Scoops: 31, 31, 67, 67, 67, 67",False
+CC_10,ALGO,canonical,"Count: 4
+Coins: 197, 67, 31, 7",False
+CC_10,ALGO,W3,"Total: 4 Scoops: 197, 67, 1, 1",False
+SP_001,ALGO,canonical,"Path: 0 -> 5 -> 9 -> 10 -> 11, Cost: 30.",False
+SP_001,ALGO,W3,"Path: A -> B -> D -> H -> L, Cost: 15.",False
+SP_002,ALGO,canonical,"Path: 16 -> 12 -> 9 -> 19 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 34.",False
+SP_002,ALGO,W3,"Path: 16 -> 9 -> 18 -> 6 -> 5 -> 10 -> 15 -> 21 -> 11, Cost: 53.",False
+SP_003,ALGO,canonical,"Path: Safe House 11 -> Relay 18 -> Outpost 14 -> Junction 0 -> Crossing 15 -> Depot 5 -> Warehouse 12 -> Checkpoint 2 -> Overpass 3 -> Drop Point 9, Cost: 43.",False
+SP_003,ALGO,W3,"Path: 11 -> 18 -> 14 -> 0 -> 15 -> 5 -> 12 -> 2 -> 3 -> 9, Cost: 63.",False
+SP_004,ALGO,canonical,"Path: 0 -> 1 -> 5 -> 9, Cost: 8.",True
+SP_004,ALGO,W3,"Path: 0 -> 1 -> 5 -> 9, Cost: 17.",False
+SP_005,ALGO,canonical,"Path: 0 -> 1 -> 2 -> 6 -> 8 -> 10 -> 13 -> 14 -> 15, Cost: 53",False
+SP_005,ALGO,W3,"Path: 0 -> 8 -> 10 -> 12 -> 14 -> 15, Cost: 28 + 5 + 4 + 6 + 4 = 47.",False
+SP_019,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 6, Cost: 24",False
+SP_019,ALGO,W3,"Path: Berlin -> Frankfurt -> Munich -> Cologne, Cost: 39",False
+SP_020,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 5, Cost: 24",False
+SP_020,ALGO,W3,"Path: Rome -> Florence -> Venice -> Naples, Cost: 24.",False
+SP_021,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 8, Cost: 29",False
+SP_021,ALGO,W3,"Path: London -> Cambridge -> Edinburgh, Cost: 35",False
+SP_023,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 5, Cost: 13",False
+SP_023,ALGO,W3,"Path: Tokyo -> Kyoto -> Kobe, Cost: 10.",False
+SP_024,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 7, Cost: 13",False
+SP_024,ALGO,W3,"Path: London -> Reading -> Bristol -> Cardiff, Cost: 12",False
+SP_026,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 8, Cost: 13",False
+SP_026,ALGO,W3,"Path: Paris -> Lyon -> Nice -> Monaco, Cost: 15",False
+SP_027,ALGO,canonical,"Path: 0 -> 2 -> 1 -> 6, Cost: 8.",False
+SP_027,ALGO,W3,"Path: Tokyo -> Osaka -> Fukuoka, Cost: 4.",False
+SP_028,ALGO,canonical,"Path: 0 -> 2 -> 7, Cost: 8.",False
+SP_028,ALGO,W3,"Path: Tokyo -> Osaka -> Sendai, Cost: 4.",False
+SP_029,ALGO,canonical,"Path: 0 -> 2 -> 7, Cost: 13",False
+SP_029,ALGO,W3,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3.",True
+SP_030,ALGO,canonical,"Path: 0 -> 2 -> 7, Cost: 13",False
+SP_030,ALGO,W3,"Path: Berlin -> Dresden -> Bremen, Cost: 16",False
+SP_031,ALGO,canonical,"Path: 0 -> 2 -> 4 -> 8, Cost: 52",False
+SP_031,ALGO,W3,"Path: Paris -> Nice -> Strasbourg, Cost: 14.",False
+SP_032,ALGO,canonical,"Path: 0 -> 4 -> 5 -> 6 -> 7, Cost: 60",False
+SP_032,ALGO,W3,"Path: London -> Amsterdam -> Hamburg -> Berlin, Cost: 31.",False
+SP_033,ALGO,canonical,"Path: 0 -> 5 -> 6 -> 7, Cost: 58",False
+SP_033,ALGO,W3,"Path: Paris -> Bordeaux -> Toulouse -> Montpellier, Cost: 38.",False
+SP_034,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 7, Cost: 21",True
+SP_034,ALGO,W3,"Path: London -> Bristol -> Bath -> Birmingham, Cost: 31",False
+SP_035,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 6, Cost: 57",False
+SP_035,ALGO,W3,"Path: London -> Brussels -> Amsterdam -> Milan, Cost: 57",False
+SP_036,ALGO,canonical,"Path: 0 -> 2 -> 5 -> 7, Cost: 47",False
+SP_036,ALGO,W3,"Path: London -> Berlin -> Prague -> Madrid, Cost: 27.",False
+SP_037,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 6, Cost: 24",False
+SP_037,ALGO,W3,"Path: Madrid -> Toledo -> Segovia -> Leon, Cost: 30",False
+SP_038,ALGO,canonical,"Path: 0 -> 7 -> 8, Cost: 20",False
+SP_038,ALGO,W3,"Path: Berlin -> Frankfurt -> Budapest, Cost: 20",False
+SP_039,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 8, Cost: 29",False
+SP_039,ALGO,W3,"Path: London -> Brussels -> Lyon -> Rome, Cost: 24.",False
+SP_040,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 7, Cost: 29",False
+SP_040,ALGO,W3,"Path: London -> Amsterdam -> Berlin -> Prague, Cost: 18.",False
+SP_042,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 8, Cost: 13",False
+SP_042,ALGO,W3,"Path: Paris -> Lyon -> Nice -> Monaco, Cost: 12",False
+SP_044,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 6, Cost: 13",False
+SP_044,ALGO,W3,"Path: London -> Oxford -> Birmingham -> Edinburgh, Cost: 7.",False
+SP_045,ALGO,canonical,"Path: 0 -> 2 -> 1 -> 6, Cost: 2.",False
+SP_045,ALGO,W3,"Path: Berlin -> Prague -> Paris, Cost: 4.",False
+SP_046,ALGO,canonical,"Path: 0 -> 2 -> 7, Cost: 13",False
+SP_046,ALGO,W3,"Path: Paris -> Lyon -> Lille, Cost: 4.",False
+SP_047,ALGO,canonical,"Path: 0 -> 2 -> 1 -> 6, Cost: 2.",False
+SP_047,ALGO,W3,"Path: Paris -> Lyon -> Lille, Cost: 4.",False
+SP_048,ALGO,canonical,"Path: 0 -> 2 -> 7, Cost: 8.",False
+SP_048,ALGO,W3,"Path: London -> Berlin -> Paris -> Warsaw, Cost: 3.",True
+SP_049,ALGO,canonical,"Path: 0 -> 4 -> 6 -> 8, Cost: 30",False
+SP_049,ALGO,W3,"Path: Paris -> Geneva -> Milan -> Rome, Cost: 20.",False
+SP_050,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 5 -> 7, Cost: 34",False
+SP_050,ALGO,W3,"Path: Tokyo -> Nagoya -> Kobe -> Nara -> Sendai, Cost: 27",False
+SP_051,ALGO,canonical,"Path: 0 -> 2 -> 6 -> 7, Cost: 33.",False
+SP_051,ALGO,W3,"Path: London -> Brussels -> Milan -> Rome, Cost: 7.",False
+SP_052,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 8, Cost: 26.",False
+SP_052,ALGO,W3,"Path: London -> Brussels -> Amsterdam -> Rome, Cost: 28",False
+SP_053,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 5, Cost: 53",False
+SP_053,ALGO,W3,"Path: Berlin -> Prague -> Budapest -> Warsaw, Cost: 51",False
+SP_054,ALGO,canonical,"Path: 0 -> 2 -> 5 -> 7, Cost: 29",False
+SP_054,ALGO,W3,"Path: London -> Brussels -> Amsterdam -> Milan, Cost: 29.",False
+SP_055,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 5 -> 6, Cost: 24",False
+SP_055,ALGO,W3,"Path: London -> Brussels -> Amsterdam -> Prague -> Vienna, Cost: 58",False
+SP_056,ALGO,canonical,"Path: 0 -> 2 -> 4 -> 7, Cost: 50",False
+SP_056,ALGO,W3,"Path: Berlin -> Munich -> Zurich -> Rome, Cost: 50",False
+SP_057,ALGO,canonical,"Path: 0 -> 4 -> 5 -> 6, Cost: 51",False
+SP_057,ALGO,W3,"Path: London -> Dover -> Calais -> Berlin, Cost: 51.",False
+SP_058,ALGO,canonical,"Path: 0 -> 3 -> 5 -> 7, Cost: 40",False
+SP_058,ALGO,W3,"Path: London -> Birmingham -> Nottingham -> Sheffield, Cost: 20.",True
+SP_059,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 6 -> 7 -> 8, Cost: 58",False
+SP_059,ALGO,W3,"Path: London -> Oxford -> Reading -> Swindon -> Bath -> Cardiff, Cost: 52",False
+SP_060,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 5 -> 7 -> 8, Cost: 36",False
+SP_060,ALGO,W3,"Path: London -> Birmingham -> Leicester -> Nottingham -> Sheffield -> Manchester, Cost: 20.",False
+SP_061,ALGO,canonical,"Path: 0 -> 3 -> 4 -> 7, Cost: 52",False
+SP_061,ALGO,W3,"Path: London -> Brussels -> Amsterdam -> Warsaw, Cost: 52",False
+SP_062,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 6, Cost: 24",False
+SP_062,ALGO,W3,"Path: London -> Amsterdam -> Prague -> Rome, Cost: 18.",False
+SP_063,ALGO,canonical,"Path: 0 -> 6 -> 8, Cost: 17",False
+SP_063,ALGO,W3,"Path: London -> Birmingham -> Edinburgh, Cost: 22",False
+SP_064,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 6, Cost: 24",False
+SP_064,ALGO,W3,"Path: Berlin -> Munich -> Vienna -> Zagreb, Cost: 39",False
+SP_065,ALGO,canonical,"Path: 0 -> 3 -> 2 -> 6, Cost: 24 + 11 + 4 = 39",False
+SP_065,ALGO,W3,"Path: London -> Oxford -> Cambridge -> Edinburgh, Cost: 36",False
+SP_066,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 6, Cost: 13",False
+SP_066,ALGO,W3,"Path: Berlin -> Hamburg -> Frankfurt -> Dresden, Cost: 7.",False
+SP_068,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 8, Cost: 13",False
+SP_068,ALGO,W3,"Path: London -> Oxford -> Edinburgh, Cost: 6.",False
+SP_069,ALGO,canonical,"Path: 0 -> 2 -> 3 -> 7, Cost: 13",False
+SP_069,ALGO,W3,"Path: London -> Brussels -> Amsterdam -> Munich, Cost: 13",False
+SP_070,ALGO,canonical,"Path: 0 -> 2 -> 1 -> 6, Cost: 2.",False
+SP_070,ALGO,W3,"Path: London -> Berlin -> Paris -> Prague, Cost: 1.",False
+SP_071,ALGO,canonical,"Path: 0 -> 2 -> 8, Cost: 13.",False
+SP_071,ALGO,W3,"Path: Berlin -> Prague -> Warsaw, Cost: 4.",False
+SP_072,ALGO,canonical,"Path: 0 -> 2 -> 1 -> 6, Cost: 8.",False
+SP_072,ALGO,W3,"Path: Paris -> Lyon -> Strasbourg, Cost: 4.",False
+SP_073,ALGO,canonical,"Path: 0 -> 2 -> 7, Cost: 13",False
+SP_073,ALGO,W3,"Path: Berlin -> Prague -> Paris, Cost: 4.",False
+WIS_001,ALGO,canonical,"Selected: 0, 2, 4, 6, 8, Total: 28",False
+WIS_001,ALGO,W3,"Selected: {0, 2, 4, 6, 9}, Total: $28K.",False
+WIS_002,ALGO,canonical,"Selected: {0, 1, 2, 5, 7, 8, 9, 11}, Total: 62",False
+WIS_002,ALGO,W3,"Selected: {0, 2, 5, 7, 8, 11}, Total: 42.",False
+WIS_003,ALGO,canonical,"Selected: {0, 2, 4, 5, 8, 12}, Total: 49",False
+WIS_003,ALGO,W3,"Selected: {0, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13}, Total: 80",False
+WIS_004,ALGO,canonical,"Selected: {0, 1, 3, 4, 8, 12, 13}, Total: 37",False
+WIS_004,ALGO,W3,"Selected: {0, 1, 3, 4, 5, 8, 9, 12, 13}, Total: 46",False
+WIS_005,ALGO,canonical,"Selected: {2, 8, 10, 13, 15}, Total: 58",False
+WIS_005,ALGO,W3,"Selected: {0, 2, 3, 5, 7, 10, 11, 14, 15}, Total: 78",False
+WIS_006,ALGO,canonical,"Selected: 0, 1, 3, 6, Total: 29",False
+WIS_006,ALGO,W3,"Selected: Opening Keynote, Awards Ceremony, Total: 16.",False
+WIS_007,ALGO,canonical,"Selected: 0, 2, 5, Total: 34",False
+WIS_007,ALGO,W3,"Selected: Opening Keynote, Closing Remarks, Total: 26.",False
+WIS_009,ALGO,canonical,"Selected: 0, 1, 4, 5, 6, Total: 44",False
+WIS_009,ALGO,W3,"Selected: Opening Keynote, Lunch Networking, Evening Reception, Total: 31.",False
+WIS_010,ALGO,canonical,"Selected: 0, 2, 5, 6, Total: 38",False
+WIS_010,ALGO,W3,"Selected: Morning Keynote, Industry Awards, Total: 26.",False
+WIS_012,ALGO,canonical,"Selected: 0, 1, 3, 4, 5, 7, Total: 55",False
+WIS_012,ALGO,W3,"Selected: Opening Keynote, Evening Keynote, Total: 23.",False
+WIS_013,ALGO,canonical,"Selected: 4, Total: 43",False
+WIS_013,ALGO,W3,"Selected: Full Day Summit, Total: 43.",False
+WIS_014,ALGO,canonical,"Selected: 0, 3, 5, Total: 20",False
+WIS_014,ALGO,W3,"Selected: Full Day Bootcamp, Networking Break, Closing Remarks, Total: 60.",False
+WIS_015,ALGO,canonical,"Selected: 4, Total: 44",False
+WIS_015,ALGO,W3,"Selected: Full Day Seminar, Networking Break, Closing Remarks, Total: 57.",False
+WIS_016,ALGO,canonical,"Selected: 4, Total: 44",False
+WIS_016,ALGO,W3,"Selected: Full Day Seminar, Panel Discussion, Closing Remarks, Total: 44 + 9 + 7 = 60.",False
+WIS_017,ALGO,canonical,"Selected: 4, 5, Total: 57",True
+WIS_017,ALGO,W3,"Selected: AI Ethics Symposium, Future Tech Showcase, Total: 57.",True
+WIS_018,ALGO,canonical,"Selected: 4, 5, Total: 55",True
+WIS_018,ALGO,W3,"Selected: Product Launch, Industry Summit, Total: 55.",True
+WIS_019,ALGO,canonical,"Selected: 4, 5, Total: 58",True
+WIS_019,ALGO,W3,"Selected: Workshop Session, Tech Demo, Total: 58.",True
+WIS_020,ALGO,canonical,"Selected: 4, 5, Total: 59",True
+WIS_020,ALGO,W3,"Selected: Industry Showcase, Networking Event, Total: 59.",True
+WIS_021,ALGO,canonical,"Selected: 3, 5, 8, Total: 39",False
+WIS_021,ALGO,W3,"Selected: Closing Keynote, Morning Tutorial, Product Launch, Evening Mixer, Night Reception, Total: 59",False
+WIS_022,ALGO,canonical,"Selected: {0, 2, 4, 6}, Total: 64",False
+WIS_022,ALGO,W3,"Selected: Opening Ceremony, Demo Session, Afternoon Workshop, Evening Keynote, Total: 65",False
+WIS_023,ALGO,canonical,"Selected: {3}, Total: 39",False
+WIS_023,ALGO,W3,"Selected: Full Day Workshop, Total: 39.",False
+WIS_024,ALGO,canonical,"Selected: 4, Total: 40",False
+WIS_024,ALGO,W3,"Selected: Full Day Workshop, Total: 40.",False
+WIS_025,ALGO,canonical,"Selected: 3, Total: 37",False
+WIS_025,ALGO,W3,"Selected: Full Day Workshop, Closing Remarks, Total: 44.",True
+WIS_026,ALGO,canonical,"Selected: 4, Total: 46",False
+WIS_026,ALGO,W3,"Selected: Full Day Seminar, Total: 46.",False
+WIS_027,ALGO,canonical,"Selected: 5, Total: 29",False
+WIS_027,ALGO,W3,"Selected: Networking Event, Closing Remarks, Total: 40.",False
+WIS_028,ALGO,canonical,"Selected: 3, Total: 37",False
+WIS_028,ALGO,W3,"Selected: Full Day Workshop, Total: 37.",False
+WIS_029,ALGO,canonical,"Selected: 4, Total: 41",False
+WIS_029,ALGO,W3,"Selected: Full Day Bootcamp, Networking Break, Closing Remarks, Total: 54.",False
+WIS_030,ALGO,canonical,"Selected: 2, 5, 7, Total: 42",False
+WIS_030,ALGO,W3,"Selected: Panel Discussion, Product Launch, Closing Ceremony, Total: 45",False
+WIS_031,ALGO,canonical,"Selected: 2, 5, 7, Total: 33",False
+WIS_031,ALGO,W3,"Selected: Marketing Workshop, Product Demo, Industry Update, Closing Remarks, Total: 28.",False
+WIS_032,ALGO,canonical,"Selected: 0, 2, 5, Total: 34",False
+WIS_032,ALGO,W3,"Selected: Morning Keynote, AI Seminar, Closing Address, Total: 30.",False
+BW_001,BW,canonical,"1. pick-up l
+2. stack l h
+3. pick-up h
+4. stack h b
+5. pick-up b
+6. stack b d
+7. pick-up d
+8. stack d g
+9. pick-up g
+10. stack g i
+11. pick-up i
+12. stack i f
+13. pick-up f
+14. stack f j",False
+BW_001,BW,W3,"1. select James
+2. place James under Fiona
+3. select Fiona
+4. place Fiona under Ian
+5. select Ian
+6. place Ian under Grace
+7. select Grace
+8. place Grace under Derek
+9. select Derek
+10. place Derek under Ben
+11. select Ben
+12. place Ben under Hannah
+13. select Hannah
+14. place Hannah under Leo",False
+BW_002,BW,canonical,"1. pick-up j
+2. stack j g
+3. pick-up g
+4. stack g a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b k
+9. pick-up k
+10. stack k h
+11. pick-up h
+12. stack h i",False
+BW_002,BW,W3,"1. select Jake
+2. place Jake under Grace
+3. select Grace
+4. place Grace under Alice
+5. select Alice
+6. place Alice under Bob
+7. select Bob
+8. place Bob under Kevin
+9. select Kevin
+10. place Kevin under Henry
+11. select Henry
+12. place Henry under Ivan",True
+BW_010,BW,canonical,"1. pick-up d
+2. stack d e
+3. pick-up e
+4. stack e a
+5. pick-up a
+6. stack a b
+7. pick-up b
+8. stack b f
+9. pick-up f
+10. stack f d",False
+BW_010,BW,W3,"1. select Diana
+2. place Diana under Ethan
+3. select Ethan
+4. place Ethan under Alice
+5. select Alice
+6. place Alice under Brian
+7. select Brian
+8. place Brian under Felix",False
+BW_011,BW,canonical,"1. pick-up c
+2. stack c k
+3. pick-up k
+4. stack k g
+5. pick-up g
+6. stack g a
+7. pick-up a
+8. stack a l
+9. pick-up l
+10. stack l j
+11. pick-up j
+12. stack j e
+13. pick-up e
+14. stack e h
+15. pick-up h
+16. stack h i
+17. pick-up i
+18. stack i b",False
+BW_011,BW,W3,"1. select Carol
+2. place Carol under Kevin
+3. select Kevin
+4. place Kevin under George
+5. select George
+6. place George under Amy
+7. select Amy
+8. place Amy under Laura
+9. select Laura
+10. place Laura under Jack
+11. select Jack
+12. place Jack under Edward
+13. select Edward
+14. place Edward under Helen
+15. select Helen
+16. place Helen under Ivan
+17. select Ivan
+18. place Ivan under Ben",False
+BW_014,BW,canonical,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e g
+5. put-down e",False
+BW_014,BW,W3,"1. select Lisa
+2. place Lisa under Eve
+3. select Eve
+4. place Eve under Grace
+5. select Eve
+6. remove Eve from Grace",False
+BW_022,BW,canonical,"1. pick-up g
+2. stack g c
+3. pick-up c
+4. stack c b
+5. pick-up b
+6. stack b k
+7. pick-up k
+8. stack k f
+9. pick-up f
+10. stack f g",False
+BW_022,BW,W3,"1. select Grace
+2. place Grace under Carol
+3. select Carol
+4. place Carol under Bob
+5. select Bob
+6. place Bob under Kevin
+7. select Kevin
+8. place Kevin under Frank",True
+BW_080,BW,canonical,"1. pick-up l
+2. stack l c
+3. pick-up c
+4. stack c i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e j
+9. pick-up j
+10. stack j f
+11. pick-up f
+12. stack f c
+13. unstack l c
+14. unstack c i
+15. unstack i e
+16. unstack e j
+17. unstack j f
+18. put-down l
+19. put-down c
+20. put-down i
+21. put-down e
+22. put-down j
+23. put-down f",False
+BW_080,BW,W3,"1. select Laura
+2. place Laura under Clara
+3. select Clara
+4. place Clara under Ivan
+5. select Ivan
+6. place Ivan under Ethan
+7. select Ethan
+8. place Ethan under Jake
+9. select Jake
+10. place Jake under Felix
+11. select Felix",False
+BW_120,BW,canonical,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j g
+5. pick-up g
+6. stack g f
+7. pick-up f
+8. stack f c
+9. unstack c j
+10. unstack j g
+11. unstack g f",False
+BW_120,BW,W3,"1. select Clara
+2. place Clara under Jake
+3. select Jake
+4. place Jake under Grace
+5. select Grace
+6. place Grace under Felix
+7. select Grace
+8. remove Grace from Felix",False
+BW_137,BW,canonical,"1. pick-up d
+2. stack d a
+3. pick-up a
+4. stack a b
+5. pick-up b
+6. stack b j
+7. pick-up j
+8. stack j e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l h
+13. pick-up h
+14. stack h c
+15. pick-up c
+16. stack c f
+17. pick-up f
+18. stack f g
+19. pick-up g
+20. stack g i",False
+BW_137,BW,W3,"1. select Dana
+2. place Dana under Aaron
+3. select Aaron
+4. place Aaron under Brian
+5. select Brian
+6. place Brian under Julia
+7. select Julia
+8. place Julia under Ethan
+9. select Ethan
+10. place Ethan under Lisa
+11. select Lisa
+12. place Lisa under Harry
+13. select Harry
+14. place Harry under Clara
+15. select Clara
+16. place Clara under Frank
+17. select Frank
+18. place Frank under Gloria
+19. select Gloria
+20. place Gloria under Ivan",False
+BW_155,BW,canonical,"1. pick-up i
+2. stack i f
+3. pick-up f
+4. stack f e
+5. pick-up e
+6. stack e j
+7. pick-up j
+8. stack j h",False
+BW_155,BW,W3,"1. select Ivan
+2. place Ivan under Frank
+3. select Frank
+4. place Frank under Eve
+5. select Eve
+6. place Eve under Jake
+7. select Jake
+8. place Jake under Henry",False
+BW_172,BW,canonical,"1. pick-up i
+2. stack i l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a j
+15. pick-up j
+16. stack j h
+17. pick-up h
+18. stack h f
+19. pick-up f
+20. stack f k",False
+BW_172,BW,W3,"1. select Ivan
+2. place Ivan under Laura
+3. select Laura
+4. place Laura under Gary
+5. select Gary
+6. place Gary under Ethan
+7. select Ethan
+8. place Ethan under Dana
+9. select Dana
+10. place Dana under Ben
+11. select Ben
+12. place Ben under Amy
+13. select Amy
+14. place Amy under Jake
+15. select Jake
+16. place Jake under Helen
+17. select Helen
+18. place Helen under Felix
+19. select Felix
+20. place Felix under Karen",False
+BW_203,BW,canonical,"1. pick-up k
+2. stack k f
+3. pick-up f
+4. stack f j
+5. pick-up j
+6. stack j h
+7. pick-up h
+8. stack h f
+9. unstack k f
+10. put-down k
+11. unstack f j
+12. put-down f
+13. unstack j h
+14. put-down j
+15. unstack h f
+16. put-down h",False
+BW_203,BW,W3,"1. select Kevin
+2. place Kevin under Frank
+3. select Frank
+4. place Frank under Jake
+5. select Jake
+6. place Jake under Henry
+7. select Jake
+8. remove Jake from Henry",False
+BW_227,BW,canonical,"1. pick-up f
+2. stack f l
+3. pick-up l
+4. stack l g
+5. pick-up g
+6. stack g d
+7. pick-up d
+8. stack d i
+9. pick-up i
+10. stack i j
+11. pick-up j
+12. stack j c
+13. pick-up c
+14. stack c k
+15. pick-up k
+16. stack k a",False
+BW_227,BW,W3,"1. select Felix
+2. place Felix under Laura
+3. select Laura
+4. place Laura under George
+5. select George
+6. place George under Derek
+7. select Derek
+8. place Derek under Ian
+9. select Ian
+10. place Ian under Jack
+11. select Jack
+12. place Jack under Clara
+13. select Clara
+14. place Clara under Kevin
+15. select Kevin
+16. place Kevin under Amy",False
+BW_282,BW,canonical,"1. pick-up g
+2. stack g h
+3. pick-up h
+4. stack h c
+5. pick-up c
+6. stack c i
+7. pick-up i
+8. stack i b",False
+BW_282,BW,W3,"1. select Grace
+2. place Grace under Henry
+3. select Henry
+4. place Henry under Carol
+5. select Carol
+6. place Carol under Ivan
+7. select Ivan
+8. place Ivan under Bob",True
+BW_310,BW,canonical,"1. pick-up g
+2. stack g j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a f
+7. pick-up f
+8. stack f b
+9. pick-up b
+10. stack b d
+11. pick-up d
+12. stack d a
+13. unstack a f
+14. pick-up f
+15. stack f j
+16. unstack j a
+17. pick-up a
+18. stack a g
+19. unstack g j
+20. put-down g
+21. unstack j a
+22. put-down j
+23. unstack a f
+24. put-down a
+25. unstack f b
+26. put-down f
+27. unstack b d
+28. put-down b
+29. unstack d a
+30. put-down d",False
+BW_310,BW,W3,"1. select Grace
+2. place Grace under Jake
+3. select Jake
+4. place Jake under Alice
+5. select Alice
+6. place Alice under Frank
+7. select Frank
+8. place Frank under Bob
+9. select Bob
+10. place Bob under Diana",True
+BW_331,BW,canonical,"1. pick-up h
+2. stack h l
+3. pick-up j
+4. stack j l
+5. put-down j
+6. pick-up j
+7. stack j h",False
+BW_331,BW,W3,"1. select Henry
+2. place Henry under Jake
+3. select Jake
+4. place Jake under Lisa
+5. select Jake
+6. remove Jake from Lisa",False
+BW_350,BW,canonical,"1. pick-up f
+2. stack f e
+3. pick-up e
+4. stack e i
+5. pick-up i
+6. stack i j
+7. pick-up j
+8. stack j k
+9. pick-up k
+10. stack k a
+11. pick-up a
+12. stack a g
+13. pick-up g
+14. stack g b
+15. pick-up b
+16. stack b l
+17. pick-up l
+18. stack l d",False
+BW_350,BW,W3,"1. select Frank
+2. place Frank under Eve
+3. select Eve
+4. place Eve under Ivan
+5. select Ivan
+6. place Ivan under Jake
+7. select Jake
+8. place Jake under Kevin
+9. select Kevin
+10. place Kevin under Alice
+11. select Alice
+12. place Alice under Grace
+13. select Grace
+14. place Grace under Bob
+15. select Bob
+16. place Bob under Lisa
+17. select Lisa
+18. place Lisa under Diana",True
+BW_408,BW,canonical,"1. pick-up a
+2. stack a l
+3. pick-up l
+4. stack l h
+5. pick-up h
+6. stack h d
+7. pick-up d
+8. stack d c
+9. pick-up c
+10. stack c g
+11. pick-up g
+12. stack g j
+13. pick-up j
+14. stack j b",False
+BW_408,BW,W3,"1. select Alice
+2. place Alice under Lisa
+3. select Lisa
+4. place Lisa under Henry
+5. select Henry
+6. place Henry under Diana
+7. select Diana
+8. place Diana under Carol
+9. select Carol
+10. place Carol under Grace
+11. select Grace
+12. place Grace under Jake
+13. select Jake
+14. place Jake under Bob",True
+BW_467,BW,canonical,"1. pick-up g
+2. stack g i
+3. pick-up i
+4. stack i l
+5. pick-up l
+6. stack l j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a f
+11. pick-up f
+12. stack f h",False
+BW_467,BW,W3,"1. select Gloria
+2. place Gloria under Ian
+3. select Ian
+4. place Ian under Lisa
+5. select Lisa
+6. place Lisa under Jake
+7. select Jake
+8. place Jake under Amy
+9. select Amy
+10. place Amy under Felix
+11. select Felix
+12. place Felix under Hannah",False
+BW_495,BW,canonical,"1. pick-up c
+2. stack c l
+3. pick-up l
+4. stack l i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e h",False
+BW_495,BW,W3,"1. select Carol
+2. place Carol under Lisa
+3. select Lisa
+4. place Lisa under Ivan
+5. select Ivan
+6. place Ivan under Eve
+7. select Eve
+8. place Eve under Henry",True
+BW_496,BW,canonical,"1. pick-up a
+2. stack a l
+3. pick-up l
+4. stack l h
+5. pick-up h
+6. stack h j
+7. pick-up j
+8. stack j a
+9. pick-up a
+10. stack a e
+11. pick-up e
+12. stack e l
+13. pick-up l
+14. stack l h
+15. pick-up h
+16. stack h a
+17. pick-up a
+18. stack a g
+19. pick-up g
+20. stack g e
+21. pick-up e
+22. stack e k
+23. pick-up k
+24. stack k g
+25. pick-up g
+26. stack g l
+27. pick-up l
+28. stack l a
+29. pick-up a
+30. stack a d
+31. pick-up d
+32. stack d c
+33. pick-up c
+34. stack c f
+35. pick-up f
+36. stack f i
+37. pick-up i
+38. stack i c
+39. pick-up c
+40. stack c d
+41. pick-up d
+42. stack d l
+43. pick-up l
+44. stack l k
+45. pick-up k
+46. stack k g
+47. pick-up g
+48. stack g e
+49. pick-up e
+50. stack e a
+51. pick-up a
+52. stack a h
+53. pick-up h
+54. stack h j
+55. pick-up j
+56. stack j l
+57. pick-up l
+58. stack l i
+59. pick-up i
+60. stack i f
+61. pick-up f
+62. stack f c
+63. pick-up c
+64. stack c d
+65. pick-up d
+66. stack d k
+67. pick-up k
+68. stack k g
+69. pick-up g
+70. stack g e
+71. pick-up e
+72. stack e a
+73. pick-up a
+74. stack a l
+75. pick-up l
+76. stack l h
+77. pick-up h
+78. stack h j
+79. pick-up j
+80. stack j i
+81. pick-up i
+82. stack i f
+83. pick-up f
+84. stack f c
+85. pick-up c
+86.",False
+BW_496,BW,W3,"1. recruit James
+2. promote_over James Henry
+3. promote_over Henry Laura
+4. promote_over Laura Alice
+5. promote_over Alice Emma
+6. promote_over Emma Grace
+7. promote_over Grace Kevin
+8. promote_over Kevin David
+9. promote_over David Carol
+10. promote_over Carol Frank
+11. promote_over Frank Isabel
+12. reassign_from James Alice
+13. reassign_from Henry Laura
+14. reassign_from Laura Alice
+15. reassign_from Alice Emma
+16. reassign_from Emma Grace
+17. reassign_from Grace Kevin
+18. reassign_from Kevin David
+19. reassign_from David Carol
+20. reassign_from Carol Frank
+21. reassign_from Frank Isabel
+22. recruit Alice
+23. promote_over Alice James
+24. reassign_from James Henry",False
+BW_497,BW,canonical,"1. pick-up l
+2. unstack l e
+3. pick-up e
+4. stack e c
+5. put-down l
+6. stack l e",False
+BW_497,BW,W3,"1. retrieve Literature
+2. place_on Literature Cookbook
+3. retrieve Encyclopedia
+4. place_on Encyclopedia Cookbook
+5. place_on Encyclopedia Literature",False
+BW_498,BW,canonical,"1. pick-up a
+2. stack a g
+3. pick-up g
+4. unstack a g
+5. pick-up l
+6. stack l a
+7. pick-up a
+8. unstack l a
+9. pick-up d
+10. stack d l
+11. pick-up l
+12. unstack d l
+13. pick-up f
+14. stack f d
+15. pick-up d
+16. unstack f d
+17. pick-up b
+18. stack b f
+19. pick-up f
+20. unstack b f
+21. pick-up c
+22. stack c b
+23. pick-up b
+24. unstack c b
+25. pick-up e
+26. stack e c
+27. pick-up c
+28. unstack e c
+29. pick-up j
+30. stack j e
+31. pick-up e
+32. unstack j e
+33. pick-up k
+34. stack k j
+35. pick-up j
+36. unstack k j",False
+BW_498,BW,W3,"1. hire Alice
+2. hire Grace
+3. promote_above Alice Grace
+4. hire Liam
+5. promote_above Alice Liam
+6. hire David
+7. promote_above Alice David
+8. hire Frank
+9. promote_above Alice Frank
+10. hire Bob
+11. promote_above Alice Bob
+12. hire Carol
+13. promote_above Alice Carol
+14. hire Emma
+15. promote_above Alice Emma
+16. hire Jack
+17. promote_above Alice Jack
+18. promote_above Kate Jack",False
+BW_499,BW,canonical,"1. pick-up l
+2. stack l e
+3. pick-up e
+4. stack e c
+5. pick-up c
+6. stack c a
+7. pick-up a
+8. stack a j",False
+BW_499,BW,W3,"1. recruit John
+2. promote John Alice
+3. recruit Alice
+4. promote Alice Carol
+5. recruit Carol
+6. promote Carol Emma
+7. recruit Emma
+8. promote Emma Laura
+9. dismiss Emma
+10. demote Emma Carol
+11. demote Carol Alice
+12. demote Alice John",False
+BW_500,BW,canonical,"1. pick-up a
+2. stack a g
+3. pick-up g
+4. stack g c
+5. pick-up c
+6. stack c b
+7. pick-up b
+8. stack b l
+9. pick-up l
+10. stack l c
+11. pick-up c
+12. stack c b
+13. pick-up b
+14. stack b a
+15. pick-up a
+16. stack a g
+17. pick-up g
+18. stack g c
+19. pick-up c
+20. stack c d
+21. pick-up d
+22. stack d a
+23. pick-up a
+24. stack a g
+25. pick-up g
+26. stack g c
+27. pick-up c
+28. stack c k
+29. pick-up k
+30. stack k d
+31. pick-up d
+32. stack d a
+33. pick-up a
+34. stack a g
+35. pick-up g
+36. stack g c
+37. pick-up c
+38. stack c e
+39. pick-up e
+40. stack e k",False
+BW_500,BW,W3,"1. recruit Alice
+2. recruit David
+3. promote David Alice
+4. recruit Kevin
+5. promote Kevin David
+6. recruit Emily
+7. promote Emily Kevin
+8. dismiss Kevin
+9. promote David Alice
+10. recruit George
+11. promote George David
+12. dismiss David
+13. promote Alice George
+14. recruit Carol
+15. promote Carol Alice
+16. dismiss George
+17. promote Alice Carol
+18. recruit Bob
+19. promote Bob Carol
+20. dismiss Carol
+21. promote Alice Bob
+22. recruit Laura
+23. promote Laura Bob
+24. dismiss Bob
+25. promote Alice Laura",False
+BW_501,BW,canonical,"1. pick-up a
+2. stack a k
+3. pick-up k
+4. stack k i
+5. pick-up i
+6. stack i c
+7. pick-up c
+8. stack c k
+9. pick-up k
+10. unstack k i
+11. pick-up i
+12. stack i a
+13. pick-up a
+14. unstack a k
+15. pick-up k
+16. unstack k i
+17. pick-up i
+18. unstack i c
+19. pick-up c
+20. unstack c k
+21. pick-up k
+22. unstack k a
+23. pick-up a
+24. unstack a e
+25. pick-up e
+26. unstack e g
+27. pick-up g
+28. unstack g j
+29. pick-up j
+30. unstack j d
+31. pick-up d
+32. stack d j
+33. pick-up j
+34. stack j g
+35. pick-up g
+36. stack g e
+37. pick-up e
+38. stack e a
+39. pick-up a
+40. stack a k
+41. pick-up k
+42. stack k i
+43. pick-up i
+44. stack i c
+45. pick-up c
+46. stack c k
+47. pick-up k
+48. unstack k i
+49. pick-up i
+50. stack i a
+51. pick-up a
+52. unstack a k
+53. pick-up k
+54. unstack k i
+55. pick-up i
+56. unstack i c
+57. pick-up c
+58. unstack c k
+59. pick-up k
+60. unstack k a
+61. pick-up a
+62. unstack a e
+63. pick-up e
+64. unstack e g
+65. pick-up g
+66. unstack g j
+67. pick-up j
+68. unstack j d
+69. pick-up d
+70. stack d j
+71. pick-up j
+72. stack j g
+73. pick-up g
+74. stack g e
+75. pick-up e
+76. stack e a
+77. pick-up a
+78. stack a k
+79. pick-up k
+80. stack k i
+81. pick-up i
+82. stack i c",False
+BW_501,BW,W3,"1. recruit Alice
+2. recruit Carol
+3. promote Carol Alice
+4. recruit Isabella
+5. promote Isabella Carol
+6. recruit Kevin
+7. promote Kevin Isabella
+8. recruit David
+9. promote David Kevin
+10. recruit George
+11. promote George David
+12. recruit James
+13. promote James George
+14. recruit Emma
+15. promote Emma James
+16. promote Emma Alice",False
+BW_502,BW,canonical,"1. pick-up d
+2. stack d h
+3. pick-up h
+4. stack h i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e d",False
+BW_502,BW,W3,"1. recruit Diana
+2. promote Diana Henry
+3. recruit Henry
+4. promote Henry Isabella
+5. recruit Isabella
+6. promote Isabella Edward
+7. recruit Edward
+8. promote Edward Diana
+9. demote Diana Henry
+10. demote Henry Isabella
+11. demote Isabella Edward
+12. demote Edward Diana",False
+BW_503,BW,canonical,"1. pick-up a
+2. stack a g
+3. pick-up g
+4. stack g a
+5. unstack a g
+6. pick-up c
+7. stack c a
+8. unstack a g
+9. pick-up g
+10. stack g c
+11. unstack c a
+12. pick-up c
+13. stack c a
+14. unstack a g
+15. pick-up g
+16. stack g c
+17. unstack c a
+18. pick-up a
+19. stack a c
+20. unstack c g
+21. pick-up g
+22. stack g a
+23. unstack a c
+24. pick-up c
+25. stack c a
+26. unstack a g
+27. pick-up g
+28. stack g c
+29. unstack c a
+30. pick-up a
+31. stack a c
+32. unstack c g
+33. pick-up g
+34. stack g a
+35. unstack a c
+36. pick-up c
+37. stack c a
+38. unstack a g
+39. pick-up g
+40. stack g c
+41. unstack c a
+42. pick-up a
+43. stack a c
+44. unstack c g
+45. pick-up g
+46. stack g a
+47. unstack a c
+48. pick-up c
+49. stack c a
+50. unstack a g
+51. pick-up g
+52. stack g c
+53. unstack c a
+54. pick-up a
+55. stack a c
+56. unstack c g
+57. pick-up g
+58. stack g a
+59. unstack a c
+60. pick-up c
+61. stack c a
+62. unstack a g
+63. pick-up g
+64. stack g c
+65. unstack c a
+66. pick-up a
+67. stack a c
+68. unstack c g
+69. pick-up g
+70. stack g a
+71. unstack a c
+72. pick-up c
+73. stack c a
+74. unstack a g
+75. pick-up g
+76. stack g c
+77. unstack c a
+78. pick-up a
+79. stack a c
+80. unstack c g
+81. pick-up g",False
+BW_503,BW,W3,"1. recruit Alice
+2. recruit Bob
+3. assign_to_base Alice
+4. recruit Carol
+5. assign_to_base Carol
+6. recruit David
+7. assign_to_base David
+8. recruit Frank
+9. assign_to_base Frank
+10. recruit Grace
+11. assign_to_base Grace
+12. recruit Henry
+13. assign_to_base Henry
+14. recruit Irene
+15. assign_to_base Irene
+16. recruit James
+17. assign_to_base James
+18. recruit Karen
+19. assign_to_base Karen
+20. recruit Larry
+21. assign_to_base Larry
+22. recruit Emma
+23. assign_to_base Emma
+24. recruit Bob
+25. reassign_from Bob Emma
+26. promote_over Emma Bob
+27. recruit Bob
+28. reassign_from Bob Emma
+29. promote_over Emma Bob
+30. reassign_from Bob Emma
+31. promote_over Emma Bob
+32. reassign_from Bob Emma
+33. promote_over Emma Bob
+34. reassign_from Bob Emma
+35. promote_over Emma Bob
+36. reassign_from Bob Emma
+37. promote_over Emma Bob
+38. reassign_from Bob Emma
+39. promote_over Emma Bob
+40. reassign_from Bob Emma
+41. promote_over Emma Bob
+42. reassign_from Bob Emma
+43. promote_over Emma Bob
+44. reassign_from Bob Emma
+45. promote_over Emma Bob
+46. reassign_from Bob Emma
+47. promote_over Emma Bob
+48. reassign_from Bob Emma
+49. promote_over Emma Bob
+50. reassign_from Bob Emma
+51. promote_over Emma Bob
+52. reassign_from Bob Emma
+53. promote_over Emma Bob
+54. reassign_from Bob Emma
+55. promote_over Emma Bob
+56. reassign_from Bob Emma
+57. promote_over Emma Bob
+58. reassign_from Bob Emma
+59. promote_over Emma Bob
+60. reassign_from Bob Emma
+61. promote_over Emma Bob
+62. reassign_from Bob Emma
+63. promote_over Emma Bob
+64. reassign_from Bob Emma
+65. promote_over Emma Bob
+66. reassign_from Bob Emma
+67. promote_over Emma Bob
+68. reassign_from Bob Emma
+69. promote_over Emma Bob
+70. reassign_from Bob Emma
+71. promote_over Emma Bob
+72. reassign_from Bob Emma
+73. promote_over Emma Bob
+74. reassign_from",False
+BW_504,BW,canonical,"1. pick-up a
+2. stack a h
+3. pick-up h
+4. stack h f
+5. pick-up f
+6. stack f k
+7. pick-up k
+8. stack k e
+9. pick-up e
+10. stack e l
+11. pick-up l
+12. stack l b",False
+BW_504,BW,W3,"1. mobilize Alpha
+2. position Alpha Hotel
+3. mobilize Hotel
+4. position Hotel Foxtrot
+5. mobilize Foxtrot
+6. position Foxtrot Kilo
+7. mobilize Kilo
+8. position Kilo Echo
+9. mobilize Echo
+10. position Echo Lima
+11. mobilize Lima
+12. position Lima Bravo
+13. mobilize Bravo
+14. position Bravo Alpha",False
+BW_505,BW,canonical,"1. pick-up b
+2. stack b h
+3. pick-up g
+4. stack g b
+5. pick-up d
+6. stack d g
+7. pick-up c
+8. stack c d",True
+BW_505,BW,W3,"1. recruit Carol
+2. promote Carol David
+3. recruit David
+4. promote David Grace
+5. recruit Grace
+6. promote Grace Bob
+7. recruit Bob
+8. promote Bob Henry
+9. recruit Henry
+10. dismiss Henry
+11. demote Bob Henry
+12. demote Grace Bob
+13. demote David Grace
+14. demote Carol David
+15. dismiss Carol",False
+BW_506,BW,canonical,"1. pick-up g
+2. unstack g b
+3. pick-up b
+4. stack b f
+5. put-down g
+6. stack g b",False
+BW_506,BW,W3,"1. recruit Grace
+2. promote Grace Bob
+3. recruit Bob
+4. promote Bob Frank
+5. demote Grace Bob",False
+BW_507,BW,canonical,"1. pick-up e
+2. stack e j
+3. pick-up h
+4. stack h e
+5. unstack j h
+6. put-down j
+7. stack j h
+8. put-down j",False
+BW_507,BW,W3,"1. recruit Jack
+2. promote Jack Eve
+3. recruit Henry
+4. promote Henry Jack
+5. demote Jack Eve
+6. demote Henry Jack",False
+BW_508,BW,canonical,"1. pick-up b
+2. stack b f
+3. pick-up g
+4. stack g b
+5. pick-up c
+6. stack c g
+7. pick-up e
+8. stack e c",True
+BW_508,BW,W3,"1. recruit Bob
+2. recruit Carol
+3. promote Carol Bob
+4. recruit Grace
+5. promote Grace Carol
+6. recruit Frank
+7. promote Frank Grace
+8. recruit Emma
+9. promote Emma Carol",False
+BW_509,BW,canonical,"1. pick-up h
+2. unstack h d
+3. pick-up d
+4. unstack h f
+5. pick-up f
+6. unstack d j
+7. pick-up j
+8. unstack f i
+9. pick-up i
+10. stack j i
+11. stack f j
+12. stack d f
+13. stack h d",False
+BW_509,BW,W3,"1. recruit Helen
+2. promote Helen David
+3. recruit David
+4. promote David Frank
+5. recruit Frank
+6. promote Frank James
+7. recruit James
+8. promote James Irene
+9. release James
+10. promote Helen James
+11. release Helen
+12. demote Helen James
+13. release David
+14. demote David Frank
+15. release Frank
+16. demote Frank James
+17. release James
+18. demote James Irene
+19. recruit James
+20. promote James Irene
+21. release James
+22. demote James Irene
+23. recruit Irene
+24. promote Irene James
+25. release Irene
+26. demote James Irene
+27. recruit James
+28. promote James Frank
+29. release James
+30. demote Frank James
+31. recruit Frank
+32. promote Frank David
+33. release Frank
+34. demote David Frank
+35. recruit David
+36. promote David Helen
+37. release David
+38. demote Helen David
+39. recruit Helen
+40. promote Helen James
+41. release Helen
+42. demote James Helen
+43. recruit James
+44. promote James Frank
+45. release James
+46. demote Frank James
+47. recruit Frank
+48. promote Frank Irene
+49. release Frank
+50. demote Irene Frank
+51. recruit Irene
+52. promote Irene James
+53. release Irene
+54. demote James Irene
+55. recruit James
+56. promote James David
+57. release James
+58. demote David James
+59. recruit David
+60. promote David Frank
+61. release David
+62. demote Frank David
+63. recruit Frank
+64. promote Frank Helen
+65. release Frank
+66. demote Helen Frank
+67. recruit Helen
+68. promote Helen Irene
+69. release Helen
+70. demote Irene Helen
+71. recruit Irene
+72. promote Irene David
+73. release Irene
+74. demote David Irene
+75. recruit David
+76. promote David James
+77. release David
+78. demote James David
+79. recruit James
+80. promote James Frank
+81. release James
+82. demote Frank James
+83. recruit Frank
+84. promote Frank Helen
+85. release Frank
+86. demote Helen Frank
+87. recruit Helen
+88. promote Helen Irene
+89. release Helen
+90.",False
+BW_510,BW,canonical,"1. pick-up k
+2. unstack k j
+3. pick-up j
+4. unstack k a
+5. unstack j c
+6. pick-up c
+7. unstack j a
+8. unstack c l
+9. pick-up l
+10. unstack c a
+11. unstack l h
+12. pick-up h
+13. unstack l c
+14. unstack h i
+15. pick-up i
+16. unstack h l
+17. put-down i
+18. put-down h
+19. put-down l
+20. put-down c
+21. put-down j
+22. put-down k",False
+BW_510,BW,W3,"1. mobilize Alpha
+2. deploy Alpha
+3. position Alpha Juliet
+4. mobilize Juliet
+5. deploy Juliet
+6. position Juliet Alpha
+7. mobilize Kilo
+8. deploy Kilo
+9. position Kilo Juliet
+10. mobilize Charlie
+11. deploy Charlie
+12. position Charlie Alpha
+13. mobilize Lima
+14. deploy Lima
+15. position Lima Charlie
+16. mobilize Hotel
+17. deploy Hotel
+18. position Hotel Lima
+19. mobilize India
+20. deploy India
+21. position India Hotel",False
+BW_511,BW,canonical,"1. pick-up l
+2. stack l k
+3. pick-up k
+4. stack k i
+5. pick-up f
+6. stack f l
+7. pick-up l
+8. stack l k
+9. put-down l
+10. pick-up i
+11. stack i k",False
+BW_511,BW,W3,"1. recruit Irene
+2. promote Irene Kevin
+3. recruit Kevin
+4. promote Kevin Laura
+5. recruit Laura
+6. promote Laura Frank
+7. recruit Frank
+8. demote Laura Frank
+9. demote Kevin Laura
+10. demote Irene Kevin",False
+BW_512,BW,canonical,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j e
+5. pick-up e
+6. stack e h
+7. pick-up h
+8. stack h i
+9. pick-up i
+10. stack i f
+11. pick-up f
+12. stack f c",False
+BW_512,BW,W3,"1. retrieve Journal
+2. place_on Journal Cookbook
+3. retrieve Cookbook
+4. place_on Cookbook Journal
+5. retrieve Encyclopedia
+6. place_on Encyclopedia Cookbook
+7. retrieve Cookbook
+8. place_on Cookbook Encyclopedia
+9. retrieve History
+10. place_on History Encyclopedia
+11. retrieve Encyclopedia
+12. place_on Encyclopedia History
+13. retrieve Index
+14. place_on Index History
+15. retrieve History
+16. place_on History Index
+17. retrieve Fiction
+18. place_on Fiction Index
+19. retrieve Index
+20. place_on Index Fiction
+21. remove_from History Index
+22. remove_from Encyclopedia History
+23. remove_from Journal Cookbook
+24. remove_from Cookbook Journal",False
+BW_513,BW,canonical,"1. pick-up a
+2. stack a d
+3. pick-up d
+4. stack d l
+5. pick-up l
+6. stack l i
+7. pick-up i
+8. stack i f
+9. pick-up f
+10. stack f e
+11. pick-up e
+12. stack e c
+13. pick-up c
+14. stack c a
+15. pick-up a
+16. unstack a c
+17. put-down a
+18. unstack c e
+19. put-down c
+20. unstack e f
+21. put-down e
+22. unstack f i
+23. put-down f
+24. unstack i l
+25. put-down i
+26. unstack l d
+27. put-down l
+28. unstack d a
+29. put-down d
+30. unstack a c
+31. put-down a",False
+BW_513,BW,W3,"1. recruit Alice
+2. recruit Carol
+3. promote_over Carol Emma
+4. recruit Emma
+5. promote_over Emma Frank
+6. recruit Frank
+7. promote_over Frank Isaac
+8. recruit Isaac
+9. promote_over Isaac Alice
+10. recruit David
+11. promote_over Alice David
+12. promote_over David Laura",False
+BW_514,BW,canonical,"1. pick-up c
+2. stack c j
+3. pick-up j
+4. stack j a
+5. pick-up a
+6. stack a g
+7. pick-up g
+8. stack g e
+9. pick-up e
+10. stack e b
+11. pick-up b
+12. stack b a
+13. pick-up a
+14. stack a g
+15. pick-up g
+16. stack g j
+17. pick-up j
+18. stack j c",False
+BW_514,BW,W3,"1. recruit Alice
+2. assign-to-base Alice
+3. recruit John
+4. promote-above Alice John
+5. recruit Carol
+6. promote-above Alice Carol
+7. recruit John
+8. promote-above Alice John
+9. recruit Grace
+10. promote-above Alice Grace
+11. recruit Eve
+12. promote-above Alice Eve
+13. recruit Bob
+14. promote-above Alice Bob",False
+BW_515,BW,canonical,"1. pick-up g
+2. unstack g k
+3. pick-up k
+4. unstack k e
+5. pick-up e
+6. unstack e g
+7. pick-up a
+8. unstack a d
+9. pick-up d
+10. unstack d i
+11. pick-up i
+12. stack i d
+13. stack d a
+14. stack a k
+15. stack k e
+16. stack e g",False
+BW_515,BW,W3,"1. recruit Alice
+2. recruit David
+3. promote Alice David
+4. recruit Emily
+5. promote Alice Emily
+6. recruit Kevin
+7. promote Alice Kevin
+8. recruit George
+9. promote Alice George
+10. recruit Isabella
+11. reassign Alice David
+12. promote Alice Isabella
+13. reassign Alice Emily
+14. reassign Alice Kevin
+15. reassign Alice George
+16. reassign Alice Alice",False
+BW_E002,BW,canonical,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b a",True
+BW_E002,BW,W3,"1. select Aaron
+2. place Aaron under Clara
+3. select Brian
+4. place Brian under Aaron",True
+BW_E015,BW,canonical,"1. pick-up a
+2. unstack a c
+3. put-down a
+4. pick-up c
+5. stack c b
+6. put-down c",False
+BW_E015,BW,W3,"1. select Aaron
+2. place Aaron under Brian
+3. remove Aaron from Brian",False
+BW_E017,BW,canonical,"1. pick-up a
+2. stack a b
+3. pick-up c
+4. stack c a",True
+BW_E017,BW,W3,"1. select Aaron
+2. place Aaron under Brian
+3. select Clara
+4. place Clara under Aaron",False
+BW_E019,BW,canonical,"1. pick-up b
+2. stack b a
+3. pick-up a
+4. stack a c
+5. put-down a
+6. stack b a",False
+BW_E019,BW,W3,"1. select Aaron
+2. place Aaron under Clara
+3. select Brian
+4. place Brian under Aaron",False
+BW_E100,BW,canonical,"1. pick-up a
+2. stack a c
+3. pick-up b
+4. stack b c",False
+BW_E100,BW,W3,"1. select Brian
+2. place Brian under Clara
+3. select Clara
+4. place Clara under Aaron",False
+BW_E_001,BW,canonical,"1. pick-up a
+2. stack a i
+3. pick-up i
+4. stack i c
+5. pick-up c
+6. stack c f
+7. pick-up f
+8. stack f j
+9. pick-up j
+10. stack j b
+11. pick-up c
+12. unstack c f
+13. pick-up f
+14. unstack f j
+15. pick-up j
+16. unstack j b
+17. pick-up b
+18. unstack b i
+19. pick-up i
+20. unstack i c
+21. pick-up c
+22. unstack c a",False
+BW_E_001,BW,W3,"1. recruit Alice
+2. recruit Isabel
+3. promote Alice Isabel
+4. recruit Carol
+5. promote Isabel Carol
+6. recruit Frank
+7. promote Carol Frank
+8. recruit James
+9. promote Frank James
+10. recruit Bob
+11. promote James Bob
+12. promote Carol James
+13. demote Carol James
+14. demote Frank James
+15. demote Isabel Carol
+16. demote Alice Isabel",False
+BW_E_002,BW,canonical,"1. pick-up h
+2. stack h b
+3. pick-up b
+4. stack b g
+5. pick-up g
+6. stack g i
+7. put-down g
+8. put-down b
+9. put-down h",False
+BW_E_002,BW,W3,"1. recruit Henry
+2. promote_above Henry Bob
+3. recruit Bob
+4. promote_above Bob Grace
+5. recruit Grace
+6. promote_above Grace Iris
+7. dismiss Henry
+8. reassign_from Bob Iris",False
+BW_E_003,BW,canonical,"1. pick-up g
+2. unstack g c
+3. pick-up c
+4. unstack g i
+5. stack c i
+6. unstack c g
+7. stack c i
+8. pick-up i
+9. unstack c i
+10. stack i d
+11. unstack i c
+12. stack c d
+13. unstack c i
+14. stack i d
+15. pick-up d
+16. unstack i d
+17. stack d j
+18. unstack d i
+19. stack i j
+20. unstack i d
+21. stack d j
+22. put-down c
+23. put-down i
+24. put-down g",False
+BW_E_003,BW,W3,"1. recruit Carol
+2. promote Carol Ivan
+3. recruit Ivan
+4. promote Ivan David
+5. recruit David
+6. promote David Julia
+7. recruit Julia
+8. promote Julia Grace
+9. recruit Grace
+10. promote Grace Carol
+11. demote Grace Carol
+12. demote Carol Ivan
+13. demote Ivan Grace
+14. demote Grace Julia
+15. demote Julia David
+16. demote David Ivan
+17. demote Ivan Carol
+18. demote Carol Grace
+19. recruit Grace
+20. promote Grace Carol
+21. demote Grace Carol
+22. recruit Carol
+23. demote Carol Ivan
+24. recruit Ivan
+25. demote Ivan Grace
+26. demote Grace Julia
+27. demote Julia David
+28. demote David Ivan
+29. demote Ivan Carol
+30. demote Carol Grace
+31. recruit Grace
+32. demote Grace Carol
+33. recruit Carol
+34. demote Carol Ivan
+35. demote Ivan Julia
+36. demote Julia David
+37. demote David Carol
+38. demote Carol Ivan
+39. demote Ivan Grace
+40. demote Grace Julia
+41. demote Julia Carol
+42. demote Carol David
+43. demote David Ivan
+44. demote Ivan Julia
+45. demote Julia Grace
+46. demote Grace Carol
+47. demote Carol Ivan
+48. demote Ivan David
+49. demote David Julia
+50. demote Julia Carol
+51. demote Carol Grace
+52. demote Grace Ivan
+53. demote Ivan David
+54. demote David Julia
+55. demote Julia Carol
+56. demote Carol Ivan
+57. demote Ivan Grace
+58. demote Grace Julia
+59. demote Julia David
+60. demote David Carol
+61. demote Carol Ivan
+62. demote Ivan Julia
+63. demote Julia Grace
+64. demote Grace Carol
+65. demote Carol Ivan
+66. demote Ivan David
+67. demote David Julia
+68. demote Julia Carol
+69. demote Carol Grace
+70. demote Grace Ivan
+71. demote Ivan Julia
+72. demote Julia David
+73. demote David Carol
+74. demote Carol Ivan
+75. demote Ivan Grace
+76. demote Grace Julia
+77. demote Julia Carol",False
+BW_E_004,BW,canonical,"1. pick-up a
+2. stack a h
+3. pick-up h
+4. stack h i
+5. pick-up i
+6. stack i e
+7. pick-up e
+8. stack e d
+9. pick-up d
+10. stack d g
+11. pick-up g
+12. stack g l
+13. pick-up l
+14. stack l k
+15. pick-up k
+16. stack k i
+17. pick-up i
+18. stack i e
+19. pick-up e
+20. stack e d
+21. pick-up d
+22. stack d g
+23. pick-up g
+24. stack g l
+25. pick-up l
+26. put-down l
+27. pick-up k
+28. unstack k i
+29. pick-up i
+30. unstack i e
+31. pick-up e
+32. unstack e d
+33. pick-up d
+34. unstack d g
+35. pick-up g
+36. unstack g l
+37. pick-up l
+38. unstack l k
+39. pick-up k
+40. unstack k i
+41. pick-up i
+42. unstack i h
+43. pick-up h
+44. unstack h a
+45. put-down a",False
+BW_E_004,BW,W3,"1. hire Alice
+2. promote_above Alice Henry
+3. promote_above Henry Kevin
+4. promote_above Kevin Isabella
+5. promote_above Isabella Emma
+6. promote_above Emma David
+7. promote_above David George
+8. promote_above George Laura",False
+BW_E_005,BW,canonical,"1. pick-up c
+2. stack c l
+3. pick-up l
+4. stack l d
+5. pick-up d
+6. stack d e
+7. pick-up e
+8. stack e f
+9. pick-up f
+10. stack f l
+11. unstack f l
+12. unstack e f
+13. unstack d e
+14. unstack l d
+15. unstack c l
+16. put-down c
+17. put-down l
+18. put-down d
+19. put-down e
+20. put-down f",False
+BW_E_005,BW,W3,"1. recruit Carol
+2. promote Carol Laura
+3. recruit Laura
+4. promote Laura David
+5. recruit David
+6. promote David Emily
+7. recruit Emily
+8. promote Emily Frank
+9. recruit Frank
+10. demote Emily Frank
+11. demote David Emily
+12. demote Laura David
+13. demote Carol Laura
+14. dismiss Carol",False
+MBW_001,BW,canonical,"1. attack j
+2. attack f
+3. attack i
+4. attack g
+5. attack d
+6. attack b
+7. attack h
+8. attack l
+9. succumb j
+10. succumb f
+11. succumb i
+12. succumb g
+13. succumb d
+14. succumb b
+15. succumb h
+16. succumb l
+17. overcome j f
+18. overcome f i
+19. overcome i g
+20. overcome g d
+21. overcome d b
+22. overcome b h
+23. overcome h l
+24. feast j f
+25. feast f i
+26. feast i g
+27. feast g d
+28. feast d b
+29. feast b h
+30. feast h l",False
+MBW_001,BW,W3,"1. provoke Jordan
+2. broker Jordan Finland
+3. provoke Finland
+4. broker Finland Iceland
+5. provoke Iceland
+6. broker Iceland Greece
+7. provoke Greece
+8. broker Greece Denmark
+9. provoke Denmark
+10. broker Denmark Belgium
+11. provoke Belgium
+12. broker Belgium Hungary
+13. provoke Hungary
+14. broker Hungary Latvia",False
+MBW_002,BW,canonical,"1. attack j
+2. attack g
+3. attack a
+4. attack b
+5. attack k
+6. attack h
+7. attack i
+8. succumb j
+9. succumb g
+10. succumb a
+11. succumb b
+12. succumb k
+13. succumb h
+14. succumb i
+15. overcome j g
+16. overcome g a
+17. overcome a b
+18. overcome b k
+19. overcome k h
+20. overcome h i
+21. feast j g
+22. feast g a
+23. feast a b
+24. feast b k
+25. feast k h
+26. feast h i",False
+MBW_002,BW,W3,"1. provoke Japan
+2. broker Japan Greece
+3. appease Greece
+4. broker Greece Argentina
+5. appease Argentina
+6. broker Argentina Belgium
+7. appease Belgium
+8. broker Belgium Kenya
+9. appease Kenya
+10. broker Kenya Hungary
+11. appease Hungary
+12. broker Hungary Ireland",True
+MBW_010,BW,canonical,"1. attack e
+2. attack a
+3. attack b
+4. attack f
+5. succumb d
+6. succumb e
+7. succumb a
+8. succumb b
+9. succumb f
+10. overcome d e
+11. overcome a b
+12. overcome b f
+13. feast a b
+14. feast b f",False
+MBW_010,BW,W3,"1. provoke Denmark
+2. provoke Estonia
+3. appease Estonia
+4. broker Estonia Argentina
+5. appease Argentina
+6. broker Argentina Belgium
+7. appease Belgium
+8. broker Belgium France
+9. negotiate Denmark Estonia
+10. negotiate Estonia Argentina
+11. negotiate Argentina Belgium
+12. negotiate Belgium France",False
+MBW_014,BW,canonical,"1. attack e
+2. attack g
+3. succumb l
+4. overcome l e
+5. feast l e
+6. attack l",False
+MBW_014,BW,W3,"1. provoke Lithuania
+2. provoke Estonia
+3. appease Estonia
+4. broker Estonia Greece
+5. negotiate Lithuania Estonia",False
+MBW_037,BW,canonical,"1. attack c
+2. attack d
+3. attack h
+4. attack i
+5. succumb c
+6. succumb d
+7. succumb h
+8. succumb i
+9. overcome c d
+10. overcome d h
+11. overcome h i
+12. feast c d
+13. feast d h
+14. feast h i",False
+MBW_037,BW,W3,"1. provoke Canada
+2. broker Canada Denmark
+3. provoke Denmark
+4. broker Denmark Hungary
+5. provoke Hungary
+6. broker Hungary Ireland
+7. negotiate Canada Denmark
+8. negotiate Denmark Hungary
+9. negotiate Hungary Ireland",True
+MBW_10,BW,canonical,"1. attack e
+2. attack a
+3. attack b
+4. attack f
+5. succumb d
+6. succumb e
+7. succumb a
+8. succumb b
+9. succumb f
+10. overcome d e
+11. overcome a b
+12. overcome b f
+13. feast a b
+14. feast b f",False
+MBW_10,BW,W3,"1. provoke Denmark
+2. broker Denmark Ethiopia
+3. provoke Ethiopia
+4. broker Ethiopia Argentina
+5. provoke Argentina
+6. broker Argentina Brazil
+7. provoke Brazil
+8. broker Brazil France
+9. appease Brazil",False
+MBW_100,BW,canonical,"1. attack b
+2. attack j
+3. attack l
+4. attack i
+5. succumb b
+6. succumb j
+7. succumb l
+8. succumb i
+9. overcome l i
+10. overcome j l
+11. overcome b j
+12. feast l i l
+13. feast j l j
+14. feast b j b",False
+MBW_100,BW,W3,"1. provoke Morocco
+2. broker Morocco Thailand
+3. provoke Thailand
+4. broker Thailand Uruguay
+5. provoke Uruguay
+6. broker Uruguay Estonia
+7. negotiate Morocco Thailand
+8. negotiate Thailand Uruguay
+9. negotiate Uruguay Estonia",False
+MBW_127,BW,canonical,"1. attack k
+2. attack g
+3. attack j
+4. attack e
+5. attack b
+6. succumb e
+7. overcome e b
+8. feast e b",False
+MBW_127,BW,W3,"1. provoke Kenya
+2. broker Kenya Germany
+3. provoke Germany
+4. broker Germany Japan
+5. provoke Japan
+6. broker Japan Egypt
+7. provoke Egypt
+8. broker Egypt Brazil",False
+MBW_185,BW,canonical,"1. attack j
+2. attack d
+3. attack g
+4. attack i
+5. attack c
+6. attack h
+7. attack a
+8. attack b
+9. attack e
+10. attack l
+11. succumb l
+12. overcome e l
+13. succumb e
+14. overcome b e
+15. succumb b
+16. overcome a b
+17. succumb a
+18. overcome h a
+19. succumb h
+20. overcome c h
+21. succumb c
+22. overcome i c
+23. succumb i
+24. overcome g i
+25. succumb g
+26. overcome d g
+27. succumb d
+28. overcome j d",False
+MBW_185,BW,W3,"1. provoke Jordan
+2. provoke Denmark
+3. appease Denmark
+4. broker Denmark Ghana
+5. provoke Ghana
+6. broker Ghana India
+7. provoke India
+8. broker India Chile
+9. provoke Chile
+10. broker Chile Hungary
+11. provoke Hungary
+12. broker Hungary Austria
+13. provoke Austria
+14. broker Austria Bolivia
+15. provoke Bolivia
+16. broker Bolivia Ecuador
+17. provoke Ecuador
+18. broker Ecuador Latvia",False
+MBW_495,BW,canonical,"1. attack l
+2. attack i
+3. attack e
+4. attack h
+5. succumb e
+6. overcome e h
+7. succumb h
+8. overcome h i
+9. succumb i
+10. overcome i l
+11. succumb l
+12. overcome l c
+13. succumb c",False
+MBW_495,BW,W3,"1. provoke Canada
+2. broker Canada Lithuania
+3. provoke Lithuania
+4. broker Lithuania Ireland
+5. provoke Ireland
+6. broker Ireland Estonia
+7. provoke Estonia
+8. broker Estonia Hungary
+9. negotiate Lithuania Ireland
+10. negotiate Ireland Estonia
+11. negotiate Estonia Hungary
+12. negotiate Canada Lithuania",True
+MBW_496,BW,canonical,"1. attack i
+2. attack f
+3. attack g
+4. attack d
+5. attack e
+6. attack a
+7. attack c
+8. attack j
+9. attack l
+10. succumb l
+11. overcome j l
+12. feast j l
+13. succumb j
+14. overcome c j
+15. feast c j
+16. succumb c
+17. overcome a c
+18. feast a c
+19. succumb a
+20. overcome e a
+21. feast e a
+22. succumb e
+23. overcome d e
+24. feast d e
+25. succumb d
+26. overcome g d
+27. feast g d
+28. succumb g
+29. overcome h g
+30. feast h g
+31. succumb h
+32. overcome f h
+33. feast f h
+34. succumb f
+35. overcome i f
+36. feast i f",False
+MBW_496,BW,W3,"1. deploy Alpha
+2. deploy Charlie
+3. deploy Juliet
+4. deploy Lima
+5. supply Alpha India
+6. supply Charlie Foxtrot
+7. supply Juliet Hotel
+8. supply Lima Golf
+9. supply India Delta
+10. supply Foxtrot Echo
+11. supply Hotel Alpha
+12. supply Golf Charlie
+13. supply Delta Echo
+14. supply Echo Alpha
+15. supply Charlie Juliet
+16. supply Juliet Lima",False
+MBW_497,BW,canonical,"1. attack k
+2. attack i
+3. attack h
+4. attack e
+5. attack j
+6. attack l
+7. attack d
+8. attack c
+9. attack f
+10. attack a",False
+MBW_497,BW,W3,"1. promote Alice Kevin
+2. promote Kevin Alice
+3. promote Alice Frank
+4. promote Frank Carol
+5. promote Carol David
+6. promote David Laura
+7. promote Laura Isabel
+8. promote Isabel Henry
+9. promote Henry Emma
+10. promote Emma James
+11. assign Alice James
+12. assign Frank James
+13. assign Carol James
+14. assign David James
+15. assign Laura James
+16. assign Isabel James
+17. assign Henry James
+18. assign Emma James
+19. assign Kevin Alice
+20. assign Frank Alice
+21. assign Carol Alice
+22. assign David Alice
+23. assign Laura Alice
+24. assign Isabel Alice
+25. assign Henry Alice
+26. assign Emma Alice
+27. assign Alice James
+28. assign Alice Kevin
+29. assign Alice Frank
+30. assign Alice Carol
+31. assign Alice David
+32. assign Alice Laura
+33. assign Alice Isabel
+34. assign Alice Henry
+35. assign Alice Emma
+36. terminate James",False
+MBW_498,BW,canonical,"1. attack l
+2. attack e
+3. attack d
+4. attack g
+5. attack a
+6. attack h
+7. attack c
+8. attack k
+9. attack b
+10. attack i
+11. attack j
+12. attack f
+13. succumb l
+14. succumb e
+15. succumb d
+16. succumb g
+17. succumb a
+18. succumb h
+19. succumb c
+20. succumb k
+21. succumb b
+22. succumb i
+23. succumb j
+24. succumb f
+25. overcome l e
+26. overcome e d
+27. overcome d g
+28. overcome g a
+29. overcome a h
+30. overcome h c
+31. overcome c k
+32. overcome k b
+33. overcome b i
+34. overcome i j
+35. overcome j f
+36. feast l e
+37. feast e d
+38. feast d g
+39. feast g a
+40. feast a h
+41. feast h c
+42. feast c k
+43. feast k b
+44. feast b i
+45. feast i j
+46. feast j f",False
+MBW_498,BW,W3,"1. deploy Lima
+2. deploy Echo
+3. deploy Delta
+4. deploy Golf
+5. deploy Alpha
+6. deploy Hotel
+7. deploy Charlie
+8. deploy Kilo
+9. deploy Bravo
+10. deploy India
+11. deploy Juliet
+12. deploy Foxtrot
+13. establish_supply_line Echo Delta
+14. establish_supply_line Delta Golf
+15. establish_supply_line Golf Alpha
+16. establish_supply_line Alpha Hotel
+17. establish_supply_line Hotel Charlie
+18. establish_supply_line Charlie Kilo
+19. establish_supply_line Kilo Bravo
+20. establish_supply_line Bravo India
+21. establish_supply_line India Juliet
+22. establish_supply_line Juliet Foxtrot",False
+MBW_499,BW,canonical,"1. attack l
+2. attack c
+3. attack b
+4. attack f
+5. attack j
+6. attack d
+7. attack a
+8. succumb a
+9. overcome a h
+10. feast a h
+11. succumb h
+12. overcome h a
+13. feast h a
+14. succumb h
+15. overcome h a
+16. feast h a
+17. succumb d
+18. overcome d a
+19. feast d a
+20. succumb a
+21. overcome a h
+22. feast a h
+23. succumb j
+24. overcome j d
+25. feast j d
+26. succumb d
+27. overcome d a
+28. feast d a
+29. succumb f
+30. overcome f j
+31. feast f j
+32. succumb j
+33. overcome j d
+34. feast j d
+35. succumb b
+36. overcome b f
+37. feast b f
+38. succumb f
+39. overcome f j
+40. feast f j
+41. succumb c
+42. overcome c b
+43. feast c b
+44. succumb b
+45. overcome b f
+46. feast b f
+47. succumb l
+48. overcome l c
+49. feast l c",False
+MBW_499,BW,W3,"1. secure Alpha
+2. liberate Alpha Hotel
+3. secure Hotel
+4. liberate Hotel Juliet
+5. secure Juliet
+6. liberate Juliet Foxtrot
+7. secure Foxtrot
+8. liberate Foxtrot Bravo
+9. secure Bravo
+10. liberate Bravo Charlie
+11. secure Charlie
+12. liberate Charlie Delta
+13. secure Delta
+14. liberate Delta Lima",False
+MBW_500,BW,canonical,"1. attack e
+2. attack b
+3. attack k
+4. attack h
+5. attack c
+6. attack f
+7. attack i
+8. attack d
+9. attack g
+10. succumb d
+11. overcome d g
+12. succumb g
+13. overcome g d
+14. succumb i
+15. overcome i d
+16. succumb d
+17. overcome d i
+18. succumb h
+19. overcome h c
+20. succumb c
+21. overcome c f
+22. succumb f
+23. overcome f i
+24. succumb i
+25. overcome i d
+26. succumb d
+27. overcome d g
+28. succumb g
+29. overcome g d
+30. succumb e
+31. overcome e b
+32. succumb b
+33. overcome b k
+34. succumb k
+35. overcome k h
+36. succumb h
+37. overcome h c
+38. succumb c
+39. overcome c f
+40. succumb f
+41. overcome f i
+42. succumb i
+43. overcome i d
+44. succumb d
+45. overcome d g
+46. succumb g
+47. overcome g d
+48. succumb k
+49. overcome k h
+50. succumb h
+51. overcome h c
+52. succumb c
+53. overcome c f
+54. succumb f
+55. overcome f i
+56. succumb i
+57. overcome i d
+58. succumb d
+59. overcome d g
+60. succumb g
+61. overcome g d
+62. succumb b
+63. overcome b k
+64. succumb k
+65. overcome k h
+66. succumb h
+67. overcome h c
+68. succumb c
+69. overcome c f
+70. succumb f
+71. overcome f i
+72. succumb i
+73. overcome i d
+74. succumb d
+75. overcome d g
+76. succumb e
+77. overcome e b
+78. succumb b
+79. overcome b k
+80. succumb k
+81. overcome k h
+82. succumb h
+83. overcome h c
+84. succumb c
+85. overcome c f
+86. succumb f
+87. overcome f i",False
+MBW_500,BW,W3,"1. deploy_forces Alpha_Base Echo_Base
+2. establish_supply_line Alpha_Base Echo_Base
+3. deploy_forces Echo_Base Bravo_Base
+4. establish_supply_line Echo_Base Bravo_Base
+5. deploy_forces Bravo_Base Kilo_Base
+6. establish_supply_line Bravo_Base Kilo_Base
+7. deploy_forces Kilo_Base Hotel_Base
+8. establish_supply_line Kilo_Base Hotel_Base
+9. deploy_forces Hotel_Base Charlie_Base
+10. establish_supply_line Hotel_Base Charlie_Base
+11. deploy_forces Charlie_Base Foxtrot_Base
+12. establish_supply_line Charlie_Base Foxtrot_Base
+13. deploy_forces Foxtrot_Base India_Base
+14. establish_supply_line Foxtrot_Base India_Base
+15. deploy_forces India_Base Delta_Base
+16. establish_supply_line India_Base Delta_Base
+17. deploy_forces Delta_Base Golf_Base
+18. establish_supply_line Delta_Base Golf_Base",False

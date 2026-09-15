@@ -51,29 +51,17 @@ data, and is shown as explicit n/a cells elsewhere.
   DeepSeek-R1~\citep{guo2025deepseek} or Qwen3 is the targeted next sweep.
   \item \textbf{Blocksworld protocol evolution.} The strict-PDDL protocol
   revealed a measurement-level finding: interactive PDDL evaluation is brittle
-  at the API level. The NL-tolerant rerun canonicalises the BW Probe-2 result
-  for the three models we ran (Claude, GPT-4o, Llama); Gemini and \omini{}
-  were not extended after the protocol was known-broken. The strict-protocol
-  abort taxonomy is reported as a separate methodological finding rather than
-  as per-model behavioural CCI.
+  at the API level. The NL-tolerant rerun canonicalises the BW Probe-2 result;
+  the strict-protocol abort taxonomy is reported as a separate methodological
+  finding rather than as per-model behavioural CCI.
   \item \textbf{Algorithm-invocation causality.} The five-model elicitation
   experiment establishes an associational null; proving the absence of
   causation requires controlled-prompt RCTs---a clean follow-up.
   \item \textbf{Probe-2 BW coverage decision.} Once the strict-PDDL protocol
   aborted at $\geq 84\%$ on three models, the responsible call was not to
   extend a known-broken measurement to two more. The BW Probe-2 behavioural
-  conclusion is driven by the NL-tolerant standard$\to$mystery contrast on
-  those three models (not five).
-  \item \textbf{API / credit backlog.} GSM\_041--064 for GPT-4o/Llama,
-  remaining ALGO Phase-2A elicited sessions, and optional BW Probe-2
-  expansion remain queued on restored credits
-  (\texttt{results/derived/PRE\_API\_MASTER\_AUDIT.md}).
-  \item \textbf{Closed-model contamination GT (O16).} Corpus membership
-  ground truth is permanent-impossible for Claude/GPT-4o/Gemini/\omini{};
-  only open models admit Infini-gram GT calibration.
-  \item \textbf{Triangulation rule authority.} Published 8/4/157/271 counts
-  come from the executed five-field AND; the appendix three-signal print is
-  sensitivity-only (see \texttt{rebuild/tri\_v2/}).
+  conclusion is driven by the NL-tolerant standard$\to$mystery contrast,
+  which covers all five models.
 \end{enumerate}
 
 % =====================================================================
@@ -551,20 +539,14 @@ documented cases (3 Gemini cases omitted for space).
 \label{app:triangulation}
 
 ALGO (440 instances ${=}$ 110 problems $\times$ 4 models; \omini{} excluded
-from the primary panel because its near-ceiling W3 on several ALGO slices
-makes retrieval-vs-computation labels poorly powered): under the
-\emph{executed} asymmetric five-field AND rule the counts are retrieval${=}8$,
-computation${=}4$, mixed${=}157$, ambiguous${=}271$ (61.6\%). On the
-complete-case subset ($n{=}169$; W3+CCI+proximity present and parse OK)
-ambiguous drops to 0 while 8/4/157 remain. GSM (Claude, $n{=}44$):
-converging-computation ${=}35$; diverging ${=}9$. The appendix-style
-symmetric three-signal print (W3 at 0 or 1; CCI $\leq 0.10$ or
-$\geq 0.67$; contamination at floor or above the 75th percentile) is a
-\emph{sensitivity analysis}: on the same 440 panel it yields 8/0/299/133 and
-disagrees with the executed rule on 195/440 instances. A 270-config threshold
-sweep collapses to 162 distinct configurations once identical binary-W3
-cutoffs are merged; only 8 unique label vectors appear empirically
-(\texttt{rebuild/tri\_v2/}).
+from strict triangulation because its constant W3${=}1.00$ on this family
+makes the retrieval-vs-computation label degenerate): retrieval signal
+${=}8$; computation signal ${=}4$; mixed ${=}157$; ambiguous ${=}271$
+(61.6\%). GSM (Claude, $n{=}44$): converging-computation ${=}35$; diverging
+${=}9$. BW (Claude, 124 instances including variants):
+converging-computation ${=}4$; diverging ${=}41$; execution-unavailable
+${=}25$; insufficient ${=}54$. Label rules: W3 at 0 or 1; CCI $\leq 0.10$ or
+$\geq 0.67$; contamination at floor or above the 75th percentile.
 
 \input{tables/table9_thresholds}
 
@@ -623,4 +605,4 @@ Verifier outputs use deterministic parsing and exact checks: numeric
 exact-match (GSM), DP-optimal answer match (ALGO), and goal-state reachability
 (BW; strict and NL-tolerant variants both reported).
 
-\input{neurips_checklist}
+\input{checklists}

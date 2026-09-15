@@ -1,0 +1,25 @@
+slice,model,family,freq_tercile,n_pairs,median_rank_canonical,median_rank_W3,median_can_minus_W3,W,p_two_sided,note
+Qwen/Qwen2.5-1.5B-Instruct | ALGO | all,Qwen/Qwen2.5-1.5B-Instruct,ALGO,all,61,74.0,127.0,-18.0,550.5,0.011566711840569005,ok
+Qwen/Qwen2.5-1.5B-Instruct | ALGO | tercile=low,Qwen/Qwen2.5-1.5B-Instruct,ALGO,tercile=low,35,169.0,146.0,-19.0,272.0,0.48118517473979194,ok
+Qwen/Qwen2.5-1.5B-Instruct | ALGO | tercile=mid,Qwen/Qwen2.5-1.5B-Instruct,ALGO,tercile=mid,7,162.0,213.0,-50.0,0.0,0.015625,ok
+Qwen/Qwen2.5-1.5B-Instruct | ALGO | tercile=high,Qwen/Qwen2.5-1.5B-Instruct,ALGO,tercile=high,19,29.0,35.0,-6.0,11.0,0.0018888099551711867,ok
+Qwen/Qwen2.5-1.5B-Instruct | BW | all,Qwen/Qwen2.5-1.5B-Instruct,BW,all,65,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-1.5B-Instruct | BW | tercile=low,Qwen/Qwen2.5-1.5B-Instruct,BW,tercile=low,22,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-1.5B-Instruct | BW | tercile=mid,Qwen/Qwen2.5-1.5B-Instruct,BW,tercile=mid,21,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-1.5B-Instruct | BW | tercile=high,Qwen/Qwen2.5-1.5B-Instruct,BW,tercile=high,22,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-7B-Instruct | ALGO | all,Qwen/Qwen2.5-7B-Instruct,ALGO,all,61,80369.0,80511.0,-2413.0,501.5,0.0014268555520432077,ok
+Qwen/Qwen2.5-7B-Instruct | ALGO | tercile=low,Qwen/Qwen2.5-7B-Instruct,ALGO,tercile=low,35,81963.0,83020.0,-2483.0,153.0,0.007022218604106456,ok
+Qwen/Qwen2.5-7B-Instruct | ALGO | tercile=mid,Qwen/Qwen2.5-7B-Instruct,ALGO,tercile=mid,7,21731.0,30507.0,-9055.0,0.0,0.015625,ok
+Qwen/Qwen2.5-7B-Instruct | ALGO | tercile=high,Qwen/Qwen2.5-7B-Instruct,ALGO,tercile=high,19,40069.0,46453.0,-567.0,88.0,0.7982521057128906,ok
+Qwen/Qwen2.5-7B-Instruct | BW | all,Qwen/Qwen2.5-7B-Instruct,BW,all,65,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-7B-Instruct | BW | tercile=low,Qwen/Qwen2.5-7B-Instruct,BW,tercile=low,22,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-7B-Instruct | BW | tercile=mid,Qwen/Qwen2.5-7B-Instruct,BW,tercile=mid,21,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+Qwen/Qwen2.5-7B-Instruct | BW | tercile=high,Qwen/Qwen2.5-7B-Instruct,BW,tercile=high,22,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+meta-llama/Llama-3.1-8B-Instruct | ALGO | all,meta-llama/Llama-3.1-8B-Instruct,ALGO,all,61,857.0,714.0,41.0,614.0,0.026697662867091857,ok
+meta-llama/Llama-3.1-8B-Instruct | ALGO | tercile=low,meta-llama/Llama-3.1-8B-Instruct,ALGO,tercile=low,30,1463.5,1299.0,42.0,184.0,0.3284698575735092,ok
+meta-llama/Llama-3.1-8B-Instruct | ALGO | tercile=mid,meta-llama/Llama-3.1-8B-Instruct,ALGO,tercile=mid,11,636.0,531.0,41.0,20.0,0.2783203125,ok
+meta-llama/Llama-3.1-8B-Instruct | ALGO | tercile=high,meta-llama/Llama-3.1-8B-Instruct,ALGO,tercile=high,20,380.0,335.0,35.5,41.5,0.03128783028379036,ok
+meta-llama/Llama-3.1-8B-Instruct | BW | all,meta-llama/Llama-3.1-8B-Instruct,BW,all,65,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+meta-llama/Llama-3.1-8B-Instruct | BW | tercile=low,meta-llama/Llama-3.1-8B-Instruct,BW,tercile=low,22,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+meta-llama/Llama-3.1-8B-Instruct | BW | tercile=mid,meta-llama/Llama-3.1-8B-Instruct,BW,tercile=mid,21,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
+meta-llama/Llama-3.1-8B-Instruct | BW | tercile=high,meta-llama/Llama-3.1-8B-Instruct,BW,tercile=high,22,,,,,,DEGENERATE: canonical 'pick'=48/65 — Wilcoxon not reported
