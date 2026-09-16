@@ -1,19 +1,19 @@
 location,family,slice,model,variant,metric,old_value,new_value,delta,n,note
-table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,rows_affected,MISSING,64,,64,from oracle_bias_summary.csv
-table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,pert_before,MISSING,0.043,,64,from oracle_bias_summary.csv
-table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,pert_after,MISSING,0.252,,64,from oracle_bias_summary.csv
-table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,delta_perturbed,MISSING,0.209,,64,from oracle_bias_summary.csv
-table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,delta_canonical,MISSING,0.0,,64,from oracle_bias_summary.csv
-table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,rows_affected,MISSING,92,,92,from oracle_bias_summary.csv
-table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,pert_before,MISSING,0.321,,92,from oracle_bias_summary.csv
-table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,pert_after,MISSING,0.537,,92,from oracle_bias_summary.csv
-table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,delta_perturbed,MISSING,0.215,,92,from oracle_bias_summary.csv
-table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,delta_canonical,MISSING,0.113,,92,from oracle_bias_summary.csv
-table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,rows_affected,MISSING,192,,192,from oracle_bias_summary.csv
-table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,pert_before,MISSING,0.309,,192,from oracle_bias_summary.csv
-table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,pert_after,MISSING,0.397,,192,from oracle_bias_summary.csv
-table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,delta_perturbed,MISSING,0.087,,192,from oracle_bias_summary.csv
-table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,delta_canonical,MISSING,0.05,,192,from oracle_bias_summary.csv
+table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,rows_affected,MISSING,64,,64,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,pert_on,MISSING,0.252,,64,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,pert_off,MISSING,0.043,,64,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,delta_perturbed,MISSING,-0.209,,64,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,W3_blocksworld,--,BW_W3_action_mapping,delta_canonical,MISSING,0.0,,64,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,rows_affected,MISSING,92,,92,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,pert_on,MISSING,0.537,,92,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,pert_off,MISSING,0.321,,92,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,delta_perturbed,MISSING,-0.215,,92,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,ALGO,W3_shortest_path,--,SP_W3_node_mapping,delta_canonical,MISSING,-0.113,,92,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,rows_affected,MISSING,192,,192,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,pert_on,MISSING,0.397,,192,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,pert_off,MISSING,0.309,,192,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,delta_perturbed,MISSING,-0.087,,192,from oracle_bias_summary.csv (ablation: on→off)
+table_oracle,BW,all_blocksworld_variants,--,BW_state_parser,delta_canonical,MISSING,-0.05,,192,from oracle_bias_summary.csv (ablation: on→off)
 table_bw_structural,BW,matched47,--,num_blocks,delta,MISSING,0.26,,47,from K3_bw_canonical_w6_matched_report.csv
 table_bw_structural,BW,matched47,--,num_blocks,canonical_mean,MISSING,6.19,,47,from K3_bw_canonical_w6_matched_report.csv
 table_bw_structural,BW,matched47,--,num_blocks,w6_mean,MISSING,6.45,,47,from K3_bw_canonical_w6_matched_report.csv

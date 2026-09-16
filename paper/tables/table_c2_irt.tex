@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Mixture IRT / Rasch model comparison
+(\texttt{C2\_irt\_fit\_comparison.csv}). Strategy posteriors in
+\texttt{strategy\_posteriors.csv} ($n{=}72$ GSM rows, $K{=}1$).}
+\label{tab:c2-irt}
+\begin{tabular}{llrrrl}
+\toprule
+Family & Model & $K$ & BIC & Selected & Note \\
+\midrule
+GSM & 1PL & 1 & 476.1 & no & baseline single-class Rasch/1PL \\
+GSM & 2PL & 1 & 449.3 & no & baseline 2PL \\
+GSM & mixture\_rasch & 2 & 587.8 & no & restarts=4; converged\_iter~65 \\
+GSM & mixture\_rasch & 3 & 617.5 & no & restarts=4; converged\_iter~9 \\
+GSM & mixture\_rasch & 4 & 641.8 & no & restarts=4; converged\_iter~41 \\
+GSM & mixture\_rasch & 1 & 558.1 & yes & SELECTED by BIC (K$\in$1..4); LRT-path K=1; single-class mixture \\
+ALGO & NOT\_FIT & --- & --- & no & Skipped: O10 item\_var=0.0051 prop=0.0182 below gate (var>=0. \\
+BW & NOT\_FIT & --- & --- & no & Skipped: O10 item\_var=0.0006 prop=0.0024 below gate (var>=0. \\
+\bottomrule
+\end{tabular}
+\end{table}

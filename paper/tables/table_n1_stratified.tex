@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Blocksworld canonical vs regenerated accuracy stratified by block-naming
+convention (\texttt{N1\_bw\_w6\_stratified\_accuracy.csv}). Top: pairs matched on
+naming ($n{=}13$). Bottom: full naming $\times$ variant $2\times 2$ with per-cell $n$.
+The sequential-canonical cell is $n{=}3$ and is reported only as a confound check,
+not as an effect estimate. Unmatched Claude $\Delta{=}+0.468$ shrinks to within-stratum
+$+0.090$ (sequential) and $+0.064$ (scattered).}
+\label{tab:bw-stratified}
+\begin{tabular}{lrrrr}
+\toprule
+\multicolumn{5}{l}{\emph{Matched naming convention}} \\
+Model & $n$ & Canonical & Regenerated & $\Delta$ \\
+\midrule
+Claude & 13 & .231 & .308 & $+.077$ \\
+DeepSeek & 13 & .923 & .923 & $.000$ \\
+GPT-4o & 13 & .000 & .154 & $+.154$ \\
+Llama & 13 & .000 & .000 & $.000$ \\
+o4-mini & 13 & 1.000 & 1.000 & $.000$ \\
+Gemini & 13 & .385 & .231 & $-.154$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Naming $\times$ variant $2\times 2$ (accuracy, $n$)}} \\
+Model & Seq./can. & Seq./W6 & Scat./can. & Scat./W6 \\
+\midrule
+Claude & .667 ($n{=}3$) & .757 ($n{=}37$) & .136 ($n{=}44$) & .200 ($n{=}10$) \\
+DeepSeek & .667 ($n{=}3$) & .946 ($n{=}37$) & .705 ($n{=}44$) & .900 ($n{=}10$) \\
+GPT-4o & .000 ($n{=}3$) & .270 ($n{=}37$) & .091 ($n{=}44$) & .200 ($n{=}10$) \\
+Llama & .000 ($n{=}3$) & .027 ($n{=}37$) & .023 ($n{=}44$) & .000 ($n{=}10$) \\
+o4-mini & 1.000 ($n{=}3$) & 1.000 ($n{=}37$) & 1.000 ($n{=}44$) & 1.000 ($n{=}10$) \\
+Gemini & .000 ($n{=}3$) & .459 ($n{=}37$) & .523 ($n{=}44$) & .200 ($n{=}10$) \\
+\bottomrule
+\end{tabular}
+\end{table}

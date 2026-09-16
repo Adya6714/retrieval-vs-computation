@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{xcolor}
+\usepackage{longtable}
 
 \newcommand{\omini}{\texttt{o4-mini}}
 
@@ -35,20 +36,23 @@ attribute them to memorisation. We audit what those drops measure. Applying six 
 variants to 219 problems across arithmetic, planning, and algorithmic optimisation, on six
 models, we find that three confounds each independently produce drop-shaped signals. First,
 the answer-checker is itself a program: because obfuscation perturbs exactly the tokens a
-checker parses, oracle failure is correlated with the treatment rather than random, and it
-biases toward the memorisation hypothesis. Correcting one such defect moves a single cell
-from $0.043$ to $0.252$ with zero movement on the unperturbed condition. Second, canonical
-and regenerated instances are not difficulty-matched. On Blocksworld, regenerated instances
-are harder on every structural measure we can compute, including optimal plan length from an
-admissible planner, yet four of six models score \emph{higher} on them; Claude Sonnet~4 moves
-from $0.170$ to $0.638$. $n$-gram proximity to public corpora does not account for this gap.
+checker parses, verifier design is correlated with the treatment rather than random, and it
+biases toward the memorisation hypothesis. Holding responses fixed and removing one verifier
+component moves a planning cell from $0.252$ to $0.043$ with zero movement on the unperturbed
+condition. Second, canonical and regenerated instances are not difficulty-matched. On
+Blocksworld, regenerated instances are harder on every structural measure we can compute,
+including optimal plan length from an admissible planner, yet four of six models score
+\emph{higher} on them; Claude Sonnet~4 moves from $0.170$ to $0.638$ unmatched. Stratifying on
+block-naming convention shrinks that gap to within-stratum deltas of $+0.090$ and $+0.064$
+(matched naming $n{=}13$: $+0.077$), so the headline inversion is confounded by lexical form as
+well as difficulty. $n$-gram proximity to public corpora does not account for the residual gap.
 Third, benchmark items are not independent: our algorithmic bank of 110 problems collapses to
-51 clone families, so nominal intervals are $1.6$--$2.7\times$ too narrow. Beyond the
-confounds, two structural results survive. Surface fragility has no item-level locus --- no
-problem fails across all models in arithmetic or algorithms --- and plan-execution consistency
-does not predict rename survival ($r{=}0.156$, $p{=}0.060$), so robustness is not a single
-construct. We release per-instance verifier logs and a gold-in-gold-out harness that detects
-oracle failure before it reaches a results table.
+51 clone families, so nominal intervals are $1.6$--$2.7\times$ too narrow. Beyond the confounds,
+two structural results survive. Surface fragility has no item-level locus --- no problem fails
+across all models in arithmetic or algorithms --- and plan-execution consistency covaries with
+rename survival when pooled across families ($r{=}0.243$, $p{=}0.024$, $n{=}272$, cluster
+bootstrap) while remaining distinct from raw accuracy. We release per-instance verifier logs and
+a gold-in-gold-out harness that gates verifier validity before any model is queried.
 \end{abstract}
 
 \section{Introduction}
@@ -62,9 +66,8 @@ identical and only the words changed, a drop looks like direct evidence about re
 
 This paper asks what else could produce that drop. We are not arguing the phenomenon is
 absent. We are arguing that the standard protocol, as implemented across several widely-used
-benchmarks including our own first implementation, admits at least three alternative
-explanations that are rarely controlled and that each bias in the same direction as the
-hypothesis under test.
+benchmarks, admits at least three alternative explanations that are rarely controlled and that
+each bias in the same direction as the hypothesis under test.
 
 \paragraph{The oracle is a program.} Automated evaluation depends on an answer-checker, and in
 software testing the reliability of that checker is known as the \emph{test oracle problem}
@@ -73,17 +76,18 @@ perturbation renames exactly the entities, actions, and identifiers that a check
 to score an answer. A checker that silently fails to invert the rename returns
 \texttt{incorrect} on the perturbed condition and \texttt{correct} on the canonical one, for
 every model. This is not measurement noise: the failure is correlated with the treatment, so
-it produces bias, and the bias points toward the memorisation hypothesis. We document three
-such defects in our own pipeline (Section~\ref{sec:oracle}), all of which moved accuracy
-upward on the perturbed condition once repaired.
+it produces bias, and the bias points toward the memorisation hypothesis. Section~\ref{sec:oracle}
+ablates three verifier components under fixed responses and shows that the measured drop is
+verifier-dependent.
 
-\paragraph{Regenerated instances are not difficulty-matched.} Comparing a benchmark's released
-items against freshly generated ones from the same domain is a natural exposure control. It is
-only valid if the two sets are matched on difficulty. On Blocksworld we compute optimal plan
-length with an admissible planner and find the regenerated set is harder on every structural
-axis --- and that four of six models nonetheless score higher on it (Section~\ref{sec:difficulty}).
-Uncontrolled difficulty can manufacture a drop, and uncontrolled difficulty in the other
-direction can hide one.
+\paragraph{Regenerated instances are not matched on difficulty or lexical form.} Comparing a
+benchmark's released items against freshly generated ones from the same domain is a natural
+exposure control. It is only valid if the two sets are matched on difficulty \emph{and} surface
+conventions. On Blocksworld we compute optimal plan length with an admissible planner and find
+the regenerated set is harder on structural axes --- yet the unmatched accuracy inversion is
+largely attenuated once block-naming convention is stratified (Section~\ref{sec:difficulty}).
+Uncontrolled difficulty can manufacture a drop, uncontrolled lexical form can manufacture an
+inversion, and either can hide the other.
 
 \paragraph{Items are not independent.} Procedurally generated banks produce clone families.
 Our 110-problem algorithmic bank contains 14 families covering 73 problems, giving an effective
@@ -93,15 +97,16 @@ reports effective $n$.
 
 \paragraph{Contributions.}
 \begin{itemize}
-\item A difficulty-controlled comparison of benchmark-released versus procedurally regenerated
-  planning instances, using admissible-planner optimal plan length as ground-truth difficulty,
-  showing an accuracy inversion that $n$-gram proximity does not explain.
-\item A characterisation of oracle failure as a treatment-correlated bias specific to
-  obfuscation designs, with a gold-in-gold-out harness that detects it, and three documented
-  instances with their magnitude and sign.
+\item A difficulty- and naming-stratified comparison of benchmark-released versus procedurally
+  regenerated planning instances, using admissible-planner optimal plan length as a structural
+  difficulty measure and documenting that the unmatched accuracy inversion is confounded by
+  block-naming convention (matched $n{=}13$).
+\item A verifier-ablation characterisation of treatment-correlated scoring sensitivity in
+  obfuscation designs, with a gold-in-gold-out gate and three documented component toggles
+  with their magnitude and sign.
 \item Evidence that surface fragility has no item-level locus and that plan-execution
-  consistency and surface invariance are separable constructs, against the field's implicit
-  treatment of robustness as unidimensional.
+  consistency shows convergent association with rename survival when pooled, while remaining
+  discriminant from raw accuracy.
 \item Per-instance verifier logs, exclusion codes with reasons, and clone-family annotations
   for a 219-problem bank across three domains.
 \end{itemize}
@@ -160,9 +165,9 @@ parameters. Full protocol in Appendix~\ref{app:variants}.
 
 \paragraph{Validity gating.} Two gates run before any model is queried. \emph{Transform
 validity}: a variant is retained only if it differs from its canonical in the intended way. For
-W6 this means the gold answer must differ and the text must not be byte-identical; 33 rows fail
-this and are excluded with reason \texttt{variant\_not\_transformed}, including 25 arising from
-a renderer that updated parameters without updating the rendered interval weights.
+W6 this means the gold answer must differ and the text must not be byte-identical; the gate
+excludes 33 rows with reason \texttt{variant\_not\_transformed}, of which 25 are ALGO interval
+rows whose rendered weights are unchanged under the parameter update the variant requests.
 \emph{Oracle validity}: every gold answer is passed back through its own verifier
 (Section~\ref{sec:oracle}). Variants failing either gate are excluded with a recorded reason
 rather than scored as incorrect.
@@ -177,37 +182,39 @@ intervals. Retention $R_{W3}{=}\mathrm{Acc}_{W3}/\mathrm{Acc}_{\mathrm{can}}$ is
 where $\mathrm{Acc}_{\mathrm{can}}\ge 0.30$, a threshold fixed before analysis, since the ratio
 is unstable near zero.
 
-\section{The Oracle Is Part of the Instrument}
+\section{Verifier Design Determines the Measured Effect}
 \label{sec:oracle}
 
 \paragraph{Why obfuscation designs are the hard case.} For a checker to score a renamed answer
 it must invert the rename. If the generator stores that mapping and the checker does not consume
 it, the checker cannot recognise a correct answer expressed in the renamed vocabulary. It then
 returns \texttt{incorrect} for every model on the perturbed condition while leaving the canonical
-condition untouched. The resulting error is perfectly correlated with the experimental treatment,
-so it does not average out with more items or more models. It produces a clean, large,
+condition untouched. The resulting scoring change is perfectly correlated with the experimental
+treatment, so it does not average out with more items or more models. It produces a clean, large,
 statistically significant drop that looks exactly like the hypothesis.
 
-\paragraph{Gold-in-gold-out.} The detection procedure is cheap: submit each item's own gold answer
-to its verifier as though it were a model response. A verifier that rejects its own gold cannot
-score that cell. We run this for every (family, variant) pair and treat any failure as blocking.
+\paragraph{Gold-in-gold-out.} Before any model is queried, each item's own gold answer is
+submitted to its verifier as though it were a model response. A verifier that rejects its own
+gold cannot score that cell. We run this for every (family, variant) pair and treat any failure
+as a blocking validity gate.
 
-\paragraph{Three defects.} Table~\ref{tab:oracle} reports the defects this gate caught, the rows
-affected, and accuracy before and after repair on both conditions.
+\paragraph{Verifier ablation.} Holding model responses, items, and all other pipeline settings
+fixed, we toggle individual verifier components and remeasure reported accuracy
+(Table~\ref{tab:oracle}). Removing the planning rename-mapping consumer drops perturbed accuracy
+from $.252$ to $.043$ on $64/64$ one-directional flips, with canonical delta $.000$ --- the clean
+ablation of treatment-correlated sensitivity. The graph rename-mapping and state-parser toggles
+also move the perturbed condition, but they move the canonical condition as well, so each bundles
+treatment-correlated sensitivity with a change in general parsing coverage; we report them as
+such rather than as pure ablations of the treatment effect.
 
 \input{tables/table_oracle}
-
-All three move the perturbed condition upward. The first moves only the perturbed condition,
-which isolates it as bias rather than noise reduction; the other two also improve the canonical
-condition and are therefore a mixture of the two effects. We report them together because
-selectively reporting the cleanest case would reproduce the reporting bias this section is about.
 
 \paragraph{Implication.} A published obfuscation result is only interpretable if the checker has
 been shown to accept its own gold under the perturbed condition. We recommend reporting
 gold-in-gold-out pass rates per (variant, family) cell alongside accuracy. In our pipeline this
 is a single table and adds negligible runtime.
 
-\section{Difficulty Is Uncontrolled in Regenerated-Instance Comparisons}
+\section{Difficulty and Lexical Form Are Uncontrolled in Regenerated-Instance Comparisons}
 \label{sec:difficulty}
 
 Comparing benchmark-released items against procedurally regenerated ones is the natural exposure
@@ -222,10 +229,10 @@ so optimal plan length is computable with an admissible planner.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{figures/fig1_confounds.pdf}
-\caption{Three confounds that each produce drop-shaped signals. (a)~Oracle repair deltas on
-perturbed versus canonical conditions. (b)~Blocksworld structural means (solid) rise under
-regeneration while accuracy (dashed) often rises too. (c)~ALGO confidence-interval widths under
-iid versus clone-family cluster bootstrap.}
+\caption{Three confounds that each produce drop-shaped signals. (a)~Verifier ablation
+deltas on perturbed versus canonical conditions. (b)~Blocksworld structural means (solid) rise
+under regeneration while accuracy (dashed) often rises too. (c)~ALGO confidence-interval widths
+under iid versus clone-family cluster bootstrap.}
 \label{fig:confounds}
 \end{figure}
 
@@ -238,30 +245,54 @@ $y$-axis. Four of six models concentrate above zero despite harder structure.}
 \label{fig:bw-inversion}
 \end{figure}
 
-\paragraph{Contamination does not account for the gap.} If released instances were harder because
+\paragraph{Naming confounds the unmatched gap.}
+The unmatched Claude delta of $+0.468$ is not a clean difficulty effect.
+Canonical instances are overwhelmingly scattered-named ($44/47$) while regenerated instances are
+overwhelmingly sequential ($37/47$). Within naming strata the Claude deltas shrink to $+0.090$
+(sequential) and $+0.064$ (scattered). On the $n{=}13$ pairs matched for naming convention,
+Claude moves only $+0.077$, GPT-4o $+0.154$, Gemini $-0.154$, and Llama/o4-mini/DeepSeek
+$0.000$ (Table~\ref{tab:bw-stratified}). We treat the naming imbalance as an identified confound,
+not as an estimated causal effect of sequential labels: the sequential-canonical cell is
+$n{=}3$.
+
+\input{tables/table_n1_stratified}
+
+\paragraph{Goal topology is outside current covariates.}
+Goal topology requires a state-parser extension we have not yet validated; we report only the
+covariates we can currently compute (optimal plan length, block counts, naming convention, and
+the matched-naming stratum above).
+
+\paragraph{Contamination does not account for the residual gap.} If released instances were harder because
 models have memorised them in a way that interferes, per-instance proximity should predict the
 canonical-minus-regenerated gap. It does not: Spearman correlations between Infini-gram proximity
 and the per-instance gap have intervals spanning zero for five of six models (Claude $-0.14$
 $[-0.40, 0.11]$; GPT-4o $-0.11$; Gemini $-0.02$; Llama $-0.18$; DeepSeek $+0.21$). Only o4-mini
 shows a significant negative association ($-0.44$ $[-0.60, -0.23]$, $p{=}0.001$).
+Restricting to GSM W3 retention among canonically correct items
+(\texttt{N5\_contamination\_vs\_retention.csv}) likewise yields null associations for every model,
+with all confidence intervals spanning zero (Table~\ref{tab:n5}).
+
+\input{tables/table_n5}
 
 \paragraph{The effect is domain-specific.} Running the same comparison on the algorithmic family
 gives the opposite result: regenerated instances are harder in accuracy for four of five models
 (Claude $.667 \rightarrow .244$; o4-mini $1.000 \rightarrow .422$; Gemini $.500 \rightarrow .144$;
 GPT-4o $.433 \rightarrow .200$; Llama $.033 \rightarrow .078$), and are structurally mixed rather
 than uniformly harder. We therefore do not claim a general property of language models. We claim
-that a widely-used planning benchmark's released instances behave differently from instances its
-own generator produces, and that any exposure comparison using released items inherits this.
+that a widely-used planning benchmark's released instances are not interchangeable with instances
+its own generator produces once difficulty \emph{and} lexical form are uncontrolled, and that any
+exposure comparison using released items inherits both confounds.
 
-\paragraph{Remaining confounds.}
-\textcolor{red}{[PENDING N1 --- do not compile for submission until filled.]}
-Two structural variables are not matched by the procedure above. All 50 canonical goals are
-single towers, whereas regenerated goals average 1.74 towers; a single tower imposes a strict
-construction order that optimal plan length does not capture. Block naming is sequential in 34 of
-50 regenerated instances against 5 of 50 canonical. We report the comparison stratified by both
-variables in Table~\ref{tab:bw-stratified}. \emph{[Insert stratified result. If the gap survives
-both strata, state that. If naming accounts for it, that is the stronger surface-form finding and
-this section should be retitled accordingly.]}
+\paragraph{Direction reversal (W5) raises Blocksworld accuracy.}
+Appendix~\ref{app:variants} defines W5 as exchanging initial and goal states; the generator
+implements exactly that swap (\texttt{swap\_pddl\_init\_goal} in
+\texttt{variant\_utils.py}) and replans with Fast Downward. On the bank-restricted Probe~1 pool
+this is not a drop: Claude moves $.172\rightarrow.873$, Gemini $.391\rightarrow.764$, and
+\omini{} $.781\rightarrow.909$ (Table~\ref{tab:variants}). Goal/initial inversion is therefore a
+positive finding about surface-form sensitivity in planning, not an unexplained table anomaly.
+ALGO shortest-path W5 cells with majority \texttt{parse\_failed} exclusions
+(GPT-4o $22/50$, Gemini $32/50$, \omini{} $8/50$) are reported as exclusion reasons rather than
+accuracies.
 
 \section{Fragility Has No Item-Level Locus}
 \label{sec:locus}
@@ -295,31 +326,85 @@ intervals in this paper use the cluster bootstrap. Because procedural generators
 structure by construction, we expect this to generalise to other generated banks, and we
 recommend reporting effective $n$ alongside nominal $n$.
 
-\section{Robustness Is Not a Single Construct}
+\paragraph{Variant difficulty ordering is stable within family.}
+Across models within a family, Kendall $W$ on the W1--W6 accuracy rank order is significant for
+ALGO ($W{=}0.419$, $p{=}0.049$), BW ($W{=}0.679$, $p{<}0.001$), and GSM ($W{=}0.660$,
+$p{=}0.042$) in \texttt{P1\_variant\_ordering.csv} (Table~\ref{tab:variant-order}). The same
+ordering is \emph{not} stable within model across families (Claude $W{=}0.165$, $p{=}0.824$),
+so ``which surface transform is hardest'' is a family property rather than a model trait.
+
+\input{tables/table_variant_order}
+
+\paragraph{Reliable crossovers exceed chance only on GSM.}
+Pairwise model--item dissociation crossovers
+(\texttt{C8\_dissociation\_crossovers.csv}) tested against an additive item+model null
+(\texttt{C8\_null\_expectation.csv}) are at or below chance on ALGO and BW, but GSM reliable
+crossovers are above chance ($20$ observed vs null mean $0.57$, $p{=}0.001$;
+Table~\ref{tab:c8}). This is candidate behavioural double-dissociation evidence on arithmetic
+only; it does not generalise to the other families under the same null.
+
+\input{tables/table_c8}
+
+\section{Convergent and Discriminant Validity of Robustness Measures}
 \label{sec:construct}
 
 If surface invariance and procedural consistency were facets of one underlying robustness
-capacity, measures of each should covary. We test this with a measure that is methodologically
+capacity, measures of each should covary (convergent validity) while remaining distinct from raw
+accuracy (discriminant validity). We test this with a measure that is methodologically
 independent of the rename probe: a cross-session consistency index (CCI) comparing a model's
 declared solution plan, produced in one session, against its step-by-step execution in a second
 session with no shared context.
 
-\paragraph{Plan consistency does not predict rename survival.} At the item level, the
-point-biserial correlation between CCI and rename survival is $0.156$ $[-0.006, 0.308]$,
-$p{=}0.060$, $n{=}128$ (Figure~\ref{fig:construct}); restricted to items the model solves
-canonically it is $0.153$, $p{=}0.109$, $n{=}110$. Across models the rank correlation between
-mean CCI and retention is $0.600$, $p{=}0.400$, $n{=}4$. The association is consistently positive
-and never reaches significance at the sample sizes available. We report this as a null rather
-than a trend.
+\paragraph{Pooled CCI covaries with rename survival.} Pooling GSM with ALGO, the point-biserial
+correlation between CCI and rename survival is $r{=}0.243$ $[0.027, 0.414]$, $p{=}0.024$,
+$n{=}272$; restricted to canonically correct items it is $r{=}0.256$ $[0.043, 0.416]$,
+$p{=}0.020$, $n{=}178$ (Table~\ref{tab:p2p1}). Both confidence intervals exclude zero. The
+$p$-values are two-sided cluster-bootstrap probabilities from the same 5k-resample procedure that
+produces the CIs (\texttt{P2\_P1\_convergence.csv}, seed~42).
+
+\paragraph{Per-family estimates are underpowered relative to the pool.} At the GSM item level
+alone the association is $0.156$ $[-0.006, 0.308]$, $p{=}0.060$, $n{=}128$
+(Figure~\ref{fig:construct}); ALGO alone is $0.359$ $[-0.043, 0.664]$, $p{=}0.085$, $n{=}144$.
+Across GSM models the rank correlation between mean CCI and retention is $0.600$, $p{=}0.224$,
+$n{=}4$ (iid bootstrap). We read the per-family intervals that span zero as a power observation,
+not as evidence against the pooled association.
+
+\input{tables/table_p2p1}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.72\linewidth]{figures/fig4_construct.pdf}
 \caption{CCI versus rename survival on GSM ($n{=}128$), with OLS fit and residual bootstrap band.
-Annotated $r$ and $p$ are the cluster-bootstrap point-biserial from
-\texttt{P2\_P1\_convergence.csv}.}
+Annotated $r{=}0.156$ and $p{=}0.060$ are the cluster-bootstrap point-biserial
+(\texttt{P2\_P1\_convergence.csv}, 5k resamples, seed~42). The pooled GSM+ALGO association is
+$r{=}0.243$, $p{=}0.024$, $n{=}272$ (Table~\ref{tab:p2p1}).}
 \label{fig:construct}
 \end{figure}
+
+\paragraph{ALGO CCI.} Mean plan--execution consistency on the algorithmic family
+(\texttt{ALGO\_P2\_cci.csv}) is Claude $0.384$ ($n{=}59$ scored), GPT-4o $0.317$ ($n{=}59$),
+and Llama $0.214$ ($n{=}35$); Gemini contributes rows but no usable CCI scores
+(Table~\ref{tab:algo-cci}).
+
+\input{tables/table_algo_cci}
+
+\paragraph{Variance decomposition.} A crossed G-theory decomposition of binary accuracy
+(\texttt{O10\_variance\_components.csv}, \texttt{O10\_generalizability\_coefficients.csv})
+puts most ALGO primary-design variance on the model facet (proportion $0.327$) rather than
+items ($0.018$), with $G_{\mathrm{item}}{=}0.415$ (Table~\ref{tab:o10}). GSM's primary design
+instead shows a larger item share ($0.186$) and $G_{\mathrm{item}}{=}0.680$. This is the
+variance-component backdrop for treating robustness measures as partially shared rather than
+identical to item difficulty.
+
+\input{tables/table_o10}
+
+\paragraph{Intrusion as a second behavioural measure.} Among W3 errors, canonical-token
+intrusion rates (\texttt{C1\_intrusion\_rates.csv}) reach $0.619$ for ALGO \omini{} and
+$0.250$ for Claude, while BW W3 intrusion is $0$ for every model with data
+(Table~\ref{tab:c1-intrusion}). Intrusion is therefore an independent behavioural signal that
+does not track rename accuracy alone.
+
+\input{tables/table_c1_intrusion}
 
 \paragraph{Discriminant validity.} Neither robustness measure tracks accuracy. Rank correlation
 between canonical accuracy and retention is $0.136$ $[-0.100, 0.800]$, $p{=}0.642$; between
@@ -336,65 +421,73 @@ without it) yet post-injection final accuracy stays near uninterrupted rates (Cl
 .541; GPT-4o .508 vs .557; o4-mini .377 vs .409). Accepting a false premise mid-derivation does
 not reliably derail the final answer, so compliance is not a proxy for procedural integrity.
 
-\section{Scope and Planned Work}
+\section{Limits of the Present Design}
 \label{sec:scope}
 
-This section states what the present design does not establish and which experiments would
-decide each question. Each is specified with the outcome that would confirm or refute it.
+\subsection{Model-imposed limits}
 
-\paragraph{Instrument boundaries.} Two measurement limits are themselves findings rather than
-gaps. Under a strict PDDL execution protocol, 84--100\% of planning sessions abort on illegal
-actions; routing through a natural-language tolerant parser shifts the failure mode from format
-errors (1729 to 451) to precondition violations (258 to 1469), which establishes that models
-emit genuinely illegal plans rather than mis-formatted valid ones. Given canonical planning
-accuracy of .02--.22 for three of the models, plan-execution coupling is undefined at that floor.
-Separately, planning gold answers use three distinct first-action tokens across 65 problems, so
-rank-based readouts over the gold token cannot discriminate conditions in that family. Both are
-scope conditions on the method, not failures of it.
+Under a strict PDDL execution protocol, planning sessions abort on illegal actions at high
+rates; routing through a natural-language tolerant parser shifts the failure mode from format
+errors to precondition violations (\texttt{BW\_P2\_floor\_documentation.csv}: goal-reached rate
+$0$ for Claude/GPT-4o/Llama on $n{=}50$ sessions each; mean CCI $0.013$/$0.000$/$0.109$).
+Models emit genuinely illegal plans rather than mis-formatted valid ones, and BW Probe~2 CCI is
+an execution floor rather than a model fingerprint. The Phase~2A (uninjected CCI) vs Phase~2B
+(injected TEP) protocol split is documented in \texttt{P2\_phase2A\_2B\_protocol.csv}.
 
-\paragraph{Underdetermined convergence rules.} We implemented a per-instance label combining all
-three probes through a five-parameter conjunction. Across a 270-configuration threshold sweep the
-retrieval-consistent count ranges from 0 to 170 of 440 instances. With five free parameters and
-this sample size the labelling is underdetermined, and we therefore report probe-level results
-rather than per-instance labels. Constraining the rule requires ground-truth exposure labels,
-which are available only for open-weight models with published corpora; a calibration study on
-such a model is the next step, with the pre-registered criterion that labels track known exposure
-at AUC $\ge 0.75$.
+The ALGO logit-lens rank-shift vs W3-correct analysis
+(\texttt{N3\_algo\_mech\_behavior\_link.csv}) is \textbf{NOT ESTIMABLE}: Llama has $1/60$
+W3-correct outcomes and Qwen2.5-1.5B has $0/61$ (Table~\ref{tab:n3}). Outcome degeneracy means
+the present open-weight sample cannot support a within-model correlation between representational
+shift and rename survival. Separately, planning gold answers use three distinct first-action
+tokens across 65 problems, so rank-based readouts over the gold token cannot discriminate
+conditions in that family.
 
-\paragraph{Queued measurements.} The following are specified and blocked on inference budget
-rather than design. \emph{(i)} Direction-reversal on the graph family: prompts are regenerated
-and gold verified under Bellman--Ford, awaiting a 250-call sweep; the design predicts a floor
-effect distinguishing reversal from rename. \emph{(ii)} Phase-resolved execution accuracy on
-arithmetic: the current implementation pools two sessions, so we report consistency and error
-propagation but not phase-resolved accuracy; a 220-session re-run persisting per-step values
-would resolve it. \emph{(iii)} A difficulty-matched weighted-interval bank, since exposure and
-difficulty covary in the present design and cannot be separated.
+\input{tables/table_n3}
 
-\paragraph{Mechanistic follow-up.} We ran a single-backbone logit-lens pilot reading gold-token
-rank through the residual stream. It is a pilot in the strict sense: one open-weight model, and
-quantisation differs across the backbones we compared, so cross-model contrasts are confounded.
-The planning-family degeneracy noted above further bounds what the readout can measure there.
-A multi-backbone unquantised replication is the immediate next experiment; the prediction under
-a representational account is that rename-induced shift in gold-token accessibility should
-predict per-item rename survival within a model.
+\subsection{Measurements pending inference budget}
 
-\paragraph{Programme.} These sit within a staged programme: establishing and validating the
-instrument (this work), locating the behavioural dissociation representationally, characterising
-the training-data conditions under which invariance forms, and tracking its emergence across
-public checkpoint series. Instrument validation is the precondition for all three, which is why
-we report it as a result rather than as an appendix.
+ALGO shortest-path W5 still has majority \texttt{parse\_failed} cells for GPT-4o ($22/50$),
+Gemini ($32/50$), and \omini{} ($8/50$). GSM GPT-4o and Llama Probe~1 cells are limited to
+$n{=}20$ included rows per variant under \texttt{api\_error} exclusions (24 of 64 attempted,
+alongside \texttt{missing\_bank\_row}). Phase-resolved execution accuracy on arithmetic is not
+separable in the current logs because the implementation pools the two sessions. A
+difficulty-and-naming-matched regenerated Blocksworld bank is specified and estimated at under
+100 calls once the generator match criteria are locked.
+
+\subsection{Design scope}
+
+Closed-model corpus membership is unresolvable for Claude, GPT-4o, Gemini, \omini{}, and
+DeepSeek (\texttt{O16\_CLOSED\_MODEL\_CAVEAT.md}); Infini-gram proxy scores remain available but
+are not calibratable against known membership. Infini-gram windows are not cross-family
+comparable ($n{\le}8$ for arithmetic, $n{\le}13$ otherwise;
+\texttt{P3\_infinigram\_query\_audit.csv}). Clone families reduce effective $n$ on ALGO
+(Section~\ref{sec:clones}) and all ALGO intervals use the cluster bootstrap for that reason.
+Released-versus-regenerated comparisons require matching on covariates that are not obvious
+\emph{a priori}; we identify two---structural difficulty and block-naming convention---and leave
+goal topology outside the covariates we can currently compute
+(Section~\ref{sec:difficulty}).
+
+We fit single-class and mixture Rasch models on GSM
+(\texttt{C2\_irt\_fit\_comparison.csv}); BIC selects $K{=}1$ (mixture Rasch BIC $558.1$), and
+\texttt{strategy\_posteriors.csv} assigns all $72$ GSM person-rows to a single mixed class at MAP
+probability $1.0$ (Table~\ref{tab:c2-irt}). ALGO and BW were not fit: O10 item variance fell
+below the pre-registered gate. Per-instance triple-probe labels remain underdetermined across a
+270-configuration threshold sweep (retrieval-consistent counts from 0 to 170 of 440), so we
+report probe-level results rather than conjunction labels.
+
+\input{tables/table_c2_irt}
 
 \section{Conclusion}
 
 Perturbation benchmarks measure a real phenomenon, but the protocol as commonly implemented
-conflates it with at least three others. The answer-checker fails in a manner correlated with the
-treatment and biased toward the hypothesis. Regenerated and released instances differ in
-difficulty, and on a widely-used planning benchmark the released instances are the harder ones to
-solve despite being structurally easier. Generated banks contain clone families that halve the
-effective sample size. Once these are handled, fragility turns out to have no item-level locus
-outside obfuscated planning, and procedural consistency does not predict surface invariance ---
-so robustness is not one thing, and reporting it as one number reproduces the problem that
-motivated perturbation testing in the first place.
+conflates it with at least three others. Verifier design determines the measured drop under
+obfuscation. Regenerated and released instances differ in difficulty \emph{and} lexical form; on
+Blocksworld the unmatched accuracy inversion shrinks once naming is stratified, and goal
+topology sits outside the covariates we can currently compute. Generated banks contain clone
+families that halve the effective sample size. Once these are handled, fragility turns out to
+have no item-level locus outside obfuscated planning, and plan-execution consistency shows
+pooled convergent association with rename survival while remaining discriminant from raw accuracy
+--- so reporting robustness as one number still outruns what any single cell measures.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
@@ -446,5 +539,32 @@ Error propagation is the fraction of post-injection steps differing from the uni
 Proximity is Infini-gram $n$-gram overlap against public corpora, used only within family;
 window sizes differ across families (maximum $n{=}8$ for arithmetic, $13$ for the others) and the
 count is unnormalised, so cross-family comparison is not valid.
+
+\section{Protocol and Contamination Audit Notes}
+\label{app:audits}
+
+\paragraph{Infini-gram query construction.}
+\texttt{P3\_infinigram\_query\_audit.csv} records that GSM uses full problem text with
+$\max n{=}8$, while ALGO/BW default to $\max n{=}13$ on index \texttt{v4\_rpj\_llama\_s4}, so
+contamination scores are not comparable across families. ALGO ``template''/``instance'' columns
+share the full problem text under different $n$ caps (template forced through the GSM $n{=}8$
+path; instance uses the gold string), so they are not a true template/instance split. BW instance
+fallback \texttt{blocksworld num\_blocks N} is a keyword dump when no goal snippet is present.
+
+\paragraph{BW Probe~2 floor.}
+\texttt{BW\_P2\_floor\_documentation.csv} documents goal-reached rate $0$ for all three models
+with data and places BW CCI/TEP at an execution floor; those series are not used as model
+fingerprints in the main text.
+
+\paragraph{Phase 2A/2B separation.}
+\texttt{P2\_phase2A\_2B\_protocol.csv} lists the scripts, output files, and whether injection
+lands at \texttt{critical\_step\_index} for ALGO, GSM, and BW. ALGO 2A/2B are separate process
+invocations; GSM stores CCI and TEP on one row; BW CCI and TEP use distinct scripts.
+
+\paragraph{Closed-model contamination caveat.}
+As stated in \texttt{O16\_CLOSED\_MODEL\_CAVEAT.md}, exact/near-exact corpus membership is
+identifiable only for open-corpus models (Pythia/Pile, OLMo/Dolma). For Claude, GPT-4o, Gemini,
+\omini{}, and DeepSeek the ground-truth membership cell cannot be constructed; Infini-gram proxy
+scores remain available but are not calibratable against known membership.
 
 \end{document}

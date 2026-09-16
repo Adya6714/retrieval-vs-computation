@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Stability of W1--W6 difficulty ordering
+(\texttt{P1\_variant\_ordering.csv}; Kendall $W$, 10k permutations).}
+\label{tab:variant-order}
+\begin{tabular}{llrrr}
+\toprule
+Analysis & Scope & $W$ & $p$ & $n$ rankers \\
+\midrule
+within\_family\_across\_models & ALGO & .419 & .049 & 5 \\
+within\_family\_across\_models & BW & .679 & .000 & 6 \\
+within\_family\_across\_models & GSM & .660 & .042 & 3 \\
+within\_model\_across\_families & Claude & .165 & .824 & 3 \\
+within\_model\_across\_families & Gemini & .238 & .673 & 3 \\
+within\_model\_across\_families & Llama & .793 & .110 & 2 \\
+within\_model\_across\_families & GPT-4o & .543 & .462 & 2 \\
+within\_model\_across\_families & o4-mini & .670 & .043 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}

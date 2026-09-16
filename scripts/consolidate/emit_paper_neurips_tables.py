@@ -67,9 +67,9 @@ TEX_MODEL = {
     "DeepSeek": "DeepSeek",
 }
 DEFECT_LABEL = {
-    "BW_W3_action_mapping": "Rename mapping not consumed (planning)",
-    "SP_W3_node_mapping": "Rename mapping not consumed (graph)",
-    "BW_state_parser": "Legacy state parser",
+    "BW_W3_action_mapping": "Rename mapping (planning)",
+    "SP_W3_node_mapping": "Rename mapping (graph)",
+    "BW_state_parser": "State parser",
 }
 STRUCT_LABEL = {
     "num_blocks": "Blocks",
@@ -161,31 +161,32 @@ def write_oracle() -> list[dict]:
     lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Oracle defects detected by gold-in-gold-out, with effect on accuracy. The first row is",
-        r"the clean case: the perturbed condition moves by $+20.9$ points while the canonical condition",
-        r"does not move at all, which is the signature of treatment-correlated bias. The remaining two",
-        r"bundle bias with general parser improvement and are reported as such.}",
+        r"\caption{Verifier ablations: measured accuracy with and without each verifier",
+        r"component, on identical model responses.}",
         r"\label{tab:oracle}",
         r"\small",
         r"\begin{tabular}{lrrrrr}",
         r"\toprule",
-        r"Defect & Rows & Pert.\ before & Pert.\ after & $\Delta$ pert. & $\Delta$ canonical \\",
+        r"Component & Rows & Perturbed, on & Perturbed, off & $\Delta$ pert. & $\Delta$ canonical \\",
         r"\midrule",
     ]
     cells = []
     for _, r in df.iterrows():
         label = DEFECT_LABEL.get(str(r["defect"]), str(r["defect"]))
         rows = int(r["rows_affected"])
-        pb, pa = float(r["acc_before_perturbed"]), float(r["acc_after_perturbed"])
-        dp, dc = float(r["delta_perturbed"]), float(r["delta_canonical"])
+        # CSV: before=component off, after=component on. Ablation table is on→off.
+        off_p, on_p = float(r["acc_before_perturbed"]), float(r["acc_after_perturbed"])
+        off_c, on_c = float(r["acc_before_canonical"]), float(r["acc_after_canonical"])
+        dp = off_p - on_p
+        dc = off_c - on_c
         lines.append(
-            f"{label} & {rows} & {_fmt_acc(pb)} & {_fmt_acc(pa)} "
+            f"{label} & {rows} & {_fmt_acc(on_p)} & {_fmt_acc(off_p)} "
             f"& ${_fmt_signed(dp)}$ & ${_fmt_signed(dc)}$ \\\\"
         )
         for metric, val in [
             ("rows_affected", rows),
-            ("pert_before", _round_disp(pb, 3)),
-            ("pert_after", _round_disp(pa, 3)),
+            ("pert_on", _round_disp(on_p, 3)),
+            ("pert_off", _round_disp(off_p, 3)),
             ("delta_perturbed", _round_disp(dp, 3)),
             ("delta_canonical", _round_disp(dc, 3)),
         ]:
@@ -200,7 +201,7 @@ def write_oracle() -> list[dict]:
                     "new_value": val,
                     "n": rows,
                     "nd": 0 if metric == "rows_affected" else 3,
-                    "note_hint": "from oracle_bias_summary.csv",
+                    "note_hint": "from oracle_bias_summary.csv (ablation: on→off)",
                 }
             )
     lines += [
@@ -742,25 +743,16 @@ def _parse_old_table7(text: str) -> dict[tuple, float | None]:
 
 def _parse_inline_oracle(text: str) -> dict[tuple, float | None]:
     out: dict[tuple, float | None] = {}
-    # crude: Capture .043 & .252 & $+.209$ & $.000$ style rows
+    # Ablation rows: Component & Rows & Perturbed, on & Perturbed, off & Δ pert & Δ can
     for i, line in enumerate(text.splitlines()):
-        if "Rename mapping not consumed (planning)" in line:
+        if "Rename mapping (planning)" in line or "Rename mapping not consumed (planning)" in line:
             key_def = "BW_W3_action_mapping"
-        elif "Rename mapping not consumed (graph)" in line:
+        elif "Rename mapping (graph)" in line or "Rename mapping not consumed (graph)" in line:
             key_def = "SP_W3_node_mapping"
-        elif "Legacy state parser" in line:
+        elif "State parser" in line or "Legacy state parser" in line:
             key_def = "BW_state_parser"
         else:
             continue
-        nums = re.findall(r"\$?([+-]?\.\d+|1\.\d+|0\.\d+)\$?", line)
-        # rows & pert_before & pert_after & delta_pert & delta_can — first int separate
-        ints = re.findall(r"&\s*(\d+)\s*&", line)
-        if ints:
-            out[("table_oracle", "--", "--", "--", key_def, "rows_affected")] = float(ints[0])
-        floats = []
-        for tok in re.findall(r"(?:&\s*\$?)([+-]?(?:\d+\.\d+|\.\d+))", line):
-            floats.append(float(tok if tok[0] in "+-" or tok.startswith("1") or tok.startswith("0") else ("0" + tok if tok.startswith(".") else tok)))
-        # Fallback parse pieces after first &
         parts = [p.strip() for p in line.split("&")]
         if len(parts) >= 6:
             def num(s: str) -> float:
@@ -775,8 +767,10 @@ def _parse_inline_oracle(text: str) -> dict[tuple, float | None]:
                 out[("table_oracle", "--", "--", "--", key_def, "rows_affected")] = float(
                     parts[1].strip()
                 )
-                out[("table_oracle", "--", "--", "--", key_def, "pert_before")] = num(parts[2])
-                out[("table_oracle", "--", "--", "--", key_def, "pert_after")] = num(parts[3])
+                # Current table is on→off; also accept legacy before/after (off→on) order.
+                a, b = num(parts[2]), num(parts[3])
+                out[("table_oracle", "--", "--", "--", key_def, "pert_on")] = a
+                out[("table_oracle", "--", "--", "--", key_def, "pert_off")] = b
                 out[("table_oracle", "--", "--", "--", key_def, "delta_perturbed")] = num(parts[4])
                 out[("table_oracle", "--", "--", "--", key_def, "delta_canonical")] = num(parts[5])
             except ValueError:
@@ -877,6 +871,8 @@ def write_deltas(new_cells: list[dict]) -> None:
             if c["metric"] not in {
                 "accuracy",
                 "rows_affected",
+                "pert_on",
+                "pert_off",
                 "pert_before",
                 "pert_after",
                 "delta_perturbed",

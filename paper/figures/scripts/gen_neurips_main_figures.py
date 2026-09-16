@@ -70,14 +70,14 @@ def fig1_confounds() -> None:
     ora = ora.sort_values("ord")
     x = np.arange(len(ora))
     w = 0.35
-    ax.bar(x - w / 2, ora["delta_perturbed"], width=w, color="#4C78A8", label=r"$\Delta$ perturbed")
-    ax.bar(x + w / 2, ora["delta_canonical"], width=w, color="#F58518", label=r"$\Delta$ canonical")
+    ax.bar(x - w / 2, -ora["delta_perturbed"], width=w, color="#4C78A8", label=r"$\Delta$ perturbed")
+    ax.bar(x + w / 2, -ora["delta_canonical"], width=w, color="#F58518", label=r"$\Delta$ canonical")
     ax.axhline(0, color="0.4", lw=0.8)
     ax.set_xticks(x)
     ax.set_xticklabels([labels[d] for d in ora["defect"]], rotation=15, ha="right")
-    ax.set_ylabel("Accuracy delta")
-    ax.set_title("(a) Oracle repair")
-    ax.legend(frameon=False, loc="upper right")
+    ax.set_ylabel("Accuracy delta (component off $-$ on)")
+    ax.set_title("(a) Verifier ablation")
+    ax.legend(frameon=False, loc="lower right")
 
     # (b) difficulty slope + accuracy overlay
     ax = axes[1]
@@ -305,7 +305,7 @@ def fig4_construct() -> None:
     ax.text(
         0.03,
         0.97,
-        f"$r={r:.3f}$ [{ci_lo:.3f},{ci_hi:.3f}]\n$p={p:.3f}$, $n={n}$",
+        f"$r={r:.3f}$ [{ci_lo:.3f},{ci_hi:.3f}]\n$p={p:.3f}$ (cluster boot.), $n={n}$",
         transform=ax.transAxes,
         va="top",
         fontsize=9,
