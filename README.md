@@ -1,351 +1,106 @@
-# Retrieval vs Computation — LLM Reasoning Evaluation
+# Retrieval vs computation
 
-This repository implements a **three-probe evaluation framework** across **Blocksworld (BW)**, **GSM arithmetic**, and **Algorithmic (ALGO)** problem families. The core question: when two models score the same, are they solving problems the same way — by **retrieval** (pattern recall) or **computation** (structure-sensitive reasoning)?
+Equal benchmark accuracy can be reached by procedures that behave differently under surface change. This repository is a measurement programme for that distinction: six controlled surface variants, three problem families (arithmetic, planning, algorithmic optimisation), and six models. The instrument records whether a verified answer survives a named transform, whether a declared plan matches isolated execution, and whether a mid-solve injection is accepted without changing the final answer.
 
-**Published work:** *Same Score, Different Strategy* — NeurIPS 2026 Evaluations & Datasets package in [`paper/`](paper/) (CAISc archive under `paper/venue/caisc2026/`).  
-**Frozen numbers:** [`rebuild/NUMBERS.csv`](rebuild/NUMBERS.csv) · errata [`docs/paper/PAPER_ERRATA.md`](docs/paper/PAPER_ERRATA.md).  
-**Future research roadmap:** [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) + linked notes in [`research-vault/RvC-Vault/`](research-vault/RvC-Vault/).
-
----
-
-## Where everything lives
-
-| If you want to… | Open this |
-|-----------------|-----------|
-| **NeurIPS paper** (build PDF, tables, figures) | [`paper/main.tex`](paper/main.tex) · [`paper/README.md`](paper/README.md) |
-| **Frozen recomputed numbers** | [`rebuild/`](rebuild/) · [`docs/paper/PAPER_ERRATA.md`](docs/paper/PAPER_ERRATA.md) |
-| **Future research program** (phases, claims, evaluation catalog) | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
-| **Full research vault** (110+ linked planning notes) | [`research-vault/RvC-Vault/`](research-vault/RvC-Vault/) — start at `00_MOC.md` |
-| Consolidated analysis (every number from every probe) | [`ANALYSIS.md`](ANALYSIS.md) |
-| Script → artifact map | [`results/README.md`](results/README.md) |
-| Probe×family runbooks | [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](docs/evaluation/MASTER_EVALUATION_PIPELINES.md) |
-| GPU / API ops notes | [`docs/workbench/`](docs/workbench/) |
-| Model roster and API IDs | [`configs/models.yaml`](configs/models.yaml) |
-
-**Data flow:** `data/problems/` → `scripts/*_SCR_*.py` → `results/raw/` → `results/derived/` → `results/paper/` (CSV tables) + `paper/figures/` (manuscript PDFs).
+**Paper:** [Harder Instances, Higher Accuracy](paper/main.pdf) (`paper/main.tex`).  
+**Code:** [github.com/Adya6714/retrieval-vs-computation](https://github.com/Adya6714/retrieval-vs-computation).  
+**Teaching walkthrough:** [BOOK.md](BOOK.md).
 
 ---
 
-## Fresh checkout? Start here.
+## Headline findings
 
-```bash
-git clone <this-repo-url>
-cd retrieval-vs-computation
-make bootstrap            # pip install + clone PlanBench, GSM-Symbolic, Fast Downward
-cp .env.example .env      # then fill in OPENROUTER_API_KEY etc.
-```
+Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 
-`make bootstrap` clones three external repos that are intentionally **not committed** (they live under `data/sources/` and `tools/`, gitignored):
-
-| Path | Source | Why we need it |
-|---|---|---|
-| `data/sources/planbench/` | [`karthikv792/LLMs-Planning`](https://github.com/karthikv792/LLMs-Planning) | PlanBench PDDL problems for BW |
-| `data/sources/gsm_symbolic/` | [`apple/ml-gsm-symbolic`](https://github.com/apple/ml-gsm-symbolic) | GSM-Symbolic templates for GSM variants |
-| `tools/fast-downward/` | [`aibasel/downward`](https://github.com/aibasel/downward) | Reference PDDL planner for BW plan validation |
-
-If you only want to reproduce numbers from already-committed CSVs, skip the bootstrap and run `pip install -r requirements.txt` + `make test`.
+- **Numeric regeneration is nearly free; entity rename is expensive.** Gemini GSM canonical **.909** → W6 **.958**, canonical **.909** → W3 **.523** (`probe1_per_model_variant.csv`).
+- **Formal notation is often costlier than renaming.** o4-mini GSM canonical **.841** → W4 **.682** (same file); W3 on that cell is **.841**.
+- **Planning direction inversion raises accuracy.** On the Blocksworld ranker used for concordance, Claude W5 accuracy is **.869** against a W3 of **.375** (`C7_concordance_filtered.csv`). The manuscript table reports Claude canonical **.172** → W5 **.873**.
+- **No item-level locus of fragility** among items scored on all five primary models: **0/110** ALGO, **0/20** GSM, **14/64** BW (`P1_failure_patterns.csv`, `fail_all_five_paper_models`).
+- **Transform difficulty is a family property.** Kendall \(W\) within family: ALGO **.419** (\(p=.049\)), BW **.679** (\(p<.001\)), GSM **.660** (\(p=.042\)). Across families within Claude: \(W=.165\), \(p=.824\) (`P1_variant_ordering.csv`).
+- **Compliance is not correctness under injection.** o4-mini accepts **100%** of ALGO Phase-2B injections (`rebuild/NUMBERS.csv` / frozen P2.3 cell; \(n=61\)). Pooled post-injection accuracy on the injected logs is **.390** (`scientific_file_profiles.csv`, `ALGO_P2_phase2_injected.csv`), near the uninjected baseline in the paper.
 
 ---
 
-## Start here (returning user)
+## Programme
 
-| If you want to… | Open this |
-|-----------------|-----------|
-| Read the consolidated analysis (every number from every probe) | [`ANALYSIS.md`](ANALYSIS.md) |
-| See every script → file mapping | [`results/README.md`](results/README.md) |
-| Full probe×family runbooks | [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](docs/evaluation/MASTER_EVALUATION_PIPELINES.md) |
-| Tagged index of all result files | [`results/ARTIFACT_REGISTRY.csv`](results/ARTIFACT_REGISTRY.csv) |
-| Canonical path constants in code | [`probes/common/results_paths.py`](probes/common/results_paths.py) |
-| Model roster and API IDs | [`configs/models.yaml`](configs/models.yaml) |
-| Accepted NeurIPS paper | [`paper/main.tex`](paper/main.tex) |
-| Frozen number file | [`rebuild/NUMBERS.csv`](rebuild/NUMBERS.csv) |
-| Future research roadmap | [`research-vault/RVC_MASTER_DOCUMENT.md`](research-vault/RVC_MASTER_DOCUMENT.md) |
-
-**Canonical outputs:** model runs in `results/raw/`; metrics in `results/derived/`; manuscript CSV tables in `results/paper/`; paper PDF figures in `paper/figures/`; probe diagnostic plots in `results/figures/`.
-
-## Architecture
-
-```mermaid
-flowchart TB
-  subgraph inputs [Inputs]
-    QB_BW[question_bank_bw.csv]
-    QB_GSM[question_bank_gsm.csv]
-    QB_ALGO[question_bank_algo.csv]
-    CFG[configs/models.yaml]
-  end
-
-  subgraph codegen [Variant generation optional]
-    STG[data/staging/*_variants.csv]
-    GEN[scripts/generation/stage*.py]
-    QB_BW --> GEN
-    QB_GSM --> GEN
-    QB_ALGO --> GEN
-    GEN --> STG
-    STG --> QB_BW
-    STG --> QB_GSM
-    STG --> QB_ALGO
-  end
-
-  subgraph probes [Three probes — scripts/*_SCR_*.py]
-    P1[Probe 1: Behavioral sweep]
-    P2[Probe 2: Plan–execution coupling]
-    P3[Probe 3: Contamination + triangulation]
-  end
-
-  subgraph results [Results layers]
-    RAW[results/raw/ append-only]
-    DER[results/derived/ recomputed]
-    PAP[results/paper/ wide tables]
-    FIG[paper/figures/ + results/figures/]
-  end
-
-  subgraph lib [Shared library probes/]
-    BEH[behavioral/]
-    CONT[contamination/]
-    TRI[triangulation/]
-    COM[common/]
-  end
-
-  QB_BW & QB_GSM & QB_ALGO --> P1 & P2 & P3
-  CFG --> P1 & P2 & P3
-  P1 & P2 & P3 --> RAW
-  RAW --> DER
-  DER --> PAP
-  DER --> FIG
-  BEH & CONT & TRI & COM -.-> P1 & P2 & P3
-```
-
-**Design principle:** only `results/raw/` is append-only (sweeps support `--resume` on `(problem_id, variant_type, model)`). Everything in `derived/`, `paper/`, and `figures/` is **reproducible** from raw + banks — rerun metric and consolidation scripts after changing raw data or metric definitions.
+| Stage | Status | What it needs | Decision criterion |
+|-------|--------|----------------|--------------------|
+| **1. Behavioural instrument** — W1–W6 surface battery, plan–execution coupling, injection, public-corpus proximity | **Complete** | Frozen banks + append-only raw logs (this repo) | A named transform produces a drop (or rise) that is not an oracle artefact; item-level shared-hard counts and Kendall \(W\) are recoverable from `results/derived/`. **Refute** if W1–W6 order is noise (\(W\) not distinguishable from the within-row permutation null) or if a single item set fails for every model outside obfuscated planning. |
+| **2. Mechanism** — residual-stream / rank of the answer token under rename vs numeric change | **Pilot** | Unquantised open-weight model that solves enough renamed items for a within-model correlation | Rename-induced drop in gold-token accessibility predicts per-item W3 survival. **Refute** if the correlation is absent at adequate power, or if numeric (W6) and lexical (W3) conditions produce the same rank shift. Current open-weight pilots solve too few renamed items (\(1/60\), \(0/61\)) to run that test. |
+| **3. Training conditions** — known membership, surface diversity vs dose | **Designed** | Open-corpus model (e.g. OLMo/Dolma) plus controlled fine-tune arms | Behavioural indicators recover held-out membership (pre-registered AUC). Diversity of surfaces, not template dose, raises W3 retention. **Refute** if labels do not track exposure, or if dose and diversity are interchangeable. |
+| **4. Developmental** — checkpoint sweep | **Planned** | Intermediate checkpoints of one open training run | Surface invariance appears after canonical accuracy, with a measurable lag. **Refute** if invariance and accuracy move together at every checkpoint. |
 
 ---
 
-## The three probes
-
-| Probe | Question | Primary signals |
-|-------|----------|-----------------|
-| **P1 — Behavioral invariance** | Does the verified **answer** stay correct under controlled variants W1–W6? | VAR, CSS, VRI, PDAS (BW), GSS (ALGO) |
-| **P2 — Plan–execution coupling** | Does declared **strategy** match stepwise behavior and react to injection? | CCI, TEP, ADC, CPP, FDI (family-specific) |
-| **P3 — Contamination + triangulation** | Is behavior correlated with **corpus proximity** (InfiniGram), and do all probes **converge per instance**? | contamination score, template/instance decompose, `convergence_label` / `diagnosis` |
-
-**Variant types (shared):** `canonical`, `W1` (lexical), `W2` (structure), `W3` (entity rename), `W4` (formal notation), `W5` (reversal — excluded from CSS), `W6` (procedural regeneration). See [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](docs/evaluation/MASTER_EVALUATION_PIPELINES.md) §1.3.
-
-**Families:**
-
-| Code | Bank file | Subtypes | Role in paper |
-|------|-----------|----------|---------------|
-| **BW** | `data/problems/question_bank_bw.csv` | blocksworld, mystery | Planning calibration; Probe 3 shows floor/clustering — use as diagnostic, not co-equal with GSM for contamination claims |
-| **GSM** | `data/problems/question_bank_gsm.csv` | gsm | Primary arithmetic robustness + contamination evidence |
-| **ALGO** | `data/problems/question_bank_algo.csv` | coin_change, shortest_path, wis | Algorithmic structure; greedy-vs-optimal and adversarial instances |
-
----
-
-## Repository layout
+## Repository map
 
 ```
-rvc/
-├── research-vault/              # Future research program (master doc + vault zip)
-├── paper/                       # CAISc 2026 accepted paper (LaTeX, tables, figures)
-│   └── figures/scripts/         # Figure generators (main + probe + legacy)
-├── configs/models.yaml          # OpenRouter model IDs
-├── data/problems/               # Question banks (BW, GSM, ALGO)
-├── probes/                        # Reusable evaluation library
-├── scripts/                       # Runnable sweeps (*_SCR_*.py) and family figures (*_FIG_*.py)
-├── results/
-│   ├── raw/                     # Model outputs (append-only)
-│   ├── derived/                 # Recomputed metrics
-│   ├── paper/                   # Manuscript CSV tables + AUDIT/
-│   └── figures/                 # Probe diagnostic plots (non-manuscript)
-├── docs/
-│   ├── evaluation/              # Probe×family replication guides
-│   └── workbench/               # GPU runbook, checklists, pipeline reference
-├── ANALYSIS.md                  # Consolidated empirical analysis
-└── tests/
+data/problems/          three banks: question_bank_{gsm,bw,algo}.csv
+probes/                 shared library (variants, verifiers, CCI/TEP, clients)
+scripts/                sweeps (*_SCR_*), figures (*_FIG_*), generation, consolidate
+results/raw/            append-only per-instance logs (resume on problem × variant × model)
+results/derived/        every aggregate cited in the paper (recomputable from raw + banks)
+paper/                  manuscript, tables, figures, PDF
 ```
 
-**Script naming:** `{FAM}_P{probe}_SCR_{action}.py` runs evaluation; `{FAM}_P{probe}_FIG_generate.py` or `paper/figures/scripts/` produces plots.
+**Banks.** GSM (arithmetic; GSM-Symbolic templates), BW (Blocksworld / mystery; PlanBench PDDL), ALGO (coin change, shortest path, weighted interval scheduling). Shared schema: `problem_id`, `variant_type`, `problem_text`, `correct_answer`, `problem_family`, `problem_subtype`.
+
+**Variants.** W1 paraphrase, W2 reformat, W3 entity rename, W4 formal notation, W5 direction reversal (init/goal swap on BW), W6 procedural regeneration (new numbers / new instance, gold re-solved).
+
+**Probes.** P1 behavioural sweep; P2 plan vs execution (CCI) and false-state injection (TEP); P3 Infini-gram proximity and per-instance triangulation.
 
 ---
 
-## Evaluation pipeline (end-to-end)
+## Reproduce
 
-### Layer 0 — Question banks
-
-Banks share a unified schema (`probes/common/io.py`): `problem_id`, `variant_type`, `problem_text`, `correct_answer`, `problem_family`, `problem_subtype`, `difficulty`, `contamination_pole`, `difficulty_params`, etc.
-
-Variant rows are generated via `scripts/generation/` (stage scripts) into `data/staging/`, then merged into the family banks. Bank fix/consolidation: `scripts/consolidate/fix_banks.py`, `fix_gsm_bank.py`.
-
-### Layer 1 — Raw runs (`results/raw/`)
-
-All sweeps take `--resume`: skip rows already present; retry rows whose `raw_response` starts with `ERROR:`.
-
-**Environment:** `OPENROUTER_API_KEY` required; optional `ANTHROPIC_API_KEY` for GSM Probe 2 native Anthropic client. Verify with `python scripts/test_api_keys.py`. Models (behavioral roster): `anthropic/claude-sonnet-4`, `openai/gpt-4o`, `meta-llama/llama-3.1-8b-instruct`.
-
-#### Probe 1 — Behavioral
-
-| Family | Script | Output |
-|--------|--------|--------|
-| ALGO | `ALGO_P1_SCR_run_behavioral_sweep.py` | `ALGO_P1_behavioral_{claude,gpt4o,llama}.csv` |
-| GSM | `BW_P1_SCR_run_behavioral_sweep.py --family arithmetic_reasoning` | `GSM_P1_behavioral_{claude,gpt4o,llama}.csv` |
-| BW | `BW_P1_SCR_run_behavioral_sweep.py` | `BW_P1_behavioral.csv` (all models) |
-
-#### Probe 2 — Plan–execution
-
-| Family | Script | Output |
-|--------|--------|--------|
-| ALGO | `ALGO_P2_SCR_run_phase1.py` → `ALGO_P2_SCR_run_phase2.py` | `ALGO_P2_phase1_{claude,gpt4o,llama}.csv`, `ALGO_P2_phase2_{normal,injected}.csv` |
-| GSM | `GSM_P2_SCR_run_probe2.py` | `GSM_P2_cci.csv` |
-| BW | `BW_P2_SCR_extract_phase1_plans.py` → `BW_P2_SCR_run_cci.py` / `run_tep.py` | `BW_P2_plans.csv`, `BW_P2_cci.csv`, `BW_P2_tep.csv` |
-
-#### Probe 3 — Contamination
-
-| Family | Script | Output |
-|--------|--------|--------|
-| All | `BW_P3_SCR_run_contamination_triage.py` (family flag) or family-specific triage scripts | `{FAM}_P3_contamination.csv` |
-| Optional | `run_mechanistic_sweep.py` | `{FAM}_P3_mechanistic.csv` (GPU / TransformerLens) |
-
-InfiniGram queries are cached in `data/infinigram_cache.json`. Blocksworld supports template/instance decomposition via `--decompose-contamination` on the triage script.
-
-### Layer 2 — Derived metrics (`results/derived/`)
-
-| Script | Output |
-|--------|--------|
-| `ALGO_P1_SCR_compute_metrics.py` | `ALGO_P1_metrics.csv` |
-| `GSM_P1_SCR_compute_metrics.py` | `GSM_P1_metrics.csv` |
-| `BW_P1_SCR_compute_metrics.py` | `BW_P1_metrics.csv` |
-| `ALGO_P2_SCR_compute_metrics.py` | `ALGO_P2_metrics.csv`, `ALGO_P2_per_instance_cci.csv` |
-| `GSM_P2_SCR_compute_metrics.py` | `GSM_P2_metrics.csv` |
-| `ALGO_P3_SCR_triangulation.py` | `ALGO_P3_triangulation.csv` |
-| `BW_P3_SCR_run_triangulation.py` | `BW_P3_triangulation_{claude,gpt4o,llama}.csv` |
-
-Triangulation merges P1 behavioral + P2 CCI/TEP (or ALGO phase outputs) + P3 contamination into one row per `(problem_id, model)` with convergence labels.
-
-### Layer 3 — Paper & figures
-
-| Script | Output |
-|--------|--------|
-| `consolidate/make_table1.py` | `paper/TABLE1_cross_family.csv` |
-| `consolidate/run_css_regressions.py` | `paper/cross_family_regression.csv` |
-| `*_FIG_generate.py`, `paper/figures/scripts/*.py` | `paper/figures/` or `results/figures/` |
-
-**One-shot local rebuild** (metrics → tables; no API):
-
-```bash
-PYTHONPATH=. python scripts/consolidate/run_paper_consolidation.py
-```
-
-Prefer the granular cheat sheet in [`results/README.md`](results/README.md) when you only need to refresh one layer.
-
----
-
-## Canonical files to open first
-
-### Blocksworld
-
-| Layer | Path |
-|-------|------|
-| Bank | `data/problems/question_bank_bw.csv` |
-| P1 raw | `results/raw/BW_P1_behavioral.csv` |
-| P2 raw | `results/raw/BW_P2_{plans,cci,tep}.csv` |
-| P3 raw | `results/raw/BW_P3_contamination.csv` |
-| P1 metrics | `results/derived/BW_P1_metrics.csv` |
-| Triangulation | `results/derived/BW_P3_triangulation_{claude,gpt4o,llama}.csv` |
-
-### GSM
-
-| Layer | Path |
-|-------|------|
-| Bank | `data/problems/question_bank_gsm.csv` |
-| P1 raw | `results/raw/GSM_P1_behavioral_{claude,gpt4o,llama}.csv` |
-| P2 raw | `results/raw/GSM_P2_cci.csv` |
-| P3 raw | `results/raw/GSM_P3_contamination.csv` |
-| P1/P2 metrics | `results/derived/GSM_P1_metrics.csv`, `GSM_P2_metrics.csv` |
-| Triangulation | `results/derived/GSM_P3_triangulation_per_instance_*.csv` |
-
-### ALGO
-
-| Layer | Path |
-|-------|------|
-| Bank | `data/problems/question_bank_algo.csv` |
-| P1 raw | `results/raw/ALGO_P1_behavioral_{claude,gpt4o,llama}.csv` |
-| P2 raw | `results/raw/ALGO_P2_phase1_*_new.csv`, `ALGO_P2_phase2_{normal,injected}.csv` |
-| P3 raw | `results/raw/ALGO_P3_contamination.csv` |
-| P1/P2 metrics | `results/derived/ALGO_P1_metrics.csv`, `ALGO_P2_metrics.csv` |
-| Triangulation | `results/derived/ALGO_P3_triangulation.csv` |
-
-### Cross-family paper tables
-
-- `results/paper/TABLE1_cross_family.csv` — main comparison table  
-- `results/paper/cross_family_regression.csv` — contamination–stability regressions  
-- `results/paper/PROBE2_consolidated.csv` — Probe 2 summary across families  
-
----
-
-## Makefile shortcuts
-
-```bash
-make setup          # pip install -r requirements.txt
-make test           # pytest tests/
-make sweep          # BW Probe 1 behavioral sweep
-make triage         # BW Probe 3 contamination triage
-make triangulate    # BW Probe 3 triangulation
-make mechanistic    # mechanistic sweep (optional, GPU)
-```
-
-All commands assume `PYTHONPATH=.` (the Makefile sets this for targets above).
-
----
-
-## Known data caveats (read before citing numbers)
-
-These are **empirical state**, not code bugs — document them in any analysis write-up.
-
-| Area | Caveat |
-|------|--------|
-| **BW P2 CCI / TEP** | Large fraction of null CCI/TEP rows — sparse plan–execution signal |
-| **BW triangulation** | ~20% `execution_unavailable` (missing PDDL / `BW_E*` instances) |
-| **BW P3 contamination** | Template scores often floor at 0; instance scores vary — weak primary family for contamination claims |
-| **GSM P1** | Partial variant coverage on some instances; check sweep completeness before VAR/CSS |
-| **ALGO P2 injected** | Partial run coverage; adversarial CCI (`ACI`) only where per-instance CCI exists |
-| **InfiniGram** | Scores depend on cache + query formulation; use `data/infinigram_cache.json` for reproducibility |
-
----
-
-## Development
+No API key is required to recompute aggregates from committed raw logs.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-export OPENROUTER_API_KEY=...
-PYTHONPATH=. pytest tests/ -v
+export PYTHONPATH=.
+python scripts/runs/rederive_all_metrics.py
+python scripts/consolidate/p1_variant_ordering.py
+python scripts/consolidate/p1_failure_patterns.py
 ```
 
-**Lint/format:** `make lint` / `make format` (black + ruff on `probes/`, `scripts/`, `tests/`).
+| Finding | Command that writes the table | Derived file | Cell |
+|---------|-------------------------------|--------------|------|
+| Gemini GSM .909 / .958 / .523 | `python scripts/runs/rederive_all_metrics.py` | `results/derived/probe1_per_model_variant.csv` | `GSM,Gemini,{canonical,W6,W3}` → `0.9090909`, `0.9583333`, `0.5227273` |
+| o4-mini GSM .841 → .682 (W4) | same | same | `GSM,o4-mini,{canonical,W4}` → `0.8409091`, `0.6818182` |
+| Claude BW direction (W5 .869) | `python scripts/consolidate/p1_variant_ordering.py` (C7 filter companion) | `results/derived/C7_concordance_filtered.csv` | ranker `BW,anthropic/claude-sonnet-4`, `acc_W5=0.8687`, `acc_W3=0.375` |
+| Shared-hard 0/110, 0/20, 14/64 | `python scripts/consolidate/p1_failure_patterns.py` | `results/derived/P1_failure_patterns.csv` | `fail_all_five_paper_models` |
+| Kendall \(W\) .419 / .679 / .660; Claude \(W=.165\) | `python scripts/consolidate/p1_variant_ordering.py` | `results/derived/P1_variant_ordering.csv` | `within_family_across_models`; `within_model_across_families` Claude |
+| Injection acceptance 1.0; post-injection .390 | P2 metric pass inside `rederive_all_metrics.py` | `results/derived/scientific_file_profiles.csv` (`post_injection_correct` on `ALGO_P2_phase2_injected.csv`); frozen cell `P2.3.ALGO.o4-mini.compliance.compliant` in `rebuild/NUMBERS.csv` | \(n=61\) sessions |
 
-**Dry runs:** most sweep scripts accept `--dry-run` (uses `MockClient`) for plumbing tests without API spend.
+Print the GSM headline row:
+
+```bash
+python - <<'PY'
+import pandas as pd
+df = pd.read_csv("results/derived/probe1_per_model_variant.csv")
+print(df[(df.probe=="GSM") & (df.model=="Gemini")])
+print(df[(df.probe=="GSM") & (df.model=="o4-mini")])
+PY
+```
+
+**Fresh model calls** (API): `OPENROUTER_API_KEY` in `.env`; family sweeps `scripts/{ALGO,GSM,BW}_P1_SCR_run_behavioral_sweep.py` with `--resume`. Bank regeneration needs `make bootstrap` (PlanBench, GSM-Symbolic, Fast Downward).
+
+**Tests:** `PYTHONPATH=. pytest tests/ -v`
 
 ---
 
-## Documentation index
+## Layout
 
-| Document | Contents |
-|----------|----------|
-| [`ANALYSIS.md`](ANALYSIS.md) | **Consolidated analysis — every number from every probe + hidden findings + pointer index** |
-| [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](docs/evaluation/MASTER_EVALUATION_PIPELINES.md) | Full probe×family replication guide |
-| [`docs/evaluation/BW_EVALUATION_FLOW.md`](docs/evaluation/BW_EVALUATION_FLOW.md) | Blocksworld-specific flow |
-| [`docs/evaluation/GSM_EVALUATION_FLOW.md`](docs/evaluation/GSM_EVALUATION_FLOW.md) | GSM-specific flow |
-| [`docs/evaluation/ALGO_EVALUATION_FLOW.md`](docs/evaluation/ALGO_EVALUATION_FLOW.md) | ALGO-specific flow |
-| [`results/README.md`](results/README.md) | Script → artifact matrix, metric column glossary, regenerate cheat sheet |
-
----
-
-## External build-time dependencies (gitignored, reclone via `make bootstrap`)
-
-These three upstream repos were used to construct the frozen question banks under `data/problems/`. They are **not committed** because of size; `make bootstrap` clones them into the expected paths.
-
-| Path | Source | Role in pipeline |
-|---|---|---|
-| `data/sources/planbench/` | [`karthikv792/LLMs-Planning`](https://github.com/karthikv792/LLMs-Planning) | PlanBench PDDL instances for BW (`scripts/generation/stage1_extract_bw.py`) |
-| `data/sources/gsm_symbolic/` | [`apple/ml-gsm-symbolic`](https://github.com/apple/ml-gsm-symbolic) | GSM-Symbolic templates for arithmetic instances (`scripts/generation/stage1_extract_gsm.py`) |
-| `tools/fast-downward/` | [`aibasel/downward`](https://github.com/aibasel/downward) | Reference PDDL planner for BW canonical/W5/W6 plan validation |
-
-You only need these if you want to **regenerate** banks (`scripts/generation/stage{1..5}*.py`). Reproducing Probe 1–3 numbers from the existing banks works without them.
+```
+rvc/
+├── data/problems/
+├── probes/
+├── scripts/
+├── results/raw/
+├── results/derived/
+├── paper/main.tex
+├── paper/main.pdf
+├── BOOK.md
+└── tests/
+```

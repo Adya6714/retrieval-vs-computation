@@ -89,34 +89,73 @@ html.js .reveal.in{opacity:1;transform:none}
 .tab.active,.chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
 @media(prefers-color-scheme:dark){.tab.active,.chip.active{color:#0A0A0B}}
 .view{display:none}.view.active{display:block}
-.claim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.75rem;margin-top:.5rem}
-.claim{border:1px solid var(--rule);background:var(--tint);padding:1rem 1.1rem;cursor:pointer;transition:border-color .3s var(--ease)}
-.claim:hover,.claim.open{border-color:var(--accent)}
-.claim .status{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.prog-legend{display:flex;flex-wrap:wrap;gap:.55rem;margin:1rem 0 .25rem}
+.prog-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;padding:.35rem .7rem;border:1px solid var(--rule);background:var(--tint);border-radius:2px;color:var(--muted)}
+.prog-pill b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.prog-pill .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-established,.dot-complete,.dot-executed{background:var(--teal)}
+.dot-in_progress,.dot-next{background:var(--accent)}
+.dot-designed,.dot-pilot,.dot-correlational{background:var(--amber)}
+.dot-planned,.dot-untested,.dot-open{background:var(--slate)}
+.filter-row{display:flex;flex-wrap:wrap;gap:.35rem;margin:1rem 0 .75rem}
+.filter-row .chip{font-size:.78rem;padding:.35rem .7rem}
+.claim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.85rem;margin-top:.35rem}
+.claim{border:1px solid var(--rule);background:var(--tint);padding:1.05rem 1.15rem;cursor:pointer;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease);position:relative;overflow:hidden}
+.claim::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rule);transition:background .3s var(--ease)}
+.claim.kind-cc::before{background:var(--accent)}
+.claim.kind-ac::before{background:var(--teal)}
+.claim:hover{border-color:var(--accent);transform:translateY(-1px)}
+.claim.open,.claim.hl{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-soft)}
+.claim.dim{opacity:.38;transform:none}
+.claim .claim-top{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-bottom:.45rem}
+.claim .kind-tag{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid var(--rule);color:var(--muted)}
+.claim .kind-tag.cc{border-color:var(--accent);color:var(--accent)}
+.claim .kind-tag.ac{border-color:var(--teal);color:var(--teal)}
+.claim .status{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase}
 .claim .status.established{color:var(--teal)}
 .claim .status.in_progress{color:var(--accent)}
 .claim .status.designed{color:var(--amber)}
 .claim .status.planned,.claim .status.untested,.claim .status.open,.claim .status.correlational,.claim .status.pilot,.claim .status.next,.claim .status.complete{color:var(--muted)}
 .claim .status.complete,.claim .status.executed{color:var(--teal)}
 .claim .status.next{color:var(--accent)}
-.claim h3{font-size:1.05rem;margin-bottom:.35rem}
-.claim .summary{font-size:.88rem;color:var(--muted);margin:0}
-.claim .body{display:none;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.claim h3{font-size:1.08rem;margin-bottom:.4rem}
+.claim .summary{font-size:.88rem;color:var(--muted);margin:0;max-width:none}
+.claim .hyp-links,.hyp-card .hyp-links{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.7rem}
+.claim .hyp-links button,.hyp-card .hyp-links button{appearance:none;border:1px solid var(--rule);background:var(--paper);color:var(--accent);font:inherit;font-size:.72rem;font-weight:600;padding:.2rem .45rem;cursor:pointer;border-radius:2px}
+.claim .hyp-links button:hover,.hyp-card .hyp-links button:hover{border-color:var(--accent);background:var(--accent-soft)}
+.claim .body{display:none;margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
 .claim.open .body{display:block}
-.hyp-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:.5rem}
-.hyp-table th,.hyp-table td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid var(--rule);vertical-align:top}
-.hyp-table th{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.hyp-table .hid{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.claim .body dl{margin:0;display:grid;gap:.55rem}
+.claim .body dt{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.claim .body dd{margin:0;max-width:none}
+.hyp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin-top:.35rem}
+.hyp-card{border:1px solid var(--rule);background:var(--tint);padding:1rem 1.1rem;cursor:pointer;transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.hyp-card:hover,.hyp-card.open,.hyp-card.hl{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-soft)}
+.hyp-card.dim{opacity:.38}
+.hyp-card .hyp-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin-bottom:.4rem}
+.hyp-card .hid{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;font-size:1.05rem}
+.hyp-card .summary{font-size:.9rem;margin:0;max-width:none;color:var(--ink)}
+.hyp-card .meta{margin-top:.55rem;font-size:.78rem;color:var(--muted)}
+.hyp-card .body{display:none;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--rule);font-size:.84rem;color:var(--muted)}
+.hyp-card.open .body{display:block}
+.hyp-card .body p{margin:0 0 .5rem;max-width:none}
+.claim-map{margin-top:1.25rem;border:1px solid var(--rule);background:var(--tint);padding:1rem 1.1rem}
+.claim-map h4{font-size:.95rem;margin:0 0 .35rem}
+.claim-map .caption{margin:0 0 .75rem}
+.cmap-svg{width:100%;height:160px;display:block}
 .phase-track{display:flex;gap:0;align-items:stretch;overflow-x:auto;padding:1.25rem 0 1rem;margin-top:.5rem;scroll-snap-type:x mandatory}
-.phase-node{flex:0 0 min(260px,78vw);scroll-snap-align:start;border:1px solid var(--rule);background:var(--tint);padding:1rem;cursor:pointer;position:relative;transition:border-color .3s var(--ease)}
+.phase-node{flex:0 0 min(280px,82vw);scroll-snap-align:start;border:1px solid var(--rule);background:var(--tint);padding:1.05rem;cursor:pointer;position:relative;transition:border-color .3s var(--ease)}
 .phase-node:hover,.phase-node.open{border-color:var(--accent)}
 .phase-node .ph-id{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.phase-node .ph-when{font-size:.78rem;color:var(--muted);margin:.35rem 0}
 .phase-gate{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--amber);font-size:.7rem;letter-spacing:.06em}
 .phase-gate span{transform:rotate(45deg);border:1px solid var(--amber);width:14px;height:14px;display:block;background:var(--paper)}
 .phase-node .body{display:none;margin-top:.75rem;font-size:.82rem;color:var(--muted)}
 .phase-node.open .body{display:block}
 .phase-node .result{margin-top:.55rem;padding:.55rem .65rem;border-left:2px solid var(--teal);background:var(--tint2);color:var(--ink);font-size:.82rem}
-.budget-note{margin-top:1rem;padding:.9rem 1.05rem;border:1px solid var(--rule);background:var(--tint);font-size:.9rem;color:var(--muted);max-width:62ch}
+.phase-advances{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.55rem}
+.phase-advances span{font-size:.68rem;letter-spacing:.04em;padding:.15rem .4rem;border:1px solid var(--rule);color:var(--accent)}
+.vault-caption{margin-top:.65rem}
 .cat-wrap{display:grid;gap:1.25rem;margin-top:1rem}
 .cat-family h3{font-size:1rem;margin-bottom:.5rem}
 .cat-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.55rem}
@@ -254,19 +293,29 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">The programme</p>
     <h2>Claims, hypotheses, and gated phases.</h2>
-    <p class="lede">The paper is one shipped artifact. The programme is a four-paper, five-phase measurement science. Tabs below are the three views of that science.</p>
+    <p class="lede">Three views of the same science: what must be true (claims), what we bet and how we test it (hypotheses), and the gated sequence that decides which bets run next (phases). Click a claim or hypothesis to expand; linked IDs highlight across tabs.</p>
+    <div class="prog-legend" id="prog-legend" aria-label="Status counts"></div>
     <div class="tabs" id="prog-tabs">
       <button class="tab active" data-view="claims">Claims</button>
       <button class="tab" data-view="hypotheses">Hypothesis registry</button>
       <button class="tab" data-view="phases">Phase timeline</button>
     </div>
-    <div class="view active" id="view-claims"><div class="claim-grid" id="claims"></div></div>
+    <div class="view active" id="view-claims">
+      <div class="filter-row" id="claim-filters" role="group" aria-label="Filter claims"></div>
+      <div class="claim-grid" id="claims"></div>
+      <div class="claim-map">
+        <h4>Claim ↔ hypothesis map</h4>
+        <p class="caption">Capability claims (CC) sit above; architecture claims (AC) below. Lines run to the hypotheses that must land for each claim. Hover a node to highlight its neighbours.</p>
+        <svg class="cmap-svg" id="claim-hyp-map" aria-label="Links between claims and hypotheses"></svg>
+      </div>
+    </div>
     <div class="view" id="view-hypotheses">
-      <table class="hyp-table"><thead><tr><th>ID</th><th>Hypothesis</th><th>Experiment</th><th>Status</th></tr></thead><tbody id="hyp-body"></tbody></table>
+      <div class="filter-row" id="hyp-filters" role="group" aria-label="Filter hypotheses"></div>
+      <div class="hyp-grid" id="hyp-grid"></div>
     </div>
     <div class="view" id="view-phases">
+      <p class="caption" style="margin-bottom:0">Each diamond is a gate: escalate only when the decision criterion fires. Click a phase for do / needs / ships / advances.</p>
       <div class="phase-track" id="phase-track"></div>
-      <div class="budget-note"><strong>Budget envelope.</strong> Year one ≈ $520–1,830 excluding D1-full and human studies. Graceful degradation: Phase 0 is near-free; Phase 1 is the priority spend; Phase 3’s DS-04 is the first deferral.</div>
     </div>
   </div>
 </section>
@@ -286,8 +335,9 @@ html.js .reveal.in{opacity:1;transform:none}
         <li>Does it give a per-instance, theory-grounded signal the instrument can use?</li>
       </ol>
     </div>
-    <p class="caption" style="margin-top:1.25rem">Working vault: 110+ linked notes across 12 folders, maintained in Obsidian, from which this programme is executed.</p>
+    <p class="caption vault-caption" style="margin-top:1.25rem">Working vault: 110+ linked notes across 12 folders (Obsidian). The diagram below is a live force layout of those clusters — programme spine → deep strategies → directions → papers — not a cost chart.</p>
     <svg class="vault-viz" id="vault-graph" aria-label="Vault note clusters"></svg>
+    <p class="caption vault-caption">Hover a node for its role. Drag to rearrange. Clusters: MOC/Plan (spine), Claims/Hs (registry), DS/IRT (measurement), D1–D2 (experiments), AC (architecture), Papers/Laws (outputs).</p>
   </div>
 </section>
 
@@ -1185,52 +1235,80 @@ const DATA = {
   "claims": [
     {
       "id": "CC-1",
+      "kind": "cc",
       "status": "established",
       "title": "Two-dimensional capability space",
       "text": "Accuracy and surface-invariance are dissociable capabilities with different causal antecedents.",
-      "evidence": "Behavioural instrument (Phase 0–1). Gemini GSM .909→.958 (W6) vs .523 (W3); pooled CCI×W3 r=.243 while neither tracks accuracy. Refute if W1–W6 order is noise or if a universal hard-item set appears outside obfuscated planning."
+      "why": "Same score can mean different procedures. Without a second axis, benchmarks conflate them.",
+      "evidence": "Behavioural instrument (Phase 0–1). Gemini GSM .909→.958 (W6) vs .523 (W3); pooled CCI×W3 r=.243 while neither tracks accuracy.",
+      "refute": "W1–W6 order is noise under the within-row permutation null, or a universal hard-item set appears outside obfuscated planning.",
+      "links": ["H1", "H3"]
     },
     {
       "id": "CC-2",
+      "kind": "cc",
       "status": "designed",
       "title": "Absence of source monitoring",
       "text": "Models cannot report whether an answer came from memory.",
-      "evidence": "DS-05 attached to D1-lite (Phase 1). Ask source vs content; score against calibrated labels. Decided when D1-lite ROC and source-monitoring accuracy are reported."
+      "why": "If models could monitor source, retrieval vs computation would be directly reportable.",
+      "evidence": "DS-05 attached to D1-lite (Phase 1). Ask source vs content; score against calibrated labels.",
+      "refute": "Source-report accuracy tracks SEEN/UNSEEN above chance after D1-lite calibration.",
+      "links": ["H1", "H5"]
     },
     {
       "id": "CC-3",
+      "kind": "cc",
       "status": "planned",
       "title": "Developmental order",
       "text": "Invariance emerges after accuracy, with measurable lag.",
-      "evidence": "D4 OLMo checkpoint sweep (Phase 4). Refute if invariance and accuracy move together at every checkpoint."
+      "why": "Order of acquisition constrains how training should be scheduled.",
+      "evidence": "D4 OLMo checkpoint sweep (Phase 4).",
+      "refute": "Invariance and accuracy move together at every checkpoint.",
+      "links": ["H4"]
     },
     {
       "id": "CC-4",
+      "kind": "cc",
       "status": "designed",
       "title": "Compositional boundary",
       "text": "A depth k beyond which retrieval cannot substitute for computation.",
-      "evidence": "DS-09 compositional stress (Phase 3). Pre-registered depth schedule; publishable on fit or fail."
+      "why": "Locates where pattern-matching stops being enough.",
+      "evidence": "DS-09 compositional stress (Phase 3). Pre-registered depth schedule.",
+      "refute": "No depth at which retrieval substitutes fail under the preregistered schedule.",
+      "links": ["H3", "H7"]
     },
     {
       "id": "AC-1",
+      "kind": "ac",
       "status": "in_progress",
       "title": "Strategy is architectural",
       "text": "Per-item occupancy of the emergent symbolic pathway (abstraction→induction→retrieval heads) predicts robustness; fragility is pathway bypass.",
-      "evidence": "HP-15 pathway occupancy (Phase 2 / Gate G2). Mixed transfer → reframe as task-type boundary of the symbolic pathway."
+      "why": "Behavioural dissociation needs an internal locus if it is more than a scoring artefact.",
+      "evidence": "HP-15 pathway occupancy (Phase 2 / Gate G2).",
+      "refute": "Occupancy does not predict W3 survival within model; or heads do not transfer across tasks.",
+      "links": ["H6"]
     },
     {
       "id": "AC-2",
+      "kind": "ac",
       "status": "designed",
       "title": "Installation",
       "text": "Invariance can be installed by repairing stage 1 (steering or band-constrained fine-tune) without collateral damage.",
-      "evidence": "Runs only if G2 supports H6. Contrastive canonical↔W3 objective on constrained layer band."
+      "why": "Turns diagnosis into an intervention.",
+      "evidence": "Runs only if G2 supports H6. Contrastive canonical↔W3 objective on a constrained layer band.",
+      "refute": "Steering raises W3 retention but collapses canonical accuracy or unrelated tasks.",
+      "links": ["H6", "H2"]
     },
     {
       "id": "AC-3",
+      "kind": "ac",
       "status": "designed",
       "title": "Training law",
-      "text": "Exposure DIVERSITY, not dose, drives invariance, because varied surfaces force abstraction-head formation.",
-      "evidence": "DS-04 exposure-variance arms + head-emergence tracking (Phase 3 / H7). First deferral if budget tight."
+      "text": "Exposure diversity, not dose, drives invariance, because varied surfaces force abstraction-head formation.",
+      "why": "Gives a data-curation law rather than a post-hoc patch.",
+      "evidence": "DS-04 exposure-variance arms + head-emergence tracking (Phase 3 / H7).",
+      "refute": "Dose-matched and diversity-matched arms produce indistinguishable retention and head occupancy.",
+      "links": ["H7", "H3"]
     }
   ],
   "hypotheses": [
@@ -1238,43 +1316,64 @@ const DATA = {
       "id": "H1",
       "status": "untested",
       "text": "Labels track exposure.",
-      "test": "D1-lite LoRA seen/unseen + corrupted-answer oracle; Gate G1 AUC ≥ .75"
+      "detail": "Convergence labels and behavioural indicators recover held-out SEEN/UNSEEN membership on a controlled fine-tune.",
+      "test": "D1-lite LoRA seen/unseen + corrupted-answer oracle",
+      "gate": "G1 · AUC ≥ .75 → freeze thresholds v2; .60–.75 revise once; < .60 pivot mechanism-first",
+      "claims": ["CC-1", "CC-2"]
     },
     {
       "id": "H2",
       "status": "correlational",
       "text": "W3 collapse mediated by persistent canonical binding.",
-      "test": "D2 residual-stream patching on canonical↔W3 pairs (Llama)"
+      "detail": "The rename drop is caused by a lingering binding to the original entity tokens, not by loss of the algorithm.",
+      "test": "D2 residual-stream patching on canonical↔W3 pairs (open-weight)",
+      "gate": "Patching canonical binding restores W3 survival on fragile items",
+      "claims": ["AC-2"]
     },
     {
       "id": "H3",
       "status": "open",
       "text": "Fragility is a dose–response curve with stable cliffs.",
-      "test": "D3 / HP-10 graded rename ladders"
+      "detail": "Graded rename distance produces a family-consistent transfer curve, not a binary cliff unique to each model.",
+      "test": "D3 / HP-10 graded rename ladders",
+      "gate": "Pre-registered functional form fits or fails out of sample",
+      "claims": ["CC-1", "CC-4", "AC-3"]
     },
     {
       "id": "H4",
       "status": "planned",
       "text": "Invariance emerges late and tracks exposure.",
-      "test": "D4 / HP-09 OLMo checkpoint sweep"
+      "detail": "Across checkpoints, canonical accuracy rises before W3 retention; lag correlates with cumulative template diversity.",
+      "test": "D4 / HP-09 OLMo checkpoint sweep",
+      "gate": "Measurable lag at every stage where accuracy is already non-floor",
+      "claims": ["CC-3"]
     },
     {
       "id": "H5",
       "status": "open",
       "text": "Answers fixed before injection.",
-      "test": "D2 injection-step patching arm"
+      "detail": "High injection compliance with near-baseline final accuracy implies the answer direction is set before the corrupted step.",
+      "test": "D2 injection-step patching arm",
+      "gate": "Patching at the injection locus changes final answer; later patches do not",
+      "claims": ["CC-2"]
     },
     {
       "id": "H6",
       "status": "pilot",
       "text": "Strategy = symbolic-pathway occupancy.",
-      "test": "HP-15; Gate G2"
+      "detail": "Per-item occupancy of abstraction→induction→retrieval heads predicts rename survival.",
+      "test": "HP-15 pathway occupancy",
+      "gate": "G2 · supported → AC-2; mixed → report task-type boundary",
+      "claims": ["AC-1", "AC-2"]
     },
     {
       "id": "H7",
       "status": "designed",
       "text": "Diversity forces abstraction-head formation.",
-      "test": "DS-04 + AC-3 head-emergence tracking"
+      "detail": "Training on varied surfaces, holding dose fixed, raises both W3 retention and abstraction-head occupancy.",
+      "test": "DS-04 + AC-3 head-emergence tracking",
+      "gate": "G3 · diversity arm separates from dose-matched control",
+      "claims": ["AC-3", "CC-4"]
     }
   ],
   "phases": [
@@ -1282,104 +1381,73 @@ const DATA = {
       "id": "P0",
       "title": "Foundations",
       "when": "Weeks 1–2",
-      "cost": "~$20–80",
       "status": "complete",
       "do": "HP-13 intrusion errors; HP-14 mixture-IRT; HP-04 prereg + MTMM; HP-03 mechanistic ledger; HP-02 reconciliation; HP-01 GSM gap-fill.",
-      "needs": "Existing raw logs; near-free compute.",
+      "needs": "Existing raw logs; derived recompute scripts.",
       "gate": "G0: validation checks passed; strategy_posteriors.csv exists; prereg committed.",
       "ships": null,
       "results": "Intrusion-rate table (o4-mini ALGO W3 intrusion .619); fitted strategy classes; frozen thresholds; clean denominators; MTMM matrix.",
-      "advances": [
-        "CC-1",
-        "DS-01",
-        "DS-02"
-      ]
+      "advances": ["CC-1", "DS-01", "DS-02"]
     },
     {
       "id": "P1",
       "title": "Calibration + mechanism flagship",
       "when": "Weeks 3–8",
-      "cost": "~$120–400 · 1× A100-80GB",
       "status": "next",
       "do": "HP-06 D1-lite (LoRA seen/unseen + corrupted-answer oracle) with DS-05 source-monitoring; HP-07 patching; HP-08 Commitment Depth; HP-05 matched WIS bank.",
-      "needs": "1× A100-80GB rental; OpenRouter for WIS.",
+      "needs": "Open-weight fine-tune + patching stack; WIS bank API coverage.",
       "gate": "G1 (D1-lite ROC): AUC ≥ .75 proceed and freeze thresholds v2; .60–.75 revise indicators once; < .60 labels do not track exposure — pivot mechanism-first.",
       "ships": "Paper I — the instrument",
       "results": null,
-      "advances": [
-        "H1",
-        "H2",
-        "H5",
-        "CC-1",
-        "CC-2"
-      ]
+      "advances": ["H1", "H2", "H5", "CC-1", "CC-2"]
     },
     {
       "id": "P2",
       "title": "Architecture claim",
       "when": "Weeks 9–14",
-      "cost": "~$100–400",
       "status": "planned",
       "do": "HP-15 pathway occupancy; if supported, AC-2 repair via steering and band-constrained contrastive fine-tune; DS-03 RSA invariance.",
-      "needs": "GPU sessions; scoop-check steering literature.",
+      "needs": "Unquantised open backbones with enough W3 solves for within-model correlation.",
       "gate": "G2: H6 verdict. Supported → AC-2. Mixed → report transfer failure; AC-1 reframed as task-type boundary of the symbolic pathway.",
       "ships": "Paper II — mechanism / architecture",
       "results": null,
-      "advances": [
-        "H6",
-        "AC-1",
-        "AC-2"
-      ]
+      "advances": ["H6", "AC-1", "AC-2"]
     },
     {
       "id": "P3",
       "title": "Laws",
       "when": "Weeks 15–22",
-      "cost": "~$200–700",
       "status": "planned",
       "do": "HP-10 distance ladders; HP-11 direction; HP-12 sampling pilot; DS-06 law fitting with out-of-sample prediction; DS-09 compositional stress; DS-04 exposure-variance arms with AC-3 head-emergence tracking.",
-      "needs": "API + training budget; DS-04 defers first if envelope tight.",
+      "needs": "Controlled training arms after D1-lite signal; graded surface ladders.",
       "gate": "G3: pre-registered functional forms fit or fail — either is publishable; H7 verdict.",
       "ships": "Paper III — behavioural + training laws",
       "results": null,
-      "advances": [
-        "H3",
-        "H7",
-        "CC-4",
-        "AC-3"
-      ]
+      "advances": ["H3", "H7", "CC-4", "AC-3"]
     },
     {
       "id": "P4",
       "title": "Ecology and development",
       "when": "Weeks 23–30",
-      "cost": "~$80–250",
       "status": "planned",
       "do": "HP-09 OLMo checkpoint sweep; DS-07 variance decomposition; DS-10 cross-model fragility structure.",
-      "needs": "OLMo checkpoints + Dolma counts; inference-heavy.",
+      "needs": "OLMo checkpoints + Dolma membership counts.",
       "gate": "Retention curves and item-facet G coefficients recoverable.",
       "ships": "Paper IV — ecology of fragility",
       "results": null,
-      "advances": [
-        "H4",
-        "CC-3"
-      ]
+      "advances": ["H4", "CC-3"]
     },
     {
       "id": "P5",
       "title": "Year 2 summit",
       "when": "After Papers I–II",
-      "cost": "TBD",
       "status": "planned",
       "do": "DS-11 inverse inference (behaviour → training-data structure of closed models); DS-08 adaptive instrument; D10/BI audit case study on a real deployment task.",
       "needs": "Papers I–II accepted or arXived with calibration intact.",
       "gate": "Calibration intact before any external audit pitch.",
       "ships": "Applied audit suite",
       "results": null,
-      "advances": [
-        "D10",
-        "BI"
-      ]
+      "advances": ["D10", "BI"]
     }
   ],
   "catalog": [
@@ -1599,8 +1667,8 @@ const DATA = {
       "q": "Does surface diversity, not template dose, raise W3 retention?",
       "exp": "DS-04 controlled training arms with head-emergence tracking.",
       "pred": "Diversity arm raises retention and abstraction-head occupancy; dose-matched control does not.",
-      "crit": "Gate G3 functional-form fit; first deferral if budget tight.",
-      "needs": "Training budget after D1-lite signal."
+      "crit": "Gate G3 functional-form fit — either fit or fail is publishable.",
+      "needs": "Controlled training arms after D1-lite signal."
     }
   ],
   "rules": [
@@ -1610,8 +1678,7 @@ const DATA = {
     "Gates decide escalation; no skipping ahead on excitement.",
     "Ship narrow papers; the breadth lives in the vault.",
     "Reasoning sessions never invent numbers; execution sessions never interpret.",
-    "Every session writes back to Program State.",
-    "Log every dollar to costs.csv."
+    "Every session writes back to Program State."
   ]
 };
 const GH = DATA.meta.github;
@@ -2092,6 +2159,14 @@ function drawVaultGraph(){
   const el = document.getElementById('vault-graph');
   if(!el || el.dataset.drawn) return;
   el.dataset.drawn = '1';
+  const roles = {
+    MOC:'Map of content — entry point', Plan:'THE_PLAN execution spine', Claims:'CC/AC claim registry',
+    'H1–H7':'Hypothesis registry', 'DS-01':'Latent strategy model', 'DS-02':'Intrusion errors',
+    IRT:'Mixture-IRT strategy classes', D1:'Controlled exposure validation', D2:'Causal patching',
+    Patch:'Residual-stream interventions', 'AC-1':'Architectural pathway claim', 'AC-3':'Training-law claim',
+    'Paper I':'Instrument paper', Laws:'Behavioural + training laws', OLMo:'Developmental checkpoints',
+    Audit:'Deployment audit case study'
+  };
   const clusters = [
     {id:'MOC', g:0},{id:'Plan', g:0},{id:'Claims', g:1},{id:'H1–H7', g:1},
     {id:'DS-01', g:2},{id:'DS-02', g:2},{id:'IRT', g:2},{id:'D1', g:3},
@@ -2103,20 +2178,27 @@ function drawVaultGraph(){
     ['DS-01','DS-02'],['DS-02','IRT'],['Claims','D1'],['D1','D2'],['D2','Patch'],
     ['Patch','AC-1'],['AC-1','AC-3'],['AC-3','Laws'],['D1','Paper I'],['Laws','OLMo'],['OLMo','Audit']
   ];
-  const w = el.clientWidth || 640, h = 200;
+  const w = el.clientWidth || 640, h = 220;
   const svg = d3.select(el).attr('viewBox', `0 0 ${w} ${h}`).attr('width','100%').attr('height', h);
   const nodes = clusters.map(d => Object.assign({}, d));
   const linkData = links.map(([s,t]) => ({source:s, target:t}));
   const color = d3.scaleOrdinal().domain(d3.range(6)).range(['var(--accent)','var(--teal)','var(--slate)','var(--amber)','var(--ink)','var(--muted)']);
   const sim = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(linkData).id(d=>d.id).distance(54))
-    .force('charge', d3.forceManyBody().strength(-120))
+    .force('link', d3.forceLink(linkData).id(d=>d.id).distance(58))
+    .force('charge', d3.forceManyBody().strength(-140))
     .force('center', d3.forceCenter(w/2, h/2))
-    .force('collide', d3.forceCollide(22));
+    .force('collide', d3.forceCollide(24));
   const link = svg.append('g').selectAll('line').data(linkData).join('line')
     .attr('stroke','currentColor').attr('stroke-opacity',0.18);
-  const node = svg.append('g').selectAll('g').data(nodes).join('g');
-  node.append('circle').attr('r',14).attr('fill','var(--paper)').attr('stroke', d=>color(d.g)).attr('stroke-width',1.2);
+  const node = svg.append('g').selectAll('g').data(nodes).join('g')
+    .style('cursor','grab')
+    .call(d3.drag()
+      .on('start', (event,d)=>{ if(!event.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+      .on('drag', (event,d)=>{ d.fx=event.x; d.fy=event.y; })
+      .on('end', (event,d)=>{ if(!event.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }))
+    .on('mousemove', (e,d)=> showTip(e, `<strong>${d.id}</strong><br>${roles[d.id]||''}`))
+    .on('mouseleave', hideTip);
+  node.append('circle').attr('r',15).attr('fill','var(--paper)').attr('stroke', d=>color(d.g)).attr('stroke-width',1.4);
   node.append('text').attr('text-anchor','middle').attr('dy','.35em').attr('font-size',8).attr('fill','currentColor').text(d=>d.id);
   sim.on('tick', () => {
     link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
@@ -2174,35 +2256,210 @@ document.getElementById('prog-tabs').addEventListener('click', e => {
   const t=e.target.closest('.tab'); if(!t) return;
   [...e.currentTarget.children].forEach(c=>c.classList.remove('active')); t.classList.add('active');
   ['claims','hypotheses','phases'].forEach(v => document.getElementById('view-'+v).classList.toggle('active', v===t.dataset.view));
+  if(t.dataset.view==='claims') drawClaimHypMap();
 });
 
-/* claims */
-DATA.claims.forEach(c => {
-  const d=document.createElement('div'); d.className='claim';
-  d.innerHTML=`<div class="status ${c.status}">${c.status.replace('_',' ')}</div><h3>${c.id} · ${c.title}</h3><p class="summary">${c.text}</p><div class="body">${c.evidence}</div>`;
-  d.onclick=()=>d.classList.toggle('open');
-  document.getElementById('claims').appendChild(d);
-});
+const statusLabel = s => String(s||'').replace(/_/g,' ');
 
-/* hypotheses */
-DATA.hypotheses.forEach(h => {
-  const tr=document.createElement('tr');
-  tr.innerHTML=`<td class="hid">${h.id}</td><td>${h.text}</td><td>${h.test}</td><td class="status ${h.status}">${h.status}</td>`;
-  document.getElementById('hyp-body').appendChild(tr);
-});
+/* legend */
+(function(){
+  const counts = {};
+  DATA.claims.forEach(c => { counts[c.status]=(counts[c.status]||0)+1; });
+  DATA.hypotheses.forEach(h => { counts[h.status]=(counts[h.status]||0)+1; });
+  const order = ['established','in_progress','next','designed','pilot','correlational','planned','untested','open','complete'];
+  const el = document.getElementById('prog-legend');
+  el.innerHTML = `<span class="prog-pill"><b>${DATA.claims.length}</b> claims</span>
+    <span class="prog-pill"><b>${DATA.hypotheses.length}</b> hypotheses</span>
+    <span class="prog-pill"><b>${DATA.phases.length}</b> phases</span>` +
+    order.filter(k => counts[k]).map(k =>
+      `<span class="prog-pill"><span class="dot dot-${k}"></span><b>${counts[k]}</b> ${statusLabel(k)}</span>`
+    ).join('');
+})();
+
+let claimFilter = 'all';
+let hypFilter = 'all';
+let focusId = null;
+
+function setFocus(id){
+  focusId = (focusId === id) ? null : id;
+  document.querySelectorAll('.claim').forEach(el => {
+    const linked = (el.dataset.links||'').split(',');
+    const hit = !focusId || el.dataset.id===focusId || linked.includes(focusId);
+    el.classList.toggle('hl', focusId && (el.dataset.id===focusId || linked.includes(focusId)));
+    el.classList.toggle('dim', focusId && !hit);
+  });
+  document.querySelectorAll('.hyp-card').forEach(el => {
+    const linked = (el.dataset.claims||'').split(',');
+    const hit = !focusId || el.dataset.id===focusId || linked.includes(focusId);
+    el.classList.toggle('hl', focusId && (el.dataset.id===focusId || linked.includes(focusId)));
+    el.classList.toggle('dim', focusId && !hit);
+  });
+  drawClaimHypMap();
+}
+
+function renderClaimFilters(){
+  const row = document.getElementById('claim-filters');
+  const opts = [
+    ['all','All'],['cc','Capability · CC'],['ac','Architecture · AC'],
+    ['established','Established'],['in_progress','In progress'],['designed','Designed'],['planned','Planned']
+  ];
+  row.innerHTML = '';
+  opts.forEach(([v,label]) => {
+    const b=document.createElement('button');
+    b.className='chip'+(claimFilter===v?' active':'');
+    b.textContent=label; b.type='button';
+    b.onclick=()=>{ claimFilter=v; renderClaims(); renderClaimFilters(); };
+    row.appendChild(b);
+  });
+}
+
+function renderClaims(){
+  const root=document.getElementById('claims'); root.innerHTML='';
+  DATA.claims.filter(c => {
+    if(claimFilter==='all') return true;
+    if(claimFilter==='cc'||claimFilter==='ac') return c.kind===claimFilter;
+    return c.status===claimFilter;
+  }).forEach(c => {
+    const d=document.createElement('div');
+    d.className=`claim kind-${c.kind}`;
+    d.dataset.id=c.id;
+    d.dataset.links=(c.links||[]).join(',');
+    d.innerHTML=`<div class="claim-top">
+        <span class="kind-tag ${c.kind}">${c.kind==='cc'?'capability':'architecture'}</span>
+        <span class="status ${c.status}">${statusLabel(c.status)}</span>
+      </div>
+      <h3>${c.id} · ${c.title}</h3>
+      <p class="summary">${c.text}</p>
+      <div class="hyp-links">${(c.links||[]).map(h=>`<button type="button" data-hid="${h}">${h}</button>`).join('')}</div>
+      <div class="body"><dl>
+        <div><dt>Why it matters</dt><dd>${c.why||''}</dd></div>
+        <div><dt>Evidence path</dt><dd>${c.evidence||''}</dd></div>
+        <div><dt>Refute if</dt><dd>${c.refute||''}</dd></div>
+      </dl></div>`;
+    d.addEventListener('click', e => {
+      if(e.target.closest('button[data-hid]')){
+        e.stopPropagation();
+        setFocus(e.target.dataset.hid);
+        document.querySelector('#prog-tabs [data-view="hypotheses"]').click();
+        return;
+      }
+      d.classList.toggle('open');
+      setFocus(c.id);
+    });
+    root.appendChild(d);
+  });
+  if(focusId) setFocus(focusId);
+}
+
+function renderHypFilters(){
+  const row=document.getElementById('hyp-filters');
+  const opts=[['all','All'],['untested','Untested'],['correlational','Correlational'],['pilot','Pilot'],['open','Open'],['designed','Designed'],['planned','Planned']];
+  row.innerHTML='';
+  opts.forEach(([v,label])=>{
+    const b=document.createElement('button');
+    b.className='chip'+(hypFilter===v?' active':'');
+    b.textContent=label; b.type='button';
+    b.onclick=()=>{ hypFilter=v; renderHyps(); renderHypFilters(); };
+    row.appendChild(b);
+  });
+}
+
+function renderHyps(){
+  const root=document.getElementById('hyp-grid'); root.innerHTML='';
+  DATA.hypotheses.filter(h => hypFilter==='all' || h.status===hypFilter).forEach(h => {
+    const d=document.createElement('div');
+    d.className='hyp-card';
+    d.dataset.id=h.id;
+    d.dataset.claims=(h.claims||[]).join(',');
+    d.innerHTML=`<div class="hyp-head"><span class="hid">${h.id}</span><span class="status ${h.status}">${statusLabel(h.status)}</span></div>
+      <p class="summary">${h.text}</p>
+      <div class="meta">${(h.claims||[]).join(' · ')} · ${h.test}</div>
+      <div class="body">
+        <p>${h.detail||''}</p>
+        <p><strong>Test.</strong> ${h.test}</p>
+        <p><strong>Decision.</strong> ${h.gate||''}</p>
+        <div class="hyp-links">${(h.claims||[]).map(c=>`<button type="button" data-cid="${c}">${c}</button>`).join('')}</div>
+      </div>`;
+    d.addEventListener('click', e => {
+      if(e.target.closest('button[data-cid]')){
+        e.stopPropagation();
+        setFocus(e.target.dataset.cid);
+        document.querySelector('#prog-tabs [data-view="claims"]').click();
+        return;
+      }
+      d.classList.toggle('open');
+      setFocus(h.id);
+    });
+    root.appendChild(d);
+  });
+  if(focusId) setFocus(focusId);
+}
+
+function drawClaimHypMap(){
+  const el=document.getElementById('claim-hyp-map');
+  if(!el) return;
+  const w=el.clientWidth||640, h=160;
+  const svg=d3.select(el); svg.selectAll('*').remove();
+  svg.attr('viewBox',`0 0 ${w} ${h}`);
+  const ccs=DATA.claims.filter(c=>c.kind==='cc');
+  const acs=DATA.claims.filter(c=>c.kind==='ac');
+  const hyps=DATA.hypotheses;
+  const xC=i=> (i+0.5)/ccs.length * (w*0.92) + w*0.04;
+  const xA=i=> (i+0.5)/acs.length * (w*0.92) + w*0.04;
+  const xH=i=> (i+0.5)/hyps.length * (w*0.92) + w*0.04;
+  const pos={};
+  ccs.forEach((c,i)=> pos[c.id]={x:xC(i),y:28,kind:'cc'});
+  acs.forEach((c,i)=> pos[c.id]={x:xA(i),y:132,kind:'ac'});
+  hyps.forEach((h,i)=> pos[h.id]={x:xH(i),y:80,kind:'h'});
+  const g=svg.append('g');
+  DATA.claims.forEach(c => (c.links||[]).forEach(hid => {
+    if(!pos[hid]||!pos[c.id]) return;
+    const active=!focusId || focusId===c.id || focusId===hid;
+    g.append('line')
+      .attr('x1',pos[c.id].x).attr('y1',pos[c.id].y)
+      .attr('x2',pos[hid].x).attr('y2',pos[hid].y)
+      .attr('stroke','currentColor').attr('stroke-opacity', active?0.35:0.08)
+      .attr('stroke-width', active && focusId ? 1.6 : 1);
+  }));
+  Object.entries(pos).forEach(([id,p])=>{
+    const active=!focusId || focusId===id ||
+      DATA.claims.some(c=>c.id===focusId && (c.links||[]).includes(id)) ||
+      DATA.hypotheses.some(h=>h.id===focusId && (h.claims||[]).includes(id)) ||
+      DATA.claims.some(c=>c.id===id && (c.links||[]).includes(focusId)) ||
+      DATA.hypotheses.some(h=>h.id===id && (h.claims||[]).includes(focusId));
+    const ng=g.append('g').attr('transform',`translate(${p.x},${p.y})`).style('cursor','pointer')
+      .on('click',()=>setFocus(id))
+      .on('mousemove',e=>showTip(e, id))
+      .on('mouseleave',hideTip);
+    ng.append('circle').attr('r', p.kind==='h'?11:13)
+      .attr('fill','var(--paper)')
+      .attr('stroke', p.kind==='cc'?'var(--accent)':p.kind==='ac'?'var(--teal)':'var(--amber)')
+      .attr('stroke-width', active && focusId ? 2 : 1.2)
+      .attr('opacity', active?1:0.35);
+    ng.append('text').attr('text-anchor','middle').attr('dy','.35em')
+      .attr('font-size',9).attr('fill','currentColor').attr('opacity', active?1:0.35).text(id);
+  });
+}
+
+renderClaimFilters();
+renderClaims();
+renderHypFilters();
+renderHyps();
+drawClaimHypMap();
+addEventListener('resize', ()=>{ if(document.getElementById('view-claims').classList.contains('active')) drawClaimHypMap(); });
 
 /* phases */
 DATA.phases.forEach((ph,i) => {
   if(i){ const g=document.createElement('div'); g.className='phase-gate'; g.innerHTML='<span title="gate"></span>'; document.getElementById('phase-track').appendChild(g); }
   const d=document.createElement('div'); d.className='phase-node'+(i===0?' open':'');
-  d.innerHTML=`<div class="ph-id">${ph.id} · ${ph.status}</div><h3>${ph.title}</h3>
-    <div style="font-size:.78rem;color:var(--muted);margin:.35rem 0">${ph.when} · ${ph.cost}</div>
+  d.innerHTML=`<div class="ph-id">${ph.id} · ${statusLabel(ph.status)}</div><h3>${ph.title}</h3>
+    <div class="ph-when">${ph.when}</div>
     <div class="body">
       <p style="margin:0;max-width:none"><strong>Do.</strong> ${ph.do}</p>
       <p style="margin:.4rem 0 0;max-width:none"><strong>Needs.</strong> ${ph.needs}</p>
       <p style="margin:.4rem 0 0;max-width:none"><strong>Gate.</strong> ${ph.gate}</p>
       ${ph.ships?`<p style="margin:.4rem 0 0;max-width:none"><strong>Ships.</strong> ${ph.ships}</p>`:''}
-      <p style="margin:.4rem 0 0;max-width:none"><strong>Advances.</strong> ${ph.advances.join(', ')}</p>
+      <div class="phase-advances">${ph.advances.map(a=>`<span>${a}</span>`).join('')}</div>
       ${ph.results?`<div class="result"><strong>Delivered.</strong> ${ph.results}</div>`:''}
     </div>`;
   d.onclick=()=>d.classList.toggle('open');
