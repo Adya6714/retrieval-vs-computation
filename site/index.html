@@ -166,11 +166,55 @@ html.js .reveal.in{opacity:1;transform:none}
 .chip-xs.executed{border-color:var(--teal);color:var(--teal)}
 .callout{margin-top:1.5rem;padding:1.1rem 1.2rem;border:1px solid var(--rule);background:var(--tint);max-width:64ch}
 .callout ol{margin:.5rem 0 0 1.1rem;padding:0;color:var(--muted);font-size:.9rem}
-.q-grid{display:grid;gap:.75rem;margin-top:1rem}
-.q-card{border:1px solid var(--rule);background:var(--tint);padding:1.35rem 1.5rem}
-.q-card .qid{font-family:var(--serif);font-size:2rem;color:var(--accent);line-height:1;margin-bottom:.5rem}
-.q-card p{margin:0;font-size:1.15rem;max-width:48ch}
-.q-card .tags{margin-top:.75rem;font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+.q-grid{display:grid;gap:.85rem;margin-top:1rem}
+.q-card{border:1px solid var(--rule);background:var(--tint);padding:1.25rem 1.4rem;cursor:pointer;transition:border-color .3s var(--ease)}
+.q-card:hover,.q-card.open{border-color:var(--accent)}
+.q-card .qid{font-family:var(--serif);font-size:1.85rem;color:var(--accent);line-height:1;margin-bottom:.45rem}
+.q-card .q-main{margin:0;font-size:1.12rem;max-width:58ch}
+.q-card .tags{margin-top:.7rem;font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+.q-card .body{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.q-card.open .body{display:block}
+.q-card .body .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:720px){.q-card .body .cols{grid-template-columns:1fr}}
+.q-card .body h4{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 .35rem;font-family:var(--sans);font-weight:500}
+.q-card .body p{margin:0 0 .75rem;font-size:.88rem;color:var(--muted);max-width:none}
+.q-card .pill-row{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.35rem}
+.q-card .pill-row span{font-size:.7rem;padding:.2rem .45rem;border:1px solid var(--rule);color:var(--accent)}
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.85rem;margin-top:1rem}
+.exp-card{border:1px solid var(--rule);background:var(--tint);padding:1.1rem 1.2rem;cursor:pointer;transition:border-color .3s var(--ease)}
+.exp-card:hover,.exp-card.open{border-color:var(--accent)}
+.exp-card .exp-top{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-bottom:.45rem}
+.exp-card .exp-id{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.exp-card h3{font-size:1.1rem;margin-bottom:.35rem}
+.exp-card .blurb{font-size:.9rem;color:var(--muted);margin:0;max-width:none}
+.exp-card .meta-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.7rem;font-size:.75rem;color:var(--muted)}
+.exp-card .meta-row b{color:var(--ink);font-weight:500}
+.exp-card .body{display:none;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.exp-card.open .body{display:block}
+.exp-card .body dl{margin:0;display:grid;gap:.55rem}
+.exp-card .body dt{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:500;font-family:var(--sans)}
+.exp-card .body dd{margin:0;max-width:none}
+.exp-card a{color:var(--accent)}
+.finding-depth{margin-top:1.35rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+@media(max-width:900px){.finding-depth{grid-template-columns:1fr}}
+.depth-box{border:1px solid var(--rule);background:var(--tint);padding:.9rem 1rem}
+.depth-box h4{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 .4rem;font-family:var(--sans);font-weight:500}
+.depth-box p{margin:0;font-size:.85rem;color:var(--muted);max-width:none}
+.method-tiers{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 .75rem}
+.next-grid{display:grid;gap:.75rem;margin-top:1rem}
+.next-card{border:1px solid var(--rule);background:var(--tint);padding:1.15rem 1.25rem;cursor:pointer;transition:border-color .3s var(--ease)}
+.next-card:hover,.next-card.open{border-color:var(--accent)}
+.next-card .tier{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.35rem}
+.next-card h3{font-size:1.1rem;margin-bottom:.35rem}
+.next-card .q{font-size:.95rem;color:var(--muted);margin:0;max-width:62ch}
+.next-card .body{display:none;margin-top:.85rem;font-size:.85rem;color:var(--muted)}
+.next-card.open .body{display:block}
+.next-card dl{margin:0;display:grid;gap:.5rem}
+.next-card dt{color:var(--ink);font-weight:500;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-family:var(--sans)}
+.next-card dd{margin:0;max-width:none}
+.protocol-box{margin-top:.65rem;padding:.7rem .85rem;border-left:2px solid var(--accent);background:var(--tint2);font-size:.82rem;color:var(--ink)}
+.protocol-box ol{margin:.35rem 0 0 1.1rem;padding:0;color:var(--muted)}
+.protocol-box li{margin:.2rem 0}
 .protocol-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin:1.1rem 0}
 @media(max-width:900px){.protocol-steps{grid-template-columns:1fr 1fr}}
 .step-card{border:1px solid var(--rule);background:var(--tint);padding:.85rem .95rem;font-size:.85rem}
@@ -242,13 +286,6 @@ html.js .reveal.in{opacity:1;transform:none}
 .accept-card{border:1px solid var(--rule);padding:.7rem;background:var(--tint);font-size:.82rem}
 .accept-card .v{font-family:var(--serif);font-size:1.5rem;line-height:1.1}
 .next-grid{display:grid;gap:.75rem;margin-top:1rem}
-.next-card{border:1px solid var(--rule);background:var(--tint);padding:1.1rem 1.2rem;cursor:pointer}
-.next-card:hover,.next-card.open{border-color:var(--accent)}
-.next-card h3{font-size:1.1rem;margin-bottom:.35rem}
-.next-card .q{font-size:.92rem;color:var(--muted);margin:0}
-.next-card .body{display:none;margin-top:.75rem;font-size:.85rem;color:var(--muted)}
-.next-card.open .body{display:block}
-.next-card dl{margin:0} .next-card dt{color:var(--ink);font-weight:500;margin-top:.4rem} .next-card dd{margin:.1rem 0 0}
 .finding-note{margin-top:.75rem;font-size:.9rem;color:var(--muted);max-width:var(--measure)}
 .vault-viz{border:1px solid var(--rule);background:var(--tint);margin-top:1rem;height:220px}
 .footer-links{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1rem}
@@ -344,7 +381,8 @@ html.js .reveal.in{opacity:1;transform:none}
 <section class="panel" id="research-questions" data-rail="Research questions">
   <div class="inner reveal">
     <p class="kicker">Research questions</p>
-    <h2>Five questions. Each tagged to a phase and a claim.</h2>
+    <h2>Five questions that organise the programme.</h2>
+    <p class="lede">Each question has an operationalisation, what the behavioural layer already measured, and what remains gated. Click to expand.</p>
     <div class="q-grid" id="questions"></div>
   </div>
 </section>
@@ -413,12 +451,23 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
+<section class="panel" id="experiments" data-rail="Experiments">
+  <div class="inner reveal">
+    <p class="kicker">Experiments executed</p>
+    <h2>What has already been run on the bank.</h2>
+    <p class="lede">Each card is a real sweep or analysis with models, n, primary metric, and the derived artefact. Expand for design notes and what the result rules out.</p>
+    <div class="filter-row" id="exp-filters" role="group" aria-label="Filter experiments"></div>
+    <div class="exp-grid" id="exp-grid"></div>
+  </div>
+</section>
+
 <section class="panel" id="f1" data-rail="F1 Numeric vs lexical">
   <div class="inner reveal">
     <p class="kicker">Finding 1 · shipped behavioural layer</p>
     <h2>Numeric vs lexical robustness dissociate.</h2>
     <div class="chart-wrap" id="slope-chart"></div>
     <p class="caption">Canonical → W6 → W3 on arithmetic. W6 stays flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <div class="finding-depth" data-finding="f1"></div>
   </div>
 </section>
 
@@ -430,6 +479,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="tabs" id="f2-tabs"><button class="tab active" data-fam="gsm">Arithmetic</button><button class="tab" data-fam="bw">Planning</button></div>
     <div class="small-multiples" id="pc-charts"></div>
     <p class="caption">W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <div class="finding-depth" data-finding="f2"></div>
   </div>
 </section>
 
@@ -453,6 +503,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <p class="caption">Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span>; Gemini .391 → .764; o4-mini .781 → .909.</p>
       </div>
     </div>
+    <div class="finding-depth" data-finding="f3"></div>
   </div>
 </section>
 
@@ -465,6 +516,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <div class="panel-box"><h3>φ heatmap · can ↔ W3</h3><div id="phi-heat"></div><p class="caption"><a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P1_phi_canonical_w3.csv" target="_blank" rel="noopener">P1_phi_canonical_w3.csv</a></p></div>
       <div class="panel-box"><h3>Kendall W</h3><div id="kendall"></div><p class="caption">Within-family vs across-family. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C7_concordance_filtered.csv" target="_blank" rel="noopener">C7</a></p></div>
     </div>
+    <div class="finding-depth" data-finding="f4"></div>
   </div>
 </section>
 
@@ -476,6 +528,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="chart-wrap" id="scatter-chart"></div>
     <div class="fit-stat sig" id="fit-stat"></div>
     <p class="caption">Acc vs retention ρ=<span class="num" data-n="14" data-src="P1_construct_validity.csv">.136</span> (p=.642); Acc vs φ −.426 (p=.146). <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P2_P1_convergence.csv" target="_blank" rel="noopener">P2_P1_convergence.csv</a>.</p>
+    <div class="finding-depth" data-finding="f5"></div>
   </div>
 </section>
 
@@ -490,13 +543,16 @@ html.js .reveal.in{opacity:1;transform:none}
         <p class="caption" style="margin-top:1rem">n=61. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/injection_recovery_summary.csv" target="_blank" rel="noopener">injection_recovery_summary.csv</a>.</p>
       </div>
     </div>
+    <div class="finding-depth" data-finding="f6"></div>
   </div>
 </section>
 
-<section class="panel" id="next" data-rail="Next steps">
+<section class="panel" id="next" data-rail="Future methods">
   <div class="inner reveal">
-    <p class="kicker">Next steps · not limitations</p>
-    <h2>A queue. Predictions and decision criteria.</h2>
+    <p class="kicker">Future research methods</p>
+    <h2>Protocols with predictions and kill criteria.</h2>
+    <p class="lede">Tier 1 calibrates and intervenes. Tier 2 maps geometry and development. Tier 3 folds into those designs. Expand any card for the step-by-step protocol.</p>
+    <div class="method-tiers" id="method-tiers"></div>
     <div class="next-grid" id="next-grid"></div>
   </div>
 </section>
@@ -1593,82 +1649,354 @@ const DATA = {
     {
       "id": "Q1",
       "text": "Which surface properties carry the load, and is the answer a property of the model or of the task?",
-      "phase": "Phase 0–1",
-      "claim": "CC-1"
+      "phase": "Phase 0–1 · behavioural instrument",
+      "claim": "CC-1",
+      "why": "A single “robustness drop” summarises very little if W3, W4, W5, and W6 move in different directions.",
+      "ops": "Six answer-preserving transforms on 219 items × six models. Primary contrasts: Acc_can vs Acc_W3 / Acc_W4 / Acc_W5 / Acc_W6; Kendall W of transform order within vs across families; shared-hard item counts.",
+      "measured": "Numeric regeneration nearly free (Gemini GSM .909→.958 W6) while rename is expensive (.523 W3). Formal register often costlier than rename (o4-mini .841→.682 W4). Direction inversion raises BW accuracy (Claude .172→.873). Transform difficulty is family-level (W .42–.68); Claude across families W=.165 p=.82. Shared-hard 0/110 ALGO, 0/20 GSM, 14/64 BW.",
+      "open": "Matched init/goal complexity for the W5 rise; difficulty-matched WIS for exposure vs hardness.",
+      "findings": ["F1", "F2", "F3", "F4"],
+      "exps": ["P1", "Kendall W", "Shared-hard"]
     },
     {
       "id": "Q2",
       "text": "Do behavioural indicators track known training exposure?",
-      "phase": "Phase 1",
-      "claim": "H1"
+      "phase": "Phase 1 · Gate G1",
+      "claim": "H1",
+      "why": "Three correlated proxies agreeing is consistency, not validity. Without exposure ground truth the instrument is uncalibrated.",
+      "ops": "D1-lite: LoRA fine-tune Llama-3.1-8B on a random half of ALGO canonicals; hold out the rest; rerun P1–P3; report ROC of convergence labels against SEEN/UNSEEN. Corrupted-answer oracle arm as negative control.",
+      "measured": "Public-corpus Infini-gram proximity only — a within-family proxy, not closed-model membership. Labels not yet validated against known exposure.",
+      "open": "Gate G1: AUC ≥ .75 freeze thresholds; .60–.75 revise once; < .60 pivot mechanism-first.",
+      "findings": ["F5"],
+      "exps": ["P3", "Triangulation"]
     },
     {
       "id": "Q3",
       "text": "Where in the network does the split live, and can invariance be installed?",
-      "phase": "Phase 2",
-      "claim": "AC-1 / AC-2"
+      "phase": "Phase 2 · Gates G2",
+      "claim": "AC-1 / AC-2",
+      "why": "Behavioural dissociation needs an internal locus if it is more than a scoring artefact; installation turns diagnosis into intervention.",
+      "ops": "Canonical↔W3 residual-stream patching (not can↔W6); Commitment Depth as DV; HP-15 pathway occupancy on abstraction→induction→retrieval heads; if supported, band-constrained contrastive fine-tune.",
+      "measured": "Open-weight pilots solve too few renamed items (1/60, 0/61) for within-model correlation. Commitment Depth informally predicted final rank (r≈+.82) in the existing sweep.",
+      "open": "Need unquantised backbones with enough W3 solves, or an easier item set, before G2.",
+      "findings": ["F1", "F6"],
+      "exps": ["Mechanistic pilot", "Intrusion"]
     },
     {
       "id": "Q4",
       "text": "What training-data conditions produce invariance: dose or diversity?",
-      "phase": "Phase 3",
-      "claim": "AC-3 / H7"
+      "phase": "Phase 3 · Gate G3",
+      "claim": "AC-3 / H7",
+      "why": "Gives a data-curation law rather than a post-hoc patch — variety of surfaces as the pressure that forces abstraction heads.",
+      "ops": "DS-04 arms holding template dose fixed while varying surface diversity; track W3 retention and head-emergence CMA scores across arms.",
+      "measured": "Not yet run. Behavioural geometry (D3 ladders) and compositional stress (DS-09) are designed companions.",
+      "open": "Pre-registered functional forms; either fit or fail is publishable.",
+      "findings": [],
+      "exps": []
     },
     {
       "id": "Q5",
       "text": "When does invariance emerge relative to accuracy?",
       "phase": "Phase 4",
-      "claim": "CC-3 / H4"
+      "claim": "CC-3 / H4",
+      "why": "Order of acquisition constrains how training should be scheduled and what “capability” means developmentally.",
+      "ops": "OLMo intermediate checkpoints + Dolma template counts; track Acc_can, R_W3, and Commitment Depth across stages.",
+      "measured": "Not yet run. Variance decomposition already shows family-specific facet loadings (ALGO model-heavy; GSM item-heavy).",
+      "open": "Early checkpoints may floor on ALGO — use retention ratios and easy instances.",
+      "findings": ["F4", "F5"],
+      "exps": ["O10 variance"]
     }
   ],
+  "experiments": [
+    {
+      "id": "P1",
+      "family": "probe",
+      "status": "complete",
+      "title": "Surface invariance battery",
+      "blurb": "W1–W6 on GSM, BW, ALGO across six models; per-variant accuracy and retention.",
+      "n": "219 problems · ~6 models · 7 surfaces",
+      "metric": "Acc_Wv, R_W3",
+      "artifact": "results/derived/probe1_per_model_variant.csv",
+      "design": "Same gold under W1–W4; re-solved gold under W5/W6. Resume sweeps on (problem_id, variant, model). ERROR rows excluded from denominators.",
+      "result": "Lexical and numeric axes dissociate; formal register and direction are distinct treatments, not milder renames.",
+      "rules_out": "A single scalar “robustness” as a complete summary of surface behaviour."
+    },
+    {
+      "id": "P2A",
+      "family": "probe",
+      "status": "complete",
+      "title": "Plan–execution coupling (CCI)",
+      "blurb": "Hard session isolation: declare a plan, then execute without the transcript.",
+      "n": "GSM n=44/model; ALGO phase coverage model-dependent",
+      "metric": "CCI (ε=0.01 numeric / action match)",
+      "artifact": "results/derived/GSM_P2_metrics.csv",
+      "design": "Session A elicits a plan; Session B executes. CCI is positional agreement — a fingerprint, not a proof of internal reasoning.",
+      "result": "Gemini GSM mean CCI .270; Claude .231; GPT-4o .108. High accuracy ≠ high consistency.",
+      "rules_out": "Treating final-answer accuracy as evidence that intermediate plans were followed."
+    },
+    {
+      "id": "P2B",
+      "family": "probe",
+      "status": "complete",
+      "title": "False-state injection",
+      "blurb": "Replace a true interior value with a plausible false one; score compliance and final correctness.",
+      "n": "61 ALGO sessions / model",
+      "metric": "Acceptance rate; post-injection Acc",
+      "artifact": "results/raw/ALGO_P2_phase2_injected.csv",
+      "design": "Interior-step injection; four-way response taxonomy on ALGO. Plausible vs implausible arms.",
+      "result": "o4-mini 100% accept; Claude 88.5%; post-injection accuracy near uninjected baseline.",
+      "rules_out": "The visible trace as a sufficient statistic of the computation producing the answer."
+    },
+    {
+      "id": "P3",
+      "family": "probe",
+      "status": "complete",
+      "title": "Public-corpus proximity",
+      "blurb": "Infini-gram n-gram overlap on The Pile/DCLM as a within-family exposure proxy.",
+      "n": "Per canonical problem (template + instance)",
+      "metric": "c̄_T, instance score",
+      "artifact": "results/raw/*_P3_contamination.csv",
+      "design": "Cached queries; CC ≫ SP ≫ WIS prevalence co-varies with hardness — partial control only.",
+      "result": "Proximity–VRI link for some models; o4-mini breaks it. Not closed-model membership.",
+      "rules_out": "Interpreting Infini-gram as ground-truth training exposure for API models."
+    },
+    {
+      "id": "Triangulation",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Per-instance probe convergence",
+      "blurb": "Merge P1+P2+P3 into labels per (problem, model).",
+      "n": "ALGO triangulation 440 rows (v3)",
+      "metric": "convergence_label / diagnosis",
+      "artifact": "results/derived/ALGO_P3_triangulation_v3.csv",
+      "design": "Agreement-gated labels. Thresholds swing strong-label rate 2.7%→57.7% — design choice until D1 calibrates.",
+      "result": "Mostly ambiguous/mixed; few strong retrieval or computation signals at current thresholds.",
+      "rules_out": "Treating uncalibrated labels as validated strategy classes."
+    },
+    {
+      "id": "Shared-hard",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Item-level locus test",
+      "blurb": "Count problems that fail for every primary model.",
+      "n": "110 / 20 / 64 five-model intersections",
+      "metric": "fail_all_five_paper_models",
+      "artifact": "results/derived/P1_failure_patterns.csv",
+      "design": "Canonical only; missing coverage ≠ failure.",
+      "result": "0/110 ALGO, 0/20 GSM, 14/64 BW (all mystery/obfuscated).",
+      "rules_out": "A shared hard-item core outside obfuscated planning."
+    },
+    {
+      "id": "Kendall W",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Transform-order concordance",
+      "blurb": "Do models agree which surface is hardest within a family?",
+      "n": "W1–W6 rankings; 10k within-row permutations",
+      "metric": "Kendall W, permutation p",
+      "artifact": "results/derived/P1_variant_ordering.csv",
+      "design": "Null permutes ranks within each ranker. Degenerate floor rankers audited in C7.",
+      "result": "Within-family W=.42–.68; Claude across families W=.165 p=.82.",
+      "rules_out": "“Model X is rename-fragile” without a family index."
+    },
+    {
+      "id": "Intrusion",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Intrusion-error fingerprint",
+      "blurb": "Wrong answers that reuse a pre-rename token after W3.",
+      "n": "Rename-error subsets; ALGO + BW",
+      "metric": "Intrusion rate among W3 errors",
+      "artifact": "rebuild/solidify/T2_intrusion_detail.csv",
+      "design": "Content of wrong answers as retrieval signature (DS-02). Zero-cost on existing logs.",
+      "result": "o4-mini ALGO intrusion .619 (13/21); other models much lower; BW rate 0.",
+      "rules_out": "Treating all rename errors as the same failure mode."
+    },
+    {
+      "id": "Mixture-IRT",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Latent strategy classes",
+      "blurb": "Mixture-IRT / BIC class selection on response patterns.",
+      "n": "GSM / ALGO response matrices",
+      "metric": "K classes by BIC; strategy_posteriors",
+      "artifact": "results/derived/strategy_posteriors.csv",
+      "design": "DS-01: replace hand thresholds with fitted classes where item variance allows.",
+      "result": "GSM selects a single class at this sample size; ALGO/BW below item-variance threshold for identifiable mixtures.",
+      "rules_out": "Claiming discrete strategy subpopulations on ALGO/BW at current n."
+    },
+    {
+      "id": "O10 variance",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Crossed variance decomposition",
+      "blurb": "Where accuracy variance loads: items vs models vs facets.",
+      "n": "Binary accuracy crossed designs",
+      "metric": "Facet σ², G_item",
+      "artifact": "results/derived/O10_variance_components.csv",
+      "design": "ALGO vs GSM contrast: model facet vs item facet.",
+      "result": "ALGO .327 model / .018 item; GSM items .186 / model .009.",
+      "rules_out": "One experimental design for both families."
+    },
+    {
+      "id": "Mechanistic pilot",
+      "family": "mech",
+      "status": "pilot",
+      "title": "Residual-stream rank pilot",
+      "blurb": "Final-rank / layer trajectories on open weights (Qwen, Llama).",
+      "n": "Qwen-2.5-7B n=398 base; smaller instruct pilots",
+      "metric": "Gold-token rank by layer",
+      "artifact": "results/raw/mechanistic_sweep_7b_base_rawqa.csv",
+      "design": "Appendix F pilot contrasts canonical vs W6 in places — manipulation mismatch with the W3 headline.",
+      "result": "Commitment-depth signal present; underpowered for W3 within-model correlation.",
+      "rules_out": "Using the can↔W6 pilot as direct evidence for the rename mechanism."
+    },
+    {
+      "id": "CCI×W3",
+      "family": "analysis",
+      "status": "complete",
+      "title": "Construct validity: CCI vs rename survival",
+      "blurb": "Point-biserial with cluster bootstrap across families.",
+      "n": "Pooled n=272; seed 42; 5k resamples",
+      "metric": "r, 95% CI, p",
+      "artifact": "results/derived/P2_P1_convergence.csv",
+      "design": "Two probes share no machinery. Discriminant: neither tracks canonical accuracy.",
+      "result": "Pooled r=.243 p=.024; per-family both null at typical n.",
+      "rules_out": "Powering future construct tests on a single family alone at these sizes."
+    }
+  ],
+  "findingDepth": {
+    "f1": {
+      "design": "Paired Acc on the same GSM items under canonical, W6 (new numbers), and W3 (rename). n=44 for Claude/Gemini/o4-mini; GPT-4o/Llama n=20 valid.",
+      "reads": "Whatever supports the answer is stable under quantity substitution and unstable under name substitution for Gemini — and nearly flat on both for o4-mini.",
+      "rules": "Memorisation diagnoses that treat numeric regeneration as the sole diagnostic."
+    },
+    "f2": {
+      "design": "W4 rewrites register from difficulty_params while holding entity names fixed. Compared against W3 on the same items.",
+      "reads": "Fragility is not only “unknown words.” Notation dialect is an independent cost — often larger than rename for strong models.",
+      "rules": "Collapsing formalisation into paraphrase (W1) or layout (W2)."
+    },
+    "f3": {
+      "design": "BW W5 swaps PDDL :init and :goal, completes a valid init, re-solves with an admissible planner for gold.",
+      "reads": "A legal invert of origin and destination can raise accuracy sharply — the procedure is direction-shaped.",
+      "rules": "Treating init/goal as interchangeable surface noise without a matched-complexity control."
+    },
+    "f4": {
+      "design": "Five-model intersection shared-hard counts; φ(can,W3); Kendall W of W1–W6 order within vs across families.",
+      "reads": "Models can share a family’s transform difficulty ordering while failing different items. Fragility is an interaction.",
+      "rules": "Cataloguing “intrinsically fragile problems” outside mystery planning."
+    },
+    "f5": {
+      "design": "CCI (plan–execution) vs W3 survival, cluster bootstrap; also Acc vs retention / φ rank correlations.",
+      "reads": "Two independent probes agree when pooled; accuracy does not track either. Robustness behaves as a separable capacity.",
+      "rules": "Equating high Acc_can with surface invariance."
+    },
+    "f6": {
+      "design": "Mid-solve injection of a plausible false state; score acceptance and final-answer recovery against uninjected baseline.",
+      "reads": "Models adopt the false premise, carry it in the trace, and still finish near baseline — the trace is not the computation.",
+      "rules": "Monitoring schemes that treat intermediate steps as faithful records of answer formation."
+    }
+  },
   "next": [
     {
-      "title": "Direction-of-reasoning follow-up",
-      "q": "Is the W5 accuracy rise branching-factor or search-direction?",
-      "exp": "Generate Blocksworld instances with matched initial and goal complexity.",
-      "pred": "One account predicts the rise collapses under matched complexity; the other does not.",
-      "crit": "Pre-registered contrast under ≤100 inference calls.",
-      "needs": "Admissible planner + NL renderer."
-    },
-    {
-      "title": "D1-lite calibration (Phase 1 gate)",
+      "tier": 1,
+      "title": "D1-lite calibration (Gate G1)",
       "q": "Do behavioural indicators recover known exposure?",
-      "exp": "LoRA seen/unseen on Llama-3.1-8B + corrupted-answer oracle arm; full three-probe pipeline.",
+      "exp": "LoRA seen/unseen on Llama-3.1-8B over ALGO canonicals + corrupted-answer oracle; full three-probe pipeline.",
       "pred": "Retrieval-consistent labels enrich on SEEN; computation-consistent on UNSEEN.",
-      "crit": "AUC ≥ .75 retain; .60–.75 revise once; < .60 pivot mechanism-first.",
-      "needs": "1× A100-80GB."
+      "crit": "AUC ≥ .75 retain and freeze thresholds v2; .60–.75 revise indicators once; < .60 pivot mechanism-first.",
+      "needs": "Open-weight fine-tune stack; held-out item list frozen before training.",
+      "protocol": ["Split ALGO canonicals 50/50 SEEN/UNSEEN.", "LoRA-train on SEEN only; keep base checkpoint.", "Rerun P1–P3 on both halves.", "Fit ROC of each indicator and of triangulation labels.", "Run corrupted-answer arm as specificity check.", "Write Gate G1 decision into Program State."]
     },
     {
-      "title": "Mechanistic link",
-      "q": "Does rename-induced drop in gold-token accessibility predict per-item W3 survival?",
-      "exp": "D2 patching + Commitment Depth on canonical↔W3 (not can↔W6).",
-      "pred": "Entity-position patch restores answer; W6 does not shift rank the same way.",
-      "crit": "Within-model correlation at adequate power; both patch directions reported.",
-      "needs": "Stronger unquantised open models or easier item set (current pilots 1/60, 0/61)."
+      "tier": 1,
+      "title": "D2 causal patching + Commitment Depth",
+      "q": "Is W3 collapse a binding failure, and is the answer fixed before injection?",
+      "exp": "Canonical↔W3 residual-stream patches at entity positions and late layers; CD as earliest layer gold enters top-k; injection-step patch arm for H5.",
+      "pred": "Restoring canonical entity reps into the renamed run restores the answer; W6 does not shift rank the same way.",
+      "crit": "Within-model correlation at adequate W3 power; both patch directions reported; CD replicates as DV.",
+      "needs": "Unquantised open model with enough W3 solves (or easier bank).",
+      "protocol": ["Select Llama (or stronger) items with non-floor W3.", "Cache activations on can and W3.", "Patch entity-token residual stream both directions.", "Define CD; correlate with final rank and W3 survival.", "Optional: patch at injection locus for H5.", "Log every intervention result to the mechanistic ledger."]
     },
     {
-      "title": "Source monitoring (CC-2)",
+      "tier": 1,
+      "title": "Source monitoring (CC-2 / DS-05)",
       "q": "Can models report whether an answer came from memory?",
-      "exp": "DS-05 questions attached to D1-lite sessions; score against calibrated labels.",
-      "pred": "Self-report fails to track SEEN/UNSEEN above chance.",
+      "exp": "Attach source-vs-content questions to D1-lite sessions; score against SEEN/UNSEEN.",
+      "pred": "Self-report fails to track membership above chance (d′≈0).",
       "crit": "Pre-registered accuracy and calibration curves.",
-      "needs": "Rides on D1-lite GPU day."
+      "needs": "Rides on the D1-lite GPU day.",
+      "protocol": ["Write source-monitoring prompt template before the run.", "Ask after each solve, not before.", "Score against SEEN label only.", "Report d′ and calibration; no post-hoc prompt search."]
     },
     {
+      "tier": 2,
+      "title": "D3 continuous transfer distance",
+      "q": "Is fragility a dose–response curve with stable cliffs?",
+      "exp": "Graded rename ladders (10%…100% entities; synonym→rare→nonce); monotone decay vs cliff; cliff as model fingerprint.",
+      "pred": "Family-consistent cliffs; model-specific location.",
+      "crit": "Pre-registered functional form fits or fails out of sample (H3).",
+      "needs": "Variant generator extension; API sweep.",
+      "protocol": ["Define distance components (lexical / structural / format).", "Generate graded W3 ladders on a fixed item subset.", "Fit dose–response; hold out items for prediction.", "Fold D6 direction and D5 languages as far points on the same axis."]
+    },
+    {
+      "tier": 2,
+      "title": "D4 developmental checkpoints",
+      "q": "When does invariance emerge relative to accuracy?",
+      "exp": "OLMo intermediate checkpoints + Dolma template counts; track Acc_can, R_W3, CD.",
+      "pred": "Accuracy rises before W3 retention; lag tracks cumulative template diversity.",
+      "crit": "Measurable lag wherever accuracy is already non-floor (H4 / CC-3).",
+      "needs": "Checkpoint access; inference-heavy.",
+      "protocol": ["Count template occurrences in Dolma for bank items.", "Evaluate easy + hard slices at each checkpoint.", "Plot Acc vs R_W3 vs CD.", "Report floors honestly; do not impute."]
+    },
+    {
+      "tier": 2,
       "title": "Matched WIS bank (HP-05)",
       "q": "Is WIS W3 collapse exposure or difficulty?",
       "exp": "Difficulty-matched WIS instances holding algorithm fixed.",
-      "pred": "If exposure-driven, collapse attenuates when difficulty is matched; if difficulty-driven, it does not.",
-      "crit": "Pre-registered difficulty matching criterion.",
-      "needs": "API sweep."
+      "pred": "If exposure-driven, collapse attenuates when difficulty is matched.",
+      "crit": "Pre-registered matching criterion before generation.",
+      "needs": "Solver-backed instance generator + API.",
+      "protocol": ["Define difficulty match (plan length / DP table size).", "Generate matched pairs.", "Run P1 W3; compare retention to unmatched WIS.", "Update Table 5 framing."]
     },
     {
+      "tier": 2,
+      "title": "Direction-of-reasoning follow-up",
+      "q": "Is the W5 accuracy rise branching-factor or search-direction?",
+      "exp": "Blocksworld instances with matched initial and goal complexity.",
+      "pred": "One account predicts the rise collapses under matched complexity; the other does not.",
+      "crit": "Pre-registered contrast under a fixed inference budget.",
+      "needs": "Admissible planner + NL renderer.",
+      "protocol": ["Sample init/goal with matched on-pair counts.", "Verify both directions with Fast Downward.", "Run Claude/Gemini/o4-mini on both.", "Report within-stratum deltas."]
+    },
+    {
+      "tier": 3,
       "title": "Exposure diversity vs dose (H7 / AC-3)",
       "q": "Does surface diversity, not template dose, raise W3 retention?",
-      "exp": "DS-04 controlled training arms with head-emergence tracking.",
-      "pred": "Diversity arm raises retention and abstraction-head occupancy; dose-matched control does not.",
+      "exp": "DS-04 controlled training arms with abstraction-head emergence tracking.",
+      "pred": "Diversity arm raises retention and stage-1 occupancy; dose-matched control does not.",
       "crit": "Gate G3 functional-form fit — either fit or fail is publishable.",
-      "needs": "Controlled training arms after D1-lite signal."
+      "needs": "After D1-lite signal; head-identification code from P35 lineage.",
+      "protocol": ["Hold occurrence count fixed across arms.", "Vary paraphrase / rename diversity.", "Track behavioural R_W3 and CMA head scores.", "Pre-register the contrast before training."]
+    },
+    {
+      "tier": 3,
+      "title": "D7 sampling-consistency pilot",
+      "q": "Does answer-distribution entropy under T>0 dissociate canonical from W3?",
+      "exp": "30 ALGO items × 2 models; sharp canonical basin vs diffuse W3 basin.",
+      "pred": "Δ-entropy dissociates on fragile vs robust items.",
+      "crit": "Kill if |r| with CSS > .8 (adds nothing).",
+      "needs": "Small API pilot.",
+      "protocol": ["Sample 10 fragile / 10 mid / 10 robust.", "Draw k samples at fixed T>0.", "Compare entropy can vs W3.", "Correlate with CSS; apply kill criterion."]
+    },
+    {
+      "tier": 3,
+      "title": "HP-15 pathway occupancy",
+      "q": "Is strategy per-item occupancy of the symbolic pathway?",
+      "exp": "Reuse emergent-symbolic-mechanism CMA on our can/W3 pairs; correlate with labels, intrusion, CD.",
+      "pred": "Computation-consistent items show causal abstraction-head engagement; fragile items bypass stage 1.",
+      "crit": "Gate G2: supported → AC-2; mixed → report task-type boundary.",
+      "needs": "After patching infra; possibly 70B if 8B lacks clean heads.",
+      "protocol": ["Reproduce one headline number from the public CMA repo.", "Identify heads on our model.", "Score per-item mediation on can/W3.", "Correlate with DS-01/02/CD.", "Write G2 verdict."]
     }
   ],
   "rules": [
@@ -2482,8 +2810,68 @@ DATA.catalog.forEach(fam => {
 /* questions */
 DATA.questions.forEach(q => {
   const d=document.createElement('div'); d.className='q-card';
-  d.innerHTML=`<div class="qid">${q.id}</div><p>${q.text}</p><div class="tags">${q.phase} · ${q.claim}</div>`;
+  d.innerHTML=`<div class="qid">${q.id}</div><p class="q-main">${q.text}</p>
+    <div class="tags">${q.phase} · ${q.claim}</div>
+    <div class="body">
+      <div class="cols">
+        <div><h4>Why it matters</h4><p>${q.why||''}</p>
+          <h4>Operationalisation</h4><p>${q.ops||''}</p></div>
+        <div><h4>Already measured</h4><p>${q.measured||''}</p>
+          <h4>Still open</h4><p>${q.open||''}</p></div>
+      </div>
+      <div class="pill-row">${[...(q.findings||[]),...(q.exps||[])].map(x=>`<span>${x}</span>`).join('')}</div>
+    </div>`;
+  d.onclick=()=>d.classList.toggle('open');
   document.getElementById('questions').appendChild(d);
+});
+
+/* experiments */
+let expFilter='all';
+function renderExpFilters(){
+  const row=document.getElementById('exp-filters'); if(!row) return;
+  const opts=[['all','All'],['probe','Probes'],['analysis','Analyses'],['mech','Mechanistic'],['complete','Complete'],['pilot','Pilot']];
+  row.innerHTML='';
+  opts.forEach(([v,label])=>{
+    const b=document.createElement('button');
+    b.className='chip'+(expFilter===v?' active':'');
+    b.type='button'; b.textContent=label;
+    b.onclick=()=>{ expFilter=v; renderExps(); renderExpFilters(); };
+    row.appendChild(b);
+  });
+}
+function renderExps(){
+  const root=document.getElementById('exp-grid'); if(!root) return;
+  root.innerHTML='';
+  (DATA.experiments||[]).filter(e=>{
+    if(expFilter==='all') return true;
+    if(expFilter==='complete'||expFilter==='pilot') return e.status===expFilter;
+    return e.family===expFilter;
+  }).forEach(e=>{
+    const d=document.createElement('div'); d.className='exp-card';
+    const href=`${GH}/blob/main/${e.artifact}`;
+    d.innerHTML=`<div class="exp-top"><span class="exp-id">${e.id}</span><span class="status ${e.status}">${statusLabel(e.status)}</span></div>
+      <h3>${e.title}</h3><p class="blurb">${e.blurb}</p>
+      <div class="meta-row"><span><b>n</b> ${e.n}</span><span><b>metric</b> ${e.metric}</span></div>
+      <div class="body"><dl>
+        <div><dt>Design</dt><dd>${e.design}</dd></div>
+        <div><dt>Result</dt><dd>${e.result}</dd></div>
+        <div><dt>Rules out</dt><dd>${e.rules_out}</dd></div>
+        <div><dt>Artefact</dt><dd><a href="${href}" target="_blank" rel="noopener">${e.artifact}</a></dd></div>
+      </dl></div>`;
+    d.onclick=()=>d.classList.toggle('open');
+    root.appendChild(d);
+  });
+}
+renderExpFilters();
+renderExps();
+
+/* finding depth panels */
+Object.entries(DATA.findingDepth||{}).forEach(([id,fd])=>{
+  document.querySelectorAll(`.finding-depth[data-finding="${id}"]`).forEach(el=>{
+    el.innerHTML=`<div class="depth-box"><h4>Design</h4><p>${fd.design}</p></div>
+      <div class="depth-box"><h4>How to read it</h4><p>${fd.reads}</p></div>
+      <div class="depth-box"><h4>Rules out</h4><p>${fd.rules}</p></div>`;
+  });
 });
 
 /* rules */
@@ -2493,19 +2881,42 @@ DATA.rules.forEach((r,i) => {
   document.getElementById('rules').appendChild(d);
 });
 
-/* next */
-DATA.next.forEach(n => {
-  const d=document.createElement('div'); d.className='next-card';
-  d.innerHTML=`<h3>${n.title}</h3><p class="q">${n.q}</p>
-    <div class="body"><dl>
-      <dt>Experiment</dt><dd>${n.exp}</dd>
-      <dt>Prediction</dt><dd>${n.pred}</dd>
-      <dt>Decision criterion</dt><dd>${n.crit}</dd>
-      <dt>Needs</dt><dd>${n.needs}</dd>
-    </dl></div>`;
-  d.onclick=()=>d.classList.toggle('open');
-  document.getElementById('next-grid').appendChild(d);
-});
+/* future methods */
+let methodTier=[1,2,3];
+(function(){
+  const row=document.getElementById('method-tiers');
+  if(!row) return;
+  [[1,'Tier 1 · flagship'],[2,'Tier 2 · geometry & development'],[3,'Tier 3 · fold-ins']].forEach(([t,label])=>{
+    const b=document.createElement('button');
+    b.className='chip active'; b.type='button'; b.textContent=label; b.dataset.tier=t;
+    b.onclick=()=>{
+      b.classList.toggle('active');
+      methodTier=[...row.querySelectorAll('.chip.active')].map(x=>+x.dataset.tier);
+      if(!methodTier.length){ methodTier=[1,2,3]; row.querySelectorAll('.chip').forEach(c=>c.classList.add('active')); }
+      renderNext();
+    };
+    row.appendChild(b);
+  });
+})();
+function renderNext(){
+  const root=document.getElementById('next-grid'); if(!root) return;
+  root.innerHTML='';
+  DATA.next.filter(n=>methodTier.includes(n.tier||1)).forEach(n=>{
+    const d=document.createElement('div'); d.className='next-card';
+    d.innerHTML=`<div class="tier">Tier ${n.tier||'—'}</div><h3>${n.title}</h3><p class="q">${n.q}</p>
+      <div class="body"><dl>
+        <div><dt>Experiment</dt><dd>${n.exp}</dd></div>
+        <div><dt>Prediction</dt><dd>${n.pred}</dd></div>
+        <div><dt>Decision criterion</dt><dd>${n.crit}</dd></div>
+        <div><dt>Needs</dt><dd>${n.needs}</dd></div>
+      </dl>
+      ${n.protocol?`<div class="protocol-box"><strong>Protocol</strong><ol>${n.protocol.map(s=>`<li>${s}</li>`).join('')}</ol></div>`:''}
+      </div>`;
+    d.onclick=()=>d.classList.toggle('open');
+    root.appendChild(d);
+  });
+}
+renderNext();
 
 /* verify flowchart */
 (function(){
