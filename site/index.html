@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What survives a rename? — RvC</title>
+<meta name="description" content="Retrieval vs computation: a measurement programme for surface robustness in LLM reasoning." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<style>
+:root {
+  --ink: #0A0A0B;
+  --paper: #FAFAF8;
+  --muted: #5C5C5A;
+  --rule: rgba(10,10,11,0.10);
+  --tint: rgba(10,10,11,0.02);
+  --tint2: rgba(10,10,11,0.04);
+  --accent: #1B4D8F;
+  --accent-soft: rgba(27,77,143,0.08);
+  --slate: #64748B;
+  --teal: #0F766E;
+  --amber: #B45309;
+  --amber-soft: rgba(180,83,9,0.15);
+  --ok: #0F766E;
+  --fail: #B45309;
+  --serif: "Instrument Serif", "Source Serif 4", Georgia, serif;
+  --sans: Inter, "Söhne", system-ui, sans-serif;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --rail: 11rem;
+  --measure: 68ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #F2F1EE;
+    --paper: #0E0E10;
+    --muted: #A8A8A4;
+    --rule: rgba(242,241,238,0.12);
+    --tint: rgba(242,241,238,0.03);
+    --tint2: rgba(242,241,238,0.06);
+    --accent: #6BA3E0;
+    --accent-soft: rgba(107,163,224,0.12);
+    --slate: #94A3B8;
+    --teal: #2DD4BF;
+    --amber: #F59E0B;
+    --amber-soft: rgba(245,158,11,0.18);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
+}
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+h3 { font-size: 1.35rem; }
+p { max-width: var(--measure); margin: 0 0 1em; color: var(--ink); }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 52ch; }
+.caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: var(--measure);
+  margin-top: 0.85rem;
+  line-height: 1.5;
+}
+.caption a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+.caption a:hover { border-bottom-color: var(--accent); }
+.num {
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px dotted var(--rule);
+  cursor: help;
+  position: relative;
+}
+.num:hover, .num:focus { color: var(--accent); border-bottom-color: var(--accent); }
+.stat {
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* Progress rail */
+.rail {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--rail);
+  padding: 1.5rem 0.75rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  z-index: 40;
+  background: linear-gradient(90deg, var(--paper) 70%, transparent);
+  pointer-events: none;
+}
+.rail a {
+  pointer-events: auto;
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.28rem 0.4rem 0.28rem 0.7rem;
+  border-left: 1px solid var(--rule);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rail a.active {
+  color: var(--ink);
+  border-left-color: var(--accent);
+  border-left-width: 2px;
+  padding-left: calc(0.7rem - 1px);
+}
+.rail a:hover { color: var(--accent); }
+
+main { margin-left: var(--rail); }
+@media (max-width: 900px) {
+  .rail { display: none; }
+  main { margin-left: 0; }
+  :root { --rail: 0; }
+}
+
+section.panel {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 4.5rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+section.panel > .inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+  font-weight: 500;
+}
+.claim { max-width: 22ch; }
+.claim-wide { max-width: 36ch; }
+
+/* HERO */
+#hero {
+  padding-top: 3rem;
+  overflow: hidden;
+}
+#hero .inner { position: relative; z-index: 2; }
+#lattice {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--muted);
+  max-width: 42ch;
+  line-height: 1.55;
+  margin-top: 1.25rem;
+}
+.hero-meta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.hero-meta a { color: var(--accent); text-decoration: none; }
+.hero-meta a:hover { text-decoration: underline; }
+
+/* Model cards (question) */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  max-width: 720px;
+}
+@media (max-width: 768px) { .cards { grid-template-columns: 1fr; } }
+.card {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1.4rem 1.5rem;
+  border-radius: 2px;
+}
+.card .label { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.card .acc {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  line-height: 1;
+  transition: color 0.5s var(--ease);
+}
+.card .acc.down { color: var(--amber); }
+.card .acc.flat { color: var(--teal); }
+.card .sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; }
+.rename-badge {
+  display: inline-block;
+  margin: 1.5rem 0 0.5rem;
+  padding: 0.35rem 0.7rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.rename-badge.show { opacity: 1; transform: none; }
+
+/* Bank */
+.tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 1.25rem 0 1rem;
+}
+.tab, .chip {
+  appearance: none;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.tab:hover, .chip:hover { border-color: var(--accent); color: var(--accent); }
+.tab.active, .chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .tab.active, .chip.active { color: var(--paper); }
+}
+.variant-row {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.problem-box {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1.25rem 1.4rem;
+  min-height: 10rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 72ch;
+  white-space: pre-wrap;
+}
+.problem-box .diff-add { background: rgba(15,118,110,0.14); }
+.problem-box .diff-del { background: var(--amber-soft); text-decoration: line-through; opacity: 0.7; }
+.gold {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.gold .tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.gold .val { font-weight: 600; }
+.gold .changed { color: var(--amber); }
+.gold .fixed { color: var(--teal); }
+
+/* Probes */
+.probes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 900px) { .probes { grid-template-columns: 1fr; } }
+.probe {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1.1rem 1.15rem;
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.probe:hover, .probe.open { border-color: var(--accent); background: var(--accent-soft); }
+.probe h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.probe .viz { height: 140px; margin: 0.75rem 0; }
+.probe .detail {
+  display: none;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.probe.open .detail { display: block; }
+.probe pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  background: var(--tint2);
+  padding: 0.75rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  color: var(--ink);
+  margin: 0.5rem 0;
+  border: 1px solid var(--rule);
+}
+
+/* Charts */
+.chart-wrap { margin-top: 1.5rem; width: 100%; overflow-x: auto; }
+.chart-wrap svg { display: block; width: 100%; height: auto; }
+.small-multiples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.sm { border: 1px solid var(--rule); padding: 0.75rem; background: var(--tint); }
+.sm .title { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.35rem; }
+
+/* Blocksworld */
+.bw-demo {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+@media (max-width: 768px) { .bw-demo { grid-template-columns: 1fr; } }
+.towers {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 240px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  overflow: visible;
+}
+.tower-col .stacks-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+.tower-col { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.tower-col .tlabel { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.stack {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3px;
+  min-height: 140px;
+  justify-content: flex-start;
+}
+.block {
+  width: 72px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  transition: transform 0.45s var(--ease), background 0.45s var(--ease);
+}
+.table-line {
+  width: 96px;
+  height: 2px;
+  background: var(--ink);
+  opacity: 0.35;
+  margin-top: 4px;
+}
+.bw-controls { display: flex; flex-direction: column; gap: 1rem; }
+.acc-bar-wrap {
+  margin-top: 0.5rem;
+}
+.acc-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.acc-track {
+  height: 10px;
+  background: var(--tint2);
+  border: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.acc-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.6s var(--ease);
+}
+.toggle-btn {
+  appearance: none;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+@media (prefers-color-scheme: dark) {
+  .toggle-btn { color: var(--paper); }
+}
+.toggle-btn:hover { filter: brightness(1.08); }
+.model-select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  max-width: 16rem;
+}
+
+/* Fragility panels */
+.tri {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 900px) { .tri { grid-template-columns: 1fr; } }
+.panel-box {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1.1rem;
+}
+.panel-box h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+.hard-list { list-style: none; padding: 0; margin: 0; }
+.hard-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+.hard-list li:last-child { border-bottom: none; }
+.heatmap { width: 100%; }
+.heatmap td, .heatmap th {
+  text-align: center;
+  padding: 0.45rem 0.35rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--rule);
+}
+.heatmap th { color: var(--muted); font-weight: 500; }
+.heatmap td { cursor: help; font-variant-numeric: tabular-nums; }
+.kendall-bars { display: flex; flex-direction: column; gap: 0.65rem; }
+.kb { font-size: 0.85rem; }
+.kb .row { display: flex; justify-content: space-between; margin-bottom: 0.2rem; }
+.kb .bar { height: 6px; background: var(--tint2); border: 1px solid var(--rule); }
+.kb .fill { height: 100%; background: var(--teal); }
+
+/* Scatter toggle */
+.scope-toggle { display: flex; gap: 0.4rem; margin: 1rem 0; flex-wrap: wrap; }
+.fit-stat {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  max-width: 42ch;
+}
+.fit-stat.sig { border-color: var(--teal); }
+.fit-stat.null { border-color: var(--rule); }
+
+/* Injection trace */
+.trace {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  max-width: 36rem;
+}
+.trace-step {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  font-size: 0.9rem;
+  opacity: 0.35;
+  transform: translateX(-6px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.trace-step.on { opacity: 1; transform: none; }
+.trace-step.inject { background: var(--amber-soft); border-color: var(--amber); }
+.trace-step.prop { background: var(--amber-soft); }
+.trace-step.ok-final { background: rgba(15,118,110,0.12); border-color: var(--teal); }
+.accept-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+.accept-card {
+  border: 1px solid var(--rule);
+  padding: 0.75rem;
+  background: var(--tint);
+  font-size: 0.85rem;
+}
+.accept-card .v { font-family: var(--serif); font-size: 1.6rem; line-height: 1.1; }
+
+/* Programme timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  position: relative;
+}
+@media (max-width: 900px) { .timeline { grid-template-columns: 1fr; } }
+.stage {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease);
+  min-height: 8rem;
+}
+.stage:hover, .stage.open { border-color: var(--accent); }
+.stage .status {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.stage .status.complete { color: var(--teal); }
+.stage .status.pilot { color: var(--accent); }
+.stage .status.designed { color: var(--amber); }
+.stage .status.planned { color: var(--muted); }
+.stage .body { display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+.stage.open .body { display: block; }
+.stage .body dt { color: var(--ink); font-weight: 500; margin-top: 0.5rem; }
+.stage .body dd { margin: 0.15rem 0 0; }
+.stage .result-inline {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+/* Appendix */
+details.appendix {
+  border: 1px solid var(--rule);
+  margin: 0.6rem 0;
+  background: var(--tint);
+}
+details.appendix summary {
+  padding: 0.9rem 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+details.appendix summary::-webkit-details-marker { display: none; }
+details.appendix summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+  color: var(--accent);
+  font-weight: 600;
+}
+details.appendix[open] summary::before { content: "−"; }
+details.appendix .content {
+  padding: 0 1.1rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+details.appendix .content p { color: var(--muted); }
+table.cov {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}
+table.cov th, table.cov td {
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+}
+table.cov th { background: var(--tint2); font-weight: 500; }
+
+/* Footer */
+#footer {
+  min-height: auto;
+  padding: 3rem;
+  border-bottom: none;
+}
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-links a:hover { text-decoration: underline; }
+
+/* Tooltip */
+#tip {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  padding: 0.45rem 0.6rem;
+  border-radius: 2px;
+  max-width: 240px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease;
+}
+#tip.show { opacity: 1; transform: none; }
+
+.axis text, .tick text { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
+.axis path, .axis line, .tick line { stroke: var(--rule); }
+</style>
+</head>
+<body>
+<nav class="rail" id="rail" aria-label="Sections"></nav>
+<div id="tip" role="tooltip"></div>
+
+<main>
+<!-- 1 HERO -->
+<section class="panel" id="hero" data-rail="Hero">
+  <svg id="lattice" aria-hidden="true"></svg>
+  <div class="inner reveal">
+    <p class="kicker">Retrieval vs computation</p>
+    <h1 class="claim-wide">What survives a rename?</h1>
+    <p class="hero-sub" id="thesis"></p>
+    <div class="hero-meta">
+      <span>219 problems · 6 models · 6 surfaces</span>
+      <a id="gh-top" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a id="pdf-top" href="#" target="_blank" rel="noopener">Paper PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2 QUESTION -->
+<section class="panel" id="question" data-rail="The question">
+  <div class="inner reveal">
+    <p class="kicker">The question</p>
+    <h2 class="claim-wide">Same score. Different procedure.</h2>
+    <div class="rename-badge" id="rename-badge">Entity rename applied →</div>
+    <div class="cards">
+      <div class="card">
+        <div class="label">Model A · Gemini</div>
+        <div class="acc" id="acc-a">.909</div>
+        <div class="sub" id="sub-a">Canonical arithmetic</div>
+      </div>
+      <div class="card">
+        <div class="label">Model B · o4-mini</div>
+        <div class="acc" id="acc-b">.841</div>
+        <div class="sub" id="sub-b">Canonical arithmetic</div>
+      </div>
+    </div>
+    <p class="caption">Both solve the canonical bank. After rename, Gemini falls to <span class="num" data-n="44" data-ci="Wilson" data-src="probe1_per_model_variant.csv">.523</span>; o4-mini stays at <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841</span>. Accuracy alone cannot tell them apart.</p>
+  </div>
+</section>
+
+<!-- 3 BANK -->
+<section class="panel" id="bank" data-rail="The bank">
+  <div class="inner reveal">
+    <p class="kicker">Method · The bank</p>
+    <h2 class="claim-wide">Six surfaces, one gold procedure.</h2>
+    <p class="lede">Pick a family, then step through W1–W6. Gold stays fixed for W1–W4; W5/W6 re-derive it.</p>
+    <div class="tabs" id="family-tabs"></div>
+    <div class="variant-row" id="variant-chips"></div>
+    <div class="problem-box" id="problem-text"></div>
+    <div class="gold">
+      <span class="tag">Gold answer</span>
+      <span class="val" id="gold-answer"></span>
+      <span class="tag" id="gold-note"></span>
+    </div>
+    <p class="caption">Source: <a id="bank-src" href="#" target="_blank" rel="noopener"></a>. Real bank text; W3 length-matched rename; W6 regenerates numbers.</p>
+  </div>
+</section>
+
+<!-- 4 PROBES -->
+<section class="panel" id="probes" data-rail="Three probes">
+  <div class="inner reveal">
+    <p class="kicker">Method · Three probes</p>
+    <h2 class="claim-wide">Surface, process, proximity.</h2>
+    <div class="probes">
+      <article class="probe" data-probe="1">
+        <h3>Probe 1 · Surface battery</h3>
+        <div class="viz" id="probe1-viz"></div>
+        <p style="font-size:0.85rem;color:var(--muted);margin:0">One problem → six answer-preserving forms. Metric: per-variant accuracy &amp; W3 retention.</p>
+        <div class="detail">
+          <strong>Template.</strong>
+          <pre>Solve the following problem step by step.
+Then give the final answer.
+
+{problem_text}</pre>
+          <strong>Metric.</strong> Acc<sub>Wv</sub> = correct / n; R<sub>W3</sub> = Acc<sub>W3</sub> / Acc<sub>can</sub> where Acc<sub>can</sub> ≥ 0.30.
+        </div>
+      </article>
+      <article class="probe" data-probe="2">
+        <h3>Probe 2 · Plan vs execution</h3>
+        <div class="viz" id="probe2-viz"></div>
+        <p style="font-size:0.85rem;color:var(--muted);margin:0">Session A declares a plan; Session B executes without history. Optional mid-solve injection.</p>
+        <div class="detail">
+          <strong>CCI.</strong> Fraction of declared numeric steps matched in isolated execution (ε = 0.01).
+          <strong>Injection.</strong> At a sampled interior step, replace true intermediate with a plausible false value; score acceptance and final-answer recovery.
+        </div>
+      </article>
+      <article class="probe" data-probe="3">
+        <h3>Probe 3 · Corpus proximity</h3>
+        <div class="viz" id="probe3-viz"></div>
+        <p style="font-size:0.85rem;color:var(--muted);margin:0">n-gram windows over public corpus (Infini-gram). Within-family proximity proxy only.</p>
+        <div class="detail">
+          <strong>Metric.</strong> Public-corpus n-gram hit rate by subtype (coin change ≫ shortest path ≫ WIS). Not used as closed-model membership claim.
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5 FINDING 1 -->
+<section class="panel" id="f1" data-rail="Numeric vs lexical">
+  <div class="inner reveal">
+    <p class="kicker">Finding 1</p>
+    <h2 class="claim-wide">Numeric change is nearly free. Rename is not.</h2>
+    <div class="chart-wrap" id="slope-chart"></div>
+    <p class="caption">Slope graph: canonical → W6 → W3 on arithmetic. W6 lines stay flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+  </div>
+</section>
+
+<!-- 6 FINDING 2 -->
+<section class="panel" id="f2" data-rail="Formal notation">
+  <div class="inner reveal">
+    <p class="kicker">Finding 2</p>
+    <h2 class="claim-wide">Formal notation often costs more than renaming.</h2>
+    <p class="lede">W4 leaves entity names intact and changes register. o4-mini loses 16 points on arithmetic under W4 alone.</p>
+    <div class="tabs" id="f2-tabs">
+      <button class="tab active" data-fam="gsm">Arithmetic</button>
+      <button class="tab" data-fam="bw">Planning</button>
+    </div>
+    <div class="small-multiples" id="pc-charts"></div>
+    <p class="caption">Parallel coordinates W1–W6; W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+  </div>
+</section>
+
+<!-- 7 FINDING 3 -->
+<section class="panel" id="f3" data-rail="Direction">
+  <div class="inner reveal">
+    <p class="kicker">Finding 3</p>
+    <h2 class="claim-wide">Swap initial and goal — accuracy rises.</h2>
+    <div class="bw-demo">
+      <div>
+        <div class="towers" id="towers"></div>
+        <p class="caption" style="margin-top:0.75rem">BW_014 · three blocks on the table → tower l/e/g. Toggle exchanges origin and destination.</p>
+      </div>
+      <div class="bw-controls">
+        <label for="bw-model" style="font-size:0.85rem;color:var(--muted)">Model</label>
+        <select class="model-select" id="bw-model"></select>
+        <button class="toggle-btn" id="bw-toggle" type="button">Invert direction (W5)</button>
+        <div class="acc-bar-wrap">
+          <div class="acc-bar-label">
+            <span id="bw-acc-label">Canonical</span>
+            <span class="stat" id="bw-acc-val">.172</span>
+          </div>
+          <div class="acc-track"><div class="acc-fill" id="bw-acc-fill"></div></div>
+        </div>
+        <p class="caption">Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span>. Mechanism not established — matched init/goal complexity experiment would decide branching-factor vs search-direction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 FINDING 4 -->
+<section class="panel" id="f4" data-rail="Where fragility lives">
+  <div class="inner reveal">
+    <p class="kicker">Finding 4</p>
+    <h2 class="claim-wide">Fragility is a model–item interaction.</h2>
+    <div class="tri">
+      <div class="panel-box">
+        <h3>Shared-hard counts</h3>
+        <ul class="hard-list" id="shared-hard"></ul>
+        <p class="caption" style="margin-top:0.75rem">Items failing all five primary models. Outside obfuscated planning: none.</p>
+      </div>
+      <div class="panel-box">
+        <h3>φ heatmap · can ↔ W3</h3>
+        <div id="phi-heat"></div>
+        <p class="caption">Hover for n and CI. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P1_phi_canonical_w3.csv" target="_blank" rel="noopener">P1_phi_canonical_w3.csv</a>.</p>
+      </div>
+      <div class="panel-box">
+        <h3>Kendall W</h3>
+        <div class="kendall-bars" id="kendall"></div>
+        <p class="caption">Within-family concordance vs across-family collapse. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C7_concordance_filtered.csv" target="_blank" rel="noopener">C7_concordance_filtered.csv</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 FINDING 5 -->
+<section class="panel" id="f5" data-rail="Robustness ≠ accuracy">
+  <div class="inner reveal">
+    <p class="kicker">Finding 5</p>
+    <h2 class="claim-wide">Robustness is not accuracy.</h2>
+    <p class="lede">Two probes that share no machinery agree when pooled — and neither tracks canonical accuracy.</p>
+    <div class="scope-toggle" id="scope-toggle">
+      <button class="chip" data-scope="family">Per-family (both null)</button>
+      <button class="chip active" data-scope="pooled">Pooled (significant)</button>
+    </div>
+    <div class="chart-wrap" id="scatter-chart"></div>
+    <div class="fit-stat sig" id="fit-stat"></div>
+    <p class="caption">Point-biserial CCI × W3 correctness; cluster bootstrap. Acc vs retention ρ=<span class="num" data-n="14" data-src="P1_construct_validity.csv">.136</span> (p=.642). Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P2_P1_convergence.csv" target="_blank" rel="noopener">P2_P1_convergence.csv</a>.</p>
+  </div>
+</section>
+
+<!-- 10 FINDING 6 -->
+<section class="panel" id="f6" data-rail="Compliance">
+  <div class="inner reveal">
+    <p class="kicker">Finding 6</p>
+    <h2 class="claim-wide">Compliance is not correctness.</h2>
+    <p class="lede">An injected false intermediate propagates — and the final answer still recovers.</p>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:start">
+      <div class="trace" id="trace"></div>
+      <div>
+        <div class="accept-row" id="accept-row"></div>
+        <p class="caption" style="margin-top:1rem">n=61 ALGO Phase-2B. Gemini rejects every injection (0% compliance). Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/injection_recovery_summary.csv" target="_blank" rel="noopener">injection_recovery_summary.csv</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 PROGRAMME -->
+<section class="panel" id="programme" data-rail="Programme">
+  <div class="inner reveal">
+    <p class="kicker">The programme</p>
+    <h2 class="claim-wide">Four stages. Predictions before results.</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- 12 APPENDIX -->
+<section class="panel" id="appendix" data-rail="Methods">
+  <div class="inner reveal">
+    <p class="kicker">Methods appendix</p>
+    <h2 class="claim-wide">How the instrument is built.</h2>
+    <details class="appendix">
+      <summary>Bank composition</summary>
+      <div class="content">
+        <p><strong>GSM</strong> · 44 arithmetic word problems from GSM8K / GSM-Symbolic across proximity quartiles.</p>
+        <p><strong>BW</strong> · 65 Blocksworld instances (50 standard, 15 obfuscated) with PDDL encoding.</p>
+        <p><strong>ALGO</strong> · 110 DP problems: coin change, shortest path, weighted interval scheduling (51 near-duplicate families).</p>
+      </div>
+    </details>
+    <details class="appendix">
+      <summary>Variant protocol</summary>
+      <div class="content">
+        <p>W1 paraphrase · W2 structural reformat · W3 entity rename (vocabulary-disjoint, length-matched) · W4 formal notation · W5 direction reversal · W6 procedural regeneration (gold re-derived). Entity mapping persisted; verifier consumes it so renamed answers score correctly.</p>
+      </div>
+    </details>
+    <details class="appendix">
+      <summary>Verifier design</summary>
+      <div class="content">
+        <p>Semantic where possible: PDDL state simulator for planning; exact optimal solver for optimisation; numeric match for arithmetic. Gold submitted to own verifier before any model call; variants checked to differ as intended; failures excluded with reason.</p>
+      </div>
+    </details>
+    <details class="appendix">
+      <summary>Probe prompt templates</summary>
+      <div class="content">
+        <p>Zero-shot chain-of-thought at T=0 through a single gateway. CCI: plan session then isolated execution session (no shared history). Injection: identical to execution with one interior false state.</p>
+      </div>
+    </details>
+    <details class="appendix">
+      <summary>Statistical treatment</summary>
+      <div class="content">
+        <p>ALGO: 10,000-draw percentile cluster bootstrap over 51 near-duplicate families. GSM/BW: Wilson intervals. Retention floor Acc<sub>can</sub> ≥ 0.30 fixed before analysis. Kendall W against within-row rank permutation null (10,000 perms, seed 42).</p>
+      </div>
+    </details>
+    <details class="appendix" open>
+      <summary>Coverage table (P1)</summary>
+      <div class="content">
+        <table class="cov">
+          <thead><tr><th>Family</th><th>Model</th><th>Canonical n</th><th>Coverage</th></tr></thead>
+          <tbody>
+            <tr><td>GSM</td><td>Claude / Gemini / o4-mini</td><td>44</td><td>full bank</td></tr>
+            <tr><td>GSM</td><td>GPT-4o / Llama</td><td>20</td><td>partial</td></tr>
+            <tr><td>ALGO</td><td>All five</td><td>110</td><td>full bank</td></tr>
+            <tr><td>BW</td><td>All five</td><td>65</td><td>full bank</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:0.75rem">Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/master_coverage_table.csv" target="_blank" rel="noopener">master_coverage_table.csv</a>.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 13 FOOTER -->
+<section class="panel" id="footer" data-rail="Links">
+  <div class="inner reveal">
+    <h2>Continue.</h2>
+    <div class="footer-links">
+      <a id="gh-foot" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a id="pdf-foot" href="#" target="_blank" rel="noopener">Paper PDF</a>
+      <a id="book-foot" href="#" target="_blank" rel="noopener">BOOK.md</a>
+      <a id="contact-foot" href="#">Contact</a>
+    </div>
+    <p class="caption" style="margin-top:2rem">RvC programme · Arrow keys move section to section · Numbers hover for n, CI, source.</p>
+  </div>
+</section>
+</main>
+
+<script>
+const DATA = {
+  "meta": {
+    "title": "What survives a rename?",
+    "thesis": "Equal accuracy can hide procedures that diverge under surface change: numeric regeneration is nearly free, entity rename is expensive, and formal notation often costs more than renaming.",
+    "github": "https://github.com/Adya6714/retrieval-vs-computation",
+    "paper": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf",
+    "book": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md",
+    "contact": "https://github.com/Adya6714/retrieval-vs-computation/issues"
+  },
+  "bank": {
+    "arithmetic": {
+      "id": "GSM_041",
+      "family": "Arithmetic",
+      "source": "data/problems/question_bank_gsm.csv",
+      "variants": {
+        "canonical": {
+          "text": "A group of 190 students has various hobbies. 19 like to paint, 7 like to play football, and the rest like to either bake or hike. How many like to bake if the number that like to hike is twice the number that prefer playing football?",
+          "answer": "150"
+        },
+        "W1": {
+          "text": "Among 190 students with different hobbies, 19 enjoy painting and 7 enjoy playing football, while the remaining students either enjoy baking or hiking. If the students who like hiking equal twice those who prefer playing football, how many students like to bake?",
+          "answer": "150"
+        },
+        "W2": {
+          "text": "Given:\r\n- Total number of students: 190\r\n- Students who like to paint: 19\r\n- Students who like to play football: 7\r\n- Students who like to hike: twice the number that prefer playing football\r\n- Students who like to bake or hike: the rest of the students\r\n\r\nFind: How many students like to bake?",
+          "answer": "150"
+        },
+        "W3": {
+          "text": "A group of 190 workers has various specialties. 19 like to welding, 7 like to operate forklifts, and the rest like to either assembly or quality control. How many like to assembly if the number that like to quality control is twice the number that prefer operating operate forklifts?",
+          "answer": "150"
+        },
+        "W4": {
+          "text": "Variables:\r\n  n1 = 190  # A group of 190 students has various hobbies.\r\n  n2 = 19  # A group of 190 students has various hobbies.\r\n  n3 = 7  # 19 like to paint, 7 like to play football, and the rest like to either bake or hike.\r\nRelationships:\r\n  A group of 190 students has various hobbies.\r\nFind: solve for the unknown \u2014 How many like to bake if the number that like to hike is twice the number that prefer playing football?",
+          "answer": "150"
+        },
+        "W5": {
+          "text": "A group of students has various hobbies. 19 like to paint, 7 like to play football, and the rest like to either bake or hike. If 150 students like to bake and the number that like to hike is twice the number that prefer playing football, how many students are in the group?",
+          "answer": "190"
+        },
+        "W6": {
+          "text": "A group of 54 students has various hobbies. 35 like to dance, 2 like to play badminton, and the rest like to either paint or bake. How many like to paint if the number that like to bake is twice the number that prefer playing badminton?",
+          "answer": "13"
+        }
+      }
+    },
+    "planning": {
+      "id": "BW_014",
+      "family": "Planning",
+      "source": "data/problems/question_bank_bw.csv",
+      "variants": {
+        "canonical": {
+          "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks l, e, and g are clear and on the table. The hand is empty. Goal: Block l is on block e, and block e is on block g. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+          "answer": "pick-up e  stack e g  pick-up l  stack l e"
+        },
+        "W1": {
+          "text": "You are a robotic manipulator. Permitted operations: pick-up X (X must be unobstructed and resting on the surface, gripper must be vacant), put-down X (deposit X onto the surface), stack X Y (position X atop Y; Y must be unobstructed, you must be gripping X), unstack X Y (retrieve X from atop Y; X must be unobstructed, gripper must be vacant). You may grip one block at a time. Current configuration: Blocks l, e, and g are unobstructed and resting on the surface. The gripper is vacant. Objective: Block l rests atop block e, and block e rests atop block g. Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+          "answer": "pick-up e  stack e g  pick-up l  stack l e"
+        },
+        "W2": {
+          "text": "Action Reference:\n | Action | Preconditions | Effect |\n |--------|---------------|--------|\n | pick-up X | X is on table, X is clear, hand empty | holding X |\n | put-down X | holding X | X on table |\n | stack X Y | holding X, Y is clear | X on Y |\n | unstack X Y | X on Y, X is clear, hand empty | holding X |\n \n Current State:\n | Block | Location | Clear? |\n |-------|----------|--------|\n | l | table | yes |\n | e | table | yes |\n | g | table | yes |\n \n Goal:\n | Block | Must be on top of |\n |-------|-------------------|\n | l | e |\n | e | g |\n \n Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+          "answer": "pick-up e  stack e g  pick-up l  stack l e"
+        },
+        "W3": {
+          "text": "You are an HR manager building a reporting chain. Available actions: select X (X must be unassigned and available, hands must be free), release X (return X to the unassigned pool), place X under Y (Y must be available, you must be holding X), remove X from Y (X must have no direct reports, hands must be free). You can manage one employee at a time. Current state: Lisa, Eve, and Grace are all unassigned and available. Your hands are free. Goal: Lisa reports to Eve, Eve reports to Grace. Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.",
+          "answer": "select Eve place Eve under Grace select Lisa place Lisa under Eve"
+        },
+        "W4": {
+          "text": "FORMAL DEFINITION:\n \u03c0 = \u27e8B, S\u2080, S*, A\u27e9\n \n BLOCKS:\n B = {l, e, g}\n \n INITIAL STATE S\u2080:\n OnTable(l), OnTable(e), OnTable(g),\n Clear(l), Clear(e), Clear(g),\n HandEmpty\n \n GOAL STATE S*:\n On(l,e), On(e,g)\n \n ACTIONS (Preconditions \u2192 Add Effects | Delete Effects):\n \n 1. pick-up(x):\n  Pre: Clear(x), OnTable(x), HandEmpty\n  Add: Holding(x)\n  Del: Clear(x), OnTable(x), HandEmpty\n \n 2. put-down(x):\n  Pre: Holding(x)\n  Add: OnTable(x), Clear(x), HandEmpty\n  Del: Holding(x)\n \n 3. stack(x, y):\n  Pre: Holding(x), Clear(y)\n  Add: On(x,y), Clear(x), HandEmpty\n  Del: Holding(x), Clear(y)\n \n 4. unstack(x, y):\n  Pre: On(x,y), Clear(x), HandEmpty\n  Add: Holding(x), Clear(y)\n  Del: On(x,y), Clear(x), HandEmpty\n \n CONSTRAINTS:\n - x \u2260 y for all two-argument actions\n - Exactly one block can be held at a time\n - Pre(a\u2096) \u2286 S\u2096\u208b\u2081 must hold for each action a\u2096\n \n TASK:\n Find plan \u03c0 = (a\u2081, a\u2082, ..., a\u2099) such that:\n S\u2080\u2026",
+          "answer": "pick-up e  stack e g  pick-up l  stack l e"
+        },
+        "W5": {
+          "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block l is on block e, block e is on block g. Block g is on the table. The hand is empty. Goal: Blocks l, e, and g are all clear and on the table. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+          "answer": "unstack l e put-down l unstack e g put-down e"
+        },
+        "W6": {
+          "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block c b time. Current state: Blocks h, d, and f are clear and on the table. The hand is empty. Goal: Block h is on block d, and block d is on block f. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+          "answer": "pick-up d  stack d f  pick-up h  stack h d"
+        }
+      }
+    },
+    "optimisation": {
+      "id": "SP_019",
+      "family": "Optimisation",
+      "source": "data/problems/question_bank_algo.csv",
+      "variants": {
+        "canonical": {
+          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.\n\nThe road network is:\n- Node 0 to Node 1: 1\n- Node 0 to Node 3: 4\n- Node 0 to Node 5: 10\n- Node 1 to Node 2: 1\n- Node 1 to Node 4: 14\n- Node 2 to Node 4: 12\n- Node 2 to Node 6: 24\n- Node 3 to Node 2: 11\n- Node 3 to Node 4: 4\n- Node 4 to Node 6: 4\n- Node 5 to Node 6: 12\n\nWhat is the shortest path from node 0 to node 6 and its total cost?\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
+        },
+        "W1": {
+          "text": "A route planning system contains 7 locations numbered 0 through 6. Each road is one-directional and has an associated travel time weight.\n\nThe connections between locations are as follows:\n- Node 0 connects to Node 1: 1\n- Node 0 connects to Node 3: 4\n- Node 0 connects to Node 5: 10\n- Node 1 connects to Node 2: 1\n- Node 1 connects to Node 4: 14\n- Node 2 connects to Node 4: 12\n- Node 2 connects to Node 6: 24\n- Node 3 connects to Node 2: 11\n- Node 3 connects to Node 4: 4\n- Node 4 connects to Node 6: 4\n- Node 5 connects to Node 6: 12\n\nDetermine the path with minimum total travel time from node 0 to node 6 along with the total cost.\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
+        },
+        "W2": {
+          "text": "Graph edges:\n(0 \u2192 1, weight=1)\n(0 \u2192 3, weight=4)\n(0 \u2192 5, weight=10)\n(1 \u2192 2, weight=1)\n(1 \u2192 4, weight=14)\n(2 \u2192 4, weight=12)\n(2 \u2192 6, weight=24)\n(3 \u2192 2, weight=11)\n(3 \u2192 4, weight=4)\n(4 \u2192 6, weight=4)\n(5 \u2192 6, weight=12)\nSource: 0\nTarget: 6",
+          "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
+        },
+        "W3": {
+          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.\n\nThe road network is:\n- Node Berlin to Node Hamburg: 1\n- Node Berlin to Node Frankfurt: 4\n- Node Berlin to Node Dresden: 10\n- Node Hamburg to Node Munich: 1\n- Node Hamburg to Node Stuttgart: 14\n- Node Munich to Node Stuttgart: 12\n- Node Munich to Node Cologne: 24\n- Node Frankfurt to Node Munich: 11\n- Node Frankfurt to Node Stuttgart: 4\n- Node Stuttgart to Node Cologne: 4\n- Node Dresden to Node Cologne: 12\n\nWhat is the shortest path from node Berlin to node Cologne and its total cost?\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "answer": "Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12"
+        },
+        "W4": {
+          "text": "G = (V, E) where V = {0, 1, ..., 6}\nE = {(0,1,1), (0,3,4), (0,5,10), (1,2,1), (1,4,14), (2,4,12), (2,6,24), (3,2,11), (3,4,4), (4,6,4), (5,6,12)}\nFind: \u03b4(0, 6) = minimum weight path from 0 to 6\nOUTPUT FORMAT:\nPath: X -> X -> X, Cost: X",
+          "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
+        },
+        "W5": {
+          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.\n\nThe road network is:\n- Node 1 to Node 0: 1\n- Node 3 to Node 0: 4\n- Node 5 to Node 0: 10\n- Node 2 to Node 1: 1\n- Node 4 to Node 1: 14\n- Node 4 to Node 2: 12\n- Node 6 to Node 2: 24\n- Node 2 to Node 3: 11\n- Node 4 to Node 3: 4\n- Node 6 to Node 4: 4\n- Node 6 to Node 5: 12\n\nWhat is the shortest path from node 6 to node 0 and its total cost?\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "answer": "Path: 6 -> 4 -> 3 -> 0, Cost: 12"
+        },
+        "W6": {
+          "text": "A route-planning task over weighted one-way roads. Edge list and travel times are:\n\n- 0 -> 2: 2\n- 0 -> 5: 10\n- 1 -> 2: 16\n- 1 -> 5: 10\n- 1 -> 3: 15\n- 2 -> 6: 3\n- 3 -> 4: 10\n- 4 -> 6: 11\n- 4 -> 5: 13\n- 5 -> 4: 6\n- 5 -> 6: 11\n\nReply with only the path as a sequence of nodes and the total cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "answer": "Path: 0 -> 2 -> 6, Cost: 5"
+        }
+      }
+    }
+  },
+  "finding1": {
+    "source": "results/derived/probe1_per_model_variant.csv",
+    "n": 44,
+    "family": "GSM",
+    "caption": "Gemini .909 \u2192 .958 (W6) vs .523 (W3). n = 44 arithmetic items.",
+    "models": [
+      {
+        "name": "Gemini 2.5 Flash",
+        "canonical": 0.909,
+        "W6": 0.958,
+        "W3": 0.523
+      },
+      {
+        "name": "Claude Sonnet 4",
+        "canonical": 0.841,
+        "W6": 0.75,
+        "W3": 0.75
+      },
+      {
+        "name": "o4-mini",
+        "canonical": 0.841,
+        "W6": 0.833,
+        "W3": 0.841
+      },
+      {
+        "name": "GPT-4o",
+        "canonical": 0.825,
+        "W6": 0.825,
+        "W3": 0.35
+      },
+      {
+        "name": "Llama-3.1-8B",
+        "canonical": 0.825,
+        "W6": 0.525,
+        "W3": 0.2
+      }
+    ]
+  },
+  "finding2": {
+    "source": "results/derived/probe1_per_model_variant.csv",
+    "n_gsm": 44,
+    "n_bw": 65,
+    "caption": "W4 undercuts W3 for several models. Formal notation changes register, not names.",
+    "gsm": [
+      {
+        "name": "Claude",
+        "vals": {
+          "canonical": 0.841,
+          "W1": 0.841,
+          "W2": 0.773,
+          "W3": 0.75,
+          "W4": 0.636,
+          "W5": 0.818,
+          "W6": 0.75
+        }
+      },
+      {
+        "name": "Gemini",
+        "vals": {
+          "canonical": 0.909,
+          "W1": 0.818,
+          "W2": 0.636,
+          "W3": 0.523,
+          "W4": 0.477,
+          "W5": 0.614,
+          "W6": 0.958
+        }
+      },
+      {
+        "name": "o4-mini",
+        "vals": {
+          "canonical": 0.841,
+          "W1": 0.864,
+          "W2": 0.818,
+          "W3": 0.841,
+          "W4": 0.682,
+          "W5": 0.886,
+          "W6": 0.833
+        }
+      },
+      {
+        "name": "GPT-4o",
+        "vals": {
+          "canonical": 0.825,
+          "W1": 0.8,
+          "W2": 0.425,
+          "W3": 0.35,
+          "W4": 0.375,
+          "W5": 0.4
+        }
+      },
+      {
+        "name": "Llama",
+        "vals": {
+          "canonical": 0.825,
+          "W1": 0.8,
+          "W2": 0.225,
+          "W3": 0.2,
+          "W4": 0.425,
+          "W5": 0.05
+        }
+      }
+    ],
+    "bw": [
+      {
+        "name": "Claude",
+        "vals": {
+          "canonical": 0.172,
+          "W1": 0.138,
+          "W2": 0.305,
+          "W3": 0.1,
+          "W4": 0.119,
+          "W5": 0.873,
+          "W6": 0.673
+        }
+      },
+      {
+        "name": "Gemini",
+        "vals": {
+          "canonical": 0.391,
+          "W1": 0.259,
+          "W2": 0.237,
+          "W3": 0.133,
+          "W4": 0.068,
+          "W5": 0.764,
+          "W6": 0.404
+        }
+      },
+      {
+        "name": "o4-mini",
+        "vals": {
+          "canonical": 0.781,
+          "W1": 0.862,
+          "W2": 0.831,
+          "W3": 0.483,
+          "W4": 0.475,
+          "W5": 0.909,
+          "W6": 1.0
+        }
+      },
+      {
+        "name": "GPT-4o",
+        "vals": {
+          "canonical": 0.063,
+          "W1": 0.172,
+          "W2": 0.102,
+          "W3": 0.1,
+          "W4": 0.119,
+          "W5": 0.291,
+          "W6": 0.25
+        }
+      },
+      {
+        "name": "Llama",
+        "vals": {
+          "canonical": 0.016,
+          "W1": 0.052,
+          "W2": 0.017,
+          "W3": 0.05,
+          "W4": 0.0,
+          "W5": 0.0,
+          "W6": 0.019
+        }
+      }
+    ]
+  },
+  "finding3": {
+    "source": "paper/main.tex Table (Blocksworld); results/derived/C7_concordance_filtered.csv",
+    "n": 65,
+    "problem_id": "BW_014",
+    "init": [
+      [
+        "l"
+      ],
+      [
+        "e"
+      ],
+      [
+        "g"
+      ]
+    ],
+    "goal": [
+      [
+        "g", "e", "l"
+      ]
+    ],
+    "models": [
+      {
+        "name": "Claude Sonnet 4",
+        "canonical": 0.172,
+        "W5": 0.873
+      },
+      {
+        "name": "Gemini 2.5 Flash",
+        "canonical": 0.391,
+        "W5": 0.764
+      },
+      {
+        "name": "o4-mini",
+        "canonical": 0.781,
+        "W5": 0.909
+      },
+      {
+        "name": "GPT-4o",
+        "canonical": 0.063,
+        "W5": 0.291
+      },
+      {
+        "name": "Llama-3.1-8B",
+        "canonical": 0.016,
+        "W5": 0.0
+      }
+    ]
+  },
+  "finding4": {
+    "source_shared": "results/derived/P1_failure_patterns.csv",
+    "source_phi": "results/derived/P1_phi_canonical_w3.csv",
+    "source_kendall": "results/derived/C7_concordance_filtered.csv",
+    "shared_hard": [
+      {
+        "family": "Optimisation",
+        "count": "0/110",
+        "n": 110
+      },
+      {
+        "family": "Arithmetic",
+        "count": "0/20",
+        "n": 20
+      },
+      {
+        "family": "Planning",
+        "count": "14/64",
+        "note": "all obfuscated",
+        "n": 64
+      }
+    ],
+    "phi": [
+      {
+        "family": "ALGO",
+        "model": "Claude",
+        "phi": 0.682,
+        "lo": 0.527,
+        "hi": 0.843,
+        "n": 100
+      },
+      {
+        "family": "ALGO",
+        "model": "GPT-4o",
+        "phi": 0.523,
+        "lo": 0.325,
+        "hi": 0.695,
+        "n": 102
+      },
+      {
+        "family": "ALGO",
+        "model": "Gemini",
+        "phi": 0.332,
+        "lo": 0.192,
+        "hi": 0.494,
+        "n": 105
+      },
+      {
+        "family": "ALGO",
+        "model": "Llama",
+        "phi": -0.03,
+        "lo": null,
+        "hi": null,
+        "n": 109
+      },
+      {
+        "family": "ALGO",
+        "model": "o4-mini",
+        "phi": null,
+        "lo": null,
+        "hi": null,
+        "n": 81,
+        "note": "degenerate"
+      },
+      {
+        "family": "BW",
+        "model": "Claude",
+        "phi": 0.534,
+        "lo": 0.367,
+        "hi": 0.689,
+        "n": 104
+      },
+      {
+        "family": "BW",
+        "model": "GPT-4o",
+        "phi": 0.524,
+        "lo": 0.35,
+        "hi": 0.68,
+        "n": 104
+      },
+      {
+        "family": "BW",
+        "model": "Gemini",
+        "phi": 0.265,
+        "lo": -0.004,
+        "hi": 0.48,
+        "n": 60
+      },
+      {
+        "family": "BW",
+        "model": "Llama",
+        "phi": 0.413,
+        "lo": 0.217,
+        "hi": 0.592,
+        "n": 103
+      },
+      {
+        "family": "BW",
+        "model": "o4-mini",
+        "phi": 0.433,
+        "lo": 0.287,
+        "hi": 0.572,
+        "n": 60
+      },
+      {
+        "family": "GSM",
+        "model": "Claude",
+        "phi": 0.179,
+        "lo": null,
+        "hi": null,
+        "n": 44
+      },
+      {
+        "family": "GSM",
+        "model": "GPT-4o",
+        "phi": -0.031,
+        "lo": null,
+        "hi": null,
+        "n": 20
+      },
+      {
+        "family": "GSM",
+        "model": "Gemini",
+        "phi": 0.014,
+        "lo": null,
+        "hi": null,
+        "n": 44
+      },
+      {
+        "family": "GSM",
+        "model": "Llama",
+        "phi": 0.21,
+        "lo": null,
+        "hi": null,
+        "n": 20
+      },
+      {
+        "family": "GSM",
+        "model": "o4-mini",
+        "phi": 0.66,
+        "lo": null,
+        "hi": null,
+        "n": 44
+      }
+    ],
+    "kendall": {
+      "within": [
+        {
+          "scope": "Optimisation",
+          "W": 0.419,
+          "p": 0.049,
+          "n_rankers": 5
+        },
+        {
+          "scope": "Planning",
+          "W": 0.679,
+          "p": 0.0001,
+          "n_rankers": 6
+        },
+        {
+          "scope": "Arithmetic",
+          "W": 0.66,
+          "p": 0.042,
+          "n_rankers": 3
+        }
+      ],
+      "across": [
+        {
+          "scope": "Claude across families",
+          "W": 0.165,
+          "p": 0.824
+        },
+        {
+          "scope": "Gemini across families",
+          "W": 0.238,
+          "p": 0.673
+        }
+      ]
+    }
+  },
+  "finding5": {
+    "source": "results/derived/P2_P1_convergence.csv",
+    "per_family": [
+      {
+        "scope": "Arithmetic",
+        "r": 0.156,
+        "lo": -0.006,
+        "hi": 0.308,
+        "p": 0.06,
+        "n": 128
+      },
+      {
+        "scope": "Optimisation",
+        "r": 0.359,
+        "lo": -0.043,
+        "hi": 0.664,
+        "p": 0.085,
+        "n": 144
+      }
+    ],
+    "pooled": {
+      "scope": "Pooled",
+      "r": 0.243,
+      "lo": 0.027,
+      "hi": 0.414,
+      "p": 0.024,
+      "n": 272
+    },
+    "discriminant": {
+      "acc_vs_retention": {
+        "rho": 0.136,
+        "p": 0.642
+      },
+      "acc_vs_phi": {
+        "rho": -0.426,
+        "p": 0.146
+      }
+    },
+    "scatter": [
+      {
+        "model": "claude",
+        "task": "GSM",
+        "canon": 0.818,
+        "ret": 0.917,
+        "cci": 0.231
+      },
+      {
+        "model": "llama",
+        "task": "GSM",
+        "canon": 0.773,
+        "ret": 0.529,
+        "cci": 0.167
+      },
+      {
+        "model": "gpt4o",
+        "task": "GSM",
+        "canon": 0.818,
+        "ret": 0.583,
+        "cci": 0.108
+      },
+      {
+        "model": "gemini",
+        "task": "GSM",
+        "canon": 0.909,
+        "ret": 0.575,
+        "cci": 0.27
+      },
+      {
+        "model": "o4-mini",
+        "task": "GSM",
+        "canon": 0.879,
+        "ret": 0.957,
+        "cci": 0.22
+      },
+      {
+        "model": "claude",
+        "task": "ALGO",
+        "canon": 0.369,
+        "ret": 0.25,
+        "cci": 0.384
+      },
+      {
+        "model": "gpt4o",
+        "task": "ALGO",
+        "canon": 0.427,
+        "ret": 0.4,
+        "cci": 0.317
+      },
+      {
+        "model": "llama",
+        "task": "ALGO",
+        "canon": 0.063,
+        "ret": 0.29,
+        "cci": 0.214
+      },
+      {
+        "model": "gemini",
+        "task": "ALGO",
+        "canon": 0.324,
+        "ret": 0.79,
+        "cci": null
+      }
+    ]
+  },
+  "finding6": {
+    "source": "results/paper/AUDIT/injection_recovery_summary.csv",
+    "n": 61,
+    "baseline_note": "Final-answer accuracy near uninjected baseline despite acceptance.",
+    "models": [
+      {
+        "name": "Claude",
+        "accept": 0.885,
+        "post": 0.525,
+        "baseline": 0.541
+      },
+      {
+        "name": "GPT-4o",
+        "accept": 0.934,
+        "post": 0.508,
+        "baseline": 0.557
+      },
+      {
+        "name": "o4-mini",
+        "accept": 1.0,
+        "post": 0.377,
+        "baseline": 0.409
+      },
+      {
+        "name": "Llama",
+        "accept": 0.393,
+        "post": 0.23,
+        "baseline": null
+      },
+      {
+        "name": "Gemini",
+        "accept": 0.0,
+        "post": 0.311,
+        "baseline": null,
+        "note": "treats injection as malformed"
+      }
+    ],
+    "trace": [
+      {
+        "step": 1,
+        "label": "Read denominations",
+        "value": "[1,3,4,7]",
+        "ok": true
+      },
+      {
+        "step": 2,
+        "label": "Target amount",
+        "value": "6",
+        "ok": true
+      },
+      {
+        "step": 3,
+        "label": "DP[1]",
+        "value": "1",
+        "ok": true
+      },
+      {
+        "step": 4,
+        "label": "DP[2]",
+        "value": "2",
+        "ok": true,
+        "inject": "9",
+        "injected": true
+      },
+      {
+        "step": 5,
+        "label": "DP[3]",
+        "value": "1 \u2192 4",
+        "ok": false,
+        "propagated": true
+      },
+      {
+        "step": 6,
+        "label": "DP[4]",
+        "value": "1 \u2192 3",
+        "ok": false,
+        "propagated": true
+      },
+      {
+        "step": 7,
+        "label": "DP[5]",
+        "value": "2 \u2192 5",
+        "ok": false,
+        "propagated": true
+      },
+      {
+        "step": 8,
+        "label": "Final Count",
+        "value": "2",
+        "ok": true,
+        "recovered": true
+      }
+    ]
+  },
+  "programme": [
+    {
+      "stage": 1,
+      "title": "Behavioural instrument",
+      "status": "complete",
+      "question": "Which surface properties carry the load, and is the answer a property of the model or of the task?",
+      "needs": "Frozen banks + append-only raw logs (this repo).",
+      "prediction": "Named transforms produce drops (or rises) that are not oracle artefacts; shared-hard counts and Kendall W are recoverable.",
+      "criterion": "Refute if W1\u2013W6 order is noise (W indistinguishable from within-row permutation null) or if a single item set fails for every model outside obfuscated planning.",
+      "result": "Numeric vs lexical dissociation; W4 often harder than W3; W5 raises planning accuracy; no item locus outside obfuscated BW; family-level concordance."
+    },
+    {
+      "stage": 2,
+      "title": "Mechanism",
+      "status": "pilot",
+      "question": "Does rename-induced drop in gold-token accessibility predict per-item W3 survival?",
+      "needs": "Unquantised open-weight model that solves enough renamed items for a within-model correlation.",
+      "prediction": "Rename shifts answer-token rank; numeric change does not, on the same items.",
+      "criterion": "Refute if correlation absent at adequate power, or if W6 and W3 produce the same rank shift.",
+      "result": "Current pilots solve too few renamed items (1/60, 0/61) to run the test."
+    },
+    {
+      "stage": 3,
+      "title": "Training conditions",
+      "status": "designed",
+      "question": "Under what training-data conditions does surface invariance form?",
+      "needs": "Open-corpus model (e.g. OLMo/Dolma) plus controlled fine-tune arms.",
+      "prediction": "Surface diversity, not template dose, raises W3 retention; behavioural indicators recover held-out membership.",
+      "criterion": "Pre-registered AUC \u2265 0.75 to retain indicators. Refute if dose and diversity are interchangeable.",
+      "result": null
+    },
+    {
+      "stage": 4,
+      "title": "Developmental",
+      "status": "planned",
+      "question": "When does invariance emerge relative to accuracy across checkpoints?",
+      "needs": "Intermediate checkpoints of one open training run.",
+      "prediction": "Surface invariance appears after canonical accuracy, with a measurable lag.",
+      "criterion": "Refute if invariance and accuracy move together at every checkpoint.",
+      "result": null
+    }
+  ]
+};
+
+const GH = DATA.meta.github;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ramp = d3.scaleLinear().domain([0, 0.5, 1]).range(['#64748B', '#0F766E', '#B45309']);
+
+/* ---------- meta links ---------- */
+['gh-top','gh-foot'].forEach(id => document.getElementById(id).href = GH);
+['pdf-top','pdf-foot'].forEach(id => document.getElementById(id).href = DATA.meta.paper);
+document.getElementById('book-foot').href = DATA.meta.book;
+document.getElementById('contact-foot').href = DATA.meta.contact;
+document.getElementById('thesis').textContent = DATA.meta.thesis;
+
+/* ---------- rail ---------- */
+const sections = [...document.querySelectorAll('section.panel')];
+const rail = document.getElementById('rail');
+sections.forEach(s => {
+  const a = document.createElement('a');
+  a.href = '#' + s.id;
+  a.textContent = s.dataset.rail || s.id;
+  a.dataset.target = s.id;
+  rail.appendChild(a);
+});
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById('tip');
+function showTip(e, html) {
+  tip.innerHTML = html;
+  tip.classList.add('show');
+  const x = Math.min(e.clientX + 12, window.innerWidth - 250);
+  const y = Math.min(e.clientY + 12, window.innerHeight - 80);
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+}
+function hideTip() { tip.classList.remove('show'); }
+document.querySelectorAll('.num').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const parts = [];
+    if (el.dataset.n) parts.push('n = ' + el.dataset.n);
+    if (el.dataset.ci) parts.push('CI: ' + el.dataset.ci);
+    if (el.dataset.src) parts.push(el.dataset.src);
+    showTip(e, parts.join('<br>'));
+  });
+  el.addEventListener('mouseleave', hideTip);
+});
+
+/* ---------- scroll reveal + chart once ---------- */
+const drawn = new Set();
+const io = new IntersectionObserver(entries => {
+  entries.forEach(ent => {
+    if (!ent.isIntersecting) return;
+    ent.target.classList.add('in');
+    const sec = ent.target.closest('section');
+    if (sec) drawSection(sec.id);
+  });
+}, { threshold: 0.22 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const railIo = new IntersectionObserver(entries => {
+  entries.forEach(ent => {
+    if (!ent.isIntersecting) return;
+    rail.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.dataset.target === ent.target.id));
+  });
+}, { threshold: 0.45 });
+sections.forEach(s => railIo.observe(s));
+
+function drawSection(id) {
+  if (drawn.has(id) && !reduceMotion) {
+    // still allow re-trigger for question animation only once
+  }
+  if (drawn.has(id)) return;
+  drawn.add(id);
+  const immediate = reduceMotion;
+  if (id === 'question') animateQuestion(immediate);
+  if (id === 'f1') drawSlope(immediate);
+  if (id === 'f2') drawPC(DATA.finding2.gsm);
+  if (id === 'f4') { renderSharedHard(); renderPhi(); renderKendall(); }
+  if (id === 'f5') drawScatter('pooled');
+  if (id === 'f6') animateTrace(immediate);
+  if (id === 'probes') { drawProbeViz(); }
+}
+
+/* ---------- keyboard ---------- */
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input,textarea,select')) return;
+  const idx = sections.findIndex(s => {
+    const r = s.getBoundingClientRect();
+    return r.top <= window.innerHeight * 0.4 && r.bottom > window.innerHeight * 0.3;
+  });
+  if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'j') {
+    e.preventDefault();
+    sections[Math.min(idx + 1, sections.length - 1)]?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+  if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'k') {
+    e.preventDefault();
+    sections[Math.max(idx - 1, 0)]?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+});
+
+/* ---------- HERO lattice ---------- */
+(function initLattice() {
+  const svg = d3.select('#lattice');
+  const W = () => svg.node().clientWidth || window.innerWidth;
+  const H = () => svg.node().clientHeight || window.innerHeight;
+  const nodes = [
+    {id:'pay', x:0.22, y:0.35, can:'pay', nonce:'burn'},
+    {id:'rate1', x:0.38, y:0.22, can:'$0.9', nonce:'0.9 cal'},
+    {id:'mins', x:0.55, y:0.30, can:'86 min', nonce:'86 min'},
+    {id:'drop', x:0.42, y:0.48, can:'after 20', nonce:'after 20'},
+    {id:'rate2', x:0.58, y:0.55, can:'$0.5', nonce:'0.5 cal'},
+    {id:'ans', x:0.75, y:0.40, can:'51', nonce:'51'},
+  ];
+  const links = [
+    ['pay','rate1'],['rate1','mins'],['mins','ans'],
+    ['pay','drop'],['drop','rate2'],['rate2','ans'],['mins','drop']
+  ];
+  let renamed = false;
+  function render() {
+    const w = W(), h = H();
+    svg.attr('viewBox', `0 0 ${w} ${h}`);
+    svg.selectAll('*').remove();
+    const g = svg.append('g');
+    links.forEach(([a,b]) => {
+      const na = nodes.find(n=>n.id===a), nb = nodes.find(n=>n.id===b);
+      g.append('line')
+        .attr('x1', na.x*w).attr('y1', na.y*h)
+        .attr('x2', nb.x*w).attr('y2', nb.y*h)
+        .attr('stroke', 'currentColor').attr('stroke-opacity', 0.18).attr('stroke-width', 1);
+    });
+    const ng = g.selectAll('g.node').data(nodes).join('g')
+      .attr('transform', d => `translate(${d.x*w},${d.y*h})`);
+    ng.append('circle').attr('r', 18)
+      .attr('fill', 'var(--paper)').attr('stroke', 'currentColor').attr('stroke-opacity', 0.25);
+    ng.append('text')
+      .attr('text-anchor', 'middle').attr('dy', '0.35em')
+      .attr('font-size', 11).attr('font-family', 'var(--sans)')
+      .attr('fill', 'currentColor')
+      .text(d => renamed ? d.nonce : d.can);
+  }
+  render();
+  window.addEventListener('resize', render);
+  if (!reduceMotion) {
+    setInterval(() => { renamed = !renamed; render(); }, 2800);
+  } else {
+    renamed = true; render();
+  }
+})();
+
+/* ---------- Question cards ---------- */
+function animateQuestion(immediate) {
+  const badge = document.getElementById('rename-badge');
+  const a = document.getElementById('acc-a');
+  const b = document.getElementById('acc-b');
+  const sa = document.getElementById('sub-a');
+  const sb = document.getElementById('sub-b');
+  const run = () => {
+    badge.classList.add('show');
+    a.textContent = '.523'; a.classList.add('down');
+    sa.textContent = 'After entity rename (W3)';
+    b.textContent = '.841'; b.classList.add('flat');
+    sb.textContent = 'After entity rename (W3) — unchanged';
+  };
+  if (immediate) run();
+  else setTimeout(run, 900);
+}
+
+/* ---------- Bank ---------- */
+(function initBank() {
+  const fams = [
+    {key:'arithmetic', label:'Arithmetic'},
+    {key:'planning', label:'Planning'},
+    {key:'optimisation', label:'Optimisation'}
+  ];
+  const tabs = document.getElementById('family-tabs');
+  const chips = document.getElementById('variant-chips');
+  let fam = 'arithmetic', variant = 'canonical';
+  const order = ['canonical','W1','W2','W3','W4','W5','W6'];
+
+  fams.forEach(f => {
+    const btn = document.createElement('button');
+    btn.className = 'tab' + (f.key===fam?' active':'');
+    btn.textContent = f.label;
+    btn.onclick = () => { fam = f.key; variant = 'canonical'; render(); };
+    tabs.appendChild(btn);
+  });
+
+  function wordDiff(a, b) {
+    const aw = a.split(/(\s+)/), bw = b.split(/(\s+)/);
+    // simple LCS-ish highlight of changed tokens
+    const setB = new Set(bw.filter(w => w.trim()));
+    const setA = new Set(aw.filter(w => w.trim()));
+    return bw.map(w => {
+      if (!w.trim()) return w;
+      if (!setA.has(w)) return `<span class="diff-add">${w}</span>`;
+      return w;
+    }).join('');
+  }
+
+  function render() {
+    [...tabs.children].forEach((c,i) => c.classList.toggle('active', fams[i].key===fam));
+    chips.innerHTML = '';
+    const item = DATA.bank[fam];
+    order.forEach(v => {
+      if (!item.variants[v]) return;
+      const b = document.createElement('button');
+      b.className = 'chip' + (v===variant?' active':'');
+      b.textContent = v === 'canonical' ? 'Canonical' : v;
+      b.onclick = () => { variant = v; render(); };
+      chips.appendChild(b);
+    });
+    const cur = item.variants[variant];
+    const base = item.variants.canonical;
+    const html = variant === 'canonical' ? cur.text : wordDiff(base.text, cur.text);
+    document.getElementById('problem-text').innerHTML = html;
+    const gold = document.getElementById('gold-answer');
+    gold.textContent = cur.answer;
+    const note = document.getElementById('gold-note');
+    if (variant === 'W5' || variant === 'W6') {
+      gold.className = 'val changed';
+      note.textContent = variant + ' · gold re-derived';
+      note.className = 'tag changed';
+    } else {
+      gold.className = 'val fixed';
+      note.textContent = 'gold fixed (W1–W4)';
+      note.className = 'tag fixed';
+    }
+    const src = document.getElementById('bank-src');
+    src.textContent = item.source + ' · ' + item.id;
+    src.href = GH + '/blob/main/' + item.source;
+  }
+  render();
+})();
+
+/* ---------- Probe viz (hand SVG) ---------- */
+function drawProbeViz() {
+  // Probe 1 fan
+  const p1 = d3.select('#probe1-viz').append('svg').attr('viewBox','0 0 280 140').attr('width','100%').attr('height','100%');
+  p1.append('circle').attr('cx',40).attr('cy',70).attr('r',14).attr('fill','none').attr('stroke','currentColor').attr('stroke-opacity',0.5);
+  p1.append('text').attr('x',40).attr('y',74).attr('text-anchor','middle').attr('font-size',10).text('P');
+  const labels = ['W1','W2','W3','W4','W5','W6'];
+  labels.forEach((lb,i) => {
+    const y = 18 + i*18;
+    p1.append('line').attr('x1',54).attr('y1',70).attr('x2',160).attr('y2',y)
+      .attr('stroke','currentColor').attr('stroke-opacity',0.25);
+    p1.append('rect').attr('x',160).attr('y',y-8).attr('width',36).attr('height',16)
+      .attr('fill','var(--accent-soft)').attr('stroke','var(--accent)').attr('stroke-width',0.8);
+    p1.append('text').attr('x',178).attr('y',y+3).attr('text-anchor','middle').attr('font-size',9).attr('fill','var(--accent)').text(lb);
+  });
+
+  // Probe 2 wall
+  const p2 = d3.select('#probe2-viz').append('svg').attr('viewBox','0 0 280 140').attr('width','100%').attr('height','100%');
+  p2.append('rect').attr('x',10).attr('y',20).attr('width',100).attr('height',100).attr('fill','var(--tint)').attr('stroke','currentColor').attr('stroke-opacity',0.3);
+  p2.append('text').attr('x',60).attr('y',40).attr('text-anchor','middle').attr('font-size',10).text('Session A');
+  p2.append('text').attr('x',60).attr('y',80).attr('text-anchor','middle').attr('font-size',11).text('Plan');
+  p2.append('line').attr('x1',140).attr('y1',20).attr('x2',140).attr('y2',120).attr('stroke','var(--accent)').attr('stroke-width',2).attr('stroke-dasharray','4 3');
+  p2.append('text').attr('x',140).attr('y',14).attr('text-anchor','middle').attr('font-size',8).attr('fill','var(--accent)').text('wall');
+  p2.append('rect').attr('x',170).attr('y',20).attr('width',100).attr('height',100).attr('fill','var(--tint)').attr('stroke','currentColor').attr('stroke-opacity',0.3);
+  p2.append('text').attr('x',220).attr('y',40).attr('text-anchor','middle').attr('font-size',10).text('Session B');
+  p2.append('text').attr('x',220).attr('y',80).attr('text-anchor','middle').attr('font-size',11).text('Execute');
+  // injection arrow
+  p2.append('path').attr('d','M220 95 L220 110').attr('stroke','var(--amber)').attr('stroke-width',1.5).attr('marker-end','url(#arrow)');
+  p2.append('defs').append('marker').attr('id','arrow').attr('viewBox','0 0 10 10').attr('refX',5).attr('refY',5)
+    .attr('markerWidth',4).attr('markerHeight',4).attr('orient','auto')
+    .append('path').attr('d','M0 0 L10 5 L0 10 z').attr('fill','var(--amber)');
+  p2.append('text').attr('x',220).attr('y',128).attr('text-anchor','middle').attr('font-size',8).attr('fill','var(--amber)').text('inject');
+
+  // Probe 3 ngrams
+  const p3 = d3.select('#probe3-viz').append('svg').attr('viewBox','0 0 280 140').attr('width','100%').attr('height','100%');
+  const corpus = 'coin change dynamic programming tutorial…';
+  p3.append('text').attr('x',10).attr('y',50).attr('font-size',10).attr('fill','var(--muted)').text(corpus);
+  const win = p3.append('rect').attr('x',8).attr('y',34).attr('width',70).attr('height',22)
+    .attr('fill','none').attr('stroke','var(--accent)').attr('stroke-width',1.5);
+  if (!reduceMotion) {
+    win.transition().duration(2200).ease(d3.easeLinear).attr('x',120)
+      .transition().duration(2200).attr('x',8)
+      .on('end', function repeat() {
+        d3.select(this).attr('x',8).transition().duration(2200).attr('x',120)
+          .transition().duration(2200).attr('x',8).on('end', repeat);
+      });
+  }
+}
+
+document.querySelectorAll('.probe').forEach(p => {
+  p.addEventListener('click', () => p.classList.toggle('open'));
+});
+
+/* ---------- Slope chart ---------- */
+function drawSlope(immediate) {
+  const el = document.getElementById('slope-chart');
+  el.innerHTML = '';
+  const models = DATA.finding1.models;
+  const stages = ['canonical','W6','W3'];
+  const margin = {top: 24, right: 120, bottom: 36, left: 48};
+  const width = Math.min(860, el.clientWidth || 800);
+  const height = 380;
+  const svg = d3.select(el).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('role','img').attr('aria-label','Slope graph of accuracy');
+  const x = d3.scalePoint().domain(stages).range([margin.left, width - margin.right]).padding(0.3);
+  const y = d3.scaleLinear().domain([0, 1]).range([height - margin.bottom, margin.top]);
+  const color = d3.scaleOrdinal()
+    .domain(models.map(m=>m.name))
+    .range(['#0F766E','#1B4D8F','#64748B','#B45309','#334155']);
+
+  svg.append('g').attr('class','axis')
+    .attr('transform', `translate(0,${height-margin.bottom})`)
+    .call(d3.axisBottom(x).tickFormat(d => d === 'canonical' ? 'Canonical' : d));
+  svg.append('g').attr('class','axis')
+    .attr('transform', `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(5).tickFormat(d3.format('.1f')));
+
+  models.forEach((m, mi) => {
+    const pts = stages.map(s => ({s, v: m[s]}));
+    const path = svg.append('path')
+      .datum(pts)
+      .attr('fill','none')
+      .attr('stroke', color(m.name))
+      .attr('stroke-width', m.name.startsWith('Gemini') ? 2.2 : 1.4)
+      .attr('stroke-opacity', 0.85)
+      .attr('d', d3.line().x(d=>x(d.s)).y(d=>y(d.v)));
+    const len = path.node().getTotalLength();
+    if (!immediate) {
+      path.attr('stroke-dasharray', `${len} ${len}`).attr('stroke-dashoffset', len)
+        .transition().delay(mi*80).duration(900).ease(d3.easeCubicOut)
+        .attr('stroke-dashoffset', 0);
+    }
+    pts.forEach(p => {
+      svg.append('circle').attr('cx', x(p.s)).attr('cy', y(p.v)).attr('r', 3.5)
+        .attr('fill', color(m.name))
+        .style('cursor','help')
+        .on('mousemove', (e) => showTip(e, `${m.name}<br>${p.s}: ${p.v.toFixed(3)}<br>n=44<br>${DATA.finding1.source}`))
+        .on('mouseleave', hideTip);
+    });
+    svg.append('text')
+      .attr('x', x('W3') + 10).attr('y', y(m.W3) + 4)
+      .attr('font-size', 11).attr('fill', color(m.name))
+      .text(m.name.replace(' 2.5 Flash','').replace(' Sonnet 4','').replace('-3.1-8B',''));
+  });
+}
+
+/* ---------- Parallel coords ---------- */
+function drawPC(rows) {
+  const el = document.getElementById('pc-charts');
+  el.innerHTML = '';
+  const dims = ['W1','W2','W3','W4','W5','W6'];
+  rows.forEach(row => {
+    const wrap = document.createElement('div');
+    wrap.className = 'sm';
+    wrap.innerHTML = `<div class="title">${row.name}</div>`;
+    el.appendChild(wrap);
+    const w = 180, h = 160, m = {t:8,r:8,b:20,l:28};
+    const svg = d3.select(wrap).append('svg').attr('viewBox',`0 0 ${w} ${h}`);
+    const x = d3.scalePoint().domain(dims).range([m.l, w-m.r]);
+    const y = d3.scaleLinear().domain([0,1]).range([h-m.b, m.t]);
+    const vals = dims.map(d => row.vals[d]).filter(v => v != null);
+    if (!vals.length) return;
+    const line = d3.line().defined(d => row.vals[d] != null).x(d=>x(d)).y(d=>y(row.vals[d] ?? 0));
+    svg.append('path').datum(dims).attr('d', line)
+      .attr('fill','none').attr('stroke','var(--slate)').attr('stroke-width',1.4);
+    dims.forEach(d => {
+      if (row.vals[d] == null) return;
+      const hi = d === 'W4';
+      svg.append('circle')
+        .attr('cx', x(d)).attr('cy', y(row.vals[d]))
+        .attr('r', hi ? 5 : 3)
+        .attr('fill', hi ? 'var(--amber)' : 'var(--teal)')
+        .style('cursor','help')
+        .on('mousemove', e => showTip(e, `${row.name} ${d}: ${row.vals[d].toFixed(3)}`))
+        .on('mouseleave', hideTip);
+    });
+    // W4 highlight tick
+    svg.append('text').attr('x', x('W4')).attr('y', h-4).attr('text-anchor','middle')
+      .attr('font-size',8).attr('fill','var(--amber)').text('W4');
+  });
+}
+document.getElementById('f2-tabs').addEventListener('click', e => {
+  const t = e.target.closest('.tab');
+  if (!t) return;
+  [...e.currentTarget.children].forEach(c => c.classList.remove('active'));
+  t.classList.add('active');
+  drawPC(t.dataset.fam === 'bw' ? DATA.finding2.bw : DATA.finding2.gsm);
+});
+
+/* ---------- Blocksworld ---------- */
+(function initBW() {
+  const models = DATA.finding3.models;
+  const sel = document.getElementById('bw-model');
+  models.forEach((m,i) => {
+    const o = document.createElement('option');
+    o.value = i; o.textContent = m.name;
+    sel.appendChild(o);
+  });
+  let inverted = false;
+  function renderTowers() {
+    const init = inverted ? DATA.finding3.goal : DATA.finding3.init;
+    const goal = inverted ? DATA.finding3.init : DATA.finding3.goal;
+    const el = document.getElementById('towers');
+    el.innerHTML = '';
+    [['Initial', init], ['Goal', goal]].forEach(([label, stacks]) => {
+      const col = document.createElement('div');
+      col.className = 'tower-col';
+      col.innerHTML = `<div class="tlabel">${label}</div>`;
+      const area = document.createElement('div');
+      area.className = 'stacks-row';
+      stacks.forEach(stack => {
+        const s = document.createElement('div');
+        s.className = 'stack';
+        stack.forEach(blk => {
+          const b = document.createElement('div');
+          b.className = 'block';
+          b.textContent = blk;
+          s.appendChild(b);
+        });
+        const line = document.createElement('div');
+        line.className = 'table-line';
+        const wrap = document.createElement('div');
+        wrap.appendChild(s); wrap.appendChild(line);
+        area.appendChild(wrap);
+      });
+      col.appendChild(area);
+      el.appendChild(col);
+    });
+  }
+  function renderAcc() {
+    const m = models[+sel.value];
+    const v = inverted ? m.W5 : m.canonical;
+    document.getElementById('bw-acc-label').textContent = inverted ? 'W5 (inverted)' : 'Canonical';
+    document.getElementById('bw-acc-val').textContent = '.' + Math.round(v*1000).toString().padStart(3,'0');
+    document.getElementById('bw-acc-fill').style.width = (v*100) + '%';
+    document.getElementById('bw-toggle').textContent = inverted ? 'Restore canonical' : 'Invert direction (W5)';
+  }
+  sel.addEventListener('change', renderAcc);
+  document.getElementById('bw-toggle').addEventListener('click', () => {
+    inverted = !inverted; renderTowers(); renderAcc();
+  });
+  // tap towers on mobile
+  document.getElementById('towers').addEventListener('click', () => {
+    inverted = !inverted; renderTowers(); renderAcc();
+  });
+  renderTowers(); renderAcc();
+})();
+
+/* ---------- Finding 4 ---------- */
+function renderSharedHard() {
+  const ul = document.getElementById('shared-hard');
+  ul.innerHTML = '';
+  DATA.finding4.shared_hard.forEach(h => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span>${h.family}${h.note?' <span style="color:var(--muted);font-size:0.8em">('+h.note+')</span>':''}</span><span class="stat num" data-n="${h.n}" data-src="P1_failure_patterns.csv">${h.count}</span>`;
+    ul.appendChild(li);
+  });
+  ul.querySelectorAll('.num').forEach(el => {
+    el.addEventListener('mousemove', e => showTip(e, `n=${el.dataset.n}<br>${el.dataset.src}`));
+    el.addEventListener('mouseleave', hideTip);
+  });
+}
+function renderPhi() {
+  const el = document.getElementById('phi-heat');
+  const models = ['Claude','GPT-4o','Gemini','Llama','o4-mini'];
+  const fams = ['ALGO','BW','GSM'];
+  const map = {};
+  DATA.finding4.phi.forEach(r => { map[r.family+'|'+r.model] = r; });
+  const color = d3.scaleLinear().domain([-0.1, 0.35, 0.7]).range(['#64748B', '#0F766E', '#B45309']);
+  let html = '<table class="heatmap"><thead><tr><th></th>';
+  models.forEach(m => html += `<th>${m}</th>`);
+  html += '</tr></thead><tbody>';
+  fams.forEach(f => {
+    html += `<tr><th>${f}</th>`;
+    models.forEach(m => {
+      const r = map[f+'|'+m];
+      if (!r || r.phi == null) {
+        html += `<td style="background:var(--tint2);color:var(--muted)" title="degenerate">—</td>`;
+      } else {
+        const bg = color(r.phi);
+        const ci = (r.lo!=null) ? `[${r.lo.toFixed(2)}, ${r.hi.toFixed(2)}]` : 'CI n/a';
+        html += `<td style="background:${bg};color:#fff" data-tip="${m} ${f}<br>φ=${r.phi.toFixed(3)}<br>${ci}<br>n=${r.n}">${r.phi.toFixed(2)}</td>`;
+      }
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+  el.querySelectorAll('td[data-tip]').forEach(td => {
+    td.addEventListener('mousemove', e => showTip(e, td.dataset.tip));
+    td.addEventListener('mouseleave', hideTip);
+  });
+}
+function renderKendall() {
+  const el = document.getElementById('kendall');
+  el.innerHTML = '';
+  const all = [...DATA.finding4.kendall.within.map(x=>({...x, kind:'within'})),
+               ...DATA.finding4.kendall.across.map(x=>({...x, kind:'across'}))];
+  all.forEach(k => {
+    const d = document.createElement('div');
+    d.className = 'kb';
+    const pct = Math.max(0, Math.min(1, k.W)) * 100;
+    d.innerHTML = `<div class="row"><span>${k.scope}</span><span class="stat">W=${k.W.toFixed(3)} · p=${k.p < 0.001 ? '<.001' : k.p.toFixed(3)}</span></div>
+      <div class="bar"><div class="fill" style="width:${pct}%;background:${k.kind==='within'?'var(--teal)':'var(--slate)'}"></div></div>`;
+    el.appendChild(d);
+  });
+}
+
+/* ---------- Scatter ---------- */
+function drawScatter(scope) {
+  const el = document.getElementById('scatter-chart');
+  el.innerHTML = '';
+  const width = Math.min(720, el.clientWidth || 640);
+  const height = 340;
+  const margin = {top:20,right:20,bottom:40,left:48};
+  const svg = d3.select(el).append('svg').attr('viewBox',`0 0 ${width} ${height}`);
+  const x = d3.scaleLinear().domain([0,1]).range([margin.left, width-margin.right]);
+  const y = d3.scaleLinear().domain([0,1]).range([height-margin.bottom, margin.top]);
+  svg.append('g').attr('transform',`translate(0,${height-margin.bottom})`).attr('class','axis').call(d3.axisBottom(x).ticks(5));
+  svg.append('g').attr('transform',`translate(${margin.left},0)`).attr('class','axis').call(d3.axisLeft(y).ticks(5));
+  svg.append('text').attr('x',width/2).attr('y',height-8).attr('text-anchor','middle').attr('font-size',11).attr('fill','var(--muted)').text('Canonical accuracy');
+  svg.append('text').attr('transform',`translate(14,${height/2}) rotate(-90)`).attr('text-anchor','middle').attr('font-size',11).attr('fill','var(--muted)').text('W3 retention / CCI link');
+
+  const pts = DATA.finding5.scatter.filter(p => p.ret != null && isFinite(p.ret) && p.ret <= 1.5);
+  // fit band for pooled
+  const fit = document.getElementById('fit-stat');
+  if (scope === 'pooled') {
+    const f = DATA.finding5.pooled;
+    fit.className = 'fit-stat sig';
+    fit.innerHTML = `Pooled r = <strong>${f.r.toFixed(3)}</strong> [${f.lo.toFixed(3)}, ${f.hi.toFixed(3)}] · p = ${f.p.toFixed(3)} · n = ${f.n}`;
+    // schematic positive slope band
+    const band = svg.append('path')
+      .attr('d', `M${x(0.1)},${y(0.15)} L${x(0.9)},${y(0.55)} L${x(0.9)},${y(0.85)} L${x(0.1)},${y(0.45)} Z`)
+      .attr('fill','var(--accent-soft)').attr('stroke','none');
+    svg.append('line').attr('x1',x(0.1)).attr('y1',y(0.30)).attr('x2',x(0.9)).attr('y2',y(0.70))
+      .attr('stroke','var(--accent)').attr('stroke-width',1.5);
+  } else {
+    const fams = DATA.finding5.per_family;
+    fit.className = 'fit-stat null';
+    fit.innerHTML = fams.map(f => `${f.scope}: r=${f.r.toFixed(3)} [${f.lo.toFixed(3)}, ${f.hi.toFixed(3)}] p=${f.p.toFixed(3)} (n=${f.n})`).join('<br>') + '<br><em>Neither family alone reaches significance.</em>';
+  }
+
+  pts.forEach(p => {
+    const yy = Math.min(1, Math.max(0, p.cci != null ? p.cci : p.ret * 0.4));
+    svg.append('circle')
+      .attr('cx', x(p.canon)).attr('cy', y(scope==='pooled' ? Math.min(1,p.ret) : yy))
+      .attr('r', 5)
+      .attr('fill', p.task.startsWith('GSM') ? 'var(--teal)' : 'var(--amber)')
+      .attr('fill-opacity', 0.85)
+      .style('cursor','help')
+      .on('mousemove', e => showTip(e, `${p.model} · ${p.task}<br>canon=${p.canon}<br>ret=${p.ret}`))
+      .on('mouseleave', hideTip);
+  });
+}
+document.getElementById('scope-toggle').addEventListener('click', e => {
+  const c = e.target.closest('.chip');
+  if (!c) return;
+  [...e.currentTarget.children].forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  drawScatter(c.dataset.scope);
+});
+
+/* ---------- Trace ---------- */
+function animateTrace(immediate) {
+  const el = document.getElementById('trace');
+  el.innerHTML = '';
+  DATA.finding6.trace.forEach((s,i) => {
+    const d = document.createElement('div');
+    d.className = 'trace-step';
+    if (s.injected) d.classList.add('inject');
+    if (s.propagated) d.classList.add('prop');
+    if (s.recovered) d.classList.add('ok-final');
+    d.innerHTML = `<span class="stat">${s.step}</span><span>${s.label}${s.injected?' <em style="color:var(--amber)">← inject '+s.inject+'</em>':''}</span><span class="stat">${s.value}</span>`;
+    el.appendChild(d);
+    const show = () => d.classList.add('on');
+    if (immediate) show();
+    else setTimeout(show, 180 + i*220);
+  });
+  const row = document.getElementById('accept-row');
+  row.innerHTML = '';
+  DATA.finding6.models.forEach(m => {
+    const c = document.createElement('div');
+    c.className = 'accept-card';
+    c.innerHTML = `<div style="color:var(--muted);font-size:0.75rem">${m.name}</div>
+      <div class="v num" data-n="61" data-src="injection_recovery_summary.csv">${(m.accept*100).toFixed(0)}%</div>
+      <div style="color:var(--muted)">accept · post ${(m.post*100).toFixed(0)}%</div>`;
+    row.appendChild(c);
+  });
+  row.querySelectorAll('.num').forEach(el => {
+    el.addEventListener('mousemove', e => showTip(e, `n=${el.dataset.n}<br>${el.dataset.src}`));
+    el.addEventListener('mouseleave', hideTip);
+  });
+}
+
+/* ---------- Programme ---------- */
+(function initProgramme() {
+  const el = document.getElementById('timeline');
+  DATA.programme.forEach(s => {
+    const d = document.createElement('div');
+    d.className = 'stage';
+    d.innerHTML = `<div class="status ${s.status}">${s.status}</div>
+      <h3>${s.stage}. ${s.title}</h3>
+      <div class="body">
+        <dl>
+          <dt>Question</dt><dd>${s.question}</dd>
+          <dt>Needs</dt><dd>${s.needs}</dd>
+          <dt>Prediction</dt><dd>${s.prediction}</dd>
+          <dt>Decision criterion</dt><dd>${s.criterion}</dd>
+        </dl>
+        ${s.result ? `<div class="result-inline"><strong>Result.</strong> ${s.result}</div>` : ''}
+      </div>`;
+    d.addEventListener('click', () => d.classList.toggle('open'));
+    el.appendChild(d);
+  });
+})();
+
+/* draw charts that are already in view on load */
+requestAnimationFrame(() => {
+  sections.forEach(s => {
+    const r = s.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      s.querySelector('.reveal')?.classList.add('in');
+      drawSection(s.id);
+    }
+  });
+});
+</script>
+</body>
+</html>
