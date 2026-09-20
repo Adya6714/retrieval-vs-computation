@@ -228,14 +228,79 @@ html.js .reveal.in{opacity:1;transform:none}
 .gold .tag{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .gold .fixed{color:var(--teal);font-weight:600}
 .gold .changed{color:var(--amber);font-weight:600}
-.probes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
-@media(max-width:900px){.probes{grid-template-columns:1fr}}
-.probe{border:1px solid var(--rule);background:var(--tint);padding:1.05rem 1.1rem;cursor:pointer}
-.probe:hover,.probe.open{border-color:var(--accent);background:var(--accent-soft)}
-.probe .viz{height:130px;margin:.65rem 0}
-.probe .detail{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
-.probe.open .detail{display:block}
-.probe pre{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;background:var(--tint2);padding:.65rem;overflow-x:auto;white-space:pre-wrap;color:var(--ink);margin:.45rem 0;border:1px solid var(--rule)}
+.probes{display:none}
+.probe-studio{margin-top:1rem;border:1px solid var(--rule);background:var(--tint);overflow:hidden}
+.probe-nav{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.probe-nav button{appearance:none;border:0;border-right:1px solid var(--rule);background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:.85rem 1.15rem;cursor:pointer;transition:color .25s var(--ease),background .25s var(--ease)}
+.probe-nav button:hover{color:var(--accent)}
+.probe-nav button.active{color:var(--ink);background:var(--tint);box-shadow:inset 0 -2px 0 var(--accent)}
+.probe-nav .pn-id{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.15rem}
+.probe-pane{display:none;padding:1.25rem 1.35rem 1.5rem}
+.probe-pane.active{display:block}
+.probe-pane .probe-lede{font-size:.95rem;color:var(--muted);max-width:62ch;margin:0 0 1rem}
+.probe-metrics{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.probe-metrics span{font-size:.75rem;padding:.3rem .55rem;border:1px solid var(--rule);background:var(--paper);color:var(--muted)}
+.probe-metrics span b{color:var(--ink);font-weight:500}
+.p2-protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:1.1rem}
+@media(max-width:800px){.p2-protocol{grid-template-columns:1fr}}
+.p2-protocol .pp{border:1px solid var(--rule);background:var(--paper);padding:.75rem .85rem}
+.p2-protocol .pp .pp-k{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+.p2-protocol .pp p{margin:0;font-size:.82rem;color:var(--muted);max-width:none}
+.p2-stage-nav{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.65rem}
+.p2-stage-nav button{appearance:none;border:1px solid var(--rule);background:var(--paper);color:var(--muted);font:inherit;font-size:.78rem;padding:.45rem .75rem;cursor:pointer;border-radius:2px;transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
+.p2-stage-nav button.active{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.p2-stage-nav button.done{border-color:var(--teal);color:var(--teal)}
+.p2-brief{font-size:.88rem;color:var(--muted);margin:0 0 1rem;max-width:62ch;min-height:2.6em}
+.p2-brief strong{color:var(--ink);font-weight:560}
+.p2-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:1rem;align-items:stretch}
+@media(max-width:900px){.p2-layout{grid-template-columns:1fr}}
+.session-card{border:1px solid var(--rule);background:var(--paper);padding:1rem 1.05rem;display:flex;flex-direction:column;min-height:20rem}
+.session-card.sess-a{border-top:3px solid var(--accent)}
+.session-card.sess-b{border-top:3px solid var(--teal)}
+.session-card.sess-score{border-top:3px solid var(--amber)}
+.session-card .sc-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin-bottom:.65rem}
+.session-card .sc-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.session-card .sc-status{font-size:.75rem;color:var(--muted)}
+.session-card .sc-status.live{color:var(--teal)}
+.session-card .sc-status.warn{color:var(--amber)}
+.prompt-box{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;line-height:1.5;background:var(--tint2);border:1px solid var(--rule);padding:.75rem .85rem;white-space:pre-wrap;color:var(--ink);max-height:15rem;overflow:auto;min-height:8rem;flex:1}
+.prompt-box .hl{display:inline;background:var(--amber-soft);color:var(--ink);box-shadow:inset 0 0 0 1px var(--amber)}
+.prompt-box .ok{color:var(--teal)}
+.prompt-box .iso{color:var(--accent)}
+.plan-board{display:flex;flex-direction:column;gap:.3rem;flex:1}
+.plan-step{display:grid;grid-template-columns:1.75rem 1fr auto;gap:.5rem;align-items:center;padding:.4rem .55rem;border:1px solid var(--rule);background:var(--tint);font-size:.82rem;opacity:.32;transition:opacity .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+.plan-step.on{opacity:1}
+.plan-step.match{border-color:var(--teal);background:rgba(15,118,110,.1)}
+.plan-step.miss{border-color:var(--amber);background:var(--amber-soft)}
+.plan-step.inject-row{border-color:var(--amber);background:var(--amber-soft);box-shadow:inset 3px 0 0 var(--amber)}
+.plan-step .ps-n{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.72rem}
+.plan-step .ps-val{font-family:ui-monospace,Menlo,monospace;font-size:.76rem}
+.plan-step .ps-tag{font-size:.65rem;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);margin-left:.35rem}
+.plan-legend{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.75rem;font-size:.72rem;color:var(--muted)}
+.plan-legend i{display:inline-block;width:.65rem;height:.65rem;border:1px solid var(--rule);margin-right:.3rem;vertical-align:-1px}
+.plan-legend .lg-match{background:rgba(15,118,110,.25);border-color:var(--teal)}
+.plan-legend .lg-miss{background:var(--amber-soft);border-color:var(--amber)}
+.plan-legend .lg-pending{background:var(--tint);opacity:.5}
+.p2-controls{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;align-items:center}
+.p2-controls .toggle-btn{padding:.55rem 1rem;font-size:.85rem}
+.p2-controls .ghost{appearance:none;border:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:.85rem;padding:.55rem 1rem;cursor:pointer}
+.p2-controls .ghost:hover{border-color:var(--accent);color:var(--accent)}
+.cci-meter{margin-top:1rem;padding:.85rem 1rem;border:1px solid var(--rule);background:var(--tint)}
+.cci-meter .cm-row{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.35rem}
+.cci-meter .cm-track{height:8px;background:var(--tint2);border:1px solid var(--rule);overflow:hidden}
+.cci-meter .cm-fill{height:100%;background:var(--teal);width:0%;transition:width .5s var(--ease)}
+.cci-meter .cm-note{margin-top:.55rem;font-size:.8rem;color:var(--muted);max-width:none;margin-bottom:0}
+.p2-score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.85rem}
+@media(max-width:700px){.p2-score-grid{grid-template-columns:1fr}}
+.p2-score-grid .sg{border:1px solid var(--rule);background:var(--tint);padding:.65rem .75rem}
+.p2-score-grid .sg .sg-k{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.p2-score-grid .sg .sg-v{font-family:var(--serif);font-size:1.35rem;margin-top:.15rem;line-height:1.1}
+.p2-score-grid .sg .sg-s{font-size:.75rem;color:var(--muted);margin-top:.2rem}
+.p1-fan{height:160px;margin:.5rem 0 1rem}
+.p3-scan{height:120px;margin:.5rem 0 1rem;border:1px solid var(--rule);background:var(--paper)}
+.probe-aside{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
+@media(max-width:700px){.probe-aside{grid-template-columns:1fr}}
+.probe-aside .depth-box p{font-size:.82rem}
 .flow{border:1px solid var(--rule);background:var(--tint);padding:1rem;margin-top:1rem;font-size:.88rem;overflow-x:auto}
 .flow svg{display:block;width:100%;max-width:720px;height:auto}
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.5rem;margin-top:1rem}
@@ -410,29 +475,112 @@ html.js .reveal.in{opacity:1;transform:none}
 
     <div class="sub">
       <h3>5b · The three probes</h3>
-      <p class="lede">Each probe carries an assumption the others do not share. Labels issue only on agreement — consistency is not yet validity.</p>
-      <div class="probes">
-        <article class="probe" data-probe="1">
-          <h3>Probe 1 · Surface battery</h3>
-          <div class="viz" id="probe1-viz"></div>
-          <p style="font-size:.85rem;color:var(--muted);margin:0">One problem → six answer-preserving forms. Metric: Acc<sub>Wv</sub>; R<sub>W3</sub> = Acc<sub>W3</sub>/Acc<sub>can</sub> (floor Acc<sub>can</sub> ≥ .30).</p>
-          <div class="detail"><strong>Template.</strong><pre>Solve step by step. Give the final answer.
+      <p class="lede">One probe at a time. Each carries an assumption the others do not share — labels issue only on agreement.</p>
+      <div class="probe-studio" id="probe-studio">
+        <div class="probe-nav" id="probe-nav" role="tablist" aria-label="Probes">
+          <button type="button" class="active" data-probe="1" role="tab" aria-selected="true"><span class="pn-id">Probe 1</span>Surface battery</button>
+          <button type="button" data-probe="2" role="tab" aria-selected="false"><span class="pn-id">Probe 2</span>Plan vs execution</button>
+          <button type="button" data-probe="3" role="tab" aria-selected="false"><span class="pn-id">Probe 3</span>Corpus proximity</button>
+        </div>
 
-{problem_text}</pre>
-          Assumption alone cannot discharge: tokenization noise. Cross-model opposite-direction fragility + length-matched nonces bound it.</div>
-        </article>
-        <article class="probe" data-probe="2">
-          <h3>Probe 2 · Plan vs execution</h3>
-          <div class="viz" id="probe2-viz"></div>
-          <p style="font-size:.85rem;color:var(--muted);margin:0">Session A declares a plan; Session B executes with no history. Optional mid-solve injection.</p>
-          <div class="detail"><strong>CCI.</strong> Fraction of declared numeric steps matched (ε=0.01). <strong>Injection.</strong> Plausible false intermediate; score acceptance and final-answer recovery. CCI is a fingerprint — parser coverage confounds.</div>
-        </article>
-        <article class="probe" data-probe="3">
-          <h3>Probe 3 · Corpus proximity</h3>
-          <div class="viz" id="probe3-viz"></div>
-          <p style="font-size:.85rem;color:var(--muted);margin:0">Infini-gram n-gram windows. Within-family proxy only — not closed-model membership.</p>
-          <div class="detail">What establishes it: open-corpus models (OLMo+Dolma) and controlled fine-tunes where exposure is known by construction (D1-lite).</div>
-        </article>
+        <div class="probe-pane active" id="pane-p1" role="tabpanel">
+          <p class="probe-lede">One problem → six answer-preserving forms. The question is which surface axis the procedure is keyed to.</p>
+          <div class="probe-metrics">
+            <span><b>Metric</b> Acc<sub>Wv</sub></span>
+            <span><b>Retention</b> R<sub>W3</sub> = Acc<sub>W3</sub>/Acc<sub>can</sub></span>
+            <span><b>Floor</b> Acc<sub>can</sub> ≥ .30</span>
+          </div>
+          <div class="p2-protocol" aria-label="Probe 1 protocol">
+            <div class="pp"><div class="pp-k">Battery</div><p>W1 paraphrase · W2 reformat · W3 rename · W4 formal · W5 direction · W6 new numbers.</p></div>
+            <div class="pp"><div class="pp-k">Held fixed</div><p>Same instruction template on every variant. Gold answer preserved under each transform.</p></div>
+            <div class="pp"><div class="pp-k">Reads as</div><p>Axis-specific fragility. Opposite-direction drops across models bound tokenization as the sole story.</p></div>
+          </div>
+          <div class="p1-fan" id="probe1-viz"></div>
+          <div class="probe-aside">
+            <div class="depth-box"><h4>Template</h4><p>Solve step by step. Give the final answer. Then {problem_text}. Same instruction on every variant.</p></div>
+            <div class="depth-box"><h4>Assumption it cannot discharge alone</h4><p>Tokenization noise. Cross-model opposite-direction fragility and length-matched nonces bound it.</p></div>
+          </div>
+        </div>
+
+        <div class="probe-pane" id="pane-p2" role="tabpanel">
+          <p class="probe-lede">Two hard-isolated sessions on the same coin-change instance. Session A declares the full plan in one shot. Session B never sees that plan — each turn gets only the problem plus the last verified intermediates. Mid-solve, a false DP cell can be injected.</p>
+          <div class="probe-metrics">
+            <span><b>CCI</b> positional match (ε=0.01)</span>
+            <span><b>2B</b> injection acceptance</span>
+            <span><b>Recovery</b> final Acc vs baseline</span>
+          </div>
+          <div class="p2-protocol" aria-label="Probe 2 protocol">
+            <div class="pp"><div class="pp-k">Session A</div><p>One prompt → full numbered plan of intermediate values. No execution.</p></div>
+            <div class="pp"><div class="pp-k">Session B</div><p>Fresh context. Prompt updated each step with history only. Plan text never appears.</p></div>
+            <div class="pp"><div class="pp-k">Injection</div><p>At DP[2], environment lies: true 2 → reported 9. Trace may diverge; final answer may still recover.</p></div>
+          </div>
+          <div class="p2-stage-nav" id="p2-stages" role="group" aria-label="Probe 2 stages">
+            <button type="button" class="active" data-stage="0">1 · Declare</button>
+            <button type="button" data-stage="1">2 · Execute</button>
+            <button type="button" data-stage="2">3 · Inject</button>
+            <button type="button" data-stage="3">4 · Score</button>
+          </div>
+          <p class="p2-brief" id="p2-brief"></p>
+          <div class="p2-layout">
+            <div class="session-card sess-a" id="p2-session">
+              <div class="sc-head">
+                <span class="sc-label" id="p2-session-label">Session A · plan declaration</span>
+                <span class="sc-status" id="p2-session-status">idle</span>
+              </div>
+              <div class="prompt-box" id="p2-prompt" aria-live="polite"></div>
+              <div class="p2-controls">
+                <button type="button" class="toggle-btn" id="p2-play">Play stage</button>
+                <button type="button" class="ghost" id="p2-step">Step</button>
+                <button type="button" class="ghost" id="p2-reset">Reset</button>
+              </div>
+            </div>
+            <div class="session-card" id="p2-board-card">
+              <div class="sc-head">
+                <span class="sc-label" id="p2-board-label">Declared plan</span>
+                <span class="sc-status" id="p2-board-status">waiting</span>
+              </div>
+              <div class="plan-board" id="p2-board"></div>
+              <div class="plan-legend" id="p2-legend" hidden>
+                <span><i class="lg-match"></i>matches plan</span>
+                <span><i class="lg-miss"></i>diverged / injected</span>
+                <span><i class="lg-pending"></i>pending</span>
+              </div>
+              <div class="cci-meter" id="p2-meter" hidden>
+                <div class="cm-row"><span>Plan–execution consistency (CCI)</span><strong id="p2-cci-val">—</strong></div>
+                <div class="cm-track"><div class="cm-fill" id="p2-cci-fill"></div></div>
+                <p class="cm-note" id="p2-cci-note"></p>
+                <div class="p2-score-grid">
+                  <div class="sg"><div class="sg-k">Pre-inject match</div><div class="sg-v" id="p2-sg-match">4/8</div><div class="sg-s">positional</div></div>
+                  <div class="sg"><div class="sg-k">Injected cell</div><div class="sg-v" id="p2-sg-inj">2→9</div><div class="sg-s">DP[2]</div></div>
+                  <div class="sg"><div class="sg-k">Final Count</div><div class="sg-v" id="p2-sg-final">2</div><div class="sg-s">recovered</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="probe-aside" style="margin-top:1.15rem">
+            <div class="depth-box"><h4>Why two sessions</h4><p>If plan and execution share a transcript, agreement is cheap. Isolation makes CCI a fingerprint of whether the declared procedure is the one being followed.</p></div>
+            <div class="depth-box"><h4>What injection tests</h4><p>Compliance ≠ correctness. Models can adopt a false interior value, carry it in the visible trace, and still finish near the uninjected baseline.</p></div>
+          </div>
+        </div>
+
+        <div class="probe-pane" id="pane-p3" role="tabpanel">
+          <p class="probe-lede">Infini-gram n-gram windows over public corpora (Pile/DCLM). A within-family exposure <em>proxy</em> — not closed-model membership.</p>
+          <div class="probe-metrics">
+            <span><b>Template</b> c̄<sub>T</sub></span>
+            <span><b>Instance</b> score</span>
+            <span><b>Cache</b> data/infinigram_cache.json</span>
+          </div>
+          <div class="p2-protocol" aria-label="Probe 3 protocol">
+            <div class="pp"><div class="pp-k">Scan</div><p>Sliding n-gram windows score how often a template or instance appears in public text.</p></div>
+            <div class="pp"><div class="pp-k">Within family</div><p>ALGO: CC ≫ SP ≫ WIS prevalence — co-varies with some VRI patterns.</p></div>
+            <div class="pp"><div class="pp-k">Limit</div><p>Proxy only. Closed models need open-corpus counterparts or D1-lite fine-tunes.</p></div>
+          </div>
+          <div class="p3-scan" id="probe3-viz"></div>
+          <div class="probe-aside">
+            <div class="depth-box"><h4>What it can show</h4><p>Within ALGO, CC ≫ SP ≫ WIS prevalence co-varies with some VRI patterns — a partial control, not a clean isolation from difficulty.</p></div>
+            <div class="depth-box"><h4>What establishes it</h4><p>Open-corpus models (OLMo+Dolma) and D1-lite fine-tunes where exposure is known by construction.</p></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -2127,58 +2275,375 @@ document.addEventListener('keydown', e => {
   render();
 })();
 
-/* ---------- Probe viz (hand SVG) ---------- */
-function drawProbeViz() {
-  // Probe 1 fan
-  const p1 = d3.select('#probe1-viz').append('svg').attr('viewBox','0 0 280 140').attr('width','100%').attr('height','100%');
-  p1.append('circle').attr('cx',40).attr('cy',70).attr('r',14).attr('fill','none').attr('stroke','currentColor').attr('stroke-opacity',0.5);
-  p1.append('text').attr('x',40).attr('y',74).attr('text-anchor','middle').attr('font-size',10).text('P');
-  const labels = ['W1','W2','W3','W4','W5','W6'];
-  labels.forEach((lb,i) => {
-    const y = 18 + i*18;
-    p1.append('line').attr('x1',54).attr('y1',70).attr('x2',160).attr('y2',y)
-      .attr('stroke','currentColor').attr('stroke-opacity',0.25);
-    p1.append('rect').attr('x',160).attr('y',y-8).attr('width',36).attr('height',16)
-      .attr('fill','var(--accent-soft)').attr('stroke','var(--accent)').attr('stroke-width',0.8);
-    p1.append('text').attr('x',178).attr('y',y+3).attr('text-anchor','middle').attr('font-size',9).attr('fill','var(--accent)').text(lb);
+/* ---------- Probe studio ---------- */
+const P2_DEMO = {
+  problem: "Coin change. Denominations D = {1, 3, 4, 7}. Target S* = 6. Find the minimum number of coins.",
+  plan: [
+    {label: "Sort / read D", value: "[1, 3, 4, 7]"},
+    {label: "Init DP[0]", value: "0"},
+    {label: "DP[1]", value: "1"},
+    {label: "DP[2]", value: "2"},
+    {label: "DP[3]", value: "1"},
+    {label: "DP[4]", value: "1"},
+    {label: "DP[5]", value: "2"},
+    {label: "DP[6] → Count", value: "2"}
+  ],
+  injectAt: 3, // 0-based index into execution steps after plan is known
+  injectValue: "9",
+  trueValue: "2",
+  exec: [
+    {label: "Read D", value: "[1, 3, 4, 7]", match: true},
+    {label: "Target", value: "6", match: true},
+    {label: "DP[1]", value: "1", match: true},
+    {label: "DP[2]", value: "2", match: true, inject: "9"},
+    {label: "DP[3]", value: "4", match: false, prop: true},
+    {label: "DP[4]", value: "3", match: false, prop: true},
+    {label: "DP[5]", value: "5", match: false, prop: true},
+    {label: "Final Count", value: "2", match: true, recovered: true}
+  ]
+};
+
+function drawProbe1Fan() {
+  const el = document.getElementById('probe1-viz');
+  if (!el || el.dataset.drawn) return;
+  el.dataset.drawn = '1';
+  const p1 = d3.select(el).append('svg').attr('viewBox','0 0 560 160').attr('width','100%').attr('height','100%');
+  p1.append('circle').attr('cx',70).attr('cy',80).attr('r',22).attr('fill','var(--paper)').attr('stroke','var(--accent)').attr('stroke-width',1.5);
+  p1.append('text').attr('x',70).attr('y',84).attr('text-anchor','middle').attr('font-size',12).attr('fill','currentColor').text('item');
+  const labels = [
+    {lb:'W1', note:'paraphrase'},
+    {lb:'W2', note:'reformat'},
+    {lb:'W3', note:'rename'},
+    {lb:'W4', note:'formal'},
+    {lb:'W5', note:'direction'},
+    {lb:'W6', note:'new numbers'}
+  ];
+  labels.forEach((d,i) => {
+    const y = 18 + i*22;
+    p1.append('line').attr('x1',92).attr('y1',80).attr('x2',200).attr('y2',y)
+      .attr('stroke','currentColor').attr('stroke-opacity',0.2);
+    p1.append('rect').attr('x',200).attr('y',y-10).attr('width',52).attr('height',20)
+      .attr('fill','var(--accent-soft)').attr('stroke','var(--accent)').attr('stroke-width',0.9);
+    p1.append('text').attr('x',226).attr('y',y+4).attr('text-anchor','middle').attr('font-size',11).attr('fill','var(--accent)').text(d.lb);
+    p1.append('text').attr('x',264).attr('y',y+4).attr('font-size',11).attr('fill','var(--muted)').text(d.note);
   });
+}
 
-  // Probe 2 wall
-  const p2 = d3.select('#probe2-viz').append('svg').attr('viewBox','0 0 280 140').attr('width','100%').attr('height','100%');
-  p2.append('rect').attr('x',10).attr('y',20).attr('width',100).attr('height',100).attr('fill','var(--tint)').attr('stroke','currentColor').attr('stroke-opacity',0.3);
-  p2.append('text').attr('x',60).attr('y',40).attr('text-anchor','middle').attr('font-size',10).text('Session A');
-  p2.append('text').attr('x',60).attr('y',80).attr('text-anchor','middle').attr('font-size',11).text('Plan');
-  p2.append('line').attr('x1',140).attr('y1',20).attr('x2',140).attr('y2',120).attr('stroke','var(--accent)').attr('stroke-width',2).attr('stroke-dasharray','4 3');
-  p2.append('text').attr('x',140).attr('y',14).attr('text-anchor','middle').attr('font-size',8).attr('fill','var(--accent)').text('wall');
-  p2.append('rect').attr('x',170).attr('y',20).attr('width',100).attr('height',100).attr('fill','var(--tint)').attr('stroke','currentColor').attr('stroke-opacity',0.3);
-  p2.append('text').attr('x',220).attr('y',40).attr('text-anchor','middle').attr('font-size',10).text('Session B');
-  p2.append('text').attr('x',220).attr('y',80).attr('text-anchor','middle').attr('font-size',11).text('Execute');
-  // injection arrow
-  p2.append('path').attr('d','M220 95 L220 110').attr('stroke','var(--amber)').attr('stroke-width',1.5).attr('marker-end','url(#arrow)');
-  p2.append('defs').append('marker').attr('id','arrow').attr('viewBox','0 0 10 10').attr('refX',5).attr('refY',5)
-    .attr('markerWidth',4).attr('markerHeight',4).attr('orient','auto')
-    .append('path').attr('d','M0 0 L10 5 L0 10 z').attr('fill','var(--amber)');
-  p2.append('text').attr('x',220).attr('y',128).attr('text-anchor','middle').attr('font-size',8).attr('fill','var(--amber)').text('inject');
-
-  // Probe 3 ngrams
-  const p3 = d3.select('#probe3-viz').append('svg').attr('viewBox','0 0 280 140').attr('width','100%').attr('height','100%');
-  const corpus = 'coin change dynamic programming tutorial…';
-  p3.append('text').attr('x',10).attr('y',50).attr('font-size',10).attr('fill','var(--muted)').text(corpus);
-  const win = p3.append('rect').attr('x',8).attr('y',34).attr('width',70).attr('height',22)
-    .attr('fill','none').attr('stroke','var(--accent)').attr('stroke-width',1.5);
+function drawProbe3Scan() {
+  const el = document.getElementById('probe3-viz');
+  if (!el || el.dataset.drawn) return;
+  el.dataset.drawn = '1';
+  const p3 = d3.select(el).append('svg').attr('viewBox','0 0 560 120').attr('width','100%').attr('height','100%');
+  const corpus = '… coin change dynamic programming tutorial minimum coins denominations …';
+  p3.append('text').attr('x',24).attr('y',64).attr('font-size',14).attr('fill','var(--muted)').text(corpus);
+  const win = p3.append('rect').attr('x',20).attr('y',42).attr('width',120).attr('height',36)
+    .attr('fill','none').attr('stroke','var(--accent)').attr('stroke-width',1.6);
+  p3.append('text').attr('x',24).attr('y',28).attr('font-size',10).attr('fill','var(--accent)').text('n-gram window');
   if (!reduceMotion) {
-    win.transition().duration(2200).ease(d3.easeLinear).attr('x',120)
-      .transition().duration(2200).attr('x',8)
+    win.transition().duration(2400).ease(d3.easeLinear).attr('x',360)
+      .transition().duration(2400).attr('x',20)
       .on('end', function repeat() {
-        d3.select(this).attr('x',8).transition().duration(2200).attr('x',120)
-          .transition().duration(2200).attr('x',8).on('end', repeat);
+        d3.select(this).attr('x',20).transition().duration(2400).attr('x',360)
+          .transition().duration(2400).attr('x',20).on('end', repeat);
       });
   }
 }
 
-document.querySelectorAll('.probe').forEach(p => {
-  p.addEventListener('click', () => p.classList.toggle('open'));
-});
+function initProbeStudio() {
+  const nav = document.getElementById('probe-nav');
+  if (!nav || nav.dataset.ready) return;
+  nav.dataset.ready = '1';
+
+  nav.addEventListener('click', e => {
+    const b = e.target.closest('button[data-probe]');
+    if (!b) return;
+    nav.querySelectorAll('button').forEach(x => {
+      x.classList.toggle('active', x === b);
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    ['1','2','3'].forEach(id => {
+      document.getElementById('pane-p'+id).classList.toggle('active', id === b.dataset.probe);
+    });
+    if (b.dataset.probe === '1') drawProbe1Fan();
+    if (b.dataset.probe === '3') drawProbe3Scan();
+  });
+
+  drawProbe1Fan();
+  initP2Demo();
+}
+
+function initP2Demo() {
+  let stage = 0;
+  let execIdx = 0;
+  let playing = false;
+  let timer = null;
+
+  const promptEl = document.getElementById('p2-prompt');
+  const board = document.getElementById('p2-board');
+  const sessCard = document.getElementById('p2-session');
+  const boardCard = document.getElementById('p2-board-card');
+  const sessLabel = document.getElementById('p2-session-label');
+  const sessStatus = document.getElementById('p2-session-status');
+  const boardLabel = document.getElementById('p2-board-label');
+  const boardStatus = document.getElementById('p2-board-status');
+  const meter = document.getElementById('p2-meter');
+  const legend = document.getElementById('p2-legend');
+  const brief = document.getElementById('p2-brief');
+  const stageNav = document.getElementById('p2-stages');
+  const playBtn = document.getElementById('p2-play');
+
+  const BRIEFS = [
+    '<strong>Declare.</strong> Session A gets one prompt and streams a complete plan of intermediate values — no step-by-step execution yet.',
+    '<strong>Execute.</strong> Session B is a new chat. Each prompt carries only the problem plus verified history so far. The plan text is never shown.',
+    '<strong>Inject.</strong> At DP[2] the environment reports 9 instead of 2. Watch the prompt highlight and the trace diverge while the model stays compliant.',
+    '<strong>Score.</strong> CCI counts positional agreement with the declared plan. Recovery asks whether the final Count still lands on 2.'
+  ];
+
+  function setStageButtons() {
+    stageNav.querySelectorAll('button').forEach(b => {
+      const s = +b.dataset.stage;
+      b.classList.toggle('active', s === stage);
+      b.classList.toggle('done', s < stage);
+    });
+  }
+
+  function setCardTone() {
+    sessCard.classList.remove('sess-a', 'sess-b', 'sess-score');
+    boardCard.classList.remove('sess-a', 'sess-b', 'sess-score');
+    if (stage === 0) {
+      sessCard.classList.add('sess-a');
+      boardCard.classList.add('sess-a');
+    } else if (stage === 3) {
+      sessCard.classList.add('sess-score');
+      boardCard.classList.add('sess-score');
+    } else {
+      sessCard.classList.add('sess-b');
+      boardCard.classList.add('sess-b');
+    }
+  }
+
+  function renderBoard(mode) {
+    board.innerHTML = '';
+    if (mode === 'plan') {
+      P2_DEMO.plan.forEach((p, i) => {
+        const d = document.createElement('div');
+        d.className = 'plan-step' + (i < execIdx ? ' on' : '');
+        d.innerHTML = `<span class="ps-n">${i + 1}</span><span>${p.label}</span><span class="ps-val">${p.value}</span>`;
+        board.appendChild(d);
+      });
+      return;
+    }
+    P2_DEMO.exec.forEach((p, i) => {
+      const done = i < execIdx;
+      const injected = p.inject && i === P2_DEMO.injectAt && stage >= 2 && done;
+      let cls = 'plan-step';
+      if (done) {
+        cls += ' on';
+        if (injected) cls += ' inject-row miss';
+        else if (p.prop) cls += ' miss';
+        else if (p.recovered || p.match) cls += ' match';
+        else cls += ' miss';
+      }
+      const val = injected
+        ? `<span style="text-decoration:line-through;opacity:.45">${p.value}</span> → ${p.inject}`
+        : p.value;
+      let tag = '';
+      if (injected) tag = '<span class="ps-tag">inject</span>';
+      else if (p.prop && done) tag = '<span class="ps-tag">propagated</span>';
+      else if (p.recovered && done) tag = '<span class="ps-tag" style="color:var(--teal)">recovered</span>';
+      const d = document.createElement('div');
+      d.className = cls;
+      d.innerHTML = `<span class="ps-n">${i + 1}</span><span>${p.label}${tag}</span><span class="ps-val">${val}</span>`;
+      board.appendChild(d);
+    });
+  }
+
+  function sessionAPrompt() {
+    return `SYSTEM: You will declare a complete solution plan. Do not execute yet.
+
+PROBLEM:
+${P2_DEMO.problem}
+
+Respond with a numbered plan of intermediate values only.`;
+  }
+
+  function sessionBPrompt(k) {
+    const history = P2_DEMO.exec.slice(0, k).map((s, i) => {
+      const v = (s.inject && i === P2_DEMO.injectAt && stage >= 2) ? s.inject : s.value;
+      return `Step ${i + 1} (${s.label}): ${v}`;
+    }).join('\n');
+    let injectNote = '';
+    if (stage >= 2 && k === P2_DEMO.injectAt) {
+      injectNote = `\n\n<span class="hl">[INJECTED STATE] Environment reports DP[2] = ${P2_DEMO.injectValue} (true value was ${P2_DEMO.trueValue}). Continue from this state.</span>`;
+    }
+    return `SYSTEM: New session. You have <span class="iso">no access</span> to any prior plan transcript.
+
+PROBLEM:
+${P2_DEMO.problem}
+
+${k === 0
+      ? 'Begin with Step 1 only. Return one intermediate value.'
+      : `History so far:\n${history}\n\nCompute the next intermediate value only.`}${injectNote}`;
+  }
+
+  function playLabel() {
+    if (stage === 0 && execIdx >= P2_DEMO.plan.length) return 'Next: execute →';
+    if (stage === 1 && execIdx >= P2_DEMO.injectAt) return 'Next: inject →';
+    if (stage === 2 && execIdx >= P2_DEMO.exec.length) return 'Next: score →';
+    if (stage === 3) return 'Replay';
+    return 'Play stage';
+  }
+
+  function showStage() {
+    setStageButtons();
+    setCardTone();
+    brief.innerHTML = BRIEFS[stage];
+    meter.hidden = stage < 3;
+    legend.hidden = stage < 1;
+
+    if (stage === 0) {
+      sessLabel.textContent = 'Session A · one-shot plan declaration';
+      sessStatus.textContent = execIdx === 0 ? 'awaiting plan' : (execIdx < P2_DEMO.plan.length ? 'streaming plan' : 'plan complete');
+      sessStatus.className = 'sc-status' + (execIdx > 0 ? ' live' : '');
+      boardLabel.textContent = 'Declared plan (Session A only)';
+      boardStatus.textContent = execIdx === 0 ? 'empty' : `${Math.min(execIdx, P2_DEMO.plan.length)}/${P2_DEMO.plan.length} steps`;
+      promptEl.innerHTML = sessionAPrompt();
+      renderBoard('plan');
+    } else if (stage === 1 || stage === 2) {
+      sessLabel.textContent = stage === 1
+        ? 'Session B · step-by-step (isolated)'
+        : 'Session B · false state injected';
+      sessStatus.textContent = stage === 2
+        ? (execIdx > P2_DEMO.injectAt ? 'false state in history' : 'injection ready')
+        : 'isolated execution';
+      sessStatus.className = 'sc-status' + (stage === 2 ? ' warn' : ' live');
+      boardLabel.textContent = 'Executed intermediates';
+      boardStatus.textContent = `${execIdx}/${P2_DEMO.exec.length} steps`;
+      promptEl.innerHTML = sessionBPrompt(execIdx);
+      renderBoard('exec');
+    } else {
+      sessLabel.textContent = 'Scoring · CCI + recovery';
+      sessStatus.textContent = 'complete';
+      sessStatus.className = 'sc-status live';
+      boardLabel.textContent = 'Alignment vs declared plan';
+      boardStatus.textContent = 'scored';
+      const pre = 4;
+      const cci = pre / P2_DEMO.plan.length;
+      promptEl.innerHTML = `COMPARE
+Session A plan length: ${P2_DEMO.plan.length}
+Session B executed steps: ${P2_DEMO.exec.length}
+Positional matches (pre-inject): ${pre}
+Injected step: ${P2_DEMO.injectAt + 1} (DP[2] ← ${P2_DEMO.injectValue})
+Final answer: <span class="ok">2</span> (recovered)
+Acceptance: compliant · post-injection Acc ≈ baseline`;
+      execIdx = P2_DEMO.exec.length;
+      renderBoard('exec');
+      document.getElementById('p2-cci-val').textContent = cci.toFixed(3);
+      document.getElementById('p2-cci-fill').style.width = (cci * 100) + '%';
+      document.getElementById('p2-cci-note').textContent =
+        `CCI = ${pre}/${P2_DEMO.plan.length} positional agreements before injection (ε=0.01). After injection the trace diverges, yet final Count returns to 2 — compliance without derailment of the answer.`;
+      document.getElementById('p2-sg-match').textContent = `${pre}/${P2_DEMO.plan.length}`;
+      document.getElementById('p2-sg-inj').textContent = `${P2_DEMO.trueValue}→${P2_DEMO.injectValue}`;
+      document.getElementById('p2-sg-final').textContent = '2';
+    }
+    if (!playing) playBtn.textContent = playLabel();
+  }
+
+  // Advance within / across stages. Returns: 'ok' | 'boundary' | 'done'
+  function advanceOne() {
+    if (stage === 0) {
+      if (execIdx < P2_DEMO.plan.length) { execIdx++; showStage(); return execIdx >= P2_DEMO.plan.length ? 'boundary' : 'ok'; }
+      return 'boundary';
+    }
+    if (stage === 1) {
+      if (execIdx < P2_DEMO.injectAt) { execIdx++; showStage(); return execIdx >= P2_DEMO.injectAt ? 'boundary' : 'ok'; }
+      return 'boundary';
+    }
+    if (stage === 2) {
+      if (execIdx < P2_DEMO.exec.length) { execIdx++; showStage(); return execIdx >= P2_DEMO.exec.length ? 'boundary' : 'ok'; }
+      return 'boundary';
+    }
+    return 'done';
+  }
+
+  function goNextStage() {
+    if (stage >= 3) return;
+    stage += 1;
+    if (stage === 1) execIdx = 0;
+    else if (stage === 2) execIdx = P2_DEMO.injectAt;
+    else execIdx = P2_DEMO.exec.length;
+    showStage();
+  }
+
+  function playStage() {
+    if (playing) return;
+    if (stage === 3) {
+      stage = 0; execIdx = 0; meter.hidden = true;
+      showStage();
+    }
+    // If current stage already finished, advance to next then play
+    if (stage === 0 && execIdx >= P2_DEMO.plan.length) { goNextStage(); }
+    else if (stage === 1 && execIdx >= P2_DEMO.injectAt) { goNextStage(); }
+    else if (stage === 2 && execIdx >= P2_DEMO.exec.length) { goNextStage(); return; }
+
+    playing = true;
+    playBtn.textContent = 'Playing…';
+
+    const tick = () => {
+      const r = advanceOne();
+      if (r === 'boundary' || r === 'done') {
+        playing = false;
+        playBtn.textContent = playLabel();
+        return;
+      }
+      timer = setTimeout(tick, reduceMotion ? 0 : (stage === 2 ? 420 : 300));
+    };
+    // Pause on the inject prompt so the highlight is readable
+    if (stage === 2 && execIdx === P2_DEMO.injectAt) {
+      showStage();
+      timer = setTimeout(tick, reduceMotion ? 0 : 1200);
+    } else {
+      timer = setTimeout(tick, reduceMotion ? 0 : 180);
+    }
+  }
+
+  playBtn.onclick = () => playStage();
+  document.getElementById('p2-step').onclick = () => {
+    if (playing) return;
+    if (stage === 3) return;
+    if ((stage === 0 && execIdx >= P2_DEMO.plan.length) ||
+        (stage === 1 && execIdx >= P2_DEMO.injectAt) ||
+        (stage === 2 && execIdx >= P2_DEMO.exec.length)) {
+      goNextStage();
+      return;
+    }
+    advanceOne();
+    playBtn.textContent = playLabel();
+  };
+  document.getElementById('p2-reset').onclick = () => {
+    clearTimeout(timer); playing = false;
+    stage = 0; execIdx = 0; meter.hidden = true;
+    playBtn.textContent = 'Play stage';
+    showStage();
+  };
+  stageNav.addEventListener('click', e => {
+    const b = e.target.closest('button[data-stage]');
+    if (!b) return;
+    clearTimeout(timer); playing = false;
+    stage = +b.dataset.stage;
+    if (stage === 0) execIdx = 0;
+    else if (stage === 1) execIdx = 0;
+    else if (stage === 2) execIdx = P2_DEMO.injectAt;
+    else execIdx = P2_DEMO.exec.length;
+    showStage();
+  });
+
+  showStage();
+}
+
+function drawProbeViz() {
+  initProbeStudio();
+}
 
 /* ---------- Slope chart ---------- */
 function drawSlope(immediate) {
