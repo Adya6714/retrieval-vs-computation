@@ -71,7 +71,8 @@ p{max-width:var(--measure);margin:0 0 1em}
 .rail a:hover{color:var(--accent)}
 main{margin-left:var(--rail)}
 @media(max-width:960px){.rail{display:none}main{margin-left:0}:root{--rail:0}}
-section.panel{min-height:100vh;min-height:100dvh;padding:4.2rem 2.75rem 3.5rem;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--rule);position:relative}
+section.panel{min-height:100vh;min-height:100dvh;padding:3.5rem 2.75rem 3.25rem;display:flex;flex-direction:column;justify-content:flex-start;border-bottom:1px solid var(--rule);position:relative}
+section.panel#motivation{justify-content:center;padding-top:4.2rem;padding-bottom:3.5rem}
 section.panel > .inner{max-width:1120px;width:100%;margin:0 auto}
 .reveal{opacity:1;transform:none}
 html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
@@ -229,78 +230,92 @@ html.js .reveal.in{opacity:1;transform:none}
 .gold .fixed{color:var(--teal);font-weight:600}
 .gold .changed{color:var(--amber);font-weight:600}
 .probes{display:none}
-.probe-studio{margin-top:1rem;border:1px solid var(--rule);background:var(--tint);overflow:hidden}
-.probe-nav{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);background:var(--paper)}
-.probe-nav button{appearance:none;border:0;border-right:1px solid var(--rule);background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:.85rem 1.15rem;cursor:pointer;transition:color .25s var(--ease),background .25s var(--ease)}
-.probe-nav button:hover{color:var(--accent)}
-.probe-nav button.active{color:var(--ink);background:var(--tint);box-shadow:inset 0 -2px 0 var(--accent)}
-.probe-nav .pn-id{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.15rem}
-.probe-pane{display:none;padding:1.25rem 1.35rem 1.5rem}
+.probe-studio{margin-top:1rem;border:1px solid var(--rule);background:var(--paper);overflow:hidden}
+.probe-nav{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--rule);background:var(--tint)}
+@media(max-width:700px){.probe-nav{grid-template-columns:1fr}}
+.probe-nav button{appearance:none;border:0;border-right:1px solid var(--rule);background:transparent;color:var(--muted);font:inherit;font-size:.9rem;padding:1rem 1.1rem;cursor:pointer;text-align:left;transition:color .2s var(--ease),background .2s var(--ease)}
+.probe-nav button:last-child{border-right:0}
+.probe-nav button:hover{color:var(--ink)}
+.probe-nav button.active{color:var(--ink);background:var(--paper);box-shadow:inset 0 -2px 0 var(--accent)}
+.probe-nav .pn-id{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.2rem}
+.probe-pane{display:none;padding:0}
 .probe-pane.active{display:block}
-.probe-pane .probe-lede{font-size:.95rem;color:var(--muted);max-width:62ch;margin:0 0 1rem}
-.probe-metrics{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
-.probe-metrics span{font-size:.75rem;padding:.3rem .55rem;border:1px solid var(--rule);background:var(--paper);color:var(--muted)}
-.probe-metrics span b{color:var(--ink);font-weight:500}
-.p2-protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:1.1rem}
-@media(max-width:800px){.p2-protocol{grid-template-columns:1fr}}
-.p2-protocol .pp{border:1px solid var(--rule);background:var(--paper);padding:.75rem .85rem}
-.p2-protocol .pp .pp-k{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
-.p2-protocol .pp p{margin:0;font-size:.82rem;color:var(--muted);max-width:none}
-.p2-stage-nav{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.65rem}
-.p2-stage-nav button{appearance:none;border:1px solid var(--rule);background:var(--paper);color:var(--muted);font:inherit;font-size:.78rem;padding:.45rem .75rem;cursor:pointer;border-radius:2px;transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
-.p2-stage-nav button.active{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
-.p2-stage-nav button.done{border-color:var(--teal);color:var(--teal)}
-.p2-brief{font-size:.88rem;color:var(--muted);margin:0 0 1rem;max-width:62ch;min-height:2.6em}
-.p2-brief strong{color:var(--ink);font-weight:560}
-.p2-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:1rem;align-items:stretch}
-@media(max-width:900px){.p2-layout{grid-template-columns:1fr}}
-.session-card{border:1px solid var(--rule);background:var(--paper);padding:1rem 1.05rem;display:flex;flex-direction:column;min-height:20rem}
-.session-card.sess-a{border-top:3px solid var(--accent)}
-.session-card.sess-b{border-top:3px solid var(--teal)}
-.session-card.sess-score{border-top:3px solid var(--amber)}
-.session-card .sc-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin-bottom:.65rem}
-.session-card .sc-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
-.session-card .sc-status{font-size:.75rem;color:var(--muted)}
-.session-card .sc-status.live{color:var(--teal)}
-.session-card .sc-status.warn{color:var(--amber)}
-.prompt-box{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;line-height:1.5;background:var(--tint2);border:1px solid var(--rule);padding:.75rem .85rem;white-space:pre-wrap;color:var(--ink);max-height:15rem;overflow:auto;min-height:8rem;flex:1}
+.probe-head{padding:1.15rem 1.35rem;border-bottom:1px solid var(--rule);background:var(--tint)}
+.probe-head h4{margin:0 0 .35rem;font-size:1.2rem;font-family:var(--serif);font-weight:500}
+.probe-head .ph-lede{margin:0 0 .85rem;font-size:.92rem;color:var(--muted);max-width:62ch}
+.probe-head .ph-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;border:1px solid var(--rule);background:var(--paper)}
+@media(max-width:600px){.probe-head .ph-metrics{grid-template-columns:1fr}}
+.probe-head .ph-metrics div{display:flex;flex-direction:column;gap:.15rem;padding:.55rem .75rem;border-right:1px solid var(--rule)}
+.probe-head .ph-metrics div:last-child{border-right:0}
+@media(max-width:600px){.probe-head .ph-metrics div{border-right:0;border-bottom:1px solid var(--rule)}.probe-head .ph-metrics div:last-child{border-bottom:0}}
+.probe-head .ph-metrics dt{margin:0;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.probe-head .ph-metrics dd{margin:0;font-size:.88rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.probe-stage{padding:1.15rem 1.35rem 1.25rem}
+.probe-foot{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);background:var(--tint)}
+@media(max-width:700px){.probe-foot{grid-template-columns:1fr}}
+.probe-foot > div{padding:.85rem 1.15rem;font-size:.82rem;color:var(--muted)}
+.probe-foot > div + div{border-left:1px solid var(--rule)}
+@media(max-width:700px){.probe-foot > div + div{border-left:0;border-top:1px solid var(--rule)}}
+.probe-foot strong{display:block;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:560;margin-bottom:.3rem}
+.probe-foot p{margin:0;max-width:none}
+.p1-fan{height:170px;border:1px solid var(--rule);background:var(--tint)}
+.p3-scan{height:130px;border:1px solid var(--rule);background:var(--tint)}
+.p2-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:1rem;border:1px solid var(--rule);background:var(--tint)}
+@media(max-width:700px){.p2-rail{grid-template-columns:1fr 1fr}}
+.p2-rail button{appearance:none;border:0;border-right:1px solid var(--rule);background:transparent;color:var(--muted);font:inherit;font-size:.8rem;padding:.7rem .75rem;cursor:pointer;text-align:left;position:relative}
+.p2-rail button:last-child{border-right:0}
+.p2-rail button .rn{display:block;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem;color:inherit;opacity:.7}
+.p2-rail button.active{background:var(--paper);color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+.p2-rail button.done{color:var(--teal)}
+.p2-toolbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.p2-toolbar .p2-brief{margin:0;font-size:.9rem;color:var(--muted);max-width:46ch;flex:1;min-width:14rem}
+.p2-toolbar .p2-brief strong{color:var(--ink);font-weight:560}
+.p2-controls{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}
+.p2-controls .toggle-btn{padding:.5rem .95rem;font-size:.85rem}
+.p2-controls .ghost{appearance:none;border:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:.85rem;padding:.5rem .95rem;cursor:pointer}
+.p2-controls .ghost:hover{border-color:var(--accent);color:var(--accent)}
+.p2-workspace{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);min-height:22rem;background:var(--paper)}
+@media(max-width:900px){.p2-workspace{grid-template-columns:1fr}}
+.p2-col{display:flex;flex-direction:column;min-height:0;padding:1rem 1.05rem}
+.p2-col + .p2-col{border-left:1px solid var(--rule)}
+@media(max-width:900px){.p2-col + .p2-col{border-left:0;border-top:1px solid var(--rule)}}
+.p2-col.sess-a{box-shadow:inset 3px 0 0 var(--accent)}
+.p2-col.sess-b{box-shadow:inset 3px 0 0 var(--teal)}
+.p2-col.sess-score{box-shadow:inset 3px 0 0 var(--amber)}
+.p2-col .sc-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin-bottom:.65rem}
+.p2-col .sc-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.p2-col .sc-status{font-size:.75rem;color:var(--muted)}
+.p2-col .sc-status.live{color:var(--teal)}
+.p2-col .sc-status.warn{color:var(--amber)}
+.prompt-box{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;line-height:1.5;background:var(--tint2);border:1px solid var(--rule);padding:.75rem .85rem;white-space:pre-wrap;color:var(--ink);flex:1;overflow:auto;min-height:12rem;max-height:18rem}
 .prompt-box .hl{display:inline;background:var(--amber-soft);color:var(--ink);box-shadow:inset 0 0 0 1px var(--amber)}
 .prompt-box .ok{color:var(--teal)}
 .prompt-box .iso{color:var(--accent)}
-.plan-board{display:flex;flex-direction:column;gap:.3rem;flex:1}
-.plan-step{display:grid;grid-template-columns:1.75rem 1fr auto;gap:.5rem;align-items:center;padding:.4rem .55rem;border:1px solid var(--rule);background:var(--tint);font-size:.82rem;opacity:.32;transition:opacity .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+.plan-board{display:flex;flex-direction:column;gap:.28rem;flex:1;overflow:auto;max-height:18rem}
+.plan-step{display:grid;grid-template-columns:1.6rem 1fr auto;gap:.45rem;align-items:center;padding:.38rem .5rem;border:1px solid var(--rule);background:var(--tint);font-size:.8rem;opacity:.3;transition:opacity .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
 .plan-step.on{opacity:1}
 .plan-step.match{border-color:var(--teal);background:rgba(15,118,110,.1)}
 .plan-step.miss{border-color:var(--amber);background:var(--amber-soft)}
 .plan-step.inject-row{border-color:var(--amber);background:var(--amber-soft);box-shadow:inset 3px 0 0 var(--amber)}
-.plan-step .ps-n{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.72rem}
-.plan-step .ps-val{font-family:ui-monospace,Menlo,monospace;font-size:.76rem}
-.plan-step .ps-tag{font-size:.65rem;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);margin-left:.35rem}
-.plan-legend{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.75rem;font-size:.72rem;color:var(--muted)}
-.plan-legend i{display:inline-block;width:.65rem;height:.65rem;border:1px solid var(--rule);margin-right:.3rem;vertical-align:-1px}
+.plan-step .ps-n{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.7rem}
+.plan-step .ps-val{font-family:ui-monospace,Menlo,monospace;font-size:.74rem}
+.plan-step .ps-tag{font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);margin-left:.3rem}
+.plan-legend{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.7rem;font-size:.7rem;color:var(--muted)}
+.plan-legend i{display:inline-block;width:.6rem;height:.6rem;border:1px solid var(--rule);margin-right:.28rem;vertical-align:-1px}
 .plan-legend .lg-match{background:rgba(15,118,110,.25);border-color:var(--teal)}
 .plan-legend .lg-miss{background:var(--amber-soft);border-color:var(--amber)}
 .plan-legend .lg-pending{background:var(--tint);opacity:.5}
-.p2-controls{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;align-items:center}
-.p2-controls .toggle-btn{padding:.55rem 1rem;font-size:.85rem}
-.p2-controls .ghost{appearance:none;border:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:.85rem;padding:.55rem 1rem;cursor:pointer}
-.p2-controls .ghost:hover{border-color:var(--accent);color:var(--accent)}
-.cci-meter{margin-top:1rem;padding:.85rem 1rem;border:1px solid var(--rule);background:var(--tint)}
-.cci-meter .cm-row{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.35rem}
-.cci-meter .cm-track{height:8px;background:var(--tint2);border:1px solid var(--rule);overflow:hidden}
+.cci-meter{margin-top:.75rem;padding:.75rem .85rem;border:1px solid var(--rule);background:var(--tint)}
+.cci-meter .cm-row{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem}
+.cci-meter .cm-track{height:7px;background:var(--tint2);border:1px solid var(--rule);overflow:hidden}
 .cci-meter .cm-fill{height:100%;background:var(--teal);width:0%;transition:width .5s var(--ease)}
-.cci-meter .cm-note{margin-top:.55rem;font-size:.8rem;color:var(--muted);max-width:none;margin-bottom:0}
-.p2-score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.85rem}
+.cci-meter .cm-note{margin-top:.5rem;font-size:.76rem;color:var(--muted);max-width:none;margin-bottom:0}
+.p2-score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:.7rem}
 @media(max-width:700px){.p2-score-grid{grid-template-columns:1fr}}
-.p2-score-grid .sg{border:1px solid var(--rule);background:var(--tint);padding:.65rem .75rem}
-.p2-score-grid .sg .sg-k{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.p2-score-grid .sg .sg-v{font-family:var(--serif);font-size:1.35rem;margin-top:.15rem;line-height:1.1}
-.p2-score-grid .sg .sg-s{font-size:.75rem;color:var(--muted);margin-top:.2rem}
-.p1-fan{height:160px;margin:.5rem 0 1rem}
-.p3-scan{height:120px;margin:.5rem 0 1rem;border:1px solid var(--rule);background:var(--paper)}
-.probe-aside{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
-@media(max-width:700px){.probe-aside{grid-template-columns:1fr}}
-.probe-aside .depth-box p{font-size:.82rem}
+.p2-score-grid .sg{border:1px solid var(--rule);background:var(--paper);padding:.55rem .65rem}
+.p2-score-grid .sg .sg-k{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.p2-score-grid .sg .sg-v{font-family:var(--serif);font-size:1.25rem;margin-top:.1rem;line-height:1.1}
+.p2-score-grid .sg .sg-s{font-size:.72rem;color:var(--muted);margin-top:.15rem}
 .flow{border:1px solid var(--rule);background:var(--tint);padding:1rem;margin-top:1rem;font-size:.88rem;overflow-x:auto}
 .flow svg{display:block;width:100%;max-width:720px;height:auto}
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.5rem;margin-top:1rem}
@@ -475,7 +490,7 @@ html.js .reveal.in{opacity:1;transform:none}
 
     <div class="sub">
       <h3>5b · The three probes</h3>
-      <p class="lede">One probe at a time. Each carries an assumption the others do not share — labels issue only on agreement.</p>
+      <p class="lede">One probe at a time. Labels issue only when probes agree.</p>
       <div class="probe-studio" id="probe-studio">
         <div class="probe-nav" id="probe-nav" role="tablist" aria-label="Probes">
           <button type="button" class="active" data-probe="1" role="tab" aria-selected="true"><span class="pn-id">Probe 1</span>Surface battery</button>
@@ -484,102 +499,110 @@ html.js .reveal.in{opacity:1;transform:none}
         </div>
 
         <div class="probe-pane active" id="pane-p1" role="tabpanel">
-          <p class="probe-lede">One problem → six answer-preserving forms. The question is which surface axis the procedure is keyed to.</p>
-          <div class="probe-metrics">
-            <span><b>Metric</b> Acc<sub>Wv</sub></span>
-            <span><b>Retention</b> R<sub>W3</sub> = Acc<sub>W3</sub>/Acc<sub>can</sub></span>
-            <span><b>Floor</b> Acc<sub>can</sub> ≥ .30</span>
+          <header class="probe-head">
+            <div>
+              <h4>Surface battery</h4>
+              <p class="ph-lede">One problem → six answer-preserving forms. Which surface axis is the procedure keyed to?</p>
+            </div>
+            <dl class="ph-metrics">
+              <div><dt>Metric</dt><dd>Acc<sub>Wv</sub></dd></div>
+              <div><dt>Retention</dt><dd>R<sub>W3</sub></dd></div>
+              <div><dt>Floor</dt><dd>Acc<sub>can</sub> ≥ .30</dd></div>
+            </dl>
+          </header>
+          <div class="probe-stage">
+            <div class="p1-fan" id="probe1-viz"></div>
           </div>
-          <div class="p2-protocol" aria-label="Probe 1 protocol">
-            <div class="pp"><div class="pp-k">Battery</div><p>W1 paraphrase · W2 reformat · W3 rename · W4 formal · W5 direction · W6 new numbers.</p></div>
-            <div class="pp"><div class="pp-k">Held fixed</div><p>Same instruction template on every variant. Gold answer preserved under each transform.</p></div>
-            <div class="pp"><div class="pp-k">Reads as</div><p>Axis-specific fragility. Opposite-direction drops across models bound tokenization as the sole story.</p></div>
-          </div>
-          <div class="p1-fan" id="probe1-viz"></div>
-          <div class="probe-aside">
-            <div class="depth-box"><h4>Template</h4><p>Solve step by step. Give the final answer. Then {problem_text}. Same instruction on every variant.</p></div>
-            <div class="depth-box"><h4>Assumption it cannot discharge alone</h4><p>Tokenization noise. Cross-model opposite-direction fragility and length-matched nonces bound it.</p></div>
-          </div>
+          <footer class="probe-foot">
+            <div><strong>Template</strong><p>Solve step by step. Give the final answer. Then {problem_text}. Same instruction on every variant.</p></div>
+            <div><strong>Cannot discharge alone</strong><p>Tokenization noise. Cross-model opposite-direction fragility and length-matched nonces bound it.</p></div>
+          </footer>
         </div>
 
         <div class="probe-pane" id="pane-p2" role="tabpanel">
-          <p class="probe-lede">Two hard-isolated sessions on the same coin-change instance. Session A declares the full plan in one shot. Session B never sees that plan — each turn gets only the problem plus the last verified intermediates. Mid-solve, a false DP cell can be injected.</p>
-          <div class="probe-metrics">
-            <span><b>CCI</b> positional match (ε=0.01)</span>
-            <span><b>2B</b> injection acceptance</span>
-            <span><b>Recovery</b> final Acc vs baseline</span>
-          </div>
-          <div class="p2-protocol" aria-label="Probe 2 protocol">
-            <div class="pp"><div class="pp-k">Session A</div><p>One prompt → full numbered plan of intermediate values. No execution.</p></div>
-            <div class="pp"><div class="pp-k">Session B</div><p>Fresh context. Prompt updated each step with history only. Plan text never appears.</p></div>
-            <div class="pp"><div class="pp-k">Injection</div><p>At DP[2], environment lies: true 2 → reported 9. Trace may diverge; final answer may still recover.</p></div>
-          </div>
-          <div class="p2-stage-nav" id="p2-stages" role="group" aria-label="Probe 2 stages">
-            <button type="button" class="active" data-stage="0">1 · Declare</button>
-            <button type="button" data-stage="1">2 · Execute</button>
-            <button type="button" data-stage="2">3 · Inject</button>
-            <button type="button" data-stage="3">4 · Score</button>
-          </div>
-          <p class="p2-brief" id="p2-brief"></p>
-          <div class="p2-layout">
-            <div class="session-card sess-a" id="p2-session">
-              <div class="sc-head">
-                <span class="sc-label" id="p2-session-label">Session A · plan declaration</span>
-                <span class="sc-status" id="p2-session-status">idle</span>
-              </div>
-              <div class="prompt-box" id="p2-prompt" aria-live="polite"></div>
+          <header class="probe-head">
+            <div>
+              <h4>Plan vs execution</h4>
+              <p class="ph-lede">Session A declares once. Session B executes step-by-step with no plan text. Mid-solve, inject a false state.</p>
+            </div>
+            <dl class="ph-metrics">
+              <div><dt>CCI</dt><dd>ε = 0.01</dd></div>
+              <div><dt>2B</dt><dd>injection</dd></div>
+              <div><dt>Recovery</dt><dd>final Acc</dd></div>
+            </dl>
+          </header>
+          <div class="probe-stage">
+            <div class="p2-rail" id="p2-stages" role="group" aria-label="Probe 2 stages">
+              <button type="button" class="active" data-stage="0"><span class="rn">Stage 1</span>Declare</button>
+              <button type="button" data-stage="1"><span class="rn">Stage 2</span>Execute</button>
+              <button type="button" data-stage="2"><span class="rn">Stage 3</span>Inject</button>
+              <button type="button" data-stage="3"><span class="rn">Stage 4</span>Score</button>
+            </div>
+            <div class="p2-toolbar">
+              <p class="p2-brief" id="p2-brief"></p>
               <div class="p2-controls">
                 <button type="button" class="toggle-btn" id="p2-play">Play stage</button>
                 <button type="button" class="ghost" id="p2-step">Step</button>
                 <button type="button" class="ghost" id="p2-reset">Reset</button>
               </div>
             </div>
-            <div class="session-card" id="p2-board-card">
-              <div class="sc-head">
-                <span class="sc-label" id="p2-board-label">Declared plan</span>
-                <span class="sc-status" id="p2-board-status">waiting</span>
+            <div class="p2-workspace">
+              <div class="p2-col sess-a" id="p2-session">
+                <div class="sc-head">
+                  <span class="sc-label" id="p2-session-label">Session A · plan</span>
+                  <span class="sc-status" id="p2-session-status">idle</span>
+                </div>
+                <div class="prompt-box" id="p2-prompt" aria-live="polite"></div>
               </div>
-              <div class="plan-board" id="p2-board"></div>
-              <div class="plan-legend" id="p2-legend" hidden>
-                <span><i class="lg-match"></i>matches plan</span>
-                <span><i class="lg-miss"></i>diverged / injected</span>
-                <span><i class="lg-pending"></i>pending</span>
-              </div>
-              <div class="cci-meter" id="p2-meter" hidden>
-                <div class="cm-row"><span>Plan–execution consistency (CCI)</span><strong id="p2-cci-val">—</strong></div>
-                <div class="cm-track"><div class="cm-fill" id="p2-cci-fill"></div></div>
-                <p class="cm-note" id="p2-cci-note"></p>
-                <div class="p2-score-grid">
-                  <div class="sg"><div class="sg-k">Pre-inject match</div><div class="sg-v" id="p2-sg-match">4/8</div><div class="sg-s">positional</div></div>
-                  <div class="sg"><div class="sg-k">Injected cell</div><div class="sg-v" id="p2-sg-inj">2→9</div><div class="sg-s">DP[2]</div></div>
-                  <div class="sg"><div class="sg-k">Final Count</div><div class="sg-v" id="p2-sg-final">2</div><div class="sg-s">recovered</div></div>
+              <div class="p2-col" id="p2-board-card">
+                <div class="sc-head">
+                  <span class="sc-label" id="p2-board-label">Declared plan</span>
+                  <span class="sc-status" id="p2-board-status">waiting</span>
+                </div>
+                <div class="plan-board" id="p2-board"></div>
+                <div class="plan-legend" id="p2-legend" hidden>
+                  <span><i class="lg-match"></i>match</span>
+                  <span><i class="lg-miss"></i>diverge</span>
+                  <span><i class="lg-pending"></i>pending</span>
+                </div>
+                <div class="cci-meter" id="p2-meter" hidden>
+                  <div class="cm-row"><span>Plan–execution consistency</span><strong id="p2-cci-val">—</strong></div>
+                  <div class="cm-track"><div class="cm-fill" id="p2-cci-fill"></div></div>
+                  <p class="cm-note" id="p2-cci-note"></p>
+                  <div class="p2-score-grid">
+                    <div class="sg"><div class="sg-k">Pre-inject</div><div class="sg-v" id="p2-sg-match">4/8</div><div class="sg-s">match</div></div>
+                    <div class="sg"><div class="sg-k">Injected</div><div class="sg-v" id="p2-sg-inj">2→9</div><div class="sg-s">DP[2]</div></div>
+                    <div class="sg"><div class="sg-k">Final</div><div class="sg-v" id="p2-sg-final">2</div><div class="sg-s">recovered</div></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="probe-aside" style="margin-top:1.15rem">
-            <div class="depth-box"><h4>Why two sessions</h4><p>If plan and execution share a transcript, agreement is cheap. Isolation makes CCI a fingerprint of whether the declared procedure is the one being followed.</p></div>
-            <div class="depth-box"><h4>What injection tests</h4><p>Compliance ≠ correctness. Models can adopt a false interior value, carry it in the visible trace, and still finish near the uninjected baseline.</p></div>
-          </div>
+          <footer class="probe-foot">
+            <div><strong>Why two sessions</strong><p>Shared transcript makes agreement cheap. Isolation makes CCI a fingerprint of whether the declared procedure is followed.</p></div>
+            <div><strong>What injection tests</strong><p>Compliance ≠ correctness. Models can adopt a false interior value and still finish near the uninjected baseline.</p></div>
+          </footer>
         </div>
 
         <div class="probe-pane" id="pane-p3" role="tabpanel">
-          <p class="probe-lede">Infini-gram n-gram windows over public corpora (Pile/DCLM). A within-family exposure <em>proxy</em> — not closed-model membership.</p>
-          <div class="probe-metrics">
-            <span><b>Template</b> c̄<sub>T</sub></span>
-            <span><b>Instance</b> score</span>
-            <span><b>Cache</b> data/infinigram_cache.json</span>
+          <header class="probe-head">
+            <div>
+              <h4>Corpus proximity</h4>
+              <p class="ph-lede">Infini-gram n-gram windows over public corpora. Within-family exposure proxy — not closed-model membership.</p>
+            </div>
+            <dl class="ph-metrics">
+              <div><dt>Template</dt><dd>c̄<sub>T</sub></dd></div>
+              <div><dt>Instance</dt><dd>score</dd></div>
+              <div><dt>Cache</dt><dd>infinigram</dd></div>
+            </dl>
+          </header>
+          <div class="probe-stage">
+            <div class="p3-scan" id="probe3-viz"></div>
           </div>
-          <div class="p2-protocol" aria-label="Probe 3 protocol">
-            <div class="pp"><div class="pp-k">Scan</div><p>Sliding n-gram windows score how often a template or instance appears in public text.</p></div>
-            <div class="pp"><div class="pp-k">Within family</div><p>ALGO: CC ≫ SP ≫ WIS prevalence — co-varies with some VRI patterns.</p></div>
-            <div class="pp"><div class="pp-k">Limit</div><p>Proxy only. Closed models need open-corpus counterparts or D1-lite fine-tunes.</p></div>
-          </div>
-          <div class="p3-scan" id="probe3-viz"></div>
-          <div class="probe-aside">
-            <div class="depth-box"><h4>What it can show</h4><p>Within ALGO, CC ≫ SP ≫ WIS prevalence co-varies with some VRI patterns — a partial control, not a clean isolation from difficulty.</p></div>
-            <div class="depth-box"><h4>What establishes it</h4><p>Open-corpus models (OLMo+Dolma) and D1-lite fine-tunes where exposure is known by construction.</p></div>
-          </div>
+          <footer class="probe-foot">
+            <div><strong>What it can show</strong><p>Within ALGO, CC ≫ SP ≫ WIS prevalence co-varies with some VRI patterns — a partial control, not isolation from difficulty.</p></div>
+            <div><strong>What establishes it</strong><p>Open-corpus models (OLMo+Dolma) and D1-lite fine-tunes where exposure is known by construction.</p></div>
+          </footer>
         </div>
       </div>
     </div>
@@ -2393,10 +2416,10 @@ function initP2Demo() {
   const playBtn = document.getElementById('p2-play');
 
   const BRIEFS = [
-    '<strong>Declare.</strong> Session A gets one prompt and streams a complete plan of intermediate values — no step-by-step execution yet.',
-    '<strong>Execute.</strong> Session B is a new chat. Each prompt carries only the problem plus verified history so far. The plan text is never shown.',
-    '<strong>Inject.</strong> At DP[2] the environment reports 9 instead of 2. Watch the prompt highlight and the trace diverge while the model stays compliant.',
-    '<strong>Score.</strong> CCI counts positional agreement with the declared plan. Recovery asks whether the final Count still lands on 2.'
+    '<strong>Declare.</strong> Session A streams a full plan of intermediate values in one shot.',
+    '<strong>Execute.</strong> Session B is a new chat — problem + history only; no plan text.',
+    '<strong>Inject.</strong> Environment reports DP[2] = 9 instead of 2. Trace may diverge.',
+    '<strong>Score.</strong> CCI = positional agreement with the plan; recovery asks if Count still lands on 2.'
   ];
 
   function setStageButtons() {
@@ -2408,18 +2431,12 @@ function initP2Demo() {
   }
 
   function setCardTone() {
-    sessCard.classList.remove('sess-a', 'sess-b', 'sess-score');
-    boardCard.classList.remove('sess-a', 'sess-b', 'sess-score');
-    if (stage === 0) {
-      sessCard.classList.add('sess-a');
-      boardCard.classList.add('sess-a');
-    } else if (stage === 3) {
-      sessCard.classList.add('sess-score');
-      boardCard.classList.add('sess-score');
-    } else {
-      sessCard.classList.add('sess-b');
-      boardCard.classList.add('sess-b');
-    }
+    [sessCard, boardCard].forEach(el => {
+      el.classList.remove('sess-a', 'sess-b', 'sess-score');
+    });
+    const tone = stage === 0 ? 'sess-a' : (stage === 3 ? 'sess-score' : 'sess-b');
+    sessCard.classList.add(tone);
+    boardCard.classList.add(tone);
   }
 
   function renderBoard(mode) {
