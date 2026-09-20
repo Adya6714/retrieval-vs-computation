@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>What survives a rename? — RvC</title>
-<meta name="description" content="Retrieval vs computation: a measurement programme for surface robustness in LLM reasoning." />
+<title>Same score, different strategy — RvC</title>
+<meta name="description" content="Retrieval vs computation: a validated per-instance measurement science for how LLMs solve problems." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -194,6 +194,33 @@ section.panel > .inner {
   pointer-events: none;
   z-index: 1;
 }
+
+.hero-mission {
+  font-size: 0.95rem; color: var(--ink); max-width: 58ch; line-height: 1.6;
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+}
+.status-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.65rem; margin-top: 1.5rem; }
+@media (max-width: 900px) { .status-strip { grid-template-columns: 1fr 1fr; } }
+.status-card { border: 1px solid var(--rule); background: var(--tint); padding: 0.95rem 1rem; }
+.status-card .lab { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.status-card .val { font-family: var(--serif); font-size: 1.25rem; line-height: 1.2; }
+.status-card p { margin: 0.4rem 0 0; font-size: 0.82rem; color: var(--muted); max-width: none; }
+.arm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1.25rem; }
+@media (max-width: 768px) { .arm-grid { grid-template-columns: 1fr; } }
+.arm { border: 1px solid var(--rule); background: var(--tint); padding: 1.05rem 1.15rem; }
+.arm h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.arm .tag { display: inline-block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.45rem; }
+.arm p { margin: 0; font-size: 0.88rem; color: var(--muted); max-width: none; }
+.arm ul { margin: 0.5rem 0 0 1.05rem; padding: 0; font-size: 0.85rem; color: var(--muted); }
+.done-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.done-list li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; }
+.done-list .badge { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); padding-top: 0.15rem; }
+.catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-top: 1rem; }
+@media (max-width: 900px) { .catalog-grid { grid-template-columns: 1fr; } }
+.cat { border: 1px solid var(--rule); background: var(--tint); padding: 0.9rem 1rem; font-size: 0.85rem; }
+.cat h4 { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; margin: 0 0 0.35rem; }
+.cat p { margin: 0; color: var(--muted); max-width: none; font-size: 0.82rem; }
+
 .hero-sub {
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   color: var(--muted);
@@ -832,58 +859,60 @@ table.cov th { background: var(--tint2); font-weight: 500; }
 
 <main>
 <!-- 1 HERO -->
-<section class="panel" id="hero" data-rail="Hero">
+<section class="panel" id="hero" data-rail="Motivation">
   <svg id="lattice" aria-hidden="true"></svg>
   <div class="inner reveal">
-    <p class="kicker">Retrieval vs computation</p>
-    <h1 class="claim-wide">What survives a rename?</h1>
+    <p class="kicker">Research programme · Retrieval vs computation</p>
+    <h1 class="claim-wide">Same score. Different strategy.</h1>
     <p class="hero-sub" id="thesis"></p>
+    <p class="hero-mission" id="mission"></p>
     <div class="hero-meta">
-      <span>219 problems · 6 models · 6 surfaces</span>
+      <span>Validated per-instance instrument · behavioural + mechanistic</span>
+      <span>219 problems · 6 models · ~20K calls</span>
       <a id="gh-top" href="#" target="_blank" rel="noopener">GitHub</a>
       <a id="pdf-top" href="#" target="_blank" rel="noopener">Paper PDF</a>
+      <a id="vault-top" href="#" target="_blank" rel="noopener">Research vault</a>
     </div>
   </div>
 </section>
 
 
-<!-- MOTIVATION -->
-<section class="panel" id="motivation" data-rail="Motivation">
+
+<!-- MOTIVATION / PROGRAMME SHAPE -->
+<section class="panel" id="motivation" data-rail="The programme">
   <div class="inner reveal">
-    <p class="kicker">Why this programme exists</p>
-    <h2 class="claim-wide">A score is silent about process.</h2>
+    <p class="kicker">From the research vault · 00_MOC · RVC_MASTER_DOCUMENT</p>
+    <h2 class="claim-wide">Not another benchmark. A measurement science.</h2>
     <div class="prose-grid">
       <div>
-        <p>When two models post the same benchmark accuracy, one may have executed a general procedure and the other may have matched the item to something structurally similar in training. Both routes produce the same number. Accuracy alone cannot tell them apart — and the field mostly reports only that number.</p>
-        <p>The programme builds a <em>validated, per-instance instrument</em> that distinguishes retrieval-like from computation-like solving: surface transforms that preserve the answer, a plan–execution probe that shares no session context, and a proximity signal against public corpora. Then it calibrates those signals against cases where exposure is known by construction.</p>
-        <p class="finding-note">Core question from the research vault: when two LLMs score the same, are they solving the same way — or is one computing and the other pattern-matching?</p>
+        <p>When two LLMs score the same on a benchmark, are they solving the same way — or is one computing and the other pattern-matching? Correct output does not prove correct process. That is the founding problem of neuropsychology and experimental psychology: inferring hidden architecture from observable behaviour in a mind you cannot open.</p>
+        <p>This programme builds a <strong>validated, convergent, multi-signal instrument</strong> (behavioural + mechanistic) that distinguishes retrieval-like from computation-like solving <em>per instance</em>, then uses it to establish capability claims, an architecture claim, and training-data laws.</p>
+        <p class="finding-note">Rename (W3) is one surface axis of the instrument — not the research motivation. The motivation is process diagnosis. Surface transforms, plan–execution isolation, injection, intrusion errors, causal patching, controlled-exposure fine-tunes, and developmental checkpoints are the toolkit.</p>
       </div>
       <div>
         <ul class="claim-list" id="mission-claims"></ul>
       </div>
     </div>
-    <div class="pillars">
-      <div class="pillar">
-        <h3>The blind spot</h3>
-        <p>“Machine psychology” borrowed questionnaires. Almost nobody borrowed the <em>inferential machinery</em> neuropsychology built for hidden minds: dissociation, transfer gradients, source monitoring, developmental order.</p>
-      </div>
-      <div class="pillar">
-        <h3>The method</h3>
-        <p>Import that logic. Make one ability break while another survives. Treat rename vs numeric regeneration as a dissociation, not a single “robustness” scalar.</p>
-      </div>
-      <div class="pillar">
-        <h3>The end state</h3>
-        <p>A measurement science for reasoning — capability claims, an architecture claim, and training-data laws — not another leaderboard.</p>
-      </div>
-    </div>
+    <div class="status-strip" id="status-strip"></div>
+  </div>
+</section>
+
+<!-- DONE / CONFIRMED -->
+<section class="panel" id="done" data-rail="Already established">
+  <div class="inner reveal">
+    <p class="kicker">Program state · verified-raw</p>
+    <h2 class="claim-wide">What is already established.</h2>
+    <p class="lede">From <code>01_Program_State</code>: confirmed behavioural findings and hygiene resolutions. Hypothesis and mechanism layers remain open — that is Phase 1.</p>
+    <ul class="done-list" id="done-list"></ul>
+    <div class="why-box"><strong>Honest scope.</strong> The central claim is still behavioural. The open-weight mechanistic pilot is correlational and contrasts canonical vs W6, while the headline dissociation is lexical (W3). Causal patching on canonical↔W3 (D2) closes that gap. Labels are consistent across probes; they are not yet calibrated against exposure ground truth (D1-lite).</div>
   </div>
 </section>
 
 <!-- 2 QUESTION -->
-<section class="panel" id="question" data-rail="The question">
+<section class="panel" id="question" data-rail="Why accuracy fails">
   <div class="inner reveal">
-    <p class="kicker">The question</p>
-    <h2 class="claim-wide">Same score. Different procedure.</h2>
+    <p class="kicker">Demonstration · one axis of the instrument</p>
+    <h2 class="claim-wide">Accuracy hides process. Surface change reveals it.</h2>
     <div class="rename-badge" id="rename-badge">Entity rename applied →</div>
     <div class="cards">
       <div class="card">
@@ -899,6 +928,26 @@ table.cov th { background: var(--tint2); font-weight: 500; }
     </div>
     <p class="caption">Both solve the canonical bank. After rename, Gemini falls to <span class="num" data-n="44" data-ci="Wilson" data-src="probe1_per_model_variant.csv">.523</span>; o4-mini stays at <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841</span>. Accuracy alone cannot tell them apart.</p>
     <div class="why-box"><strong>Motivation for the experiment.</strong> If the procedure were keyed to structure, a bijective rename of entities should leave the answer intact. If it is keyed to surface tokens seen in training, the rename should break it. Holding the algorithm and difficulty fixed while swapping only the lexical frame is the natural experiment.</div>
+  </div>
+</section>
+
+
+<!-- METHOD DEPTH -->
+<section class="panel" id="method" data-rail="Methodology">
+  <div class="inner reveal">
+    <p class="kicker">Methodology · EF-00 · Decision Memo</p>
+    <h2 class="claim-wide">Three orthogonal probes. Agreement before a label.</h2>
+    <p class="lede">Each probe carries an assumption the others do not share. Per-instance convergence labels issue only on agreement. Consistency is not validity — calibration against known exposure is the next gate (D1).</p>
+    <div class="protocol-steps">
+      <div class="step-card"><div class="n">P1</div><p><strong>Surface invariance</strong> Does the verified answer survive W1–W6? Primary: W3 retention; CSS; VRI.</p></div>
+      <div class="step-card"><div class="n">P2</div><p><strong>Plan–execution</strong> Session-isolated CCI; mid-solve false-state injection (compliance ≠ correctness).</p></div>
+      <div class="step-card"><div class="n">P3</div><p><strong>Exposure proxy</strong> Infini-gram proximity + built-in CC≫SP≫WIS gradient. Not closed-model membership.</p></div>
+      <div class="step-card"><div class="n">MTMM</div><p><strong>Convergence</strong> Multi-trait multi-method labeling; mixture-IRT strategy classes (DS-01) replace hand thresholds.</p></div>
+    </div>
+    <div class="two-col-text">
+      <p><strong>Non-negotiable rules</strong> (THE_PLAN). Raw CSVs are truth; derived tables regenerate by script. External numbers quarantined until reproduced. Pre-register thresholds, metrics, and kill criteria before runs. Gates decide escalation. Ship narrow papers; breadth lives in the vault.</p>
+      <p><strong>What a hostile reviewer attacks.</strong> Uncalibrated labels; mechanistic pilot on the wrong manipulation (W6 not W3); Infini-gram ≠ training corpus; WIS exposure–difficulty confound; CCI parser coverage. Each has a named fix in Phase 0–1.</p>
+    </div>
   </div>
 </section>
 
@@ -1089,32 +1138,39 @@ Then give the final answer.
 </section>
 
 
-<!-- 11 PROGRAMME -->
-<section class="panel" id="programme" data-rail="Programme">
+
+<!-- PROGRAMME completed layer -->
+<section class="panel" id="programme" data-rail="Behavioural layer">
   <div class="inner reveal">
-    <p class="kicker">The programme · completed layer</p>
-    <h2 class="claim-wide">Behavioural instrument first. Predictions before results.</h2>
-    <p class="lede">Stage 1 is complete: six surfaces, three probes, six models, frozen banks. Each later stage states a prediction and a pre-registered kill criterion — ship narrow papers; the breadth lives in the vault.</p>
+    <p class="kicker">Completed · behavioural instrument</p>
+    <h2 class="claim-wide">Stage 1 is done. Predictions preceded results.</h2>
+    <p class="lede">Frozen banks, append-only raw logs, six surfaces, three probes. Refute condition was pre-registered: W1–W6 order indistinguishable from permutation null, or a universal hard-item set outside obfuscated planning.</p>
     <div class="timeline" id="timeline"></div>
   </div>
 </section>
 
-<!-- 11b AHEAD -->
+<!-- AHEAD -->
 <section class="panel" id="ahead" data-rail="What lies ahead">
   <div class="inner reveal">
-    <p class="kicker">What lies ahead · THE_PLAN</p>
-    <h2 class="claim-wide">Calibrate, then intervene, then find laws.</h2>
-    <p class="lede">The standing weakness is not coverage — it is that “retrieval vs computation” has never been checked against anything that is actually retrieval or actually computation. Three correlated proxies agreeing is consistency, not validity. The roadmap converts the instrument from consistent to validated.</p>
-
-    <h3 style="margin-top:1.5rem">Standing hypotheses</h3>
+    <p class="kicker">THE_PLAN · Decision Memo · Tier-1 flagship</p>
+    <h2 class="claim-wide">Calibrate. Intervene. Install. Find laws.</h2>
+    <p class="lede">The standing weakness is not coverage — “retrieval vs computation” has never been checked against anything that is actually retrieval or actually computation. Three correlated proxies agreeing is consistency, not validity.</p>
+    <div class="arm-grid" id="arms"></div>
+    <h3 style="margin-top:2rem">Standing hypotheses</h3>
     <div class="hyp-grid" id="hypotheses"></div>
-
     <h3 style="margin-top:2rem">Phased execution (gates decide escalation)</h3>
     <div class="phase-rail" id="phases"></div>
+  </div>
+</section>
 
-    <div class="why-box" style="margin-top:1.5rem">
-      <strong>Publication doctrine.</strong> Build the whole programme in the vault; ship narrow papers. Natural cleavage: Paper I = instrument + calibration; Paper II = mechanism / architecture; Paper III = behavioural + training laws; Paper IV = ecology of fragility. Reviewers reward one load-bearing claim with objections pre-closed.
-    </div>
+<!-- CATALOG -->
+<section class="panel" id="catalog" data-rail="Method catalog">
+  <div class="inner reveal">
+    <p class="kicker">Borrowed methods · EVAL-CATALOG_Extended</p>
+    <h2 class="claim-wide">Inference machinery, not more questionnaires.</h2>
+    <p class="lede">“Machine psychology” borrowed personality inventories. This programme borrows the methodological machinery those fields built to diagnose hidden process — dissociation, transfer, memory signatures, adaptation, developmental order, psychometrics.</p>
+    <div class="catalog-grid" id="catalog-grid"></div>
+    <div class="why-box"><strong>One-sentence programme.</strong> Build a validated per-instance instrument for whether an answer was retrieved or computed, using the full inferential toolkit of the sciences of hidden minds; use it for capability claims, an architecture claim, and training-data laws; ship narrow papers.</div>
   </div>
 </section>
 
@@ -1196,9 +1252,11 @@ Then give the final answer.
       <a id="gh-foot" href="#" target="_blank" rel="noopener">GitHub</a>
       <a id="pdf-foot" href="#" target="_blank" rel="noopener">Paper PDF</a>
       <a id="book-foot" href="#" target="_blank" rel="noopener">BOOK.md</a>
+      <a id="vault-foot" href="#" target="_blank" rel="noopener">Research vault</a>
+      <a id="plan-foot" href="#" target="_blank" rel="noopener">THE_PLAN</a>
       <a id="contact-foot" href="#">Contact</a>
     </div>
-    <p class="caption" style="margin-top:2rem">RvC programme · Arrow keys move section to section · Numbers hover for n, CI, source.</p>
+    <p class="caption" style="margin-top:2rem">Sources: 00_MOC · 01_Program_State · 02_Decision_Memo · THE_PLAN · RVC_MASTER_DOCUMENT · Arrow keys navigate.</p>
     <p class="finding-note"><strong>Consequence.</strong> “Model X is rename-fragile” is not well-formed without a family index. Which transform is hardest is a property of the task family (Kendall W significant within family; not across families within a model). Outside obfuscated planning there is essentially no universally fragile item.</p>
 
   </div>
@@ -1209,11 +1267,13 @@ Then give the final answer.
 const DATA = {
   "meta": {
     "title": "What survives a rename?",
-    "thesis": "Equal accuracy can hide procedures that diverge under surface change: numeric regeneration is nearly free, entity rename is expensive, and formal notation often costs more than renaming.",
+    "thesis": "When two models score the same, one may be computing and the other pattern-matching. Accuracy is silent about process. This programme builds the instrument that tells them apart — per instance.",
     "github": "https://github.com/Adya6714/retrieval-vs-computation",
     "paper": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf",
     "book": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md",
-    "contact": "https://github.com/Adya6714/retrieval-vs-computation/issues"
+    "contact": "https://github.com/Adya6714/retrieval-vs-computation/issues",
+    "mission": "Mission (THE_PLAN): build the first validated, per-instance measurement science for how LLMs solve problems (retrieval vs computation), then establish capability claims, an architecture claim, and training-data laws. Rename is one probe axis — not the whole motivation.",
+    "vault": "https://github.com/Adya6714/retrieval-vs-computation/tree/main/research-vault/RvC-Vault"
   },
   "bank": {
     "arithmetic": {
@@ -1230,7 +1290,14 @@ const DATA = {
           "answer": "150"
         },
         "W2": {
-          "text": "Given:\r\n- Total number of students: 190\r\n- Students who like to paint: 19\r\n- Students who like to play football: 7\r\n- Students who like to hike: twice the number that prefer playing football\r\n- Students who like to bake or hike: the rest of the students\r\n\r\nFind: How many students like to bake?",
+          "text": "Given:
+- Total number of students: 190
+- Students who like to paint: 19
+- Students who like to play football: 7
+- Students who like to hike: twice the number that prefer playing football
+- Students who like to bake or hike: the rest of the students
+
+Find: How many students like to bake?",
           "answer": "150"
         },
         "W3": {
@@ -1238,7 +1305,13 @@ const DATA = {
           "answer": "150"
         },
         "W4": {
-          "text": "Variables:\r\n  n1 = 190  # A group of 190 students has various hobbies.\r\n  n2 = 19  # A group of 190 students has various hobbies.\r\n  n3 = 7  # 19 like to paint, 7 like to play football, and the rest like to either bake or hike.\r\nRelationships:\r\n  A group of 190 students has various hobbies.\r\nFind: solve for the unknown \u2014 How many like to bake if the number that like to hike is twice the number that prefer playing football?",
+          "text": "Variables:
+  n1 = 190  # A group of 190 students has various hobbies.
+  n2 = 19  # A group of 190 students has various hobbies.
+  n3 = 7  # 19 like to paint, 7 like to play football, and the rest like to either bake or hike.
+Relationships:
+  A group of 190 students has various hobbies.
+Find: solve for the unknown — How many like to bake if the number that like to hike is twice the number that prefer playing football?",
           "answer": "150"
         },
         "W5": {
@@ -1265,7 +1338,28 @@ const DATA = {
           "answer": "pick-up e  stack e g  pick-up l  stack l e"
         },
         "W2": {
-          "text": "Action Reference:\n | Action | Preconditions | Effect |\n |--------|---------------|--------|\n | pick-up X | X is on table, X is clear, hand empty | holding X |\n | put-down X | holding X | X on table |\n | stack X Y | holding X, Y is clear | X on Y |\n | unstack X Y | X on Y, X is clear, hand empty | holding X |\n \n Current State:\n | Block | Location | Clear? |\n |-------|----------|--------|\n | l | table | yes |\n | e | table | yes |\n | g | table | yes |\n \n Goal:\n | Block | Must be on top of |\n |-------|-------------------|\n | l | e |\n | e | g |\n \n Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+          "text": "Action Reference:
+ | Action | Preconditions | Effect |
+ |--------|---------------|--------|
+ | pick-up X | X is on table, X is clear, hand empty | holding X |
+ | put-down X | holding X | X on table |
+ | stack X Y | holding X, Y is clear | X on Y |
+ | unstack X Y | X on Y, X is clear, hand empty | holding X |
+ 
+ Current State:
+ | Block | Location | Clear? |
+ |-------|----------|--------|
+ | l | table | yes |
+ | e | table | yes |
+ | g | table | yes |
+ 
+ Goal:
+ | Block | Must be on top of |
+ |-------|-------------------|
+ | l | e |
+ | e | g |
+ 
+ Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
           "answer": "pick-up e  stack e g  pick-up l  stack l e"
         },
         "W3": {
@@ -1273,7 +1367,50 @@ const DATA = {
           "answer": "select Eve place Eve under Grace select Lisa place Lisa under Eve"
         },
         "W4": {
-          "text": "FORMAL DEFINITION:\n \u03c0 = \u27e8B, S\u2080, S*, A\u27e9\n \n BLOCKS:\n B = {l, e, g}\n \n INITIAL STATE S\u2080:\n OnTable(l), OnTable(e), OnTable(g),\n Clear(l), Clear(e), Clear(g),\n HandEmpty\n \n GOAL STATE S*:\n On(l,e), On(e,g)\n \n ACTIONS (Preconditions \u2192 Add Effects | Delete Effects):\n \n 1. pick-up(x):\n  Pre: Clear(x), OnTable(x), HandEmpty\n  Add: Holding(x)\n  Del: Clear(x), OnTable(x), HandEmpty\n \n 2. put-down(x):\n  Pre: Holding(x)\n  Add: OnTable(x), Clear(x), HandEmpty\n  Del: Holding(x)\n \n 3. stack(x, y):\n  Pre: Holding(x), Clear(y)\n  Add: On(x,y), Clear(x), HandEmpty\n  Del: Holding(x), Clear(y)\n \n 4. unstack(x, y):\n  Pre: On(x,y), Clear(x), HandEmpty\n  Add: Holding(x), Clear(y)\n  Del: On(x,y), Clear(x), HandEmpty\n \n CONSTRAINTS:\n - x \u2260 y for all two-argument actions\n - Exactly one block can be held at a time\n - Pre(a\u2096) \u2286 S\u2096\u208b\u2081 must hold for each action a\u2096\n \n TASK:\n Find plan \u03c0 = (a\u2081, a\u2082, ..., a\u2099) such that:\n S\u2080\u2026",
+          "text": "FORMAL DEFINITION:
+ π = ⟨B, S₀, S*, A⟩
+ 
+ BLOCKS:
+ B = {l, e, g}
+ 
+ INITIAL STATE S₀:
+ OnTable(l), OnTable(e), OnTable(g),
+ Clear(l), Clear(e), Clear(g),
+ HandEmpty
+ 
+ GOAL STATE S*:
+ On(l,e), On(e,g)
+ 
+ ACTIONS (Preconditions → Add Effects | Delete Effects):
+ 
+ 1. pick-up(x):
+  Pre: Clear(x), OnTable(x), HandEmpty
+  Add: Holding(x)
+  Del: Clear(x), OnTable(x), HandEmpty
+ 
+ 2. put-down(x):
+  Pre: Holding(x)
+  Add: OnTable(x), Clear(x), HandEmpty
+  Del: Holding(x)
+ 
+ 3. stack(x, y):
+  Pre: Holding(x), Clear(y)
+  Add: On(x,y), Clear(x), HandEmpty
+  Del: Holding(x), Clear(y)
+ 
+ 4. unstack(x, y):
+  Pre: On(x,y), Clear(x), HandEmpty
+  Add: Holding(x), Clear(y)
+  Del: On(x,y), Clear(x), HandEmpty
+ 
+ CONSTRAINTS:
+ - x ≠ y for all two-argument actions
+ - Exactly one block can be held at a time
+ - Pre(aₖ) ⊆ Sₖ₋₁ must hold for each action aₖ
+ 
+ TASK:
+ Find plan π = (a₁, a₂, ..., aₙ) such that:
+ S₀…",
           "answer": "pick-up e  stack e g  pick-up l  stack l e"
         },
         "W5": {
@@ -1292,31 +1429,135 @@ const DATA = {
       "source": "data/problems/question_bank_algo.csv",
       "variants": {
         "canonical": {
-          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.\n\nThe road network is:\n- Node 0 to Node 1: 1\n- Node 0 to Node 3: 4\n- Node 0 to Node 5: 10\n- Node 1 to Node 2: 1\n- Node 1 to Node 4: 14\n- Node 2 to Node 4: 12\n- Node 2 to Node 6: 24\n- Node 3 to Node 2: 11\n- Node 3 to Node 4: 4\n- Node 4 to Node 6: 4\n- Node 5 to Node 6: 12\n\nWhat is the shortest path from node 0 to node 6 and its total cost?\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
+
+The road network is:
+- Node 0 to Node 1: 1
+- Node 0 to Node 3: 4
+- Node 0 to Node 5: 10
+- Node 1 to Node 2: 1
+- Node 1 to Node 4: 14
+- Node 2 to Node 4: 12
+- Node 2 to Node 6: 24
+- Node 3 to Node 2: 11
+- Node 3 to Node 4: 4
+- Node 4 to Node 6: 4
+- Node 5 to Node 6: 12
+
+What is the shortest path from node 0 to node 6 and its total cost?
+
+Reply with only the path and cost.
+Format: Path: X -> X -> X, Cost: X",
           "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
         },
         "W1": {
-          "text": "A route planning system contains 7 locations numbered 0 through 6. Each road is one-directional and has an associated travel time weight.\n\nThe connections between locations are as follows:\n- Node 0 connects to Node 1: 1\n- Node 0 connects to Node 3: 4\n- Node 0 connects to Node 5: 10\n- Node 1 connects to Node 2: 1\n- Node 1 connects to Node 4: 14\n- Node 2 connects to Node 4: 12\n- Node 2 connects to Node 6: 24\n- Node 3 connects to Node 2: 11\n- Node 3 connects to Node 4: 4\n- Node 4 connects to Node 6: 4\n- Node 5 connects to Node 6: 12\n\nDetermine the path with minimum total travel time from node 0 to node 6 along with the total cost.\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "text": "A route planning system contains 7 locations numbered 0 through 6. Each road is one-directional and has an associated travel time weight.
+
+The connections between locations are as follows:
+- Node 0 connects to Node 1: 1
+- Node 0 connects to Node 3: 4
+- Node 0 connects to Node 5: 10
+- Node 1 connects to Node 2: 1
+- Node 1 connects to Node 4: 14
+- Node 2 connects to Node 4: 12
+- Node 2 connects to Node 6: 24
+- Node 3 connects to Node 2: 11
+- Node 3 connects to Node 4: 4
+- Node 4 connects to Node 6: 4
+- Node 5 connects to Node 6: 12
+
+Determine the path with minimum total travel time from node 0 to node 6 along with the total cost.
+
+Reply with only the path and cost.
+Format: Path: X -> X -> X, Cost: X",
           "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
         },
         "W2": {
-          "text": "Graph edges:\n(0 \u2192 1, weight=1)\n(0 \u2192 3, weight=4)\n(0 \u2192 5, weight=10)\n(1 \u2192 2, weight=1)\n(1 \u2192 4, weight=14)\n(2 \u2192 4, weight=12)\n(2 \u2192 6, weight=24)\n(3 \u2192 2, weight=11)\n(3 \u2192 4, weight=4)\n(4 \u2192 6, weight=4)\n(5 \u2192 6, weight=12)\nSource: 0\nTarget: 6",
+          "text": "Graph edges:
+(0 → 1, weight=1)
+(0 → 3, weight=4)
+(0 → 5, weight=10)
+(1 → 2, weight=1)
+(1 → 4, weight=14)
+(2 → 4, weight=12)
+(2 → 6, weight=24)
+(3 → 2, weight=11)
+(3 → 4, weight=4)
+(4 → 6, weight=4)
+(5 → 6, weight=12)
+Source: 0
+Target: 6",
           "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
         },
         "W3": {
-          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.\n\nThe road network is:\n- Node Berlin to Node Hamburg: 1\n- Node Berlin to Node Frankfurt: 4\n- Node Berlin to Node Dresden: 10\n- Node Hamburg to Node Munich: 1\n- Node Hamburg to Node Stuttgart: 14\n- Node Munich to Node Stuttgart: 12\n- Node Munich to Node Cologne: 24\n- Node Frankfurt to Node Munich: 11\n- Node Frankfurt to Node Stuttgart: 4\n- Node Stuttgart to Node Cologne: 4\n- Node Dresden to Node Cologne: 12\n\nWhat is the shortest path from node Berlin to node Cologne and its total cost?\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
+
+The road network is:
+- Node Berlin to Node Hamburg: 1
+- Node Berlin to Node Frankfurt: 4
+- Node Berlin to Node Dresden: 10
+- Node Hamburg to Node Munich: 1
+- Node Hamburg to Node Stuttgart: 14
+- Node Munich to Node Stuttgart: 12
+- Node Munich to Node Cologne: 24
+- Node Frankfurt to Node Munich: 11
+- Node Frankfurt to Node Stuttgart: 4
+- Node Stuttgart to Node Cologne: 4
+- Node Dresden to Node Cologne: 12
+
+What is the shortest path from node Berlin to node Cologne and its total cost?
+
+Reply with only the path and cost.
+Format: Path: X -> X -> X, Cost: X",
           "answer": "Path: Berlin -> Frankfurt -> Stuttgart -> Cologne, Cost: 12"
         },
         "W4": {
-          "text": "G = (V, E) where V = {0, 1, ..., 6}\nE = {(0,1,1), (0,3,4), (0,5,10), (1,2,1), (1,4,14), (2,4,12), (2,6,24), (3,2,11), (3,4,4), (4,6,4), (5,6,12)}\nFind: \u03b4(0, 6) = minimum weight path from 0 to 6\nOUTPUT FORMAT:\nPath: X -> X -> X, Cost: X",
+          "text": "G = (V, E) where V = {0, 1, ..., 6}
+E = {(0,1,1), (0,3,4), (0,5,10), (1,2,1), (1,4,14), (2,4,12), (2,6,24), (3,2,11), (3,4,4), (4,6,4), (5,6,12)}
+Find: δ(0, 6) = minimum weight path from 0 to 6
+OUTPUT FORMAT:
+Path: X -> X -> X, Cost: X",
           "answer": "Path: 0 -> 3 -> 4 -> 6, Cost: 12"
         },
         "W5": {
-          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.\n\nThe road network is:\n- Node 1 to Node 0: 1\n- Node 3 to Node 0: 4\n- Node 5 to Node 0: 10\n- Node 2 to Node 1: 1\n- Node 4 to Node 1: 14\n- Node 4 to Node 2: 12\n- Node 6 to Node 2: 24\n- Node 2 to Node 3: 11\n- Node 4 to Node 3: 4\n- Node 6 to Node 4: 4\n- Node 6 to Node 5: 12\n\nWhat is the shortest path from node 6 to node 0 and its total cost?\n\nReply with only the path and cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "text": "A route planner has 7 locations labeled 0 to 6. Roads are one-way and weighted by travel time.
+
+The road network is:
+- Node 1 to Node 0: 1
+- Node 3 to Node 0: 4
+- Node 5 to Node 0: 10
+- Node 2 to Node 1: 1
+- Node 4 to Node 1: 14
+- Node 4 to Node 2: 12
+- Node 6 to Node 2: 24
+- Node 2 to Node 3: 11
+- Node 4 to Node 3: 4
+- Node 6 to Node 4: 4
+- Node 6 to Node 5: 12
+
+What is the shortest path from node 6 to node 0 and its total cost?
+
+Reply with only the path and cost.
+Format: Path: X -> X -> X, Cost: X",
           "answer": "Path: 6 -> 4 -> 3 -> 0, Cost: 12"
         },
         "W6": {
-          "text": "A route-planning task over weighted one-way roads. Edge list and travel times are:\n\n- 0 -> 2: 2\n- 0 -> 5: 10\n- 1 -> 2: 16\n- 1 -> 5: 10\n- 1 -> 3: 15\n- 2 -> 6: 3\n- 3 -> 4: 10\n- 4 -> 6: 11\n- 4 -> 5: 13\n- 5 -> 4: 6\n- 5 -> 6: 11\n\nReply with only the path as a sequence of nodes and the total cost.\nFormat: Path: X -> X -> X, Cost: X",
+          "text": "A route-planning task over weighted one-way roads. Edge list and travel times are:
+
+- 0 -> 2: 2
+- 0 -> 5: 10
+- 1 -> 2: 16
+- 1 -> 5: 10
+- 1 -> 3: 15
+- 2 -> 6: 3
+- 3 -> 4: 10
+- 4 -> 6: 11
+- 4 -> 5: 13
+- 5 -> 4: 6
+- 5 -> 6: 11
+
+Reply with only the path as a sequence of nodes and the total cost.
+Format: Path: X -> X -> X, Cost: X",
           "answer": "Path: 0 -> 2 -> 6, Cost: 5"
         }
       }
@@ -1326,7 +1567,7 @@ const DATA = {
     "source": "results/derived/probe1_per_model_variant.csv",
     "n": 44,
     "family": "GSM",
-    "caption": "Gemini .909 \u2192 .958 (W6) vs .523 (W3). n = 44 arithmetic items.",
+    "caption": "Gemini .909 → .958 (W6) vs .523 (W3). n = 44 arithmetic items.",
     "models": [
       {
         "name": "Gemini 2.5 Flash",
@@ -1505,7 +1746,9 @@ const DATA = {
     ],
     "goal": [
       [
-        "g", "e", "l"
+        "g",
+        "e",
+        "l"
       ]
     ],
     "models": [
@@ -1887,21 +2130,21 @@ const DATA = {
       {
         "step": 5,
         "label": "DP[3]",
-        "value": "1 \u2192 4",
+        "value": "1 → 4",
         "ok": false,
         "propagated": true
       },
       {
         "step": 6,
         "label": "DP[4]",
-        "value": "1 \u2192 3",
+        "value": "1 → 3",
         "ok": false,
         "propagated": true
       },
       {
         "step": 7,
         "label": "DP[5]",
-        "value": "2 \u2192 5",
+        "value": "2 → 5",
         "ok": false,
         "propagated": true
       },
@@ -1922,7 +2165,7 @@ const DATA = {
       "question": "Which surface properties carry the load, and is the answer a property of the model or of the task?",
       "needs": "Frozen banks + append-only raw logs (this repo).",
       "prediction": "Named transforms produce drops (or rises) that are not oracle artefacts; shared-hard counts and Kendall W are recoverable.",
-      "criterion": "Refute if W1\u2013W6 order is noise (W indistinguishable from within-row permutation null) or if a single item set fails for every model outside obfuscated planning.",
+      "criterion": "Refute if W1–W6 order is noise (W indistinguishable from within-row permutation null) or if a single item set fails for every model outside obfuscated planning.",
       "result": "Numeric vs lexical dissociation; W4 often harder than W3; W5 raises planning accuracy; no item locus outside obfuscated BW; family-level concordance."
     },
     {
@@ -1942,7 +2185,7 @@ const DATA = {
       "question": "Under what training-data conditions does surface invariance form?",
       "needs": "Open-corpus model (e.g. OLMo/Dolma) plus controlled fine-tune arms.",
       "prediction": "Surface diversity, not template dose, raises W3 retention; behavioural indicators recover held-out membership.",
-      "criterion": "Pre-registered AUC \u2265 0.75 to retain indicators. Refute if dose and diversity are interchangeable.",
+      "criterion": "Pre-registered AUC ≥ 0.75 to retain indicators. Refute if dose and diversity are interchangeable.",
       "result": null
     },
     {
@@ -1980,7 +2223,7 @@ const DATA = {
       },
       {
         "id": "AC-3",
-        "text": "Exposure diversity \u2014 not dose \u2014 drives invariance by forcing abstraction-head formation."
+        "text": "Exposure diversity — not dose — drives invariance by forcing abstraction-head formation."
       }
     ]
   },
@@ -1995,12 +2238,12 @@ const DATA = {
       "id": "H2",
       "status": "correlational",
       "text": "W3 collapse is mediated by a persistent canonical binding representation.",
-      "needs": "D2 causal patching (canonical\u2194W3)"
+      "needs": "D2 causal patching (canonical↔W3)"
     },
     {
       "id": "H3",
       "status": "open",
-      "text": "Fragility decays with surface distance as a family-consistent dose\u2013response curve.",
+      "text": "Fragility decays with surface distance as a family-consistent dose–response curve.",
       "needs": "D3 graded rename ladders"
     },
     {
@@ -2018,7 +2261,7 @@ const DATA = {
     {
       "id": "H6",
       "status": "pilot",
-      "text": "Strategy equals symbolic-pathway occupancy (abstraction\u2192induction\u2192retrieval).",
+      "text": "Strategy equals symbolic-pathway occupancy (abstraction→induction→retrieval).",
       "needs": "HP-15 pathway occupancy"
     },
     {
@@ -2032,56 +2275,188 @@ const DATA = {
     {
       "id": "P0",
       "title": "Foundations",
-      "when": "Weeks 1\u20132",
-      "cost": "~$20\u201380",
+      "when": "Weeks 1–2",
+      "cost": "~$20–80",
       "do": "Intrusion-error analysis; mixture-IRT strategy classes; threshold prereg + MTMM; mechanistic provenance ledger; GSM gap-fill.",
       "produces": "Intrusion-rate table, strategy posteriors, frozen thresholds, clean denominators.",
-      "gate": "G0: all Phase-0 validation checks pass; strategy_posteriors.csv exists; prereg committed. Fail \u2192 fix before any Tier-1 spend."
+      "gate": "G0: all Phase-0 validation checks pass; strategy_posteriors.csv exists; prereg committed. Fail → fix before any Tier-1 spend."
     },
     {
       "id": "P1",
       "title": "Calibration + mechanism flagship",
-      "when": "Weeks 3\u20138",
-      "cost": "~$120\u2013400 \u00b7 1\u00d7 A100",
-      "do": "D1-lite LoRA seen/unseen + source-monitoring questions; D2 residual-stream patching on Llama canonical\u2194W3; Commitment Depth; matched WIS bank.",
-      "produces": "Label calibration AUC; H2/H5 interventional verdicts; Paper I draft (instrument).",
-      "gate": "G1: D1-lite AUC \u2265 .75 \u2192 freeze thresholds v2. .60\u2013.75 \u2192 revise indicators once. < .60 \u2192 pivot to mechanism-first framing."
+      "when": "Weeks 3–8",
+      "cost": "~$120–400 · 1× A100",
+      "do": "D1-lite LoRA seen/unseen + corrupted-answer oracle arm + source-monitoring (CC-2); D2 residual-stream patching on Llama canonical↔W3; Commitment Depth (D8); matched WIS bank.",
+      "produces": "Label calibration AUC; oracle falsification verdict; H2/H5 interventional verdicts; Paper I draft (instrument).",
+      "gate": "G1: D1-lite AUC ≥ .75 → freeze thresholds v2. .60–.75 → revise indicators once. < .60 → pivot to mechanism-first framing."
     },
     {
       "id": "P2",
       "title": "Architecture claim",
-      "when": "Weeks 9\u201314",
-      "cost": "~$100\u2013400",
-      "do": "Pathway-occupancy pilot (H6/AC-1); if supported, steering / band-constrained repair (AC-2); RSA representational invariance.",
+      "when": "Weeks 9–14",
+      "cost": "~$100–400",
+      "do": "Pathway-occupancy pilot (H6/AC-1); if supported, AC-2 alignment repair — steering and band-constrained contrastive SFT; RSA representational invariance.",
       "produces": "Paper II draft (mechanism / architecture).",
-      "gate": "G2: H6 verdict. Supported \u2192 AC-2. Mixed \u2192 report transfer failure as the finding."
+      "gate": "G2: H6 verdict. Supported → AC-2. Mixed → report transfer failure as the finding."
     },
     {
       "id": "P3",
       "title": "Laws",
-      "when": "Weeks 15\u201322",
-      "cost": "~$200\u2013700",
+      "when": "Weeks 15–22",
+      "cost": "~$200–700",
       "do": "Distance ladders (H3); direction asymmetry; compositional stress (CC-4); exposure-variance training arms (H7/AC-3).",
       "produces": "Paper III draft (behavioural + training laws).",
-      "gate": "G3: pre-registered functional forms fit or fail \u2014 either is publishable; H7 verdict."
+      "gate": "G3: pre-registered functional forms fit or fail — either is publishable; H7 verdict."
     },
     {
       "id": "P4",
       "title": "Ecology & development",
-      "when": "Weeks 23\u201330",
-      "cost": "~$80\u2013250",
+      "when": "Weeks 23–30",
+      "cost": "~$80–250",
       "do": "OLMo checkpoint sweep (H4, CC-3); variance decomposition; cross-model fragility structure.",
-      "produces": "Paper IV draft \u2014 ecology of fragility.",
+      "produces": "Paper IV draft — ecology of fragility.",
       "gate": "Ship when checkpoint retention curves and item-facet G coefficients are recoverable."
     },
     {
       "id": "P5",
       "title": "Year-2 summit",
-      "when": "After Papers I\u2013II",
+      "when": "After Papers I–II",
       "cost": "TBD",
-      "do": "Inverse inference (behaviour \u2192 training structure of closed models); adaptive instrument; deployment audit case study.",
+      "do": "Inverse inference (behaviour → training structure of closed models); adaptive instrument; deployment audit case study.",
       "produces": "Applied audit suite once calibration intact.",
-      "gate": "Prerequisite: Papers I\u2013II accepted or arXived with calibration intact."
+      "gate": "Prerequisite: Papers I–II accepted or arXived with calibration intact."
+    }
+  ],
+  "status": [
+    {
+      "lab": "Instrument",
+      "val": "Behavioural complete",
+      "detail": "P1–P3 on GSM/BW/ALGO; ~20K calls; CAISc 2026 submitted."
+    },
+    {
+      "lab": "Validation",
+      "val": "Not yet",
+      "detail": "Labels consistent across probes; not calibrated to exposure ground truth (D1-lite)."
+    },
+    {
+      "lab": "Mechanism",
+      "val": "Pilot only",
+      "detail": "Qwen sweeps exist; correlational; wrong contrast (can↔W6). D2 patching is next."
+    },
+    {
+      "lab": "Next gate",
+      "val": "G0 → G1",
+      "detail": "Phase-0 hygiene, then D1-lite AUC ≥ .75 or pivot mechanism-first."
+    }
+  ],
+  "done": [
+    {
+      "badge": "Confirmed",
+      "text": "Numeric regeneration nearly free; entity rename expensive (Gemini GSM .909 → .958 W6 vs .523 W3)."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "Formal notation (W4) often costlier than rename; o4-mini −16pp on GSM under W4 alone."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "Direction inversion (W5) raises planning accuracy for most models (Claude .172 → .873)."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "No item-level locus of fragility outside obfuscated BW (0/110 ALGO, 0/20 GSM, 14/64 BW)."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "Transform difficulty is a family property (Kendall W within-family significant; across-family within-model not)."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "Robustness ≠ accuracy: CCI and W3 agree when pooled (r=.243, p=.024); neither tracks canonical accuracy."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "Compliance ≠ correctness under injection (accept up to 100%; final answer near baseline)."
+    },
+    {
+      "badge": "Confirmed",
+      "text": "Intrusion errors: o4-mini reuses pre-rename tokens at .619 of ALGO W3 errors — retrieval fingerprint."
+    },
+    {
+      "badge": "Hygiene",
+      "text": "GSM GPT-4o/Llama honest n=20 (not 40); Qwen 7B vs 0.5B mechanistic artifacts disambiguated."
+    },
+    {
+      "badge": "Open",
+      "text": "H1–H7 untested against ground truth / intervention; WIS exposure–difficulty confound until HP-05."
+    }
+  ],
+  "arms": [
+    {
+      "tag": "Oracle / falsification",
+      "title": "D1-lite corrupted-answer arm",
+      "body": "LoRA on SEEN ALGO items with correct CoT; parallel LoRA with corrupted final answers (Xie-style). Labels must NOT read computation-consistent on the corrupted arm — if they do, the instrument is broken. Ground truth = seen/unseen. Gate G1: AUC ≥ .75.",
+      "bullets": [
+        "HP-06 LoRA Llama-3.1-8B",
+        "Seen/unseen ROC for convergence labels",
+        "Falsification arm is the oracle test"
+      ]
+    },
+    {
+      "tag": "Mechanistic",
+      "title": "D2 causal patching + Commitment Depth",
+      "body": "Patch residual stream on canonical↔W3 pairs (fixing can↔W6 mismatch). Entity-position and late-layer interventions; injection-step patch for H5. Commitment Depth (earliest layer gold enters top-k) is the reusable DV (pilot r≈.82).",
+      "bullets": [
+        "H2 binding failure vs lost computation",
+        "H5 answer direction pre-injection",
+        "Same GPU sessions as D1"
+      ]
+    },
+    {
+      "tag": "Alignment · SFT / steering",
+      "title": "AC-2 installation + robustness FT",
+      "body": "If pathway occupancy (H6) localizes fragility at stage 1: steer or band-constrained contrastive fine-tune abstraction heads (canonical↔W3) to install invariance without collateral damage. D9: train rename-robustness on one family, test transfer.",
+      "bullets": [
+        "Steering / representation engineering",
+        "Band-constrained SFT (AC-2)",
+        "D9 robustness fine-tune transfer"
+      ]
+    },
+    {
+      "tag": "Training laws · ecology",
+      "title": "Diversity not dose · OLMo checkpoints",
+      "body": "DS-04 exposure-variance arms (H7/AC-3): surface diversity drives invariance. D4: OLMo+Dolma checkpoint sweep — ecological exposure counts in the actual corpus; order-of-acquisition for CC-3.",
+      "bullets": [
+        "H7 variety-not-volume",
+        "CC-3 developmental lag",
+        "DS-11 inverse inference (Year 2)"
+      ]
+    }
+  ],
+  "catalog": [
+    {
+      "title": "Dissociation",
+      "text": "DS-14 double-dissociation battery — crossover pairs prove separable capabilities (neuropsychology)."
+    },
+    {
+      "title": "Transfer / concept",
+      "text": "DS-15 conservation; D3 graded distance ladders (Barnett & Ceci near/far)."
+    },
+    {
+      "title": "Memory science",
+      "text": "DS-02 intrusion; DS-05 source monitoring; DS-16 savings / priming / recognition–recall."
+    },
+    {
+      "title": "Adaptation",
+      "text": "DS-17 repetition-suppression; DS-03 RSA/CKA representational invariance."
+    },
+    {
+      "title": "Development / lesion",
+      "text": "D4 checkpoints; DS-18 order-of-acquisition; ablation as lesion."
+    },
+    {
+      "title": "Psychometrics",
+      "text": "DS-01 mixture IRT; DS-07/10/19 variance & population factors."
     }
   ]
 };
@@ -2096,6 +2471,13 @@ const ramp = d3.scaleLinear().domain([0, 0.5, 1]).range(['#64748B', '#0F766E', '
 document.getElementById('book-foot').href = DATA.meta.book;
 document.getElementById('contact-foot').href = DATA.meta.contact;
 document.getElementById('thesis').textContent = DATA.meta.thesis;
+if (DATA.meta.mission && document.getElementById('mission')) document.getElementById('mission').textContent = DATA.meta.mission;
+if (DATA.meta.vault) {
+  const vt = document.getElementById('vault-top'); if (vt) vt.href = DATA.meta.vault;
+  const vf = document.getElementById('vault-foot'); if (vf) vf.href = DATA.meta.vault;
+  const pf = document.getElementById('plan-foot'); if (pf) pf.href = DATA.meta.vault.replace(/RvC-Vault\/?$/, 'RvC-Vault/THE_PLAN.md');
+}
+
 
 /* ---------- rail ---------- */
 const sections = [...document.querySelectorAll('section.panel')];
@@ -2694,6 +3076,50 @@ function animateTrace(immediate) {
   });
 })();
 
+
+
+/* ---------- Status / done / arms / catalog ---------- */
+(function() {
+  const ss = document.getElementById('status-strip');
+  if (ss && DATA.status) {
+    ss.innerHTML = '';
+    DATA.status.forEach(s => {
+      const d = document.createElement('div');
+      d.className = 'status-card';
+      d.innerHTML = `<div class="lab">${s.lab}</div><div class="val">${s.val}</div><p>${s.detail}</p>`;
+      ss.appendChild(d);
+    });
+  }
+  const dl = document.getElementById('done-list');
+  if (dl && DATA.done) {
+    dl.innerHTML = '';
+    DATA.done.forEach(x => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="badge">${x.badge}</span><span>${x.text}</span>`;
+      dl.appendChild(li);
+    });
+  }
+  const ag = document.getElementById('arms');
+  if (ag && DATA.arms) {
+    ag.innerHTML = '';
+    DATA.arms.forEach(a => {
+      const d = document.createElement('div');
+      d.className = 'arm';
+      d.innerHTML = `<div class="tag">${a.tag}</div><h3>${a.title}</h3><p>${a.body}</p><ul>${a.bullets.map(b=>'<li>'+b+'</li>').join('')}</ul>`;
+      ag.appendChild(d);
+    });
+  }
+  const cg = document.getElementById('catalog-grid');
+  if (cg && DATA.catalog) {
+    cg.innerHTML = '';
+    DATA.catalog.forEach(c => {
+      const d = document.createElement('div');
+      d.className = 'cat';
+      d.innerHTML = `<h4>${c.title}</h4><p>${c.text}</p>`;
+      cg.appendChild(d);
+    });
+  }
+})();
 
 /* ---------- Motivation claims ---------- */
 (function() {
