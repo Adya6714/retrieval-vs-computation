@@ -28,7 +28,7 @@
   --serif: "Instrument Serif", "Source Serif 4", Georgia, serif;
   --sans: Inter, "Söhne", system-ui, sans-serif;
   --ease: cubic-bezier(.16,1,.3,1);
-  --rail: 11rem;
+  --rail: 12.5rem;
   --measure: 68ch;
 }
 @media (prefers-color-scheme: dark) {
@@ -677,6 +677,151 @@ table.cov th { background: var(--tint2); font-weight: 500; }
 }
 #tip.show { opacity: 1; transform: none; }
 
+
+/* Prose / content density */
+.prose-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) { .prose-grid { grid-template-columns: 1fr; } }
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 768px) { .pillars { grid-template-columns: 1fr; } }
+.pillar {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1.1rem 1.15rem;
+}
+.pillar h3 { font-size: 1.15rem; margin-bottom: 0.45rem; }
+.pillar p { font-size: 0.9rem; color: var(--muted); margin: 0; max-width: none; }
+.claim-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.claim-list li {
+  border-left: 2px solid var(--accent);
+  padding: 0.45rem 0 0.45rem 0.9rem;
+  font-size: 0.92rem;
+}
+.claim-list .cid {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.why-box {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  max-width: 68ch;
+  font-size: 0.92rem;
+}
+.why-box strong { color: var(--ink); }
+.protocol-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  margin: 1.25rem 0 0.5rem;
+}
+@media (max-width: 900px) { .protocol-steps { grid-template-columns: 1fr 1fr; } }
+.step-card {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 0.85rem 0.95rem;
+  font-size: 0.85rem;
+}
+.step-card .n {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.step-card p { margin: 0; color: var(--muted); max-width: none; font-size: 0.85rem; }
+.hyp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) { .hyp-grid { grid-template-columns: 1fr; } }
+.hyp {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+}
+.hyp .hid { color: var(--accent); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.06em; }
+.hyp .status-tag {
+  float: right;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.phase-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+}
+.phase {
+  border: 1px solid var(--rule);
+  background: var(--tint);
+  padding: 1rem 1.15rem;
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease);
+}
+.phase:hover, .phase.open { border-color: var(--accent); }
+.phase-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.phase-head h3 { margin: 0; font-size: 1.15rem; }
+.phase .meta { font-size: 0.78rem; color: var(--muted); }
+.phase .body { display: none; margin-top: 0.75rem; font-size: 0.88rem; color: var(--muted); }
+.phase.open .body { display: block; }
+.phase .body ul { margin: 0.4rem 0 0.6rem 1.1rem; padding: 0; }
+.phase .gate {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  border-left: 2px solid var(--amber);
+  background: var(--tint2);
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+.finding-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+.two-col-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) { .two-col-text { grid-template-columns: 1fr; } }
+.two-col-text p { max-width: none; font-size: 0.92rem; color: var(--muted); }
+
 .axis text, .tick text { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
 .axis path, .axis line, .tick line { stroke: var(--rule); }
 </style>
@@ -701,6 +846,39 @@ table.cov th { background: var(--tint2); font-weight: 500; }
   </div>
 </section>
 
+
+<!-- MOTIVATION -->
+<section class="panel" id="motivation" data-rail="Motivation">
+  <div class="inner reveal">
+    <p class="kicker">Why this programme exists</p>
+    <h2 class="claim-wide">A score is silent about process.</h2>
+    <div class="prose-grid">
+      <div>
+        <p>When two models post the same benchmark accuracy, one may have executed a general procedure and the other may have matched the item to something structurally similar in training. Both routes produce the same number. Accuracy alone cannot tell them apart — and the field mostly reports only that number.</p>
+        <p>The programme builds a <em>validated, per-instance instrument</em> that distinguishes retrieval-like from computation-like solving: surface transforms that preserve the answer, a plan–execution probe that shares no session context, and a proximity signal against public corpora. Then it calibrates those signals against cases where exposure is known by construction.</p>
+        <p class="finding-note">Core question from the research vault: when two LLMs score the same, are they solving the same way — or is one computing and the other pattern-matching?</p>
+      </div>
+      <div>
+        <ul class="claim-list" id="mission-claims"></ul>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>The blind spot</h3>
+        <p>“Machine psychology” borrowed questionnaires. Almost nobody borrowed the <em>inferential machinery</em> neuropsychology built for hidden minds: dissociation, transfer gradients, source monitoring, developmental order.</p>
+      </div>
+      <div class="pillar">
+        <h3>The method</h3>
+        <p>Import that logic. Make one ability break while another survives. Treat rename vs numeric regeneration as a dissociation, not a single “robustness” scalar.</p>
+      </div>
+      <div class="pillar">
+        <h3>The end state</h3>
+        <p>A measurement science for reasoning — capability claims, an architecture claim, and training-data laws — not another leaderboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 2 QUESTION -->
 <section class="panel" id="question" data-rail="The question">
   <div class="inner reveal">
@@ -720,6 +898,7 @@ table.cov th { background: var(--tint2); font-weight: 500; }
       </div>
     </div>
     <p class="caption">Both solve the canonical bank. After rename, Gemini falls to <span class="num" data-n="44" data-ci="Wilson" data-src="probe1_per_model_variant.csv">.523</span>; o4-mini stays at <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841</span>. Accuracy alone cannot tell them apart.</p>
+    <div class="why-box"><strong>Motivation for the experiment.</strong> If the procedure were keyed to structure, a bijective rename of entities should leave the answer intact. If it is keyed to surface tokens seen in training, the rename should break it. Holding the algorithm and difficulty fixed while swapping only the lexical frame is the natural experiment.</div>
   </div>
 </section>
 
@@ -728,7 +907,13 @@ table.cov th { background: var(--tint2); font-weight: 500; }
   <div class="inner reveal">
     <p class="kicker">Method · The bank</p>
     <h2 class="claim-wide">Six surfaces, one gold procedure.</h2>
-    <p class="lede">Pick a family, then step through W1–W6. Gold stays fixed for W1–W4; W5/W6 re-derive it.</p>
+    <p class="lede">Three families chosen for contrasting algorithmic character. Pick one, then step through W1–W6. Gold stays fixed for W1–W4; W5/W6 re-derive it.</p>
+    <div class="protocol-steps">
+      <div class="step-card"><div class="n">01</div><p><strong>GSM · 44</strong> Arithmetic word problems across proximity quartiles (GSM-Symbolic templates).</p></div>
+      <div class="step-card"><div class="n">02</div><p><strong>BW · 65</strong> Blocksworld planning (50 standard + 15 obfuscated) with PDDL gold.</p></div>
+      <div class="step-card"><div class="n">03</div><p><strong>ALGO · 110</strong> DP: coin change (common), shortest path (moderate), WIS (rare) — built-in exposure gradient.</p></div>
+      <div class="step-card"><div class="n">04</div><p><strong>Verify first</strong> Gold and every variant pass the domain verifier before any model call; failures excluded with reason.</p></div>
+    </div>
     <div class="tabs" id="family-tabs"></div>
     <div class="variant-row" id="variant-chips"></div>
     <div class="problem-box" id="problem-text"></div>
@@ -746,6 +931,7 @@ table.cov th { background: var(--tint2); font-weight: 500; }
   <div class="inner reveal">
     <p class="kicker">Method · Three probes</p>
     <h2 class="claim-wide">Surface, process, proximity.</h2>
+    <p class="lede">Each probe carries an assumption the others do not share. A per-instance label is issued only on agreement — consistency is not yet validity; calibration against known exposure is the next gate.</p>
     <div class="probes">
       <article class="probe" data-probe="1">
         <h3>Probe 1 · Surface battery</h3>
@@ -757,7 +943,8 @@ table.cov th { background: var(--tint2); font-weight: 500; }
 Then give the final answer.
 
 {problem_text}</pre>
-          <strong>Metric.</strong> Acc<sub>Wv</sub> = correct / n; R<sub>W3</sub> = Acc<sub>W3</sub> / Acc<sub>can</sub> where Acc<sub>can</sub> ≥ 0.30.
+          <strong>Metric.</strong> Acc<sub>Wv</sub> = correct / n; R<sub>W3</sub> = Acc<sub>W3</sub> / Acc<sub>can</sub> where Acc<sub>can</sub> ≥ 0.30 (floor fixed before analysis).
+          <p style="margin-top:0.6rem"><strong>Assumption it cannot discharge alone.</strong> A W3 drop could be tokenization noise or residual difficulty. Cross-model opposite-direction fragility on the same items, plus length-matched nonces, bound that. Graded-distance ladders (D3) are the next refinement.</p>
         </div>
       </article>
       <article class="probe" data-probe="2">
@@ -765,8 +952,9 @@ Then give the final answer.
         <div class="viz" id="probe2-viz"></div>
         <p style="font-size:0.85rem;color:var(--muted);margin:0">Session A declares a plan; Session B executes without history. Optional mid-solve injection.</p>
         <div class="detail">
-          <strong>CCI.</strong> Fraction of declared numeric steps matched in isolated execution (ε = 0.01).
-          <strong>Injection.</strong> At a sampled interior step, replace true intermediate with a plausible false value; score acceptance and final-answer recovery.
+          <strong>CCI.</strong> Fraction of declared numeric steps matched in isolated execution (ε = 0.01). Hard cross-session isolation — unlike within-trace CoT faithfulness work, the execution session has no plan in context.
+          <strong>Injection.</strong> At a sampled interior step, replace true intermediate with a plausible false value; score acceptance taxonomy and final-answer recovery (TEP).
+          <p style="margin-top:0.6rem"><strong>Scope.</strong> CCI is a fingerprint, not a pure score (parser coverage confounds). BW strict-PDDL aborts 84–100% of sessions: a protocol finding, not a model claim.</p>
         </div>
       </article>
       <article class="probe" data-probe="3">
@@ -774,7 +962,8 @@ Then give the final answer.
         <div class="viz" id="probe3-viz"></div>
         <p style="font-size:0.85rem;color:var(--muted);margin:0">n-gram windows over public corpus (Infini-gram). Within-family proximity proxy only.</p>
         <div class="detail">
-          <strong>Metric.</strong> Public-corpus n-gram hit rate by subtype (coin change ≫ shortest path ≫ WIS). Not used as closed-model membership claim.
+          <strong>Metric.</strong> Infini-gram n-gram hit rate over public corpora by subtype (coin change ≫ shortest path ≫ WIS). Explicitly a <em>proxy</em> — not the training corpus of any closed model tested.
+          <p style="margin-top:0.6rem"><strong>What would establish it.</strong> Open-corpus models (OLMo + Dolma) where template counts are measurable in the actual training data (D4). Controlled fine-tunes where exposure is known by construction (D1-lite).</p>
         </div>
       </article>
     </div>
@@ -788,6 +977,8 @@ Then give the final answer.
     <h2 class="claim-wide">Numeric change is nearly free. Rename is not.</h2>
     <div class="chart-wrap" id="slope-chart"></div>
     <p class="caption">Slope graph: canonical → W6 → W3 on arithmetic. W6 lines stay flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="finding-note"><strong>What this establishes.</strong> A single “robustness” scalar summarises very little: the same model can be nearly free under numeric regeneration and fragile under rename on the identical algorithm. The load-bearing surface is the name frame, not the numerals. Source: vault EF-01; paper §Lexical and Numeric Robustness.</p>
+
   </div>
 </section>
 
@@ -803,6 +994,8 @@ Then give the final answer.
     </div>
     <div class="small-multiples" id="pc-charts"></div>
     <p class="caption">Parallel coordinates W1–W6; W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="finding-note"><strong>What this establishes.</strong> Fragility is not only “unknown words.” W4 leaves identifiers untouched and still damages accuracy — often more than W3. Register mismatch between training prose and compact symbolic form is a distinct axis the rename literature does not capture.</p>
+
   </div>
 </section>
 
@@ -871,6 +1064,10 @@ Then give the final answer.
     <div class="chart-wrap" id="scatter-chart"></div>
     <div class="fit-stat sig" id="fit-stat"></div>
     <p class="caption">Point-biserial CCI × W3 correctness; cluster bootstrap. Acc vs retention ρ=<span class="num" data-n="14" data-src="P1_construct_validity.csv">.136</span> (p=.642). Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P2_P1_convergence.csv" target="_blank" rel="noopener">P2_P1_convergence.csv</a>.</p>
+    <p class="finding-note"><strong>Power point.</strong> At typical per-family n the association is invisible (both null). Pooling reveals convergent validity (r=.243, p=.024). Discriminant: neither retention nor φ tracks canonical accuracy. This is why the programme treats robustness as a capacity, not a restatement of the leaderboard.</p>
+
+    <p class="finding-note"><strong>Open mechanism (vault D06).</strong> Two testable accounts: goal states are more constrained (lower branching), or forward search from a sparse init is harder than backward chaining. Distinguishing them needs instances with matched init/goal complexity — a small, designed experiment under ~100 inference calls.</p>
+
   </div>
 </section>
 
@@ -887,15 +1084,37 @@ Then give the final answer.
         <p class="caption" style="margin-top:1rem">n=61 ALGO Phase-2B. Gemini rejects every injection (0% compliance). Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/injection_recovery_summary.csv" target="_blank" rel="noopener">injection_recovery_summary.csv</a>.</p>
       </div>
     </div>
+    <p class="finding-note"><strong>Standing hypothesis H5.</strong> Recovery under injection may mean the answer direction was fixed before the injected step. Patching at the injection position (D2) would decide that — currently behavioural evidence only. Intrusion errors on rename (o4-mini .619 on ALGO W3) are a separate retrieval fingerprint already scored on existing data.</p>
   </div>
 </section>
+
 
 <!-- 11 PROGRAMME -->
 <section class="panel" id="programme" data-rail="Programme">
   <div class="inner reveal">
-    <p class="kicker">The programme</p>
-    <h2 class="claim-wide">Four stages. Predictions before results.</h2>
+    <p class="kicker">The programme · completed layer</p>
+    <h2 class="claim-wide">Behavioural instrument first. Predictions before results.</h2>
+    <p class="lede">Stage 1 is complete: six surfaces, three probes, six models, frozen banks. Each later stage states a prediction and a pre-registered kill criterion — ship narrow papers; the breadth lives in the vault.</p>
     <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- 11b AHEAD -->
+<section class="panel" id="ahead" data-rail="What lies ahead">
+  <div class="inner reveal">
+    <p class="kicker">What lies ahead · THE_PLAN</p>
+    <h2 class="claim-wide">Calibrate, then intervene, then find laws.</h2>
+    <p class="lede">The standing weakness is not coverage — it is that “retrieval vs computation” has never been checked against anything that is actually retrieval or actually computation. Three correlated proxies agreeing is consistency, not validity. The roadmap converts the instrument from consistent to validated.</p>
+
+    <h3 style="margin-top:1.5rem">Standing hypotheses</h3>
+    <div class="hyp-grid" id="hypotheses"></div>
+
+    <h3 style="margin-top:2rem">Phased execution (gates decide escalation)</h3>
+    <div class="phase-rail" id="phases"></div>
+
+    <div class="why-box" style="margin-top:1.5rem">
+      <strong>Publication doctrine.</strong> Build the whole programme in the vault; ship narrow papers. Natural cleavage: Paper I = instrument + calibration; Paper II = mechanism / architecture; Paper III = behavioural + training laws; Paper IV = ecology of fragility. Reviewers reward one load-bearing claim with objections pre-closed.
+    </div>
   </div>
 </section>
 
@@ -954,6 +1173,21 @@ Then give the final answer.
   </div>
 </section>
 
+
+    <details class="appendix">
+      <summary>Open methodological questions (hostile-reviewer list)</summary>
+      <div class="content">
+        <p>Central claim is still behavioural-only; the open-weight mechanistic pilot contrasts canonical vs W6, while the headline is W3 — fix in causal patching (D2).</p>
+        <p>Convergence-label thresholds swing strong-label rate widely; labels are a design choice until externally calibrated (D1-lite AUC gate ≥ .75).</p>
+        <p>Infini-gram over public corpora is not any tested model’s training data; OLMo+Dolma makes exposure ecological.</p>
+        <p>WIS universal W3 collapse confounds exposure with difficulty until a difficulty-matched WIS bank (HP-05).</p>
+      </div>
+    </details>
+    <details class="appendix">
+      <summary>Claims the programme exists to establish</summary>
+      <div class="content" id="claims-appendix"></div>
+    </details>
+
 <!-- 13 FOOTER -->
 <section class="panel" id="footer" data-rail="Links">
   <div class="inner reveal">
@@ -965,6 +1199,8 @@ Then give the final answer.
       <a id="contact-foot" href="#">Contact</a>
     </div>
     <p class="caption" style="margin-top:2rem">RvC programme · Arrow keys move section to section · Numbers hover for n, CI, source.</p>
+    <p class="finding-note"><strong>Consequence.</strong> “Model X is rename-fragile” is not well-formed without a family index. Which transform is hardest is a property of the task family (Kendall W significant within family; not across families within a model). Outside obfuscated planning there is essentially no universally fragile item.</p>
+
   </div>
 </section>
 </main>
@@ -1719,6 +1955,134 @@ const DATA = {
       "criterion": "Refute if invariance and accuracy move together at every checkpoint.",
       "result": null
     }
+  ],
+  "motivation": {
+    "claims": [
+      {
+        "id": "CC-1",
+        "text": "Accuracy and surface-invariance are dissociable capabilities with different causal antecedents."
+      },
+      {
+        "id": "CC-2",
+        "text": "Models cannot reliably report whether an answer came from memory (source monitoring)."
+      },
+      {
+        "id": "CC-3",
+        "text": "Invariance emerges after accuracy in training, with measurable lag."
+      },
+      {
+        "id": "CC-4",
+        "text": "There is a compositional depth beyond which retrieval cannot substitute for computation."
+      },
+      {
+        "id": "AC-1",
+        "text": "Strategy is architectural: pathway occupancy predicts robustness; fragility is pathway bypass."
+      },
+      {
+        "id": "AC-3",
+        "text": "Exposure diversity \u2014 not dose \u2014 drives invariance by forcing abstraction-head formation."
+      }
+    ]
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "status": "untested",
+      "text": "Convergence labels track actual training exposure.",
+      "needs": "D1 controlled-exposure validation"
+    },
+    {
+      "id": "H2",
+      "status": "correlational",
+      "text": "W3 collapse is mediated by a persistent canonical binding representation.",
+      "needs": "D2 causal patching (canonical\u2194W3)"
+    },
+    {
+      "id": "H3",
+      "status": "open",
+      "text": "Fragility decays with surface distance as a family-consistent dose\u2013response curve.",
+      "needs": "D3 graded rename ladders"
+    },
+    {
+      "id": "H4",
+      "status": "planned",
+      "text": "Surface-invariant reasoning emerges late and tracks accumulated template exposure.",
+      "needs": "D4 OLMo checkpoint sweep"
+    },
+    {
+      "id": "H5",
+      "status": "open",
+      "text": "Injected-state recovery reflects an answer direction fixed before the injection point.",
+      "needs": "D2 injection-step patching"
+    },
+    {
+      "id": "H6",
+      "status": "pilot",
+      "text": "Strategy equals symbolic-pathway occupancy (abstraction\u2192induction\u2192retrieval).",
+      "needs": "HP-15 pathway occupancy"
+    },
+    {
+      "id": "H7",
+      "status": "designed",
+      "text": "Surface diversity forces abstraction-head formation (variety-not-volume).",
+      "needs": "DS-04 training arms"
+    }
+  ],
+  "phases": [
+    {
+      "id": "P0",
+      "title": "Foundations",
+      "when": "Weeks 1\u20132",
+      "cost": "~$20\u201380",
+      "do": "Intrusion-error analysis; mixture-IRT strategy classes; threshold prereg + MTMM; mechanistic provenance ledger; GSM gap-fill.",
+      "produces": "Intrusion-rate table, strategy posteriors, frozen thresholds, clean denominators.",
+      "gate": "G0: all Phase-0 validation checks pass; strategy_posteriors.csv exists; prereg committed. Fail \u2192 fix before any Tier-1 spend."
+    },
+    {
+      "id": "P1",
+      "title": "Calibration + mechanism flagship",
+      "when": "Weeks 3\u20138",
+      "cost": "~$120\u2013400 \u00b7 1\u00d7 A100",
+      "do": "D1-lite LoRA seen/unseen + source-monitoring questions; D2 residual-stream patching on Llama canonical\u2194W3; Commitment Depth; matched WIS bank.",
+      "produces": "Label calibration AUC; H2/H5 interventional verdicts; Paper I draft (instrument).",
+      "gate": "G1: D1-lite AUC \u2265 .75 \u2192 freeze thresholds v2. .60\u2013.75 \u2192 revise indicators once. < .60 \u2192 pivot to mechanism-first framing."
+    },
+    {
+      "id": "P2",
+      "title": "Architecture claim",
+      "when": "Weeks 9\u201314",
+      "cost": "~$100\u2013400",
+      "do": "Pathway-occupancy pilot (H6/AC-1); if supported, steering / band-constrained repair (AC-2); RSA representational invariance.",
+      "produces": "Paper II draft (mechanism / architecture).",
+      "gate": "G2: H6 verdict. Supported \u2192 AC-2. Mixed \u2192 report transfer failure as the finding."
+    },
+    {
+      "id": "P3",
+      "title": "Laws",
+      "when": "Weeks 15\u201322",
+      "cost": "~$200\u2013700",
+      "do": "Distance ladders (H3); direction asymmetry; compositional stress (CC-4); exposure-variance training arms (H7/AC-3).",
+      "produces": "Paper III draft (behavioural + training laws).",
+      "gate": "G3: pre-registered functional forms fit or fail \u2014 either is publishable; H7 verdict."
+    },
+    {
+      "id": "P4",
+      "title": "Ecology & development",
+      "when": "Weeks 23\u201330",
+      "cost": "~$80\u2013250",
+      "do": "OLMo checkpoint sweep (H4, CC-3); variance decomposition; cross-model fragility structure.",
+      "produces": "Paper IV draft \u2014 ecology of fragility.",
+      "gate": "Ship when checkpoint retention curves and item-facet G coefficients are recoverable."
+    },
+    {
+      "id": "P5",
+      "title": "Year-2 summit",
+      "when": "After Papers I\u2013II",
+      "cost": "TBD",
+      "do": "Inverse inference (behaviour \u2192 training structure of closed models); adaptive instrument; deployment audit case study.",
+      "produces": "Applied audit suite once calibration intact.",
+      "gate": "Prerequisite: Papers I\u2013II accepted or arXived with calibration intact."
+    }
   ]
 };
 
@@ -2329,6 +2693,51 @@ function animateTrace(immediate) {
     el.appendChild(d);
   });
 })();
+
+
+/* ---------- Motivation claims ---------- */
+(function() {
+  const ul = document.getElementById('mission-claims');
+  if (!ul || !DATA.motivation) return;
+  DATA.motivation.claims.forEach(c => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="cid">${c.id}</span>${c.text}`;
+    ul.appendChild(li);
+  });
+  const ap = document.getElementById('claims-appendix');
+  if (ap) {
+    ap.innerHTML = DATA.motivation.claims.map(c => `<p><strong>${c.id}.</strong> ${c.text}</p>`).join('');
+  }
+})();
+
+/* ---------- Hypotheses + phases ---------- */
+(function() {
+  const hg = document.getElementById('hypotheses');
+  if (hg && DATA.hypotheses) {
+    DATA.hypotheses.forEach(h => {
+      const d = document.createElement('div');
+      d.className = 'hyp';
+      d.innerHTML = `<span class="status-tag">${h.status}</span><div class="hid">${h.id}</div><p style="margin:0.35rem 0 0;color:var(--ink);max-width:none">${h.text}</p><p style="margin:0.35rem 0 0;font-size:0.8rem;color:var(--muted);max-width:none">Needs: ${h.needs}</p>`;
+      hg.appendChild(d);
+    });
+  }
+  const pr = document.getElementById('phases');
+  if (pr && DATA.phases) {
+    DATA.phases.forEach((ph, i) => {
+      const d = document.createElement('div');
+      d.className = 'phase' + (i === 0 ? ' open' : '');
+      d.innerHTML = `<div class="phase-head"><h3>${ph.id} · ${ph.title}</h3><span class="meta">${ph.when} · ${ph.cost}</span></div>
+        <div class="body">
+          <p style="margin:0;max-width:none"><strong>Do.</strong> ${ph.do}</p>
+          <p style="margin:0.45rem 0 0;max-width:none"><strong>Produces.</strong> ${ph.produces}</p>
+          <div class="gate"><strong>Gate.</strong> ${ph.gate}</div>
+        </div>`;
+      d.addEventListener('click', () => d.classList.toggle('open'));
+      pr.appendChild(d);
+    });
+  }
+})();
+
 
 /* draw charts that are already in view on load */
 requestAnimationFrame(() => {
