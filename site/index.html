@@ -8,7 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js">
+/* reveal fallback: if IO never fires, show everything */
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+}, 800);
+</script>
 <style>
 :root {
   --ink: #0A0A0B;
@@ -233,8 +238,8 @@ html.js .reveal.in{opacity:1;transform:none}
   <svg id="lattice" aria-hidden="true"></svg>
   <div class="inner reveal">
     <p class="kicker">Retrieval vs computation · research programme</p>
-    <h1 id="headline"></h1>
-    <p class="hero-mission" id="mission"></p>
+    <h1 id="headline">A measurement science for how language models solve problems.</h1>
+    <p class="hero-mission" id="mission">Build the first validated, per-instance measurement science for how LLMs solve problems (retrieval vs computation), then use it to establish capability claims, an architecture claim, and training-data laws.</p>
     <div class="epistemic">
       <p>A correct answer is consistent with executing a procedure or with matching a seen pattern. Accuracy cannot separate them.</p>
       <p>Group-level perturbation studies report that accuracy drops. They do not tell you, for a given instance, which process produced the answer.</p>
@@ -271,7 +276,7 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<section class="panel" id="catalog" data-rail="Strategy catalogue">
+<section class="panel" id="strategy" data-rail="Strategy catalogue">
   <div class="inner reveal">
     <p class="kicker">Strategy catalogue</p>
     <h2>Inference machinery, not questionnaires.</h2>
@@ -291,7 +296,7 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<section class="panel" id="questions" data-rail="Research questions">
+<section class="panel" id="research-questions" data-rail="Research questions">
   <div class="inner reveal">
     <p class="kicker">Research questions</p>
     <h2>Five questions. Each tagged to a phase and a claim.</h2>
@@ -1617,14 +1622,13 @@ const DATA = {
 const GH = DATA.meta.github;
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-['gh-top','gh-foot'].forEach(id => { const el=document.getElementById(id); if(el) el.href=GH; });
-['pdf-top','pdf-foot'].forEach(id => { const el=document.getElementById(id); if(el) el.href=DATA.meta.paper; });
-['vault-top','vault-foot'].forEach(id => { const el=document.getElementById(id); if(el) el.href=DATA.meta.vault; });
-['plan-top','plan-foot'].forEach(id => { const el=document.getElementById(id); if(el) el.href=DATA.meta.plan; });
-document.getElementById('book-foot').href = DATA.meta.book;
-document.getElementById('contact-foot').href = DATA.meta.contact;
-document.getElementById('headline').textContent = DATA.meta.headline;
-document.getElementById('mission').textContent = DATA.meta.mission;
+const setHref = (id, href) => { const el=document.getElementById(id); if(el && href) el.href=href; };
+['gh-top','gh-foot'].forEach(id => setHref(id, GH));
+['pdf-top','pdf-foot'].forEach(id => setHref(id, DATA.meta.paper));
+['vault-top','vault-foot'].forEach(id => setHref(id, DATA.meta.vault));
+['plan-top','plan-foot'].forEach(id => setHref(id, DATA.meta.plan));
+setHref('book-foot', DATA.meta.book);
+setHref('contact-foot', DATA.meta.contact);
 
 /* rail */
 const sections = [...document.querySelectorAll('section.panel')];
@@ -1802,3 +1806,9 @@ DATA.next.forEach(n => {
       return `<rect x="${x}" y="18" width="110" height="52" fill="var(--paper)" stroke="currentColor" stroke-opacity=".25"/><text x="${+x+55}" y="42" text-anchor="middle" font-size="10" fill="currentColor">${a}</text><text x="${+x+55}" y="56" text-anchor="middle" font-size="10" fill="currentColor">${b}</text>${line}`;
     }).join('')+'</svg>';
 })();
+
+/* reveal fallback: if IO never fires, show everything */
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+}, 800);
+</script>
