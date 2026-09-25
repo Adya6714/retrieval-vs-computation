@@ -84,6 +84,65 @@ html.js .reveal.in{opacity:1;transform:none}
 .epistemic p{margin:0;font-size:.95rem;color:var(--muted);padding-left:.9rem;border-left:2px solid var(--rule)}
 .hero-meta{margin-top:2.2rem;display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
 .hero-meta a{color:var(--accent)}
+.pubs{margin-top:2.25rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
+.pubs-kicker{margin:0 0 .85rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--sans);font-weight:500}
+.pubs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.65rem}
+.pub-card{border:1px solid var(--rule);background:var(--tint);padding:.85rem .95rem}
+.pub-card a{color:inherit;text-decoration:none}
+.pub-card a:hover .pub-title{color:var(--accent)}
+.pub-card .pub-status{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem}
+.pub-card .pub-status.published{color:var(--teal)}
+.pub-card .pub-status.in_preparation{color:var(--accent)}
+.pub-card .pub-status.planned{color:var(--muted)}
+.pub-card .pub-title{font-family:var(--serif);font-size:1.02rem;margin:0 0 .25rem;line-height:1.25}
+.pub-card .pub-venue{font-size:.78rem;color:var(--muted);margin:0 0 .4rem}
+.pub-card .pub-note{font-size:.78rem;color:var(--muted);margin:0;max-width:none}
+.who-panel{margin-top:2.35rem;border:1px solid var(--rule);background:var(--tint);overflow:hidden}
+.who-panel .who-head{padding:1rem 1.15rem .85rem;border-bottom:1px solid var(--rule);background:var(--paper)}
+.who-panel .who-head h3{margin:0 0 .3rem;font-size:1.05rem;font-family:var(--serif);font-weight:500}
+.who-panel .who-head p{margin:0;font-size:.88rem;color:var(--muted);max-width:58ch}
+.who-nav{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.who-nav button{appearance:none;border:0;border-right:1px solid var(--rule);background:transparent;color:var(--muted);font:inherit;font-size:.82rem;padding:.75rem 1rem;cursor:pointer;text-align:left}
+.who-nav button:last-child{border-right:0}
+.who-nav button:hover{color:var(--ink)}
+.who-nav button.active{color:var(--ink);background:var(--tint);box-shadow:inset 0 -2px 0 var(--accent)}
+.who-nav button .wn-k{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.12rem}
+.who-body{display:grid;grid-template-columns:1.15fr .85fr;gap:0;min-height:12rem}
+@media(max-width:800px){.who-body{grid-template-columns:1fr}}
+.who-main{padding:1.15rem 1.25rem}
+.who-main h4{margin:0 0 .45rem;font-size:1.15rem;font-family:var(--serif);font-weight:500}
+.who-main .who-fail{margin:0 0 .85rem;font-size:.92rem;color:var(--muted);max-width:52ch}
+.who-main .who-do{margin:0;font-size:.9rem;color:var(--ink);max-width:52ch}
+.who-main .who-do strong{color:var(--accent);font-weight:560}
+.who-side{padding:1.15rem 1.15rem;border-left:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;gap:.65rem}
+@media(max-width:800px){.who-side{border-left:0;border-top:1px solid var(--rule)}}
+.who-chip{border:1px solid var(--rule);background:var(--tint);padding:.65rem .75rem}
+.who-chip .wc-k{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.who-chip .wc-v{font-size:.88rem;color:var(--ink);margin:0;max-width:none}
+.who-chip a{color:var(--accent);text-decoration:none;font-size:.78rem}
+.who-chip a:hover{text-decoration:underline}
+.reproduce{margin-top:.85rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.78rem;color:var(--muted)}
+.reproduce span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.reproduce code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;background:var(--tint2);border:1px solid var(--rule);padding:.2rem .45rem;color:var(--ink)}
+.cov-legend{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0 .75rem;font-size:.78rem;color:var(--muted)}
+.cov-legend i{display:inline-block;width:.7rem;height:.7rem;border:1px solid var(--rule);margin-right:.35rem;vertical-align:-1px}
+.cov-legend .cov-filled{background:var(--teal)}
+.cov-legend .cov-partial{background:var(--amber)}
+.cov-legend .cov-empty{background:var(--tint2)}
+.cov-wrap{overflow-x:auto;border:1px solid var(--rule);background:var(--tint)}
+.cov-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.cov-table th,.cov-table td{border:1px solid var(--rule);padding:.4rem .45rem;text-align:center}
+.cov-table th{color:var(--muted);font-weight:500;background:var(--paper)}
+.cov-table th.row-h{text-align:left;color:var(--ink)}
+.cov-table td.filled{background:rgba(15,118,110,.35);color:var(--ink)}
+.cov-table td.partial{background:var(--amber-soft);color:var(--ink)}
+.cov-table td.empty{background:var(--tint2);color:var(--muted)}
+.f7-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:1.15rem}
+@media(max-width:800px){.f7-grid{grid-template-columns:1fr}}
+.phase-results{margin:.65rem 0 0;padding:.65rem .75rem;border:1px solid var(--rule);background:var(--paper);display:grid;gap:.45rem}
+.phase-results div{display:grid;gap:.15rem}
+.phase-results dt{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0}
+.phase-results dd{margin:0;font-size:.8rem;color:var(--muted);max-width:none}
 .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.25rem 0 1rem}
 .tab,.chip{appearance:none;border:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:.85rem;padding:.45rem .85rem;cursor:pointer;border-radius:2px;transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
 .tab:hover,.chip:hover{border-color:var(--accent);color:var(--accent)}
@@ -398,10 +457,35 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <div class="hero-meta">
       <span>Four papers · five phases · 110+ vault notes</span>
-      <a id="gh-top" href="#" target="_blank" rel="noopener">GitHub</a>
-      <a id="pdf-top" href="#" target="_blank" rel="noopener">Paper PDF</a>
-      <a id="vault-top" href="#" target="_blank" rel="noopener">Research vault</a>
-      <a id="plan-top" href="#" target="_blank" rel="noopener">THE_PLAN</a>
+      <a id="gh-top" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">GitHub</a>
+      <a id="pdf-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper PDF</a>
+      <a id="vault-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RVC_MASTER_DOCUMENT.md" target="_blank" rel="noopener">Research vault</a>
+      <a id="plan-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md" target="_blank" rel="noopener">THE_PLAN</a>
+      <a id="book-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md" target="_blank" rel="noopener">BOOK.md</a>
+      <a id="issues-top" href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Issues</a>
+    </div>
+    <div class="pubs" id="pubs" aria-label="Publications">
+      <h3 class="pubs-kicker">Publications</h3>
+      <div class="pubs-grid" id="pubs-grid"></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="who" data-rail="Who this helps">
+  <div class="inner reveal">
+    <p class="kicker">Why it matters outside the paper</p>
+    <h2>Same benchmark score. Different process. Different deployment failure.</h2>
+    <p class="lede">Click a role. Each panel names the decision you make today, what this instrument would catch, and which finding proves the gap.</p>
+    <div class="who-panel" id="who-panel">
+      <div class="who-nav" id="who-nav" role="tablist" aria-label="Application audiences"></div>
+      <div class="who-body">
+        <div class="who-main">
+          <h4 id="who-title"></h4>
+          <p class="who-fail" id="who-fail"></p>
+          <p class="who-do" id="who-do"></p>
+        </div>
+        <aside class="who-side" id="who-side" aria-live="polite"></aside>
+      </div>
     </div>
   </div>
 </section>
@@ -622,6 +706,21 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
+<section class="panel" id="coverage" data-rail="Coverage">
+  <div class="inner reveal">
+    <p class="kicker">Execution coverage</p>
+    <h2>How much of the bank × probe grid has actually been run.</h2>
+    <p class="lede">Cells from <code>results/derived/COVERAGE_MASTER.csv</code>. Filled ≥85% of attempted cells included; partial = some included; empty = not run or zero included. P3 is corpus-level (shared across models).</p>
+    <div class="cov-legend" aria-hidden="true">
+      <span><i class="cov-filled"></i>filled</span>
+      <span><i class="cov-partial"></i>partial</span>
+      <span><i class="cov-empty"></i>empty</span>
+    </div>
+    <div class="cov-wrap" id="cov-matrix"></div>
+    <p class="caption">Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/COVERAGE_MASTER.csv" target="_blank" rel="noopener">COVERAGE_MASTER.csv</a>. Primary five models × GSM / BW / ALGO × P1–P3.</p>
+  </div>
+</section>
+
 <section class="panel" id="experiments" data-rail="Experiments">
   <div class="inner reveal">
     <p class="kicker">Experiments executed</p>
@@ -638,6 +737,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <h2>Numeric vs lexical robustness dissociate.</h2>
     <div class="chart-wrap" id="slope-chart"></div>
     <p class="caption">Canonical → W6 → W3 on arithmetic. W6 stays flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code></p>
     <div class="finding-depth" data-finding="f1"></div>
   </div>
 </section>
@@ -649,7 +749,8 @@ html.js .reveal.in{opacity:1;transform:none}
     <p class="lede">W4 leaves entity names intact and changes register. o4-mini loses 16 points under W4 alone.</p>
     <div class="tabs" id="f2-tabs"><button class="tab active" data-fam="gsm">Arithmetic</button><button class="tab" data-fam="bw">Planning</button></div>
     <div class="small-multiples" id="pc-charts"></div>
-    <p class="caption">W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="caption">W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. o4-mini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841 → .682</span>. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code></p>
     <div class="finding-depth" data-finding="f2"></div>
   </div>
 </section>
@@ -674,6 +775,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <p class="caption">Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span>; Gemini .391 → .764; o4-mini .781 → .909.</p>
       </div>
     </div>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/consolidate/p1_variant_ordering.py</code></p>
     <div class="finding-depth" data-finding="f3"></div>
   </div>
 </section>
@@ -682,11 +784,13 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Finding 4</p>
     <h2>Fragility is a model–item interaction.</h2>
+    <p class="lede">Shared-hard (fail all five primary models): Optimisation <strong class="num" data-n="110" data-src="P1_failure_patterns.csv">0/110</strong> · Arithmetic <strong class="num" data-n="20" data-src="P1_failure_patterns.csv">0/20</strong> · Planning <strong class="num" data-n="64" data-src="P1_failure_patterns.csv">14/64</strong> (all obfuscated).</p>
     <div class="tri">
       <div class="panel-box"><h3>Shared-hard</h3><ul class="hard-list" id="shared-hard"></ul><p class="caption" style="margin-top:.65rem">Fail all five primary models.</p></div>
       <div class="panel-box"><h3>φ heatmap · can ↔ W3</h3><div id="phi-heat"></div><p class="caption"><a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P1_phi_canonical_w3.csv" target="_blank" rel="noopener">P1_phi_canonical_w3.csv</a></p></div>
       <div class="panel-box"><h3>Kendall W</h3><div id="kendall"></div><p class="caption">Within-family vs across-family. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C7_concordance_filtered.csv" target="_blank" rel="noopener">C7</a></p></div>
     </div>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/consolidate/p1_failure_patterns.py && python scripts/consolidate/p1_variant_ordering.py</code></p>
     <div class="finding-depth" data-finding="f4"></div>
   </div>
 </section>
@@ -695,10 +799,12 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Finding 5</p>
     <h2>Robustness is a capacity distinct from accuracy.</h2>
+    <p class="lede">Pooled CCI × W3 retention: <strong>r = .243</strong> <span class="num" data-n="272" data-src="P2_P1_convergence.csv">[.027, .414]</span>, <strong>p = .024</strong>, <strong>n = 272</strong>. Per-family both null. Acc vs retention ρ=.136 (p=.642).</p>
     <div class="tabs" id="scope-toggle"><button class="chip" data-scope="family">Per-family (both null)</button><button class="chip active" data-scope="pooled">Pooled (significant)</button></div>
     <div class="chart-wrap" id="scatter-chart"></div>
     <div class="fit-stat sig" id="fit-stat"></div>
     <p class="caption">Acc vs retention ρ=<span class="num" data-n="14" data-src="P1_construct_validity.csv">.136</span> (p=.642); Acc vs φ −.426 (p=.146). <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P2_P1_convergence.csv" target="_blank" rel="noopener">P2_P1_convergence.csv</a>.</p>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code> → <code>P2_P1_convergence.csv</code></p>
     <div class="finding-depth" data-finding="f5"></div>
   </div>
 </section>
@@ -714,7 +820,37 @@ html.js .reveal.in{opacity:1;transform:none}
         <p class="caption" style="margin-top:1rem">n=61. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/injection_recovery_summary.csv" target="_blank" rel="noopener">injection_recovery_summary.csv</a>.</p>
       </div>
     </div>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code> · injection logs in <code>results/raw/ALGO_P2_phase2_injected.csv</code></p>
     <div class="finding-depth" data-finding="f6"></div>
+  </div>
+</section>
+
+<section class="panel" id="f7" data-rail="F7 Psychometric structure">
+  <div class="inner reveal">
+    <p class="kicker">Finding 7 · Phase 0 foundations</p>
+    <h2>Psychometric structure differs by family — and arithmetic alone shows separable competencies.</h2>
+    <p class="lede">Executed Phase 0 results: variance-facet inversion, K=1 mixture, o4-mini intrusion signature, and arithmetic-only dissociation crossovers.</p>
+    <div class="f7-grid">
+      <div class="panel-box">
+        <h3>Variance facets (O10)</h3>
+        <p>ALGO: model <strong>.327</strong> vs item <strong>.018</strong> (G<sub>item</sub>=.415). GSM: item <strong>.186</strong>, model <strong>.009</strong> (G<sub>item</sub>=.680). Facet loading inverts by family.</p>
+      </div>
+      <div class="panel-box">
+        <h3>Mixture-IRT</h3>
+        <p>On arithmetic, BIC selects <strong>K=1</strong> over K∈{1..4}. No discrete strategy subpopulations at this sample size. ALGO/BW fall below the item-variance threshold for identifiable mixtures.</p>
+      </div>
+      <div class="panel-box">
+        <h3>Intrusion signature</h3>
+        <p>o4-mini ALGO W3 intrusion <strong>.619</strong> (13/21). Other models ≤ <strong>.25</strong>. BW intrusion rate 0 across models.</p>
+      </div>
+      <div class="panel-box">
+        <h3>Dissociation crossovers</h3>
+        <p>Arithmetic: <strong>20</strong> reliable model–item crossovers vs null <strong>0.57</strong> (p=.001). Optimisation and planning at or below chance.</p>
+      </div>
+    </div>
+    <p class="caption">Sources: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/O10_variance_components.csv" target="_blank" rel="noopener">O10_variance_components.csv</a>, <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/strategy_posteriors.csv" target="_blank" rel="noopener">strategy_posteriors.csv</a>, <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C1_intrusion_rates.csv" target="_blank" rel="noopener">C1_intrusion_rates.csv</a>, paper Table C8.</p>
+    <p class="reproduce"><span>Reproduce</span><code>python scripts/consolidate/c1_intrusion_error_analysis.py</code> · O10 / mixture scripts under <code>scripts/</code></p>
+    <div class="finding-depth" data-finding="f7"></div>
   </div>
 </section>
 
@@ -732,12 +868,12 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="inner reveal">
     <h2>Continue in the vault.</h2>
     <div class="footer-links">
-      <a id="gh-foot" href="#" target="_blank" rel="noopener">GitHub</a>
-      <a id="pdf-foot" href="#" target="_blank" rel="noopener">Paper PDF</a>
-      <a id="book-foot" href="#" target="_blank" rel="noopener">BOOK.md</a>
-      <a id="vault-foot" href="#" target="_blank" rel="noopener">Research vault</a>
-      <a id="plan-foot" href="#" target="_blank" rel="noopener">THE_PLAN</a>
-      <a id="contact-foot" href="#">Issues</a>
+      <a id="gh-foot" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">GitHub</a>
+      <a id="pdf-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper PDF</a>
+      <a id="book-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md" target="_blank" rel="noopener">BOOK.md</a>
+      <a id="vault-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RVC_MASTER_DOCUMENT.md" target="_blank" rel="noopener">Research vault</a>
+      <a id="plan-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md" target="_blank" rel="noopener">THE_PLAN</a>
+      <a id="contact-foot" href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Issues</a>
     </div>
     <p class="caption" style="margin-top:2rem">Sources: 00_MOC · THE_PLAN · RVC_MASTER_DOCUMENT · 01_Program_State · 02_Decision_Memo. Arrow keys move section to section.</p>
   </div>
@@ -754,10 +890,105 @@ const DATA = {
     "github": "https://github.com/Adya6714/retrieval-vs-computation",
     "paper": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf",
     "book": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md",
-    "vault": "https://github.com/Adya6714/retrieval-vs-computation/tree/main/research-vault/RvC-Vault",
-    "plan": "https://github.com/Adya6714/retrieval-vs-computation/tree/main/research-vault/RvC-Vault/THE_PLAN.md",
-    "contact": "https://github.com/Adya6714/retrieval-vs-computation/issues"
+    "vault": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RVC_MASTER_DOCUMENT.md",
+    "plan": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md",
+    "contact": "https://github.com/Adya6714/retrieval-vs-computation/issues",
+    "caisc": "https://openreview.net/forum?id=d8w4gMVQ1w"
   },
+  "publications": [
+    {
+      "title": "Same Score, Different Strategy",
+      "venue": "CAISc 2026",
+      "status": "published",
+      "note": "Accepted predecessor. The behavioural instrument on this site has grown since that acceptance.",
+      "href": "https://openreview.net/forum?id=d8w4gMVQ1w"
+    },
+    {
+      "title": "Paper I — behavioural layer",
+      "venue": "Workshop target",
+      "status": "in preparation",
+      "note": "Ships the validated instrument (Phase 0–1).",
+      "href": null
+    },
+    {
+      "title": "Paper II — mechanism / architecture",
+      "venue": "Planned",
+      "status": "planned",
+      "note": "Phase 2 · Gate G2 · AC-1 / AC-2.",
+      "href": null
+    },
+    {
+      "title": "Paper III — behavioural + training laws",
+      "venue": "Planned",
+      "status": "planned",
+      "note": "Phase 3 · Gate G3 · H3 / H7 / AC-3.",
+      "href": null
+    },
+    {
+      "title": "Paper IV — ecology of fragility",
+      "venue": "Planned",
+      "status": "planned",
+      "note": "Phase 4 · developmental checkpoints · CC-3 / H4.",
+      "href": null
+    }
+  ],
+  "who": [
+    {
+      "id": "kernels",
+      "label": "Inference kernels",
+      "title": "Serving & inference kernels",
+      "fail": "You ship a faster kernel, speculative decode path, or continuous batching change. Aggregate accuracy holds. Under rename or inverted planning, the surviving procedure collapses — and you never see it on the standard eval suite.",
+      "do": "<strong>Use the instrument as a regression gate:</strong> before promoting a kernel, require that R<sub>W3</sub> and CCI stay within a pre-registered band of the baseline checkpoint — not just Acc<sub>can</sub>.",
+      "evidence": "Gemini GSM Acc stays flat under W6 (.909→.958) but falls under W3 (.523).",
+      "link": "#f1",
+      "linkLabel": "Finding 1 · numeric vs lexical",
+      "action": "Gate: Δ Acc_can ≤ ε is not enough; also gate Δ R_W3 and mean CCI."
+    },
+    {
+      "id": "quant",
+      "label": "Quantisation",
+      "title": "Quantisation & compression",
+      "fail": "INT8 / GPTQ / AWQ can match FP16 on the leaderboard while changing which surface the model keys on. The score you optimise for is blind to that shift.",
+      "do": "<strong>Treat robustness as a second axis of the acceptance test.</strong> Same Acc with collapsed rename survival or injection-compliance change is a silent regression.",
+      "evidence": "o4-mini loses 16 points under formal notation alone (.841→.682) with entity names intact.",
+      "link": "#f2",
+      "linkLabel": "Finding 2 · formal notation",
+      "action": "Acceptance suite: Acc_can + R_W3 + W4 Acc + injection acceptance rate."
+    },
+    {
+      "id": "arch",
+      "label": "Layer architecture",
+      "title": "Layer architecture & heads",
+      "fail": "You edit attention / MLP bands or steer heads for latency. Behavioural accuracy looks fine; the pathway that carried surface-invariant solving may have been the thing you pruned.",
+      "do": "<strong>Pair architecture edits with can↔W3 contrasts</strong> (and, when open-weight allows, pathway occupancy). Installation claims only fire after Gate G2.",
+      "evidence": "Programme AC-1: strategy as symbolic-pathway occupancy; Phase 2 is built to test whether fragility is pathway bypass.",
+      "link": "#programme",
+      "linkLabel": "Programme · AC-1 / Phase 2",
+      "action": "Before merge: within-model correlation of head occupancy with W3 survival on the fragile set."
+    },
+    {
+      "id": "train",
+      "label": "Training",
+      "title": "Training mix & data law",
+      "fail": "More of the same template (dose) looks like progress on Acc. Diversity of surfaces is what the programme bets forces abstraction — and that is a different mixture decision.",
+      "do": "<strong>Curate for surface diversity under fixed dose</strong> when the goal is invariance, not just accuracy. Track R_W3 across checkpoints, not Acc alone.",
+      "evidence": "AC-3 / H7: diversity vs dose arms; F7 shows ALGO variance is model-heavy while GSM is item-heavy — families need different designs.",
+      "link": "#f7",
+      "linkLabel": "Finding 7 · psychometric structure",
+      "action": "Training dashboard: Acc_can, R_W3, and facet loadings by family."
+    },
+    {
+      "id": "prompt",
+      "label": "Prompting",
+      "title": "Prompting & chain-of-thought",
+      "fail": "You trust the visible reasoning trace as an explanation of the answer. Injection shows models can adopt a false intermediate and still finish near baseline — compliance ≠ computation.",
+      "do": "<strong>Do not treat CoT as a faithful audit log.</strong> If you use traces for routing, tool calls, or user-facing explanations, measure injection acceptance and recovery first.",
+      "evidence": "o4-mini accepts 100% of ALGO false-state injections (n=61) with post-injection Acc near uninjected baseline.",
+      "link": "#f6",
+      "linkLabel": "Finding 6 · compliance vs correctness",
+      "action": "Prompt / agent eval: Acc + injection acceptance + post-injection Acc delta."
+    }
+  ],
   "bank": {
     "arithmetic": {
       "id": "GSM_041",
@@ -1613,7 +1844,13 @@ const DATA = {
       "needs": "Existing raw logs; derived recompute scripts.",
       "gate": "G0: validation checks passed; strategy_posteriors.csv exists; prereg committed.",
       "ships": null,
-      "results": "Intrusion-rate table (o4-mini ALGO W3 intrusion .619); fitted strategy classes; frozen thresholds; clean denominators; MTMM matrix.",
+      "results": "Intrusion-rate table (o4-mini ALGO W3 intrusion .619 vs ≤.25 for others); mixture-IRT BIC selects K=1 on GSM; variance decomp ALGO model .327 vs item .018, GSM item .186 with G_item=.680; frozen thresholds + clean denominators + MTMM matrix.",
+      "results_detail": [
+        {"k": "Intrusion (C1)", "v": "o4-mini ALGO W3 .619 (13/21); other models ≤ .25; BW rate 0"},
+        {"k": "Mixture-IRT (DS-01)", "v": "GSM BIC selects K=1 over K∈{1..4}; ALGO/BW below item-variance threshold"},
+        {"k": "Variance facets (O10)", "v": "ALGO: model .327 vs item .018 (G_item=.415). GSM: item .186, model .009 (G_item=.680)"},
+        {"k": "Frozen", "v": "Thresholds, clean denominators, MTMM matrix, strategy_posteriors.csv"}
+      ],
       "advances": ["CC-1", "DS-01", "DS-02"]
     },
     {
@@ -2066,7 +2303,35 @@ const DATA = {
       "design": "Mid-solve injection of a plausible false state; score acceptance and final-answer recovery against uninjected baseline.",
       "reads": "Models adopt the false premise, carry it in the trace, and still finish near baseline — the trace is not the computation.",
       "rules": "Monitoring schemes that treat intermediate steps as faithful records of answer formation."
+    },
+    "f7": {
+      "design": "Crossed variance decomposition (O10); mixture-Rasch BIC over K∈{1..4}; C1 intrusion among W3 errors; C8 dissociation crossovers vs additive null.",
+      "reads": "Optimisation variance lives on models; arithmetic variance lives on items. Only arithmetic yields above-chance cross-model dissociations. o4-mini’s rename errors uniquely recycle canonical tokens.",
+      "rules": "Treating all three families as interchangeable for psychometric design; reading K=1 as “no strategies exist” rather than “not recoverable at this n.”"
     }
+  },
+  "coverage": {
+    "source": "results/derived/COVERAGE_MASTER.csv",
+    "models": ["Claude", "GPT-4o", "Gemini", "Llama", "o4-mini"],
+    "cols": [
+      {"id": "GSM·P1", "family": "GSM", "probe": "P1"},
+      {"id": "GSM·P2", "family": "GSM", "probe": "P2"},
+      {"id": "GSM·P3", "family": "GSM", "probe": "P3"},
+      {"id": "BW·P1", "family": "BW", "probe": "P1"},
+      {"id": "BW·P2", "family": "BW", "probe": "P2"},
+      {"id": "BW·P3", "family": "BW", "probe": "P3"},
+      {"id": "ALGO·P1", "family": "ALGO", "probe": "P1"},
+      {"id": "ALGO·P2", "family": "ALGO", "probe": "P2"},
+      {"id": "ALGO·P3", "family": "ALGO", "probe": "P3"}
+    ],
+    "cells": {
+      "Claude": {"GSM·P1":"filled","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"partial","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"partial","ALGO·P3":"filled"},
+      "GPT-4o": {"GSM·P1":"partial","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"partial","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"filled","ALGO·P3":"filled"},
+      "Gemini": {"GSM·P1":"filled","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"empty","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"partial","ALGO·P3":"filled"},
+      "Llama": {"GSM·P1":"partial","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"partial","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"partial","ALGO·P3":"filled"},
+      "o4-mini": {"GSM·P1":"filled","GSM·P2":"empty","GSM·P3":"filled","BW·P1":"filled","BW·P2":"empty","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"empty","ALGO·P3":"filled"}
+    },
+    "note": "P3 marked filled when family-level Infini-gram proximity exists (corpus shared across models)."
   },
   "next": [
     {
@@ -2188,8 +2453,81 @@ const setHref = (id, href) => { const el=document.getElementById(id); if(el && h
 ['pdf-top','pdf-foot'].forEach(id => setHref(id, DATA.meta.paper));
 ['vault-top','vault-foot'].forEach(id => setHref(id, DATA.meta.vault));
 ['plan-top','plan-foot'].forEach(id => setHref(id, DATA.meta.plan));
-setHref('book-foot', DATA.meta.book);
-setHref('contact-foot', DATA.meta.contact);
+['book-top','book-foot'].forEach(id => setHref(id, DATA.meta.book));
+['issues-top','contact-foot'].forEach(id => setHref(id, DATA.meta.contact));
+
+(function renderPubs(){
+  const grid = document.getElementById('pubs-grid');
+  if (!grid || !DATA.publications) return;
+  DATA.publications.forEach(p => {
+    const st = (p.status||'').replace(/\s+/g,'_');
+    const title = p.href
+      ? `<a href="${p.href}" target="_blank" rel="noopener"><div class="pub-title">${p.title}</div></a>`
+      : `<div class="pub-title">${p.title}</div>`;
+    const d = document.createElement('div');
+    d.className = 'pub-card';
+    d.innerHTML = `<div class="pub-status ${st}">${p.status}</div>${title}<p class="pub-venue">${p.venue}</p><p class="pub-note">${p.note}</p>`;
+    grid.appendChild(d);
+  });
+})();
+
+(function renderWho(){
+  const nav = document.getElementById('who-nav');
+  const title = document.getElementById('who-title');
+  const fail = document.getElementById('who-fail');
+  const doit = document.getElementById('who-do');
+  const side = document.getElementById('who-side');
+  if (!nav || !DATA.who || !DATA.who.length) return;
+
+  function show(id){
+    const w = DATA.who.find(x => x.id === id) || DATA.who[0];
+    nav.querySelectorAll('button').forEach(b => {
+      const on = b.dataset.id === w.id;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    title.textContent = w.title;
+    fail.textContent = w.fail;
+    doit.innerHTML = w.do;
+    side.innerHTML =
+      `<div class="who-chip"><div class="wc-k">Evidence on this site</div><p class="wc-v">${w.evidence}</p>` +
+      (w.link ? `<a href="${w.link}">${w.linkLabel || 'See finding'} →</a>` : '') +
+      `</div>` +
+      `<div class="who-chip"><div class="wc-k">Concrete action</div><p class="wc-v">${w.action}</p></div>`;
+  }
+
+  DATA.who.forEach((w, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.dataset.id = w.id;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.innerHTML = `<span class="wn-k">0${i + 1}</span>${w.label}`;
+    b.addEventListener('click', () => show(w.id));
+    nav.appendChild(b);
+  });
+  show(DATA.who[0].id);
+})();
+
+(function renderCoverage(){
+  const el = document.getElementById('cov-matrix');
+  if (!el || !DATA.coverage) return;
+  const {models, cols, cells} = DATA.coverage;
+  let html = '<table class="cov-table"><thead><tr><th></th>';
+  cols.forEach(c => { html += `<th>${c.id}</th>`; });
+  html += '</tr></thead><tbody>';
+  models.forEach(m => {
+    html += `<tr><th class="row-h">${m}</th>`;
+    cols.forEach(c => {
+      const st = (cells[m] && cells[m][c.id]) || 'empty';
+      const label = st === 'filled' ? '●' : (st === 'partial' ? '◐' : '○');
+      html += `<td class="${st}" title="${m} · ${c.id}: ${st}">${label}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+})();
 
 /* rail */
 const sections = [...document.querySelectorAll('section.panel')];
@@ -3271,6 +3609,7 @@ DATA.phases.forEach((ph,i) => {
       ${ph.ships?`<p style="margin:.4rem 0 0;max-width:none"><strong>Ships.</strong> ${ph.ships}</p>`:''}
       <div class="phase-advances">${ph.advances.map(a=>`<span>${a}</span>`).join('')}</div>
       ${ph.results?`<div class="result"><strong>Delivered.</strong> ${ph.results}</div>`:''}
+      ${ph.results_detail?`<dl class="phase-results">${ph.results_detail.map(r=>`<div><dt>${r.k}</dt><dd>${r.v}</dd></div>`).join('')}</dl>`:''}
     </div>`;
   d.onclick=()=>d.classList.toggle('open');
   document.getElementById('phase-track').appendChild(d);
