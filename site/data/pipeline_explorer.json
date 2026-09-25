@@ -1,0 +1,1236 @@
+{
+ "generated_by": "scripts/site/build_pipeline_explorer_data.py",
+ "sources": [
+  "data/problems/question_bank_*.csv",
+  "results/derived/*_P1_behavioral*_rescored.csv",
+  "results/raw/*_P3_contamination.csv",
+  "results/derived/ALGO_P2_per_instance_cci.csv"
+ ],
+ "phase_routing": [
+  {
+   "phase": "0",
+   "name": "Foundations",
+   "status": "complete",
+   "uses_item": "Probe 1-3 behavioural layer, intrusion errors, mixture IRT, G-theory.",
+   "claims": [
+    "CC-1"
+   ]
+  },
+  {
+   "phase": "1",
+   "name": "Calibration + mechanism",
+   "status": "blocked (GPU)",
+   "uses_item": "D1-lite seen/unseen LoRA: does this item's label track known exposure? Gate G1.",
+   "claims": [
+    "H1",
+    "CC-2",
+    "H5"
+   ]
+  },
+  {
+   "phase": "1T",
+   "name": "Open-weight T4 track (amendment A1)",
+   "status": "ready",
+   "uses_item": "Noise floor, precision sweep, base/Coder/Math and distillation contrasts on the same item.",
+   "claims": [
+    "H8",
+    "H9",
+    "H10",
+    "H11",
+    "H12",
+    "H13"
+   ]
+  },
+  {
+   "phase": "2",
+   "name": "Architecture claim",
+   "status": "designed",
+   "uses_item": "Symbolic-pathway occupancy on canonical vs W3; commitment depth. Gate G2.",
+   "claims": [
+    "AC-1",
+    "AC-2",
+    "H6"
+   ]
+  },
+  {
+   "phase": "3",
+   "name": "Laws",
+   "status": "designed",
+   "uses_item": "Distance ladders, direction, diversity-vs-dose training arms incl. RLVR. Gate G3.",
+   "claims": [
+    "H3",
+    "H7",
+    "H7b",
+    "AC-3"
+   ]
+  },
+  {
+   "phase": "4",
+   "name": "Ecology and development",
+   "status": "planned",
+   "uses_item": "OLMo checkpoint sweep: when does this item become rename-invariant?",
+   "claims": [
+    "CC-3",
+    "H4"
+   ]
+  }
+ ],
+ "items": [
+  {
+   "problem_id": "GSM_047",
+   "family": "GSM",
+   "subtype": "gsm_symbolic",
+   "difficulty": "hard",
+   "source": "gsm_symbolic:template_id=28",
+   "verifier_kind": "Numeric match against gold",
+   "variants": [
+    {
+     "variant": "canonical",
+     "meaning": "Original benchmark item.",
+     "text": "A clinic has a capacity of 1800 rooms with 1/4 occupied. Due to the natural disaster, 40 patients are admitted into the clinic each day. Calculate the total number of unoccupied rooms in the clinic after 3 weeks.",
+     "gold": "510.0",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W1",
+     "meaning": "Paraphrase. Same entities, same numbers, new wording.",
+     "text": "A medical clinic contains 1800 rooms total, with 1/4 currently filled with patients. Following a natural disaster, the clinic admits 40 new patients daily. Determine how many empty rooms remain in the clinic after 3 weeks have passed.",
+     "gold": "510.0",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W2",
+     "meaning": "Structural reformat (table, matrix, equation set).",
+     "text": "Given:\r\n- Total capacity of clinic: 1800 rooms\r\n- Fraction of rooms occupied initially: 1/4\r\n- Number of patients admitted each day: 40\r\n- Time period: 3 weeks\r\n\r\nFind: The total number of unoccupied rooms in the clinic after 3 weeks",
+     "gold": "510.0",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W3",
+     "meaning": "Cover-story isomorph: entities and framing moved to a new real-word domain (W3b). True nonce rename (W3a) is being added, see EF-07.",
+     "text": "A data center has a capacity of 1800 server units with 1/4 occupied. Due to the system upgrade, 40 data streams are admitted into the data center each day. Calculate the total number of unoccupied server units in the data center after 3 weeks.",
+     "gold": "510.0",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": {
+      "domain": "data center with server units",
+      "mapping": {
+       "clinic": "data center",
+       "rooms": "server units",
+       "patients": "data streams",
+       "natural disaster": "system upgrade"
+      }
+     },
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W4",
+     "meaning": "Formal notation (LaTeX, PDDL predicates, edge list).",
+     "text": "Variables:\r\n  n1 = 1800  # A clinic has a capacity of 1800 rooms with 1/4 occupied.\r\n  n2 = 1  # A clinic has a capacity of 1800 rooms with 1/4 occupied.\r\n  n3 = 4  # A clinic has a capacity of 1800 rooms with 1/4 occupied.\r\n  n4 = 40  # Due to the natural disaster, 40 patients are admitted into the clinic each day.\r\n  n5 = 3  # Calculate the total number of unoccupied rooms in the clinic after 3 weeks.\r\nRelationships:\r\n  A clinic has a capacity of 1800 rooms with 1/4 occupied.\r\n  Due to the natural disaster, 40 patients are admitted into the clinic each day.\r\nFind: solve for the unknown — Calculate the total number of unoccupied rooms in the clinic after 3 weeks.",
+     "gold": "510.0",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W5",
+     "meaning": "Direction reversal (initial and goal, source and destination).",
+     "text": "A clinic has some rooms with 1/4 occupied. Due to the natural disaster, 40 patients are admitted into the clinic each day. After 3 weeks, there are 510 unoccupied rooms remaining. What is the total capacity of the clinic in rooms?",
+     "gold": "1800.0",
+     "gold_rule": "re-derived",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W6",
+     "meaning": "Procedural regeneration: same algorithm, new numbers.",
+     "text": "A care facility has a capacity of 1900 rooms with 2/5 occupied. Due to the pandemic, 80 patients are admitted into the care facility each day. Calculate the total number of unoccupied rooms in the care facility after 2 weeks.",
+     "gold": "20.0",
+     "gold_rule": "re-derived",
+     "verifier_function": "verify_gsm_answer",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "api_error"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    }
+   ],
+   "probe3_proximity": {
+    "contamination_score": 0.1579,
+    "max_ngram_length": 6,
+    "max_ngram_count": 51,
+    "family_percentile": 0.727
+   },
+   "probe2_cci": null
+  },
+  {
+   "problem_id": "BW_497",
+   "family": "BW",
+   "subtype": "blocksworld",
+   "difficulty": "easy",
+   "source": "type=planbench_original | dataset=planbench | filename=instance-102.pddl | path=plan-bench/instances/blocksworld/generated/instance-102.pddl",
+   "verifier_kind": "PDDL state simulator replays the plan",
+   "variants": [
+    {
+     "variant": "canonical",
+     "meaning": "Original benchmark item.",
+     "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks c, e, and l are clear and on the table, and the hand is empty. Goal: Block l is on block e, and block e is on block c. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+     "gold": "pick-up e\nstack e c\npick-up l\nstack l e",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W1",
+     "meaning": "Paraphrase. Same entities, same numbers, new wording.",
+     "text": "You function as a robotic arm. Possible operations: pick-up X (requires X to be unobstructed and resting on the table, with your hand unoccupied), put-down X (set X down on the table), stack X Y (put X on top of Y; Y needs to be unobstructed, X must be in your grasp), unstack X Y (lift X off of Y; X needs to be unobstructed, your hand must be unoccupied). Your capacity is limited to grasping a single block at once. Present situation: Blocks c, e, and l are unobstructed and sitting on the table, with your hand currently free. Objective: Block l should be positioned on block e, with block e positioned on block c. Reply using only a numbered sequence of operations. Every operation must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Provide no explanations. Include no additional content.",
+     "gold": "pick-up e\nstack e c\npick-up l\nstack l e",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W2",
+     "meaning": "Structural reformat (table, matrix, equation set).",
+     "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time.\n\nInitial state:\n| Block | Position |\n|-------|----------|\n| c | on table |\n| e | on table |\n| l | on table |\n\nGoal:\n| Block | Target Position |\n|-------|-----------------|\n| e | on c |\n| l | on e |\n\nWhat sequence of actions achieves the goal?",
+     "gold": "pick-up e\nstack e c\npick-up l\nstack l e",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W3",
+     "meaning": "Cover-story isomorph: entities and framing moved to a new real-word domain (W3b). True nonce rename (W3a) is being added, see EF-07.",
+     "text": "You are a robot arm. Available actions: retrieve X (X must be clear and on the table, hand must be empty), shelve X (place X on the table), place_on X Y (place X on Y; Y must be clear, you must be holding X), remove_from X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks Cookbook, Encyclopedia, and Literature are clear and on the table, and the hand is empty. Goal: Block Literature is on block Encyclopedia, and block Encyclopedia is on block Cookbook. Respond with a numbered list of actions only. Each action must be exactly one of: retrieve X / shelve X / place_on X Y / remove_from X Y. No explanation. No extra text.",
+     "gold": "retrieve Encyclopedia\nplace_on Encyclopedia Cookbook\nretrieve Literature\nplace_on Literature Encyclopedia",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": {
+      "domain": "library",
+      "mapping": {
+       "c": "Cookbook",
+       "e": "Encyclopedia",
+       "l": "Literature"
+      }
+     },
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W4",
+     "meaning": "Formal notation (LaTeX, PDDL predicates, edge list).",
+     "text": "FORMAL DEFINITION:\nπ = ⟨B, S₀, S*, A⟩\n\nBLOCKS:\nB = {c, e, l}\n\nINITIAL STATE S₀:\nOnTable(c)\nClear(c)\nOnTable(e)\nClear(e)\nOnTable(l)\nClear(l)\nHandEmpty\n\nGOAL STATE S*:\nOn(e,c)\nOn(l,e)\nHandEmpty\n\nACTIONS (Preconditions → Add Effects | Delete Effects):\npick-up(x): Pre: Clear(x), OnTable(x), HandEmpty → Holding(x) | ¬Clear(x), ¬OnTable(x), ¬HandEmpty\nput-down(x): Pre: Holding(x) → OnTable(x), Clear(x), HandEmpty | ¬Holding(x)\nstack(x,y): Pre: Holding(x), Clear(y) → On(x,y), Clear(x), HandEmpty | ¬Holding(x), ¬Clear(y)\nunstack(x,y): Pre: On(x,y), Clear(x), HandEmpty → Holding(x) | ¬On(x,y), ¬Clear(x), ¬HandEmpty\n\nTASK:\nFind plan π = (a₁, a₂, ..., aₙ) such that:\nS₀ →(a₁) S₁ →(a₂) ... →(aₙ) Sₙ, where S* ⊆ Sₙ\n\nOUTPUT FORMAT:\nReturn a numbered list of actions only.\nNo explanation. No extra text.",
+     "gold": "pick-up e\nstack e c\npick-up l\nstack l e",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W5",
+     "meaning": "Direction reversal (initial and goal, source and destination).",
+     "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Block l is on block e, and block e is on block c. Block l is clear. The hand is empty. Goal: Block c is on the table. Block e is on the table. Block l is on the table. The hand is empty. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+     "gold": "unstack l e\nput-down l\nunstack e c\nput-down e",
+     "gold_rule": "re-derived",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W6",
+     "meaning": "Procedural regeneration: same algorithm, new numbers.",
+     "text": "You are a robot arm. Available actions: pick-up X (X must be clear and on the table, hand must be empty), put-down X (place X on the table), stack X Y (place X on Y; Y must be clear, you must be holding X), unstack X Y (pick up X from Y; X must be clear, hand must be empty). You can hold one block at a time. Current state: Blocks a, b, and c are clear and on the table. The hand is empty. Goal: Block a is on block b, block b is on the table, block c is on block a. Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.",
+     "gold": "pick-up a\nstack a b\npick-up c\nstack c a",
+     "gold_rule": "re-derived",
+     "verifier_function": "verify_blocksworld_plan",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "R1-distill-70B",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    }
+   ],
+   "probe3_proximity": {
+    "contamination_score": 0.0526,
+    "max_ngram_length": 7,
+    "max_ngram_count": 4,
+    "template_contamination_score": 0.0,
+    "instance_contamination_score": 0.1087,
+    "family_percentile": 0.862
+   },
+   "probe2_cci": null
+  },
+  {
+   "problem_id": "CC_035",
+   "family": "ALGO",
+   "subtype": "coin_change",
+   "difficulty": "medium",
+   "source": "procedural_seed_5521898579341841205",
+   "verifier_kind": "Exact optimal solver recomputes the optimum",
+   "variants": [
+    {
+     "variant": "canonical",
+     "meaning": "Original benchmark item.",
+     "text": "You have coins with the following denominations: [1, 2, 5, 10]. You need to make exact change for 71 using the minimum number of coins. You may use each denomination any number of times.\nWhat is the minimum number of coins needed and which coins do you use?\nRespond in this exact format:\nCount: [integer]\nCoins: [denomination1, denomination2, ...]\nNo explanation. No other text.",
+     "gold": "Count: 8\nCoins: [10, 10, 10, 10, 10, 10, 10, 1]",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_coinchange",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W1",
+     "meaning": "Paraphrase. Same entities, same numbers, new wording.",
+     "text": "The denominations of coins available to you are: [1, 2, 5, 10]. Your task is to create exact change for 71 while using the fewest possible coins. Each denomination can be used multiple times.\nHow many coins minimum are required and what coins should be used?\nRespond in this exact format:\nCount: [integer]\nCoins: [denomination1, denomination2, ...]\nNo explanation. No other text.",
+     "gold": "Count: 8\nCoins: [10, 10, 10, 10, 10, 10, 10, 1]",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_coinchange",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W2",
+     "meaning": "Structural reformat (table, matrix, equation set).",
+     "text": "Given D = {1, 2, 5, 10} and target t = 71, find minimum coin count.",
+     "gold": "Count: 8\nCoins: [10, 10, 10, 10, 10, 10, 10, 1]",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_coinchange",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "parse_failed"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W3",
+     "meaning": "Cover-story isomorph: entities and framing moved to a new real-word domain (W3b). True nonce rename (W3a) is being added, see EF-07.",
+     "text": "You have stamps with the following stamp sizes: [1, 2, 5, 10]. You need to make exact change for the required exact postage of 71 cents using the minimum number of stamps. You may use each stamp sizes any number of times.\nWhat is the minimum number of stamps needed and which stamps do you use?\nRespond in this exact format:\nCount: [integer]\nstamps: [denomination1, denomination2, ...]\nNo explanation. No other text.",
+     "gold": "Count: 8\nCoins: [10, 10, 10, 10, 10, 10, 10, 1]",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_coinchange",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W4",
+     "meaning": "Formal notation (LaTeX, PDDL predicates, edge list).",
+     "text": "FORMAL DEFINITION: π = ⟨D, S₀, S*, A⟩\nDENOMINATIONS: D = {1, 2, 5, 10}\nINITIAL STATE S₀: CurrentSum = 0\nGOAL STATE S*: CurrentSum = 71\nACTIONS:\nSelectCoin(c):\n  Pre: c ∈ D, (CurrentSum + c) ≤ 71\n  Effect: CurrentSum ← CurrentSum + c\nTASK: Find shortest sequence of actions to reach CurrentSum = 71.\nOUTPUT FORMAT:\nCount: [integer]\nCoins: [denomination1, denomination2, ...]",
+     "gold": "Count: 8\nCoins: [10, 10, 10, 10, 10, 10, 10, 1]",
+     "gold_rule": "fixed",
+     "verifier_function": "verify_coinchange",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": null,
+       "included": false,
+       "exclusion_reason": "parse_failed"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W6",
+     "meaning": "Procedural regeneration: same algorithm, new numbers.",
+     "text": "You have coins with the following denominations: [1, 8, 32, 39]. You need to make exact change for 146 using the minimum number of coins. You may use each denomination any number of times.\nWhat is the minimum number of coins needed and which coins do you use?\nRespond in this exact format:\nCount: [integer]\nCoins: [denomination1, denomination2, ...]\nNo explanation. No other text.",
+     "gold": "Count: 8\nCoins: [39, 39, 32, 32, 1, 1, 1, 1]",
+     "gold_rule": "re-derived",
+     "verifier_function": "verify_coinchange",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    }
+   ],
+   "probe3_proximity": {
+    "contamination_score": 0.1094,
+    "max_ngram_length": 7,
+    "max_ngram_count": 260,
+    "template_contamination_score": 0.1094,
+    "instance_contamination_score": 0.6364,
+    "family_percentile": 0.845
+   },
+   "probe2_cci": null
+  },
+  {
+   "problem_id": "WIS_001",
+   "family": "ALGO",
+   "subtype": "wis",
+   "difficulty": "Easy",
+   "source": null,
+   "verifier_kind": "Exact optimal solver recomputes the optimum",
+   "variants": [
+    {
+     "variant": "canonical",
+     "meaning": "Original benchmark item.",
+     "text": "A farmer owns plots of land along a straight road. The plots are numbered \n0 through 9 from west to east. Due to access restrictions, no two adjacent \nplots can be harvested in the same season. Each plot has an expected crop \nyield in tonnes:\n\nPlot 0: 8 tonnes\nPlot 1: 3 tonnes\nPlot 2: 6 tonnes\nPlot 3: 2 tonnes\nPlot 4: 9 tonnes\nPlot 5: 4 tonnes\nPlot 6: 7 tonnes\nPlot 7: 1 tonne\nPlot 8: 5 tonnes\nPlot 9: 10 tonnes\n\nAdjacent plots (cannot both be harvested):\n0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9\n\nWhich plots should the farmer harvest to maximise total yield, and what \nis that maximum yield?\n\nReply with only the selected plots and the total weight.\nFormat: Selected: {X, X, X, ...}, Total: X",
+     "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
+     "gold_rule": "fixed",
+     "verifier_function": "veryify_WIS",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W1",
+     "meaning": "Paraphrase. Same entities, same numbers, new wording.",
+     "text": "A landowner possesses parcels of farmland along a linear country lane. The parcels are labeled 0 through 9 from the western end to the eastern end. Due to land access regulations, no two neighboring parcels can be reaped during the same growing period. Each parcel has an anticipated harvest output in tonnes: Parcel 0: 8 tonnes Parcel 1: 3 tonnes Parcel 2: 6 tonnes Parcel 3: 2 tonnes Parcel 4: 9 tonnes Parcel 5: 4 tonnes Parcel 6: 7 tonnes Parcel 7: 1 tonne Parcel 8: 5 tonnes Parcel 9: 10 tonnes Neighboring parcels (cannot both be reaped): 0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9 Which parcels should the landowner reap to maximize total harvest output, and what is that peak yield? Reply with only the chosen parcels and the total weight. Format: Selected: {X, X, X, ...}, Total: X",
+     "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
+     "gold_rule": "fixed",
+     "verifier_function": "veryify_WIS",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W2",
+     "meaning": "Structural reformat (table, matrix, equation set).",
+     "text": "| Field | Details |\n|-------|---------|\n| Problem | Select plots to maximise total yield; no two adjacent plots can be harvested in the same season |\n| Layout | Plots numbered 0–9 from west to east (straight road) |\n\n| Plot | Yield (tonnes) |\n|------|---------------|\n| 0 | 8 |\n| 1 | 3 |\n| 2 | 6 |\n| 3 | 2 |\n| 4 | 9 |\n| 5 | 4 |\n| 6 | 7 |\n| 7 | 1 |\n| 8 | 5 |\n| 9 | 10 |\n\n| Adjacency Table | |\n|--------|--------|\n| Plot A | Plot B |\n| 0 | 1 |\n| 1 | 2 |\n| 2 | 3 |\n| 3 | 4 |\n| 4 | 5 |\n| 5 | 6 |\n| 6 | 7 |\n| 7 | 8 |\n| 8 | 9 |\n\nQuestion: Which plots should the farmer harvest to maximise total yield, given no two adjacent plots can be selected? Reply as: Selected: {X, X, X, ...}, Total: X",
+     "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
+     "gold_rule": "fixed",
+     "verifier_function": "veryify_WIS",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W3",
+     "meaning": "Cover-story isomorph: entities and framing moved to a new real-word domain (W3b). True nonce rename (W3a) is being added, see EF-07.",
+     "text": "\"A thief breaks into a street of 10 houses numbered 0 to 9. Security systems link every pair of neighboring houses, meaning robbing two directly adjacent houses will trigger an alarm. Each house contains valuables worth: House 0: $8K, House 1: $3K, House 2: $6K, House 3: $2K, House 4: $9K, House 5: $4K, House 6: $7K, House 7: $1K, House 8: $5K, House 9: $10K. Which combination of houses should the thief rob to maximize the total stolen value without triggering any alarm, and what is that maximum value?\nReply with only the selected houses and the total value.\nFormat: Selected: {X, X, X, ...}, Total: X\"",
+     "gold": "Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",
+     "gold_rule": "fixed",
+     "verifier_function": "veryify_WIS",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    },
+    {
+     "variant": "W4",
+     "meaning": "Formal notation (LaTeX, PDDL predicates, edge list).",
+     "text": "Let G = (V, E) be an undirected graph where:\n\nV = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}\n\nE = {{0,1}, {1,2}, {2,3}, {3,4}, {4,5}, {5,6}, {6,7}, {7,8}, {8,9}}\n\nLet the weight function w: V -> R+ be defined as:\n\nw = {0->8, 1->3, 2->6, 3->2, 4->9, 5->4, 6->7, 7->1, 8->5, 9->10}\n\nFind an independent set S ⊆ V such that:\n\nmaximise W(S) = sum of w(v) for all v in S\n\nsubject to: for all u, v in S: {u, v} not in E\n\nReport only S and W(S).\n\nFormat: Selected: {x1, x2, ...}, Total: W(S)",
+     "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
+     "gold_rule": "fixed",
+     "verifier_function": "veryify_WIS",
+     "mapping": null,
+     "probe1": [
+      {
+       "model": "Claude Sonnet 4",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "GPT-4o",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Gemini 2.5 Flash",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "Llama-3.1-8B",
+       "correct": false,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      },
+      {
+       "model": "o4-mini",
+       "correct": true,
+       "included": true,
+       "exclusion_reason": "in_bank_ok"
+      }
+     ]
+    }
+   ],
+   "probe3_proximity": {
+    "contamination_score": 0.0522,
+    "max_ngram_length": 7,
+    "max_ngram_count": 150,
+    "template_contamination_score": 0.0,
+    "instance_contamination_score": 0.0,
+    "family_percentile": 0.397
+   },
+   "probe2_cci": null
+  }
+ ]
+}

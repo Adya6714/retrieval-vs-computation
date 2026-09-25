@@ -37,6 +37,15 @@ Four distinct mechanistic artifacts exist; they were never one dataset:
 - H4: Surface-invariant reasoning emerges late in training and tracks accumulated template exposure ([[D04_Developmental_Checkpoints]]).
 - H5: The injected-state recovery effect reflects an answer direction fixed before the injection point (patching-testable, ties H2 to Probe 2).
 
+## C (append): standing hypotheses added 2026-09-25 via [[THE_PLAN_AMENDMENT_A1]]
+- H8 inference-stack noise floor bounds per-instance labels ([[D11_Inference_Stack_Noise_Floor]]). status: untested.
+- H9 precision reduction degrades invariance before accuracy ([[D12_Precision_Compression_Invariance]]). status: untested.
+- H10 code continued pretraining removes the W4 penalty, not the W3 cost ([[D13_Continued_Pretraining_Transfer]]). status: untested.
+- H11 distillation transfers accuracy more than invariance ([[D14_Distillation_Invariance]]). status: untested.
+- H12 surface ensembling beats self-consistency at matched calls ([[D16_Surface_Ensembling]]). status: untested.
+- H13 isomorph cost exceeds nonce-rename cost ([[EF-07_W3_Construct_Audit]]). status: untested.
+- H7b RL form of H7 ([[D15_RLVR_Surface_Diversity]]). status: gated behind G2.
+
 ## D. Open issues / known weaknesses
 - Central claim is behavioral-only; the one mechanistic pilot is single-model, correlational, and — important — contrasts **canonical vs W6**, not the W3 rename that carries the headline. The mechanistic evidence and the headline claim are currently about different manipulations. Fix in [[D02_Causal_Patching]].
 - Label thresholds swing strong-label rate 2.7%→57.7%; labels are a design choice until externally calibrated ([[HP-04_Threshold_Prereg_and_MTMM]]).
@@ -44,9 +53,20 @@ Four distinct mechanistic artifacts exist; they were never one dataset:
 - One reasoning-trained model; per-cell Fisher tests instead of a pooled mixed-effects model ([[EF-06_Open_Methodological_Questions]]).
 - Compute reality: mechanistic pilot ran on a Colab T4. D2/D6-mech/D8 need ≥1 A100-40GB-class GPU; D1 full needs multi-GPU training budget. **Open question for Adya: what GPU budget and OpenRouter budget are actually available?**
 
+## D (append): open issues found 2026-09-25 (verified-raw)
+- **W3 construct mismatch.** Bank W3 is a real-word cover-story / domain isomorph; paper and vault describe a nonce rename. Blocks Paper I resubmission. See [[EF-07_W3_Construct_Audit]].
+- **Rename bug.** 12/65 BW W3 rows contain "You are Alice robot arm" (substring replacement).
+- **GSM-Symbolic positioning.** Vary Name is names only; our W3 is a domain swap. Direction of the number-vs-name effect relative to GSM-Symbolic must be checked in the primary source (quarantined recollection).
+- **F3 prior art.** arXiv:2411.01790 is cited in HP-11 but not in Paper I.
+- **Hygiene.** mock rows in derived rescored CSVs; one column-shifted BW row; inconsistent `verifier_function` names; mixed ALGO ID widths breaking CCI joins; `models.yaml` display name for claude-sonnet-4 says Claude 3.7 Sonnet. Full list: `docs/audit/REPO_AUDIT_2026-09-25.md`.
+- **Compute reality updated.** Only free Colab T4 available. Phase 1 remains blocked. Track T defined to use the T4.
+
 ## E. Changelog
 - 2026-07-07: A1–A4 resolved via direct repo audit; vault created; decision memo v1.
 - 2026-07-07 (later): added Deep Strategies series (DS-01..DS-12), Lab build/landscape/problem-engine/cost notes (LB-00..03), and a full Beginners Manual (BM-00..07). New paper notes P31 (Mislevy & Verhelst mixture IRT), P32 (perturbation-sensitivity), P33 (code memorization MRI), P34 (ReEval transfer). New handoff prompts HP-13 (intrusion errors) and HP-14 (mixture-IRT fit), both zero-cost on existing data. Scoop-checked mixture-IRT-for-strategy and intrusion-content signals: both appear open.
 - 2026-07-07 (later still): added DS-13 (capability/architecture claim ladder), P35 (Yang et al. emergent symbolic mechanisms, ICML 2025), HP-15 (pathway-occupancy pilot). New hypotheses H6 (strategy = pathway occupancy) and H7 (diversity forces abstraction-head formation) registered.
 - 2026-07-07 (final consolidation): THE_PLAN v1.0 frozen at vault root — single canonical phased roadmap (Phases 0–5, gates G0–G3, claim registry CC-1..4 / AC-1..4, hypothesis registry H1–H7, budget envelope). BM-08 reading curriculum added. OM-00 priority order updated to final sequencing. All prior planning notes remain as supporting detail; THE_PLAN wins conflicts.
 - 2026-07-07 (deep-methods pass): added 11_Borrowed_Methods folder mapping six families of hidden-mind inference (dissociation, transfer/concept, memory-signature, adaptation, developmental/lesion, individual-differences) to new LLM evaluation strategies DS-14..DS-19, plus BX-07 frontier list (psychophysics, animal cognition, sociology, linguistics/wug, causal inference) and EVAL-CATALOG_Extended. Verified: 'machine psychology'/'LLM psychometrics' fields (Ye et al. 2505.08245, Hagendorff) borrow personality/ability TASKS but not the inferential MACHINERY — that machinery is the moat. Key inspiration papers logged: BabyReasoningBench 2601.18933, CogBench, Berko wug test, Teuber double dissociation.
+
+## E (append): changelog
+- 2026-09-25: Repo + site review. Added [[THE_PLAN_AMENDMENT_A1]] (Track T), [[EF-07_W3_Construct_Audit]], [[EF-08_Position_On_Thinking]], directions [[D11_Inference_Stack_Noise_Floor]] to [[D16_Surface_Ensembling]], handoffs [[HP-16_Noise_Floor]] to [[HP-23_W3a_Nonce_Bank]], [[BI-04_Engineering_Relevance]]. Appended D05, D06, P01, P-00. Registered H8 to H13 and H7b. No gate status changed. G0 remains passed; G1 remains blocked.
