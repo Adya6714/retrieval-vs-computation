@@ -36,7 +36,7 @@
           const d = document.createElement('div');
           d.className = 'app-row';
           d.innerHTML = `<div>
-              <h4>${esc(row.area)}</h4>
+              <h3 class="app-h">${esc(row.area)}</h3>
               <p>${esc(row.adds)}</p>
               <div class="dir">${esc(row.direction)}</div>
             </div>

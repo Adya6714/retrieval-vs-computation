@@ -71,11 +71,11 @@
   border:1px solid var(--rule);background:var(--tint);padding:.85rem 1rem;
   display:grid;grid-template-columns:1fr auto;gap:.5rem 1rem;align-items:start;
 }
-.app-row h4{margin:0;font-size:.95rem}
+.app-row h3.app-h,.app-row .app-h{margin:0;font-size:1.05rem;font-family:var(--serif);font-weight:400}
 .app-row p{margin:.35rem 0 0;font-size:.85rem;color:var(--muted);max-width:none}
 .app-row .dir{font-size:.72rem;color:var(--accent);font-variant-numeric:tabular-nums}
 .badge{
-  font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;
+  font-size:.72rem;letter-spacing:.02em;text-transform:none;
   padding:.2rem .45rem;border:1px solid var(--rule);white-space:nowrap;
 }
 .badge.shipped{border-color:var(--teal);color:var(--teal)}
@@ -96,7 +96,7 @@
 .pos-toggle .verify{font-size:.78rem;color:var(--amber);margin-top:.45rem}
 .next-card .meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.55rem}
 .next-card .status-pill{
-  font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;
+  font-size:.72rem;letter-spacing:.02em;text-transform:none;
   padding:.15rem .4rem;border:1px solid var(--rule);color:var(--muted);
 }
 .next-card.priority{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-soft)}

@@ -190,10 +190,10 @@
   display:inline-flex;
   align-items:center;
   gap:.4rem;
-  font-size:.72rem;
+  font-size:.78rem;
   font-weight:600;
-  letter-spacing:.04em;
-  text-transform:uppercase;
+  letter-spacing:.02em;
+  text-transform:none;
   padding:.25rem .5rem;
   border:1px solid var(--rule);
   margin-bottom:.65rem;
@@ -388,4 +388,8 @@
   font-weight:600;
   padding:.2rem .45rem;
   cursor:pointer;
+}
+
+@media(prefers-color-scheme:dark){
+  #pipeline .pipe-chip.active,#pipeline .pipe-ctrl.primary{color:#0A0A0B}
 }

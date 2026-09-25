@@ -1,0 +1,10 @@
+{
+  "light": {
+    "accessibility": 100,
+    "best-practices": 100
+  },
+  "dark": {
+    "accessibility": 100,
+    "best-practices": 100
+  }
+}
