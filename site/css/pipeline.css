@@ -1,0 +1,391 @@
+/* Pipeline Explorer — uses site CSS variables only (no new colours). */
+#pipeline .pipe-shell{
+  margin-top:1.25rem;
+  border:1px solid var(--rule);
+  background:var(--tint);
+  overflow:hidden;
+  position:relative;
+}
+#pipeline .pipe-error{
+  margin:1rem 0;
+  padding:.85rem 1rem;
+  border:1px solid var(--amber);
+  background:var(--amber-soft);
+  color:var(--ink);
+  font-size:.9rem;
+  max-width:none;
+}
+#pipeline .pipe-top{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  padding:.75rem 1rem;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+}
+#pipeline .pipe-items{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  align-items:center;
+}
+#pipeline .pipe-items .label{
+  font-size:.72rem;
+  color:var(--muted);
+  margin-right:.25rem;
+}
+#pipeline .pipe-chip{
+  appearance:none;
+  border:1px solid var(--rule);
+  background:transparent;
+  color:var(--ink);
+  font:inherit;
+  font-size:.78rem;
+  font-variant-numeric:tabular-nums;
+  padding:.35rem .65rem;
+  cursor:pointer;
+}
+#pipeline .pipe-chip:hover{border-color:var(--accent);color:var(--accent)}
+#pipeline .pipe-chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+#pipeline .pipe-chip:focus-visible,
+#pipeline .pipe-ctrl:focus-visible,
+#pipeline .pipe-stage-btn:focus-visible,
+#pipeline .pipe-var:focus-visible,
+#pipeline .pipe-phase:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+#pipeline .pipe-ctrls{display:flex;gap:.4rem;flex-wrap:wrap}
+#pipeline .pipe-ctrl{
+  appearance:none;
+  border:1px solid var(--rule);
+  background:var(--paper);
+  color:var(--ink);
+  font:inherit;
+  font-size:.82rem;
+  padding:.4rem .75rem;
+  cursor:pointer;
+}
+#pipeline .pipe-ctrl:hover{border-color:var(--accent);color:var(--accent)}
+#pipeline .pipe-ctrl.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+#pipeline .pipe-body{
+  display:grid;
+  grid-template-columns:11.5rem 1fr;
+  min-height:22rem;
+}
+@media(max-width:720px){
+  #pipeline .pipe-body{grid-template-columns:1fr}
+}
+#pipeline .pipe-rail{
+  border-right:1px solid var(--rule);
+  background:var(--paper);
+  padding:.5rem 0;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+@media(max-width:720px){
+  #pipeline .pipe-rail{
+    flex-direction:row;
+    overflow-x:auto;
+    border-right:0;
+    border-bottom:1px solid var(--rule);
+    padding:.35rem .5rem;
+  }
+}
+#pipeline .pipe-rail-marker{
+  position:absolute;
+  left:0;
+  width:3px;
+  height:2.1rem;
+  background:var(--accent);
+  transition:transform .4s var(--ease);
+  pointer-events:none;
+}
+@media(max-width:720px){
+  #pipeline .pipe-rail-marker{display:none}
+}
+#pipeline .pipe-stage-btn{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font:inherit;
+  font-size:.78rem;
+  text-align:left;
+  padding:.55rem .85rem .55rem 1rem;
+  cursor:pointer;
+  display:flex;
+  gap:.45rem;
+  align-items:baseline;
+  white-space:nowrap;
+}
+@media(max-width:720px){
+  #pipeline .pipe-stage-btn{padding:.45rem .7rem}
+}
+#pipeline .pipe-stage-btn .n{
+  font-variant-numeric:tabular-nums;
+  color:var(--accent);
+  font-weight:600;
+  min-width:1.1rem;
+}
+#pipeline .pipe-stage-btn.active{color:var(--ink);background:var(--tint)}
+#pipeline .pipe-stage-btn:hover{color:var(--ink)}
+#pipeline .pipe-canvas{
+  padding:1.1rem 1.25rem 1.35rem;
+  position:relative;
+}
+#pipeline .pipe-live{
+  position:absolute;
+  width:1px;height:1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+}
+#pipeline .pipe-serif{
+  font-family:var(--serif);
+  font-size:1.05rem;
+  line-height:1.55;
+  color:var(--ink);
+  max-width:58ch;
+  white-space:pre-wrap;
+}
+#pipeline .pipe-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem .9rem;
+  font-size:.78rem;
+  color:var(--muted);
+  margin:0 0 .85rem;
+}
+#pipeline .pipe-meta b{color:var(--ink);font-weight:560}
+#pipeline .pipe-caption{
+  margin:.85rem 0 0;
+  font-size:.85rem;
+  color:var(--muted);
+  max-width:58ch;
+}
+#pipeline .pipe-caption a{color:var(--accent);text-decoration:none}
+#pipeline .pipe-caption a:hover{text-decoration:underline}
+#pipeline .pipe-vars{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+  margin:0 0 .75rem;
+}
+#pipeline .pipe-var{
+  appearance:none;
+  border:1px solid var(--rule);
+  background:transparent;
+  color:var(--muted);
+  font:inherit;
+  font-size:.75rem;
+  font-variant-numeric:tabular-nums;
+  padding:.3rem .55rem;
+  cursor:pointer;
+}
+#pipeline .pipe-var.active{border-color:var(--amber);color:var(--ink);background:var(--amber-soft)}
+#pipeline .pipe-gold{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  padding:.25rem .5rem;
+  border:1px solid var(--rule);
+  margin-bottom:.65rem;
+}
+#pipeline .pipe-gold.fixed{color:var(--teal);border-color:var(--teal)}
+#pipeline .pipe-gold.rederived{color:var(--amber);border-color:var(--amber)}
+#pipeline .diff-del{
+  text-decoration:line-through;
+  color:var(--amber);
+  opacity:.85;
+  transition:opacity .4s var(--ease);
+}
+#pipeline .diff-ins{
+  color:var(--amber);
+  background:var(--amber-soft);
+  transition:opacity .4s var(--ease);
+}
+#pipeline .diff-num{
+  color:var(--teal);
+  font-weight:560;
+  font-variant-numeric:tabular-nums;
+}
+#pipeline .diff-num.pulse{
+  animation:pipeNumPulse .4s var(--ease);
+}
+@keyframes pipeNumPulse{
+  0%{background:transparent}
+  40%{background:rgba(15,118,110,.22)}
+  100%{background:transparent}
+}
+@media(prefers-reduced-motion:reduce){
+  #pipeline .diff-num.pulse{animation:none}
+  #pipeline .pipe-rail-marker{transition:none}
+}
+#pipeline .pipe-map{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.82rem;
+  margin-top:.85rem;
+  max-width:36rem;
+}
+#pipeline .pipe-map th,
+#pipeline .pipe-map td{
+  border:1px solid var(--rule);
+  padding:.4rem .55rem;
+  text-align:left;
+  font-variant-numeric:tabular-nums;
+}
+#pipeline .pipe-map th{background:var(--paper);color:var(--muted);font-weight:500}
+#pipeline .pipe-verify-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.75rem;
+  margin:.85rem 0;
+  font-size:.9rem;
+}
+#pipeline .pipe-verify-step{
+  padding:.45rem .7rem;
+  border:1px solid var(--rule);
+  background:var(--paper);
+  color:var(--muted);
+}
+#pipeline .pipe-verify-step.on{border-color:var(--accent);color:var(--accent)}
+#pipeline .pipe-verify-step.ok{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+#pipeline .pipe-check{
+  width:1.4rem;height:1.4rem;
+  border-radius:50%;
+  border:2px solid var(--accent);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  font-weight:700;
+  opacity:0;
+  transform:scale(.6);
+  transition:opacity .35s var(--ease),transform .35s var(--ease);
+}
+#pipeline .pipe-check.show{opacity:1;transform:scale(1)}
+#pipeline .pipe-excl{
+  margin-top:.65rem;
+  font-size:.82rem;
+  color:var(--amber);
+}
+#pipeline .p1-grid-wrap{overflow-x:auto}
+#pipeline .p1-grid{
+  border-collapse:collapse;
+  font-size:.72rem;
+  font-variant-numeric:tabular-nums;
+}
+#pipeline .p1-grid th,
+#pipeline .p1-grid td{
+  border:1px solid var(--rule);
+  padding:.3rem .4rem;
+  text-align:center;
+  min-width:2.2rem;
+}
+#pipeline .p1-grid th.row-h{text-align:left;color:var(--muted);font-weight:500}
+#pipeline .p1-cell{
+  width:1.1rem;height:1.1rem;
+  margin:0 auto;
+  border:1.5px solid var(--rule);
+  background:transparent;
+  opacity:0;
+  transition:opacity .35s var(--ease),background .35s var(--ease);
+}
+#pipeline .p1-cell.show{opacity:1}
+#pipeline .p1-cell.ok{background:var(--teal);border-color:var(--teal)}
+#pipeline .p1-cell.bad{background:transparent;border-color:var(--ink)}
+#pipeline .p1-cell.na{
+  background:repeating-linear-gradient(-45deg,transparent,transparent 2px,var(--rule) 2px,var(--rule) 3px);
+  border-color:var(--muted);
+}
+#pipeline .ret-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.65rem 1.1rem;
+  margin-top:.9rem;
+  font-size:.82rem;
+}
+#pipeline .ret-item{display:flex;align-items:center;gap:.4rem;color:var(--muted)}
+#pipeline .ret-item b{color:var(--ink);font-weight:560;font-variant-numeric:tabular-nums}
+#pipeline .ret-dot{
+  width:.55rem;height:.55rem;border-radius:50%;
+  border:1.5px solid var(--rule);
+  display:inline-block;
+}
+#pipeline .ret-dot.on{background:var(--teal);border-color:var(--teal)}
+#pipeline .ret-dot.off{background:transparent;border-color:var(--amber)}
+#pipeline .cci-list{display:grid;gap:.45rem;margin:.5rem 0 1rem;max-width:32rem}
+#pipeline .cci-row{
+  display:flex;justify-content:space-between;gap:1rem;
+  font-size:.88rem;padding:.45rem .6rem;
+  border:1px solid var(--rule);background:var(--paper);
+  font-variant-numeric:tabular-nums;
+}
+#pipeline .strip{width:100%;max-width:36rem;height:4.5rem;margin:.5rem 0}
+#pipeline .verdict{
+  border:1px solid var(--rule);
+  background:var(--paper);
+  padding:.9rem 1rem;
+  font-size:.92rem;
+  max-width:58ch;
+}
+#pipeline .f-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
+#pipeline .f-tag{
+  font-size:.72rem;
+  padding:.25rem .5rem;
+  border:1px solid var(--rule);
+  color:var(--accent);
+  font-variant-numeric:tabular-nums;
+}
+#pipeline .phase-track{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem;
+  margin:.5rem 0 1rem;
+}
+#pipeline .pipe-phase{
+  appearance:none;
+  border:1.5px solid var(--muted);
+  background:transparent;
+  color:var(--muted);
+  font:inherit;
+  font-size:.78rem;
+  font-variant-numeric:tabular-nums;
+  padding:.5rem .7rem;
+  cursor:pointer;
+  min-width:3.4rem;
+}
+#pipeline .pipe-phase.complete{background:var(--accent);border-color:var(--accent);color:#fff}
+#pipeline .pipe-phase.ready{border-color:var(--accent);color:var(--accent)}
+#pipeline .pipe-phase.blocked{border-color:var(--amber);color:var(--amber)}
+#pipeline .pipe-phase.designed,
+#pipeline .pipe-phase.planned{border-color:var(--rule);color:var(--muted)}
+#pipeline .pipe-phase.active{box-shadow:0 0 0 2px var(--accent-soft)}
+#pipeline .phase-detail{
+  border:1px solid var(--rule);
+  background:var(--paper);
+  padding:.75rem .9rem;
+  font-size:.88rem;
+  max-width:52ch;
+}
+#pipeline .phase-detail .ids{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem}
+#pipeline .phase-detail button{
+  appearance:none;
+  border:1px solid var(--rule);
+  background:var(--tint);
+  color:var(--accent);
+  font:inherit;
+  font-size:.75rem;
+  font-weight:600;
+  padding:.2rem .45rem;
+  cursor:pointer;
+}

@@ -199,6 +199,7 @@ def build_item(pid: str, family: str, bank: pd.DataFrame, p1: pd.DataFrame,
         fam_scores = p3["contamination_score"].dropna()
         if proximity.get("contamination_score") is not None and len(fam_scores):
             proximity["family_percentile"] = round(float((fam_scores < proximity["contamination_score"]).mean()), 3)
+        proximity["family_scores"] = [round(float(s), 4) for s in fam_scores.tolist()]
     probe2 = None
     if cci is not None:
         c = cci[cci["problem_id"] == pid]

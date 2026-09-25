@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<link rel="stylesheet" href="css/pipeline.css" />
 <style>
 :root {
   --ink: #0A0A0B;
@@ -571,7 +572,20 @@ html.js .reveal.in{opacity:1;transform:none}
       <div class="gold"><span class="tag">Gold</span><span id="gold-answer"></span><span class="tag" id="gold-note"></span></div>
       <p class="caption">Source: <a id="bank-src" href="#" target="_blank" rel="noopener"></a></p>
     </div>
+  </div>
+</section>
 
+<section class="panel" id="pipeline" data-rail="Pipeline">
+  <div class="inner reveal">
+    <p class="kicker">Instrument walkthrough</p>
+    <h2>From benchmark item to verdict.</h2>
+    <p class="lede">One item travels the whole instrument: transform, verify, three probes, then an honest statement of what we can and cannot say. Play steps through the stages; arrows also work.</p>
+    <div id="pipe-root"></div>
+  </div>
+</section>
+
+<section class="panel" id="method-probes" data-rail="Probes">
+  <div class="inner reveal">
     <div class="sub">
       <h3>5b · The three probes</h3>
       <p class="lede">One probe at a time. Labels issue only when probes agree.</p>
@@ -2994,6 +3008,17 @@ Acceptance: compliant · post-injection Acc ≈ baseline`;
   });
 
   showStage();
+
+  window.startProbe2Player = function startProbe2Player() {
+    const navBtn = document.querySelector('#probe-nav button[data-probe="2"]');
+    if (navBtn) navBtn.click();
+    const target = document.getElementById('probe-studio') || document.getElementById('method-probes') || document.getElementById('method');
+    if (target) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    const reset = document.getElementById('p2-reset');
+    const play = document.getElementById('p2-play');
+    if (reset) reset.click();
+    setTimeout(() => { if (play) play.click(); }, reduceMotion ? 0 : 280);
+  };
 }
 
 function drawProbeViz() {
@@ -3444,6 +3469,10 @@ function setFocus(id){
   });
   drawClaimHypMap();
 }
+window.setProgrammeFocus = function(id){
+  focusId = null;
+  setFocus(id);
+};
 
 function renderClaimFilters(){
   const row = document.getElementById('claim-filters');
@@ -3755,3 +3784,4 @@ setTimeout(() => {
   document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
 }, 800);
 </script>
+<script src="js/pipeline.js"></script>
