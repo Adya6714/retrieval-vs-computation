@@ -1022,7 +1022,7 @@
      "text": "A farmer owns plots of land along a straight road. The plots are numbered \n0 through 9 from west to east. Due to access restrictions, no two adjacent \nplots can be harvested in the same season. Each plot has an expected crop \nyield in tonnes:\n\nPlot 0: 8 tonnes\nPlot 1: 3 tonnes\nPlot 2: 6 tonnes\nPlot 3: 2 tonnes\nPlot 4: 9 tonnes\nPlot 5: 4 tonnes\nPlot 6: 7 tonnes\nPlot 7: 1 tonne\nPlot 8: 5 tonnes\nPlot 9: 10 tonnes\n\nAdjacent plots (cannot both be harvested):\n0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9\n\nWhich plots should the farmer harvest to maximise total yield, and what \nis that maximum yield?\n\nReply with only the selected plots and the total weight.\nFormat: Selected: {X, X, X, ...}, Total: X",
      "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
      "gold_rule": "fixed",
-     "verifier_function": "veryify_WIS",
+     "verifier_function": "verify_wis",
      "mapping": null,
      "probe1": [
       {
@@ -1063,7 +1063,7 @@
      "text": "A landowner possesses parcels of farmland along a linear country lane. The parcels are labeled 0 through 9 from the western end to the eastern end. Due to land access regulations, no two neighboring parcels can be reaped during the same growing period. Each parcel has an anticipated harvest output in tonnes: Parcel 0: 8 tonnes Parcel 1: 3 tonnes Parcel 2: 6 tonnes Parcel 3: 2 tonnes Parcel 4: 9 tonnes Parcel 5: 4 tonnes Parcel 6: 7 tonnes Parcel 7: 1 tonne Parcel 8: 5 tonnes Parcel 9: 10 tonnes Neighboring parcels (cannot both be reaped): 0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-7, 7-8, 8-9 Which parcels should the landowner reap to maximize total harvest output, and what is that peak yield? Reply with only the chosen parcels and the total weight. Format: Selected: {X, X, X, ...}, Total: X",
      "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
      "gold_rule": "fixed",
-     "verifier_function": "veryify_WIS",
+     "verifier_function": "verify_wis",
      "mapping": null,
      "probe1": [
       {
@@ -1104,7 +1104,7 @@
      "text": "| Field | Details |\n|-------|---------|\n| Problem | Select plots to maximise total yield; no two adjacent plots can be harvested in the same season |\n| Layout | Plots numbered 0–9 from west to east (straight road) |\n\n| Plot | Yield (tonnes) |\n|------|---------------|\n| 0 | 8 |\n| 1 | 3 |\n| 2 | 6 |\n| 3 | 2 |\n| 4 | 9 |\n| 5 | 4 |\n| 6 | 7 |\n| 7 | 1 |\n| 8 | 5 |\n| 9 | 10 |\n\n| Adjacency Table | |\n|--------|--------|\n| Plot A | Plot B |\n| 0 | 1 |\n| 1 | 2 |\n| 2 | 3 |\n| 3 | 4 |\n| 4 | 5 |\n| 5 | 6 |\n| 6 | 7 |\n| 7 | 8 |\n| 8 | 9 |\n\nQuestion: Which plots should the farmer harvest to maximise total yield, given no two adjacent plots can be selected? Reply as: Selected: {X, X, X, ...}, Total: X",
      "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
      "gold_rule": "fixed",
-     "verifier_function": "veryify_WIS",
+     "verifier_function": "verify_wis",
      "mapping": null,
      "probe1": [
       {
@@ -1145,7 +1145,7 @@
      "text": "\"A thief breaks into a street of 10 houses numbered 0 to 9. Security systems link every pair of neighboring houses, meaning robbing two directly adjacent houses will trigger an alarm. Each house contains valuables worth: House 0: $8K, House 1: $3K, House 2: $6K, House 3: $2K, House 4: $9K, House 5: $4K, House 6: $7K, House 7: $1K, House 8: $5K, House 9: $10K. Which combination of houses should the thief rob to maximize the total stolen value without triggering any alarm, and what is that maximum value?\nReply with only the selected houses and the total value.\nFormat: Selected: {X, X, X, ...}, Total: X\"",
      "gold": "Selected: {Item A, Item C, Item E, Item G, Item J}, Total: 40",
      "gold_rule": "fixed",
-     "verifier_function": "veryify_WIS",
+     "verifier_function": "verify_wis",
      "mapping": null,
      "probe1": [
       {
@@ -1186,7 +1186,7 @@
      "text": "Let G = (V, E) be an undirected graph where:\n\nV = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}\n\nE = {{0,1}, {1,2}, {2,3}, {3,4}, {4,5}, {5,6}, {6,7}, {7,8}, {8,9}}\n\nLet the weight function w: V -> R+ be defined as:\n\nw = {0->8, 1->3, 2->6, 3->2, 4->9, 5->4, 6->7, 7->1, 8->5, 9->10}\n\nFind an independent set S ⊆ V such that:\n\nmaximise W(S) = sum of w(v) for all v in S\n\nsubject to: for all u, v in S: {u, v} not in E\n\nReport only S and W(S).\n\nFormat: Selected: {x1, x2, ...}, Total: W(S)",
      "gold": "Selected: {0, 2, 4, 6, 9}, Total: 40",
      "gold_rule": "fixed",
-     "verifier_function": "veryify_WIS",
+     "verifier_function": "verify_wis",
      "mapping": null,
      "probe1": [
       {

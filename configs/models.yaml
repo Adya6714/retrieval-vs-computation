@@ -9,7 +9,7 @@ default_openrouter_model: anthropic/claude-sonnet-4
 
 roster:
   - name: claude-sonnet-4
-    display_name: Claude 3.7 Sonnet
+    display_name: Claude Sonnet 4
     via: OpenRouter
     openrouter_id: anthropic/claude-sonnet-4
     scientific_role: "Anchor. PDAS=1.000 finding."

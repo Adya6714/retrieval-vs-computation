@@ -99,3 +99,39 @@ Models with data also have `canonical_execution_accuracy=0.0` and per-model `par
 | `results/derived/C3_corrections_changelog.md` | This file |
 
 **Vault:** no matches for 80440, 0.02–0.22, N3 ρ=0.147, or “L1 survives the one-tower control” in `research-vault/` at correction time — nothing to edit there.
+
+---
+
+## C1 hygiene — 2026-09-25
+
+**Scope.** Audit section B (`docs/audit/REPO_AUDIT_2026-09-25.md`): drop mock / column-shifted rows from derived rescored CSVs; normalise ALGO `verifier_function`; fix Claude display name; report ALGO ID width (no rename).
+
+### 1. Mock + column-shifted rows (derived only; raw append-only)
+
+- Script: `scripts/consolidate/rescore_p1.py` now **omits** rows with `model` in `{mock, the answer is 42.}` / `variant_type=MOCK` / answer-like model text from derived `*_rescored.csv`.
+- Detects the BW column-shift pattern (4 rows in `results/raw/BW_P1_behavioral.csv` where `model == "The answer is 42."` and `notes` holds `planning_suite`); repairs in-memory then drops as mock. Raw unchanged.
+- Regenerated all P1 `*_rescored.csv`. Drops: BW combined 62 (58 mock + 4 shifted), ALGO claude 3, ALGO llama 2.
+- **Included metrics unchanged** (0 diffs on model×variant n/acc). Non-rescored `results/derived/` and `results/paper/` MD5 unchanged.
+
+### 2. `verifier_function` normalisation (`data/problems/question_bank_algo.csv`)
+
+| Before | After (by subtype) |
+|---|---|
+| `verify_coinchange` | `verify_coinchange` |
+| `verify_sp`, `Dijkstra`, `Bellman-Ford` | `verify_sp` |
+| `verify_wis`, `veryify_WIS` | `verify_wis` |
+
+- 50/690 bank rows changed. Generator typo `veryify_WIS` fixed in `scripts/generation/stage1_generate_algo.py`.
+- `probes/contamination/algo_instance_metrics.py`: SP optimal cost uses Bellman-Ford when any edge weight is negative (so SP_004 still works after losing the `Bellman-Ford` verifier string).
+- Guard: `tests/test_bank_schema.py`.
+- Rebuilt `site/data/pipeline_explorer.json` (verifier field sync).
+
+### 3. Display name
+
+- `configs/models.yaml`: `claude-sonnet-4` → `Claude Sonnet 4`.
+- Figure label maps in `ALGO_P1/P2/P3_FIG_generate.py`, `BW_P2_SCR_generate_figures.py` updated to match. (Figure binaries not regenerated this pass.)
+
+### 4. ALGO ID width — report only (no rename)
+
+See `docs/audit/C1_ALGO_ID_REPORT.md`. **Proposal (awaiting approval):** canonical form `{PREFIX}_{NNN}` zero-padded to 3 digits (`CC_01` → `CC_001`). Do not apply until approved.
+

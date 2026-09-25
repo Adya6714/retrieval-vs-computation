@@ -900,7 +900,7 @@ def main() -> None:
                 id_state["WIS"] += 1
                 pid = f"WIS_{id_state['WIS']:03d}"
                 payload = _generate_wis_standard(pid)
-                rows.append(_row(pid, "wis", "veryify_WIS", "High", payload))
+                rows.append(_row(pid, "wis", "verify_wis", "High", payload))
             # 8 adversarial split: 4 anchor_conflict, 4 chain_trap.
             for pattern_idx in range(TARGETS["wis"]["adversarial"]):
                 id_state["WIS"] += 1
@@ -910,7 +910,7 @@ def main() -> None:
                     payload = _generate_wis_adversarial_anchor(rng)
                 else:
                     payload = _generate_wis_adversarial_chain_trap(rng)
-                rows.append(_row(pid, "wis", "veryify_WIS", "High", payload))
+                rows.append(_row(pid, "wis", "verify_wis", "High", payload))
 
     print(f"Generated rows: {len(rows)}")
     print(f"By prefix: CC={sum(r['problem_id'].startswith('CC_') for r in rows)}, "

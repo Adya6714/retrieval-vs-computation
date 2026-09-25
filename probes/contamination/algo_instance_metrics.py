@@ -39,7 +39,11 @@ def _sp_optimal_cost(params: dict[str, Any], verifier: str) -> int | None:
         g.add_edge(int(edge["u"]), int(edge["v"]), weight=int(edge["w"]))
     src = int(params.get("source", 0))
     tgt = int(params.get("target", max(g.nodes) if g.nodes else 0))
-    use_bf = "bellman" in str(verifier or "").lower()
+    # Prefer Bellman-Ford when the verifier string says so OR any edge weight is
+    # negative (Dijkstra is undefined on negative weights). After C1 bank
+    # normalisation, verifier_function is always verify_sp for SP rows.
+    weights = [int(edge["w"]) for edge in graph_edges]
+    use_bf = ("bellman" in str(verifier or "").lower()) or any(w < 0 for w in weights)
     try:
         if use_bf:
             return int(nx.bellman_ford_path_length(g, src, tgt, weight="weight"))

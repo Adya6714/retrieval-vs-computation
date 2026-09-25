@@ -1,16 +1,4 @@
 problem_id,variant_type,model,model_answer,ground_truth,verified,parse_status,correct_alternative,human_review_flag,correct_canonical,greedy_answer,gave_greedy_answer,difficulty_params_instance_type,variant_type_normalized,included,exclusion_reason,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
-CC_01,canonical,mock,"Count: 2
- Coins: [3, 3]","Count: 2
- Coins: [3, 3]",True,parsed_with_normalization,False,False,True,"Count: 2
- Coins: [3, 3]",True,adversarial,canonical,False,mock_row,True,,,mock_row,
-CC_01,W1,mock,"Count: 2
- Coins: [3, 3]","Count: 2
- Coins: [3, 3]",True,parsed_with_normalization,False,False,False,"Count: 2
- Coins: [3, 3]",True,adversarial,W1,False,mock_row,True,,,mock_row,
-CC_01,W2,mock,"Count: 2
- Coins: [3, 3]","Count: 2
- Coins: [3, 3]",True,parsed_with_normalization,False,False,False,"Count: 2
- Coins: [3, 3]",True,adversarial,W2,False,mock_row,True,,,mock_row,
 CC_01,canonical,anthropic/claude-sonnet-4,"Count: 2
 Coins: [3, 3]","Count: 2
  Coins: [3, 3]",True,parsed_with_normalization,False,False,True,"Count: 2

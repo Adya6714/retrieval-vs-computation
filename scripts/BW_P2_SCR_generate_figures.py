@@ -22,7 +22,7 @@ AMBER       = "#F59E0B"
 GRAY        = "#9CA3AF"
 DIFFICULTY_COLORS = {"easy": GREEN, "medium": AMBER, "hard": P3_ACCENT}
 MODEL_LABELS = {
-    "anthropic/claude-sonnet-4": "Claude 3.7",
+    "anthropic/claude-sonnet-4": "Claude Sonnet 4",
     "openai/gpt-4o":               "GPT-4o",
     "meta-llama/llama-3.1-8b-instruct": "Llama 3.1 8B",
     "meta-llama/llama-3-8b-instruct":   "Llama 3 8B",

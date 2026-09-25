@@ -1,19 +1,4 @@
 problem_id,problem_family,variant_type,model,raw_response,behavioral_correct,notes,correct_answer,contamination_pole,difficulty,variant_type_normalized,included,exclusion_reason,old_verified,rescored_correct,verify_method,rescore_reason,verdict_changed
-BW_155,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_010,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_001,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_011,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_120,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_227,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_137,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_172,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_467,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-BW_080,blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-MBW_001,mystery_blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-MBW_100,mystery_blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-MBW_127,mystery_blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-MBW_185,mystery_blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
-MBW_10,mystery_blocksworld,canonical,mock,The answer is 42.,False,,,,,canonical,False,mock_row,False,,,mock_row,
 BW_155,blocksworld,canonical,openai/gpt-4o,"1. pick-up i
 2. stack i f
 3. pick-up f
@@ -361,45 +346,6 @@ MBW_10,mystery_blocksworld,canonical,meta-llama/llama-3.1-8b-instruct,"1. attack
 7. feast a b
 8. succumb 1
 9. feast b f",False,,,,,canonical,True,in_bank_ok,False,False,state_machine,incorrect,False
-BW_155,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_155,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_155,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_155,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_010,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_010,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_010,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_010,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_001,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_001,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_001,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_001,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_011,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_011,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_011,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_011,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_120,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_120,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_120,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_120,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_227,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_227,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_227,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_227,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_137,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_137,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_137,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_137,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_172,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_172,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_172,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_172,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_467,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_467,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_467,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
-BW_467,blocksworld,W5,mock,The answer is 42.,False,,,,,W5,False,mock_row,False,,,mock_row,
-BW_080,blocksworld,W2,mock,The answer is 42.,False,,,,,W2,False,mock_row,False,,,mock_row,
-BW_080,blocksworld,W3,mock,The answer is 42.,False,,,,,W3,False,mock_row,False,,,mock_row,
-BW_080,blocksworld,W4,mock,The answer is 42.,False,,,,,W4,False,mock_row,False,,,mock_row,
 BW_155,blocksworld,W2,openai/gpt-4o,"1. pick-up i
 2. stack i f
 3. pick-up f
@@ -7348,51 +7294,6 @@ BW_002,planning_suite,W6,meta-llama/llama-3.1-8b-instruct,1. pick-up l,False,,"p
  stack f c
  pick-up n
  stack n f",high,hard,W6,True,in_bank_ok,False,False,state_machine,incorrect,False
-BW_001,W1,mock,The answer is 42.,False,"pick-up h
-stack h l
-pick-up b
-stack b h
-pick-up d
-stack d b
-pick-up g
-stack g d
-pick-up i
-stack i g
-pick-up f
-stack f i
-pick-up j
-stack j f",planning_suite,high,medium,,MOCK,False,mock_row,,,,mock_row,
-GSM_001,canonical,mock,The answer is 42.,False,51,arithmetic_reasoning,high,medium,,MOCK,False,mock_row,,,,mock_row,
-GSM_002,canonical,mock,The answer is 42.,False,30,arithmetic_reasoning,high,easy,,MOCK,False,mock_row,,,,mock_row,
-GSM_003,canonical,mock,The answer is 42.,False,150,arithmetic_reasoning,high,medium,,MOCK,False,mock_row,,,,mock_row,
-BW_001,planning_suite,W1,mock,The answer is 42.,False,,"pick-up h
-stack h l
-pick-up b
-stack b h
-pick-up d
-stack d b
-pick-up g
-stack g d
-pick-up i
-stack i g
-pick-up f
-stack f i
-pick-up j
-stack j f",high,medium,W1,False,mock_row,False,,,mock_row,
-BW_001,planning_suite,W2,mock,The answer is 42.,False,,"pick-up h
-stack h l
-pick-up b
-stack b h
-pick-up d
-stack d b
-pick-up g
-stack g d
-pick-up i
-stack i g
-pick-up f
-stack f i
-pick-up j
-stack j f",high,medium,W2,False,mock_row,False,,,mock_row,
 BW_001,planning_suite,W1,anthropic/claude-sonnet-4,"1. pick-up j
 2. pick-up f
 3. stack j f
@@ -7447,8 +7348,6 @@ Total cost:
 $18.00 + $33.00 = $51.00
 
 Therefore, an 86-minute call would cost $51.00.",True,,51,high,medium,canonical,True,in_bank_ok,True,True,numeric,correct,False
-GSM_001,arithmetic_reasoning,canonical,mock,The answer is 42.,False,,51,high,medium,canonical,False,mock_row,False,,,mock_row,
-GSM_002,arithmetic_reasoning,canonical,mock,The answer is 42.,False,,30,high,easy,canonical,False,mock_row,False,,,mock_row,
 BW_001,planning_suite,W6,meta-llama/llama-3.1-8b-instruct,"1. pick-up a
 2. stack a i
 3. put-down a

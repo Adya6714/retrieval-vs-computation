@@ -31,7 +31,7 @@ MODEL_ORDER = [
     "meta-llama/llama-3.1-8b-instruct",
 ]
 MODEL_LABEL = {
-    "anthropic/claude-sonnet-4": "Claude 3.7",
+    "anthropic/claude-sonnet-4": "Claude Sonnet 4",
     "openai/gpt-4o": "GPT-4o",
     "meta-llama/llama-3.1-8b-instruct": "Llama 3.1 8B",
 }

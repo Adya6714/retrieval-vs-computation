@@ -2589,14 +2589,6 @@ Let's calculate the best groups of towers which could cover 80: {4, 0, 8, 2} giv
 WIS_005,W6,meta-llama/llama-3.1-8b-instruct,"Selected: {8, 13, 15}, Total: 30
 
 To find the maximum total profitability, I used a greedy algorithm, continuously selecting the center that would result in the highest profit increase with the least potential for creating supply chain inefficiencies. This algorithm was combined with a knapsack approach to add previously added centers if adding new ones could potentially increase total profitability.","Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}, Total: 175",False,parsed_clean,False,False,False,"Selected: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}, Total: 175",,standard,W6,False,missing_bank_row,False,,,missing_bank_row,
-CC_01,canonical,mock,"Count: 2
- Coins: [3, 3]","Count: 2
- Coins: [3, 3]",True,parsed_with_normalization,False,False,True,"Count: 2
- Coins: [3, 3]",True,adversarial,canonical,False,mock_row,True,,,mock_row,
-CC_01,W1,mock,"Count: 2
- Coins: [3, 3]","Count: 2
- Coins: [3, 3]",True,parsed_with_normalization,False,False,False,"Count: 2
- Coins: [3, 3]",True,adversarial,W1,False,mock_row,True,,,mock_row,
 CC_031,W1,meta-llama/llama-3.1-8b-instruct,"Count: 6
 Coins: 10, 10, 10, 10, 1, 1","Count: 5
 Coins: [10, 10, 10, 10, 2]",False,parsed_with_normalization,False,False,False,"Count: 5

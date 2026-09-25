@@ -73,6 +73,70 @@ REASON_INVALID_GOLD = "invalid_gold"
 
 MOCK_MODELS = {"mock", "the answer is 42."}
 
+# Known problem_family values that appear in BW raw when a mock row was
+# column-shifted (variant landed in problem_family; family landed in notes).
+_SHIFTED_FAMILY_MARKERS = {
+    "planning_suite",
+    "blocksworld",
+    "mystery_blocksworld",
+    "logistics",
+    "arithmetic_reasoning",
+}
+
+
+def _looks_like_answer_text(model: str) -> bool:
+    text = str(model or "").strip().lower()
+    if not text:
+        return False
+    if text in MOCK_MODELS:
+        return True
+    if text.startswith("the answer"):
+        return True
+    if "/" in text or text.startswith(("anthropic", "openai", "meta-", "google", "deepseek", "qwen")):
+        return False
+    # Free-text that is clearly not a model id.
+    return (" " in text) and not text.startswith("mock")
+
+
+def _repair_column_shifted_row(raw: dict[str, str]) -> dict[str, str] | None:
+    """Repair BW rows where omitting problem_family shifted later fields left.
+
+    Observed shape (raw ``BW_P1_behavioral.csv``)::
+
+        problem_id, problem_family=W1, variant_type=mock,
+        model='The answer is 42.', raw_response=False,
+        behavioral_correct=<gold plan>, notes=planning_suite,
+        correct_answer=high, contamination_pole=medium
+
+    Returns a remapped dict, or None if the row is not this pattern.
+    Raw files are append-only; repair happens only when reading into derived.
+    """
+    model = str(raw.get("model") or "").strip()
+    variant = str(raw.get("variant_type") or "").strip()
+    notes = str(raw.get("notes") or "").strip()
+    fam = str(raw.get("problem_family") or "").strip()
+    if not _looks_like_answer_text(model):
+        return None
+    if variant.lower() != "mock" and fam.lower() != "mock":
+        # Still repair if model is answer-text and notes holds a family marker.
+        if notes.lower() not in _SHIFTED_FAMILY_MARKERS:
+            return None
+    repaired = dict(raw)
+    repaired["problem_family"] = notes if notes else fam
+    repaired["variant_type"] = fam if fam.lower() != "mock" else variant
+    if str(raw.get("variant_type") or "").strip().lower() == "mock":
+        repaired["variant_type"] = fam  # W1 / canonical / …
+        repaired["model"] = "mock"
+    else:
+        repaired["model"] = variant if variant.lower() == "mock" else "mock"
+    repaired["raw_response"] = model
+    repaired["behavioral_correct"] = str(raw.get("raw_response") or "")
+    repaired["notes"] = ""
+    repaired["correct_answer"] = str(raw.get("behavioral_correct") or "")
+    repaired["contamination_pole"] = str(raw.get("correct_answer") or "")
+    repaired["difficulty"] = str(raw.get("contamination_pole") or "")
+    return repaired
+
 
 def _resolve_verifier_family(*, pid: str, problem_family: str, problem_subtype: str) -> str:
     fam = str(problem_family or "").strip().lower()
@@ -275,16 +339,34 @@ def main() -> None:
         out_fields = src_fields + extra
         out_path = out_dir / f"{path.stem}_rescored.csv"
 
+        n_written = 0
+        n_dropped_mock = 0
+        n_repaired_shift = 0
         with out_path.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=out_fields, extrasaction="ignore")
             writer.writeheader()
-            for raw in rows:
+            for raw_in in rows:
+                repaired = _repair_column_shifted_row(raw_in)
+                if repaired is not None:
+                    raw = repaired
+                    n_repaired_shift += 1
+                else:
+                    raw = raw_in
+
                 pid = str(raw.get("problem_id", "")).strip()
                 variant_raw = str(raw.get("variant_type", "")).strip()
                 variant = normalize_variant(variant_raw)
                 model = str(raw.get("model") or "").strip() or path.stem
                 answer = _model_answer(raw)
                 old = _old_correct(raw)
+
+                # Drop mock / column-shifted mock rows from derived entirely.
+                # They remain in raw (append-only); metrics never used them
+                # (included=False), so dropping must not change included metrics.
+                if _is_mock_model(model) or variant == "MOCK" or _looks_like_answer_text(model):
+                    n_dropped_mock += 1
+                    coverage[REASON_MOCK] += 1
+                    continue
 
                 bank_row = None
                 row_family = family
@@ -295,13 +377,7 @@ def main() -> None:
                         row_family = name
                         break
 
-                if _is_mock_model(model) or variant == "MOCK":
-                    included = False
-                    reason = REASON_MOCK
-                    new = None
-                    method = ""
-                    detail = "mock_row"
-                elif bank_row is None:
+                if bank_row is None:
                     included = False
                     reason = REASON_MISSING_BANK
                     new = None
@@ -365,9 +441,13 @@ def main() -> None:
                 out_row["rescore_reason"] = detail
                 out_row["verdict_changed"] = changed if included else ""
                 writer.writerow(out_row)
+                n_written += 1
 
         written.append(out_path)
-        print(f"Wrote {out_path} ({len(rows)} rows)")
+        print(
+            f"Wrote {out_path} ({n_written} rows; "
+            f"dropped_mock={n_dropped_mock}; repaired_shift={n_repaired_shift})"
+        )
 
     print()
     header = (
