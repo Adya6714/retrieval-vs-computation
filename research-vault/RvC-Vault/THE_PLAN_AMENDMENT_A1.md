@@ -25,6 +25,8 @@ THE_PLAN still wins every conflict. This amendment adds work; it removes no gate
 | T4 | [[D14_Distillation_Invariance]] (R1-Distill-Qwen-1.5B vs Qwen2.5-Math-1.5B) | H11 | CC-1, AC-3 precursor | T4 hours |
 | T5 | [[D06_Direction_Asymmetry]] backward-prompting discriminator (append) | D06 | F3 mechanism | < 100 calls |
 | T6 | [[D16_Surface_Ensembling]] | H12 | practitioner result | T4 hours |
+| T7 | [[D17_Commitment_Depth_T4]] | H14 | AC-1 precursor | T4 hours |
+| T8 | [[D05_Cross_Linguistic]] W7 via [[HP-25_W7_Language_Transform]] | H15 | CC-1, GlobalSouthAI angle | T4 hours or small API |
 
 Phase 3 addition (gated behind G2, not Track T): [[D15_RLVR_Surface_Diversity]] tests H7b, the RL form of AC-3. A plumbing-only dry run on Qwen2.5-0.5B is allowed; no result from it is reported.
 
@@ -35,6 +37,8 @@ Phase 3 addition (gated behind G2, not Track T): [[D15_RLVR_Surface_Diversity]] 
 - H11 Distillation transfers canonical accuracy more fully than it transfers invariance.
 - H12 Majority vote across answer-preserving surfaces beats sample self-consistency at matched call count, because fragility is model-item specific (F4).
 - H13 Cost of cover-story isomorph (W3b) exceeds cost of nonce rename (W3a); if W3a is cheap, F1 is a domain-transfer effect, not an entity-binding effect.
+- H14 Commitment depth (first layer where the gold token is top-1) shifts later under W3 than canonical, on models strong enough to solve renamed items.
+- H15 A model computing in a language-agnostic latent shows R_W7 near 1; a model that does not shows W7 collapsing like W3.
 - H7b (sub-hypothesis of H7) Under RLVR with matched steps, surface-diverse prompts yield higher held-out invariance than canonical-only prompts at equal canonical accuracy.
 
 ## Kill criteria (pre-registered)

@@ -15,8 +15,8 @@ Open this note first. It is the map of the whole vault and the current state of 
 ## Added 2026-09-25
 - Read after THE_PLAN: [[THE_PLAN_AMENDMENT_A1]] (Track T while Phase 1 is GPU-blocked).
 - Instrument: [[EF-07_W3_Construct_Audit]] (W3 as built is a cover-story isomorph; required Paper I fix) and [[EF-08_Position_On_Thinking]].
-- Directions: [[D11_Inference_Stack_Noise_Floor]], [[D12_Precision_Compression_Invariance]], [[D13_Continued_Pretraining_Transfer]], [[D14_Distillation_Invariance]], [[D15_RLVR_Surface_Diversity]], [[D16_Surface_Ensembling]].
-- Handoffs: [[HP-16_Noise_Floor]] to [[HP-23_W3a_Nonce_Bank]].
+- Directions: [[D11_Inference_Stack_Noise_Floor]], [[D12_Precision_Compression_Invariance]], [[D13_Continued_Pretraining_Transfer]], [[D14_Distillation_Invariance]], [[D15_RLVR_Surface_Diversity]], [[D16_Surface_Ensembling]], [[D17_Commitment_Depth_T4]].
+- Handoffs: [[HP-16_Noise_Floor]] to [[HP-23_W3a_Nonce_Bank]], [[HP-24_Commitment_Depth_T4]], [[HP-25_W7_Language_Transform]].
 - Broader impact: [[BI-04_Engineering_Relevance]].
 
 ## Vault sections

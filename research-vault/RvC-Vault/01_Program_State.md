@@ -44,6 +44,8 @@ Four distinct mechanistic artifacts exist; they were never one dataset:
 - H11 distillation transfers accuracy more than invariance ([[D14_Distillation_Invariance]]). status: untested.
 - H12 surface ensembling beats self-consistency at matched calls ([[D16_Surface_Ensembling]]). status: untested.
 - H13 isomorph cost exceeds nonce-rename cost ([[EF-07_W3_Construct_Audit]]). status: untested.
+- H14 commitment depth shifts under rename, on models that can solve renamed items ([[D17_Commitment_Depth_T4]]). status: untested.
+- H15 language-agnostic latent shows near-1 W7 retention ([[D05_Cross_Linguistic]]). status: untested.
 - H7b RL form of H7 ([[D15_RLVR_Surface_Diversity]]). status: gated behind G2.
 
 ## D. Open issues / known weaknesses
@@ -70,3 +72,4 @@ Four distinct mechanistic artifacts exist; they were never one dataset:
 
 ## E (append): changelog
 - 2026-09-25: Repo + site review. Added [[THE_PLAN_AMENDMENT_A1]] (Track T), [[EF-07_W3_Construct_Audit]], [[EF-08_Position_On_Thinking]], directions [[D11_Inference_Stack_Noise_Floor]] to [[D16_Surface_Ensembling]], handoffs [[HP-16_Noise_Floor]] to [[HP-23_W3a_Nonce_Bank]], [[BI-04_Engineering_Relevance]]. Appended D05, D06, P01, P-00. Registered H8 to H13 and H7b. No gate status changed. G0 remains passed; G1 remains blocked.
+- 2026-09-25 (later): Track T T7/T8. Added [[D17_Commitment_Depth_T4]], [[HP-24_Commitment_Depth_T4]], [[HP-25_W7_Language_Transform]]. Registered H14 and H15. Amended [[THE_PLAN_AMENDMENT_A1]] table. No gate status changed.

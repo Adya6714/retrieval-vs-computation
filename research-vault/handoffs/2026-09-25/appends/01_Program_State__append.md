@@ -7,6 +7,8 @@
 - H11 distillation transfers accuracy more than invariance ([[D14_Distillation_Invariance]]). status: untested.
 - H12 surface ensembling beats self-consistency at matched calls ([[D16_Surface_Ensembling]]). status: untested.
 - H13 isomorph cost exceeds nonce-rename cost ([[EF-07_W3_Construct_Audit]]). status: untested.
+- H14 commitment depth shifts under rename, on models that can solve renamed items ([[D17_Commitment_Depth_T4]]). status: untested.
+- H15 language-agnostic latent shows near-1 W7 retention ([[D05_Cross_Linguistic]]). status: untested.
 - H7b RL form of H7 ([[D15_RLVR_Surface_Diversity]]). status: gated behind G2.
 
 ## D (append): open issues found 2026-09-25 (verified-raw)
