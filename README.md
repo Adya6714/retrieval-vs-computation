@@ -1,5 +1,7 @@
 # Retrieval vs computation
 
+**Website:** https://adya6714.github.io/retrieval-vs-computation/
+
 Equal benchmark accuracy can be reached by procedures that behave differently under surface change. This repository is a measurement programme for that distinction: six controlled surface variants, three problem families (arithmetic, planning, algorithmic optimisation), and the model roster below. The instrument records whether a verified answer survives a named transform, whether a declared plan matches isolated execution, and whether a mid-solve injection is accepted without changing the final answer.
 
 ## Status
@@ -15,7 +17,7 @@ Status, Sept 2026: behavioural layer shipped (Phase 0, gate G0 passed). Per-inst
 
 **Code:** [github.com/Adya6714/retrieval-vs-computation](https://github.com/Adya6714/retrieval-vs-computation).  
 **Teaching walkthrough:** [BOOK.md](BOOK.md).  
-**Site:** [GitHub Pages](https://adya6714.github.io/retrieval-vs-computation/).
+**Speaker notes:** [`docs/talks/Speaker_Notes_Retrieval_vs_Computation.md`](docs/talks/Speaker_Notes_Retrieval_vs_Computation.md).
 
 ---
 
@@ -71,6 +73,7 @@ Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 | `results/derived/` | Aggregates cited in the paper (recomputable from raw + banks) |
 | `paper/` | Manuscript, tables, figures, PDF; CAISc archive under `paper/venue/caisc2026/` |
 | `site/` | Interactive site (GitHub Pages) |
+| `docs/talks/` | Speaker notes for presenting the site |
 | `research-vault/` | Programme vault (`THE_PLAN.md`, notes, handoffs) |
 | **Plan** | [`research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md) (Track T amendment) · [`docs/audit/REPO_AUDIT_2026-09-25.md`](docs/audit/REPO_AUDIT_2026-09-25.md) (verified hygiene / Paper I blockers) |
 

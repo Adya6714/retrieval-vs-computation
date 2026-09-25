@@ -93,3 +93,6 @@ paper/_minted*/
 # ─── Logs ───────────────────────────────────────────────────────────
 logs/
 *.log
+
+# ─── One-off delivery packages (already applied under research-vault/handoffs/) ──
+/Retrieval vs Computation in LLM Inference Optimization/
