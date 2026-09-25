@@ -1,10 +1,38 @@
 # Retrieval vs computation
 
-Equal benchmark accuracy can be reached by procedures that behave differently under surface change. This repository is a measurement programme for that distinction: six controlled surface variants, three problem families (arithmetic, planning, algorithmic optimisation), and six models. The instrument records whether a verified answer survives a named transform, whether a declared plan matches isolated execution, and whether a mid-solve injection is accepted without changing the final answer.
+Equal benchmark accuracy can be reached by procedures that behave differently under surface change. This repository is a measurement programme for that distinction: six controlled surface variants, three problem families (arithmetic, planning, algorithmic optimisation), and the model roster below. The instrument records whether a verified answer survives a named transform, whether a declared plan matches isolated execution, and whether a mid-solve injection is accepted without changing the final answer.
 
-**Paper:** [Harder Instances, Higher Accuracy](paper/main.pdf) (`paper/main.tex`).  
+## Status
+
+Status, Sept 2026: behavioural layer shipped (Phase 0, gate G0 passed). Per-instance labels are not issued yet; they wait on calibration gate G1, which needs a GPU. Open-weight Track T is running on a T4.
+
+## Papers
+
+| Artefact | Description |
+|----------|-------------|
+| [`paper/main.tex`](paper/main.tex) / [`paper/main.pdf`](paper/main.pdf) | Paper I draft: What Survives a Rename (NeurIPS 2026 E&D format) |
+| [`paper/venue/caisc2026/`](paper/venue/caisc2026/) | Accepted predecessor: *Same Score, Different Strategy* (CAISc 2026) |
+
 **Code:** [github.com/Adya6714/retrieval-vs-computation](https://github.com/Adya6714/retrieval-vs-computation).  
-**Teaching walkthrough:** [BOOK.md](BOOK.md).
+**Teaching walkthrough:** [BOOK.md](BOOK.md).  
+**Site:** [GitHub Pages](https://adya6714.github.io/retrieval-vs-computation/).
+
+---
+
+## Models
+
+Roster generated from [`configs/models.yaml`](configs/models.yaml) by `scripts/consolidate/make_model_table.py`. Paper analyses use five primary behavioural models plus DeepSeek-R1-distill-Llama-70B on planning only (see `results/derived/COVERAGE_MASTER.csv`).
+
+<!-- MODELS:START -->
+| Model | ID | Via | Behavioural | Mechanistic | Priority | Role |
+|---|---|---|:---:|:---:|---|---|
+| Claude Sonnet 4 | `anthropic/claude-sonnet-4` | OpenRouter | yes | no | required | Anchor. PDAS=1.000 finding. |
+| GPT-4o | `openai/gpt-4o` | OpenRouter | yes | no | required | Frontier closed-source comparison. |
+| Llama 3.1 8B | `meta-llama/llama-3.1-8b-instruct` | OpenRouter | yes | no | required | Capability floor. Open-source reproducibility. |
+| DeepSeek-R1-Distill-Llama-70B | `deepseek/deepseek-r1-distill-llama-70b` | OpenRouter | yes | no | optional | Reasoning-specialized (cost-efficient distill). |
+| Qwen2.5 72B | `qwen/qwen-2.5-72b-instruct` | OpenRouter | yes | no | required | Large open-source, different training distribution. |
+| Qwen2.5 7B (local HF) | `Qwen/Qwen2.5-7B-Instruct` | local HF | no | yes | optional | mechanistic probes only; behavioral sweeps use qwen2.5-72b via OpenRouter |
+<!-- MODELS:END -->
 
 ---
 
@@ -12,7 +40,7 @@ Equal benchmark accuracy can be reached by procedures that behave differently un
 
 Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 
-- **Numeric regeneration is nearly free; entity rename is expensive.** Gemini GSM canonical **.909** → W6 **.958**, canonical **.909** → W3 **.523** (`probe1_per_model_variant.csv`).
+- **Numeric regeneration is nearly free; cover-story change is expensive.** Gemini GSM canonical **.909** → W6 **.958**, canonical **.909** → W3 **.523** (`probe1_per_model_variant.csv`).
 - **Formal notation is often costlier than renaming.** o4-mini GSM canonical **.841** → W4 **.682** (same file); W3 on that cell is **.841**.
 - **Planning direction inversion raises accuracy.** On the Blocksworld ranker used for concordance, Claude W5 accuracy is **.869** against a W3 of **.375** (`C7_concordance_filtered.csv`). The manuscript table reports Claude canonical **.172** → W5 **.873**.
 - **No item-level locus of fragility** among items scored on all five primary models: **0/110** ALGO, **0/20** GSM, **14/64** BW (`P1_failure_patterns.csv`, `fail_all_five_paper_models`).
@@ -32,20 +60,23 @@ Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 
 ---
 
-## Repository map
+## Where everything lives
 
-```
-data/problems/          three banks: question_bank_{gsm,bw,algo}.csv
-probes/                 shared library (variants, verifiers, CCI/TEP, clients)
-scripts/                sweeps (*_SCR_*), figures (*_FIG_*), generation, consolidate
-results/raw/            append-only per-instance logs (resume on problem × variant × model)
-results/derived/        every aggregate cited in the paper (recomputable from raw + banks)
-paper/                  manuscript, tables, figures, PDF
-```
+| Path | What it is |
+|------|------------|
+| `data/problems/` | Question banks: `question_bank_{gsm,bw,algo}.csv` |
+| `probes/` | Shared library (variants, verifiers, CCI/TEP, clients) |
+| `scripts/` | Sweeps (`*_SCR_*`), figures (`*_FIG_*`), generation, consolidate |
+| `results/raw/` | Append-only per-instance logs (resume on problem × variant × model) |
+| `results/derived/` | Aggregates cited in the paper (recomputable from raw + banks) |
+| `paper/` | Manuscript, tables, figures, PDF; CAISc archive under `paper/venue/caisc2026/` |
+| `site/` | Interactive site (GitHub Pages) |
+| `research-vault/` | Programme vault (`THE_PLAN.md`, notes, handoffs) |
+| **Plan** | [`research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md) (Track T amendment) · [`docs/audit/REPO_AUDIT_2026-09-25.md`](docs/audit/REPO_AUDIT_2026-09-25.md) (verified hygiene / Paper I blockers) |
 
-**Banks.** GSM (arithmetic; GSM-Symbolic templates), BW (Blocksworld / mystery; PlanBench PDDL), ALGO (coin change, shortest path, weighted interval scheduling). Shared schema: `problem_id`, `variant_type`, `problem_text`, `correct_answer`, `problem_family`, `problem_subtype`.
+**Banks.** GSM (arithmetic; GSM-Symbolic templates), BW (Blocksworld / mystery; PlanBench PDDL), ALGO (coin change, shortest path, weighted interval scheduling). Shared schema includes `problem_id`, `variant_type`, `variant_subtype`, `w3_kind`, `problem_text`, `correct_answer`, `problem_family`, `problem_subtype`.
 
-**Variants.** W1 paraphrase, W2 reformat, W3 entity rename, W4 formal notation, W5 direction reversal (init/goal swap on BW), W6 procedural regeneration (new numbers / new instance, gold re-solved).
+**Variants.** W1 paraphrase, W2 reformat, W3 cover-story isomorph (W3b; nonce W3a in progress), W4 formal notation, W5 direction reversal (init/goal swap on BW), W6 procedural regeneration (new numbers / new instance, gold re-solved).
 
 **Probes.** P1 behavioural sweep; P2 plan vs execution (CCI) and false-state injection (TEP); P3 Infini-gram proximity and per-instance triangulation.
 
@@ -62,6 +93,7 @@ export PYTHONPATH=.
 python scripts/runs/rederive_all_metrics.py
 python scripts/consolidate/p1_variant_ordering.py
 python scripts/consolidate/p1_failure_patterns.py
+python scripts/consolidate/make_model_table.py
 ```
 
 | Finding | Command that writes the table | Derived file | Cell |
@@ -101,6 +133,8 @@ rvc/
 ├── results/derived/
 ├── paper/main.tex
 ├── paper/main.pdf
+├── paper/venue/caisc2026/
 ├── BOOK.md
+├── research-vault/
 └── tests/
 ```
