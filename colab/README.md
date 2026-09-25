@@ -36,4 +36,12 @@ at `results/raw/colab_inbox/` (kept for provenance; re-land under the paths belo
 
 **Combined suite:** `colab/k_suite_colab.ipynb` runs K1→K2→K3→K4→K6→K7→K5 in one T4 session. Toggle arms with `RUN_K*` in the master knobs cell. Smoke with `LIMIT=2`, `DRY_RUN=True` first.
 
+| **`T1_noise_floor.ipynb`** (HP-16 / Track T) | `results/raw/T1_noise_floor_*.csv` → metrics in `results/derived/T1_noise_floor_metrics.csv` |
+| **`T2_qwen_family.ipynb`** (HP-17 / Track T) | `results/raw/T2_P1_*.csv` → `results/derived/T2_mixed_model.csv` |
+| **`T3_precision.ipynb`** (HP-18 / Track T) | `results/raw/T3_P1_*_{precision,band*}.csv` → `T3_precision_metrics.csv`, `T3_band_map.csv`, `results/figures/T3_band_map.pdf` |
+
+**Track T secrets:** Colab → 🔑 `RVC_PUSH_TOKEN` (preferred) or `GITHUB_TOKEN` for the push cell; never hard-code. Optional `HF_TOKEN`. First cell prints GPU / CUDA / torch / transformers. Scripts live under `scripts/trackT/` and always take `--resume`. Smoke with `DRY_RUN = True` in the run cell before a full T4 session.
+
+Regenerate Track T notebooks with `python colab/_build_trackT.py`.
+
 Regenerate the `.ipynb` files with `python colab/_build_notebooks.py` (includes O15/O16/O14b/DS16/k_suite via sibling builders).
