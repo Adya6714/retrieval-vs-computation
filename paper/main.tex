@@ -26,7 +26,7 @@ optimisation, presenting each problem in six answer-preserving surface forms and
 adding a cross-session plan-versus-execution probe and a mid-solve false-state
 injection probe. Five results emerge. (i) Robustness separates by \emph{what} is
 changed, not how much: regenerating a problem with new numeric values costs almost
-nothing (Gemini $.909 \rightarrow .958$) while renaming its entities costs a great
+nothing (Gemini $.909 \rightarrow .958$) while moving the same problem into a different cover story costs a great
 deal ($.909 \rightarrow .523$), on the same algorithm at the same difficulty.
 (ii) Rewriting a problem in formal notation, with entities left intact, is often
 \emph{harder} than renaming: even the reasoning-trained o4-mini loses 16 points.
@@ -65,8 +65,8 @@ process-level probes on the same instances.
 
 \paragraph{Contributions.}
 \begin{itemize}
-\item A dissociation between numeric and lexical robustness: regenerated parameter
-values are nearly free, renamed entities are expensive, on identical algorithms.
+\item A dissociation between numeric and cover-story robustness: regenerated parameter
+values are nearly free, cover-story isomorphs are expensive, on identical algorithms.
 \item The observation that formal-notation rewriting, which changes no entity names,
 is frequently a harder perturbation than renaming.
 \item A direction-of-reasoning effect in planning: goal/initial inversion raises
@@ -83,14 +83,26 @@ injection.
 \section{Related Work}
 
 \paragraph{Surface perturbation.} \citet{mirzadeh2025gsmsymbolic} regenerate GSM8K
-items with varied names and values and report group-level decline; their
-\emph{Vary Name} condition is the direct predecessor of our entity-rename
-transformation on arithmetic. \citet{valmeekam2023planbench} introduce obfuscated
+templates with new names and
+values and report group-level decline. % TODO-VERIFY: exact direction of their
+% name-vs-number result, with section and figure number.
+Their \emph{Vary Name} condition changes proper names only; our W3b changes the
+entire cover story, and our W6 changes values within a fixed template. The two
+manipulations are therefore not comparable one to one, and we report the contrast
+explicitly rather than treating our W3 as a replication of theirs.
+\citet{valmeekam2023planbench} introduce obfuscated
 Blocksworld, replacing domain predicates with arbitrary tokens; our planning rename
 follows that design. \citet{wang2024rupbench} apply nine perturbation types across
 fifteen datasets and \citet{wu2024reasoning} evaluate eleven counterfactual tasks.
 These establish that perturbation costs accuracy. We ask which perturbation, on
 which family, and whether the ordering is stable.
+
+\paragraph{Direction in planning.}
+Direction asymmetry in planning has been reported before and linked to search
+complexity \citep{fwdbwd2024}. We replicate it on PlanBench Blocksworld items and
+leave its mechanism open; a pre-registered discriminating test (backward-reasoning
+instruction on canonical items versus constraint asymmetry per item) is specified in
+our repository.
 
 \paragraph{Chain-of-thought faithfulness.} \citet{turpin2023language} and
 \citet{lanham2023measuring} intervene within a single reasoning trace. Our
@@ -117,8 +129,10 @@ public-corpus prevalence: coin change (very common in tutorial text), shortest p
 \paragraph{Surface transformations.} Each problem is expanded to six variants by
 deterministic scripts, each preserving the answer exactly except where noted:
 W1 paraphrase; W2 structural reformatting (adjacency matrix, interval table,
-equation set); W3 entity rename to a vocabulary-disjoint held-out token set,
-length-matched and single-token where the original was; W4 formal notation
+equation set); W3 \emph{cover-story isomorph}: entities, actions and framing are mapped into a
+different real-world domain (e.g.\ coins to stamps, a phone tariff to a calorie
+budget, block moves to a reporting chain) while numbers, structure and gold answer
+are preserved; the mapping is persisted and consumed by the verifier; W4 formal notation
 (\LaTeX{} for arithmetic, formal predicates for planning, edge-list notation for
 graphs); W5 direction reversal (initial and goal states exchanged for planning,
 source and destination exchanged for graphs, forward-to-backward inversion for
@@ -145,10 +159,11 @@ except that at a sampled interior step the true intermediate value is replaced w
 a plausible but incorrect one; we classify the model's response at the injection
 step and measure final-answer accuracy against the uninjected run.
 
-\paragraph{Models and sampling.} Six models at $T = 0$, zero-shot chain-of-thought
+\paragraph{Models and sampling.} Five primary models at $T = 0$, zero-shot chain-of-thought
 through a single gateway: Claude Sonnet~4, GPT-4o, Gemini 2.5 Flash,
-Llama-3.1-8B-Instruct \citep{dubey2024llama}, o4-mini, and
-DeepSeek-R1-distill-Llama-70B \citep{guo2025deepseek} on planning. Approximately
+Llama-3.1-8B-Instruct \citep{dubey2024llama}, and o4-mini; plus
+DeepSeek-R1-distill-Llama-70B \citep{guo2025deepseek} on planning only
+(Probe~1 Blocksworld; $n{=}6$ models on BW, $n{=}5$ on GSM and ALGO). Approximately
 20{,}000 model calls.
 
 \paragraph{Statistics.} Because procedurally generated banks contain families of
@@ -160,14 +175,19 @@ where canonical accuracy is at least $0.30$, a threshold fixed before analysis.
 
 \section{Lexical and Numeric Robustness Dissociate}
 
+All results in this section are exploratory with respect to the pre-registration,
+which governs subsequent calibration and mechanism phases; thresholds reported here
+(e.g.\ the $\mathrm{Acc}_{\mathrm{can}} \geq .30$ retention floor) were fixed before
+the corresponding analyses were run.
+
 The sharpest contrast in our data is between W6 and W3. Both replace content in the
-problem; W6 replaces the numbers and W3 replaces the names. The underlying algorithm
+problem; W6 replaces the numbers and W3 replaces the cover story. The underlying algorithm
 and the difficulty class are held fixed in both.
 
 \begin{table}[t]
 \centering
-\caption{Arithmetic per-variant accuracy. W6 regenerates numeric values; W3 renames
-entities. Numeric novelty is nearly free; lexical novelty is expensive, and the cost
+\caption{Arithmetic per-variant accuracy ($n{=}5$ primary models). W6 regenerates numeric values; W3 is a
+cover-story isomorph. Numeric novelty is nearly free; cover-story change is expensive, and the cost
 varies sharply by model.}
 \label{tab:gsm}
 \small
@@ -218,9 +238,15 @@ a valid planning instance of comparable structure, re-solved with an admissible
 planner to obtain its gold plan. For most models it is markedly \emph{easier} than
 the original.
 
+Direction asymmetry in planning has been reported before and linked to search
+complexity \citep{fwdbwd2024}. We replicate it on PlanBench Blocksworld items and
+leave its mechanism open; a pre-registered discriminating test (backward-reasoning
+instruction on canonical items versus constraint asymmetry per item) is specified in
+our repository.
+
 \begin{table}[t]
 \centering
-\caption{Blocksworld per-variant accuracy. W5 exchanges initial and goal states.}
+\caption{Blocksworld per-variant accuracy ($n{=}5$ primary models shown; DeepSeek-R1-distill on planning is additional). W5 exchanges initial and goal states.}
 \label{tab:bw}
 \small
 \begin{tabular}{lrrrrrrr}
@@ -384,6 +410,15 @@ retained.
 characterising the training-data conditions under which invariance forms, which
 requires controlled training runs; and tracking when invariance emerges relative to
 accuracy across public checkpoint series.
+
+\section{Limitations}
+
+The instrument is designed for per-instance diagnosis, but we do not issue
+per-instance retrieval or computation labels: across a 270-configuration threshold
+sweep the retrieval-consistent count ranges from 0 to 170 of 440, and mixture Rasch
+models select a single class on arithmetic. Per-instance verdicts may also be
+sensitive to the inference stack (batch size, kernel, accumulation precision) even at
+temperature zero; we quantify this floor on open-weight models in follow-up work.
 
 \section{Conclusion}
 
