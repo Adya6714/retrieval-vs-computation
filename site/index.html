@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <link rel="stylesheet" href="css/pipeline.css" />
+<link rel="stylesheet" href="css/content.css" />
 <style>
 :root {
   --ink: #0A0A0B;
@@ -450,11 +451,22 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Retrieval vs computation · research programme</p>
     <h1 id="headline">A measurement science for how language models solve problems.</h1>
+    <p class="hero-author">Adya Srivastava, BITS Pilani. Supervised by Prof. Dhruv Kumar (BITS Pilani / IIIT Delhi).</p>
+    <p class="hero-pub">Predecessor paper: <a href="https://github.com/Adya6714/retrieval-vs-computation/tree/main/paper/venue/caisc2026" target="_blank" rel="noopener">Same Score, Different Strategy, CAISc 2026</a>.</p>
     <p class="hero-mission" id="mission">Build the first validated, per-instance measurement science for how LLMs solve problems (retrieval vs computation), then use it to establish capability claims, an architecture claim, and training-data laws.</p>
+    <p class="status-strip">Status, Sept 2026: behavioural layer shipped (Phase 0, gate G0 passed). Per-instance labels are not issued yet; they wait on calibration gate G1, which needs a GPU. Open-weight Track T is running on a T4.</p>
     <div class="epistemic">
       <p>A correct answer is consistent with executing a procedure or with matching a seen pattern. Accuracy cannot separate them.</p>
       <p>Group-level perturbation studies report that accuracy drops. They do not tell you, for a given instance, which process produced the answer.</p>
       <p>Per-instance diagnosis is the object. Everything downstream — where the split lives in the network, what training conditions produce it, when it emerges — depends on first having an instrument that works at instance granularity.</p>
+    </div>
+    <div class="prior-box" id="prior-work">
+      <h3>What is new relative to prior work</h3>
+      <div class="prior-rows">
+        <div class="prior-row"><div class="name">GSM-Symbolic</div><p>Group-level, names and numbers. Ours: per-instance, cover-story isomorph vs numeric regeneration, convergent second probe.</p></div>
+        <div class="prior-row"><div class="name">PlanBench obfuscation</div><p>Replicated; ours adds the direction contrast and verification with a persisted mapping.</p></div>
+        <div class="prior-row"><div class="name">Counterfactual tasks</div><p>Same spirit; ours adds psychometric structure (G-theory, mixture IRT, intrusion errors).</p></div>
+      </div>
     </div>
     <div class="hero-meta">
       <span>Four papers · five phases · 110+ vault notes</span>
@@ -488,6 +500,26 @@ html.js .reveal.in{opacity:1;transform:none}
         <aside class="who-side" id="who-side" aria-live="polite"></aside>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="panel" id="applications" data-rail="Applications">
+  <div class="inner reveal">
+    <p class="kicker">Engineering relevance</p>
+    <h2>Where this applies, and where it does not.</h2>
+    <p class="app-fixed">This is a validity check, not an efficiency method. It does not make kernels faster or models smaller.</p>
+    <p class="lede">Filter by engineering area. Each row states what the instrument adds, the direction ID, and status.</p>
+    <div class="app-filters" id="app-filters" role="group" aria-label="Filter engineering areas"></div>
+    <div class="app-list" id="app-list"></div>
+  </div>
+</section>
+
+<section class="panel" id="position" data-rail="Position">
+  <div class="inner reveal">
+    <p class="kicker">Position</p>
+    <h2>What this measures, and what it does not.</h2>
+    <p class="pos-para" id="pos-para">We do not ask whether language models think. We measure, per problem instance, whether a correct answer was produced by a procedure that is invariant to answer-irrelevant surface features. Across five primary models and three task families this property is graded, model-item specific, and dissociable from accuracy, and several of its failure patterns (cover-story isomorphs, representational register, search direction) have direct analogues in human problem solving. The question our instrument makes empirical is therefore not "thinking or not" but which surface features a given solution procedure is bound to, and whether that binding resembles the human one.</p>
+    <div class="pos-toggles" id="pos-toggles"></div>
   </div>
 </section>
 
@@ -613,7 +645,7 @@ html.js .reveal.in{opacity:1;transform:none}
           </div>
           <footer class="probe-foot">
             <div><strong>Template</strong><p>Solve step by step. Give the final answer. Then {problem_text}. Same instruction on every variant.</p></div>
-            <div><strong>Cannot discharge alone</strong><p>Tokenization noise. Cross-model opposite-direction fragility and length-matched nonces bound it.</p></div>
+            <div><strong>Cannot discharge alone</strong><p>As built, W3 moves the problem into a new real-word domain (a cover-story isomorph). A true nonce rename (W3a) is being added so the two can be compared.</p></div>
           </footer>
         </div>
 
@@ -750,7 +782,8 @@ html.js .reveal.in{opacity:1;transform:none}
     <p class="kicker">Finding 1 · shipped behavioural layer</p>
     <h2>Numeric vs lexical robustness dissociate.</h2>
     <div class="chart-wrap" id="slope-chart"></div>
-    <p class="caption">Canonical → W6 → W3 on arithmetic. W6 stays flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="caption">Canonical → W6 → W3 on arithmetic. W6 stays flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span><span class="ci-pending">CI pending</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="caption">W3 as built is a cover-story isomorph; see the <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md" target="_blank" rel="noopener">construct note</a>.</p>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code></p>
     <div class="finding-depth" data-finding="f1"></div>
   </div>
@@ -763,7 +796,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <p class="lede">W4 leaves entity names intact and changes register. o4-mini loses 16 points under W4 alone.</p>
     <div class="tabs" id="f2-tabs"><button class="tab active" data-fam="gsm">Arithmetic</button><button class="tab" data-fam="bw">Planning</button></div>
     <div class="small-multiples" id="pc-charts"></div>
-    <p class="caption">W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. o4-mini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841 → .682</span>. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="caption">W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. o4-mini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841 → .682</span><span class="ci-pending">CI pending</span>. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code></p>
     <div class="finding-depth" data-finding="f2"></div>
   </div>
@@ -786,7 +819,8 @@ html.js .reveal.in{opacity:1;transform:none}
           <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.35rem"><span id="bw-acc-label">Canonical</span><span class="stat" id="bw-acc-val">.172</span></div>
           <div class="acc-track"><div class="acc-fill" id="bw-acc-fill"></div></div>
         </div>
-        <p class="caption">Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span>; Gemini .391 → .764; o4-mini .781 → .909.</p>
+        <p class="caption">Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span><span class="ci-pending">CI pending</span>; Gemini .391 → .764; o4-mini .781 → .909.</p>
+        <p class="caption">Direction asymmetry in planning has been reported before; our open question is mechanism. See <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/06_Operating_Manual/HP-22_Backward_Prompt_Discriminator.md" target="_blank" rel="noopener">HP-22</a>.</p>
       </div>
     </div>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/consolidate/p1_variant_ordering.py</code></p>
@@ -868,12 +902,12 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<section class="panel" id="next" data-rail="Future methods">
+<section class="panel" id="next" data-rail="Track T">
   <div class="inner reveal">
-    <p class="kicker">Future research methods</p>
-    <h2>Protocols with predictions and kill criteria.</h2>
-    <p class="lede">Tier 1 calibrates and intervenes. Tier 2 maps geometry and development. Tier 3 folds into those designs. Expand any card for the step-by-step protocol.</p>
-    <div class="method-tiers" id="method-tiers"></div>
+    <p class="kicker">Open-weight track</p>
+    <h2>Track T on a T4 — and the priority spend.</h2>
+    <p class="lede">Phase 1 (G1) remains the priority spend when a GPU is available. Track T runs the existing instrument on small open-weight models under controlled interventions; it discharges no gate and issues no per-instance labels.</p>
+    <div class="method-tiers" id="method-tiers" hidden></div>
     <div class="next-grid" id="next-grid"></div>
   </div>
 </section>
@@ -889,7 +923,22 @@ html.js .reveal.in{opacity:1;transform:none}
       <a id="plan-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md" target="_blank" rel="noopener">THE_PLAN</a>
       <a id="contact-foot" href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Issues</a>
     </div>
-    <p class="caption" style="margin-top:2rem">Sources: 00_MOC · THE_PLAN · RVC_MASTER_DOCUMENT · 01_Program_State · 02_Decision_Memo. Arrow keys move section to section.</p>
+    <div class="bib-block">
+      <div class="bib-toolbar">
+        <strong>Cite the predecessor (CAISc 2026)</strong>
+        <button type="button" class="bib-copy" id="bib-copy">Copy</button>
+      </div>
+      <pre id="bib-text">@inproceedings{srivastava2026samescore,
+  title     = {Same Score, Different Strategy: Multi-Probe Diagnosis of Structural Fragility in LLM Reasoning},
+  author    = {Srivastava, Adya and Kumar, Dhruv},
+  booktitle = {Workshop on Cognition, AI, and Society (CAISc)},
+  year      = {2026},
+  note      = {Predecessor paper to the Retrieval vs Computation programme}
+}</pre>
+    </div>
+    <p class="cite-line">How to cite this site: Adya Srivastava. Retrieval vs Computation — programme site. <span class="num">2026</span>. <a href="https://adya6714.github.io/retrieval-vs-computation/" target="_blank" rel="noopener">https://adya6714.github.io/retrieval-vs-computation/</a>.</p>
+    <p class="built-line" id="built-date" data-locked="1">Last built: 2026-09-25</p>
+    <p class="caption" style="margin-top:2rem">Sources: 00_MOC · THE_PLAN · THE_PLAN_AMENDMENT_A1 · EF-07 · EF-08 · BI-04 · D11–D16. Arrow keys move section to section.</p>
   </div>
 </section>
 </main>
@@ -1845,7 +1894,78 @@ const DATA = {
       "detail": "Training on varied surfaces, holding dose fixed, raises both W3 retention and abstraction-head occupancy.",
       "test": "DS-04 + AC-3 head-emergence tracking",
       "gate": "G3 · diversity arm separates from dose-matched control",
-      "claims": ["AC-3", "CC-4"]
+      "claims": ["AC-3", "CC-4"],
+      "note": "research-vault/RvC-Vault/04_Directions/D15_RLVR_Surface_Diversity.md"
+    },
+    {
+      "id": "H7b",
+      "status": "gated",
+      "text": "RLVR form of H7: surface-diverse prompts raise held-out invariance.",
+      "detail": "Under RLVR with matched steps, surface-diverse prompts yield higher held-out invariance than canonical-only prompts at equal canonical accuracy.",
+      "test": "D15 RLVR surface diversity",
+      "gate": "Gated behind G2",
+      "claims": ["AC-3", "H7"],
+      "note": "research-vault/RvC-Vault/04_Directions/D15_RLVR_Surface_Diversity.md"
+    },
+    {
+      "id": "H8",
+      "status": "untested",
+      "text": "Inference-stack noise floor bounds per-instance labels.",
+      "detail": "Inference-stack nondeterminism (batch size, attention backend, accumulation precision) flips a measurable fraction of per-item verdicts at T=0; per-instance labels are only meaningful above that floor.",
+      "test": "D11 / HP-16 noise floor",
+      "gate": "Track T · T1; discharges no programme gate",
+      "claims": ["CC-1"],
+      "note": "research-vault/RvC-Vault/04_Directions/D11_Inference_Stack_Noise_Floor.md"
+    },
+    {
+      "id": "H9",
+      "status": "untested",
+      "text": "Precision reduction degrades invariance before accuracy.",
+      "detail": "Precision reduction degrades surface invariance (R_W3, φ) before it degrades canonical accuracy.",
+      "test": "D12 / HP-18 precision sweep",
+      "gate": "Track T · T3; discharges no programme gate",
+      "claims": ["CC-1", "AC-1"],
+      "note": "research-vault/RvC-Vault/04_Directions/D12_Precision_Compression_Invariance.md"
+    },
+    {
+      "id": "H10",
+      "status": "untested",
+      "text": "Code continued pretraining removes the W4 penalty, not the W3 cost.",
+      "detail": "Code-specialised continued pretraining removes or inverts the W4 formal-notation penalty without changing W3 cost.",
+      "test": "D13 / HP-17 Qwen family contrast",
+      "gate": "Track T · T2; discharges no programme gate",
+      "claims": ["CC-1", "AC-3"],
+      "note": "research-vault/RvC-Vault/04_Directions/D13_Continued_Pretraining_Transfer.md"
+    },
+    {
+      "id": "H11",
+      "status": "untested",
+      "text": "Distillation transfers accuracy more than invariance.",
+      "detail": "Distillation transfers canonical accuracy more fully than it transfers invariance.",
+      "test": "D14 / HP-19 distillation contrast",
+      "gate": "Track T · T4; discharges no programme gate",
+      "claims": ["CC-1", "AC-3"],
+      "note": "research-vault/RvC-Vault/04_Directions/D14_Distillation_Invariance.md"
+    },
+    {
+      "id": "H12",
+      "status": "untested",
+      "text": "Surface ensembling beats self-consistency at matched calls.",
+      "detail": "Majority vote across answer-preserving surfaces beats sample self-consistency at matched call count, because fragility is model-item specific (F4).",
+      "test": "D16 / HP-20 surface ensembling",
+      "gate": "Track T · T6; discharges no programme gate",
+      "claims": ["CC-1"],
+      "note": "research-vault/RvC-Vault/04_Directions/D16_Surface_Ensembling.md"
+    },
+    {
+      "id": "H13",
+      "status": "untested",
+      "text": "Isomorph cost exceeds nonce-rename cost.",
+      "detail": "Cost of cover-story isomorph (W3b) exceeds cost of nonce rename (W3a); if W3a is cheap, F1 is a domain-transfer effect, not an entity-binding effect.",
+      "test": "EF-07 option S via HP-23 W3a nonce bank",
+      "gate": "Track T · T0; discharges no programme gate",
+      "claims": ["CC-1", "H2"],
+      "note": "research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md"
     }
   ],
   "phases": [
@@ -1873,11 +1993,24 @@ const DATA = {
       "when": "Weeks 3–8",
       "status": "next",
       "do": "HP-06 D1-lite (LoRA seen/unseen + corrupted-answer oracle) with DS-05 source-monitoring; HP-07 patching; HP-08 Commitment Depth; HP-05 matched WIS bank.",
-      "needs": "Open-weight fine-tune + patching stack; WIS bank API coverage.",
+      "needs": "Open-weight fine-tune + patching stack; WIS bank API coverage. Needs 1× A100-80GB.",
       "gate": "G1 (D1-lite ROC): AUC ≥ .75 proceed and freeze thresholds v2; .60–.75 revise indicators once; < .60 labels do not track exposure — pivot mechanism-first.",
       "ships": "Paper I — the instrument",
       "results": null,
       "advances": ["H1", "H2", "H5", "CC-1", "CC-2"]
+    },
+    {
+      "id": "P1T",
+      "title": "1T open-weight track (T4)",
+      "when": "Parallel to Phase 1",
+      "status": "ready",
+      "parallel": true,
+      "do": "Track T0–T6 on a T4: noise floor, Qwen family, precision, distillation, backward-prompt discriminator, surface ensembling, W3a nonce bank.",
+      "needs": "T4 GPU; open weights. No API-scale A100 required.",
+      "gate": "Discharges no gate. Makes no exposure claim and issues no per-instance labels.",
+      "ships": null,
+      "results": null,
+      "advances": ["H8", "H9", "H10", "H11", "H12", "H13"]
     },
     {
       "id": "P2",
@@ -2074,7 +2207,7 @@ const DATA = {
       "phase": "Phase 0–1 · behavioural instrument",
       "claim": "CC-1",
       "why": "A single “robustness drop” summarises very little if W3, W4, W5, and W6 move in different directions.",
-      "ops": "Six answer-preserving transforms on 219 items × six models. Primary contrasts: Acc_can vs Acc_W3 / Acc_W4 / Acc_W5 / Acc_W6; Kendall W of transform order within vs across families; shared-hard item counts.",
+      "ops": "Six answer-preserving transforms on 219 items × five primary models (plus R1-distill-70B on planning only). Primary contrasts: Acc_can vs Acc_W3 / Acc_W4 / Acc_W5 / Acc_W6; Kendall W of transform order within vs across families; shared-hard item counts.",
       "measured": "Numeric regeneration nearly free (Gemini GSM .909→.958 W6) while rename is expensive (.523 W3). Formal register often costlier than rename (o4-mini .841→.682 W4). Direction inversion raises BW accuracy (Claude .172→.873). Transform difficulty is family-level (W .42–.68); Claude across families W=.165 p=.82. Shared-hard 0/110 ALGO, 0/20 GSM, 14/64 BW.",
       "open": "Matched init/goal complexity for the W5 rise; difficulty-matched WIS for exposure vs hardness.",
       "findings": ["F1", "F2", "F3", "F4"],
@@ -2135,7 +2268,7 @@ const DATA = {
       "family": "probe",
       "status": "complete",
       "title": "Surface invariance battery",
-      "blurb": "W1–W6 on GSM, BW, ALGO across six models; per-variant accuracy and retention.",
+      "blurb": "W1–W6 on GSM, BW, ALGO across five primary models; per-variant accuracy and retention.",
       "n": "219 problems · ~6 models · 7 surfaces",
       "metric": "Acc_Wv, R_W3",
       "artifact": "results/derived/probe1_per_model_variant.csv",
@@ -2347,6 +2480,35 @@ const DATA = {
     },
     "note": "P3 marked filled when family-level Infini-gram proximity exists (corpus shared across models)."
   },
+
+  "applications": [
+    {"area":"Inference stack, kernels, determinism","adds":"Per-item verdict flip rate across batch size, attention backend, accumulation precision; a noise floor for any per-instance eval.","direction":"D11","status":"untested"},
+    {"area":"Quantization","adds":"Invariance loss at matched accuracy; per-band sensitivity map for mixed-precision allocation.","direction":"D12","status":"untested"},
+    {"area":"KV-cache compression","adds":"State-tracking stress via Probe 2 execution transcripts.","direction":"D12 (deferred, needs L4)","status":"untested"},
+    {"area":"Continued pretraining, domain transfer","adds":"Which surface the procedure is keyed to after transfer, not just accuracy.","direction":"D13, D05","status":"untested"},
+    {"area":"Distillation","adds":"Whether the student inherits invariance or only accuracy; intrusion signature.","direction":"D14","status":"untested"},
+    {"area":"RLVR / GRPO","adds":"Surface-diverse verifiable environments; diversity-vs-dose test of AC-3.","direction":"D15","status":"gated"},
+    {"area":"Prompting and test-time compute","adds":"Surface ensembling; backward-planning prompts; avoid formal notation for non-code models. F2 (formal notation cost) is shipped; D16 and HP-22 remain untested.","direction":"D16, HP-22, F2","status":"untested"},
+    {"area":"Alignment, CoT monitoring","adds":"F6: false premises adopted and visibly propagated yet final answers recover, so the visible trace is not the whole causal path.","direction":"F6","status":"shipped"},
+    {"area":"Honesty, self-knowledge","adds":"Source monitoring: can a model report recalled vs computed?","direction":"CC-2 / DS-05","status":"gated"},
+    {"area":"Eval integrity, safety cases","adds":"Contamination-robust check that a capability score reflects computation.","direction":"Phase 5 audit","status":"planned"}
+  ],
+  "positionToggles": [
+    {"id":"F1","title":"Cover-story isomorphs","finding":"Numeric regeneration within a template is nearly free; moving the same template into a new domain is expensive.","analogue":"Problem isomorphs with identical structure differ several-fold in difficulty by cover story; analogical transfer across cover stories is poor without cues."},
+    {"id":"F2","title":"Representational register","finding":"Formal notation can cost more than renaming while entity names stay fixed.","analogue":"Content effects in the Wason task — register and framing change difficulty without changing logical structure."},
+    {"id":"F3","title":"Search direction","finding":"Inverting origin and destination in planning can raise accuracy sharply; the procedure is direction-shaped.","analogue":"Forward vs backward search asymmetries in human and LLM planning."},
+    {"id":"CC-2","title":"Source monitoring","finding":"Calibration of whether a correct answer was recalled or computed is gated on known exposure (G1).","analogue":"Humans are also poor at source monitoring."}
+  ],
+  "trackT": [
+    {"id":"Priority","title":"Phase 1 (G1) remains the priority spend","hypothesis":"Do behavioural indicators recover known exposure on a controlled fine-tune?","contrast":"D1-lite LoRA seen/unseen ROC of triangulation labels and indicators.","kill":"AUC ≥ .75 freeze thresholds v2; .60–.75 revise once; < .60 pivot mechanism-first.","cost":"1× A100-80GB + API","status":"blocked (GPU)","serves":"CC-1, CC-2, Paper I","priority":true,"link":"research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md","linkLabel":"THE_PLAN_AMENDMENT_A1"},
+    {"id":"T0","title":"W3a nonce vs W3b isomorph","hypothesis":"H13: isomorph cost exceeds nonce-rename cost.","contrast":"Acc(W3a) − Acc(W3b), per model, paired by item.","kill":"Support if contrast > 0 with interval excluding 0 for at least 3 of 5 API models, or 2 of 3 open models.","cost":"< $10 API or T4","status":"untested","serves":"CC-1, H2, Paper I fix","link":"research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md","linkLabel":"EF-07"},
+    {"id":"T1","title":"Inference-stack noise floor","hypothesis":"H8: stack nondeterminism flips per-item verdicts at T=0.","contrast":"Verdict flip rate vs reference across the 11 other configurations, per model.","kill":"If flip rate exceeds 10% of items for a model, suspend per-instance statements for that model until a batch-invariant configuration is fixed.","cost":"T4 hours","status":"untested","serves":"Instrument validity","link":"research-vault/RvC-Vault/04_Directions/D11_Inference_Stack_Noise_Floor.md","linkLabel":"D11"},
+    {"id":"T2","title":"Qwen family continued pretraining","hypothesis":"H10: code continued pretraining removes W4 penalty, not W3 cost.","contrast":"Interaction Coder × W4 in a logistic mixed model on ALGO.","kill":"If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.","cost":"T4 hours","status":"untested","serves":"CC-1, AC-3 precursor","link":"research-vault/RvC-Vault/04_Directions/D13_Continued_Pretraining_Transfer.md","linkLabel":"D13"},
+    {"id":"T3","title":"Precision / compression invariance","hypothesis":"H9: precision reduction degrades invariance before accuracy.","contrast":"ΔR_W3 − (ΔAcc_can / Acc_can) vs fp16, cluster bootstrap.","kill":"If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.","cost":"T4 hours","status":"untested","serves":"CC-1, AC-1 localisation precursor","link":"research-vault/RvC-Vault/04_Directions/D12_Precision_Compression_Invariance.md","linkLabel":"D12"},
+    {"id":"T4","title":"Distillation invariance","hypothesis":"H11: distillation transfers accuracy more than invariance.","contrast":"(ΔAcc_can) − (ΔR_W3) for distilled student vs base.","kill":"If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.","cost":"T4 hours","status":"untested","serves":"CC-1, AC-3 precursor","link":"research-vault/RvC-Vault/04_Directions/D14_Distillation_Invariance.md","linkLabel":"D14"},
+    {"id":"T5","title":"Backward-prompt discriminator","hypothesis":"F3 mechanism: search direction vs instance constraint.","contrast":"(Acc_B − Acc_A) / (Acc_C − Acc_A) per model.","kill":"Inconclusive if neither Account S (≥ .5 for ≥ 2 models) nor Account C (≤ .2 + covariate p < .05) is favoured.","cost":"< 100 calls","status":"untested","serves":"F3 mechanism","link":"research-vault/RvC-Vault/06_Operating_Manual/HP-22_Backward_Prompt_Discriminator.md","linkLabel":"HP-22"},
+    {"id":"T6","title":"Surface ensembling","hypothesis":"H12: surface vote beats self-consistency at matched calls.","contrast":"Acc(surface vote, 5 calls) − Acc(self-consistency, 5 calls).","kill":"If surface ensembling does not beat self-consistency at matched calls on at least 2 of 3 models, report the null; do not tune the vote rule.","cost":"T4 hours","status":"untested","serves":"Practitioner result","link":"research-vault/RvC-Vault/04_Directions/D16_Surface_Ensembling.md","linkLabel":"D16"}
+  ],
   "next": [
     {
       "tier": 1,
@@ -3543,6 +3705,7 @@ function renderHypFilters(){
 
 function renderHyps(){
   const root=document.getElementById('hyp-grid'); root.innerHTML='';
+  const GH='https://github.com/Adya6714/retrieval-vs-computation/blob/main/';
   DATA.hypotheses.filter(h => hypFilter==='all' || h.status===hypFilter).forEach(h => {
     const d=document.createElement('div');
     d.className='hyp-card';
@@ -3555,6 +3718,7 @@ function renderHyps(){
         <p>${h.detail||''}</p>
         <p><strong>Test.</strong> ${h.test}</p>
         <p><strong>Decision.</strong> ${h.gate||''}</p>
+        ${h.note?`<p><strong>Note.</strong> <a href="${GH}${h.note}" target="_blank" rel="noopener">${h.note.split('/').pop()}</a></p>`:''}
         <div class="hyp-links">${(h.claims||[]).map(c=>`<button type="button" data-cid="${c}">${c}</button>`).join('')}</div>
       </div>`;
     d.addEventListener('click', e => {
@@ -3627,16 +3791,18 @@ addEventListener('resize', ()=>{ if(document.getElementById('view-claims').class
 
 /* phases */
 DATA.phases.forEach((ph,i) => {
-  if(i){ const g=document.createElement('div'); g.className='phase-gate'; g.innerHTML='<span title="gate"></span>'; document.getElementById('phase-track').appendChild(g); }
-  const d=document.createElement('div'); d.className='phase-node'+(i===0?' open':'');
+  if(i && !ph.parallel){ const g=document.createElement('div'); g.className='phase-gate'; g.innerHTML='<span title="gate"></span>'; document.getElementById('phase-track').appendChild(g); }
+  const d=document.createElement('div');
+  d.className=(ph.parallel?'phase-parallel':'phase-node')+(i===0?' open':'');
   d.innerHTML=`<div class="ph-id">${ph.id} · ${statusLabel(ph.status)}</div><h3>${ph.title}</h3>
-    <div class="ph-when">${ph.when}</div>
+    <div class="ph-when">${ph.when||''}</div>
+    ${ph.parallel?`<p class="note">Parallel lane beside Phase 1. Discharges no gate.</p>`:''}
     <div class="body">
       <p style="margin:0;max-width:none"><strong>Do.</strong> ${ph.do}</p>
       <p style="margin:.4rem 0 0;max-width:none"><strong>Needs.</strong> ${ph.needs}</p>
       <p style="margin:.4rem 0 0;max-width:none"><strong>Gate.</strong> ${ph.gate}</p>
       ${ph.ships?`<p style="margin:.4rem 0 0;max-width:none"><strong>Ships.</strong> ${ph.ships}</p>`:''}
-      <div class="phase-advances">${ph.advances.map(a=>`<span>${a}</span>`).join('')}</div>
+      <div class="phase-advances">${(ph.advances||[]).map(a=>`<span>${a}</span>`).join('')}</div>
       ${ph.results?`<div class="result"><strong>Delivered.</strong> ${ph.results}</div>`:''}
       ${ph.results_detail?`<dl class="phase-results">${ph.results_detail.map(r=>`<div><dt>${r.k}</dt><dd>${r.v}</dd></div>`).join('')}</dl>`:''}
     </div>`;
@@ -3785,3 +3951,4 @@ setTimeout(() => {
 }, 800);
 </script>
 <script src="js/pipeline.js"></script>
+<script src="js/content.js"></script>

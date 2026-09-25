@@ -1,0 +1,116 @@
+/* C6 content sections — reuse existing CSS variables only. */
+.hero-author,.hero-pub,.status-strip{
+  margin:.55rem 0 0;
+  font-size:.88rem;
+  color:var(--muted);
+  max-width:58ch;
+}
+.hero-author{margin-top:.85rem;color:var(--ink)}
+.hero-pub a{color:var(--accent);text-decoration:none}
+.hero-pub a:hover{text-decoration:underline}
+.status-strip{
+  margin-top:1rem;
+  padding:.65rem .85rem;
+  border-left:2px solid var(--accent);
+  background:var(--tint);
+  max-width:68ch;
+}
+.prior-box{
+  margin-top:1.75rem;
+  border:1px solid var(--rule);
+  background:var(--tint);
+  padding:1.1rem 1.2rem;
+}
+.prior-box h3{margin:0 0 .75rem;font-size:1.05rem}
+.prior-rows{display:grid;gap:.75rem}
+.prior-row{
+  display:grid;
+  grid-template-columns:9rem 1fr;
+  gap:.75rem 1rem;
+  font-size:.9rem;
+}
+@media(max-width:640px){.prior-row{grid-template-columns:1fr}}
+.prior-row .name{font-weight:600;color:var(--accent)}
+.prior-row p{margin:0;color:var(--muted);max-width:none}
+.ci-pending{
+  font-size:.78rem;
+  color:var(--amber);
+  font-variant-numeric:tabular-nums;
+  margin-left:.35rem;
+}
+.phase-parallel{
+  flex:0 0 min(280px,82vw);
+  scroll-snap-align:start;
+  border:1.5px dashed var(--accent);
+  background:var(--accent-soft);
+  padding:1.05rem;
+  cursor:pointer;
+}
+.phase-parallel .ph-id{color:var(--accent)}
+.phase-parallel .note{font-size:.82rem;color:var(--muted);margin-top:.45rem}
+.app-fixed{
+  margin:0 0 1rem;
+  padding:.75rem .9rem;
+  border:1px solid var(--rule);
+  background:var(--paper);
+  font-size:.9rem;
+  max-width:68ch;
+}
+.app-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem}
+.app-filters button{
+  appearance:none;border:1px solid var(--rule);background:transparent;
+  color:var(--muted);font:inherit;font-size:.78rem;padding:.35rem .65rem;cursor:pointer;
+}
+.app-filters button.active{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.app-filters button:focus-visible,
+.pos-toggle:focus-visible,
+.bib-copy:focus-visible,
+.next-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.app-list{display:grid;gap:.65rem}
+.app-row{
+  border:1px solid var(--rule);background:var(--tint);padding:.85rem 1rem;
+  display:grid;grid-template-columns:1fr auto;gap:.5rem 1rem;align-items:start;
+}
+.app-row h4{margin:0;font-size:.95rem}
+.app-row p{margin:.35rem 0 0;font-size:.85rem;color:var(--muted);max-width:none}
+.app-row .dir{font-size:.72rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.badge{
+  font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;
+  padding:.2rem .45rem;border:1px solid var(--rule);white-space:nowrap;
+}
+.badge.shipped{border-color:var(--teal);color:var(--teal)}
+.badge.untested{border-color:var(--muted);color:var(--muted)}
+.badge.gated{border-color:var(--amber);color:var(--amber)}
+.badge.planned{border-color:var(--rule);color:var(--muted)}
+.pos-para{max-width:68ch;font-size:1.02rem;line-height:1.55}
+.pos-toggles{display:grid;gap:.55rem;margin-top:1.25rem}
+.pos-toggle{
+  appearance:none;width:100%;text-align:left;border:1px solid var(--rule);
+  background:var(--tint);color:var(--ink);font:inherit;padding:.85rem 1rem;cursor:pointer;
+}
+.pos-toggle.open{border-color:var(--accent)}
+.pos-toggle .pt-head{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.pos-toggle .pt-id{font-size:.72rem;letter-spacing:.06em;color:var(--accent);font-weight:600}
+.pos-toggle .pt-body{display:none;margin-top:.65rem;font-size:.88rem;color:var(--muted)}
+.pos-toggle.open .pt-body{display:block}
+.pos-toggle .verify{font-size:.78rem;color:var(--amber);margin-top:.45rem}
+.next-card .meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.55rem}
+.next-card .status-pill{
+  font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;
+  padding:.15rem .4rem;border:1px solid var(--rule);color:var(--muted);
+}
+.next-card.priority{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-soft)}
+.bib-block{
+  margin-top:1.25rem;border:1px solid var(--rule);background:var(--tint);padding:1rem 1.1rem;
+}
+.bib-block pre{
+  margin:.65rem 0 0;white-space:pre-wrap;font-size:.78rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:var(--ink);max-width:none;
+}
+.bib-toolbar{display:flex;align-items:center;gap:.75rem}
+.bib-copy{
+  appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;
+  font:inherit;font-size:.82rem;padding:.4rem .75rem;cursor:pointer;
+}
+.bib-copy.done{background:var(--teal);border-color:var(--teal)}
+.cite-line,.built-line{margin-top:.85rem;font-size:.88rem;color:var(--muted);max-width:68ch}

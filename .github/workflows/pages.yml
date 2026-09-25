@@ -35,6 +35,10 @@ jobs:
         run: |
           PYTHONPATH=. python scripts/site/build_pipeline_explorer_data.py
           PYTHONPATH=. python -m pytest tests/site -q
+      - name: Stamp last-built date
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          sed -i "s/Last built: [0-9-]*/Last built: ${DATE}/" site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
