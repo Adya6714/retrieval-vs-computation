@@ -23,6 +23,7 @@
    "uses_item": "D1-lite seen/unseen LoRA: does this item's label track known exposure? Gate G1.",
    "claims": [
     "H1",
+    "H2",
     "CC-2",
     "H5"
    ]

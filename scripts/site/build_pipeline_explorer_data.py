@@ -69,7 +69,7 @@ PHASE_ROUTING = [
      "claims": ["CC-1"]},
     {"phase": "1", "name": "Calibration + mechanism", "status": "blocked (GPU)",
      "uses_item": "D1-lite seen/unseen LoRA: does this item's label track known exposure? Gate G1.",
-     "claims": ["H1", "CC-2", "H5"]},
+     "claims": ["H1", "H2", "CC-2", "H5"]},
     {"phase": "1T", "name": "Open-weight T4 track (amendment A1)", "status": "ready",
      "uses_item": "Noise floor, precision sweep, base/Coder/Math and distillation contrasts on the same item.",
      "claims": ["H8", "H9", "H10", "H11", "H12", "H13"]},
