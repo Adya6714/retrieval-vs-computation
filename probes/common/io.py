@@ -11,6 +11,8 @@ QUESTION_BANK_PATH = "data/problems/question_bank_bw.csv"
 QUESTION_BANK_COLUMNS = [
     "problem_id",
     "variant_type",
+    "variant_subtype",
+    "w3_kind",
     "problem_text",
     "correct_answer",
     "problem_family",

@@ -34,16 +34,64 @@ def build_substitution_regex(mapping: dict) -> re.Pattern:
 # "unstack" are tried before shorter ones like "stack" so they don't overlap).
 
 
+# English articles / single-letter keys: replace by default (whole-word), but
+# skip known article contexts so "You are a robot arm" is not rewritten.
+_ARTICLE_LIKE_KEYS = frozenset({"a", "an", "the"})
+_ARTICLE_LEFT_CONTEXT = re.compile(
+    r"(?is)(?:"
+    r"\byou are\s*$|"  # You are a robot arm
+    r"\bat\s*$|"  # at a time
+    r"\bwith\s*$|"  # with a numbered list
+    r"\bis\s*$"  # is a / (rare; keep conservative)
+    r")"
+)
+
+
+def _key_needs_article_guard(key: str) -> bool:
+    k = str(key or "")
+    if not k:
+        return False
+    if k.lower() in _ARTICLE_LIKE_KEYS:
+        return True
+    return len(k) == 1 and k.isalpha()
+
+
 def apply_mapping(text: str, mapping: dict) -> str:
+    """Whole-word substitution; case-aware guard for English-article keys.
+
+    Single-letter / English-article keys (``a``, ``an``, ``the``) are replaced
+    at word boundaries except in known article contexts (e.g. ``You are a
+    robot``, ``at a time``, ``with a numbered``). This prevents ``a → Alice``
+    from turning ``You are a robot arm`` into ``You are Alice robot arm``,
+    while still renaming ``pick-up a`` / ``recruit a`` / ``block a``.
+    """
     if not mapping:
         return text
-    pattern = build_substitution_regex(mapping)
-    return pattern.sub(lambda m: mapping[m.group(0)], text)
+    keys = sorted((str(k) for k in mapping.keys() if str(k)), key=len, reverse=True)
+    out = str(text)
+    for key in keys:
+        val = str(mapping[key])
+        pat = re.compile(r"\b(" + re.escape(key) + r")\b")
+        guard = _key_needs_article_guard(key)
+        parts: list[str] = []
+        last = 0
+        for match in pat.finditer(out):
+            keep = False
+            if guard:
+                left = out[max(0, match.start() - 40) : match.start()]
+                if _ARTICLE_LEFT_CONTEXT.search(left):
+                    keep = True
+            parts.append(out[last : match.start()])
+            parts.append(match.group(0) if keep else val)
+            last = match.end()
+        parts.append(out[last:])
+        out = "".join(parts)
+    return out
 
 
 # WHAT THIS DOES (apply_mapping):
-# Replaces every mapped word in the text in a single pass, so shorter
-# keys cannot corrupt longer words (e.g. replacing "a" inside "stack").
+# Replaces every mapped word in the text in a single pass (longer keys first),
+# skipping English-article contexts for single-letter entity keys.
 
 
 def make_inverse_mapping(mapping: dict) -> dict:

@@ -134,4 +134,77 @@ Models with data also have `canonical_execution_accuracy=0.0` and per-model `par
 ### 4. ALGO ID width — report only (no rename)
 
 See `docs/audit/C1_ALGO_ID_REPORT.md`. **Proposal (awaiting approval):** canonical form `{PREFIX}_{NNN}` zero-padded to 3 digits (`CC_01` → `CC_001`). Do not apply until approved.
+---
 
+## C2 — W3b relabel + Alice substring fix — 2026-09-25
+**Scope.** HP-23 steps 1–2 only (no W3a generation, no model calls).
+### 1. Relabel
+Added columns `w3_kind=isomorph` and `variant_subtype=W3b` on every existing W3 row. `variant_type` unchanged (`W3`). Schema: `probes/common/io.py`.
+| Family | W3 rows labelled W3b |
+|---|---:|
+| GSM | 44 |
+| BW | 65 |
+| ALGO | 110 |
+
+### 2. Substring / article-collision fix
+`apply_mapping` now whole-word replaces with an article-context guard for keys `a`/`an`/`the` (and single-letter alpha keys): skips `You are a …`, `at a …`, `with a …`.
+Detected and regenerated **18** mechanical BW/MBW W3 rows. Of these, **12** had `You are Alice robot arm`.
+
+Before/after heads:
+- `BW_496`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on t`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the t`
+- `BW_498`
+  - before: `You are Alice robot arm. Available actions: hire X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the `
+  - after: `You are a robot arm. Available actions: hire X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the tabl`
+- `BW_499`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the table), `
+- `BW_500`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the table), `
+- `BW_501`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the table), `
+- `BW_503`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on t`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the t`
+- `BW_504`
+  - before: `You are Alpha robot arm. Available actions: mobilize X (X must be clear and on the table, hand must be empty), deploy X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: mobilize X (X must be clear and on the table, hand must be empty), deploy X (place X on the table), `
+- `BW_510`
+  - before: `You are Alpha robot arm. Available actions: mobilize X (X must be clear and on the table, hand must be empty), deploy X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: mobilize X (X must be clear and on the table, hand must be empty), deploy X (place X on the table), `
+- `BW_513`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on t`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the t`
+- `BW_514`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign-to-base X (place X on t`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), assign-to-base X (place X on the t`
+- `BW_515`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the table), `
+- `BW_E_001`
+  - before: `You are Alice robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the tabl`
+  - after: `You are a robot arm. Available actions: recruit X (X must be clear and on the table, hand must be empty), dismiss X (place X on the table), `
+- `BW_E_004`
+  - before: `You are Alice robot arm. Available actions: hire X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the `
+  - after: `You are a robot arm. Available actions: hire X (X must be clear and on the table, hand must be empty), assign_to_base X (place X on the tabl`
+- `MBW_496`
+  - before: `You are Alpha robot arm. Available actions: deploy X (requires harmony, province X, planet X to be true), surrender X (requires pain X to be`
+  - after: `You are a robot arm. Available actions: deploy X (requires harmony, province X, planet X to be true), surrender X (requires pain X to be tru`
+- `MBW_497`
+  - before: `You are Alice robot arm. Available actions: terminate X (requires harmony, province X, planet X to be true), resign X (requires pain X to be`
+  - after: `You are a robot arm. Available actions: terminate X (requires harmony, province X, planet X to be true), resign X (requires pain X to be tru`
+- `MBW_498`
+  - before: `You are Alpha robot arm. Available actions: deploy X (requires harmony, province X, planet X to be true), surrender X (requires pain X to be`
+  - after: `You are a robot arm. Available actions: deploy X (requires harmony, province X, planet X to be true), surrender X (requires pain X to be tru`
+- `MBW_499`
+  - before: `You are Alpha robot arm. Available actions: secure X (requires harmony, province X, planet X to be true), surrender X (requires pain X to be`
+  - after: `You are a robot arm. Available actions: secure X (requires harmony, province X, planet X to be true), surrender X (requires pain X to be tru`
+- `MBW_500`
+  - before: `You are Alpha_Base robot arm. Available actions: deploy_forces X (requires harmony, province X, planet X to be true), surrender_position X (`
+  - after: `You are a robot arm. Available actions: deploy_forces X (requires harmony, province X, planet X to be true), surrender_position X (requires `
+
+### 3. Reruns
+Listed in `docs/trackT/T0_PENDING_RERUNS.md` (OpenRouter key present; plain `--resume` cannot force re-score under append-only raw).
