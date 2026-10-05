@@ -497,7 +497,7 @@ html.js .reveal{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Why it matters outside the paper</p>
     <h2>Same benchmark score. Different process. Different deployment failure.</h2>
-    <p class="lede">Benchmark accuracy says whether a model scores, not which surface its procedure is bound to. Two checkpoints can tie on Acc<sub>can</sub> yet fail on different renames, notation, or protagonist cues once your product paraphrases inputs or serves different users. Choose a role below: each tab maps a real shipping decision to what the instrument would flag and to a finding on this site that shows the gap.</p>
+    <p class="lede">Accuracy says whether a model scores. It does not say which answer-irrelevant surface the procedure is bound to. Two checkpoints can match on Acc<sub>can</sub> and still fail under different renames, notation, or protagonist cues once your product paraphrases inputs or serves different users. Each role below has three parts: the decision you make today, what this instrument would catch, and which finding on this site proves the gap.</p>
     <div class="who-panel" id="who-panel">
       <div class="who-nav" id="who-nav" role="tablist" aria-label="Application audiences"></div>
       <div class="who-body">
@@ -1010,21 +1010,21 @@ const DATA = {
     {
       "id": "kernels",
       "label": "Inference kernels",
-      "title": "Serving & inference kernels",
-      "fail": "You ship a faster kernel, speculative decode path, or continuous batching change. Aggregate accuracy holds. Under rename or inverted planning, the surviving procedure collapses — and you never see it on the standard eval suite.",
-      "do": "<strong>Use the instrument as a regression gate:</strong> before promoting a kernel, require that R<sub>W3</sub> and CCI stay within a pre-registered band of the baseline checkpoint — not just Acc<sub>can</sub>.",
-      "evidence": "Gemini GSM Acc stays flat under W6 (.909→.958) but falls under W3 (.523).",
+      "title": "Serving and inference kernels",
+      "fail": "You promote a faster kernel, speculative decode path, or continuous-batching change because aggregate Acc_can held. Standard evals never ask whether rename survival or planning inversion still hold.",
+      "do": "<strong>Gate promotion on surface survival, not Acc alone.</strong> Require R<sub>W3</sub> and CCI within a pre-registered band of the baseline checkpoint before the kernel ships.",
+      "evidence": "Finding 1 (measured): on GSM, Gemini Acc stays flat under numeric regeneration (W6) but falls under cover-story rename (W3) on the same algorithm.",
       "link": "#f1",
       "linkLabel": "Finding 1: numeric vs lexical",
-      "action": "Gate: Δ Acc_can ≤ ε is not enough; also gate Δ R_W3 and mean CCI."
+      "action": "Promotion gate: Acc_can band plus R_W3 and mean CCI bands."
     },
     {
       "id": "quant",
       "label": "Quantisation",
-      "title": "Quantisation & compression",
+      "title": "Quantisation and compression",
       "fail": "INT8 / GPTQ / AWQ can match FP16 on the leaderboard while changing which surface the model keys on. The score you optimise for is blind to that shift.",
-      "do": "<strong>Treat robustness as a second axis of the acceptance test.</strong> Same Acc with collapsed rename survival or injection-compliance change is a silent regression.",
-      "evidence": "o4-mini loses 16 points under formal notation alone (.841→.682) with entity names intact.",
+      "do": "<strong>Treat robustness as a second acceptance axis.</strong> Same Acc with collapsed rename survival or a changed injection-compliance rate is a silent regression.",
+      "evidence": "Finding 2 (measured): o4-mini loses accuracy under formal notation (W4) with entity names intact.",
       "link": "#f2",
       "linkLabel": "Finding 2: formal notation",
       "action": "Acceptance suite: Acc_can + R_W3 + W4 Acc + injection acceptance rate."
@@ -1032,21 +1032,21 @@ const DATA = {
     {
       "id": "arch",
       "label": "Layer architecture",
-      "title": "Layer architecture & heads",
-      "fail": "You edit attention / MLP bands or steer heads for latency. Behavioural accuracy looks fine; the pathway that carried surface-invariant solving may have been the thing you pruned.",
-      "do": "<strong>Pair architecture edits with can↔W3 contrasts</strong> (and, when open-weight allows, pathway occupancy). Installation claims only fire after Gate G2.",
-      "evidence": "Programme AC-1: strategy as symbolic-pathway occupancy; Phase 2 is built to test whether fragility is pathway bypass.",
+      "title": "Layer architecture and heads",
+      "fail": "You edit attention or MLP bands, or steer heads for latency. Behavioural Acc looks fine; the pathway that carried surface-invariant solving may be what you removed.",
+      "do": "<strong>Pair architecture edits with can↔W3 contrasts</strong> (and pathway occupancy when open-weight allows). Installation claims only after Gate G2.",
+      "evidence": "Programme AC-1 (proposed): strategy as symbolic-pathway occupancy; Phase 2 tests whether fragility is pathway bypass.",
       "link": "#programme",
       "linkLabel": "Programme: AC-1 / Phase 2",
-      "action": "Before merge: within-model correlation of head occupancy with W3 survival on the fragile set."
+      "action": "Before merge: within-model correlation of head occupancy with W3 survival on the fragile set (after G2 prerequisites)."
     },
     {
       "id": "train",
       "label": "Training",
-      "title": "Training mix & data law",
-      "fail": "More of the same template (dose) looks like progress on Acc. Diversity of surfaces is what the programme bets forces abstraction — and that is a different mixture decision.",
-      "do": "<strong>Curate for surface diversity under fixed dose</strong> when the goal is invariance, not just accuracy. Track R_W3 across checkpoints, not Acc alone.",
-      "evidence": "AC-3 / H7: diversity vs dose arms; F7 shows ALGO variance is model-heavy while GSM is item-heavy — families need different designs.",
+      "title": "Training mix and data law",
+      "fail": "More of the same template (dose) looks like Acc progress. Surface diversity is a different mixture decision if the goal is invariance rather than score alone.",
+      "do": "<strong>Curate for surface diversity under fixed dose</strong> when targeting invariance. Track R_W3 across checkpoints, not Acc alone.",
+      "evidence": "Finding 7 (measured) plus AC-3 / H7 (proposed): ALGO variance is model-heavy while GSM is item-heavy; families need different designs. Diversity-vs-dose arms are gated.",
       "link": "#f7",
       "linkLabel": "Finding 7: psychometric structure",
       "action": "Training dashboard: Acc_can, R_W3, and facet loadings by family."
@@ -1054,10 +1054,10 @@ const DATA = {
     {
       "id": "prompt",
       "label": "Prompting",
-      "title": "Prompting & chain-of-thought",
-      "fail": "You trust the visible reasoning trace as an explanation of the answer. Injection shows models can adopt a false intermediate and still finish near baseline — compliance ≠ computation.",
-      "do": "<strong>Do not treat CoT as a faithful audit log.</strong> If you use traces for routing, tool calls, or user-facing explanations, measure injection acceptance and recovery first.",
-      "evidence": "o4-mini accepts 100% of ALGO false-state injections (n=61) with post-injection Acc near uninjected baseline.",
+      "title": "Prompting and chain-of-thought",
+      "fail": "You treat the visible reasoning trace as an explanation of the answer. Injection shows models can adopt a false intermediate and still finish near baseline: compliance is not computation.",
+      "do": "<strong>Do not treat CoT as a faithful audit log.</strong> If traces drive routing, tool calls, or user-facing explanations, measure injection acceptance and recovery first.",
+      "evidence": "Finding 6 (measured): o4-mini accepts all ALGO false-state injections in the reported cell, with post-injection Acc near the uninjected baseline.",
       "link": "#f6",
       "linkLabel": "Finding 6: compliance vs correctness",
       "action": "Prompt / agent eval: Acc + injection acceptance + post-injection Acc delta."
@@ -1065,13 +1065,13 @@ const DATA = {
     {
       "id": "fairness",
       "label": "Fairness & audit",
-      "title": "Fairness, hiring, and lending-style audits",
-      "fail": "You green-light a model because benchmark accuracy looks flat across vendors or prompt templates. In production the protagonist name or demographic cue changes while the task logic and gold answer stay fixed, and outcomes diverge even though the leaderboard did not move.",
-      "do": "<strong>Run W8-style protected-attribute swaps on verifiable-gold tasks</strong> (Track B / D18, proposed): primary contrast is group A vs group B on a neutral-name baseline; treat the shipped canonical name as reference only. Pair with W3a rename cost to test whether bias shares a mechanism with rename fragility (CC-5).",
-      "evidence": "Finding 1: Gemini holds GSM accuracy under numeric regeneration (.909→.958) but not under cover-story rename (.909→.523) on the same algorithm. Track B asks whether attribute-bearing names behave like that rename surface (proposed, not run).",
+      "title": "Fairness audits on verifiable tasks",
+      "fail": "If the protagonist name or demographic cue changes while the task logic and gold answer stay fixed, outcomes could diverge even though the leaderboard did not move.",
+      "do": "<strong>Run W8-style protected-attribute swaps on verifiable-gold tasks</strong> (Track B / D18, proposed): primary contrast is group A vs group B on a neutral-name baseline; treat the shipped canonical name as reference only. Pair with W3a rename cost to test whether bias shares a mechanism with rename fragility (CC-5, proposed).",
+      "evidence": "Finding 1 (measured) shows cover-story rename can cost where numeric regeneration does not. Track B asks whether attribute-bearing names behave like that rename surface (proposed, not run).",
       "link": "#applications",
-      "linkLabel": "Applications: fairness row",
-      "action": "Audit gate: Acc_can on neutral-name baseline + W8 group gap vs T1 noise floor + per-item covariation with W3a when HP-23 exists."
+      "linkLabel": "Applications: fairness row (proposed)",
+      "action": "Proposed audit gate: Acc_can on neutral-name baseline + W8 group gap vs T1 noise floor + per-item covariation with W3a when HP-23 exists."
     }
   ],
   "bank": {

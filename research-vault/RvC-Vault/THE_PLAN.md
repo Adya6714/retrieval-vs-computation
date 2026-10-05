@@ -61,3 +61,6 @@ Ship: **Paper IV draft** — the ecology of fragility.
 **Budget assumptions.** Marketplace GPU (A100-80GB ≈ $1.3–2.5/hr) rented per-phase; OpenRouter for sweeps with model tiering. Year-one envelope ≈ $520–1,830 excluding D1-full and human studies. If actual budget is materially lower, the plan degrades gracefully: Phases 0 is free-ish, Phase 1 is the priority spend, Phase 3's DS-04 is the first thing to defer.
 
 **If only 4 hours exist this week:** do the next unchecked HP in the current phase, alone, fully, with write-back. Never start two HPs at once.
+
+## Changelog
+- 2026-10-05: added "Why it matters outside the paper" paragraph; no change to gates, claims or phases.

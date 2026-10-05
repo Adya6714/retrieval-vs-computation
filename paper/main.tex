@@ -49,12 +49,9 @@ A benchmark score is ambiguous about process. A model that answers a word proble
 correctly may have executed a general procedure, or may have matched the problem
 against something structurally similar in its training distribution. Both routes
 produce the same number, so accuracy alone cannot distinguish them.
-That ambiguity is not academic for teams shipping kernels, quantised checkpoints,
-prompt templates, or user-facing features: the same leaderboard score can hide
-different failure modes once inputs are paraphrased, formalised, or tied to
-different surface identities in deployment.
-The instrument is built to make those gaps measurable before they become production
-incidents, not to replace accuracy.
+The same gap matters at deployment: equal Acc\textsubscript{can} can hide different
+failure modes once inputs are paraphrased, formalised, or tied to different
+surfaces. The instrument measures those gaps; it does not replace accuracy.
 
 The natural experiment is to change the problem's surface while preserving its
 solution and observe what survives. Prior work establishes that group-level accuracy
@@ -84,23 +81,18 @@ family-level rather than model-level property.
 from benchmark accuracy, using two probes that share no measurement machinery.
 \item A separation of compliance from correctness under mid-solve false-state
 injection.
-\item A practitioner-facing mapping from common shipping decisions (kernel
-promotion, compression, training mix, prompting, architecture edits, and
-fairness-style audits on verifiable tasks) to surface probes and to the findings
-that justify looking beyond Acc\textsubscript{can} alone (public site section
-``Why it matters outside the paper'').
+\item A public mapping from shipping decisions (kernels, compression, training,
+prompting, architecture, fairness audits on verifiable tasks) to the probes and
+findings that justify looking beyond Acc\textsubscript{can}.
 \end{itemize}
 
 \section{Related Work}
 
 \paragraph{Surface perturbation.} \citet{mirzadeh2025gsmsymbolic} regenerate GSM8K
-templates with new names and
-values and report group-level decline. % TODO-VERIFY: exact direction of their
-% name-vs-number result, with section and figure number.
-Their \emph{Vary Name} condition changes proper names only; our W3b changes the
-entire cover story, and our W6 changes values within a fixed template. The two
-manipulations are therefore not comparable one to one, and we report the contrast
-explicitly rather than treating our W3 as a replication of theirs.
+templates; Sec.~4.2 and Fig.~4 show greater sensitivity to changing numbers than
+to changing proper names alone. Their name-only condition is not our W3b cover
+story, nor our W6 value regeneration, so we report the contrast rather than treat
+W3 as a replication.
 \citet{valmeekam2023planbench} introduce obfuscated
 Blocksworld, replacing domain predicates with arbitrary tokens; our planning rename
 follows that design. \citet{wang2024rupbench} apply nine perturbation types across
