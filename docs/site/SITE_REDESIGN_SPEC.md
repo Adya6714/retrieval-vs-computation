@@ -22,7 +22,7 @@ source notes: [[THE_PLAN_AMENDMENT_A1]], [[EF-07_W3_Construct_Audit]], [[EF-08_P
 - **Quality floor.** Keyboard operable (arrow keys step stages, Enter/Space activate), visible focus ring using `--accent`, `aria-live="polite"` region announcing each stage, contrast AA in both themes, responsive to 360 px (explorer stacks vertically), `prefers-reduced-motion` makes every transition instant.
 
 ## 2. Header and hero changes
-- **Author line under the H1:** "Adya Srivastava, BITS Pilani. Supervised by Prof. Dhruv Kumar (BITS Pilani / IIIT Delhi)."
+- **Author line under the H1:** "Adya Srivastava, BITS Pilani."
 - **Publication line:** "Predecessor paper: Same Score, Different Strategy, CAISc 2026." Link to `paper/venue/caisc2026/`.
 - **Status strip** (one line, directly under the hero text, muted):
   "Status, Sept 2026: behavioural layer shipped (Phase 0, gate G0 passed). Per-instance labels are not issued yet; they wait on calibration gate G1, which needs a GPU. Open-weight Track T is running on a T4."
