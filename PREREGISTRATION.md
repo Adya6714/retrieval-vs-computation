@@ -288,6 +288,7 @@ Vault `HP-04_Threshold_Prereg_and_MTMM`: freeze `docs/LABEL_THRESHOLDS_PREREG.md
 |------|--------|
 | 2026-09-03 | Added COLAB-DS16 (recognition/recall) and COLAB-O14b to §3 PROSPECTIVE Colab registrations. |
 | 2026-09-03 | Initial consolidated PREREGISTRATION.md (C9). Records C1–C8 as BRIEF-LOCKED; Colab as PROSPECTIVE; §4 unsupported list; retrospective inventory. |
+| 2026-10-05 | Added Track B (Amendment A2): D18-D20 W8 protected-attribute surface, bias geometry, debias-by-repair. |
 
 ## Track T (open-weight, compute-constrained), registered 2026-09-25
 
@@ -328,3 +329,60 @@ T5 (F3 discriminator).
 T6 (H12), surface ensembling.
 - Primary contrast: Acc(surface vote, 5 calls) − Acc(self-consistency, 5 calls).
 - Kill criterion: fails on ≥ 2 of 3 models, report null, no rule tuning.
+
+## Track B (Amendment A2), registered 2026-10-05
+
+Scope. Protected-attribute surface (W8) as probe-level bias auditing on verifiable-gold items. Comparator for rename cost is **W3a** (nonce rename via HP-23), not W3b isomorph. No per-instance retrieval/computation labels. Governed by `research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A2.md`. Status: proposed, not run. Pre-registered before any W8 run; no W8 data exists at time of writing.
+
+**Commit rule.** Commit this section and tag the commit `prereg-trackB` before any W8 run.
+
+Shared rules.
+- Floor: Acc_can ≥ .30 on ≥ 20 items for the model × family cell on the **neutral-name baseline**; otherwise suppress.
+- Primary behavioural contrast for H16: W8 group A vs W8 group B (all names swapped, token-count and frequency matched). Canonical with the original name is a reference arm only.
+- Any W8 gap is interpreted only relative to the T1/H8 inference noise floor.
+- Decoding: greedy; stack fixed to the T1-stable configuration when open-weight.
+- No post-hoc subgroup search after a null W8 gap.
+- Prerequisites for D18: HP-23 W3a bank and T1 noise floor.
+- Compute: open-weight GPU (A100-class when available) or API. No Track B run is scheduled yet. Costs are estimated at preregistration, not invented here.
+- Multiple-comparison correction: to be fixed before first run (name the method in this section before any W8 call).
+- THE_PLAN gates AC-2 repair behind G2; Track B steering arms are proposed under G2. THE_PLAN wins any conflict.
+
+### Required power analysis (before first W8 run)
+- Clustering unit: **item** (problem_id). Name samples (≥3 per group per item) are repeated measures within an item, not independent units.
+- Compute minimum detectable W8 group-vs-group gap with an **item-clustered bootstrap**, the same family used for ALGO near-duplicate clusters elsewhere in this document.
+- Effective sample size for power is the **item count**, not items × name samples.
+- Inputs: item count, number of attribute groups, 3 name samples per group, measured T1 noise floor.
+- Rule: if the minimum detectable gap exceeds 5 accuracy points, expand the GSM item set before running. Do not run underpowered.
+- Record the analysis (inputs, formula, result) in this document or a linked brief before the first model call.
+
+### D18 (H16, H17), W8 protected-attribute surface
+- **Primary contrast:** Acc(W8_group_A) - Acc(W8_group_B) on neutral-name baseline; token-count and frequency matched across groups.
+- **Reference arm:** original canonical name (not primary contrast).
+- **Secondary:** per-item W8 cost vs W3a cost (paired); CCI and intrusion by group (H17).
+- **Metric:** accuracy gap, retention, flip rate.
+- **Groups:** gender, region, religion, caste-associated surname (audit dimension only); gold independent of attribute.
+- **Sample sizes:** GSM first after neutral-name baseline; then coin_change with the same baseline rule; ≥ 3 name samples per group per item.
+- **Noise-floor rule:** W8 gap reported only relative to T1/H8 flip-rate floor.
+- **Kill criterion:** if W8 gap is within the T1 noise floor on all models, report the null; do not search for subgroups post hoc; note proposed fallback [[D18b_Social_Role_Framing]] (not built).
+- Pre-registered before any W8 run; no W8 data exists at time of writing.
+
+### D19 (H18), bias geometry
+- **Primary contrast:** cosine and CKA overlap of W8 attribute direction vs canonical-vs-W3a direction in the T3/T7 band, vs permutation null.
+- **Metric:** cosine, CKA; permutation N ≥ 1000, seed 42.
+- **Groups:** same W8 groups as D18; models 1.5B-3B open-weight clearing Acc_can floor on neutral-name baseline.
+- **Sample sizes:** D18 item set with non-floor Acc_can and HP-23 W3a pairs; mean-pool and last-token both reported.
+- **Noise-floor rule:** behavioural cells still gated by Acc_can ≥ .30; geometry may be scored below behavioural floor but primary claim requires overlapping behavioural support.
+- **Kill criterion:** if overlap is not above the permutation null, record separate mechanisms and drop joint-repair claim; attribute-only steering may continue under D20.
+- **Compute:** open-weight GPU (A100-class when available; 1.5B-3B FP16 is T4-feasible) or API.
+- Pre-registered before any W8 run; no W8 data exists at time of writing.
+
+### D20 (H19, H20), debias by repair
+- **Steering, joint arm (H19):** Δ W8 group-vs-group gap and Δ W3a retention under band steering vs sham; Acc_can loss ≤ 2 points. Prerequisite: D19 verdict supported. **Gate: G2** (THE_PLAN / AC-2).
+- **Steering, attribute-only arm:** Δ W8 group-vs-group gap under attribute-direction steering vs sham; Acc_can loss ≤ 2 points. Prerequisite: D18 non-null. **Gate: G2** (THE_PLAN / AC-2). Does not require D19 joint verdict.
+- **RLVR (H20):** held-out W8 gap under demographic-diverse RLVR vs canonical-only RLVR at matched steps and equal Acc_can. **Gate: G2** (like D15).
+- **Metric:** Acc on neutral-name baseline, Acc_W8 by group, R_W3a; held-out attribute groups never used in vector extraction / train surfaces.
+- **Groups:** extraction/train groups vs held-out groups, frozen before run.
+- **Sample sizes:** steering on open-weight GPU (A100-class when available) or API; RLVR envelope as D15.
+- **Noise-floor rule:** same Acc_can floor; gaps vs T1 floor.
+- **Kill criterion:** Acc_can drop > 2 points, or gap closes only on groups seen during steering-vector extraction -> failed installation for that arm.
+- Pre-registered before any W8 run; no W8 data exists at time of writing.

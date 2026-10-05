@@ -4,6 +4,8 @@ This is the single canonical execution document. Everything else in the vault su
 
 **Mission.** Build the first validated, per-instance measurement science for how LLMs solve problems (retrieval vs computation), then use it to establish capability claims, an architecture claim, and training-data laws.
 
+**Why it matters outside the paper.** Benchmarks report whether a model scores, not which answer-irrelevant surfaces its procedure is bound to. Two checkpoints can match on aggregate accuracy yet diverge under rename, notation, planning inversion, injection, or (in Track B, when run) protected-attribute swaps on verifiable-gold items. That is a different process and a different deployment failure than the headline score suggests. The public site section ``Why it matters outside the paper'' (`#who`) maps engineering roles to three items each: the shipping decision you make today, what this instrument would catch, and the finding on the site that proves the gap; [[BI-03_Practitioner_Guidance]] holds the citable caveats. Phase 5 [[BI-02_Predeployment_Audit]] targets a calibrated audit product once D1 thresholds land.
+
 **The claims this program exists to establish** (full detail: [[DS-13_Capability_Architecture_Claims]]):
 - CC-1 Two-dimensional capability space: accuracy and surface-invariance are dissociable capabilities with different causal antecedents.
 - CC-2 Absence of source monitoring: models cannot report whether an answer came from memory.

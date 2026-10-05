@@ -19,6 +19,11 @@ Open this note first. It is the map of the whole vault and the current state of 
 - Handoffs: [[HP-16_Noise_Floor]] to [[HP-23_W3a_Nonce_Bank]], [[HP-24_Commitment_Depth_T4]], [[HP-25_W7_Language_Transform]].
 - Broader impact: [[BI-04_Engineering_Relevance]].
 
+## Added 2026-10-05
+- Amendment: [[THE_PLAN_AMENDMENT_A2]] (Track B, bias as surface binding).
+- Directions: [[D18_Protected_Attribute_Surface]], [[D19_Bias_Geometry]], [[D20_Debias_By_Repair]].
+- Broader impact: [[BI-05_Fairness_And_Bias]].
+
 ## Vault sections
 - **03_Evaluation_Framework/** — what the instrument is. One note per probe ([[EF-01_Probe1_Surface_Invariance]], [[EF-02_Probe2_Plan_Execution]], [[EF-03_Probe3_Exposure]]), the labeling logic ([[EF-04_Convergence_Labels_MTMM]]), metric definitions ([[EF-05_Metrics_Glossary]]), and open methodological questions ([[EF-06_Open_Methodological_Questions]]).
 - **04_Directions/** — one note per candidate direction, D01–D10. Each links to every paper that bears on it and to the handoff prompt that executes it.

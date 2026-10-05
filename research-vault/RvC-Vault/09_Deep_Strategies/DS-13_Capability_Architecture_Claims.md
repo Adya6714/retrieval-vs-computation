@@ -20,3 +20,7 @@ The bridge is [[P35_Emergent_Symbolic_Mechanisms_2025]] (ICML 2025): Llama model
 - P35 identified heads in 70B-class models. Plan: replicate head identification on Llama-3.1-8B first (their code, our GPU budget); if 8B lacks clean heads, rent for 70B inference (multi-GPU, raises cost to ~$150–400 per sweep) or use head lists as priors.
 - Their tasks are synthetic identity rules; ours are math/planning. Head-function transfer across task types is itself a finding either way — report it, don't assume it.
 - Execution: [[HP-15_Symbolic_Pathway_Occupancy]]. Sequencing: HP-13/14 (free) → HP-07 (patching infra) → HP-15 → AC-2.
+
+## Append 2026-10-05 (Track B / [[THE_PLAN_AMENDMENT_A2]])
+**CC-5. Protected-attribute invariance is a case of surface invariance.** On verifiable-gold items, attribute-swap cost covaries per item with W3a (nonce rename) cost. Directions: [[D18_Protected_Attribute_Surface]]; comparator requires [[HP-23_W3a_Nonce_Bank]]. status: proposed.
+**AC-5. Bias and W3a (nonce rename) fragility share a localisable representational substrate; repairing it reduces both.** (AC-4 remains the moonshot binding-bottleneck module above; Track B does not overwrite it.) Directions: [[D19_Bias_Geometry]], [[D20_Debias_By_Repair]]. status: proposed.

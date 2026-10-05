@@ -118,8 +118,9 @@ html.js .reveal{opacity:1;transform:none}
 .who-body{display:grid;grid-template-columns:1.15fr .85fr;gap:0;min-height:12rem}
 @media(max-width:800px){.who-body{grid-template-columns:1fr}}
 .who-main{padding:1.15rem 1.25rem}
-.who-main h4{margin:0 0 .45rem;font-size:1.15rem;font-family:var(--serif);font-weight:500}
-.who-main .who-fail{margin:0 0 .85rem;font-size:.92rem;color:var(--muted);max-width:52ch}
+.who-main h3{margin:0 0 .65rem;font-size:1.15rem;font-family:var(--serif);font-weight:500}
+.who-main .who-lbl{margin:0 0 .25rem;font-size:.62rem;letter-spacing:.02em;text-transform:none;color:var(--accent)}
+.who-main .who-fail{margin:0 0 1rem;font-size:.92rem;color:var(--muted);max-width:52ch}
 .who-main .who-do{margin:0;font-size:.9rem;color:var(--ink);max-width:52ch}
 .who-main .who-do strong{color:var(--accent);font-weight:560}
 .who-side{padding:1.15rem 1.15rem;border-left:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;gap:.65rem}
@@ -496,13 +497,15 @@ html.js .reveal{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Why it matters outside the paper</p>
     <h2>Same benchmark score. Different process. Different deployment failure.</h2>
-    <p class="lede">Click a role. Each panel names the decision you make today, what this instrument would catch, and which finding proves the gap.</p>
+    <p class="lede">Benchmark accuracy says whether a model scores, not which surface its procedure is bound to. Two checkpoints can tie on Acc<sub>can</sub> yet fail on different renames, notation, or protagonist cues once your product paraphrases inputs or serves different users. Choose a role below: each tab maps a real shipping decision to what the instrument would flag and to a finding on this site that shows the gap.</p>
     <div class="who-panel" id="who-panel">
       <div class="who-nav" id="who-nav" role="tablist" aria-label="Application audiences"></div>
       <div class="who-body">
         <div class="who-main">
           <h3 id="who-title"></h3>
+          <p class="who-lbl">The decision you make today</p>
           <p class="who-fail" id="who-fail"></p>
+          <p class="who-lbl">What this instrument would catch</p>
           <p class="who-do" id="who-do"></p>
         </div>
         <aside class="who-side" id="who-side" aria-live="polite"></aside>
@@ -586,7 +589,7 @@ html.js .reveal{opacity:1;transform:none}
 <section class="panel" id="research-questions" data-rail="Research questions">
   <div class="inner reveal">
     <p class="kicker">Research questions</p>
-    <h2>Five questions that organise the programme.</h2>
+    <h2>Six questions that organise the programme.</h2>
     <p class="lede">Each question has an operationalisation, what the behavioural layer already measured, and what remains gated. Click to expand.</p>
     <div class="q-grid" id="questions"></div>
   </div>
@@ -1058,6 +1061,17 @@ const DATA = {
       "link": "#f6",
       "linkLabel": "Finding 6: compliance vs correctness",
       "action": "Prompt / agent eval: Acc + injection acceptance + post-injection Acc delta."
+    },
+    {
+      "id": "fairness",
+      "label": "Fairness & audit",
+      "title": "Fairness, hiring, and lending-style audits",
+      "fail": "You green-light a model because benchmark accuracy looks flat across vendors or prompt templates. In production the protagonist name or demographic cue changes while the task logic and gold answer stay fixed, and outcomes diverge even though the leaderboard did not move.",
+      "do": "<strong>Run W8-style protected-attribute swaps on verifiable-gold tasks</strong> (Track B / D18, proposed): primary contrast is group A vs group B on a neutral-name baseline; treat the shipped canonical name as reference only. Pair with W3a rename cost to test whether bias shares a mechanism with rename fragility (CC-5).",
+      "evidence": "Finding 1: Gemini holds GSM accuracy under numeric regeneration (.909→.958) but not under cover-story rename (.909→.523) on the same algorithm. Track B asks whether attribute-bearing names behave like that rename surface (proposed, not run).",
+      "link": "#applications",
+      "linkLabel": "Applications: fairness row",
+      "action": "Audit gate: Acc_can on neutral-name baseline + W8 group gap vs T1 noise floor + per-item covariation with W3a when HP-23 exists."
     }
   ],
   "bank": {
@@ -1769,9 +1783,12 @@ const DATA = {
       "title": "Two-dimensional capability space",
       "text": "Accuracy and surface-invariance are dissociable capabilities with different causal antecedents.",
       "why": "Same score can mean different procedures. Without a second axis, benchmarks conflate them.",
-      "evidence": "Behavioural instrument (Phase 0–1). Gemini GSM .909→.958 (W6) vs .523 (W3); pooled CCI×W3 r=.243 while neither tracks accuracy.",
-      "refute": "W1–W6 order is noise under the within-row permutation null, or a universal hard-item set appears outside obfuscated planning.",
-      "links": ["H1", "H3"]
+      "evidence": "Behavioural instrument (Phase 0-1). Gemini GSM .909→.958 (W6) vs .523 (W3); pooled CCI×W3 r=.243 while neither tracks accuracy.",
+      "refute": "W1-W6 order is noise under the within-row permutation null, or a universal hard-item set appears outside obfuscated planning.",
+      "links": [
+        "H1",
+        "H3"
+      ]
     },
     {
       "id": "CC-2",
@@ -1782,7 +1799,10 @@ const DATA = {
       "why": "If models could monitor source, retrieval vs computation would be directly reportable.",
       "evidence": "DS-05 attached to D1-lite (Phase 1). Ask source vs content; score against calibrated labels.",
       "refute": "Source-report accuracy tracks SEEN/UNSEEN above chance after D1-lite calibration.",
-      "links": ["H1", "H5"]
+      "links": [
+        "H1",
+        "H5"
+      ]
     },
     {
       "id": "CC-3",
@@ -1793,7 +1813,9 @@ const DATA = {
       "why": "Order of acquisition constrains how training should be scheduled.",
       "evidence": "D4 OLMo checkpoint sweep (Phase 4).",
       "refute": "Invariance and accuracy move together at every checkpoint.",
-      "links": ["H4"]
+      "links": [
+        "H4"
+      ]
     },
     {
       "id": "CC-4",
@@ -1804,7 +1826,10 @@ const DATA = {
       "why": "Locates where pattern-matching stops being enough.",
       "evidence": "DS-09 compositional stress (Phase 3). Pre-registered depth schedule.",
       "refute": "No depth at which retrieval substitutes fail under the preregistered schedule.",
-      "links": ["H3", "H7"]
+      "links": [
+        "H3",
+        "H7"
+      ]
     },
     {
       "id": "AC-1",
@@ -1815,7 +1840,9 @@ const DATA = {
       "why": "Behavioural dissociation needs an internal locus if it is more than a scoring artefact.",
       "evidence": "HP-15 pathway occupancy (Phase 2 / Gate G2).",
       "refute": "Occupancy does not predict W3 survival within model; or heads do not transfer across tasks.",
-      "links": ["H6"]
+      "links": [
+        "H6"
+      ]
     },
     {
       "id": "AC-2",
@@ -1826,7 +1853,10 @@ const DATA = {
       "why": "Turns diagnosis into an intervention.",
       "evidence": "Runs only if G2 supports H6. Contrastive canonical↔W3 objective on a constrained layer band.",
       "refute": "Steering raises W3 retention but collapses canonical accuracy or unrelated tasks.",
-      "links": ["H6", "H2"]
+      "links": [
+        "H6",
+        "H2"
+      ]
     },
     {
       "id": "AC-3",
@@ -1837,7 +1867,39 @@ const DATA = {
       "why": "Gives a data-curation law rather than a post-hoc patch.",
       "evidence": "DS-04 exposure-variance arms + head-emergence tracking (Phase 3 / H7).",
       "refute": "Dose-matched and diversity-matched arms produce indistinguishable retention and head occupancy.",
-      "links": ["H7", "H3"]
+      "links": [
+        "H7",
+        "H3"
+      ]
+    },
+    {
+      "id": "CC-5",
+      "kind": "cc",
+      "status": "proposed",
+      "title": "Protected-attribute invariance",
+      "text": "Protected-attribute invariance is a case of surface invariance: on verifiable-gold items with neutral-name baselines, W8 group-vs-group cost covaries per item with W3a (nonce rename) cost.",
+      "why": "Turns bias auditing into a special case of the existing surface-invariance instrument.",
+      "evidence": "D18 W8 behavioural battery vs W3a (Track B / Amendment A2; requires HP-23). Not yet run.",
+      "refute": "W8 gap within the T1 noise floor on all models, or no per-item covariance with W3a cost.",
+      "links": [
+        "H16",
+        "H17"
+      ]
+    },
+    {
+      "id": "AC-5",
+      "kind": "ac",
+      "status": "proposed",
+      "title": "Shared bias-rename substrate",
+      "text": "Bias and W3a (nonce rename) fragility share a localisable representational substrate; repairing it reduces both.",
+      "why": "A single repair targeting both is only warranted if the directions overlap.",
+      "evidence": "D19 geometry (W8 vs W3a directions) then D20 steering / demographic-diverse RLVR. Not yet run. (AC-4 moonshot binding-bottleneck module is unchanged.)",
+      "refute": "Overlap not above permutation null, or repair fails Acc_can ≤ 2-point loss / held-out generalisation.",
+      "links": [
+        "H18",
+        "H19",
+        "H20"
+      ]
     }
   ],
   "hypotheses": [
@@ -1847,8 +1909,11 @@ const DATA = {
       "text": "Labels track exposure.",
       "detail": "Convergence labels and behavioural indicators recover held-out SEEN/UNSEEN membership on a controlled fine-tune.",
       "test": "D1-lite LoRA seen/unseen + corrupted-answer oracle",
-      "gate": "G1 · AUC ≥ .75 → freeze thresholds v2; .60–.75 revise once; < .60 pivot mechanism-first",
-      "claims": ["CC-1", "CC-2"]
+      "gate": "G1 · AUC ≥ .75 → freeze thresholds v2; .60-.75 revise once; < .60 pivot mechanism-first",
+      "claims": [
+        "CC-1",
+        "CC-2"
+      ]
     },
     {
       "id": "H2",
@@ -1857,16 +1922,22 @@ const DATA = {
       "detail": "The rename drop is caused by a lingering binding to the original entity tokens, not by loss of the algorithm.",
       "test": "D2 residual-stream patching on canonical↔W3 pairs (open-weight)",
       "gate": "Patching canonical binding restores W3 survival on fragile items",
-      "claims": ["AC-2"]
+      "claims": [
+        "AC-2"
+      ]
     },
     {
       "id": "H3",
       "status": "open",
-      "text": "Fragility is a dose–response curve with stable cliffs.",
+      "text": "Fragility is a dose-response curve with stable cliffs.",
       "detail": "Graded rename distance produces a family-consistent transfer curve, not a binary cliff unique to each model.",
       "test": "D3 / HP-10 graded rename ladders",
       "gate": "Pre-registered functional form fits or fails out of sample",
-      "claims": ["CC-1", "CC-4", "AC-3"]
+      "claims": [
+        "CC-1",
+        "CC-4",
+        "AC-3"
+      ]
     },
     {
       "id": "H4",
@@ -1875,7 +1946,9 @@ const DATA = {
       "detail": "Across checkpoints, canonical accuracy rises before W3 retention; lag correlates with cumulative template diversity.",
       "test": "D4 / HP-09 OLMo checkpoint sweep",
       "gate": "Measurable lag at every stage where accuracy is already non-floor",
-      "claims": ["CC-3"]
+      "claims": [
+        "CC-3"
+      ]
     },
     {
       "id": "H5",
@@ -1884,7 +1957,9 @@ const DATA = {
       "detail": "High injection compliance with near-baseline final accuracy implies the answer direction is set before the corrupted step.",
       "test": "D2 injection-step patching arm",
       "gate": "Patching at the injection locus changes final answer; later patches do not",
-      "claims": ["CC-2"]
+      "claims": [
+        "CC-2"
+      ]
     },
     {
       "id": "H6",
@@ -1893,7 +1968,10 @@ const DATA = {
       "detail": "Per-item occupancy of abstraction→induction→retrieval heads predicts rename survival.",
       "test": "HP-15 pathway occupancy",
       "gate": "G2 · supported → AC-2; mixed → report task-type boundary",
-      "claims": ["AC-1", "AC-2"]
+      "claims": [
+        "AC-1",
+        "AC-2"
+      ]
     },
     {
       "id": "H7",
@@ -1902,7 +1980,10 @@ const DATA = {
       "detail": "Training on varied surfaces, holding dose fixed, raises both W3 retention and abstraction-head occupancy.",
       "test": "DS-04 + AC-3 head-emergence tracking",
       "gate": "G3 · diversity arm separates from dose-matched control",
-      "claims": ["AC-3", "CC-4"],
+      "claims": [
+        "AC-3",
+        "CC-4"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D15_RLVR_Surface_Diversity.md"
     },
     {
@@ -1912,7 +1993,10 @@ const DATA = {
       "detail": "Under RLVR with matched steps, surface-diverse prompts yield higher held-out invariance than canonical-only prompts at equal canonical accuracy.",
       "test": "D15 RLVR surface diversity",
       "gate": "Gated behind G2",
-      "claims": ["AC-3", "H7"],
+      "claims": [
+        "AC-3",
+        "H7"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D15_RLVR_Surface_Diversity.md"
     },
     {
@@ -1922,7 +2006,9 @@ const DATA = {
       "detail": "Inference-stack nondeterminism (batch size, attention backend, accumulation precision) flips a measurable fraction of per-item verdicts at T=0; per-instance labels are only meaningful above that floor.",
       "test": "D11 / HP-16 noise floor",
       "gate": "Track T · T1; discharges no programme gate",
-      "claims": ["CC-1"],
+      "claims": [
+        "CC-1"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D11_Inference_Stack_Noise_Floor.md"
     },
     {
@@ -1932,7 +2018,10 @@ const DATA = {
       "detail": "Precision reduction degrades surface invariance (R_W3, φ) before it degrades canonical accuracy.",
       "test": "D12 / HP-18 precision sweep",
       "gate": "Track T · T3; discharges no programme gate",
-      "claims": ["CC-1", "AC-1"],
+      "claims": [
+        "CC-1",
+        "AC-1"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D12_Precision_Compression_Invariance.md"
     },
     {
@@ -1942,7 +2031,10 @@ const DATA = {
       "detail": "Code-specialised continued pretraining removes or inverts the W4 formal-notation penalty without changing W3 cost.",
       "test": "D13 / HP-17 Qwen family contrast",
       "gate": "Track T · T2; discharges no programme gate",
-      "claims": ["CC-1", "AC-3"],
+      "claims": [
+        "CC-1",
+        "AC-3"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D13_Continued_Pretraining_Transfer.md"
     },
     {
@@ -1952,7 +2044,10 @@ const DATA = {
       "detail": "Distillation transfers canonical accuracy more fully than it transfers invariance.",
       "test": "D14 / HP-19 distillation contrast",
       "gate": "Track T · T4; discharges no programme gate",
-      "claims": ["CC-1", "AC-3"],
+      "claims": [
+        "CC-1",
+        "AC-3"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D14_Distillation_Invariance.md"
     },
     {
@@ -1962,7 +2057,9 @@ const DATA = {
       "detail": "Majority vote across answer-preserving surfaces beats sample self-consistency at matched call count, because fragility is model-item specific (F4).",
       "test": "D16 / HP-20 surface ensembling",
       "gate": "Track T · T6; discharges no programme gate",
-      "claims": ["CC-1"],
+      "claims": [
+        "CC-1"
+      ],
       "note": "research-vault/RvC-Vault/04_Directions/D16_Surface_Ensembling.md"
     },
     {
@@ -1972,8 +2069,98 @@ const DATA = {
       "detail": "Cost of cover-story isomorph (W3b) exceeds cost of nonce rename (W3a); if W3a is cheap, F1 is a domain-transfer effect, not an entity-binding effect.",
       "test": "EF-07 option S via HP-23 W3a nonce bank",
       "gate": "Track T · T0; discharges no programme gate",
-      "claims": ["CC-1", "H2"],
+      "claims": [
+        "CC-1",
+        "H2"
+      ],
       "note": "research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md"
+    },
+    {
+      "id": "H14",
+      "status": "untested",
+      "text": "Commitment depth shifts under rename on models that can solve renamed items.",
+      "detail": "Commitment depth (first layer where the gold token is top-1) shifts later under W3 than canonical, on models strong enough to solve renamed items.",
+      "test": "D17 / HP-24 Commitment Depth on T4",
+      "gate": "Track T · T7; discharges no programme gate",
+      "claims": [
+        "AC-1"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D17_Commitment_Depth_T4.md"
+    },
+    {
+      "id": "H15",
+      "status": "untested",
+      "text": "Language-agnostic latent shows near-1 W7 retention.",
+      "detail": "A model computing in a language-agnostic latent shows R_W7 near 1; a model that does not shows W7 collapsing like W3.",
+      "test": "D05 / HP-25 W7 language transform",
+      "gate": "Track T · T8; discharges no programme gate",
+      "claims": [
+        "CC-1"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D05_Cross_Linguistic.md"
+    },
+    {
+      "id": "H16",
+      "status": "proposed",
+      "text": "W8 group A vs group B gap beyond noise floor (neutral-name baseline).",
+      "detail": "Primary contrast: Acc(W8_group_A) - Acc(W8_group_B) with matched token count and frequency; neutral-name baseline required; canonical is reference only. Secondary: per-item W8 cost correlates with W3a cost.",
+      "test": "D18 W8 protected-attribute surface (requires HP-23 W3a and T1)",
+      "gate": "Track B · Amendment A2 · proposed, not run; discharges no programme gate",
+      "claims": [
+        "CC-5"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D18_Protected_Attribute_Surface.md"
+    },
+    {
+      "id": "H17",
+      "status": "proposed",
+      "text": "CCI and intrusion differ by protagonist group at matched Acc_can.",
+      "detail": "At matched canonical accuracy, plan-execution consistency (CCI) and intrusion rate differ by protagonist group (differential reasoning, not only differential answers).",
+      "test": "D18 Probe 2 + intrusion by W8 group",
+      "gate": "Track B · Amendment A2 · proposed, not run; discharges no programme gate",
+      "claims": [
+        "CC-5"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D18_Protected_Attribute_Surface.md"
+    },
+    {
+      "id": "H18",
+      "status": "proposed",
+      "text": "W8 attribute direction overlaps canonical-vs-W3a direction above null.",
+      "detail": "The residual-stream direction separating W8 variants overlaps the canonical-vs-W3a direction above a permutation null (cosine and CKA) in the same layer band identified by T3/T7.",
+      "test": "D19 bias geometry (RSA/CKA)",
+      "gate": "Track B · Amendment A2 · proposed, not run; discharges no programme gate",
+      "claims": [
+        "AC-5"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D19_Bias_Geometry.md"
+    },
+    {
+      "id": "H19",
+      "status": "proposed",
+      "text": "Steering reduces W8 and/or W3a cost (joint or attribute-only arm).",
+      "detail": "Joint arm (H19): shared W8/W3a direction after D19 support. Attribute-only arm: W8 direction after D18 non-null. Both proposed under G2 (THE_PLAN / AC-2), not G1. Acc_can loss ≤ 2 points. Not yet run.",
+      "test": "D20 steering / band-constrained ablation",
+      "gate": "G2 (THE_PLAN / AC-2) · proposed, not run",
+      "claims": [
+        "AC-5",
+        "AC-2"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D20_Debias_By_Repair.md"
+    },
+    {
+      "id": "H20",
+      "status": "proposed",
+      "text": "Demographic-diverse RLVR reduces held-out W8 gap vs canonical-only.",
+      "detail": "RLVR with demographic-diverse surfaces reduces the W8 gap on held-out attribute groups more than canonical-only RLVR at matched steps and equal canonical accuracy.",
+      "test": "D20 RLVR arm (extends H7b / D15)",
+      "gate": "G2 (like D15) · proposed, not run",
+      "claims": [
+        "AC-5",
+        "AC-3",
+        "H7b"
+      ],
+      "note": "research-vault/RvC-Vault/04_Directions/D20_Debias_By_Repair.md"
     }
   ],
   "phases": [
@@ -1988,12 +2175,28 @@ const DATA = {
       "ships": null,
       "results": "Intrusion-rate table (o4-mini ALGO W3 intrusion .619 vs ≤.25 for others); mixture-IRT BIC selects K=1 on GSM; variance decomp ALGO model .327 vs item .018, GSM item .186 with G_item=.680; frozen thresholds + clean denominators + MTMM matrix.",
       "results_detail": [
-        {"k": "Intrusion (C1)", "v": "o4-mini ALGO W3 .619 (13/21); other models ≤ .25; BW rate 0"},
-        {"k": "Mixture-IRT (DS-01)", "v": "GSM BIC selects K=1 over K∈{1..4}; ALGO/BW below item-variance threshold"},
-        {"k": "Variance facets (O10)", "v": "ALGO: model .327 vs item .018 (G_item=.415). GSM: item .186, model .009 (G_item=.680)"},
-        {"k": "Frozen", "v": "Thresholds, clean denominators, MTMM matrix, strategy_posteriors.csv"}
+        {
+          "k": "Intrusion (C1)",
+          "v": "o4-mini ALGO W3 .619 (13/21); other models ≤ .25; BW rate 0"
+        },
+        {
+          "k": "Mixture-IRT (DS-01)",
+          "v": "GSM BIC selects K=1 over K∈{1..4}; ALGO/BW below item-variance threshold"
+        },
+        {
+          "k": "Variance facets (O10)",
+          "v": "ALGO: model .327 vs item .018 (G_item=.415). GSM: item .186, model .009 (G_item=.680)"
+        },
+        {
+          "k": "Frozen",
+          "v": "Thresholds, clean denominators, MTMM matrix, strategy_posteriors.csv"
+        }
       ],
-      "advances": ["CC-1", "DS-01", "DS-02"]
+      "advances": [
+        "CC-1",
+        "DS-01",
+        "DS-02"
+      ]
     },
     {
       "id": "P1",
@@ -2005,7 +2208,13 @@ const DATA = {
       "gate": "G1 (D1-lite ROC): AUC ≥ .75 proceed and freeze thresholds v2; .60–.75 revise indicators once; < .60 labels do not track exposure — pivot mechanism-first.",
       "ships": "Paper I — the instrument",
       "results": null,
-      "advances": ["H1", "H2", "H5", "CC-1", "CC-2"]
+      "advances": [
+        "H1",
+        "H2",
+        "H5",
+        "CC-1",
+        "CC-2"
+      ]
     },
     {
       "id": "P1T",
@@ -2018,7 +2227,14 @@ const DATA = {
       "gate": "Discharges no gate. Makes no exposure claim and issues no per-instance labels.",
       "ships": null,
       "results": null,
-      "advances": ["H8", "H9", "H10", "H11", "H12", "H13"]
+      "advances": [
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ]
     },
     {
       "id": "P2",
@@ -2030,7 +2246,11 @@ const DATA = {
       "gate": "G2: H6 verdict. Supported → AC-2. Mixed → report transfer failure; AC-1 reframed as task-type boundary of the symbolic pathway.",
       "ships": "Paper II — mechanism / architecture",
       "results": null,
-      "advances": ["H6", "AC-1", "AC-2"]
+      "advances": [
+        "H6",
+        "AC-1",
+        "AC-2"
+      ]
     },
     {
       "id": "P3",
@@ -2042,7 +2262,12 @@ const DATA = {
       "gate": "G3: pre-registered functional forms fit or fail — either is publishable; H7 verdict.",
       "ships": "Paper III — behavioural + training laws",
       "results": null,
-      "advances": ["H3", "H7", "CC-4", "AC-3"]
+      "advances": [
+        "H3",
+        "H7",
+        "CC-4",
+        "AC-3"
+      ]
     },
     {
       "id": "P4",
@@ -2054,7 +2279,10 @@ const DATA = {
       "gate": "Retention curves and item-facet G coefficients recoverable.",
       "ships": "Paper IV — ecology of fragility",
       "results": null,
-      "advances": ["H4", "CC-3"]
+      "advances": [
+        "H4",
+        "CC-3"
+      ]
     },
     {
       "id": "P5",
@@ -2066,7 +2294,10 @@ const DATA = {
       "gate": "Calibration intact before any external audit pitch.",
       "ships": "Applied audit suite",
       "results": null,
-      "advances": ["D10", "BI"]
+      "advances": [
+        "D10",
+        "BI"
+      ]
     }
   ],
   "catalog": [
@@ -2076,7 +2307,7 @@ const DATA = {
         {
           "id": "DS-14",
           "title": "Double-dissociation battery",
-          "text": "Crossover pairs proving separable capabilities — behavioural and lesion versions.",
+          "text": "Crossover pairs proving separable capabilities  -  behavioural and lesion versions.",
           "status": "designed"
         }
       ]
@@ -2104,7 +2335,7 @@ const DATA = {
         {
           "id": "DS-02",
           "title": "Intrusion-error analysis",
-          "text": "Proactive interference — pre-rename tokens in wrong answers.",
+          "text": "Proactive interference  -  pre-rename tokens in wrong answers.",
           "status": "executed"
         },
         {
@@ -2116,7 +2347,7 @@ const DATA = {
         {
           "id": "DS-16",
           "title": "Memory-signature suite",
-          "text": "Savings, priming, recognition–recall gap.",
+          "text": "Savings, priming, recognition-recall gap.",
           "status": "designed"
         }
       ]
@@ -2206,20 +2437,46 @@ const DATA = {
           "status": "designed"
         }
       ]
+    },
+    {
+      "family": "Social psychology and sociolinguistics",
+      "items": [
+        {
+          "id": "BX-corr",
+          "title": "Correspondence audit",
+          "text": "Matched CVs differing only in name: hidden property is differential evaluation by inferred group; LLM analogue is W8 name swap on verifiable-gold items.",
+          "status": "designed"
+        },
+        {
+          "id": "BX-guise",
+          "title": "Matched-guise test",
+          "text": "Same speaker, different accent: content-irrelevant surface cue; LLM analogue is W7/W8 answer-preserving social-cue surfaces with gold fixed.",
+          "status": "designed"
+        }
+      ]
     }
   ],
   "questions": [
     {
       "id": "Q1",
       "text": "Which surface properties carry the load, and is the answer a property of the model or of the task?",
-      "phase": "Phase 0–1 · behavioural instrument",
+      "phase": "Phase 0-1 · behavioural instrument",
       "claim": "CC-1",
       "why": "A single “robustness drop” summarises very little if W3, W4, W5, and W6 move in different directions.",
       "ops": "Six answer-preserving transforms on 219 items × five primary models (plus R1-distill-70B on planning only). Primary contrasts: Acc_can vs Acc_W3 / Acc_W4 / Acc_W5 / Acc_W6; Kendall W of transform order within vs across families; shared-hard item counts.",
-      "measured": "Numeric regeneration nearly free (Gemini GSM .909→.958 W6) while rename is expensive (.523 W3). Formal register often costlier than rename (o4-mini .841→.682 W4). Direction inversion raises BW accuracy (Claude .172→.873). Transform difficulty is family-level (W .42–.68); Claude across families W=.165 p=.82. Shared-hard 0/110 ALGO, 0/20 GSM, 14/64 BW.",
+      "measured": "Numeric regeneration nearly free (Gemini GSM .909→.958 W6) while rename is expensive (.523 W3). Formal register often costlier than rename (o4-mini .841→.682 W4). Direction inversion raises BW accuracy (Claude .172→.873). Transform difficulty is family-level (W .42-.68); Claude across families W=.165 p=.82. Shared-hard 0/110 ALGO, 0/20 GSM, 14/64 BW.",
       "open": "Matched init/goal complexity for the W5 rise; difficulty-matched WIS for exposure vs hardness.",
-      "findings": ["F1", "F2", "F3", "F4"],
-      "exps": ["P1", "Kendall W", "Shared-hard"]
+      "findings": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "exps": [
+        "P1",
+        "Kendall W",
+        "Shared-hard"
+      ]
     },
     {
       "id": "Q2",
@@ -2227,11 +2484,16 @@ const DATA = {
       "phase": "Phase 1 · Gate G1",
       "claim": "H1",
       "why": "Three correlated proxies agreeing is consistency, not validity. Without exposure ground truth the instrument is uncalibrated.",
-      "ops": "D1-lite: LoRA fine-tune Llama-3.1-8B on a random half of ALGO canonicals; hold out the rest; rerun P1–P3; report ROC of convergence labels against SEEN/UNSEEN. Corrupted-answer oracle arm as negative control.",
-      "measured": "Public-corpus Infini-gram proximity only — a within-family proxy, not closed-model membership. Labels not yet validated against known exposure.",
-      "open": "Gate G1: AUC ≥ .75 freeze thresholds; .60–.75 revise once; < .60 pivot mechanism-first.",
-      "findings": ["F5"],
-      "exps": ["P3", "Triangulation"]
+      "ops": "D1-lite: LoRA fine-tune Llama-3.1-8B on a random half of ALGO canonicals; hold out the rest; rerun P1-P3; report ROC of convergence labels against SEEN/UNSEEN. Corrupted-answer oracle arm as negative control.",
+      "measured": "Public-corpus Infini-gram proximity only  -  a within-family proxy, not closed-model membership. Labels not yet validated against known exposure.",
+      "open": "Gate G1: AUC ≥ .75 freeze thresholds; .60-.75 revise once; < .60 pivot mechanism-first.",
+      "findings": [
+        "F5"
+      ],
+      "exps": [
+        "P3",
+        "Triangulation"
+      ]
     },
     {
       "id": "Q3",
@@ -2242,15 +2504,21 @@ const DATA = {
       "ops": "Canonical↔W3 residual-stream patching (not can↔W6); Commitment Depth as DV; HP-15 pathway occupancy on abstraction→induction→retrieval heads; if supported, band-constrained contrastive fine-tune.",
       "measured": "Open-weight pilots solve too few renamed items (1/60, 0/61) for within-model correlation. Commitment Depth informally predicted final rank (r≈+.82) in the existing sweep.",
       "open": "Need unquantised backbones with enough W3 solves, or an easier item set, before G2.",
-      "findings": ["F1", "F6"],
-      "exps": ["Mechanistic pilot", "Intrusion"]
+      "findings": [
+        "F1",
+        "F6"
+      ],
+      "exps": [
+        "Mechanistic pilot",
+        "Intrusion"
+      ]
     },
     {
       "id": "Q4",
       "text": "What training-data conditions produce invariance: dose or diversity?",
       "phase": "Phase 3 · Gate G3",
       "claim": "AC-3 / H7",
-      "why": "Gives a data-curation law rather than a post-hoc patch — variety of surfaces as the pressure that forces abstraction heads.",
+      "why": "Gives a data-curation law rather than a post-hoc patch  -  variety of surfaces as the pressure that forces abstraction heads.",
       "ops": "DS-04 arms holding template dose fixed while varying surface diversity; track W3 retention and head-emergence CMA scores across arms.",
       "measured": "Not yet run. Behavioural geometry (D3 ladders) and compositional stress (DS-09) are designed companions.",
       "open": "Pre-registered functional forms; either fit or fail is publishable.",
@@ -2265,9 +2533,26 @@ const DATA = {
       "why": "Order of acquisition constrains how training should be scheduled and what “capability” means developmentally.",
       "ops": "OLMo intermediate checkpoints + Dolma template counts; track Acc_can, R_W3, and Commitment Depth across stages.",
       "measured": "Not yet run. Variance decomposition already shows family-specific facet loadings (ALGO model-heavy; GSM item-heavy).",
-      "open": "Early checkpoints may floor on ALGO — use retention ratios and easy instances.",
-      "findings": ["F4", "F5"],
-      "exps": ["O10 variance"]
+      "open": "Early checkpoints may floor on ALGO  -  use retention ratios and easy instances.",
+      "findings": [
+        "F4",
+        "F5"
+      ],
+      "exps": [
+        "O10 variance"
+      ]
+    },
+    {
+      "id": "Q6",
+      "text": "Is social bias a case of surface binding, and can one repair fix both?",
+      "phase": "Track B · Amendment A2",
+      "claim": "CC-5 / AC-5",
+      "why": "A protected attribute in a verifiable-gold item is an answer-irrelevant surface; if attribute-swap cost covaries with W3a (nonce rename) cost and both share a direction, fairness auditing is a special case of the instrument. W3 is an isomorph, so the comparator is W3a (HP-23).",
+      "ops": "D18: W8 group A vs B on neutral-name baseline (GSM first); D19: W8 vs W3a geometry; D20 joint and attribute-only steering under G2; H20 RLVR under G2. Prerequisites: HP-23, T1.",
+      "measured": "Not yet run.",
+      "open": "D18 kill if W8 gap within T1 noise floor; D19 kill if overlap not above permutation null (separate mechanisms); D20 kill if Acc_can drops > 2 points or gap closes only on seen attribute groups.",
+      "findings": [],
+      "exps": []
     }
   ],
   "experiments": [
@@ -2467,55 +2752,311 @@ const DATA = {
   },
   "coverage": {
     "source": "results/derived/COVERAGE_MASTER.csv",
-    "models": ["Claude", "GPT-4o", "Gemini", "Llama", "o4-mini"],
+    "models": [
+      "Claude",
+      "GPT-4o",
+      "Gemini",
+      "Llama",
+      "o4-mini"
+    ],
     "cols": [
-      {"id": "GSM·P1", "family": "GSM", "probe": "P1"},
-      {"id": "GSM·P2", "family": "GSM", "probe": "P2"},
-      {"id": "GSM·P3", "family": "GSM", "probe": "P3"},
-      {"id": "BW·P1", "family": "BW", "probe": "P1"},
-      {"id": "BW·P2", "family": "BW", "probe": "P2"},
-      {"id": "BW·P3", "family": "BW", "probe": "P3"},
-      {"id": "ALGO·P1", "family": "ALGO", "probe": "P1"},
-      {"id": "ALGO·P2", "family": "ALGO", "probe": "P2"},
-      {"id": "ALGO·P3", "family": "ALGO", "probe": "P3"}
+      {
+        "id": "GSM·P1",
+        "family": "GSM",
+        "probe": "P1"
+      },
+      {
+        "id": "GSM·P2",
+        "family": "GSM",
+        "probe": "P2"
+      },
+      {
+        "id": "GSM·P3",
+        "family": "GSM",
+        "probe": "P3"
+      },
+      {
+        "id": "BW·P1",
+        "family": "BW",
+        "probe": "P1"
+      },
+      {
+        "id": "BW·P2",
+        "family": "BW",
+        "probe": "P2"
+      },
+      {
+        "id": "BW·P3",
+        "family": "BW",
+        "probe": "P3"
+      },
+      {
+        "id": "ALGO·P1",
+        "family": "ALGO",
+        "probe": "P1"
+      },
+      {
+        "id": "ALGO·P2",
+        "family": "ALGO",
+        "probe": "P2"
+      },
+      {
+        "id": "ALGO·P3",
+        "family": "ALGO",
+        "probe": "P3"
+      }
     ],
     "cells": {
-      "Claude": {"GSM·P1":"filled","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"partial","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"partial","ALGO·P3":"filled"},
-      "GPT-4o": {"GSM·P1":"partial","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"partial","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"filled","ALGO·P3":"filled"},
-      "Gemini": {"GSM·P1":"filled","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"empty","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"partial","ALGO·P3":"filled"},
-      "Llama": {"GSM·P1":"partial","GSM·P2":"filled","GSM·P3":"filled","BW·P1":"filled","BW·P2":"partial","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"partial","ALGO·P3":"filled"},
-      "o4-mini": {"GSM·P1":"filled","GSM·P2":"empty","GSM·P3":"filled","BW·P1":"filled","BW·P2":"empty","BW·P3":"filled","ALGO·P1":"filled","ALGO·P2":"empty","ALGO·P3":"filled"}
+      "Claude": {
+        "GSM·P1": "filled",
+        "GSM·P2": "filled",
+        "GSM·P3": "filled",
+        "BW·P1": "filled",
+        "BW·P2": "partial",
+        "BW·P3": "filled",
+        "ALGO·P1": "filled",
+        "ALGO·P2": "partial",
+        "ALGO·P3": "filled"
+      },
+      "GPT-4o": {
+        "GSM·P1": "partial",
+        "GSM·P2": "filled",
+        "GSM·P3": "filled",
+        "BW·P1": "filled",
+        "BW·P2": "partial",
+        "BW·P3": "filled",
+        "ALGO·P1": "filled",
+        "ALGO·P2": "filled",
+        "ALGO·P3": "filled"
+      },
+      "Gemini": {
+        "GSM·P1": "filled",
+        "GSM·P2": "filled",
+        "GSM·P3": "filled",
+        "BW·P1": "filled",
+        "BW·P2": "empty",
+        "BW·P3": "filled",
+        "ALGO·P1": "filled",
+        "ALGO·P2": "partial",
+        "ALGO·P3": "filled"
+      },
+      "Llama": {
+        "GSM·P1": "partial",
+        "GSM·P2": "filled",
+        "GSM·P3": "filled",
+        "BW·P1": "filled",
+        "BW·P2": "partial",
+        "BW·P3": "filled",
+        "ALGO·P1": "filled",
+        "ALGO·P2": "partial",
+        "ALGO·P3": "filled"
+      },
+      "o4-mini": {
+        "GSM·P1": "filled",
+        "GSM·P2": "empty",
+        "GSM·P3": "filled",
+        "BW·P1": "filled",
+        "BW·P2": "empty",
+        "BW·P3": "filled",
+        "ALGO·P1": "filled",
+        "ALGO·P2": "empty",
+        "ALGO·P3": "filled"
+      }
     },
     "note": "P3 marked filled when family-level Infini-gram proximity exists (corpus shared across models)."
   },
-
   "applications": [
-    {"area":"Inference stack, kernels, determinism","adds":"Per-item verdict flip rate across batch size, attention backend, accumulation precision; a noise floor for any per-instance eval.","direction":"D11","status":"untested"},
-    {"area":"Quantization","adds":"Invariance loss at matched accuracy; per-band sensitivity map for mixed-precision allocation.","direction":"D12","status":"untested"},
-    {"area":"KV-cache compression","adds":"State-tracking stress via Probe 2 execution transcripts.","direction":"D12 (deferred, needs L4)","status":"untested"},
-    {"area":"Continued pretraining, domain transfer","adds":"Which surface the procedure is keyed to after transfer, not just accuracy.","direction":"D13, D05","status":"untested"},
-    {"area":"Distillation","adds":"Whether the student inherits invariance or only accuracy; intrusion signature.","direction":"D14","status":"untested"},
-    {"area":"RLVR / GRPO","adds":"Surface-diverse verifiable environments; diversity-vs-dose test of AC-3.","direction":"D15","status":"gated"},
-    {"area":"Prompting and test-time compute","adds":"Surface ensembling; backward-planning prompts; avoid formal notation for non-code models. F2 (formal notation cost) is shipped; D16 and HP-22 remain untested.","direction":"D16, HP-22, F2","status":"untested"},
-    {"area":"Alignment, CoT monitoring","adds":"F6: false premises adopted and visibly propagated yet final answers recover, so the visible trace is not the whole causal path.","direction":"F6","status":"shipped"},
-    {"area":"Honesty, self-knowledge","adds":"Source monitoring: can a model report recalled vs computed?","direction":"CC-2 / DS-05","status":"gated"},
-    {"area":"Eval integrity, safety cases","adds":"Contamination-robust check that a capability score reflects computation.","direction":"Phase 5 audit","status":"planned"}
+    {
+      "area": "Inference stack, kernels, determinism",
+      "adds": "Per-item verdict flip rate across batch size, attention backend, accumulation precision; a noise floor for any per-instance eval.",
+      "direction": "D11",
+      "status": "untested"
+    },
+    {
+      "area": "Quantization",
+      "adds": "Invariance loss at matched accuracy; per-band sensitivity map for mixed-precision allocation.",
+      "direction": "D12",
+      "status": "untested"
+    },
+    {
+      "area": "KV-cache compression",
+      "adds": "State-tracking stress via Probe 2 execution transcripts.",
+      "direction": "D12 (deferred, needs L4)",
+      "status": "untested"
+    },
+    {
+      "area": "Continued pretraining, domain transfer",
+      "adds": "Which surface the procedure is keyed to after transfer, not just accuracy.",
+      "direction": "D13, D05",
+      "status": "untested"
+    },
+    {
+      "area": "Distillation",
+      "adds": "Whether the student inherits invariance or only accuracy; intrusion signature.",
+      "direction": "D14",
+      "status": "untested"
+    },
+    {
+      "area": "RLVR / GRPO",
+      "adds": "Surface-diverse verifiable environments; diversity-vs-dose test of AC-3; demographic-diverse environments for debiasing (H20).",
+      "direction": "D15",
+      "status": "gated"
+    },
+    {
+      "area": "Prompting and test-time compute",
+      "adds": "Surface ensembling; backward-planning prompts; avoid formal notation for non-code models. F2 (formal notation cost) is shipped; D16 and HP-22 remain untested.",
+      "direction": "D16, HP-22, F2",
+      "status": "untested"
+    },
+    {
+      "area": "Alignment, CoT monitoring",
+      "adds": "F6: false premises adopted and visibly propagated yet final answers recover, so the visible trace is not the whole causal path.",
+      "direction": "F6",
+      "status": "shipped"
+    },
+    {
+      "area": "Honesty, self-knowledge",
+      "adds": "Source monitoring: can a model report recalled vs computed?",
+      "direction": "CC-2 / DS-05",
+      "status": "gated"
+    },
+    {
+      "area": "Eval integrity, safety cases",
+      "adds": "Contamination-robust check that a capability score reflects computation.",
+      "direction": "Phase 5 audit",
+      "status": "planned"
+    },
+    {
+      "area": "Fairness, bias auditing",
+      "adds": "Protected-attribute swap as an answer-preserving surface on verifiable-gold items; tests whether models reason differently by who the problem is about, and whether bias shares a mechanism with rename fragility.",
+      "direction": "D18, D19, D20",
+      "status": "proposed"
+    }
   ],
   "positionToggles": [
-    {"id":"F1","title":"Cover-story isomorphs","finding":"Numeric regeneration within a template is nearly free; moving the same template into a new domain is expensive.","analogue":"Problem isomorphs with identical structure differ several-fold in difficulty by cover story; analogical transfer across cover stories is poor without cues."},
-    {"id":"F2","title":"Representational register","finding":"Formal notation can cost more than renaming while entity names stay fixed.","analogue":"Content effects in the Wason task — register and framing change difficulty without changing logical structure."},
-    {"id":"F3","title":"Search direction","finding":"Inverting origin and destination in planning can raise accuracy sharply; the procedure is direction-shaped.","analogue":"Forward vs backward search asymmetries in human and LLM planning."},
-    {"id":"CC-2","title":"Source monitoring","finding":"Calibration of whether a correct answer was recalled or computed is gated on known exposure (G1).","analogue":"Humans are also poor at source monitoring."}
+    {
+      "id": "F1",
+      "title": "Cover-story isomorphs",
+      "finding": "Numeric regeneration within a template is nearly free; moving the same template into a new domain is expensive.",
+      "analogue": "Problem isomorphs with identical structure differ several-fold in difficulty by cover story; analogical transfer across cover stories is poor without cues."
+    },
+    {
+      "id": "F2",
+      "title": "Representational register",
+      "finding": "Formal notation can cost more than renaming while entity names stay fixed.",
+      "analogue": "Content effects in the Wason task — register and framing change difficulty without changing logical structure."
+    },
+    {
+      "id": "F3",
+      "title": "Search direction",
+      "finding": "Inverting origin and destination in planning can raise accuracy sharply; the procedure is direction-shaped.",
+      "analogue": "Forward vs backward search asymmetries in human and LLM planning."
+    },
+    {
+      "id": "CC-2",
+      "title": "Source monitoring",
+      "finding": "Calibration of whether a correct answer was recalled or computed is gated on known exposure (G1).",
+      "analogue": "Humans are also poor at source monitoring."
+    }
   ],
   "trackT": [
-    {"id":"Priority","title":"Phase 1 (G1) remains the priority spend","hypothesis":"Do behavioural indicators recover known exposure on a controlled fine-tune?","contrast":"D1-lite LoRA seen/unseen ROC of triangulation labels and indicators.","kill":"AUC ≥ .75 freeze thresholds v2; .60–.75 revise once; < .60 pivot mechanism-first.","cost":"1× A100-80GB + API","status":"blocked (GPU)","serves":"CC-1, CC-2, Paper I","priority":true,"link":"research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md","linkLabel":"THE_PLAN_AMENDMENT_A1"},
-    {"id":"T0","title":"W3a nonce vs W3b isomorph","hypothesis":"H13: isomorph cost exceeds nonce-rename cost.","contrast":"Acc(W3a) − Acc(W3b), per model, paired by item.","kill":"Support if contrast > 0 with interval excluding 0 for at least 3 of 5 API models, or 2 of 3 open models.","cost":"< $10 API or T4","status":"untested","serves":"CC-1, H2, Paper I fix","link":"research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md","linkLabel":"EF-07"},
-    {"id":"T1","title":"Inference-stack noise floor","hypothesis":"H8: stack nondeterminism flips per-item verdicts at T=0.","contrast":"Verdict flip rate vs reference across the 11 other configurations, per model.","kill":"If flip rate exceeds 10% of items for a model, suspend per-instance statements for that model until a batch-invariant configuration is fixed.","cost":"T4 hours","status":"untested","serves":"Instrument validity","link":"research-vault/RvC-Vault/04_Directions/D11_Inference_Stack_Noise_Floor.md","linkLabel":"D11"},
-    {"id":"T2","title":"Qwen family continued pretraining","hypothesis":"H10: code continued pretraining removes W4 penalty, not W3 cost.","contrast":"Interaction Coder × W4 in a logistic mixed model on ALGO.","kill":"If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.","cost":"T4 hours","status":"untested","serves":"CC-1, AC-3 precursor","link":"research-vault/RvC-Vault/04_Directions/D13_Continued_Pretraining_Transfer.md","linkLabel":"D13"},
-    {"id":"T3","title":"Precision / compression invariance","hypothesis":"H9: precision reduction degrades invariance before accuracy.","contrast":"ΔR_W3 − (ΔAcc_can / Acc_can) vs fp16, cluster bootstrap.","kill":"If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.","cost":"T4 hours","status":"untested","serves":"CC-1, AC-1 localisation precursor","link":"research-vault/RvC-Vault/04_Directions/D12_Precision_Compression_Invariance.md","linkLabel":"D12"},
-    {"id":"T4","title":"Distillation invariance","hypothesis":"H11: distillation transfers accuracy more than invariance.","contrast":"(ΔAcc_can) − (ΔR_W3) for distilled student vs base.","kill":"If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.","cost":"T4 hours","status":"untested","serves":"CC-1, AC-3 precursor","link":"research-vault/RvC-Vault/04_Directions/D14_Distillation_Invariance.md","linkLabel":"D14"},
-    {"id":"T5","title":"Backward-prompt discriminator","hypothesis":"F3 mechanism: search direction vs instance constraint.","contrast":"(Acc_B − Acc_A) / (Acc_C − Acc_A) per model.","kill":"Inconclusive if neither Account S (≥ .5 for ≥ 2 models) nor Account C (≤ .2 + covariate p < .05) is favoured.","cost":"< 100 calls","status":"untested","serves":"F3 mechanism","link":"research-vault/RvC-Vault/06_Operating_Manual/HP-22_Backward_Prompt_Discriminator.md","linkLabel":"HP-22"},
-    {"id":"T6","title":"Surface ensembling","hypothesis":"H12: surface vote beats self-consistency at matched calls.","contrast":"Acc(surface vote, 5 calls) − Acc(self-consistency, 5 calls).","kill":"If surface ensembling does not beat self-consistency at matched calls on at least 2 of 3 models, report the null; do not tune the vote rule.","cost":"T4 hours","status":"untested","serves":"Practitioner result","link":"research-vault/RvC-Vault/04_Directions/D16_Surface_Ensembling.md","linkLabel":"D16"}
+    {
+      "id": "Priority",
+      "title": "Phase 1 (G1) remains the priority spend",
+      "hypothesis": "Do behavioural indicators recover known exposure on a controlled fine-tune?",
+      "contrast": "D1-lite LoRA seen/unseen ROC of triangulation labels and indicators.",
+      "kill": "AUC ≥ .75 freeze thresholds v2; .60–.75 revise once; < .60 pivot mechanism-first.",
+      "cost": "1× A100-80GB + API",
+      "status": "blocked (GPU)",
+      "serves": "CC-1, CC-2, Paper I",
+      "priority": true,
+      "link": "research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md",
+      "linkLabel": "THE_PLAN_AMENDMENT_A1"
+    },
+    {
+      "id": "T0",
+      "title": "W3a nonce vs W3b isomorph",
+      "hypothesis": "H13: isomorph cost exceeds nonce-rename cost.",
+      "contrast": "Acc(W3a) − Acc(W3b), per model, paired by item.",
+      "kill": "Support if contrast > 0 with interval excluding 0 for at least 3 of 5 API models, or 2 of 3 open models.",
+      "cost": "< $10 API or T4",
+      "status": "untested",
+      "serves": "CC-1, H2, Paper I fix",
+      "link": "research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md",
+      "linkLabel": "EF-07"
+    },
+    {
+      "id": "T1",
+      "title": "Inference-stack noise floor",
+      "hypothesis": "H8: stack nondeterminism flips per-item verdicts at T=0.",
+      "contrast": "Verdict flip rate vs reference across the 11 other configurations, per model.",
+      "kill": "If flip rate exceeds 10% of items for a model, suspend per-instance statements for that model until a batch-invariant configuration is fixed.",
+      "cost": "T4 hours",
+      "status": "untested",
+      "serves": "Instrument validity",
+      "link": "research-vault/RvC-Vault/04_Directions/D11_Inference_Stack_Noise_Floor.md",
+      "linkLabel": "D11"
+    },
+    {
+      "id": "T2",
+      "title": "Qwen family continued pretraining",
+      "hypothesis": "H10: code continued pretraining removes W4 penalty, not W3 cost.",
+      "contrast": "Interaction Coder × W4 in a logistic mixed model on ALGO.",
+      "kill": "If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.",
+      "cost": "T4 hours",
+      "status": "untested",
+      "serves": "CC-1, AC-3 precursor",
+      "link": "research-vault/RvC-Vault/04_Directions/D13_Continued_Pretraining_Transfer.md",
+      "linkLabel": "D13"
+    },
+    {
+      "id": "T3",
+      "title": "Precision / compression invariance",
+      "hypothesis": "H9: precision reduction degrades invariance before accuracy.",
+      "contrast": "ΔR_W3 − (ΔAcc_can / Acc_can) vs fp16, cluster bootstrap.",
+      "kill": "If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.",
+      "cost": "T4 hours",
+      "status": "untested",
+      "serves": "CC-1, AC-1 localisation precursor",
+      "link": "research-vault/RvC-Vault/04_Directions/D12_Precision_Compression_Invariance.md",
+      "linkLabel": "D12"
+    },
+    {
+      "id": "T4",
+      "title": "Distillation invariance",
+      "hypothesis": "H11: distillation transfers accuracy more than invariance.",
+      "contrast": "(ΔAcc_can) − (ΔR_W3) for distilled student vs base.",
+      "kill": "If no model clears Acc_can ≥ .30 on ≥ 20 items, report underpowered and do not interpret.",
+      "cost": "T4 hours",
+      "status": "untested",
+      "serves": "CC-1, AC-3 precursor",
+      "link": "research-vault/RvC-Vault/04_Directions/D14_Distillation_Invariance.md",
+      "linkLabel": "D14"
+    },
+    {
+      "id": "T5",
+      "title": "Backward-prompt discriminator",
+      "hypothesis": "F3 mechanism: search direction vs instance constraint.",
+      "contrast": "(Acc_B − Acc_A) / (Acc_C − Acc_A) per model.",
+      "kill": "Inconclusive if neither Account S (≥ .5 for ≥ 2 models) nor Account C (≤ .2 + covariate p < .05) is favoured.",
+      "cost": "< 100 calls",
+      "status": "untested",
+      "serves": "F3 mechanism",
+      "link": "research-vault/RvC-Vault/06_Operating_Manual/HP-22_Backward_Prompt_Discriminator.md",
+      "linkLabel": "HP-22"
+    },
+    {
+      "id": "T6",
+      "title": "Surface ensembling",
+      "hypothesis": "H12: surface vote beats self-consistency at matched calls.",
+      "contrast": "Acc(surface vote, 5 calls) − Acc(self-consistency, 5 calls).",
+      "kill": "If surface ensembling does not beat self-consistency at matched calls on at least 2 of 3 models, report the null; do not tune the vote rule.",
+      "cost": "T4 hours",
+      "status": "untested",
+      "serves": "Practitioner result",
+      "link": "research-vault/RvC-Vault/04_Directions/D16_Surface_Ensembling.md",
+      "linkLabel": "D16"
+    }
   ],
   "next": [
     {
@@ -2524,9 +3065,16 @@ const DATA = {
       "q": "Do behavioural indicators recover known exposure?",
       "exp": "LoRA seen/unseen on Llama-3.1-8B over ALGO canonicals + corrupted-answer oracle; full three-probe pipeline.",
       "pred": "Retrieval-consistent labels enrich on SEEN; computation-consistent on UNSEEN.",
-      "crit": "AUC ≥ .75 retain and freeze thresholds v2; .60–.75 revise indicators once; < .60 pivot mechanism-first.",
+      "crit": "AUC ≥ .75 retain and freeze thresholds v2; .60-.75 revise indicators once; < .60 pivot mechanism-first.",
       "needs": "Open-weight fine-tune stack; held-out item list frozen before training.",
-      "protocol": ["Split ALGO canonicals 50/50 SEEN/UNSEEN.", "LoRA-train on SEEN only; keep base checkpoint.", "Rerun P1–P3 on both halves.", "Fit ROC of each indicator and of triangulation labels.", "Run corrupted-answer arm as specificity check.", "Write Gate G1 decision into Program State."]
+      "protocol": [
+        "Split ALGO canonicals 50/50 SEEN/UNSEEN.",
+        "LoRA-train on SEEN only; keep base checkpoint.",
+        "Rerun P1-P3 on both halves.",
+        "Fit ROC of each indicator and of triangulation labels.",
+        "Run corrupted-answer arm as specificity check.",
+        "Write Gate G1 decision into Program State."
+      ]
     },
     {
       "tier": 1,
@@ -2536,7 +3084,14 @@ const DATA = {
       "pred": "Restoring canonical entity reps into the renamed run restores the answer; W6 does not shift rank the same way.",
       "crit": "Within-model correlation at adequate W3 power; both patch directions reported; CD replicates as DV.",
       "needs": "Unquantised open model with enough W3 solves (or easier bank).",
-      "protocol": ["Select Llama (or stronger) items with non-floor W3.", "Cache activations on can and W3.", "Patch entity-token residual stream both directions.", "Define CD; correlate with final rank and W3 survival.", "Optional: patch at injection locus for H5.", "Log every intervention result to the mechanistic ledger."]
+      "protocol": [
+        "Select Llama (or stronger) items with non-floor W3.",
+        "Cache activations on can and W3.",
+        "Patch entity-token residual stream both directions.",
+        "Define CD; correlate with final rank and W3 survival.",
+        "Optional: patch at injection locus for H5.",
+        "Log every intervention result to the mechanistic ledger."
+      ]
     },
     {
       "tier": 1,
@@ -2546,17 +3101,27 @@ const DATA = {
       "pred": "Self-report fails to track membership above chance (d′≈0).",
       "crit": "Pre-registered accuracy and calibration curves.",
       "needs": "Rides on the D1-lite GPU day.",
-      "protocol": ["Write source-monitoring prompt template before the run.", "Ask after each solve, not before.", "Score against SEEN label only.", "Report d′ and calibration; no post-hoc prompt search."]
+      "protocol": [
+        "Write source-monitoring prompt template before the run.",
+        "Ask after each solve, not before.",
+        "Score against SEEN label only.",
+        "Report d′ and calibration; no post-hoc prompt search."
+      ]
     },
     {
       "tier": 2,
       "title": "D3 continuous transfer distance",
-      "q": "Is fragility a dose–response curve with stable cliffs?",
+      "q": "Is fragility a dose-response curve with stable cliffs?",
       "exp": "Graded rename ladders (10%…100% entities; synonym→rare→nonce); monotone decay vs cliff; cliff as model fingerprint.",
       "pred": "Family-consistent cliffs; model-specific location.",
       "crit": "Pre-registered functional form fits or fails out of sample (H3).",
       "needs": "Variant generator extension; API sweep.",
-      "protocol": ["Define distance components (lexical / structural / format).", "Generate graded W3 ladders on a fixed item subset.", "Fit dose–response; hold out items for prediction.", "Fold D6 direction and D5 languages as far points on the same axis."]
+      "protocol": [
+        "Define distance components (lexical / structural / format).",
+        "Generate graded W3 ladders on a fixed item subset.",
+        "Fit dose-response; hold out items for prediction.",
+        "Fold D6 direction and D5 languages as far points on the same axis."
+      ]
     },
     {
       "tier": 2,
@@ -2566,7 +3131,12 @@ const DATA = {
       "pred": "Accuracy rises before W3 retention; lag tracks cumulative template diversity.",
       "crit": "Measurable lag wherever accuracy is already non-floor (H4 / CC-3).",
       "needs": "Checkpoint access; inference-heavy.",
-      "protocol": ["Count template occurrences in Dolma for bank items.", "Evaluate easy + hard slices at each checkpoint.", "Plot Acc vs R_W3 vs CD.", "Report floors honestly; do not impute."]
+      "protocol": [
+        "Count template occurrences in Dolma for bank items.",
+        "Evaluate easy + hard slices at each checkpoint.",
+        "Plot Acc vs R_W3 vs CD.",
+        "Report floors honestly; do not impute."
+      ]
     },
     {
       "tier": 2,
@@ -2576,7 +3146,12 @@ const DATA = {
       "pred": "If exposure-driven, collapse attenuates when difficulty is matched.",
       "crit": "Pre-registered matching criterion before generation.",
       "needs": "Solver-backed instance generator + API.",
-      "protocol": ["Define difficulty match (plan length / DP table size).", "Generate matched pairs.", "Run P1 W3; compare retention to unmatched WIS.", "Update Table 5 framing."]
+      "protocol": [
+        "Define difficulty match (plan length / DP table size).",
+        "Generate matched pairs.",
+        "Run P1 W3; compare retention to unmatched WIS.",
+        "Update Table 5 framing."
+      ]
     },
     {
       "tier": 2,
@@ -2586,7 +3161,12 @@ const DATA = {
       "pred": "One account predicts the rise collapses under matched complexity; the other does not.",
       "crit": "Pre-registered contrast under a fixed inference budget.",
       "needs": "Admissible planner + NL renderer.",
-      "protocol": ["Sample init/goal with matched on-pair counts.", "Verify both directions with Fast Downward.", "Run Claude/Gemini/o4-mini on both.", "Report within-stratum deltas."]
+      "protocol": [
+        "Sample init/goal with matched on-pair counts.",
+        "Verify both directions with Fast Downward.",
+        "Run Claude/Gemini/o4-mini on both.",
+        "Report within-stratum deltas."
+      ]
     },
     {
       "tier": 3,
@@ -2594,9 +3174,14 @@ const DATA = {
       "q": "Does surface diversity, not template dose, raise W3 retention?",
       "exp": "DS-04 controlled training arms with abstraction-head emergence tracking.",
       "pred": "Diversity arm raises retention and stage-1 occupancy; dose-matched control does not.",
-      "crit": "Gate G3 functional-form fit — either fit or fail is publishable.",
+      "crit": "Gate G3 functional-form fit  -  either fit or fail is publishable.",
       "needs": "After D1-lite signal; head-identification code from P35 lineage.",
-      "protocol": ["Hold occurrence count fixed across arms.", "Vary paraphrase / rename diversity.", "Track behavioural R_W3 and CMA head scores.", "Pre-register the contrast before training."]
+      "protocol": [
+        "Hold occurrence count fixed across arms.",
+        "Vary paraphrase / rename diversity.",
+        "Track behavioural R_W3 and CMA head scores.",
+        "Pre-register the contrast before training."
+      ]
     },
     {
       "tier": 3,
@@ -2606,7 +3191,12 @@ const DATA = {
       "pred": "Δ-entropy dissociates on fragile vs robust items.",
       "crit": "Kill if |r| with CSS > .8 (adds nothing).",
       "needs": "Small API pilot.",
-      "protocol": ["Sample 10 fragile / 10 mid / 10 robust.", "Draw k samples at fixed T>0.", "Compare entropy can vs W3.", "Correlate with CSS; apply kill criterion."]
+      "protocol": [
+        "Sample 10 fragile / 10 mid / 10 robust.",
+        "Draw k samples at fixed T>0.",
+        "Compare entropy can vs W3.",
+        "Correlate with CSS; apply kill criterion."
+      ]
     },
     {
       "tier": 3,
@@ -2616,7 +3206,60 @@ const DATA = {
       "pred": "Computation-consistent items show causal abstraction-head engagement; fragile items bypass stage 1.",
       "crit": "Gate G2: supported → AC-2; mixed → report task-type boundary.",
       "needs": "After patching infra; possibly 70B if 8B lacks clean heads.",
-      "protocol": ["Reproduce one headline number from the public CMA repo.", "Identify heads on our model.", "Score per-item mediation on can/W3.", "Correlate with DS-01/02/CD.", "Write G2 verdict."]
+      "protocol": [
+        "Reproduce one headline number from the public CMA repo.",
+        "Identify heads on our model.",
+        "Score per-item mediation on can/W3.",
+        "Correlate with DS-01/02/CD.",
+        "Write G2 verdict."
+      ]
+    },
+    {
+      "tier": 1,
+      "title": "D18 W8 protected-attribute surface",
+      "q": "Does W8 group A vs group B exceed the noise floor on a neutral-name baseline?",
+      "exp": "Neutral-name baseline for GSM and ALGO; W8 swaps only; primary contrast group vs group; canonical reference only; ≥3 names/group/item.",
+      "pred": "Proposed: group-vs-group gap above T1 floor; secondary covariation with W3a. Not yet run.",
+      "crit": "If W8 gap within T1 noise floor on all models, report null; no post-hoc subgroup search.",
+      "needs": "HP-23 W3a bank; T1 noise floor; documented public name lists; tokenizer length match (Llama-3 / Qwen2.5); open-weight GPU (A100-class when available) or API. Proposed, not run.",
+      "protocol": [
+        "Confirm HP-23 W3a, T1, and item-clustered bootstrap power analysis (effective n = items).",
+        "Install neutral-name baselines for GSM then ALGO.",
+        "Sample ≥3 frequency- and token-matched names per group per item.",
+        "Primary contrast: Acc(W8_A) - Acc(W8_B); canonical as reference only.",
+        "Verifier gold-in-gold-out; score vs T1 floor; on null, register D18b fallback (proposed only)."
+      ]
+    },
+    {
+      "tier": 2,
+      "title": "D19 bias geometry",
+      "q": "Do W8 attribute and W3a binding directions overlap in the T3/T7 band?",
+      "exp": "RSA/CKA on residual-stream states for canonical, W3a, and W8 groups on 1.5B-3B open models; permutation null.",
+      "pred": "Cosine and CKA overlap above permutation null in the pre-registered band.",
+      "crit": "If not above null, record separate mechanisms and drop joint-repair claim; attribute-only repair may continue.",
+      "needs": "D18 bank; HP-23 W3a; open-weight GPU (A100-class when available) or API; models clearing Acc_can floor.",
+      "protocol": [
+        "Freeze T3/T7 layer band and metrics before first forward pass.",
+        "Extract residual states (mean-pool and last-token) for can, W3a, W8 groups.",
+        "Define attribute direction and W3a binding direction; score cosine and CKA.",
+        "Permutation null over item identity (N≥1000, seed 42).",
+        "Write kill verdict into Program State before any D20 joint repair."
+      ]
+    },
+    {
+      "tier": 2,
+      "title": "D20 debias by repair",
+      "q": "Can steering or RLVR close W8 gap without breaking accuracy?",
+      "exp": "Joint steering arm after D19; attribute-only arm after D18 non-null; RLVR arm like D15. All proposed under G2.",
+      "pred": "Proposed: gap reduction with Acc_can loss ≤ 2 points on held-out groups. Not yet run.",
+      "crit": "Failed installation if Acc_can drops > 2 points or gap closes only on seen groups.",
+      "needs": "G2 passed; open-weight GPU (A100-class when available) or API.",
+      "protocol": [
+        "Wait for G2 (THE_PLAN / AC-2).",
+        "Choose joint vs attribute-only arm by prerequisite table in A2.",
+        "Extract vectors on held-out items; sham control in same band.",
+        "RLVR only under G2 like D15."
+      ]
     }
   ],
   "rules": [
@@ -2674,7 +3317,7 @@ const setHref = (id, href) => { const el=document.getElementById(id); if(el && h
     fail.textContent = w.fail;
     doit.innerHTML = w.do;
     side.innerHTML =
-      `<div class="who-chip"><div class="wc-k">Evidence on this site</div><p class="wc-v">${w.evidence}</p>` +
+      `<div class="who-chip"><div class="wc-k">Finding that proves the gap</div><p class="wc-v">${w.evidence}</p>` +
       (w.link ? `<a href="${w.link}">${w.linkLabel || 'See finding'}</a>` : '') +
       `</div>` +
       `<div class="who-chip"><div class="wc-k">Concrete action</div><p class="wc-v">${w.action}</p></div>`;

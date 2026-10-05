@@ -10,3 +10,6 @@ family: deeper measurement · cost: 1–2 GPU-days ≈ $50–150 · joins the [[
 **Scoop status.** RSA is heavily used for LLM–brain alignment and CKA for model comparison; aimed at perturbation ladders as a per-item invariance instrument tied to a behavioral suite — not found. Verify once more before drafting.
 
 **Risks.** Similarity metrics are sensitive to token alignment (use mean-pooled problem-span states + last-token states, report both); layer choice cherry-picking (pre-register the layer bands).
+
+## Track B use (2026-10-05)
+[[D19_Bias_Geometry]] reuses the RSA/CKA geometry on canonical vs W3 vs W8 attribute variants in the T3/T7 layer band. Primary ask: whether the W8 attribute direction overlaps the canonical-vs-W3 binding direction above a permutation null. See [[THE_PLAN_AMENDMENT_A2]].

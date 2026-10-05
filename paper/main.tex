@@ -49,6 +49,12 @@ A benchmark score is ambiguous about process. A model that answers a word proble
 correctly may have executed a general procedure, or may have matched the problem
 against something structurally similar in its training distribution. Both routes
 produce the same number, so accuracy alone cannot distinguish them.
+That ambiguity is not academic for teams shipping kernels, quantised checkpoints,
+prompt templates, or user-facing features: the same leaderboard score can hide
+different failure modes once inputs are paraphrased, formalised, or tied to
+different surface identities in deployment.
+The instrument is built to make those gaps measurable before they become production
+incidents, not to replace accuracy.
 
 The natural experiment is to change the problem's surface while preserving its
 solution and observe what survives. Prior work establishes that group-level accuracy
@@ -78,6 +84,11 @@ family-level rather than model-level property.
 from benchmark accuracy, using two probes that share no measurement machinery.
 \item A separation of compliance from correctness under mid-solve false-state
 injection.
+\item A practitioner-facing mapping from common shipping decisions (kernel
+promotion, compression, training mix, prompting, architecture edits, and
+fairness-style audits on verifiable tasks) to surface probes and to the findings
+that justify looking beyond Acc\textsubscript{can} alone (public site section
+``Why it matters outside the paper'').
 \end{itemize}
 
 \section{Related Work}
@@ -96,6 +107,12 @@ follows that design. \citet{wang2024rupbench} apply nine perturbation types acro
 fifteen datasets and \citet{wu2024reasoning} evaluate eleven counterfactual tasks.
 These establish that perturbation costs accuracy. We ask which perturbation, on
 which family, and whether the ordering is stable.
+
+Counterfactual bias benchmarks \citep{parrish-etal-2022-bbq,sahoo-etal-2024-indibias} and
+steering-based debiasing \citep{siddique2025shifting} address attribute sensitivity and
+repair; our planned W8 transform instead asks whether attribute-swap cost on
+verifiable-gold items is the same construct as W3a (nonce rename) fragility under the
+surface-invariance instrument.
 
 \paragraph{Direction in planning.}
 Direction asymmetry in planning has been reported before and linked to search
@@ -410,6 +427,13 @@ retained.
 characterising the training-data conditions under which invariance forms, which
 requires controlled training runs; and tracking when invariance emerges relative to
 accuracy across public checkpoint series.
+
+\paragraph{Bias as surface binding.} Under the planned Track B framing, protected
+attributes in verifiable-gold items are treated as answer-irrelevant surfaces. The
+planned W8 transform would test whether attribute-swap cost covaries with W3a
+(nonce rename) cost and whether both localise to a shared representational
+direction; if so, bias auditing would become a special case of the instrument.
+No Track B runs have been performed.
 
 \section{Limitations}
 

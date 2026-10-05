@@ -20,3 +20,6 @@ status: Phase 3, gated behind G2 · execution: [[HP-21_RLVR_Dry_Run]] (plumbing 
 **Kill criterion.** If Arm B Acc_can falls more than 5 points below Arm A at the matched step, dose was not matched in effective terms; rebalance and rerun once, then report.
 
 **Cost.** Dry run: T4, $0. Real run: roughly one A100-day.
+
+## Track B link (2026-10-05)
+[[THE_PLAN_AMENDMENT_A2]] registers **H20** as the fairness extension of H7b: RLVR with demographic-diverse surfaces (W8 attribute groups) vs canonical-only, at matched steps and equal Acc_can, evaluated on held-out attribute groups. Execution lives in [[D20_Debias_By_Repair]]; still gated behind G2 like this note.

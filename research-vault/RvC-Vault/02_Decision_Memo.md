@@ -74,3 +74,7 @@ Ranking rule: (value to a gated claim or to Paper I) ÷ (cost in available compu
 9. Phase 1 (G1) the moment an A100 is available. Nothing above substitutes for it.
 
 What does not change: Phase 1 remains the priority spend; G1 remains the only route to per-instance labels and exposure claims.
+
+## Addendum 2026-10-05: Track B (bias as surface binding)
+
+Decision: accept [[THE_PLAN_AMENDMENT_A2]] as proposed work that adds directions D18-D20 without removing any gate or moving any existing claim. Rationale: a protected attribute in a verifiable-gold item is an answer-irrelevant surface already in the instrument's scope, so fairness auditing becomes a special case rather than a parallel programme; AC-4 remains the moonshot binding-bottleneck module, so the new architecture claim is registered as AC-5. Ordering: D18 behavioural W8 first, then D19 geometry, then D20 repair (steering on T4; RLVR still behind G2 like D15).

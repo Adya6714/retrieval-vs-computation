@@ -73,3 +73,16 @@ Four distinct mechanistic artifacts exist; they were never one dataset:
 ## E (append): changelog
 - 2026-09-25: Repo + site review. Added [[THE_PLAN_AMENDMENT_A1]] (Track T), [[EF-07_W3_Construct_Audit]], [[EF-08_Position_On_Thinking]], directions [[D11_Inference_Stack_Noise_Floor]] to [[D16_Surface_Ensembling]], handoffs [[HP-16_Noise_Floor]] to [[HP-23_W3a_Nonce_Bank]], [[BI-04_Engineering_Relevance]]. Appended D05, D06, P01, P-00. Registered H8 to H13 and H7b. No gate status changed. G0 remains passed; G1 remains blocked.
 - 2026-09-25 (later): Track T T7/T8. Added [[D17_Commitment_Depth_T4]], [[HP-24_Commitment_Depth_T4]], [[HP-25_W7_Language_Transform]]. Registered H14 and H15. Amended [[THE_PLAN_AMENDMENT_A1]] table. No gate status changed.
+
+## C (append): standing hypotheses and claims added 2026-10-05 via [[THE_PLAN_AMENDMENT_A2]]
+Track B is proposed, not run. Compute: open-weight GPU (A100-class when available) or API; no Track B run scheduled; costs estimated at preregistration.
+- H16 W8 group A vs group B gap beyond T1 floor on neutral-name baseline (canonical reference only); secondary per-item W8 vs W3a cost ([[D18_Protected_Attribute_Surface]]; requires [[HP-23_W3a_Nonce_Bank]]). status: proposed.
+- H17 At matched Acc_can, CCI and intrusion differ by protagonist group ([[D18_Protected_Attribute_Surface]]). status: proposed.
+- H18 W8 attribute direction overlaps canonical-vs-W3a direction above permutation null in the T3/T7 band ([[D19_Bias_Geometry]]). status: proposed.
+- H19 Joint-arm steering (shared W8/W3a direction) reduces W8 gap and W3a cost with Acc_can loss ≤ 2 points; gated behind G2 ([[D20_Debias_By_Repair]]). Attribute-only steering arm: D18 non-null, same G2 gate. status: proposed.
+- H20 RLVR with demographic-diverse surfaces reduces held-out W8 gap more than canonical-only RLVR at matched steps ([[D20_Debias_By_Repair]], extends H7b). status: proposed.
+- CC-5 Protected-attribute invariance is a case of surface invariance (attribute-swap cost covaries with W3a cost). status: proposed.
+- AC-5 Bias and W3a rename fragility share a localisable substrate; repairing it reduces both. (AC-4 moonshot unchanged.) status: proposed.
+
+## E (append): changelog
+- 2026-10-05 (Track B doc): D20 steering under G2; D18 group-vs-group primary contrast; D18b stub; power analysis clustering. Prior entry: Added [[THE_PLAN_AMENDMENT_A2]] (Track B: bias as surface binding), directions [[D18_Protected_Attribute_Surface]] [[D19_Bias_Geometry]] [[D20_Debias_By_Repair]], [[BI-05_Fairness_And_Bias]]. Registered H16-H20, CC-5, AC-5. No gate status changed.
