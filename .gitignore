@@ -72,6 +72,9 @@ data/raw/
 *.bak_*
 *.orig
 *~
+/site.zip
+results/paper/*.zip
+paper/venue/**/*.zip
 
 # ─── Results: commit CSVs, ignore large dumps and archives ──────────
 results/*.jsonl

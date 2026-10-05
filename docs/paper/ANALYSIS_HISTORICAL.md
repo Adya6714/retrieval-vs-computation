@@ -1,9 +1,9 @@
-# Retrieval vs Computation — Consolidated Analysis
+# Retrieval vs Computation — Consolidated Analysis (historical)
 
-> **Superseded for manuscript numbers.** Use `rebuild/NUMBERS.csv` +
-> `rebuild/REBUILD_REPORT.md` + `docs/paper/PAPER_ERRATA.md` as the frozen
-> authority. This document remains a useful historical consolidation of
-> probe analyses (May snapshot).
+> Moved from repo root (`ANALYSIS.md`) on 2026-10-05. Superseded for manuscript
+> numbers. Use `rebuild/NUMBERS.csv` + `rebuild/REBUILD_REPORT.md` +
+> `docs/paper/PAPER_ERRATA.md` as the frozen authority. This document remains a
+> useful historical consolidation of probe analyses (May snapshot).
 
 Single canonical analysis document for this project (historical). Replaces all previous
 analysis MDs (`MASTER_ANALYSIS_COMPENDIUM`, `COMPREHENSIVE_PROBE_ANALYSIS`,

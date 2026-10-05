@@ -1,4 +1,4 @@
-> Amendment in force: [[THE_PLAN_AMENDMENT_A1]] (`research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md`, 2026-09-25).
+> Amendments in force: [[THE_PLAN_AMENDMENT_A1]] (2026-09-25, Track T) and [[THE_PLAN_AMENDMENT_A2]] (2026-10-05, Track B). Canonical plan: [[THE_PLAN]].
 
 # RvC Research Program — Master Document
 ### Retrieval vs Computation: A Measurement Science for How LLMs Actually Solve Problems

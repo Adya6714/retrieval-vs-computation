@@ -13,7 +13,7 @@
 | `rebuild/tri_v2/` | Executed vs appendix rule comparison |
 | `results/paper/NUMBERS_FROZEN.csv` | Copy of `rebuild/NUMBERS.csv` for manuscript packaging |
 
-`ANALYSIS.md` (May snapshot) is **historical**; do not treat it as number SoT.
+`docs/paper/ANALYSIS_HISTORICAL.md` (May snapshot) is **historical**; do not treat it as number SoT.
 
 ## Corrections applied in the NeurIPS paper
 

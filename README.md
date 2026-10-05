@@ -75,7 +75,8 @@ Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 | `site/` | Interactive site (GitHub Pages) |
 | `docs/talks/` | Speaker notes for presenting the site |
 | `research-vault/` | Programme vault (`THE_PLAN.md`, notes, handoffs) |
-| **Plan** | [`research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md) (Track T amendment) · [`docs/audit/REPO_AUDIT_2026-09-25.md`](docs/audit/REPO_AUDIT_2026-09-25.md) (verified hygiene / Paper I blockers) |
+| **Plan** | [`research-vault/RvC-Vault/THE_PLAN.md`](research-vault/RvC-Vault/THE_PLAN.md) · amendments [`A1`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md) (Track T) · [`A2`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A2.md) (Track B) · vault entry [`00_MOC.md`](research-vault/RvC-Vault/00_MOC.md) · [`docs/audit/REPO_AUDIT_2026-09-25.md`](docs/audit/REPO_AUDIT_2026-09-25.md) (hygiene / Paper I blockers) |
+| **Historical analysis** | [`docs/paper/ANALYSIS_HISTORICAL.md`](docs/paper/ANALYSIS_HISTORICAL.md) (May snapshot; not number SoT) · authority: `rebuild/NUMBERS.csv` + [`docs/paper/PAPER_ERRATA.md`](docs/paper/PAPER_ERRATA.md) |
 
 **Banks.** GSM (arithmetic; GSM-Symbolic templates), BW (Blocksworld / mystery; PlanBench PDDL), ALGO (coin change, shortest path, weighted interval scheduling). Shared schema includes `problem_id`, `variant_type`, `variant_subtype`, `w3_kind`, `problem_text`, `correct_answer`, `problem_family`, `problem_subtype`.
 
