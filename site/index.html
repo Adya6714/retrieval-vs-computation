@@ -522,7 +522,7 @@ html.js .reveal{opacity:1;transform:none}
       </a>
       <a class="panel-box" href="#f5" style="display:block;color:inherit;text-decoration:none">
         <h3>Accuracy does not predict robustness.</h3>
-        <p>How often a model is right says almost nothing about whether its answers survive a rewrite (ρ = .14, not significant). They behave like two separate abilities.</p>
+        <p>How often a model is right says almost nothing about whether its answers survive a rewrite (correlation .14, not significant). They behave like two separate abilities.</p>
       </a>
       <a class="panel-box" href="#f6" style="display:block;color:inherit;text-decoration:none">
         <h3>The reasoning you see is not always the reasoning used.</h3>
@@ -600,7 +600,7 @@ html.js .reveal{opacity:1;transform:none}
             </div>
             <dl class="ph-metrics">
               <div><dt>Measured</dt><dd>Accuracy per rewrite</dd></div>
-              <div><dt>Retention</dt><dd>Survives the story swap (R<sub>W3</sub>)</dd></div>
+              <div><dt>Retention</dt><dd>Share that survives the story swap</dd></div>
               <div><dt>Minimum</dt><dd>Original accuracy ≥ .30 to be counted</dd></div>
             </dl>
           </header>
@@ -660,12 +660,12 @@ html.js .reveal{opacity:1;transform:none}
                   <span><i class="lg-pending"></i>pending</span>
                 </div>
                 <div class="cci-meter" id="p2-meter" hidden>
-                  <div class="cm-row"><span>Plan–execution consistency</span><strong id="p2-cci-val">—</strong></div>
+                  <div class="cm-row"><span>Plan-following score</span><strong id="p2-cci-val">—</strong></div>
                   <div class="cm-track"><div class="cm-fill" id="p2-cci-fill"></div></div>
                   <p class="cm-note" id="p2-cci-note"></p>
                   <div class="p2-score-grid">
-                    <div class="sg"><div class="sg-k">Pre-inject</div><div class="sg-v" id="p2-sg-match">4/8</div><div class="sg-s">match</div></div>
-                    <div class="sg"><div class="sg-k">Injected</div><div class="sg-v" id="p2-sg-inj">2→9</div><div class="sg-s">DP[2]</div></div>
+                    <div class="sg"><div class="sg-k">Before plant</div><div class="sg-v" id="p2-sg-match">4/8</div><div class="sg-s">match</div></div>
+                    <div class="sg"><div class="sg-k">Planted</div><div class="sg-v" id="p2-sg-inj">2→9</div><div class="sg-s">table cell 2</div></div>
                     <div class="sg"><div class="sg-k">Final</div><div class="sg-v" id="p2-sg-final">2</div><div class="sg-s">recovered</div></div>
                   </div>
                 </div>
@@ -685,7 +685,7 @@ html.js .reveal{opacity:1;transform:none}
               <p class="ph-lede">We count how often chunks of the problem's text appear in large public text collections, using the infini-gram tool. More familiar problems are more likely to be recalled than computed. This estimates exposure. It cannot prove what any closed model was trained on.</p>
             </div>
             <dl class="ph-metrics">
-              <div><dt>Per template</dt><dd>c̄<sub>T</sub></dd></div>
+              <div><dt>Per template</dt><dd>Average familiarity</dd></div>
               <div><dt>Per problem</dt><dd>Familiarity score</dd></div>
               <div><dt>Tool</dt><dd>infini-gram</dd></div>
             </dl>
@@ -705,14 +705,59 @@ html.js .reveal{opacity:1;transform:none}
 <section class="panel" id="roadmap" data-rail="Roadmap">
   <div class="inner reveal">
     <p class="kicker">Where this is going</p>
-    <h2>Measure it, look inside, then train for it.</h2>
+    <h2>Measure it, look inside, then build with it.</h2>
+    <p class="lede">The per-problem test is the foundation. Once each problem has a reliable label, "computed" or "recalled", those labels become something I can use: a ground truth for studying what happens inside the model, and a signal for building better systems. Everything below is planned work, in the order I plan to do it.</p>
+
     <div class="protocol-steps">
-      <div class="step-card"><div class="n">1 · Now</div><p><strong>Measure.</strong> A per-problem test that separates computing from recalling, using rewrites, plan-following checks and familiarity scores. Behavioural results are done.</p></div>
-      <div class="step-card"><div class="n">2 · Next</div><p><strong>Open eval.</strong> A public benchmark anyone can run: plug in a model, it pulls problems from open benchmarks like GSM8K, applies the six rewrites, and reports accuracy alongside how much of it survives.</p></div>
-      <div class="step-card"><div class="n">3 · Needs GPU</div><p><strong>Look inside.</strong> On open-weight models, find where in the network the split between computing and recalling shows up, using activations and attention heads.</p></div>
-      <div class="step-card"><div class="n">4 · Later</div><p><strong>Train for it.</strong> Use these signals in post-training (for example supervised fine-tuning) so smaller models compute instead of leaning on surface cues, and so their written reasoning matches what they actually do.</p></div>
+      <div class="step-card"><div class="n">1 · Done</div><p><strong>Behavioural results.</strong> Rewrites, plan-following checks and familiarity scores across 5 models and 3 task types.</p></div>
+      <div class="step-card"><div class="n">2 · Next</div><p><strong>Calibration.</strong> Fine-tune Llama-3.1-8B on half the problems on purpose, and check the probes can tell which half it memorised.</p></div>
+      <div class="step-card"><div class="n">3 · Needs GPU</div><p><strong>Look inside.</strong> Use the labels to find where computing and recalling differ inside open-weight models.</p></div>
+      <div class="step-card"><div class="n">4 · Then</div><p><strong>Build with it.</strong> Turn what I learn into tools and training methods.</p></div>
     </div>
-    <p class="lede">Along the way, a planned side study (Track B) tests whether demographic bias works the same way: if swapping a person's name changes the answer on a problem with one correct answer, does that follow the same pattern as story-swap fragility?</p>
+
+    <h3 style="margin-top:2rem">Thread 1: Looking inside the model</h3>
+    <p class="lede">Behaviour tells you that a model recalled an answer. It does not tell you where or how. These experiments use open-weight models, where every internal activation can be read.</p>
+    <div class="f7-grid">
+      <div class="panel-box">
+        <h3>Can you see it before the answer?</h3>
+        <p>Train a simple classifier on the model's hidden states to predict "computed" vs "recalled", using my per-problem labels. If it works, the difference exists inside the model before it writes anything.</p>
+      </div>
+      <div class="panel-box">
+        <h3>Which parts break under a rewrite?</h3>
+        <p>Run the original and the story-swapped version of the same problem, then copy internal activations from one run into the other (activation patching). This shows which layers and attention heads carry the answer and which ones the rewrite disrupts.</p>
+      </div>
+      <div class="panel-box">
+        <h3>What does memorising look like?</h3>
+        <p>In the calibration run, I control exactly which problems the model has seen. Comparing its internals on seen vs unseen problems shows what recall looks like from the inside.</p>
+      </div>
+      <div class="panel-box">
+        <h3>Does training data explain it?</h3>
+        <p>Models with fully public training data (OLMo, trained on Dolma) let me link how a model handles a problem to how often that problem actually appeared in training.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem">Thread 2: Building with what I learn</h3>
+    <p class="lede">The goal is not only to describe models, but to make them more reliable to use and to train.</p>
+    <div class="f7-grid">
+      <div class="panel-box">
+        <h3>An open eval anyone can run</h3>
+        <p>Plug in a model. The harness pulls problems from open benchmarks like GSM8K, applies the six rewrites, and reports accuracy alongside how much of it survives. One extra number that leaderboards do not show today.</p>
+      </div>
+      <div class="panel-box">
+        <h3>A recall flag at run time</h3>
+        <p>If the inside-the-model classifier works, it can run next to a deployed model and flag answers that look recalled rather than computed, before an agent acts on them.</p>
+      </div>
+      <div class="panel-box">
+        <h3>A check for chain-of-thought</h3>
+        <p>Package the plan-following and planted-step tests into a check for agent reasoning traces: does the agent actually follow the steps it writes down?</p>
+      </div>
+      <div class="panel-box">
+        <h3>Small models that compute</h3>
+        <p>Use rewrite variety and the recall signal during post-training (supervised fine-tuning), so smaller, domain-specific models learn to work problems out instead of leaning on surface cues.</p>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-top:1.5rem">Along the way, a side study (Track B) tests whether demographic bias works the same way: if swapping a person's name changes the answer on a problem with one correct answer, does that follow the same pattern as story-swap fragility?</p>
 
     <div class="pubs" id="pubs" aria-label="Publications">
       <h3 class="pubs-kicker">Papers</h3>
@@ -725,7 +770,7 @@ html.js .reveal{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">What I need</p>
     <h2>This is work in progress. Here is how you can help.</h2>
-    <p class="lede">The behavioural results are done. The next step is calibration: fine-tune an open model (Llama-3.1-8B) on half of the problems on purpose, then check whether the probes correctly flag that half as recalled and the other half as computed. If they do, the test can be trusted to label problems one at a time.</p>
+    <p class="lede">The behavioural results are done. The next step is calibration: fine-tune an open model (Llama-3.1-8B) on half of the problems on purpose, then check whether the probes correctly flag that half as recalled and the other half as computed. If they do, the test can be trusted to label problems one at a time. It is also what unlocks the work in Thread 1.</p>
     <p class="lede">That run needs more GPU than the free T4 I am using now.</p>
     <div class="callout">
       <strong>I am looking for</strong>
