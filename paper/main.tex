@@ -51,7 +51,11 @@ against something structurally similar in its training distribution. Both routes
 produce the same number, so accuracy alone cannot distinguish them.
 The same gap matters at deployment: equal Acc\textsubscript{can} can hide different
 failure modes once inputs are paraphrased, formalised, or tied to different
-surfaces. The instrument measures those gaps; it does not replace accuracy.
+surfaces, and once a serving change (kernel, batching, attention backend, or
+KV compression that alters numerics) is promoted on Acc alone. The measured gaps
+that motivate those checks are on closed API models; direct stack tests (D11
+kernels/batching; D12 quantisation) are untested. The instrument measures those
+gaps; it does not replace accuracy.
 
 The natural experiment is to change the problem's surface while preserving its
 solution and observe what survives. Prior work establishes that group-level accuracy
@@ -81,9 +85,10 @@ family-level rather than model-level property.
 from benchmark accuracy, using two probes that share no measurement machinery.
 \item A separation of compliance from correctness under mid-solve false-state
 injection.
-\item A public mapping from shipping decisions (kernels, compression, training,
-prompting, architecture, fairness audits on verifiable tasks) to the probes and
-findings that justify looking beyond Acc\textsubscript{can}.
+\item A public mapping from shipping decisions (kernels and batching, quantisation,
+training, prompting, architecture, fairness audits on verifiable tasks) to the
+probes that justify looking beyond Acc\textsubscript{can}, with stack checks
+marked untested until D11/D12.
 \end{itemize}
 
 \section{Related Work}

@@ -4,8 +4,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B4D8F'/%3E%3C/svg%3E" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>RvC — A measurement science for how language models solve problems</title>
-<meta name="description" content="Retrieval vs computation: a four-paper, five-phase research programme for per-instance diagnosis of LLM solving." />
+<title>Same Score, Different Process | Adya Srivastava</title>
+<meta name="description" content="Research in progress: telling, problem by problem, whether a language model computed its answer or recalled it. Early results across 5 models and 3 task types." />
+<meta property="og:title" content="When a model gets the right answer, did it work it out or remember it?" />
+<meta property="og:description" content="Research in progress on measuring how language models solve problems, not just whether they get them right." />
+<meta property="og:url" content="https://adya6714.github.io/retrieval-vs-computation/" />
+<meta name="twitter:card" content="summary" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -455,57 +459,110 @@ html.js .reveal{opacity:1;transform:none}
 <div id="tip" role="tooltip" aria-label="Chart tip" hidden></div>
 <main>
 
-<section class="panel" id="motivation" data-rail="Motivation">
+<section class="panel" id="motivation" data-rail="Overview">
   <svg id="lattice" aria-hidden="true"></svg>
   <div class="inner reveal">
-    <p class="kicker">Retrieval vs computation research programme</p>
-    <h1 id="headline">A measurement science for how language models solve problems.</h1>
-    <p class="hero-author">Adya Srivastava, BITS Pilani.</p>
-    <p class="hero-pub">Predecessor paper: <a href="https://github.com/Adya6714/retrieval-vs-computation/tree/main/paper/venue/caisc2026" target="_blank" rel="noopener">Same Score, Different Strategy, CAISc 2026</a>.</p>
-    <p class="hero-mission" id="mission">Build the first validated, per-instance measurement science for how LLMs solve problems (retrieval vs computation), then use it to establish capability claims, an architecture claim, and training-data laws.</p>
-    <p class="status-strip">Status, Sept 2026: behavioural layer shipped (Phase 0, gate G0 passed). Per-instance labels are not issued yet; they wait on calibration gate G1, which needs a GPU. Open-weight Track T is running on a T4.</p>
+    <p class="kicker">Retrieval vs Computation · research in progress</p>
+    <h1 id="headline">When a language model gets the right answer, did it work it out or remember it?</h1>
+    <p class="hero-author">Adya Srivastava, BITS Pilani. First paper: <a href="https://openreview.net/forum?id=d8w4gMVQ1w" target="_blank" rel="noopener">Same Score, Different Strategy (CAISc 2026)</a>.</p>
+    <p class="hero-mission" id="mission">Benchmarks tell you whether a model got the answer right. They do not tell you how. I am building a test that checks, one problem at a time, whether a correct answer came from carrying out the steps (computation) or from matching something the model has seen before (retrieval).</p>
     <div class="epistemic">
-      <p>A correct answer is consistent with executing a procedure or with matching a seen pattern. Accuracy cannot separate them.</p>
-      <p>Group-level perturbation studies report that accuracy drops. They do not tell you, for a given instance, which process produced the answer.</p>
-      <p>Per-instance diagnosis is the object. Everything downstream — where the split lives in the network, what training conditions produce it, when it emerges — depends on first having an instrument that works at instance granularity.</p>
+      <p><strong>Why this is hard.</strong> A correct answer looks the same either way. Two models can have identical accuracy and still be solving problems in very different ways.</p>
+      <p><strong>What exists today.</strong> Earlier studies rewrite whole benchmarks and report that average accuracy drops. That tells you a model is fragile on average. It does not tell you which specific answers were computed and which were recalled.</p>
+      <p><strong>What this adds.</strong> A verdict for each problem, from three independent probes that have to agree. Everything I want to study next, where this happens inside the network and how training causes it, depends on having that per-problem test first.</p>
     </div>
-    <div class="prior-box" id="prior-work">
-      <h2 class="prior-h">What is new relative to prior work</h2>
-      <div class="prior-rows">
-        <div class="prior-row"><div class="name">GSM-Symbolic</div><p>Group-level, names and numbers. Ours: per-instance, cover-story isomorph vs numeric regeneration, convergent second probe.</p></div>
-        <div class="prior-row"><div class="name">PlanBench obfuscation</div><p>Replicated; ours adds the direction contrast and verification with a persisted mapping.</p></div>
-        <div class="prior-row"><div class="name">Counterfactual tasks</div><p>Same spirit; ours adds psychometric structure (G-theory, mixture IRT, intrusion errors).</p></div>
-      </div>
-    </div>
+    <p class="status-strip">Status, October 2026: first results are in across 5 models and 3 task types. The next stage needs GPU time, and I am looking for compute, collaborators and mentors. <a href="#ask">How you can help ↓</a></p>
     <div class="hero-meta">
-      <span>Four papers, five phases, 110+ vault notes</span>
-      <a id="gh-top" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">GitHub</a>
-      <a id="pdf-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper PDF</a>
-      <a id="vault-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/RVC_MASTER_DOCUMENT.md" target="_blank" rel="noopener">Research vault</a>
-      <a id="plan-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md" target="_blank" rel="noopener">THE_PLAN</a>
-      <a id="book-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md" target="_blank" rel="noopener">BOOK.md</a>
-      <a id="issues-top" href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Issues</a>
-    </div>
-    <div class="pubs" id="pubs" aria-label="Publications">
-      <h3 class="pubs-kicker">Publications</h3>
-      <div class="pubs-grid" id="pubs-grid"></div>
+      <a id="pdf-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+      <a id="gh-top" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">Code</a>
+      <a href="#findings">Findings</a>
+      <a href="#ask">Contact</a>
     </div>
   </div>
 </section>
 
-<section class="panel" id="who" data-rail="Who this helps">
+<section class="panel" id="problem" data-rail="The problem">
   <div class="inner reveal">
-    <p class="kicker">Why it matters outside the paper</p>
-    <h2>Same benchmark score. Different process. Different deployment failure.</h2>
-    <p class="lede">Accuracy says whether a model scores. It does not say which answer-irrelevant surface the procedure is bound to. Two checkpoints can match on Acc<sub>can</sub> and still fail under different renames, notation, or protagonist cues once your product paraphrases inputs or serves different users. Each role below has three parts: the decision you make today, what this instrument would catch, and which finding on this site proves the gap.</p>
+    <p class="kicker">The problem in 30 seconds</p>
+    <h2>Same kind of puzzle, same rules, very different results.</h2>
+    <p class="lede">Blocksworld is a classic planning puzzle: move stacked blocks from a start arrangement to a goal arrangement. If you swap the start and the goal, you get a puzzle of the same kind, with a new correct plan that a planner computes for us. A model that is really working out the plan should do about as well in either direction.</p>
+    <p class="lede">It does not. Across 65 planning problems, Claude solves 17% in the original direction and 87% when the direction is reversed. Pick a model and press the button.</p>
+
+    <div class="bw-demo">
+      <div>
+        <div class="towers" id="towers"></div>
+        <p class="caption" style="margin-top:.7rem">Example shown: planning problem BW_014. The button swaps the start and the goal.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <label for="bw-model" style="font-size:.85rem;color:var(--muted)">Model</label>
+        <select class="model-select" id="bw-model"></select>
+        <button class="toggle-btn" id="bw-toggle" type="button">Reverse the direction (W5)</button>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.35rem"><span id="bw-acc-label">Original</span><span class="stat" id="bw-acc-val">.172</span></div>
+          <div class="acc-track"><div class="acc-fill" id="bw-acc-fill"></div></div>
+        </div>
+
+    <p class="caption">A big jump from a change that should not matter suggests the model is following a pattern tied to how the problem is written, not computing the plan from scratch. <a href="#f3">Full result in Finding 3 ↓</a></p>
+  </div>
+</section>
+
+<section class="panel" id="findings" data-rail="Findings">
+  <div class="inner reveal">
+    <p class="kicker">What I found so far</p>
+    <h2>Four early results.</h2>
+    <p class="lede">Models tested: Claude, GPT-4o, Gemini, Llama and o4-mini. Tasks: arithmetic word problems, Blocksworld planning, and optimisation problems. Each card links to the full result, the data, and the script that reproduces it.</p>
+    <div class="f7-grid">
+      <a class="panel-box" href="#f1" style="display:block;color:inherit;text-decoration:none">
+        <h3>The story matters more than the numbers.</h3>
+        <p>Change the numbers in an arithmetic problem and Gemini barely notices (.91 to .96). Keep the same maths but set it in a different real-world story, and it drops to .52.</p>
+      </a>
+      <a class="panel-box" href="#f2" style="display:block;color:inherit;text-decoration:none">
+        <h3>Notation alone can break a model.</h3>
+        <p>o4-mini falls from .84 to .68 on arithmetic when the same problems are written in formal notation. Every name and number stays the same.</p>
+      </a>
+      <a class="panel-box" href="#f5" style="display:block;color:inherit;text-decoration:none">
+        <h3>Accuracy does not predict robustness.</h3>
+        <p>How often a model is right says almost nothing about whether its answers survive a rewrite (ρ = .14, not significant). They behave like two separate abilities.</p>
+      </a>
+      <a class="panel-box" href="#f6" style="display:block;color:inherit;text-decoration:none">
+        <h3>The reasoning you see is not always the reasoning used.</h3>
+        <p>When I plant a false value halfway through an optimisation problem, o4-mini takes it into its working every time, yet its final accuracy stays close to normal. The written steps are not what produced the answer.</p>
+      </a>
+    </div>
+    <p class="caption" style="margin-top:1rem">These are early numbers. Confidence intervals for some are still being computed and are marked "CI pending" in the details.</p>
+  </div>
+</section>
+
+<section class="panel" id="why" data-rail="Why it matters">
+  <div class="inner reveal">
+    <p class="kicker">Why this matters</p>
+    <h2>If we cannot see how a model got its answer, we cannot fully trust the answer.</h2>
+    <p class="lede">Models are being given real tasks and real access because of their scores. But a score cannot tell you whether a model will hold up when inputs look a little different from what it was trained on. A model's written reasoning cannot fully tell you either, as Finding 6 shows.</p>
+    <p class="lede">Trustworthy AI systems need ways to observe and verify how answers are produced, not only whether they are right. This project builds one such check: a test of process that works per problem, can be run by someone other than the model's builder, and does not depend on the model's own account of what it did.</p>
+    <div class="callout">
+      <strong>What this gives you in practice</strong>
+      <ul style="margin:.5rem 0 0 1.1rem;padding:0;color:var(--muted);font-size:.9rem">
+        <li>A second number next to accuracy: how much of it survives changes that should not matter.</li>
+        <li>A warning when a model's shown steps and its actual answer come apart.</li>
+        <li>A way to tell apart two models with the same score, and see which one is actually computing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="who" data-rail="Who it helps">
+  <div class="inner reveal">
+    <p class="kicker">Who this helps</p>
+    <h2>Same score, different process, different failure once deployed.</h2>
+    <p class="lede">Pick your area. Each tab shows a decision you might make today, what this test would catch, and the result on this site that backs it up.</p>
     <div class="who-panel" id="who-panel">
       <div class="who-nav" id="who-nav" role="tablist" aria-label="Application audiences"></div>
       <div class="who-body">
         <div class="who-main">
           <h3 id="who-title"></h3>
-          <p class="who-lbl">The decision you make today</p>
+          <p class="who-lbl">What you might do today</p>
           <p class="who-fail" id="who-fail"></p>
-          <p class="who-lbl">What this instrument would catch</p>
+          <p class="who-lbl">What this test would catch</p>
           <p class="who-do" id="who-do"></p>
         </div>
         <aside class="who-side" id="who-side" aria-live="polite"></aside>
@@ -514,162 +571,58 @@ html.js .reveal{opacity:1;transform:none}
   </div>
 </section>
 
-<section class="panel" id="applications" data-rail="Applications">
+<section class="panel" id="pipeline" data-rail="How it works">
   <div class="inner reveal">
-    <p class="kicker">Engineering relevance</p>
-    <h2>Where this applies, and where it does not.</h2>
-    <p class="app-fixed">This is a validity check, not an efficiency method. It does not make kernels faster or models smaller.</p>
-    <p class="lede">Filter by engineering area. Each row states what the instrument adds, the direction ID, and status.</p>
-    <div class="app-filters" id="app-filters" role="group" aria-label="Filter engineering areas"></div>
-    <div class="app-list" id="app-list"></div>
-  </div>
-</section>
-
-<section class="panel" id="position" data-rail="Position">
-  <div class="inner reveal">
-    <p class="kicker">Position</p>
-    <h2>What this measures, and what it does not.</h2>
-    <p class="pos-para" id="pos-para">We do not ask whether language models think. We measure, per problem instance, whether a correct answer was produced by a procedure that is invariant to answer-irrelevant surface features. Across five primary models and three task families this property is graded, model-item specific, and dissociable from accuracy, and several of its failure patterns (cover-story isomorphs, representational register, search direction) have direct analogues in human problem solving. The question our instrument makes empirical is therefore not "thinking or not" but which surface features a given solution procedure is bound to, and whether that binding resembles the human one.</p>
-    <div class="pos-toggles" id="pos-toggles"></div>
-  </div>
-</section>
-
-<section class="panel" id="programme" data-rail="Programme">
-  <div class="inner reveal">
-    <p class="kicker">The programme</p>
-    <h2>Claims, hypotheses, and gated phases.</h2>
-    <p class="lede">Three views of the same science: what must be true (claims), what we bet and how we test it (hypotheses), and the gated sequence that decides which bets run next (phases). Click a claim or hypothesis to expand; linked IDs highlight across tabs.</p>
-    <div class="prog-legend" id="prog-legend" aria-label="Status counts"></div>
-    <div class="tabs" id="prog-tabs">
-      <button class="tab active" data-view="claims">Claims</button>
-      <button class="tab" data-view="hypotheses">Hypothesis registry</button>
-      <button class="tab" data-view="phases">Phase timeline</button>
-    </div>
-    <div class="view active" id="view-claims">
-      <div class="filter-row" id="claim-filters" role="group" aria-label="Filter claims"></div>
-      <div class="claim-grid" id="claims"></div>
-      <div class="claim-map">
-        <h3 class="cmap-h">Claim ↔ hypothesis map</h3>
-        <p class="caption">Capability claims (CC) sit above; architecture claims (AC) below. Lines run to the hypotheses that must land for each claim. Hover a node to highlight its neighbours.</p>
-        <svg class="cmap-svg" id="claim-hyp-map" aria-label="Links between claims and hypotheses"></svg>
-      </div>
-    </div>
-    <div class="view" id="view-hypotheses">
-      <div class="filter-row" id="hyp-filters" role="group" aria-label="Filter hypotheses"></div>
-      <div class="hyp-grid" id="hyp-grid"></div>
-    </div>
-    <div class="view" id="view-phases">
-      <p class="caption" style="margin-bottom:0">Each diamond is a gate: escalate only when the decision criterion fires. Click a phase for do / needs / ships / advances.</p>
-      <div class="phase-track" id="phase-track"></div>
-    </div>
-  </div>
-</section>
-
-<section class="panel" id="strategy" data-rail="Strategy catalogue">
-  <div class="inner reveal">
-    <p class="kicker">Strategy catalogue</p>
-    <h2>Inference machinery, not questionnaires.</h2>
-    <p class="lede">The machine-psychology literature borrows tasks from cognitive science. This programme borrows the inference machinery — the methods those fields built to diagnose hidden process in minds they could not open.</p>
-    <div class="cat-wrap" id="catalog"></div>
-    <div class="callout">
-      <strong>Generative principle.</strong> For any method from a science of hidden minds, ask:
-      <ol>
-        <li>What hidden property did it infer?</li>
-        <li>What observable signature did it exploit?</li>
-        <li>What is the LLM analogue of that signature?</li>
-        <li>Does it give a per-instance, theory-grounded signal the instrument can use?</li>
-      </ol>
-    </div>
-    <p class="caption vault-caption" style="margin-top:1.25rem">Working vault: 110+ linked notes across 12 folders (Obsidian). The diagram below is a live force layout of those clusters — programme spine → deep strategies → directions → papers — not a cost chart.</p>
-    <svg class="vault-viz" id="vault-graph" aria-label="Vault note clusters"></svg>
-    <p class="caption vault-caption">Hover a node for its role. Drag to rearrange. Clusters: MOC/Plan (spine), Claims/Hs (registry), DS/IRT (measurement), D1–D2 (experiments), AC (architecture), Papers/Laws (outputs).</p>
-  </div>
-</section>
-
-<section class="panel" id="research-questions" data-rail="Research questions">
-  <div class="inner reveal">
-    <p class="kicker">Research questions</p>
-    <h2>Six questions that organise the programme.</h2>
-    <p class="lede">Each question has an operationalisation, what the behavioural layer already measured, and what remains gated. Click to expand.</p>
-    <div class="q-grid" id="questions"></div>
-  </div>
-</section>
-
-<section class="panel" id="method" data-rail="Methodology">
-  <div class="inner reveal">
-    <p class="kicker">Methodology</p>
-    <h2>Bank, probes, verification, statistics.</h2>
-
-    <div class="sub">
-      <h3>5a. The bank</h3>
-      <p class="lede">Three families chosen for contrasting algorithmic character. Optimisation subtypes share structure but differ by orders of magnitude in public-corpus prevalence — the built-in exposure gradient.</p>
-      <div class="protocol-steps">
-        <div class="step-card"><div class="n">44</div><p><strong>Arithmetic</strong> GSM-Symbolic templates across proximity quartiles.</p></div>
-        <div class="step-card"><div class="n">65</div><p><strong>Planning</strong> Blocksworld: 50 standard + 15 obfuscated, PDDL gold.</p></div>
-        <div class="step-card"><div class="n">110</div><p><strong>Optimisation</strong> Coin change ≫ shortest path ≫ WIS prevalence.</p></div>
-        <div class="step-card"><div class="n">W1–W6</div><p><strong>Surfaces</strong> Gold fixed W1–W4; re-derived for W5/W6.</p></div>
-      </div>
-      <div class="tabs" id="family-tabs"></div>
-      <div class="variant-row" id="variant-chips"></div>
-      <div class="problem-box" id="problem-text"></div>
-      <div class="gold"><span class="tag">Gold</span><span id="gold-answer"></span><span class="tag" id="gold-note"></span></div>
-      <p class="caption">Source: <a id="bank-src" href="#" target="_blank" rel="noopener"></a></p>
-    </div>
-  </div>
-</section>
-
-<section class="panel" id="pipeline" data-rail="Pipeline">
-  <div class="inner reveal">
-    <p class="kicker">Instrument walkthrough</p>
-    <h2>From benchmark item to verdict.</h2>
-    <p class="lede">One item travels the whole instrument: transform, verify, three probes, then an honest statement of what we can and cannot say. Play steps through the stages; arrows also work.</p>
+    <p class="kicker">How the test works</p>
+    <h2>Follow one problem through the test.</h2>
+    <p class="lede">Watch one problem go through every stage: rewrite it, check that the rewrite has the same correct answer, run the three probes, then state honestly what we can and cannot conclude. Press Play, or use the arrow keys.</p>
     <div id="pipe-root"></div>
   </div>
 </section>
 
-<section class="panel" id="method-probes" data-rail="Probes">
+<section class="panel" id="method-probes" data-rail="Three probes">
   <div class="inner reveal">
-    <div class="sub">
-      <h3>5b. The three probes</h3>
-      <p class="lede">One probe at a time. Labels issue only when probes agree.</p>
-      <div class="probe-studio" id="probe-studio">
+    <p class="kicker">The three probes</p>
+    <h2>Three ways of looking. A verdict only when they agree.</h2>
+    <p class="lede">Each probe looks at the same problem from a different angle. A problem only gets labelled "computed" or "recalled" when all three point the same way.</p>
+    <div class="probe-studio" id="probe-studio">
         <div class="probe-nav" id="probe-nav" role="tablist" aria-label="Probes">
-          <button type="button" class="active" data-probe="1" role="tab" aria-selected="true"><span class="pn-id">Probe 1</span>Surface battery</button>
-          <button type="button" data-probe="2" role="tab" aria-selected="false"><span class="pn-id">Probe 2</span>Plan vs execution</button>
-          <button type="button" data-probe="3" role="tab" aria-selected="false"><span class="pn-id">Probe 3</span>Corpus proximity</button>
+          <button type="button" class="active" data-probe="1" role="tab" aria-selected="true"><span class="pn-id">Probe 1</span>Rewrite test</button>
+          <button type="button" data-probe="2" role="tab" aria-selected="false"><span class="pn-id">Probe 2</span>Does it follow its own plan?</button>
+          <button type="button" data-probe="3" role="tab" aria-selected="false"><span class="pn-id">Probe 3</span>How familiar is it?</button>
         </div>
 
         <div class="probe-pane active" id="pane-p1" role="tabpanel">
           <header class="probe-head">
             <div>
-              <h4>Surface battery</h4>
-              <p class="ph-lede">One problem → six answer-preserving forms. Which surface axis is the procedure keyed to?</p>
+              <h4>Rewrite test</h4>
+              <p class="ph-lede">Each problem is rewritten six ways that keep the correct answer the same: paraphrase, layout change, story swap, formal notation, reversed direction, and new numbers. We check which rewrites break the model.</p>
             </div>
             <dl class="ph-metrics">
-              <div><dt>Metric</dt><dd>Acc<sub>Wv</sub></dd></div>
-              <div><dt>Retention</dt><dd>R<sub>W3</sub></dd></div>
-              <div><dt>Floor</dt><dd>Acc<sub>can</sub> ≥ .30</dd></div>
+              <div><dt>Measured</dt><dd>Accuracy per rewrite</dd></div>
+              <div><dt>Retention</dt><dd>Survives the story swap (R<sub>W3</sub>)</dd></div>
+              <div><dt>Minimum</dt><dd>Original accuracy ≥ .30 to be counted</dd></div>
             </dl>
           </header>
           <div class="probe-stage">
             <div class="p1-fan" id="probe1-viz"></div>
           </div>
           <footer class="probe-foot">
-            <div><strong>Template</strong><p>Solve step by step. Give the final answer. Then {problem_text}. Same instruction on every variant.</p></div>
-            <div><strong>Cannot discharge alone</strong><p>As built, W3 moves the problem into a new real-word domain (a cover-story isomorph). A true nonce rename (W3a) is being added so the two can be compared.</p></div>
+            <div><strong>Template</strong><p>Every version gets the same instruction: "Solve step by step. Give the final answer." followed by the problem.</p></div>
+            <div><strong>Known limitation</strong><p>Right now the story swap (W3) moves the problem into a different real-world setting, which changes more than just names. A pure rename version (W3a) is being added so the two effects can be separated.</p></div>
           </footer>
         </div>
 
         <div class="probe-pane" id="pane-p2" role="tabpanel">
           <header class="probe-head">
             <div>
-              <h4>Plan vs execution</h4>
-              <p class="ph-lede">Session A declares once. Session B executes step-by-step with no plan text. Mid-solve, inject a false state.</p>
+              <h4>Does the model follow its own plan?</h4>
+              <p class="ph-lede">In one chat, the model writes its plan. In a separate chat, it solves the problem step by step without seeing that plan. We compare the two. Then, partway through, we plant a false value to see whether the model takes it on.</p>
             </div>
             <dl class="ph-metrics">
-              <div><dt>CCI</dt><dd>ε = 0.01</dd></div>
-              <div><dt>2B</dt><dd>injection</dd></div>
-              <div><dt>Recovery</dt><dd>final Acc</dd></div>
+              <div><dt>Plan-following</dt><dd>CCI</dd></div>
+              <div><dt>Stress test</dt><dd>Planted false value</dd></div>
+              <div><dt>Recovery</dt><dd>Final accuracy</dd></div>
             </dl>
           </header>
           <div class="probe-stage">
@@ -720,54 +673,224 @@ html.js .reveal{opacity:1;transform:none}
             </div>
           </div>
           <footer class="probe-foot">
-            <div><strong>Why two sessions</strong><p>Shared transcript makes agreement cheap. Isolation makes CCI a fingerprint of whether the declared procedure is followed.</p></div>
-            <div><strong>What injection tests</strong><p>Compliance ≠ correctness. Models can adopt a false interior value and still finish near the uninjected baseline.</p></div>
+            <div><strong>Why two separate chats</strong><p>If plan and solution are in the same chat, the model can simply copy its plan. Keeping them separate makes agreement meaningful: it shows whether the model actually follows the procedure it describes.</p></div>
+            <div><strong>What the planted value tests</strong><p>Following a wrong step and still getting the right answer means the written steps are not what produced the answer.</p></div>
           </footer>
         </div>
 
         <div class="probe-pane" id="pane-p3" role="tabpanel">
           <header class="probe-head">
             <div>
-              <h4>Corpus proximity</h4>
-              <p class="ph-lede">Infini-gram n-gram windows over public corpora. Within-family exposure proxy — not closed-model membership.</p>
+              <h4>How familiar is this problem?</h4>
+              <p class="ph-lede">We count how often chunks of the problem's text appear in large public text collections, using the infini-gram tool. More familiar problems are more likely to be recalled than computed. This estimates exposure. It cannot prove what any closed model was trained on.</p>
             </div>
             <dl class="ph-metrics">
-              <div><dt>Template</dt><dd>c̄<sub>T</sub></dd></div>
-              <div><dt>Instance</dt><dd>score</dd></div>
-              <div><dt>Cache</dt><dd>infinigram</dd></div>
+              <div><dt>Per template</dt><dd>c̄<sub>T</sub></dd></div>
+              <div><dt>Per problem</dt><dd>Familiarity score</dd></div>
+              <div><dt>Tool</dt><dd>infini-gram</dd></div>
             </dl>
           </header>
           <div class="probe-stage">
             <div class="p3-scan" id="probe3-viz"></div>
           </div>
           <footer class="probe-foot">
-            <div><strong>What it can show</strong><p>Within ALGO, CC ≫ SP ≫ WIS prevalence co-varies with some VRI patterns — a partial control, not isolation from difficulty.</p></div>
-            <div><strong>What establishes it</strong><p>Open-corpus models (OLMo+Dolma) and D1-lite fine-tunes where exposure is known by construction.</p></div>
+            <div><strong>What it can show</strong><p>Among optimisation tasks, coin change is far more common online than shortest path, which is more common than weighted interval scheduling. Some fragility patterns follow that same order. This is a partial control: familiarity and difficulty are not fully separated yet.</p></div>
+            <div><strong>What would settle it</strong><p>Models whose full training data is public (OLMo, trained on Dolma), and small fine-tunes where we choose exactly which problems the model has seen.</p></div>
           </footer>
         </div>
       </div>
+  </div>
+</section>
+
+<section class="panel" id="roadmap" data-rail="Roadmap">
+  <div class="inner reveal">
+    <p class="kicker">Where this is going</p>
+    <h2>Measure it, look inside, then train for it.</h2>
+    <div class="protocol-steps">
+      <div class="step-card"><div class="n">1 · Now</div><p><strong>Measure.</strong> A per-problem test that separates computing from recalling, using rewrites, plan-following checks and familiarity scores. Behavioural results are done.</p></div>
+      <div class="step-card"><div class="n">2 · Next</div><p><strong>Open eval.</strong> A public benchmark anyone can run: plug in a model, it pulls problems from open benchmarks like GSM8K, applies the six rewrites, and reports accuracy alongside how much of it survives.</p></div>
+      <div class="step-card"><div class="n">3 · Needs GPU</div><p><strong>Look inside.</strong> On open-weight models, find where in the network the split between computing and recalling shows up, using activations and attention heads.</p></div>
+      <div class="step-card"><div class="n">4 · Later</div><p><strong>Train for it.</strong> Use these signals in post-training (for example supervised fine-tuning) so smaller models compute instead of leaning on surface cues, and so their written reasoning matches what they actually do.</p></div>
+    </div>
+    <p class="lede">Along the way, a planned side study (Track B) tests whether demographic bias works the same way: if swapping a person's name changes the answer on a problem with one correct answer, does that follow the same pattern as story-swap fragility?</p>
+
+    <div class="pubs" id="pubs" aria-label="Publications">
+      <h3 class="pubs-kicker">Papers</h3>
+      <div class="pubs-grid" id="pubs-grid"></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="ask" data-rail="Get involved">
+  <div class="inner reveal">
+    <p class="kicker">What I need</p>
+    <h2>This is work in progress. Here is how you can help.</h2>
+    <p class="lede">The behavioural results are done. The next step is calibration: fine-tune an open model (Llama-3.1-8B) on half of the problems on purpose, then check whether the probes correctly flag that half as recalled and the other half as computed. If they do, the test can be trusted to label problems one at a time.</p>
+    <p class="lede">That run needs more GPU than the free T4 I am using now.</p>
+    <div class="callout">
+      <strong>I am looking for</strong>
+      <ul style="margin:.5rem 0 0 1.1rem;padding:0;color:var(--muted);font-size:.9rem">
+        <li>GPU compute or cloud credits for the calibration run and the look-inside work.</li>
+        <li>Mentors or collaborators who work on evaluation, interpretability or post-training.</li>
+        <li>Critical feedback on the method, especially where it could be wrong.</li>
+      </ul>
+    </div>
+    <div class="hero-meta">
+      <a href="mailto:srivastavadya@gmail.com">Email</a>
+      <a href="https://x.com/adyasrivastava2" target="_blank" rel="noopener">X (@adyasrivastava2)</a>
+      <a href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Open a GitHub issue</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="deep-dive" data-rail="For researchers">
+  <div class="inner reveal">
+    <p class="kicker">For researchers</p>
+    <h2>The full plan, the methods, and every result.</h2>
+    <p class="lede">Everything below is the detailed version: scope, the problem set, statistics, the research plan, coverage, and all seven findings with links to the data and the scripts that reproduce them.</p>
+    <div class="callout" style="max-width:72ch">
+      <strong>Terms used below</strong>
+      <p style="margin:.6rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Original (canonical):</strong> the problem exactly as written in the source benchmark. <strong>Acc<sub>can</sub></strong> is accuracy on these.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>W1 to W6:</strong> six rewrites that keep the correct answer the same. W1 paraphrase, W2 layout change, W3 story swap (same maths, different real-world setting), W4 formal notation, W5 reversed direction (planning only), W6 new numbers.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Retention (R<sub>W3</sub>):</strong> of the problems a model gets right in the original form, the share it still gets right after the story swap.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Plan-following score (CCI):</strong> how closely the model's step-by-step solution matches the plan it wrote in a separate chat.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Injection:</strong> planting a false intermediate value partway through a solution.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Familiarity (corpus proximity):</strong> how often chunks of the problem text appear in large public text collections.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>GSM, BW, ALGO:</strong> arithmetic, Blocksworld planning, and optimisation problems.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Shared-hard:</strong> problems that all five models fail.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Gate (G0, G1, G2):</strong> a check with pass or fail criteria fixed in advance. The next phase starts only if it passes.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>φ (phi):</strong> how strongly getting the original right goes together with getting the story swap right. <strong>Kendall W:</strong> how much models agree on which rewrites are hardest. <strong>Mixture IRT:</strong> a statistical test of whether models or problems split into distinct strategy groups.</p>
+      <p style="margin:.4rem 0 0;font-size:.9rem;color:var(--muted)"><strong>Track T:</strong> running the existing test on small open-weight models with the GPU I have now. <strong>Track B:</strong> the planned bias side study.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="position" data-rail="Scope">
+  <div class="inner reveal">
+    <p class="kicker">Position</p>
+    <h2>What this measures, and what it does not.</h2>
+    <p class="pos-para" id="pos-para">This project does not try to answer "do language models think?". It asks a narrower question that can actually be tested: for a given problem, does the model's correct answer survive changes that should not matter, like new names, new notation, or a reversed direction? Across five models and three task types, the answer depends on both the model and the problem, and it is separate from accuracy. Several of the failure patterns, like being thrown off by a new story or new notation, also show up in how people solve problems.</p>
+    <div class="pos-toggles" id="pos-toggles"></div>
+    <div class="prior-box" id="prior-work">
+      <h2 class="prior-h">How this differs from earlier work</h2>
+      <div class="prior-rows">
+        <div class="prior-row"><div class="name">GSM-Symbolic</div><p>Rewrote names and numbers and reported average accuracy drops. This project gives a verdict per problem, separates story swaps from number changes, and adds a second, independent probe.</p></div>
+        <div class="prior-row"><div class="name">PlanBench obfuscation</div><p>Replicated here. This project adds the reversed-direction test and checks every rewritten problem with a planner, keeping a saved record of each rename.</p></div>
+        <div class="prior-row"><div class="name">Counterfactual tasks</div><p>Same spirit. This project adds statistical tools from the study of human test-taking (generalisability theory, mixture IRT, and analysis of which wrong answers appear).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="method" data-rail="Problem set and stats">
+  <div class="inner reveal">
+    <p class="kicker">The problem set</p>
+    <h2>Problems, verification, and statistics.</h2>
+
+    <div class="sub">
+      <h3>The problems</h3>
+      <p class="lede">Three task types with very different structures. The optimisation tasks share a structure but differ hugely in how often they appear online, which gives a built-in familiarity scale.</p>
+      <div class="protocol-steps">
+        <div class="step-card"><div class="n">44</div><p><strong>Arithmetic</strong> 44 problems from GSM-Symbolic templates, spread across familiarity levels.</p></div>
+        <div class="step-card"><div class="n">65</div><p><strong>Planning</strong> 65 Blocksworld problems: 50 standard and 15 with meaningless object names. Every correct plan is checked by a planner.</p></div>
+        <div class="step-card"><div class="n">110</div><p><strong>Optimisation</strong> 110 problems. Coin change is far more common online than shortest path, which is more common than weighted interval scheduling.</p></div>
+        <div class="step-card"><div class="n">W1–W6</div><p><strong>W1 to W6</strong> Six rewrites per problem. The correct answer is unchanged for W1 to W4 and recomputed for W5 and W6.</p></div>
+      </div>
+      <div class="tabs" id="family-tabs"></div>
+      <div class="variant-row" id="variant-chips"></div>
+      <div class="problem-box" id="problem-text"></div>
+      <div class="gold"><span class="tag">Gold</span><span id="gold-answer"></span><span class="tag" id="gold-note"></span></div>
+      <p class="caption">Source: <a id="bank-src" href="#" target="_blank" rel="noopener"></a></p>
     </div>
 
     <div class="sub">
-      <h3>5c. Verification</h3>
+      <h3>How answers are checked</h3>
       <div class="flow" id="verify-flow"></div>
-      <p class="caption">Semantic where the domain allows: PDDL simulator (planning), exact optimal solver (optimisation), numeric match (arithmetic). Failures excluded with reason, never scored.</p>
+      <p class="caption">Each task type is checked by meaning, not by string match: a planning simulator for planning, an exact solver for optimisation, and numeric match for arithmetic. Answers that cannot be checked are excluded and the reason is recorded. They are never scored.</p>
     </div>
 
     <div class="sub">
-      <h3>5d. Statistical treatment</h3>
-      <p>Optimisation: 10,000-draw percentile cluster bootstrap over 51 near-duplicate families (110 items). GSM/BW: Wilson intervals. Retention floor Acc<sub>can</sub> ≥ 0.30 fixed before analysis. Kendall W against within-row rank permutation null (10,000 perms, seed 42).</p>
+      <h3>Statistics</h3>
+      <p>Optimisation: confidence intervals from a 10,000-draw bootstrap that resamples whole families of near-duplicate problems (51 families, 110 problems). Arithmetic and planning: Wilson intervals. The rule that a model needs at least .30 original accuracy to be counted was fixed before any analysis. Agreement between models (Kendall W) is tested against 10,000 random shuffles (seed 42).</p>
       <h3 style="margin-top:1.5rem;font-size:1.05rem">Operating rules</h3>
       <div class="rules" id="rules"></div>
     </div>
   </div>
 </section>
 
+<section class="panel" id="programme" data-rail="Full plan">
+  <div class="inner reveal">
+    <p class="kicker">The programme</p>
+    <h2>Claims, hypotheses, and phases.</h2>
+    <p class="lede">The full research plan in three views. Claims: what I want to establish. Hypotheses: the specific bets, and how each one is tested. Phases: the order they run in, where each phase starts only after a pre-set check (a gate) passes. Click any item to expand it.</p>
+    <div class="prog-legend" id="prog-legend" aria-label="Status counts"></div>
+    <div class="tabs" id="prog-tabs">
+      <button class="tab active" data-view="claims">Claims</button>
+      <button class="tab" data-view="hypotheses">Hypothesis registry</button>
+      <button class="tab" data-view="phases">Phase timeline</button>
+    </div>
+    <div class="view active" id="view-claims">
+      <div class="filter-row" id="claim-filters" role="group" aria-label="Filter claims"></div>
+      <div class="claim-grid" id="claims"></div>
+      <div class="claim-map">
+        <h3 class="cmap-h">Claim ↔ hypothesis map</h3>
+        <p class="caption">Claims about capability (CC) are on top, claims about model architecture (AC) below. Lines connect each claim to the hypotheses it depends on. Hover a node to highlight its links.</p>
+        <svg class="cmap-svg" id="claim-hyp-map" aria-label="Links between claims and hypotheses"></svg>
+      </div>
+    </div>
+    <div class="view" id="view-hypotheses">
+      <div class="filter-row" id="hyp-filters" role="group" aria-label="Filter hypotheses"></div>
+      <div class="hyp-grid" id="hyp-grid"></div>
+    </div>
+    <div class="view" id="view-phases">
+      <p class="caption" style="margin-bottom:0">Each diamond is a gate. The next phase starts only when its pass criterion is met. Click a phase to see what it does, what it needs, and what it produces.</p>
+      <div class="phase-track" id="phase-track"></div>
+    </div>
+  </div>
+</section>
+<section class="panel" id="research-questions" data-rail="Questions">
+  <div class="inner reveal">
+    <p class="kicker">Research questions</p>
+    <h2>Six questions behind the project.</h2>
+    <p class="lede">Each question shows how it is measured, what has been measured so far, and what is still waiting on compute. Click to expand.</p>
+    <div class="q-grid" id="questions"></div>
+  </div>
+</section>
+<section class="panel" id="strategy" data-rail="Methods borrowed">
+  <div class="inner reveal">
+    <p class="kicker">Strategy catalogue</p>
+    <h2>Borrowing tools from the study of human minds.</h2>
+    <p class="lede">Psychologists have long had to infer thinking processes they cannot see directly. Instead of borrowing their test questions, this project borrows their methods for inferring hidden processes.</p>
+    <div class="cat-wrap" id="catalog"></div>
+    <div class="callout">
+      <strong>How a method gets borrowed.</strong>
+      <ol>
+        <li>What hidden process was the original method trying to detect?</li>
+        <li>What visible sign did it rely on?</li>
+        <li>What is the equivalent sign in a language model?</li>
+        <li>Does it give a signal for each problem that fits this test?</li>
+      </ol>
+    </div>
+    <p class="caption vault-caption" style="margin-top:1.25rem">My working research notes (Obsidian), shown as a graph of linked topics.</p>
+    <svg class="vault-viz" id="vault-graph" aria-label="Vault note clusters"></svg>
+    <p class="caption vault-caption">Hover a node to see its role. Drag to rearrange.</p>
+  </div>
+</section>
+<section class="panel" id="applications" data-rail="Applications">
+  <div class="inner reveal">
+    <p class="kicker">Engineering use</p>
+    <h2>Where this applies, and where it does not.</h2>
+    <p class="app-fixed">This is a validity check, not an efficiency method. It does not make kernels faster or models smaller.</p>
+    <p class="lede">Filter by engineering area. Each row says what this test adds, which research direction it belongs to, and whether it has been run yet.</p>
+    <div class="app-filters" id="app-filters" role="group" aria-label="Filter engineering areas"></div>
+    <div class="app-list" id="app-list"></div>
+  </div>
+</section>
 <section class="panel" id="coverage" data-rail="Coverage">
   <div class="inner reveal">
-    <p class="kicker">Execution coverage</p>
-    <h2>How much of the bank × probe grid has actually been run.</h2>
-    <p class="lede">Cells from <code>results/derived/COVERAGE_MASTER.csv</code>. Filled ≥85% of attempted cells included; partial = some included; empty = not run or zero included. P3 is corpus-level (shared across models).</p>
+    <p class="kicker">What has been run</p>
+    <h2>What has been run so far.</h2>
+    <p class="lede">Each cell shows whether a probe has been run for one model on one task type. Filled: at least 85% of attempted problems included. Partial: some included. Empty: not run yet. The familiarity probe (Probe 3) is measured once per task type, because it depends on the text, not the model.</p>
     <div class="cov-legend" aria-hidden="true">
       <span><i class="cov-filled"></i>filled</span>
       <span><i class="cov-partial"></i>partial</span>
@@ -777,34 +900,34 @@ html.js .reveal{opacity:1;transform:none}
     <p class="caption">Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/COVERAGE_MASTER.csv" target="_blank" rel="noopener">COVERAGE_MASTER.csv</a>. Primary five models × GSM / BW / ALGO × P1–P3.</p>
   </div>
 </section>
-
 <section class="panel" id="experiments" data-rail="Experiments">
   <div class="inner reveal">
     <p class="kicker">Experiments executed</p>
-    <h2>What has already been run on the bank.</h2>
-    <p class="lede">Each card is a real sweep or analysis with models, n, primary metric, and the derived artefact. Expand for design notes and what the result rules out.</p>
+    <h2>Every experiment run so far.</h2>
+    <p class="lede">Each card is one experiment that has actually been run: which models, how many problems, the main measure, and the output file. Expand a card for the design and what the result rules out.</p>
     <div class="filter-row" id="exp-filters" role="group" aria-label="Filter experiments"></div>
     <div class="exp-grid" id="exp-grid"></div>
   </div>
 </section>
 
-<section class="panel" id="f1" data-rail="F1 Numeric vs lexical">
+<section class="panel" id="f1" data-rail="F1 Story vs numbers">
   <div class="inner reveal">
-    <p class="kicker">Finding 1. Shipped behavioural layer</p>
-    <h2>Numeric vs lexical robustness dissociate.</h2>
+    <p class="kicker">Finding 1</p>
+    <h2>Changing the numbers barely matters. Changing the story does.</h2>
+    <p class="lede">Two rewrites of the same arithmetic problems, both with the same maths: new numbers (W6), and the same maths set in a different real-world story (W3). A model that is truly computing should not care about either. Gemini goes from .91 on the originals to .96 with new numbers, but drops to .52 when only the story changes. o4-mini stays nearly flat on both.</p>
     <div class="chart-wrap" id="slope-chart"></div>
-    <p class="caption">Canonical → W6 → W3 on arithmetic. W6 stays flat; W3 falls. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span><span class="ci-pending">CI pending</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
-    <p class="caption">W3 as built is a cover-story isomorph; see the <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md" target="_blank" rel="noopener">construct note</a>.</p>
+    <p class="caption">Original → new numbers (W6) → story swap (W3), arithmetic. Gemini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.909</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.958</span> / <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.523</span><span class="ci-pending">CI pending</span>. Source: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
+    <p class="caption">Note: the story swap currently changes the setting, not just the names. A pure rename version (W3a) is being added. See the <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/03_Evaluation_Framework/EF-07_W3_Construct_Audit.md" target="_blank" rel="noopener">construct note</a>.</p>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code></p>
     <div class="finding-depth" data-finding="f1"></div>
   </div>
 </section>
 
-<section class="panel" id="f2" data-rail="F2 Formal notation">
+<section class="panel" id="f2" data-rail="F2 Notation">
   <div class="inner reveal">
     <p class="kicker">Finding 2</p>
-    <h2>Formal notation costs more than renaming.</h2>
-    <p class="lede">W4 leaves entity names intact and changes register. o4-mini loses 16 points under W4 alone.</p>
+    <h2>Formal notation hurts more than renaming.</h2>
+    <p class="lede">This rewrite (W4) keeps every name and number and only changes how the problem is written, from plain words to formal, symbolic notation. o4-mini drops 16 points on arithmetic from that change alone. For strong models, a change of notation often costs more than a change of names.</p>
     <div class="tabs" id="f2-tabs"><button class="tab active" data-fam="gsm">Arithmetic</button><button class="tab" data-fam="bw">Planning</button></div>
     <div class="small-multiples" id="pc-charts"></div>
     <p class="caption">W4 highlighted. n<sub>GSM</sub>=44, n<sub>BW</sub>=65. o4-mini <span class="num" data-n="44" data-src="probe1_per_model_variant.csv">.841 → .682</span><span class="ci-pending">CI pending</span>. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/probe1_per_model_variant.csv" target="_blank" rel="noopener">probe1_per_model_variant.csv</a>.</p>
@@ -816,50 +939,35 @@ html.js .reveal{opacity:1;transform:none}
 <section class="panel" id="f3" data-rail="F3 Direction">
   <div class="inner reveal">
     <p class="kicker">Finding 3</p>
-    <h2>Direction of reasoning in planning.</h2>
-    <div class="bw-demo">
-      <div>
-        <div class="towers" id="towers"></div>
-        <p class="caption" style="margin-top:.7rem">BW_014 · toggle exchanges origin and destination.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1rem">
-        <label for="bw-model" style="font-size:.85rem;color:var(--muted)">Model</label>
-        <select class="model-select" id="bw-model"></select>
-        <button class="toggle-btn" id="bw-toggle" type="button">Invert direction (W5)</button>
-        <div>
-          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.35rem"><span id="bw-acc-label">Canonical</span><span class="stat" id="bw-acc-val">.172</span></div>
-          <div class="acc-track"><div class="acc-fill" id="bw-acc-fill"></div></div>
-        </div>
-        <p class="caption">Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span><span class="ci-pending">CI pending</span>; Gemini .391 → .764; o4-mini .781 → .909.</p>
-        <p class="caption">Direction asymmetry in planning has been reported before; our open question is mechanism. See <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/06_Operating_Manual/HP-22_Backward_Prompt_Discriminator.md" target="_blank" rel="noopener">HP-22</a>.</p>
-      </div>
-    </div>
+    <h2>Reversing a planning problem changes how often models solve it.</h2>
+    <p class="lede">This rewrite (W5) swaps the start and goal of a Blocksworld problem, and a planner computes the new correct plan. The interactive demo is at the top of the page in <a href="#problem">The problem in 30 seconds</a>.</p>
+    <p class="caption">Across the planning set (n = 65), original → reversed: Claude <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.172</span> → <span class="num" data-n="65" data-src="C7_concordance_filtered.csv">.873</span><span class="ci-pending">CI pending</span>, Gemini .391 → .764, o4-mini .781 → .909.</p>
+    <p class="caption">Direction effects in planning have been reported before. The open question here is why reversing helps. See <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/06_Operating_Manual/HP-22_Backward_Prompt_Discriminator.md" target="_blank" rel="noopener">HP-22</a>.</p>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/consolidate/p1_variant_ordering.py</code></p>
     <div class="finding-depth" data-finding="f3"></div>
   </div>
 </section>
 
-<section class="panel" id="f4" data-rail="F4 Fragility locus">
+<section class="panel" id="f4" data-rail="F4 Who fails what">
   <div class="inner reveal">
     <p class="kicker">Finding 4</p>
-    <h2>Fragility is a model–item interaction.</h2>
-    <p class="lede">Shared-hard (fail all five primary models): Optimisation <strong class="num" data-n="110" data-src="P1_failure_patterns.csv">0/110</strong> · Arithmetic <strong class="num" data-n="20" data-src="P1_failure_patterns.csv">0/20</strong> · Planning <strong class="num" data-n="64" data-src="P1_failure_patterns.csv">14/64</strong> (all obfuscated).</p>
+    <h2>Different models fail on different problems.</h2>
+    <p class="lede">Almost no problem is hard for every model. None of the 110 optimisation problems or 20 arithmetic problems was failed by all five models (<strong class="num" data-n="110" data-src="P1_failure_patterns.csv">0/110</strong>, <strong class="num" data-n="20" data-src="P1_failure_patterns.csv">0/20</strong>). The only problems all five fail are 14 planning problems with meaningless object names (<strong class="num" data-n="64" data-src="P1_failure_patterns.csv">14/64</strong>). Fragility comes from the combination of a model and a problem, not from the problem alone.</p>
     <div class="tri">
-      <div class="panel-box"><h3>Shared-hard</h3><ul class="hard-list" id="shared-hard"></ul><p class="caption" style="margin-top:.65rem">Fail all five primary models.</p></div>
-      <div class="panel-box"><h3>φ heatmap · can ↔ W3</h3><div id="phi-heat"></div><p class="caption"><a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P1_phi_canonical_w3.csv" target="_blank" rel="noopener">P1_phi_canonical_w3.csv</a></p></div>
-      <div class="panel-box"><h3>Kendall W</h3><div id="kendall"></div><p class="caption">Within-family vs across-family. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C7_concordance_filtered.csv" target="_blank" rel="noopener">C7</a></p></div>
+      <div class="panel-box"><h3>Failed by all five models</h3><ul class="hard-list" id="shared-hard"></ul><p class="caption" style="margin-top:.65rem">Fail all five primary models.</p></div>
+      <div class="panel-box"><h3>Does getting the original right predict getting the story swap right? (φ)</h3><div id="phi-heat"></div><p class="caption"><a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P1_phi_canonical_w3.csv" target="_blank" rel="noopener">P1_phi_canonical_w3.csv</a></p></div>
+      <div class="panel-box"><h3>Do models agree on which rewrites are hardest? (Kendall W)</h3><div id="kendall"></div><p class="caption">Within one task type vs across task types. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C7_concordance_filtered.csv" target="_blank" rel="noopener">C7</a></p></div>
     </div>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/consolidate/p1_failure_patterns.py && python scripts/consolidate/p1_variant_ordering.py</code></p>
     <div class="finding-depth" data-finding="f4"></div>
   </div>
 </section>
-
-<section class="panel" id="f5" data-rail="F5 Robustness ≠ accuracy">
+<section class="panel" id="f5" data-rail="F5 Robust is not accurate">
   <div class="inner reveal">
     <p class="kicker">Finding 5</p>
-    <h2>Robustness is a capacity distinct from accuracy.</h2>
-    <p class="lede">Pooled CCI × W3 retention: <strong>r = .243</strong> <span class="num" data-n="272" data-src="P2_P1_convergence.csv">[.027, .414]</span>, <strong>p = .024</strong>, <strong>n = 272</strong>. Per-family both null. Acc vs retention ρ=.136 (p=.642).</p>
-    <div class="tabs" id="scope-toggle"><button class="chip" data-scope="family">Per-family (both null)</button><button class="chip active" data-scope="pooled">Pooled (significant)</button></div>
+    <h2>Being accurate and being robust are different abilities.</h2>
+    <p class="lede">A model's accuracy on the original problems barely predicts how much of it survives a rewrite (ρ = .14, p = .64). Meanwhile, two independent measures of process, plan-following (CCI) and story-swap retention, do agree when all problems are pooled (r = .24, p = .024, n = 272), though not within each task type on its own. Robustness looks like its own capacity, one that accuracy does not capture. Pooled CI: <span class="num" data-n="272" data-src="P2_P1_convergence.csv">[.027, .414]</span>.</p>
+    <div class="tabs" id="scope-toggle"><button class="chip" data-scope="family">Each task type separately (no effect)</button><button class="chip active" data-scope="pooled">All problems together (significant)</button></div>
     <div class="chart-wrap" id="scatter-chart"></div>
     <div class="fit-stat sig" id="fit-stat"></div>
     <p class="caption">Acc vs retention ρ=<span class="num" data-n="14" data-src="P1_construct_validity.csv">.136</span> (p=.642); Acc vs φ −.426 (p=.146). <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/P2_P1_convergence.csv" target="_blank" rel="noopener">P2_P1_convergence.csv</a>.</p>
@@ -867,44 +975,43 @@ html.js .reveal{opacity:1;transform:none}
     <div class="finding-depth" data-finding="f5"></div>
   </div>
 </section>
-
-<section class="panel" id="f6" data-rail="F6 Compliance">
+<section class="panel" id="f6" data-rail="F6 Shown vs real steps">
   <div class="inner reveal">
     <p class="kicker">Finding 6</p>
-    <h2>Compliance and correctness are separable.</h2>
+    <h2>A model can follow a wrong step and still give the right answer.</h2>
+    <p class="lede">Partway through a solution, we plant a plausible but false intermediate value and watch what happens. On optimisation problems, o4-mini accepted every planted value into its working, yet its final accuracy stayed close to its accuracy without the plant. The visible reasoning and the process producing the answer came apart, so a chain of thought should not be treated as a faithful record.</p>
     <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:start">
       <div class="trace" id="trace"></div>
       <div>
         <div class="accept-row" id="accept-row"></div>
-        <p class="caption" style="margin-top:1rem">n=61. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/injection_recovery_summary.csv" target="_blank" rel="noopener">injection_recovery_summary.csv</a>.</p>
+        <p class="caption" style="margin-top:1rem">Based on 61 planted values. <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/paper/AUDIT/injection_recovery_summary.csv" target="_blank" rel="noopener">injection_recovery_summary.csv</a>.</p>
       </div>
     </div>
     <p class="reproduce"><span>Reproduce</span><code>python scripts/runs/rederive_all_metrics.py</code> · injection logs in <code>results/raw/ALGO_P2_phase2_injected.csv</code></p>
     <div class="finding-depth" data-finding="f6"></div>
   </div>
 </section>
-
-<section class="panel" id="f7" data-rail="F7 Psychometric structure">
+<section class="panel" id="f7" data-rail="F7 Statistics">
   <div class="inner reveal">
-    <p class="kicker">Finding 7. Phase 0 foundations</p>
-    <h2>Psychometric structure differs by family — and arithmetic alone shows separable competencies.</h2>
-    <p class="lede">Executed Phase 0 results: variance-facet inversion, K=1 mixture, o4-mini intrusion signature, and arithmetic-only dissociation crossovers.</p>
+    <p class="kicker">Finding 7</p>
+    <h2>The three task types behave differently under statistical analysis.</h2>
+    <p class="lede">In optimisation, most of the variation in results comes from differences between models. In arithmetic, it comes from differences between problems. Only arithmetic shows reliable cases where one model beats another on one problem and loses on a different one. No distinct strategy groups were found at this sample size, which means "not detectable yet", not "do not exist".</p>
     <div class="f7-grid">
       <div class="panel-box">
-        <h3>Variance facets (O10)</h3>
-        <p>ALGO: model <strong>.327</strong> vs item <strong>.018</strong> (G<sub>item</sub>=.415). GSM: item <strong>.186</strong>, model <strong>.009</strong> (G<sub>item</sub>=.680). Facet loading inverts by family.</p>
+        <h3>Where the variation comes from</h3>
+        <p>Optimisation: models <strong>.327</strong>, problems <strong>.018</strong> (G<sub>item</sub>=.415). Arithmetic: problems <strong>.186</strong>, models <strong>.009</strong> (G<sub>item</sub>=.680). The main source of variation flips between task types.</p>
       </div>
       <div class="panel-box">
-        <h3>Mixture-IRT</h3>
-        <p>On arithmetic, BIC selects <strong>K=1</strong> over K∈{1..4}. No discrete strategy subpopulations at this sample size. ALGO/BW fall below the item-variance threshold for identifiable mixtures.</p>
+        <h3>Distinct strategy groups?</h3>
+        <p>On arithmetic, the best-fitting model has one group (K=1, chosen by BIC out of 1 to 4). Planning and optimisation do not vary enough across problems to test this yet.</p>
       </div>
       <div class="panel-box">
-        <h3>Intrusion signature</h3>
-        <p>o4-mini ALGO W3 intrusion <strong>.619</strong> (13/21). Other models ≤ <strong>.25</strong>. BW intrusion rate 0 across models.</p>
+        <h3>Copying from the original</h3>
+        <p>When o4-mini gets a story-swapped optimisation problem wrong, 62% of its errors (13 of 21) reuse words from the original version. Other models: 25% or less. Planning: 0% for all models.</p>
       </div>
       <div class="panel-box">
-        <h3>Dissociation crossovers</h3>
-        <p>Arithmetic: <strong>20</strong> reliable model–item crossovers vs null <strong>0.57</strong> (p=.001). Optimisation and planning at or below chance.</p>
+        <h3>One model wins here, loses there</h3>
+        <p>Arithmetic: <strong>20</strong> reliable cases where two models swap places from one problem to another, against <strong>0.57</strong> expected by chance (p = .001). Optimisation and planning: at chance level or below.</p>
       </div>
     </div>
     <p class="caption">Sources: <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/O10_variance_components.csv" target="_blank" rel="noopener">O10_variance_components.csv</a>, <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/strategy_posteriors.csv" target="_blank" rel="noopener">strategy_posteriors.csv</a>, <a href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/results/derived/C1_intrusion_rates.csv" target="_blank" rel="noopener">C1_intrusion_rates.csv</a>, paper Table C8.</p>
@@ -912,27 +1019,25 @@ html.js .reveal{opacity:1;transform:none}
     <div class="finding-depth" data-finding="f7"></div>
   </div>
 </section>
-
-<section class="panel" id="next" data-rail="Track T">
+<section class="panel" id="next" data-rail="Compute">
   <div class="inner reveal">
-    <p class="kicker">Open-weight track</p>
-    <h2>Track T on a T4 — and the priority spend.</h2>
-    <p class="lede">Phase 1 (G1) remains the priority spend when a GPU is available. Track T runs the existing instrument on small open-weight models under controlled interventions; it discharges no gate and issues no per-instance labels.</p>
+    <p class="kicker">Compute</p>
+    <h2>What runs now, and what needs a GPU.</h2>
+    <p class="lede">Track T: with the free T4 GPU I have, I run the existing test on small open-weight models under controlled changes. It is useful, but it cannot validate the test or label individual problems. Calibration (Phase 1, gate G1) is the priority as soon as a larger GPU is available. Details of that run are below.</p>
     <div class="method-tiers" id="method-tiers" hidden></div>
     <div class="next-grid" id="next-grid"></div>
   </div>
 </section>
-
 <section class="panel" id="footer" data-rail="Links">
   <div class="inner reveal">
-    <h2>Continue in the vault.</h2>
+    <h2>Read more.</h2>
     <div class="footer-links">
-      <a id="gh-foot" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">GitHub</a>
-      <a id="pdf-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper PDF</a>
-      <a id="book-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md" target="_blank" rel="noopener">BOOK.md</a>
-      <a id="vault-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/RVC_MASTER_DOCUMENT.md" target="_blank" rel="noopener">Research vault</a>
-      <a id="plan-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md" target="_blank" rel="noopener">THE_PLAN</a>
-      <a id="contact-foot" href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Issues</a>
+      <a id="gh-foot" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">Code</a>
+      <a id="pdf-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+      <a id="book-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md" target="_blank" rel="noopener">Long write-up</a>
+      <a id="vault-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/RVC_MASTER_DOCUMENT.md" target="_blank" rel="noopener">Research notes</a>
+      <a id="plan-foot" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/research-vault/RvC-Vault/THE_PLAN.md" target="_blank" rel="noopener">Full plan</a>
+      <a id="contact-foot" href="https://github.com/Adya6714/retrieval-vs-computation/issues" target="_blank" rel="noopener">Open a GitHub issue</a>
     </div>
     <div class="bib-block">
       <div class="bib-toolbar">
@@ -947,9 +1052,9 @@ html.js .reveal{opacity:1;transform:none}
   note      = {Predecessor paper to the Retrieval vs Computation programme}
 }</pre>
     </div>
-    <p class="cite-line">How to cite this site: Adya Srivastava. Retrieval vs Computation — programme site. <span class="num">2026</span>. <a href="https://adya6714.github.io/retrieval-vs-computation/" target="_blank" rel="noopener">https://adya6714.github.io/retrieval-vs-computation/</a>.</p>
+    <p class="cite-line">How to cite this site: Adya Srivastava. Retrieval vs Computation: programme site. <span class="num">2026</span>. <a href="https://adya6714.github.io/retrieval-vs-computation/" target="_blank" rel="noopener">https://adya6714.github.io/retrieval-vs-computation/</a>.</p>
     <p class="built-line" id="built-date" data-locked="1">Last built: 2026-09-25</p>
-    <p class="caption" style="margin-top:2rem">Sources: 00_MOC · THE_PLAN · THE_PLAN_AMENDMENT_A1 · EF-07 · EF-08 · BI-04 · D11–D16. Arrow keys move section to section.</p>
+    <p class="caption" style="margin-top:2rem">Built from my research notes. Use the arrow keys to move between sections.</p>
   </div>
 </section>
 </main>
@@ -959,8 +1064,8 @@ html.js .reveal{opacity:1;transform:none}
 document.documentElement.classList.add('js');
 const DATA = {
   "meta": {
-    "headline": "A measurement science for how language models solve problems.",
-    "mission": "Build the first validated, per-instance measurement science for how LLMs solve problems (retrieval vs computation), then use it to establish capability claims, an architecture claim, and training-data laws.",
+    "headline": "When a language model gets the right answer, did it work it out or remember it?",
+    "mission": "Benchmarks tell you whether a model got the answer right. They do not tell you how. I am building a test that checks, one problem at a time, whether a correct answer came from carrying out the steps (computation) or from matching something the model has seen before (retrieval).",
     "github": "https://github.com/Adya6714/retrieval-vs-computation",
     "paper": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf",
     "book": "https://github.com/Adya6714/retrieval-vs-computation/blob/main/BOOK.md",
@@ -974,104 +1079,107 @@ const DATA = {
       "title": "Same Score, Different Strategy",
       "venue": "CAISc 2026",
       "status": "published",
-      "note": "Accepted predecessor. The behavioural instrument on this site has grown since that acceptance.",
+      "note": "Published. The first version of this test; the site shows how it has grown since.",
       "href": "https://openreview.net/forum?id=d8w4gMVQ1w"
     },
     {
-      "title": "Paper I — behavioural layer",
+      "title": "Paper I: the test itself",
       "venue": "Workshop target",
       "status": "in preparation",
-      "note": "Ships the validated instrument (Phase 0–1).",
+      "note": "The validated per-problem test (Phases 0 and 1).",
       "href": null
     },
     {
-      "title": "Paper II — mechanism / architecture",
+      "title": "Paper II: inside the network",
       "venue": "Planned",
       "status": "planned",
-      "note": "Phase 2 · Gate G2 · AC-1 / AC-2.",
+      "note": "Where in the model the split between computing and recalling happens. Needs GPU.",
       "href": null
     },
     {
-      "title": "Paper III — behavioural + training laws",
+      "title": "Paper III: the role of training data",
       "venue": "Planned",
       "status": "planned",
-      "note": "Phase 3 · Gate G3 · H3 / H7 / AC-3.",
+      "note": "How what a model was trained on shapes whether it computes or recalls.",
       "href": null
     },
     {
-      "title": "Paper IV — ecology of fragility",
+      "title": "Paper IV: over the course of training",
       "venue": "Planned",
       "status": "planned",
-      "note": "Phase 4 · developmental checkpoints · CC-3 / H4.",
+      "note": "When fragility appears as a model trains, using saved checkpoints.",
       "href": null
     }
   ],
   "who": [
     {
       "id": "kernels",
-      "label": "Inference kernels",
-      "title": "Serving and inference kernels",
-      "fail": "You promote a faster kernel, speculative decode path, or continuous-batching change because aggregate Acc_can held. Standard evals never ask whether rename survival or planning inversion still hold.",
-      "do": "<strong>Gate promotion on surface survival, not Acc alone.</strong> Require R<sub>W3</sub> and CCI within a pre-registered band of the baseline checkpoint before the kernel ships.",
-      "evidence": "Finding 1 (measured): on GSM, Gemini Acc stays flat under numeric regeneration (W6) but falls under cover-story rename (W3) on the same algorithm.",
+      "label": "Serving and inference",
+      "title": "If you change how a model is served",
+      "fail": "You ship a faster kernel, a speculative decoding path, or a batching change because accuracy on the standard benchmark held. Nobody checks whether the model still solves reworded or reversed problems.",
+      "do": "<strong>Check robustness before you ship, not just accuracy.</strong> Require that story-swap retention (R<sub>W3</sub>) and the plan-following score (CCI) stay within an agreed range of the previous version.",
+      "evidence": "Finding 1 (measured): on arithmetic, Gemini's accuracy holds when the numbers change but drops from .91 to .52 when only the story changes.",
       "link": "#f1",
-      "linkLabel": "Finding 1: numeric vs lexical",
-      "action": "Promotion gate: Acc_can band plus R_W3 and mean CCI bands."
+      "linkLabel": "Finding 1: story vs numbers",
+      "action": "Release check: original accuracy, story-swap retention, and plan-following score.",
+      "evidenceLabel": "Why the check is worth running (measured on closed API models, not yet on kernels or quantisation)",
+      "status": "proposed"
     },
     {
       "id": "quant",
       "label": "Quantisation",
-      "title": "Quantisation and compression",
-      "fail": "INT8 / GPTQ / AWQ can match FP16 on the leaderboard while changing which surface the model keys on. The score you optimise for is blind to that shift.",
-      "do": "<strong>Treat robustness as a second acceptance axis.</strong> Same Acc with collapsed rename survival or a changed injection-compliance rate is a silent regression.",
-      "evidence": "Finding 2 (measured): o4-mini loses accuracy under formal notation (W4) with entity names intact.",
+      "title": "If you compress or quantise a model",
+      "fail": "An INT8, GPTQ or AWQ model can match the full-precision model on the leaderboard while changing which surface details it relies on. The leaderboard cannot see that change.",
+      "do": "<strong>Treat robustness as a second pass or fail check.</strong> Same accuracy but lower retention after rewrites, or a different response to planted errors, is a hidden regression.",
+      "evidence": "Finding 2 (measured): o4-mini loses 16 points when problems are written in formal notation, with every name unchanged.",
       "link": "#f2",
-      "linkLabel": "Finding 2: formal notation",
-      "action": "Acceptance suite: Acc_can + R_W3 + W4 Acc + injection acceptance rate."
+      "linkLabel": "Finding 2: notation",
+      "action": "Acceptance check: original accuracy, story-swap retention, formal-notation accuracy, and how often planted errors are accepted.",
+      "evidenceLabel": "Why the check is worth running (measured on closed API models, not yet on kernels or quantisation)"
     },
     {
       "id": "arch",
-      "label": "Layer architecture",
-      "title": "Layer architecture and heads",
-      "fail": "You edit attention or MLP bands, or steer heads for latency. Behavioural Acc looks fine; the pathway that carried surface-invariant solving may be what you removed.",
-      "do": "<strong>Pair architecture edits with can↔W3 contrasts</strong> (and pathway occupancy when open-weight allows). Installation claims only after Gate G2.",
-      "evidence": "Programme AC-1 (proposed): strategy as symbolic-pathway occupancy; Phase 2 tests whether fragility is pathway bypass.",
+      "label": "Layers and heads",
+      "title": "If you edit layers or attention heads",
+      "fail": "You prune or steer attention heads or MLP layers for speed. Accuracy looks fine, but you may have removed the part of the network that did the actual computing.",
+      "do": "<strong>Test edits on original vs story-swapped problems</strong>, and for open-weight models, check which internal pathways are active. Claims about where this happens in the network come only after the Phase 2 gate.",
+      "evidence": "Planned (AC-1): test whether fragile answers skip the pathway that does step-by-step computation. Not run yet.",
       "link": "#programme",
-      "linkLabel": "Programme: AC-1 / Phase 2",
-      "action": "Before merge: within-model correlation of head occupancy with W3 survival on the fragile set (after G2 prerequisites)."
+      "linkLabel": "Full plan: AC-1 and Phase 2",
+      "action": "Before merging an edit: check that the heads linked to story-swap survival are intact (after Phase 2)."
     },
     {
       "id": "train",
-      "label": "Training",
-      "title": "Training mix and data law",
-      "fail": "More of the same template (dose) looks like Acc progress. Surface diversity is a different mixture decision if the goal is invariance rather than score alone.",
-      "do": "<strong>Curate for surface diversity under fixed dose</strong> when targeting invariance. Track R_W3 across checkpoints, not Acc alone.",
-      "evidence": "Finding 7 (measured) plus AC-3 / H7 (proposed): ALGO variance is model-heavy while GSM is item-heavy; families need different designs. Diversity-vs-dose arms are gated.",
+      "label": "Training data",
+      "title": "If you decide what goes into training",
+      "fail": "Adding more copies of the same problem template raises accuracy and looks like progress. But if the goal is a model that computes, varied surface forms may matter more than volume.",
+      "do": "<strong>When the goal is robustness, add variety, not just more of the same.</strong> Track story-swap retention across checkpoints, not only accuracy.",
+      "evidence": "Finding 7 (measured): in optimisation the differences are mostly between models, in arithmetic mostly between problems, so each task type needs its own design. Variety vs volume training experiments are planned, not run.",
       "link": "#f7",
-      "linkLabel": "Finding 7: psychometric structure",
-      "action": "Training dashboard: Acc_can, R_W3, and facet loadings by family."
+      "linkLabel": "Finding 7: statistics",
+      "action": "Training dashboard: accuracy, story-swap retention, and where variation comes from, per task type."
     },
     {
       "id": "prompt",
-      "label": "Prompting",
-      "title": "Prompting and chain-of-thought",
-      "fail": "You treat the visible reasoning trace as an explanation of the answer. Injection shows models can adopt a false intermediate and still finish near baseline: compliance is not computation.",
-      "do": "<strong>Do not treat CoT as a faithful audit log.</strong> If traces drive routing, tool calls, or user-facing explanations, measure injection acceptance and recovery first.",
-      "evidence": "Finding 6 (measured): o4-mini accepts all ALGO false-state injections in the reported cell, with post-injection Acc near the uninjected baseline.",
+      "label": "Chain-of-thought",
+      "title": "If you rely on chain-of-thought",
+      "fail": "You treat the model's written reasoning as an explanation of its answer. But models can take on a false step and still reach the right answer, so the written steps are not what produced it.",
+      "do": "<strong>Do not treat chain-of-thought as a faithful log.</strong> If reasoning traces drive routing, tool calls, or explanations shown to users, first measure how often planted errors are accepted and whether the answer changes.",
+      "evidence": "Finding 6 (measured): o4-mini accepted every planted false value on optimisation problems, and its final accuracy stayed close to normal.",
       "link": "#f6",
-      "linkLabel": "Finding 6: compliance vs correctness",
-      "action": "Prompt / agent eval: Acc + injection acceptance + post-injection Acc delta."
+      "linkLabel": "Finding 6: shown vs real steps",
+      "action": "Agent or prompt evaluation: accuracy, planted-error acceptance, and change in accuracy after the plant."
     },
     {
       "id": "fairness",
-      "label": "Fairness & audit",
-      "title": "Fairness audits on verifiable tasks",
-      "fail": "If the protagonist name or demographic cue changes while the task logic and gold answer stay fixed, outcomes could diverge even though the leaderboard did not move.",
-      "do": "<strong>Run W8-style protected-attribute swaps on verifiable-gold tasks</strong> (Track B / D18, proposed): primary contrast is group A vs group B on a neutral-name baseline; treat the shipped canonical name as reference only. Pair with W3a rename cost to test whether bias shares a mechanism with rename fragility (CC-5, proposed).",
-      "evidence": "Finding 1 (measured) shows cover-story rename can cost where numeric regeneration does not. Track B asks whether attribute-bearing names behave like that rename surface (proposed, not run).",
+      "label": "Bias audits",
+      "title": "If you audit for bias",
+      "fail": "If changing a person's name or a demographic cue changes the outcome, while the logic and the correct answer stay the same, the leaderboard will never show it.",
+      "do": "<strong>Swap names and demographic cues on problems with a checkable answer</strong>, and compare groups against a neutral-name baseline (planned, Track B). Then test whether this bias follows the same pattern as story-swap fragility.",
+      "evidence": "Finding 1 (measured) shows a story swap can hurt where new numbers do not. Track B asks whether demographic name swaps behave the same way (planned, not run).",
       "link": "#applications",
-      "linkLabel": "Applications: fairness row (proposed)",
-      "action": "Proposed audit gate: Acc_can on neutral-name baseline + W8 group gap vs T1 noise floor + per-item covariation with W3a when HP-23 exists."
+      "linkLabel": "Applications: bias audit (planned)",
+      "action": "Planned audit: accuracy with neutral names, and the gap between groups compared with normal run-to-run noise."
     }
   ],
   "bank": {
@@ -2716,37 +2824,37 @@ const DATA = {
   "findingDepth": {
     "f1": {
       "design": "Paired Acc on the same GSM items under canonical, W6 (new numbers), and W3 (rename). n=44 for Claude/Gemini/o4-mini; GPT-4o/Llama n=20 valid.",
-      "reads": "Whatever supports the answer is stable under quantity substitution and unstable under name substitution for Gemini — and nearly flat on both for o4-mini.",
+      "reads": "Gemini's answers hold when quantities change and break when the story changes. o4-mini is nearly flat on both.",
       "rules": "Memorisation diagnoses that treat numeric regeneration as the sole diagnostic."
     },
     "f2": {
       "design": "W4 rewrites register from difficulty_params while holding entity names fixed. Compared against W3 on the same items.",
-      "reads": "Fragility is not only “unknown words.” Notation dialect is an independent cost — often larger than rename for strong models.",
+      "reads": "Fragility is not only about unfamiliar words. Notation is a separate cost, often larger than renaming for strong models.",
       "rules": "Collapsing formalisation into paraphrase (W1) or layout (W2)."
     },
     "f3": {
       "design": "BW W5 swaps PDDL :init and :goal, completes a valid init, re-solves with an admissible planner for gold.",
-      "reads": "A legal invert of origin and destination can raise accuracy sharply — the procedure is direction-shaped.",
+      "reads": "Swapping start and goal, a change that should not matter, can raise accuracy sharply. The procedure models use seems tied to direction.",
       "rules": "Treating init/goal as interchangeable surface noise without a matched-complexity control."
     },
     "f4": {
       "design": "Five-model intersection shared-hard counts; φ(can,W3); Kendall W of W1–W6 order within vs across families.",
-      "reads": "Models can share a family’s transform difficulty ordering while failing different items. Fragility is an interaction.",
+      "reads": "Models can agree on which rewrites are hardest in a task type while failing different problems. Fragility depends on the model and the problem together.",
       "rules": "Cataloguing “intrinsically fragile problems” outside mystery planning."
     },
     "f5": {
       "design": "CCI (plan–execution) vs W3 survival, cluster bootstrap; also Acc vs retention / φ rank correlations.",
-      "reads": "Two independent probes agree when pooled; accuracy does not track either. Robustness behaves as a separable capacity.",
+      "reads": "Two independent measures of process agree when pooled, and accuracy tracks neither. Robustness behaves like its own ability.",
       "rules": "Equating high Acc_can with surface invariance."
     },
     "f6": {
       "design": "Mid-solve injection of a plausible false state; score acceptance and final-answer recovery against uninjected baseline.",
-      "reads": "Models adopt the false premise, carry it in the trace, and still finish near baseline — the trace is not the computation.",
+      "reads": "Models take on the false value, carry it in their written steps, and still finish near their normal accuracy. The written reasoning is not the computation.",
       "rules": "Monitoring schemes that treat intermediate steps as faithful records of answer formation."
     },
     "f7": {
       "design": "Crossed variance decomposition (O10); mixture-Rasch BIC over K∈{1..4}; C1 intrusion among W3 errors; C8 dissociation crossovers vs additive null.",
-      "reads": "Optimisation variance lives on models; arithmetic variance lives on items. Only arithmetic yields above-chance cross-model dissociations. o4-mini’s rename errors uniquely recycle canonical tokens.",
+      "reads": "Variation sits with models in optimisation and with problems in arithmetic. Only arithmetic shows reliable model-by-problem crossovers. o4-mini's story-swap errors uniquely reuse words from the original.",
       "rules": "Treating all three families as interchangeable for psychometric design; reading K=1 as “no strategies exist” rather than “not recoverable at this n.”"
     }
   },
@@ -3317,7 +3425,7 @@ const setHref = (id, href) => { const el=document.getElementById(id); if(el && h
     fail.textContent = w.fail;
     doit.innerHTML = w.do;
     side.innerHTML =
-      `<div class="who-chip"><div class="wc-k">Finding that proves the gap</div><p class="wc-v">${w.evidence}</p>` +
+      `<div class="who-chip"><div class="wc-k">${w.evidenceLabel || 'Finding that proves the gap'}</div><p class="wc-v">${w.evidence}</p>` +
       (w.link ? `<a href="${w.link}">${w.linkLabel || 'See finding'}</a>` : '') +
       `</div>` +
       `<div class="who-chip"><div class="wc-k">Concrete action</div><p class="wc-v">${w.action}</p></div>`;
@@ -3978,10 +4086,10 @@ document.getElementById('f2-tabs').addEventListener('click', e => {
   function renderAcc() {
     const m = models[+sel.value];
     const v = inverted ? m.W5 : m.canonical;
-    document.getElementById('bw-acc-label').textContent = inverted ? 'W5 (inverted)' : 'Canonical';
+    document.getElementById('bw-acc-label').textContent = inverted ? 'Reversed (W5)' : 'Original';
     document.getElementById('bw-acc-val').textContent = '.' + Math.round(v*1000).toString().padStart(3,'0');
     document.getElementById('bw-acc-fill').style.width = (v*100) + '%';
-    document.getElementById('bw-toggle').textContent = inverted ? 'Restore canonical' : 'Invert direction (W5)';
+    document.getElementById('bw-toggle').textContent = inverted ? 'Back to original' : 'Reverse the direction (W5)';
   }
   sel.addEventListener('change', renderAcc);
   document.getElementById('bw-toggle').addEventListener('click', () => {
@@ -4201,7 +4309,7 @@ function drawSection(id){
   if(id==='f4'){ renderSharedHard(); renderPhi(); renderKendall(); }
   if(id==='f5') drawScatter('pooled');
   if(id==='f6') animateTrace(reduceMotion);
-  if(id==='method') drawProbeViz();
+  if(id==='method-probes') drawProbeViz();
   if(id==='strategy') drawVaultGraph();
 }
 
