@@ -462,6 +462,7 @@ html.js .reveal{opacity:1;transform:none}
 <section class="panel" id="motivation" data-rail="Overview">
   <svg id="lattice" aria-hidden="true"></svg>
   <div class="inner reveal">
+    <span id="hero"></span>
     <p class="kicker">Retrieval vs Computation · research in progress</p>
     <h1 id="headline">When a language model gets the right answer, did it work it out or remember it?</h1>
     <p class="hero-author">Adya Srivastava, BITS Pilani. First paper: <a href="https://openreview.net/forum?id=d8w4gMVQ1w" target="_blank" rel="noopener">Same Score, Different Strategy (CAISc 2026)</a>.</p>
@@ -471,7 +472,13 @@ html.js .reveal{opacity:1;transform:none}
       <p><strong>What exists today.</strong> Earlier studies rewrite whole benchmarks and report that average accuracy drops. That tells you a model is fragile on average. It does not tell you which specific answers were computed and which were recalled.</p>
       <p><strong>What this adds.</strong> A verdict for each problem, from three independent probes that have to agree. Everything I want to study next, where this happens inside the network and how training causes it, depends on having that per-problem test first.</p>
     </div>
-    <p class="status-strip">Status, October 2026: first results are in across 5 models and 3 task types. The next stage needs GPU time, and I am looking for compute, collaborators and mentors. <a href="#ask">How you can help ↓</a></p>
+    <p class="status-strip">Status, October 2026: first results are in across 5 models and 3 task types. They are early and I am still learning, so critical feedback is welcome. The next stage needs GPU time, and I am looking for compute, research labs and mentors. <a href="#ask">How you can help ↓</a></p>
+    <div class="epistemic" style="margin-top:1.5rem">
+      <p><strong>How the work fits together.</strong></p>
+      <p><strong>1. Find where accuracy misleads.</strong> Rewrites that should not change the answer, and false values planted mid-solution, show when a correct answer was probably not computed.</p>
+      <p><strong>2. Understand why.</strong> Test how chain-of-thought and surface changes relate to what a model actually does, then look inside open-weight models to see where computing and recalling differ.</p>
+      <p><strong>3. Build on it.</strong> Open evals that report robustness next to accuracy, checks that make a model's reasoning easier for people to verify, and training methods so smaller models compute instead of recall. The long-term aim is models that are more reliable, interpretable and aligned. That is the direction, not something this site claims to have achieved.</p>
+    </div>
     <div class="hero-meta">
       <a id="pdf-top" href="https://github.com/Adya6714/retrieval-vs-computation/blob/main/paper/main.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
       <a id="gh-top" href="https://github.com/Adya6714/retrieval-vs-computation" target="_blank" rel="noopener">Code</a>
@@ -486,7 +493,7 @@ html.js .reveal{opacity:1;transform:none}
     <p class="kicker">The problem in 30 seconds</p>
     <h2>Same kind of puzzle, same rules, very different results.</h2>
     <p class="lede">Blocksworld is a classic planning puzzle: move stacked blocks from a start arrangement to a goal arrangement. If you swap the start and the goal, you get a puzzle of the same kind, with a new correct plan that a planner computes for us. A model that is really working out the plan should do about as well in either direction.</p>
-    <p class="lede">It does not. Across 65 planning problems, Claude solves 17% in the original direction and 87% when the direction is reversed. Pick a model and press the button.</p>
+    <p class="lede">In early results across 65 planning problems, it does not. Claude solves 17% in the original direction and 87% when the direction is reversed. Pick a model and press the button.</p>
 
     <div class="bw-demo">
       <div>
@@ -514,19 +521,19 @@ html.js .reveal{opacity:1;transform:none}
     <div class="f7-grid">
       <a class="panel-box" href="#f1" style="display:block;color:inherit;text-decoration:none">
         <h3>The story matters more than the numbers.</h3>
-        <p>Change the numbers in an arithmetic problem and Gemini barely notices (.91 to .96). Keep the same maths but set it in a different real-world story, and it drops to .52.</p>
+        <p>In early tests, changing the numbers in an arithmetic problem barely moved Gemini (.91 to .96). Keeping the same maths but setting it in a different real-world story dropped it to .52.</p>
       </a>
       <a class="panel-box" href="#f2" style="display:block;color:inherit;text-decoration:none">
         <h3>Notation alone can break a model.</h3>
-        <p>o4-mini falls from .84 to .68 on arithmetic when the same problems are written in formal notation. Every name and number stays the same.</p>
+        <p>In early tests, o4-mini fell from .84 to .68 on arithmetic when the same problems were written in formal notation. Every name and number stayed the same.</p>
       </a>
       <a class="panel-box" href="#f5" style="display:block;color:inherit;text-decoration:none">
         <h3>Accuracy does not predict robustness.</h3>
         <p>How often a model is right says almost nothing about whether its answers survive a rewrite (correlation .14, not significant). They behave like two separate abilities.</p>
       </a>
       <a class="panel-box" href="#f6" style="display:block;color:inherit;text-decoration:none">
-        <h3>The reasoning you see is not always the reasoning used.</h3>
-        <p>When I plant a false value halfway through an optimisation problem, o4-mini takes it into its working every time, yet its final accuracy stays close to normal. The written steps are not what produced the answer.</p>
+        <h3>Does the reasoning a model shows match what it does?</h3>
+        <p>In an early test on optimisation problems, o4-mini carried planted false values into its working while its final accuracy stayed close to normal. One model, one task type, so I treat it as a hypothesis to replicate, not a conclusion.</p>
       </a>
     </div>
     <p class="caption" style="margin-top:1rem">These are early numbers. Confidence intervals for some are still being computed and are marked "CI pending" in the details.</p>
@@ -537,13 +544,14 @@ html.js .reveal{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Why this matters</p>
     <h2>If we cannot see how a model got its answer, we cannot fully trust the answer.</h2>
-    <p class="lede">Models are being given real tasks and real access because of their scores. But a score cannot tell you whether a model will hold up when inputs look a little different from what it was trained on. A model's written reasoning cannot fully tell you either, as Finding 6 shows.</p>
+    <p class="lede">Models are being given real tasks and real access because of their scores. But a score cannot tell you whether a model will hold up when inputs look a little different from what it was trained on. A model's written reasoning may not fully tell you either, as an early result in Finding 6 suggests.</p>
     <p class="lede">Trustworthy AI systems need ways to observe and verify how answers are produced, not only whether they are right. This project builds one such check: a test of process that works per problem, can be run by someone other than the model's builder, and does not depend on the model's own account of what it did.</p>
+    <p class="lede">This is part of a wider question the field is working on: how do we verify what an AI system is doing without relying on its own account of itself? My piece of it is measuring how answers are produced, one problem at a time, and being clear about what that measurement can and cannot show.</p>
     <div class="callout">
       <strong>What this gives you in practice</strong>
       <ul style="margin:.5rem 0 0 1.1rem;padding:0;color:var(--muted);font-size:.9rem">
         <li>A second number next to accuracy: how much of it survives changes that should not matter.</li>
-        <li>A warning when a model's shown steps and its actual answer come apart.</li>
+        <li>A way to check whether a model's shown steps and its actual answer come apart.</li>
         <li>A way to tell apart two models with the same score, and see which one is actually computing.</li>
       </ul>
     </div>
@@ -706,7 +714,7 @@ html.js .reveal{opacity:1;transform:none}
   <div class="inner reveal">
     <p class="kicker">Where this is going</p>
     <h2>Measure it, look inside, then build with it.</h2>
-    <p class="lede">The per-problem test is the foundation. Once each problem has a reliable label, "computed" or "recalled", those labels become something I can use: a ground truth for studying what happens inside the model, and a signal for building better systems. Everything below is planned work, in the order I plan to do it.</p>
+    <p class="lede">The work follows one path: find where accuracy misleads, understand why by looking inside models, then build on it. The per-problem test is the foundation. Once each problem has a reliable label, "computed" or "recalled", those labels become ground truth for studying what happens inside the model and a signal for building better systems. Everything below is planned work, in the order I plan to do it.</p>
 
     <div class="protocol-steps">
       <div class="step-card"><div class="n">1 · Done</div><p><strong>Behavioural results.</strong> Rewrites, plan-following checks and familiarity scores across 5 models and 3 task types.</p></div>
@@ -756,6 +764,7 @@ html.js .reveal{opacity:1;transform:none}
         <p>Use rewrite variety and the recall signal during post-training (supervised fine-tuning), so smaller, domain-specific models learn to work problems out instead of leaning on surface cues.</p>
       </div>
     </div>
+    <p class="caption">The long-term aim of Thread 2 is models that are more reliable, interpretable and aligned. Today the site shows measurement results only; the rest is planned.</p>
 
     <p class="lede" style="margin-top:1.5rem">Along the way, a side study (Track B) tests whether demographic bias works the same way: if swapping a person's name changes the answer on a problem with one correct answer, does that follow the same pattern as story-swap fragility?</p>
 
@@ -776,8 +785,8 @@ html.js .reveal{opacity:1;transform:none}
       <strong>I am looking for</strong>
       <ul style="margin:.5rem 0 0 1.1rem;padding:0;color:var(--muted);font-size:.9rem">
         <li>GPU compute or cloud credits for the calibration run and the look-inside work.</li>
-        <li>Mentors or collaborators who work on evaluation, interpretability or post-training.</li>
-        <li>Critical feedback on the method, especially where it could be wrong.</li>
+        <li>Research labs, mentors or collaborators who work on evaluation, interpretability or post-training.</li>
+        <li>Critical feedback and suggestions on the method, especially where it could be wrong. I am still learning and want to hear what I am missing.</li>
       </ul>
     </div>
     <div class="hero-meta">
@@ -1023,8 +1032,8 @@ html.js .reveal{opacity:1;transform:none}
 <section class="panel" id="f6" data-rail="F6 Shown vs real steps">
   <div class="inner reveal">
     <p class="kicker">Finding 6</p>
-    <h2>A model can follow a wrong step and still give the right answer.</h2>
-    <p class="lede">Partway through a solution, we plant a plausible but false intermediate value and watch what happens. On optimisation problems, o4-mini accepted every planted value into its working, yet its final accuracy stayed close to its accuracy without the plant. The visible reasoning and the process producing the answer came apart, so a chain of thought should not be treated as a faithful record.</p>
+    <h2>Compliance and correctness may be separable (early result).</h2>
+    <p class="lede">Partway through a solution, we plant a plausible but false intermediate value and watch what happens. On optimisation problems, o4-mini took the planted value into its working in every case in this test, yet its final accuracy stayed close to its accuracy without the plant. If this holds up, it would mean a chain of thought should not be treated as a faithful record of how an answer was produced. It is one model on one task type, so replication on other models and tasks comes first.</p>
     <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:start">
       <div class="trace" id="trace"></div>
       <div>
@@ -1208,9 +1217,9 @@ const DATA = {
       "id": "prompt",
       "label": "Chain-of-thought",
       "title": "If you rely on chain-of-thought",
-      "fail": "You treat the model's written reasoning as an explanation of its answer. But models can take on a false step and still reach the right answer, so the written steps are not what produced it.",
+      "fail": "You treat the visible reasoning trace as an explanation of the answer. An early test suggests a model can take on a false step and still reach the right answer, so the written steps may not be what produced it.",
       "do": "<strong>Do not treat chain-of-thought as a faithful log.</strong> If reasoning traces drive routing, tool calls, or explanations shown to users, first measure how often planted errors are accepted and whether the answer changes.",
-      "evidence": "Finding 6 (measured): o4-mini accepted every planted false value on optimisation problems, and its final accuracy stayed close to normal.",
+      "evidence": "Finding 6 (early result): in one test on optimisation problems, o4-mini accepted every planted false value and its final accuracy stayed close to normal. One model, one task type, needs replication.",
       "link": "#f6",
       "linkLabel": "Finding 6: shown vs real steps",
       "action": "Agent or prompt evaluation: accuracy, planted-error acceptance, and change in accuracy after the plant."
@@ -2894,7 +2903,7 @@ const DATA = {
     },
     "f6": {
       "design": "Mid-solve injection of a plausible false state; score acceptance and final-answer recovery against uninjected baseline.",
-      "reads": "Models take on the false value, carry it in their written steps, and still finish near their normal accuracy. The written reasoning is not the computation.",
+      "reads": "In this test the model took the false value into its written steps and still finished near its normal accuracy. If it replicates, the written reasoning is not a reliable record of the computation.",
       "rules": "Monitoring schemes that treat intermediate steps as faithful records of answer formation."
     },
     "f7": {
