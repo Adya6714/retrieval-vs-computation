@@ -26,6 +26,9 @@ Mandatory checklist: `neurips_checklist.tex` (input at end of appendix).
 All Table-7 / proximity / triangulation headline numbers should match
 `../rebuild/NUMBERS.csv`. Errata: [`../docs/paper/PAPER_ERRATA.md`](../docs/paper/PAPER_ERRATA.md).
 
+The active **v1.1** behavioural rerun (`rvc11/`, [`docs/v11/README.md`](../docs/v11/README.md))
+has not yet produced replacement numbers. Do not mix v1 and v1.1 absolute accuracies.
+
 ## Regenerate figures / Table 7
 
 | Script | Output |

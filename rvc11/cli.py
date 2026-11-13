@@ -1,4 +1,4 @@
-"""Command line. ``python -m rvc11 <command>``; see V11_RUNBOOK.md."""
+"""Command line. ``python -m rvc11 <command>``; see docs/v11/RUNBOOK.md."""
 
 from __future__ import annotations
 

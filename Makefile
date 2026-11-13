@@ -16,8 +16,8 @@ help:
 # Fresh checkout: dependencies + upstream sources (PlanBench, GSM-Symbolic, Fast Downward)
 bootstrap: setup clone-sources
 	@echo ""
-	@echo "Bootstrap complete. See ANALYSIS.md for the consolidated research summary."
-	@echo "See README.md > 'Reproducing results' for sweep commands."
+	@echo "Bootstrap complete. See docs/v11/README.md for the current rerun, or README.md for the programme overview."
+	@echo "v1.1: make v11-qa && make v11-dry. Legacy v1 sweeps: see docs/evaluation/MASTER_EVALUATION_PIPELINES.md."
 
 # External upstream sources (gitignored; reclone per environment)
 clone-sources:
@@ -59,7 +59,7 @@ triangulate:
 clean:
 	rm -rf __pycache__ .pytest_cache .coverage && find . -name "*.pyc" -delete
 
-# ─── v1.1 corrected rerun (see V11_RUNBOOK.md) ──────────────────────────────
+# ─── v1.1 corrected rerun (see docs/v11/README.md) ──────────────────────────
 .PHONY: v11-setup v11-bank v11-qa v11-test v11-dry v11-models v11-pilot v11-p1 v11-e1 v11-e2 v11-p2
 RUN ?= main
 MODELS ?= all

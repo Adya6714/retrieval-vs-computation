@@ -176,8 +176,8 @@ def write_coverage() -> None:
             f"& {att} & {inc} & {exc} & {reason} \\\\"
         )
     lines += [r"\end{longtable}", ""]
-    (PAPER_T / "table_coverage.tex").write_text("\n".join(lines), encoding="utf-8")
-    print(f"Wrote table_coverage.tex ({len(df)} rows after mock filter)")
+    # Unused orphan (not \\input by the manuscript). Skip writing paper/tables/table_coverage.tex.
+    print(f"Skipped unused table_coverage.tex ({len(df)} rows after mock filter)")
 
 
 def write_q5_tables() -> None:

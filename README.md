@@ -6,13 +6,17 @@ Equal benchmark accuracy can be reached by procedures that behave differently un
 
 ## Status
 
-Status, Sept 2026: behavioural layer shipped (Phase 0, gate G0 passed). Per-instance labels are not issued yet; they wait on calibration gate G1, which needs a GPU. Open-weight Track T is running on a T4.
+**v1.1 corrected rerun is the active path** (13 Nov 2026). New code in [`rvc11/`](rvc11/); experiments, ordered tests, next steps, and blockers: [`docs/v11/README.md`](docs/v11/README.md). Runbook: [`docs/v11/RUNBOOK.md`](docs/v11/RUNBOOK.md). Audit of v1 defects: [`docs/v11/AUDIT.md`](docs/v11/AUDIT.md).
+
+Pipeline and offline QA are in place. **No paid model run yet** — model ids in `configs/v11/models.yaml` are placeholders until `make v11-models`. The published v1 behavioural layer remains frozen under `rebuild/NUMBERS.csv`; do not mix v1 and v1.1 absolute accuracies.
+
+Programme gates: Phase 0 / G0 still passed on the v1 archive. Per-instance labels and G1 still wait on calibration (GPU). Track T remains designed for a T4; it is separate from the v1.1 behavioural rerun.
 
 ## Papers
 
 | Artefact | Description |
 |----------|-------------|
-| [`paper/main.tex`](paper/main.tex) / [`paper/main.pdf`](paper/main.pdf) | Paper I draft: What Survives a Rename (NeurIPS 2026 E&D format) |
+| [`paper/main.tex`](paper/main.tex) / [`paper/main.pdf`](paper/main.pdf) | Paper I draft: What Survives a Rename (NeurIPS 2026 E&D format) — numbers still from the v1 freeze |
 | [`paper/venue/caisc2026/`](paper/venue/caisc2026/) | Accepted predecessor: *Same Score, Different Strategy* (CAISc 2026) |
 
 **Code:** [github.com/Adya6714/retrieval-vs-computation](https://github.com/Adya6714/retrieval-vs-computation).  
@@ -66,14 +70,16 @@ Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 
 | Path | What it is |
 |------|------------|
-| `data/problems/` | Question banks: `question_bank_{gsm,bw,algo}.csv` |
-| `probes/` | Shared library (variants, verifiers, CCI/TEP, clients) |
-| `scripts/` | Sweeps (`*_SCR_*`), figures (`*_FIG_*`), generation, consolidate |
-| `results/raw/` | Append-only per-instance logs (resume on problem × variant × model) |
-| `results/derived/` | Aggregates cited in the paper (recomputable from raw + banks) |
+| **`rvc11/`** | **Active** corrected pipeline (client, bank, verify, experiments, score, analyze) |
+| **`configs/v11/`**, **`data/v11/`**, **`results/v11/`**, **`tests_v11/`** | **Active** study config, cleaned bank, run outputs, tests |
+| **`docs/v11/`** | **Active** runbook, audit, experiment status |
+| `data/problems/` | Legacy v1 banks: `question_bank_{gsm,bw,algo}.csv` (inputs to `rvc11 build-bank`) |
+| `probes/`, `scripts/` | v1 archive: sweeps, figures, consolidate |
+| `results/raw/`, `results/derived/`, `rebuild/` | v1 append-only logs and frozen manuscript numbers |
 | `paper/` | Manuscript, tables, figures, PDF; CAISc archive under `paper/venue/caisc2026/` |
 | `site/` | Interactive site (GitHub Pages) |
 | `docs/talks/` | Speaker notes for presenting the site |
+| `docs/evaluation/` | v1 evaluation map ([MASTER](docs/evaluation/MASTER_EVALUATION_PIPELINES.md)); not the v1.1 path |
 | `research-vault/` | Programme vault (`THE_PLAN.md`, notes, handoffs) |
 | **Plan** | [`research-vault/RvC-Vault/THE_PLAN.md`](research-vault/RvC-Vault/THE_PLAN.md) · amendments [`A1`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A1.md) (Track T) · [`A2`](research-vault/RvC-Vault/THE_PLAN_AMENDMENT_A2.md) (Track B) · vault entry [`00_MOC.md`](research-vault/RvC-Vault/00_MOC.md) · [`docs/audit/REPO_AUDIT_2026-09-25.md`](docs/audit/REPO_AUDIT_2026-09-25.md) (hygiene / Paper I blockers) |
 | **Historical analysis** | [`docs/paper/ANALYSIS_HISTORICAL.md`](docs/paper/ANALYSIS_HISTORICAL.md) (May snapshot; not number SoT) · authority: `rebuild/NUMBERS.csv` + [`docs/paper/PAPER_ERRATA.md`](docs/paper/PAPER_ERRATA.md) |
@@ -87,6 +93,22 @@ Values rounded from `results/derived/` as listed in [Reproduce](#reproduce).
 ---
 
 ## Reproduce
+
+### v1.1 (preferred for new runs)
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+make v11-setup          # deps + PlanBench + .env
+# put OPENROUTER_API_KEY in .env
+make v11-qa             # must print 18/18 gates passed
+make v11-dry            # full pipeline on mocks, no key
+# edit configs/v11/models.yaml, then:
+make v11-models && make v11-pilot
+```
+
+Full experiment order and blockers: [`docs/v11/README.md`](docs/v11/README.md).
+
+### v1 aggregates (manuscript freeze only)
 
 No API key is required to recompute aggregates from committed raw logs.
 
@@ -120,9 +142,9 @@ print(df[(df.probe=="GSM") & (df.model=="o4-mini")])
 PY
 ```
 
-**Fresh model calls** (API): `OPENROUTER_API_KEY` in `.env`; family sweeps `scripts/{ALGO,GSM,BW}_P1_SCR_run_behavioral_sweep.py` with `--resume`. Bank regeneration needs `make bootstrap` (PlanBench, GSM-Symbolic, Fast Downward).
+**Fresh v1 model calls** (archive only): `OPENROUTER_API_KEY` in `.env`; family sweeps `scripts/{ALGO,GSM,BW}_P1_SCR_run_behavioral_sweep.py` with `--resume`. Bank regeneration needs `make bootstrap` (PlanBench, GSM-Symbolic, Fast Downward).
 
-**Tests:** `PYTHONPATH=. pytest tests/ -v`
+**Tests:** `make v11-test` (active) · `PYTHONPATH=. pytest tests/ -v` (v1 archive)
 
 ---
 
@@ -130,15 +152,17 @@ PY
 
 ```
 rvc/
-├── data/problems/
-├── probes/
-├── scripts/
-├── results/raw/
-├── results/derived/
-├── paper/main.tex
-├── paper/main.pdf
-├── paper/venue/caisc2026/
+├── rvc11/                 # active corrected pipeline
+├── configs/v11/
+├── data/v11/
+├── results/v11/
+├── tests_v11/
+├── docs/v11/              # runbook, audit, status
+├── data/problems/         # v1 banks (bank-build input)
+├── probes/ · scripts/     # v1 archive
+├── results/raw/ · derived/
+├── paper/
+├── site/
 ├── BOOK.md
-├── research-vault/
-└── tests/
+└── research-vault/
 ```

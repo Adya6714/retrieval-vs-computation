@@ -1,5 +1,7 @@
 # Evaluation walkthrough — question → metric (with examples)
 
+> **v1 archive.** New runs: [`docs/v11/README.md`](../v11/README.md).
+
 One worked example per family: **GSM** (arithmetic), **ALGO** (coin change), **BW** (blocksworld).
 
 For file paths and W1–W6 audit tables see `PROBE_PIPELINE_REFERENCE.md`.

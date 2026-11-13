@@ -1,5 +1,8 @@
 # Probe pipeline reference
 
+> **v1 archive.** New runs: [`docs/v11/README.md`](../v11/README.md). v1 end-to-end map:
+> [`docs/evaluation/MASTER_EVALUATION_PIPELINES.md`](../evaluation/MASTER_EVALUATION_PIPELINES.md).
+
 How each probe is run, verified, and turned into metrics — with **result files tagged per variant (W1–W6)** so you can audit row-by-row.
 
 **Companion docs:** `CHECKLIST.md` (gaps & fixes) · `API_USAGE.md` (manual run log)

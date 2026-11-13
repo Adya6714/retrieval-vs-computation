@@ -4,6 +4,10 @@ A teaching book for the retrieval-vs-computation programme. The chain is a seque
 
 Read [README.md](README.md) first for the programme map. The manuscript is [paper/main.pdf](paper/main.pdf).
 
+> This book walks the **v1** instrument and frozen numbers. The active corrected pipeline is
+> **v1.1** (`rvc11/`) — see [`docs/v11/README.md`](docs/v11/README.md) for the experiments to run
+> next. Several v1 scoring/bank defects that this book assumes are fixed in v1.1 ([`docs/v11/AUDIT.md`](docs/v11/AUDIT.md)).
+
 ---
 
 ## How to use this book

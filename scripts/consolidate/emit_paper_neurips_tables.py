@@ -6,9 +6,10 @@ Writes:
   paper/tables/table_bw_structural.tex
   paper/tables/table_bw_accuracy.tex
   paper/tables/table_variants.tex
-  paper/tables/table_coverage.tex
   results/derived/PAPER_NUMBER_DELTAS.csv
   results/derived/SP_std_claude_canonical_audit.csv
+
+Coverage rows feed the delta ledger only (unused table_coverage.tex is not written).
 """
 
 from __future__ import annotations
@@ -669,7 +670,8 @@ def write_coverage() -> list[dict]:
             }
         )
     lines += [r"    \bottomrule", r"  \end{tabular}", r"\end{table}", ""]
-    (PAPER_T / "table_coverage.tex").write_text("\n".join(lines), encoding="utf-8")
+    # Unused orphan: neither main.tex nor appendix.tex \\input this file.
+    # Kept in the cell ledger for audit; do not rewrite paper/tables/table_coverage.tex.
     return cells
 
 
@@ -945,7 +947,7 @@ def main() -> None:
     cells += write_variants()
     print("Wrote", PAPER_T / "table_variants.tex")
     cells += write_coverage()
-    print("Wrote", PAPER_T / "table_coverage.tex")
+    print("Coverage ledger cells collected (table_coverage.tex not written)")
     write_deltas(cells)
     audit_sp_std_claude()
 

@@ -1,6 +1,6 @@
 # Program State — Confirmed / Hypothesis / Open
 
-Last updated: 2026-07-07 (raw-data audit of github.com/Adya6714/retrieval-vs-computation, commit at clone time).
+Last updated: 2026-11-13 (v1.1 corrected pipeline landed; docs reorganised around `rvc11/`).
 
 ## A. Resolved this pass (verified-raw)
 
@@ -86,3 +86,4 @@ Track B is proposed, not run. Compute: open-weight GPU (A100-class when availabl
 
 ## E (append): changelog
 - 2026-10-05 (Track B doc): D20 steering under G2; D18 group-vs-group primary contrast; D18b stub; power analysis clustering. Prior entry: Added [[THE_PLAN_AMENDMENT_A2]] (Track B: bias as surface binding), directions [[D18_Protected_Attribute_Surface]] [[D19_Bias_Geometry]] [[D20_Debias_By_Repair]], [[BI-05_Fairness_And_Bias]]. Registered H16-H20, CC-5, AC-5. No gate status changed.
+- 2026-11-13 (v1.1): Corrected behavioural pipeline shipped in repo `rvc11/` with bank rebuild, unified client/verifier, multi-sample designs, and offline QA. Experiments designed: P1 surface, E1 instruction confound, E2 noise floor, P2 false-state (GSM). **Blocker:** placeholder model ids / no `models.lock.json` — no paid run yet. Docs consolidated under `docs/v11/`; family evaluation flows collapsed to stubs pointing at MASTER. G0 still passed; G1 still blocked. Absolute v1.1 accuracies are not comparable to v1.

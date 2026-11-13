@@ -4,7 +4,7 @@ Open this note first. It is the map of the whole vault and the current state of 
 
 **Core question:** when two LLMs score the same on a benchmark, are they solving problems the same way, or is one computing and the other pattern-matching? The program builds a validated, convergent, multi-signal instrument (behavioral + mechanistic) that distinguishes them per instance.
 
-**Status (2026-07-07):** CAISc 2026 submission complete ("Same Score, Different Strategy"). Three data-hygiene issues resolved against raw CSVs in this pass (see [[01_Program_State]]). Next phase: instrument validation + causal mechanism.
+**Status (2026-11-13):** CAISc 2026 accepted ("Same Score, Different Strategy"). v1.1 corrected behavioural rerun is the active path (`rvc11/`; see repo `docs/v11/README.md`). Pipeline + offline QA shipped; **no paid model run yet** (placeholder model ids). Phase-1 / G1 still GPU-blocked; Track T remains the T4 track. See [[01_Program_State]].
 
 ## Read in this order
 0. **[[THE_PLAN]] — the single canonical execution document. If you read one note, read this.**
@@ -48,9 +48,9 @@ Open this note first. It is the map of the whole vault and the current state of 
 3. Ecological ground truth: [[D04_Developmental_Checkpoints]] on OLMo (exposure measured in the actual corpus).
 4. Behavioral expansion: [[D03_Continuous_Transfer_Distance]] with [[D06_Direction_Asymmetry]] and [[D05_Cross_Linguistic]] folded in as distance points.
 
-Current top priorities (supersedes the list above until Phase 1 unblocks; THE_PLAN gates unchanged):
-1. T0 W3 construct fix ([[HP-23_W3a_Nonce_Bank]]) and hygiene (`docs/audit/REPO_AUDIT_2026-09-25.md`).
-2. T1 noise floor ([[HP-16_Noise_Floor]]).
-3. T5 F3 discriminator ([[HP-22_Backward_Prompt_Discriminator]]).
-4. T2, T3, T4, T6 in that order.
+Current top priorities (13 Nov 2026; THE_PLAN gates unchanged):
+1. **v1.1 behavioural rerun** — fill `configs/v11/models.yaml` → `make v11-models` → `make v11-pilot` → P1 → E1 → E2 → P2 (`docs/v11/README.md`).
+2. Bank hardening in parallel: regenerate 200 unverified rewrites; re-derive GSM W6 gold; port BW/ALGO P2 into `rvc11`.
+3. T0 W3 construct fix ([[HP-23_W3a_Nonce_Bank]]) and hygiene (`docs/audit/REPO_AUDIT_2026-09-25.md`) remain required for Paper I refresh.
+4. Track T on T4: T1 noise floor ([[HP-16_Noise_Floor]]) then T5 / T2–T6 as designed in [[THE_PLAN_AMENDMENT_A1]].
 5. Phase 1 the moment an A100 is available.

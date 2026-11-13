@@ -4,6 +4,12 @@
 **Authority:** Phase-0 gate G0 (vault `THE_PLAN` / `RVC_MASTER_DOCUMENT`).  
 **Companion specs:** `results/derived/C1_INTRUSION_PREREG.md`, `results/derived/C2_IRT_CODING.md`, `colab/README.md`.
 
+> **v1.1 note (2026-11-13):** This file preregisters analyses on the **v1** freeze.
+> The corrected behavioural rerun (`rvc11/`) designs E1 (instruction confound), E2 (noise floor),
+> and P2 false-state as first-class experiments — see [`docs/v11/README.md`](docs/v11/README.md).
+> A separate v1.1 analysis amendment should be written before those runs are interpreted as
+> pre-registered. Absolute v1.1 accuracies are not comparable to v1.
+
 ---
 
 ## 0. How to read this document (non-negotiable)

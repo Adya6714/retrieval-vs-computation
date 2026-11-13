@@ -1,10 +1,14 @@
 # Master Evaluation Pipelines (Probe 1–3 × BW, GSM, ALGO)
 
-This document is the end-to-end map for every evaluation pipeline in this repository: **question bank → W6 generation → verifier → model call → results → figures → triangulation**. It is written for defense, replication, and paper writing.
+> **v1 archive map.** The active corrected pipeline is **v1.1** (`rvc11/`). Start at
+> [`docs/v11/README.md`](../v11/README.md). This document remains the SoT for how the
+> *published* v1 numbers were produced; do not use it to launch new sweeps.
+
+This document is the end-to-end map for the legacy evaluation pipeline: **question bank → W6 generation → verifier → model call → results → figures → triangulation**. It is written for defense, replication, and paper writing against the v1 freeze.
 
 **Frozen number authority for the manuscript:** [`rebuild/NUMBERS.csv`](../../rebuild/NUMBERS.csv) under [`rebuild/FROZEN_FILTERS.md`](../../rebuild/FROZEN_FILTERS.md). Paper errata / NeurIPS updates: [`docs/paper/PAPER_ERRATA.md`](../paper/PAPER_ERRATA.md). Triangulation default rule = executed five-field AND (`rebuild/triangulation_rule.py`); appendix three-signal is sensitivity-only. BW NL-tolerant Probe-2 covers **three** models (Claude, GPT-4o, Llama).
 
-Family-specific quick references still live in:
+Family-specific stubs (point back here):
 
 - [BW_EVALUATION_FLOW.md](./BW_EVALUATION_FLOW.md)
 - [GSM_EVALUATION_FLOW.md](./GSM_EVALUATION_FLOW.md)
