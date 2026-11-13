@@ -1,0 +1,17 @@
+# Study settings for the v1.1 rerun. Change numbers here, not in code.
+experiments:
+  p1_surface:            # every usable item, every variant
+    thinking: [on, off]  # "off" is skipped for models that cannot turn thinking off
+    samples: 5
+  e1_instruction:        # the v1 confound, run as a designed factor
+    thinking: [on, off]
+    instructions: [none, show_work, answer_only]
+    variants: [canonical, W3, W4]
+    samples: 3
+  e2_noise:              # noise floor and pass^k
+    thinking: [on]
+    problems_per_family: 20
+    samples: 20
+  p2_plan:               # stage A of the false-state test; stage B is built from its results
+    thinking: [on]
+    samples: 3

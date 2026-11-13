@@ -58,3 +58,50 @@ triangulate:
 
 clean:
 	rm -rf __pycache__ .pytest_cache .coverage && find . -name "*.pyc" -delete
+
+# ─── v1.1 corrected rerun (see V11_RUNBOOK.md) ──────────────────────────────
+.PHONY: v11-setup v11-bank v11-qa v11-test v11-dry v11-models v11-pilot v11-p1 v11-e1 v11-e2 v11-p2
+RUN ?= main
+MODELS ?= all
+WORKERS ?= 8
+
+v11-setup:
+	pip install -r requirements.txt
+	@test -d data/sources/planbench || git clone --depth 1 https://github.com/karthikv792/LLMs-Planning.git data/sources/planbench
+	@test -f .env || cp env.example .env
+
+v11-bank:        ## rebuild data/v11 from the legacy banks
+	python -m rvc11 build-bank
+
+v11-qa:          ## every QA gate, offline, no key
+	python -m rvc11 qa
+
+v11-test:
+	PYTHONPATH=. pytest tests_v11 -q
+
+v11-dry:         ## whole pipeline with scripted models, no key
+	python -m rvc11 run p1_surface --run _dry --models mock_drop,mock_noisy --limit 4
+	python -m rvc11 run e1_instruction --run _dry --models mock_drop --limit 4
+	python -m rvc11 run e2_noise --run _dry --models mock_noisy --limit 5
+	python -m rvc11 run p2_plan --run _dry --models mock_drop --limit 10
+	python -m rvc11 p2-continue --run _dry
+	@echo "open results/v11/_dry/analysis/REPORT.md"
+
+v11-models:      ## check model ids against the live catalogue (needs the key)
+	python -m rvc11 models-check
+
+v11-pilot:       ## 2 problems per subtype on every model: cost and format check
+	python -m rvc11 run p1_surface --run pilot --models $(MODELS) --limit 2 --workers $(WORKERS)
+
+v11-p1:
+	python -m rvc11 run p1_surface --run $(RUN) --models $(MODELS) --workers $(WORKERS)
+
+v11-e1:
+	python -m rvc11 run e1_instruction --run $(RUN) --models $(MODELS) --workers $(WORKERS)
+
+v11-e2:
+	python -m rvc11 run e2_noise --run $(RUN) --models $(MODELS) --workers $(WORKERS)
+
+v11-p2:
+	python -m rvc11 run p2_plan --run $(RUN) --models $(MODELS) --workers $(WORKERS)
+	python -m rvc11 p2-continue --run $(RUN) --workers $(WORKERS)

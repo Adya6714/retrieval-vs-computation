@@ -99,3 +99,8 @@ logs/
 
 # ─── One-off delivery packages (already applied under research-vault/handoffs/) ──
 /Retrieval vs Computation in LLM Inference Optimization/
+
+# ─── v1.1 pipeline ──────────────────────────────────────────────────
+results/v11/_dry/
+results/v11/_qa_selftest/
+configs/v11/models.lock.json

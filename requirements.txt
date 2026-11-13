@@ -37,3 +37,6 @@ pytest-mock>=3.12
 # accelerate>=0.30          # Multi-GPU / device map for 7B model
 # bitsandbytes>=0.43        # 8-bit quantization (if VRAM < 14GB)
 # tuned-lens>=0.2           # Probe 2 mechanistic; check Qwen2.5 support first
+
+# ── v1.1 pipeline ────────────────────────────────────────────────────
+tabulate>=0.9            # markdown tables in results/v11/*/analysis/REPORT.md

@@ -1,0 +1,55 @@
+item_id,subtype,variant,reason
+BW_E015::W6,blocksworld,W6,w6_text_identical_to_canonical
+BW_E017::W6,blocksworld,W6,w6_text_identical_to_canonical
+BW_E019::W6,blocksworld,W6,w6_text_identical_to_canonical
+MBW_001::W5,mystery_blocksworld,W5,unsolvable:reference planner could not solve: goal not reached: 1 goal fact(s) false
+MBW_001::W6,mystery_blocksworld,W6,w6_text_identical_to_canonical
+MBW_002::W6,mystery_blocksworld,W6,unsolvable:reference planner could not solve: goal not reached: 6 goal fact(s) false
+MBW_010::W6,mystery_blocksworld,W6,unsolvable:reference planner could not solve: goal not reached: 4 goal fact(s) false
+MBW_014::W6,mystery_blocksworld,W6,unsolvable:reference planner could not solve: goal not reached: 2 goal fact(s) false
+MBW_037::W6,mystery_blocksworld,W6,unsolvable:reference planner could not solve: goal not reached: 3 goal fact(s) false
+MBW_10::W5,mystery_blocksworld,W5,unsolvable:reference planner could not solve: goal not reached: 1 goal fact(s) false
+MBW_10::W6,mystery_blocksworld,W6,w6_text_identical_to_canonical
+MBW_100::W5,mystery_blocksworld,W5,unsolvable:reference planner could not solve: goal not reached: 1 goal fact(s) false
+MBW_100::W6,mystery_blocksworld,W6,w6_text_identical_to_canonical
+MBW_127::W5,mystery_blocksworld,W5,unsolvable:reference planner could not solve: goal not reached: 1 goal fact(s) false
+MBW_127::W6,mystery_blocksworld,W6,w6_text_identical_to_canonical
+MBW_185::W5,mystery_blocksworld,W5,unsolvable:reference planner could not solve: goal not reached: 1 goal fact(s) false
+MBW_185::W6,mystery_blocksworld,W6,w6_text_identical_to_canonical
+MBW_495::W6,mystery_blocksworld,W6,unsolvable:reference planner could not solve: goal not reached: 4 goal fact(s) false
+MBW_496::W5,mystery_blocksworld,W5,w5_text_identical_to_canonical
+MBW_497::W5,mystery_blocksworld,W5,w5_text_identical_to_canonical
+MBW_498::W5,mystery_blocksworld,W5,w5_text_identical_to_canonical
+MBW_499::W5,mystery_blocksworld,W5,w5_text_identical_to_canonical
+MBW_500::W5,mystery_blocksworld,W5,w5_text_identical_to_canonical
+CC_031::W3,coin_change,W3,text_does_not_contain_spec_values
+CC_034::W3,coin_change,W3,text_does_not_contain_spec_values
+CC_036::W3,coin_change,W3,text_does_not_contain_spec_values
+CC_037::W3,coin_change,W3,text_does_not_contain_spec_values
+CC_038::W3,coin_change,W3,text_does_not_contain_spec_values
+CC_043::W3,coin_change,W3,text_does_not_contain_spec_values
+WIS_006::W6,wis,W6,w6_text_identical_to_canonical
+WIS_007::W6,wis,W6,w6_text_identical_to_canonical
+WIS_009::W6,wis,W6,w6_text_identical_to_canonical
+WIS_010::W6,wis,W6,w6_text_identical_to_canonical
+WIS_012::W6,wis,W6,w6_text_identical_to_canonical
+WIS_013::W6,wis,W6,w6_text_identical_to_canonical
+WIS_014::W6,wis,W6,w6_text_identical_to_canonical
+WIS_015::W6,wis,W6,w6_text_identical_to_canonical
+WIS_016::W6,wis,W6,w6_text_identical_to_canonical
+WIS_017::W6,wis,W6,w6_text_identical_to_canonical
+WIS_018::W6,wis,W6,w6_text_identical_to_canonical
+WIS_019::W6,wis,W6,w6_text_identical_to_canonical
+WIS_020::W6,wis,W6,w6_text_identical_to_canonical
+WIS_021::W6,wis,W6,w6_text_identical_to_canonical
+WIS_022::W6,wis,W6,w6_text_identical_to_canonical
+WIS_023::W6,wis,W6,w6_text_identical_to_canonical
+WIS_024::W6,wis,W6,w6_text_identical_to_canonical
+WIS_025::W6,wis,W6,w6_text_identical_to_canonical
+WIS_026::W6,wis,W6,w6_text_identical_to_canonical
+WIS_027::W6,wis,W6,w6_text_identical_to_canonical
+WIS_028::W6,wis,W6,w6_text_identical_to_canonical
+WIS_029::W6,wis,W6,w6_text_identical_to_canonical
+WIS_030::W6,wis,W6,w6_text_identical_to_canonical
+WIS_031::W6,wis,W6,w6_text_identical_to_canonical
+WIS_032::W6,wis,W6,w6_text_identical_to_canonical

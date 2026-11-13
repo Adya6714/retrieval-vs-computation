@@ -1,0 +1,62 @@
+# Model roster for the v1.1 rerun.
+#
+# EVERY id BELOW IS A PLACEHOLDER UNTIL `python -m rvc11 models check` CONFIRMS IT.
+# This file was written without access to the OpenRouter catalogue. The check command reads the
+# live catalogue with your key, tells you which ids exist, and writes models.lock.json. A real run
+# refuses to start for a model that is not in the lock file.
+#
+# thinking.on / thinking.off are merged into the request body. Set `off: null` for a model that
+# cannot turn thinking off; that model then runs only the thinking-on arms.
+defaults:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  max_tokens: 32000        # high on purpose: truncated answers are excluded, not scored
+  temperature: null        # null = provider default (model-card setting). Recorded per call.
+  send_seed: false
+  timeout_s: 900
+  max_retries: 6
+  thinking:
+    on: {reasoning: {effort: high}}
+    off: {reasoning: {enabled: false}}
+
+models:
+  # --- closed frontier (behaviour only) ---
+  closed_a:
+    id: anthropic/REPLACE-with-current-flagship
+    role: closed_frontier
+  closed_b:
+    id: openai/REPLACE-with-current-flagship
+    role: closed_frontier
+    thinking: {on: {reasoning: {effort: high}}, off: null}
+  # --- open frontier (behaviour only) ---
+  glm:
+    id: z-ai/REPLACE-glm-5.x
+    role: open_frontier
+  kimi:
+    id: moonshotai/REPLACE-kimi-k3.x
+    role: open_frontier
+  deepseek:
+    id: deepseek/REPLACE-deepseek-v4.x
+    role: open_frontier
+  # --- inspectable open model (the mechanism model later) ---
+  qwen27b:
+    id: qwen/REPLACE-qwen3.5-27b
+    role: open_dense
+    # To pin one provider and precision on OpenRouter, uncomment and edit:
+    # extra_body: {provider: {order: [PROVIDER], allow_fallbacks: false, quantizations: [bf16]}}
+  # A local vLLM server works with the same client:
+  # qwen27b_local:
+  #   id: Qwen/Qwen3.5-27B
+  #   base_url: http://localhost:8000/v1
+  #   api_key_env: null
+  #   thinking: {on: {chat_template_kwargs: {enable_thinking: true}}, off: {chat_template_kwargs: {enable_thinking: false}}}
+
+  # --- offline mocks: no key, no network ---
+  mock_oracle: {id: mock/oracle, role: mock, api_key_env: null}
+  mock_wrong: {id: mock/wrong, role: mock, api_key_env: null}
+  mock_empty: {id: mock/empty, role: mock, api_key_env: null}
+  mock_unmarked: {id: mock/unmarked, role: mock, api_key_env: null}
+  mock_truncated: {id: mock/truncated, role: mock, api_key_env: null}
+  mock_error: {id: mock/error, role: mock, api_key_env: null}
+  mock_noisy: {id: "mock/noisy:0.7", role: mock, api_key_env: null}
+  mock_drop: {id: mock/variant_drop, role: mock, api_key_env: null}

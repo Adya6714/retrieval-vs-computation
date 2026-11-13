@@ -1,0 +1,1101 @@
+item_id,removed_text
+BW_001::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_001::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_001::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_001::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_001::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_001::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_001::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_002::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_002::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_002::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_002::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_002::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_002::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_002::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_010::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_010::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_010::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_010::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_010::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_010::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_010::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_011::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_011::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_011::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_011::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_011::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_011::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_011::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_014::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_014::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_014::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_014::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_014::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_014::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_014::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_022::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_022::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_022::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_022::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_022::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_022::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_022::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_080::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_080::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_080::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_080::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_080::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_080::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_080::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_120::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_120::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_120::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_120::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_120::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_120::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_120::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_137::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_137::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_137::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_137::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_137::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_137::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_137::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_155::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_155::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_155::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_155::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_155::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_155::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_155::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_172::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_172::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_172::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_172::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_172::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_172::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_172::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_203::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_203::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_203::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_203::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_203::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_203::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_203::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_227::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_227::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_227::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_227::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_227::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_227::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_227::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_282::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_282::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_282::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_282::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_282::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_282::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_282::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_310::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_310::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_310::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_310::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_310::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_310::W6,Respond with a numbered list of actions only. Each action must be exactlyone of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_310::canonical,Respond with a numbered list of actions only. Each action must be exactlyone of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_331::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_331::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_331::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_331::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_331::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_331::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_331::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_350::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_350::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_350::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_350::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_350::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_350::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_350::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_408::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_408::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_408::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_408::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_408::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_408::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_408::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_467::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_467::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_467::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_467::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_467::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_467::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_467::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_495::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_495::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_495::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_495::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_495::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_495::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_495::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E002::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E002::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E002::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_E002::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_E002::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E002::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E002::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E015::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E015::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E015::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_E015::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_E015::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E015::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E015::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E017::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E017::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E017::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_E017::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_E017::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E017::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E017::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E019::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E019::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E019::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_E019::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_E019::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E019::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E019::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E100::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E100::W2,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E100::W3,Respond with a numbered list of actions only. Each action must be exactly one of: select X / release X / place X under Y / remove X from Y. No explanation. No extra text.
+BW_E100::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: pick-up X put-down X stack X Y unstack X Y No explanation. No extra text.
+BW_E100::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E100::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E100::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_001::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_001::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_001::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_001::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_001::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_001::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_001::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_002::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_002::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_002::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_002::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_002::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_002::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_002::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_010::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_010::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_010::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_010::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_010::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_010::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_010::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_014::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_014::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_014::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_014::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_014::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_014::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_014::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_037::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_037::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_037::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_037::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_037::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_037::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_037::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_10::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_10::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_10::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_10::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_10::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_10::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_10::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_100::W1,Respond with a numbered list of actions only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_100::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_100::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_100::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_100::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_100::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_100::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_127::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_127::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_127::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_127::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_127::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_127::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_127::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_185::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_185::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_185::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_185::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_185::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_185::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_185::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_495::W1,Reply with a numbered sequence of operations only. Each operation must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_495::W2,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_495::W3,Respond with a numbered list of actions only. Each action must be exactly one of: provoke X / appease X / broker X Y / negotiate X Y. No explanation. No extra text.
+MBW_495::W4,OUTPUT FORMAT: Return a numbered list of actions only. Each action must be exactly one of: attack X succumb X overcome X Y feast X Y No explanation. No extra text.
+MBW_495::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_495::W6,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_495::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+BW_496::W1,Reply using only a numbered sequence of operations. Every operation should be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Provide no clarification. Include no additional words.
+BW_496::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / assign_to_base X / promote_over X Y / reassign_from X Y. No explanation. No extra text.
+BW_496::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_496::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_496::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_496::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_497::W1,Reply using only a numbered sequence of operations. Every operation must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Provide no explanations. Include no additional content.
+BW_497::W3,Respond with a numbered list of actions only. Each action must be exactly one of: retrieve X / shelve X / place_on X Y / remove_from X Y. No explanation. No extra text.
+BW_497::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_497::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_497::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_497::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_498::W3,Respond with a numbered list of actions only. Each action must be exactly one of: hire X / assign_to_base X / promote_above X Y / reassign_from X Y. No explanation. No extra text.
+BW_498::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_498::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_498::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_498::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_499::W1,Reply using only a numbered sequence of actions. Every action should be precisely: pick-up X / put-down X / stack X Y / unstack X Y. Don't add explanations. Don't include additional text.
+BW_499::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_499::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_499::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_499::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_499::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_500::W1,Provide only a sequentially numbered action list. Every action must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Include no explanations. Add no supplementary text.
+BW_500::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_500::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_500::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_500::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_500::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_501::W1,Reply using only a numbered sequence of actions. All actions must strictly follow: pick-up X / put-down X / stack X Y / unstack X Y. Include nothing else. Add no further words.
+BW_501::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_501::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_501::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_501::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_501::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_502::W1,Reply using only a numbered sequence of operations. Every operation should be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Provide no explanations. Include no additional content.
+BW_502::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_502::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_502::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_502::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_502::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_503::W1,Provide only a sequentially numbered action list. Every action should be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Include no explanations. Add no supplementary text.
+BW_503::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / assign_to_base X / promote_over X Y / reassign_from X Y. No explanation. No extra text.
+BW_503::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_503::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_503::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_503::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_504::W1,Provide only a sequentially numbered action list. Every action must precisely match: pick-up X / put-down X / stack X Y / unstack X Y. Exclude explanations. Exclude additional content.
+BW_504::W3,Respond with a numbered list of actions only. Each action must be exactly one of: mobilize X / deploy X / position X Y / withdraw X Y. No explanation. No extra text.
+BW_504::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_504::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_504::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_504::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_505::W1,Reply using only a numbered sequence of actions. Every action should be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Provide no explanations. Include no additional text.
+BW_505::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_505::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_505::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_505::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_505::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_506::W1,Reply using only a numbered sequence of actions. Every action has to be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. No explanations. No additional text.
+BW_506::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_506::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_506::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_506::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_506::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_507::W1,Provide only a sequentially numbered action list. Every action must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Exclude explanations. Exclude additional text.
+BW_507::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_507::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_507::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_507::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_507::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_508::W1,Provide only a numbered sequence of actions. Each action must be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Include no explanations or additional text.
+BW_508::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_508::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_508::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_508::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_508::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_509::W1,Reply using only a numbered sequence of actions. Every action must be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Don't include explanations. Don't add any additional text.
+BW_509::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / release X / promote X Y / demote X Y. No explanation. No extra text.
+BW_509::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_509::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_509::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_509::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_510::W1,Provide only a numbered sequence of actions. Each action should be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Include no explanations or additional text.
+BW_510::W3,Respond with a numbered list of actions only. Each action must be exactly one of: mobilize X / deploy X / position X Y / withdraw X Y. No explanation. No extra text.
+BW_510::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_510::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_510::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_510::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_511::W1,Reply using only a numbered sequence of actions. All actions must precisely match: pick-up X / put-down X / stack X Y / unstack X Y. Exclude explanations. Exclude additional text.
+BW_511::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_511::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_511::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_511::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_511::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_512::W1,Provide only a sequentially numbered list of operations. Every operation must strictly follow one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Omit any explanations. Include no additional text.
+BW_512::W3,Respond with a numbered list of actions only. Each action must be exactly one of: retrieve X / shelve X / place_on X Y / remove_from X Y. No explanation. No extra text.
+BW_512::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_512::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_512::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_512::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_513::W1,Reply using a numbered sequence of actions exclusively. Every action has to be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. No explanations. No additional words.
+BW_513::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / assign_to_base X / promote_over X Y / reassign_from X Y. No explanation. No extra text.
+BW_513::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_513::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_513::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_513::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_514::W1,Reply using a numbered sequence of actions exclusively. Every action must be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. Provide no explanations. Include no additional text.
+BW_514::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / assign-to-base X / promote-above X Y / reassign-from X Y. No explanation. No extra text.
+BW_514::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_514::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_514::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_514::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_515::W1,no explanations. Include no additional text.
+BW_515::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / reassign X Y. No explanation. No extra text.
+BW_515::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_515::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_515::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_515::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_001::W1,Provide only a numbered sequence of actions. Each entry must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Exclude any explanations. Include no additional content.
+BW_E_001::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_E_001::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_E_001::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_001::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_001::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_002::W1,Provide only a sequential numbered list of actions. All actions must precisely match: pick-up X / put-down X / stack X Y / unstack X Y. Include no explanations. Add no supplementary text.
+BW_E_002::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote_above X Y / reassign_from X Y. No explanation. No extra text.
+BW_E_002::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_E_002::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_002::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_002::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_003::W1,Reply using only a numbered sequence of actions. All actions must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Provide no explanations. Include no additional content.
+BW_E_003::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_E_003::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_E_003::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_003::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_003::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_004::W1,Provide your response as a numbered sequence containing only actions. Every action must precisely match one of these formats: pick-up X / put-down X / stack X Y / unstack X Y. Do not include explanations. Do not add any additional text.
+BW_E_004::W3,Respond with a numbered list of actions only. Each action must be exactly one of: hire X / assign_to_base X / promote_above X Y / demote_from X Y. No explanation. No extra text.
+BW_E_004::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_E_004::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_004::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_004::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_005::W1,Reply using only a numbered sequence of actions. Every action must be precisely one of these: pick-up X / put-down X / stack X Y / unstack X Y. No explanations. No additional text.
+BW_E_005::W3,Respond with a numbered list of actions only. Each action must be exactly one of: recruit X / dismiss X / promote X Y / demote X Y. No explanation. No extra text.
+BW_E_005::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+BW_E_005::W5,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_005::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+BW_E_005::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_496::W1,Provide only a numbered sequence of actions. Each action must precisely be one of these: attack X / succumb X / overcome X Y / feast X Y. Include no explanations. Add no additional text.
+MBW_496::W3,Respond with a numbered list of actions only. Each action must be exactly one of: deploy X / surrender X / reinforce X Y / supply X Y. No explanation. No extra text.
+MBW_496::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+MBW_496::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_496::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_496::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_497::W1,Provide a numbered sequence containing only actions. All actions must be precisely one of these: attack X / succumb X / overcome X Y / feast X Y. Do not include explanations. Do not add additional text.
+MBW_497::W3,Respond with a numbered list of actions only. Each action must be exactly one of: terminate X / resign X / promote X Y / assign X Y. No explanation. No extra text.
+MBW_497::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+MBW_497::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_497::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_497::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_498::W1,Reply using only a numbered list of actions. Every action must be precisely one of these: attack X / succumb X / overcome X Y / feast X Y. Do not provide explanations. Do not include additional text.
+MBW_498::W3,Respond with a numbered list of actions only. Each action must be exactly one of: deploy X / surrender X / reinforce X Y / establish_supply_line X Y. No explanation. No extra text.
+MBW_498::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+MBW_498::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_498::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_498::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_499::W1,Provide only a numbered sequence of actions. Each action must strictly be one of these: attack X / succumb X / overcome X Y / feast X Y. Do not include explanations. Do not add any additional text.
+MBW_499::W3,Respond with a numbered list of actions only. Each action must be exactly one of: secure X / surrender X / liberate X Y / supply X Y. No explanation. No extra text.
+MBW_499::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+MBW_499::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_499::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_499::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_500::W1,Give only a numbered action sequence. All actions must be precisely: attack X / succumb X / overcome X Y / feast X Y. No explanations. No additional content.
+MBW_500::W3,Respond with a numbered list of actions only. Each action must be exactly one of: deploy_forces X / surrender_position X / capture_territory X Y / establish_supply_line X Y. No explanation. No extra text.
+MBW_500::W4,OUTPUT FORMAT: Return a numbered list of actions only. No explanation. No extra text.
+MBW_500::W5,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+MBW_500::W6,Respond with a numbered list of actions only. Each action must be exactly one of: pick-up X / put-down X / stack X Y / unstack X Y. No explanation. No extra text.
+MBW_500::canonical,Respond with a numbered list of actions only. Each action must be exactly one of: attack X / succumb X / overcome X Y / feast X Y. No explanation. No extra text.
+GSM_001::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_002::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_004::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_005::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_006::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_007::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_008::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_009::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_010::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_011::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_012::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_013::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_014::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_015::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_016::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_017::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text. ---"
+GSM_018::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_019::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_020::W2,"Respond in this exact format: ""number"" (without the quotes) No explanation. No other text."
+GSM_001::W3,Give just the final answer without units and nothing else.
+GSM_002::W3,Give just the final answer without units and nothing else.
+GSM_003::W3,Give just the final answer without units and nothing else.
+GSM_004::W3,Give just the final answer without units and nothing else.
+GSM_005::W3,Give just the final answer without units and nothing else.
+GSM_006::W3,Give just the final answer without units and nothing else.
+GSM_007::W3,Give just the final answer without units and nothing else.
+GSM_008::W3,Give just the final answer without units and nothing else.
+GSM_009::W3,Give just the final answer without units and nothing else.
+GSM_010::W3,Give just the final answer without units and nothing else.
+GSM_011::W3,Give just the final answer without units and nothing else.
+GSM_012::W3,Give just the final answer without units and nothing else.
+GSM_013::W3,Give just the final answer without units and nothing else.
+GSM_014::W3,Give just the final answer without units and nothing else.
+GSM_015::W3,Give just the final answer without units and nothing else.
+GSM_016::W3,Give just the final answer without units and nothing else.
+GSM_017::W3,Give just the final answer without units and nothing else.
+GSM_019::W3,Give just the final answer without units and nothing else. Give just the final answer and nothing else.
+GSM_020::W3,Give just the final answer without units and nothing else.
+GSM_001::W4,Give just the final answer without units and nothing else.
+GSM_002::W4,Give just the final answer without units and nothing else.
+GSM_003::W4,Give just the final answer without units and nothing else.
+GSM_004::W4,Give just the final answer without units and nothing else.
+GSM_006::W4,Give just the final answer without units and nothing else.
+GSM_007::W4,Give just the final answer without units and nothing else.
+GSM_008::W4,Give just the final answer without units and nothing else.
+GSM_009::W4,Give just the final answer without units and nothing else.
+GSM_010::W4,Give just the final answer without units and nothing else.
+GSM_011::W4,Give just the final answer without units and nothing else.
+GSM_012::W4,Give just the final answer without units and nothing else.
+GSM_013::W4,Give just the final answer without units and nothing else.
+GSM_014::W4,Give just the final answer without units and nothing else.
+GSM_015::W4,Give just the final answer without units and nothing else.
+GSM_016::W4,Give just the final answer without units and nothing else.
+GSM_017::W4,Give just the final answer without units and nothing else.
+GSM_018::W4,Give just the final answer without units and nothing else.
+GSM_019::W4,Give just the final answer without units and nothing else.
+GSM_020::W4,Give just the final answer without units and nothing else.
+GSM_001::W5,Give just the final answer and nothing else.
+GSM_002::W5,Give just the final answer and nothing else.
+GSM_003::W5,Give just the final answer and nothing else.
+GSM_004::W5,Give just the final answer and nothing else.
+GSM_005::W5,Give just the final answer and nothing else.
+GSM_006::W5,Give just the final answer and nothing else.
+GSM_007::W5,Give the final answer and nothing else.
+GSM_008::W5,Give the final answer and nothing else.
+GSM_009::W5,Give the final answer and nothing else.
+GSM_010::W5,Give the final answer and nothing else.
+GSM_011::W5,Give the final answer and nothing else.
+GSM_012::W5,Give the final answer and nothing else.
+GSM_013::W5,Give the final answer and nothing else.
+GSM_014::W5,Give the final answer and nothing else.
+GSM_015::W5,Give the final answer and nothing else.
+GSM_016::W5,Give the final answer and nothing else.
+GSM_017::W5,Give the final answer and nothing else.
+GSM_018::W5,Give the final answer and nothing else.
+GSM_019::W5,Give the final answer and nothing else.
+GSM_020::W5,Give the final answer and nothing else.
+CC_01::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_01::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_01::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_01::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_01::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_02::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_02::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_02::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_02::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_02::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_03::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_03::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_03::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_03::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_03::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_04::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_04::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_04::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_04::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_04::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_05::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_05::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_05::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_05::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_05::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_06::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_06::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_06::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_06::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_06::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_07::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_07::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_07::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_07::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_07::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_08::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_08::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_08::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_08::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_08::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_09::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_09::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_09::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_09::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_09::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_10::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_10::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_10::W2,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."""
+CC_10::W3,"Respond in this exact format: Total: [integer] Scoops: [denomination1, denomination2, ...] No explanation. No other text."
+CC_10::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+SP_001::canonical,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_001::W1,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_001::W2,"Reply as: `Path: X → X → X, Cost: X`"
+SP_001::W3,"Reply with only the path as a sequence of hubs and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_001::W4,"Format: Path: X -> X -> X, Cost: X"
+SP_002::canonical,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_002::W1,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_002::W2,"Reply as: `Path: X → X → X, Cost: X`"
+SP_002::W3,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_002::W4,"Format: Path: X -> X -> X, Cost: X"
+SP_003::canonical,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_003::W1,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_003::W2,"Reply as: `Path: X → X → X, Cost: X`"
+SP_003::W3,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_003::W4,"Format: Path: X -> X -> X, Cost: X"
+SP_004::canonical,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_004::W1,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_004::W2,"Reply as: `Path: X → X → X, Cost: X`"
+SP_004::W3,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_004::W4,"Format: Path: X -> X -> X, Cost: X"
+SP_005::canonical,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_005::W1,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_005::W2,"Reply as: `Path: X → X → X, Cost: X`"
+SP_005::W3,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_005::W4,"Format: Path: X -> X -> X, Cost: X"
+WIS_001::canonical,"Reply with only the selected plots and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_001::W1,"Reply with only the chosen parcels and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_001::W2,"Reply as: Selected: {X, X, X, ...}, Total: X"
+WIS_001::W3,"Reply with only the selected houses and the total value. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_001::W4,"Report only S and W(S). Format: Selected: {x1, x2, ...}, Total: W(S)"
+WIS_002::canonical,"Reply with only the selected districts and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_002::W1,"Reply with only the chosen zones and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_002::W2,"Reply as: Selected: {X, X, X, ...}, Total: X"
+WIS_002::W3,"Reply with only the selected servers and the total capacity. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_002::W4,"Report only S and W(S). Format: Selected: {x1, x2, ...}, Total: W(S)"
+WIS_003::canonical,"Reply with only the selected servers and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_003::W1,"Reply with only the chosen nodes and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_003::W2,"Reply as: Selected: {X, X, X, ...}, Total: X"
+WIS_003::W3,"Reply with only the selected classrooms and the total capacity. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_003::W4,"Report only S and W(S). Format: Selected: {x1, x2, ...}, Total: W(S)"
+WIS_004::canonical,"Reply with only the selected towers and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_004::W1,"Reply with only the chosen masts and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_004::W2,"Reply as: Selected: {X, X, X, ...}, Total: X"
+WIS_004::W3,"Reply with only the selected compounds and the total potential. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_004::W4,"Report only S and W(S). Format: Selected: {x1, x2, ...}, Total: W(S)"
+WIS_005::canonical,"Reply with only the selected centers and the total profitability. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_005::W1,"Reply with only the selected laboratories and the total productivity. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_005::W2,"Reply as: Selected: {X, X, X, ...}, Total: X"
+WIS_005::W3,"Reply with only the selected floor spaces and the total capacity. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_005::W4,"Report only S and W(S). Format: Selected: {x1, x2, ...}, Total: W(S)"
+CC_031::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_031::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_031::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_031::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_032::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_032::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_032::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_032::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_033::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_033::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_033::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_033::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_034::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_034::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_034::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_034::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_035::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_035::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_035::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_035::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_036::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_036::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_036::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_036::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_037::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_037::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_037::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_037::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_038::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_038::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_038::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_038::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_039::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_039::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_039::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_039::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_040::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_040::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_040::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_040::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_041::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_041::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_041::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_041::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_042::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_042::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_042::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_042::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_043::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_043::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_043::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_043::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_044::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_044::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_044::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_044::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_045::W1,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_045::W3,"Respond in this exact format: Count: [integer] stamps: [denomination1, denomination2, ...] No explanation. No other text."
+CC_045::W4,"OUTPUT FORMAT: Count: [integer] Coins: [denomination1, denomination2, ...]"
+CC_045::W6,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+SP_019::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_019::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_019::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_019::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_019::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_020::W1,"Respond with just the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_020::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_020::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_020::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_020::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_021::W1,"Provide only the route and total cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_021::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_021::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_021::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_021::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_023::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_023::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_023::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_023::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_023::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_024::W1,"Provide only the route and total time. Format: Path: X -> X -> X, Cost: X"
+SP_024::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_024::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_024::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_024::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_026::W1,"Provide only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_026::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_026::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_026::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_026::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_027::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_027::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_027::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_027::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_027::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_028::W1,"Format: Path: X -> X -> X, Cost: X"
+SP_028::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_028::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_028::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_028::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_029::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_029::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_029::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_029::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_029::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_030::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_030::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_030::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_030::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_031::W1,"Provide only the path sequence and total weight. Format: Path: X -> X -> X, Cost: X"
+SP_031::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_031::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_031::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_031::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_032::W1,"Provide only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_032::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_032::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_032::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_032::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_033::W1,"Provide only the path and total cost. Format: Path: X -> X -> X, Cost: X"
+SP_033::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_033::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_033::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_033::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_034::W1,"Provide only the route and total time. Format: Path: X -> X -> X, Cost: X"
+SP_034::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_034::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_034::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_034::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_035::W1,"Respond using only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_035::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_035::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_035::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_035::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_036::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_036::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_036::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_036::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_036::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_037::W1,"Format: Path: X -> X -> X, Cost: X"
+SP_037::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_037::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_037::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_037::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_038::W1,"Provide only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_038::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_038::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_038::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_038::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_039::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_039::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_039::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_039::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_039::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_040::W1,"Format: Path: X -> X -> X, Cost: X"
+SP_040::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_040::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_040::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_040::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_042::W1,"Provide only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_042::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_042::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_042::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_042::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_044::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_044::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_044::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_044::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_044::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_045::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_045::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_045::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_045::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_045::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_046::W1,"Provide only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_046::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_046::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_046::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_046::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_047::W1,"Provide only the path and total cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_047::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_047::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_047::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_047::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_048::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_048::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_048::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_048::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_048::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_049::W1,"Respond using just the route and total weight. Format: Path: X -> X -> X, Cost: X"
+SP_049::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_049::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_049::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_049::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_050::W1,"Respond with just the path and total cost. Format: Path: X -> X -> X, Cost: X"
+SP_050::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_050::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_050::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_050::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_051::W1,"Respond with just the path and total travel time. Format: Path: X -> X -> X, Cost: X"
+SP_051::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_051::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_051::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_051::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_052::W1,"Provide only the path and its cost. Format: Path: X -> X -> X, Cost: X"
+SP_052::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_052::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_052::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_052::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_053::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_053::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_053::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_053::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_053::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_054::W1,"Provide only the path and cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_054::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_054::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_054::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_054::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_055::W1,"Provide only the route and total cost. Format: Path: X -> X -> X, Cost: X"
+SP_055::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_055::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_055::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_055::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_056::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_056::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_056::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_056::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_056::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_057::W1,"Provide only the path and its cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_057::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_057::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_057::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_057::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_058::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_058::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_058::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_058::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_058::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_059::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_059::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_059::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_059::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_059::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_060::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_060::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_060::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_060::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_060::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_061::W1,"Format: Path: X -> X -> X, Cost: X"
+SP_061::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_061::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_061::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_061::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_062::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_062::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_062::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_062::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_062::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_063::W1,"Provide only the route and its total time. Format: Path: X -> X -> X, Cost: X"
+SP_063::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_063::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_063::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_063::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_064::W1,"Provide only the path and total cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_064::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_064::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_064::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_064::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_065::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_065::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_065::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_065::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_065::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_066::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_066::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_066::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_066::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_066::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_068::W1,"Provide only the path and cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_068::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_068::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_068::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_068::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_069::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_069::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_069::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_069::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_069::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_070::W1,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_070::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_070::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_070::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_070::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_071::W1,"Format: Path: X -> X -> X, Cost: X"
+SP_071::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_071::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_071::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_071::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_072::W1,"Provide only the path and cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_072::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_072::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_072::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_072::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+SP_073::W1,"Provide only the path and cost in response. Format: Path: X -> X -> X, Cost: X"
+SP_073::W3,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_073::W4,"OUTPUT FORMAT: Path: X -> X -> X, Cost: X"
+SP_073::W5,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_073::W6,"Reply with only the path as a sequence of nodes and the total cost. Format: Path: X -> X -> X, Cost: X"
+WIS_006::W1,"Respond with just the chosen interval ids and the sum of their weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_006::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_006::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_006::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_007::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_007::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_007::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_007::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_009::W1,"Respond with just the chosen interval ids and their sum of weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_009::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_009::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_009::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_010::W1,"Provide only the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_010::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_010::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_010::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_012::W1,"Respond with just the chosen interval ids and sum of weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_012::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_012::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_012::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_013::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_013::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_013::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_013::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_014::W1,"Provide only the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_014::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_014::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_014::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_015::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_015::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_015::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_015::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_016::W1,"Respond with just the chosen interval ids and their sum of weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_016::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_016::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_016::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_017::W1,"Respond with just the chosen interval ids and the sum of their weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_017::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_017::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_017::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_018::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_018::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_018::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_018::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_019::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_019::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_019::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_019::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_020::W1,"Respond with just the chosen interval ids and the sum of weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_020::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_020::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_020::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_021::W1,"Format: Selected: {X, X, X, ...}, Total: X"
+WIS_021::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_021::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_021::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_022::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_022::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_022::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_022::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_023::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_023::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_023::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_023::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_024::W1,"Respond with just the chosen interval ids and the sum of weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_024::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_024::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_024::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_025::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_025::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_025::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_025::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_026::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_026::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_026::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_026::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_027::W1,"Respond with just the chosen interval ids and the combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_027::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_027::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_027::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_028::W1,"Provide only the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_028::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_028::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_028::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_029::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_029::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_029::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_029::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_030::W1,"Respond with just the chosen interval ids and their combined weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_030::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_030::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_030::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_031::W1,"Format: Selected: {X, X, X, ...}, Total: X"
+WIS_031::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_031::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_031::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_032::W1,"Respond with just the chosen interval ids and sum of their weights. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_032::W3,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_032::W4,"OUTPUT FORMAT: Selected: {X, X, X, ...}, Total: X"
+WIS_032::W6,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+CC_031::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_032::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_033::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_034::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_035::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_036::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_037::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_038::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_039::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_040::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_041::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_042::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_043::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_044::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+CC_045::canonical,"Respond in this exact format: Count: [integer] Coins: [denomination1, denomination2, ...] No explanation. No other text."
+SP_019::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_020::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_021::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_023::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_024::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_026::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_027::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_028::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_029::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_030::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+WIS_006::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_007::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_009::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_010::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_012::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_013::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_014::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_015::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_016::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_017::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_018::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_019::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_020::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+SP_031::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_032::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_033::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_034::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_035::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_036::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_037::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_038::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_039::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_040::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_042::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_044::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_045::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_046::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_047::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_048::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_049::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_050::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_051::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_052::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_053::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_054::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_055::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_056::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_057::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_058::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_059::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_060::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_061::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_062::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_063::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_064::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_065::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_066::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_068::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_069::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_070::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_071::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_072::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+SP_073::canonical,"Reply with only the path and cost. Format: Path: X -> X -> X, Cost: X"
+WIS_021::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_022::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_023::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_024::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_025::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_026::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_027::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_028::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_029::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_030::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_031::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
+WIS_032::canonical,"Reply with only the selected interval ids and the total weight. Format: Selected: {X, X, X, ...}, Total: X"
